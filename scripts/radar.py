@@ -130,3 +130,32 @@ def norm_title(s: str) -> str:
     s = s.lower().replace("π", "pi")
     s = re.sub(r"[\\${}_^]", "", s)
     return re.sub(r"[^a-z0-9]+", "", s)
+
+
+ARXIV_UA = {"User-Agent": "embodied-ai-radar/1.0 (+https://github.com/hu-zlatan/embodied-ai-radar)"}
+
+
+def arxiv_get(url: str, attempts: int = 6) -> bytes:
+    """GET from the arXiv API with polite exponential backoff (honours Retry-After on 429/503)."""
+    import time
+    import urllib.error
+    import urllib.request
+
+    delay = 15
+    for attempt in range(1, attempts + 1):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=ARXIV_UA), timeout=90) as r:
+                return r.read()
+        except urllib.error.HTTPError as ex:
+            wait = delay
+            ra = ex.headers.get("Retry-After") if ex.headers else None
+            if ra and ra.isdigit():
+                wait = max(wait, int(ra))
+            print(f"  arXiv HTTP {ex.code}; waiting {wait}s (attempt {attempt}/{attempts})", flush=True)
+        except Exception as ex:  # timeouts, resets
+            wait = delay
+            print(f"  arXiv error {type(ex).__name__}; waiting {wait}s (attempt {attempt}/{attempts})", flush=True)
+        if attempt < attempts:
+            time.sleep(wait)
+            delay = min(delay * 2, 300)
+    raise RuntimeError(f"arXiv API unreachable after {attempts} attempts: {url[:120]}")

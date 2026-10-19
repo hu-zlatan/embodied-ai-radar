@@ -10,6 +10,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: arxiv-api   # never hit arXiv from two jobs at once
+  cancel-in-progress: false
 jobs:
   verify:
     runs-on: ubuntu-24.04

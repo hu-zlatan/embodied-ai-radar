@@ -17,7 +17,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 
-from radar import load_curated, norm_title
+from radar import arxiv_get, load_curated, norm_title
 
 NS = {"a": "http://www.w3.org/2005/Atom"}
 UA = {"User-Agent": "embodied-ai-radar-verify/1.0 (+https://github.com/hu-zlatan/embodied-ai-radar)"}
@@ -25,20 +25,11 @@ UA = {"User-Agent": "embodied-ai-radar-verify/1.0 (+https://github.com/hu-zlatan
 
 def arxiv_titles(ids: list[str]) -> dict[str, str]:
     out = {}
-    for i in range(0, len(ids), 50):
-        chunk = ids[i:i + 50]
+    for i in range(0, len(ids), 25):
+        chunk = ids[i:i + 25]
         url = "https://export.arxiv.org/api/query?" + urllib.parse.urlencode(
             {"id_list": ",".join(chunk), "max_results": len(chunk)})
-        for attempt in range(4):
-            try:
-                with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r:
-                    root = ET.fromstring(r.read())
-                break
-            except Exception as ex:
-                print(f"arXiv fetch failed ({ex}), retrying")
-                time.sleep(10 * (attempt + 1))
-        else:
-            raise RuntimeError("arXiv API unreachable")
+        root = ET.fromstring(arxiv_get(url))
         for e in root.findall("a:entry", NS):
             eid = (e.findtext("a:id", default="", namespaces=NS) or "").rsplit("/abs/", 1)[-1]
             eid = eid.split("v")[0] if "v" in eid else eid

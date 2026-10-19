@@ -16,10 +16,9 @@ import re
 import sys
 import time
 import urllib.parse
-import urllib.request
 import xml.etree.ElementTree as ET
 
-from radar import ARXIV_DIR, classify, load_arxiv_feed, load_topics
+from radar import ARXIV_DIR, arxiv_get, classify, load_arxiv_feed, load_topics
 
 API = "https://export.arxiv.org/api/query"
 NS = {"a": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
@@ -41,16 +40,7 @@ def fetch(query: str, start: int) -> bytes:
         "search_query": query, "start": start, "max_results": PAGE,
         "sortBy": "submittedDate", "sortOrder": "descending",
     })
-    req = urllib.request.Request(f"{API}?{params}", headers={
-        "User-Agent": "embodied-ai-radar/1.0 (+https://github.com/hu-zlatan/embodied-ai-radar)"})
-    for attempt in range(4):
-        try:
-            with urllib.request.urlopen(req, timeout=60) as r:
-                return r.read()
-        except Exception as ex:  # network hiccups: back off and retry
-            print(f"  fetch failed ({ex}); retry {attempt + 1}")
-            time.sleep(10 * (attempt + 1))
-    raise RuntimeError("arXiv API unreachable")
+    return arxiv_get(f"{API}?{params}")
 
 
 def clean(s: str | None) -> str:
