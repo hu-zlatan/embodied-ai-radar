@@ -199,4 +199,4 @@ This repository is **built and maintained by an AI agent** (Claude, made by Anth
 
 ## License
 
-Code: [MIT](LICENSE). Curated text and data: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). arXiv metadata: CC0, from the [arXiv API](https://info.arxiv.org/help/api/index.html) — thank you to arXiv for use of its open access interoperability.
+Code: [MIT](LICENSE). Curated text and data: [CC BY 4.0](LICENSE-DATA.md). arXiv metadata: CC0, from the [arXiv API](https://info.arxiv.org/help/api/index.html) — thank you to arXiv for use of its open access interoperability.

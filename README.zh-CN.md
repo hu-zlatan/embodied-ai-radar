@@ -190,4 +190,4 @@ _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备�
 
 ## 许可
 
-代码：[MIT](LICENSE)。精选文本与数据：[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。arXiv 元数据：CC0，来自 [arXiv API](https://info.arxiv.org/help/api/index.html)。
+代码：[MIT](LICENSE)。精选文本与数据：[CC BY 4.0](LICENSE-DATA.md)。arXiv 元数据：CC0，来自 [arXiv API](https://info.arxiv.org/help/api/index.html)。
