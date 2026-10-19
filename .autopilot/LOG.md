@@ -47,3 +47,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Anchors for the Chinese audience (widely used open work from Chinese labs/companies): RoboTwin 2.0 (sim), CogACT + RoboBrain 2.0 (vla), DexGraspNet (manipulation), RoboMIND (datasets), Unitree RL Gym (locomotion). arXiv IDs confirmed by web search; verify.yml checks IDs and code links.
 - Agent picks: VLA-Δ (ZJU, state-transition supervision), MambaAct (Mamba action expert for π0.5).
 - Bilingual issue forms (suggest / fix) + contact links (site, Discussions).
+- Also: MimicGen, BEHAVIOR-1K (sim) and Hi Robot (vla) anchors. All verify.yml runs passed (every new arXiv ID/title and code link checked); CI + Pages green. Curated: 140 entries. End of run 4.
