@@ -28,3 +28,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - OG/Twitter preview image, refreshed README screenshot, per-topic Atom feeds.
 - Agent picks: Blind Precise Assembly (MIT), FastVLA, Embodied Skill Bench.
 - Verified the new UI headless (filters, language toggle, mobile layout; no JS errors).
+- Later in run 2: new topic **Planning, Control & Safety** (cuRobo, MPiNets, Diffuser, CBF tutorial, safe-learning survey, safe-control-gym; verify passed) → untagged 162/451. Shareable search URLs. Intake enrichment with arXiv comments → project links + conservative venue badges; dispatched intake (days=1) to test it.
