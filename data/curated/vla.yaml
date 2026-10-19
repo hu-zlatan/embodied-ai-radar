@@ -162,3 +162,21 @@
   tags: [multitask, skill-consolidation, hypernetwork]
   takeaway_en: Learns skills separately, then consolidates them after the fact with a nested hypernetwork that generates VLA parameters instead of merging weights.
   takeaway_zh: 先独立学习各项技能，再用嵌套超网络“生成”VLA 参数来事后整合技能，而不是直接合并权重。
+- title: "CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic Manipulation"
+  type: paper
+  arxiv: "2411.19650"
+  year: 2024
+  org: Microsoft Research Asia, Tsinghua
+  code: https://github.com/microsoft/CogACT
+  tags: [real, sim, diffusion, open-weights]
+  takeaway_en: Instead of emitting action tokens from the VLM, a separate diffusion action transformer is conditioned on the VLM's "cognition" feature; reports clear gains over OpenVLA in sim and on real robots.
+  takeaway_zh: 不再让 VLM 直接输出动作 token，而是用独立的扩散动作 Transformer 以 VLM 的“认知”特征为条件生成动作；报告在仿真和真机上明显优于 OpenVLA。
+- title: "RoboBrain 2.0 Technical Report"
+  type: paper
+  arxiv: "2507.02029"
+  year: 2025
+  org: BAAI
+  code: https://github.com/FlagOpen/RoboBrain2.0
+  tags: [vlm, planning, spatial-reasoning, open-weights]
+  takeaway_en: Open embodied VLMs (7B and 32B) trained for spatial grounding, affordances, trajectories and multi-step task planning — a "brain" that sits above low-level policies.
+  takeaway_zh: 开源具身视觉语言模型（7B 与 32B），面向空间定位、可供性、轨迹预测与多步任务规划，作为底层策略之上的“大脑”。
