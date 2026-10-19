@@ -1,0 +1,85 @@
+"""Draft a bilingual weekly digest: digest/YYYY-Www.md.
+
+Sections: editor's picks (curated entries whose `added` date falls in the week),
+numbers per topic, and new papers with code by topic (from the daily feed).
+Usage: python scripts/make_digest.py [--week 2026-W43] [--force]
+Without --week, uses the most recent complete ISO week (Mon–Sun).
+"""
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import re
+import sys
+
+from radar import ROOT, load_arxiv_feed, load_curated, load_topics
+
+PER_TOPIC = 6
+
+
+def week_bounds(week: str) -> tuple[dt.date, dt.date]:
+    y, w = week.split("-W")
+    start = dt.date.fromisocalendar(int(y), int(w), 1)
+    return start, start + dt.timedelta(days=6)
+
+
+def clean_title(t: str) -> str:
+    return re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", t).replace("[", "(").replace("]", ")")
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--week")
+    ap.add_argument("--force", action="store_true")
+    args = ap.parse_args()
+    if args.week:
+        week = args.week
+    else:
+        last = dt.date.today() - dt.timedelta(days=dt.date.today().isoweekday())
+        y, w, _ = last.isocalendar()
+        week = f"{y}-W{w:02d}"
+    start, end = week_bounds(week)
+    out = ROOT / "digest" / f"{week}.md"
+    if out.exists() and not args.force:
+        print(f"{out.name} exists; use --force to overwrite")
+        return 0
+    topics = load_topics()
+    entries, _ = load_curated(strict=False)
+    feed = [p for p in load_arxiv_feed() if start.isoformat() <= p.get("published", "") <= end.isoformat()]
+    picks = [e for e in entries if e.get("added") and start.isoformat() <= str(e["added"]) <= end.isoformat()]
+
+    L = [f"# Embodied AI Radar · Weekly {week} · 具身智能雷达周报", "",
+         f"{start.isoformat()} → {end.isoformat()} · {len(feed)} new arXiv papers · {len([p for p in feed if p.get('code')])} with code",
+         f"本周共收录 {len(feed)} 篇 arXiv 新论文，其中 {len([p for p in feed if p.get('code')])} 篇附代码。", ""]
+    L += ["## Editor's picks · 本周精选", ""]
+    if picks:
+        for e in picks:
+            link = f"https://arxiv.org/abs/{e['arxiv']}" if e.get("arxiv") else (e.get("url") or e.get("code"))
+            L.append(f"- **[{clean_title(e['title'])}]({link})** — {e['takeaway_en']} / {e['takeaway_zh']}")
+    else:
+        L.append("- _No new curated picks this week. 本周暂无新增精选。_")
+    L += ["", "## By topic · 分主题统计", ""]
+    for t in topics:
+        n = len([p for p in feed if t["id"] in p.get("topics", [])])
+        L.append(f"- {t['en']} · {t['zh']}: **{n}**")
+    L += ["", "## New papers with code · 本周附代码的新论文", ""]
+    for t in topics:
+        ps = [p for p in feed if t["id"] in p.get("topics", []) and p.get("code")][:PER_TOPIC]
+        if not ps:
+            continue
+        L += [f"### {t['en']} · {t['zh']}", ""]
+        for p in ps:
+            L.append(f"- [{clean_title(p['title'])}](https://arxiv.org/abs/{p['id']}) · [code]({p['code'][0]})")
+        L.append("")
+    L += ["---", "",
+          "Auto-tagged by keyword rules; picks are reviewed by the maintainer agent. "
+          "[Website](https://hu-zlatan.github.io/embodied-ai-radar/) · [GitHub](https://github.com/hu-zlatan/embodied-ai-radar)",
+          "主题为关键词规则自动标注；精选由维护智能体审阅。"]
+    out.parent.mkdir(exist_ok=True)
+    out.write_text("\n".join(L) + "\n", encoding="utf-8")
+    print(f"wrote {out.relative_to(ROOT)} ({len(feed)} papers, {len(picks)} picks)")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

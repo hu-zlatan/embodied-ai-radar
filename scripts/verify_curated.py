@@ -40,6 +40,23 @@ def arxiv_titles(ids: list[str]) -> dict[str, str]:
     return out
 
 
+def abs_page_titles(ids: list[str]) -> dict[str, str]:
+    """Fallback: read <meta name="citation_title"> from https://arxiv.org/abs/<id>."""
+    import html as htmllib
+    import re
+    out = {}
+    for a in ids:
+        try:
+            page = arxiv_get(f"https://arxiv.org/abs/{a}", attempts=3).decode("utf-8", "replace")
+        except RuntimeError:
+            continue
+        m = re.search(r'<meta name="citation_title" content="([^"]*)"', page)
+        if m:
+            out[a] = " ".join(htmllib.unescape(m.group(1)).split())
+        time.sleep(2)
+    return out
+
+
 def check_url(url: str) -> str | None:
     for method in ("HEAD", "GET"):
         try:
@@ -64,7 +81,14 @@ def main() -> int:
     lines = ["## Curated data verification", ""]
     failures = list(errs)
     ids = [e["arxiv"] for e in entries if e.get("arxiv")]
-    titles = arxiv_titles(ids)
+    try:
+        titles = arxiv_titles(ids)
+    except RuntimeError as ex:
+        print(f"API unavailable ({ex}); falling back to arxiv.org abstract pages")
+        titles = {}
+    missing = [i for i in ids if i not in titles]
+    if missing:
+        titles.update(abs_page_titles(missing))
     for e in entries:
         a = e.get("arxiv")
         if not a:

@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
   workflow_run:
-    workflows: ["Daily arXiv intake"]
+    workflows: ["Daily arXiv intake", "Weekly digest"]
     types: [completed]
   schedule:
     - cron: "40 3 * * *"
