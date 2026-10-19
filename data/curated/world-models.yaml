@@ -57,3 +57,30 @@
   tags: [representation, planning, real, arm]
   takeaway_en: A self-supervised video encoder, post-trained with a little robot data, plans zero-shot pick-and-place by latent prediction.
   takeaway_zh: 自监督视频编码器经少量机器人数据后训练，通过潜空间预测实现零样本抓放规划。
+- title: "Dream to Control: Learning Behaviors by Latent Imagination"
+  type: paper
+  arxiv: "1912.01603"
+  year: 2019
+  org: University of Toronto, Google
+  tags: [model-based-rl, latent-dynamics]
+  takeaway_en: The first Dreamer — learns a latent world model from pixels and trains the policy entirely on imagined rollouts.
+  takeaway_zh: 第一代 Dreamer：从像素学习潜空间世界模型，并完全在想象的轨迹上训练策略。
+- title: "TD-MPC2: Scalable, Robust World Models for Continuous Control"
+  type: paper
+  arxiv: "2310.16828"
+  year: 2023
+  org: UC San Diego
+  code: https://github.com/nicklashansen/tdmpc2
+  topics: [control]
+  tags: [model-based-rl, mpc, multitask]
+  takeaway_en: An implicit (decoder-free) world model planned with MPC; one set of hyperparameters works across many continuous-control tasks and scales to a multitask agent.
+  takeaway_zh: 无解码器的隐式世界模型配合 MPC 规划；同一组超参数适用于大量连续控制任务，并可扩展为多任务智能体。
+- title: "DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning"
+  type: paper
+  arxiv: "2411.04983"
+  year: 2024
+  org: NYU
+  code: https://github.com/gaoyuezhou/dino_wm
+  tags: [planning, representation, offline]
+  takeaway_en: Predicts future DINOv2 patch features instead of pixels, so a world model trained on offline data can plan to new visual goals at test time.
+  takeaway_zh: 预测未来的 DINOv2 图像块特征而非像素，使基于离线数据训练的世界模型能在测试时规划到新的视觉目标。

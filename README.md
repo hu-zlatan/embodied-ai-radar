@@ -80,7 +80,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - **[Visual Dexterity: In-Hand Reorientation of Novel and Complex Object Shapes](https://arxiv.org/abs/2211.11744)** (2022) — Reorients unseen objects in-hand using only a depth camera, with a policy trained in simulation.
 - **[Solving Rubik's Cube with a Robot Hand](https://arxiv.org/abs/1910.07113)** (2019) — Automatic domain randomization lets a sim-trained hand policy manipulate a Rubik's cube on real hardware.
 - **[Learning Dexterous In-Hand Manipulation](https://arxiv.org/abs/1808.00177)** (2018) — A Shadow Hand reorients a cube using RL trained purely in randomized simulation — a sim-to-real milestone.
-- _See also:_ [3D-ViTac](#tactile), [Code as Policies](#navigation), [OK-Robot](#navigation), [Cracking Mobile Manipulation](#navigation), [Hierarchical Residual Policy Learning for Real-World Mobile Manipulation with Sparse Human Guidance](#navigation), [FoundationPose](#perception), [cuRobo](#control), [Motion Policy Networks](#control), [LeRobot](#datasets), [LEAP Hand](#hardware)
+- _See also:_ [3D-ViTac](#tactile), [Code as Policies](#navigation), [OK-Robot](#navigation), [Cracking Mobile Manipulation](#navigation), [Hierarchical Residual Policy Learning for Real-World Mobile Manipulation with Sparse Human Guidance](#navigation), [FoundationPose](#perception), [cuRobo](#control), [Motion Policy Networks](#control), [LeRobot](#datasets), [LEAP Hand](#hardware), [BEHAVIOR Robot Suite](#hardware)
 
 <a id="tactile"></a>
 ### Tactile & Visuotactile Sensing
@@ -92,6 +92,8 @@ _Tactile sensors, touch representations and contact-rich control._ [Browse with 
 - **[AnySkin: Plug-and-play Skin Sensing for Robotic Touch](https://arxiv.org/abs/2409.08276)** (2024) — A replaceable magnetic tactile skin whose learned policies keep working after the skin is swapped.
 - **[Binding Touch to Everything: Learning Unified Multimodal Tactile Representations](https://arxiv.org/abs/2401.18084)** (2024) — UniTouch aligns tactile signals with vision, language and audio embeddings, enabling zero-shot touch understanding.
 - **[Sparsh: Self-supervised touch representations for vision-based tactile sensing](https://arxiv.org/abs/2410.24090)** (2024) — Self-supervised encoders pretrained on many tactile images that work across different vision-based touch sensors. · [code](https://github.com/facebookresearch/sparsh)
+- **[Touch and Go: Learning from Human-Collected Vision and Touch](https://arxiv.org/abs/2211.12498)** (2022) — A dataset of paired video and GelSight touch collected by people probing objects in the wild, for cross-modal tactile learning.
+- **[ReSkin: versatile, replaceable, lasting tactile skins](https://arxiv.org/abs/2111.00071)** (2021) — A thin magnetic-elastomer skin read by magnetometers; cheap to make and swap, with learned calibration that carries over to new skins. · [code](https://github.com/raunaqbhirangi/reskin_sensor)
 - **[TACTO: A Fast, Flexible, and Open-source Simulator for High-Resolution Vision-based Tactile Sensors](https://arxiv.org/abs/2012.08456)** (2020) — Renders DIGIT/GelSight-style tactile images in simulation so touch-based policies can be trained at scale. · [code](https://github.com/facebookresearch/tacto)
 
 <a id="locomotion"></a>
@@ -110,7 +112,7 @@ _Legged locomotion, humanoid whole-body control and parkour._ [Browse with the l
 - **[RMA: Rapid Motor Adaptation for Legged Robots](https://arxiv.org/abs/2107.04034)** (2021) — An adaptation module infers environment parameters online, so one policy handles new terrains and payloads in real time.
 - **[Learning Quadrupedal Locomotion over Challenging Terrain](https://arxiv.org/abs/2010.11251)** (2020) — A teacher-student, proprioception-only policy that walks ANYmal over mud, snow and rubble in the wild.
 - **[Learning Agile and Dynamic Motor Skills for Legged Robots](https://arxiv.org/abs/1901.08652)** (2019) — A learned actuator model closes the sim-to-real gap so RL policies run and recover from falls on ANYmal.
-- _See also:_ [Open-TeleVision](#hardware), [Berkeley Humanoid](#hardware)
+- _See also:_ [Crocoddyl](#control), [Open-TeleVision](#hardware), [Berkeley Humanoid](#hardware), [ToddlerBot](#hardware)
 
 <a id="world-models"></a>
 ### World Models
@@ -120,9 +122,12 @@ _Learned dynamics, video world models and model-based RL for embodied agents._ [
 - ⭐ **[Mastering Diverse Domains through World Models](https://arxiv.org/abs/2301.04104)** (2023) — DreamerV3 — one set of hyperparameters works across 150+ tasks, including collecting diamonds in Minecraft from scratch. · [code](https://github.com/danijar/dreamerv3)
 - **[Cosmos World Foundation Model Platform for Physical AI](https://arxiv.org/abs/2501.03575)** (2025) — Open video world foundation models plus tokenizers and data pipelines for generating physical-AI training data.
 - **[V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://arxiv.org/abs/2506.09985)** (2025) — A self-supervised video encoder, post-trained with a little robot data, plans zero-shot pick-and-place by latent prediction.
+- **[DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning](https://arxiv.org/abs/2411.04983)** (2024) — Predicts future DINOv2 patch features instead of pixels, so a world model trained on offline data can plan to new visual goals at test time. · [code](https://github.com/gaoyuezhou/dino_wm)
 - **[Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391)** (2024) — Learns playable environments and latent actions from unlabeled internet videos alone.
 - **[Learning Interactive Real-World Simulators](https://arxiv.org/abs/2310.06114)** (2023) — UniSim — an action-conditioned video model used as a simulator to train policies that transfer to the real world.
+- **[TD-MPC2: Scalable, Robust World Models for Continuous Control](https://arxiv.org/abs/2310.16828)** (2023) — An implicit (decoder-free) world model planned with MPC; one set of hyperparameters works across many continuous-control tasks and scales to a multitask agent. · [code](https://github.com/nicklashansen/tdmpc2)
 - **[DayDreamer: World Models for Physical Robot Learning](https://arxiv.org/abs/2206.14176)** (2022) — Dreamer trained directly on real robots — a quadruped learns to walk in about an hour with no simulator.
+- **[Dream to Control: Learning Behaviors by Latent Imagination](https://arxiv.org/abs/1912.01603)** (2019) — The first Dreamer — learns a latent world model from pixels and trains the policy entirely on imagined rollouts.
 - **[World Models](https://arxiv.org/abs/1803.10122)** (2018) — The classic VAE + RNN agent that learns a compressed model of its environment and trains a controller inside the "dream". · [project](https://worldmodels.github.io/)
 - _See also:_ [Planning with Diffusion for Flexible Behavior Synthesis](#control)
 
@@ -169,6 +174,9 @@ _Motion planning, trajectory optimization, MPC, safety filters and safe learning
 - **[Safe Learning in Robotics: From Learning-Based Control to Safe Reinforcement Learning](https://arxiv.org/abs/2108.06266)** (2021) — Survey connecting control-theory and RL views of safety, from learned dynamics with guarantees to constrained RL and safety filters.
 - **[safe-control-gym: a Unified Benchmark Suite for Safe Learning-based Control and Reinforcement Learning in Robotics](https://arxiv.org/abs/2109.06325)** (2021) — Gym-style benchmark with cart-pole and quadrotor tasks, constraints and disturbances for comparing safe control and safe RL methods. · [code](https://github.com/utiasDSL/safe-control-gym)
 - **[Control Barrier Functions: Theory and Applications](https://arxiv.org/abs/1903.11199)** (2019) — Tutorial on control barrier functions — the standard way to wrap any controller in a minimal-change filter that keeps the system safe.
+- **[Crocoddyl: An Efficient and Versatile Framework for Multi-Contact Optimal Control](https://arxiv.org/abs/1909.04947)** (2019) — An open-source DDP-based solver for contact-rich trajectory optimization, widely used for legged and humanoid motion generation and MPC. · [code](https://github.com/loco-3d/crocoddyl)
+- **[acados: a modular open-source framework for fast embedded optimal control](https://arxiv.org/abs/1910.13753)** (2019) — Fast nonlinear MPC and estimation solvers with Python/MATLAB interfaces that generate C code for embedded targets. · [code](https://github.com/acados/acados)
+- _See also:_ [TD-MPC2](#world-models)
 
 <a id="sim"></a>
 ### Sim-to-Real & Simulators
@@ -216,11 +224,13 @@ _Large robot datasets, egocentric data and evaluation suites._ [Browse with the 
 _Low-cost arms, hands, grippers and data-collection rigs you can build._ [Browse with the latest papers →](https://hu-zlatan.github.io/embodied-ai-radar/topics/hardware.html)
 
 - ⭐ **[LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning](https://arxiv.org/abs/2309.06440)** (2023) — A 16-DoF dexterous hand buildable for about $2,000 from off-the-shelf parts. · [project](https://leaphand.com/)
+- **[BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities](https://arxiv.org/abs/2503.05652)** (2025) — A whole-body teleoperation interface plus a learning method for a wheeled bimanual robot doing long household tasks that need reach, balance and navigation. · [project](https://behavior-robot-suite.github.io/)
+- **[ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation](https://arxiv.org/abs/2502.00893)** (2025) — A small, 3D-printed open-source humanoid with a matching simulation model, built so that ML policies and teleoperated data transfer to the real robot. · [project](https://toddlerbot.github.io/)
 - **[Berkeley Humanoid: A Research Platform for Learning-based Control](https://arxiv.org/abs/2407.21781)** (2024) — A mid-size, low-cost humanoid designed for easy sim-to-real transfer of RL locomotion.
 - **[Open-TeleVision: Teleoperation with Immersive Active Visual Feedback](https://arxiv.org/abs/2407.01512)** (2024) — VR teleoperation with an actively steered stereo camera, used to collect humanoid manipulation data. · [code](https://github.com/OpenTeleVision/TeleVision)
 - **[SO-ARM100 / SO-101](https://github.com/TheRobotStudio/SO-ARM100)** (2024) — An open 3D-printed 6-DoF arm (leader + follower) costing roughly $100–200 per arm; the default LeRobot starter kit.
 - **[GELLO: A General, Low-Cost, and Intuitive Teleoperation Framework for Robot Manipulators](https://arxiv.org/abs/2309.13037)** (2023) — 3D-printed kinematic replicas of robot arms for cheap, intuitive joint-space teleoperation. · [code](https://github.com/wuphilipp/gello_software)
-- _See also:_ [Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](#manipulation), [Mobile ALOHA](#manipulation), [Universal Manipulation Interface](#manipulation), [DexCap](#manipulation), [DIGIT](#tactile), [AnySkin](#tactile), [LeRobot](#datasets)
+- _See also:_ [Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](#manipulation), [Mobile ALOHA](#manipulation), [Universal Manipulation Interface](#manipulation), [DexCap](#manipulation), [DIGIT](#tactile), [AnySkin](#tactile), [ReSkin](#tactile), [LeRobot](#datasets)
 
 <!-- radar:end -->
 
