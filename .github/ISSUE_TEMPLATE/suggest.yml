@@ -1,0 +1,48 @@
+name: "Suggest a paper, repo, dataset or robot / 推荐条目"
+description: "Something useful is missing from the radar. 推荐雷达里缺少的论文、代码、数据集或机器人。"
+title: "[suggest] "
+labels: ["suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! Every suggestion is checked before it is added (the link must be real and reachable). 感谢推荐！每个条目在收录前都会核实链接。
+  - type: input
+    id: link
+    attributes:
+      label: "Link (arXiv, GitHub, project page) / 链接"
+      placeholder: "https://arxiv.org/abs/2406.09246"
+    validations:
+      required: true
+  - type: dropdown
+    id: topic
+    attributes:
+      label: "Topic / 主题"
+      options:
+        - "VLA & robot foundation models"
+        - "Manipulation & dexterous hands"
+        - "Tactile & visuotactile sensing"
+        - "Locomotion & humanoids"
+        - "World models"
+        - "Navigation"
+        - "Perception, SLAM & 3D mapping"
+        - "Planning, control & safety"
+        - "Robot learning (RL & imitation)"
+        - "Simulators & sim-to-real"
+        - "Datasets & benchmarks"
+        - "Hardware & open-source robots"
+        - "Not sure / 不确定"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: "Why is it worth including? (one or two sentences, EN or 中文) / 推荐理由"
+    validations:
+      required: true
+  - type: checkboxes
+    id: relation
+    attributes:
+      label: "Disclosure / 声明"
+      options:
+        - label: "I am an author or maintainer of this work (that's fine, just say so). 我是该工作的作者或维护者（可以推荐，请注明）。"

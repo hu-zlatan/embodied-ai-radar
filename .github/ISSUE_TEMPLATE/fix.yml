@@ -1,0 +1,17 @@
+name: "Report a mistake or broken link / 报告错误"
+description: "Wrong takeaway, wrong tag, broken link, or a site bug. 摘要/标签有误、链接失效或网站问题。"
+title: "[fix] "
+labels: ["bug"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: "Where? (entry title, page URL or arXiv ID) / 位置"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: "What is wrong, and what should it be? / 问题与正确内容"
+    validations:
+      required: true
