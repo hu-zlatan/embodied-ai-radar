@@ -12,7 +12,7 @@ import datetime as dt
 import re
 import sys
 
-from radar import ROOT, load_arxiv_feed, load_curated, load_topics
+from radar import ROOT, load_arxiv_feed, load_curated, load_topics, venue_of
 
 PER_TOPIC = 6
 
@@ -58,6 +58,14 @@ def main() -> int:
             L.append(f"- **[{clean_title(e['title'])}]({link})** — {e['takeaway_en']} / {e['takeaway_zh']}")
     else:
         L.append("- _No new curated picks this week. 本周暂无新增精选。_")
+    accepted = sorted(((venue_of(p.get("comment")), p) for p in feed if venue_of(p.get("comment"))),
+                      key=lambda vp: (vp[0], vp[1]["id"]))
+    if accepted:
+        L += ["", "## Accepted at venues · 已被会议/期刊接收", "",
+              "_From the authors' arXiv comments. 根据作者在 arXiv 上的备注。_", ""]
+        for v, p in accepted:
+            extra = "".join(f" · [{k}]({p[k][0]})" for k in ("code", "project") if p.get(k))
+            L.append(f"- **{v}** · [{clean_title(p['title'])}](https://arxiv.org/abs/{p['id']}){extra}")
     L += ["", "## By topic · 分主题统计", ""]
     for t in topics:
         n = len([p for p in feed if t["id"] in p.get("topics", [])])
@@ -69,7 +77,8 @@ def main() -> int:
             continue
         L += [f"### {t['en']} · {t['zh']}", ""]
         for p in ps:
-            L.append(f"- [{clean_title(p['title'])}](https://arxiv.org/abs/{p['id']}) · [code]({p['code'][0]})")
+            L.append(f"- [{clean_title(p['title'])}](https://arxiv.org/abs/{p['id']}) · [code]({p['code'][0]})"
+                     + (f" · [project]({p['project'][0]})" if p.get("project") else ""))
         L.append("")
     L += ["---", "",
           "Auto-tagged by keyword rules; picks are reviewed by the maintainer agent. "

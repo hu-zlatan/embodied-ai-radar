@@ -247,7 +247,8 @@ def build() -> int:
             break
         it = {"k": "f", "id": p["id"], "t": p["title"], "d": p.get("published", ""),
               "au": ", ".join(p.get("authors", [])[:4]), "tp": p.get("topics", []), "em": p["emb"],
-              "c": (p.get("code") or [None])[0], "pc": p.get("primary", ""), "v": venue_of(p.get("comment"))}
+              "c": (p.get("code") or [None])[0], "pc": p.get("primary", ""), "v": venue_of(p.get("comment")),
+              "pj": (p.get("project") or [None])[0]}
         if it["d"] >= ab_cut:  # keep the index small: older papers are searchable by title/authors only
             it["ab"] = p.get("abstract", "")[:300]
         idx.append({k: v for k, v in it.items() if v not in (None, [], "")} | {"k": "f", "id": p["id"], "t": p["title"]})
