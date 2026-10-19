@@ -27,7 +27,7 @@
     fetch('data/index.json').then(function (r) { return r.json(); }).then(function (j) {
       data = j;
       data.items.forEach(function (it) {
-        it._s = [it.t, it.en, it.zh, it.o, (it.tg || []).join(' '), it.au, it.ab, it.a, it.id, it.pc].join(' ').toLowerCase();
+        it._s = [it.t, it.en, it.zh, it.o, (it.tg || []).join(' '), it.au, it.ab, it.a, it.id, it.pc, it.v].join(' ').toLowerCase();
       });
       cb();
     }).catch(function () { count.textContent = 'Could not load the search index.'; });

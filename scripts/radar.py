@@ -188,8 +188,8 @@ def arxiv_get(url: str, attempts: int = 6) -> bytes:
 
 VENUE_RE = re.compile(
     r"\b(CoRL|RSS|ICRA|IROS|NeurIPS|ICLR|ICML|CVPR|ICCV|ECCV|RA-?L|T-RO|TRO|Humanoids|AAAI|IJCAI|"
-    r"Science Robotics|IJRR|WAFR|HRI|CASE|L4DC|ISRR|3DV|WACV)\b(?:\s*['’]?\s*(20\d\d|\d\d)\b)?")
-NOT_ACCEPTED_RE = re.compile(r"submitted|under review|in submission|preprint version of a submission|workshop", re.I)
+    r"Science Robotics|IJRR|WAFR|HRI|CASE|L4DC|ISRR|3DV|WACV)\b\)?(?:\s*['’]?\s*(20\d\d|\d\d)\b)?")
+NOT_ACCEPTED_RE = re.compile(r"submi\w*|under review|in submission|preprint version of a submission|workshop", re.I)
 
 
 def venue_of(comment: str | None) -> str | None:
@@ -202,6 +202,9 @@ def venue_of(comment: str | None) -> str | None:
         return None
     name = {"RAL": "RA-L", "TRO": "T-RO"}.get(m.group(1), m.group(1))
     year = m.group(2)
+    if not year:  # e.g. "International Conference on ... (IROS), 2026": use the comment's only year, if unique
+        years = set(re.findall(r"\b(20[2-3]\d)\b", comment))
+        year = years.pop() if len(years) == 1 else None
     if year and len(year) == 2:
         year = "20" + year
     return f"{name} {year}" if year else name
