@@ -29,6 +29,15 @@ def load_topics() -> list[dict]:
         return yaml.safe_load(f)
 
 
+def load_embodiments() -> list[dict]:
+    """Embodiment tags (arm, hand, humanoid, ...) used for the site filter. Missing file -> []."""
+    path = DATA / "embodiments.yaml"
+    if not path.exists():
+        return []
+    with open(path, encoding="utf-8") as f:
+        return yaml.safe_load(f) or []
+
+
 def slug(text: str) -> str:
     s = re.sub(r"\$[^$]*\$", lambda m: re.sub(r"[^a-z0-9]", "", m.group(0).lower()), text.lower())
     s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
@@ -120,7 +129,7 @@ def load_arxiv_feed() -> list[dict]:
     return out
 
 
-def classify(text: str, topics: list[dict], title: str | None = None) -> list[str]:
+def classify(text: str, topics: list[dict], title: str | None = None, threshold: int = 2) -> list[str]:
     """Rule-based topic tags for feed papers, from topics.yaml keywords.
 
     A keyword in the title scores 3, each occurrence in the rest of the text scores 1;
@@ -137,7 +146,7 @@ def classify(text: str, topics: list[dict], title: str | None = None) -> list[st
             if head and k in head:
                 score += 3
             score += body.count(k)
-        if score >= 2:
+        if score >= threshold:
             out.append(tp["id"])
     return out
 

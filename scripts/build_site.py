@@ -14,7 +14,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from radar import ROOT, load_arxiv_feed, load_curated, load_topics
+from radar import ROOT, classify, load_arxiv_feed, load_curated, load_embodiments, load_topics
 
 OUT = ROOT / "_site"
 SRC = ROOT / "site_src"
@@ -24,8 +24,14 @@ REPO_URL = "https://github.com/hu-zlatan/embodied-ai-radar"
 FEED_DAYS_ON_SITE = 60   # feed papers kept in the search index
 FEED_DAYS_PAGE = 7       # days shown on the feed page
 TOPIC_FEED_MAX = 40      # recent feed papers per topic page
+FEED_ABSTRACT_DAYS = 21  # abstracts (for search) kept in the index only for this many days
 
 esc = html.escape
+EMB: dict[str, dict] = {}  # embodiment id -> {en, zh}, filled in build()
+
+
+def emb_chips(ids: list[str]) -> str:
+    return "".join(f'<span class="chip emb">{bi(EMB[i]["en"], EMB[i]["zh"])}</span>' for i in ids if i in EMB)
 
 
 def bi(en: str, zh: str, tag: str = "span") -> str:
@@ -65,7 +71,7 @@ def curated_card(e: dict, topics_by_id: dict, root: str) -> str:
     chips = "".join(
         f'<a class="chip topic" href="{root}topics/{t}.html">{bi(topics_by_id[t]["en"], topics_by_id[t]["zh"])}</a>'
         for t in e["topics"])
-    tags = "".join(f'<span class="chip">{esc(t)}</span>' for t in (e.get("tags") or []))
+    tags = emb_chips(e.get("emb", [])) + "".join(f'<span class="chip">{esc(t)}</span>' for t in (e.get("tags") or []))
     star = '<span class="star" title="Highlight">★</span>' if e.get("highlight") else ""
     if e.get("added"):
         star += f' <span class="badge new">{bi("new", "新")} {esc(str(e["added"]))}</span>'
@@ -86,7 +92,7 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
         authors += " et al."
     chips = "".join(
         f'<a class="chip topic" href="{root}topics/{t}.html">{bi(topics_by_id[t]["en"], topics_by_id[t]["zh"])}</a>'
-        for t in p.get("topics", []) if t in topics_by_id)
+        for t in p.get("topics", []) if t in topics_by_id) + emb_chips(p.get("emb", []))
     code = "".join(f' · <a href="{esc(u)}" rel="noopener">{bi("Code", "代码")}</a>' for u in p.get("code", [])[:1])
     proj = "".join(f' · <a href="{esc(u)}" rel="noopener">{bi("Project", "项目页")}</a>' for u in p.get("project", [])[:1])
     has_code = '<span class="badge code">code</span>' if p.get("code") else ""
@@ -185,6 +191,13 @@ def build() -> int:
         print(f"warning: {len(errs)} curated data problems (run validate.py); building anyway")
     feed = load_arxiv_feed()
     today = dt.datetime.now(dt.timezone.utc).date()
+    embs = load_embodiments()
+    EMB.clear()
+    EMB.update({m["id"]: m for m in embs})
+    for e in entries:
+        e["emb"] = classify(" ".join([e["takeaway_en"], " ".join(e.get("tags") or [])]), embs, title=e["title"], threshold=1)
+    for p in feed:
+        p["emb"] = classify(p.get("abstract", ""), embs, title=p.get("title", ""), threshold=1)
 
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -205,17 +218,22 @@ def build() -> int:
     for e in entries:
         idx.append({"k": "c", "id": e["id"], "t": re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", e["title"]), "y": e["year"], "ty": e["type"],
                     "o": e.get("org", ""), "en": e["takeaway_en"], "zh": e["takeaway_zh"],
-                    "tp": e["topics"], "tg": e.get("tags") or [], "h": 1 if e.get("highlight") else 0,
+                    "tp": e["topics"], "em": e["emb"], "tg": e.get("tags") or [], "h": 1 if e.get("highlight") else 0,
                     "l": links_of(e)[0][2], "a": e.get("arxiv"), "c": e.get("code"), "p": e.get("project")})
+    ab_cut = (today - dt.timedelta(days=FEED_ABSTRACT_DAYS)).isoformat()
     for p in feed:
         if p.get("published", "") < site_cut:
             break
-        idx.append({"k": "f", "id": p["id"], "t": p["title"], "d": p.get("published", ""),
-                    "au": ", ".join(p.get("authors", [])[:4]), "tp": p.get("topics", []),
-                    "c": (p.get("code") or [None])[0], "ab": p.get("abstract", "")[:300], "pc": p.get("primary", "")})
+        it = {"k": "f", "id": p["id"], "t": p["title"], "d": p.get("published", ""),
+              "au": ", ".join(p.get("authors", [])[:4]), "tp": p.get("topics", []), "em": p["emb"],
+              "c": (p.get("code") or [None])[0], "pc": p.get("primary", "")}
+        if it["d"] >= ab_cut:  # keep the index small: older papers are searchable by title/authors only
+            it["ab"] = p.get("abstract", "")[:300]
+        idx.append({k: v for k, v in it.items() if v not in (None, [], "")} | {"k": "f", "id": p["id"], "t": p["title"]})
     topics_js = {t["id"]: [t["en"], t["zh"]] for t in topics}
+    emb_js = {m["id"]: [m["en"], m["zh"]] for m in embs}
     (OUT / "data" / "index.json").write_text(
-        json.dumps({"topics": topics_js, "items": idx, "built": today.isoformat()}, ensure_ascii=False,
+        json.dumps({"topics": topics_js, "emb": emb_js, "items": idx, "built": today.isoformat()}, ensure_ascii=False,
                    separators=(",", ":")), encoding="utf-8")
 
     # ---- index
@@ -224,10 +242,12 @@ def build() -> int:
              f'<div><b>{len(topics)}</b>{bi("topics", "主题")}</div>'
              f'<div><b>{esc(latest_date or "—")}</b>{bi("latest intake", "最近收录")}</div></div>')
     topic_opts = "".join(f'<option value="{t["id"]}" data-en="{esc(t["en"])}" data-zh="{esc(t["zh"])}">{esc(t["en"])}</option>' for t in topics)
+    emb_opts = "".join(f'<option value="{m["id"]}" data-en="{esc(m["en"])}" data-zh="{esc(m["zh"])}">{esc(m["en"])}</option>' for m in embs)
     search = f"""<section class="search" id="search">
 <input id="q" type="search" placeholder="Search papers, code, datasets… / 搜索论文、代码、数据集…" aria-label="Search" autocomplete="off">
 <div class="filters">
 <select id="f-topic" aria-label="Topic"><option value="" data-en="All topics" data-zh="全部主题">All topics</option>{topic_opts}</select>
+<select id="f-emb" aria-label="Embodiment"><option value="" data-en="Any robot" data-zh="全部机器人形态">Any robot</option>{emb_opts}</select>
 <select id="f-kind" aria-label="Source"><option value="" data-en="Curated + daily feed" data-zh="精选 + 每日论文">Curated + daily feed</option><option value="c" data-en="Curated only" data-zh="仅精选">Curated only</option><option value="f" data-en="Daily feed only" data-zh="仅每日论文">Daily feed only</option></select>
 <label><input id="f-code" type="checkbox"> {bi("Has code", "有代码")}</label>
 </div>

@@ -16,7 +16,7 @@
   var q = document.getElementById('q');
   if (!q) return;
   var fTopic = document.getElementById('f-topic'), fKind = document.getElementById('f-kind'),
-      fCode = document.getElementById('f-code'), out = document.getElementById('results'),
+      fCode = document.getElementById('f-code'), fEmb = document.getElementById('f-emb'), out = document.getElementById('results'),
       count = document.getElementById('count'), home = document.getElementById('home-static');
   var data = null, loading = false;
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]; }); }
@@ -35,6 +35,9 @@
   function topicChips(tp) {
     return (tp || []).map(function (t) { var n = data.topics[t]; return n ? '<a class="chip topic" href="topics/' + t + '.html">' + esc(n[lang() === 'zh' ? 1 : 0]) + '</a>' : ''; }).join('');
   }
+  function embChips(em) {
+    return (em || []).map(function (m) { var n = (data.emb || {})[m]; return n ? '<span class="chip emb">' + esc(n[lang() === 'zh' ? 1 : 0]) + '</span>' : ''; }).join('');
+  }
   function card(it) {
     if (it.k === 'c') {
       var links = [];
@@ -43,20 +46,21 @@
       if (it.p) links.push('<a href="' + esc(it.p) + '">' + (lang() === 'zh' ? '项目页' : 'Project') + '</a>');
       return '<article class="card"><div class="meta"><span class="badge">' + esc(it.ty) + '</span> ' + esc(it.y) + ' · ' + esc(it.o) + (it.h ? ' <span class="star">★</span>' : '') +
         '</div><h3><a href="' + esc(it.l) + '">' + esc(it.t) + '</a></h3><p class="take">' + esc(lang() === 'zh' ? it.zh : it.en) +
-        '</p><div class="links">' + links.join(' · ') + '</div><div class="chips">' + topicChips(it.tp) + '</div></article>';
+        '</p><div class="links">' + links.join(' · ') + '</div><div class="chips">' + topicChips(it.tp) + embChips(it.em) + '</div></article>';
     }
     return '<article class="card feed"><div class="meta"><span class="badge">arXiv ' + esc(it.pc) + '</span> ' + esc(it.d) + (it.c ? ' <span class="badge code">code</span>' : '') +
       '</div><h3><a href="https://arxiv.org/abs/' + esc(it.id) + '">' + esc(it.t) + '</a></h3><p class="authors">' + esc(it.au) +
       '</p><div class="links"><a href="https://arxiv.org/pdf/' + esc(it.id) + '">PDF</a>' + (it.c ? ' · <a href="' + esc(it.c) + '">' + (lang() === 'zh' ? '代码' : 'Code') + '</a>' : '') +
-      '</div><div class="chips">' + topicChips(it.tp) + '</div></article>';
+      '</div><div class="chips">' + topicChips(it.tp) + embChips(it.em) + '</div></article>';
   }
-  function active() { return q.value.trim() || fTopic.value || fKind.value || fCode.checked; }
+  function active() { return q.value.trim() || fTopic.value || (fEmb && fEmb.value) || fKind.value || fCode.checked; }
   function render() {
     if (!active()) { out.innerHTML = ''; count.textContent = ''; if (home) home.hidden = false; return; }
     load(function () {
       var terms = q.value.toLowerCase().split(/\s+/).filter(Boolean);
       var res = data.items.filter(function (it) {
         if (fTopic.value && (it.tp || []).indexOf(fTopic.value) < 0) return false;
+        if (fEmb && fEmb.value && (it.em || []).indexOf(fEmb.value) < 0) return false;
         if (fKind.value && it.k !== fKind.value) return false;
         if (fCode.checked && !it.c) return false;
         for (var i = 0; i < terms.length; i++) if (it._s.indexOf(terms[i]) < 0) return false;
@@ -76,8 +80,9 @@
   window.__radarRender = function () { if (q) render(); };
   var timer;
   q.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(render, 120); });
-  [fTopic, fKind, fCode].forEach(function (el) { el.addEventListener('change', render); });
+  [fTopic, fEmb, fKind, fCode].filter(Boolean).forEach(function (el) { el.addEventListener('change', render); });
   var params = new URLSearchParams(location.search);
   if (params.get('q')) { q.value = params.get('q'); render(); }
   if (params.get('topic')) { fTopic.value = params.get('topic'); render(); }
+  if (params.get('robot') && fEmb) { fEmb.value = params.get('robot'); render(); }
 })();
