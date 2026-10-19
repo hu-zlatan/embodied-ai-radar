@@ -1,0 +1,57 @@
+- title: "cuRobo: Parallelized Collision-Free Minimum-Jerk Robot Motion Generation"
+  type: paper
+  arxiv: "2310.17274"
+  year: 2023
+  org: NVIDIA
+  highlight: true
+  code: https://github.com/NVlabs/curobo
+  topics: [manipulation]
+  tags: [motion-planning, gpu, trajectory-optimization]
+  takeaway_en: GPU-parallel motion generation for arms — many trajectory optimizations run at once, giving collision-free, smooth plans in milliseconds.
+  takeaway_zh: 面向机械臂的 GPU 并行运动生成：同时运行大量轨迹优化，在毫秒级给出无碰撞且平滑的轨迹。
+- title: "Motion Policy Networks"
+  type: paper
+  arxiv: "2210.12209"
+  year: 2022
+  org: NVIDIA · University of Washington
+  code: https://github.com/NVlabs/motion-policy-networks
+  topics: [manipulation]
+  tags: [motion-planning, point-cloud, imitation]
+  takeaway_en: A neural policy trained on millions of planner-generated trajectories that moves an arm to goals straight from point clouds.
+  takeaway_zh: 在数百万条规划器生成的轨迹上训练的神经策略，可直接根据点云把机械臂移动到目标位置。
+- title: "Planning with Diffusion for Flexible Behavior Synthesis"
+  type: paper
+  arxiv: "2205.09991"
+  year: 2022
+  org: UC Berkeley
+  code: https://github.com/jannerm/diffuser
+  topics: [world-models]
+  tags: [diffusion, planning, offline-rl]
+  takeaway_en: Diffuser — treats planning as denoising whole trajectories, so goals and rewards can steer sampling; an early link between diffusion and control.
+  takeaway_zh: Diffuser：把规划视为对整条轨迹去噪，目标与奖励可以引导采样；扩散模型与控制结合的早期代表作。
+- title: "Control Barrier Functions: Theory and Applications"
+  type: paper
+  arxiv: "1903.11199"
+  year: 2019
+  org: Caltech
+  tags: [safety, control-barrier-function, tutorial]
+  takeaway_en: Tutorial on control barrier functions — the standard way to wrap any controller in a minimal-change filter that keeps the system safe.
+  takeaway_zh: 控制障碍函数教程：为任意控制器加一层“尽量少改动”的安全滤波器、保证系统安全的标准方法。
+- title: "Safe Learning in Robotics: From Learning-Based Control to Safe Reinforcement Learning"
+  type: paper
+  arxiv: "2108.06266"
+  year: 2021
+  org: University of Toronto
+  tags: [safety, survey, safe-rl]
+  takeaway_en: Survey connecting control-theory and RL views of safety, from learned dynamics with guarantees to constrained RL and safety filters.
+  takeaway_zh: 综述，连接控制理论与强化学习两种安全视角：从带保证的学习动力学到约束强化学习与安全滤波器。
+- title: "safe-control-gym: a Unified Benchmark Suite for Safe Learning-based Control and Reinforcement Learning in Robotics"
+  type: benchmark
+  arxiv: "2109.06325"
+  year: 2021
+  org: University of Toronto
+  code: https://github.com/utiasDSL/safe-control-gym
+  topics: [datasets]
+  tags: [safety, benchmark, safe-rl]
+  takeaway_en: Gym-style benchmark with cart-pole and quadrotor tasks, constraints and disturbances for comparing safe control and safe RL methods.
+  takeaway_zh: Gym 风格基准，含倒立摆与四旋翼任务、约束与扰动，用于比较安全控制与安全强化学习方法。

@@ -27,7 +27,7 @@ Hand-verified papers, code, datasets, simulators and hardware with one-line take
 
 ## Topics
 
-VLA & robot foundation models · manipulation & dexterous hands · tactile sensing · locomotion & humanoids · world models · navigation & embodied agents · perception, SLAM & 3D mapping · sim-to-real & simulators · datasets & benchmarks · hardware & open-source robots.
+VLA & robot foundation models · manipulation & dexterous hands · tactile sensing · locomotion & humanoids · world models · navigation & embodied agents · perception, SLAM & 3D mapping · planning, control & safety · sim-to-real & simulators · datasets & benchmarks · hardware & open-source robots.
 
 ## Curated index
 
@@ -35,7 +35,7 @@ VLA & robot foundation models · manipulation & dexterous hands · tactile sensi
 
 <!-- radar:start -->
 
-[VLA & Robot Foundation Models](#vla) · [Manipulation & Dexterous Hands](#manipulation) · [Tactile & Visuotactile Sensing](#tactile) · [Locomotion & Humanoids](#locomotion) · [World Models](#world-models) · [Navigation & Embodied Agents](#navigation) · [Perception, SLAM & 3D Mapping](#perception) · [Sim-to-Real & Simulators](#sim) · [Datasets & Benchmarks](#datasets) · [Hardware & Open-Source Robots](#hardware)
+[VLA & Robot Foundation Models](#vla) · [Manipulation & Dexterous Hands](#manipulation) · [Tactile & Visuotactile Sensing](#tactile) · [Locomotion & Humanoids](#locomotion) · [World Models](#world-models) · [Navigation & Embodied Agents](#navigation) · [Perception, SLAM & 3D Mapping](#perception) · [Planning, Control & Safety](#control) · [Sim-to-Real & Simulators](#sim) · [Datasets & Benchmarks](#datasets) · [Hardware & Open-Source Robots](#hardware)
 
 <a id="vla"></a>
 ### VLA & Robot Foundation Models
@@ -79,7 +79,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - **[Visual Dexterity: In-Hand Reorientation of Novel and Complex Object Shapes](https://arxiv.org/abs/2211.11744)** (2022) — Reorients unseen objects in-hand using only a depth camera, with a policy trained in simulation.
 - **[Solving Rubik's Cube with a Robot Hand](https://arxiv.org/abs/1910.07113)** (2019) — Automatic domain randomization lets a sim-trained hand policy manipulate a Rubik's cube on real hardware.
 - **[Learning Dexterous In-Hand Manipulation](https://arxiv.org/abs/1808.00177)** (2018) — A Shadow Hand reorients a cube using RL trained purely in randomized simulation — a sim-to-real milestone.
-- _See also:_ [3D-ViTac](#tactile), [Code as Policies](#navigation), [OK-Robot](#navigation), [Cracking Mobile Manipulation](#navigation), [FoundationPose](#perception), [LeRobot](#datasets), [LEAP Hand](#hardware)
+- _See also:_ [3D-ViTac](#tactile), [Code as Policies](#navigation), [OK-Robot](#navigation), [Cracking Mobile Manipulation](#navigation), [FoundationPose](#perception), [cuRobo](#control), [Motion Policy Networks](#control), [LeRobot](#datasets), [LEAP Hand](#hardware)
 
 <a id="tactile"></a>
 ### Tactile & Visuotactile Sensing
@@ -123,6 +123,7 @@ _Learned dynamics, video world models and model-based RL for embodied agents._ [
 - **[Learning Interactive Real-World Simulators](https://arxiv.org/abs/2310.06114)** (2023) — UniSim — an action-conditioned video model used as a simulator to train policies that transfer to the real world.
 - **[DayDreamer: World Models for Physical Robot Learning](https://arxiv.org/abs/2206.14176)** (2022) — Dreamer trained directly on real robots — a quadruped learns to walk in about an hour with no simulator.
 - **[World Models](https://arxiv.org/abs/1803.10122)** (2018) — The classic VAE + RNN agent that learns a compressed model of its environment and trains a controller inside the "dream". · [project](https://worldmodels.github.io/)
+- _See also:_ [Planning with Diffusion for Flexible Behavior Synthesis](#control)
 
 <a id="navigation"></a>
 ### Navigation & Embodied Agents
@@ -154,6 +155,18 @@ _Visual / LiDAR SLAM and odometry, 3D reconstruction, object pose, depth and ope
 - **[DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras](https://arxiv.org/abs/2108.10869)** (2021) — End-to-end learned visual SLAM — recurrent optical-flow updates plus a differentiable bundle-adjustment layer. · [code](https://github.com/princeton-vl/DROID-SLAM)
 - **[FAST-LIO2: Fast Direct LiDAR-inertial Odometry](https://arxiv.org/abs/2107.06829)** (2021) — Registers raw LiDAR points directly to the map with an incremental k-d tree; fast enough for onboard drone and robot computers. · [code](https://github.com/hku-mars/FAST_LIO)
 - **[LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping](https://arxiv.org/abs/2007.00258)** (2020) — LiDAR-inertial odometry built on a factor graph, so GPS and loop closures slot in as extra factors. · [code](https://github.com/TixiaoShan/LIO-SAM)
+
+<a id="control"></a>
+### Planning, Control & Safety
+
+_Motion planning, trajectory optimization, MPC, safety filters and safe learning-based control._ [Browse with the latest papers →](https://hu-zlatan.github.io/embodied-ai-radar/topics/control.html)
+
+- ⭐ **[cuRobo: Parallelized Collision-Free Minimum-Jerk Robot Motion Generation](https://arxiv.org/abs/2310.17274)** (2023) — GPU-parallel motion generation for arms — many trajectory optimizations run at once, giving collision-free, smooth plans in milliseconds. · [code](https://github.com/NVlabs/curobo)
+- **[Motion Policy Networks](https://arxiv.org/abs/2210.12209)** (2022) — A neural policy trained on millions of planner-generated trajectories that moves an arm to goals straight from point clouds. · [code](https://github.com/NVlabs/motion-policy-networks)
+- **[Planning with Diffusion for Flexible Behavior Synthesis](https://arxiv.org/abs/2205.09991)** (2022) — Diffuser — treats planning as denoising whole trajectories, so goals and rewards can steer sampling; an early link between diffusion and control. · [code](https://github.com/jannerm/diffuser)
+- **[Safe Learning in Robotics: From Learning-Based Control to Safe Reinforcement Learning](https://arxiv.org/abs/2108.06266)** (2021) — Survey connecting control-theory and RL views of safety, from learned dynamics with guarantees to constrained RL and safety filters.
+- **[safe-control-gym: a Unified Benchmark Suite for Safe Learning-based Control and Reinforcement Learning in Robotics](https://arxiv.org/abs/2109.06325)** (2021) — Gym-style benchmark with cart-pole and quadrotor tasks, constraints and disturbances for comparing safe control and safe RL methods. · [code](https://github.com/utiasDSL/safe-control-gym)
+- **[Control Barrier Functions: Theory and Applications](https://arxiv.org/abs/1903.11199)** (2019) — Tutorial on control barrier functions — the standard way to wrap any controller in a minimal-change filter that keeps the system safe.
 
 <a id="sim"></a>
 ### Sim-to-Real & Simulators
@@ -192,7 +205,7 @@ _Large robot datasets, egocentric data and evaluation suites._ [Browse with the 
 - **[Habitat: A Platform for Embodied AI Research](https://arxiv.org/abs/1904.01201)** (2019) — A very fast photorealistic 3D simulator and task suite that standardized embodied navigation research. · [code](https://github.com/facebookresearch/habitat-sim)
 - **[Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning](https://arxiv.org/abs/1910.10897)** (2019) — 50 Sawyer manipulation tasks for multi-task and meta-RL evaluation. · [code](https://github.com/Farama-Foundation/Metaworld)
 - **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 hand-designed manipulation tasks with demos; a staple for 3D policy methods like PerAct. · [code](https://github.com/stepjam/RLBench)
-- _See also:_ [Universal Manipulation Interface](#manipulation), [Vision-and-Language Navigation](#navigation), [robosuite](#sim), [RoboCasa](#sim)
+- _See also:_ [Universal Manipulation Interface](#manipulation), [Vision-and-Language Navigation](#navigation), [safe-control-gym](#control), [robosuite](#sim), [RoboCasa](#sim)
 
 <a id="hardware"></a>
 ### Hardware & Open-Source Robots
