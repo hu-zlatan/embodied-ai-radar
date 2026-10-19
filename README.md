@@ -8,7 +8,7 @@ Hand-verified papers, code, datasets, simulators and hardware with one-line take
 [![Website](https://img.shields.io/badge/website-live-0f6fde)](https://hu-zlatan.github.io/embodied-ai-radar/)
 [![Daily arXiv intake](https://github.com/hu-zlatan/embodied-ai-radar/actions/workflows/intake.yml/badge.svg)](https://github.com/hu-zlatan/embodied-ai-radar/actions/workflows/intake.yml)
 [![Verified links](https://github.com/hu-zlatan/embodied-ai-radar/actions/workflows/verify.yml/badge.svg)](https://github.com/hu-zlatan/embodied-ai-radar/actions/workflows/verify.yml)
-[![License: MIT + CC BY 4.0](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-lightgrey)](LICENSE)
+[![License: MIT + CC BY 4.0](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-lightgrey)](LICENSE-DATA.md)
 
 ![Screenshot of the Embodied AI Radar website](docs/screenshot.png)
 
@@ -16,7 +16,7 @@ Hand-verified papers, code, datasets, simulators and hardware with one-line take
 
 - **Verified.** Every curated arXiv ID is checked against arXiv and every link is checked by CI, weekly.
 - **Fresh.** A GitHub Action pulls new cs.RO papers (plus robotics papers from cs.CV / cs.LG / cs.AI / cs.CL) every day and tags them by topic — they appear on the site without anyone touching the repo.
-- **Searchable.** Instant search and filters (topic · curated vs. daily · has code) on a fast static site that works on phones.
+- **Searchable.** Instant search and filters (topic · robot type: arm, hand, humanoid, legged, drone… · curated vs. daily · has code) on a fast static site that works on phones.
 - **Bilingual.** Every curated entry has a one-line takeaway in English and Chinese; the site has an EN / 中文 toggle.
 
 | What | How often |
@@ -27,7 +27,7 @@ Hand-verified papers, code, datasets, simulators and hardware with one-line take
 
 ## Topics
 
-VLA & robot foundation models · manipulation & dexterous hands · tactile sensing · locomotion & humanoids · world models · navigation & embodied agents · sim-to-real & simulators · datasets & benchmarks · hardware & open-source robots.
+VLA & robot foundation models · manipulation & dexterous hands · tactile sensing · locomotion & humanoids · world models · navigation & embodied agents · perception, SLAM & 3D mapping · sim-to-real & simulators · datasets & benchmarks · hardware & open-source robots.
 
 ## Curated index
 

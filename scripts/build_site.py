@@ -124,6 +124,11 @@ def page(title: str, body: str, root: str, desc: str, path: str) -> str:
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:type" content="website">
+<meta property="og:url" content="{SITE_URL}{path}">
+<meta property="og:image" content="{SITE_URL}assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📡%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="{root}assets/style.css">
 <script>try{{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang')||((navigator.language||'').startsWith('zh')?'zh':'en');if(l==='zh')document.documentElement.classList.add('zh');document.documentElement.lang=l==='zh'?'zh-CN':'en'}}catch(e){{}}</script>
