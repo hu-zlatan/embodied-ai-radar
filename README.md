@@ -181,7 +181,7 @@ _Large robot datasets, egocentric data and evaluation suites._ [Browse with the 
 _Low-cost arms, hands, grippers and data-collection rigs you can build._ [Browse with the latest papers →](https://hu-zlatan.github.io/embodied-ai-radar/topics/hardware.html)
 
 - ⭐ **[LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning](https://arxiv.org/abs/2309.06440)** (2023) — A 16-DoF dexterous hand buildable for about $2,000 from off-the-shelf parts. · [project](https://leaphand.com/)
-- **[Berkeley Humanoid: A Research Platform for Learning-based Control](https://arxiv.org/abs/2407.18276)** (2024) — A mid-size, low-cost humanoid designed for easy sim-to-real transfer of RL locomotion.
+- **[Berkeley Humanoid: A Research Platform for Learning-based Control](https://arxiv.org/abs/2407.21781)** (2024) — A mid-size, low-cost humanoid designed for easy sim-to-real transfer of RL locomotion.
 - **[Open-TeleVision: Teleoperation with Immersive Active Visual Feedback](https://arxiv.org/abs/2407.01512)** (2024) — VR teleoperation with an actively steered stereo camera, used to collect humanoid manipulation data. · [code](https://github.com/OpenTeleVision/TeleVision)
 - **[SO-ARM100 / SO-101](https://github.com/TheRobotStudio/SO-ARM100)** (2024) — An open 3D-printed 6-DoF arm (leader + follower) costing roughly $100–200 per arm; the default LeRobot starter kit.
 - **[GELLO: A General, Low-Cost, and Intuitive Teleoperation Framework for Robot Manipulators](https://arxiv.org/abs/2309.13037)** (2023) — 3D-printed kinematic replicas of robot arms for cheap, intuitive joint-space teleoperation. · [code](https://github.com/wuphilipp/gello_software)
