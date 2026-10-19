@@ -313,8 +313,14 @@ def build() -> int:
     for t in topics:
         cur = sorted(by_topic[t["id"]], key=lambda e: (not e.get("highlight"), -int(e["year"])))
         recent = feed_by_topic[t["id"]][:TOPIC_FEED_MAX]
+        in_topic = by_topic[t["id"]] + feed_by_topic[t["id"]]
+        robot_links = " · ".join(
+            f'<a href="../index.html?topic={t["id"]}&amp;robot={m["id"]}#search">{bi(m["en"], m["zh"])}</a> <span class="muted">({n})</span>'
+            for m in embs if (n := sum(1 for x in in_topic if m["id"] in x.get("emb", []))))
+        robot_row = f'<p class="muted">{bi("Search this topic by robot type:", "按机器人形态搜索本主题：")} {robot_links}</p>' if robot_links else ""
         body = f"""<h1>{bi(t["en"], t["zh"])}</h1>
 <p class="lead">{bi(t["desc_en"], t["desc_zh"])}</p>
+{robot_row}
 <h2>{bi("Curated", "精选")} <span class="muted">({len(cur)})</span></h2>
 <div class="cards">{''.join(curated_card(e, tby, '../') for e in cur)}</div>
 <h2>{bi("Recent arXiv papers", "近期 arXiv 论文")} <span class="muted">({bi("auto-tagged", "自动标注")} · <a href="{t['id']}.xml">{bi("Atom feed", "Atom 订阅")}</a>)</span></h2>
