@@ -106,7 +106,7 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
 </article>"""
 
 
-def page(title: str, body: str, root: str, desc: str, path: str) -> str:
+def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") -> str:
     nav = (f'<a href="{root}index.html">{bi("Home", "首页")}</a>'
            f'<a href="{root}feed.html">{bi("Daily arXiv", "每日 arXiv")}</a>'
            f'<a href="{root}topics/index.html">{bi("Topics", "主题")}</a>'
@@ -120,7 +120,7 @@ def page(title: str, body: str, root: str, desc: str, path: str) -> str:
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{SITE_URL}{path}">
-<link rel="alternate" type="application/atom+xml" title="Embodied AI Radar" href="{root}feed.xml">
+<link rel="alternate" type="application/atom+xml" title="Embodied AI Radar" href="{root}feed.xml">{alt}
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:type" content="website">
@@ -150,6 +150,19 @@ def page(title: str, body: str, root: str, desc: str, path: str) -> str:
 <script src="{root}assets/app.js" defer></script>
 </body>
 </html>
+"""
+
+
+def atom(papers: list[dict], title: str, path: str, today: dt.date) -> str:
+    items = "".join(f"""<entry><title>{esc(p['title'])}</title><id>https://arxiv.org/abs/{esc(p['id'])}</id>
+<link href="https://arxiv.org/abs/{esc(p['id'])}"/><updated>{esc(p.get('published', today.isoformat()))}T00:00:00Z</updated>
+<summary>{esc(p.get('abstract', ''))}</summary></entry>""" for p in papers)
+    return f"""<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>{esc(title)}</title>
+<link href="{SITE_URL}"/><link rel="self" href="{SITE_URL}{path}"/><id>{SITE_URL}{"" if path == "feed.xml" else path}</id>
+<updated>{today.isoformat()}T00:00:00Z</updated><author><name>Embodied AI Radar</name></author>
+{items}
+</feed>
 """
 
 
@@ -301,11 +314,12 @@ def build() -> int:
 <p class="lead">{bi(t["desc_en"], t["desc_zh"])}</p>
 <h2>{bi("Curated", "精选")} <span class="muted">({len(cur)})</span></h2>
 <div class="cards">{''.join(curated_card(e, tby, '../') for e in cur)}</div>
-<h2>{bi("Recent arXiv papers", "近期 arXiv 论文")} <span class="muted">({bi("auto-tagged", "自动标注")})</span></h2>
+<h2>{bi("Recent arXiv papers", "近期 arXiv 论文")} <span class="muted">({bi("auto-tagged", "自动标注")} · <a href="{t['id']}.xml">{bi("Atom feed", "Atom 订阅")}</a>)</span></h2>
 <div class="cards">{''.join(feed_card(p, tby, '../') for p in recent) or '<p class="muted">—</p>'}</div>"""
         (OUT / "topics" / f"{t['id']}.html").write_text(
             page(f"{t['en']} · {t['zh']} · Embodied AI Radar", body, "../",
-                 f"{t['desc_en']} Curated papers, code and datasets plus daily arXiv updates.", f"topics/{t['id']}.html"),
+                 f"{t['desc_en']} Curated papers, code and datasets plus daily arXiv updates.", f"topics/{t['id']}.html",
+                 alt=f'\n<link rel="alternate" type="application/atom+xml" title="{esc(t["en"])} · Embodied AI Radar" href="{t["id"]}.xml">'),
             encoding="utf-8")
 
     # ---- feed page
@@ -344,18 +358,10 @@ def build() -> int:
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"<url><loc>{SITE_URL}{u}</loc><lastmod>{today.isoformat()}</lastmod></url>\n" for u in urls)
         + "</urlset>\n", encoding="utf-8")
-    atom_items = []
-    for p in feed[:100]:
-        atom_items.append(f"""<entry><title>{esc(p['title'])}</title><id>https://arxiv.org/abs/{esc(p['id'])}</id>
-<link href="https://arxiv.org/abs/{esc(p['id'])}"/><updated>{esc(p.get('published', today.isoformat()))}T00:00:00Z</updated>
-<summary>{esc(p.get('abstract', ''))}</summary></entry>""")
-    (OUT / "feed.xml").write_text(f"""<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Embodied AI Radar — daily arXiv</title>
-<link href="{SITE_URL}"/><link rel="self" href="{SITE_URL}feed.xml"/><id>{SITE_URL}</id>
-<updated>{today.isoformat()}T00:00:00Z</updated><author><name>Embodied AI Radar</name></author>
-{''.join(atom_items)}
-</feed>
-""", encoding="utf-8")
+    (OUT / "feed.xml").write_text(atom(feed[:100], "Embodied AI Radar — daily arXiv", "feed.xml", today), encoding="utf-8")
+    for t in topics:
+        (OUT / "topics" / f"{t['id']}.xml").write_text(
+            atom(feed_by_topic[t["id"]][:100], f"Embodied AI Radar — {t['en']}", f"topics/{t['id']}.xml", today), encoding="utf-8")
     n = sum(1 for _ in OUT.rglob("*.html"))
     print(f"built {n} pages into {OUT.relative_to(ROOT)}/ ({len(entries)} curated, {len(feed)} feed)")
     return 0
