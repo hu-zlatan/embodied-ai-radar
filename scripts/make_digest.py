@@ -1,7 +1,7 @@
 """Draft a bilingual weekly digest: digest/YYYY-Www.md.
 
 Sections: editor's picks (curated entries whose `added` date falls in the week),
-numbers per topic, and new papers with code by topic (from the daily feed).
+numbers per topic and per robot type, and new papers with code by topic (from the daily feed).
 Usage: python scripts/make_digest.py [--week 2026-W43] [--force]
 Without --week, uses the most recent complete ISO week (Mon–Sun).
 """
@@ -12,7 +12,7 @@ import datetime as dt
 import re
 import sys
 
-from radar import ROOT, load_arxiv_feed, load_curated, load_topics, venue_of
+from radar import ROOT, classify, load_arxiv_feed, load_curated, load_embodiments, load_topics, venue_of
 
 PER_TOPIC = 6
 
@@ -70,6 +70,13 @@ def main() -> int:
     for t in topics:
         n = len([p for p in feed if t["id"] in p.get("topics", [])])
         L.append(f"- {t['en']} · {t['zh']}: **{n}**")
+    embs = load_embodiments()
+    if embs:
+        L += ["", "## By robot type · 分机器人类型统计", "",
+              "_Keyword-matched on title and abstract; a paper can count for several types. 按标题与摘要关键词匹配，一篇论文可计入多个类型。_", ""]
+        for m in embs:
+            n = sum(1 for p in feed if m["id"] in classify(p.get("abstract", ""), embs, title=p.get("title", ""), threshold=1))
+            L.append(f"- {m['en']} · {m['zh']}: **{n}**")
     L += ["", "## New papers with code · 本周附代码的新论文", ""]
     for t in topics:
         ps = [p for p in feed if t["id"] in p.get("topics", []) and p.get("code")][:PER_TOPIC]
