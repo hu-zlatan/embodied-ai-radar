@@ -44,7 +44,7 @@
       if (it.a) links.push('<a href="https://arxiv.org/abs/' + esc(it.a) + '">' + (lang() === 'zh' ? '论文' : 'Paper') + '</a>');
       if (it.c) links.push('<a href="' + esc(it.c) + '">' + (lang() === 'zh' ? '代码' : 'Code') + '</a>');
       if (it.p) links.push('<a href="' + esc(it.p) + '">' + (lang() === 'zh' ? '项目页' : 'Project') + '</a>');
-      return '<article class="card"><div class="meta"><span class="badge">' + esc(it.ty) + '</span> ' + esc(it.y) + ' · ' + esc(it.o) + (it.h ? ' <span class="star">★</span>' : '') +
+      return '<article class="card"><div class="meta"><span class="badge">' + esc(it.ty) + '</span> ' + esc(it.y) + ' · ' + esc(it.o) + (it.v ? ' <span class="badge venue">' + esc(it.v) + '</span>' : '') + (it.h ? ' <span class="star">★</span>' : '') +
         '</div><h3><a href="' + esc(it.l) + '">' + esc(it.t) + '</a></h3><p class="take">' + esc(lang() === 'zh' ? it.zh : it.en) +
         '</p><div class="links">' + links.join(' · ') + '</div><div class="chips">' + topicChips(it.tp) + embChips(it.em) + '</div></article>';
     }

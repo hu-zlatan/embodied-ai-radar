@@ -77,6 +77,8 @@ def curated_card(e: dict, topics_by_id: dict, root: str) -> str:
         star += f' <span class="badge new">{bi("new", "新")} {esc(str(e["added"]))}</span>'
     linkrow = " · ".join(f'<a href="{esc(u)}" rel="noopener">{bi(a, b)}</a>' for a, b, u in links)
     meta = " · ".join(x for x in [esc(str(e["year"])), esc(e.get("org", ""))] if x)
+    if e.get("venue"):
+        meta += f' <span class="badge venue">{esc(str(e["venue"]))}</span>'
     return f"""<article class="card" id="{esc(e['id'])}">
 <div class="meta"><span class="badge">{bi(en, zh)}</span> {meta} {star}</div>
 <h3><a href="{esc(main)}" rel="noopener">{title_html(e['title'])}</a></h3>
@@ -242,7 +244,8 @@ def build() -> int:
         idx.append({"k": "c", "id": e["id"], "t": re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", e["title"]), "y": e["year"], "ty": e["type"],
                     "o": e.get("org", ""), "en": e["takeaway_en"], "zh": e["takeaway_zh"],
                     "tp": e["topics"], "em": e["emb"], "tg": e.get("tags") or [], "h": 1 if e.get("highlight") else 0,
-                    "l": links_of(e)[0][2], "a": e.get("arxiv"), "c": e.get("code"), "p": e.get("project")})
+                    "l": links_of(e)[0][2], "a": e.get("arxiv"), "c": e.get("code"), "p": e.get("project"),
+                    "v": str(e["venue"]) if e.get("venue") else None})
     ab_cut = (today - dt.timedelta(days=FEED_ABSTRACT_DAYS)).isoformat()
     for p in feed:
         if p.get("published", "") < site_cut:
