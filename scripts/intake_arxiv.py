@@ -89,6 +89,18 @@ TITLE_KW = re.compile(r"\b(robot\w*|embodied|humanoid\w*|manipulat\w*|locomotion
                       r"sim-to-real|sim2real|tactile|visuotactile|quadruped\w*|dexterous|grasp\w*)\b", re.I)
 
 
+ROBOT_CTX = re.compile(r"\b(robot\w*|embodied|humanoid\w*|vision-language-action|vla|quadruped\w*|legged|"
+                       r"gripper|end-effector|sim-to-real|sim2real|teleoperat\w*)\b", re.I)
+
+
+def is_relevant(rec: dict) -> bool:
+    """cs.RO papers always count; cross-listed papers need a robotics title keyword AND robot context
+    in the abstract (filters e.g. 'face manipulation' deepfake papers)."""
+    if "cs.RO" in rec.get("categories", []):
+        return True
+    return bool(TITLE_KW.search(rec.get("title", "")) and ROBOT_CTX.search(rec.get("title", "") + " " + rec.get("abstract", "")))
+
+
 def fetch_rss() -> list[dict]:
     """Today's arXiv announcements (new + cross-lists) from rss.arxiv.org. Empty on weekends/holidays."""
     import email.utils
@@ -107,8 +119,6 @@ def fetch_rss() -> list[dict]:
         abstract = clean(desc.split("Abstract:", 1)[1] if "Abstract:" in desc else desc)
         title = clean(it.findtext("title"))
         cats = [clean(c.text) for c in it.findall("category") if c.text]
-        if "cs.RO" not in cats and not TITLE_KW.search(title):
-            continue
         creators = [clean(c.text) for c in it if c.tag.endswith("creator") and c.text]
         authors = [a.strip() for a in ",".join(creators).split(",") if a.strip()]
         try:
@@ -127,7 +137,8 @@ def fetch_rss() -> list[dict]:
             rec["code"] = code[:3]
         if project:
             rec["project"] = project[:2]
-        out.append(rec)
+        if is_relevant(rec):
+            out.append(rec)
     return out
 
 
@@ -135,7 +146,11 @@ def retag() -> int:
     topics = load_topics()
     for path in sorted(ARXIV_DIR.glob("*/*.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
-        for p in data.get("papers", []):
+        before = len(data.get("papers", []))
+        data["papers"] = [p for p in data.get("papers", []) if is_relevant(p)]
+        if len(data["papers"]) != before:
+            print(f"{path.name}: dropped {before - len(data['papers'])} off-topic cross-lists")
+        for p in data["papers"]:
             p["topics"] = classify(p.get("abstract", ""), topics, title=p.get("title", ""))
         path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print("retagged")
@@ -181,7 +196,7 @@ def main() -> int:
                     if not recs:
                         break
                     for r in recs:
-                        if r["published"] >= cutoff:
+                        if r["published"] >= cutoff and is_relevant(r):
                             add(r)
                     if recs[-1]["published"] < cutoff:
                         break

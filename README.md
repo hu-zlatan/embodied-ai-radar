@@ -45,6 +45,8 @@ _Vision-language-action models and generalist robot policies._ [Browse with the 
 - ⭐ **[π0: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/abs/2410.24164)** (2024) — A VLM backbone with a flow-matching action expert, trained across many robots, doing long dexterous tasks like laundry folding. · [code](https://github.com/Physical-Intelligence/openpi)
 - ⭐ **[OpenVLA: An Open-Source Vision-Language-Action Model](https://arxiv.org/abs/2406.09246)** (2024) — A 7B open VLA built on Llama 2 + DINOv2/SigLIP; the de-facto open baseline for VLA research and LoRA fine-tuning. · [code](https://github.com/openvla/openvla)
 - ⭐ **[RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control](https://arxiv.org/abs/2307.15818)** (2023) — Coined "VLA" — co-fine-tuning a web-scale VLM to output action tokens transfers semantic knowledge to robot control. · [project](https://robotics-transformer2.github.io/)
+- **[LTM: Latent Transition Based In-Context Memory for Vision-Language-Action Models](https://arxiv.org/abs/2610.21362)** (2026) — Gives π0.5 memory by caching compact latent transitions between observations, aimed at tasks where key objects go out of view. · [code](https://github.com/buaa-colalab/LTM-pi)
+- **[REKI: Registering Knowledge in VLAs](https://arxiv.org/abs/2610.22178)** (2026) — A 2.4B VLM + flow-matching VLA pretrained only on public data; reports beating all but ~2× larger models, plus cheap register-token memory. · [code](https://github.com/kyutai-labs/reki)
 - **[π0.5: a Vision-Language-Action Model with Open-World Generalization](https://arxiv.org/abs/2504.16054)** (2025) — Co-training on heterogeneous data lets a mobile manipulator clean kitchens and bedrooms in homes it has never seen. · [code](https://github.com/Physical-Intelligence/openpi)
 - **[FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://arxiv.org/abs/2501.09747)** (2025) — Compresses action chunks with a DCT-based tokenizer so autoregressive VLAs can learn high-frequency, dexterous control.
 - **[Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success](https://arxiv.org/abs/2502.19645)** (2025) — OpenVLA-OFT — parallel decoding, action chunking and continuous actions make VLA fine-tuning much faster and more accurate. · [code](https://github.com/moojink/openvla-oft)
@@ -56,7 +58,7 @@ _Vision-language-action models and generalist robot policies._ [Browse with the 
 - **[PaLM-E: An Embodied Multimodal Language Model](https://arxiv.org/abs/2303.03378)** (2023) — Injects continuous sensor embeddings into a 562B language model for embodied reasoning and planning.
 - **[A Generalist Agent](https://arxiv.org/abs/2205.06175)** (2022) — Gato — one Transformer with one set of weights plays games, captions images and stacks blocks with a real arm.
 - **[RT-1: Robotics Transformer for Real-World Control at Scale](https://arxiv.org/abs/2212.06817)** (2022) — Tokenized actions plus a Transformer trained on 130k real demos showed that robot policies scale with data diversity. · [code](https://github.com/google-research/robotics_transformer)
-- _See also:_ [Open X-Embodiment](#datasets), [Evaluating Real-World Robot Manipulation Policies in Simulation](#datasets)
+- _See also:_ [Cracking Mobile Manipulation](#navigation), [Open X-Embodiment](#datasets), [Evaluating Real-World Robot Manipulation Policies in Simulation](#datasets)
 
 <a id="manipulation"></a>
 ### Manipulation & Dexterous Hands
@@ -66,6 +68,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - ⭐ **[Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329)** (2024) — A handheld gripper with a GoPro collects demos anywhere; policies transfer directly to robot arms. · [code](https://github.com/real-stanford/universal_manipulation_interface)
 - ⭐ **[Diffusion Policy: Visuomotor Policy Learning via Action Diffusion](https://arxiv.org/abs/2303.04137)** (2023) — Generating action sequences by denoising handles multimodal demos far better than regression; now a standard IL baseline. · [code](https://github.com/real-stanford/diffusion_policy)
 - ⭐ **[Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](https://arxiv.org/abs/2304.13705)** (2023) — ALOHA + ACT — a ~$20k bimanual teleop rig and an action-chunking Transformer that learns precise tasks from ~50 demos. · [code](https://github.com/tonyzhaozh/act)
+- **[Can a Frontier VLM Serve as a Robot Policy for Memory-Dependent Manipulation?](https://arxiv.org/abs/2610.17350)** (2026) — A frozen frontier VLM, prompted with the whole episode, outputs waypoints directly and reports 92.1% on RoboMME memory tasks with no task training. · [code](https://github.com/jackbjed/embodied-astra-robomme) · [project](https://embodied-astra.github.io)
 - **[3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://arxiv.org/abs/2403.03954)** (2024) — Conditions a diffusion policy on a compact point-cloud encoding; more data-efficient and robust to viewpoint than images. · [code](https://github.com/YanjieZe/3D-Diffusion-Policy)
 - **[DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation](https://arxiv.org/abs/2403.07788)** (2024) — A wearable mocap glove + camera rig records human hand motion that is retargeted to train dexterous robot hands.
 - **[Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation](https://arxiv.org/abs/2401.02117)** (2024) — Puts ALOHA on a mobile base; co-training with static ALOHA data boosts mobile tasks like cooking and opening cabinets. · [code](https://github.com/MarkFzp/mobile-aloha)
@@ -74,7 +77,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - **[Visual Dexterity: In-Hand Reorientation of Novel and Complex Object Shapes](https://arxiv.org/abs/2211.11744)** (2022) — Reorients unseen objects in-hand using only a depth camera, with a policy trained in simulation.
 - **[Solving Rubik's Cube with a Robot Hand](https://arxiv.org/abs/1910.07113)** (2019) — Automatic domain randomization lets a sim-trained hand policy manipulate a Rubik's cube on real hardware.
 - **[Learning Dexterous In-Hand Manipulation](https://arxiv.org/abs/1808.00177)** (2018) — A Shadow Hand reorients a cube using RL trained purely in randomized simulation — a sim-to-real milestone.
-- _See also:_ [3D-ViTac](#tactile), [Code as Policies](#navigation), [OK-Robot](#navigation), [LeRobot](#datasets), [LEAP Hand](#hardware)
+- _See also:_ [3D-ViTac](#tactile), [Code as Policies](#navigation), [OK-Robot](#navigation), [Cracking Mobile Manipulation](#navigation), [LeRobot](#datasets), [LEAP Hand](#hardware)
 
 <a id="tactile"></a>
 ### Tactile & Visuotactile Sensing
@@ -125,6 +128,7 @@ _Learned dynamics, video world models and model-based RL for embodied agents._ [
 _Vision-language navigation, embodied question answering, mobile manipulation and LLM planners._ [Browse with the latest papers →](https://hu-zlatan.github.io/embodied-ai-radar/topics/navigation.html)
 
 - ⭐ **[Do As I Can, Not As I Say: Grounding Language in Robotic Affordances](https://arxiv.org/abs/2204.01691)** (2022) — SayCan — an LLM proposes steps and learned value functions score what the robot can actually do right now.
+- **[Cracking Mobile Manipulation: From Failure Diagnosis to Agentic Robot System](https://arxiv.org/abs/2610.19600)** (2026) — Finds a VLA at 80% on atomic skills drops to 19% when composed into mobile manipulation, diagnoses why, and builds an agentic system around it. · [code](https://github.com/PKU-VaLuE-Lab/Cracking-Mobile-Manipulation)
 - **[OK-Robot: What Really Matters in Integrating Open-Knowledge Models for Robotics](https://arxiv.org/abs/2401.12202)** (2024) — Combines off-the-shelf open-vocabulary models into a pick-and-drop system that works in real homes without training.
 - **[NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration](https://arxiv.org/abs/2310.07896)** (2023) — One diffusion policy handles both goal-directed navigation and exploration by masking the goal.
 - **[Code as Policies: Language Model Programs for Embodied Control](https://arxiv.org/abs/2209.07753)** (2022) — LLMs write Python that calls perception and control APIs, turning instructions into reactive robot programs.
