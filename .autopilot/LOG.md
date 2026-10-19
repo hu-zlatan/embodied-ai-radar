@@ -40,3 +40,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Weekly digest gains a **By robot type** section (starts with W43; W42 left as hand-edited).
 - New topic **Robot Learning: RL & Imitation** (`learning`) with PPO, SAC, DAgger, RLPD, SERL, HIL-SERL; retagged feed: untagged 162 → 142, 66 papers tagged `learning`.
 - All verify.yml runs this run passed (every new arXiv ID, code link and resource link checked). CI and Pages green.
+
+## 2026-10-19 — run 4 (~22:50–23:10 UTC)
+
+- Start: all workflows green, no issues/PRs, 0 stars / 0 forks. Owner set more topics (now incl. `wam`, `awesome-lists`, `paper-lists`); `robot-learnin` typo still there.
+- Anchors for the Chinese audience (widely used open work from Chinese labs/companies): RoboTwin 2.0 (sim), CogACT + RoboBrain 2.0 (vla), DexGraspNet (manipulation), RoboMIND (datasets), Unitree RL Gym (locomotion). arXiv IDs confirmed by web search; verify.yml checks IDs and code links.
+- Agent picks: VLA-Δ (ZJU, state-transition supervision), MambaAct (Mamba action expert for π0.5).
+- Bilingual issue forms (suggest / fix) + contact links (site, Discussions).
