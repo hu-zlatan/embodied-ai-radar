@@ -115,3 +115,25 @@
   tags: [sim, dual-arm, data-generation, domain-randomization, benchmark]
   takeaway_en: Simulation pipeline that writes and checks task code with multimodal LLMs to mass-produce bimanual demos under heavy randomization (clutter, lighting, backgrounds, instructions); also a 50-task dual-arm benchmark.
   takeaway_zh: 用多模态大模型自动生成并校验任务代码，在强域随机化（杂物、光照、背景、指令）下批量产出双臂演示数据的仿真管线，同时提供 50 个双臂任务的基准。
+- title: "MimicGen: A Data Generation System for Scalable Robot Learning using Human Demonstrations"
+  type: paper
+  arxiv: "2310.17596"
+  year: 2023
+  venue: CoRL 2023
+  org: NVIDIA, UT Austin
+  code: https://github.com/NVlabs/mimicgen
+  topics: [manipulation, datasets]
+  tags: [sim, data-generation, imitation]
+  takeaway_en: Turns a handful of human demos into thousands by splitting them into object-centric segments and replaying those segments in new scenes; widely reused to scale imitation data.
+  takeaway_zh: 把少量人类演示切分为以物体为中心的片段，并在新场景中变换重放，从而扩增为数千条演示；被广泛用于扩充模仿学习数据。
+- title: "BEHAVIOR-1K: A Human-Centered, Embodied AI Benchmark with 1,000 Everyday Activities and Realistic Simulation"
+  type: paper
+  arxiv: "2403.09227"
+  year: 2022
+  venue: CoRL 2022
+  org: Stanford
+  code: https://github.com/StanfordVL/BEHAVIOR-1K
+  topics: [datasets]
+  tags: [sim, household, long-horizon, benchmark]
+  takeaway_en: 1,000 household activities chosen from a survey of what people want robots to do, defined in a logic language and simulated in OmniGibson with realistic physics and rendering.
+  takeaway_zh: 依据人们希望机器人做什么的调查挑选出 1000 项家务活动，用逻辑语言定义，并在具备真实物理与渲染的 OmniGibson 中仿真。
