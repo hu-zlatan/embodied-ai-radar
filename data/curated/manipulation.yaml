@@ -1,0 +1,100 @@
+- title: "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion"
+  type: paper
+  arxiv: "2303.04137"
+  year: 2023
+  org: Columbia, TRI, MIT
+  code: https://github.com/real-stanford/diffusion_policy
+  highlight: true
+  tags: [real, sim, arm, diffusion, imitation]
+  takeaway_en: Generating action sequences by denoising handles multimodal demos far better than regression; now a standard IL baseline.
+  takeaway_zh: 以去噪方式生成动作序列，比回归更能处理多模态演示，已成为模仿学习标准基线。
+- title: "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware"
+  type: paper
+  arxiv: "2304.13705"
+  year: 2023
+  org: Stanford
+  code: https://github.com/tonyzhaozh/act
+  highlight: true
+  topics: [hardware]
+  tags: [real, bimanual, imitation, low-cost]
+  takeaway_en: ALOHA + ACT — a ~$20k bimanual teleop rig and an action-chunking Transformer that learns precise tasks from ~50 demos.
+  takeaway_zh: ALOHA + ACT：约 2 万美元的双臂遥操作平台，加上动作分块 Transformer，约 50 条演示即可学会精细任务。
+- title: "Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation"
+  type: paper
+  arxiv: "2401.02117"
+  year: 2024
+  org: Stanford
+  code: https://github.com/MarkFzp/mobile-aloha
+  topics: [hardware]
+  tags: [real, bimanual, mobile, imitation, low-cost]
+  takeaway_en: Puts ALOHA on a mobile base; co-training with static ALOHA data boosts mobile tasks like cooking and opening cabinets.
+  takeaway_zh: 将 ALOHA 装上移动底盘；与静态 ALOHA 数据联合训练显著提升做饭、开柜等移动任务表现。
+- title: "3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations"
+  type: paper
+  arxiv: "2403.03954"
+  year: 2024
+  org: Shanghai Qi Zhi, Tsinghua
+  code: https://github.com/YanjieZe/3D-Diffusion-Policy
+  tags: [real, sim, point-cloud, diffusion]
+  takeaway_en: Conditions a diffusion policy on a compact point-cloud encoding; more data-efficient and robust to viewpoint than images.
+  takeaway_zh: 用紧凑点云编码作为扩散策略条件，比图像输入更省数据、对视角更鲁棒。
+- title: "Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots"
+  type: paper
+  arxiv: "2402.10329"
+  year: 2024
+  org: Stanford, Columbia, TRI
+  code: https://github.com/real-stanford/universal_manipulation_interface
+  highlight: true
+  topics: [hardware, datasets]
+  tags: [real, arm, handheld, data-collection]
+  takeaway_en: A handheld gripper with a GoPro collects demos anywhere; policies transfer directly to robot arms.
+  takeaway_zh: 手持夹爪加 GoPro 可随处采集演示，训练出的策略可直接迁移到机械臂。
+- title: "DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation"
+  type: paper
+  arxiv: "2403.07788"
+  year: 2024
+  org: Stanford
+  topics: [hardware]
+  tags: [real, hand, data-collection]
+  takeaway_en: A wearable mocap glove + camera rig records human hand motion that is retargeted to train dexterous robot hands.
+  takeaway_zh: 可穿戴动捕手套与相机采集人手动作，重定向后用于训练灵巧机器人手。
+- title: "Learning Dexterous In-Hand Manipulation"
+  type: paper
+  arxiv: "1808.00177"
+  year: 2018
+  org: OpenAI
+  tags: [sim2real, hand, rl]
+  takeaway_en: A Shadow Hand reorients a cube using RL trained purely in randomized simulation — a sim-to-real milestone.
+  takeaway_zh: 完全在随机化仿真中用强化学习训练，Shadow 灵巧手在真实世界翻转方块，是 sim-to-real 里程碑。
+- title: "Solving Rubik's Cube with a Robot Hand"
+  type: paper
+  arxiv: "1910.07113"
+  year: 2019
+  org: OpenAI
+  tags: [sim2real, hand, rl]
+  takeaway_en: Automatic domain randomization lets a sim-trained hand policy manipulate a Rubik's cube on real hardware.
+  takeaway_zh: 自动域随机化让仿真训练的灵巧手策略在真实硬件上操作魔方。
+- title: "Visual Dexterity: In-Hand Reorientation of Novel and Complex Object Shapes"
+  type: paper
+  arxiv: "2211.11744"
+  year: 2022
+  org: MIT
+  tags: [sim2real, hand, rl, depth]
+  takeaway_en: Reorients unseen objects in-hand using only a depth camera, with a policy trained in simulation.
+  takeaway_zh: 仅凭深度相机即可在手中翻转未见过的物体，策略在仿真中训练。
+- title: "VoxPoser: Composable 3D Value Maps for Robotic Manipulation with Language Models"
+  type: paper
+  arxiv: "2307.05973"
+  year: 2023
+  org: Stanford
+  tags: [real, arm, llm, zero-shot]
+  takeaway_en: LLMs write code that composes 3D affordance/constraint maps, which a planner turns into trajectories — no robot training.
+  takeaway_zh: 大模型编写代码组合 3D 可供性/约束地图，再由规划器生成轨迹，无需机器人训练。
+- title: "R3M: A Universal Visual Representation for Robot Manipulation"
+  type: paper
+  arxiv: "2203.12601"
+  year: 2022
+  org: Stanford, Meta AI
+  tags: [representation, egocentric-video]
+  takeaway_en: Pretrains a visual encoder on Ego4D human videos that makes downstream imitation far more data-efficient.
+  takeaway_zh: 在 Ego4D 人类视频上预训练视觉编码器，显著提高下游模仿学习的数据效率。

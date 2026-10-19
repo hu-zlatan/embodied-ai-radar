@@ -1,0 +1,22 @@
+name: Verify curated data
+on:
+  push:
+    branches: [main]
+    paths: ["data/curated/**", "scripts/verify_curated.py", "scripts/radar.py"]
+  pull_request:
+    paths: ["data/curated/**"]
+  schedule:
+    - cron: "5 4 * * 1"   # weekly link check, Mondays
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python scripts/verify_curated.py

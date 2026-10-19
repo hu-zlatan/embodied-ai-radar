@@ -1,0 +1,96 @@
+- title: "Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning"
+  type: paper
+  arxiv: "2109.11978"
+  year: 2021
+  org: ETH Zurich, NVIDIA
+  code: https://github.com/leggedrobotics/legged_gym
+  highlight: true
+  topics: [sim]
+  tags: [sim2real, quadruped, rl, gpu-parallel]
+  takeaway_en: Thousands of parallel GPU environments train a quadruped walking policy in minutes; legged_gym became a standard starter.
+  takeaway_zh: 数千个 GPU 并行环境几分钟就能训练出四足行走策略；legged_gym 成为标准入门框架。
+- title: "Learning Quadrupedal Locomotion over Challenging Terrain"
+  type: paper
+  arxiv: "2010.11251"
+  year: 2020
+  org: ETH Zurich
+  tags: [sim2real, quadruped, rl, proprioception]
+  takeaway_en: A teacher-student, proprioception-only policy that walks ANYmal over mud, snow and rubble in the wild.
+  takeaway_zh: 仅依赖本体感知的师生策略，让 ANYmal 在泥地、雪地和碎石等野外地形行走。
+- title: "Learning Agile and Dynamic Motor Skills for Legged Robots"
+  type: paper
+  arxiv: "1901.08652"
+  year: 2019
+  org: ETH Zurich
+  tags: [sim2real, quadruped, rl, actuator-net]
+  takeaway_en: A learned actuator model closes the sim-to-real gap so RL policies run and recover from falls on ANYmal.
+  takeaway_zh: 学习的执行器模型缩小仿真与现实差距，使强化学习策略能让 ANYmal 奔跑并摔倒后起身。
+- title: "RMA: Rapid Motor Adaptation for Legged Robots"
+  type: paper
+  arxiv: "2107.04034"
+  year: 2021
+  org: UC Berkeley, CMU, Meta AI
+  tags: [sim2real, quadruped, rl, adaptation]
+  takeaway_en: An adaptation module infers environment parameters online, so one policy handles new terrains and payloads in real time.
+  takeaway_zh: 自适应模块在线估计环境参数，使同一策略实时适应新地形和负载。
+- title: "Robot Parkour Learning"
+  type: paper
+  arxiv: "2309.05665"
+  year: 2023
+  org: Shanghai Qi Zhi, Stanford
+  code: https://github.com/ZiwenZhuang/parkour
+  tags: [sim2real, quadruped, rl, vision]
+  takeaway_en: Distills specialist parkour skills into a single vision-based policy that climbs, leaps and crawls on low-cost quadrupeds.
+  takeaway_zh: 将多个跑酷专家技能蒸馏为单一视觉策略，让低成本四足机器人攀爬、跳跃和匍匐。
+- title: "Extreme Parkour with Legged Robots"
+  type: paper
+  arxiv: "2309.14341"
+  year: 2023
+  org: CMU
+  code: https://github.com/chengxuxin/extreme-parkour
+  tags: [sim2real, quadruped, rl, vision]
+  takeaway_en: An end-to-end depth-camera policy makes a small quadruped do long jumps, high jumps and handstands.
+  takeaway_zh: 端到端深度相机策略让小型四足机器人完成跳远、跳高和倒立。
+- title: "Real-World Humanoid Locomotion with Reinforcement Learning"
+  type: paper
+  arxiv: "2303.03381"
+  year: 2023
+  org: UC Berkeley
+  highlight: true
+  tags: [sim2real, humanoid, rl, transformer]
+  takeaway_en: A causal Transformer policy trained in simulation walks a full-size humanoid outdoors, zero-shot.
+  takeaway_zh: 在仿真中训练的因果 Transformer 策略零样本驱动全尺寸人形机器人在户外行走。
+- title: "Expressive Whole-Body Control for Humanoid Robots"
+  type: paper
+  arxiv: "2402.16796"
+  year: 2024
+  org: UC San Diego
+  tags: [sim2real, humanoid, rl, motion-imitation]
+  takeaway_en: Imitates upper-body human motion capture while keeping robust legs, giving humanoids expressive gestures and dance.
+  takeaway_zh: 上半身模仿人类动捕、下肢保持鲁棒行走，让人形机器人做出富有表现力的动作和舞蹈。
+- title: "Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation"
+  type: paper
+  arxiv: "2403.04436"
+  year: 2024
+  org: CMU
+  tags: [sim2real, humanoid, teleoperation]
+  takeaway_en: H2O — an RL tracking policy lets an RGB camera stream a person's whole-body motion onto a humanoid in real time.
+  takeaway_zh: H2O：强化学习跟踪策略借助 RGB 相机，把人的全身动作实时映射到人形机器人。
+- title: "HumanPlus: Humanoid Shadowing and Imitation from Humans"
+  type: paper
+  arxiv: "2406.10454"
+  year: 2024
+  org: Stanford
+  code: https://github.com/MarkFzp/humanplus
+  tags: [real, humanoid, teleoperation, imitation]
+  takeaway_en: A humanoid shadows a human from one RGB camera, then learns autonomous skills from the collected data.
+  takeaway_zh: 人形机器人通过单个 RGB 相机实时模仿人类，再用采集的数据学习自主技能。
+- title: "ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid Whole-Body Skills"
+  type: paper
+  arxiv: "2502.01143"
+  year: 2025
+  org: CMU, NVIDIA
+  code: https://github.com/LeCAR-Lab/ASAP
+  tags: [sim2real, humanoid, rl, delta-action]
+  takeaway_en: Learns a residual "delta action" model from real rollouts to fix sim physics, enabling agile athletic humanoid motions.
+  takeaway_zh: 从真实轨迹学习残差"增量动作"模型来修正仿真物理，实现敏捷的人形运动技能。

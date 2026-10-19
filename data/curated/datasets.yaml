@@ -1,0 +1,119 @@
+- title: "Open X-Embodiment: Robotic Learning Datasets and RT-X Models"
+  type: dataset
+  arxiv: "2310.08864"
+  year: 2023
+  org: Open X-Embodiment Collaboration
+  code: https://github.com/google-deepmind/open_x_embodiment
+  highlight: true
+  topics: [vla]
+  tags: [real, cross-embodiment, multi-robot]
+  takeaway_en: 1M+ trajectories from 22 robot types pooled by 30+ labs; RT-X models trained on it beat single-robot baselines.
+  takeaway_zh: 30 多个实验室汇集 22 种机器人的 100 多万条轨迹；在其上训练的 RT-X 优于单机器人基线。
+- title: "DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset"
+  type: dataset
+  arxiv: "2403.12945"
+  year: 2024
+  org: DROID Collaboration
+  code: https://github.com/droid-dataset/droid
+  tags: [real, arm, in-the-wild]
+  takeaway_en: 76k teleoperated Franka trajectories collected in hundreds of real scenes across many institutions.
+  takeaway_zh: 由多家机构在数百个真实场景中采集的 7.6 万条 Franka 遥操作轨迹。
+- title: "BridgeData V2: A Dataset for Robot Learning at Scale"
+  type: dataset
+  arxiv: "2308.12952"
+  year: 2023
+  org: UC Berkeley
+  tags: [real, arm, low-cost]
+  takeaway_en: 60k trajectories on a low-cost WidowX arm across many kitchens and tasks; a common pretraining source.
+  takeaway_zh: 在低成本 WidowX 机械臂上采集、涵盖众多厨房与任务的 6 万条轨迹，常用作预训练数据。
+- title: "RH20T: A Comprehensive Robotic Dataset for Learning Diverse Skills in One-Shot"
+  type: dataset
+  arxiv: "2307.00595"
+  year: 2023
+  org: Shanghai Jiao Tong University
+  tags: [real, arm, multimodal, force]
+  takeaway_en: 110k+ contact-rich sequences with vision, force, audio and paired human demonstration videos.
+  takeaway_zh: 11 万多条接触丰富的序列，包含视觉、力、音频及配对的人类演示视频。
+- title: "AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems"
+  type: dataset
+  arxiv: "2503.06669"
+  year: 2025
+  org: AgiBot, Shanghai AI Lab
+  tags: [real, humanoid, dual-arm, large-scale]
+  takeaway_en: A million-scale real-robot dataset collected in purpose-built scenes, with the GO-1 generalist policy trained on it.
+  takeaway_zh: 在专门搭建的场景中采集的百万级真实机器人数据集，并基于其训练通用策略 GO-1。
+- title: "Ego4D: Around the World in 3,000 Hours of Egocentric Video"
+  type: dataset
+  arxiv: "2110.07058"
+  year: 2021
+  org: Meta AI and university partners
+  tags: [egocentric-video, human-data]
+  takeaway_en: 3,670 hours of first-person daily-life video; widely used to pretrain visual representations for robots.
+  takeaway_zh: 3670 小时第一视角日常生活视频，广泛用于为机器人预训练视觉表征。
+- title: "LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning"
+  type: benchmark
+  arxiv: "2306.03310"
+  year: 2023
+  org: UT Austin
+  code: https://github.com/Lifelong-Robot-Learning/LIBERO
+  highlight: true
+  tags: [sim, manipulation, lifelong-learning]
+  takeaway_en: 130 language-conditioned tasks in four suites; now the most common simulation benchmark for VLA papers.
+  takeaway_zh: 四个套件共 130 个语言条件任务，现已成为 VLA 论文最常用的仿真基准。
+- title: "CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks"
+  type: benchmark
+  arxiv: "2112.03227"
+  year: 2021
+  org: University of Freiburg
+  code: https://github.com/mees/calvin
+  tags: [sim, manipulation, long-horizon]
+  takeaway_en: Chains of five language instructions in a row test long-horizon, language-conditioned control.
+  takeaway_zh: 连续执行五条语言指令，测试长时程、语言条件下的控制能力。
+- title: "RLBench: The Robot Learning Benchmark & Learning Environment"
+  type: benchmark
+  arxiv: "1909.12271"
+  year: 2019
+  org: Imperial College London
+  code: https://github.com/stepjam/RLBench
+  tags: [sim, manipulation]
+  takeaway_en: 100 hand-designed manipulation tasks with demos; a staple for 3D policy methods like PerAct.
+  takeaway_zh: 100 个手工设计的操作任务并附演示，是 PerAct 等 3D 策略方法的常用基准。
+- title: "Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning"
+  type: benchmark
+  arxiv: "1910.10897"
+  year: 2019
+  org: Stanford, UC Berkeley
+  code: https://github.com/Farama-Foundation/Metaworld
+  tags: [sim, manipulation, rl, multi-task]
+  takeaway_en: 50 Sawyer manipulation tasks for multi-task and meta-RL evaluation.
+  takeaway_zh: 50 个 Sawyer 操作任务，用于多任务与元强化学习评测。
+- title: "Evaluating Real-World Robot Manipulation Policies in Simulation"
+  type: benchmark
+  arxiv: "2405.05941"
+  year: 2024
+  org: UC San Diego, Stanford, UC Berkeley, Google DeepMind
+  code: https://github.com/simpler-env/SimplerEnv
+  topics: [vla]
+  tags: [sim, real-to-sim, evaluation]
+  takeaway_en: SimplerEnv — real-to-sim environments whose scores correlate with real-robot results for RT-1/Octo-style policies.
+  takeaway_zh: SimplerEnv：真实到仿真的评测环境，其得分与 RT-1/Octo 类策略的真机表现相关。
+- title: "Habitat: A Platform for Embodied AI Research"
+  type: paper
+  arxiv: "1904.01201"
+  year: 2019
+  org: Meta AI
+  code: https://github.com/facebookresearch/habitat-sim
+  topics: [sim, navigation]
+  tags: [sim, navigation, photorealistic]
+  takeaway_en: A very fast photorealistic 3D simulator and task suite that standardized embodied navigation research.
+  takeaway_zh: 极速的逼真 3D 仿真器与任务集，统一了具身导航研究的标准。
+- title: "LeRobot"
+  type: code
+  year: 2024
+  org: Hugging Face
+  code: https://github.com/huggingface/lerobot
+  highlight: true
+  topics: [hardware, manipulation]
+  tags: [library, open-source, low-cost, datasets]
+  takeaway_en: PyTorch library with datasets, pretrained policies (ACT, Diffusion, SmolVLA) and drivers for low-cost arms.
+  takeaway_zh: PyTorch 机器人学习库，提供数据集、预训练策略（ACT、Diffusion、SmolVLA）与低成本机械臂驱动。

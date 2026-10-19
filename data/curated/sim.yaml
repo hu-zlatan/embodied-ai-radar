@@ -1,0 +1,97 @@
+- title: "MuJoCo"
+  type: simulator
+  year: 2012
+  org: Google DeepMind
+  url: https://mujoco.org/
+  code: https://github.com/google-deepmind/mujoco
+  highlight: true
+  tags: [physics, open-source]
+  takeaway_en: Fast, accurate contact physics; the default simulator for robot learning research, open-sourced by DeepMind.
+  takeaway_zh: 快速准确的接触物理仿真，机器人学习研究的默认仿真器，由 DeepMind 开源。
+- title: "MuJoCo Playground"
+  type: paper
+  arxiv: "2502.08844"
+  year: 2025
+  org: Google DeepMind, UC Berkeley
+  code: https://github.com/google-deepmind/mujoco_playground
+  tags: [gpu-parallel, sim2real, open-source]
+  takeaway_en: GPU-accelerated MJX environments for locomotion and manipulation that train in minutes and transfer to real robots.
+  takeaway_zh: 基于 MJX 的 GPU 加速运动与操作环境，几分钟即可训练并迁移到真实机器人。
+- title: "Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning"
+  type: paper
+  arxiv: "2108.10470"
+  year: 2021
+  org: NVIDIA
+  tags: [gpu-parallel, physics]
+  takeaway_en: Keeps physics and policy on the GPU end-to-end, enabling thousands of parallel environments on one card.
+  takeaway_zh: 物理仿真与策略全程在 GPU 上运行，单卡即可并行数千个环境。
+- title: "Orbit: A Unified Simulation Framework for Interactive Robot Learning Environments"
+  type: paper
+  arxiv: "2301.04195"
+  year: 2023
+  org: ETH Zurich, NVIDIA, Toronto
+  code: https://github.com/isaac-sim/IsaacLab
+  tags: [gpu-parallel, framework, open-source]
+  takeaway_en: The framework that became Isaac Lab — modular robots, sensors and tasks on top of Isaac Sim.
+  takeaway_zh: Isaac Lab 的前身，在 Isaac Sim 之上提供模块化的机器人、传感器与任务。
+- title: "ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI"
+  type: paper
+  arxiv: "2410.00425"
+  year: 2024
+  org: UC San Diego
+  code: https://github.com/haosulab/ManiSkill
+  tags: [gpu-parallel, rendering, benchmark, open-source]
+  takeaway_en: GPU-parallel simulation and rendering with many manipulation tasks; fast visual RL and data generation.
+  takeaway_zh: GPU 并行仿真与渲染，内置大量操作任务，适合快速视觉强化学习与数据生成。
+- title: "Genesis"
+  type: simulator
+  year: 2024
+  org: Genesis Embodied AI
+  code: https://github.com/Genesis-Embodied-AI/Genesis
+  tags: [physics, gpu-parallel, open-source]
+  takeaway_en: An open-source, Python-native physics platform covering rigid bodies, soft bodies, fluids and fast GPU simulation.
+  takeaway_zh: 开源、Python 原生的物理平台，覆盖刚体、软体、流体，支持高速 GPU 仿真。
+- title: "robosuite: A Modular Simulation Framework and Benchmark for Robot Learning"
+  type: paper
+  arxiv: "2009.12293"
+  year: 2020
+  org: Stanford, UT Austin
+  code: https://github.com/ARISE-Initiative/robosuite
+  topics: [datasets]
+  tags: [mujoco, benchmark, open-source]
+  takeaway_en: Modular MuJoCo-based manipulation environments behind many imitation-learning benchmarks.
+  takeaway_zh: 基于 MuJoCo 的模块化操作环境，是众多模仿学习基准的底座。
+- title: "RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots"
+  type: paper
+  arxiv: "2406.02523"
+  year: 2024
+  org: UT Austin, NVIDIA
+  code: https://github.com/robocasa/robocasa
+  topics: [datasets]
+  tags: [kitchen, benchmark, synthetic-data]
+  takeaway_en: 120 kitchen scenes, 2,500+ objects and 100 tasks with generated demonstrations for training generalist policies.
+  takeaway_zh: 120 个厨房场景、2500 多个物体与 100 个任务，并附生成演示，用于训练通用策略。
+- title: "SAPIEN: A SimulAted Part-based Interactive ENvironment"
+  type: paper
+  arxiv: "2003.08515"
+  year: 2020
+  org: UC San Diego
+  tags: [articulated-objects, physics]
+  takeaway_en: A simulator with large-scale articulated objects (PartNet-Mobility) for interaction tasks like opening drawers.
+  takeaway_zh: 包含大规模铰接物体（PartNet-Mobility）的仿真器，适合开抽屉等交互任务。
+- title: "Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World"
+  type: paper
+  arxiv: "1703.06907"
+  year: 2017
+  org: OpenAI
+  tags: [sim2real, domain-randomization]
+  takeaway_en: Randomizing textures, lighting and cameras in sim makes vision models work on real images with no real data.
+  takeaway_zh: 在仿真中随机化纹理、光照和相机，使视觉模型无需真实数据即可在真实图像上工作。
+- title: "Sim-to-Real Transfer of Robotic Control with Dynamics Randomization"
+  type: paper
+  arxiv: "1710.06537"
+  year: 2017
+  org: OpenAI, UC Berkeley
+  tags: [sim2real, domain-randomization, rl]
+  takeaway_en: Randomizing physical parameters during training yields control policies robust enough to run on a real arm.
+  takeaway_zh: 训练中随机化物理参数，得到足以在真实机械臂上运行的鲁棒控制策略。

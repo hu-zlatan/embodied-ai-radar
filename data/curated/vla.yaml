@@ -1,0 +1,126 @@
+# Curated entries for topic `vla`. Schema: see CONTRIBUTING.md.
+- title: "RT-1: Robotics Transformer for Real-World Control at Scale"
+  type: paper
+  arxiv: "2212.06817"
+  year: 2022
+  org: Google
+  code: https://github.com/google-research/robotics_transformer
+  tags: [real, arm, transformer]
+  takeaway_en: Tokenized actions plus a Transformer trained on 130k real demos showed that robot policies scale with data diversity.
+  takeaway_zh: 将动作离散化为 token，用 13 万条真实演示训练 Transformer，证明机器人策略会随数据多样性扩展。
+- title: "RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control"
+  type: paper
+  arxiv: "2307.15818"
+  year: 2023
+  org: Google DeepMind
+  project: https://robotics-transformer2.github.io/
+  highlight: true
+  tags: [real, arm, vlm]
+  takeaway_en: Coined "VLA" — co-fine-tuning a web-scale VLM to output action tokens transfers semantic knowledge to robot control.
+  takeaway_zh: 提出 "VLA" 概念：把网络规模的视觉语言模型联合微调为输出动作 token，把语义知识迁移到机器人控制。
+- title: "Octo: An Open-Source Generalist Robot Policy"
+  type: paper
+  arxiv: "2405.12213"
+  year: 2024
+  org: UC Berkeley, Stanford, CMU
+  code: https://github.com/octo-models/octo
+  tags: [real, arm, diffusion, cross-embodiment, open-weights]
+  takeaway_en: A small open diffusion-head Transformer pretrained on Open X-Embodiment that fine-tunes quickly to new robots and sensors.
+  takeaway_zh: 在 Open X-Embodiment 上预训练的开源扩散头 Transformer 策略，可快速微调到新机器人和新传感器。
+- title: "OpenVLA: An Open-Source Vision-Language-Action Model"
+  type: paper
+  arxiv: "2406.09246"
+  year: 2024
+  org: Stanford, UC Berkeley, TRI
+  code: https://github.com/openvla/openvla
+  highlight: true
+  tags: [real, arm, vlm, open-weights]
+  takeaway_en: A 7B open VLA built on Llama 2 + DINOv2/SigLIP; the de-facto open baseline for VLA research and LoRA fine-tuning.
+  takeaway_zh: 基于 Llama 2 与 DINOv2/SigLIP 的 7B 开源 VLA，是 VLA 研究与 LoRA 微调的事实开源基线。
+- title: "Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success"
+  type: paper
+  arxiv: "2502.19645"
+  year: 2025
+  org: Stanford
+  code: https://github.com/moojink/openvla-oft
+  tags: [real, sim, arm, open-weights]
+  takeaway_en: OpenVLA-OFT — parallel decoding, action chunking and continuous actions make VLA fine-tuning much faster and more accurate.
+  takeaway_zh: OpenVLA-OFT：并行解码、动作分块与连续动作让 VLA 微调更快、成功率更高。
+- title: "$π_0$: A Vision-Language-Action Flow Model for General Robot Control"
+  type: paper
+  arxiv: "2410.24164"
+  year: 2024
+  org: Physical Intelligence
+  code: https://github.com/Physical-Intelligence/openpi
+  highlight: true
+  tags: [real, arm, bimanual, flow-matching, cross-embodiment, open-weights]
+  takeaway_en: A VLM backbone with a flow-matching action expert, trained across many robots, doing long dexterous tasks like laundry folding.
+  takeaway_zh: VLM 主干加流匹配动作专家，跨多种机器人训练，能完成叠衣服等长时程灵巧任务。
+- title: "$π_{0.5}$: a Vision-Language-Action Model with Open-World Generalization"
+  type: paper
+  arxiv: "2504.16054"
+  year: 2025
+  org: Physical Intelligence
+  code: https://github.com/Physical-Intelligence/openpi
+  tags: [real, mobile, co-training]
+  takeaway_en: Co-training on heterogeneous data lets a mobile manipulator clean kitchens and bedrooms in homes it has never seen.
+  takeaway_zh: 通过异构数据联合训练，让移动操作机器人在从未见过的家庭中整理厨房和卧室。
+- title: "FAST: Efficient Action Tokenization for Vision-Language-Action Models"
+  type: paper
+  arxiv: "2501.09747"
+  year: 2025
+  org: Physical Intelligence, UC Berkeley, Stanford
+  tags: [real, tokenization]
+  takeaway_en: Compresses action chunks with a DCT-based tokenizer so autoregressive VLAs can learn high-frequency, dexterous control.
+  takeaway_zh: 用基于 DCT 的分词器压缩动作块，使自回归 VLA 能学习高频灵巧控制。
+- title: "RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation"
+  type: paper
+  arxiv: "2410.07864"
+  year: 2024
+  org: Tsinghua University
+  code: https://github.com/thu-ml/RoboticsDiffusionTransformer
+  tags: [real, bimanual, diffusion, open-weights]
+  takeaway_en: A 1.2B diffusion Transformer with a unified action space across robots, targeted at bimanual manipulation.
+  takeaway_zh: 12 亿参数扩散 Transformer，采用跨机器人统一动作空间，面向双臂操作。
+- title: "GR00T N1: An Open Foundation Model for Generalist Humanoid Robots"
+  type: paper
+  arxiv: "2503.14734"
+  year: 2025
+  org: NVIDIA
+  code: https://github.com/NVIDIA/Isaac-GR00T
+  tags: [real, sim, humanoid, open-weights]
+  takeaway_en: A dual-system (VLM "slow" + diffusion "fast") humanoid policy trained on real, human-video and synthetic data.
+  takeaway_zh: 双系统（VLM 慢思考 + 扩散快执行）人形机器人策略，用真实、人类视频与合成数据训练。
+- title: "SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics"
+  type: paper
+  arxiv: "2506.01844"
+  year: 2025
+  org: Hugging Face
+  code: https://github.com/huggingface/lerobot
+  tags: [real, arm, open-weights, low-cost]
+  takeaway_en: A ~450M-parameter VLA trained on community LeRobot data that runs on consumer GPUs.
+  takeaway_zh: 约 4.5 亿参数的 VLA，用社区 LeRobot 数据训练，可在消费级 GPU 上运行。
+- title: "Gemini Robotics: Bringing AI into the Physical World"
+  type: paper
+  arxiv: "2503.20020"
+  year: 2025
+  org: Google DeepMind
+  tags: [real, bimanual, vlm]
+  takeaway_en: Gemini 2.0-based VLA and embodied-reasoning models for dexterous, general robot control.
+  takeaway_zh: 基于 Gemini 2.0 的 VLA 与具身推理模型，面向灵巧、通用的机器人控制。
+- title: "PaLM-E: An Embodied Multimodal Language Model"
+  type: paper
+  arxiv: "2303.03378"
+  year: 2023
+  org: Google
+  tags: [real, vlm, planning]
+  takeaway_en: Injects continuous sensor embeddings into a 562B language model for embodied reasoning and planning.
+  takeaway_zh: 将连续传感器嵌入注入 5620 亿参数语言模型，用于具身推理与规划。
+- title: "A Generalist Agent"
+  type: paper
+  arxiv: "2205.06175"
+  year: 2022
+  org: DeepMind
+  tags: [sim, real, transformer]
+  takeaway_en: Gato — one Transformer with one set of weights plays games, captions images and stacks blocks with a real arm.
+  takeaway_zh: Gato：同一套权重的 Transformer 既能玩游戏、写图像描述，也能用真实机械臂堆积木。
