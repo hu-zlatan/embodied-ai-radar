@@ -120,10 +120,26 @@ def load_arxiv_feed() -> list[dict]:
     return out
 
 
-def classify(text: str, topics: list[dict]) -> list[str]:
-    """Rule-based topic tags for feed papers, from topics.yaml keywords."""
-    t = " " + re.sub(r"\s+", " ", text.lower()) + " "
-    return [tp["id"] for tp in topics if any(k in t for k in tp.get("keywords", []))]
+def classify(text: str, topics: list[dict], title: str | None = None) -> list[str]:
+    """Rule-based topic tags for feed papers, from topics.yaml keywords.
+
+    A keyword in the title scores 3, each occurrence in the rest of the text scores 1;
+    a topic is tagged at score >= 2, so a single passing mention in an abstract is not enough.
+    """
+    def prep(x: str) -> str:
+        return " " + re.sub(r"\s+", " ", x.lower()) + " "
+    body = prep(text)
+    head = prep(title) if title else ""
+    out = []
+    for tp in topics:
+        score = 0
+        for k in tp.get("keywords", []):
+            if head and k in head:
+                score += 3
+            score += body.count(k)
+        if score >= 2:
+            out.append(tp["id"])
+    return out
 
 
 def norm_title(s: str) -> str:

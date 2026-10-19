@@ -131,11 +131,25 @@ def fetch_rss() -> list[dict]:
     return out
 
 
+def retag() -> int:
+    topics = load_topics()
+    for path in sorted(ARXIV_DIR.glob("*/*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        for p in data.get("papers", []):
+            p["topics"] = classify(p.get("abstract", ""), topics, title=p.get("title", ""))
+        path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print("retagged")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=3, help="API look-back window in days")
     ap.add_argument("--no-api", action="store_true", help="only use the RSS feed")
+    ap.add_argument("--retag", action="store_true", help="re-run topic tagging on all stored papers and exit")
     args = ap.parse_args()
+    if args.retag:
+        return retag()
     cutoff = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=args.days)).strftime("%Y-%m-%d")
     topics = load_topics()
     known = {p["id"] for p in load_arxiv_feed()}
@@ -144,7 +158,7 @@ def main() -> int:
 
     def add(r: dict) -> None:
         if r["id"] not in known and r["id"] not in new:
-            r["topics"] = classify(r["title"] + " " + r["abstract"], topics)
+            r["topics"] = classify(r["abstract"], topics, title=r["title"])
             new[r["id"]] = r
 
     # 1) RSS: today's announcements; a different host from the API and rarely rate-limited.
