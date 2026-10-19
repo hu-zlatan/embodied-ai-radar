@@ -1,0 +1,55 @@
+- title: "Proximal Policy Optimization Algorithms"
+  type: paper
+  arxiv: "1707.06347"
+  year: 2017
+  org: OpenAI
+  highlight: true
+  tags: [rl, on-policy, sim]
+  takeaway_en: The clipped policy-gradient method behind most GPU-parallel sim-to-real locomotion and dexterity training.
+  takeaway_zh: 采用截断目标的策略梯度方法，是大多数 GPU 并行仿真训练（运动控制、灵巧操作）背后的算法。
+- title: "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor"
+  type: paper
+  arxiv: "1801.01290"
+  year: 2018
+  org: UC Berkeley
+  tags: [rl, off-policy, max-entropy]
+  takeaway_en: Off-policy RL with an entropy bonus; sample-efficient enough to become the default for learning directly on real robots.
+  takeaway_zh: 带熵奖励的离策略强化学习；样本效率较高，成为真机上直接学习的常用默认算法。
+- title: "A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning"
+  type: paper
+  arxiv: "1011.0686"
+  year: 2010
+  org: CMU
+  tags: [imitation, dagger, interactive]
+  takeaway_en: DAgger — query the expert on the states the learner itself visits, fixing the compounding errors of plain behavior cloning.
+  takeaway_zh: DAgger：在学习者自己访问到的状态上向专家查询标注，解决单纯行为克隆的误差累积问题。
+- title: "Efficient Online Reinforcement Learning with Offline Data"
+  type: paper
+  arxiv: "2302.02948"
+  year: 2023
+  org: UC Berkeley
+  code: https://github.com/ikostrikov/rlpd
+  tags: [rl, offline-to-online, sample-efficiency]
+  takeaway_en: RLPD — a few simple changes to off-policy RL (symmetric sampling of offline and online data, layer norm, ensembles) make prior data speed up online learning.
+  takeaway_zh: RLPD：对离策略强化学习做几处简单改动（离线/在线数据对称采样、层归一化、集成），让已有数据加速在线学习。
+- title: "SERL: A Software Suite for Sample-Efficient Robotic Reinforcement Learning"
+  type: paper
+  arxiv: "2401.16013"
+  year: 2024
+  org: UC Berkeley
+  code: https://github.com/rail-berkeley/serl
+  topics: [manipulation]
+  tags: [rl, real, arm, open-source]
+  takeaway_en: An open-source stack for training manipulation policies with RL on a real arm — learned reward classifiers, reset-free training and an impedance controller.
+  takeaway_zh: 在真实机械臂上用强化学习训练操作策略的开源软件栈：学习式奖励分类器、免重置训练与阻抗控制器。
+- title: "Precise and Dexterous Robotic Manipulation via Human-in-the-Loop Reinforcement Learning"
+  type: paper
+  arxiv: "2410.21845"
+  year: 2024
+  org: UC Berkeley
+  highlight: true
+  code: https://github.com/rail-berkeley/hil-serl
+  topics: [manipulation]
+  tags: [rl, real, arm, human-in-the-loop]
+  takeaway_en: HIL-SERL — real-world RL with human corrections, reported to reach near-perfect success on precise assembly and dynamic tasks after a few hours of training.
+  takeaway_zh: HIL-SERL：结合人类纠正的真机强化学习，报告称在精密装配与动态任务上经数小时训练即可接近满分成功率。

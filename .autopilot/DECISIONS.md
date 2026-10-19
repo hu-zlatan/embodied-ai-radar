@@ -19,3 +19,7 @@ Why the project is the way it is. Newest at the bottom. Format: date — decisio
 2026-10-19 — **Robot type ("embodiment") is a computed filter, not stored data.** — Keyword rules in `data/embodiments.yaml` run at build time over title+abstract (feed) or title+takeaway+tags (curated); one explicit mention is enough (threshold 1, unlike topics at 2) because naming the robot is a strong signal. Editing the rules re-tags everything on the next build, no data migration. — Alternatives: store per-paper tags in the JSON (needs retag passes), manual tags (doesn't scale).
 
 2026-10-19 — **License files split** — GitHub showed "Other" for a combined MIT + CC BY file; a plain MIT `LICENSE` plus `LICENSE-DATA.md` reads clearly in the sidebar and keeps the same terms.
+
+2026-10-19 — **New topic `learning` (Robot Learning: RL & Imitation).** — Many untagged feed papers were method papers on RL / IL / policy post-training that fit no existing topic (they are not about a specific task like manipulation). A cross-cutting methods topic tags them (untagged 162 → 142 of 451) and gives a home to anchors like PPO, SAC, DAgger, RLPD, SERL, HIL-SERL. Papers may carry it alongside a task topic. — Alternatives: stretch `vla` or `manipulation` keywords (would mis-tag), leave untagged.
+
+2026-10-19 — **`data/resources.yaml` for related lists, courses, docs, communities.** — Newcomers (especially Chinese readers) ask "where do I start"; pointing to other good lists is honest and useful, and positions this radar as complementary. Links are checked by verify.yml like curated data.
