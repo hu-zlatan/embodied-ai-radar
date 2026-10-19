@@ -181,6 +181,8 @@ def md_to_html(md: str) -> str:
         s = line.rstrip()
         def inline(t: str) -> str:
             t = esc(t)
+            if len(t) > 2 and t.startswith("_") and t.endswith("_"):  # whole-line italics
+                t = f"<em>{t[1:-1]}</em>"
             t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
             t = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", r'<a href="\2" rel="noopener">\1</a>', t)
             return t
