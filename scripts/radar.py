@@ -184,3 +184,24 @@ def arxiv_get(url: str, attempts: int = 6) -> bytes:
             time.sleep(wait)
             delay = min(delay * 2, 300)
     raise RuntimeError(f"arXiv API unreachable after {attempts} attempts: {url[:120]}")
+
+
+VENUE_RE = re.compile(
+    r"\b(CoRL|RSS|ICRA|IROS|NeurIPS|ICLR|ICML|CVPR|ICCV|ECCV|RA-?L|T-RO|TRO|Humanoids|AAAI|IJCAI|"
+    r"Science Robotics|IJRR|WAFR|HRI|CASE|L4DC|ISRR|3DV|WACV)\b(?:\s*['’]?\s*(20\d\d|\d\d)\b)?")
+NOT_ACCEPTED_RE = re.compile(r"submitted|under review|in submission|preprint version of a submission|workshop", re.I)
+
+
+def venue_of(comment: str | None) -> str | None:
+    """'ICRA 2026' from arXiv comments like 'Accepted to ICRA 2026, 8 pages'. None for submissions,
+    workshops or no venue. Conservative on purpose: a missing badge is better than a wrong one."""
+    if not comment or NOT_ACCEPTED_RE.search(comment):
+        return None
+    m = VENUE_RE.search(comment)
+    if not m:
+        return None
+    name = {"RAL": "RA-L", "TRO": "T-RO"}.get(m.group(1), m.group(1))
+    year = m.group(2)
+    if year and len(year) == 2:
+        year = "20" + year
+    return f"{name} {year}" if year else name

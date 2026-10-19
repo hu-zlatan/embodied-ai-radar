@@ -48,7 +48,7 @@
         '</div><h3><a href="' + esc(it.l) + '">' + esc(it.t) + '</a></h3><p class="take">' + esc(lang() === 'zh' ? it.zh : it.en) +
         '</p><div class="links">' + links.join(' · ') + '</div><div class="chips">' + topicChips(it.tp) + embChips(it.em) + '</div></article>';
     }
-    return '<article class="card feed"><div class="meta"><span class="badge">arXiv ' + esc(it.pc) + '</span> ' + esc(it.d) + (it.c ? ' <span class="badge code">code</span>' : '') +
+    return '<article class="card feed"><div class="meta"><span class="badge">arXiv ' + esc(it.pc) + '</span> ' + esc(it.d) + (it.c ? ' <span class="badge code">code</span>' : '') + (it.v ? ' <span class="badge venue">' + esc(it.v) + '</span>' : '') +
       '</div><h3><a href="https://arxiv.org/abs/' + esc(it.id) + '">' + esc(it.t) + '</a></h3><p class="authors">' + esc(it.au) +
       '</p><div class="links"><a href="https://arxiv.org/pdf/' + esc(it.id) + '">PDF</a>' + (it.c ? ' · <a href="' + esc(it.c) + '">' + (lang() === 'zh' ? '代码' : 'Code') + '</a>' : '') +
       '</div><div class="chips">' + topicChips(it.tp) + embChips(it.em) + '</div></article>';

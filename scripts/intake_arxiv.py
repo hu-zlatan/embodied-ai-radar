@@ -33,6 +33,48 @@ MAX_PER_QUERY = 1000
 GITHUB_RE = re.compile(r"https?://github\.com/[\w.-]+/[\w.-]+", re.I)
 URL_RE = re.compile(r"https?://[^\s,;()<>\"']+", re.I)
 ABSTRACT_MAX = 600
+# URLs in arXiv comments that are not project pages
+NOT_PROJECT = re.compile(r"github\.com|arxiv\.org|doi\.org|creativecommons|ieee\.org|acm\.org|youtu|zenodo|huggingface\.co/datasets", re.I)
+
+
+def fetch_ids(ids: list[str]) -> bytes:
+    params = urllib.parse.urlencode({"id_list": ",".join(ids), "max_results": len(ids)})
+    return arxiv_get(f"{API}?{params}", attempts=4)
+
+
+ENRICH_BATCH = 50
+
+
+def enrich(papers: list[dict]) -> int:
+    """Add arXiv comments (venue, page count) and code/project links found in them.
+
+    RSS items carry no comments, and authors usually put project pages there, so one
+    id_list API request per 50 papers fills that in. Best-effort: failures leave records as they were.
+    Records get `enriched: true` so they are not re-queried.
+    """
+    todo = [p for p in papers if not p.get("enriched")]
+    done = 0
+    for i in range(0, len(todo), ENRICH_BATCH):
+        chunk = todo[i:i + ENRICH_BATCH]
+        try:
+            got = {r["id"]: r for r in parse(fetch_ids([p["id"] for p in chunk]))}
+        except Exception as ex:
+            print(f"warning: enrichment stopped: {ex}")
+            break
+        for p in chunk:
+            r = got.get(p["id"])
+            if not r:
+                continue
+            if r.get("comment"):
+                p["comment"] = r["comment"]
+            for k in ("code", "project"):
+                merged = sorted(set(p.get(k, [])) | set(r.get(k, [])))
+                if merged:
+                    p[k] = merged[:3]
+            p["enriched"] = True
+            done += 1
+        time.sleep(4)
+    return done
 
 
 def fetch(query: str, start: int) -> bytes:
@@ -64,7 +106,8 @@ def parse(xml: bytes) -> list[dict]:
         text_links = abstract + " " + comment
         code = sorted({u.rstrip(".") for u in GITHUB_RE.findall(text_links)})
         project = sorted({u.rstrip(".") for u in URL_RE.findall(text_links)
-                          if "github.io" in u or "sites.google.com" in u})
+                          if "github.io" in u or "sites.google.com" in u}
+                         | {u.rstrip(".") for u in URL_RE.findall(comment) if not NOT_PROJECT.search(u)})
         rec = {
             "id": aid,
             "title": clean(e.findtext("a:title", default="", namespaces=NS)),
@@ -162,6 +205,8 @@ def main() -> int:
     ap.add_argument("--days", type=int, default=3, help="API look-back window in days")
     ap.add_argument("--no-api", action="store_true", help="only use the RSS feed")
     ap.add_argument("--retag", action="store_true", help="re-run topic tagging on all stored papers and exit")
+    ap.add_argument("--enrich-days", type=int, default=7,
+                    help="also add arXiv comments/links to stored papers from the last N days that lack them")
     args = ap.parse_args()
     if args.retag:
         return retag()
@@ -206,6 +251,21 @@ def main() -> int:
     if ok_sources == 0:
         print("error: no arXiv source reachable")
         return 1
+    # 3) Enrichment: comments + project/code links for new papers and recent stored ones.
+    enrich_cut = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=args.enrich_days)).strftime("%Y-%m-%d")
+    stored = {}
+    if not args.no_api:
+        for path in sorted(ARXIV_DIR.glob("*/*.json")):
+            if f"{path.parent.name}-{path.stem}" < enrich_cut:
+                continue
+            try:
+                stored[path] = json.loads(path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                continue
+        targets = list(new.values()) + [p for d in stored.values() for p in d.get("papers", [])]
+        print(f"enriched {enrich(targets)} of {len(targets)} papers with arXiv comments/links")
+        for path, data in stored.items():
+            path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     by_date: dict[str, list[dict]] = {}
     for r in new.values():
         by_date.setdefault(r["published"], []).append(r)

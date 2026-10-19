@@ -14,7 +14,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from radar import ROOT, classify, load_arxiv_feed, load_curated, load_embodiments, load_topics
+from radar import ROOT, classify, venue_of, load_arxiv_feed, load_curated, load_embodiments, load_topics
 
 OUT = ROOT / "_site"
 SRC = ROOT / "site_src"
@@ -96,6 +96,9 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
     code = "".join(f' · <a href="{esc(u)}" rel="noopener">{bi("Code", "代码")}</a>' for u in p.get("code", [])[:1])
     proj = "".join(f' · <a href="{esc(u)}" rel="noopener">{bi("Project", "项目页")}</a>' for u in p.get("project", [])[:1])
     has_code = '<span class="badge code">code</span>' if p.get("code") else ""
+    v = venue_of(p.get("comment"))
+    if v:
+        has_code += f' <span class="badge venue">{esc(v)}</span>'
     return f"""<article class="card feed" id="arxiv-{esc(p['id'])}">
 <div class="meta"><span class="badge">arXiv {esc(p.get('primary', ''))}</span> {esc(p.get('published', ''))} {has_code}</div>
 <h3><a href="https://arxiv.org/abs/{esc(p['id'])}" rel="noopener">{esc(p['title'])}</a></h3>
@@ -244,7 +247,7 @@ def build() -> int:
             break
         it = {"k": "f", "id": p["id"], "t": p["title"], "d": p.get("published", ""),
               "au": ", ".join(p.get("authors", [])[:4]), "tp": p.get("topics", []), "em": p["emb"],
-              "c": (p.get("code") or [None])[0], "pc": p.get("primary", "")}
+              "c": (p.get("code") or [None])[0], "pc": p.get("primary", ""), "v": venue_of(p.get("comment"))}
         if it["d"] >= ab_cut:  # keep the index small: older papers are searchable by title/authors only
             it["ab"] = p.get("abstract", "")[:300]
         idx.append({k: v for k, v in it.items() if v not in (None, [], "")} | {"k": "f", "id": p["id"], "t": p["title"]})
