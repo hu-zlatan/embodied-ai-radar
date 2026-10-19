@@ -9,3 +9,9 @@ Why the project is the way it is. Newest at the bottom. Format: date — decisio
 2026-10-19 — **Verification lives in CI.** — The agent's shell cannot reach arXiv or GitHub web pages, so a `verify` workflow checks every curated arXiv ID against the arXiv API (title must match) and every URL for a non-error status. Entries that fail are fixed or removed, never guessed.
 
 2026-10-19 — **arXiv metadata is stored (CC0), abstracts trimmed.** — arXiv metadata, including abstracts, is released under CC0; we keep a trimmed abstract for search and always link the source. Daily files live in `data/arxiv/YYYY/MM-DD.json`.
+
+2026-10-19 — **Daily intake reads arXiv RSS first; the export API is only a best-effort backfill.** — The API rate-limits GitHub's shared runner IPs (HTTP 429 on the first two runs); rss.arxiv.org gives the day's new + cross-listed papers with abstracts in one request. — Alternatives: OAI-PMH (same host as the API), third-party mirrors (licensing/trust unclear).
+
+2026-10-19 — **Topic tagging = scored keyword rules, not an ML model.** — Transparent, editable in `topics.yaml`, zero cost, reproducible in CI. Title hit 3, abstract occurrence 1, threshold 2. Cross-listed (non-cs.RO) papers must have a robotics title keyword plus robot context. Curated entries remain the trusted layer.
+
+2026-10-19 — **Agent picks are added to curated YAML with an `added:` date** — makes "what's new" and weekly digest picks automatic; results from new papers are phrased as "reports …" since they are unreviewed claims.
