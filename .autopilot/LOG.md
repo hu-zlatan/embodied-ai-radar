@@ -30,3 +30,12 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Verified the new UI headless (filters, language toggle, mobile layout; no JS errors).
 - Later in run 2: new topic **Planning, Control & Safety** (cuRobo, MPiNets, Diffuser, CBF tutorial, safe-learning survey, safe-control-gym; verify passed) → untagged 162/451. Shareable search URLs. Intake enrichment with arXiv comments → project links + conservative venue badges; dispatched intake (days=1) to test it.
 - End of run 2: enrichment run succeeded (all 451 papers; 105 with project pages, 29 with code, 36 accepted-venue badges, mostly CoRL 2026); fixed venue edge cases ('Submiited', '(CoRL) 2026'). Venue search ('corl 2026'), project links in search results, curated venue badges, topic-page robot quick links. First digest 2026-W42 (with 'Accepted at venues'). Picks: WACL, HiRe-MoMa, MetaGenSim (CoRL 2026). Launch kit updated. Repo still 0 stars / 0 forks.
+
+## 2026-10-19 — run 3 (~16:50–17:15 UTC)
+
+- Start: all workflows green, no issues/PRs, 0 stars / 0 forks. Owner has set the repo description, website and topics (thanks!) — one topic is misspelled (`robot-learnin`), noted in OWNER_TODO.
+- Thin-topic anchors (verify passed): ToddlerBot, BEHAVIOR Robot Suite (hardware); ReSkin, Touch and Go (tactile); Dreamer, TD-MPC2, DINO-WM (world models); Crocoddyl, acados (control).
+- **Related lists & learning resources** (`data/resources.yaml`): 4 lists (incl. 中文 Embodied-AI-Guide), 3 courses, 3 tool docs, 古月居 — in both READMEs and a new site page `resources.html` (nav: Learn / 资源). verify.yml now checks these links too (passed).
+- Agent picks: NestedVLA (NeurIPS 2026), HexaShell (VLM coding agent driving a bimanual robot), sub-millisecond ROS 2 reflex engine (pHRI).
+- Weekly digest gains a **By robot type** section (starts with W43; W42 left as hand-edited).
+- New topic **Robot Learning: RL & Imitation** (`learning`) with PPO, SAC, DAgger, RLPD, SERL, HIL-SERL; retagged feed: untagged 162 → 142, 66 papers tagged `learning`.

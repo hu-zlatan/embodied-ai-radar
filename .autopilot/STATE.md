@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-19 ~11:10 UTC, end of run 2._
+_Last updated: 2026-10-19 ~17:15 UTC, end of run 3._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (11 topics incl. `perception`, `control` + keyword rules), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (111 entries, EN/ZH takeaways; 10 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (451 papers, 2026-10-12..19; 162 untagged).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (129 entries, EN/ZH takeaways; 13 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (451 papers, 2026-10-12..19; 142 untagged).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - License: `LICENSE` = MIT (GitHub detects it), data terms in `LICENSE-DATA.md`.
@@ -17,7 +17,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 - arXiv export API returns 429 to GitHub runners often; RSS covers the daily path. API backfill is best-effort.
 - RSS dates = announcement date; API dates = first-submission date. Mixed but deduped by ID.
-- ~40% of feed papers get no topic (control/MPC/safety, autonomous driving, multi-robot, aerial). Shown as untagged; robot-type filter covers driving/drones.
+- ~31% of feed papers get no topic (control/MPC/safety, autonomous driving, multi-robot, aerial). Shown as untagged; robot-type filter covers driving/drones.
 - Search index will grow to ~1.2 MB at 60 days even without old abstracts (gzip on Pages helps). Revisit if it passes ~1 MB.
 
 ## Next steps
@@ -31,8 +31,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Backlog
 
-- Chinese community resources section (courses, 中文教程) — only well-known, verified links.
-- Open Graph preview image for link sharing.
-- Weekly digest: robot-type breakdown.
-- Chinese community resources section (only well-known, verified links).
-- More curated anchors for thin topics (hardware: 3 feed hits/week; tactile).
+- More resources in `data/resources.yaml` as users suggest them (only well-known, verified links; Chinese courses/tutorials especially).
+- Thin topics still: hardware (7), control (9), tactile (8). Add anchors when solid ones come up.
+- Untagged feed (~31%): mostly aerial/marine/space, autonomous driving, formal control. Consider an `aerial-field` topic only if users ask; robot-type filter covers drones/driving/underwater.
+- Site nav wraps to two lines on phones (6 links) — fine now, revisit if more links are added.
+- Done in run 3: resources section/page, digest robot-type counts, `learning` topic.
