@@ -67,6 +67,8 @@ def curated_card(e: dict, topics_by_id: dict, root: str) -> str:
         for t in e["topics"])
     tags = "".join(f'<span class="chip">{esc(t)}</span>' for t in (e.get("tags") or []))
     star = '<span class="star" title="Highlight">★</span>' if e.get("highlight") else ""
+    if e.get("added"):
+        star += f' <span class="badge new">{bi("new", "新")} {esc(str(e["added"]))}</span>'
     linkrow = " · ".join(f'<a href="{esc(u)}" rel="noopener">{bi(a, b)}</a>' for a, b, u in links)
     meta = " · ".join(x for x in [esc(str(e["year"])), esc(e.get("org", ""))] if x)
     return f"""<article class="card" id="{esc(e['id'])}">
@@ -233,6 +235,12 @@ def build() -> int:
 <div id="results"></div>
 </section>"""
     hi = [e for e in entries if e.get("highlight")]
+    recent_picks = sorted((e for e in entries if e.get("added")), key=lambda e: str(e["added"]), reverse=True)[:6]
+    picks_html = ""
+    if recent_picks:
+        picks_html = (f'<h2>{bi("Newly added picks", "最新精选")}</h2>'
+                      f'<p class="muted">{bi("Notable new papers reviewed from the daily feed.", "从每日论文中审阅挑选的值得关注的新工作。")}</p>'
+                      f'<div class="cards">{"".join(curated_card(e, tby, "") for e in recent_picks)}</div>')
     topic_grid = "".join(
         f'<a class="tile" href="topics/{t["id"]}.html"><h3>{bi(t["en"], t["zh"])}</h3>'
         f'<p>{bi(t["desc_en"], t["desc_zh"])}</p><span class="muted">{len(by_topic[t["id"]])} {bi("curated", "精选")} · '
@@ -248,6 +256,7 @@ def build() -> int:
 <div id="home-static">
 <h2>{bi("Topics", "主题")}</h2>
 <div class="grid">{topic_grid}</div>
+{picks_html}
 <h2>{bi("Highlights", "重点推荐")}</h2>
 <div class="cards">{''.join(curated_card(e, tby, '') for e in hi)}</div>
 <h2>{bi("Fresh from arXiv", "arXiv 最新")}</h2>
