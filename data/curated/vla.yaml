@@ -152,3 +152,13 @@
   tags: [efficiency, token-compression, inference]
   takeaway_en: Speeds up VLA inference by keeping only the visual tokens the current task needs, with a token budget that changes from step to step.
   takeaway_zh: 只保留当前任务所需的视觉 token、并让 token 预算随时间步变化，以加快 VLA 推理。
+- title: "NestedVLA: Learning to Consolidate and Generate Skills for Vision-Language-Action Models"
+  type: paper
+  arxiv: "2610.23271"
+  year: 2026
+  venue: NeurIPS 2026
+  code: https://github.com/WanyuGroup/NeurIPS2026-NestedVLA
+  added: 2026-10-19
+  tags: [multitask, skill-consolidation, hypernetwork]
+  takeaway_en: Learns skills separately, then consolidates them after the fact with a nested hypernetwork that generates VLA parameters instead of merging weights.
+  takeaway_zh: 先独立学习各项技能，再用嵌套超网络“生成”VLA 参数来事后整合技能，而不是直接合并权重。
