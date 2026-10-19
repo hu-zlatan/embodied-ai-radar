@@ -35,7 +35,7 @@ VLA & robot foundation models · manipulation & dexterous hands · tactile sensi
 
 <!-- radar:start -->
 
-[VLA & Robot Foundation Models](#vla) · [Manipulation & Dexterous Hands](#manipulation) · [Tactile & Visuotactile Sensing](#tactile) · [Locomotion & Humanoids](#locomotion) · [World Models](#world-models) · [Navigation & Embodied Agents](#navigation) · [Sim-to-Real & Simulators](#sim) · [Datasets & Benchmarks](#datasets) · [Hardware & Open-Source Robots](#hardware)
+[VLA & Robot Foundation Models](#vla) · [Manipulation & Dexterous Hands](#manipulation) · [Tactile & Visuotactile Sensing](#tactile) · [Locomotion & Humanoids](#locomotion) · [World Models](#world-models) · [Navigation & Embodied Agents](#navigation) · [Perception, SLAM & 3D Mapping](#perception) · [Sim-to-Real & Simulators](#sim) · [Datasets & Benchmarks](#datasets) · [Hardware & Open-Source Robots](#hardware)
 
 <a id="vla"></a>
 ### VLA & Robot Foundation Models
@@ -77,7 +77,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - **[Visual Dexterity: In-Hand Reorientation of Novel and Complex Object Shapes](https://arxiv.org/abs/2211.11744)** (2022) — Reorients unseen objects in-hand using only a depth camera, with a policy trained in simulation.
 - **[Solving Rubik's Cube with a Robot Hand](https://arxiv.org/abs/1910.07113)** (2019) — Automatic domain randomization lets a sim-trained hand policy manipulate a Rubik's cube on real hardware.
 - **[Learning Dexterous In-Hand Manipulation](https://arxiv.org/abs/1808.00177)** (2018) — A Shadow Hand reorients a cube using RL trained purely in randomized simulation — a sim-to-real milestone.
-- _See also:_ [3D-ViTac](#tactile), [Code as Policies](#navigation), [OK-Robot](#navigation), [Cracking Mobile Manipulation](#navigation), [LeRobot](#datasets), [LEAP Hand](#hardware)
+- _See also:_ [3D-ViTac](#tactile), [Code as Policies](#navigation), [OK-Robot](#navigation), [Cracking Mobile Manipulation](#navigation), [FoundationPose](#perception), [LeRobot](#datasets), [LEAP Hand](#hardware)
 
 <a id="tactile"></a>
 ### Tactile & Visuotactile Sensing
@@ -135,7 +135,23 @@ _Vision-language navigation, embodied question answering, mobile manipulation an
 - **[Inner Monologue: Embodied Reasoning through Planning with Language Models](https://arxiv.org/abs/2207.05608)** (2022) — Feeding success detection and scene descriptions back to the LLM planner lets it replan after failures.
 - **[Visual Language Maps for Robot Navigation](https://arxiv.org/abs/2210.05714)** (2022) — VLMaps fuses visual-language features into a 3D map so robots can navigate to open-vocabulary spatial goals.
 - **[Vision-and-Language Navigation: Interpreting visually-grounded navigation instructions in real environments](https://arxiv.org/abs/1711.07280)** (2017) — Introduced the VLN task and the Room-to-Room (R2R) benchmark in Matterport3D homes.
-- _See also:_ [Habitat](#datasets)
+- _See also:_ [ConceptGraphs](#perception), [Habitat](#datasets)
+
+<a id="perception"></a>
+### Perception, SLAM & 3D Mapping
+
+_Visual / LiDAR SLAM and odometry, 3D reconstruction, object pose, depth and open-vocabulary scene maps for robots._ [Browse with the latest papers →](https://hu-zlatan.github.io/embodied-ai-radar/topics/perception.html)
+
+- ⭐ **[ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM](https://arxiv.org/abs/2007.11898)** (2020) — The go-to feature-based SLAM library — monocular, stereo and RGB-D, with IMU fusion and multi-map relocalization. · [code](https://github.com/UZ-SLAMLab/ORB_SLAM3)
+- **[VGGT: Visual Geometry Grounded Transformer](https://arxiv.org/abs/2503.11651)** (2025) — One feed-forward transformer predicts cameras, depth, point maps and tracks for many views at once, in about a second. · [code](https://github.com/facebookresearch/vggt)
+- **[Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data](https://arxiv.org/abs/2401.10891)** (2024) — Monocular depth model trained on tens of millions of pseudo-labelled images; a common off-the-shelf depth prior for robots. · [code](https://github.com/LiheYoung/Depth-Anything)
+- **[ConceptGraphs: Open-Vocabulary 3D Scene Graphs for Perception and Planning](https://arxiv.org/abs/2309.16650)** (2023) — Builds an object-level 3D scene graph labelled by vision-language models, which an LLM planner can query in natural language. · [project](https://concept-graphs.github.io/)
+- **[DUSt3R: Geometric 3D Vision Made Easy](https://arxiv.org/abs/2312.14132)** (2023) — Regresses 3D point maps straight from image pairs without known camera intrinsics or poses; started the "3D foundation model" wave. · [code](https://github.com/naver/dust3r)
+- **[FoundationPose: Unified 6D Pose Estimation and Tracking of Novel Objects](https://arxiv.org/abs/2312.08344)** (2023) — 6D pose estimation and tracking of unseen objects from a CAD model or a few reference images, with no per-object training. · [code](https://github.com/NVlabs/FoundationPose)
+- **[Gaussian Splatting SLAM](https://arxiv.org/abs/2312.06741)** (2023) — MonoGS — runs SLAM directly on a 3D Gaussian map, giving camera tracking and a photorealistic dense map from one camera. · [code](https://github.com/muskie82/MonoGS)
+- **[DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras](https://arxiv.org/abs/2108.10869)** (2021) — End-to-end learned visual SLAM — recurrent optical-flow updates plus a differentiable bundle-adjustment layer. · [code](https://github.com/princeton-vl/DROID-SLAM)
+- **[FAST-LIO2: Fast Direct LiDAR-inertial Odometry](https://arxiv.org/abs/2107.06829)** (2021) — Registers raw LiDAR points directly to the map with an incremental k-d tree; fast enough for onboard drone and robot computers. · [code](https://github.com/hku-mars/FAST_LIO)
+- **[LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping](https://arxiv.org/abs/2007.00258)** (2020) — LiDAR-inertial odometry built on a factor graph, so GPS and loop closures slot in as extra factors. · [code](https://github.com/TixiaoShan/LIO-SAM)
 
 <a id="sim"></a>
 ### Sim-to-Real & Simulators

@@ -1,0 +1,93 @@
+- title: "ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM"
+  type: paper
+  arxiv: "2007.11898"
+  year: 2020
+  org: Universidad de Zaragoza
+  highlight: true
+  code: https://github.com/UZ-SLAMLab/ORB_SLAM3
+  tags: [slam, visual-inertial, open-source]
+  takeaway_en: The go-to feature-based SLAM library — monocular, stereo and RGB-D, with IMU fusion and multi-map relocalization.
+  takeaway_zh: 最常用的特征点 SLAM 库：支持单目、双目与 RGB-D，可融合 IMU，并支持多地图重定位。
+- title: "LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping"
+  type: paper
+  arxiv: "2007.00258"
+  year: 2020
+  org: MIT
+  code: https://github.com/TixiaoShan/LIO-SAM
+  tags: [lidar, odometry, factor-graph]
+  takeaway_en: LiDAR-inertial odometry built on a factor graph, so GPS and loop closures slot in as extra factors.
+  takeaway_zh: 基于因子图的激光-惯性里程计，GPS 与回环可以作为额外因子直接加入。
+- title: "FAST-LIO2: Fast Direct LiDAR-inertial Odometry"
+  type: paper
+  arxiv: "2107.06829"
+  year: 2021
+  org: HKU MaRS Lab
+  code: https://github.com/hku-mars/FAST_LIO
+  tags: [lidar, odometry, real-time]
+  takeaway_en: Registers raw LiDAR points directly to the map with an incremental k-d tree; fast enough for onboard drone and robot computers.
+  takeaway_zh: 用增量 k-d 树把原始激光点直接配准到地图，速度足以在无人机和机器人机载计算机上运行。
+- title: "DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras"
+  type: paper
+  arxiv: "2108.10869"
+  year: 2021
+  org: Princeton
+  code: https://github.com/princeton-vl/DROID-SLAM
+  tags: [slam, learned, visual]
+  takeaway_en: End-to-end learned visual SLAM — recurrent optical-flow updates plus a differentiable bundle-adjustment layer.
+  takeaway_zh: 端到端学习的视觉 SLAM：循环光流更新加上可微分的光束法平差层。
+- title: "Gaussian Splatting SLAM"
+  type: paper
+  arxiv: "2312.06741"
+  year: 2023
+  org: Imperial College London
+  code: https://github.com/muskie82/MonoGS
+  tags: [slam, gaussian-splatting, dense]
+  takeaway_en: MonoGS — runs SLAM directly on a 3D Gaussian map, giving camera tracking and a photorealistic dense map from one camera.
+  takeaway_zh: MonoGS：直接在三维高斯地图上做 SLAM，仅用单个相机即可同时完成相机跟踪与照片级稠密建图。
+- title: "DUSt3R: Geometric 3D Vision Made Easy"
+  type: paper
+  arxiv: "2312.14132"
+  year: 2023
+  org: NAVER LABS Europe
+  code: https://github.com/naver/dust3r
+  tags: [3d-reconstruction, foundation-model]
+  takeaway_en: Regresses 3D point maps straight from image pairs without known camera intrinsics or poses; started the "3D foundation model" wave.
+  takeaway_zh: 不需要已知相机内参或位姿，直接从图像对回归三维点图，开启了“三维基础模型”这一方向。
+- title: "VGGT: Visual Geometry Grounded Transformer"
+  type: paper
+  arxiv: "2503.11651"
+  year: 2025
+  org: Oxford VGG · Meta AI
+  code: https://github.com/facebookresearch/vggt
+  tags: [3d-reconstruction, foundation-model, feed-forward]
+  takeaway_en: One feed-forward transformer predicts cameras, depth, point maps and tracks for many views at once, in about a second.
+  takeaway_zh: 单个前馈 Transformer 一次性为多视角图像预测相机参数、深度、点图与跟踪，约一秒完成。
+- title: "FoundationPose: Unified 6D Pose Estimation and Tracking of Novel Objects"
+  type: paper
+  arxiv: "2312.08344"
+  year: 2023
+  org: NVIDIA
+  code: https://github.com/NVlabs/FoundationPose
+  topics: [manipulation]
+  tags: [6d-pose, tracking, zero-shot]
+  takeaway_en: 6D pose estimation and tracking of unseen objects from a CAD model or a few reference images, with no per-object training.
+  takeaway_zh: 只需 CAD 模型或少量参考图像即可对未见过的物体做 6D 位姿估计与跟踪，无需逐物体训练。
+- title: "Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data"
+  type: paper
+  arxiv: "2401.10891"
+  year: 2024
+  org: HKU · TikTok
+  code: https://github.com/LiheYoung/Depth-Anything
+  tags: [depth, monocular, foundation-model]
+  takeaway_en: Monocular depth model trained on tens of millions of pseudo-labelled images; a common off-the-shelf depth prior for robots.
+  takeaway_zh: 在数千万张伪标注图像上训练的单目深度模型，常被机器人系统直接拿来作为深度先验。
+- title: "ConceptGraphs: Open-Vocabulary 3D Scene Graphs for Perception and Planning"
+  type: paper
+  arxiv: "2309.16650"
+  year: 2023
+  org: University of Toronto · MIT · Mila
+  project: https://concept-graphs.github.io/
+  topics: [navigation]
+  tags: [scene-graph, open-vocabulary, llm]
+  takeaway_en: Builds an object-level 3D scene graph labelled by vision-language models, which an LLM planner can query in natural language.
+  takeaway_zh: 用视觉语言模型构建带语义标注的物体级三维场景图，大模型规划器可以用自然语言查询。
