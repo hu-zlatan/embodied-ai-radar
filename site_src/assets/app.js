@@ -54,7 +54,18 @@
       '</div><div class="chips">' + topicChips(it.tp) + embChips(it.em) + '</div></article>';
   }
   function active() { return q.value.trim() || fTopic.value || (fEmb && fEmb.value) || fKind.value || fCode.checked; }
+  function syncUrl() {
+    // Keep the address bar shareable: ?q=…&topic=…&robot=…&src=…&code=1 (lang is kept if present).
+    try {
+      var u = new URLSearchParams(location.search), set = function (k, v) { if (v) u.set(k, v); else u.delete(k); };
+      set('q', q.value.trim()); set('topic', fTopic.value); set('robot', fEmb ? fEmb.value : '');
+      set('src', fKind.value); set('code', fCode.checked ? '1' : '');
+      var s = u.toString();
+      history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash);
+    } catch (e) {}
+  }
   function render() {
+    syncUrl();
     if (!active()) { out.innerHTML = ''; count.textContent = ''; if (home) home.hidden = false; return; }
     load(function () {
       var terms = q.value.toLowerCase().split(/\s+/).filter(Boolean);
@@ -85,4 +96,6 @@
   if (params.get('q')) { q.value = params.get('q'); render(); }
   if (params.get('topic')) { fTopic.value = params.get('topic'); render(); }
   if (params.get('robot') && fEmb) { fEmb.value = params.get('robot'); render(); }
+  if (params.get('src')) { fKind.value = params.get('src'); render(); }
+  if (params.get('code') === '1') { fCode.checked = true; render(); }
 })();
