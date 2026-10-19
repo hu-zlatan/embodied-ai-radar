@@ -180,3 +180,21 @@
   tags: [vlm, planning, spatial-reasoning, open-weights]
   takeaway_en: Open embodied VLMs (7B and 32B) trained for spatial grounding, affordances, trajectories and multi-step task planning — a "brain" that sits above low-level policies.
   takeaway_zh: 开源具身视觉语言模型（7B 与 32B），面向空间定位、可供性、轨迹预测与多步任务规划，作为底层策略之上的“大脑”。
+- title: "VLA-$Δ$: Learning Physical State Transition for Vision-Language-Action Models"
+  type: paper
+  arxiv: "2610.21306"
+  year: 2026
+  code: https://github.com/ZJU-OmniAI/VLA-Delta
+  added: 2026-10-19
+  tags: [state-transition, auxiliary-supervision]
+  takeaway_en: Argues VLAs overfit observation→action pairs and adds explicit supervision of the physical state change an action should cause, rather than predicting future states in language or pixels.
+  takeaway_zh: 认为 VLA 容易过拟合“观测→动作”的对应关系，因此显式监督动作应引起的物理状态变化，而不是在语言或像素空间里预测未来状态。
+- title: "MambaAct: Efficient Mamba Action Experts for Flow-Matching Vision-Language-Action Models"
+  type: paper
+  arxiv: "2610.22951"
+  year: 2026
+  code: https://github.com/giakhuyendihoc/MambaAct
+  added: 2026-10-19
+  tags: [efficiency, mamba, flow-matching, pi0.5]
+  takeaway_en: Keeps π0.5's pretrained vision-language encoder but swaps its Transformer action expert — run many times per denoising loop — for a compact Mamba expert to cut inference cost.
+  takeaway_zh: 保留 π0.5 预训练的视觉语言编码器，把在去噪循环中被反复调用的 Transformer 动作专家换成紧凑的 Mamba 专家，以降低推理开销。
