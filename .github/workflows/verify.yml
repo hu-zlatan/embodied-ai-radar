@@ -2,7 +2,7 @@ name: Verify curated data
 on:
   push:
     branches: [main]
-    paths: ["data/curated/**", "scripts/verify_curated.py", "scripts/radar.py"]
+    paths: ["data/curated/**", "data/resources.yaml", "scripts/verify_curated.py", "scripts/radar.py"]
   pull_request:
     paths: ["data/curated/**"]
   schedule:

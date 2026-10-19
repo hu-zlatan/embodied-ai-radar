@@ -114,6 +114,38 @@ def load_curated(strict: bool = True) -> tuple[list[dict], list[str]]:
     return entries, errs
 
 
+RESOURCE_KINDS = ("list", "course", "docs", "community")
+
+
+def load_resources() -> tuple[list[dict], list[str]]:
+    """Related lists / courses / docs / communities from data/resources.yaml."""
+    path = DATA / "resources.yaml"
+    if not path.exists():
+        return [], []
+    try:
+        items = yaml.safe_load(path.read_text(encoding="utf-8")) or []
+    except yaml.YAMLError as ex:
+        return [], [f"resources.yaml: YAML error: {ex}"]
+    out, errs = [], []
+    for i, r in enumerate(items):
+        where = f"resources.yaml#{i + 1}"
+        if not isinstance(r, dict):
+            errs.append(f"{where}: not a mapping")
+            continue
+        miss = [k for k in ("name", "url", "kind", "lang", "note_en", "note_zh") if not r.get(k)]
+        if miss:
+            errs.append(f"{where}: missing {', '.join(miss)}")
+            continue
+        if r["kind"] not in RESOURCE_KINDS:
+            errs.append(f"{where}: kind must be one of {RESOURCE_KINDS}")
+            continue
+        if not str(r["url"]).startswith("https://"):
+            errs.append(f"{where}: url must be https")
+            continue
+        out.append(r)
+    return out, errs
+
+
 def load_arxiv_feed() -> list[dict]:
     """All daily intake records, newest first. Malformed files are skipped, never fatal."""
     out = []

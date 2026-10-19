@@ -17,7 +17,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 
-from radar import arxiv_get, load_curated, norm_title
+from radar import arxiv_get, load_curated, load_resources, norm_title
 
 NS = {"a": "http://www.w3.org/2005/Atom"}
 UA = {"User-Agent": "embodied-ai-radar-verify/1.0 (+https://github.com/hu-zlatan/embodied-ai-radar)"}
@@ -99,7 +99,8 @@ def main() -> int:
         elif norm_title(got) != norm_title(e["title"]):
             failures.append(f"arXiv {a} title mismatch: curated {e['title']!r} vs arXiv {got!r}")
     if not args.no_links:
-        urls = sorted({e[k] for e in entries for k in ("url", "code", "project") if e.get(k)})
+        urls = sorted({e[k] for e in entries for k in ("url", "code", "project") if e.get(k)}
+                      | {r["url"] for r in load_resources()[0]})
         for u in urls:
             problem = check_url(u)
             if problem:

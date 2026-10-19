@@ -1,7 +1,7 @@
 """Offline data checks. Exit 1 on any curated-data error. Usage: python scripts/validate.py"""
 import sys
 
-from radar import load_arxiv_feed, load_curated, load_embodiments, load_topics
+from radar import load_arxiv_feed, load_curated, load_embodiments, load_resources, load_topics
 
 
 def main() -> int:
@@ -23,6 +23,8 @@ def main() -> int:
                 errs.append(f"embodiments.yaml: {em.get('id')} missing {k}")
     entries, cerrs = load_curated()
     errs += cerrs
+    resources, rerrs = load_resources()
+    errs += rerrs
     feed = load_arxiv_feed()
     for e in errs:
         print("ERROR:", e)

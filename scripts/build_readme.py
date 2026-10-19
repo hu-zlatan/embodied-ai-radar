@@ -9,9 +9,12 @@ from __future__ import annotations
 import re
 import sys
 
-from radar import ROOT, load_curated, load_topics
+from radar import ROOT, load_curated, load_resources, load_topics
 
 START, END = "<!-- radar:start -->", "<!-- radar:end -->"
+RSTART, REND = "<!-- resources:start -->", "<!-- resources:end -->"
+KIND_LABEL = {"list": ("Related lists", "相关列表"), "course": ("Courses & textbooks", "课程与教材"),
+              "docs": ("Tool docs", "工具文档"), "community": ("Communities", "社区")}
 SITE = "https://hu-zlatan.github.io/embodied-ai-radar/"
 
 
@@ -57,16 +60,40 @@ def render(lang: str) -> str:
     return "\n".join(lines)
 
 
+def render_resources(lang: str) -> str:
+    res, _ = load_resources()
+    zh = lang == "zh"
+    lines = [RSTART, ""]
+    for kind, (en_label, zh_label) in KIND_LABEL.items():
+        items = [r for r in res if r["kind"] == kind]
+        if not items:
+            continue
+        lines += [f"**{zh_label if zh else en_label}**", ""]
+        for r in items:
+            tag = " `中文`" if r["lang"] == "zh" else ""
+            lines.append(f"- [{md_title(r['name'])}]({r['url']}){tag} — {r['note_zh'] if zh else r['note_en']}")
+        lines.append("")
+    lines.append(REND)
+    return "\n".join(lines)
+
+
+def splice(text: str, start: str, end: str, body: str) -> str | None:
+    if start not in text or end not in text:
+        return None
+    return text.split(start)[0] + body + text.split(end, 1)[1]
+
+
 def main() -> int:
     check = "--check" in sys.argv
     stale = []
     for fname, lang in (("README.md", "en"), ("README.zh-CN.md", "zh")):
         path = ROOT / fname
         text = path.read_text(encoding="utf-8")
-        if START not in text or END not in text:
+        new = splice(text, START, END, render(lang))
+        new = new and splice(new, RSTART, REND, render_resources(lang))
+        if new is None:
             print(f"{fname}: markers missing")
             return 1
-        new = text.split(START)[0] + render(lang) + text.split(END, 1)[1]
         if new != text:
             stale.append(fname)
             if not check:
