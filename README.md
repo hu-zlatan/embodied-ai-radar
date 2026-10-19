@@ -45,6 +45,7 @@ _Vision-language-action models and generalist robot policies._ [Browse with the 
 - ⭐ **[π0: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/abs/2410.24164)** (2024) — A VLM backbone with a flow-matching action expert, trained across many robots, doing long dexterous tasks like laundry folding. · [code](https://github.com/Physical-Intelligence/openpi)
 - ⭐ **[OpenVLA: An Open-Source Vision-Language-Action Model](https://arxiv.org/abs/2406.09246)** (2024) — A 7B open VLA built on Llama 2 + DINOv2/SigLIP; the de-facto open baseline for VLA research and LoRA fine-tuning. · [code](https://github.com/openvla/openvla)
 - ⭐ **[RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control](https://arxiv.org/abs/2307.15818)** (2023) — Coined "VLA" — co-fine-tuning a web-scale VLM to output action tokens transfers semantic knowledge to robot control. · [project](https://robotics-transformer2.github.io/)
+- **[FastVLA: Task-Conditioned and Temporally Adaptive Visual Token Compression for Efficient Vision-Language-Action Models](https://arxiv.org/abs/2610.22146)** (2026) — Speeds up VLA inference by keeping only the visual tokens the current task needs, with a token budget that changes from step to step. · [code](https://github.com/jiuyixu25/FastVLA)
 - **[LTM: Latent Transition Based In-Context Memory for Vision-Language-Action Models](https://arxiv.org/abs/2610.21362)** (2026) — Gives π0.5 memory by caching compact latent transitions between observations, aimed at tasks where key objects go out of view. · [code](https://github.com/buaa-colalab/LTM-pi)
 - **[REKI: Registering Knowledge in VLAs](https://arxiv.org/abs/2610.22178)** (2026) — A 2.4B VLM + flow-matching VLA pretrained only on public data; reports beating all but ~2× larger models, plus cheap register-token memory. · [code](https://github.com/kyutai-labs/reki)
 - **[π0.5: a Vision-Language-Action Model with Open-World Generalization](https://arxiv.org/abs/2504.16054)** (2025) — Co-training on heterogeneous data lets a mobile manipulator clean kitchens and bedrooms in homes it has never seen. · [code](https://github.com/Physical-Intelligence/openpi)
@@ -58,7 +59,7 @@ _Vision-language-action models and generalist robot policies._ [Browse with the 
 - **[PaLM-E: An Embodied Multimodal Language Model](https://arxiv.org/abs/2303.03378)** (2023) — Injects continuous sensor embeddings into a 562B language model for embodied reasoning and planning.
 - **[A Generalist Agent](https://arxiv.org/abs/2205.06175)** (2022) — Gato — one Transformer with one set of weights plays games, captions images and stacks blocks with a real arm.
 - **[RT-1: Robotics Transformer for Real-World Control at Scale](https://arxiv.org/abs/2212.06817)** (2022) — Tokenized actions plus a Transformer trained on 130k real demos showed that robot policies scale with data diversity. · [code](https://github.com/google-research/robotics_transformer)
-- _See also:_ [Cracking Mobile Manipulation](#navigation), [Open X-Embodiment](#datasets), [Evaluating Real-World Robot Manipulation Policies in Simulation](#datasets)
+- _See also:_ [Cracking Mobile Manipulation](#navigation), [Open X-Embodiment](#datasets), [Evaluating Real-World Robot Manipulation Policies in Simulation](#datasets), [Embodied Skill Bench](#datasets)
 
 <a id="manipulation"></a>
 ### Manipulation & Dexterous Hands
@@ -68,6 +69,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - ⭐ **[Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329)** (2024) — A handheld gripper with a GoPro collects demos anywhere; policies transfer directly to robot arms. · [code](https://github.com/real-stanford/universal_manipulation_interface)
 - ⭐ **[Diffusion Policy: Visuomotor Policy Learning via Action Diffusion](https://arxiv.org/abs/2303.04137)** (2023) — Generating action sequences by denoising handles multimodal demos far better than regression; now a standard IL baseline. · [code](https://github.com/real-stanford/diffusion_policy)
 - ⭐ **[Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](https://arxiv.org/abs/2304.13705)** (2023) — ALOHA + ACT — a ~$20k bimanual teleop rig and an action-chunking Transformer that learns precise tasks from ~50 demos. · [code](https://github.com/tonyzhaozh/act)
+- **[Blind Precise Assembly: Proprioceptive Sim-to-Real Peg-in-Hole for Diverse Parts](https://arxiv.org/abs/2610.23849)** (2026) — Asks whether joint readings alone suffice for millimetre-precise insertion — trains sim-to-real policies with no camera, force or tactile input.
 - **[Can a Frontier VLM Serve as a Robot Policy for Memory-Dependent Manipulation?](https://arxiv.org/abs/2610.17350)** (2026) — A frozen frontier VLM, prompted with the whole episode, outputs waypoints directly and reports 92.1% on RoboMME memory tasks with no task training. · [code](https://github.com/jackbjed/embodied-astra-robomme) · [project](https://embodied-astra.github.io)
 - **[3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://arxiv.org/abs/2403.03954)** (2024) — Conditions a diffusion policy on a compact point-cloud encoding; more data-efficient and robust to viewpoint than images. · [code](https://github.com/YanjieZe/3D-Diffusion-Policy)
 - **[DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation](https://arxiv.org/abs/2403.07788)** (2024) — A wearable mocap glove + camera rig records human hand motion that is retargeted to train dexterous robot hands.
@@ -135,7 +137,7 @@ _Vision-language navigation, embodied question answering, mobile manipulation an
 - **[Inner Monologue: Embodied Reasoning through Planning with Language Models](https://arxiv.org/abs/2207.05608)** (2022) — Feeding success detection and scene descriptions back to the LLM planner lets it replan after failures.
 - **[Visual Language Maps for Robot Navigation](https://arxiv.org/abs/2210.05714)** (2022) — VLMaps fuses visual-language features into a 3D map so robots can navigate to open-vocabulary spatial goals.
 - **[Vision-and-Language Navigation: Interpreting visually-grounded navigation instructions in real environments](https://arxiv.org/abs/1711.07280)** (2017) — Introduced the VLN task and the Room-to-Room (R2R) benchmark in Matterport3D homes.
-- _See also:_ [ConceptGraphs](#perception), [Habitat](#datasets)
+- _See also:_ [ConceptGraphs](#perception), [Habitat](#datasets), [Embodied Skill Bench](#datasets)
 
 <a id="perception"></a>
 ### Perception, SLAM & 3D Mapping
@@ -169,7 +171,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._ [Browse
 - **[robosuite: A Modular Simulation Framework and Benchmark for Robot Learning](https://arxiv.org/abs/2009.12293)** (2020) — Modular MuJoCo-based manipulation environments behind many imitation-learning benchmarks. · [code](https://github.com/ARISE-Initiative/robosuite)
 - **[Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World](https://arxiv.org/abs/1703.06907)** (2017) — Randomizing textures, lighting and cameras in sim makes vision models work on real images with no real data.
 - **[Sim-to-Real Transfer of Robotic Control with Dynamics Randomization](https://arxiv.org/abs/1710.06537)** (2017) — Randomizing physical parameters during training yields control policies robust enough to run on a real arm.
-- _See also:_ [TACTO](#tactile), [Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning](#locomotion), [Habitat](#datasets)
+- _See also:_ [Blind Precise Assembly](#manipulation), [TACTO](#tactile), [Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning](#locomotion), [Habitat](#datasets)
 
 <a id="datasets"></a>
 ### Datasets & Benchmarks
@@ -179,6 +181,7 @@ _Large robot datasets, egocentric data and evaluation suites._ [Browse with the 
 - ⭐ **[LeRobot](https://github.com/huggingface/lerobot)** (2024) — PyTorch library with datasets, pretrained policies (ACT, Diffusion, SmolVLA) and drivers for low-cost arms.
 - ⭐ **[LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning](https://arxiv.org/abs/2306.03310)** (2023) — 130 language-conditioned tasks in four suites; now the most common simulation benchmark for VLA papers. · [code](https://github.com/Lifelong-Robot-Learning/LIBERO)
 - ⭐ **[Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://arxiv.org/abs/2310.08864)** (2023) — 1M+ trajectories from 22 robot types pooled by 30+ labs; RT-X models trained on it beat single-robot baselines. · [code](https://github.com/google-deepmind/open_x_embodiment)
+- **[Embodied Skill Bench: Benchmarking How Well Agents with Embodied Skills Perform on Physical Tasks](https://arxiv.org/abs/2610.16238)** (2026) — Packages VLA policies, perception models and know-how as 250 reusable "embodied skills" and measures how much they help LLM agents on physical tasks. · [code](https://github.com/HanZhi306/EmbodiedSkill-Bench)
 - **[AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems](https://arxiv.org/abs/2503.06669)** (2025) — A million-scale real-robot dataset collected in purpose-built scenes, with the GO-1 generalist policy trained on it.
 - **[DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset](https://arxiv.org/abs/2403.12945)** (2024) — 76k teleoperated Franka trajectories collected in hundreds of real scenes across many institutions. · [code](https://github.com/droid-dataset/droid)
 - **[Evaluating Real-World Robot Manipulation Policies in Simulation](https://arxiv.org/abs/2405.05941)** (2024) — SimplerEnv — real-to-sim environments whose scores correlate with real-robot results for RT-1/Octo-style policies. · [code](https://github.com/simpler-env/SimplerEnv)
