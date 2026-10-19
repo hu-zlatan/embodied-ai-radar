@@ -14,7 +14,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from radar import ROOT, classify, venue_of, load_arxiv_feed, load_curated, load_embodiments, load_topics
+from radar import ROOT, classify, venue_of, load_arxiv_feed, load_curated, load_embodiments, load_resources, load_topics
 
 OUT = ROOT / "_site"
 SRC = ROOT / "site_src"
@@ -116,6 +116,7 @@ def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") 
            f'<a href="{root}feed.html">{bi("Daily arXiv", "每日 arXiv")}</a>'
            f'<a href="{root}topics/index.html">{bi("Topics", "主题")}</a>'
            f'<a href="{root}digest/index.html">{bi("Weekly", "周报")}</a>'
+           f'<a href="{root}resources.html">{bi("Learn", "资源")}</a>'
            f'<a href="{REPO_URL}" rel="noopener">GitHub</a>')
     return f"""<!doctype html>
 <html lang="en">
@@ -364,11 +365,29 @@ def build() -> int:
              f'<h1>{bi("Weekly digests", "每周精选")}</h1><ul class="tlist">{"".join(dl) or "<li class=muted>—</li>"}</ul>',
              "../", "Weekly bilingual digests of embodied AI research.", "digest/index.html"), encoding="utf-8")
 
+    # ---- related lists & learning resources
+    kinds = [("list", "Related lists", "相关列表"), ("course", "Courses & textbooks", "课程与教材"),
+             ("docs", "Tool docs", "工具文档"), ("community", "Communities", "社区")]
+    res, _ = load_resources()
+    rs = []
+    for k, en, zh in kinds:
+        items = [r for r in res if r["kind"] == k]
+        if items:
+            rs.append(f'<h2>{bi(en, zh)}</h2><ul class="tlist">' + "".join(
+                f'<li><a href="{esc(r["url"])}" rel="noopener">{esc(r["name"])}</a>'
+                + (' <span class="badge">中文</span>' if r["lang"] == "zh" else "")
+                + f' — {bi(r["note_en"], r["note_zh"])}</li>' for r in items) + "</ul>")
+    body = (f'<h1>{bi("Related lists & learning resources", "相关列表与学习资源")}</h1>'
+            f'<p class="lead">{bi("Other good maps of the field, plus courses and docs we point newcomers to. Suggest more by opening an issue.", "领域内其他优秀的资源整理，以及推荐给新手的课程和文档。欢迎提 issue 补充。")}</p>'
+            + "".join(rs))
+    (OUT / "resources.html").write_text(page("Learning resources · Embodied AI Radar", body, "",
+        "Related embodied AI lists, robotics courses, tool docs and communities (EN/中文).", "resources.html"), encoding="utf-8")
+
     # ---- 404, robots, sitemap, atom
     (OUT / "404.html").write_text(page("Not found · Embodied AI Radar", f'<h1>404</h1><p><a href="{SITE_URL}">{bi("Back to the radar", "返回首页")}</a></p>', SITE_URL, desc, "404.html"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n")
-    urls = ["", "feed.html", "topics/index.html", "digest/index.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests]
+    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests]
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"<url><loc>{SITE_URL}{u}</loc><lastmod>{today.isoformat()}</lastmod></url>\n" for u in urls)
