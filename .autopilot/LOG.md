@@ -39,3 +39,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Agent picks: NestedVLA (NeurIPS 2026), HexaShell (VLM coding agent driving a bimanual robot), sub-millisecond ROS 2 reflex engine (pHRI).
 - Weekly digest gains a **By robot type** section (starts with W43; W42 left as hand-edited).
 - New topic **Robot Learning: RL & Imitation** (`learning`) with PPO, SAC, DAgger, RLPD, SERL, HIL-SERL; retagged feed: untagged 162 → 142, 66 papers tagged `learning`.
+- All verify.yml runs this run passed (every new arXiv ID, code link and resource link checked). CI and Pages green.
