@@ -15,3 +15,7 @@ Why the project is the way it is. Newest at the bottom. Format: date — decisio
 2026-10-19 — **Topic tagging = scored keyword rules, not an ML model.** — Transparent, editable in `topics.yaml`, zero cost, reproducible in CI. Title hit 3, abstract occurrence 1, threshold 2. Cross-listed (non-cs.RO) papers must have a robotics title keyword plus robot context. Curated entries remain the trusted layer.
 
 2026-10-19 — **Agent picks are added to curated YAML with an `added:` date** — makes "what's new" and weekly digest picks automatic; results from new papers are phrased as "reports …" since they are unreviewed claims.
+
+2026-10-19 — **Robot type ("embodiment") is a computed filter, not stored data.** — Keyword rules in `data/embodiments.yaml` run at build time over title+abstract (feed) or title+takeaway+tags (curated); one explicit mention is enough (threshold 1, unlike topics at 2) because naming the robot is a strong signal. Editing the rules re-tags everything on the next build, no data migration. — Alternatives: store per-paper tags in the JSON (needs retag passes), manual tags (doesn't scale).
+
+2026-10-19 — **License files split** — GitHub showed "Other" for a combined MIT + CC BY file; a plain MIT `LICENSE` plus `LICENSE-DATA.md` reads clearly in the sidebar and keeps the same terms.
