@@ -15,7 +15,8 @@ import sys
 from pathlib import Path
 
 from repo_stats import load_stats, repo_key
-from radar import ROOT, classify, venue_of, load_arxiv_feed, load_curated, load_embodiments, load_resources, load_topics
+from radar import (ROOT, bibtex, classify, venue_of, load_arxiv_feed, load_curated, load_curated_meta, load_embodiments,
+                   load_resources, load_topics)
 
 OUT = ROOT / "_site"
 SRC = ROOT / "site_src"
@@ -73,6 +74,14 @@ TYPE_LABEL = {
 }
 
 
+def bib_block(b: str | None) -> str:
+    """Collapsed BibTeX (works without JS; app.js adds the copy button behaviour)."""
+    if not b:
+        return ""
+    return (f'<details class="bib"><summary>BibTeX</summary><pre>{esc(b)}</pre>'
+            f'<button type="button" class="copy">{bi("Copy", "复制")}</button></details>')
+
+
 def title_html(t: str) -> str:
     # Render the few LaTeX titles we have ($π_0$, $π_{0.5}$) readably.
     t = re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", t)
@@ -104,6 +113,7 @@ def curated_card(e: dict, topics_by_id: dict, root: str) -> str:
 <h3><a href="{esc(main)}" rel="noopener">{title_html(e['title'])}</a></h3>
 <p class="take">{bi(e['takeaway_en'], e['takeaway_zh'])}</p>
 <div class="links">{linkrow}</div>
+{bib_block(e.get("bib"))}
 <div class="chips">{chips}{tags}</div>
 </article>"""
 
@@ -127,6 +137,7 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
 <p class="authors">{esc(authors)}</p>
 <details><summary>{bi("Abstract", "摘要")}</summary><p>{esc(p.get('abstract', ''))}</p></details>
 <div class="links"><a href="https://arxiv.org/abs/{esc(p['id'])}" rel="noopener">arXiv</a> · <a href="https://arxiv.org/pdf/{esc(p['id'])}" rel="noopener">PDF</a>{code}{proj}</div>
+{bib_block(bibtex(p["id"], p["title"], p.get("authors", []), p.get("published", ""), p.get("primary", "")))}
 <div class="chips">{chips}</div>
 </article>"""
 
@@ -244,6 +255,11 @@ def build() -> int:
     STATS.update(load_stats())
     for e in entries:
         e["emb"] = classify(" ".join([e["takeaway_en"], " ".join(e.get("tags") or [])]), embs, title=e["title"], threshold=1)
+    meta = load_curated_meta()
+    for e in entries:
+        m = meta.get(e.get("arxiv") or "")
+        if m:
+            e["bib"] = bibtex(e["arxiv"], e["title"], m["authors"], m.get("published", ""), m.get("primary", ""))
     for p in feed:
         p["emb"] = classify(p.get("abstract", ""), embs, title=p.get("title", ""), threshold=1)
 
@@ -355,7 +371,10 @@ def build() -> int:
 
     # ---- topics
     tlist = "".join(f'<li><a href="{t["id"]}.html">{bi(t["en"], t["zh"])}</a> <span class="muted">({len(by_topic[t["id"]])})</span></li>' for t in topics)
-    (OUT / "topics" / "index.html").write_text(page("Topics · Embodied AI Radar", f'<h1>{bi("Topics", "主题")}</h1><ul class="tlist">{tlist}</ul>', "../", desc, "topics/index.html"), encoding="utf-8")
+    nbib = sum(1 for e in entries if e.get("bib"))
+    bibnote = (f'<p><a href="../curated.bib" download>{bi(f"Download BibTeX for all {nbib} curated arXiv papers", f"下载全部 {nbib} 篇精选 arXiv 论文的 BibTeX")}</a></p>'
+               if nbib else "")
+    (OUT / "topics" / "index.html").write_text(page("Topics · Embodied AI Radar", f'<h1>{bi("Topics", "主题")}</h1><ul class="tlist">{tlist}</ul>' + bibnote, "../", desc, "topics/index.html"), encoding="utf-8")
     for t in topics:
         cur = sorted(by_topic[t["id"]], key=lambda e: (not e.get("highlight"), -int(e["year"])))
         recent = feed_by_topic[t["id"]][:TOPIC_FEED_MAX]
@@ -421,6 +440,12 @@ def build() -> int:
             + "".join(rs))
     (OUT / "resources.html").write_text(page("Learning resources · Embodied AI Radar", body, "",
         "Related embodied AI lists, robotics courses, tool docs and communities (EN/中文).", "resources.html"), encoding="utf-8")
+
+    # ---- one .bib with every curated arXiv paper we have metadata for
+    bibs = [e["bib"] for e in entries if e.get("bib")]
+    (OUT / "curated.bib").write_text(
+        "% Embodied AI Radar - curated papers (" + str(len(bibs)) + " entries), built from arXiv metadata (CC0).\n"
+        f"% {SITE_URL}\n\n" + "\n\n".join(bibs) + "\n", encoding="utf-8")
 
     # ---- 404, robots, sitemap, atom
     (OUT / "404.html").write_text(page("Not found · Embodied AI Radar", f'<h1>404</h1><p><a href="{SITE_URL}">{bi("Back to the radar", "返回首页")}</a></p>', SITE_URL, desc, "404.html"), encoding="utf-8")

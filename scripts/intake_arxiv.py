@@ -18,7 +18,8 @@ import time
 import urllib.parse
 import xml.etree.ElementTree as ET
 
-from radar import ARXIV_DIR, arxiv_get, classify, load_arxiv_feed, load_topics
+from radar import (ARXIV_DIR, CURATED_META, arxiv_get, classify, load_arxiv_feed, load_curated,
+                   load_curated_meta, load_topics)
 
 API = "https://export.arxiv.org/api/query"
 NS = {"a": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
@@ -75,6 +76,45 @@ def enrich(papers: list[dict]) -> int:
             done += 1
         time.sleep(4)
     return done
+
+
+META_MAX_AUTHORS = 50
+
+
+def fill_curated_meta() -> int:
+    """Cache authors / first-version date / primary category of curated arXiv papers in
+    data/arxiv/curated_meta.json, so the site can offer BibTeX for them. Only missing IDs are
+    fetched (one id_list request per 50). Best-effort: failures keep what is cached."""
+    meta = load_curated_meta()
+    entries, _ = load_curated(strict=False)
+    todo = sorted({e["arxiv"] for e in entries if e.get("arxiv")} - set(meta))
+    added = 0
+    for i in range(0, len(todo), ENRICH_BATCH):
+        chunk = todo[i:i + ENRICH_BATCH]
+        try:
+            root = ET.fromstring(fetch_ids(chunk))
+        except Exception as ex:
+            print(f"warning: curated metadata stopped: {ex}")
+            break
+        for e in root.findall("a:entry", NS):
+            m = re.search(r"abs/([^v\s]+)(v\d+)?$", clean(e.findtext("a:id", default="", namespaces=NS)))
+            if not m or m.group(1) not in chunk:
+                continue
+            authors = [clean(a.findtext("a:name", default="", namespaces=NS)) for a in e.findall("a:author", NS)]
+            if not authors:
+                continue
+            if len(authors) > META_MAX_AUTHORS:
+                authors = authors[:META_MAX_AUTHORS] + [f"+{len(authors) - META_MAX_AUTHORS}"]
+            prim = e.find("arxiv:primary_category", NS)
+            meta[m.group(1)] = {"authors": authors,
+                                "published": clean(e.findtext("a:published", default="", namespaces=NS))[:10],
+                                "primary": prim.get("term") if prim is not None else ""}
+            added += 1
+        time.sleep(4)
+    if added:
+        CURATED_META.write_text(json.dumps({"source": "arXiv API (metadata CC0)", "papers": dict(sorted(meta.items()))},
+                                           ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return added
 
 
 def fetch(query: str, start: int) -> bytes:
@@ -284,6 +324,8 @@ def main() -> int:
         path.write_text(json.dumps({"date": date, "source": "arXiv RSS/API (metadata CC0)", "papers": merged},
                                    ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         print(f"{path.relative_to(ARXIV_DIR.parent.parent)}: +{len(merged) - len(existing)} (total {len(merged)})")
+    if not args.no_api:
+        print(f"curated metadata: +{fill_curated_meta()}")
     print(f"done: {len(new)} new papers")
     return 0
 

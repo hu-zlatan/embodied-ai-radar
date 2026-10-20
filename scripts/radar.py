@@ -240,3 +240,41 @@ def venue_of(comment: str | None) -> str | None:
     if year and len(year) == 2:
         year = "20" + year
     return f"{name} {year}" if year else name
+
+
+CURATED_META = ARXIV_DIR / "curated_meta.json"  # authors + first-version date of curated arXiv papers (CI-filled)
+
+
+def load_curated_meta() -> dict[str, dict]:
+    """{arxiv_id: {"authors": [...], "published": "YYYY-MM-DD", "primary": "cs.RO"}}. Missing or malformed → {}."""
+    try:
+        data = json.loads(CURATED_META.read_text(encoding="utf-8"))
+        return {k: v for k, v in data.get("papers", {}).items() if isinstance(v, dict) and v.get("authors")}
+    except (OSError, json.JSONDecodeError, AttributeError):
+        return {}
+
+
+def _bib_escape(s: str) -> str:
+    return re.sub(r"(?<!\\)([&%#])", r"\\\1", s)
+
+
+def bibtex(arxiv_id: str, title: str, authors: list[str], published: str, primary: str = "") -> str | None:
+    """A BibTeX @misc entry built only from arXiv metadata. None if there are no authors.
+
+    Feed records cap authors at 8 and add a "+N" marker; that becomes "and others".
+    """
+    names = [a for a in authors if a and not a.startswith("+")]
+    if not names or not published[:4].isdigit():
+        return None
+    import unicodedata
+    last = unicodedata.normalize("NFKD", names[0].split()[-1]).encode("ascii", "ignore").decode().lower()
+    last = re.sub(r"[^a-z]", "", last) or "anon"
+    words = [w for w in re.findall(r"[A-Za-z]+", title) if w.lower() not in {"a", "an", "the", "on", "of", "for", "to", "and", "in", "with"}]
+    key = f"{last}{published[:4]}{(words[0].lower() if words else '')}"
+    author = " and ".join(_bib_escape(n) for n in names) + (" and others" if len(names) < len(authors) else "")
+    lines = [f"@misc{{{key},", f"  title = {{{{{_bib_escape(' '.join(title.split()))}}}}},", f"  author = {{{author}}},",
+             f"  year = {{{published[:4]}}},", f"  eprint = {{{arxiv_id}}},", "  archivePrefix = {arXiv},"]
+    if primary:
+        lines.append(f"  primaryClass = {{{primary}}},")
+    lines += [f"  url = {{https://arxiv.org/abs/{arxiv_id}}},", "}"]
+    return "\n".join(lines)

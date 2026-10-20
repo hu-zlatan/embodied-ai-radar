@@ -13,6 +13,19 @@
   if (btn) btn.addEventListener('click', function () { setLang(lang() === 'zh' ? 'en' : 'zh'); });
   setLang(lang());
 
+  // BibTeX copy buttons (cards are static HTML; the <pre> stays selectable without JS).
+  document.addEventListener('click', function (ev) {
+    var b = ev.target.closest && ev.target.closest('button.copy');
+    if (!b) return;
+    var pre = b.parentNode.querySelector('pre');
+    if (!pre || !navigator.clipboard) return;
+    navigator.clipboard.writeText(pre.textContent).then(function () {
+      var old = b.innerHTML;
+      b.textContent = lang() === 'zh' ? '已复制 ✓' : 'Copied ✓';
+      setTimeout(function () { b.innerHTML = old; }, 1500);
+    });
+  });
+
   var q = document.getElementById('q');
   if (!q) return;
   var fTopic = document.getElementById('f-topic'), fKind = document.getElementById('f-kind'),
