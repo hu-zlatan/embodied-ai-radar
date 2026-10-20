@@ -72,3 +72,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - **BibTeX**: collapsed BibTeX + copy button on every arXiv card, `curated.bib` download; curated authors cached by intake in `data/arxiv/curated_meta.json`. Dispatched intake to fill the cache. Tested headless (copy works, no JS errors, 390px OK).
 - **Search sort**: best match / newest / GitHub stars, shareable `?sort=`.
 - README (EN/ZH): new 'Citable' bullet.
+- Tactile anchors Taxim + Tactile Gym 2.0 (verify passed). Dispatched intake (first dispatch was cancelled by a newer pending verify in the shared concurrency group; re-dispatched after verify started): curated_meta.json now covers all 157 curated arXiv papers; curated.bib has 157 entries, unique keys. Curated: 163. CI/verify/Pages green. Repo: 0 stars / 0 forks. End of run 7.

@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-20 ~17:10 UTC, run 7._
+_Last updated: 2026-10-20 ~17:10 UTC, run 7 (end)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (161 entries, EN/ZH takeaways; 17 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (621 papers, 2026-10-12..20; 186 untagged).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (163 entries, EN/ZH takeaways; 17 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (621 papers, 2026-10-12..20; 186 untagged).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -26,7 +26,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
-0. Check `data/arxiv/curated_meta.json` exists (filled by the intake dispatched in run 7) and that curated cards show BibTeX on the live site. If the intake API was 429'd, it retries on every intake run.
+0. `data/arxiv/curated_meta.json` is filled (157/157 curated arXiv IDs, run 7). New curated entries get metadata on the next intake run. Note: a push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started.
 1. Check that scheduled runs now fire (intake 02:17 / 07:43 / 15:29 UTC, pages 03:40). If none fire again, note it in OWNER_TODO (repo may need a recent commit/activity; scheduled workflows run on the default branch only). verify.yml passed for all 9 run-5 entries; re-check the latest run each time.
 2. Each run: review the newest feed (papers with code first), promote 2–5 notable ones into curated YAML with `added: <date>` and careful EN/ZH takeaways (phrase results as "reports").
 3. Monday 2026-10-26: check the first auto digest (2026-W43); add a short human-quality intro paragraph if useful.
@@ -36,7 +36,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 ## Backlog
 
 - More resources in `data/resources.yaml` as users suggest them (only well-known, verified links; Chinese courses/tutorials especially).
-- Thin topics still: hardware (9), tactile (9), learning (10), perception (10).
+- Thin topics still: hardware (9), tactile (11), learning (10), perception (10).
 - feed.html is ~1.2 MB raw / 260 KB gzipped (all 7 days, ~600 cards). Consider splitting the feed page by day if it grows. Add anchors when solid ones come up.
 - Untagged feed (~31%): mostly aerial/marine/space, autonomous driving, formal control. Consider an `aerial-field` topic only if users ask; robot-type filter covers drones/driving/underwater.
 - Site nav wraps to two lines on phones (6 links) — fine now, revisit if more links are added.
@@ -45,6 +45,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - Done in run 5: anchors ViNT, VIMA, Dobb-E, Isaac Lab paper (2511.04831), AI2-THOR; picks Ropedia W0, CondenseVLA, MoDex, PrismPlan; tagging keywords (impedance control, behavior trees, rearrangement, lifelong learning, soft/continuum robots).
 - Done in run 6: GitHub stars (repo-stats workflow, ★ on site, most-starred list); anchors GNM, Habitat 3.0, GR-3, Digit 360 (tactile), MuJoCo MPC + Pinocchio (control). verify.yml passed for all.
 - Archived repos found by stats: digit-interface, tacto, sparsh (facebookresearch), robotics_transformer (RT-1). Shown with an 'archived' badge; consider noting maintained forks if users ask.
-- Done in run 7: anchors robomimic, IQL, BeT, DPPO, ALOHA 2, Stretch; BibTeX; search sort.
+- Done in run 7: anchors robomimic, IQL, BeT, DPPO, ALOHA 2, Stretch, Taxim, Tactile Gym 2.0; BibTeX + curated.bib; search sort.
+- Candidate perception anchor: Segment Anything (confirm arXiv ID by search first).
 - Idea: stars in README (would need the stats workflow to regenerate README too).
 - Candidate anchors still missing: GraspNet-1Billion (no arXiv; CVPR page).
