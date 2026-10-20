@@ -56,3 +56,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Agent picks 2026-10-20: Ropedia W0 (cross-embodiment loco-manipulation world model), CondenseVLA (NeurIPS 2026), MoDex (CoRL 2026), PrismPlan (GPU motion-planning substrate).
 - Tagging: new keywords for control/learning/manipulation/hardware; retag moved 17 papers, untagged 199 → 186 of 621.
 - verify.yml passed for all 9 new entries (IDs, titles, code links). CI + Pages green. Repo still 0 stars / 0 forks. End of run 5.
+
+## 2026-10-20 — run 6 (~10:50–11:05 UTC)
+
+- Start: no issues/PRs, 0 stars / 0 forks. Scheduled workflows now fire (intake 07:43 slot ran, no new papers since arXiv's next announcement is tonight; pages schedule ran). All green.
+- **GitHub stars**: new `repo-stats.yml` + `scripts/repo_stats.py` fetch stars / last push / archived for every curated GitHub repo (GITHUB_TOKEN; first run: 91 repos, all real API values). Site shows ★ counts on cards and in search, an 'archived' badge (4 repos archived), and a home-page 'Most-starred open-source code' list. Workflow push was accepted (no fallback needed).
+- Anchors: GNM (navigation, ICRA 2023), Habitat 3.0 (sim, ICLR 2024), GR-3 (vla, ByteDance Seed); IDs confirmed by web search, GR-3 takeaway checked against the abstract.
+- Problem caught locally: an unquoted colon in a YAML takeaway broke vla.yaml; `| tail` hid validate's exit code. Fixed before pushing; now using `set -o pipefail` for check chains.
