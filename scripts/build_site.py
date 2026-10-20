@@ -14,6 +14,7 @@ import shutil
 import sys
 from pathlib import Path
 
+from repo_stats import load_stats, repo_key
 from radar import ROOT, classify, venue_of, load_arxiv_feed, load_curated, load_embodiments, load_resources, load_topics
 
 OUT = ROOT / "_site"
@@ -28,6 +29,20 @@ FEED_ABSTRACT_DAYS = 21  # abstracts (for search) kept in the index only for thi
 
 esc = html.escape
 EMB: dict[str, dict] = {}  # embodiment id -> {en, zh}, filled in build()
+STATS: dict[str, dict] = {}  # 'owner/repo' -> {stars, pushed, archived}, from data/repo_stats.json
+
+
+def fmt_stars(n: int) -> str:
+    return f"{n / 1000:.1f}k".replace(".0k", "k") if n >= 1000 else str(n)
+
+
+def repo_stat(e: dict) -> dict | None:
+    """GitHub stats for the entry's code repo (or website/project if that is a GitHub repo)."""
+    for k in ("code", "url", "project"):
+        st = STATS.get(repo_key(e.get(k)) or "")
+        if st:
+            return st
+    return None
 
 
 def emb_chips(ids: list[str]) -> str:
@@ -76,6 +91,11 @@ def curated_card(e: dict, topics_by_id: dict, root: str) -> str:
     if e.get("added"):
         star += f' <span class="badge new">{bi("new", "新")} {esc(str(e["added"]))}</span>'
     linkrow = " · ".join(f'<a href="{esc(u)}" rel="noopener">{bi(a, b)}</a>' for a, b, u in links)
+    st = repo_stat(e)
+    if st:
+        linkrow += f' <span class="gh" title="GitHub stars">★ {fmt_stars(st["stars"])}</span>'
+        if st.get("archived"):
+            linkrow += f' <span class="badge">{bi("archived", "已归档")}</span>'
     meta = " · ".join(x for x in [esc(str(e["year"])), esc(e.get("org", ""))] if x)
     if e.get("venue"):
         meta += f' <span class="badge venue">{esc(str(e["venue"]))}</span>'
@@ -220,6 +240,8 @@ def build() -> int:
     embs = load_embodiments()
     EMB.clear()
     EMB.update({m["id"]: m for m in embs})
+    STATS.clear()
+    STATS.update(load_stats())
     for e in entries:
         e["emb"] = classify(" ".join([e["takeaway_en"], " ".join(e.get("tags") or [])]), embs, title=e["title"], threshold=1)
     for p in feed:
@@ -246,7 +268,8 @@ def build() -> int:
                     "o": e.get("org", ""), "en": e["takeaway_en"], "zh": e["takeaway_zh"],
                     "tp": e["topics"], "em": e["emb"], "tg": e.get("tags") or [], "h": 1 if e.get("highlight") else 0,
                     "l": links_of(e)[0][2], "a": e.get("arxiv"), "c": e.get("code"), "p": e.get("project"),
-                    "v": str(e["venue"]) if e.get("venue") else None})
+                    "v": str(e["venue"]) if e.get("venue") else None,
+                    "s": (repo_stat(e) or {}).get("stars")})
     ab_cut = (today - dt.timedelta(days=FEED_ABSTRACT_DAYS)).isoformat()
     for p in feed:
         if p.get("published", "") < site_cut:

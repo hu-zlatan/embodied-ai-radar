@@ -1,0 +1,34 @@
+name: GitHub repo stats
+on:
+  schedule:
+    - cron: "37 6 * * 0"   # weekly, Sundays
+  push:
+    branches: [main]
+    paths: ["data/curated/**", "data/resources.yaml", "scripts/repo_stats.py"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: repo-stats
+  cancel-in-progress: false
+jobs:
+  stats:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Fetch stars / last push / archived for curated GitHub repos
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/repo_stats.py
+      - name: Commit and push
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/repo_stats.json
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "data: GitHub repo stats $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
