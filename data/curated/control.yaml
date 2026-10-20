@@ -93,3 +93,20 @@
   tags: [motion-planning, gpu, benchmark]
   takeaway_en: Builds batched GPU collision checking and forward kinematics once and runs sampling, search and optimization planners on top, so the three paradigms can be compared fairly.
   takeaway_zh: 一次性实现批量 GPU 碰撞检测与正运动学，在其上运行采样、搜索和优化三类规划器，使三种范式可以公平比较。
+- title: "Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo"
+  type: paper
+  arxiv: "2212.00541"
+  year: 2022
+  org: Google DeepMind
+  code: https://github.com/google-deepmind/mujoco_mpc
+  tags: [sim, mpc, sampling-based, open-source]
+  takeaway_en: Introduces MuJoCo MPC (MJPC), an interactive tool for real-time predictive control in MuJoCo, and shows that a simple sampling-based planner is a strong baseline for contact-rich behaviours.
+  takeaway_zh: 推出 MuJoCo MPC（MJPC），可在 MuJoCo 中交互式地做实时预测控制，并表明简单的基于采样的规划器在接触丰富的行为上是很强的基线。
+- title: "Pinocchio"
+  type: code
+  year: 2019
+  org: LAAS-CNRS, INRIA
+  code: https://github.com/stack-of-tasks/pinocchio
+  tags: [library, dynamics, kinematics, open-source]
+  takeaway_en: Fast C++/Python rigid-body dynamics library with analytical derivatives; a common backbone for kinematics, optimal control (e.g. Crocoddyl) and legged/humanoid control stacks.
+  takeaway_zh: 高性能 C++/Python 刚体动力学库，提供解析导数；是运动学、最优控制（如 Crocoddyl）以及足式/人形机器人控制栈的常用底座。
