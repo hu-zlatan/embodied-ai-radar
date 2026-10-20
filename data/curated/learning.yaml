@@ -95,3 +95,23 @@
   tags: [rl, diffusion-policy, fine-tuning, sim-to-real]
   takeaway_en: DPPO — fine-tunes a pre-trained diffusion policy with PPO by treating the denoising steps as part of the MDP; reports stable gains over other RL fine-tuning methods and sim-to-real transfer.
   takeaway_zh: DPPO：把去噪步骤视为 MDP 的一部分，用 PPO 微调预训练扩散策略；报告称比其他强化学习微调方法更稳定，并实现了仿真到真机迁移。
+- title: "Conservative Q-Learning for Offline Reinforcement Learning"
+  type: paper
+  arxiv: "2006.04779"
+  year: 2020
+  org: UC Berkeley
+  venue: NeurIPS 2020
+  code: https://github.com/aviralkumar2907/CQL
+  tags: [offline-rl, value-learning]
+  takeaway_en: CQL — penalizes Q-values on actions outside the dataset so the learned value is a lower bound; a standard offline-RL baseline for learning from fixed robot logs.
+  takeaway_zh: CQL：压低数据集外动作的 Q 值，使学到的价值成为下界；是从固定机器人日志中学习的标准离线强化学习基线。
+- title: "Decision Transformer: Reinforcement Learning via Sequence Modeling"
+  type: paper
+  arxiv: "2106.01345"
+  year: 2021
+  org: UC Berkeley · Google · FAIR
+  venue: NeurIPS 2021
+  code: https://github.com/kzl/decision-transformer
+  tags: [offline-rl, transformer, sequence-modeling]
+  takeaway_en: Recasts RL as sequence modeling — a GPT-style model predicts actions conditioned on the desired return; an early bridge between transformers and control.
+  takeaway_zh: 把强化学习改写成序列建模：GPT 式模型以期望回报为条件预测动作；是 Transformer 与控制结合的早期代表。

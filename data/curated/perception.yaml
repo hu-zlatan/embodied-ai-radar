@@ -91,3 +91,44 @@
   tags: [scene-graph, open-vocabulary, llm]
   takeaway_en: Builds an object-level 3D scene graph labelled by vision-language models, which an LLM planner can query in natural language.
   takeaway_zh: 用视觉语言模型构建带语义标注的物体级三维场景图，大模型规划器可以用自然语言查询。
+- title: "Segment Anything"
+  type: paper
+  arxiv: "2304.02643"
+  year: 2023
+  org: Meta AI
+  venue: ICCV 2023
+  highlight: true
+  code: https://github.com/facebookresearch/segment-anything
+  tags: [segmentation, foundation-model, promptable]
+  takeaway_en: SAM — a promptable segmentation model (points, boxes, masks) trained on 1B+ masks; a standard building block for object masks in robot perception pipelines.
+  takeaway_zh: SAM：可用点、框、掩码提示的分割模型，在 10 亿级掩码上训练；已成为机器人感知流程中获取物体掩码的常用基础组件。
+- title: "SAM 2: Segment Anything in Images and Videos"
+  type: paper
+  arxiv: "2408.00714"
+  year: 2024
+  org: Meta AI
+  venue: ICLR 2025
+  code: https://github.com/facebookresearch/sam2
+  tags: [segmentation, video, tracking]
+  takeaway_en: Extends SAM to video with a streaming memory, so a mask prompted once is tracked across frames — handy for following objects during manipulation.
+  takeaway_zh: 用流式记忆把 SAM 扩展到视频：一次提示得到的掩码可在后续帧中持续跟踪，适合在操作过程中跟随目标物体。
+- title: "Grounding DINO: Marrying DINO with Grounded Pre-Training for Open-Set Object Detection"
+  type: paper
+  arxiv: "2303.05499"
+  year: 2023
+  org: IDEA Research · Tsinghua
+  venue: ECCV 2024
+  code: https://github.com/IDEA-Research/GroundingDINO
+  tags: [open-vocabulary, detection, language-grounding]
+  takeaway_en: Open-set detector that finds objects from a free-text prompt; often paired with SAM ("Grounded-SAM") to turn a language instruction into object masks.
+  takeaway_zh: 开放集目标检测器，可根据任意文本提示找到物体；常与 SAM 组合（Grounded-SAM），把语言指令变成物体掩码。
+- title: "FoundationStereo: Zero-Shot Stereo Matching"
+  type: paper
+  arxiv: "2501.09898"
+  year: 2025
+  org: NVIDIA
+  venue: CVPR 2025
+  code: https://github.com/NVlabs/FoundationStereo
+  tags: [stereo, depth, zero-shot]
+  takeaway_en: Stereo depth model trained on large synthetic data that reports strong zero-shot accuracy on real scenes — a drop-in depth source for stereo-camera robots.
+  takeaway_zh: 在大规模合成数据上训练的双目深度模型，报告称在真实场景上零样本精度很强；可直接作为双目相机机器人的深度来源。
