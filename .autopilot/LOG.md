@@ -48,3 +48,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Agent picks: VLA-Δ (ZJU, state-transition supervision), MambaAct (Mamba action expert for π0.5).
 - Bilingual issue forms (suggest / fix) + contact links (site, Discussions).
 - Also: MimicGen, BEHAVIOR-1K (sim) and Hi Robot (vla) anchors. All verify.yml runs passed (every new arXiv ID/title and code link checked); CI + Pages green. Curated: 140 entries. End of run 4.
+
+## 2026-10-20 — run 5 (~04:50–05:15 UTC)
+
+- Start: CI/Pages/verify green, no issues/PRs, 0 stars / 0 forks. Problem: the first scheduled intake (02:17 UTC) never fired. Dispatched it by hand (170 new papers for 2026-10-20, enrichment fine) and added backup cron slots to intake (07:43, 15:29 UTC) and weekly digest (Mon 13:11 UTC); both jobs are idempotent.
+- Anchors (IDs confirmed by web search): ViNT (navigation, CoRL 2023), VIMA (vla, ICML 2023), Dobb-E / On Bringing Robots Home (manipulation), Isaac Lab paper 2511.04831 + AI2-THOR (sim).
+- Agent picks 2026-10-20: Ropedia W0 (cross-embodiment loco-manipulation world model), CondenseVLA (NeurIPS 2026), MoDex (CoRL 2026), PrismPlan (GPU motion-planning substrate).
+- Tagging: new keywords for control/learning/manipulation/hardware; retag moved 17 papers, untagged 199 → 186 of 621.
