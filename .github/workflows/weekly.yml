@@ -2,6 +2,7 @@ name: Weekly digest
 on:
   schedule:
     - cron: "23 5 * * 1"   # Mondays 05:23 UTC, digest for the previous ISO week
+    - cron: "11 13 * * 1"  # backup slot (scheduled runs can be dropped); skips if the digest exists
   workflow_dispatch:
 permissions:
   contents: write

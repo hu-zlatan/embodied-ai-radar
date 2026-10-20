@@ -2,6 +2,10 @@ name: Daily arXiv intake
 on:
   schedule:
     - cron: "17 2 * * *"   # daily 02:17 UTC, after arXiv's daily announcement
+    # Backup slots: GitHub can delay or drop scheduled runs (the first 02:17 run on
+    # 2026-10-20 never fired). Intake dedups by arXiv ID, so extra runs are harmless.
+    - cron: "43 7 * * *"
+    - cron: "29 15 * * *"
   workflow_dispatch:
     inputs:
       days:
