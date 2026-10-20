@@ -64,3 +64,11 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Anchors: GNM (navigation, ICRA 2023), Habitat 3.0 (sim, ICLR 2024), GR-3 (vla, ByteDance Seed); IDs confirmed by web search, GR-3 takeaway checked against the abstract.
 - Problem caught locally: an unquoted colon in a YAML takeaway broke vla.yaml; `| tail` hid validate's exit code. Fixed before pushing; now using `set -o pipefail` for check chains.
 - Thin-topic anchors: Digit 360 (tactile/hardware, 2411.02479), MuJoCo MPC predictive sampling (2212.00541) and Pinocchio (control). verify.yml passed for all 6 new entries this run; CI + Pages green. Curated: 155. Repo still 0 stars / 0 forks. End of run 6.
+
+## 2026-10-20 — run 7 (~16:50–17:15 UTC)
+
+- Start: all workflows green, no issues/PRs, 0 stars / 0 forks. Owner fixed the `robot-learnin` topic typo (ticked in OWNER_TODO). No new arXiv papers since run 5 (next announcement ~00:00 UTC).
+- Anchors (IDs confirmed by web search; verify.yml passed incl. code links): robomimic, IQL, Behavior Transformers, DPPO (learning); ALOHA 2, Stretch (hardware).
+- **BibTeX**: collapsed BibTeX + copy button on every arXiv card, `curated.bib` download; curated authors cached by intake in `data/arxiv/curated_meta.json`. Dispatched intake to fill the cache. Tested headless (copy works, no JS errors, 390px OK).
+- **Search sort**: best match / newest / GitHub stars, shareable `?sort=`.
+- README (EN/ZH): new 'Citable' bullet.
