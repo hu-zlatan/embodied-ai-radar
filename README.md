@@ -107,8 +107,10 @@ _Tactile sensors, touch representations and contact-rich control._ [Browse with 
 - **[Binding Touch to Everything: Learning Unified Multimodal Tactile Representations](https://arxiv.org/abs/2401.18084)** (2024) — UniTouch aligns tactile signals with vision, language and audio embeddings, enabling zero-shot touch understanding.
 - **[Digitizing Touch with an Artificial Multimodal Fingertip](https://arxiv.org/abs/2411.02479)** (2024) — Digit 360: an open-design, finger-shaped sensor that senses force, fine texture, vibration and heat, with an on-board neural accelerator for reflex-like local processing. · [code](https://github.com/facebookresearch/digit360)
 - **[Sparsh: Self-supervised touch representations for vision-based tactile sensing](https://arxiv.org/abs/2410.24090)** (2024) — Self-supervised encoders pretrained on many tactile images that work across different vision-based touch sensors. · [code](https://github.com/facebookresearch/sparsh)
+- **[Tactile Gym 2.0: Sim-to-real Deep Reinforcement Learning for Comparing Low-cost High-Resolution Robot Touch](https://arxiv.org/abs/2207.10763)** (2022) — Open-source tactile RL environments with sim-to-real transfer across three low-cost optical sensors (TacTip, DIGIT, DigiTac), for comparing them on the same tasks. · [code](https://github.com/dexterousrobot/tactile_gym)
 - **[Touch and Go: Learning from Human-Collected Vision and Touch](https://arxiv.org/abs/2211.12498)** (2022) — A dataset of paired video and GelSight touch collected by people probing objects in the wild, for cross-modal tactile learning.
 - **[ReSkin: versatile, replaceable, lasting tactile skins](https://arxiv.org/abs/2111.00071)** (2021) — A thin magnetic-elastomer skin read by magnetometers; cheap to make and swap, with learned calibration that carries over to new skins. · [code](https://github.com/raunaqbhirangi/reskin_sensor)
+- **[Taxim: An Example-based Simulation Model for GelSight Tactile Sensors](https://arxiv.org/abs/2109.04027)** (2021) — Simulates GelSight images from calibration examples (optical lookup + linear elastic deformation) instead of physics-based rendering, so tactile data can be generated quickly. · [code](https://github.com/Robo-Touch/Taxim)
 - **[TACTO: A Fast, Flexible, and Open-source Simulator for High-Resolution Vision-based Tactile Sensors](https://arxiv.org/abs/2012.08456)** (2020) — Renders DIGIT/GelSight-style tactile images in simulation so touch-based policies can be trained at scale. · [code](https://github.com/facebookresearch/tacto)
 
 <a id="locomotion"></a>
@@ -216,7 +218,7 @@ _Reinforcement learning, imitation learning and policy post-training methods for
 - **[What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](https://arxiv.org/abs/2108.03298)** (2021) — robomimic — a controlled study of imitation and offline RL on human-collected manipulation demos (demo quality, observation choices, history-aware BC), released with the framework and datasets. · [code](https://github.com/ARISE-Initiative/robomimic)
 - **[Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor](https://arxiv.org/abs/1801.01290)** (2018) — Off-policy RL with an entropy bonus; sample-efficient enough to become the default for learning directly on real robots.
 - **[A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning](https://arxiv.org/abs/1011.0686)** (2010) — DAgger — query the expert on the states the learner itself visits, fixing the compounding errors of plain behavior cloning.
-- _See also:_ [Unitree RL Gym](#locomotion)
+- _See also:_ [Tactile Gym 2.0](#tactile), [Unitree RL Gym](#locomotion)
 
 <a id="sim"></a>
 ### Sim-to-Real & Simulators
@@ -241,7 +243,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._ [Browse
 - **[AI2-THOR: An Interactive 3D Environment for Visual AI](https://arxiv.org/abs/1712.05474)** (2017) — Photorealistic interactive indoor scenes where agents open, pick up and change objects; the base of many embodied-AI benchmarks such as ALFRED. · [code](https://github.com/allenai/ai2thor)
 - **[Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World](https://arxiv.org/abs/1703.06907)** (2017) — Randomizing textures, lighting and cameras in sim makes vision models work on real images with no real data.
 - **[Sim-to-Real Transfer of Robotic Control with Dynamics Randomization](https://arxiv.org/abs/1710.06537)** (2017) — Randomizing physical parameters during training yields control policies robust enough to run on a real arm.
-- _See also:_ [Blind Precise Assembly](#manipulation), [TACTO](#tactile), [Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning](#locomotion), [Habitat](#datasets)
+- _See also:_ [Blind Precise Assembly](#manipulation), [TACTO](#tactile), [Taxim](#tactile), [Tactile Gym 2.0](#tactile), [Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning](#locomotion), [Habitat](#datasets)
 
 <a id="datasets"></a>
 ### Datasets & Benchmarks
