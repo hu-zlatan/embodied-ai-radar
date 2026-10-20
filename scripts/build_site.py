@@ -312,6 +312,21 @@ def build() -> int:
         picks_html = (f'<h2>{bi("Newly added picks", "最新精选")}</h2>'
                       f'<p class="muted">{bi("Notable new papers reviewed from the daily feed.", "从每日论文中审阅挑选的值得关注的新工作。")}</p>'
                       f'<div class="cards">{"".join(curated_card(e, tby, "") for e in recent_picks)}</div>')
+    by_repo: dict[str, dict] = {}  # one row per repo; prefer the non-paper entry (e.g. "LeRobot" over a paper using it)
+    for e in entries:
+        k = repo_key(e.get("code"))
+        if k and k in STATS and (k not in by_repo or (by_repo[k]["type"] == "paper" and e["type"] != "paper")):
+            by_repo[k] = e
+    popular = sorted(((STATS[k], e) for k, e in by_repo.items()), key=lambda x: -x[0]["stars"])[:12]
+    popular_html = ""
+    if popular:
+        rows = "".join(
+            f'<li><a href="{esc(e["code"])}" rel="noopener">{esc(e["code"].split("github.com/")[1].rstrip("/"))}</a>'
+            f' <span class="gh">★ {fmt_stars(st["stars"])}</span> <span class="muted">· {title_html(e["title"]) if len(e["title"]) < 70 else title_html(e["title"][:67]) + "…"}</span></li>'
+            for st, e in popular)
+        popular_html = (f'<h2>{bi("Most-starred open-source code", "最受关注的开源代码")}</h2>'
+                        f'<p class="muted">{bi("GitHub stars of curated entries, refreshed weekly.", "精选条目的 GitHub 星标数，每周更新。")}</p>'
+                        f'<ol class="poplist">{rows}</ol>')
     topic_grid = "".join(
         f'<a class="tile" href="topics/{t["id"]}.html"><h3>{bi(t["en"], t["zh"])}</h3>'
         f'<p>{bi(t["desc_en"], t["desc_zh"])}</p><span class="muted">{len(by_topic[t["id"]])} {bi("curated", "精选")} · '
@@ -328,6 +343,7 @@ def build() -> int:
 <h2>{bi("Topics", "主题")}</h2>
 <div class="grid">{topic_grid}</div>
 {picks_html}
+{popular_html}
 <h2>{bi("Highlights", "重点推荐")}</h2>
 <div class="cards">{''.join(curated_card(e, tby, '') for e in hi)}</div>
 <h2>{bi("Fresh from arXiv", "arXiv 最新")}</h2>
