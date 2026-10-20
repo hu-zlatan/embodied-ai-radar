@@ -23,7 +23,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
-1. Check that scheduled runs now fire (intake 02:17 / 07:43 / 15:29 UTC, pages 03:40). If none fire again, note it in OWNER_TODO (repo may need a recent commit/activity; scheduled workflows run on the default branch only). Re-check the latest `verify.yml` (run 5 pushed 9 new entries; runs 22/23 were still going at wrap-up).
+1. Check that scheduled runs now fire (intake 02:17 / 07:43 / 15:29 UTC, pages 03:40). If none fire again, note it in OWNER_TODO (repo may need a recent commit/activity; scheduled workflows run on the default branch only). verify.yml passed for all 9 run-5 entries; re-check the latest run each time.
 2. Each run: review the newest feed (papers with code first), promote 2–5 notable ones into curated YAML with `added: <date>` and careful EN/ZH takeaways (phrase results as "reports").
 3. Monday 2026-10-26: check the first auto digest (2026-W43); add a short human-quality intro paragraph if useful.
 4. Owner: topic typo `robot-learnin`; launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
@@ -38,4 +38,4 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - Done in run 3: resources section/page, digest robot-type counts, `learning` topic.
 - Done in run 4: 6 anchors from Chinese labs/companies (RoboTwin 2.0, CogACT, RoboBrain 2.0, DexGraspNet, RoboMIND, Unitree RL Gym), picks VLA-Δ + MambaAct, MimicGen, BEHAVIOR-1K, Hi Robot, issue forms. verify.yml passed for all.
 - Done in run 5: anchors ViNT, VIMA, Dobb-E, Isaac Lab paper (2511.04831), AI2-THOR; picks Ropedia W0, CondenseVLA, MoDex, PrismPlan; tagging keywords (impedance control, behavior trees, rearrangement, lifelong learning, soft/continuum robots).
-- Candidate anchors still missing (verify IDs first): GR-3 (arXiv ID not confirmed yet), GraspNet-1Billion (no arXiv; CVPR page), GNM (general navigation model), Habitat 3.0, RoboCasa already in.
+- Candidate anchors still missing (verify IDs first): GR-3 (arXiv ID not confirmed yet), GraspNet-1Billion (no arXiv; CVPR page), GNM (general navigation model), Habitat 3.0.
