@@ -24,7 +24,6 @@ DIGEST = ROOT / "digest"
 SITE_URL = "https://hu-zlatan.github.io/embodied-ai-radar/"
 REPO_URL = "https://github.com/hu-zlatan/embodied-ai-radar"
 FEED_DAYS_ON_SITE = 60   # feed papers kept in the search index
-FEED_DAYS_PAGE = 7       # days shown on the feed page
 TOPIC_FEED_MAX = 40      # recent feed papers per topic page
 FEED_ABSTRACT_DAYS = 21  # abstracts (for search) kept in the index only for this many days
 
@@ -397,17 +396,56 @@ def build() -> int:
                  alt=f'\n<link rel="alternate" type="application/atom+xml" title="{esc(t["en"])} · Embodied AI Radar" href="{t["id"]}.xml">'),
             encoding="utf-8")
 
-    # ---- feed page
-    days = sorted({p["published"] for p in feed}, reverse=True)[:FEED_DAYS_PAGE]
-    sections = []
-    for d in days:
-        ps = [p for p in feed if p["published"] == d]
-        sections.append(f'<h2 id="d{d}">{esc(d)} <span class="muted">({len(ps)})</span></h2><div class="cards">'
-                        + "".join(feed_card(p, tby, "") for p in ps) + "</div>")
+    # ---- feed: feed.html = newest day + archive; feed/<date>.html = one page per day
+    all_days = sorted({p["published"] for p in feed if p.get("published")}, reverse=True)
+    day_papers = {d: [p for p in feed if p.get("published") == d] for d in all_days}
+    (OUT / "feed").mkdir(exist_ok=True)
+    lead = f"""<p class="lead">{bi("New papers from cs.RO, plus robotics and embodied-AI papers from cs.CV / cs.LG / cs.AI / cs.CL, fetched automatically every day and tagged by keyword rules (tags can be wrong — curated entries are the verified ones).", "每天自动抓取 cs.RO 新论文，以及 cs.CV / cs.LG / cs.AI / cs.CL 中与机器人和具身智能相关的论文，并按关键词规则标注主题（自动标注可能有误，精选条目才是经过核验的）。")}</p>"""
+
+    def day_summary(ps: list[dict]) -> str:
+        n_code = sum(1 for p in ps if p.get("code"))
+        n_venue = sum(1 for p in ps if venue_of(p.get("comment")))
+        return (f'<p class="muted">{len(ps)} {bi("papers", "篇论文")} · {n_code} {bi("with code", "附代码")}'
+                + (f' · {n_venue} {bi("accepted at a venue", "已被会议/期刊接收")}' if n_venue else "") + "</p>")
+
+    def day_cards(ps: list[dict], root: str) -> str:
+        # papers with code first, otherwise keep feed order
+        ordered = [p for p in ps if p.get("code")] + [p for p in ps if not p.get("code")]
+        return '<div class="cards">' + "".join(feed_card(p, tby, root) for p in ordered) + "</div>"
+
+    def archive(root: str, current: str | None) -> str:
+        items = "".join(
+            f'<li>{"<b>" if d == current else ""}<a href="{root}feed/{d}.html">{esc(d)}</a>{"</b>" if d == current else ""} '
+            f'<span class="muted">({len(day_papers[d])})</span></li>' for d in all_days)
+        return f'<h2 id="archive">{bi("All days", "按日期浏览")}</h2><ul class="days">{items}</ul>' if items else ""
+
+    for i, d in enumerate(all_days):
+        newer = all_days[i - 1] if i > 0 else None
+        older = all_days[i + 1] if i + 1 < len(all_days) else None
+        pn = ('<p class="pager">'
+              + (f'<a href="{older}.html">← {esc(older)}</a>' if older else "")
+              + (f' <a href="{newer}.html">{esc(newer)} →</a>' if newer else "") + "</p>")
+        body = f"""<h1>{bi("arXiv papers", "arXiv 论文")} · {esc(d)}</h1>
+{lead}{day_summary(day_papers[d])}{pn}
+{day_cards(day_papers[d], "../")}
+{pn}{archive("../", d)}"""
+        (OUT / "feed" / f"{d}.html").write_text(
+            page(f"Embodied AI & robotics papers on arXiv, {d} · Embodied AI Radar", body, "../",
+                 f"{len(day_papers[d])} new embodied AI and robotics papers on arXiv ({d}), tagged by topic; papers with code first.",
+                 f"feed/{d}.html"), encoding="utf-8")
+
+    if all_days:
+        d0 = all_days[0]
+        latest = (f'<h2 id="d{d0}">{bi("Latest", "最新")}: {esc(d0)}</h2>{day_summary(day_papers[d0])}'
+                  f'{day_cards(day_papers[d0], "")}'
+                  f'<p><a class="more" href="feed/{d0}.html">{bi("Permalink for this day →", "本日固定链接 →")}</a></p>')
+    else:
+        latest = '<p class="muted">' + bi("The first intake has not run yet.", "首次收录尚未运行。") + "</p>"
     body = f"""<h1>{bi("Daily arXiv feed", "每日 arXiv 论文")}</h1>
-<p class="lead">{bi("New papers from cs.RO, plus robotics and embodied-AI papers from cs.CV / cs.LG / cs.AI / cs.CL, fetched automatically every day and tagged by keyword rules (tags can be wrong — curated entries are the verified ones).", "每天自动抓取 cs.RO 新论文，以及 cs.CV / cs.LG / cs.AI / cs.CL 中与机器人和具身智能相关的论文，并按关键词规则标注主题（自动标注可能有误，精选条目才是经过核验的）。")}</p>
-<p><a href="index.html#search">{bi("Search and filter all of it →", "搜索与筛选 →")}</a></p>
-{''.join(sections) or '<p class="muted">' + bi("The first intake has not run yet.", "首次收录尚未运行。") + '</p>'}"""
+{lead}
+<p><a href="index.html#search">{bi("Search and filter all of it →", "搜索与筛选 →")}</a> · <a href="#archive">{bi("Earlier days", "往日论文")}</a></p>
+{latest}
+{archive("", None)}"""
     (OUT / "feed.html").write_text(page("Daily arXiv feed · Embodied AI Radar", body, "", "New embodied AI and robotics papers from arXiv, every day, tagged by topic.", "feed.html"), encoding="utf-8")
 
     # ---- digests
@@ -452,7 +490,7 @@ def build() -> int:
     (OUT / "404.html").write_text(page("Not found · Embodied AI Radar", f'<h1>404</h1><p><a href="{SITE_URL}">{bi("Back to the radar", "返回首页")}</a></p>', SITE_URL, desc, "404.html"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n")
-    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests]
+    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days]
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"<url><loc>{SITE_URL}{u}</loc><lastmod>{today.isoformat()}</lastmod></url>\n" for u in urls)
