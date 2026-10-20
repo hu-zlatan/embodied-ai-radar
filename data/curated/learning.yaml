@@ -53,3 +53,45 @@
   tags: [rl, real, arm, human-in-the-loop]
   takeaway_en: HIL-SERL — real-world RL with human corrections, reported to reach near-perfect success on precise assembly and dynamic tasks after a few hours of training.
   takeaway_zh: HIL-SERL：结合人类纠正的真机强化学习，报告称在精密装配与动态任务上经数小时训练即可接近满分成功率。
+- title: "What Matters in Learning from Offline Human Demonstrations for Robot Manipulation"
+  type: paper
+  arxiv: "2108.03298"
+  year: 2021
+  org: Stanford
+  venue: CoRL 2021
+  code: https://github.com/ARISE-Initiative/robomimic
+  topics: [manipulation, datasets]
+  tags: [imitation, offline-rl, benchmark, human-demos]
+  takeaway_en: robomimic — a controlled study of imitation and offline RL on human-collected manipulation demos (demo quality, observation choices, history-aware BC), released with the framework and datasets.
+  takeaway_zh: robomimic：在人类采集的操作示教数据上系统比较模仿学习与离线强化学习（示教质量、观测选择、带历史的行为克隆），并开源框架与数据集。
+- title: "Offline Reinforcement Learning with Implicit Q-Learning"
+  type: paper
+  arxiv: "2110.06169"
+  year: 2021
+  org: UC Berkeley
+  venue: ICLR 2022
+  code: https://github.com/ikostrikov/implicit_q_learning
+  tags: [offline-rl, expectile-regression, offline-to-online]
+  takeaway_en: IQL — learns values with expectile regression without ever querying actions outside the dataset, then extracts a policy by advantage-weighted regression; a common base for offline-to-online robot RL.
+  takeaway_zh: IQL：用期望分位数回归学习价值函数、从不查询数据集外的动作，再用优势加权回归提取策略；是机器人离线到在线强化学习的常用基础。
+- title: "Behavior Transformers: Cloning $k$ modes with one stone"
+  type: paper
+  arxiv: "2206.11251"
+  year: 2022
+  org: NYU
+  venue: NeurIPS 2022
+  code: https://github.com/notmahi/bet
+  tags: [imitation, multimodal, transformer]
+  takeaway_en: BeT — clusters actions into k bins plus a continuous offset so a transformer can imitate multimodal demonstrations instead of averaging them.
+  takeaway_zh: BeT：把动作聚成 k 个类别再加连续偏移，让 Transformer 能模仿多模态示教，而不是把不同模式平均掉。
+- title: "Diffusion Policy Policy Optimization"
+  type: paper
+  arxiv: "2409.00588"
+  year: 2024
+  org: Princeton
+  venue: ICLR 2025
+  code: https://github.com/irom-princeton/dppo
+  topics: [manipulation]
+  tags: [rl, diffusion-policy, fine-tuning, sim-to-real]
+  takeaway_en: DPPO — fine-tunes a pre-trained diffusion policy with PPO by treating the denoising steps as part of the MDP; reports stable gains over other RL fine-tuning methods and sim-to-real transfer.
+  takeaway_zh: DPPO：把去噪步骤视为 MDP 的一部分，用 PPO 微调预训练扩散策略；报告称比其他强化学习微调方法更稳定，并实现了仿真到真机迁移。
