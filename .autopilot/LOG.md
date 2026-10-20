@@ -73,3 +73,11 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - **Search sort**: best match / newest / GitHub stars, shareable `?sort=`.
 - README (EN/ZH): new 'Citable' bullet.
 - Tactile anchors Taxim + Tactile Gym 2.0 (verify passed). Dispatched intake (first dispatch was cancelled by a newer pending verify in the shared concurrency group; re-dispatched after verify started): curated_meta.json now covers all 157 curated arXiv papers; curated.bib has 157 entries, unique keys. Curated: 163. CI/verify/Pages green. Repo: 0 stars / 0 forks. End of run 7.
+
+## 2026-10-20 — run 8 (~22:50 UTC–)
+
+- Start: all workflows green (scheduled intake 15:29 slot ran, no new papers), no issues/PRs, 0 stars / 0 forks.
+- Anchors (IDs/titles confirmed by web search; verify.yml passed): Segment Anything, SAM 2, Grounding DINO, FoundationStereo (perception 10 → 16 with picks), CQL, Decision Transformer (learning), Berkeley Humanoid Lite (hardware, RSS 2025).
+- Agent picks from 2026-10-20 feed (all with code): SpaRV (HKU MaRS), HumanoidPose (ETH), CusADi2, CTR (SJTU bimanual IL). Takeaways from the stored (truncated) abstracts, kept to what they state; WebFetch of arxiv.org/abs pages needs approval in unattended runs.
+- **Feed split by day**: feed.html 1.27 MB → 0.35 MB; per-day permalink pages with prev/next and a summary line; tested headless at 390 px (no JS errors, no horizontal scroll).
+- Push was rejected once because the repo-stats bot had pushed; `git pull --rebase` then push (always pull before push).
