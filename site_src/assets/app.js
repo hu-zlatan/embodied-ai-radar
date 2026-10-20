@@ -29,7 +29,7 @@
   var q = document.getElementById('q');
   if (!q) return;
   var fTopic = document.getElementById('f-topic'), fKind = document.getElementById('f-kind'),
-      fCode = document.getElementById('f-code'), fEmb = document.getElementById('f-emb'), out = document.getElementById('results'),
+      fCode = document.getElementById('f-code'), fSort = document.getElementById('f-sort'), fEmb = document.getElementById('f-emb'), out = document.getElementById('results'),
       count = document.getElementById('count'), home = document.getElementById('home-static');
   var data = null, loading = false;
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]; }); }
@@ -67,13 +67,13 @@
       (it.pj ? ' · <a href="' + esc(it.pj) + '">' + (lang() === 'zh' ? '项目页' : 'Project') + '</a>' : '') +
       '</div><div class="chips">' + topicChips(it.tp) + embChips(it.em) + '</div></article>';
   }
-  function active() { return q.value.trim() || fTopic.value || (fEmb && fEmb.value) || fKind.value || fCode.checked; }
+  function active() { return q.value.trim() || fTopic.value || (fEmb && fEmb.value) || fKind.value || fCode.checked || (fSort && fSort.value); }
   function syncUrl() {
     // Keep the address bar shareable: ?q=…&topic=…&robot=…&src=…&code=1 (lang is kept if present).
     try {
       var u = new URLSearchParams(location.search), set = function (k, v) { if (v) u.set(k, v); else u.delete(k); };
       set('q', q.value.trim()); set('topic', fTopic.value); set('robot', fEmb ? fEmb.value : '');
-      set('src', fKind.value); set('code', fCode.checked ? '1' : '');
+      set('src', fKind.value); set('code', fCode.checked ? '1' : ''); set('sort', fSort ? fSort.value : '');
       var s = u.toString();
       history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash);
     } catch (e) {}
@@ -91,7 +91,10 @@
         for (var i = 0; i < terms.length; i++) if (it._s.indexOf(terms[i]) < 0) return false;
         return true;
       });
+      var mode = fSort ? fSort.value : '';
       res.sort(function (a, b) {
+        if (mode === 'stars') { var sa = a.s == null ? -1 : a.s, sb = b.s == null ? -1 : b.s; if (sa !== sb) return sb - sa; }
+        if (mode === 'new') { var da = a.d || String(a.y), db = b.d || String(b.y); if (da !== db) return da < db ? 1 : -1; }
         if (a.k !== b.k) return a.k === 'c' ? -1 : 1;
         if (a.k === 'c') return (b.h - a.h) || (b.y - a.y);
         return a.d < b.d ? 1 : -1;
@@ -105,11 +108,12 @@
   window.__radarRender = function () { if (q) render(); };
   var timer;
   q.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(render, 120); });
-  [fTopic, fEmb, fKind, fCode].filter(Boolean).forEach(function (el) { el.addEventListener('change', render); });
+  [fTopic, fEmb, fKind, fCode, fSort].filter(Boolean).forEach(function (el) { el.addEventListener('change', render); });
   var params = new URLSearchParams(location.search);
   if (params.get('q')) { q.value = params.get('q'); render(); }
   if (params.get('topic')) { fTopic.value = params.get('topic'); render(); }
   if (params.get('robot') && fEmb) { fEmb.value = params.get('robot'); render(); }
   if (params.get('src')) { fKind.value = params.get('src'); render(); }
   if (params.get('code') === '1') { fCode.checked = true; render(); }
+  if (params.get('sort') && fSort) { fSort.value = params.get('sort'); render(); }
 })();

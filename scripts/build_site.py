@@ -316,6 +316,7 @@ def build() -> int:
 <select id="f-topic" aria-label="Topic"><option value="" data-en="All topics" data-zh="全部主题">All topics</option>{topic_opts}</select>
 <select id="f-emb" aria-label="Embodiment"><option value="" data-en="Any robot" data-zh="全部机器人形态">Any robot</option>{emb_opts}</select>
 <select id="f-kind" aria-label="Source"><option value="" data-en="Curated + daily feed" data-zh="精选 + 每日论文">Curated + daily feed</option><option value="c" data-en="Curated only" data-zh="仅精选">Curated only</option><option value="f" data-en="Daily feed only" data-zh="仅每日论文">Daily feed only</option></select>
+<select id="f-sort" aria-label="Sort"><option value="" data-en="Sort: best match" data-zh="排序：默认">Sort: best match</option><option value="new" data-en="Sort: newest" data-zh="排序：最新">Sort: newest</option><option value="stars" data-en="Sort: GitHub stars" data-zh="排序：GitHub 星标">Sort: GitHub stars</option></select>
 <label><input id="f-code" type="checkbox"> {bi("Has code", "有代码")}</label>
 </div>
 <p id="count" class="muted"></p>
