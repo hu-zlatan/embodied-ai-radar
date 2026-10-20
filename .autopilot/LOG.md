@@ -81,3 +81,6 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Agent picks from 2026-10-20 feed (all with code): SpaRV (HKU MaRS), HumanoidPose (ETH), CusADi2, CTR (SJTU bimanual IL). Takeaways from the stored (truncated) abstracts, kept to what they state; WebFetch of arxiv.org/abs pages needs approval in unattended runs.
 - **Feed split by day**: feed.html 1.27 MB → 0.35 MB; per-day permalink pages with prev/next and a summary line; tested headless at 390 px (no JS errors, no horizontal scroll).
 - Push was rejected once because the repo-stats bot had pushed; `git pull --rebase` then push (always pull before push).
+- Hardware anchors ORCA hand (ETH) and HOMIE (Shanghai AI Lab/CUHK, RSS 2025); checked against the arXiv HTML pages.
+- verify.yml caught a 404 code link on the CTR pick (repo not public yet) → removed. A second failure came from a temporary MIT course-site outage → verify now retries network/5xx errors once and reports them as warnings; 4xx still fails. Final verify run passed for all 176 entries.
+- End: CI/Pages green, curated 176, repo 0 stars / 0 forks, no issues/PRs. Nothing new for the owner. End of run 8.

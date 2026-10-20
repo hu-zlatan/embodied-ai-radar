@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-20 ~23:05 UTC, run 8._
+_Last updated: 2026-10-20 ~23:10 UTC, run 8 (end)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (174 entries, EN/ZH takeaways; 17 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (621 papers, 2026-10-12..20; 186 untagged).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (176 entries, EN/ZH takeaways; 17 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (621 papers, 2026-10-12..20; 186 untagged).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -14,7 +14,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - **Feed by day** (run 8): `feed.html` = newest day (code-first) + archive list; `feed/YYYY-MM-DD.html` per day with prev/next, summary (papers / with code / venues), in sitemap. All days kept (permalinks stay valid); each day page ~150–350 KB raw.
 - Issue forms: `.github/ISSUE_TEMPLATE/` (suggest an entry / report a mistake, bilingual; contact links to site + Discussions). Footer link `/issues/new` opens the chooser.
 - License: `LICENSE` = MIT (GitHub detects it), data terms in `LICENSE-DATA.md`.
-- Verification: all curated arXiv IDs + links checked by `verify.yml` (run 2: 10 perception anchors passed). Re-check the latest verify run at the start of each run.
+- Verification: all curated arXiv IDs + links checked by `verify.yml` (since run 8: HTTP 4xx fails; network errors/5xx are retried once and shown as ⚠️ warnings, not failures) (run 2: 10 perception anchors passed). Re-check the latest verify run at the start of each run.
 - Scripts: `validate.py`, `verify_curated.py` (CI; API → abs-page fallback), `intake_arxiv.py` (CI; RSS first, API fallback, `--retag`), `build_site.py`, `build_readme.py` (`--check` in CI), `make_digest.py`.
 - Workflows: `repo-stats.yml` (above), `ci.yml`, `intake.yml` (daily 02:17 UTC + backup slots 07:43 and 15:29 UTC, since GitHub dropped the first scheduled run), `pages.yml` (push / after intake or digest / daily 03:40 UTC), `verify.yml` (curated changes + weekly Mon), `weekly.yml` (Mon 05:23 UTC + backup 13:11 UTC → `digest/YYYY-Www.md`, skips if it exists). intake + verify share concurrency group `arxiv-api` (a newer pending run cancels an older pending one — re-dispatch if needed).
 
@@ -49,4 +49,6 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - Done in run 7: anchors robomimic, IQL, BeT, DPPO, ALOHA 2, Stretch, Taxim, Tactile Gym 2.0; BibTeX + curated.bib; search sort.
 - Done in run 8: anchors SAM, SAM 2, Grounding DINO, FoundationStereo (perception), CQL, Decision Transformer (learning), Berkeley Humanoid Lite (hardware); picks SpaRV, HumanoidPose, CusADi2, CTR; feed split by day.
 - Idea: stars in README (would need the stats workflow to regenerate README too).
-- Candidate anchors still missing: GraspNet-1Billion (no arXiv; CVPR page).
+- Candidate anchors still missing: GraspNet-1Billion (no arXiv; CVPR page), GelSight 2017 sensor paper (MDPI Sensors, no arXiv).
+- Feed code links come from authors' arXiv comments and can 404 before release (e.g. github.com/MINT-SJTU/CTR in run 8). Idea: let repo_stats.py also check feed code repos and hide/flag missing ones.
+- Pick CTR (2610.26507): add its code link once github.com/MINT-SJTU/CTR is public.
