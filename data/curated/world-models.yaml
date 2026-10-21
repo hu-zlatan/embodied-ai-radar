@@ -103,3 +103,52 @@
   tags: [survey, video-generation, awesome-list]
   takeaway_en: A survey of video world models in robotics - where they replace or complement physics simulators (e.g. deformable objects), their applications, and open challenges - with a maintained paper list.
   takeaway_zh: 机器人视频世界模型综述：它们在哪些场景可替代或补充物理仿真器（如可变形物体）、主要应用与开放挑战，并附持续更新的论文列表。
+- title: "Learning Latent Dynamics for Planning from Pixels"
+  type: paper
+  arxiv: "1811.04551"
+  year: 2019
+  org: Google Brain, DeepMind
+  venue: ICML 2019
+  code: https://github.com/google-research/planet
+  tags: [sim, model-based-rl, planning, latent-dynamics]
+  takeaway_en: PlaNet — learns a latent dynamics model (the RSSM later reused by Dreamer) from images and plans actions directly in latent space with CEM.
+  takeaway_zh: PlaNet：从图像中学习潜空间动力学模型（即后来 Dreamer 沿用的 RSSM），并用 CEM 直接在潜空间中规划动作。
+- title: "Mastering Atari with Discrete World Models"
+  type: paper
+  arxiv: "2010.02193"
+  year: 2021
+  org: Google Research, DeepMind
+  venue: ICLR 2021
+  code: https://github.com/danijar/dreamerv2
+  tags: [sim, model-based-rl, discrete-latents]
+  takeaway_en: DreamerV2 — switches Dreamer to categorical latent variables and learns Atari behaviour purely inside the world model, reaching human-level scores.
+  takeaway_zh: DreamerV2：把 Dreamer 的潜变量改为离散类别分布，仅在世界模型的想象中学习 Atari 策略，达到人类水平。
+- title: "Transformers are Sample-Efficient World Models"
+  type: paper
+  arxiv: "2209.00588"
+  year: 2023
+  org: University of Geneva
+  venue: ICLR 2023
+  code: https://github.com/eloialonso/iris
+  tags: [sim, model-based-rl, transformer, tokenizer]
+  takeaway_en: IRIS — a discrete autoencoder turns frames into tokens and a Transformer predicts the next tokens; the agent learns in imagination with only ~2 hours of Atari gameplay.
+  takeaway_zh: IRIS：离散自编码器把画面变成 token，Transformer 预测后续 token；智能体只用约 2 小时的 Atari 游戏经验便在想象中学会策略。
+- title: "Learning Universal Policies via Text-Guided Video Generation"
+  type: paper
+  arxiv: "2302.00111"
+  year: 2023
+  org: MIT, Google
+  venue: NeurIPS 2023
+  tags: [video-generation, planning, language]
+  takeaway_en: UniPi — casts decision making as text-conditioned video generation, then recovers actions from the generated frames with an inverse dynamics model.
+  takeaway_zh: UniPi：把决策问题转化为文本条件的视频生成，再用逆动力学模型从生成的画面中恢复动作。
+- title: "Temporal Difference Learning for Model Predictive Control"
+  type: paper
+  arxiv: "2203.04955"
+  year: 2022
+  org: UC San Diego
+  venue: ICML 2022
+  code: https://github.com/nicklashansen/tdmpc
+  tags: [sim, model-based-rl, mpc, planning]
+  takeaway_en: TD-MPC — a task-oriented latent model used for short-horizon planning, with a learned value function covering the long-term return; the predecessor of TD-MPC2.
+  takeaway_zh: TD-MPC：用面向任务的潜空间模型做短视距规划，由学习到的价值函数估计长期回报；是 TD-MPC2 的前身。
