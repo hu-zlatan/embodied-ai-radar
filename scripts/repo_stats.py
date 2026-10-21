@@ -7,6 +7,8 @@ Runs in GitHub Actions (repo-stats.yml) with GITHUB_TOKEN; writes data/repo_stat
 of papers from the last FEED_DAYS days: such repos often 404 until the code is released, so the site shows
 them as "code not public yet" instead of a broken link. Repos that fail to fetch (network, rate limit)
 keep their previous values, so a flaky API never blanks the site.
+It also appends a daily star snapshot to data/repo_stars_history.json (last HIST_DAYS days) so the site can show
+stars gained over the last week ("rising" repos).
 Usage: python scripts/repo_stats.py
 """
 from __future__ import annotations
@@ -23,6 +25,8 @@ import urllib.request
 from radar import ROOT, load_arxiv_feed, load_curated, load_resources
 
 OUT = ROOT / "data" / "repo_stats.json"
+HIST = ROOT / "data" / "repo_stars_history.json"  # {"YYYY-MM-DD": {"owner/repo": stars}}, one snapshot per day
+HIST_DAYS = 45
 FEED_DAYS = 30
 GH = re.compile(r"^https://github\.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+?)(?:\.git)?/?(?:[#?].*)?$")
 
@@ -46,6 +50,41 @@ def load_stats() -> dict:
 
 def load_feed_stats() -> dict:
     return _load("feed")
+
+
+def load_history() -> dict[str, dict[str, int]]:
+    try:
+        h = json.loads(HIST.read_text(encoding="utf-8"))
+        return {d: v for d, v in h.items() if isinstance(v, dict)} if isinstance(h, dict) else {}
+    except (OSError, ValueError):
+        return {}
+
+
+def save_history(hist: dict[str, dict[str, int]], today: dt.date, snap: dict[str, int]) -> None:
+    """Add today's snapshot (replacing an earlier one from the same day) and drop days older than HIST_DAYS."""
+    hist = dict(hist)
+    hist[today.isoformat()] = dict(sorted(snap.items()))
+    cut = (today - dt.timedelta(days=HIST_DAYS)).isoformat()
+    days = sorted(d for d in hist if d >= cut)
+    # one line per day keeps git diffs small
+    body = ",\n".join(json.dumps(d) + ":" + json.dumps(hist[d], separators=(",", ":")) for d in days)
+    HIST.write_text("{\n" + body + "\n}\n", encoding="utf-8")
+
+
+def star_gains(hist: dict[str, dict[str, int]], days: int = 7) -> tuple[dict[str, int], int]:
+    """Stars gained per repo between the newest snapshot and the newest one at least `days` older.
+    Returns ({repo: gain}, span_in_days); ({}, 0) when the history is too short."""
+    if not hist:
+        return {}, 0
+    last = max(hist)
+    last_d = dt.date.fromisoformat(last)
+    older = [d for d in hist if dt.date.fromisoformat(d) <= last_d - dt.timedelta(days=days)]
+    if not older:
+        return {}, 0
+    base = max(older)
+    span = (last_d - dt.date.fromisoformat(base)).days
+    now, then = hist[last], hist[base]
+    return {k: now[k] - then[k] for k in now if k in then}, span
 
 
 def apply_feed_stats(papers: list[dict], stats: dict) -> None:
@@ -125,6 +164,8 @@ def main() -> int:
             feed[k] = old_feed[k]
     OUT.write_text(json.dumps({"updated": dt.date.today().isoformat(), "repos": new, "feed": feed},
                               indent=1, sort_keys=True) + "\n", encoding="utf-8")
+    snap = {k: v["stars"] for k, v in new.items()} | {k: v["stars"] for k, v in feed.items() if "stars" in v}
+    save_history(load_history(), dt.date.today(), snap)
     n_missing = sum(1 for v in feed.values() if v.get("missing"))
     print(f"{ok}/{len(keys)} curated repos fetched; feed: {fok}/{len(fkeys)} fetched, {n_missing} not found")
     return 0 if ok or not keys else 1

@@ -14,7 +14,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from repo_stats import apply_feed_stats, load_feed_stats, load_stats, repo_key
+from repo_stats import apply_feed_stats, load_feed_stats, load_history, load_stats, repo_key, star_gains
 from radar import (ROOT, bibtex, classify, venue_of, load_arxiv_feed, load_curated, load_curated_meta, load_embodiments,
                    load_resources, load_topics)
 
@@ -386,15 +386,44 @@ def build() -> int:
         if k and k in STATS and (k not in by_repo or (by_repo[k]["type"] == "paper" and e["type"] != "paper")):
             by_repo[k] = e
     popular = sorted(((STATS[k], e) for k, e in by_repo.items()), key=lambda x: -x[0]["stars"])[:12]
+    gains, span = star_gains(load_history())
+
+    def gain_badge(k: str) -> str:
+        g = gains.get(k, 0)
+        return f' <span class="badge rise" title="GitHub stars gained in the last {span} days">+{fmt_stars(g)}</span>' if g > 0 else ""
+
+    def short(t: str) -> str:
+        return title_html(t) if len(t) < 70 else title_html(t[:67]) + "…"
+
     popular_html = ""
     if popular:
         rows = "".join(
             f'<li><a href="{esc(e["code"])}" rel="noopener">{esc(e["code"].split("github.com/")[1].rstrip("/"))}</a>'
-            f' <span class="gh">★ {fmt_stars(st["stars"])}</span> <span class="muted">· {title_html(e["title"]) if len(e["title"]) < 70 else title_html(e["title"][:67]) + "…"}</span></li>'
+            f' <span class="gh">★ {fmt_stars(st["stars"])}</span>{gain_badge(repo_key(e["code"]) or "")}'
+            f' <span class="muted">· <a href="e/{esc(e["id"])}.html">{short(e["title"])}</a></span></li>'
             for st, e in popular)
         popular_html = (f'<h2>{bi("Most-starred open-source code", "最受关注的开源代码")}</h2>'
                         f'<p class="muted">{bi("GitHub stars of curated entries, refreshed weekly.", "精选条目的 GitHub 星标数，每周更新。")}</p>'
                         f'<ol class="poplist">{rows}</ol>')
+    # repos that gained the most GitHub stars over the last week (curated code + code of recent feed papers)
+    rising_html = ""
+    if gains:
+        owner_of: dict[str, tuple[str, str, str]] = {}  # repo -> (repo url, title, detail link)
+        for p in feed:
+            for u in p.get("code") or []:
+                k = repo_key(u)
+                if k and k not in owner_of:
+                    owner_of[k] = (u, p["title"], f'https://arxiv.org/abs/{p["id"]}')
+        for k, e in by_repo.items():
+            owner_of[k] = (e["code"], e["title"], f'e/{e["id"]}.html')
+        top = sorted(((g, k) for k, g in gains.items() if g > 0 and k in owner_of), reverse=True)[:10]
+        if top:
+            rows = "".join(
+                f'<li><a href="{esc(owner_of[k][0])}" rel="noopener">{esc(k)}</a> <span class="badge rise">+{fmt_stars(g)}</span>'
+                f' <span class="muted">· <a href="{esc(owner_of[k][2])}">{short(owner_of[k][1])}</a></span></li>' for g, k in top)
+            rising_html = (f'<h2>{bi("Rising this week", "本周升温")}</h2>'
+                           f'<p class="muted">{bi(f"GitHub stars gained in the last {span} days by code from curated entries and recent arXiv papers.", f"精选条目与近期 arXiv 论文的代码在最近 {span} 天新增的 GitHub 星标。")}</p>'
+                           f'<ol class="poplist">{rows}</ol>')
     topic_grid = "".join(
         f'<a class="tile" href="topics/{t["id"]}.html"><h3>{bi(t["en"], t["zh"])}</h3>'
         f'<p>{bi(t["desc_en"], t["desc_zh"])}</p><span class="muted">{len(by_topic[t["id"]])} {bi("curated", "精选")} · '
@@ -411,6 +440,7 @@ def build() -> int:
 <h2>{bi("Topics", "主题")}</h2>
 <div class="grid">{topic_grid}</div>
 {picks_html}
+{rising_html}
 {popular_html}
 <h2>{bi("Highlights", "重点推荐")}</h2>
 <div class="cards">{''.join(curated_card(e, tby, '') for e in hi)}</div>
