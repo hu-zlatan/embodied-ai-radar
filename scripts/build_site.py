@@ -81,13 +81,47 @@ def bib_block(b: str | None) -> str:
             f'<button type="button" class="copy">{bi("Copy", "复制")}</button></details>')
 
 
+def plain_title(t: str) -> str:
+    return re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", t)
+
+
 def title_html(t: str) -> str:
     # Render the few LaTeX titles we have ($π_0$, $π_{0.5}$) readably.
     t = re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", t)
     return esc(t).replace("π0.5", "π<sub>0.5</sub>").replace("π0", "π<sub>0</sub>")
 
 
-def curated_card(e: dict, topics_by_id: dict, root: str) -> str:
+SCHEMA_TYPE = {"paper": "ScholarlyArticle", "code": "SoftwareSourceCode", "dataset": "Dataset",
+               "benchmark": "Dataset", "simulator": "SoftwareSourceCode", "hardware": "CreativeWork"}
+
+
+def entry_page(e: dict, topics_by_id: dict, related: list[dict], authors: list[str]) -> str:
+    """Body of e/<id>.html: one curated entry with its takeaway, links, BibTeX and related entries."""
+    t0 = topics_by_id[e["topics"][0]]
+    crumbs = (f'<p class="muted"><a href="../topics/index.html">{bi("Topics", "主题")}</a> › '
+              f'<a href="../topics/{t0["id"]}.html">{bi(t0["en"], t0["zh"])}</a></p>')
+    au = ""
+    if authors:
+        au = f'<p class="authors">{bi("Authors (from arXiv): ", "作者（来自 arXiv）：")}{esc(", ".join(authors[:8]))}{" et al." if len(authors) > 8 else ""}</p>'
+    rel = ""
+    if related:
+        rel = (f'<h2>{bi("More in " + t0["en"], "更多" + t0["zh"] + "条目")}</h2><ul class="tlist">'
+               + "".join(f'<li><a href="{esc(r["id"])}.html">{title_html(r["title"])}</a> '
+                         f'<span class="muted">· {esc(str(r["year"]))}{" · " + esc(r["org"]) if r.get("org") else ""}</span></li>'
+                         for r in related)
+               + f'</ul><p><a class="more" href="../topics/{t0["id"]}.html">{bi("All " + t0["en"] + " entries →", "查看全部" + t0["zh"] + "条目 →")}</a></p>')
+    ld = {"@context": "https://schema.org", "@type": SCHEMA_TYPE.get(e["type"], "CreativeWork"),
+          "name": plain_title(e["title"]), "url": f"{SITE_URL}e/{e['id']}.html",
+          "description": e["takeaway_en"], "sameAs": [u for _, _, u in links_of(e)], "dateCreated": str(e["year"]),
+          "about": [topics_by_id[t]["en"] for t in e["topics"]]}
+    if authors:
+        ld["author"] = [{"@type": "Person", "name": a} for a in authors[:20]]
+    ld_js = json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")
+    return (crumbs + f'<div class="cards single">{curated_card(e, topics_by_id, "../", detail=True)}</div>' + au + rel
+            + f'\n<script type="application/ld+json">{ld_js}</script>')
+
+
+def curated_card(e: dict, topics_by_id: dict, root: str, detail: bool = False) -> str:
     links = links_of(e)
     main = links[0][2]
     en, zh = TYPE_LABEL[e["type"]]
@@ -99,17 +133,20 @@ def curated_card(e: dict, topics_by_id: dict, root: str) -> str:
     if e.get("added"):
         star += f' <span class="badge new">{bi("new", "新")} {esc(str(e["added"]))}</span>'
     linkrow = " · ".join(f'<a href="{esc(u)}" rel="noopener">{bi(a, b)}</a>' for a, b, u in links)
+    if not detail:
+        linkrow += f' · <a class="perma" href="{root}e/{esc(e["id"])}.html">{bi("Details", "详情")}</a>'
     st = repo_stat(e)
     if st:
         linkrow += f' <span class="gh" title="GitHub stars">★ {fmt_stars(st["stars"])}</span>'
         if st.get("archived"):
             linkrow += f' <span class="badge">{bi("archived", "已归档")}</span>'
     meta = " · ".join(x for x in [esc(str(e["year"])), esc(e.get("org", ""))] if x)
+    h = "h1" if detail else "h3"
     if e.get("venue"):
         meta += f' <span class="badge venue">{esc(str(e["venue"]))}</span>'
     return f"""<article class="card" id="{esc(e['id'])}">
 <div class="meta"><span class="badge">{bi(en, zh)}</span> {meta} {star}</div>
-<h3><a href="{esc(main)}" rel="noopener">{title_html(e['title'])}</a></h3>
+<{h}><a href="{esc(main)}" rel="noopener">{title_html(e['title'])}</a></{h}>
 <p class="take">{bi(e['takeaway_en'], e['takeaway_zh'])}</p>
 <div class="links">{linkrow}</div>
 {bib_block(e.get("bib"))}
@@ -411,6 +448,18 @@ def build() -> int:
                  alt=f'\n<link rel="alternate" type="application/atom+xml" title="{esc(t["en"])} · Embodied AI Radar" href="{t["id"]}.xml">'),
             encoding="utf-8")
 
+    # ---- one permalink page per curated entry: e/<id>.html
+    (OUT / "e").mkdir()
+    for e in entries:
+        t0 = e["topics"][0]
+        related = sorted((r for r in by_topic[t0] if r["id"] != e["id"]),
+                         key=lambda r: (not r.get("highlight"), -int(r["year"]), r["title"]))[:8]
+        authors = (meta.get(e.get("arxiv") or "") or {}).get("authors") or []
+        desc_e = f"{e['takeaway_en']} {e['takeaway_zh']}"
+        (OUT / "e" / f"{e['id']}.html").write_text(
+            page(f"{plain_title(e['title'])} · Embodied AI Radar", entry_page(e, tby, related, authors), "../",
+                 desc_e, f"e/{e['id']}.html"), encoding="utf-8")
+
     # ---- feed: feed.html = newest day + archive; feed/<date>.html = one page per day
     all_days = sorted({p["published"] for p in feed if p.get("published")}, reverse=True)
     day_papers = {d: [p for p in feed if p.get("published") == d] for d in all_days}
@@ -505,7 +554,7 @@ def build() -> int:
     (OUT / "404.html").write_text(page("Not found · Embodied AI Radar", f'<h1>404</h1><p><a href="{SITE_URL}">{bi("Back to the radar", "返回首页")}</a></p>', SITE_URL, desc, "404.html"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n")
-    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days]
+    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries]
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"<url><loc>{SITE_URL}{u}</loc><lastmod>{today.isoformat()}</lastmod></url>\n" for u in urls)
