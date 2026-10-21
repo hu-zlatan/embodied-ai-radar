@@ -14,7 +14,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from repo_stats import load_stats, repo_key
+from repo_stats import apply_feed_stats, load_feed_stats, load_stats, repo_key
 from radar import (ROOT, bibtex, classify, venue_of, load_arxiv_feed, load_curated, load_curated_meta, load_embodiments,
                    load_resources, load_topics)
 
@@ -125,6 +125,11 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
         f'<a class="chip topic" href="{root}topics/{t}.html">{bi(topics_by_id[t]["en"], topics_by_id[t]["zh"])}</a>'
         for t in p.get("topics", []) if t in topics_by_id) + emb_chips(p.get("emb", []))
     code = "".join(f' · <a href="{esc(u)}" rel="noopener">{bi("Code", "代码")}</a>' for u in p.get("code", [])[:1])
+    if not code and p.get("code_pending"):
+        code = (' · <span class="muted" title="' + esc(p["code_pending"][0]) + '">'
+                + bi("Code: not public yet", "代码：尚未公开") + "</span>")
+    elif code and p.get("stars") is not None:
+        code += f' <span class="gh" title="GitHub stars">★ {fmt_stars(p["stars"])}</span>'
     proj = "".join(f' · <a href="{esc(u)}" rel="noopener">{bi("Project", "项目页")}</a>' for u in p.get("project", [])[:1])
     has_code = '<span class="badge code">code</span>' if p.get("code") else ""
     v = venue_of(p.get("comment"))
@@ -252,6 +257,7 @@ def build() -> int:
     EMB.update({m["id"]: m for m in embs})
     STATS.clear()
     STATS.update(load_stats())
+    apply_feed_stats(feed, load_feed_stats())
     for e in entries:
         e["emb"] = classify(" ".join([e["takeaway_en"], " ".join(e.get("tags") or [])]), embs, title=e["title"], threshold=1)
     meta = load_curated_meta()
@@ -292,7 +298,7 @@ def build() -> int:
         it = {"k": "f", "id": p["id"], "t": p["title"], "d": p.get("published", ""),
               "au": ", ".join(p.get("authors", [])[:4]), "tp": p.get("topics", []), "em": p["emb"],
               "c": (p.get("code") or [None])[0], "pc": p.get("primary", ""), "v": venue_of(p.get("comment")),
-              "pj": (p.get("project") or [None])[0]}
+              "pj": (p.get("project") or [None])[0], "s": p.get("stars") if p.get("code") else None}
         if it["d"] >= ab_cut:  # keep the index small: older papers are searchable by title/authors only
             it["ab"] = p.get("abstract", "")[:300]
         idx.append({k: v for k, v in it.items() if v not in (None, [], "")} | {"k": "f", "id": p["id"], "t": p["title"]})

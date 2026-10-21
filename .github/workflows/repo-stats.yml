@@ -5,6 +5,9 @@ on:
   push:
     branches: [main]
     paths: ["data/curated/**", "data/resources.yaml", "scripts/repo_stats.py"]
+  workflow_run:  # re-check feed code links (often 404 until release) after each intake
+    workflows: ["Daily arXiv intake"]
+    types: [completed]
   workflow_dispatch:
 permissions:
   contents: write
@@ -20,7 +23,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Fetch stars / last push / archived for curated GitHub repos
+      - name: Fetch stars / last push / archived for curated and recent feed GitHub repos
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/repo_stats.py
