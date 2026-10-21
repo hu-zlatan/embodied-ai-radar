@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-10-20 ~23:10 UTC, run 8 (end)._
+_Last updated: 2026-10-21 ~05:20 UTC, run 9._
 
 ## Status
 
@@ -9,6 +9,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
+- **Feed code-link check** (run 9): `repo_stats.py` also checks code repos of feed papers from the last 30 days → `feed` section of `data/repo_stats.json` (`{stars}` or `{missing: true}`). 404 repos render as 'Code: not public yet' (no link, not counted as code, excluded from digest/filter); live ones show ★ (also in search, sortable). `repo-stats.yml` now also runs after every intake (workflow_run).
 - **BibTeX** (run 7): every arXiv card (curated + feed) has a collapsed BibTeX block + copy button; `_site/curated.bib` bundles all curated papers; topics page links it. Built only from arXiv metadata: feed authors (capped 8 → 'and others'), curated authors cached in `data/arxiv/curated_meta.json` by intake (`fill_curated_meta`, only missing IDs). Feed page +21% gzipped.
 - **Search sort** (run 7): best match / newest / GitHub stars, `?sort=new|stars`; sort alone lists everything.
 - **Feed by day** (run 8): `feed.html` = newest day (code-first) + archive list; `feed/YYYY-MM-DD.html` per day with prev/next, summary (papers / with code / venues), in sitemap. All days kept (permalinks stay valid); each day page ~150–350 KB raw.
@@ -28,7 +29,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 ## Next steps
 
 0. `data/arxiv/curated_meta.json` is filled (157/157 curated arXiv IDs, run 7). New curated entries get metadata on the next intake run. Note: a push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started.
-1. Check that scheduled runs now fire (intake 02:17 / 07:43 / 15:29 UTC, pages 03:40). If none fire again, note it in OWNER_TODO (repo may need a recent commit/activity; scheduled workflows run on the default branch only). verify.yml passed for all 9 run-5 entries; re-check the latest run each time.
+1. Scheduled runs are unreliable: on 2026-10-21 the 02:17 intake had not fired by 04:50 (the 15:29 slot on 10-20 started at 19:24). Run 9 dispatched intake by hand. Check that scheduled runs now fire (intake 02:17 / 07:43 / 15:29 UTC, pages 03:40). If none fire again, note it in OWNER_TODO (repo may need a recent commit/activity; scheduled workflows run on the default branch only). verify.yml passed for all 9 run-5 entries; re-check the latest run each time.
 2. Each run: review the newest feed (papers with code first), promote 2–5 notable ones into curated YAML with `added: <date>` and careful EN/ZH takeaways (phrase results as "reports").
 3. Monday 2026-10-26: check the first auto digest (2026-W43); add a short human-quality intro paragraph if useful.
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
@@ -50,5 +51,4 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - Done in run 8: anchors SAM, SAM 2, Grounding DINO, FoundationStereo (perception), CQL, Decision Transformer (learning), Berkeley Humanoid Lite (hardware); picks SpaRV, HumanoidPose, CusADi2, CTR; feed split by day.
 - Idea: stars in README (would need the stats workflow to regenerate README too).
 - Candidate anchors still missing: GraspNet-1Billion (no arXiv; CVPR page), GelSight 2017 sensor paper (MDPI Sensors, no arXiv).
-- Feed code links come from authors' arXiv comments and can 404 before release (e.g. github.com/MINT-SJTU/CTR in run 8). Idea: let repo_stats.py also check feed code repos and hide/flag missing ones.
 - Pick CTR (2610.26507): add its code link once github.com/MINT-SJTU/CTR is public.

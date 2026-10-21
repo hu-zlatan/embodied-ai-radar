@@ -84,3 +84,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Hardware anchors ORCA hand (ETH) and HOMIE (Shanghai AI Lab/CUHK, RSS 2025); checked against the arXiv HTML pages.
 - verify.yml caught a 404 code link on the CTR pick (repo not public yet) → removed. A second failure came from a temporary MIT course-site outage → verify now retries network/5xx errors once and reports them as warnings; 4xx still fails. Final verify run passed for all 176 entries.
 - End: CI/Pages green, curated 176, repo 0 stars / 0 forks, no issues/PRs. Nothing new for the owner. End of run 8.
+
+## 2026-10-21 — run 9 (~04:50 UTC–)
+
+- Start: CI/Pages/verify green, no issues/PRs, 0 stars / 0 forks. Scheduled 02:17 intake had not fired (GitHub cron delays); dispatched intake by hand → 91 papers for 2026-10-21.
+- **Feed code-link check**: repo_stats.py now also checks the code repos linked from feed papers (last 30 days) and runs after every intake. First CI run: 41 feed repos, 2 not public yet (MINT-SJTU/CTR, yjang43/lp2) → shown as 'Code: not public yet' instead of a broken link; others get ★. Workflow change pushed fine.
+- Agent picks 2026-10-21: SuperMimic (CoRL 2026 oral, humanoid tracking + differentiable world model), RoboCasa-Shift (VLA robustness benchmark), Jetson AGX Orin depth benchmark (perception), Robotic Video World Models survey (Princeton, with paper list). Takeaways only state what the (truncated) abstracts say.
