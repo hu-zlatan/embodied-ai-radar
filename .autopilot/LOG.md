@@ -102,3 +102,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Locomotion anchors: perceptive ANYmal (2201.08117, Science Robotics), OmniH2O (CoRL 2024), HOVER (ICRA 2025). Control anchors: OSQP (paper), OMPL, MoveIt 2, Drake (code; repos confirmed via GitHub search). Curated: 204.
 - verify.yml passed for every push this run (#37–#40: all new IDs, titles, code and resource links). Dispatched intake after verify finished to fill BibTeX metadata for the new anchors.
 - End: CI/Pages/verify green, repo 0 stars / 0 forks, no issues/PRs. Nothing new for the owner (launch kit still waiting). End of run 10.
+
+## 2026-10-21 — run 11 (~16:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs, 0 stars / 0 forks. The 07:43 intake slot fired late (13:11 UTC), no new papers (next arXiv announcement ~00:00 UTC), so no picks this run.
+- **Entry permalink pages** `e/<id>.html` for all curated entries: bilingual takeaway as `<h1>` card, links, ★, BibTeX, arXiv authors, 'More in <topic>' (8 related), schema.org JSON-LD; in sitemap. Cards and search results get a 'Details / 详情' link. Why: shareable links per paper and search-engine landing pages (e.g. Chinese queries for a paper name) — the site had only list pages. Tested headless at 390 px (no JS errors, no horizontal scroll, search → details link works); internal link check: 0 broken.
+- Hardware anchors (checked on arXiv HTML pages + GitHub search): AirExo (ICRA 2024), AirExo-2 (CoRL 2025), Bunny-VisionPro, TeleMoMa, Solo / Open Dynamic Robot Initiative. Hardware 13 → 18.
