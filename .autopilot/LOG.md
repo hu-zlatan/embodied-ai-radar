@@ -121,3 +121,6 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Tactile anchors (thinnest topic, 14 → 19): Making Sense of Vision and Touch (ICRA 2019), See Hear Feel (CoRL 2022), TVL (ICML 2024), RotateIt (CoRL 2023), TacSL (NVIDIA). IDs/venues via web search, repos via GitHub search.
 - **Data export**: site now publishes `curated.json` + `curated.csv` (stable fields incl. robot types and ★, CC BY 4.0; CSV with BOM for Excel). Linked from topics page and both READMEs ('Reusable').
 - Anchors: LM-Nav, SemExp, Active Neural SLAM (navigation 19 → 22), QT-Opt, DrQ-v2 (learning 16 → 18; DrQ-v2 repo is archived → badge). Curated: 224.
+- Locomotion anchors: Walk These Ways (CoRL 2022), DreamWaQ (ICRA 2023), ANYmal Parkour (Science Robotics), Humanoid Parkour Learning (CoRL 2024) → 20. Dataset anchors: RoboNet, Ego-Exo4D, Objaverse, ScanNet → 21. Curated: 232.
+- verify.yml: run #43 (tactile) passed; #44 was cancelled by the newer pending run (shared concurrency group), #45/#46 re-check everything.
+- No feed picks this run: the next arXiv announcement is ~00:00 UTC and the next scheduled intake 02:17 UTC; run 13 should review the 10-22 feed.

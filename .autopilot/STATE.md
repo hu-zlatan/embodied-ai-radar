@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-21 ~23:00 UTC, run 12 (in progress)._
+_Last updated: 2026-10-21 ~23:00 UTC, run 12 (end)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (224 entries, EN/ZH takeaways; 17 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (621 papers, 2026-10-12..20; 186 untagged).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (232 entries, EN/ZH takeaways; 17 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (621 papers, 2026-10-12..20; 186 untagged).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -34,7 +34,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 0. `data/arxiv/curated_meta.json` is filled (157/157 curated arXiv IDs, run 7). New curated entries get metadata on the next intake run. Note: a push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started.
 1. Scheduled runs: the 07:43 intake slot on 10-21 fired on time (run 10). Earlier, on 2026-10-21 the 02:17 intake had not fired by 04:50 (the 15:29 slot on 10-20 started at 19:24). Run 9 dispatched intake by hand. Check that scheduled runs now fire (intake 02:17 / 07:43 / 15:29 UTC, pages 03:40). If none fire again, note it in OWNER_TODO (repo may need a recent commit/activity; scheduled workflows run on the default branch only). verify.yml passed for all 9 run-5 entries; re-check the latest run each time.
-2. Each run: review the newest feed (papers with code first), promote 2–5 notable ones into curated YAML with `added: <date>` and careful EN/ZH takeaways (phrase results as "reports").
+2. Run 13: review the 2026-10-22 feed (not reviewed yet). Each run: review the newest feed (papers with code first), promote 2–5 notable ones into curated YAML with `added: <date>` and careful EN/ZH takeaways (phrase results as "reports").
 3. Monday 2026-10-26: check the first auto digest (2026-W43); add a short human-quality intro paragraph if useful.
 3b. From ~2026-10-28: check 'Rising this week' renders with real data (needs 7 days of `data/repo_stars_history.json`); consider adding it to the weekly digest (`make_digest.py`).
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
@@ -43,7 +43,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 ## Backlog
 
 - More resources in `data/resources.yaml` as users suggest them (only well-known, verified links; Chinese courses/tutorials especially).
-- Thin topics still: learning (18), locomotion (16), control/datasets/perception (17). Run 12: tactile 14 → 19, navigation → 22. Run 11 added hardware (13 → 18), VLA, navigation, dataset anchors. Run 10 added world-models (→17), learning, locomotion anchors. Run 9 added navigation (VLFM, NaVid, Uni-NaVid, Nav2) and tactile (GelSlim 3.0, DTact, 9DTact) anchors.
+- Thin topics still: control (17), perception (17), learning (18). Run 12: tactile 14 → 19, navigation → 22, locomotion → 20, datasets → 21. Run 11 added hardware (13 → 18), VLA, navigation, dataset anchors. Run 10 added world-models (→17), learning, locomotion anchors. Run 9 added navigation (VLFM, NaVid, Uni-NaVid, Nav2) and tactile (GelSlim 3.0, DTact, 9DTact) anchors.
 - Feed split by day done in run 8. If the site gets large (many months of day pages), consider dropping abstracts from day pages older than ~90 days rather than deleting pages.
 - Untagged feed (~31%): mostly aerial/marine/space, autonomous driving, formal control. Consider an `aerial-field` topic only if users ask; robot-type filter covers drones/driving/underwater.
 - Site nav wraps to two lines on phones (6 links) — fine now, revisit if more links are added.
