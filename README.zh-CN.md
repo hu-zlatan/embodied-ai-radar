@@ -63,7 +63,7 @@ _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与�
 - **[A Generalist Agent](https://arxiv.org/abs/2205.06175)** (2022) — Gato：同一套权重的 Transformer 既能玩游戏、写图像描述，也能用真实机械臂堆积木。
 - **[RT-1: Robotics Transformer for Real-World Control at Scale](https://arxiv.org/abs/2212.06817)** (2022) — 将动作离散化为 token，用 13 万条真实演示训练 Transformer，证明机器人策略会随数据多样性扩展。 · [代码](https://github.com/google-research/robotics_transformer)
 - **[VIMA: General Robot Manipulation with Multimodal Prompts](https://arxiv.org/abs/2210.03094)** (2022) — 把多种桌面任务统一成图文交错的提示，交给一个 Transformer 策略执行，并配套 VIMA-Bench 用于系统性泛化评测。 · [代码](https://github.com/vimalabs/VIMA)
-- _另见:_ [HexaShell](#manipulation), [Cracking Mobile Manipulation](#navigation), [Uni-NaVid](#navigation), [NaVILA](#navigation), [Open X-Embodiment](#datasets), [Evaluating Real-World Robot Manipulation Policies in Simulation](#datasets), [Embodied Skill Bench](#datasets), [RoboCasa-Shift](#datasets)
+- _另见:_ [HexaShell](#manipulation), [Cracking Mobile Manipulation](#navigation), [Uni-NaVid](#navigation), [NaVILA](#navigation), [LM-Nav](#navigation), [Open X-Embodiment](#datasets), [Evaluating Real-World Robot Manipulation Policies in Simulation](#datasets), [Embodied Skill Bench](#datasets), [RoboCasa-Shift](#datasets)
 
 <a id="manipulation"></a>
 ### 操作与灵巧手
@@ -89,7 +89,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_ [在网站上�
 - **[Visual Dexterity: In-Hand Reorientation of Novel and Complex Object Shapes](https://arxiv.org/abs/2211.11744)** (2022) — 仅凭深度相机即可在手中翻转未见过的物体，策略在仿真中训练。
 - **[Solving Rubik's Cube with a Robot Hand](https://arxiv.org/abs/1910.07113)** (2019) — 自动域随机化让仿真训练的灵巧手策略在真实硬件上操作魔方。
 - **[Learning Dexterous In-Hand Manipulation](https://arxiv.org/abs/1808.00177)** (2018) — 完全在随机化仿真中用强化学习训练，Shadow 灵巧手在真实世界翻转方块，是 sim-to-real 里程碑。
-- _另见:_ [3D-ViTac](#tactile), [Making Sense of Vision and Touch](#tactile), [See, Hear, and Feel](#tactile), [General In-Hand Object Rotation with Vision and Touch](#tactile), [Code as Policies](#navigation), [OK-Robot](#navigation), [Cracking Mobile Manipulation](#navigation), [Hierarchical Residual Policy Learning for Real-World Mobile Manipulation with Sparse Human Guidance](#navigation), [FoundationPose](#perception), [cuRobo](#control), [Motion Policy Networks](#control), [Sub-Millisecond Reflexes for Continuous Physical Human-Robot Interaction](#control), [MoveIt 2](#control), [SERL](#learning), [Precise and Dexterous Robotic Manipulation via Human-in-the-Loop Reinforcement Learning](#learning), [What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](#learning), [Diffusion Policy Policy Optimization](#learning), [RoboTwin 2.0](#sim), [MimicGen](#sim), [LeRobot](#datasets), [LEAP Hand](#hardware), [BEHAVIOR Robot Suite](#hardware), [ALOHA 2](#hardware), [ORCA](#hardware), [AnyTeleop](#hardware), [AirExo](#hardware), [AirExo-2](#hardware), [Bunny-VisionPro](#hardware), [TeleMoMa](#hardware)
+- _另见:_ [3D-ViTac](#tactile), [Making Sense of Vision and Touch](#tactile), [See, Hear, and Feel](#tactile), [General In-Hand Object Rotation with Vision and Touch](#tactile), [Code as Policies](#navigation), [OK-Robot](#navigation), [Cracking Mobile Manipulation](#navigation), [Hierarchical Residual Policy Learning for Real-World Mobile Manipulation with Sparse Human Guidance](#navigation), [FoundationPose](#perception), [cuRobo](#control), [Motion Policy Networks](#control), [Sub-Millisecond Reflexes for Continuous Physical Human-Robot Interaction](#control), [MoveIt 2](#control), [SERL](#learning), [Precise and Dexterous Robotic Manipulation via Human-in-the-Loop Reinforcement Learning](#learning), [What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](#learning), [Diffusion Policy Policy Optimization](#learning), [QT-Opt](#learning), [RoboTwin 2.0](#sim), [MimicGen](#sim), [LeRobot](#datasets), [LEAP Hand](#hardware), [BEHAVIOR Robot Suite](#hardware), [ALOHA 2](#hardware), [ORCA](#hardware), [AnyTeleop](#hardware), [AirExo](#hardware), [AirExo-2](#hardware), [Bunny-VisionPro](#hardware), [TeleMoMa](#hardware)
 
 <a id="tactile"></a>
 ### 触觉与视触觉感知
@@ -182,8 +182,11 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网�
 - **[Code as Policies: Language Model Programs for Embodied Control](https://arxiv.org/abs/2209.07753)** (2022) — 大模型编写调用感知与控制 API 的 Python 代码，把指令变成可响应的机器人程序。
 - **[GNM: A General Navigation Model to Drive Any Robot](https://arxiv.org/abs/2210.03370)** (2022) — ViNT 的前作：在多种不同机器人汇集的数据上训练一个目标条件导航策略，可迁移到包括训练中未见过的新机器人。 · [代码](https://github.com/robodhruv/visualnav-transformer)
 - **[Inner Monologue: Embodied Reasoning through Planning with Language Models](https://arxiv.org/abs/2207.05608)** (2022) — 将成功检测与场景描述反馈给大模型规划器，使其在失败后重新规划。
+- **[LM-Nav: Robotic Navigation with Large Pre-Trained Models of Language, Vision, and Action](https://arxiv.org/abs/2207.04429)** (2022) — 将大语言模型（从指令中解析地标）、CLIP（在图像中找到地标）与视觉导航模型串联，无需带语言标注的机器人数据即可在真实机器人上按路线指令导航。 · [代码](https://github.com/blazejosinski/lm_nav)
 - **[Visual Language Maps for Robot Navigation](https://arxiv.org/abs/2210.05714)** (2022) — VLMaps 将视觉语言特征融合进 3D 地图，使机器人可按开放词汇空间目标导航。
 - **[Beyond the Nav-Graph: Vision-and-Language Navigation in Continuous Environments](https://arxiv.org/abs/2004.02857)** (2020) — VLN-CE 把 Room-to-Room 指令从固定导航图搬到 Habitat 连续环境中、使用底层动作执行，是更贴近真实的 VLN 标准设定。 · [代码](https://github.com/jacobkrantz/VLN-CE)
+- **[Learning to Explore using Active Neural SLAM](https://arxiv.org/abs/2004.05155)** (2020) — 将探索拆为可学习的神经 SLAM 模块、选择长期目标的全局策略和到达目标的局部策略，比端到端强化学习样本效率高得多。 · [代码](https://github.com/devendrachaplot/Neural-SLAM)
+- **[Object Goal Navigation using Goal-Oriented Semantic Exploration](https://arxiv.org/abs/2007.00643)** (2020) — SemExp 构建情景语义地图，并学习在地图上选择长期目标的策略；这一模块化方案成为 Habitat 中 ObjectNav 的常用基线。 · [代码](https://github.com/devendrachaplot/Object-Goal-Navigation)
 - **[The Marathon 2: A Navigation System](https://arxiv.org/abs/2003.00368)** (2020) — ROS 2 标准导航栈 Nav2 的论文：用行为树编排规划器、控制器和恢复行为，并在真实机器人上长距离“马拉松”测试验证。 · [代码](https://github.com/ros-navigation/navigation2)
 - **[Vision-and-Language Navigation: Interpreting visually-grounded navigation instructions in real environments](https://arxiv.org/abs/1711.07280)** (2017) — 提出视觉语言导航任务与基于 Matterport3D 的 Room-to-Room (R2R) 基准。
 - _另见:_ [ConceptGraphs](#perception), [Habitat 3.0](#sim), [Habitat](#datasets), [Embodied Skill Bench](#datasets), [Habitat-Matterport 3D Dataset (HM3D)](#datasets), [The Design of Stretch](#hardware)
@@ -210,6 +213,7 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - **[DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras](https://arxiv.org/abs/2108.10869)** (2021) — 端到端学习的视觉 SLAM：循环光流更新加上可微分的光束法平差层。 · [代码](https://github.com/princeton-vl/DROID-SLAM)
 - **[FAST-LIO2: Fast Direct LiDAR-inertial Odometry](https://arxiv.org/abs/2107.06829)** (2021) — 用增量 k-d 树把原始激光点直接配准到地图，速度足以在无人机和机器人机载计算机上运行。 · [代码](https://github.com/hku-mars/FAST_LIO)
 - **[LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping](https://arxiv.org/abs/2007.00258)** (2020) — 基于因子图的激光-惯性里程计，GPS 与回环可以作为额外因子直接加入。 · [代码](https://github.com/TixiaoShan/LIO-SAM)
+- _另见:_ [Object Goal Navigation using Goal-Oriented Semantic Exploration](#navigation), [Learning to Explore using Active Neural SLAM](#navigation)
 
 <a id="control"></a>
 ### 规划、控制与安全
@@ -248,11 +252,13 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Behavior Transformers: Cloning $k$ modes with one stone](https://arxiv.org/abs/2206.11251)** (2022) — BeT：把动作聚成 k 个类别再加连续偏移，让 Transformer 能模仿多模态示教，而不是把不同模式平均掉。 · [代码](https://github.com/notmahi/bet)
 - **[Decision Transformer: Reinforcement Learning via Sequence Modeling](https://arxiv.org/abs/2106.01345)** (2021) — 把强化学习改写成序列建模：GPT 式模型以期望回报为条件预测动作；是 Transformer 与控制结合的早期代表。 · [代码](https://github.com/kzl/decision-transformer)
 - **[Implicit Behavioral Cloning](https://arxiv.org/abs/2109.00137)** (2021) — 用基于能量的模型（而非直接回归）表示策略，更好地处理多模态、不连续的示范数据。
+- **[Mastering Visual Continuous Control: Improved Data-Augmented Reinforcement Learning](https://arxiv.org/abs/2107.09645)** (2021) — DrQ-v2：带图像增强的简单无模型 actor-critic，单 GPU 即可从像素学习连续控制（包括 DeepMind Control Suite 的人形任务），是常用的视觉强化学习基线。 · [代码](https://github.com/facebookresearch/drqv2)
 - **[Offline Reinforcement Learning with Implicit Q-Learning](https://arxiv.org/abs/2110.06169)** (2021) — IQL：用期望分位数回归学习价值函数、从不查询数据集外的动作，再用优势加权回归提取策略；是机器人离线到在线强化学习的常用基础。 · [代码](https://github.com/ikostrikov/implicit_q_learning)
 - **[What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](https://arxiv.org/abs/2108.03298)** (2021) — robomimic：在人类采集的操作示教数据上系统比较模仿学习与离线强化学习（示教质量、观测选择、带历史的行为克隆），并开源框架与数据集。 · [代码](https://github.com/ARISE-Initiative/robomimic)
 - **[AWAC: Accelerating Online Reinforcement Learning with Offline Datasets](https://arxiv.org/abs/2006.09359)** (2020) — 优势加权的 Actor-Critic：先用已有示范数据预训练，再在线持续提升，并在真实灵巧手任务上验证。
 - **[Conservative Q-Learning for Offline Reinforcement Learning](https://arxiv.org/abs/2006.04779)** (2020) — CQL：压低数据集外动作的 Q 值，使学到的价值成为下界；是从固定机器人日志中学习的标准离线强化学习基线。 · [代码](https://github.com/aviralkumar2907/CQL)
 - **[Addressing Function Approximation Error in Actor-Critic Methods](https://arxiv.org/abs/1802.09477)** (2018) — TD3：通过双 Critic、延迟策略更新和目标策略平滑解决 DDPG 的价值高估问题，至今仍是连续控制的常用基线。 · [代码](https://github.com/sfujim/TD3)
+- **[QT-Opt: Scalable Deep Reinforcement Learning for Vision-Based Robotic Manipulation](https://arxiv.org/abs/1806.10293)** (2018) — 使用交叉熵方法优化动作的离策略 Q 学习，在机器人集群采集的数十万次真实抓取上训练；报告对未见物体的抓取成功率为 96%。
 - **[Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor](https://arxiv.org/abs/1801.01290)** (2018) — 带熵奖励的离策略强化学习；样本效率较高，成为真机上直接学习的常用默认算法。
 - **[Generative Adversarial Imitation Learning](https://arxiv.org/abs/1606.03476)** (2016) — GAIL：训练策略使判别器无法区分其状态-动作分布与专家数据，无需显式恢复奖励函数。
 - **[A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning](https://arxiv.org/abs/1011.0686)** (2010) — DAgger：在学习者自己访问到的状态上向专家查询标注，解决单纯行为克隆的误差累积问题。

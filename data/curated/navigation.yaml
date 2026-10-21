@@ -162,3 +162,36 @@
   tags: [vln, habitat, benchmark]
   takeaway_en: VLN-CE moves Room-to-Room instructions from a fixed navigation graph into continuous Habitat scenes with low-level actions; the standard setting for realistic VLN.
   takeaway_zh: VLN-CE 把 Room-to-Room 指令从固定导航图搬到 Habitat 连续环境中、使用底层动作执行，是更贴近真实的 VLN 标准设定。
+- title: "LM-Nav: Robotic Navigation with Large Pre-Trained Models of Language, Vision, and Action"
+  type: paper
+  arxiv: "2207.04429"
+  year: 2022
+  venue: CoRL 2022
+  org: UC Berkeley, Google
+  code: https://github.com/blazejosinski/lm_nav
+  topics: [vla]
+  tags: [real, wheeled, language, foundation-models, zero-shot]
+  takeaway_en: Chains an LLM (parses landmarks from the instruction), CLIP (finds them in images) and a visual navigation model to follow route instructions on a real robot without language-annotated robot data.
+  takeaway_zh: 将大语言模型（从指令中解析地标）、CLIP（在图像中找到地标）与视觉导航模型串联，无需带语言标注的机器人数据即可在真实机器人上按路线指令导航。
+- title: "Object Goal Navigation using Goal-Oriented Semantic Exploration"
+  type: paper
+  arxiv: "2007.00643"
+  year: 2020
+  venue: NeurIPS 2020
+  org: CMU, Meta AI
+  code: https://github.com/devendrachaplot/Object-Goal-Navigation
+  topics: [perception]
+  tags: [sim, objectnav, semantic-map, modular, rl]
+  takeaway_en: SemExp builds an episodic semantic map and learns a policy that picks long-term goals on it, a modular recipe that became a standard ObjectNav baseline in Habitat.
+  takeaway_zh: SemExp 构建情景语义地图，并学习在地图上选择长期目标的策略；这一模块化方案成为 Habitat 中 ObjectNav 的常用基线。
+- title: "Learning to Explore using Active Neural SLAM"
+  type: paper
+  arxiv: "2004.05155"
+  year: 2020
+  venue: ICLR 2020
+  org: CMU, Meta AI
+  code: https://github.com/devendrachaplot/Neural-SLAM
+  topics: [perception]
+  tags: [sim, exploration, slam, modular, rl]
+  takeaway_en: Splits exploration into a learned neural SLAM module, a global policy that chooses long-term goals and a local policy that reaches them, which is far more sample-efficient than end-to-end RL.
+  takeaway_zh: 将探索拆为可学习的神经 SLAM 模块、选择长期目标的全局策略和到达目标的局部策略，比端到端强化学习样本效率高得多。

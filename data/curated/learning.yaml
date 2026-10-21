@@ -151,3 +151,23 @@
   tags: [rl, offline-to-online, real]
   takeaway_en: Advantage-weighted actor-critic that pre-trains on prior demonstrations and keeps improving online, shown on real dexterous-hand tasks.
   takeaway_zh: 优势加权的 Actor-Critic：先用已有示范数据预训练，再在线持续提升，并在真实灵巧手任务上验证。
+- title: "QT-Opt: Scalable Deep Reinforcement Learning for Vision-Based Robotic Manipulation"
+  type: paper
+  arxiv: "1806.10293"
+  year: 2018
+  venue: CoRL 2018
+  org: Google
+  topics: [manipulation]
+  tags: [real, grasping, off-policy, q-learning, large-scale]
+  takeaway_en: Off-policy Q-learning with a cross-entropy-method action optimizer, trained on several hundred thousand real grasp attempts collected by a fleet of robots; reports 96% grasp success on unseen objects.
+  takeaway_zh: 使用交叉熵方法优化动作的离策略 Q 学习，在机器人集群采集的数十万次真实抓取上训练；报告对未见物体的抓取成功率为 96%。
+- title: "Mastering Visual Continuous Control: Improved Data-Augmented Reinforcement Learning"
+  type: paper
+  arxiv: "2107.09645"
+  year: 2021
+  venue: ICLR 2022
+  org: NYU, Meta AI
+  code: https://github.com/facebookresearch/drqv2
+  tags: [sim, pixels, data-augmentation, off-policy]
+  takeaway_en: DrQ-v2 - a simple model-free actor-critic with image augmentation that learns continuous control from pixels (incl. humanoid tasks in the DeepMind Control Suite) on a single GPU; a common visual-RL baseline.
+  takeaway_zh: DrQ-v2：带图像增强的简单无模型 actor-critic，单 GPU 即可从像素学习连续控制（包括 DeepMind Control Suite 的人形任务），是常用的视觉强化学习基线。
