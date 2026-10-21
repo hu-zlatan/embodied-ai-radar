@@ -53,6 +53,8 @@ _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与�
 - **[Hi Robot: Open-Ended Instruction Following with Hierarchical Vision-Language-Action Models](https://arxiv.org/abs/2502.19417)** (2025) — 高层 VLM 理解开放式指令与执行中的纠正，并将其转化为简短语言指令交给底层 π0 策略执行。
 - **[RoboBrain 2.0 Technical Report](https://arxiv.org/abs/2507.02029)** (2025) — 开源具身视觉语言模型（7B 与 32B），面向空间定位、可供性、轨迹预测与多步任务规划，作为底层策略之上的“大脑”。 · [代码](https://github.com/FlagOpen/RoboBrain2.0)
 - **[SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics](https://arxiv.org/abs/2506.01844)** (2025) — 约 4.5 亿参数的 VLA，用社区 LeRobot 数据训练，可在消费级 GPU 上运行。 · [代码](https://github.com/huggingface/lerobot)
+- **[SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model](https://arxiv.org/abs/2501.15830)** (2025) — 为视觉 token 加入 3D 位置编码，并用自适应动作网格表示动作，在 110 万条真机轨迹上预训练；迁移到新机器人时只需重新划分动作网格。 · [代码](https://github.com/SpatialVLA/SpatialVLA)
+- **[UniVLA: Learning to Act Anywhere with Task-centric Latent Actions](https://arxiv.org/abs/2505.06111)** (2025) — 在 DINO 特征空间中、借助语言指令过滤，从视频里学习“任务相关”的隐动作，使策略可跨机器人与人类视频预训练；报告以少得多的预训练算力超过 OpenVLA。 · [代码](https://github.com/OpenDriveLab/UniVLA)
 - **[CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic Manipulation](https://arxiv.org/abs/2411.19650)** (2024) — 不再让 VLM 直接输出动作 token，而是用独立的扩散动作 Transformer 以 VLM 的“认知”特征为条件生成动作；报告在仿真和真机上明显优于 OpenVLA。 · [代码](https://github.com/microsoft/CogACT)
 - **[Octo: An Open-Source Generalist Robot Policy](https://arxiv.org/abs/2405.12213)** (2024) — 在 Open X-Embodiment 上预训练的开源扩散头 Transformer 策略，可快速微调到新机器人和新传感器。 · [代码](https://github.com/octo-models/octo)
 - **[RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation](https://arxiv.org/abs/2410.07864)** (2024) — 12 亿参数扩散 Transformer，采用跨机器人统一动作空间，面向双臂操作。 · [代码](https://github.com/thu-ml/RoboticsDiffusionTransformer)
@@ -60,7 +62,7 @@ _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与�
 - **[A Generalist Agent](https://arxiv.org/abs/2205.06175)** (2022) — Gato：同一套权重的 Transformer 既能玩游戏、写图像描述，也能用真实机械臂堆积木。
 - **[RT-1: Robotics Transformer for Real-World Control at Scale](https://arxiv.org/abs/2212.06817)** (2022) — 将动作离散化为 token，用 13 万条真实演示训练 Transformer，证明机器人策略会随数据多样性扩展。 · [代码](https://github.com/google-research/robotics_transformer)
 - **[VIMA: General Robot Manipulation with Multimodal Prompts](https://arxiv.org/abs/2210.03094)** (2022) — 把多种桌面任务统一成图文交错的提示，交给一个 Transformer 策略执行，并配套 VIMA-Bench 用于系统性泛化评测。 · [代码](https://github.com/vimalabs/VIMA)
-- _另见:_ [HexaShell](#manipulation), [Cracking Mobile Manipulation](#navigation), [Uni-NaVid](#navigation), [Open X-Embodiment](#datasets), [Evaluating Real-World Robot Manipulation Policies in Simulation](#datasets), [Embodied Skill Bench](#datasets), [RoboCasa-Shift](#datasets)
+- _另见:_ [HexaShell](#manipulation), [Cracking Mobile Manipulation](#navigation), [Uni-NaVid](#navigation), [NaVILA](#navigation), [Open X-Embodiment](#datasets), [Evaluating Real-World Robot Manipulation Policies in Simulation](#datasets), [Embodied Skill Bench](#datasets), [RoboCasa-Shift](#datasets)
 
 <a id="manipulation"></a>
 ### 操作与灵巧手
@@ -130,7 +132,7 @@ _足式运动、人形全身控制与跑酷。_ [在网站上查看与最新论�
 - **[RMA: Rapid Motor Adaptation for Legged Robots](https://arxiv.org/abs/2107.04034)** (2021) — 自适应模块在线估计环境参数，使同一策略实时适应新地形和负载。
 - **[Learning Quadrupedal Locomotion over Challenging Terrain](https://arxiv.org/abs/2010.11251)** (2020) — 仅依赖本体感知的师生策略，让 ANYmal 在泥地、雪地和碎石等野外地形行走。
 - **[Learning Agile and Dynamic Motor Skills for Legged Robots](https://arxiv.org/abs/1901.08652)** (2019) — 学习的执行器模型缩小仿真与现实差距，使强化学习策略能让 ANYmal 奔跑并摔倒后起身。
-- _另见:_ [Vision as Proprioception](#perception), [Crocoddyl](#control), [Open-TeleVision](#hardware), [Berkeley Humanoid](#hardware), [Demonstrating Berkeley Humanoid Lite](#hardware), [ToddlerBot](#hardware), [HOMIE](#hardware), [An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](#hardware)
+- _另见:_ [NaVILA](#navigation), [Vision as Proprioception](#perception), [Crocoddyl](#control), [Open-TeleVision](#hardware), [Berkeley Humanoid](#hardware), [Demonstrating Berkeley Humanoid Lite](#hardware), [ToddlerBot](#hardware), [HOMIE](#hardware), [An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](#hardware)
 
 <a id="world-models"></a>
 ### 世界模型
@@ -164,6 +166,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网�
 - ⭐ **[Do As I Can, Not As I Say: Grounding Language in Robotic Affordances](https://arxiv.org/abs/2204.01691)** (2022) — SayCan：大模型提出步骤，学习到的价值函数评估机器人当下实际能做什么。
 - **[Cracking Mobile Manipulation: From Failure Diagnosis to Agentic Robot System](https://arxiv.org/abs/2610.19600)** (2026) — 发现 VLA 在原子技能上 80% 成功率、组合成移动操作后仅 19%，分析失败原因并据此构建智能体式系统。 · [代码](https://github.com/PKU-VaLuE-Lab/Cracking-Mobile-Manipulation)
 - **[Hierarchical Residual Policy Learning for Real-World Mobile Manipulation with Sparse Human Guidance](https://arxiv.org/abs/2610.20607)** (2026) — HiRe-MoMa 在真实环境中通过学习残差修正来微调冻结的移动操作策略，只需偶尔的人类引导。 · [项目页](https://hire-moma.github.io/)
+- **[NaVILA: Legged Robot Vision-Language-Action Model for Navigation](https://arxiv.org/abs/2412.04453)** (2024) — VLA 先用语言输出中层导航指令，再由强化学习运动策略执行，让腿式机器人按自然语言指令导航；并提供 Isaac Lab 上的 VLN 基准。 · [代码](https://github.com/AnjieCheng/NaVILA) · [项目页](https://navila-bot.github.io/)
 - **[NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation](https://arxiv.org/abs/2402.15852)** (2024) — 基于视频的视觉语言模型：只看单目 RGB 历史帧和语言指令，直接输出下一步导航动作，不依赖地图、里程计或深度。 · [代码](https://github.com/jzhzhang/NaVid-VLN-CE)
 - **[OK-Robot: What Really Matters in Integrating Open-Knowledge Models for Robotics](https://arxiv.org/abs/2401.12202)** (2024) — 组合现成的开放词汇模型，构建无需训练即可在真实家庭中抓取放置的系统。
 - **[Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied Navigation Tasks](https://arxiv.org/abs/2412.06224)** (2024) — 把 NaVid 扩展为单一视频 VLA 模型，统一处理多种导航任务（指令导航、目标搜索、具身问答、跟随人）。 · [代码](https://github.com/jzhzhang/NaVid-VLN-CE)
@@ -174,9 +177,10 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网�
 - **[GNM: A General Navigation Model to Drive Any Robot](https://arxiv.org/abs/2210.03370)** (2022) — ViNT 的前作：在多种不同机器人汇集的数据上训练一个目标条件导航策略，可迁移到包括训练中未见过的新机器人。 · [代码](https://github.com/robodhruv/visualnav-transformer)
 - **[Inner Monologue: Embodied Reasoning through Planning with Language Models](https://arxiv.org/abs/2207.05608)** (2022) — 将成功检测与场景描述反馈给大模型规划器，使其在失败后重新规划。
 - **[Visual Language Maps for Robot Navigation](https://arxiv.org/abs/2210.05714)** (2022) — VLMaps 将视觉语言特征融合进 3D 地图，使机器人可按开放词汇空间目标导航。
+- **[Beyond the Nav-Graph: Vision-and-Language Navigation in Continuous Environments](https://arxiv.org/abs/2004.02857)** (2020) — VLN-CE 把 Room-to-Room 指令从固定导航图搬到 Habitat 连续环境中、使用底层动作执行，是更贴近真实的 VLN 标准设定。 · [代码](https://github.com/jacobkrantz/VLN-CE)
 - **[The Marathon 2: A Navigation System](https://arxiv.org/abs/2003.00368)** (2020) — ROS 2 标准导航栈 Nav2 的论文：用行为树编排规划器、控制器和恢复行为，并在真实机器人上长距离“马拉松”测试验证。 · [代码](https://github.com/ros-navigation/navigation2)
 - **[Vision-and-Language Navigation: Interpreting visually-grounded navigation instructions in real environments](https://arxiv.org/abs/1711.07280)** (2017) — 提出视觉语言导航任务与基于 Matterport3D 的 Room-to-Room (R2R) 基准。
-- _另见:_ [ConceptGraphs](#perception), [Habitat 3.0](#sim), [Habitat](#datasets), [Embodied Skill Bench](#datasets), [The Design of Stretch](#hardware)
+- _另见:_ [ConceptGraphs](#perception), [Habitat 3.0](#sim), [Habitat](#datasets), [Embodied Skill Bench](#datasets), [Habitat-Matterport 3D Dataset (HM3D)](#datasets), [The Design of Stretch](#hardware)
 
 <a id="perception"></a>
 ### 感知、SLAM 与三维建图
@@ -246,7 +250,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor](https://arxiv.org/abs/1801.01290)** (2018) — 带熵奖励的离策略强化学习；样本效率较高，成为真机上直接学习的常用默认算法。
 - **[Generative Adversarial Imitation Learning](https://arxiv.org/abs/1606.03476)** (2016) — GAIL：训练策略使判别器无法区分其状态-动作分布与专家数据，无需显式恢复奖励函数。
 - **[A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning](https://arxiv.org/abs/1011.0686)** (2010) — DAgger：在学习者自己访问到的状态上向专家查询标注，解决单纯行为克隆的误差累积问题。
-- _另见:_ [Learn the Task, Not the Schedule](#manipulation), [Tactile Gym 2.0](#tactile), [Unitree RL Gym](#locomotion), [SuperMimic](#locomotion), [AirExo-2](#hardware)
+- _另见:_ [UniVLA](#vla), [Learn the Task, Not the Schedule](#manipulation), [Tactile Gym 2.0](#tactile), [Unitree RL Gym](#locomotion), [SuperMimic](#locomotion), [AirExo-2](#hardware)
 
 <a id="sim"></a>
 ### 仿真与 Sim-to-Real
@@ -271,7 +275,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_ [在网站上
 - **[AI2-THOR: An Interactive 3D Environment for Visual AI](https://arxiv.org/abs/1712.05474)** (2017) — 具有可交互物体的逼真室内场景，智能体可开关、拾取和改变物体，是 ALFRED 等众多具身智能基准的基础。 · [代码](https://github.com/allenai/ai2thor)
 - **[Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World](https://arxiv.org/abs/1703.06907)** (2017) — 在仿真中随机化纹理、光照和相机，使视觉模型无需真实数据即可在真实图像上工作。
 - **[Sim-to-Real Transfer of Robotic Control with Dynamics Randomization](https://arxiv.org/abs/1710.06537)** (2017) — 训练中随机化物理参数，得到足以在真实机械臂上运行的鲁棒控制策略。
-- _另见:_ [Blind Precise Assembly](#manipulation), [TACTO](#tactile), [Taxim](#tactile), [Tactile Gym 2.0](#tactile), [Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning](#locomotion), [Drake](#control), [Habitat](#datasets), [RoboCasa-Shift](#datasets)
+- _另见:_ [Blind Precise Assembly](#manipulation), [TACTO](#tactile), [Taxim](#tactile), [Tactile Gym 2.0](#tactile), [Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning](#locomotion), [Drake](#control), [Habitat](#datasets), [RoboCasa-Shift](#datasets), [Habitat-Matterport 3D Dataset (HM3D)](#datasets)
 
 <a id="datasets"></a>
 ### 数据集与基准
@@ -291,10 +295,11 @@ _大规模机器人数据集、第一视角数据与评测基准。_ [在网站�
 - **[RH20T: A Comprehensive Robotic Dataset for Learning Diverse Skills in One-Shot](https://arxiv.org/abs/2307.00595)** (2023) — 11 万多条接触丰富的序列，包含视觉、力、音频及配对的人类演示视频。
 - **[CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks](https://arxiv.org/abs/2112.03227)** (2021) — 连续执行五条语言指令，测试长时程、语言条件下的控制能力。 · [代码](https://github.com/mees/calvin)
 - **[Ego4D: Around the World in 3,000 Hours of Egocentric Video](https://arxiv.org/abs/2110.07058)** (2021) — 3670 小时第一视角日常生活视频，广泛用于为机器人预训练视觉表征。
+- **[Habitat-Matterport 3D Dataset (HM3D): 1000 Large-scale 3D Environments for Embodied AI](https://arxiv.org/abs/2109.08238)** (2021) — 1000 个真实室内空间的 3D 扫描，供 Habitat 使用；ObjectNav 等众多具身导航基准的主要场景集。 · [代码](https://github.com/facebookresearch/habitat-matterport3d-dataset)
 - **[Habitat: A Platform for Embodied AI Research](https://arxiv.org/abs/1904.01201)** (2019) — 极速的逼真 3D 仿真器与任务集，统一了具身导航研究的标准。 · [代码](https://github.com/facebookresearch/habitat-sim)
 - **[Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning](https://arxiv.org/abs/1910.10897)** (2019) — 50 个 Sawyer 操作任务，用于多任务与元强化学习评测。 · [代码](https://github.com/Farama-Foundation/Metaworld)
 - **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 个手工设计的操作任务并附演示，是 PerAct 等 3D 策略方法的常用基准。 · [代码](https://github.com/stepjam/RLBench)
-- _另见:_ [Universal Manipulation Interface](#manipulation), [DexGraspNet](#manipulation), [Vision-and-Language Navigation](#navigation), [safe-control-gym](#control), [What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](#learning), [robosuite](#sim), [RoboCasa](#sim), [RoboTwin 2.0](#sim), [MimicGen](#sim), [BEHAVIOR-1K](#sim)
+- _另见:_ [Universal Manipulation Interface](#manipulation), [DexGraspNet](#manipulation), [Vision-and-Language Navigation](#navigation), [Beyond the Nav-Graph](#navigation), [safe-control-gym](#control), [What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](#learning), [robosuite](#sim), [RoboCasa](#sim), [RoboTwin 2.0](#sim), [MimicGen](#sim), [BEHAVIOR-1K](#sim)
 
 <a id="hardware"></a>
 ### 硬件与开源机器人

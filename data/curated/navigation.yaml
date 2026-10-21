@@ -139,3 +139,26 @@
   tags: [ros2, nav2, behavior-trees, open-source, mobile]
   takeaway_en: The paper behind Nav2, the standard ROS 2 navigation stack - behavior-tree orchestration of planners, controllers and recovery behaviors, validated by long marathon runs on real robots.
   takeaway_zh: ROS 2 标准导航栈 Nav2 的论文：用行为树编排规划器、控制器和恢复行为，并在真实机器人上长距离“马拉松”测试验证。
+- title: "NaVILA: Legged Robot Vision-Language-Action Model for Navigation"
+  type: paper
+  arxiv: "2412.04453"
+  year: 2024
+  org: UC San Diego, USC, NVIDIA
+  code: https://github.com/AnjieCheng/NaVILA
+  project: https://navila-bot.github.io/
+  venue: RSS 2025
+  topics: [vla, locomotion]
+  tags: [vln, legged, hierarchical]
+  takeaway_en: A VLA outputs mid-level navigation commands in language that an RL locomotion policy executes, so legged robots follow natural-language routes; adds Isaac Lab VLN benchmarks.
+  takeaway_zh: VLA 先用语言输出中层导航指令，再由强化学习运动策略执行，让腿式机器人按自然语言指令导航；并提供 Isaac Lab 上的 VLN 基准。
+- title: "Beyond the Nav-Graph: Vision-and-Language Navigation in Continuous Environments"
+  type: benchmark
+  arxiv: "2004.02857"
+  year: 2020
+  org: Oregon State, Georgia Tech, Meta AI
+  code: https://github.com/jacobkrantz/VLN-CE
+  venue: ECCV 2020
+  topics: [datasets]
+  tags: [vln, habitat, benchmark]
+  takeaway_en: VLN-CE moves Room-to-Room instructions from a fixed navigation graph into continuous Habitat scenes with low-level actions; the standard setting for realistic VLN.
+  takeaway_zh: VLN-CE 把 Room-to-Room 指令从固定导航图搬到 Habitat 连续环境中、使用底层动作执行，是更贴近真实的 VLN 标准设定。

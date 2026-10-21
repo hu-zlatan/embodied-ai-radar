@@ -234,3 +234,24 @@
   tags: [real, bimanual, mobile-manipulation, long-horizon]
   takeaway_en: "ByteDance Seed's generalist VLA: robot imitation data co-trained with web vision-language data, adapted quickly with VR-collected human trajectories; shown on long-horizon bimanual mobile tasks."
   takeaway_zh: 字节跳动 Seed 的通用 VLA——机器人数据模仿学习并与网络视觉-语言数据联合训练，再用 VR 采集的人类轨迹快速适配；在 ByteMini 双臂移动机器人上展示长时程与衣物操作任务。
+- title: "UniVLA: Learning to Act Anywhere with Task-centric Latent Actions"
+  type: paper
+  arxiv: "2505.06111"
+  year: 2025
+  org: HKU, OpenDriveLab, AgiBot
+  code: https://github.com/OpenDriveLab/UniVLA
+  venue: RSS 2025
+  topics: [learning]
+  tags: [latent-actions, cross-embodiment, video-pretraining]
+  takeaway_en: Learns task-centric latent actions from videos (in DINO feature space, filtered by language) so one policy can be pretrained across robots and human video; reports beating OpenVLA with far less pretraining compute.
+  takeaway_zh: 在 DINO 特征空间中、借助语言指令过滤，从视频里学习“任务相关”的隐动作，使策略可跨机器人与人类视频预训练；报告以少得多的预训练算力超过 OpenVLA。
+- title: "SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model"
+  type: paper
+  arxiv: "2501.15830"
+  year: 2025
+  org: Shanghai AI Lab, ShanghaiTech, TeleAI
+  code: https://github.com/SpatialVLA/SpatialVLA
+  venue: RSS 2025
+  tags: [3d, spatial, action-tokenization]
+  takeaway_en: Adds 3D-aware position encoding to visual tokens and adaptive action grids, pretrained on 1.1M real robot episodes; new robot setups are handled by re-discretizing the grids.
+  takeaway_zh: 为视觉 token 加入 3D 位置编码，并用自适应动作网格表示动作，在 110 万条真机轨迹上预训练；迁移到新机器人时只需重新划分动作网格。
