@@ -127,3 +127,56 @@
   tags: [teleoperation, hand, vision-based, retargeting]
   takeaway_en: Camera-only teleoperation for arm + dexterous hand pairs - tracks the operator's hand and retargets it to many different robot hands, in sim or on real hardware.
   takeaway_zh: 仅用相机即可遥操作"机械臂 + 灵巧手"：跟踪操作者手部并重定向到多种不同的机器人手，可用于仿真或真机。
+- title: "AirExo: Low-Cost Exoskeletons for Learning Whole-Arm Manipulation in the Wild"
+  type: hardware
+  arxiv: "2309.14975"
+  year: 2023
+  org: Shanghai Jiao Tong University
+  code: https://github.com/AirExo/collector
+  venue: ICRA 2024
+  topics: [manipulation]
+  tags: [exoskeleton, teleoperation, low-cost, data-collection]
+  takeaway_en: A portable dual-arm exoskeleton (about $600 in parts, per the paper) for joint-level teleop and cheap in-the-wild demos; reports few-minute teleop plus wild data rivals much longer teleop-only training.
+  takeaway_zh: 便携式双臂外骨骼（论文称零件成本约 600 美元），可做关节级遥操作并低成本采集野外示教；报告称少量遥操作数据加野外数据即可达到甚至超过长时间纯遥操作训练的效果。
+- title: "AirExo-2: Scaling up Generalizable Robotic Imitation Learning with Low-Cost Exoskeletons"
+  type: hardware
+  arxiv: "2503.03081"
+  year: 2025
+  org: Shanghai Jiao Tong University
+  code: https://github.com/AirExo/AirExo-2
+  venue: CoRL 2025
+  topics: [manipulation, learning]
+  tags: [exoskeleton, in-the-wild, imitation-learning]
+  takeaway_en: Exoskeleton demos are converted into pseudo-robot demonstrations; the paper reports its RISE-2 policy trained on them alone, with no robot data, performs comparably to one trained on teleoperated robot data.
+  takeaway_zh: 将外骨骼示教转换为“伪机器人”示教；论文报告仅用这些数据（无任何机器人数据）训练的 RISE-2 策略，效果与用遥操作机器人数据训练的策略相当。
+- title: "Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning"
+  type: hardware
+  arxiv: "2407.03162"
+  year: 2024
+  org: UC San Diego, HKU
+  code: https://github.com/Dingry/BunnyVisionPro
+  topics: [manipulation]
+  tags: [teleoperation, vr, hand, bimanual, haptics]
+  takeaway_en: Apple Vision Pro teleoperation of two dexterous robot hands with real-time retargeting, collision and singularity avoidance, and low-cost vibration haptics for the operator.
+  takeaway_zh: 用 Apple Vision Pro 实时遥操作双灵巧手，带实时重定向、碰撞与奇异点规避，并为操作者提供低成本振动触觉反馈。
+- title: "TeleMoMa: A Modular and Versatile Teleoperation System for Mobile Manipulation"
+  type: hardware
+  arxiv: "2403.07869"
+  year: 2024
+  org: UT Austin, Stanford, Sony AI
+  code: https://github.com/UT-Austin-RobIn/telemoma
+  project: https://robin-lab.cs.utexas.edu/telemoma-web/
+  topics: [manipulation]
+  tags: [teleoperation, mobile-manipulation, whole-body]
+  takeaway_en: One modular teleop interface that mixes RGB-D body tracking, VR controllers, keyboard and joystick for whole-body mobile manipulators (Tiago++, HSR, Fetch), in sim and real.
+  takeaway_zh: 模块化遥操作接口，可组合 RGB-D 人体追踪、VR 手柄、键盘与摇杆，控制 Tiago++、HSR、Fetch 等移动操作机器人做全身动作，仿真和真机都支持。
+- title: "An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research"
+  type: hardware
+  arxiv: "1910.00093"
+  year: 2019
+  org: MPI-IS, NYU (Open Dynamic Robot Initiative)
+  code: https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware
+  topics: [locomotion]
+  tags: [quadruped, open-source, torque-control, low-cost]
+  takeaway_en: The open-source Solo quadruped and its modular torque-controlled actuators, built from off-the-shelf and 3D-printed parts so labs can reproduce a dynamic legged robot.
+  takeaway_zh: 开源四足机器人 Solo 及其模块化力矩控制关节，采用现成件和 3D 打印件，便于各实验室复现动态腿式机器人。
