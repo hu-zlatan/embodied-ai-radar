@@ -99,3 +99,6 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Thin-topic anchors (IDs/titles confirmed by web search): PlaNet, DreamerV2, IRIS, UniPi, TD-MPC (world models 12 → 17); TD3, GAIL, Implicit BC, AWAC (learning 12 → 16); AnyTeleop (hardware 12 → 13). Curated: 197.
 - **Search venue filter**: new 'Any venue' select (CoRL, NeurIPS, IROS, ICLR, RSS… with counts, plus 'Any accepted venue'); matches the venue series of curated `venue:` and feed venue badges; shareable `?venue=CoRL`. Tested headless at 390 px (40 CoRL results, no JS errors, no horizontal scroll). READMEs mention it.
 - Resources: 蘑菇书 EasyRL (Datawhale) and 动手学强化学习 (Hands-on RL) as Chinese RL courses; awesome-embodied-vla-va-vln list. Repos confirmed via GitHub search.
+- Locomotion anchors: perceptive ANYmal (2201.08117, Science Robotics), OmniH2O (CoRL 2024), HOVER (ICRA 2025). Control anchors: OSQP (paper), OMPL, MoveIt 2, Drake (code; repos confirmed via GitHub search). Curated: 204.
+- verify.yml passed for every push this run (#37–#40: all new IDs, titles, code and resource links). Dispatched intake after verify finished to fill BibTeX metadata for the new anchors.
+- End: CI/Pages/verify green, repo 0 stars / 0 forks, no issues/PRs. Nothing new for the owner (launch kit still waiting). End of run 10.
