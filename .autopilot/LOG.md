@@ -124,3 +124,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Locomotion anchors: Walk These Ways (CoRL 2022), DreamWaQ (ICRA 2023), ANYmal Parkour (Science Robotics), Humanoid Parkour Learning (CoRL 2024) → 20. Dataset anchors: RoboNet, Ego-Exo4D, Objaverse, ScanNet → 21. Curated: 232.
 - verify.yml: run #43 (tactile) passed; #44 was cancelled by the newer pending run (shared concurrency group), #45/#46 re-check everything.
 - No feed picks this run: the next arXiv announcement is ~00:00 UTC and the next scheduled intake 02:17 UTC; run 13 should review the 10-22 feed.
+- verify.yml #45 and #46 passed (all 232 entries incl. the 18 new ones). CI/Pages green. BibTeX metadata for new anchors will be filled by the next scheduled intake (02:17 UTC). Repo 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting). End of run 12.
