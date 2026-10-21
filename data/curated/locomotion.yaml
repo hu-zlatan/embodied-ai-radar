@@ -114,3 +114,30 @@
   tags: [humanoid, motion-tracking, whole-body-control, differentiable-model]
   takeaway_en: Rather than distilling per-motion experts or brute-forcing one RL policy, trains a humanoid tracking policy jointly with one differentiable world model of shared dynamics, fit from simulator logs (CoRL 2026 oral).
   takeaway_zh: SuperMimic 不再蒸馏逐动作专家或用大算力硬训单一 RL 策略，而是把人形机器人动作跟踪策略与一个从仿真日志拟合的、共享动力学的可微世界模型联合训练（CoRL 2026 口头报告）。
+- title: "Learning robust perceptive locomotion for quadrupedal robots in the wild"
+  type: paper
+  arxiv: "2201.08117"
+  year: 2022
+  org: ETH Zurich, Intel
+  venue: Science Robotics 2022
+  tags: [quadruped, rl, perception, real, sim-to-real]
+  takeaway_en: ANYmal fuses proprioception with noisy height-map perception through a learned belief encoder, and is shown hiking an alpine trail and other rough terrain.
+  takeaway_zh: ANYmal 通过学习的信念编码器融合本体感知与带噪声的高程图感知，在高山徒步路线等复杂地形上完成行走。
+- title: "OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning"
+  type: paper
+  arxiv: "2406.08858"
+  year: 2024
+  org: CMU
+  venue: CoRL 2024
+  tags: [humanoid, teleoperation, whole-body, rl, sim-to-real]
+  takeaway_en: One RL whole-body controller that a humanoid can follow from a VR headset, verbal commands or an RGB camera, and that also runs learned autonomous policies.
+  takeaway_zh: 一个强化学习全身控制器：人形机器人可跟随 VR 头显、语音指令或 RGB 相机的输入，也可执行学习得到的自主策略。
+- title: "HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots"
+  type: paper
+  arxiv: "2410.21229"
+  year: 2024
+  org: NVIDIA, CMU
+  venue: ICRA 2025
+  tags: [humanoid, whole-body, rl, distillation]
+  takeaway_en: Distills one policy that supports several humanoid control modes (root velocity, joint angles, keypoint tracking) instead of training a separate controller per mode.
+  takeaway_zh: 蒸馏出单一策略，支持多种人形控制模式（根部速度、关节角、关键点跟踪），不必为每种模式各训练一个控制器。
