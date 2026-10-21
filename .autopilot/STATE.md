@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-10-21 ~17:10 UTC, run 11._
+_Last updated: 2026-10-21 ~17:10 UTC, run 11 (end)._
 
 ## Status
 
@@ -42,7 +42,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 ## Backlog
 
 - More resources in `data/resources.yaml` as users suggest them (only well-known, verified links; Chinese courses/tutorials especially).
-- Thin topics still: hardware (13), learning (16), control (13). Run 10 added world-models (→17), learning, locomotion anchors. Run 9 added navigation (VLFM, NaVid, Uni-NaVid, Nav2) and tactile (GelSlim 3.0, DTact, 9DTact) anchors.
+- Thin topics still: tactile (14), learning (16), navigation (17). Run 11 added hardware (13 → 18), VLA, navigation, dataset anchors. Run 10 added world-models (→17), learning, locomotion anchors. Run 9 added navigation (VLFM, NaVid, Uni-NaVid, Nav2) and tactile (GelSlim 3.0, DTact, 9DTact) anchors.
 - Feed split by day done in run 8. If the site gets large (many months of day pages), consider dropping abstracts from day pages older than ~90 days rather than deleting pages.
 - Untagged feed (~31%): mostly aerial/marine/space, autonomous driving, formal control. Consider an `aerial-field` topic only if users ask; robot-type filter covers drones/driving/underwater.
 - Site nav wraps to two lines on phones (6 links) — fine now, revisit if more links are added.
