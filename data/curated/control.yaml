@@ -119,3 +119,41 @@
   tags: [gpu, kinematics, trajectory-optimization]
   takeaway_en: Evaluates batches of kinematics, Jacobians and Hessians on the GPU with low wall-clock latency, targeting online sampling- and gradient-based trajectory optimization.
   takeaway_zh: 在 GPU 上以低延迟批量计算运动学、雅可比与海森矩阵，面向在线运行的采样式与梯度式轨迹优化。
+- title: "OSQP: An Operator Splitting Solver for Quadratic Programs"
+  type: paper
+  arxiv: "1711.08013"
+  year: 2020
+  org: University of Oxford, ETH Zurich, IMT Lucca, Stanford
+  code: https://github.com/osqp/osqp
+  tags: [optimization, qp-solver, mpc, open-source]
+  takeaway_en: A fast, robust ADMM-based QP solver with warm starting and embedded C code generation; widely used inside MPC and whole-body controllers.
+  takeaway_zh: 基于 ADMM 的快速、鲁棒二次规划求解器，支持热启动与嵌入式 C 代码生成，广泛用于 MPC 与全身控制器。
+- title: "OMPL: The Open Motion Planning Library"
+  type: code
+  year: 2012
+  org: Rice University (Kavraki Lab)
+  code: https://github.com/ompl/ompl
+  url: https://ompl.kavrakilab.org/
+  tags: [library, motion-planning, sampling-based, open-source]
+  takeaway_en: The standard library of sampling-based motion planners (RRT, RRT-Connect, PRM, RRT* and many more); the default planning backend of MoveIt.
+  takeaway_zh: 采样式运动规划器的标准库（RRT、RRT-Connect、PRM、RRT* 等众多算法），也是 MoveIt 默认的规划后端。
+- title: "MoveIt 2"
+  type: code
+  year: 2019
+  org: PickNik Robotics and community
+  code: https://github.com/moveit/moveit2
+  url: https://moveit.ai/
+  topics: [manipulation]
+  tags: [ros2, motion-planning, manipulation, open-source]
+  takeaway_en: The ROS 2 manipulation framework - motion planning, inverse kinematics, collision checking and real-time servoing for robot arms.
+  takeaway_zh: ROS 2 的机械臂操作框架：提供运动规划、逆运动学、碰撞检测与实时伺服控制。
+- title: "Drake"
+  type: code
+  year: 2014
+  org: MIT, Toyota Research Institute
+  code: https://github.com/RobotLocomotion/drake
+  url: https://drake.mit.edu/
+  topics: [sim]
+  tags: [library, optimization, simulation, trajectory-optimization, open-source]
+  takeaway_en: Model-based toolbox for robotics - multibody dynamics with contact simulation, mathematical programming and trajectory optimization; used in the MIT manipulation and underactuated courses.
+  takeaway_zh: 面向机器人的基于模型的工具箱：带接触的多体动力学仿真、数学规划与轨迹优化；MIT 操作与欠驱动课程即使用它。
