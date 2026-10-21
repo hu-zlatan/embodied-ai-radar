@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-10-21 ~11:10 UTC, run 10 (end)._
+_Last updated: 2026-10-21 ~17:10 UTC, run 11._
 
 ## Status
 
@@ -14,6 +14,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - **Venue filter** (run 10): search has an 'Any venue' select (venue series from curated `venue:` + feed badges, ≥2 items, with counts; '*' = any accepted venue), `?venue=CoRL`.
 - **Search sort** (run 7): best match / newest / GitHub stars, `?sort=new|stars`; sort alone lists everything.
 - **Feed by day** (run 8): `feed.html` = newest day (code-first) + archive list; `feed/YYYY-MM-DD.html` per day with prev/next, summary (papers / with code / venues), in sitemap. All days kept (permalinks stay valid); each day page ~150–350 KB raw.
+- **Entry pages** (run 11): `e/<id>.html` for every curated entry (id = `arxiv-<id>` or title slug, stable): takeaway card with `<h1>`, links, ★, BibTeX, arXiv authors, 'More in <topic>', schema.org JSON-LD; in sitemap. Cards, search results and the most-starred list link to them ('Details / 详情').
+- **Star history** (run 11): `repo_stats.py` appends one snapshot per day (45 days) to `data/repo_stars_history.json` (curated + recent feed repos; first snapshot 2026-10-21). Home page shows 'Rising this week' (top 10 by 7-day gain) and +N badges on the most-starred list once a snapshot ≥7 days older exists (from ~2026-10-28). Nothing shows before that.
 - Issue forms: `.github/ISSUE_TEMPLATE/` (suggest an entry / report a mistake, bilingual; contact links to site + Discussions). Footer link `/issues/new` opens the chooser.
 - License: `LICENSE` = MIT (GitHub detects it), data terms in `LICENSE-DATA.md`.
 - Verification: all curated arXiv IDs + links checked by `verify.yml` (since run 8: HTTP 4xx fails; network errors/5xx are retried once and shown as ⚠️ warnings, not failures) (run 2: 10 perception anchors passed). Re-check the latest verify run at the start of each run.
@@ -33,6 +35,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 1. Scheduled runs: the 07:43 intake slot on 10-21 fired on time (run 10). Earlier, on 2026-10-21 the 02:17 intake had not fired by 04:50 (the 15:29 slot on 10-20 started at 19:24). Run 9 dispatched intake by hand. Check that scheduled runs now fire (intake 02:17 / 07:43 / 15:29 UTC, pages 03:40). If none fire again, note it in OWNER_TODO (repo may need a recent commit/activity; scheduled workflows run on the default branch only). verify.yml passed for all 9 run-5 entries; re-check the latest run each time.
 2. Each run: review the newest feed (papers with code first), promote 2–5 notable ones into curated YAML with `added: <date>` and careful EN/ZH takeaways (phrase results as "reports").
 3. Monday 2026-10-26: check the first auto digest (2026-W43); add a short human-quality intro paragraph if useful.
+3b. From ~2026-10-28: check 'Rising this week' renders with real data (needs 7 days of `data/repo_stars_history.json`); consider adding it to the weekly digest (`make_digest.py`).
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 5. Enrichment step: 2026-10-20 dispatched intake finished in <1 min with 170 new papers (code links + venues present), no 429 trouble.
 
