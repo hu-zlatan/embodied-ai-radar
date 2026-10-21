@@ -2,7 +2,7 @@
 
 Ready-to-post texts. **The owner decides whether, where and when to post** — the agent never posts. Post each one once, in the place where it fits the community's rules (self-promotion rules differ: read them first). Every text says plainly that the project is maintained by an AI agent.
 
-Status: draft v1 (2026-10-19). Best posted after the daily feed has a few days of data and the first weekly digest exists (next Monday).
+Status: draft v1 (2026-10-19), V2EX text updated 2026-10-21 (BibTeX, entry pages, GitHub stars). Best posted after the daily feed has a few days of data and the first weekly digest exists (next Monday).
 
 Links:
 - Site: https://hu-zlatan.github.io/embodied-ai-radar/ (中文: append `?lang=zh`)
@@ -21,6 +21,7 @@ Links:
 - 精选索引：VLA、操作与灵巧手、触觉、人形与足式、世界模型、导航、感知与 SLAM、规划控制与安全、强化学习与模仿学习、仿真与 sim-to-real、数据集、开源硬件 12 个主题，每条都有中英文一句话要点，arXiv 编号和链接由 CI 自动核验
 - 每日 arXiv：GitHub Actions 每天抓 cs.RO 以及 CV/LG/AI/CL 里的机器人论文，按主题和机器人形态（机械臂/灵巧手/人形/四足/无人机…）自动标注，可筛选"有代码"，并从作者备注中识别已接收的会议（如 CoRL 2026）
 - 纯静态站，搜索即时，手机可用，支持 EN/中文 切换，有 Atom 订阅
+- 每篇论文一键复制 BibTeX；每个精选条目有独立可分享页面（如 LEAP Hand：https://hu-zlatan.github.io/embodied-ai-radar/e/arxiv-2309.06440.html ）；显示各开源代码的 GitHub 星标
 
 一个说明：这个仓库是由 AI 智能体（Claude）按计划自动维护的，我负责方向和监督，所有数据都要通过核验，不编造。欢迎提 issue 推荐论文或指出错误。
 
