@@ -315,12 +315,21 @@ def build() -> int:
              f'<div><b>{esc(latest_date or "—")}</b>{bi("latest intake", "最近收录")}</div></div>')
     topic_opts = "".join(f'<option value="{t["id"]}" data-en="{esc(t["en"])}" data-zh="{esc(t["zh"])}">{esc(t["en"])}</option>' for t in topics)
     emb_opts = "".join(f'<option value="{m["id"]}" data-en="{esc(m["en"])}" data-zh="{esc(m["zh"])}">{esc(m["en"])}</option>' for m in embs)
+    venue_n: dict[str, int] = {}
+    for it in idx:
+        if it.get("v"):
+            ser = str(it["v"]).rsplit(" ", 1)[0] if re.search(r" 20\d\d$", str(it["v"])) else str(it["v"])
+            venue_n[ser] = venue_n.get(ser, 0) + 1
+    venue_opts = ('<option value="*" data-en="Any accepted venue" data-zh="任意已录用会议/期刊">Any accepted venue</option>'
+                  + "".join(f'<option value="{esc(v)}">{esc(v)} ({n})</option>'
+                            for v, n in sorted(venue_n.items(), key=lambda x: (-x[1], x[0])) if n >= 2))
     search = f"""<section class="search" id="search">
 <input id="q" type="search" placeholder="Search papers, code, datasets… / 搜索论文、代码、数据集…" aria-label="Search" autocomplete="off">
 <div class="filters">
 <select id="f-topic" aria-label="Topic"><option value="" data-en="All topics" data-zh="全部主题">All topics</option>{topic_opts}</select>
 <select id="f-emb" aria-label="Embodiment"><option value="" data-en="Any robot" data-zh="全部机器人形态">Any robot</option>{emb_opts}</select>
 <select id="f-kind" aria-label="Source"><option value="" data-en="Curated + daily feed" data-zh="精选 + 每日论文">Curated + daily feed</option><option value="c" data-en="Curated only" data-zh="仅精选">Curated only</option><option value="f" data-en="Daily feed only" data-zh="仅每日论文">Daily feed only</option></select>
+<select id="f-venue" aria-label="Venue"><option value="" data-en="Any venue" data-zh="全部会议/期刊">Any venue</option>{venue_opts}</select>
 <select id="f-sort" aria-label="Sort"><option value="" data-en="Sort: best match" data-zh="排序：默认">Sort: best match</option><option value="new" data-en="Sort: newest" data-zh="排序：最新">Sort: newest</option><option value="stars" data-en="Sort: GitHub stars" data-zh="排序：GitHub 星标">Sort: GitHub stars</option></select>
 <label><input id="f-code" type="checkbox"> {bi("Has code", "有代码")}</label>
 </div>

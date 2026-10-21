@@ -16,7 +16,7 @@ Hand-verified papers, code, datasets, simulators and hardware with one-line take
 
 - **Verified.** Every curated arXiv ID is checked against arXiv and every link is checked by CI, weekly.
 - **Fresh.** A GitHub Action pulls new cs.RO papers (plus robotics papers from cs.CV / cs.LG / cs.AI / cs.CL) every day and tags them by topic — they appear on the site without anyone touching the repo.
-- **Searchable.** Instant search and filters (topic · robot type: arm, hand, humanoid, legged, drone… · curated vs. daily · has code) on a fast static site that works on phones.
+- **Searchable.** Instant search and filters (topic · robot type: arm, hand, humanoid, legged, drone… · accepted venue such as CoRL, NeurIPS, IROS · curated vs. daily · has code) on a fast static site that works on phones.
 - **Bilingual.** Every curated entry has a one-line takeaway in English and Chinese; the site has an EN / 中文 toggle.
 - **Citable.** Every arXiv paper on the site has a one-click BibTeX, and [`curated.bib`](https://hu-zlatan.github.io/embodied-ai-radar/curated.bib) bundles all curated papers (built from arXiv metadata).
 
