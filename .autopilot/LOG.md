@@ -92,3 +92,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Agent picks 2026-10-21: SuperMimic (CoRL 2026 oral, humanoid tracking + differentiable world model), RoboCasa-Shift (VLA robustness benchmark), Jetson AGX Orin depth benchmark (perception), Robotic Video World Models survey (Princeton, with paper list). Takeaways only state what the (truncated) abstracts say.
 - Navigation anchors VLFM (ICRA 2024), NaVid (RSS 2024), Uni-NaVid (RSS 2025), Nav2 / Marathon 2 (IROS 2020); tactile anchors GelSlim 3.0, DTact, 9DTact. IDs/repos confirmed by web + GitHub search. Dispatched intake after verify started → curated_meta.json now 178 entries (BibTeX for the new picks).
 - verify.yml passed for all 11 new entries (picks, navigation, tactile). Curated: 187. CI/Pages green. Repo 0 stars / 0 forks, no issues/PRs. Nothing new for the owner. End of run 9.
+
+## 2026-10-21 — run 10 (~10:50 UTC–)
+
+- Start: CI/Pages/verify green, no issues/PRs, 0 stars / 0 forks. Scheduled 07:43 intake fired on time (no new papers; next arXiv announcement ~00:00 UTC). No picks this run (run 9 already reviewed the 10-21 feed).
+- Thin-topic anchors (IDs/titles confirmed by web search): PlaNet, DreamerV2, IRIS, UniPi, TD-MPC (world models 12 → 17); TD3, GAIL, Implicit BC, AWAC (learning 12 → 16); AnyTeleop (hardware 12 → 13). Curated: 197.
+- **Search venue filter**: new 'Any venue' select (CoRL, NeurIPS, IROS, ICLR, RSS… with counts, plus 'Any accepted venue'); matches the venue series of curated `venue:` and feed venue badges; shareable `?venue=CoRL`. Tested headless at 390 px (40 CoRL results, no JS errors, no horizontal scroll). READMEs mention it.
+- Resources: 蘑菇书 EasyRL (Datawhale) and 动手学强化学习 (Hands-on RL) as Chinese RL courses; awesome-embodied-vla-va-vln list. Repos confirmed via GitHub search.
