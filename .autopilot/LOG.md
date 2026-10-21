@@ -114,3 +114,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Digest picks now link to their entry pages; launch kit (V2EX) mentions BibTeX, entry pages, stars.
 - verify.yml passed for both anchor pushes (#41, #42). Dispatched intake after verify to fill BibTeX metadata for the new anchors.
 - End: CI/verify green, 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting). End of run 11.
+
+## 2026-10-21 — run 12 (~22:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs, 0 stars / 0 forks. Scheduled 15:29 intake slot fired at 19:23 (no new papers; next arXiv announcement ~00:00 UTC).
+- Tactile anchors (thinnest topic, 14 → 19): Making Sense of Vision and Touch (ICRA 2019), See Hear Feel (CoRL 2022), TVL (ICML 2024), RotateIt (CoRL 2023), TacSL (NVIDIA). IDs/venues via web search, repos via GitHub search.
+- **Data export**: site now publishes `curated.json` + `curated.csv` (stable fields incl. robot types and ★, CC BY 4.0; CSV with BOM for Excel). Linked from topics page and both READMEs ('Reusable').
+- Anchors: LM-Nav, SemExp, Active Neural SLAM (navigation 19 → 22), QT-Opt, DrQ-v2 (learning 16 → 18; DrQ-v2 repo is archived → badge). Curated: 224.
