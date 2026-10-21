@@ -128,3 +128,55 @@
   tags: [sensor-design, open-source, force, 3d-geometry]
   takeaway_en: Successor to DTact - a compact open-source visuotactile sensor that reconstructs 3D contact shape and estimates 6D force/torque with a model that generalizes to unseen objects.
   takeaway_zh: DTact 的后续：紧凑的开源视觉触觉传感器，可重建三维接触形状，并用可泛化到新物体的模型估计六维力/力矩。
+- title: "Making Sense of Vision and Touch: Self-Supervised Learning of Multimodal Representations for Contact-Rich Tasks"
+  type: paper
+  arxiv: "1810.10191"
+  year: 2018
+  venue: ICRA 2019
+  org: Stanford
+  code: https://github.com/stanford-iprl-lab/multimodal_representation
+  topics: [manipulation, learning]
+  tags: [real, visuotactile, force-torque, representation, rl]
+  takeaway_en: Learns a compact vision + force/torque representation with self-supervised objectives, then trains a peg-insertion policy with RL on top of it on a real robot.
+  takeaway_zh: 用自监督目标学习视觉 + 力/力矩的紧凑联合表征，再在其上用强化学习在真实机器人上训练插孔策略。
+- title: "See, Hear, and Feel: Smart Sensory Fusion for Robotic Manipulation"
+  type: paper
+  arxiv: "2212.03858"
+  year: 2022
+  venue: CoRL 2022
+  org: Stanford
+  code: https://github.com/JunzheJosephZhu/see_hear_feel
+  topics: [manipulation]
+  tags: [real, visuotactile, audio, multimodal, imitation-learning]
+  takeaway_en: Fuses camera, contact microphone and GelSight touch with self-attention in an imitation-learned policy, studied on dense packing and pouring tasks.
+  takeaway_zh: 在模仿学习策略中用自注意力融合相机、接触麦克风和 GelSight 触觉，在密集装箱与倾倒任务上做了研究。
+- title: "A Touch, Vision, and Language Dataset for Multimodal Alignment"
+  type: paper
+  arxiv: "2402.13232"
+  year: 2024
+  venue: ICML 2024
+  org: UC Berkeley
+  code: https://github.com/Max-Fu/tvl
+  topics: [datasets]
+  tags: [dataset, vision-based-tactile, language, representation]
+  takeaway_en: TVL pairs tactile and visual observations with language descriptions and trains a touch-vision-language encoder plus a model that describes how things feel.
+  takeaway_zh: TVL 数据集将触觉与视觉观测配上语言描述，并训练触觉-视觉-语言编码器以及能描述物体触感的模型。
+- title: "General In-Hand Object Rotation with Vision and Touch"
+  type: paper
+  arxiv: "2309.09979"
+  year: 2023
+  venue: CoRL 2023
+  org: UC Berkeley, Meta AI
+  topics: [manipulation]
+  tags: [dexterous-hand, visuotactile, sim2real, rl]
+  takeaway_en: RotateIt trains in simulation with privileged object information, then distills to a policy that rotates diverse objects in hand using vision, touch and proprioception on a real hand.
+  takeaway_zh: RotateIt 先在仿真中利用特权物体信息训练，再蒸馏为仅用视觉、触觉和本体感觉的策略，在真实灵巧手上旋转多种物体。
+- title: "TacSL: A Library for Visuotactile Sensor Simulation and Learning"
+  type: paper
+  arxiv: "2408.06506"
+  year: 2024
+  org: NVIDIA
+  topics: [sim]
+  tags: [sim, gpu, vision-based-tactile, sim2real]
+  takeaway_en: GPU-based simulation of GelSight-style tactile images and contact forces in Isaac Gym, plus learning tools for sim-to-real transfer of visuotactile policies.
+  takeaway_zh: 在 Isaac Gym 中用 GPU 模拟 GelSight 式触觉图像与接触力，并提供用于视触觉策略仿真到真实迁移的学习工具。
