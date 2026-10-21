@@ -99,3 +99,43 @@
   tags: [foundation-model, image-goal, cross-embodiment, open-source]
   takeaway_en: The predecessor of ViNT — one goal-conditioned navigation policy trained on pooled data from several different robots, which transfers to new robots including ones not seen in training.
   takeaway_zh: ViNT 的前作：在多种不同机器人汇集的数据上训练一个目标条件导航策略，可迁移到包括训练中未见过的新机器人。
+- title: "VLFM: Vision-Language Frontier Maps for Zero-Shot Semantic Navigation"
+  type: paper
+  arxiv: "2312.03275"
+  year: 2023
+  venue: ICRA 2024
+  org: Boston Dynamics AI Institute, Georgia Tech
+  code: https://github.com/rai-opensource/vlfm
+  tags: [zero-shot, object-goal, vlm, frontier-exploration, real, sim]
+  takeaway_en: Zero-shot object-goal navigation that scores exploration frontiers by vision-language similarity to the target, with no task-specific training; tested in Habitat and on a Spot robot.
+  takeaway_zh: 零样本目标物体导航：用视觉-语言模型对探索前沿与目标的相关度打分来决定往哪走，无需针对任务训练；在 Habitat 和 Spot 机器人上验证。
+- title: "NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation"
+  type: paper
+  arxiv: "2402.15852"
+  year: 2024
+  venue: RSS 2024
+  org: Peking University
+  code: https://github.com/jzhzhang/NaVid-VLN-CE
+  tags: [vln, video-vlm, monocular, sim-to-real]
+  takeaway_en: A video VLM that reads the monocular RGB history plus the instruction and outputs the next navigation action directly, without maps, odometry or depth.
+  takeaway_zh: 基于视频的视觉语言模型：只看单目 RGB 历史帧和语言指令，直接输出下一步导航动作，不依赖地图、里程计或深度。
+- title: "Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied Navigation Tasks"
+  type: paper
+  arxiv: "2412.06224"
+  year: 2024
+  venue: RSS 2025
+  org: Peking University
+  code: https://github.com/jzhzhang/NaVid-VLN-CE
+  topics: [vla]
+  tags: [vln, object-goal, following, video-vlm]
+  takeaway_en: Extends NaVid into one video VLA model for several navigation tasks (instruction following, object search, question answering, human following).
+  takeaway_zh: 把 NaVid 扩展为单一视频 VLA 模型，统一处理多种导航任务（指令导航、目标搜索、具身问答、跟随人）。
+- title: "The Marathon 2: A Navigation System"
+  type: paper
+  arxiv: "2003.00368"
+  year: 2020
+  venue: IROS 2020
+  code: https://github.com/ros-navigation/navigation2
+  tags: [ros2, nav2, behavior-trees, open-source, mobile]
+  takeaway_en: The paper behind Nav2, the standard ROS 2 navigation stack - behavior-tree orchestration of planners, controllers and recovery behaviors, validated by long marathon runs on real robots.
+  takeaway_zh: ROS 2 标准导航栈 Nav2 的论文：用行为树编排规划器、控制器和恢复行为，并在真实机器人上长距离“马拉松”测试验证。
