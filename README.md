@@ -69,7 +69,7 @@ _Vision-language-action models and generalist robot policies._ [Browse with the 
 - **[A Generalist Agent](https://arxiv.org/abs/2205.06175)** (2022) — Gato — one Transformer with one set of weights plays games, captions images and stacks blocks with a real arm.
 - **[RT-1: Robotics Transformer for Real-World Control at Scale](https://arxiv.org/abs/2212.06817)** (2022) — Tokenized actions plus a Transformer trained on 130k real demos showed that robot policies scale with data diversity. · [code](https://github.com/google-research/robotics_transformer)
 - **[VIMA: General Robot Manipulation with Multimodal Prompts](https://arxiv.org/abs/2210.03094)** (2022) — Casts many tabletop tasks as interleaved text-and-image prompts to one Transformer policy, with the VIMA-Bench suite for systematic generalization tests. · [code](https://github.com/vimalabs/VIMA)
-- _See also:_ [HexaShell](#manipulation), [Cracking Mobile Manipulation](#navigation), [Open X-Embodiment](#datasets), [Evaluating Real-World Robot Manipulation Policies in Simulation](#datasets), [Embodied Skill Bench](#datasets)
+- _See also:_ [HexaShell](#manipulation), [Cracking Mobile Manipulation](#navigation), [Open X-Embodiment](#datasets), [Evaluating Real-World Robot Manipulation Policies in Simulation](#datasets), [Embodied Skill Bench](#datasets), [RoboCasa-Shift](#datasets)
 
 <a id="manipulation"></a>
 ### Manipulation & Dexterous Hands
@@ -122,6 +122,7 @@ _Legged locomotion, humanoid whole-body control and parkour._ [Browse with the l
 
 - ⭐ **[Real-World Humanoid Locomotion with Reinforcement Learning](https://arxiv.org/abs/2303.03381)** (2023) — A causal Transformer policy trained in simulation walks a full-size humanoid outdoors, zero-shot.
 - ⭐ **[Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning](https://arxiv.org/abs/2109.11978)** (2021) — Thousands of parallel GPU environments train a quadruped walking policy in minutes; legged_gym became a standard starter. · [code](https://github.com/leggedrobotics/legged_gym)
+- **[SuperMimic: Scaling Humanoid Whole-Body Control with One Differentiable World Model](https://arxiv.org/abs/2610.28480)** (2026) — Rather than distilling per-motion experts or brute-forcing one RL policy, trains a humanoid tracking policy jointly with one differentiable world model of shared dynamics, fit from simulator logs (CoRL 2026 oral). · [project](https://supermimic.github.io)
 - **[ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid Whole-Body Skills](https://arxiv.org/abs/2502.01143)** (2025) — Learns a residual "delta action" model from real rollouts to fix sim physics, enabling agile athletic humanoid motions. · [code](https://github.com/LeCAR-Lab/ASAP)
 - **[Expressive Whole-Body Control for Humanoid Robots](https://arxiv.org/abs/2402.16796)** (2024) — Imitates upper-body human motion capture while keeping robust legs, giving humanoids expressive gestures and dance.
 - **[HumanPlus: Humanoid Shadowing and Imitation from Humans](https://arxiv.org/abs/2406.10454)** (2024) — A humanoid shadows a human from one RGB camera, then learns autonomous skills from the collected data. · [code](https://github.com/MarkFzp/humanplus)
@@ -140,6 +141,7 @@ _Legged locomotion, humanoid whole-body control and parkour._ [Browse with the l
 _Learned dynamics, video world models and model-based RL for embodied agents._ [Browse with the latest papers →](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html)
 
 - ⭐ **[Mastering Diverse Domains through World Models](https://arxiv.org/abs/2301.04104)** (2023) — DreamerV3 — one set of hyperparameters works across 150+ tasks, including collecting diamonds in Minecraft from scratch. · [code](https://github.com/danijar/dreamerv3)
+- **[Robotic Video World Models: A Survey of Applications, Research Challenges, Future Directions](https://arxiv.org/abs/2601.07823)** (2026) — A survey of video world models in robotics - where they replace or complement physics simulators (e.g. deformable objects), their applications, and open challenges - with a maintained paper list. · [code](https://github.com/irom-princeton/awesome-robotics-video-world-model-papers)
 - **[Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience](https://arxiv.org/abs/2610.26855)** (2026) — An egocentric world model covering both walking and manipulating, trained on ~10k hours of human video plus ~3k hours of robot data under one shared kinematic action representation. · [code](https://github.com/Ropedia/ropedia-w0)
 - **[Cosmos World Foundation Model Platform for Physical AI](https://arxiv.org/abs/2501.03575)** (2025) — Open video world foundation models plus tokenizers and data pipelines for generating physical-AI training data.
 - **[V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://arxiv.org/abs/2506.09985)** (2025) — A self-supervised video encoder, post-trained with a little robot data, plans zero-shot pick-and-place by latent prediction.
@@ -150,7 +152,7 @@ _Learned dynamics, video world models and model-based RL for embodied agents._ [
 - **[DayDreamer: World Models for Physical Robot Learning](https://arxiv.org/abs/2206.14176)** (2022) — Dreamer trained directly on real robots — a quadruped learns to walk in about an hour with no simulator.
 - **[Dream to Control: Learning Behaviors by Latent Imagination](https://arxiv.org/abs/1912.01603)** (2019) — The first Dreamer — learns a latent world model from pixels and trains the policy entirely on imagined rollouts.
 - **[World Models](https://arxiv.org/abs/1803.10122)** (2018) — The classic VAE + RNN agent that learns a compressed model of its environment and trains a controller inside the "dream". · [project](https://worldmodels.github.io/)
-- _See also:_ [Planning with Diffusion for Flexible Behavior Synthesis](#control)
+- _See also:_ [SuperMimic](#locomotion), [Planning with Diffusion for Flexible Behavior Synthesis](#control)
 
 <a id="navigation"></a>
 ### Navigation & Embodied Agents
@@ -179,6 +181,7 @@ _Visual / LiDAR SLAM and odometry, 3D reconstruction, object pose, depth and ope
 - ⭐ **[ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM](https://arxiv.org/abs/2007.11898)** (2020) — The go-to feature-based SLAM library — monocular, stereo and RGB-D, with IMU fusion and multi-map relocalization. · [code](https://github.com/UZ-SLAMLab/ORB_SLAM3)
 - **[SpaRV: Sparse Radiance Voxels for Scalable Geometrically Consistent LiDAR-Visual Mapping and Rendering](https://arxiv.org/abs/2610.25665)** (2026) — A sparse-voxel radiance map built from LiDAR and camera data, aimed at robot logs — few viewpoints, imperfect poses and large scenes — while keeping geometry accurate and GPU memory in check. · [code](https://github.com/hku-mars/SpaRV)
 - **[Vision as Proprioception: Estimating Humanoid Robot Pose from Video](https://arxiv.org/abs/2610.25288)** (2026) — HumanoidPose recovers a humanoid's full-body joint configuration from video alone — useful when onboard state is unavailable, and for turning online robot videos into training data. · [code](https://github.com/eth-siplab/HumanoidPose)
+- **[Which Depth Estimator for Jetson AGX Orin? A 2026 Benchmark of Monocular and Stereo Methods](https://arxiv.org/abs/2610.27199)** (2026) — Measured numbers for robot builders: nine monocular and stereo depth families (Depth Anything V2/3, Depth Pro, MoGe-2, Fast-FoundationStereo, ...) run on a Jetson AGX Orin, scored for metric accuracy and speed. · [code](https://github.com/nodarhub/orin-depth-benchmark)
 - **[FoundationStereo: Zero-Shot Stereo Matching](https://arxiv.org/abs/2501.09898)** (2025) — Stereo depth model trained on large synthetic data that reports strong zero-shot accuracy on real scenes — a drop-in depth source for stereo-camera robots. · [code](https://github.com/NVlabs/FoundationStereo)
 - **[VGGT: Visual Geometry Grounded Transformer](https://arxiv.org/abs/2503.11651)** (2025) — One feed-forward transformer predicts cameras, depth, point maps and tracks for many views at once, in about a second. · [code](https://github.com/facebookresearch/vggt)
 - **[Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data](https://arxiv.org/abs/2401.10891)** (2024) — Monocular depth model trained on tens of millions of pseudo-labelled images; a common off-the-shelf depth prior for robots. · [code](https://github.com/LiheYoung/Depth-Anything)
@@ -229,7 +232,7 @@ _Reinforcement learning, imitation learning and policy post-training methods for
 - **[Conservative Q-Learning for Offline Reinforcement Learning](https://arxiv.org/abs/2006.04779)** (2020) — CQL — penalizes Q-values on actions outside the dataset so the learned value is a lower bound; a standard offline-RL baseline for learning from fixed robot logs. · [code](https://github.com/aviralkumar2907/CQL)
 - **[Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor](https://arxiv.org/abs/1801.01290)** (2018) — Off-policy RL with an entropy bonus; sample-efficient enough to become the default for learning directly on real robots.
 - **[A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning](https://arxiv.org/abs/1011.0686)** (2010) — DAgger — query the expert on the states the learner itself visits, fixing the compounding errors of plain behavior cloning.
-- _See also:_ [Learn the Task, Not the Schedule](#manipulation), [Tactile Gym 2.0](#tactile), [Unitree RL Gym](#locomotion)
+- _See also:_ [Learn the Task, Not the Schedule](#manipulation), [Tactile Gym 2.0](#tactile), [Unitree RL Gym](#locomotion), [SuperMimic](#locomotion)
 
 <a id="sim"></a>
 ### Sim-to-Real & Simulators
@@ -254,7 +257,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._ [Browse
 - **[AI2-THOR: An Interactive 3D Environment for Visual AI](https://arxiv.org/abs/1712.05474)** (2017) — Photorealistic interactive indoor scenes where agents open, pick up and change objects; the base of many embodied-AI benchmarks such as ALFRED. · [code](https://github.com/allenai/ai2thor)
 - **[Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World](https://arxiv.org/abs/1703.06907)** (2017) — Randomizing textures, lighting and cameras in sim makes vision models work on real images with no real data.
 - **[Sim-to-Real Transfer of Robotic Control with Dynamics Randomization](https://arxiv.org/abs/1710.06537)** (2017) — Randomizing physical parameters during training yields control policies robust enough to run on a real arm.
-- _See also:_ [Blind Precise Assembly](#manipulation), [TACTO](#tactile), [Taxim](#tactile), [Tactile Gym 2.0](#tactile), [Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning](#locomotion), [Habitat](#datasets)
+- _See also:_ [Blind Precise Assembly](#manipulation), [TACTO](#tactile), [Taxim](#tactile), [Tactile Gym 2.0](#tactile), [Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning](#locomotion), [Habitat](#datasets), [RoboCasa-Shift](#datasets)
 
 <a id="datasets"></a>
 ### Datasets & Benchmarks
@@ -265,6 +268,7 @@ _Large robot datasets, egocentric data and evaluation suites._ [Browse with the 
 - ⭐ **[LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning](https://arxiv.org/abs/2306.03310)** (2023) — 130 language-conditioned tasks in four suites; now the most common simulation benchmark for VLA papers. · [code](https://github.com/Lifelong-Robot-Learning/LIBERO)
 - ⭐ **[Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://arxiv.org/abs/2310.08864)** (2023) — 1M+ trajectories from 22 robot types pooled by 30+ labs; RT-X models trained on it beat single-robot baselines. · [code](https://github.com/google-deepmind/open_x_embodiment)
 - **[Embodied Skill Bench: Benchmarking How Well Agents with Embodied Skills Perform on Physical Tasks](https://arxiv.org/abs/2610.16238)** (2026) — Packages VLA policies, perception models and know-how as 250 reusable "embodied skills" and measures how much they help LLM agents on physical tasks. · [code](https://github.com/HanZhi306/EmbodiedSkill-Bench)
+- **[RoboCasa-Shift: Stage-Aware Robustness Evaluation of Vision-Language-Action Policies in Long-Horizon Household Manipulation](https://arxiv.org/abs/2610.27861)** (2026) — VLA robustness benchmark on RoboCasa365: paired clean/perturbed rollouts differing in one shift, plus stage-level diagnostics of where long-horizon failures start; evaluated on GR00T N1.5. · [code](https://github.com/HaochengWang23/RoboCasa-Shift)
 - **[AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems](https://arxiv.org/abs/2503.06669)** (2025) — A million-scale real-robot dataset collected in purpose-built scenes, with the GO-1 generalist policy trained on it.
 - **[DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset](https://arxiv.org/abs/2403.12945)** (2024) — 76k teleoperated Franka trajectories collected in hundreds of real scenes across many institutions. · [code](https://github.com/droid-dataset/droid)
 - **[Evaluating Real-World Robot Manipulation Policies in Simulation](https://arxiv.org/abs/2405.05941)** (2024) — SimplerEnv — real-to-sim environments whose scores correlate with real-robot results for RT-1/Octo-style policies. · [code](https://github.com/simpler-env/SimplerEnv)
