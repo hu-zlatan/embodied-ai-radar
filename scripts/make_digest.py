@@ -57,7 +57,8 @@ def main() -> int:
     if picks:
         for e in picks:
             link = f"https://arxiv.org/abs/{e['arxiv']}" if e.get("arxiv") else (e.get("url") or e.get("code"))
-            L.append(f"- **[{clean_title(e['title'])}]({link})** — {e['takeaway_en']} / {e['takeaway_zh']}")
+            L.append(f"- **[{clean_title(e['title'])}]({link})** — {e['takeaway_en']} / {e['takeaway_zh']}"
+                     f" · [details · 详情](https://hu-zlatan.github.io/embodied-ai-radar/e/{e['id']}.html)")
     else:
         L.append("- _No new curated picks this week. 本周暂无新增精选。_")
     accepted = sorted(((venue_of(p.get("comment")), p) for p in feed if venue_of(p.get("comment"))),
