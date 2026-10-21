@@ -6,8 +6,10 @@ Bilingual: every text exists in EN and ZH; CSS shows one based on <html class="z
 """
 from __future__ import annotations
 
+import csv
 import datetime as dt
 import html
+import io
 import json
 import re
 import shutil
@@ -456,6 +458,8 @@ def build() -> int:
     nbib = sum(1 for e in entries if e.get("bib"))
     bibnote = (f'<p><a href="../curated.bib" download>{bi(f"Download BibTeX for all {nbib} curated arXiv papers", f"下载全部 {nbib} 篇精选 arXiv 论文的 BibTeX")}</a></p>'
                if nbib else "")
+    bibnote += (f'<p>{bi("Reuse the whole curated index (CC BY 4.0):", "复用全部精选数据（CC BY 4.0）：")} '
+                f'<a href="../curated.json">curated.json</a> · <a href="../curated.csv" download>curated.csv</a></p>')
     (OUT / "topics" / "index.html").write_text(page("Topics · Embodied AI Radar", f'<h1>{bi("Topics", "主题")}</h1><ul class="tlist">{tlist}</ul>' + bibnote, "../", desc, "topics/index.html"), encoding="utf-8")
     for t in topics:
         cur = sorted(by_topic[t["id"]], key=lambda e: (not e.get("highlight"), -int(e["year"])))
@@ -579,6 +583,33 @@ def build() -> int:
     (OUT / "curated.bib").write_text(
         "% Embodied AI Radar - curated papers (" + str(len(bibs)) + " entries), built from arXiv metadata (CC0).\n"
         f"% {SITE_URL}\n\n" + "\n\n".join(bibs) + "\n", encoding="utf-8")
+
+    # ---- machine-readable export of the curated index (CC BY 4.0), JSON + CSV
+    FIELDS = ["id", "title", "type", "arxiv", "year", "venue", "org", "url", "code", "project", "topics", "tags",
+              "robot_types", "highlight", "added", "takeaway_en", "takeaway_zh", "github_stars", "page"]
+    rows = []
+    for e in entries:
+        st = repo_stat(e) or {}
+        rows.append({
+            "id": e["id"], "title": e["title"], "type": e.get("type"), "arxiv": e.get("arxiv"),
+            "year": e.get("year"), "venue": e.get("venue"), "org": e.get("org"), "url": e.get("url"),
+            "code": e.get("code"), "project": e.get("project"), "topics": e["topics"], "tags": e.get("tags") or [],
+            "robot_types": e.get("emb") or [], "highlight": bool(e.get("highlight")),
+            "added": str(e["added"]) if e.get("added") else None,
+            "takeaway_en": e["takeaway_en"], "takeaway_zh": e["takeaway_zh"],
+            "github_stars": st.get("stars"), "page": f"{SITE_URL}e/{e['id']}.html"})
+    (OUT / "curated.json").write_text(json.dumps({
+        "name": "Embodied AI Radar - curated index", "source": SITE_URL,
+        "license": "CC BY 4.0 (curated text and data); arXiv metadata CC0",
+        "built": today.isoformat(), "count": len(rows), "fields": FIELDS, "items": rows},
+        ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    buf = io.StringIO()
+    w = csv.writer(buf, lineterminator="\n")
+    w.writerow(FIELDS)
+    for r in rows:
+        w.writerow(["; ".join(v) if isinstance(v, list) else ("" if v is None else v) for v in (r[f] for f in FIELDS)])
+    # UTF-8 BOM so Excel opens the Chinese takeaways correctly
+    (OUT / "curated.csv").write_text("\ufeff" + buf.getvalue(), encoding="utf-8")
 
     # ---- 404, robots, sitemap, atom
     (OUT / "404.html").write_text(page("Not found · Embodied AI Radar", f'<h1>404</h1><p><a href="{SITE_URL}">{bi("Back to the radar", "返回首页")}</a></p>', SITE_URL, desc, "404.html"), encoding="utf-8")
