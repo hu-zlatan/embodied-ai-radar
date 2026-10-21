@@ -141,3 +141,39 @@
   tags: [humanoid, whole-body, rl, distillation]
   takeaway_en: Distills one policy that supports several humanoid control modes (root velocity, joint angles, keypoint tracking) instead of training a separate controller per mode.
   takeaway_zh: 蒸馏出单一策略，支持多种人形控制模式（根部速度、关节角、关键点跟踪），不必为每种模式各训练一个控制器。
+- title: "Walk These Ways: Tuning Robot Control for Generalization with Multiplicity of Behavior"
+  type: paper
+  arxiv: "2212.03238"
+  year: 2022
+  venue: CoRL 2022
+  org: MIT
+  code: https://github.com/Improbable-AI/walk-these-ways
+  tags: [real, quadruped, sim2real, rl, unitree-go1]
+  takeaway_en: Trains one quadruped policy that exposes gait parameters (frequency, foot swing, posture) as commands, so a human can tune behavior at deploy time for new tasks; open sim-to-real stack for the Unitree Go1.
+  takeaway_zh: 训练一个把步态参数（频率、抬脚高度、姿态等）作为指令开放的四足策略，部署时可由人调节行为以适应新任务；附带面向 Unitree Go1 的开源仿真到真实工具链。
+- title: "DreamWaQ: Learning Robust Quadrupedal Locomotion With Implicit Terrain Imagination via Deep Reinforcement Learning"
+  type: paper
+  arxiv: "2301.10602"
+  year: 2023
+  venue: ICRA 2023
+  org: KAIST
+  tags: [real, quadruped, blind, sim2real, rl]
+  takeaway_en: A blind quadruped policy that infers terrain properties implicitly from proprioception history with a context-aided estimator, enabling robust walking on stairs and rough ground without cameras.
+  takeaway_zh: 盲视四足策略：借助上下文辅助估计器从本体感觉历史中隐式推断地形特性，无需相机即可稳健地走楼梯和崎岖地面。
+- title: "ANYmal Parkour: Learning Agile Navigation for Quadrupedal Robots"
+  type: paper
+  arxiv: "2306.14874"
+  year: 2023
+  org: ETH Zurich, NVIDIA
+  tags: [real, quadruped, parkour, hierarchical, perception]
+  takeaway_en: A learned navigation policy sequences pre-trained skills (walk, jump, climb, crouch) using a learned obstacle reconstruction; reports up to 2 m/s on hardware (Science Robotics).
+  takeaway_zh: 分层的全学习系统：导航策略结合学习到的障碍物重建来调度预训练技能（行走、跳跃、攀爬、下蹲）；报告实机速度可达 2 米/秒。发表于 Science Robotics。
+- title: "Humanoid Parkour Learning"
+  type: paper
+  arxiv: "2406.10759"
+  year: 2024
+  venue: CoRL 2024
+  org: Shanghai Qi Zhi, ShanghaiTech, Tsinghua
+  tags: [real, humanoid, parkour, vision, unitree-h1, sim2real]
+  takeaway_en: Learns a vision-based whole-body parkour policy for the Unitree H1 without motion references, covering skills such as jumping onto platforms and leaping over gaps, and transfers it to the real robot.
+  takeaway_zh: 无需动作参考，为 Unitree H1 学习基于视觉的全身跑酷策略，涵盖跳上平台、跨越沟壑等技能，并迁移到真实机器人。
