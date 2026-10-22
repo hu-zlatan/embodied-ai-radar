@@ -180,3 +180,47 @@
   tags: [sim, gpu, vision-based-tactile, sim2real]
   takeaway_en: GPU-based simulation of GelSight-style tactile images and contact forces in Isaac Gym, plus learning tools for sim-to-real transfer of visuotactile policies.
   takeaway_zh: 在 Isaac Gym 中用 GPU 模拟 GelSight 式触觉图像与接触力，并提供用于视触觉策略仿真到真实迁移的学习工具。
+- title: "Rotating without Seeing: Towards In-hand Dexterity through Touch"
+  type: paper
+  arxiv: "2303.10880"
+  year: 2023
+  venue: RSS 2023
+  org: UC San Diego
+  project: https://touchdexterity.github.io
+  topics: [manipulation]
+  tags: [dexterous-hand, binary-touch, low-cost, sim2real, rl]
+  takeaway_en: Covers a robot hand with cheap binary (contact / no contact) touch sensors and trains an RL policy in simulation that rotates unseen objects in hand on a real robot without any vision.
+  takeaway_zh: 在灵巧手上铺设廉价的二值（有/无接触）触觉传感器，在仿真中用强化学习训练策略，迁移到真机后无需视觉即可在手中旋转未见过的物体。
+- title: "Robot Synesthesia: In-Hand Manipulation with Visuotactile Sensing"
+  type: paper
+  arxiv: "2312.01853"
+  year: 2023
+  org: UC San Diego
+  project: https://yingyuan0414.github.io/visuotactile/
+  topics: [manipulation]
+  tags: [dexterous-hand, visuotactile, point-cloud, sim2real, rl]
+  takeaway_en: Turns tactile readings into points in the same 3D frame as the camera point cloud and the hand model, so one visuotactile point-cloud input drives in-hand object rotation.
+  takeaway_zh: 将触觉读数转换为与相机点云、手部模型处于同一三维坐标系的点，用统一的视触觉点云输入驱动手内物体旋转。
+- title: "Neural feels with neural fields: Visuo-tactile perception for in-hand manipulation"
+  type: paper
+  arxiv: "2312.13469"
+  year: 2023
+  venue: Science Robotics 2024
+  org: Meta AI, CMU
+  code: https://github.com/facebookresearch/neuralfeels
+  topics: [perception, manipulation]
+  tags: [visuotactile, neural-fields, pose-tracking, dexterous-hand]
+  takeaway_en: NeuralFeels fuses vision and touch from a multi-fingered hand into an online neural field, reconstructing an object's shape and tracking its pose while the hand manipulates it.
+  takeaway_zh: NeuralFeels 将多指手的视觉与触觉在线融合为神经场，在操作过程中同时重建物体形状并跟踪其位姿。
+- title: "Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation"
+  type: paper
+  arxiv: "2503.02881"
+  year: 2025
+  venue: RSS 2025
+  org: SJTU, Tsinghua
+  code: https://github.com/xiaoxiaoxh/reactive_diffusion_policy
+  project: https://reactive-diffusion-policy.github.io/
+  topics: [manipulation, learning]
+  tags: [visuotactile, force, diffusion-policy, teleoperation, real]
+  takeaway_en: A slow latent diffusion policy plans action chunks while a fast policy reacts to tactile/force feedback; reports >35% higher scores than visual imitation baselines on three contact-rich tasks.
+  takeaway_zh: 慢速扩散策略在隐空间规划动作块，快速策略根据触觉/力反馈高频调整；论文报告在三个接触丰富任务上比纯视觉模仿学习基线总分高 35% 以上。
