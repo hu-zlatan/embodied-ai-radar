@@ -193,3 +193,12 @@
   tags: [3d-reconstruction, image-matching, pointmap]
   takeaway_en: Extends DUSt3R with a dense local-feature head, so one network gives both 3D pointmaps and accurate pixel matches between views — useful for calibration-free reconstruction and localization.
   takeaway_zh: 在 DUSt3R 基础上加入稠密局部特征头，同一网络既输出三维点图又给出视角间精确的像素匹配，适用于免标定的三维重建与定位。
+- title: "FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry"
+  type: paper
+  arxiv: "2408.14035"
+  year: 2024
+  org: HKU MaRS Lab
+  code: https://github.com/hku-mars/FAST-LIVO2
+  tags: [lidar, visual, odometry, sensor-fusion, real-time]
+  takeaway_en: FAST-LIVO2 — fuses LiDAR, camera and IMU in one filter with direct (feature-free) updates for both sensors, sharing a single voxel map where image patches are attached to LiDAR points.
+  takeaway_zh: FAST-LIVO2：在同一滤波器中融合激光雷达、相机与 IMU，两种传感器都采用直接法（无需提取特征）更新，并共用一张体素地图，图像块挂载在激光点上。

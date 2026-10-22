@@ -231,3 +231,24 @@
   tags: [real, zero-shot, keypoints, vlm, optimization]
   takeaway_en: ReKep — a VLM writes manipulation tasks as Python cost functions over 3D keypoints (relational keypoint constraints), solved by a hierarchical optimizer in real time; zero-shot, no task-specific training.
   takeaway_zh: ReKep：由视觉语言模型把操作任务写成定义在三维关键点上的 Python 代价函数（关系关键点约束），再由分层优化器实时求解；零样本，无需针对任务训练。
+- title: "Contact-GraspNet: Efficient 6-DoF Grasp Generation in Cluttered Scenes"
+  type: paper
+  arxiv: "2103.14127"
+  year: 2021
+  org: NVIDIA
+  venue: ICRA 2021
+  code: https://github.com/NVlabs/contact_graspnet
+  topics: [perception]
+  tags: [grasping, point-cloud, 6-dof, clutter]
+  takeaway_en: Contact-GraspNet — predicts 6-DoF parallel-jaw grasps for a whole cluttered scene from one depth view by treating observed points as grasp contacts, which shrinks the problem to 4 DoF per point.
+  takeaway_zh: Contact-GraspNet：从单帧深度图为整个杂乱场景预测 6 自由度平行夹爪抓取；把观测到的点当作抓取接触点，使每个点只需学习 4 个自由度。
+- title: "AnyGrasp: Robust and Efficient Grasp Perception in Spatial and Temporal Domains"
+  type: paper
+  arxiv: "2212.08333"
+  year: 2022
+  org: SJTU
+  code: https://github.com/graspnet/anygrasp_sdk
+  topics: [perception]
+  tags: [grasping, real, dynamic, tracking]
+  takeaway_en: AnyGrasp — dense 7-DoF parallel-gripper grasp detection trained on real sensor data with analytic labels and center-of-mass awareness, plus grasp tracking across frames for moving objects; released as an SDK.
+  takeaway_zh: AnyGrasp：基于真实传感器数据与解析标注训练、考虑物体质心的稠密 7 自由度平行夹爪抓取检测，并能跨帧跟踪抓取以应对运动物体；以 SDK 形式发布。
