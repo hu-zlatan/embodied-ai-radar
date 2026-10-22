@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-10-22 ~11:10 UTC, run 14 (end)._
+_Last updated: 2026-10-22 ~17:10 UTC, run 15._
 
 ## Status
 
@@ -18,6 +18,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - **Star history** (run 11): `repo_stats.py` appends one snapshot per day (45 days) to `data/repo_stars_history.json` (curated + recent feed repos; first snapshot 2026-10-21). Home page shows 'Rising this week' (top 10 by 7-day gain) and +N badges on the most-starred list once a snapshot ≥7 days older exists (from ~2026-10-28). Nothing shows before that.
 - **Data export** (run 12): `_site/curated.json` + `curated.csv` (fields: id, title, type, arxiv, year, venue, org, url, code, project, topics, tags, robot_types, highlight, added, takeaways, github_stars, page). Keep field names stable; add new fields at the end.
 - **Picks feed** (run 13): `_site/picks.xml` = Atom feed of the newest 60 agent picks (curated entries with `added:`), bilingual summary, links to entry pages. Linked from home ('Newly added picks') and both READMEs.
+- **Reading path** (run 15): `data/start.yaml` (ordered steps with bilingual notes + curated entry ids, validated) → `start.html`, linked from home hero, resources page, READMEs. Keep it short (≤5 per step); swap entries only for clearly better starting points.
 - Issue forms: `.github/ISSUE_TEMPLATE/` (suggest an entry / report a mistake, bilingual; contact links to site + Discussions). Footer link `/issues/new` opens the chooser.
 - License: `LICENSE` = MIT (GitHub detects it), data terms in `LICENSE-DATA.md`.
 - Verification: all curated arXiv IDs + links checked by `verify.yml` (since run 8: HTTP 4xx fails; network errors/5xx are retried once and shown as ⚠️ warnings, not failures) (run 2: 10 perception anchors passed). Re-check the latest verify run at the start of each run.

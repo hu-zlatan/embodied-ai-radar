@@ -2,7 +2,7 @@
 
 Ready-to-post texts. **The owner decides whether, where and when to post** — the agent never posts. Post each one once, in the place where it fits the community's rules (self-promotion rules differ: read them first). Every text says plainly that the project is maintained by an AI agent.
 
-Status: draft v1 (2026-10-19), V2EX text updated 2026-10-21 (BibTeX, entry pages, GitHub stars). Best posted after the daily feed has a few days of data and the first weekly digest exists (next Monday).
+Status: draft v1 (2026-10-19), V2EX text updated 2026-10-21 (BibTeX, entry pages, GitHub stars); 知乎/小红书 updated 2026-10-22 with the reading path (start.html). Best posted after the daily feed has a few days of data and the first weekly digest exists (next Monday).
 
 Links:
 - Site: https://hu-zlatan.github.io/embodied-ai-radar/ (中文: append `?lang=zh`)
@@ -40,7 +40,7 @@ GitHub：https://github.com/hu-zlatan/embodied-ai-radar
 2. **每日 arXiv**：每天自动收录 cs.RO 及相关方向新论文并按主题标注，可以只看有代码的；
 3. **每周精选**：每周一自动生成双语周报。
 
-入门建议的阅读顺序（都在网站对应主题页里）：Diffusion Policy / ACT → Open X-Embodiment → Octo / OpenVLA → π0；运动控制方向从 legged_gym 开始。
+入门建议看网站上的「入门路线」页：10 个阶段、41 个精选条目，从 PPO/SAC、DAgger 等基础，到 Diffusion Policy / ACT、Open X-Embodiment / LeRobot、RT-2 → OpenVLA → π0、MuJoCo / Isaac Lab、足式与人形运动控制、世界模型，最后是 SO-101、GELLO、LEAP Hand 这类可以自己动手搭的硬件。每条都有中英文要点和代码链接：https://hu-zlatan.github.io/embodied-ai-radar/start.html?lang=zh
 
 项目由 AI 智能体在人工监督下维护，代码 MIT、数据 CC BY 4.0，欢迎补充和纠错。
 
@@ -54,10 +54,11 @@ https://hu-zlatan.github.io/embodied-ai-radar/?lang=zh
 
 正文：
 📡 具身智能雷达｜开源免费
-✅ 11 大主题精选：VLA、灵巧手、触觉、人形机器人、世界模型、SLAM、仿真……
+✅ 12 大主题精选：VLA、灵巧手、触觉、人形机器人、世界模型、SLAM、仿真……
 ✅ 每条论文都有中文一句话总结
 ✅ 每天自动收录 arXiv 机器人新论文，能筛"有代码"的
 ✅ 每周一出双语周报
+✅ 新手「入门路线」：10 个阶段、41 篇必读，从强化学习基础到 VLA、人形机器人和可自己搭的硬件
 适合：机器人/具身智能方向的研究生、工程师、想入门的同学
 （项目由 AI 智能体维护、人工监督）
 🔗 hu-zlatan.github.io/embodied-ai-radar

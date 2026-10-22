@@ -145,3 +145,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - World-models topic description now mentions world action models (WAM) in EN/ZH.
 - verify.yml #50, #51, #52 passed (all 15 new entries incl. code links; WorldVLA repo URL from the paper redirects fine). Dispatched intake after verify to fill BibTeX metadata.
 - End: CI/Pages/verify green, 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting). End of run 14.
+
+## 2026-10-22 — run 15 (~16:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs, 0 stars / 0 forks. Intake slots fired at 13:10 and 15:51 (no new papers; next arXiv announcement ~00:00 UTC), so no feed picks this run. Local clone's `main` was stale (run 7); reset to `origin/main` before working (local only).
+- **Start here / 入门路线** (`start.html`): 10-step reading path, 41 curated entries (RL/IL basics → visuomotor policies → data/tooling → VLA → sim → locomotion → world models → language/navigation → perception → hardware), bilingual step notes, linked from home hero, resources page, sitemap and both READMEs. `validate.py` fails on unknown ids. Tested headless at 390/1280 px (no JS errors, no horizontal scroll, 中文 toggle works, all 41 links resolve).
+- Launch kit: 知乎 and 小红书 texts now point to the reading path; fixed topic count (12).
