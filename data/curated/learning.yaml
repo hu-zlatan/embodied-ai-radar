@@ -171,3 +171,37 @@
   tags: [sim, pixels, data-augmentation, off-policy]
   takeaway_en: DrQ-v2 - a simple model-free actor-critic with image augmentation that learns continuous control from pixels (incl. humanoid tasks in the DeepMind Control Suite) on a single GPU; a common visual-RL baseline.
   takeaway_zh: DrQ-v2：带图像增强的简单无模型 actor-critic，单 GPU 即可从像素学习连续控制（包括 DeepMind Control Suite 的人形任务），是常用的视觉强化学习基线。
+- title: "Steering Your Diffusion Policy with Latent Space Reinforcement Learning"
+  type: paper
+  arxiv: "2506.15799"
+  year: 2025
+  org: UC Berkeley, University of Washington
+  venue: CoRL 2025
+  code: https://github.com/ajwagen/dsrl
+  project: https://diffusion-steering.github.io
+  topics: [manipulation]
+  tags: [real, rl-finetuning, diffusion-policy, sample-efficient]
+  takeaway_en: DSRL — adapts a frozen diffusion policy by running RL over its input noise, not its weights; needs only forward passes, works with π0, and reports real-robot success rising from 20% to 90% in under 50 online episodes.
+  takeaway_zh: DSRL：不改扩散策略的权重，而是对其输入的初始噪声做强化学习来"引导"输出动作；只需前向推理、可用于 π0，论文报告真机任务在不到 50 次在线交互内成功率从 20% 升至 90%。
+- title: "Flow Q-Learning"
+  type: paper
+  arxiv: "2502.02538"
+  year: 2025
+  org: UC Berkeley
+  venue: ICML 2025
+  code: https://github.com/seohongpark/fql
+  project: https://seohong.me/projects/fql/
+  tags: [sim, offline-rl, flow-matching, ogbench]
+  takeaway_en: FQL — a flow-matching BC policy plus a one-step policy that maximizes Q while distilling from it; no backprop through flow steps, strong on 73 OGBench / D4RL offline and offline-to-online tasks.
+  takeaway_zh: FQL：先用行为克隆训练流匹配策略，再训练一个最大化 Q 值、同时向流策略蒸馏的单步策略；避免对多步流采样反向传播，在 73 个 OGBench / D4RL 离线及离线转在线任务上表现突出。
+- title: "SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning"
+  type: paper
+  arxiv: "2509.09674"
+  year: 2025
+  org: Shanghai Jiao Tong University, Peking University, HKU, Shanghai AI Lab
+  venue: ICLR 2026
+  code: https://github.com/PRIME-RL/SimpleVLA-RL
+  topics: [vla]
+  tags: [sim, rl-finetuning, grpo, libero, robotwin]
+  takeaway_en: Online RL for VLAs with GRPO and only binary success rewards on OpenVLA-OFT, plus exploration tweaks; reports 99.1% on LIBERO and 70.4% on RoboTwin 1.0 (vs 39.8% for the SFT baseline).
+  takeaway_zh: 在 OpenVLA-OFT 上用 GRPO 与仅"成功/失败"二值奖励做在线强化学习，并加入若干促进探索的改动；论文报告 LIBERO 成功率 99.1%、RoboTwin 1.0 为 70.4%（SFT 基线 39.8%）。
