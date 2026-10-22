@@ -255,3 +255,12 @@
   tags: [3d, spatial, action-tokenization]
   takeaway_en: Adds 3D-aware position encoding to visual tokens and adaptive action grids, pretrained on 1.1M real robot episodes; new robot setups are handled by re-discretizing the grids.
   takeaway_zh: 为视觉 token 加入 3D 位置编码，并用自适应动作网格表示动作，在 110 万条真机轨迹上预训练；迁移到新机器人时只需重新划分动作网格。
+- title: "Post-hoc Epistemic Uncertainty for Vision-Language-Action Policies"
+  type: paper
+  arxiv: "2610.29730"
+  year: 2026
+  code: https://github.com/post-hoc-vla-uncertainty/post-hoc-vla-uncertainty
+  added: 2026-10-22
+  tags: [uncertainty, safety, gaussian-process, failure-detection]
+  takeaway_en: Post-hoc kernel-variance heads (Gaussian-process variance over training-demo embeddings) estimate one VLA policy's epistemic uncertainty without an ensemble, so the robot knows when to ask for help.
+  takeaway_zh: 在训练完成后为单个 VLA 策略加上轻量的核方差头（基于训练示教嵌入的高斯过程方差）来估计认知不确定性，无需训练和运行策略集成，让机器人知道何时该求助或补充示教。
