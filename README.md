@@ -163,7 +163,7 @@ _Legged locomotion, humanoid whole-body control and parkour._ [Browse with the l
 <a id="world-models"></a>
 ### World Models
 
-_Learned dynamics, video world models and model-based RL for embodied agents._ [Browse with the latest papers →](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html)
+_Learned dynamics, video world models, world action models (WAM) and model-based RL for embodied agents._ [Browse with the latest papers →](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html)
 
 - ⭐ **[Mastering Diverse Domains through World Models](https://arxiv.org/abs/2301.04104)** (2023) — DreamerV3 — one set of hyperparameters works across 150+ tasks, including collecting diamonds in Minecraft from scratch. · [code](https://github.com/danijar/dreamerv3)
 - **[CW-WAM: A Structured Contact-Wrench World Action Model for Force-Sensitive Manipulation](https://arxiv.org/abs/2610.30117)** (2026) — World action model that jointly predicts video, motion and contact wrench, outputting time-aligned motion–wrench chunks as control references (hybrid motion-force style) for force-sensitive manipulation. · [project](https://cw-wam-project.github.io/)
