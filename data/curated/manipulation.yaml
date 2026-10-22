@@ -178,3 +178,56 @@
   tags: [bimanual, imitation, data-augmentation]
   takeaway_en: CTR retimes the two arms in bimanual demos at training time while keeping task-required constraints, so the policy stops using the other arm's progress as a shortcut cue.
   takeaway_zh: CTR 在训练时对双臂示教中两只手臂的动作时序重新组合，同时保留任务必需的约束，避免策略把另一只手臂的进度当作捷径线索。
+- title: "Transporter Networks: Rearranging the Visual World for Robotic Manipulation"
+  type: paper
+  arxiv: "2010.14406"
+  year: 2020
+  org: Google
+  venue: CoRL 2020
+  code: https://github.com/google-research/ravens
+  tags: [sim, real, pick-and-place, rearrangement, equivariance]
+  takeaway_en: Transporter Nets — pick-and-place as spatial matching of deep features cropped around the pick point; very sample-efficient on rearrangement tasks, released with the Ravens benchmark.
+  takeaway_zh: Transporter 网络：把抓取-放置建模为以抓取点为中心的深度特征的空间匹配，在重排类任务上样本效率很高，并随论文发布 Ravens 基准。
+- title: "CLIPort: What and Where Pathways for Robotic Manipulation"
+  type: paper
+  arxiv: "2109.12098"
+  year: 2021
+  org: University of Washington, NVIDIA
+  venue: CoRL 2021
+  code: https://github.com/cliport/cliport
+  topics: [vla]
+  tags: [sim, real, language, clip, pick-and-place]
+  takeaway_en: CLIPort — combines CLIP's semantic "what" stream with Transporter's spatial "where" stream for language-conditioned tabletop manipulation; an early bridge from web vision-language models to robot actions.
+  takeaway_zh: CLIPort：把 CLIP 提供的语义"是什么"通路与 Transporter 的空间"在哪里"通路结合，实现语言条件的桌面操作；是较早把网络视觉语言模型接入机器人动作的工作。
+- title: "Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation"
+  type: paper
+  arxiv: "2209.05451"
+  year: 2022
+  org: University of Washington, NVIDIA
+  venue: CoRL 2022
+  code: https://github.com/peract/peract
+  topics: [vla]
+  tags: [sim, real, voxel, rlbench, language, keyframe]
+  takeaway_en: PerAct — a Perceiver Transformer over voxelized RGB-D observations that predicts the next keyframe gripper pose as voxel classification; one language-conditioned policy for many RLBench and real tasks.
+  takeaway_zh: PerAct：在体素化的 RGB-D 观测上运行 Perceiver Transformer，把下一关键帧夹爪位姿当作体素分类来预测；一个语言条件策略即可覆盖众多 RLBench 与真机任务。
+- title: "RVT: Robotic View Transformer for 3D Object Manipulation"
+  type: paper
+  arxiv: "2306.14896"
+  year: 2023
+  org: NVIDIA
+  venue: CoRL 2023
+  code: https://github.com/NVlabs/RVT
+  tags: [sim, real, multi-view, rlbench, keyframe]
+  takeaway_en: RVT — re-renders the point cloud into a few virtual views and uses a multi-view Transformer to predict keyframe poses; reported to train and run much faster than voxel-based PerAct on RLBench. Repo also hosts RVT-2.
+  takeaway_zh: RVT：把点云重新渲染为若干虚拟视角，再用多视角 Transformer 预测关键帧位姿；论文报告在 RLBench 上训练与推理都比基于体素的 PerAct 快得多。代码库同时包含 RVT-2。
+- title: "ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation"
+  type: paper
+  arxiv: "2409.01652"
+  year: 2024
+  org: Stanford, Columbia
+  venue: CoRL 2024
+  code: https://github.com/huangwl18/ReKep
+  topics: [vla]
+  tags: [real, zero-shot, keypoints, vlm, optimization]
+  takeaway_en: ReKep — a VLM writes manipulation tasks as Python cost functions over 3D keypoints (relational keypoint constraints), solved by a hierarchical optimizer in real time; zero-shot, no task-specific training.
+  takeaway_zh: ReKep：由视觉语言模型把操作任务写成定义在三维关键点上的 Python 代价函数（关系关键点约束），再由分层优化器实时求解；零样本，无需针对任务训练。
