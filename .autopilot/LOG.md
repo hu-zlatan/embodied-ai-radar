@@ -135,3 +135,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Sim anchors: Brax (NeurIPS 2021 D&B), Habitat 2.0 (NeurIPS 2021), Humanoid-Gym (RobotEra), Gazebo. Curated: 246.
 - verify.yml #47, #48, #49 passed (all new picks/anchors incl. code links). Dispatched intake after verify to fill BibTeX metadata.
 - End: CI/Pages/verify green, 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting). End of run 13.
+
+## 2026-10-22 — run 14 (~10:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs, 0 stars / 0 forks. The 07:43 intake slot fired at 07:38 and an extra scheduled run at 09:41 (both fine; no new papers until ~00:00 UTC), so no feed picks this run (10-22 feed reviewed in run 13).
+- Owner added repo topics (`wam`, `ai`, `reinforcement-learning`, …). Took `wam` as a signal: added world action model anchors GR-1 (ICLR 2024), VPP (ICML 2025), UVA (RSS 2025), WorldVLA, Genie Envisioner (ICLR 2026); feed keywords ' wam ', ' wams ', 'video action model', 'action world model' (retag changed one feed paper: HAVANA → +world-models). Checked on arXiv HTML pages + GitHub search. verify #50 passed.
+- Learning anchors DSRL (CoRL 2025), Flow Q-Learning (ICML 2025), SimpleVLA-RL (ICLR 2026); hardware anchors DexUMI (CoRL 2025), ACE (CoRL 2024, project page only — no code repo found).
+- Manipulation anchors Transporter Nets (ravens repo archived → badge), CLIPort, PerAct, RVT, ReKep. Curated: 261.
