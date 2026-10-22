@@ -195,3 +195,24 @@
   tags: [sim, exploration, slam, modular, rl]
   takeaway_en: Splits exploration into a learned neural SLAM module, a global policy that chooses long-term goals and a local policy that reaches them, which is far more sample-efficient than end-to-end RL.
   takeaway_zh: 将探索拆为可学习的神经 SLAM 模块、选择长期目标的全局策略和到达目标的局部策略，比端到端强化学习样本效率高得多。
+- title: "CoWs on Pasture: Baselines and Benchmarks for Language-Driven Zero-Shot Object Navigation"
+  type: paper
+  arxiv: "2203.10421"
+  year: 2022
+  org: Columbia University
+  venue: CVPR 2023
+  project: https://cow.cs.columbia.edu/
+  tags: [zero-shot, object-goal, clip, benchmark, sim]
+  takeaway_en: CLIP on Wheels pairs open-vocabulary localization (CLIP-style models, no fine-tuning) with classical exploration for zero-shot object navigation; the Pasture benchmark adds rare, attribute-described and hidden objects.
+  takeaway_zh: CoWs on Pasture：CLIP on Wheels 把开放词汇定位（CLIP 等模型，无需微调）与经典探索结合，实现零样本目标物体导航；配套的 Pasture 基准加入了少见物体、按属性描述的物体和被遮挡物体。
+- title: "PIRLNav: Pretraining with Imitation and RL Finetuning for ObjectNav"
+  type: paper
+  arxiv: "2301.07302"
+  year: 2023
+  org: Georgia Tech, Meta AI
+  venue: CVPR 2023
+  code: https://github.com/Ram81/pirlnav
+  topics: [learning]
+  tags: [object-goal, imitation, rl-finetuning, habitat, sim]
+  takeaway_en: PIRLNav — behavior cloning on human ObjectNav demonstrations, then RL fine-tuning of the same policy; the paper reports 65.0% success on Habitat ObjectNav, 5 points above the previous best.
+  takeaway_zh: PIRLNav：先在人类 ObjectNav 演示上做行为克隆，再用强化学习微调同一策略；论文报告在 Habitat ObjectNav 上成功率 65.0%，比此前最佳高 5 个百分点。

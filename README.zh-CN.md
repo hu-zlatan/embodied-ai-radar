@@ -198,8 +198,10 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网�
 - **[OK-Robot: What Really Matters in Integrating Open-Knowledge Models for Robotics](https://arxiv.org/abs/2401.12202)** (2024) — 组合现成的开放词汇模型，构建无需训练即可在真实家庭中抓取放置的系统。
 - **[Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied Navigation Tasks](https://arxiv.org/abs/2412.06224)** (2024) — 把 NaVid 扩展为单一视频 VLA 模型，统一处理多种导航任务（指令导航、目标搜索、具身问答、跟随人）。 · [代码](https://github.com/jzhzhang/NaVid-VLN-CE)
 - **[NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration](https://arxiv.org/abs/2310.07896)** (2023) — 通过对目标做掩码，单一扩散策略同时完成目标导航与探索。
+- **[PIRLNav: Pretraining with Imitation and RL Finetuning for ObjectNav](https://arxiv.org/abs/2301.07302)** (2023) — PIRLNav：先在人类 ObjectNav 演示上做行为克隆，再用强化学习微调同一策略；论文报告在 Habitat ObjectNav 上成功率 65.0%，比此前最佳高 5 个百分点。 · [代码](https://github.com/Ram81/pirlnav)
 - **[VLFM: Vision-Language Frontier Maps for Zero-Shot Semantic Navigation](https://arxiv.org/abs/2312.03275)** (2023) — 零样本目标物体导航：用视觉-语言模型对探索前沿与目标的相关度打分来决定往哪走，无需针对任务训练；在 Habitat 和 Spot 机器人上验证。 · [代码](https://github.com/rai-opensource/vlfm)
 - **[ViNT: A Foundation Model for Visual Navigation](https://arxiv.org/abs/2306.14846)** (2023) — 在多种机器人的导航数据上训练的 Transformer 导航策略，经少量微调即可适配新的目标形式和新机器人。 · [代码](https://github.com/robodhruv/visualnav-transformer)
+- **[CoWs on Pasture: Baselines and Benchmarks for Language-Driven Zero-Shot Object Navigation](https://arxiv.org/abs/2203.10421)** (2022) — CoWs on Pasture：CLIP on Wheels 把开放词汇定位（CLIP 等模型，无需微调）与经典探索结合，实现零样本目标物体导航；配套的 Pasture 基准加入了少见物体、按属性描述的物体和被遮挡物体。 · [项目页](https://cow.cs.columbia.edu/)
 - **[Code as Policies: Language Model Programs for Embodied Control](https://arxiv.org/abs/2209.07753)** (2022) — 大模型编写调用感知与控制 API 的 Python 代码，把指令变成可响应的机器人程序。
 - **[GNM: A General Navigation Model to Drive Any Robot](https://arxiv.org/abs/2210.03370)** (2022) — ViNT 的前作：在多种不同机器人汇集的数据上训练一个目标条件导航策略，可迁移到包括训练中未见过的新机器人。 · [代码](https://github.com/robodhruv/visualnav-transformer)
 - **[Inner Monologue: Embodied Reasoning through Planning with Language Models](https://arxiv.org/abs/2207.05608)** (2022) — 将成功检测与场景描述反馈给大模型规划器，使其在失败后重新规划。
@@ -293,7 +295,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor](https://arxiv.org/abs/1801.01290)** (2018) — 带熵奖励的离策略强化学习；样本效率较高，成为真机上直接学习的常用默认算法。
 - **[Generative Adversarial Imitation Learning](https://arxiv.org/abs/1606.03476)** (2016) — GAIL：训练策略使判别器无法区分其状态-动作分布与专家数据，无需显式恢复奖励函数。
 - **[A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning](https://arxiv.org/abs/1011.0686)** (2010) — DAgger：在学习者自己访问到的状态上向专家查询标注，解决单纯行为克隆的误差累积问题。
-- _另见:_ [UniVLA](#vla), [Learn the Task, Not the Schedule](#manipulation), [Tactile Gym 2.0](#tactile), [Making Sense of Vision and Touch](#tactile), [Unitree RL Gym](#locomotion), [SuperMimic](#locomotion), [Brax](#sim), [RoboNet](#datasets), [AirExo-2](#hardware)
+- _另见:_ [UniVLA](#vla), [Learn the Task, Not the Schedule](#manipulation), [Tactile Gym 2.0](#tactile), [Making Sense of Vision and Touch](#tactile), [Unitree RL Gym](#locomotion), [SuperMimic](#locomotion), [PIRLNav](#navigation), [Brax](#sim), [RoboNet](#datasets), [AirExo-2](#hardware)
 
 <a id="sim"></a>
 ### 仿真与 Sim-to-Real
