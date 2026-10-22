@@ -155,3 +155,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Weekly digest footer links the reading path (EN/ZH); tested by generating W43 locally (not committed — the scheduled job writes it Monday).
 - Dispatched intake after verify to fill BibTeX metadata for the 5 new anchors.
 - End: CI/Pages/verify green, 0 stars / 0 forks, no issues/PRs. Owner: nothing new beyond the launch kit (now with the reading path as the hook). End of run 15.
+
+## 2026-10-22 — run 16 (~22:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs, 0 stars / 0 forks. Intake fired at 19:17 (schedule); no new papers until ~00:00 UTC, so no feed picks this run. WebFetch of github.com pages was not permitted this run; used the read-only GitHub tools for issues/PRs/runs instead.
+- **Tagging fix**: ' vla' / 'vla ' only matched between spaces, so PACT-VLA, FlowVLA, Fast-VLA, De-Diffusing WAMs etc. were untagged or missed VLA. `classify()` now pads punctuation and splits glued acronyms; added keywords (localization, pose tracking, optical flow, calibration, force/adaptive/robust control, embodied reasoning/planning, spatial memory, kinematic retargeting, UMI, pouring, world action language). Untagged 244 → 213 of 794; compared before/after on every stored paper: no topic lost. Retagged all stored days.
+- Tactile anchors: Rotating without Seeing (RSS 2023), Robot Synesthesia (UCSD, project page only — no code released), NeuralFeels (Science Robotics 2024), Reactive Diffusion Policy (RSS 2025). Curated: 270.
+- Weekly digest: new 'Rising on GitHub' section (top 8 star gains over 7 days up to the week's end; skipped until the history is long enough). Tested with fake history (not committed).
