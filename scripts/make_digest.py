@@ -1,6 +1,7 @@
 """Draft a bilingual weekly digest: digest/YYYY-Www.md.
 
 Sections: editor's picks (curated entries whose `added` date falls in the week),
+repos rising on GitHub (star gains over the 7 days up to the week's end, once the history is long enough),
 numbers per topic and per robot type, and new papers with code by topic (from the daily feed).
 Usage: python scripts/make_digest.py [--week 2026-W43] [--force]
 Without --week, uses the most recent complete ISO week (Mon–Sun).
@@ -13,9 +14,10 @@ import re
 import sys
 
 from radar import ROOT, classify, load_arxiv_feed, load_curated, load_embodiments, load_topics, venue_of
-from repo_stats import apply_feed_stats, load_feed_stats
+from repo_stats import apply_feed_stats, load_feed_stats, load_history, repo_key, star_gains
 
 PER_TOPIC = 6
+RISING = 8
 
 
 def week_bounds(week: str) -> tuple[dt.date, dt.date]:
@@ -26,6 +28,34 @@ def week_bounds(week: str) -> tuple[dt.date, dt.date]:
 
 def clean_title(t: str) -> str:
     return re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", t).replace("[", "(").replace("]", ")")
+
+
+def rising_section(entries: list[dict], end: dt.date) -> list[str]:
+    """Repos (curated code + feed paper code) that gained the most GitHub stars in the 7 days up to `end`."""
+    hist = {d: v for d, v in load_history().items() if d <= end.isoformat()}
+    gains, span = star_gains(hist)
+    if not gains:
+        return []
+    owner: dict[str, tuple[str, str, str]] = {}  # repo -> (repo url, title, link)
+    for p in load_arxiv_feed():
+        for u in p.get("code") or []:
+            k = repo_key(u)
+            if k and k not in owner:
+                owner[k] = (u, p["title"], f"https://arxiv.org/abs/{p['id']}")
+    for e in entries:
+        k = repo_key(e.get("code"))
+        if k:
+            owner[k] = (e["code"], e["title"], f"https://hu-zlatan.github.io/embodied-ai-radar/e/{e['id']}.html")
+    top = sorted(((g, k) for k, g in gains.items() if g > 0 and k in owner), reverse=True)[:RISING]
+    if not top:
+        return []
+    L = ["", "## Rising on GitHub · GitHub 升温榜", "",
+         f"_Stars gained in the {span} days to {max(hist)}. 截至 {max(hist)} 的 {span} 天内新增星标。_", ""]
+    for g, k in top:
+        url, title, link = owner[k]
+        name = url.split("github.com/")[-1].rstrip("/")
+        L.append(f"- [{name}]({url}) **+{g}** · [{clean_title(title)}]({link})")
+    return L
 
 
 def main() -> int:
@@ -69,6 +99,7 @@ def main() -> int:
         for v, p in accepted:
             extra = "".join(f" · [{k}]({p[k][0]})" for k in ("code", "project") if p.get(k))
             L.append(f"- **{v}** · [{clean_title(p['title'])}](https://arxiv.org/abs/{p['id']}){extra}")
+    L += rising_section(entries, end)
     L += ["", "## By topic · 分主题统计", ""]
     for t in topics:
         n = len([p for p in feed if t["id"] in p.get("topics", [])])
