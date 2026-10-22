@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-10-22 ~11:05 UTC, run 14._
+_Last updated: 2026-10-22 ~11:10 UTC, run 14 (end)._
 
 ## Status
 
@@ -35,7 +35,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 0. New curated entries get BibTeX metadata on the next intake run. A push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started/finished.
 1. Scheduled runs: the 02:17 intake slot has not fired on time on any day (10-20, 10-21, 10-22 — nothing by 04:50); other slots land hours late (07:43 → ~13:11, 15:29 → ~19:23). Run 13 added slots 01:11, 04:53, 11:07. Check on 10-23 whether any early slot fired (list runs with event=schedule). If the feed still only lands around noon UTC, consider an OWNER_TODO note (nothing the owner can really fix; GitHub cron is best-effort).
-2. Run 14+: review the newest feed (papers with code first), promote 2–5 notable ones with `added: <date>` and careful EN/ZH takeaways (≤220 chars EN; phrase results as "reports"). 10-22 feed reviewed in run 13.
+2. Run 15+: review the newest feed (10-23 onward) (papers with code first), promote 2–5 notable ones with `added: <date>` and careful EN/ZH takeaways (≤220 chars EN; phrase results as "reports"). 10-22 feed reviewed in run 13.
 3. Monday 2026-10-26: check the first auto digest (2026-W43); add a short human-quality intro paragraph if useful.
 3b. From ~2026-10-28: check 'Rising this week' renders with real data (needs 7 days of `data/repo_stars_history.json`); consider adding it to the weekly digest (`make_digest.py`).
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).

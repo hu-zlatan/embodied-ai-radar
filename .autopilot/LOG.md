@@ -142,3 +142,6 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Owner added repo topics (`wam`, `ai`, `reinforcement-learning`, …). Took `wam` as a signal: added world action model anchors GR-1 (ICLR 2024), VPP (ICML 2025), UVA (RSS 2025), WorldVLA, Genie Envisioner (ICLR 2026); feed keywords ' wam ', ' wams ', 'video action model', 'action world model' (retag changed one feed paper: HAVANA → +world-models). Checked on arXiv HTML pages + GitHub search. verify #50 passed.
 - Learning anchors DSRL (CoRL 2025), Flow Q-Learning (ICML 2025), SimpleVLA-RL (ICLR 2026); hardware anchors DexUMI (CoRL 2025), ACE (CoRL 2024, project page only — no code repo found).
 - Manipulation anchors Transporter Nets (ravens repo archived → badge), CLIPort, PerAct, RVT, ReKep. Curated: 261.
+- World-models topic description now mentions world action models (WAM) in EN/ZH.
+- verify.yml #50, #51, #52 passed (all 15 new entries incl. code links; WorldVLA repo URL from the paper redirects fine). Dispatched intake after verify to fill BibTeX metadata.
+- End: CI/Pages/verify green, 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting). End of run 14.
