@@ -162,3 +162,34 @@
   tags: [depth, stereo, edge, jetson, benchmark]
   takeaway_en: "Measured numbers for robot builders: nine monocular and stereo depth families (Depth Anything V2/3, Depth Pro, MoGe-2, Fast-FoundationStereo, ...) run on a Jetson AGX Orin, scored for metric accuracy and speed."
   takeaway_zh: 给机器人开发者的实测数据：在 Jetson AGX Orin 上用 TensorRT 运行九类单目与双目深度估计模型（Depth Anything V2/3、Depth Pro、MoGe-2、Fast-FoundationStereo 等），并评测度量精度与速度。
+- title: "DINOv2: Learning Robust Visual Features without Supervision"
+  type: paper
+  arxiv: "2304.07193"
+  year: 2023
+  org: Meta AI
+  venue: TMLR 2024
+  code: https://github.com/facebookresearch/dinov2
+  topics: [vla]
+  tags: [self-supervised, vision-backbone, foundation-model]
+  takeaway_en: Self-supervised image features that work frozen for depth, segmentation and retrieval; a common visual backbone in VLAs (e.g. OpenVLA) and latent world models.
+  takeaway_zh: 自监督学习的图像特征，冻结即可用于深度估计、分割和检索；是 VLA（如 OpenVLA）和潜空间世界模型常用的视觉骨干。
+- title: "CoTracker: It is Better to Track Together"
+  type: paper
+  arxiv: "2307.07635"
+  year: 2023
+  org: Meta AI · University of Oxford (VGG)
+  venue: ECCV 2024
+  code: https://github.com/facebookresearch/co-tracker
+  tags: [point-tracking, video, transformer]
+  takeaway_en: Transformer that tracks many video points jointly rather than one at a time, staying robust through occlusions; widely used to extract motion tracks from human or robot videos for policy learning.
+  takeaway_zh: 联合跟踪视频中大量点（而非逐点独立跟踪）的 Transformer，遮挡下依然稳健；常用于从人类或机器人视频中提取运动轨迹来学习策略。
+- title: "Grounding Image Matching in 3D with MASt3R"
+  type: paper
+  arxiv: "2406.09756"
+  year: 2024
+  org: NAVER LABS Europe
+  venue: ECCV 2024
+  code: https://github.com/naver/mast3r
+  tags: [3d-reconstruction, image-matching, pointmap]
+  takeaway_en: Extends DUSt3R with a dense local-feature head, so one network gives both 3D pointmaps and accurate pixel matches between views — useful for calibration-free reconstruction and localization.
+  takeaway_zh: 在 DUSt3R 基础上加入稠密局部特征头，同一网络既输出三维点图又给出视角间精确的像素匹配，适用于免标定的三维重建与定位。

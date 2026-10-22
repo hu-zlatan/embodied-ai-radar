@@ -157,3 +157,31 @@
   tags: [library, optimization, simulation, trajectory-optimization, open-source]
   takeaway_en: Model-based toolbox for robotics - multibody dynamics with contact simulation, mathematical programming and trajectory optimization; used in the MIT manipulation and underactuated courses.
   takeaway_zh: 面向机器人的基于模型的工具箱：带接触的多体动力学仿真、数学规划与轨迹优化；MIT 操作与欠驱动课程即使用它。
+- title: "Motions in Microseconds via Vectorized Sampling-Based Planning"
+  type: paper
+  arxiv: "2309.14545"
+  year: 2023
+  org: Rice University (Kavraki Lab)
+  venue: ICRA 2024
+  code: https://github.com/KavrakiLab/vamp
+  topics: [manipulation]
+  tags: [motion-planning, simd, sampling-based, cpu]
+  takeaway_en: VAMP — vectorizes collision checking with CPU SIMD so sampling-based planners like RRT-Connect solve arm motion-planning queries in microseconds to milliseconds, no GPU needed.
+  takeaway_zh: VAMP：用 CPU SIMD 指令把碰撞检测向量化，使 RRT-Connect 等基于采样的规划器在微秒到毫秒级求解机械臂运动规划，无需 GPU。
+- title: "Riemannian Motion Policies"
+  type: paper
+  arxiv: "1801.02854"
+  year: 2018
+  org: NVIDIA
+  tags: [reactive-control, motion-generation, geometric-control]
+  takeaway_en: RMPs — describe each behaviour (reach, avoid obstacles, joint limits) as an acceleration policy plus a Riemannian metric, then combine them geometrically; the basis of later RMPflow and geometric fabrics controllers.
+  takeaway_zh: RMP：把每种行为（到达、避障、关节限位）表示为加速度策略加黎曼度量，再按几何方式组合；是后来 RMPflow 与几何织物（geometric fabrics）控制器的基础。
+- title: "Hamilton-Jacobi Reachability: A Brief Overview and Recent Advances"
+  type: paper
+  arxiv: "1709.07523"
+  year: 2017
+  org: UC Berkeley
+  venue: CDC 2017
+  tags: [safety, reachability, tutorial]
+  takeaway_en: Short tutorial on Hamilton-Jacobi reachability — computing the set of states from which a system can be kept safe under worst-case disturbances, and the tricks used to scale it up.
+  takeaway_zh: Hamilton-Jacobi 可达性分析简明教程：计算在最坏扰动下仍能保持系统安全的状态集合，以及将其扩展到更高维系统的方法。
