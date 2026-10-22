@@ -195,6 +195,10 @@ def classify(text: str, topics: list[dict], title: str | None = None, threshold:
     a topic is tagged at score >= 2, so a single passing mention in an abstract is not enough.
     """
     def prep(x: str) -> str:
+        # Split glued acronyms ("FlowVLA" -> "Flow VLA") and pad punctuation ("PACT-VLA:" -> "PACT-VLA :")
+        # so short keywords such as " vla" / "vla " match at word edges.
+        x = re.sub(r"(?<=[a-z]{2})(?=[A-Z]{2,}\b)", " ", x)
+        x = re.sub(r"[:;,.!?()\[\]{}\"'/]", lambda m: f" {m.group(0)} ", x)
         return " " + re.sub(r"\s+", " ", x.lower()) + " "
     body = prep(text)
     head = prep(title) if title else ""
