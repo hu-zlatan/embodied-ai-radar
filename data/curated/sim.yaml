@@ -175,3 +175,43 @@
   tags: [aerial, quadrotor, simulator, gpu, rendering, sim-to-real]
   takeaway_en: GPU batch-rendering quadrotor simulator; reports 20×+ the speed of existing batch quadrotor sims, with a new ray tracer rendering RGB, depth, segmentation, normals and optical flow (CoRL 2026).
   takeaway_zh: 以 GPU 批量渲染为核心的四旋翼仿真器；报告比现有批量四旋翼仿真器快 20 倍以上，新的光线追踪引擎（支持 OptiX、Vulkan、Metal、WebGPU）可渲染 RGB、深度、分割、法向和光流（CoRL 2026）。
+- title: "Brax: A Differentiable Physics Engine for Large Scale Rigid Body Simulation"
+  type: paper
+  arxiv: "2106.13281"
+  year: 2021
+  org: Google
+  venue: NeurIPS 2021 Datasets and Benchmarks
+  code: https://github.com/google/brax
+  topics: [learning]
+  tags: [physics, jax, gpu, tpu, differentiable]
+  takeaway_en: JAX physics engine that runs thousands of environments in parallel on GPU/TPU together with the RL training loop, cutting locomotion training from hours to minutes.
+  takeaway_zh: 基于 JAX 的物理引擎，在 GPU/TPU 上与强化学习训练循环一起并行运行数千个环境，把运动控制训练从数小时缩短到数分钟。
+- title: "Habitat 2.0: Training Home Assistants to Rearrange their Habitat"
+  type: paper
+  arxiv: "2106.14405"
+  year: 2021
+  org: Meta AI
+  venue: NeurIPS 2021
+  topics: [navigation, manipulation]
+  tags: [rearrangement, mobile-manipulation, home, benchmark]
+  takeaway_en: Adds fast rigid-body physics and an interactive apartment dataset (ReplicaCAD) to Habitat, plus a home-rearrangement benchmark for mobile manipulators.
+  takeaway_zh: 为 Habitat 加入快速刚体物理与可交互公寓数据集 ReplicaCAD，并提出面向移动操作机器人的家居物品重排基准。
+- title: "Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer"
+  type: paper
+  arxiv: "2404.05695"
+  year: 2024
+  org: RobotEra
+  code: https://github.com/roboterax/humanoid-gym
+  topics: [locomotion]
+  tags: [humanoid, rl, isaac-gym, sim-to-sim, sim-to-real]
+  takeaway_en: Isaac Gym–based RL framework for humanoid locomotion with a sim-to-sim check in MuJoCo before deploying zero-shot to real humanoids; a common starting point for humanoid RL.
+  takeaway_zh: 基于 Isaac Gym 的人形机器人运动强化学习框架，先在 MuJoCo 中做 sim2sim 验证，再零样本部署到真实人形机器人，是人形 RL 的常用起点。
+- title: "Gazebo"
+  type: simulator
+  year: 2004
+  org: Open Robotics
+  url: https://gazebosim.org/
+  code: https://github.com/gazebosim/gz-sim
+  tags: [ros, ros2, physics, open-source]
+  takeaway_en: The long-standing open-source robot simulator of the ROS ecosystem — sensors, plugins and ROS 2 integration; the usual choice for testing full robot software stacks rather than training policies.
+  takeaway_zh: ROS 生态中历史悠久的开源机器人仿真器，提供传感器、插件与 ROS 2 集成；通常用于测试完整的机器人软件栈，而非训练策略。

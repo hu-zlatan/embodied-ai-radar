@@ -90,7 +90,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_ [在网站上�
 - **[Visual Dexterity: In-Hand Reorientation of Novel and Complex Object Shapes](https://arxiv.org/abs/2211.11744)** (2022) — 仅凭深度相机即可在手中翻转未见过的物体，策略在仿真中训练。
 - **[Solving Rubik's Cube with a Robot Hand](https://arxiv.org/abs/1910.07113)** (2019) — 自动域随机化让仿真训练的灵巧手策略在真实硬件上操作魔方。
 - **[Learning Dexterous In-Hand Manipulation](https://arxiv.org/abs/1808.00177)** (2018) — 完全在随机化仿真中用强化学习训练，Shadow 灵巧手在真实世界翻转方块，是 sim-to-real 里程碑。
-- _另见:_ [3D-ViTac](#tactile), [Making Sense of Vision and Touch](#tactile), [See, Hear, and Feel](#tactile), [General In-Hand Object Rotation with Vision and Touch](#tactile), [CW-WAM](#world-models), [Code as Policies](#navigation), [OK-Robot](#navigation), [Cracking Mobile Manipulation](#navigation), [Hierarchical Residual Policy Learning for Real-World Mobile Manipulation with Sparse Human Guidance](#navigation), [FoundationPose](#perception), [cuRobo](#control), [Motion Policy Networks](#control), [Sub-Millisecond Reflexes for Continuous Physical Human-Robot Interaction](#control), [MoveIt 2](#control), [Motions in Microseconds via Vectorized Sampling-Based Planning](#control), [SERL](#learning), [Precise and Dexterous Robotic Manipulation via Human-in-the-Loop Reinforcement Learning](#learning), [What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](#learning), [Diffusion Policy Policy Optimization](#learning), [QT-Opt](#learning), [RoboTwin 2.0](#sim), [MimicGen](#sim), [LeRobot](#datasets), [LEAP Hand](#hardware), [BEHAVIOR Robot Suite](#hardware), [ALOHA 2](#hardware), [ORCA](#hardware), [AnyTeleop](#hardware), [AirExo](#hardware), [AirExo-2](#hardware), [Bunny-VisionPro](#hardware), [TeleMoMa](#hardware)
+- _另见:_ [3D-ViTac](#tactile), [Making Sense of Vision and Touch](#tactile), [See, Hear, and Feel](#tactile), [General In-Hand Object Rotation with Vision and Touch](#tactile), [CW-WAM](#world-models), [Code as Policies](#navigation), [OK-Robot](#navigation), [Cracking Mobile Manipulation](#navigation), [Hierarchical Residual Policy Learning for Real-World Mobile Manipulation with Sparse Human Guidance](#navigation), [FoundationPose](#perception), [cuRobo](#control), [Motion Policy Networks](#control), [Sub-Millisecond Reflexes for Continuous Physical Human-Robot Interaction](#control), [MoveIt 2](#control), [Motions in Microseconds via Vectorized Sampling-Based Planning](#control), [SERL](#learning), [Precise and Dexterous Robotic Manipulation via Human-in-the-Loop Reinforcement Learning](#learning), [What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](#learning), [Diffusion Policy Policy Optimization](#learning), [QT-Opt](#learning), [RoboTwin 2.0](#sim), [MimicGen](#sim), [Habitat 2.0](#sim), [LeRobot](#datasets), [LEAP Hand](#hardware), [BEHAVIOR Robot Suite](#hardware), [ALOHA 2](#hardware), [ORCA](#hardware), [AnyTeleop](#hardware), [AirExo](#hardware), [AirExo-2](#hardware), [Bunny-VisionPro](#hardware), [TeleMoMa](#hardware)
 
 <a id="tactile"></a>
 ### 触觉与视触觉感知
@@ -144,7 +144,7 @@ _足式运动、人形全身控制与跑酷。_ [在网站上查看与最新论�
 - **[RMA: Rapid Motor Adaptation for Legged Robots](https://arxiv.org/abs/2107.04034)** (2021) — 自适应模块在线估计环境参数，使同一策略实时适应新地形和负载。
 - **[Learning Quadrupedal Locomotion over Challenging Terrain](https://arxiv.org/abs/2010.11251)** (2020) — 仅依赖本体感知的师生策略，让 ANYmal 在泥地、雪地和碎石等野外地形行走。
 - **[Learning Agile and Dynamic Motor Skills for Legged Robots](https://arxiv.org/abs/1901.08652)** (2019) — 学习的执行器模型缩小仿真与现实差距，使强化学习策略能让 ANYmal 奔跑并摔倒后起身。
-- _另见:_ [NaVILA](#navigation), [Vision as Proprioception](#perception), [Crocoddyl](#control), [Open-TeleVision](#hardware), [Berkeley Humanoid](#hardware), [Demonstrating Berkeley Humanoid Lite](#hardware), [ToddlerBot](#hardware), [HOMIE](#hardware), [An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](#hardware)
+- _另见:_ [NaVILA](#navigation), [Vision as Proprioception](#perception), [Crocoddyl](#control), [Humanoid-Gym](#sim), [Open-TeleVision](#hardware), [Berkeley Humanoid](#hardware), [Demonstrating Berkeley Humanoid Lite](#hardware), [ToddlerBot](#hardware), [HOMIE](#hardware), [An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](#hardware)
 
 <a id="world-models"></a>
 ### 世界模型
@@ -196,7 +196,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网�
 - **[Object Goal Navigation using Goal-Oriented Semantic Exploration](https://arxiv.org/abs/2007.00643)** (2020) — SemExp 构建情景语义地图，并学习在地图上选择长期目标的策略；这一模块化方案成为 Habitat 中 ObjectNav 的常用基线。 · [代码](https://github.com/devendrachaplot/Object-Goal-Navigation)
 - **[The Marathon 2: A Navigation System](https://arxiv.org/abs/2003.00368)** (2020) — ROS 2 标准导航栈 Nav2 的论文：用行为树编排规划器、控制器和恢复行为，并在真实机器人上长距离“马拉松”测试验证。 · [代码](https://github.com/ros-navigation/navigation2)
 - **[Vision-and-Language Navigation: Interpreting visually-grounded navigation instructions in real environments](https://arxiv.org/abs/1711.07280)** (2017) — 提出视觉语言导航任务与基于 Matterport3D 的 Room-to-Room (R2R) 基准。
-- _另见:_ [ConceptGraphs](#perception), [Habitat 3.0](#sim), [Habitat](#datasets), [Embodied Skill Bench](#datasets), [Habitat-Matterport 3D Dataset (HM3D)](#datasets), [The Design of Stretch](#hardware)
+- _另见:_ [ConceptGraphs](#perception), [Habitat 3.0](#sim), [Habitat 2.0](#sim), [Habitat](#datasets), [Embodied Skill Bench](#datasets), [Habitat-Matterport 3D Dataset (HM3D)](#datasets), [The Design of Stretch](#hardware)
 
 <a id="perception"></a>
 ### 感知、SLAM 与三维建图
@@ -275,7 +275,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor](https://arxiv.org/abs/1801.01290)** (2018) — 带熵奖励的离策略强化学习；样本效率较高，成为真机上直接学习的常用默认算法。
 - **[Generative Adversarial Imitation Learning](https://arxiv.org/abs/1606.03476)** (2016) — GAIL：训练策略使判别器无法区分其状态-动作分布与专家数据，无需显式恢复奖励函数。
 - **[A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning](https://arxiv.org/abs/1011.0686)** (2010) — DAgger：在学习者自己访问到的状态上向专家查询标注，解决单纯行为克隆的误差累积问题。
-- _另见:_ [UniVLA](#vla), [Learn the Task, Not the Schedule](#manipulation), [Tactile Gym 2.0](#tactile), [Making Sense of Vision and Touch](#tactile), [Unitree RL Gym](#locomotion), [SuperMimic](#locomotion), [RoboNet](#datasets), [AirExo-2](#hardware)
+- _另见:_ [UniVLA](#vla), [Learn the Task, Not the Schedule](#manipulation), [Tactile Gym 2.0](#tactile), [Making Sense of Vision and Touch](#tactile), [Unitree RL Gym](#locomotion), [SuperMimic](#locomotion), [Brax](#sim), [RoboNet](#datasets), [AirExo-2](#hardware)
 
 <a id="sim"></a>
 ### 仿真与 Sim-to-Real
@@ -289,18 +289,22 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_ [在网站上
 - **[MuJoCo Playground](https://arxiv.org/abs/2502.08844)** (2025) — 基于 MJX 的 GPU 加速运动与操作环境，几分钟即可训练并迁移到真实机器人。 · [代码](https://github.com/google-deepmind/mujoco_playground)
 - **[RoboTwin 2.0: A Scalable Data Generator and Benchmark with Strong Domain Randomization for Robust Bimanual Robotic Manipulation](https://arxiv.org/abs/2506.18088)** (2025) — 用多模态大模型自动生成并校验任务代码，在强域随机化（杂物、光照、背景、指令）下批量产出双臂演示数据的仿真管线，同时提供 50 个双臂任务的基准。 · [代码](https://github.com/RoboTwin-Platform/RoboTwin)
 - **[Genesis](https://github.com/Genesis-Embodied-AI/Genesis)** (2024) — 开源、Python 原生的物理平台，覆盖刚体、软体、流体，支持高速 GPU 仿真。
+- **[Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer](https://arxiv.org/abs/2404.05695)** (2024) — 基于 Isaac Gym 的人形机器人运动强化学习框架，先在 MuJoCo 中做 sim2sim 验证，再零样本部署到真实人形机器人，是人形 RL 的常用起点。 · [代码](https://github.com/roboterax/humanoid-gym)
 - **[ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI](https://arxiv.org/abs/2410.00425)** (2024) — GPU 并行仿真与渲染，内置大量操作任务，适合快速视觉强化学习与数据生成。 · [代码](https://github.com/haosulab/ManiSkill)
 - **[RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots](https://arxiv.org/abs/2406.02523)** (2024) — 120 个厨房场景、2500 多个物体与 100 个任务，并附生成演示，用于训练通用策略。 · [代码](https://github.com/robocasa/robocasa)
 - **[Habitat 3.0: A Co-Habitat for Humans, Avatars and Robots](https://arxiv.org/abs/2310.13724)** (2023) — 为 Habitat 加入仿真人形化身和真人在环交互接口，可在与人协作的任务（如社交导航、社交重排）上训练和评测机器人。 · [代码](https://github.com/facebookresearch/habitat-lab)
 - **[MimicGen: A Data Generation System for Scalable Robot Learning using Human Demonstrations](https://arxiv.org/abs/2310.17596)** (2023) — 把少量人类演示切分为以物体为中心的片段，并在新场景中变换重放，从而扩增为数千条演示；被广泛用于扩充模仿学习数据。 · [代码](https://github.com/NVlabs/mimicgen)
 - **[Orbit: A Unified Simulation Framework for Interactive Robot Learning Environments](https://arxiv.org/abs/2301.04195)** (2023) — Isaac Lab 的前身，在 Isaac Sim 之上提供模块化的机器人、传感器与任务。 · [代码](https://github.com/isaac-sim/IsaacLab)
 - **[BEHAVIOR-1K: A Human-Centered, Embodied AI Benchmark with 1,000 Everyday Activities and Realistic Simulation](https://arxiv.org/abs/2403.09227)** (2022) — 依据人们希望机器人做什么的调查挑选出 1000 项家务活动，用逻辑语言定义，并在具备真实物理与渲染的 OmniGibson 中仿真。 · [代码](https://github.com/StanfordVL/BEHAVIOR-1K)
+- **[Brax: A Differentiable Physics Engine for Large Scale Rigid Body Simulation](https://arxiv.org/abs/2106.13281)** (2021) — 基于 JAX 的物理引擎，在 GPU/TPU 上与强化学习训练循环一起并行运行数千个环境，把运动控制训练从数小时缩短到数分钟。 · [代码](https://github.com/google/brax)
+- **[Habitat 2.0: Training Home Assistants to Rearrange their Habitat](https://arxiv.org/abs/2106.14405)** (2021) — 为 Habitat 加入快速刚体物理与可交互公寓数据集 ReplicaCAD，并提出面向移动操作机器人的家居物品重排基准。
 - **[Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning](https://arxiv.org/abs/2108.10470)** (2021) — 物理仿真与策略全程在 GPU 上运行，单卡即可并行数千个环境。
 - **[SAPIEN: A SimulAted Part-based Interactive ENvironment](https://arxiv.org/abs/2003.08515)** (2020) — 包含大规模铰接物体（PartNet-Mobility）的仿真器，适合开抽屉等交互任务。
 - **[robosuite: A Modular Simulation Framework and Benchmark for Robot Learning](https://arxiv.org/abs/2009.12293)** (2020) — 基于 MuJoCo 的模块化操作环境，是众多模仿学习基准的底座。 · [代码](https://github.com/ARISE-Initiative/robosuite)
 - **[AI2-THOR: An Interactive 3D Environment for Visual AI](https://arxiv.org/abs/1712.05474)** (2017) — 具有可交互物体的逼真室内场景，智能体可开关、拾取和改变物体，是 ALFRED 等众多具身智能基准的基础。 · [代码](https://github.com/allenai/ai2thor)
 - **[Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World](https://arxiv.org/abs/1703.06907)** (2017) — 在仿真中随机化纹理、光照和相机，使视觉模型无需真实数据即可在真实图像上工作。
 - **[Sim-to-Real Transfer of Robotic Control with Dynamics Randomization](https://arxiv.org/abs/1710.06537)** (2017) — 训练中随机化物理参数，得到足以在真实机械臂上运行的鲁棒控制策略。
+- **[Gazebo](https://gazebosim.org/)** (2004) — ROS 生态中历史悠久的开源机器人仿真器，提供传感器、插件与 ROS 2 集成；通常用于测试完整的机器人软件栈，而非训练策略。 · [代码](https://github.com/gazebosim/gz-sim)
 - _另见:_ [Blind Precise Assembly](#manipulation), [TACTO](#tactile), [Taxim](#tactile), [Tactile Gym 2.0](#tactile), [TacSL](#tactile), [Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning](#locomotion), [Drake](#control), [Habitat](#datasets), [RoboCasa-Shift](#datasets), [Habitat-Matterport 3D Dataset (HM3D)](#datasets), [Objaverse](#datasets)
 
 <a id="datasets"></a>
