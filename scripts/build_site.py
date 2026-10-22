@@ -246,6 +246,22 @@ def atom(papers: list[dict], title: str, path: str, today: dt.date) -> str:
 """
 
 
+def picks_atom(entries: list[dict], today: dt.date, limit: int = 60) -> str:
+    """Low-volume feed: only agent picks (curated entries with `added:`), newest first, bilingual takeaway."""
+    picks = sorted((e for e in entries if e.get("added")), key=lambda e: (str(e["added"]), e["id"]), reverse=True)[:limit]
+    items = "".join(f"""<entry><title>{esc(e['title'])}</title><id>{SITE_URL}e/{esc(e['id'])}.html</id>
+<link href="{SITE_URL}e/{esc(e['id'])}.html"/><updated>{esc(str(e['added']))}T00:00:00Z</updated>
+<summary>{esc(e.get('takeaway_en', ''))}\n\n{esc(e.get('takeaway_zh', ''))}</summary></entry>""" for e in picks)
+    latest = str(picks[0]["added"]) if picks else today.isoformat()
+    return f"""<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Embodied AI Radar — agent picks / 精选</title>
+<link href="{SITE_URL}"/><link rel="self" href="{SITE_URL}picks.xml"/><id>{SITE_URL}picks.xml</id>
+<updated>{latest}T00:00:00Z</updated><author><name>Embodied AI Radar</name></author>
+{items}
+</feed>
+"""
+
+
 def week_id(d: dt.date) -> str:
     y, w, _ = d.isocalendar()
     return f"{y}-W{w:02d}"
@@ -379,7 +395,7 @@ def build() -> int:
     recent_picks = sorted((e for e in entries if e.get("added")), key=lambda e: str(e["added"]), reverse=True)[:6]
     picks_html = ""
     if recent_picks:
-        picks_html = (f'<h2>{bi("Newly added picks", "最新精选")}</h2>'
+        picks_html = (f'<h2>{bi("Newly added picks", "最新精选")} <span class="muted">(<a href="picks.xml">{bi("Atom feed", "Atom 订阅")}</a>)</span></h2>'
                       f'<p class="muted">{bi("Notable new papers reviewed from the daily feed.", "从每日论文中审阅挑选的值得关注的新工作。")}</p>'
                       f'<div class="cards">{"".join(curated_card(e, tby, "") for e in recent_picks)}</div>')
     by_repo: dict[str, dict] = {}  # one row per repo; prefer the non-paper entry (e.g. "LeRobot" over a paper using it)
@@ -451,7 +467,8 @@ def build() -> int:
 <p><a class="more" href="feed.html">{bi("See the full daily feed →", "查看完整每日论文 →")}</a></p>
 </div>"""
     desc = "Bilingual (EN/中文), daily-updated map of embodied AI and robot learning: VLA, manipulation, tactile, humanoids, world models, sim-to-real, datasets and hardware."
-    (OUT / "index.html").write_text(page("Embodied AI Radar · 具身智能雷达", body, "", desc, ""), encoding="utf-8")
+    (OUT / "index.html").write_text(page("Embodied AI Radar · 具身智能雷达", body, "", desc, "",
+                                         alt='\n<link rel="alternate" type="application/atom+xml" title="Agent picks · Embodied AI Radar" href="picks.xml">'), encoding="utf-8")
 
     # ---- topics
     tlist = "".join(f'<li><a href="{t["id"]}.html">{bi(t["en"], t["zh"])}</a> <span class="muted">({len(by_topic[t["id"]])})</span></li>' for t in topics)
@@ -621,6 +638,7 @@ def build() -> int:
         + "".join(f"<url><loc>{SITE_URL}{u}</loc><lastmod>{today.isoformat()}</lastmod></url>\n" for u in urls)
         + "</urlset>\n", encoding="utf-8")
     (OUT / "feed.xml").write_text(atom(feed[:100], "Embodied AI Radar — daily arXiv", "feed.xml", today), encoding="utf-8")
+    (OUT / "picks.xml").write_text(picks_atom(entries, today), encoding="utf-8")
     for t in topics:
         (OUT / "topics" / f"{t['id']}.xml").write_text(
             atom(feed_by_topic[t["id"]][:100], f"Embodied AI Radar — {t['en']}", f"topics/{t['id']}.xml", today), encoding="utf-8")

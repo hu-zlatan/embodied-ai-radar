@@ -24,7 +24,7 @@ Hand-verified papers, code, datasets, simulators and hardware with one-line take
 | What | How often |
 |---|---|
 | Daily arXiv feed ([site](https://hu-zlatan.github.io/embodied-ai-radar/feed.html) · [Atom](https://hu-zlatan.github.io/embodied-ai-radar/feed.xml); one Atom feed per topic, e.g. [VLA](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.xml)) | every day, automatically |
-| Curated index (below and on the site) | several times a week |
+| Curated index (below and on the site) · agent picks from the daily feed ([Atom](https://hu-zlatan.github.io/embodied-ai-radar/picks.xml), a few a day, bilingual) | several times a week |
 | [Weekly digest](digest/) | weekly |
 
 ## Topics
