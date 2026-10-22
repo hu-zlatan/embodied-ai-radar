@@ -4,7 +4,12 @@ on:
     - cron: "17 2 * * *"   # daily 02:17 UTC, after arXiv's daily announcement
     # Backup slots: GitHub can delay or drop scheduled runs (the first 02:17 run on
     # 2026-10-20 never fired). Intake dedups by arXiv ID, so extra runs are harmless.
+    # 02:17 has not fired on time on any day so far (runs land 5+ h late or never),
+    # so add more early slots; the first one that fires picks up the new day.
+    - cron: "11 1 * * *"
+    - cron: "53 4 * * *"
     - cron: "43 7 * * *"
+    - cron: "7 11 * * *"
     - cron: "29 15 * * *"
   workflow_dispatch:
     inputs:
