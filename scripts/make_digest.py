@@ -92,8 +92,10 @@ def main() -> int:
         L.append("")
     L += ["---", "",
           "Auto-tagged by keyword rules; picks are reviewed by the maintainer agent. "
-          "[Website](https://hu-zlatan.github.io/embodied-ai-radar/) · [GitHub](https://github.com/hu-zlatan/embodied-ai-radar)",
-          "主题为关键词规则自动标注；精选由维护智能体审阅。"]
+          "[Website](https://hu-zlatan.github.io/embodied-ai-radar/) · [GitHub](https://github.com/hu-zlatan/embodied-ai-radar)"
+          " · New to the field? [Reading path](https://hu-zlatan.github.io/embodied-ai-radar/start.html)",
+          "",
+          "主题为关键词规则自动标注；精选由维护智能体审阅。刚入门？看[入门路线](https://hu-zlatan.github.io/embodied-ai-radar/start.html?lang=zh)。"]
     out.parent.mkdir(exist_ok=True)
     out.write_text("\n".join(L) + "\n", encoding="utf-8")
     print(f"wrote {out.relative_to(ROOT)} ({len(feed)} papers, {len(picks)} picks)")
