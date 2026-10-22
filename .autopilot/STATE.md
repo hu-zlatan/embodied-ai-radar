@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-22 ~17:10 UTC, run 15._
+_Last updated: 2026-10-22 ~17:20 UTC, run 15 (end)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (261 entries, EN/ZH takeaways; 31 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (266 entries, EN/ZH takeaways; 31 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -36,12 +36,14 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 0. New curated entries get BibTeX metadata on the next intake run. A push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started/finished.
 1. Scheduled runs: the 02:17 intake slot has not fired on time on any day (10-20, 10-21, 10-22 — nothing by 04:50); other slots land hours late (07:43 → ~13:11, 15:29 → ~19:23). Run 13 added slots 01:11, 04:53, 11:07. Check on 10-23 whether any early slot fired (list runs with event=schedule). If the feed still only lands around noon UTC, consider an OWNER_TODO note (nothing the owner can really fix; GitHub cron is best-effort).
-2. Run 15+: review the newest feed (10-23 onward) (papers with code first), promote 2–5 notable ones with `added: <date>` and careful EN/ZH takeaways (≤220 chars EN; phrase results as "reports"). 10-22 feed reviewed in run 13.
+2. Run 16+: review the newest feed (10-23 onward) (papers with code first), promote 2–5 notable ones with `added: <date>` and careful EN/ZH takeaways (≤220 chars EN; phrase results as "reports"). 10-22 feed reviewed in run 13.
 3. Monday 2026-10-26: check the first auto digest (2026-W43); add a short human-quality intro paragraph if useful.
 3b. From ~2026-10-28: check 'Rising this week' renders with real data (needs 7 days of `data/repo_stars_history.json`); consider adding it to the weekly digest (`make_digest.py`).
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 15: reading path `start.html`; anchors Contact-GraspNet, AnyGrasp, FAST-LIVO2, CoWs on Pasture, PIRLNav. Reading path ideas: add a 'tactile' step if users ask; keep ≤10 steps.
 
 - More resources in `data/resources.yaml` as users suggest them (only well-known, verified links; Chinese courses/tutorials especially).
 - Run 14: world-models 18 → 23 (world action models: GR-1, VPP, UVA, WorldVLA, Genie Envisioner; owner added the `wam` repo topic, so WAM coverage matters; feed keywords now include ' wam ', 'video action model'), learning 18 → 21 (DSRL, FQL, SimpleVLA-RL), hardware 18 → 20 (DexUMI, ACE), manipulation 19 → 24 (Transporter Nets, CLIPort, PerAct, RVT, ReKep). Thinnest now: control/sim/tactile/perception ~19–23. Run 13: sim 19 → 23 (Brax, Habitat 2.0, Humanoid-Gym, Gazebo), control 17 → 20 (VAMP, RMP, HJ reachability), perception 17 → 20 (DINOv2, CoTracker, MASt3R). Run 12: tactile 14 → 19, navigation → 22, locomotion → 20, datasets → 21. Run 11 added hardware (13 → 18), VLA, navigation, dataset anchors. Run 10 added world-models (→17), learning, locomotion anchors. Run 9 added navigation (VLFM, NaVid, Uni-NaVid, Nav2) and tactile (GelSlim 3.0, DTact, 9DTact) anchors.
