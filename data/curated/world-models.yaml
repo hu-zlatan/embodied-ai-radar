@@ -162,3 +162,57 @@
   tags: [world-action-model, force-control, contact-rich, video-prediction]
   takeaway_en: World action model that jointly predicts video, motion and contact wrench, outputting time-aligned motion–wrench chunks as control references (hybrid motion-force style) for force-sensitive manipulation.
   takeaway_zh: 一个同时预测未来视频、运动与接触力旋量的世界动作模型，借鉴力位混合控制思路，输出时间对齐的运动-力旋量片段作为控制参考，面向仅靠视觉无法感知接触与负载的力敏感操作任务。
+- title: "Unleashing Large-Scale Video Generative Pre-training for Visual Robot Manipulation"
+  type: paper
+  arxiv: "2312.13139"
+  year: 2024
+  org: ByteDance Research
+  venue: ICLR 2024
+  code: https://github.com/bytedance/GR-1
+  topics: [manipulation]
+  tags: [world-action-model, video-prediction, pretraining, gpt]
+  takeaway_en: GR-1 — a GPT-style model that predicts both actions and future frames; pre-training on Ego4D video prediction before robot fine-tuning lifts CALVIN unseen-scene success from 53.3% to 85.4% (as reported).
+  takeaway_zh: GR-1：GPT 式模型同时预测动作与未来画面；先在 Ego4D 上做视频预测预训练、再用机器人数据微调，论文报告 CALVIN 未见场景成功率从 53.3% 提升到 85.4%。
+- title: "Video Prediction Policy: A Generalist Robot Policy with Predictive Visual Representations"
+  type: paper
+  arxiv: "2412.14803"
+  year: 2025
+  org: Tsinghua University, Shanghai Qi Zhi Institute, RobotEra
+  venue: ICML 2025
+  code: https://github.com/roboterax/video-prediction-policy
+  topics: [manipulation]
+  tags: [world-action-model, video-diffusion, diffusion-policy, dexterous]
+  takeaway_en: VPP — fine-tunes Stable Video Diffusion on robot and human videos and feeds its one-pass predictive features to a diffusion policy; reports 4.33 average length on CALVIN ABC→D and real Franka / dexterous-hand results.
+  takeaway_zh: VPP：在机器人与人类操作视频上微调 Stable Video Diffusion，只做一次前向提取"预测性"视觉特征再交给扩散策略；论文报告 CALVIN ABC→D 平均完成长度 4.33，并有 Franka 与灵巧手真机实验。
+- title: "Unified Video Action Model"
+  type: paper
+  arxiv: "2503.00200"
+  year: 2025
+  org: Stanford University
+  venue: RSS 2025
+  code: https://github.com/ShuangLI59/unified_video_action
+  topics: [manipulation]
+  tags: [world-action-model, video-generation, diffusion, umi]
+  takeaway_en: UVA — one shared latent for video and actions with two light diffusion heads; masked training lets the same model act as policy, video generator and forward/inverse dynamics model, while keeping policy inference fast.
+  takeaway_zh: UVA：视频与动作共享一个潜表示，配两个轻量扩散头解码；通过掩码训练，同一模型既能当策略，也能做视频生成和正/逆动力学，且策略推理仍然较快。
+- title: "WorldVLA: Towards Autoregressive Action World Model"
+  type: paper
+  arxiv: "2506.21539"
+  year: 2025
+  org: Alibaba DAMO Academy, Zhejiang University
+  code: https://github.com/alibaba-damo-academy/WorldVLA
+  topics: [vla]
+  tags: [world-action-model, autoregressive, libero]
+  takeaway_en: One autoregressive model that is both a VLA policy and an image-predicting world model; the two help each other on LIBERO, and an attention mask hiding earlier actions curbs error build-up in action chunks.
+  takeaway_zh: 单个自回归模型同时充当 VLA 策略与预测未来图像的世界模型，二者在 LIBERO 上相互促进；论文还发现自回归生成动作块会累积误差，用屏蔽先前动作的注意力掩码可以缓解。
+- title: "Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation"
+  type: paper
+  arxiv: "2508.05635"
+  year: 2025
+  org: AgiBot, NUS, Beihang University
+  venue: ICLR 2026
+  code: https://github.com/AgibotTech/Genie-Envisioner-V1
+  topics: [manipulation, sim]
+  tags: [world-action-model, video-diffusion, neural-simulator, benchmark]
+  takeaway_en: Genie Envisioner (AgiBot) — a video-diffusion world model (GE-Base) plus a flow-matching action decoder (GE-Act), an action-conditioned neural simulator (GE-Sim) and the EWMBench benchmark in one platform.
+  takeaway_zh: 智元 Genie Envisioner：一个平台集成视频扩散世界模型 GE-Base、流匹配动作解码器 GE-Act、动作条件神经仿真器 GE-Sim，以及世界模型评测基准 EWMBench。
