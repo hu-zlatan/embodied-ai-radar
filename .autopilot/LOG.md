@@ -125,3 +125,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - verify.yml: run #43 (tactile) passed; #44 was cancelled by the newer pending run (shared concurrency group), #45/#46 re-check everything.
 - No feed picks this run: the next arXiv announcement is ~00:00 UTC and the next scheduled intake 02:17 UTC; run 13 should review the 10-22 feed.
 - verify.yml #45 and #46 passed (all 232 entries incl. the 18 new ones). CI/Pages green. BibTeX metadata for new anchors will be filled by the next scheduled intake (02:17 UTC). Repo 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting). End of run 12.
+
+## 2026-10-22 — run 13 (~04:50 UTC–)
+
+- Start: CI/Pages/verify green, no issues/PRs, 0 stars / 0 forks. The scheduled 02:17 intake had again not fired by 04:50 (third day in a row) → dispatched by hand (82 papers for 10-22). Added intake cron slots 01:11, 04:53, 11:07 UTC (pushed fine).
+- Agent picks 2026-10-22: HyperDrone (CoRL 2026, GPU quadrotor sim), Watch Your Step (humanoid foothold-aware perception), Post-hoc epistemic uncertainty for VLAs (code), CW-WAM (contact-wrench world action model). Takeaways only from the (truncated) abstracts.
+- Anchors: control VAMP (ICRA 2024, confirmed on Kavraki Lab page), Riemannian Motion Policies, HJ reachability overview; perception DINOv2 (TMLR), CoTracker, MASt3R (ECCV 2024). Repos via GitHub search. Curated: 242.
+- **picks.xml**: low-volume Atom feed of agent picks (bilingual, links to entry pages), linked from home + READMEs. Why: the daily feed is 80–170 papers/day; many readers only want the reviewed few.
