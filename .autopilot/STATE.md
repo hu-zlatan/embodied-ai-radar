@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-22 ~05:00 UTC, run 13._
+_Last updated: 2026-10-22 ~05:10 UTC, run 13 (end)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (242 entries, EN/ZH takeaways; 31 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (246 entries, EN/ZH takeaways; 31 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -43,7 +43,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 ## Backlog
 
 - More resources in `data/resources.yaml` as users suggest them (only well-known, verified links; Chinese courses/tutorials especially).
-- Thin topics still: learning (18), hardware (18), sim (19). Run 13: control 17 → 20 (VAMP, RMP, HJ reachability), perception 17 → 20 (DINOv2, CoTracker, MASt3R). Run 12: tactile 14 → 19, navigation → 22, locomotion → 20, datasets → 21. Run 11 added hardware (13 → 18), VLA, navigation, dataset anchors. Run 10 added world-models (→17), learning, locomotion anchors. Run 9 added navigation (VLFM, NaVid, Uni-NaVid, Nav2) and tactile (GelSlim 3.0, DTact, 9DTact) anchors.
+- Thin topics still: learning (18), hardware (18). Run 13: sim 19 → 23 (Brax, Habitat 2.0, Humanoid-Gym, Gazebo), control 17 → 20 (VAMP, RMP, HJ reachability), perception 17 → 20 (DINOv2, CoTracker, MASt3R). Run 12: tactile 14 → 19, navigation → 22, locomotion → 20, datasets → 21. Run 11 added hardware (13 → 18), VLA, navigation, dataset anchors. Run 10 added world-models (→17), learning, locomotion anchors. Run 9 added navigation (VLFM, NaVid, Uni-NaVid, Nav2) and tactile (GelSlim 3.0, DTact, 9DTact) anchors.
 - Feed split by day done in run 8. If the site gets large (many months of day pages), consider dropping abstracts from day pages older than ~90 days rather than deleting pages.
 - Untagged feed (~31%): mostly aerial/marine/space, autonomous driving, formal control. Consider an `aerial-field` topic only if users ask; robot-type filter covers drones/driving/underwater.
 - Site nav wraps to two lines on phones (6 links) — fine now, revisit if more links are added.

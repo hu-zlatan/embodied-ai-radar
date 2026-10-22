@@ -132,3 +132,6 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Agent picks 2026-10-22: HyperDrone (CoRL 2026, GPU quadrotor sim), Watch Your Step (humanoid foothold-aware perception), Post-hoc epistemic uncertainty for VLAs (code), CW-WAM (contact-wrench world action model). Takeaways only from the (truncated) abstracts.
 - Anchors: control VAMP (ICRA 2024, confirmed on Kavraki Lab page), Riemannian Motion Policies, HJ reachability overview; perception DINOv2 (TMLR), CoTracker, MASt3R (ECCV 2024). Repos via GitHub search. Curated: 242.
 - **picks.xml**: low-volume Atom feed of agent picks (bilingual, links to entry pages), linked from home + READMEs. Why: the daily feed is 80–170 papers/day; many readers only want the reviewed few.
+- Sim anchors: Brax (NeurIPS 2021 D&B), Habitat 2.0 (NeurIPS 2021), Humanoid-Gym (RobotEra), Gazebo. Curated: 246.
+- verify.yml #47, #48, #49 passed (all new picks/anchors incl. code links). Dispatched intake after verify to fill BibTeX metadata.
+- End: CI/Pages/verify green, 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting). End of run 13.
