@@ -146,6 +146,33 @@ def load_resources() -> tuple[list[dict], list[str]]:
     return out, errs
 
 
+def load_start(known_ids: set[str]) -> tuple[list[dict], list[str]]:
+    """'Start here' reading path from data/start.yaml. Unknown entry ids are reported and dropped."""
+    path = DATA / "start.yaml"
+    if not path.exists():
+        return [], []
+    try:
+        steps = yaml.safe_load(path.read_text(encoding="utf-8")) or []
+    except yaml.YAMLError as ex:
+        return [], [f"start.yaml: YAML error: {ex}"]
+    out, errs = [], []
+    for i, st in enumerate(steps):
+        where = f"start.yaml#{i + 1}"
+        if not isinstance(st, dict):
+            errs.append(f"{where}: not a mapping")
+            continue
+        miss = [k for k in ("en", "zh", "why_en", "why_zh", "entries") if not st.get(k)]
+        if miss:
+            errs.append(f"{where}: missing {', '.join(miss)}")
+            continue
+        bad = [x for x in st["entries"] if x not in known_ids]
+        errs += [f"{where}: unknown curated entry id '{x}'" for x in bad]
+        ids = [x for x in st["entries"] if x in known_ids]
+        if ids:
+            out.append({**st, "entries": ids})
+    return out, errs
+
+
 def load_arxiv_feed() -> list[dict]:
     """All daily intake records, newest first. Malformed files are skipped, never fatal."""
     out = []

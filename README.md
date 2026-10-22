@@ -12,6 +12,8 @@ Hand-verified papers, code, datasets, simulators and hardware with one-line take
 
 ![Screenshot of the Embodied AI Radar website](docs/screenshot.png)
 
+**New to the field?** Follow the [reading path](https://hu-zlatan.github.io/embodied-ai-radar/start.html): 10 steps from RL and imitation basics through visuomotor policies, VLA models, simulation, locomotion and world models to hardware you can build — 41 hand-picked entries, each with a bilingual takeaway.
+
 ## Why this one
 
 - **Verified.** Every curated arXiv ID is checked against arXiv and every link is checked by CI, weekly.

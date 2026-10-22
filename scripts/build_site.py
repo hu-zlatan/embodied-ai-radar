@@ -18,7 +18,7 @@ from pathlib import Path
 
 from repo_stats import apply_feed_stats, load_feed_stats, load_history, load_stats, repo_key, star_gains
 from radar import (ROOT, bibtex, classify, venue_of, load_arxiv_feed, load_curated, load_curated_meta, load_embodiments,
-                   load_resources, load_topics)
+                   load_resources, load_start, load_topics)
 
 OUT = ROOT / "_site"
 SRC = ROOT / "site_src"
@@ -452,6 +452,7 @@ def build() -> int:
 <h1>{bi("The map of embodied AI & robot learning", "具身智能与机器人学习全景图")}</h1>
 <p class="lead">{bi("Hand-verified papers, code, datasets, simulators and hardware with one-line takeaways in English and Chinese — plus every new robotics paper on arXiv, tagged by topic, every day.", "人工核验的论文、代码、数据集、仿真器与硬件，配中英文一句话要点；外加每天自动收录并按主题标注的 arXiv 机器人新论文。")}</p>
 {stats}
+<p class="start-link"><a class="more" href="start.html">{bi("New to embodied AI? Start with the reading path →", "刚入门具身智能？从入门路线开始 →")}</a></p>
 </section>
 {search}
 <div id="home-static">
@@ -591,9 +592,33 @@ def build() -> int:
                 + f' — {bi(r["note_en"], r["note_zh"])}</li>' for r in items) + "</ul>")
     body = (f'<h1>{bi("Related lists & learning resources", "相关列表与学习资源")}</h1>'
             f'<p class="lead">{bi("Other good maps of the field, plus courses and docs we point newcomers to. Suggest more by opening an issue.", "领域内其他优秀的资源整理，以及推荐给新手的课程和文档。欢迎提 issue 补充。")}</p>'
+            f'<p><a class="more" href="start.html">{bi("New here? Follow the reading path through the curated index →", "刚入门？按入门路线阅读精选条目 →")}</a></p>'
             + "".join(rs))
     (OUT / "resources.html").write_text(page("Learning resources · Embodied AI Radar", body, "",
         "Related embodied AI lists, robotics courses, tool docs and communities (EN/中文).", "resources.html"), encoding="utf-8")
+
+    # ---- "start here" reading path
+    eby = {e["id"]: e for e in entries}
+    steps, _ = load_start(set(eby))
+    if steps:
+        n_items = sum(len(st["entries"]) for st in steps)
+        sh = []
+        for st in steps:
+            rows = "".join(
+                f'<li><a href="e/{esc(i)}.html">{title_html(eby[i]["title"])}</a> '
+                f'<span class="muted">· {esc(str(eby[i]["year"]))}{" · " + esc(eby[i]["org"]) if eby[i].get("org") else ""}</span>'
+                f'<br><span class="take">{bi(eby[i]["takeaway_en"], eby[i]["takeaway_zh"])}</span></li>'
+                for i in st["entries"])
+            sh.append(f'<h2>{bi(st["en"], st["zh"])}</h2><p class="muted">{bi(st["why_en"], st["why_zh"])}</p>'
+                      f'<ol class="tlist path">{rows}</ol>')
+        body = (f'<h1>{bi("Start here: a reading path", "入门路线：从这里开始读")}</h1>'
+                f'<p class="lead">{bi(f"{len(steps)} steps, {n_items} papers, code bases and robots, picked from the curated index for newcomers. Each links to a page with the bilingual takeaway, code, BibTeX and related work. Skip any step you already know.", f"为新手从精选库中挑选的 {len(steps)} 个阶段、{n_items} 篇论文/代码/硬件。每一项都链接到详情页（中英文要点、代码、BibTeX 与相关工作）。已经熟悉的部分可以跳过。")}</p>'
+                + "".join(sh)
+                + f'<p class="muted">{bi("Courses and other lists: ", "课程与其他资源列表：")}<a href="resources.html">{bi("Learning resources", "学习资源")}</a> · '
+                f'<a href="{REPO_URL}/issues/new">{bi("Suggest a change to this path", "对路线提建议")}</a></p>')
+        (OUT / "start.html").write_text(page("Start here: embodied AI reading path · Embodied AI Radar", body, "",
+            "A bilingual (EN/中文) reading path into embodied AI and robot learning: RL and imitation, visuomotor policies, VLA, simulation, locomotion, world models, perception and hardware.",
+            "start.html"), encoding="utf-8")
 
     # ---- one .bib with every curated arXiv paper we have metadata for
     bibs = [e["bib"] for e in entries if e.get("bib")]
@@ -632,7 +657,7 @@ def build() -> int:
     (OUT / "404.html").write_text(page("Not found · Embodied AI Radar", f'<h1>404</h1><p><a href="{SITE_URL}">{bi("Back to the radar", "返回首页")}</a></p>', SITE_URL, desc, "404.html"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n")
-    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries]
+    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html", "start.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries]
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"<url><loc>{SITE_URL}{u}</loc><lastmod>{today.isoformat()}</lastmod></url>\n" for u in urls)
