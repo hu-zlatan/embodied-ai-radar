@@ -244,3 +244,70 @@
   tags: [objects, 3d-models, benchmark-protocols, grasping]
   takeaway_en: The YCB object set — 73 everyday objects with scans, textured meshes and simulation models, plus benchmarking protocols; widely used in grasping and pose-estimation work.
   takeaway_zh: YCB 物体集：73 个日常物体，附扫描数据、带纹理网格与仿真模型，以及基准测试规程；被抓取与位姿估计研究广泛使用。
+- title: "Rescaling Egocentric Vision"
+  type: dataset
+  arxiv: "2006.13256"
+  year: 2020
+  org: University of Bristol · University of Catania · University of Toronto
+  venue: IJCV 2022
+  code: https://github.com/epic-kitchens/epic-kitchens-100-annotations
+  topics: [perception]
+  tags: [egocentric-video, human-data, kitchens, action-recognition]
+  takeaway_en: EPIC-KITCHENS-100 — 100 hours (20M frames, ~90K action segments) of unscripted first-person kitchen video from 45 environments, with dense action labels and challenges such as action anticipation.
+  takeaway_zh: EPIC-KITCHENS-100：来自 45 个厨房环境、100 小时（2000 万帧、约 9 万个动作片段）的非脚本第一视角视频，动作标注密集，并设有动作预测等挑战任务。
+- title: "HOI4D: A 4D Egocentric Dataset for Category-Level Human-Object Interaction"
+  type: dataset
+  arxiv: "2203.01577"
+  year: 2022
+  org: Tsinghua University · Shanghai Qi Zhi Institute
+  venue: CVPR 2022
+  code: https://github.com/leolyliu/HOI4D-Instructions
+  topics: [manipulation, perception]
+  tags: [egocentric-video, human-data, rgbd, articulated-objects, 4d]
+  takeaway_en: 2.4M egocentric RGB-D frames (4,000+ sequences, 800 object instances in 16 categories, 610 rooms) of people handling rigid and articulated objects, with segmentation, hand and object pose labels.
+  takeaway_zh: 240 万帧第一视角 RGB-D（4000 多段序列、16 类 800 个物体实例、610 个房间），记录人操作刚体与铰接物体，带分割、手部与物体位姿标注。
+- title: "OakInk: A Large-scale Knowledge Repository for Understanding Hand-Object Interaction"
+  type: dataset
+  arxiv: "2203.15709"
+  year: 2022
+  org: Shanghai Jiao Tong University
+  venue: CVPR 2022
+  code: https://github.com/oakink/OakInk
+  topics: [manipulation]
+  tags: [human-hands, grasping, affordance, mano]
+  takeaway_en: Affordance labels for ~1,800 household objects plus 50K intent-oriented hand-object interactions recorded on 100 of them; a common source for dexterous grasp synthesis. Follow-up OakInk2 covers bimanual tasks.
+  takeaway_zh: 为约 1800 个日常物体标注可供性，并在其中 100 个物体上记录 5 万次带意图的手-物交互；常用于灵巧抓取生成。后续 OakInk2 扩展到双手任务。
+- title: "ARCTIC: A Dataset for Dexterous Bimanual Hand-Object Manipulation"
+  type: dataset
+  arxiv: "2204.13662"
+  year: 2022
+  org: ETH Zürich · MPI for Intelligent Systems
+  venue: CVPR 2023
+  code: https://github.com/zc-alexfan/arctic
+  topics: [manipulation, perception]
+  tags: [human-hands, bimanual, articulated-objects, mocap, mano]
+  takeaway_en: 2.1M video frames of two hands manipulating articulated objects (scissors, laptops…) with accurate 3D hand and object meshes from motion capture; a reference for bimanual hand-object reconstruction.
+  takeaway_zh: 210 万帧双手操作铰接物体（剪刀、笔记本电脑等）的视频，借助动作捕捉提供精确的手与物体三维网格；双手-物体重建的常用基准。
+- title: "VLABench: A Large-Scale Benchmark for Language-Conditioned Robotics Manipulation with Long-Horizon Reasoning Tasks"
+  type: benchmark
+  arxiv: "2412.18194"
+  year: 2024
+  org: Fudan University
+  code: https://github.com/OpenMOSS/VLABench
+  project: https://vlabench.github.io/
+  topics: [vla, manipulation]
+  tags: [sim, language, long-horizon, reasoning, vla-eval]
+  takeaway_en: 100 task categories over 2,000+ objects that need common sense, world knowledge and multi-step reasoning, not just instruction following; evaluates VLAs, embodied agents and VLMs in one suite.
+  takeaway_zh: 100 类任务、2000 多个物体，任务需要常识、世界知识与多步推理，而不只是照指令执行；在同一套件中评测 VLA、具身智能体与 VLM。
+- title: "RoboVerse: Towards a Unified Platform, Dataset and Benchmark for Scalable and Generalizable Robot Learning"
+  type: benchmark
+  arxiv: "2504.18904"
+  year: 2025
+  org: UC Berkeley · PKU · BIGAI · Stanford · CMU and others
+  venue: RSS 2025
+  code: https://github.com/RoboVerseOrg/RoboVerse
+  project: https://roboverseorg.github.io/
+  topics: [sim]
+  tags: [sim, multi-simulator, synthetic-data, imitation-learning, rl]
+  takeaway_en: MetaSim puts many simulators (Isaac Sim/Gym, MuJoCo, Genesis, SAPIEN…) behind one interface; adds a large synthetic dataset migrated from public benchmarks and unified IL/RL benchmarks.
+  takeaway_zh: MetaSim 用统一接口封装多种仿真器（Isaac Sim/Gym、MuJoCo、Genesis、SAPIEN、PyBullet 等）；提供由公开基准迁移而来的大规模合成数据集，以及按泛化层级划分的统一模仿学习/强化学习基准。
