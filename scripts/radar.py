@@ -215,7 +215,14 @@ def classify(text: str, topics: list[dict], title: str | None = None, threshold:
 
 
 def norm_title(s: str) -> str:
-    s = s.lower().replace("π", "pi")
+    """Comparable form of a title: Greek letters spelled out (Δ and \\Delta both -> delta), LaTeX and punctuation dropped."""
+    import unicodedata
+
+    def greek(ch: str) -> str:
+        name = unicodedata.name(ch, "")
+        return name.split()[-1].lower() if name.startswith("GREEK") else ch
+    s = "".join(greek(c) for c in s).lower()
+    s = re.sub(r"\\([a-z]+)", r"\1", s)  # \delta -> delta
     s = re.sub(r"[\\${}_^]", "", s)
     return re.sub(r"[^a-z0-9]+", "", s)
 
