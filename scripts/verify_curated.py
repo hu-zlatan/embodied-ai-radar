@@ -29,7 +29,11 @@ def arxiv_titles(ids: list[str]) -> dict[str, str]:
         chunk = ids[i:i + 25]
         url = "https://export.arxiv.org/api/query?" + urllib.parse.urlencode(
             {"id_list": ",".join(chunk), "max_results": len(chunk)})
-        root = ET.fromstring(arxiv_get(url))
+        try:  # abs pages cover whatever is left, so don't sit in long 429 backoff here
+            root = ET.fromstring(arxiv_get(url, attempts=3))
+        except RuntimeError as ex:
+            print(f"API stopped after {len(out)} titles ({ex})")
+            break
         for e in root.findall("a:entry", NS):
             eid = (e.findtext("a:id", default="", namespaces=NS) or "").rsplit("/abs/", 1)[-1]
             eid = eid.split("v")[0] if "v" in eid else eid
