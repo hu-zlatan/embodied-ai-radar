@@ -196,3 +196,8 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Search: '▲ N HF' in results, `?sort=hf`. Digest: 'Upvoted on Hugging Face' section. Tested headless at 390 px (no JS errors, no horizontal scroll).
 - verify #67 (dataset anchors; EPIC title confirmed) and #68 (picks) passed; CI green. Dispatched intake to fill BibTeX metadata. READMEs mention stars + HF upvotes as signals.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting; CoRL week Nov 9–12 is a good moment). End of run 19.
+
+## 2026-10-23 — run 20 (~22:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs, 0 stars / 0 forks. No add_repo tool this session; the clone was already there (detached HEAD → `main` reset to `origin/main`). Scheduled intake fired 6× on 10-23 (first at 05:57 UTC; early slots still miss). No new arXiv papers until Mon 10-26.
+- From the HF-upvote review queue: picks Learning from Fleet Experience (2610.25736; Tsinghua, AgiBot, Infinigence AI; code in RLinf) → learning; DONIC (2610.29997; Ropedia/DONIC) → manipulation; GPT-6-Astra embodied evaluation report (2610.22471; SenseNova et al., repo public with code 'coming soon' → project link) → vla. Anchor RLinf-VLA (2510.06710; RLinf repo 5.5k★) → learning. Facts from arXiv abs pages (reached via WebSearch results), HyperAI and Neurohive summaries; results phrased as 'reports'. Curated: 303.

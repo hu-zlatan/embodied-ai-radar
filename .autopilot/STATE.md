@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-23 ~17:20 UTC, run 19 (end)._
+_Last updated: 2026-10-23 ~23:20 UTC, run 20._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (299 entries, EN/ZH takeaways; 31 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (303 entries, EN/ZH takeaways; 31 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -38,13 +38,15 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 ## Next steps
 
 0. New curated entries get BibTeX metadata on the next intake run. A push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started/finished.
-1. Scheduled runs: the 02:17 intake slot has not fired on time on any day (10-20, 10-21, 10-22 — nothing by 04:50); other slots land hours late (07:43 → ~13:11, 15:29 → ~19:23). Run 13 added slots 01:11, 04:53, 11:07. Check on 10-23 whether any early slot fired (list runs with event=schedule). If the feed still only lands around noon UTC, consider an OWNER_TODO note (nothing the owner can really fix; GitHub cron is best-effort).
-2. Run 20+: check that `data/hf_papers.json` exists and has matches (first real run: repo-stats #68); if the HF step fails, read its log. Review the newest feed (10-24 onward; 10-23 reviewed in run 17: OpenTac, GelSlim 5.0, one-step flow-matching, UniFlowWAM), papers with code first, promote 2–5 notable ones with `added: <date>` and careful EN/ZH takeaways (≤220 chars EN — validate with `set -o pipefail`; phrase results as "reports").
+1. Scheduled runs: on 10-23 the 01:11/02:17/04:53 slots never fired; first scheduled intake landed 05:57 UTC, then 07:36, 09:37, 12:51, 15:42, 19:21. So the feed lands ~06:00 UTC — acceptable; no owner action. arXiv does not announce on Sat/Sun nights, so the next new feed day is Mon 10-26 (~00:00 UTC announcement).
+2. HF data works (36 matches). Review the newest feed (10-26 onward; 10-23 reviewed in run 17: OpenTac, GelSlim 5.0, one-step flow-matching, UniFlowWAM), papers with code first, promote 2–5 notable ones with `added: <date>` and careful EN/ZH takeaways (≤220 chars EN — validate with `set -o pipefail`; phrase results as "reports").
 3. Monday 2026-10-26: check the first auto digest (2026-W43); add a short human-quality intro paragraph if useful.
 3b. From ~2026-10-28: check 'Rising this week' renders with real data (needs 7 days of `data/repo_stars_history.json`). Digest 'Rising on GitHub' section was added in run 16 (first real one: 2026-W44, written Mon 11-02).
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 20: picks from the HF queue: Learning from Fleet Experience (Tsinghua/AgiBot, code in RLinf), DONIC (Ropedia), GPT-6-Astra embodied evaluation report (SenseNova; repo public but code 'coming soon' → linked as project; add `code:` once released); anchor RLinf-VLA (2510.06710). Still unreviewed HF-queue candidates: WAVE-0 2610.18568, AgenticRoboRL 2610.28589, RoboValue 2610.26663 (project page), LIBERO-Industry 2610.16782 (project page), HandsOn 2610.26765. WebFetch of arxiv.org works only for URLs that first appear in a WebSearch result — search the title first.
 
 - Run 19: datasets 25 → 31 (EPIC-KITCHENS-100, HOI4D, OakInk, ARCTIC, VLABench, RoboVerse); HF upvotes signal (first data: 36 matches). Use `data/hf_papers.json` as a review queue for picks: high-upvote papers not yet curated (e.g. DONIC 2610.29997, Learning from Fleet Experience 2610.25736, GPT-6-Astra report 2610.22471 — read full abstracts first; stored feed abstracts are truncated at ~600 chars). VLA-Rolling (2610.25043): add code link once github.com/chenbao123ww/VLA-Rolling is public. Ideas: OakInk2 (CVPR 2024) as its own entry; CoRL 2026 picks around Nov 9–12.
 
