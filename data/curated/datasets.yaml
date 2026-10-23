@@ -200,3 +200,47 @@
   tags: [dataset, rgbd, 3d-reconstruction, semantic-segmentation, indoor]
   takeaway_en: RGB-D scans of 1,500+ indoor scenes with 3D reconstructions, camera poses and semantic labels; the standard benchmark for 3D scene understanding that embodied perception builds on.
   takeaway_zh: 1500+ 个室内场景的 RGB-D 扫描，含三维重建、相机位姿与语义标注；具身感知所依赖的三维场景理解标准基准。
+- title: "HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation"
+  type: benchmark
+  arxiv: "2403.10506"
+  year: 2024
+  org: UC Berkeley · Yonsei University
+  venue: RSS 2024
+  code: https://github.com/carlosferrazza/humanoid-bench
+  project: https://humanoid-bench.github.io
+  topics: [locomotion, sim]
+  tags: [sim, humanoid, whole-body, rl-benchmark, mujoco]
+  takeaway_en: 27 simulated tasks (12 locomotion, 15 whole-body manipulation) on a Unitree H1 with two dexterous hands; reports that DreamerV3, TD-MPC2, SAC and PPO fail most of them, especially long-horizon whole-body ones.
+  takeaway_zh: 27 个仿真任务（12 个运动、15 个全身操作），机器人为带两只灵巧手的 Unitree H1；报告 DreamerV3、TD-MPC2、SAC、PPO 在大多数任务上未达标，长时程全身协调任务尤甚。
+- title: "THE COLOSSEUM: A Benchmark for Evaluating Generalization for Robotic Manipulation"
+  type: benchmark
+  arxiv: "2402.08191"
+  year: 2024
+  org: UW · AI2 · USC · NVIDIA · UCSP
+  venue: RSS 2024
+  code: https://github.com/robot-colosseum/robot-colosseum
+  project: https://robot-colosseum.github.io
+  topics: [manipulation]
+  tags: [sim, generalization, perturbations, rlbench]
+  takeaway_en: 20 RLBench tasks × 14 perturbation factors (color, texture, lighting, distractors, camera pose, friction, mass…); reports 30–50% success drops for leading policies, 75%+ when perturbations combine.
+  takeaway_zh: 20 个 RLBench 任务 × 14 种扰动因素（颜色、纹理、光照、干扰物、相机位姿、摩擦、质量……）；报告主流策略成功率下降 30–50%，多种扰动叠加时下降 75% 以上。
+- title: "DexYCB: A Benchmark for Capturing Hand Grasping of Objects"
+  type: dataset
+  arxiv: "2104.04631"
+  year: 2021
+  org: NVIDIA · University of Washington
+  venue: CVPR 2021
+  code: https://github.com/NVlabs/dex-ycb-toolkit
+  topics: [manipulation, perception]
+  tags: [real, human-hands, grasping, hand-pose, 6d-pose, handover]
+  takeaway_en: ~582K RGB-D frames (1,000 sequences, 10 people, 20 YCB objects, 8 cameras) of human grasps with hand and object pose labels; benchmarks detection, 6D object pose, 3D hand pose and human-to-robot handover.
+  takeaway_zh: 约 58.2 万帧 RGB-D（1000 段序列、10 人、20 个 YCB 物体、8 台相机）的人手抓取数据，带手部与物体位姿标注；评测检测、物体 6D 位姿、三维手部姿态及人到机器人的物体交接。
+- title: "Benchmarking in Manipulation Research: The YCB Object and Model Set and Benchmarking Protocols"
+  type: dataset
+  arxiv: "1502.03143"
+  year: 2015
+  org: Yale · CMU · UC Berkeley
+  topics: [manipulation]
+  tags: [objects, 3d-models, benchmark-protocols, grasping]
+  takeaway_en: The YCB object set — 73 everyday objects with scans, textured meshes and simulation models, plus benchmarking protocols; widely used in grasping and pose-estimation work.
+  takeaway_zh: YCB 物体集：73 个日常物体，附扫描数据、带纹理网格与仿真模型，以及基准测试规程；被抓取与位姿估计研究广泛使用。
