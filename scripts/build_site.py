@@ -32,6 +32,25 @@ FEED_ABSTRACT_DAYS = 21  # abstracts (for search) kept in the index only for thi
 esc = html.escape
 EMB: dict[str, dict] = {}  # embodiment id -> {en, zh}, filled in build()
 STATS: dict[str, dict] = {}  # 'owner/repo' -> {stars, pushed, archived}, from data/repo_stats.json
+VENUE_PAGES: set[str] = set()  # venue keys like 'CoRL 2026' that have a page venues/<slug>.html, filled in build()
+VENUE_MIN = 3  # a venue+year gets its own page once it has this many papers (curated + feed)
+
+
+def venue_key(v: str | None) -> str | None:
+    """'CoRL 2026' from 'CoRL 2026' or 'NeurIPS 2021 Datasets and Benchmarks'; None without a year."""
+    m = re.match(r"^(.+?) (20\d\d|19\d\d)\b", str(v or "").strip())
+    return f"{m.group(1)} {m.group(2)}" if m else None
+
+
+def venue_slug(k: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", k.lower()).strip("-")
+
+
+def venue_badge(v: str, root: str) -> str:
+    k = venue_key(v)
+    if k in VENUE_PAGES:
+        return f'<a class="badge venue" href="{root}venues/{venue_slug(k)}.html">{esc(v)}</a>'
+    return f'<span class="badge venue">{esc(v)}</span>'
 
 
 def fmt_stars(n: int) -> str:
@@ -145,7 +164,7 @@ def curated_card(e: dict, topics_by_id: dict, root: str, detail: bool = False) -
     meta = " · ".join(x for x in [esc(str(e["year"])), esc(e.get("org", ""))] if x)
     h = "h1" if detail else "h3"
     if e.get("venue"):
-        meta += f' <span class="badge venue">{esc(str(e["venue"]))}</span>'
+        meta += " " + venue_badge(str(e["venue"]), root)
     return f"""<article class="card" id="{esc(e['id'])}">
 <div class="meta"><span class="badge">{bi(en, zh)}</span> {meta} {star}</div>
 <{h}><a href="{esc(main)}" rel="noopener">{title_html(e['title'])}</a></{h}>
@@ -173,7 +192,7 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
     has_code = '<span class="badge code">code</span>' if p.get("code") else ""
     v = venue_of(p.get("comment"))
     if v:
-        has_code += f' <span class="badge venue">{esc(v)}</span>'
+        has_code += " " + venue_badge(v, root)
     return f"""<article class="card feed" id="arxiv-{esc(p['id'])}">
 <div class="meta"><span class="badge">arXiv {esc(p.get('primary', ''))}</span> {esc(p.get('published', ''))} {has_code}</div>
 <h3><a href="https://arxiv.org/abs/{esc(p['id'])}" rel="noopener">{esc(p['title'])}</a></h3>
@@ -322,6 +341,18 @@ def build() -> int:
             e["bib"] = bibtex(e["arxiv"], e["title"], m["authors"], m.get("published", ""), m.get("primary", ""))
     for p in feed:
         p["emb"] = classify(p.get("abstract", ""), embs, title=p.get("title", ""), threshold=1)
+    venues: dict[str, dict] = {}  # 'CoRL 2026' -> {"c": [curated entries], "f": [feed papers]}
+    for e in entries:
+        k = venue_key(e.get("venue"))
+        if k:
+            venues.setdefault(k, {"c": [], "f": []})["c"].append(e)
+    cur_ids = {e.get("arxiv") for e in entries if e.get("arxiv")}
+    for p in feed:
+        k = venue_key(venue_of(p.get("comment")))
+        if k and p["id"] not in cur_ids:  # agent picks are curated entries already
+            venues.setdefault(k, {"c": [], "f": []})["f"].append(p)
+    VENUE_PAGES.clear()
+    VENUE_PAGES.update(k for k, g in venues.items() if len(g["c"]) + len(g["f"]) >= VENUE_MIN)
 
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -478,6 +509,7 @@ def build() -> int:
                if nbib else "")
     bibnote += (f'<p>{bi("Reuse the whole curated index (CC BY 4.0):", "复用全部精选数据（CC BY 4.0）：")} '
                 f'<a href="../curated.json">curated.json</a> · <a href="../curated.csv" download>curated.csv</a></p>')
+    bibnote += f'<p><a href="../venues/index.html">{bi("Browse papers by venue (CoRL, RSS, ICRA, NeurIPS…) →", "按会议/期刊浏览论文（CoRL、RSS、ICRA、NeurIPS…）→")}</a></p>'
     (OUT / "topics" / "index.html").write_text(page("Topics · Embodied AI Radar", f'<h1>{bi("Topics", "主题")}</h1><ul class="tlist">{tlist}</ul>' + bibnote, "../", desc, "topics/index.html"), encoding="utf-8")
     for t in topics:
         cur = sorted(by_topic[t["id"]], key=lambda e: (not e.get("highlight"), -int(e["year"])))
@@ -559,7 +591,7 @@ def build() -> int:
         latest = '<p class="muted">' + bi("The first intake has not run yet.", "首次收录尚未运行。") + "</p>"
     body = f"""<h1>{bi("Daily arXiv feed", "每日 arXiv 论文")}</h1>
 {lead}
-<p><a href="index.html#search">{bi("Search and filter all of it →", "搜索与筛选 →")}</a> · <a href="#archive">{bi("Earlier days", "往日论文")}</a></p>
+<p><a href="index.html#search">{bi("Search and filter all of it →", "搜索与筛选 →")}</a> · <a href="#archive">{bi("Earlier days", "往日论文")}</a> · <a href="venues/index.html">{bi("By venue", "按会议/期刊")}</a></p>
 {latest}
 {archive("", None)}"""
     (OUT / "feed.html").write_text(page("Daily arXiv feed · Embodied AI Radar", body, "", "New embodied AI and robotics papers from arXiv, every day, tagged by topic.", "feed.html"), encoding="utf-8")
@@ -653,11 +685,41 @@ def build() -> int:
     # UTF-8 BOM so Excel opens the Chinese takeaways correctly
     (OUT / "curated.csv").write_text("\ufeff" + buf.getvalue(), encoding="utf-8")
 
+    # ---- venue pages: venues/<slug>.html per venue+year with >= VENUE_MIN papers, venues/index.html
+    (OUT / "venues").mkdir()
+    vkeys = sorted(VENUE_PAGES, key=lambda k: (-int(k.rsplit(" ", 1)[1]), -(len(venues[k]["c"]) + len(venues[k]["f"])), k))
+    vnote = bi("Feed papers are listed when their arXiv comment says they were accepted (e.g. 'Accepted to CoRL 2026'); papers that do not say so are missing, and the list grows as authors post camera-ready versions. Curated entries carry a hand-checked venue.",
+               "日常 arXiv 论文仅在其 arXiv 备注写明已被接收（如 “Accepted to CoRL 2026”）时列入；未注明的论文不会出现，列表会随作者上传终稿而增加。精选条目的会议/期刊信息经过人工核对。")
+    for k in vkeys:
+        g = venues[k]
+        cur = sorted(g["c"], key=lambda e: (not e.get("highlight"), e["title"]))
+        fp = sorted(g["f"], key=lambda p: p.get("published", ""), reverse=True)
+        fp = [p for p in fp if p.get("code")] + [p for p in fp if not p.get("code")]
+        n_code = sum(1 for p in fp if p.get("code")) + sum(1 for e in cur if e.get("code"))
+        parts = [f'<p class="muted"><a href="index.html">{bi("Venues", "会议/期刊")}</a> › {esc(k)}</p>',
+                 f'<h1>{esc(k)} · {bi("papers", "论文")}</h1>',
+                 f'<p class="lead">{bi(f"{len(cur) + len(fp)} embodied-AI and robotics papers accepted at {k}, {n_code} with code.", f"{len(cur) + len(fp)} 篇被 {k} 接收的具身智能与机器人论文，其中 {n_code} 篇附代码。")}</p>',
+                 f'<p class="muted">{vnote}</p>',
+                 f'<p><a href="../index.html?venue={esc(k.rsplit(" ", 1)[0])}#search">{bi("Search within this venue series →", "在该会议/期刊系列中搜索 →")}</a></p>']
+        if cur:
+            parts.append(f'<h2>{bi("Curated", "精选")} ({len(cur)})</h2><div class="cards">{"".join(curated_card(e, tby, "../") for e in cur)}</div>')
+        if fp:
+            parts.append(f'<h2>{bi("From the daily arXiv feed", "来自每日 arXiv")} ({len(fp)})</h2><div class="cards">{"".join(feed_card(p, tby, "../") for p in fp)}</div>')
+        (OUT / "venues" / f"{venue_slug(k)}.html").write_text(
+            page(f"{k} papers: embodied AI & robotics · Embodied AI Radar", "".join(parts), "../",
+                 f"{len(cur) + len(fp)} embodied AI and robotics papers accepted at {k}, with code links, topics and BibTeX; updated daily from arXiv.",
+                 f"venues/{venue_slug(k)}.html"), encoding="utf-8")
+    vrows = "".join(f'<li><a href="{venue_slug(k)}.html">{esc(k)}</a> <span class="muted">({len(venues[k]["c"]) + len(venues[k]["f"])})</span></li>' for k in vkeys)
+    (OUT / "venues" / "index.html").write_text(page("Papers by venue · Embodied AI Radar",
+        f'<h1>{bi("Papers by venue", "按会议/期刊浏览")}</h1><p class="lead">{bi(f"Conferences and journals with at least {VENUE_MIN} papers in the radar, newest year first.", f"收录论文不少于 {VENUE_MIN} 篇的会议与期刊，按年份从新到旧排列。")}</p>'
+        f'<p class="muted">{vnote}</p><ul class="tlist">{vrows or "<li class=muted>—</li>"}</ul>', "../",
+        "Embodied AI and robotics papers grouped by venue: CoRL, RSS, ICRA, IROS, NeurIPS, CVPR and more.", "venues/index.html"), encoding="utf-8")
+
     # ---- 404, robots, sitemap, atom
     (OUT / "404.html").write_text(page("Not found · Embodied AI Radar", f'<h1>404</h1><p><a href="{SITE_URL}">{bi("Back to the radar", "返回首页")}</a></p>', SITE_URL, desc, "404.html"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n")
-    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html", "start.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries]
+    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html", "start.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries] + ["venues/index.html"] + [f"venues/{venue_slug(k)}.html" for k in vkeys]
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"<url><loc>{SITE_URL}{u}</loc><lastmod>{today.isoformat()}</lastmod></url>\n" for u in urls)
