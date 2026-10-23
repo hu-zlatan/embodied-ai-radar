@@ -225,3 +225,23 @@
   tags: [real, offline-rl, transformer, large-scale]
   takeaway_en: Discretizes each action dimension and predicts Q-values per dimension autoregressively with a Transformer, plus a conservative regularizer; trained offline on large real robot datasets mixing demos and autonomous data.
   takeaway_zh: 将每个动作维度离散化，用 Transformer 自回归地逐维预测 Q 值，并加入保守正则；在混合演示与自主采集数据的大规模真实机器人数据集上离线训练。
+- title: "RLinf-VLA: A Unified and Efficient Framework for Reinforcement Learning of Vision-Language-Action Models"
+  type: paper
+  arxiv: "2510.06710"
+  year: 2025
+  code: https://github.com/RLinf/RLinf
+  topics: [vla]
+  tags: [sim, rl-finetuning, ppo, grpo, infrastructure, libero, maniskill, robotwin]
+  takeaway_en: Open RL training framework for VLAs (PPO/GRPO across GPU-parallel simulators); reports 98.11% on 130 LIBERO tasks and 97.66% on 25 ManiSkill tasks after RL — a common base for VLA+RL work.
+  takeaway_zh: 面向 VLA 的开源强化学习训练框架（PPO/GRPO，支持 GPU 并行仿真器）；论文报告经 RL 后在 130 个 LIBERO 任务上成功率 98.11%、25 个 ManiSkill 任务上 97.66%，是 VLA+RL 研究常用的底座。
+- title: "Learning from Fleet Experience: A Collective Learning Paradigm for Robots"
+  type: paper
+  arxiv: "2610.25736"
+  year: 2026
+  org: Tsinghua, AgiBot, Infinigence AI
+  code: https://github.com/RLinf/RLinf
+  added: 2026-10-23
+  topics: [manipulation]
+  tags: [real, fleet-learning, deployment, failure-retrieval]
+  takeaway_en: Deployed robots pool their runs; failures retrieve matching successful segments from the fleet buffer to fine-tune on, with no new demos. Reports 93–99% on five real tasks; 96 robots lift phone packing 79% → 98%.
+  takeaway_zh: 部署中的机器人共享执行经验：用失败片段在机群经验库中检索相似的成功片段来微调策略，无需新增示教或人工纠正。论文报告五个真机任务成功率 93–99%，96 台机器人把手机装盒任务从 79% 提升到 98%。
