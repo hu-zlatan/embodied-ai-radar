@@ -205,3 +205,22 @@
   tags: [library, mpc, optimal-control, legged, mobile-manipulation]
   takeaway_en: C++ toolbox for nonlinear MPC on switched systems (SLQ, DDP, SQP) with robot examples for legged robots and mobile manipulators; the base of many open-source legged MPC + whole-body control stacks.
   takeaway_zh: 面向切换系统的非线性 MPC C++ 工具箱（SLQ、DDP、SQP），附足式机器人与移动操作臂示例；许多开源足式 MPC + 全身控制方案都基于它。
+- title: "Dynamic Locomotion in the MIT Cheetah 3 Through Convex Model-Predictive Control"
+  type: paper
+  year: 2018
+  org: MIT (Biomimetic Robotics Lab)
+  venue: IROS 2018
+  code: https://github.com/mit-biomimetics/Cheetah-Software
+  topics: [locomotion]
+  tags: [mpc, quadruped, convex-optimization, ground-reaction-forces]
+  takeaway_en: Convex MPC for quadrupeds — simplified rigid-body dynamics turn ground-reaction-force planning into a small QP solved in real time; the classic model-based baseline behind many open-source quadruped controllers.
+  takeaway_zh: 四足机器人的凸 MPC：用简化刚体动力学把足端地面反作用力规划变成可实时求解的小规模 QP；众多开源四足控制器背后的经典基于模型的基线。
+- title: "legged_control"
+  type: code
+  year: 2022
+  org: Qiayuan Liao (open-source project)
+  code: https://github.com/qiayuanl/legged_control
+  topics: [locomotion]
+  tags: [mpc, whole-body-control, state-estimation, ros, legged]
+  takeaway_en: Open-source NMPC + whole-body control + state-estimation stack for quadrupeds built on OCS2 and ros-control, with a sim-to-real path; a popular starting point for model-based legged control.
+  takeaway_zh: 基于 OCS2 与 ros-control 的开源四足控制栈：非线性 MPC + 全身控制 + 状态估计，并支持 sim2real；基于模型的足式控制常用的起点。
