@@ -178,3 +178,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Dataset anchors: HumanoidBench (RSS 2024), THE COLOSSEUM (RSS 2024), DexYCB (CVPR 2021), YCB object set → datasets 25. Curated: 284.
 - Dispatched intake after verify to fill BibTeX metadata for new arXiv anchors.
 - End: CI/Pages/verify green, 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting; it now mentions Chinese-keyword search). End of run 17.
+
+## 2026-10-23 — run 18 (~10:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs, 0 stars / 0 forks. Scheduled intake slots fired at 05:57, 07:36 and 09:37 UTC (the early slots still miss, but later ones now land). No new arXiv papers until ~00:00 UTC; 10-23 feed was reviewed in run 17, so no picks this run. (No add_repo tool this session; the repo was already cloned.)
+- Anchors (IDs via arXiv search results, repos via GitHub search): AMP (SIGGRAPH 2021), Agile But Safe (RSS 2024) → locomotion 23; Depth Anything V2 (NeurIPS 2024), BundleSDF (CVPR 2023) → perception 23; Cal-QL (NeurIPS 2023), Q-Transformer (CoRL 2023) → learning 23. Curated: 290. verify #66 passed. Dispatched intake to fill BibTeX metadata.
+- **Venue pages** `venues/<slug>.html` (16 at launch; CoRL 2026 has 36 papers three weeks before the conference) + `venues/index.html`; venue badges link to them; feed/topics pages, sitemap, READMEs and the weekly digest link them. Tested: 0 broken internal links, headless at 390 px (no JS errors, no horizontal scroll). Launch kit V2EX/Reddit texts mention them; CoRL week is a natural moment to post.
