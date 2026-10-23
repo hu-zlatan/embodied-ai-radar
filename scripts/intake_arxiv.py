@@ -117,12 +117,12 @@ def fill_curated_meta() -> int:
     return added
 
 
-def fetch(query: str, start: int) -> bytes:
+def fetch(query: str, start: int, attempts: int = 6) -> bytes:
     params = urllib.parse.urlencode({
         "search_query": query, "start": start, "max_results": PAGE,
         "sortBy": "submittedDate", "sortOrder": "descending",
     })
-    return arxiv_get(f"{API}?{params}")
+    return arxiv_get(f"{API}?{params}", attempts=attempts)
 
 
 def clean(s: str | None) -> str:
@@ -276,7 +276,9 @@ def main() -> int:
             for q in QUERIES:
                 print(f"api query: {q[:70]}…")
                 for start in range(0, MAX_PER_QUERY, PAGE):
-                    recs = parse(fetch(q, start))
+                    # With RSS in hand the API only fills gaps: give up sooner on 429s so the
+                    # enrichment step (code/project links) still runs within the job.
+                    recs = parse(fetch(q, start, attempts=3 if ok_sources else 6))
                     time.sleep(3)
                     if not recs:
                         break
