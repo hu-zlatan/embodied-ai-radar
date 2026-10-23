@@ -174,3 +174,7 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - verify #61 failed: API 429 for 22 min → abs-page fallback → false title mismatch VLA-$Δ$ vs VLA-$\Delta$. Fixed `norm_title` (Greek letters spelled out). Also: one red CI commit (OpenArm takeaway >220 chars slipped past because `validate | tail` hid the exit code); fixed in the next commit.
 - Anchors: OpenArm (Enactic; hardware), MIT Cheetah 3 convex MPC (IROS 2018, no arXiv → linked via Cheetah-Software), legged_control → control 24, hardware 22.
 - Picks 2026-10-23: OpenTac, GelSlim 5.0 (tactile), When One Step Is Enough (CoRL 2026), UniFlowWAM (WAM). Curated: 280.
+- Verify: `arxiv_titles` now keeps partial API results and gives up after 3 attempts (abs pages cover the rest). verify #65 passed in 5 min for all 284 entries (incl. every entry added this run).
+- Dataset anchors: HumanoidBench (RSS 2024), THE COLOSSEUM (RSS 2024), DexYCB (CVPR 2021), YCB object set → datasets 25. Curated: 284.
+- Dispatched intake after verify to fill BibTeX metadata for new arXiv anchors.
+- End: CI/Pages/verify green, 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting; it now mentions Chinese-keyword search). End of run 17.

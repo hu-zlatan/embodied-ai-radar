@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-23 ~05:45 UTC, run 17._
+_Last updated: 2026-10-23 ~05:50 UTC, run 17 (end)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (280 entries, EN/ZH takeaways; 31 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (284 entries, EN/ZH takeaways; 31 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -44,7 +44,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Backlog
 
-- Run 17: control 20 → 24 (Ruckig, OCS2, MIT Cheetah 3 convex MPC, legged_control), hardware 20 → 22 (HATO, OpenArm). Thinnest now: datasets/learning/locomotion/perception ~21. Chinese search dictionary lives in `app.js` (`ZH`).
+- Run 17: control 20 → 24 (Ruckig, OCS2, MIT Cheetah 3 convex MPC, legged_control), hardware 20 → 22 (HATO, OpenArm), datasets 21 → 25 (HumanoidBench, THE COLOSSEUM, DexYCB, YCB). Thinnest now: learning/locomotion/perception ~21–22. Candidates: HOI4D, EPIC-KITCHENS-100, OakInk, ARCTIC (datasets); VLABench, RoboVerse. Chinese search dictionary lives in `app.js` (`ZH`).
 
 - Run 16: tactile 19 → 23 (Rotating without Seeing, Robot Synesthesia, NeuralFeels, Reactive Diffusion Policy). Thinnest now: tactile/control/hardware ~20–23.
 
