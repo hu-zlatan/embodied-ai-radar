@@ -238,7 +238,7 @@ def arxiv_get(url: str, attempts: int = 6) -> bytes:
             wait = delay
             ra = ex.headers.get("Retry-After") if ex.headers else None
             if ra and ra.isdigit():
-                wait = max(wait, int(ra))
+                wait = max(wait, min(int(ra), 300))  # never stall a CI job on a huge Retry-After
             print(f"  arXiv HTTP {ex.code}; waiting {wait}s (attempt {attempt}/{attempts})", flush=True)
         except Exception as ex:  # timeouts, resets
             wait = delay
