@@ -164,3 +164,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Weekly digest: new 'Rising on GitHub' section (top 8 star gains over 7 days up to the week's end; skipped until the history is long enough). Tested with fake history (not committed).
 - verify.yml #56 and #57 passed (all 4 new tactile entries incl. code/project links). CI/Pages green. Dispatched intake after verify to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting). Next run (after ~00:00 UTC) should review the 10-23 feed for picks. End of run 16.
+
+## 2026-10-23 — run 17 (~04:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs, 0 stars / 0 forks. No scheduled intake fired between 19:17 (10-22) and 04:50 (01:11 and 02:17 slots missed again) → dispatched intake by hand.
+- Anchors: Ruckig (RSS 2021, KIT) and OCS2 (ETH RSL) → control 20 → 22; HATO (ICRA 2025, UC Berkeley) → hardware 20 → 21 (+ tactile, manipulation). Checked on arXiv + GitHub search. Curated: 273.
+- **Chinese search**: ~100 common Chinese terms map to English substrings in `app.js` (unspaced queries split into known terms). 人形 now finds 78 items (was curated-only), 人形机器人强化学习 → 17. Placeholder says 支持中文关键词. Tested headless (no JS errors).
