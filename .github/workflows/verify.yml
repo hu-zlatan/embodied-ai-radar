@@ -16,7 +16,7 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45  # a stuck arXiv fetch must not block the shared arxiv-api group for hours
+    timeout-minutes: 90  # full link + abs-page check can take ~30 min when the arXiv API rate-limits
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
