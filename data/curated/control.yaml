@@ -185,3 +185,23 @@
   tags: [safety, reachability, tutorial]
   takeaway_en: Short tutorial on Hamilton-Jacobi reachability — computing the set of states from which a system can be kept safe under worst-case disturbances, and the tricks used to scale it up.
   takeaway_zh: Hamilton-Jacobi 可达性分析简明教程：计算在最坏扰动下仍能保持系统安全的状态集合，以及将其扩展到更高维系统的方法。
+- title: "Jerk-limited Real-time Trajectory Generation with Arbitrary Target States"
+  type: paper
+  arxiv: "2105.04830"
+  year: 2021
+  org: Karlsruhe Institute of Technology (KIT)
+  venue: RSS 2021
+  code: https://github.com/pantor/ruckig
+  topics: [manipulation]
+  tags: [trajectory-generation, real-time, jerk-limited, library]
+  takeaway_en: Ruckig — open-source C++/Python library for time-optimal, jerk-limited online trajectories to any target position, velocity and acceleration; a common drop-in for smooth arm motion on real controllers.
+  takeaway_zh: Ruckig：开源 C++/Python 库，可实时生成到任意目标位置、速度和加速度的时间最优、限加加速度（jerk）轨迹；常被直接用于真实控制器上的机械臂平滑运动。
+- title: "OCS2: Optimal Control for Switched Systems"
+  type: code
+  year: 2021
+  org: ETH Zurich (Robotic Systems Lab)
+  code: https://github.com/leggedrobotics/ocs2
+  topics: [locomotion]
+  tags: [library, mpc, optimal-control, legged, mobile-manipulation]
+  takeaway_en: C++ toolbox for nonlinear MPC on switched systems (SLQ, DDP, SQP) with robot examples for legged robots and mobile manipulators; the base of many open-source legged MPC + whole-body control stacks.
+  takeaway_zh: 面向切换系统的非线性 MPC C++ 工具箱（SLQ、DDP、SQP），附足式机器人与移动操作臂示例；许多开源足式 MPC + 全身控制方案都基于它。
