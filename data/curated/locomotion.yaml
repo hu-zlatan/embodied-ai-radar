@@ -187,3 +187,24 @@
   tags: [humanoid, perceptive-locomotion, elevation-map, rl]
   takeaway_en: A lightweight foothold prediction model strips terrain irrelevant to the next steps from the elevation map before the humanoid policy sees it, aiming at faster training and better transfer to new terrain.
   takeaway_zh: 不再把整张高程图输入人形机器人运动策略，而是先用轻量的落脚点预测模型去掉与接下来几步无关的地形信息，以加快训练并提升对新地形的泛化。
+- title: "AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control"
+  type: paper
+  arxiv: "2104.02180"
+  year: 2021
+  org: UC Berkeley, Shanghai Jiao Tong University
+  venue: SIGGRAPH 2021
+  topics: [learning]
+  tags: [sim, humanoid, rl, motion-prior, imitation]
+  takeaway_en: A discriminator trained on unstructured mocap clips acts as a style reward, so RL learns tasks with natural motion without hand-picked reference clips; widely reused as a gait prior for legged robots.
+  takeaway_zh: 用在无结构动捕片段上训练的判别器作为"风格奖励"，强化学习无需逐段指定参考动作即可学到自然的动作；后来被广泛用作足式机器人的步态先验。
+- title: "Agile But Safe: Learning Collision-Free High-Speed Legged Locomotion"
+  type: paper
+  arxiv: "2401.17583"
+  year: 2024
+  org: CMU, ETH Zurich
+  venue: RSS 2024
+  code: https://github.com/LeCAR-Lab/ABS
+  topics: [navigation]
+  tags: [sim2real, quadruped, rl, safety, reach-avoid]
+  takeaway_en: ABS pairs an agile RL locomotion policy with a learned reach-avoid value network and a recovery policy that takes over near obstacles, so a quadruped can run fast without crashing.
+  takeaway_zh: ABS 将敏捷的强化学习运动策略与学习的可达-规避价值网络及恢复策略结合，接近障碍时由恢复策略接管，让四足机器人高速奔跑而不碰撞。

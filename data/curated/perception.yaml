@@ -202,3 +202,24 @@
   tags: [lidar, visual, odometry, sensor-fusion, real-time]
   takeaway_en: FAST-LIVO2 — fuses LiDAR, camera and IMU in one filter with direct (feature-free) updates for both sensors, sharing a single voxel map where image patches are attached to LiDAR points.
   takeaway_zh: FAST-LIVO2：在同一滤波器中融合激光雷达、相机与 IMU，两种传感器都采用直接法（无需提取特征）更新，并共用一张体素地图，图像块挂载在激光点上。
+- title: "Depth Anything V2"
+  type: paper
+  arxiv: "2406.09414"
+  year: 2024
+  org: HKU, TikTok
+  venue: NeurIPS 2024
+  code: https://github.com/DepthAnything/Depth-Anything-V2
+  tags: [monocular-depth, foundation-model, synthetic-data]
+  takeaway_en: Trains a large teacher only on synthetic images with precise depth, then pseudo-labels many real images to train smaller students; gives sharper, more robust monocular depth than V1.
+  takeaway_zh: 先只用深度精确的合成图像训练大教师模型，再给大量真实图像打伪标签来训练小模型；单目深度比 V1 更锐利、更鲁棒。
+- title: "BundleSDF: Neural 6-DoF Tracking and 3D Reconstruction of Unknown Objects"
+  type: paper
+  arxiv: "2303.14158"
+  year: 2023
+  org: NVIDIA
+  venue: CVPR 2023
+  code: https://github.com/NVlabs/BundleSDF
+  topics: [manipulation]
+  tags: [real, 6d-pose, tracking, reconstruction, rgbd, model-free]
+  takeaway_en: Tracks the 6-DoF pose of a never-seen object in RGB-D video while building its neural 3D model online, with no CAD model needed; useful for manipulating novel objects.
+  takeaway_zh: 在 RGB-D 视频中跟踪从未见过物体的六自由度位姿，同时在线构建其神经三维模型，无需 CAD 模型；适用于操作新物体。

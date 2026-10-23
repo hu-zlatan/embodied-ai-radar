@@ -205,3 +205,23 @@
   tags: [sim, rl-finetuning, grpo, libero, robotwin]
   takeaway_en: Online RL for VLAs with GRPO and only binary success rewards on OpenVLA-OFT, plus exploration tweaks; reports 99.1% on LIBERO and 70.4% on RoboTwin 1.0 (vs 39.8% for the SFT baseline).
   takeaway_zh: 在 OpenVLA-OFT 上用 GRPO 与仅"成功/失败"二值奖励做在线强化学习，并加入若干促进探索的改动；论文报告 LIBERO 成功率 99.1%、RoboTwin 1.0 为 70.4%（SFT 基线 39.8%）。
+- title: "Cal-QL: Calibrated Offline RL Pre-Training for Efficient Online Fine-Tuning"
+  type: paper
+  arxiv: "2303.05479"
+  year: 2023
+  org: UC Berkeley, Stanford
+  venue: NeurIPS 2023
+  code: https://github.com/nakamotoo/Cal-QL
+  tags: [offline-to-online, rl, conservative-q]
+  takeaway_en: Keeps conservative offline Q-values from dropping below a reference policy's value, which avoids the early performance dip when an offline-pretrained policy starts online fine-tuning.
+  takeaway_zh: 约束保守的离线 Q 值不低于参考策略的价值，从而避免离线预训练策略开始在线微调时常见的性能先降后升。
+- title: "Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions"
+  type: paper
+  arxiv: "2309.10150"
+  year: 2023
+  org: Google DeepMind
+  venue: CoRL 2023
+  topics: [manipulation]
+  tags: [real, offline-rl, transformer, large-scale]
+  takeaway_en: Discretizes each action dimension and predicts Q-values per dimension autoregressively with a Transformer, plus a conservative regularizer; trained offline on large real robot datasets mixing demos and autonomous data.
+  takeaway_zh: 将每个动作维度离散化，用 Transformer 自回归地逐维预测 Q 值，并加入保守正则；在混合演示与自主采集数据的大规模真实机器人数据集上离线训练。
