@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-22 ~23:10 UTC, run 16 (end)._
+_Last updated: 2026-10-23 ~05:45 UTC, run 17._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (270 entries, EN/ZH takeaways; 31 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (280 entries, EN/ZH takeaways; 31 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -19,11 +19,12 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - **Data export** (run 12): `_site/curated.json` + `curated.csv` (fields: id, title, type, arxiv, year, venue, org, url, code, project, topics, tags, robot_types, highlight, added, takeaways, github_stars, page). Keep field names stable; add new fields at the end.
 - **Picks feed** (run 13): `_site/picks.xml` = Atom feed of the newest 60 agent picks (curated entries with `added:`), bilingual summary, links to entry pages. Linked from home ('Newly added picks') and both READMEs.
 - **Reading path** (run 15): `data/start.yaml` (ordered steps with bilingual notes + curated entry ids, validated) → `start.html`, linked from home hero, resources page, READMEs. Keep it short (≤5 per step); swap entries only for clearly better starting points.
+- **Chinese search** (run 17): `app.js` has a ~100-term ZH→EN dictionary (`ZH`); Chinese queries match English titles/abstracts (unspaced queries split greedily into known terms, ANDed; 机器人/具身 dropped when something more specific is present). Add terms there when users search for something that misses.
 - Issue forms: `.github/ISSUE_TEMPLATE/` (suggest an entry / report a mistake, bilingual; contact links to site + Discussions). Footer link `/issues/new` opens the chooser.
 - License: `LICENSE` = MIT (GitHub detects it), data terms in `LICENSE-DATA.md`.
 - Verification: all curated arXiv IDs + links checked by `verify.yml` (since run 8: HTTP 4xx fails; network errors/5xx are retried once and shown as ⚠️ warnings, not failures) (run 2: 10 perception anchors passed). Re-check the latest verify run at the start of each run.
 - Scripts: `validate.py`, `verify_curated.py` (CI; API → abs-page fallback), `intake_arxiv.py` (CI; RSS first, API fallback, `--retag`), `build_site.py`, `build_readme.py` (`--check` in CI), `make_digest.py`.
-- Workflows: `repo-stats.yml` (above), `ci.yml`, `intake.yml` (daily 02:17 UTC + backup slots 01:11, 04:53, 07:43, 11:07, 15:29 UTC — run 13 added three because the 02:17 slot has never fired on time), `pages.yml` (push / after intake or digest / daily 03:40 UTC), `verify.yml` (curated changes + weekly Mon), `weekly.yml` (Mon 05:23 UTC + backup 13:11 UTC → `digest/YYYY-Www.md`, skips if it exists). intake + verify share concurrency group `arxiv-api` (a newer pending run cancels an older pending one — re-dispatch if needed).
+- Workflows: `repo-stats.yml` (above), `ci.yml`, `intake.yml` (daily 02:17 UTC + backup slots 01:11, 04:53, 07:43, 11:07, 15:29 UTC — run 13 added three because the 02:17 slot has never fired on time), `pages.yml` (push / after intake or digest / daily 03:40 UTC), `verify.yml` (curated changes + weekly Mon), `weekly.yml` (Mon 05:23 UTC + backup 13:11 UTC → `digest/YYYY-Www.md`, skips if it exists). intake + verify share concurrency group `arxiv-api` (a newer pending run cancels an older pending one — re-dispatch if needed). Both have `timeout-minutes: 45` (run 17); arXiv Retry-After capped at 300 s; with RSS ok the API backfill gives up after 3 attempts per page.
 
 ## Known issues
 
@@ -36,12 +37,14 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 0. New curated entries get BibTeX metadata on the next intake run. A push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started/finished.
 1. Scheduled runs: the 02:17 intake slot has not fired on time on any day (10-20, 10-21, 10-22 — nothing by 04:50); other slots land hours late (07:43 → ~13:11, 15:29 → ~19:23). Run 13 added slots 01:11, 04:53, 11:07. Check on 10-23 whether any early slot fired (list runs with event=schedule). If the feed still only lands around noon UTC, consider an OWNER_TODO note (nothing the owner can really fix; GitHub cron is best-effort).
-2. Run 16+: review the newest feed (10-23 onward) (papers with code first), promote 2–5 notable ones with `added: <date>` and careful EN/ZH takeaways (≤220 chars EN; phrase results as "reports"). 10-22 feed reviewed in run 13.
+2. Run 18+: review the newest feed (10-24 onward; 10-23 reviewed in run 17: OpenTac, GelSlim 5.0, one-step flow-matching, UniFlowWAM), papers with code first, promote 2–5 notable ones with `added: <date>` and careful EN/ZH takeaways (≤220 chars EN — validate with `set -o pipefail`; phrase results as "reports").
 3. Monday 2026-10-26: check the first auto digest (2026-W43); add a short human-quality intro paragraph if useful.
 3b. From ~2026-10-28: check 'Rising this week' renders with real data (needs 7 days of `data/repo_stars_history.json`). Digest 'Rising on GitHub' section was added in run 16 (first real one: 2026-W44, written Mon 11-02).
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 17: control 20 → 24 (Ruckig, OCS2, MIT Cheetah 3 convex MPC, legged_control), hardware 20 → 22 (HATO, OpenArm). Thinnest now: datasets/learning/locomotion/perception ~21. Chinese search dictionary lives in `app.js` (`ZH`).
 
 - Run 16: tactile 19 → 23 (Rotating without Seeing, Robot Synesthesia, NeuralFeels, Reactive Diffusion Policy). Thinnest now: tactile/control/hardware ~20–23.
 
