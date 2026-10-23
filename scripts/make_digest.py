@@ -95,7 +95,8 @@ def main() -> int:
                       key=lambda vp: (vp[0], vp[1]["id"]))
     if accepted:
         L += ["", "## Accepted at venues · 已被会议/期刊接收", "",
-              "_From the authors' arXiv comments. 根据作者在 arXiv 上的备注。_", ""]
+              "_From the authors' arXiv comments. 根据作者在 arXiv 上的备注。"
+              " [All papers per conference · 按会议汇总](https://hu-zlatan.github.io/embodied-ai-radar/venues/index.html)_", ""]
         for v, p in accepted:
             extra = "".join(f" · [{k}]({p[k][0]})" for k in ("code", "project") if p.get(k))
             L.append(f"- **{v}** · [{clean_title(p['title'])}](https://arxiv.org/abs/{p['id']}){extra}")
