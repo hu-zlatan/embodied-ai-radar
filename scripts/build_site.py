@@ -16,6 +16,7 @@ import shutil
 import sys
 from pathlib import Path
 
+from hf_papers import load as load_hf
 from repo_stats import apply_feed_stats, load_feed_stats, load_history, load_stats, repo_key, star_gains
 from radar import (ROOT, bibtex, classify, venue_of, load_arxiv_feed, load_curated, load_curated_meta, load_embodiments,
                    load_resources, load_start, load_topics)
@@ -64,6 +65,14 @@ def repo_stat(e: dict) -> dict | None:
         if st:
             return st
     return None
+
+
+def hf_link(arxiv_id: str | None, h: dict | None) -> str:
+    """' · ▲ 12 HF' link to the paper's Hugging Face page when it was listed on HF Daily Papers."""
+    if not arxiv_id or not h:
+        return ""
+    return (f' · <a class="hf" href="https://huggingface.co/papers/{esc(str(arxiv_id))}" rel="noopener" '
+            f'title="Upvotes on Hugging Face Daily Papers">▲ {int(h["upvotes"])} HF</a>')
 
 
 def emb_chips(ids: list[str]) -> str:
@@ -161,6 +170,7 @@ def curated_card(e: dict, topics_by_id: dict, root: str, detail: bool = False) -
         linkrow += f' <span class="gh" title="GitHub stars">★ {fmt_stars(st["stars"])}</span>'
         if st.get("archived"):
             linkrow += f' <span class="badge">{bi("archived", "已归档")}</span>'
+    linkrow += hf_link(e.get("arxiv"), e.get("hf"))
     meta = " · ".join(x for x in [esc(str(e["year"])), esc(e.get("org", ""))] if x)
     h = "h1" if detail else "h3"
     if e.get("venue"):
@@ -198,7 +208,7 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
 <h3><a href="https://arxiv.org/abs/{esc(p['id'])}" rel="noopener">{esc(p['title'])}</a></h3>
 <p class="authors">{esc(authors)}</p>
 <details><summary>{bi("Abstract", "摘要")}</summary><p>{esc(p.get('abstract', ''))}</p></details>
-<div class="links"><a href="https://arxiv.org/abs/{esc(p['id'])}" rel="noopener">arXiv</a> · <a href="https://arxiv.org/pdf/{esc(p['id'])}" rel="noopener">PDF</a>{code}{proj}</div>
+<div class="links"><a href="https://arxiv.org/abs/{esc(p['id'])}" rel="noopener">arXiv</a> · <a href="https://arxiv.org/pdf/{esc(p['id'])}" rel="noopener">PDF</a>{code}{proj}{hf_link(p['id'], p.get('hf'))}</div>
 {bib_block(bibtex(p["id"], p["title"], p.get("authors", []), p.get("published", ""), p.get("primary", "")))}
 <div class="chips">{chips}</div>
 </article>"""
@@ -332,8 +342,15 @@ def build() -> int:
     STATS.clear()
     STATS.update(load_stats())
     apply_feed_stats(feed, load_feed_stats())
+    hf = load_hf()
+    for p in feed:
+        if p["id"] in hf:
+            p["hf"] = hf[p["id"]]
     for e in entries:
         e["emb"] = classify(" ".join([e["takeaway_en"], " ".join(e.get("tags") or [])]), embs, title=e["title"], threshold=1)
+    for e in entries:
+        if e.get("arxiv") and str(e["arxiv"]) in hf:
+            e["hf"] = hf[str(e["arxiv"])]
     meta = load_curated_meta()
     for e in entries:
         m = meta.get(e.get("arxiv") or "")
@@ -473,6 +490,25 @@ def build() -> int:
             rising_html = (f'<h2>{bi("Rising this week", "本周升温")}</h2>'
                            f'<p class="muted">{bi(f"GitHub stars gained in the last {span} days by code from curated entries and recent arXiv papers.", f"精选条目与近期 arXiv 论文的代码在最近 {span} 天新增的 GitHub 星标。")}</p>'
                            f'<ol class="poplist">{rows}</ol>')
+    # papers from the feed / curated data that the community upvoted on Hugging Face Daily Papers recently
+    hf_html = ""
+    hf_cut = (today - dt.timedelta(days=14)).isoformat()
+    cur_by_arxiv = {str(e["arxiv"]): e for e in entries if e.get("arxiv")}
+    hf_rows: dict[str, tuple[int, str, str]] = {}  # arxiv id -> (upvotes, title, our link)
+    for p in feed:
+        if p.get("hf") and str(p["hf"].get("date", "")) >= hf_cut:
+            hf_rows[p["id"]] = (p["hf"]["upvotes"], p["title"], f'https://arxiv.org/abs/{p["id"]}')
+    for a, e in cur_by_arxiv.items():
+        if e.get("hf") and str(e["hf"].get("date", "")) >= hf_cut:
+            hf_rows[a] = (e["hf"]["upvotes"], e["title"], f'e/{e["id"]}.html')
+    hf_top = sorted(hf_rows.items(), key=lambda x: (-x[1][0], x[0]))[:8]
+    if hf_top:
+        rows = "".join(
+            f'<li><a href="{esc(link)}">{short(t)}</a> <a class="badge rise" href="https://huggingface.co/papers/{esc(a)}" rel="noopener" title="Upvotes on Hugging Face Daily Papers">▲ {n}</a></li>'
+            for a, (n, t, link) in hf_top)
+        hf_html = (f'<h2>{bi("Upvoted on Hugging Face", "Hugging Face 热议")}</h2>'
+                   f'<p class="muted">{bi("Robotics papers from our feed that made Hugging Face Daily Papers in the last 14 days, by community upvotes.", "最近 14 天登上 Hugging Face Daily Papers 的本站收录论文，按社区点赞数排序。")}</p>'
+                   f'<ol class="poplist">{rows}</ol>')
     topic_grid = "".join(
         f'<a class="tile" href="topics/{t["id"]}.html"><h3>{bi(t["en"], t["zh"])}</h3>'
         f'<p>{bi(t["desc_en"], t["desc_zh"])}</p><span class="muted">{len(by_topic[t["id"]])} {bi("curated", "精选")} · '
@@ -490,6 +526,7 @@ def build() -> int:
 <h2>{bi("Topics", "主题")}</h2>
 <div class="grid">{topic_grid}</div>
 {picks_html}
+{hf_html}
 {rising_html}
 {popular_html}
 <h2>{bi("Highlights", "重点推荐")}</h2>

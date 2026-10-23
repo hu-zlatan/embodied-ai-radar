@@ -4,7 +4,7 @@ on:
     - cron: "37 6 * * 0"   # weekly, Sundays
   push:
     branches: [main]
-    paths: ["data/curated/**", "data/resources.yaml", "scripts/repo_stats.py"]
+    paths: ["data/curated/**", "data/resources.yaml", "scripts/repo_stats.py", "scripts/hf_papers.py"]
   workflow_run:  # re-check feed code links (often 404 until release) after each intake
     workflows: ["Daily arXiv intake"]
     types: [completed]
@@ -27,11 +27,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/repo_stats.py
+      - name: Hugging Face Daily Papers upvotes for our papers (best-effort)
+        continue-on-error: true
+        run: python scripts/hf_papers.py
       - name: Commit and push
         run: |
           git config user.name "radar-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/repo_stats.json data/repo_stars_history.json
+          if [ -f data/hf_papers.json ]; then git add data/hf_papers.json; fi
           if git diff --cached --quiet; then echo "no changes"; exit 0; fi
           git commit -m "data: GitHub repo stats $(date -u +%F)"
           for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
