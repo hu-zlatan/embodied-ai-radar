@@ -48,6 +48,7 @@ _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与�
 - **[Post-hoc Epistemic Uncertainty for Vision-Language-Action Policies](https://arxiv.org/abs/2610.29730)** (2026) — 在训练完成后为单个 VLA 策略加上轻量的核方差头（基于训练示教嵌入的高斯过程方差）来估计认知不确定性，无需训练和运行策略集成，让机器人知道何时该求助或补充示教。 · [代码](https://github.com/post-hoc-vla-uncertainty/post-hoc-vla-uncertainty)
 - **[REKI: Registering Knowledge in VLAs](https://arxiv.org/abs/2610.22178)** (2026) — 仅用公开数据预训练的 2.4B VLM + 流匹配 VLA；报告称只输给约两倍大的模型，并用少量寄存器 token 实现低成本记忆。 · [代码](https://github.com/kyutai-labs/reki)
 - **[VLA-$Δ$: Learning Physical State Transition for Vision-Language-Action Models](https://arxiv.org/abs/2610.21306)** (2026) — 认为 VLA 容易过拟合“观测→动作”的对应关系，因此显式监督动作应引起的物理状态变化，而不是在语言或像素空间里预测未来状态。 · [代码](https://github.com/ZJU-OmniAI/VLA-Delta)
+- **[When One Step Is Enough: An Empirical Study of Euler Integration in Flow-Matching Policies](https://arxiv.org/abs/2610.30735)** (2026) — 在六个基于流匹配的 VLA 上实验，报告单步 Euler 生成动作在规模足够时与多步采样效果基本相当——在为提速引入专门的单步生成目标之前值得先看（CoRL 2026）。
 - **[π0.5: a Vision-Language-Action Model with Open-World Generalization](https://arxiv.org/abs/2504.16054)** (2025) — 通过异构数据联合训练，让移动操作机器人在从未见过的家庭中整理厨房和卧室。 · [代码](https://github.com/Physical-Intelligence/openpi)
 - **[FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://arxiv.org/abs/2501.09747)** (2025) — 用基于 DCT 的分词器压缩动作块，使自回归 VLA 能学习高频灵巧控制。
 - **[Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success](https://arxiv.org/abs/2502.19645)** (2025) — OpenVLA-OFT：并行解码、动作分块与连续动作让 VLA 微调更快、成功率更高。 · [代码](https://github.com/moojink/openvla-oft)
@@ -66,7 +67,7 @@ _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与�
 - **[A Generalist Agent](https://arxiv.org/abs/2205.06175)** (2022) — Gato：同一套权重的 Transformer 既能玩游戏、写图像描述，也能用真实机械臂堆积木。
 - **[RT-1: Robotics Transformer for Real-World Control at Scale](https://arxiv.org/abs/2212.06817)** (2022) — 将动作离散化为 token，用 13 万条真实演示训练 Transformer，证明机器人策略会随数据多样性扩展。 · [代码](https://github.com/google-research/robotics_transformer)
 - **[VIMA: General Robot Manipulation with Multimodal Prompts](https://arxiv.org/abs/2210.03094)** (2022) — 把多种桌面任务统一成图文交错的提示，交给一个 Transformer 策略执行，并配套 VIMA-Bench 用于系统性泛化评测。 · [代码](https://github.com/vimalabs/VIMA)
-- _另见:_ [HexaShell](#manipulation), [CLIPort](#manipulation), [Perceiver-Actor](#manipulation), [ReKep](#manipulation), [WorldVLA](#world-models), [Cracking Mobile Manipulation](#navigation), [Uni-NaVid](#navigation), [NaVILA](#navigation), [LM-Nav](#navigation), [DINOv2](#perception), [SimpleVLA-RL](#learning), [Open X-Embodiment](#datasets), [Evaluating Real-World Robot Manipulation Policies in Simulation](#datasets), [Embodied Skill Bench](#datasets), [RoboCasa-Shift](#datasets)
+- _另见:_ [HexaShell](#manipulation), [CLIPort](#manipulation), [Perceiver-Actor](#manipulation), [ReKep](#manipulation), [WorldVLA](#world-models), [UniFlowWAM](#world-models), [Cracking Mobile Manipulation](#navigation), [Uni-NaVid](#navigation), [NaVILA](#navigation), [LM-Nav](#navigation), [DINOv2](#perception), [SimpleVLA-RL](#learning), [Open X-Embodiment](#datasets), [Evaluating Real-World Robot Manipulation Policies in Simulation](#datasets), [Embodied Skill Bench](#datasets), [RoboCasa-Shift](#datasets)
 
 <a id="manipulation"></a>
 ### 操作与灵巧手
@@ -107,6 +108,8 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_ [在网站上�
 _触觉传感器、触觉表征与接触丰富的控制。_ [在网站上查看与最新论文 →](https://hu-zlatan.github.io/embodied-ai-radar/topics/tactile.html)
 
 - ⭐ **[DIGIT: A Novel Design for a Low-Cost Compact High-Resolution Tactile Sensor with Application to In-Hand Manipulation](https://arxiv.org/abs/2005.14679)** (2020) — 低成本、紧凑的 GelSight 式指尖传感器，让视触觉传感器得以普及。 · [代码](https://github.com/facebookresearch/digit-interface)
+- **[GelSlim 5.0: Unifying Vision and Touch with a Single Fingertip Camera](https://arxiv.org/abs/2610.31334)** (2026) — 指尖传感器只用一个摄像头，通过切换照明交替获取“透过膜的视觉图像”和触觉图像，视觉与触觉共享同一视角、无需相机外参标定；再用 Transformer（VisTacFusion）融合两者。
+- **[OpenTac: An Open Ecosystem for Customizable, Scalable, and Transferable 3D Tactile Sensing](https://arxiv.org/abs/2610.31661)** (2026) — 开源电阻式触觉皮肤：结构化覆层把切向力转成空间压力差异，相邻触点即可解码剪切与法向力；附带可定制皮肤的设计工具，硬件和软件均开源。 · [项目页](https://opentac.github.io)
 - **[Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://arxiv.org/abs/2503.02881)** (2025) — 慢速扩散策略在隐空间规划动作块，快速策略根据触觉/力反馈高频调整；论文报告在三个接触丰富任务上比纯视觉模仿学习基线总分高 35% 以上。 · [代码](https://github.com/xiaoxiaoxh/reactive_diffusion_policy) · [项目页](https://reactive-diffusion-policy.github.io/)
 - **[3D-ViTac: Learning Fine-Grained Manipulation with Visuo-Tactile Sensing](https://arxiv.org/abs/2410.24091)** (2024) — 在扩散策略中融合密集触觉阵列与 3D 视觉，完成易碎、接触丰富的双臂任务。
 - **[A Touch, Vision, and Language Dataset for Multimodal Alignment](https://arxiv.org/abs/2402.13232)** (2024) — TVL 数据集将触觉与视觉观测配上语言描述，并训练触觉-视觉-语言编码器以及能描述物体触感的模型。 · [代码](https://github.com/Max-Fu/tvl)
@@ -168,6 +171,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[CW-WAM: A Structured Contact-Wrench World Action Model for Force-Sensitive Manipulation](https://arxiv.org/abs/2610.30117)** (2026) — 一个同时预测未来视频、运动与接触力旋量的世界动作模型，借鉴力位混合控制思路，输出时间对齐的运动-力旋量片段作为控制参考，面向仅靠视觉无法感知接触与负载的力敏感操作任务。 · [项目页](https://cw-wam-project.github.io/)
 - **[Robotic Video World Models: A Survey of Applications, Research Challenges, Future Directions](https://arxiv.org/abs/2601.07823)** (2026) — 机器人视频世界模型综述：它们在哪些场景可替代或补充物理仿真器（如可变形物体）、主要应用与开放挑战，并附持续更新的论文列表。 · [代码](https://github.com/irom-princeton/awesome-robotics-video-world-model-papers)
 - **[Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience](https://arxiv.org/abs/2610.26855)** (2026) — 同时覆盖移动与操作的第一人称世界模型，在约 1 万小时人类视频和约 3 千小时机器人数据上训练，用统一的运动学表示描述不同本体的动作。 · [代码](https://github.com/Ropedia/ropedia-w0)
+- **[UniFlowWAM: A Unified World-Action Model with Visual Semantics and 4D Geometry](https://arxiv.org/abs/2610.30991)** (2026) — 世界动作模型：把场景级三维流（跟踪的三维点）纳入策略内部，而不是作为独立模块或额外输出头，让 4D 几何、视觉语义与动作一起建模。 · [项目页](https://kksham111.github.io/UniFlowWAM_ProjectPage/)
 - **[Cosmos World Foundation Model Platform for Physical AI](https://arxiv.org/abs/2501.03575)** (2025) — 开放的视频世界基础模型及分词器与数据管线，用于生成物理 AI 训练数据。
 - **[Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation](https://arxiv.org/abs/2508.05635)** (2025) — 智元 Genie Envisioner：一个平台集成视频扩散世界模型 GE-Base、流匹配动作解码器 GE-Act、动作条件神经仿真器 GE-Sim，以及世界模型评测基准 EWMBench。 · [代码](https://github.com/AgibotTech/Genie-Envisioner-V1)
 - **[Unified Video Action Model](https://arxiv.org/abs/2503.00200)** (2025) — UVA：视频与动作共享一个潜表示，配两个轻量扩散头解码；通过掩码训练，同一模型既能当策略，也能做视频生成和正/逆动力学，且策略推理仍然较快。 · [代码](https://github.com/ShuangLI59/unified_video_action)
@@ -244,7 +248,7 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - **[DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras](https://arxiv.org/abs/2108.10869)** (2021) — 端到端学习的视觉 SLAM：循环光流更新加上可微分的光束法平差层。 · [代码](https://github.com/princeton-vl/DROID-SLAM)
 - **[FAST-LIO2: Fast Direct LiDAR-inertial Odometry](https://arxiv.org/abs/2107.06829)** (2021) — 用增量 k-d 树把原始激光点直接配准到地图，速度足以在无人机和机器人机载计算机上运行。 · [代码](https://github.com/hku-mars/FAST_LIO)
 - **[LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping](https://arxiv.org/abs/2007.00258)** (2020) — 基于因子图的激光-惯性里程计，GPS 与回环可以作为额外因子直接加入。 · [代码](https://github.com/TixiaoShan/LIO-SAM)
-- _另见:_ [Contact-GraspNet](#manipulation), [AnyGrasp](#manipulation), [Neural feels with neural fields](#tactile), [Watch Your Step](#locomotion), [Object Goal Navigation using Goal-Oriented Semantic Exploration](#navigation), [Learning to Explore using Active Neural SLAM](#navigation), [ScanNet](#datasets)
+- _另见:_ [Contact-GraspNet](#manipulation), [AnyGrasp](#manipulation), [Neural feels with neural fields](#tactile), [GelSlim 5.0](#tactile), [Watch Your Step](#locomotion), [Object Goal Navigation using Goal-Oriented Semantic Exploration](#navigation), [Learning to Explore using Active Neural SLAM](#navigation), [ScanNet](#datasets)
 
 <a id="control"></a>
 ### 规划、控制与安全
@@ -303,7 +307,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor](https://arxiv.org/abs/1801.01290)** (2018) — 带熵奖励的离策略强化学习；样本效率较高，成为真机上直接学习的常用默认算法。
 - **[Generative Adversarial Imitation Learning](https://arxiv.org/abs/1606.03476)** (2016) — GAIL：训练策略使判别器无法区分其状态-动作分布与专家数据，无需显式恢复奖励函数。
 - **[A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning](https://arxiv.org/abs/1011.0686)** (2010) — DAgger：在学习者自己访问到的状态上向专家查询标注，解决单纯行为克隆的误差累积问题。
-- _另见:_ [UniVLA](#vla), [Learn the Task, Not the Schedule](#manipulation), [Tactile Gym 2.0](#tactile), [Making Sense of Vision and Touch](#tactile), [Reactive Diffusion Policy](#tactile), [Unitree RL Gym](#locomotion), [SuperMimic](#locomotion), [PIRLNav](#navigation), [Brax](#sim), [RoboNet](#datasets), [AirExo-2](#hardware)
+- _另见:_ [UniVLA](#vla), [When One Step Is Enough](#vla), [Learn the Task, Not the Schedule](#manipulation), [Tactile Gym 2.0](#tactile), [Making Sense of Vision and Touch](#tactile), [Reactive Diffusion Policy](#tactile), [Unitree RL Gym](#locomotion), [SuperMimic](#locomotion), [PIRLNav](#navigation), [Brax](#sim), [RoboNet](#datasets), [AirExo-2](#hardware)
 
 <a id="sim"></a>
 ### 仿真与 Sim-to-Real
@@ -390,7 +394,7 @@ _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备�
 - **[GELLO: A General, Low-Cost, and Intuitive Teleoperation Framework for Robot Manipulators](https://arxiv.org/abs/2309.13037)** (2023) — 3D 打印的机械臂运动学复刻件，实现低成本、直观的关节空间遥操作。 · [代码](https://github.com/wuphilipp/gello_software)
 - **[The Design of Stretch: A Compact, Lightweight Mobile Manipulator for Indoor Human Environments](https://arxiv.org/abs/2109.10892)** (2021) — Hello Robot 的 Stretch 设计：在升降柱上装伸缩臂的轻巧移动操作机器人，面向家庭环境，被大量家庭机器人研究采用。
 - **[An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](https://arxiv.org/abs/1910.00093)** (2019) — 开源四足机器人 Solo 及其模块化力矩控制关节，采用现成件和 3D 打印件，便于各实验室复现动态腿式机器人。 · [代码](https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware)
-- _另见:_ [Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](#manipulation), [Mobile ALOHA](#manipulation), [Universal Manipulation Interface](#manipulation), [DexCap](#manipulation), [DIGIT](#tactile), [AnySkin](#tactile), [ReSkin](#tactile), [Digitizing Touch with an Artificial Multimodal Fingertip](#tactile), [GelSlim 3.0](#tactile), [DTact](#tactile), [9DTact](#tactile), [Unitree RL Gym](#locomotion), [LeRobot](#datasets)
+- _另见:_ [Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](#manipulation), [Mobile ALOHA](#manipulation), [Universal Manipulation Interface](#manipulation), [DexCap](#manipulation), [DIGIT](#tactile), [AnySkin](#tactile), [ReSkin](#tactile), [Digitizing Touch with an Artificial Multimodal Fingertip](#tactile), [GelSlim 3.0](#tactile), [DTact](#tactile), [9DTact](#tactile), [OpenTac](#tactile), [Unitree RL Gym](#locomotion), [LeRobot](#datasets)
 
 <!-- radar:end -->
 
