@@ -1,6 +1,7 @@
 """Draft a bilingual weekly digest: digest/YYYY-Www.md.
 
 Sections: editor's picks (curated entries whose `added` date falls in the week),
+papers upvoted on Hugging Face Daily Papers,
 repos rising on GitHub (star gains over the 7 days up to the week's end, once the history is long enough),
 numbers per topic and per robot type, and new papers with code by topic (from the daily feed).
 Usage: python scripts/make_digest.py [--week 2026-W43] [--force]
@@ -13,6 +14,7 @@ import datetime as dt
 import re
 import sys
 
+from hf_papers import load as load_hf
 from radar import ROOT, classify, load_arxiv_feed, load_curated, load_embodiments, load_topics, venue_of
 from repo_stats import apply_feed_stats, load_feed_stats, load_history, repo_key, star_gains
 
@@ -58,6 +60,22 @@ def rising_section(entries: list[dict], end: dt.date) -> list[str]:
     return L
 
 
+def hf_section(entries: list[dict], start: dt.date, end: dt.date) -> list[str]:
+    """Our papers listed on Hugging Face Daily Papers during the week, by upvotes."""
+    hf = {k: v for k, v in load_hf().items() if start.isoformat() <= str(v.get("date", "")) <= end.isoformat()}
+    if not hf:
+        return []
+    titles = {p["id"]: p["title"] for p in load_arxiv_feed()} | {str(e["arxiv"]): e["title"] for e in entries if e.get("arxiv")}
+    top = sorted(((v["upvotes"], k) for k, v in hf.items() if k in titles), key=lambda x: (-x[0], x[1]))[:RISING]
+    if not top:
+        return []
+    L = ["", "## Upvoted on Hugging Face · Hugging Face 热议", "",
+         "_Papers from our feed listed on Hugging Face Daily Papers this week, by upvotes. 本周登上 Hugging Face Daily Papers 的收录论文，按点赞数排序。_", ""]
+    for n, k in top:
+        L.append(f"- [{clean_title(titles[k])}](https://arxiv.org/abs/{k}) · [▲ {n}](https://huggingface.co/papers/{k})")
+    return L
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--week")
@@ -100,6 +118,7 @@ def main() -> int:
         for v, p in accepted:
             extra = "".join(f" · [{k}]({p[k][0]})" for k in ("code", "project") if p.get(k))
             L.append(f"- **{v}** · [{clean_title(p['title'])}](https://arxiv.org/abs/{p['id']}){extra}")
+    L += hf_section(entries, start, end)
     L += rising_section(entries, end)
     L += ["", "## By topic · 分主题统计", ""]
     for t in topics:
