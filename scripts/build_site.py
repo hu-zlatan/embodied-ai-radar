@@ -379,7 +379,7 @@ def build() -> int:
                   + "".join(f'<option value="{esc(v)}">{esc(v)} ({n})</option>'
                             for v, n in sorted(venue_n.items(), key=lambda x: (-x[1], x[0])) if n >= 2))
     search = f"""<section class="search" id="search">
-<input id="q" type="search" placeholder="Search papers, code, datasets… / 搜索论文、代码、数据集…" aria-label="Search" autocomplete="off">
+<input id="q" type="search" placeholder="Search papers, code, datasets… / 搜索论文、代码（支持中文关键词）…" aria-label="Search" autocomplete="off">
 <div class="filters">
 <select id="f-topic" aria-label="Topic"><option value="" data-en="All topics" data-zh="全部主题">All topics</option>{topic_opts}</select>
 <select id="f-emb" aria-label="Embodiment"><option value="" data-en="Any robot" data-zh="全部机器人形态">Any robot</option>{emb_opts}</select>

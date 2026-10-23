@@ -45,6 +45,61 @@
       cb();
     }).catch(function () { count.textContent = 'Could not load the search index.'; });
   }
+  // Chinese query expansion: feed papers are English-only, so common Chinese terms are
+  // mapped to English substrings (matched against the lowercased index text). A Chinese
+  // token without spaces ("人形机器人强化学习") is split greedily into known terms, each ANDed.
+  var ZH = {
+    '具身智能': ['embodied'], '具身': ['embodied'], '机器人': ['robot'],
+    '机械臂': [' arm', 'manipulator'], '操作': ['manipulat'], '操控': ['manipulat'],
+    '灵巧手': ['dexter', ' hand'], '灵巧操作': ['dexter'], '灵巧': ['dexter'], '抓取': ['grasp'],
+    '视触觉': ['visuotactile', 'visual-tactile', 'visuo-tactile'], '触觉': ['tactile', 'touch'],
+    '人形机器人': ['humanoid'], '人形': ['humanoid'], '四足': ['quadruped', 'legged'], '足式': ['legged'],
+    '运动控制': ['locomotion'], '步态': ['gait', 'locomotion'], '跑酷': ['parkour'], '全身控制': ['whole-body', 'whole body'],
+    '双臂': ['bimanual', 'dual-arm'], '移动操作': ['mobile manipulation'], '导航': ['navigat'],
+    '视觉语言导航': ['vision-and-language navigation', 'vision-language navigation', 'vln'],
+    '世界动作模型': ['world action model', ' wam'], '世界模型': ['world model'], '视频生成': ['video generation'],
+    '扩散策略': ['diffusion polic'], '扩散': ['diffusion'], '流匹配': ['flow matching', 'flow-matching'],
+    '离线强化学习': ['offline rl', 'offline reinforcement'], '强化学习': ['reinforcement', ' rl'],
+    '模仿学习': ['imitation', 'behavior cloning', 'behaviour cloning'], '行为克隆': ['behavior cloning', 'behaviour cloning'],
+    '大语言模型': ['llm', 'language model'], '大模型': ['llm', 'language model', 'foundation model'],
+    '基础模型': ['foundation model'], '视觉语言模型': ['vlm', 'vision-language model', 'vision language model'],
+    '视觉语言动作': ['vla', 'vision-language-action'], '多模态': ['multimodal', 'multi-modal'],
+    '虚实迁移': ['sim-to-real', 'sim2real'], '仿真': ['simulat'], '数据集': ['dataset'], '基准': ['benchmark'],
+    '评测': ['benchmark', 'evaluat'], '遥操作': ['teleop'], '运动规划': ['motion planning'], '路径规划': ['path planning'],
+    '轨迹优化': ['trajectory optimization'], '轨迹': ['trajector'], '模型预测控制': ['mpc', 'model predictive'],
+    '安全': ['safe'], '点云': ['point cloud'], '三维重建': ['3d reconstruction', 'reconstruct'], '重建': ['reconstruct'],
+    '建图': ['mapping'], '定位': ['locali'], '位姿估计': ['pose estimation'], '位姿': ['pose'], '深度估计': ['depth estimation'],
+    '分割': ['segment'], '检测': ['detect'], '标定': ['calibrat'], '自动驾驶': ['driving', 'autonomous vehicle'],
+    '无人机': ['drone', 'uav', 'aerial', 'quadrotor'], '水下': ['underwater'], '软体': ['soft robot'],
+    '人机交互': ['human-robot interaction', 'hri'], '多机器人': ['multi-robot'], '泛化': ['generaliz'], '零样本': ['zero-shot'],
+    '推理': ['reasoning'], '规划': ['plan'], '视频': ['video'], '语言': ['language'], '开源': ['open-source', 'open source'],
+    '低成本': ['low-cost', 'low cost'], '硬件': ['hardware'], '传感器': ['sensor'], '力控': ['force control', 'impedance'],
+    '阻抗控制': ['impedance'], '预训练': ['pretrain', 'pre-train'], '后训练': ['post-train'], '微调': ['fine-tun'],
+    '跨具身': ['cross-embodiment'], '长时程': ['long-horizon'], '可变形': ['deformable'], '布料': ['cloth'],
+    '装配': ['assembl'], '倒水': ['pour'], '家务': ['household'], '里程计': ['odometry'], '激光雷达': ['lidar'], '综述': ['survey']
+  };
+  var ZH_KEYS = Object.keys(ZH).sort(function (a, b) { return b.length - a.length; });
+  var CJK = /[㐀-鿿]/, GENERIC = ['机器人', '具身', '具身智能'];
+  // Returns a list of groups; an item matches when, for every group, it contains any string in it.
+  function queryGroups(text) {
+    var groups = [];
+    text.toLowerCase().split(/\s+/).filter(Boolean).forEach(function (t) {
+      if (!CJK.test(t)) { groups.push([t]); return; }
+      if (ZH[t]) { groups.push([t].concat(ZH[t])); return; }
+      var found = [], i = 0;
+      while (i < t.length) {
+        var k = null;
+        for (var j = 0; j < ZH_KEYS.length; j++) if (t.substr(i, ZH_KEYS[j].length) === ZH_KEYS[j]) { k = ZH_KEYS[j]; break; }
+        if (k) { found.push([k].concat(ZH[k])); i += k.length; } else i++;
+      }
+      // Generic words ("机器人", "具身") only narrow results when nothing more specific was typed.
+      var specific = found.filter(function (g) { return GENERIC.indexOf(g[0]) < 0; });
+      if (specific.length) found = specific;
+      if (found.length) groups = groups.concat(found); else groups.push([t]);
+    });
+    return groups;
+  }
+  window.__radarQueryGroups = queryGroups;
   function topicChips(tp) {
     return (tp || []).map(function (t) { var n = data.topics[t]; return n ? '<a class="chip topic" href="topics/' + t + '.html">' + esc(n[lang() === 'zh' ? 1 : 0]) + '</a>' : ''; }).join('');
   }
@@ -83,14 +138,18 @@
     syncUrl();
     if (!active()) { out.innerHTML = ''; count.textContent = ''; if (home) home.hidden = false; return; }
     load(function () {
-      var terms = q.value.toLowerCase().split(/\s+/).filter(Boolean);
+      var groups = queryGroups(q.value);
       var res = data.items.filter(function (it) {
         if (fTopic.value && (it.tp || []).indexOf(fTopic.value) < 0) return false;
         if (fEmb && fEmb.value && (it.em || []).indexOf(fEmb.value) < 0) return false;
         if (fVen && fVen.value && !(it.v && (fVen.value === '*' || it.v === fVen.value || String(it.v).indexOf(fVen.value + ' ') === 0))) return false;
         if (fKind.value && it.k !== fKind.value) return false;
         if (fCode.checked && !it.c) return false;
-        for (var i = 0; i < terms.length; i++) if (it._s.indexOf(terms[i]) < 0) return false;
+        for (var i = 0; i < groups.length; i++) {
+          var g = groups[i], hit = false;
+          for (var j = 0; j < g.length && !hit; j++) hit = it._s.indexOf(g[j]) >= 0;
+          if (!hit) return false;
+        }
         return true;
       });
       var mode = fSort ? fSort.value : '';
