@@ -186,3 +186,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - **Venue pages** `venues/<slug>.html` (16 at launch; CoRL 2026 has 36 papers three weeks before the conference) + `venues/index.html`; venue badges link to them; feed/topics pages, sitemap, READMEs and the weekly digest link them. Tested: 0 broken internal links, headless at 390 px (no JS errors, no horizontal scroll). Launch kit V2EX/Reddit texts mention them; CoRL week is a natural moment to post.
 - Search results: venue badges link to venue pages too (index.json `venues` map). Tested headless (`?venue=CoRL` → 63 linked badges, no JS errors).
 - End: CI #145 and Pages #247 green, verify #66 green, intake #34 (manual, BibTeX fill) ok. 0 stars / 0 forks, no issues/PRs. Owner: nothing new beyond the launch kit (CoRL week, Nov 9–12, is a good moment). End of run 18.
+
+## 2026-10-23 — run 19 (~16:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs, 0 stars / 0 forks. Intake fired on schedule at 12:51 and 15:42 UTC (no new arXiv papers until ~00:00 UTC; 10-23 feed reviewed in run 17), so no picks this run. No add_repo tool this session; the clone was already there (detached HEAD → checked out main).
+- Dataset/benchmark anchors: EPIC-KITCHENS-100 (arXiv title is just "Rescaling Egocentric Vision"; IJCV 2022), HOI4D (CVPR 2022), OakInk (CVPR 2022), ARCTIC (CVPR 2023), VLABench (Fudan / OpenMOSS), RoboVerse (RSS 2025). IDs and numbers from arXiv pages, repos via GitHub search. Datasets 25 → 31; curated 296.
+- **Hugging Face upvotes**: `scripts/hf_papers.py` (best-effort step in repo-stats.yml) → `data/hf_papers.json`; '▲ N HF' links on feed + curated cards, home 'Upvoted on Hugging Face' (last 14 days, top 8). Tested with fake data and a mocked fetch (failed day keeps old values, malformed items skipped). Workflow push was accepted.
