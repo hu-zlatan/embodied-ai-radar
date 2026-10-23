@@ -391,7 +391,7 @@ def build() -> int:
     topics_js = {t["id"]: [t["en"], t["zh"]] for t in topics}
     emb_js = {m["id"]: [m["en"], m["zh"]] for m in embs}
     (OUT / "data" / "index.json").write_text(
-        json.dumps({"topics": topics_js, "emb": emb_js, "items": idx, "built": today.isoformat()}, ensure_ascii=False,
+        json.dumps({"topics": topics_js, "emb": emb_js, "items": idx, "venues": {k: venue_slug(k) for k in sorted(VENUE_PAGES)}, "built": today.isoformat()}, ensure_ascii=False,
                    separators=(",", ":")), encoding="utf-8")
 
     # ---- index

@@ -32,6 +32,12 @@
       fCode = document.getElementById('f-code'), fSort = document.getElementById('f-sort'), fEmb = document.getElementById('f-emb'), fVen = document.getElementById('f-venue'), out = document.getElementById('results'),
       count = document.getElementById('count'), home = document.getElementById('home-static');
   var data = null, loading = false;
+  function venueBadge(v) {  // links to venues/<slug>.html when the build made a page for this venue+year
+    if (!v) return '';
+    var m = /^(.+?) ((?:19|20)\d\d)\b/.exec(String(v).trim()), k = m ? m[1] + ' ' + m[2] : null;
+    var slug = k && data && data.venues ? data.venues[k] : null;
+    return slug ? ' <a class="badge venue" href="venues/' + esc(slug) + '.html">' + esc(v) + '</a>' : ' <span class="badge venue">' + esc(v) + '</span>';
+  }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]; }); }
   function load(cb) {
     if (data) return cb();
@@ -113,11 +119,11 @@
       if (it.c) links.push('<a href="' + esc(it.c) + '">' + (lang() === 'zh' ? '代码' : 'Code') + '</a>');
       if (it.p) links.push('<a href="' + esc(it.p) + '">' + (lang() === 'zh' ? '项目页' : 'Project') + '</a>');
       links.push('<a class="perma" href="e/' + esc(it.id) + '.html">' + (lang() === 'zh' ? '详情' : 'Details') + '</a>');
-      return '<article class="card"><div class="meta"><span class="badge">' + esc(it.ty) + '</span> ' + esc(it.y) + ' · ' + esc(it.o) + (it.v ? ' <span class="badge venue">' + esc(it.v) + '</span>' : '') + (it.h ? ' <span class="star">★</span>' : '') +
+      return '<article class="card"><div class="meta"><span class="badge">' + esc(it.ty) + '</span> ' + esc(it.y) + ' · ' + esc(it.o) + venueBadge(it.v) + (it.h ? ' <span class="star">★</span>' : '') +
         '</div><h3><a href="' + esc(it.l) + '">' + esc(it.t) + '</a></h3><p class="take">' + esc(lang() === 'zh' ? it.zh : it.en) +
         '</p><div class="links">' + links.join(' · ') + (it.s != null ? ' <span class="gh" title="GitHub stars">★ ' + (it.s >= 1000 ? (it.s / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : it.s) + '</span>' : '') + '</div><div class="chips">' + topicChips(it.tp) + embChips(it.em) + '</div></article>';
     }
-    return '<article class="card feed"><div class="meta"><span class="badge">arXiv ' + esc(it.pc) + '</span> ' + esc(it.d) + (it.c ? ' <span class="badge code">code</span>' : '') + (it.v ? ' <span class="badge venue">' + esc(it.v) + '</span>' : '') +
+    return '<article class="card feed"><div class="meta"><span class="badge">arXiv ' + esc(it.pc) + '</span> ' + esc(it.d) + (it.c ? ' <span class="badge code">code</span>' : '') + venueBadge(it.v) +
       '</div><h3><a href="https://arxiv.org/abs/' + esc(it.id) + '">' + esc(it.t) + '</a></h3><p class="authors">' + esc(it.au) +
       '</p><div class="links"><a href="https://arxiv.org/pdf/' + esc(it.id) + '">PDF</a>' + (it.c ? ' · <a href="' + esc(it.c) + '">' + (lang() === 'zh' ? '代码' : 'Code') + '</a>' + (it.s != null ? ' <span class="gh" title="GitHub stars">★ ' + (it.s >= 1000 ? (it.s / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : it.s) + '</span>' : '') : '') +
       (it.pj ? ' · <a href="' + esc(it.pj) + '">' + (lang() === 'zh' ? '项目页' : 'Project') + '</a>' : '') +

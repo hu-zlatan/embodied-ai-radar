@@ -20,7 +20,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - **Picks feed** (run 13): `_site/picks.xml` = Atom feed of the newest 60 agent picks (curated entries with `added:`), bilingual summary, links to entry pages. Linked from home ('Newly added picks') and both READMEs.
 - **Reading path** (run 15): `data/start.yaml` (ordered steps with bilingual notes + curated entry ids, validated) → `start.html`, linked from home hero, resources page, READMEs. Keep it short (≤5 per step); swap entries only for clearly better starting points.
 - **Chinese search** (run 17): `app.js` has a ~100-term ZH→EN dictionary (`ZH`); Chinese queries match English titles/abstracts (unspaced queries split greedily into known terms, ANDed; 机器人/具身 dropped when something more specific is present). Add terms there when users search for something that misses.
-- **Venue pages** (run 18): `venues/<slug>.html` per venue+year with ≥3 papers (curated `venue:` + feed `venue_of()`, feed papers already curated are dropped), `venues/index.html`; venue badges on cards link there; linked from feed page, topics page, sitemap, READMEs, digest 'Accepted at venues'. 16 pages at launch; CoRL 2026 = 36 papers. Search results (app.js) still show plain badges.
+- **Venue pages** (run 18): `venues/<slug>.html` per venue+year with ≥3 papers (curated `venue:` + feed `venue_of()`, feed papers already curated are dropped), `venues/index.html`; venue badges on cards link there; linked from feed page, topics page, sitemap, READMEs, digest 'Accepted at venues'. 16 pages at launch; CoRL 2026 = 36 papers. Search results link them too (index.json `venues` map → app.js `venueBadge`).
 - Issue forms: `.github/ISSUE_TEMPLATE/` (suggest an entry / report a mistake, bilingual; contact links to site + Discussions). Footer link `/issues/new` opens the chooser.
 - License: `LICENSE` = MIT (GitHub detects it), data terms in `LICENSE-DATA.md`.
 - Verification: all curated arXiv IDs + links checked by `verify.yml` (since run 8: HTTP 4xx fails; network errors/5xx are retried once and shown as ⚠️ warnings, not failures) (run 2: 10 perception anchors passed). Re-check the latest verify run at the start of each run.
@@ -45,7 +45,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Backlog
 
-- Run 18: locomotion 21 → 23 (AMP, Agile But Safe), perception 21 → 23 (Depth Anything V2, BundleSDF), learning 21 → 23 (Cal-QL, Q-Transformer); venue pages. Ideas: make search-result venue badges link to venue pages; around CoRL (Nov 9–12) check the CoRL 2026 page and pick notable CoRL papers with code. Still-missing anchor candidates: HOI4D, EPIC-KITCHENS-100, OakInk, ARCTIC, VLABench, RoboVerse.
+- Run 18: locomotion 21 → 23 (AMP, Agile But Safe), perception 21 → 23 (Depth Anything V2, BundleSDF), learning 21 → 23 (Cal-QL, Q-Transformer); venue pages. Ideas: around CoRL (Nov 9–12) check the CoRL 2026 page and pick notable CoRL papers with code. Still-missing anchor candidates: HOI4D, EPIC-KITCHENS-100, OakInk, ARCTIC, VLABench, RoboVerse.
 
 - Run 17: control 20 → 24 (Ruckig, OCS2, MIT Cheetah 3 convex MPC, legged_control), hardware 20 → 22 (HATO, OpenArm), datasets 21 → 25 (HumanoidBench, THE COLOSSEUM, DexYCB, YCB). Thinnest now: learning/locomotion/perception ~21–22. Candidates: HOI4D, EPIC-KITCHENS-100, OakInk, ARCTIC (datasets); VLABench, RoboVerse. Chinese search dictionary lives in `app.js` (`ZH`).
 
