@@ -393,7 +393,7 @@ def build() -> int:
                     "tp": e["topics"], "em": e["emb"], "tg": e.get("tags") or [], "h": 1 if e.get("highlight") else 0,
                     "l": links_of(e)[0][2], "a": e.get("arxiv"), "c": e.get("code"), "p": e.get("project"),
                     "v": str(e["venue"]) if e.get("venue") else None,
-                    "s": (repo_stat(e) or {}).get("stars")})
+                    "s": (repo_stat(e) or {}).get("stars"), "u": (e.get("hf") or {}).get("upvotes")})
     ab_cut = (today - dt.timedelta(days=FEED_ABSTRACT_DAYS)).isoformat()
     for p in feed:
         if p.get("published", "") < site_cut:
@@ -401,7 +401,8 @@ def build() -> int:
         it = {"k": "f", "id": p["id"], "t": p["title"], "d": p.get("published", ""),
               "au": ", ".join(p.get("authors", [])[:4]), "tp": p.get("topics", []), "em": p["emb"],
               "c": (p.get("code") or [None])[0], "pc": p.get("primary", ""), "v": venue_of(p.get("comment")),
-              "pj": (p.get("project") or [None])[0], "s": p.get("stars") if p.get("code") else None}
+              "pj": (p.get("project") or [None])[0], "s": p.get("stars") if p.get("code") else None,
+              "u": (p.get("hf") or {}).get("upvotes")}
         if it["d"] >= ab_cut:  # keep the index small: older papers are searchable by title/authors only
             it["ab"] = p.get("abstract", "")[:300]
         idx.append({k: v for k, v in it.items() if v not in (None, [], "")} | {"k": "f", "id": p["id"], "t": p["title"]})
@@ -433,7 +434,7 @@ def build() -> int:
 <select id="f-emb" aria-label="Embodiment"><option value="" data-en="Any robot" data-zh="全部机器人形态">Any robot</option>{emb_opts}</select>
 <select id="f-kind" aria-label="Source"><option value="" data-en="Curated + daily feed" data-zh="精选 + 每日论文">Curated + daily feed</option><option value="c" data-en="Curated only" data-zh="仅精选">Curated only</option><option value="f" data-en="Daily feed only" data-zh="仅每日论文">Daily feed only</option></select>
 <select id="f-venue" aria-label="Venue"><option value="" data-en="Any venue" data-zh="全部会议/期刊">Any venue</option>{venue_opts}</select>
-<select id="f-sort" aria-label="Sort"><option value="" data-en="Sort: best match" data-zh="排序：默认">Sort: best match</option><option value="new" data-en="Sort: newest" data-zh="排序：最新">Sort: newest</option><option value="stars" data-en="Sort: GitHub stars" data-zh="排序：GitHub 星标">Sort: GitHub stars</option></select>
+<select id="f-sort" aria-label="Sort"><option value="" data-en="Sort: best match" data-zh="排序：默认">Sort: best match</option><option value="new" data-en="Sort: newest" data-zh="排序：最新">Sort: newest</option><option value="stars" data-en="Sort: GitHub stars" data-zh="排序：GitHub 星标">Sort: GitHub stars</option><option value="hf" data-en="Sort: HF upvotes" data-zh="排序：HF 点赞">Sort: HF upvotes</option></select>
 <label><input id="f-code" type="checkbox"> {bi("Has code", "有代码")}</label>
 </div>
 <p id="count" class="muted"></p>

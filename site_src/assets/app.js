@@ -112,6 +112,9 @@
   function embChips(em) {
     return (em || []).map(function (m) { var n = (data.emb || {})[m]; return n ? '<span class="chip emb">' + esc(n[lang() === 'zh' ? 1 : 0]) + '</span>' : ''; }).join('');
   }
+  function hfLink(id, u) {
+    return u ? ' · <a class="hf" href="https://huggingface.co/papers/' + esc(id) + '" title="Upvotes on Hugging Face Daily Papers">▲ ' + esc(u) + ' HF</a>' : '';
+  }
   function card(it) {
     if (it.k === 'c') {
       var links = [];
@@ -119,6 +122,7 @@
       if (it.c) links.push('<a href="' + esc(it.c) + '">' + (lang() === 'zh' ? '代码' : 'Code') + '</a>');
       if (it.p) links.push('<a href="' + esc(it.p) + '">' + (lang() === 'zh' ? '项目页' : 'Project') + '</a>');
       links.push('<a class="perma" href="e/' + esc(it.id) + '.html">' + (lang() === 'zh' ? '详情' : 'Details') + '</a>');
+      if (it.u && it.a) links.push(hfLink(it.a, it.u).slice(3));
       return '<article class="card"><div class="meta"><span class="badge">' + esc(it.ty) + '</span> ' + esc(it.y) + ' · ' + esc(it.o) + venueBadge(it.v) + (it.h ? ' <span class="star">★</span>' : '') +
         '</div><h3><a href="' + esc(it.l) + '">' + esc(it.t) + '</a></h3><p class="take">' + esc(lang() === 'zh' ? it.zh : it.en) +
         '</p><div class="links">' + links.join(' · ') + (it.s != null ? ' <span class="gh" title="GitHub stars">★ ' + (it.s >= 1000 ? (it.s / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : it.s) + '</span>' : '') + '</div><div class="chips">' + topicChips(it.tp) + embChips(it.em) + '</div></article>';
@@ -126,7 +130,7 @@
     return '<article class="card feed"><div class="meta"><span class="badge">arXiv ' + esc(it.pc) + '</span> ' + esc(it.d) + (it.c ? ' <span class="badge code">code</span>' : '') + venueBadge(it.v) +
       '</div><h3><a href="https://arxiv.org/abs/' + esc(it.id) + '">' + esc(it.t) + '</a></h3><p class="authors">' + esc(it.au) +
       '</p><div class="links"><a href="https://arxiv.org/pdf/' + esc(it.id) + '">PDF</a>' + (it.c ? ' · <a href="' + esc(it.c) + '">' + (lang() === 'zh' ? '代码' : 'Code') + '</a>' + (it.s != null ? ' <span class="gh" title="GitHub stars">★ ' + (it.s >= 1000 ? (it.s / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : it.s) + '</span>' : '') : '') +
-      (it.pj ? ' · <a href="' + esc(it.pj) + '">' + (lang() === 'zh' ? '项目页' : 'Project') + '</a>' : '') +
+      (it.pj ? ' · <a href="' + esc(it.pj) + '">' + (lang() === 'zh' ? '项目页' : 'Project') + '</a>' : '') + hfLink(it.id, it.u) +
       '</div><div class="chips">' + topicChips(it.tp) + embChips(it.em) + '</div></article>';
   }
   function active() { return q.value.trim() || fTopic.value || (fEmb && fEmb.value) || (fVen && fVen.value) || fKind.value || fCode.checked || (fSort && fSort.value); }
@@ -161,6 +165,7 @@
       var mode = fSort ? fSort.value : '';
       res.sort(function (a, b) {
         if (mode === 'stars') { var sa = a.s == null ? -1 : a.s, sb = b.s == null ? -1 : b.s; if (sa !== sb) return sb - sa; }
+        if (mode === 'hf') { var ua = a.u || 0, ub = b.u || 0; if (ua !== ub) return ub - ua; }
         if (mode === 'new') { var da = a.d || String(a.y), db = b.d || String(b.y); if (da !== db) return da < db ? 1 : -1; }
         if (a.k !== b.k) return a.k === 'c' ? -1 : 1;
         if (a.k === 'c') return (b.h - a.h) || (b.y - a.y);
