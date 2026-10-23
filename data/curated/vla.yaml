@@ -283,3 +283,14 @@
   tags: [flow-matching, inference-speed, action-chunking, training-free-backbone]
   takeaway_en: Reuses the unexecuted tail of a flow-matching VLA's action chunk to start the next one, with a small confidence model setting how much to re-denoise; reports lower inference cost on π0.5, SmolVLA and others.
   takeaway_zh: 流匹配 VLA 每次只执行动作块的前几步，剩余部分通常丢弃；本文把这段"动作尾巴"作为下一块的起点，并用小型置信度模型决定还需去噪多少步；论文报告在 π0.5、SmolVLA 等模型上降低推理开销。
+- title: "Has GPT-6-Astra Achieved Embodied Intelligence?"
+  type: paper
+  arxiv: "2610.22471"
+  year: 2026
+  org: SenseNova, ACE Robotics, Ropedia, NTU, UTokyo
+  project: https://github.com/OpenSenseNova/SenseNova-RoboRSI
+  added: 2026-10-23
+  topics: [manipulation, navigation]
+  tags: [evaluation, llm-as-policy, zero-shot, sim, real]
+  takeaway_en: Drives robots with a frozen frontier LLM plus in-context 'knowledge packages' on 12 sim benchmarks + 8 real robots; reports beating prior bests on 9 of 12, but weak real-robot results (competence, not yet intelligence).
+  takeaway_zh: 用冻结的前沿大模型加上下文“知识包”直接控制机器人，覆盖 12 个仿真基准和 8 台真机；报告在 12 个基准中的 9 个超过此前最好结果，但真机表现较弱——结论是具备了具身“能力”，尚未达到具身“智能”。
