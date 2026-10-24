@@ -228,3 +228,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Picks from the queue (facts = CI-fetched abstracts + repos confirmed live by repo_stats): WAVE-0 → vla, FRED → world-models, LIBERO-Industry → datasets, AgenticRoboRL + Scaling in Games → learning. One YAML colon slip caught by validate. Curated: 316.
 - verify #75 passed (all 5 picks incl. code/project links); CI green. Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting; CoRL week Nov 9–12). Next: Mon 10-26 feed + first auto digest W43; picks from `.autopilot/review_queue.json`. End of run 23.
+
+## 2026-10-24 — run 24 (~22:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs, 0 stars / 0 forks. Saturday: no new arXiv days until Mon 10-26. No add_repo tool; clone was detached → `main` reset to `origin/main`.
+- Picks from `.autopilot/review_queue.json` (CI-fetched abstracts; repos live per repo_stats): MorphAct (SJTU, contextual low-rank VLA params), CarryOn (dual-loop harness for a frozen VLA), Towards Agentic Robots (survey, 126★ list) → vla; SERA (self-evolving harness, RoboMME) → manipulation; ACE-Brain-0.6 (9B grounding model) → perception. One takeaway at 221 chars caught by validate. Curated: 321.
+- Launch kit: updated entry count (300+), HF upvotes and robot-type pages in V2EX/Reddit/HN texts.
+- Measured search index: 711 KB raw / 239 KB gzip at 13 days; projection noted in STATE known issues.

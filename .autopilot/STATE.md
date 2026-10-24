@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-24 ~17:15 UTC, run 23 (end)._
+_Last updated: 2026-10-24 ~23:00 UTC, run 24 (end)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (316 entries, EN/ZH takeaways; 38 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (321 entries, EN/ZH takeaways; 43 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -35,7 +35,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - arXiv export API returns 429 to GitHub runners often; RSS covers the daily path. API backfill is best-effort.
 - RSS dates = announcement date; API dates = first-submission date. Mixed but deduped by ID.
 - ~27% of feed papers get no topic (run 16: was 31%; remaining are mostly autonomous driving, multi-robot, aerial/space, HRI, soft/bio-inspired design). Shown as untagged; robot-type filter covers driving/drones. `classify()` now pads punctuation and splits glued acronyms (FlowVLA → Flow VLA, only after ≥2 lowercase letters so LiDAR stays intact).
-- Search index will grow to ~1.2 MB at 60 days even without old abstracts (gzip on Pages helps). Revisit if it passes ~1 MB.
+- Search index: 711 KB raw / 239 KB gzip at 13 feed days (1,188 items; abstracts = 37%, capped to 21 days). Projected ~1.9 MB raw / ~650 KB gzip at 60 days. Revisit when it passes ~1 MB raw (likely early Nov): e.g. drop `au` for feed items older than 21 days, or split index by month.
 
 ## Next steps
 
@@ -47,6 +47,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 24: picks MorphAct → vla, CarryOn → vla, Towards Agentic Robots survey → vla (survey slot), SERA → manipulation, ACE-Brain-0.6 → perception. Remaining queue: Physical RSI survey 2610.29677 (NUS, 36★ list), Galbot physical-RSI scaling law 2610.26848 (project only), Agentic WAMs 2610.30136 (project only), JCA 2610.28632 (NVIDIA, project only), Multimodal Embodied Agents survey 2610.30108 (showlab). Launch kit numbers refreshed.
 
 - Run 23: picks WAVE-0, FRED, LIBERO-Industry, AgenticRoboRL (code 'will be released' → project only; add code once released), Scaling in Games — all from the review queue. Remaining queue candidates: SERA 2610.29560 (self-evolving harness), MorphAct 2610.20019 (SJTU, code), ACE-Brain-0.6 2610.27040, CarryOn 2610.21453, Agentic WAMs 2610.30136 (project only), Galbot physical-RSI scaling law 2610.26848; surveys 2610.29677 / 2610.20442 / 2610.30108 (awesome lists) for a survey slot. Idea: mark HF-sourced code links subtly on cards if users ask where links come from.
 
