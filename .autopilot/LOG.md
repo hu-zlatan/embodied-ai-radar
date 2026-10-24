@@ -203,3 +203,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - From the HF-upvote review queue: picks Learning from Fleet Experience (2610.25736; Tsinghua, AgiBot, Infinigence AI; code in RLinf) → learning; DONIC (2610.29997; Ropedia/DONIC) → manipulation; GPT-6-Astra embodied evaluation report (2610.22471; SenseNova et al., repo public with code 'coming soon' → project link) → vla. Anchor RLinf-VLA (2510.06710; RLinf repo 5.5k★) → learning. Facts from arXiv abs pages (reached via WebSearch results), HyperAI and Neurohive summaries; results phrased as 'reports'. Curated: 303.
 - verify #69/#70 failed: arXiv v2 retitled 2610.25736 to "Learning from Fleet Experience: Collective Experience Learning Across 96 Robots" (HF/HyperAI still showed the v1 title). Updated the curated title; verify #71 passed for all 303 entries. Lesson: take titles from the live arXiv abs page, not mirrors. Dispatched intake to fill BibTeX metadata.
 - End: CI/Pages/verify green, 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting; CoRL week Nov 9–12 is a good moment). End of run 20.
+
+## 2026-10-24 — run 21 (~04:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs, 0 stars / 0 forks. Saturday: no new arXiv announcements until Mon 10-26. No add_repo tool this session; clone already on `main`, up to date.
+- From the HF-upvote queue: picks ACCRUE (continual off-policy RL for VLAs; NVIDIA, KAIST) → learning; λ0 / HumanVerse (500 h egocentric human data → Unitree G1; Alibaba, code LambdaHumanoid/openlambda, 29★) → locomotion; EgoExplorer (100 h vision-motion-touch human loco-manipulation; InternRobotics repo) → datasets. Facts from alphaXiv, Deep Learning Monitor and teahose/aiweekly summaries plus GitHub search (arXiv abs and project pages were not fetchable); results phrased as 'reports'. Curated: 306.
+- One YAML slip (unquoted ': ' in a takeaway) caught by `validate.py` before commit.
