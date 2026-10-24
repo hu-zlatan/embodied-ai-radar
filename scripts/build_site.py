@@ -526,6 +526,7 @@ def build() -> int:
 <div id="home-static">
 <h2>{bi("Topics", "主题")}</h2>
 <div class="grid">{topic_grid}</div>
+<p class="muted">{bi("By robot type:", "按机器人形态：")} {" · ".join(f'<a href="robots/{m["id"]}.html">{bi(m["en"], m["zh"])}</a>' for m in embs)}</p>
 {picks_html}
 {hf_html}
 {rising_html}
@@ -548,6 +549,7 @@ def build() -> int:
     bibnote += (f'<p>{bi("Reuse the whole curated index (CC BY 4.0):", "复用全部精选数据（CC BY 4.0）：")} '
                 f'<a href="../curated.json">curated.json</a> · <a href="../curated.csv" download>curated.csv</a></p>')
     bibnote += f'<p><a href="../venues/index.html">{bi("Browse papers by venue (CoRL, RSS, ICRA, NeurIPS…) →", "按会议/期刊浏览论文（CoRL、RSS、ICRA、NeurIPS…）→")}</a></p>'
+    bibnote += f'<p><a href="../robots/index.html">{bi("Browse papers by robot type (humanoid, quadruped, dexterous hand…) →", "按机器人形态浏览（人形、四足、灵巧手…）→")}</a></p>'
     (OUT / "topics" / "index.html").write_text(page("Topics · Embodied AI Radar", f'<h1>{bi("Topics", "主题")}</h1><ul class="tlist">{tlist}</ul>' + bibnote, "../", desc, "topics/index.html"), encoding="utf-8")
     for t in topics:
         cur = sorted(by_topic[t["id"]], key=lambda e: (not e.get("highlight"), -int(e["year"])))
@@ -629,7 +631,7 @@ def build() -> int:
         latest = '<p class="muted">' + bi("The first intake has not run yet.", "首次收录尚未运行。") + "</p>"
     body = f"""<h1>{bi("Daily arXiv feed", "每日 arXiv 论文")}</h1>
 {lead}
-<p><a href="index.html#search">{bi("Search and filter all of it →", "搜索与筛选 →")}</a> · <a href="#archive">{bi("Earlier days", "往日论文")}</a> · <a href="venues/index.html">{bi("By venue", "按会议/期刊")}</a></p>
+<p><a href="index.html#search">{bi("Search and filter all of it →", "搜索与筛选 →")}</a> · <a href="#archive">{bi("Earlier days", "往日论文")}</a> · <a href="venues/index.html">{bi("By venue", "按会议/期刊")}</a> · <a href="robots/index.html">{bi("By robot type", "按机器人形态")}</a></p>
 {latest}
 {archive("", None)}"""
     (OUT / "feed.html").write_text(page("Daily arXiv feed · Embodied AI Radar", body, "", "New embodied AI and robotics papers from arXiv, every day, tagged by topic.", "feed.html"), encoding="utf-8")
@@ -753,11 +755,49 @@ def build() -> int:
         f'<p class="muted">{vnote}</p><ul class="tlist">{vrows or "<li class=muted>—</li>"}</ul>', "../",
         "Embodied AI and robotics papers grouped by venue: CoRL, RSS, ICRA, IROS, NeurIPS, CVPR and more.", "venues/index.html"), encoding="utf-8")
 
+    # ---- robot-type pages: robots/<id>.html + robots/<id>.xml per embodiment, robots/index.html
+    (OUT / "robots").mkdir()
+    by_emb = {m["id"]: sorted((e for e in entries if m["id"] in e["emb"]),
+                              key=lambda e: (not e.get("highlight"), -int(e["year"]), e["title"])) for m in embs}
+    feed_by_emb = {m["id"]: [p for p in feed if m["id"] in p["emb"]] for m in embs}
+    rnote = bi("Robot types are detected by keyword rules from titles, abstracts and tags, so a few papers may be misfiled.",
+               "机器人形态由标题、摘要和标签中的关键词自动识别，个别论文可能归类有误。")
+    for m in embs:
+        cur, fp = by_emb[m["id"]], feed_by_emb[m["id"]]
+        recent = fp[:TOPIC_FEED_MAX]
+        n_code = sum(1 for e in cur if e.get("code"))
+        tcount = " · ".join(
+            f'<a href="../index.html?topic={t["id"]}&amp;robot={m["id"]}#search">{bi(t["en"], t["zh"])}</a> <span class="muted">({n})</span>'
+            for t in topics if (n := sum(1 for x in cur + fp if t["id"] in (x.get("topics") or []))))
+        body = (f'<p class="muted"><a href="index.html">{bi("Robot types", "机器人形态")}</a> › {bi(m["en"], m["zh"])}</p>'
+                f'<h1>{bi(m["en"], m["zh"])}</h1>'
+                f'<p class="lead">{bi(f"{len(cur)} curated papers, code and datasets ({n_code} with code) and {len(fp)} recent arXiv papers tagged “{m["en"]}”.", f"{len(cur)} 个精选论文、代码与数据集（{n_code} 个附代码），以及 {len(fp)} 篇近期 arXiv 论文，均与「{m["zh"]}」相关。")}</p>'
+                f'<p class="muted">{rnote}</p>'
+                + (f'<p class="muted">{bi("Search by topic:", "按主题搜索：")} {tcount}</p>' if tcount else "")
+                + f'<h2>{bi("Curated", "精选")} <span class="muted">({len(cur)})</span></h2>'
+                f'<div class="cards">{"".join(curated_card(e, tby, "../") for e in cur) or "<p class=muted>—</p>"}</div>'
+                f'<h2>{bi("Recent arXiv papers", "近期 arXiv 论文")} <span class="muted">(<a href="{m["id"]}.xml">{bi("Atom feed", "Atom 订阅")}</a>)</span></h2>'
+                f'<div class="cards">{"".join(feed_card(p, tby, "../") for p in recent) or "<p class=muted>—</p>"}</div>'
+                + (f'<p><a href="../index.html?robot={m["id"]}&amp;src=f#search">{bi(f"All {len(fp)} feed papers in search →", f"在搜索中查看全部 {len(fp)} 篇 →")}</a></p>' if len(fp) > len(recent) else ""))
+        (OUT / "robots" / f"{m['id']}.html").write_text(
+            page(f"{m['en']} papers · {m['zh']} · Embodied AI Radar", body, "../",
+                 f"{m['en']}: curated robot-learning papers, code and datasets plus new arXiv papers every day, with EN/中文 takeaways.",
+                 f"robots/{m['id']}.html",
+                 alt=f'\n<link rel="alternate" type="application/atom+xml" title="{esc(m["en"])} · Embodied AI Radar" href="{m["id"]}.xml">'),
+            encoding="utf-8")
+        (OUT / "robots" / f"{m['id']}.xml").write_text(
+            atom(fp[:100], f"Embodied AI Radar — {m['en']}", f"robots/{m['id']}.xml", today), encoding="utf-8")
+    rrows = "".join(f'<li><a href="{m["id"]}.html">{bi(m["en"], m["zh"])}</a> <span class="muted">({len(by_emb[m["id"]])} + {len(feed_by_emb[m["id"]])})</span></li>' for m in embs)
+    (OUT / "robots" / "index.html").write_text(page("Papers by robot type · Embodied AI Radar",
+        f'<h1>{bi("Papers by robot type", "按机器人形态浏览")}</h1><p class="lead">{bi("Humanoids, quadrupeds, dexterous hands, arms, drones and more. Counts: curated + recent arXiv papers.", "人形、四足、灵巧手、机械臂、无人机等。数字为：精选 + 近期 arXiv 论文。")}</p>'
+        f'<p class="muted">{rnote}</p><ul class="tlist">{rrows}</ul>', "../",
+        "Embodied AI and robot learning papers grouped by robot type: humanoid, quadruped, dexterous hand, robot arm, mobile robot, drone, autonomous driving.", "robots/index.html"), encoding="utf-8")
+
     # ---- 404, robots, sitemap, atom
     (OUT / "404.html").write_text(page("Not found · Embodied AI Radar", f'<h1>404</h1><p><a href="{SITE_URL}">{bi("Back to the radar", "返回首页")}</a></p>', SITE_URL, desc, "404.html"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n")
-    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html", "start.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries] + ["venues/index.html"] + [f"venues/{venue_slug(k)}.html" for k in vkeys]
+    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html", "start.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries] + ["venues/index.html"] + [f"venues/{venue_slug(k)}.html" for k in vkeys] + ["robots/index.html"] + [f"robots/{m['id']}.html" for m in embs]
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"<url><loc>{SITE_URL}{u}</loc><lastmod>{today.isoformat()}</lastmod></url>\n" for u in urls)
