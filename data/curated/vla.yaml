@@ -334,3 +334,35 @@
   tags: [world-action-model, latent-world-model, sim, real]
   takeaway_en: Adds a 257M latent world model to a pretrained VLA so predicted future features condition the action expert, with no pixel generation or video pretraining; reports 98.7% on LIBERO and real-robot gains over π0.5.
   takeaway_zh: 在预训练 VLA 上加一个 2.57 亿参数的潜空间世界模型，用预测的未来表征去条件化动作专家，无需像素生成或大规模视频预训练；报告 LIBERO 成功率 98.7%，真机任务上明显优于 π0.5。
+- title: "MorphAct: Robot Policies Morphing with the Worlds They Act In"
+  type: paper
+  arxiv: "2610.20019"
+  year: 2026
+  org: Shanghai Jiao Tong University
+  code: https://github.com/MINT-SJTU/MorphAct
+  project: https://mint-sjtu.github.io/MorphAct.io/
+  added: 2026-10-24
+  topics: [vla, learning]
+  tags: [lora, contextual-parameters, multi-task, sim, real]
+  takeaway_en: Instead of one fixed set of VLA weights, generates context-dependent low-rank updates for both the vision-language and action modules; reports gains up to 16.3% on LIBERO/Meta-World and up to 14% over π0.5 on real tasks.
+  takeaway_zh: 不再让 VLA 在所有交互情境下共用固定参数，而是按当前情境为视觉语言模块和动作模块生成耦合的低秩参数更新；报告在 LIBERO/Meta-World 上最高提升 16.3%，真机上相对 π0.5 最高提升 14%。
+- title: "CarryOn: A Dual-Loop Harness for Personalized and Reliable Robot Assistance"
+  type: paper
+  arxiv: "2610.21453"
+  year: 2026
+  code: https://github.com/JIA-Lab-research/CarryOn
+  project: https://vincent2311.github.io/Projects/CarryOn/
+  added: 2026-10-24
+  topics: [vla, manipulation]
+  tags: [agentic, harness, personalization, safety, failure-recovery, sim, real]
+  takeaway_en: Wraps a frozen VLA in two loops — one keeps user preferences and scene memory for planning, one blocks hazardous actions and calls recovery skills; reports violations down from 52.6% to 6.1%, recovery up from 13% to 80%.
+  takeaway_zh: 给冻结的 VLA 套上双环框架：规划环保存用户偏好与场景记忆以做个性化任务分解，执行环拦截危险接触并调用可复用的恢复技能；报告安全违规率从 52.6% 降到 6.1%，失败恢复成功率从 13% 提升到 80%。
+- title: "Towards Agentic Robots: Model, Data, Environment, and Harness"
+  type: paper
+  arxiv: "2610.20442"
+  year: 2026
+  project: https://github.com/chonghanqin/Awesome-Agentic-Robots
+  added: 2026-10-24
+  tags: [survey, agentic, awesome-list, world-action-model]
+  takeaway_en: Survey of 'agentic robots' — foundation-model agents that plan, collect data, build environments and recover from errors — organised into 17 categories under model, data, environment and harness; companion paper list.
+  takeaway_zh: 关于"智能体化机器人"的综述：基础模型智能体负责规划、采集与筛选数据、构建环境与测试并自主纠错；把相关研究归为模型、数据、环境、执行框架四大领域下的 17 个类别，附配套论文列表。

@@ -262,3 +262,14 @@
   tags: [sim, dexterous, bimanual, tracking, ppo, human-demos]
   takeaway_en: One two-hand policy (PPO + BC on its own verified successes) tracks retargeted human hand-object motions; ships BiHOI (1,575 sequences, 229 objects). Reports 86.8% on unseen trajectories, 57.3% on new objects.
   takeaway_zh: 用一个双手跟踪策略（PPO 结合对自身成功执行的行为克隆）复现重定向后的人手-物体交互动作，并发布 BiHOI 数据集（1575 段双手序列、229 个物体）。论文报告在未见轨迹上成功率 86.8%、新物体上 57.3%。
+- title: "From VLM Planners to Robotic Agents: Self-Evolving Harnesses for History-Dependent Manipulation"
+  type: paper
+  arxiv: "2610.29560"
+  year: 2026
+  code: https://github.com/StevenKKXS/SERA
+  project: https://stevenkkxs.github.io/sera-webpage/
+  added: 2026-10-24
+  topics: [vla]
+  tags: [agentic, harness, memory, long-horizon, vlm-planner, sim]
+  takeaway_en: SERA turns the high-level VLM into an agent with an editable harness that tracks task progress for a fixed VLA executor, and revises the harness from rollouts; reports 51.4% vs 44.4% overall success on RoboMME.
+  takeaway_zh: SERA 把高层 VLM 规划器做成带可编辑执行框架的智能体，为固定的底层 VLA 记录任务进度与执行反馈，并利用环境回放自动改进框架；报告在 RoboMME 上总体成功率 51.4%，未自我演化时为 44.4%。
