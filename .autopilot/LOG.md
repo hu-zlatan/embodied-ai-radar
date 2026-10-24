@@ -235,3 +235,5 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Picks from `.autopilot/review_queue.json` (CI-fetched abstracts; repos live per repo_stats): MorphAct (SJTU, contextual low-rank VLA params), CarryOn (dual-loop harness for a frozen VLA), Towards Agentic Robots (survey, 126★ list) → vla; SERA (self-evolving harness, RoboMME) → manipulation; ACE-Brain-0.6 (9B grounding model) → perception. One takeaway at 221 chars caught by validate. Curated: 321.
 - Launch kit: updated entry count (300+), HF upvotes and robot-type pages in V2EX/Reddit/HN texts.
 - Measured search index: 711 KB raw / 239 KB gzip at 13 days; projection noted in STATE known issues.
+- verify #76 passed (all 5 picks incl. code/project links); CI green. Dispatched intake to fill BibTeX metadata.
+- End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit refreshed, still waiting; CoRL week Nov 9–12). Next: Mon 10-26 feed + first auto digest W43. End of run 24.
