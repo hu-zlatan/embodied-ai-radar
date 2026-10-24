@@ -68,71 +68,6 @@
    "ai_summary": null
   },
   {
-   "id": "2610.20442",
-   "title": "Towards Agentic Robots: Model, Data, Environment, and Harness",
-   "upvotes": 43,
-   "hf_date": "2026-10-15",
-   "published": "2026-10-14",
-   "topics": [],
-   "authors": [
-    "Chonghan Qin",
-    "Dongming Wu",
-    "Kaituo Feng",
-    "Jiaxu Wang",
-    "Xinlei Yu",
-    "Peiwen Sun",
-    "Yijia Fan",
-    "Xilin He",
-    "Bingao Chen",
-    "Weitong Lian",
-    "Ryan Ji",
-    "Wenqi Ren",
-    "Xiaobin Hu",
-    "Dahua Lin",
-    "Yu-Gang Jiang",
-    "Xiangyu Yue"
-   ],
-   "organization": null,
-   "github": "https://github.com/chonghanqin/Awesome-Agentic-Robots",
-   "project": null,
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Foundation models are driving a paradigm shift in robotic intelligence, moving beyond low-level action prediction to goal-directed orchestration of data collection, model training, task planning, and real-world execution. We characterize this emerging paradigm as an agentic robots, in which agents reason over human instructions, interact with robotic environments, rectify execution errors autonomously, and dynamically adjust operational strategies. Although this field develops fast, current studies are not well connected. Researchers have no consistent view of how to combine different agentic functions into a complete robot system. This paper provides a unified overview of existing research on agentic robots. We first trace the development from robot policies to agentic systems, covering vision-language-action models, world models, and world-action models. We then clarify the definition and scope of agentic robots and organize existing research into seventeen categories across four functional domains: Model, Data, Environment, and Harness. Across these domains, we examine how agents shape model learning and robot decisions, collect and curate robot data, construct worlds, tasks, and tests for learning and evaluation, and organize capabilities for robot use. Finally, we discuss open challenges and outline directions for future research. Looking forward, we hope this work contributes to a clearer understanding of agentic robots and supports new approaches to making them more capable, reliable, and adaptive.",
-   "ai_summary": "This survey unifies research on agentic robots by tracing the evolution from robot policies to integrated systems using vision-language-action models, world models, and structured functional domains."
-  },
-  {
-   "id": "2610.29560",
-   "title": "From VLM Planners to Robotic Agents: Self-Evolving Harnesses for History-Dependent Manipulation",
-   "upvotes": 26,
-   "hf_date": "2026-10-22",
-   "published": "2026-10-22",
-   "topics": [
-    "vla",
-    "manipulation"
-   ],
-   "authors": [
-    "Tingwen Du",
-    "Haoyu Guo",
-    "Hanxue Zhang",
-    "Xuanxu Wang",
-    "Junting Dong",
-    "Chao Gao",
-    "Mingfei Han",
-    "Tao Lu",
-    "Mulin Yu",
-    "Chunhua Shen",
-    "Xiaojun Chang",
-    "Zhihui Li"
-   ],
-   "organization": null,
-   "github": "https://github.com/StevenKKXS/SERA",
-   "project": "https://stevenkkxs.github.io/sera-webpage/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Vision-language-action (VLA) models achieve strong performance across embodied manipulation tasks by unifying visual understanding, language conditioning, and action generation. However, long-horizon tasks can involve non-Markovian dependencies: successful decisions may require retaining task progress and past interaction outcomes, while partial observability and execution errors compound over time. Existing work has begun to address these challenges by augmenting foundation-model policies with memory and by introducing hierarchical architectures that separate high-level planning from low-level execution. We organize the high-level VLM as a robotic agent through an editable harness to maintain task context and improve planning through execution experience. We instantiate this approach as SERA (Self-Evolving Robotic Agent), with a fixed VLA executor providing low-level control. The harness maintains and updates task context using observations and execution feedback to guide subsequent planning. Self-evolution uses environment rollouts to propose and evaluate harness revisions, with the selected configuration fixed before held-out testing. On RoboMME, SERA achieves 51.38% overall success with autonomous selection, compared with 44.38% without self-evolution. Our exploration suggests that agentic planning is a promising direction for history-dependent robotic manipulation.",
-   "ai_summary": "SERA improves long-horizon robotic manipulation by using an editable harness to maintain task context and evolve planning through execution feedback, paired with a fixed low-level VLA executor."
-  },
-  {
    "id": "2610.28632",
    "title": "Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs",
    "upvotes": 26,
@@ -246,7 +181,7 @@
   {
    "id": "2610.30136",
    "title": "Agentic World Action Models",
-   "upvotes": 21,
+   "upvotes": 22,
    "hf_date": "2026-10-22",
    "published": "2026-10-22",
    "topics": [
@@ -281,35 +216,6 @@
    "ai_summary": null
   },
   {
-   "id": "2610.20019",
-   "title": "MorphAct: Robot Policies Morphing with the Worlds They Act In",
-   "upvotes": 16,
-   "hf_date": "2026-10-19",
-   "published": "2026-10-14",
-   "topics": [
-    "learning"
-   ],
-   "authors": [
-    "Ziyan Liu",
-    "Jiting Liu",
-    "Weihong Zhong",
-    "Wenda Yu",
-    "Yeqiu Chen",
-    "Jason Li",
-    "Xiaojiang Peng",
-    "Shuyuan Hu",
-    "Kai Wang",
-    "Bo Zhao"
-   ],
-   "organization": "Shanghai Jiao Tong University",
-   "github": "https://github.com/MINT-SJTU/MorphAct",
-   "project": "https://mint-sjtu.github.io/MorphAct.io/",
-   "arxiv_code": [],
-   "comment": "25 pages. Project page: https://mint-sjtu.github.io/MorphAct.io/",
-   "abstract": "Progress toward general intelligence in the physical world requires scaling robot learning across diverse environments and interactions. However, existing robot policies use shared parameters that remain fixed across interaction contexts. When different operations favor competing parameter adjustments, fitting their mixture can leave individual operations insufficiently adapted. Our atomic-task diagnostics reveal competing update directions in both vision-language and action parameters, with source-improving updates increasing loss on other tasks. This motivates MorphAct, a contextual parameterization framework that dynamically adjusts robot policy parameters as interaction contexts change. Two coupled generators produce context-dependent low-rank updates for the vision-language and action modules. Their coupling follows the policy's computational dependency: vision-language updates shape the representations that condition action-side parameter generation. Both generators are trained jointly through the native action objective, without operation labels or expert-adapter targets. MorphAct improves performance across three VLA backbones on LIBERO and Meta-World, with gains of up to 16.30%. In real-world evaluation, it achieves gains of up to 14% over π_{0.5}. Ablations support the benefits of contextual parameter generation and representation coupling.",
-   "ai_summary": "MorphAct dynamically adapts robot policy parameters via coupled low-rank generators to resolve conflicting updates across interaction contexts, improving vision-language-action performance."
-  },
-  {
    "id": "2610.20609",
    "title": "SafeDriveVLA: Navigation-Conditioned World Model Dreaming for Conflict-Aware End-to-End Autonomous Driving",
    "upvotes": 16,
@@ -338,68 +244,6 @@
    "comment": "Accepted at CoRL 2026. Project page: https://safedrive-vla.github.io/SafeDriveVLA/",
    "abstract": "Vision-Language-Action (VLA) models are gaining attention in autonomous driving, inheriting commonsense priors from large language models (LLMs) and widening the navigation interface from a fixed command set to free-form natural-language instructions. However, this open-ended interface exposes a new vulnerability surface: an inattentive driver may issue instructions that are unsafe given the current scene, and a malicious user may issue dangerous ones on purpose. We present the first benchmark suite that evaluates navigation following and conflict awareness together, along with adversarial robustness. Existing VLAs fall short on both: SimLingo completes no language-instructed lane change in closed loop, and all models degrade sharply under conflicting signals. We propose SafeDriveVLA, the first driving VLA that (1) explicitly predicts a three-level navigation-compliance mode to decouple conflict reasoning from action generation, and (2) uses navigation-conditioned world model dreaming to inform this prediction. Unlike prior world models that roll out expert or planned actions, ours dreams of strictly following the navigation signal, showing when following is safe. SafeDriveVLA reaches 88.16 Driving Score (DS) and 68.64% Success Rate (SR) on Bench2Drive, lifts closed-loop language following by 49.3% and reduces collisions under unsafe instructions from 60 to 38 compared to the best SimLingo variant. Video demonstrations are available on our project page.",
    "ai_summary": "SafeDriveVLA improves autonomous driving by predicting navigation compliance and using world-model dreaming to avoid unsafe instructions, outperforming existing vision-language-action models."
-  },
-  {
-   "id": "2610.27040",
-   "title": "ACE-Brain-0.6: Scaling Spatial Grounding for Physical Foundation Models",
-   "upvotes": 13,
-   "hf_date": "2026-10-22",
-   "published": "2026-10-21",
-   "topics": [
-    "manipulation"
-   ],
-   "authors": [
-    "Yinhe Wang",
-    "Tao Tao",
-    "Zexin He",
-    "Shuang Luo",
-    "Wei Mao",
-    "Yao Mu",
-    "Feng Pan",
-    "Hanming Deng",
-    "Lewei Lu",
-    "Zhi Hou",
-    "Xingang Pan",
-    "Dahua Lin",
-    "Dacheng Tao",
-    "Xiaogang Wang"
-   ],
-   "organization": "ACE Robotics",
-   "github": "https://github.com/DAXIAORobotics/ACE-Brain-0.6",
-   "project": "https://daxiaorobotics.github.io/ACE-Brain-0.6/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "General-purpose multimodal models, including GPT-6 Astra and Claude Opus 5.5, demonstrate broad capabilities in embodied manipulation. Our analysis indicates that this generality is accompanied by strong spatial perception, as Astra can determine where to interact with task-relevant entities amid visual distractors. Because spatial perception connects high-level reasoning to the physical scene, we investigate scaling visual grounding to strengthen the perceptual foundation of general embodied operation. We develop a unified data pipeline that combines robot manipulation recordings with complementary visual data from diverse sources. After automatically annotating the robot recordings, the pipeline converts the collected data into verifiable grounding supervision. Fine-tuning Qwen3.5-9B on approximately 1.5 million samples produced by this pipeline yields ACE-Brain-0.6. The model outperforms GPT-6 Astra on four of seven public grounding benchmarks, with an overall average score of 75.41 compared with Astra's 73.68. Under a fixed Qwen3.5-9B fine-tuning setup, aggregate grounding performance improves steadily as successive data releases expand the training collection to cover a broader range of grounding scenarios. These results show that scaling verifiable grounding supervision from diverse sources can strengthen the spatial perception of an open 9B model for general embodied operation.",
-   "ai_summary": "Scaling diverse verifiable visual grounding data improves spatial perception and embodied manipulation performance in open multimodal models."
-  },
-  {
-   "id": "2610.21453",
-   "title": "CarryOn: A Dual-Loop Harness for Personalized and Reliable Robot Assistance",
-   "upvotes": 13,
-   "hf_date": "2026-10-16",
-   "published": "2026-10-15",
-   "topics": [
-    "vla"
-   ],
-   "authors": [
-    "Zixuan Wang",
-    "Yuqi Liu",
-    "Yuxin Chen",
-    "Sengqiao Yang",
-    "Jinhui Ye",
-    "Pengguang Chen",
-    "Changsheng Lu",
-    "Shu Liu",
-    "Bei Yu",
-    "Jiaya Jia"
-   ],
-   "organization": null,
-   "github": "https://github.com/JIA-Lab-research/CarryOn",
-   "project": "https://vincent2311.github.io/Projects/CarryOn/",
-   "arxiv_code": [],
-   "comment": "Project page: https://vincent2311.github.io/Projects/CarryOn/",
-   "abstract": "While generalist vision-language-action (VLA) models have enabled diverse open-world manipulation, real-world robotic assistance requires two critical capabilities they currently lack: personalization and reliable execution. First, executing an instruction like \"make me a sandwich\" requires grounding subtask decomposition in persistent user preferences rather than relying on a single generic solution. Second, reliable deployment demands explainable safety assurance that proactively prevents hazards and gracefully recovers from occasional physical failures. To address these gaps, we present CarryOn, a dual-loop harness designed to augment a frozen VLA policy. The planning loop maintains persistent user-level and scene-level context that is continually grounded against new observations and revised through interaction, enabling personalized task selection and execution grounding across conversations and changing scenes. The execution loop actively supervises policy rollouts, shielding actions from predicted hazardous contact. When execution fails, the system invokes reusable control-based recovery skills that restore task progress and are refined through reflection on earlier failures. On a real robot and in simulation, CarryOn dispatches preference-consistent subtasks across users and scenes, reduces the violation rate of an already safety-finetuned VLA from 52.6% to 6.1%, and increases recovery success from 13% to 80% when refined skills are reused.",
-   "ai_summary": "CarryOn enhances frozen vision-language-action policies with persistent personalized planning and supervised execution with recovery skills to improve safety and adaptability."
   }
  ]
 }
