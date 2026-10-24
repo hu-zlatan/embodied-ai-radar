@@ -2,36 +2,6 @@
  "updated": "2026-10-24",
  "papers": [
   {
-   "id": "2610.28698",
-   "title": "Scaling in Games: Continued Pre-Training For Embodied Agents In Diverse Virtual Worlds",
-   "upvotes": 68,
-   "hf_date": "2026-10-22",
-   "published": "2026-10-22",
-   "topics": [
-    "navigation"
-   ],
-   "authors": [
-    "Kuan Zhang",
-    "Yukun Chen",
-    "Zhihao Yang",
-    "Yue Su",
-    "Xiangnan Wu",
-    "Zirong Chen",
-    "Run Luo",
-    "Jinkun Hou",
-    "Tao Tan",
-    "Yinhe Zheng",
-    "Yiming Li"
-   ],
-   "organization": "Tsinghua Spatial Intelligence Lab",
-   "github": "https://github.com/THUSI-Lab/GameScaling",
-   "project": "https://gamescaling.github.io",
-   "arxiv_code": [],
-   "comment": "Project page: https://gamescaling.github.io ; Model: https://huggingface.co/THUSI-Lab/GameScaling",
-   "abstract": "Scaling data, diversity and model capacity has improved embodied learning in physical environments, where diverse experiences remain grounded in shared physical laws. Whether these gains extend to virtual worlds with different visual styles, dynamics, controls, and objectives remains unclear. We investigate this question through a controlled study of continued pre-training (CPT) across three axes: data volume, diversity, and model size. Our 120 training configurations span four model sizes from 0.8B to 27B, six data budgets from 50 to 1,600 hours, and five mixtures ranging from Minecraft-only data to diverse multi-world corpora. We assess performance and generalization using three-level validation losses and gameplay benchmarks from in-corpus worlds to unseen worlds. Our results show: (1) more data improves in-corpus performance, diversity improves transfer to related worlds with limited gains in distant worlds, and model size improves data efficiency but generalizes worse to distant worlds under single-world training; (2) we observe an early interface phase with broad cross-world benefits and a later world phase with gains narrowed to in-corpus and related worlds, and fit an empirical scaling law relating validation loss to data volume, diversity and model size; and (3) our models are competitive with Minecraft specialists and frontier models in 3D worlds, and perform best in real-time settings. However, the limits of imitation and persistent gaps in distant worlds suggest that building generalist embodied agents requires richer training stages beyond continued pre-training.",
-   "ai_summary": "Continued pre-training across data scale, diversity, and model size improves embodied learning in virtual worlds but reveals limits in distant-world generalization, motivating richer training beyond imitation."
-  },
-  {
    "id": "2610.19366",
    "title": "Seeing, Maintaining, and Learning: The Evolution of Multimodal Agent Memory",
    "upvotes": 56,
@@ -131,85 +101,6 @@
    "ai_summary": "This survey unifies research on agentic robots by tracing the evolution from robot policies to integrated systems using vision-language-action models, world models, and structured functional domains."
   },
   {
-   "id": "2610.18568",
-   "title": "WAVE-0: Bridging VLA Policies and WAMs with Lightweight Latent Future Prediction",
-   "upvotes": 41,
-   "hf_date": "2026-10-14",
-   "published": "2026-10-13",
-   "topics": [
-    "vla",
-    "world-models"
-   ],
-   "authors": [
-    "Haomin Wang",
-    "Anqiong Ji",
-    "Ke Wang",
-    "Zhongshan Liu",
-    "Ru Ying",
-    "Ran Zheng",
-    "Zhipeng Zhang"
-   ],
-   "organization": null,
-   "github": "https://github.com/AutoLab-SAI-SJTU/WAVE-0",
-   "project": "https://hmwang2002.github.io/release/wave0/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Vision-language-action (VLA) policies excel at generalist robotic manipulation but generate actions without explicitly modeling their environmental consequences. World action models (WAMs) incorporate future prediction, yet most rely on costly video generation, while latent alternatives either use predicted futures only as auxiliary targets or infer latent actions from suboptimal visual transitions through costly large-scale video pretraining. We introduce WAVE-0 (World-model-Augmented VLA Execution), a framework that bridges VLAs and WAMs through a lightweight latent world model. By connecting the semantic understanding of pretrained VLAs with explicit future prediction, WAVE-0 allows anticipated action consequences to directly guide action generation. Built on a pretrained VLA, its 257M world model translates VLM-generated latent action plans into predicted future representations that condition the action expert, unifying latent planning, future prediction, and action generation. The world model is trained directly on ground-truth robot actions with a counterfactual ranking objective, requiring neither pixel reconstruction nor large-scale video pretraining. WAVE-0 achieves success rates of 91.47% on RoboTwin 2.0 and 98.7% on LIBERO, along with 88.0%, 61.4%, and 75.0% on LIBERO-Plus, LIBERO-Pro, and LIBERO-Para, respectively. On real-world tasks, it improves the success rate of π_{0.5} from 38.3% to 73.3%. These results demonstrate strong manipulation performance and generalization across diverse distribution shifts.",
-   "ai_summary": "WAVE-0 integrates a lightweight latent world model with pretrained vision-language-action policies to guide robotic manipulation via predicted future consequences, achieving high success rates without video pretraining or pixel reconstruction."
-  },
-  {
-   "id": "2610.28589",
-   "title": "AgenticRoboRL: Bringing Coding-Agent Post-Training to Agentic Robotics",
-   "upvotes": 40,
-   "hf_date": "2026-10-22",
-   "published": "2026-10-21",
-   "topics": [
-    "vla",
-    "learning"
-   ],
-   "authors": [
-    "Xinxin Liu",
-    "Bingxin Xu",
-    "Wenrui Bao",
-    "Ming Li",
-    "Wentao Bao",
-    "Chen Chen",
-    "Yuzhang Shang"
-   ],
-   "organization": "University of Central Florida",
-   "github": "https://github.com/xinxinliu-ai/AgenticRoboRL",
-   "project": "https://xinxinliu-ai.github.io/AgenticRoboRL/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Agentic robotics systems combine planners with robot harnesses to perform complex manipulation tasks. Recent work improves these systems through better harnesses and external memory, but relies on powerful closed-source models as planners and does not improve the planners' own capabilities. In contrast, coding agents have improved substantially by post-training the model itself. We therefore investigate whether post-training can also improve robot planners. However, applying it across robot harnesses requires accommodating different execution mechanisms, including VLA skill invocation and control-code generation. To this end, we introduce AgenticRoboRL, a framework for post-training robot planners across different harnesses. The training recipe combines supervised fine-tuning with multi-turn reinforcement learning. To accommodate different execution mechanisms, harness-specific adapters connect recorded planner interactions with task outcomes, enabling a common RL training pipeline while keeping execution components fixed. On LIBERO-PRO, AgenticRoboRL raises the success rate of a 9B-parameter planner from 18.1% to 71.0% without external memory, approaching the 72.1% achieved by Codex (GPT-5.5) with external memory. These results demonstrate post-training as an effective approach for improving robot planners. We will release the framework and trained planner checkpoints.",
-   "ai_summary": "AgenticRoboRL improves robot planners via supervised fine-tuning and multi-turn reinforcement learning across diverse harnesses, significantly boosting success rates without external memory."
-  },
-  {
-   "id": "2610.30320",
-   "title": "Self-Distilling Future Video Representations for World Action Models",
-   "upvotes": 30,
-   "hf_date": "2026-10-23",
-   "published": "2026-10-23",
-   "topics": [
-    "world-models"
-   ],
-   "authors": [
-    "Huiwon Jang",
-    "Suhyeok Jang",
-    "Hyeonmo Kang",
-    "Seungku Kim",
-    "Jinwoo Shin",
-    "Sihyun Yu"
-   ],
-   "organization": "KAIST AI",
-   "github": "https://github.com/suhyeok-jang/FRED",
-   "project": "https://huiwon-jang.github.io/FRED/",
-   "arxiv_code": [],
-   "comment": "27 pages; Project page: https://huiwon-jang.github.io/FRED/",
-   "abstract": "World Action Models (WAMs) have emerged as a promising approach to learning generalist robot policies using rich spatiotemporal priors from pre-trained video diffusion models. A recent line of WAMs improves inference efficiency by conditioning a separate action decoder on intermediate future video representations extracted from a single denoising step, avoiding costly iterative denoising required for video generation. This design makes action prediction depend directly on the quality of these future representations. In this paper, we introduce Future REpresentation learning via self-Distillation with temporal context (FRED), a framework that trains WAMs to improve the quality of future video representations from noise in a single denoising step. Specifically, FRED uses self-distillation to predict future representations from noise, using representations extracted from ground-truth future observations as targets. We further condition the video model on historical observations, providing temporal context for predicting future representations better. Across diverse real-world manipulation scenarios, FRED consistently outperforms competing WAMs. It achieves particularly large gains on long-horizon and out-of-domain tasks under zero-shot environment generalization, and substantially improves human-to-robot skill transfer, reaching 50.0% task success on tasks absent from robot training data and demonstrated only in human videos, compared with 19.4% for the best competing WAM.",
-   "ai_summary": "FRED improves single-step future video representations in world action models through self-distillation and temporal conditioning, boosting robot policy performance on long-horizon and unseen tasks."
-  },
-  {
    "id": "2610.29560",
    "title": "From VLM Planners to Robotic Agents: Self-Evolving Harnesses for History-Dependent Manipulation",
    "upvotes": 26,
@@ -287,39 +178,6 @@
    "comment": "20 pages, 5 figures, 7 tables",
    "abstract": "3D part assembly aims to reconstruct a complete shape from a set of unassembled parts by predicting a rigid SE(3) transformation for each part. Because the placement of a part is rarely determined by its own geometry, the task demands reasoning over the entire part set, and existing methods, which rely on pairwise relations or iterative generation and verification, scale poorly to objects with many parts. We present LLM2R, which casts part assembly as sequence modeling with a pretrained decoder-only large language model (LLM): a Point-BERT encoder and a Q-Former compress each part into a block of geometric tokens, the blocks of all parts are concatenated, and a causal LLM adapted with Low-Rank Adaptation (LoRA) processes the sequence in one forward pass. Causal attention, however, lets the hidden states of a part observe only the parts that precede it. LLM2R therefore appends a block of learnable summary tokens after the last part: these tokens follow every part, so their states aggregate the whole assembly at a constant token cost, and a part-aware pose head fuses each part's states with them before predicting its rotation and translation. One architecture thus handles semantic and geometric assembly and predicts all poses in a single non-autoregressive pass. LLM2R achieves the highest part accuracy and success rate on all three PartNet categories, the best rotation error, translation error, and part accuracy on PartNeXt, and the lowest translation error and fastest inference on Breaking Bad, where only a fracture-specialized method is more accurate. Its advantage grows with the number of parts: at 100 parts it exceeds GARF by 33.5 points in part accuracy on Breaking Bad and Assembler by 29.1 points on PartNet, and it transfers zero-shot to unseen categories with more than 16 points higher part accuracy than the strongest of three baselines.",
    "ai_summary": "LLM2R treats 3D part assembly as sequence modeling with a pretrained decoder-only LLM, using geometric tokens and learnable summary tokens to predict all part poses in a single pass with improved scalability and accuracy."
-  },
-  {
-   "id": "2610.16782",
-   "title": "LIBERO-Industry: Benchmarking Robotic Manipulation under Industrial Process Constraints",
-   "upvotes": 23,
-   "hf_date": "2026-10-20",
-   "published": "2026-10-12",
-   "topics": [
-    "manipulation",
-    "learning",
-    "datasets"
-   ],
-   "authors": [
-    "Ming Shin Cindy Sung",
-    "Duan Leijiahao",
-    "Haoxiang Wang",
-    "Boning Tan",
-    "Liangna Fu",
-    "Chao Tan",
-    "Yafu Li",
-    "Yulong Chen",
-    "Chaoqun Wan",
-    "Zhen Huang",
-    "Shuxian Liang",
-    "Xian-Sheng Hua"
-   ],
-   "organization": "Physical AI Group, Institute of AI for Engineering (IAIE), Tongji University",
-   "github": "https://github.com/IAIE-PhysicalAI/LIBERO-Industry",
-   "project": "https://iaie-physicalai.github.io/LIBERO-Industry/",
-   "arxiv_code": [],
-   "comment": "38 pages, 14 figures, 20 tables, including appendices. Project website: https://IAIE-PhysicalAI.github.io/LIBERO-Industry/",
-   "abstract": "Industrial manipulation in flexible manufacturing, e.g., high-mix, low-volume (HMLV) electronics assembly, requires robot policies to adapt to changing products and production conditions. Such settings impose industrial process constraints, including product variants, moving material flows, finite execution windows, and tight geometric tolerances. However, existing evaluation frameworks do not systematically capture these constraints when assessing generalist robot policies. To address this gap, we introduce LIBERO-Industry, a novel benchmark built on the widely used robot learning benchmark LIBERO, that translates the aforementioned industrial constraints into controllable task conditions and measurable success criteria. Specifically, LIBERO-Industry comprises three classic task scenarios: Static-to-Dynamic (S2D) loading, Dynamic-to-Static (D2S) unloading, and Dynamic-to-Dynamic (D2D) transfer. The suites contain 216 tasks in total that systematically vary object geometry, conveyor speed, interaction-window duration, and geometric acceptance region size. Extensive experiments across five generalist robot policies (including vision-language-action models and world-action models) show that performance progressively degrades as industrial constraints are introduced and combined. Under a shared fine-tuning and evaluation protocol, the LIBERO-Industry co-training condition achieved higher observed target-transfer completion than the original-LIBERO condition.",
-   "ai_summary": "LIBERO-Industry introduces a benchmark translating industrial manufacturing constraints into controllable robot learning tasks to evaluate generalist policies under realistic production conditions."
   },
   {
    "id": "2610.30108",
