@@ -130,7 +130,7 @@ def main() -> int:
               "_Keyword-matched on title and abstract; a paper can count for several types. 按标题与摘要关键词匹配，一篇论文可计入多个类型。_", ""]
         for m in embs:
             n = sum(1 for p in feed if m["id"] in classify(p.get("abstract", ""), embs, title=p.get("title", ""), threshold=1))
-            L.append(f"- {m['en']} · {m['zh']}: **{n}**")
+            L.append(f"- [{m['en']} · {m['zh']}](https://hu-zlatan.github.io/embodied-ai-radar/robots/{m['id']}.html): **{n}**")
     L += ["", "## New papers with code · 本周附代码的新论文", ""]
     for t in topics:
         ps = [p for p in feed if t["id"] in p.get("topics", []) and p.get("code")][:PER_TOPIC]
