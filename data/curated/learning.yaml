@@ -245,3 +245,14 @@
   tags: [real, fleet-learning, deployment, failure-retrieval]
   takeaway_en: Deployed robots pool their runs; failures retrieve matching successful segments from the fleet buffer to fine-tune on, with no new demos. Reports 93–99% on five real tasks; 96 robots lift phone packing 79% → 98%.
   takeaway_zh: 部署中的机器人共享执行经验：用失败片段在机群经验库中检索相似的成功片段来微调策略，无需新增示教或人工纠正。论文报告五个真机任务成功率 93–99%，96 台机器人把手机装盒任务从 79% 提升到 98%。
+- title: "ACCRUE: Continual Off-Policy Reinforcement Learning for Robot Foundation Models"
+  type: paper
+  arxiv: "2610.18596"
+  year: 2026
+  org: NVIDIA, KAIST
+  project: https://accrue-rl.github.io
+  added: 2026-10-24
+  topics: [vla, manipulation]
+  tags: [real, sim, continual-learning, off-policy-rl, rl-finetuning, assembly]
+  takeaway_en: Continual off-policy RL for VLAs — small actor/critic networks carry over between tasks, distilled on a few kept episodes to avoid forgetting; reports 31–68.5% less real-robot time on new assembly tasks.
+  takeaway_zh: 面向 VLA 的持续离策略强化学习：轻量 actor/critic 在任务间延续，用少量保留的旧任务轨迹做蒸馏以防遗忘。论文报告新的接触式装配任务所需真机训练时间减少 31–68.5%，旧任务几乎不遗忘。
