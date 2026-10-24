@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-24 ~05:20 UTC, run 21 (end)._
+_Last updated: 2026-10-24 ~11:10 UTC, run 22 (end)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (309 entries, EN/ZH takeaways; 31 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (311 entries, EN/ZH takeaways; 33 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -22,6 +22,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - **Chinese search** (run 17): `app.js` has a ~100-term ZH→EN dictionary (`ZH`); Chinese queries match English titles/abstracts (unspaced queries split greedily into known terms, ANDed; 机器人/具身 dropped when something more specific is present). Add terms there when users search for something that misses.
 - **Venue pages** (run 18): `venues/<slug>.html` per venue+year with ≥3 papers (curated `venue:` + feed `venue_of()`, feed papers already curated are dropped), `venues/index.html`; venue badges on cards link there; linked from feed page, topics page, sitemap, READMEs, digest 'Accepted at venues'. 16 pages at launch; CoRL 2026 = 36 papers. Search results link them too (index.json `venues` map → app.js `venueBadge`).
 - **HF upvotes** (run 19): `scripts/hf_papers.py` (best-effort step in `repo-stats.yml`) reads https://huggingface.co/api/daily_papers?date= for the last 21 days, keeps only our arXiv IDs → `data/hf_papers.json` (`{id: {upvotes, date}}`, kept 60 days, failed days keep old values). '▲ N HF' links on feed/curated cards and search results, `?sort=hf`, home 'Upvoted on Hugging Face' (last 14 days, top 8), digest section. Hidden when there is no data.
+- **Robot-type pages** (run 22): `robots/<emb>.html` per entry of `data/embodiments.yaml` (curated entries by computed `emb`, newest 40 auto-tagged feed papers, per-topic search links) + Atom `robots/<emb>.xml` + `robots/index.html`; linked from home (row under Topics), feed page, topics index, READMEs, digest robot-type counts, sitemap.
 - Issue forms: `.github/ISSUE_TEMPLATE/` (suggest an entry / report a mistake, bilingual; contact links to site + Discussions). Footer link `/issues/new` opens the chooser.
 - License: `LICENSE` = MIT (GitHub detects it), data terms in `LICENSE-DATA.md`.
 - Verification: all curated arXiv IDs + links checked by `verify.yml` (since run 8: HTTP 4xx fails; network errors/5xx are retried once and shown as ⚠️ warnings, not failures) (run 2: 10 perception anchors passed). Re-check the latest verify run at the start of each run.
@@ -45,6 +46,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 22: picks HandsOn (2610.26765; Tsinghua C3I, code) and RoboValue (2610.26663; code + project) from the HF queue. Still unreviewed (facts not reachable this run): WAVE-0 2610.18568, AgenticRoboRL 2610.28589, FRED 2610.30320 (project page https://huiwon-jang.github.io/FRED/), LIBERO-Industry 2610.16782 (project page). Higher-upvote uncurated: 'Scaling in Games' 2610.28698 (63), agent-memory survey 2610.19366 (56, probably off-scope). Ideas: lab/org pages (needs normalised `org` field first).
 
 - Run 21: HF-queue picks ACCRUE (2610.18596; NVIDIA/KAIST, project page only), λ0 (2610.18950; Alibaba Lambda-humanoid, code openlambda), EgoExplorer (2610.18872; InternRobotics, repo + guidelines). Still unreviewed: WAVE-0 2610.18568, AgenticRoboRL 2610.28589, FRED 2610.30320 (WAM), RoboValue 2610.26663, LIBERO-Industry 2610.16782, HandsOn 2610.26765 — search engines did not surface their arXiv/project pages this run, and stored abstracts are truncated, so they wait for a run where facts can be checked. Surveys 'Toward Recursive Self-Improvement in Physical AI' (2610.29677) and 'Towards Agentic Robots' (2610.20442) are candidates for a survey slot (run 21 added 3 anchor surveys to vla.yaml, tagged `survey`, paper lists linked as `project:` rather than `code:` so they don't count as code).
 

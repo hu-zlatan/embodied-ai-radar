@@ -212,3 +212,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Survey anchors in vla.yaml: A Survey on VLA Models for Embodied AI (2405.14093, Awesome-VLA list), Foundation Models in Robotics (2312.07843, IJRR 2024), Aligning Cyber Space with Physical World (2407.06886, HCPLab-SYSU list). Titles checked on live arXiv abs pages. Paper lists linked as project, not code. Curated: 309.
 - verify #72 and #73 passed; CI/Pages green. Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting; CoRL week Nov 9–12 is a good moment). Next: Mon 10-26 feed + first auto digest W43. End of run 21.
+
+## 2026-10-24 — run 22 (~10:40 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs, 0 stars / 0 forks. Saturday: no new arXiv days until Mon 10-26. No add_repo tool this session; clone was detached → `main` reset to `origin/main`.
+- Picks from the HF-upvote queue: HandsOn (Tsinghua/BUPT/NatureWill/PKU dexterous sim benchmark; code TsinghuaC3I/HandsOn) and RoboValue (value-model benchmark; code + project page) → datasets.yaml. Facts from stored arXiv abstracts, AI Weekly / explainx summaries and GitHub search; results phrased as 'reports'. Project pages for FRED and LIBERO-Industry could not be fetched (permission not granted in an unattended run). Curated: 311.
+- **Robot-type pages** `robots/<type>.html` + Atom feeds + index (8 types; humanoid: 32 curated + 60 feed). Linked from home, feed, topics index, READMEs, digest, sitemap. Tested: 0 broken internal links, headless at 390 px (no JS errors, no horizontal scroll). Digest robot-type counts now link to them (tested by generating W43 locally, not committed).
