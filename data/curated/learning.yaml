@@ -256,3 +256,26 @@
   tags: [real, sim, continual-learning, off-policy-rl, rl-finetuning, assembly]
   takeaway_en: Continual off-policy RL for VLAs — small actor/critic networks carry over between tasks, distilled on a few kept episodes to avoid forgetting; reports 31–68.5% less real-robot time on new assembly tasks.
   takeaway_zh: 面向 VLA 的持续离策略强化学习：轻量 actor/critic 在任务间延续，用少量保留的旧任务轨迹做蒸馏以防遗忘。论文报告新的接触式装配任务所需真机训练时间减少 31–68.5%，旧任务几乎不遗忘。
+- title: "AgenticRoboRL: Bringing Coding-Agent Post-Training to Agentic Robotics"
+  type: paper
+  arxiv: "2610.28589"
+  year: 2026
+  org: University of Central Florida
+  project: https://xinxinliu-ai.github.io/AgenticRoboRL/
+  added: 2026-10-24
+  topics: [learning, vla]
+  tags: [llm-planner, reinforcement-learning, agentic, sim]
+  takeaway_en: Post-trains an open 9B robot planner (SFT + multi-turn RL) across harnesses that call VLA skills or write control code; reports LIBERO-PRO success rising from 18.1% to 71.0% without external memory.
+  takeaway_zh: 像训练编程智能体一样对 9B 开源机器人规划器做后训练（SFT + 多轮强化学习），适配调用 VLA 技能和生成控制代码两类执行框架；报告在 LIBERO-PRO 上无外部记忆成功率从 18.1% 提升到 71.0%。
+- title: "Scaling in Games: Continued Pre-Training For Embodied Agents In Diverse Virtual Worlds"
+  type: paper
+  arxiv: "2610.28698"
+  year: 2026
+  org: Tsinghua Spatial Intelligence Lab
+  code: https://github.com/THUSI-Lab/GameScaling
+  project: https://gamescaling.github.io
+  added: 2026-10-24
+  topics: [learning]
+  tags: [scaling-law, games, virtual-worlds, continued-pretraining, sim]
+  takeaway_en: "Continued pre-training study for game-playing agents: 120 runs over 0.8B–27B models, 50–1,600 h of data and multi-world mixes; reports diversity aids transfer to related worlds, little to distant ones."
+  takeaway_zh: 针对游戏中的具身智能体做持续预训练的对照研究：120 组配置覆盖 0.8B–27B 模型、50–1600 小时数据和多世界混合；报告数据多样性有助于迁移到相近世界，对差异大的世界帮助有限。
