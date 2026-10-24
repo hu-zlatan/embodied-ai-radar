@@ -220,3 +220,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - **Robot-type pages** `robots/<type>.html` + Atom feeds + index (8 types; humanoid: 32 curated + 60 feed). Linked from home, feed, topics index, READMEs, digest, sitemap. Tested: 0 broken internal links, headless at 390 px (no JS errors, no horizontal scroll). Digest robot-type counts now link to them (tested by generating W43 locally, not committed).
 - verify #74 passed (both picks incl. code/project links); CI and Pages #298 green. Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting; CoRL week Nov 9–12). Next: Mon 10-26 feed + first auto digest W43. End of run 22.
+
+## 2026-10-24 — run 23 (~16:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs, 0 stars / 0 forks. Saturday: no new arXiv days until Mon 10-26. No add_repo tool; clone was detached → `main` reset to `origin/main`. Candidate picks (WAVE-0, FRED, …) still not findable via WebSearch, HF pages need approval nobody can give in a scheduled run.
+- **HF links + review queue**: `hf_papers.py` keeps HF `githubRepo`/`projectPage` (sanitised), `merge_links()` fills missing feed code/project links (site, digest, repo_stats 404 check); writes `.autopilot/review_queue.json` with full abstracts for uncurated upvoted papers. Workflow step order swapped (HF first); workflow push accepted. Tested with a mocked fetch (failed day keeps old values, bad URLs dropped, existing arXiv code links win). First real run: 29/37 papers with GitHub links, queue of 18.
+- Picks from the queue (facts = CI-fetched abstracts + repos confirmed live by repo_stats): WAVE-0 → vla, FRED → world-models, LIBERO-Industry → datasets, AgenticRoboRL + Scaling in Games → learning. One YAML colon slip caught by validate. Curated: 316.
