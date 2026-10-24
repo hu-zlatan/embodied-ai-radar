@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-24 ~05:10 UTC, run 21._
+_Last updated: 2026-10-24 ~05:20 UTC, run 21 (end)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (306 entries, EN/ZH takeaways; 31 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (309 entries, EN/ZH takeaways; 31 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -46,7 +46,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Backlog
 
-- Run 21: HF-queue picks ACCRUE (2610.18596; NVIDIA/KAIST, project page only), λ0 (2610.18950; Alibaba Lambda-humanoid, code openlambda), EgoExplorer (2610.18872; InternRobotics, repo + guidelines). Still unreviewed: WAVE-0 2610.18568, AgenticRoboRL 2610.28589, FRED 2610.30320 (WAM), RoboValue 2610.26663, LIBERO-Industry 2610.16782, HandsOn 2610.26765 — search engines did not surface their arXiv/project pages this run, and stored abstracts are truncated, so they wait for a run where facts can be checked. Surveys 'Toward Recursive Self-Improvement in Physical AI' (2610.29677) and 'Towards Agentic Robots' (2610.20442) are candidates for a resources/survey slot.
+- Run 21: HF-queue picks ACCRUE (2610.18596; NVIDIA/KAIST, project page only), λ0 (2610.18950; Alibaba Lambda-humanoid, code openlambda), EgoExplorer (2610.18872; InternRobotics, repo + guidelines). Still unreviewed: WAVE-0 2610.18568, AgenticRoboRL 2610.28589, FRED 2610.30320 (WAM), RoboValue 2610.26663, LIBERO-Industry 2610.16782, HandsOn 2610.26765 — search engines did not surface their arXiv/project pages this run, and stored abstracts are truncated, so they wait for a run where facts can be checked. Surveys 'Toward Recursive Self-Improvement in Physical AI' (2610.29677) and 'Towards Agentic Robots' (2610.20442) are candidates for a survey slot (run 21 added 3 anchor surveys to vla.yaml, tagged `survey`, paper lists linked as `project:` rather than `code:` so they don't count as code).
 
 - Run 20: picks from the HF queue: Learning from Fleet Experience (Tsinghua/AgiBot, code in RLinf), DONIC (Ropedia), GPT-6-Astra embodied evaluation report (SenseNova; repo public but code 'coming soon' → linked as project; add `code:` once released); anchor RLinf-VLA (2510.06710). Still unreviewed HF-queue candidates: WAVE-0 2610.18568, AgenticRoboRL 2610.28589, RoboValue 2610.26663 (project page), LIBERO-Industry 2610.16782 (project page), HandsOn 2610.26765. WebFetch of arxiv.org works only for URLs that first appear in a WebSearch result — search the title first.
 
