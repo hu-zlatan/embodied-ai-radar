@@ -22,6 +22,7 @@ import time
 import urllib.error
 import urllib.request
 
+from hf_papers import load as load_hf, merge_links
 from radar import ROOT, load_arxiv_feed, load_curated, load_resources
 
 OUT = ROOT / "data" / "repo_stats.json"
@@ -111,7 +112,9 @@ def wanted() -> set[str]:
 
 def feed_wanted(curated: set[str]) -> set[str]:
     cut = (dt.date.today() - dt.timedelta(days=FEED_DAYS)).isoformat()
-    urls = [u for p in load_arxiv_feed() if p.get("published", "") >= cut for u in p.get("code") or []]
+    feed = [p for p in load_arxiv_feed() if p.get("published", "") >= cut]
+    merge_links(feed, load_hf())  # GitHub links listed on Hugging Face paper pages get checked too
+    urls = [u for p in feed for u in p.get("code") or []]
     return {k for k in map(repo_key, urls) if k} - curated
 
 

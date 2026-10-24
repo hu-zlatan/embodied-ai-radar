@@ -16,7 +16,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from hf_papers import load as load_hf
+from hf_papers import load as load_hf, merge_links
 from repo_stats import apply_feed_stats, load_feed_stats, load_history, load_stats, repo_key, star_gains
 from radar import (ROOT, bibtex, classify, venue_of, load_arxiv_feed, load_curated, load_curated_meta, load_embodiments,
                    load_resources, load_start, load_topics)
@@ -341,8 +341,9 @@ def build() -> int:
     EMB.update({m["id"]: m for m in embs})
     STATS.clear()
     STATS.update(load_stats())
-    apply_feed_stats(feed, load_feed_stats())
     hf = load_hf()
+    merge_links(feed, hf)  # code/project links from Hugging Face paper pages when the arXiv comment has none
+    apply_feed_stats(feed, load_feed_stats())
     for p in feed:
         if p["id"] in hf:
             p["hf"] = hf[p["id"]]

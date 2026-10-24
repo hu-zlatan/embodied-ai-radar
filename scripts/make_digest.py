@@ -14,7 +14,7 @@ import datetime as dt
 import re
 import sys
 
-from hf_papers import load as load_hf
+from hf_papers import load as load_hf, merge_links
 from radar import ROOT, classify, load_arxiv_feed, load_curated, load_embodiments, load_topics, venue_of
 from repo_stats import apply_feed_stats, load_feed_stats, load_history, repo_key, star_gains
 
@@ -95,6 +95,7 @@ def main() -> int:
     topics = load_topics()
     entries, _ = load_curated(strict=False)
     feed = [p for p in load_arxiv_feed() if start.isoformat() <= p.get("published", "") <= end.isoformat()]
+    merge_links(feed, load_hf())  # code/project links from Hugging Face paper pages
     apply_feed_stats(feed, load_feed_stats())  # drop code links known to 404
     picks = [e for e in entries if e.get("added") and start.isoformat() <= str(e["added"]) <= end.isoformat()]
 
