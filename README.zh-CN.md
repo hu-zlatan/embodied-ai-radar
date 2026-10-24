@@ -63,9 +63,12 @@ _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与�
 - **[SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics](https://arxiv.org/abs/2506.01844)** (2025) — 约 4.5 亿参数的 VLA，用社区 LeRobot 数据训练，可在消费级 GPU 上运行。 · [代码](https://github.com/huggingface/lerobot)
 - **[SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model](https://arxiv.org/abs/2501.15830)** (2025) — 为视觉 token 加入 3D 位置编码，并用自适应动作网格表示动作，在 110 万条真机轨迹上预训练；迁移到新机器人时只需重新划分动作网格。 · [代码](https://github.com/SpatialVLA/SpatialVLA)
 - **[UniVLA: Learning to Act Anywhere with Task-centric Latent Actions](https://arxiv.org/abs/2505.06111)** (2025) — 在 DINO 特征空间中、借助语言指令过滤，从视频里学习“任务相关”的隐动作，使策略可跨机器人与人类视频预训练；报告以少得多的预训练算力超过 OpenVLA。 · [代码](https://github.com/OpenDriveLab/UniVLA)
+- **[A Survey on Vision-Language-Action Models for Embodied AI](https://arxiv.org/abs/2405.14093)** (2024) — 较早的 VLA 综述：把相关工作分为组件研究（视觉、语言、世界模型等）、底层控制策略与高层任务规划器，并汇总数据集、仿真器与基准；附配套论文列表。 · [项目页](https://github.com/yueen-ma/Awesome-VLA)
+- **[Aligning Cyber Space with Physical World: A Comprehensive Survey on Embodied AI](https://arxiv.org/abs/2407.06886)** (2024) — 覆盖面很广的具身智能综述：机器人本体、仿真器、具身感知、交互、具身智能体与 sim-to-real，并讨论多模态大模型与世界模型的作用；配套中山大学 HCPLab 维护的常用论文列表。 · [项目页](https://github.com/HCPLab-SYSU/Embodied_AI_Paper_List)
 - **[CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic Manipulation](https://arxiv.org/abs/2411.19650)** (2024) — 不再让 VLM 直接输出动作 token，而是用独立的扩散动作 Transformer 以 VLM 的“认知”特征为条件生成动作；报告在仿真和真机上明显优于 OpenVLA。 · [代码](https://github.com/microsoft/CogACT)
 - **[Octo: An Open-Source Generalist Robot Policy](https://arxiv.org/abs/2405.12213)** (2024) — 在 Open X-Embodiment 上预训练的开源扩散头 Transformer 策略，可快速微调到新机器人和新传感器。 · [代码](https://github.com/octo-models/octo)
 - **[RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation](https://arxiv.org/abs/2410.07864)** (2024) — 12 亿参数扩散 Transformer，采用跨机器人统一动作空间，面向双臂操作。 · [代码](https://github.com/thu-ml/RoboticsDiffusionTransformer)
+- **[Foundation Models in Robotics: Applications, Challenges, and the Future](https://arxiv.org/abs/2312.07843)** (2023) — 综述预训练基础模型如何用于机器人的感知、决策与控制，以及主要瓶颈：机器人数据稀缺、安全性与不确定性量化、实时执行。 · [项目页](https://github.com/robotics-survey/Awesome-Robotics-Foundation-Models)
 - **[PaLM-E: An Embodied Multimodal Language Model](https://arxiv.org/abs/2303.03378)** (2023) — 将连续传感器嵌入注入 5620 亿参数语言模型，用于具身推理与规划。
 - **[A Generalist Agent](https://arxiv.org/abs/2205.06175)** (2022) — Gato：同一套权重的 Transformer 既能玩游戏、写图像描述，也能用真实机械臂堆积木。
 - **[RT-1: Robotics Transformer for Real-World Control at Scale](https://arxiv.org/abs/2212.06817)** (2022) — 将动作离散化为 token，用 13 万条真实演示训练 Transformer，证明机器人策略会随数据多样性扩展。 · [代码](https://github.com/google-research/robotics_transformer)
@@ -229,7 +232,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网�
 - **[Object Goal Navigation using Goal-Oriented Semantic Exploration](https://arxiv.org/abs/2007.00643)** (2020) — SemExp 构建情景语义地图，并学习在地图上选择长期目标的策略；这一模块化方案成为 Habitat 中 ObjectNav 的常用基线。 · [代码](https://github.com/devendrachaplot/Object-Goal-Navigation)
 - **[The Marathon 2: A Navigation System](https://arxiv.org/abs/2003.00368)** (2020) — ROS 2 标准导航栈 Nav2 的论文：用行为树编排规划器、控制器和恢复行为，并在真实机器人上长距离“马拉松”测试验证。 · [代码](https://github.com/ros-navigation/navigation2)
 - **[Vision-and-Language Navigation: Interpreting visually-grounded navigation instructions in real environments](https://arxiv.org/abs/1711.07280)** (2017) — 提出视觉语言导航任务与基于 Matterport3D 的 Room-to-Room (R2R) 基准。
-- _另见:_ [Has GPT-6-Astra Achieved Embodied Intelligence?](#vla), [Agile But Safe](#locomotion), [ConceptGraphs](#perception), [Habitat 3.0](#sim), [Habitat 2.0](#sim), [Habitat](#datasets), [Embodied Skill Bench](#datasets), [Habitat-Matterport 3D Dataset (HM3D)](#datasets), [The Design of Stretch](#hardware)
+- _另见:_ [Has GPT-6-Astra Achieved Embodied Intelligence?](#vla), [Aligning Cyber Space with Physical World](#vla), [Agile But Safe](#locomotion), [ConceptGraphs](#perception), [Habitat 3.0](#sim), [Habitat 2.0](#sim), [Habitat](#datasets), [Embodied Skill Bench](#datasets), [Habitat-Matterport 3D Dataset (HM3D)](#datasets), [The Design of Stretch](#hardware)
 
 <a id="perception"></a>
 ### 感知、SLAM 与三维建图
@@ -259,7 +262,7 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - **[DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras](https://arxiv.org/abs/2108.10869)** (2021) — 端到端学习的视觉 SLAM：循环光流更新加上可微分的光束法平差层。 · [代码](https://github.com/princeton-vl/DROID-SLAM)
 - **[FAST-LIO2: Fast Direct LiDAR-inertial Odometry](https://arxiv.org/abs/2107.06829)** (2021) — 用增量 k-d 树把原始激光点直接配准到地图，速度足以在无人机和机器人机载计算机上运行。 · [代码](https://github.com/hku-mars/FAST_LIO)
 - **[LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping](https://arxiv.org/abs/2007.00258)** (2020) — 基于因子图的激光-惯性里程计，GPS 与回环可以作为额外因子直接加入。 · [代码](https://github.com/TixiaoShan/LIO-SAM)
-- _另见:_ [Contact-GraspNet](#manipulation), [AnyGrasp](#manipulation), [Neural feels with neural fields](#tactile), [GelSlim 5.0](#tactile), [Watch Your Step](#locomotion), [Object Goal Navigation using Goal-Oriented Semantic Exploration](#navigation), [Learning to Explore using Active Neural SLAM](#navigation), [ScanNet](#datasets), [DexYCB](#datasets), [Rescaling Egocentric Vision](#datasets), [HOI4D](#datasets), [ARCTIC](#datasets)
+- _另见:_ [Aligning Cyber Space with Physical World](#vla), [Contact-GraspNet](#manipulation), [AnyGrasp](#manipulation), [Neural feels with neural fields](#tactile), [GelSlim 5.0](#tactile), [Watch Your Step](#locomotion), [Object Goal Navigation using Goal-Oriented Semantic Exploration](#navigation), [Learning to Explore using Active Neural SLAM](#navigation), [ScanNet](#datasets), [DexYCB](#datasets), [Rescaling Egocentric Vision](#datasets), [HOI4D](#datasets), [ARCTIC](#datasets)
 
 <a id="control"></a>
 ### 规划、控制与安全
@@ -353,7 +356,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_ [在网站上
 - **[Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World](https://arxiv.org/abs/1703.06907)** (2017) — 在仿真中随机化纹理、光照和相机，使视觉模型无需真实数据即可在真实图像上工作。
 - **[Sim-to-Real Transfer of Robotic Control with Dynamics Randomization](https://arxiv.org/abs/1710.06537)** (2017) — 训练中随机化物理参数，得到足以在真实机械臂上运行的鲁棒控制策略。
 - **[Gazebo](https://gazebosim.org/)** (2004) — ROS 生态中历史悠久的开源机器人仿真器，提供传感器、插件与 ROS 2 集成；通常用于测试完整的机器人软件栈，而非训练策略。 · [代码](https://github.com/gazebosim/gz-sim)
-- _另见:_ [Blind Precise Assembly](#manipulation), [TACTO](#tactile), [Taxim](#tactile), [Tactile Gym 2.0](#tactile), [TacSL](#tactile), [Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning](#locomotion), [Genie Envisioner](#world-models), [Drake](#control), [Habitat](#datasets), [RoboCasa-Shift](#datasets), [Habitat-Matterport 3D Dataset (HM3D)](#datasets), [Objaverse](#datasets), [HumanoidBench](#datasets), [RoboVerse](#datasets)
+- _另见:_ [Aligning Cyber Space with Physical World](#vla), [Blind Precise Assembly](#manipulation), [TACTO](#tactile), [Taxim](#tactile), [Tactile Gym 2.0](#tactile), [TacSL](#tactile), [Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning](#locomotion), [Genie Envisioner](#world-models), [Drake](#control), [Habitat](#datasets), [RoboCasa-Shift](#datasets), [Habitat-Matterport 3D Dataset (HM3D)](#datasets), [Objaverse](#datasets), [HumanoidBench](#datasets), [RoboVerse](#datasets)
 
 <a id="datasets"></a>
 ### 数据集与基准
