@@ -323,3 +323,25 @@
   tags: [real, human-data, egocentric, wearable, whole-body, tactile, humanoid]
   takeaway_en: 100 h of wearable-captured human loco-manipulation (mostly professional work) aligning egocentric video, whole-body and finger motion, touch and step-level text; reports 71.9% lower body error than baselines.
   takeaway_zh: 用可穿戴设备采集的 100 小时人类移动操作数据，侧重职业场景，对齐第一视角视频、全身与手指动作、触觉和步骤级文字描述；其补全全身动作的方法报告身体关键点误差比最强基线低 71.9%。
+- title: "HandsOn: A Large-Scale Simulation Benchmark for Generalizable Dexterous Manipulation"
+  type: benchmark
+  arxiv: "2610.26765"
+  year: 2026
+  org: Tsinghua University, BUPT, NatureWill, Peking University
+  code: https://github.com/TsinghuaC3I/HandsOn
+  added: 2026-10-24
+  topics: [manipulation, sim]
+  tags: [sim, dexterous, cross-embodiment, benchmark, human-demos]
+  takeaway_en: "Isaac Sim benchmark with 5 arms, 6 dexterous hands, ~200 assets and 18k human demos over 66 tasks; reports the best trained policy (a WAM) at only 29.1% on Core-50, near 0% on precision-fit and deformable tasks."
+  takeaway_zh: 基于 Isaac Sim 的灵巧操作基准：5 种机械臂、6 种灵巧手、约 200 个资产、1.8 万条人类演示、66 个任务；报告最好的训练策略（一种世界动作模型）在 Core-50 上仅 29.1%，精密装配和柔性物体任务接近 0%。
+- title: "RoboValue: A Fine-Grained Sim-and-Real Benchmark for Unified Evaluation of Robotic Value Models"
+  type: benchmark
+  arxiv: "2610.26663"
+  year: 2026
+  code: https://github.com/RoboValue-Benchmark/RoboValue
+  project: https://robovalue-benchmark.github.io/
+  added: 2026-10-24
+  topics: [learning, manipulation]
+  tags: [sim, real, benchmark, value-model, evaluation]
+  takeaway_en: Tests robot value (progress) models on 15 sim and 20 real tasks across task state, progress, failure/recovery and consistency; reports that good forward-progress scores hide weak history and recovery reasoning.
+  takeaway_zh: 在 15 个仿真和 20 个真实任务上评测机器人价值（进度）模型，覆盖任务状态、进度监测、失败与恢复、一致性四个维度；报告称前向进度得分高的模型在依赖历史和恢复判断上仍然薄弱。
