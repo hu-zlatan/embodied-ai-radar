@@ -226,3 +226,22 @@
   tags: [internet-video, language-navigation, quadruped, pretraining]
   takeaway_en: Pretrains on internet egocentric video to learn how the view changes when approaching a described target, then aligns to actions in sim; reports 94.9% success on its HabitatGS-LN benchmark plus a real quadruped.
   takeaway_zh: 先在互联网第一视角视频上预训练，学习"朝描述的目标走近时画面如何变化"，再用仿真数据对齐到动作；论文报告在自建 HabitatGS-LN 基准上成功率 94.9%，并在真实四足机器人上部署。
+- title: "NavGPT: Explicit Reasoning in Vision-and-Language Navigation with Large Language Models"
+  type: paper
+  arxiv: "2305.16986"
+  year: 2023
+  org: University of Adelaide
+  venue: AAAI 2024
+  code: https://github.com/GengzeZhou/NavGPT
+  tags: [vln, llm, zero-shot, reasoning, r2r]
+  takeaway_en: A purely LLM-based VLN agent — GPT models read text descriptions of what the robot sees, its history and possible directions, then reason step by step about where to go; zero-shot on R2R, still behind trained models.
+  takeaway_zh: 纯大语言模型的视觉语言导航智能体：GPT 读取视觉观测的文字描述、历史轨迹和可走方向，逐步显式推理下一步去哪；在 R2R 上零样本运行，但仍落后于专门训练的模型。
+- title: "ETPNav: Evolving Topological Planning for Vision-Language Navigation in Continuous Environments"
+  type: paper
+  arxiv: "2304.03047"
+  year: 2023
+  venue: TPAMI 2024
+  code: https://github.com/MarSaKi/ETPNav
+  tags: [vln-ce, topological-map, planning, r2r-ce, rxr-ce]
+  takeaway_en: For VLN in continuous spaces, builds a topological map online from predicted waypoints, plans on it with a cross-modal transformer and moves with an obstacle-avoiding controller; reports >10%/>20% gains on R2R-CE/RxR-CE.
+  takeaway_zh: 面向连续环境视觉语言导航：根据预测的路点在线构建拓扑地图，用跨模态 Transformer 在图上规划，再由避障控制器执行；报告在 R2R-CE、RxR-CE 上分别比此前最好方法提升 10% 和 20% 以上。

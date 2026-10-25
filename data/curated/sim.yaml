@@ -215,3 +215,33 @@
   tags: [ros, ros2, physics, open-source]
   takeaway_en: The long-standing open-source robot simulator of the ROS ecosystem — sensors, plugins and ROS 2 integration; the usual choice for testing full robot software stacks rather than training policies.
   takeaway_zh: ROS 生态中历史悠久的开源机器人仿真器，提供传感器、插件与 ROS 2 集成；通常用于测试完整的机器人软件栈，而非训练策略。
+- title: "dm_control: Software and Tasks for Continuous Control"
+  type: paper
+  arxiv: "2006.12983"
+  year: 2020
+  org: DeepMind
+  code: https://github.com/google-deepmind/dm_control
+  topics: [sim, learning]
+  tags: [mujoco, benchmark, rl, open-source]
+  takeaway_en: DeepMind's Python stack on top of MuJoCo — bindings, PyMJCF and Composer for building models and tasks, the standard Control Suite benchmarks, plus locomotion and arm-and-bricks manipulation tasks.
+  takeaway_zh: DeepMind 基于 MuJoCo 的 Python 工具栈：底层绑定、用于程序化建模与编写任务的 PyMJCF 和 Composer、作为标准基准的 Control Suite，以及运动控制和机械臂拼积木操作任务。
+- title: "SoftGym: Benchmarking Deep Reinforcement Learning for Deformable Object Manipulation"
+  type: paper
+  arxiv: "2011.07215"
+  year: 2020
+  org: Carnegie Mellon University
+  venue: CoRL 2020
+  code: https://github.com/Xingyu-Lin/softgym
+  project: https://sites.google.com/view/softgym
+  topics: [sim, manipulation]
+  tags: [deformable, cloth, rope, liquid, benchmark, rl]
+  takeaway_en: Open-source Gym-style benchmark for manipulating deformable objects such as cloth, rope and liquids; shows that high-dimensional, partially observable states make these tasks hard for standard RL.
+  takeaway_zh: 开源、Gym 接口的可变形物体操作基准（布料、绳子、液体等）；实验表明高维且部分可观测的状态让这类任务对常规强化学习方法很困难。
+- title: "Newton"
+  type: simulator
+  year: 2025
+  org: Disney Research, Google DeepMind, NVIDIA (Linux Foundation project)
+  code: https://github.com/newton-physics/newton
+  tags: [physics, gpu-parallel, open-source, warp, openusd]
+  takeaway_en: Open, GPU-accelerated physics engine built on NVIDIA Warp and OpenUSD with multiple solvers for contact-rich robot learning; co-developed by Disney Research, Google DeepMind and NVIDIA, hosted by the Linux Foundation.
+  takeaway_zh: 基于 NVIDIA Warp 和 OpenUSD 的开源 GPU 物理引擎，支持多种求解器，面向接触丰富的机器人学习；由 Disney Research、Google DeepMind 和 NVIDIA 联合开发，由 Linux 基金会托管。
