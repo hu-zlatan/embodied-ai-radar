@@ -251,3 +251,5 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Start: CI/Pages/verify/repo-stats green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. Sunday: no new arXiv days until Mon 10-26. No add_repo tool; clone was detached → `main` reset to `origin/main`.
 - Picks from `.autopilot/review_queue.json` (CI-fetched abstracts; repos live per repo_stats feed section): TILDE (HKU; teacher-in-the-loop distillation from VLAs, AutoDAgger) → learning; TARSphere (embodied-agent framework + 360-episode bench) → navigation; SkeLAM (skeleton-grounded latent actions, project only) → world-models. One over-length takeaway caught by validate.
 - Hardware anchors (thinnest topic): TidyBot++ (CoRL 2024), UMI-on-Legs (CoRL 2024), DOGlove (RSS 2025). Facts from PMLR / RSS proceedings pages; repos via GitHub search. Curated: 336.
+- verify #79 (picks) and #80 (hardware anchors) passed; CI green. Dispatched intake to fill BibTeX metadata.
+- End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting; CoRL week Nov 9–12). Next: Mon 10-26 feed + first auto digest W43. End of run 26.
