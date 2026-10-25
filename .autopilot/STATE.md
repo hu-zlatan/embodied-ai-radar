@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-24 ~23:00 UTC, run 24 (end)._
+_Last updated: 2026-10-25 ~05:10 UTC, run 25 (end)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (321 entries, EN/ZH takeaways; 43 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (330 entries, EN/ZH takeaways; 43 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -47,6 +47,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 25: picks Agentic WAMs / AW-0 → world-models, Physical RSI survey + PhysRSI-eval (Galbot) → learning, Multimodal Embodied Agents survey (Show Lab) → vla. Anchors dm_control, SoftGym, Newton → sim (26); NavGPT, ETPNav → navigation (25). Review queue now nearly empty (left: multimodal agent-memory survey 2610.19366, probably off-scope; JCA 2610.28632, animation-focused; LLM2R; SafeDriveVLA, driving). Thinnest topic now: hardware (22) — candidates need verified facts (e.g. Reachy 2, Koch arm, Unitree G1 docs). Search index loads lazily on first search, so its size is less urgent than noted in Known issues.
 
 - Run 24: picks MorphAct → vla, CarryOn → vla, Towards Agentic Robots survey → vla (survey slot), SERA → manipulation, ACE-Brain-0.6 → perception. Remaining queue: Physical RSI survey 2610.29677 (NUS, 36★ list), Galbot physical-RSI scaling law 2610.26848 (project only), Agentic WAMs 2610.30136 (project only), JCA 2610.28632 (NVIDIA, project only), Multimodal Embodied Agents survey 2610.30108 (showlab). Launch kit numbers refreshed.
 

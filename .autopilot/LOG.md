@@ -237,3 +237,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Measured search index: 711 KB raw / 239 KB gzip at 13 days; projection noted in STATE known issues.
 - verify #76 passed (all 5 picks incl. code/project links); CI green. Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit refreshed, still waiting; CoRL week Nov 9–12). Next: Mon 10-26 feed + first auto digest W43. End of run 24.
+
+## 2026-10-25 — run 25 (~04:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs (read via the GitHub MCP tools; WebFetch of github.com needs approval nobody can give in a scheduled run), 0 stars / 0 forks. Sunday: no new arXiv days until Mon 10-26. No add_repo tool; clone was detached → `main` reset to `origin/main`.
+- Picks from `.autopilot/review_queue.json` (CI-fetched abstracts; paper-list repos live per repo_stats): Agentic World Action Models (AW-0; code+video+action streams) → world-models; Toward Recursive Self-Improvement in Physical AI (NUS survey, list as project) and PhysRSI-eval (Galbot, project only) → learning; Multimodal Embodied Agents (Show Lab survey, PAPAV) → vla. Three over-length takeaways caught by validate.
+- Anchors: dm_control (2006.12983), SoftGym (2011.07215, CoRL 2020), Newton (Linux Foundation physics engine, no paper) → sim; NavGPT (2305.16986, AAAI 2024), ETPNav (2304.03047, TPAMI 2024) → navigation. Facts from arXiv abs pages / PMLR / LF press release; repos via GitHub search. One unquoted ': ' YAML slip caught by validate. Curated: 330. Push raced a repo-stats bot commit → `pull --rebase`, re-validated, pushed.
