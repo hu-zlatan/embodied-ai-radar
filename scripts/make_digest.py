@@ -16,10 +16,11 @@ import sys
 
 from hf_papers import load as load_hf, merge_links
 from radar import ROOT, classify, load_arxiv_feed, load_curated, load_embodiments, load_topics, venue_of
-from repo_stats import apply_feed_stats, load_feed_stats, load_history, repo_key, star_gains
+from repo_stats import apply_feed_stats, load_feed_stats, load_history, load_stats, repo_key, star_gains
 
 PER_TOPIC = 6
 RISING = 8
+TOP_PICKS = 8  # picks shown with full takeaways; the rest are listed compactly by topic
 
 
 def week_bounds(week: str) -> tuple[dt.date, dt.date]:
@@ -29,7 +30,9 @@ def week_bounds(week: str) -> tuple[dt.date, dt.date]:
 
 
 def clean_title(t: str) -> str:
-    return re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", t).replace("[", "(").replace("]", ")")
+    t = re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", t)
+    t = re.sub(r"\$([^$]{1,12})\$", lambda m: re.sub(r"[_{}\\]", "", m.group(1)), t)  # $Δ$ -> Δ, $λ_0$ -> λ0
+    return t.replace("[", "(").replace("]", ")")
 
 
 def rising_section(entries: list[dict], end: dt.date) -> list[str]:
@@ -76,6 +79,47 @@ def hf_section(entries: list[dict], start: dt.date, end: dt.date) -> list[str]:
     return L
 
 
+def rank_picks(picks: list[dict]) -> list[dict]:
+    """Order picks by public signals: highlight flag, Hugging Face upvotes, GitHub stars of the code, has code."""
+    hf, stats = load_hf(), load_stats()
+
+    def key(e: dict) -> tuple:
+        up = (hf.get(str(e.get("arxiv") or "")) or {}).get("upvotes", 0)
+        st = (stats.get(repo_key(e.get("code")) or "") or {}).get("stars", 0)
+        return (-bool(e.get("highlight")), -up, -st, -bool(e.get("code")), str(e["title"]).lower())
+    return sorted(picks, key=key)
+
+
+def picks_section(picks: list[dict], topics: list[dict]) -> list[str]:
+    L = ["## Editor's picks · 本周精选", ""]
+    if not picks:
+        return L + ["- _No new curated picks this week. 本周暂无新增精选。_"]
+    ranked = rank_picks(picks)
+    top, rest = ranked[:TOP_PICKS], ranked[TOP_PICKS:]
+    if rest:
+        L += [f"_Top {len(top)} of {len(picks)} new picks, ranked by community signals (Hugging Face upvotes, GitHub stars). "
+              f"本周新增 {len(picks)} 条精选，按社区信号（Hugging Face 点赞、GitHub 星标）列出前 {len(top)} 条。_", ""]
+    for e in top:
+        link = f"https://arxiv.org/abs/{e['arxiv']}" if e.get("arxiv") else (e.get("url") or e.get("code"))
+        L.append(f"- **[{clean_title(e['title'])}]({link})** — {e['takeaway_en']} / {e['takeaway_zh']}"
+                 f" · [details · 详情](https://hu-zlatan.github.io/embodied-ai-radar/e/{e['id']}.html)")
+    if rest:
+        L += ["", "### All other picks by topic · 其余精选（按主题）", ""]
+        names = {t["id"]: f"{t['en']} · {t['zh']}" for t in topics}
+        order = [t["id"] for t in topics]
+        groups: dict[str, list[dict]] = {}
+        for e in rest:
+            tid = next((t for t in (e.get("topics") or []) if t in names), "other")
+            groups.setdefault(tid, []).append(e)
+        for tid in order + ["other"]:
+            if tid not in groups:
+                continue
+            items = " · ".join(f"[{clean_title(e['title']).split(':')[0].strip()}](https://hu-zlatan.github.io/embodied-ai-radar/e/{e['id']}.html)"
+                               for e in sorted(groups[tid], key=lambda e: str(e["title"]).lower()))
+            L.append(f"- **{names.get(tid, 'Other · 其他')}**: {items}")
+    return L
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--week")
@@ -102,14 +146,7 @@ def main() -> int:
     L = [f"# Embodied AI Radar · Weekly {week} · 具身智能雷达周报", "",
          f"{start.isoformat()} → {end.isoformat()} · {len(feed)} new arXiv papers · {len([p for p in feed if p.get('code')])} with code",
          f"本周共收录 {len(feed)} 篇 arXiv 新论文，其中 {len([p for p in feed if p.get('code')])} 篇附代码。", ""]
-    L += ["## Editor's picks · 本周精选", ""]
-    if picks:
-        for e in picks:
-            link = f"https://arxiv.org/abs/{e['arxiv']}" if e.get("arxiv") else (e.get("url") or e.get("code"))
-            L.append(f"- **[{clean_title(e['title'])}]({link})** — {e['takeaway_en']} / {e['takeaway_zh']}"
-                     f" · [details · 详情](https://hu-zlatan.github.io/embodied-ai-radar/e/{e['id']}.html)")
-    else:
-        L.append("- _No new curated picks this week. 本周暂无新增精选。_")
+    L += picks_section(picks, topics)
     accepted = sorted(((venue_of(p.get("comment")), p) for p in feed if venue_of(p.get("comment"))),
                       key=lambda vp: (vp[0], vp[1]["id"]))
     if accepted:
