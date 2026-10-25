@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24",
+ "updated": "2026-10-25",
  "papers": [
   {
    "id": "2610.19366",
@@ -37,35 +37,6 @@
    "comment": null,
    "abstract": "Multimodal models and agents have emerged to enable AI systems to learn from and interact with the real world more like humans by integrating information across multiple modalities. However, enabling multimodal agents to continually acquire useful information from complex, heterogeneous multimodal data remains a significant challenge as they move toward long-horizon tasks and lifelong settings. Addressing this challenge requires effective memory mechanisms that can maintain continuity across sessions, adapt to changing users and environments, and refine memory-management policies through accumulated experience. We introduce a two-axis analytical framework for multimodal agent memory structured around two key questions: how multimodal information is formed and represented (Axis I, Formation and Representation), and how its management adapts with accumulated experience (Axis II, Memory Management). Axis I, Formation and Representation, characterizes what information is retained and how it is encoded (e.g., modality-specific embeddings, textual and structured records, latent and parametric representations) to support subsequent reasoning and action. Axis II, Memory Management, distinguishes three tiers: T1 Static Memory reuses fixed memory; T2 Dynamic Memory updates memory through a stable policy; and T3 Self-Evolving Memory updates memory through an evolving policy. Based on this framework, we synthesize recurring design patterns and derive principles for balancing source fidelity with abstraction, maintaining temporal validity and provenance, grounding memory use in recoverable evidence, and evolving memory policies over time. Furthermore, we discuss the challenges and potential future directions for the memory mechanism of multimodal agents.",
    "ai_summary": "This work proposes a two-axis framework for multimodal agent memory covering information formation and adaptive management to support lifelong learning."
-  },
-  {
-   "id": "2610.29677",
-   "title": "Toward Recursive Self-Improvement in Physical AI",
-   "upvotes": 50,
-   "hf_date": "2026-10-23",
-   "published": "2026-10-22",
-   "topics": [],
-   "authors": [
-    "Meng Luo",
-    "Zechen Bai",
-    "Shanqing Xu",
-    "Yanlin Li",
-    "Kaixin Li",
-    "Mengchen Qian",
-    "Weifeng Lu",
-    "Ran Zhang",
-    "Yingtian Zou",
-    "Ziyang Luo",
-    "Wei Chen",
-    "Hongzhan Lin"
-   ],
-   "organization": "National University of Singapore",
-   "github": "https://github.com/Physical2RSI/Awesome-Physical2RSI",
-   "project": "https://physical2rsi.github.io",
-   "arxiv_code": [],
-   "comment": "93 pages, 15 figures, 21 tables. Project page: https://physical2rsi.github.io/",
-   "abstract": "Recursive self-improvement (RSI) describes a system that improves not only its behavior but also the process by which it improves. Recent digital agents test this idea by rewriting their own code and checking each version with executable tests. Bringing these mechanisms into the physical world requires learning from partial observations through costly trials, while accounting for changing operating conditions and potentially irreversible consequences. We position RSI within robot learning and trace pathways from improving robot capabilities to improving the processes that generate them. We examine how physical experience can strengthen these improvement mechanisms and when the resulting gains can support further self-improvement of the mechanisms themselves. Gains carry forward only when feedback addresses remaining learning needs, the receiving component can use the change, its value survives changes in tasks or hardware, and continued practice remains safe and affordable. Existing studies, concentrated in manipulation, support behavioral improvement, benefits to later learning, and procedure improvement. Some systems also change the improver's knowledge or tools, but the physical studies reviewed here have yet to isolate gains attributable to recursion. We synthesize these findings into evaluation principles and research directions for machines that, trial by trial, safely improve the way they improve.",
-   "ai_summary": null
   },
   {
    "id": "2610.28632",
@@ -115,107 +86,6 @@
    "ai_summary": "LLM2R treats 3D part assembly as sequence modeling with a pretrained decoder-only LLM, using geometric tokens and learnable summary tokens to predict all part poses in a single pass with improved scalability and accuracy."
   },
   {
-   "id": "2610.26848",
-   "title": "Where is Physical RSI capability from? An Observational Scaling Law of LLM-as-policy",
-   "upvotes": 23,
-   "hf_date": "2026-10-20",
-   "published": "2026-10-20",
-   "topics": [],
-   "authors": [
-    "Zekai Li",
-    "Jiayi Yu",
-    "Jinlu Zhang",
-    "Luyang Niu",
-    "Zekun Qi",
-    "Jun Zheng",
-    "Xuchuan Chen",
-    "Dairu Liu",
-    "Yintianrun Zhang",
-    "He Wang",
-    "Li Yi"
-   ],
-   "organization": "Galbot",
-   "github": null,
-   "project": "https://physrsi-eval.github.io/",
-   "arxiv_code": [],
-   "comment": "Tech Report",
-   "abstract": "In this paper, we systematically investigate the mechanisms, scaling behavior, and generalization of physical Recursive self-improvement. We introduce PhysRSI-eval to quantify physical RSI through a five-axis metric: First-Attempt Performance, Efficiency, Success, Budget and Improvement from failure. Different VLMs are evaluated on 18 manipulation tasks under a fixed interaction budget. The analysis of experimental results motivates the Physical Barrel Hypothesis: different capabilities may constrain different parts of improvement. The five-axis metrics also distinguish systems with close public benchmark averages and show that high scores need not come with early or efficient gains. We study observational scaling from two perspectives: predicting the relative performance of VLM agents from their public capabilities, and forecasting later progress from early physical feedback. Together, these analyses ask how quickly and how far an agent can improve. Moreover, we conduct workspace interventions and then analyze what improvement leaves behind. Removing history reduces late-round success, frozen workspaces remain useful on unseen layouts, and three cross-task cases achieve success earlier. The results suggest that scene-specific adaptation and reusable experience can coexist.",
-   "ai_summary": "Physical recursive self-improvement in vision-language agents is evaluated via multi-axis metrics, scaling analysis, and workspace interventions to assess improvement speed, limits, and reusable experience."
-  },
-  {
-   "id": "2610.30108",
-   "title": "Multimodal Embodied Agents: A Unified Capability-centric Perspective from Computer-Use to Robot-Use",
-   "upvotes": 22,
-   "hf_date": "2026-10-22",
-   "published": "2026-10-22",
-   "topics": [
-    "navigation"
-   ],
-   "authors": [
-    "Yanzhe Chen",
-    "Ziyi Yang",
-    "Jifeng Zhu",
-    "Qiming Huang",
-    "Ruihe An",
-    "Peiyao Xu",
-    "Hesen Yang",
-    "Runda Liu",
-    "Chang Gong",
-    "Zhijun Cao",
-    "Zechen Bai",
-    "Wenzheng Zeng",
-    "Yiqi Lin",
-    "Guoqiang Liang",
-    "Kevin Yuchen Ma",
-    "Kevin Qinghong Lin",
-    "Mike Zheng Shou"
-   ],
-   "organization": "Show Lab",
-   "github": "https://github.com/showlab/Awesome-Multimodal-Embodied-Agent",
-   "project": "https://showlab.github.io/Awesome-Multimodal-Embodied-Agent/",
-   "arxiv_code": [],
-   "comment": "Project website: https://showlab.github.io/Awesome-Multimodal-Embodied-Agent/",
-   "abstract": "Multimodal agents (MMAs) sustain interaction through reasoning, memory, tools, and feedback, most visibly as computer-use agents, while robotic systems (RSs) couple sensing and actuation under physical dynamics. We define multimodal embodied agents (MMEAs) as goal-directed systems that couple multimodal task reasoning with physical action and revise decisions from the resulting feedback. This raises a central question: what changes when a multimodal agent moves from computer-use to robot-use? We introduce PAPAV, a unified capability-centric framework of five recurring functions: Perceive the current state, Anticipate action effects, Plan a feasible course, Act through an interface or body, and Verify the outcome. Defined by function rather than architecture, these capabilities let PAPAV identify what all three share and then compare MMEAs with MMAs and with RSs. Five physical constraints, from partial observability to unverifiable outcomes, leave fewer choices fixed in advance and less room to reverse errors. Across 64 benchmarks, explicit evaluation centers on Act; only 5 assess Anticipate and 3 assess Verify, leaving both largely hidden behind task success. These constraints also frame the open challenges we identify. PAPAV therefore provides a common basis for designing reliable physical agents and measuring progress across all five capabilities rather than task success alone.",
-   "ai_summary": "PAPAV defines five core capabilities for multimodal embodied agents and highlights gaps in evaluation and physical constraints when moving from digital to robotic settings."
-  },
-  {
-   "id": "2610.30136",
-   "title": "Agentic World Action Models",
-   "upvotes": 22,
-   "hf_date": "2026-10-22",
-   "published": "2026-10-22",
-   "topics": [
-    "world-models"
-   ],
-   "authors": [
-    "Zhuoyang Liu",
-    "Dantong Niu",
-    "Botong Zhang",
-    "Boning Shao",
-    "Jing Wang",
-    "Ruijie Zheng",
-    "Yuvan Sharma",
-    "Runyu Lu",
-    "Jiaming Liu",
-    "Renrui Zhang",
-    "Roei Herzig",
-    "Yutong Bai",
-    "Ken Goldberg",
-    "Danfei Xu",
-    "Yuke Zhu",
-    "Guanzhi Wang",
-    "Linxi &#34;Jim&#34; Fan",
-    "Trevor Darrell"
-   ],
-   "organization": null,
-   "github": null,
-   "project": "https://agentic-wam.github.io/",
-   "arxiv_code": [],
-   "comment": "Project page: https://agentic-wam.github.io/",
-   "abstract": "Recent world action models provide visual foresight and future prediction for robot manipulation, but lack explicit mechanisms for compositional skill reuse. Agentic robotics combines code-based planning and reasoning with reusable skills, but often lacks predictive grounding in physical dynamics. We introduce AW-0, an agentic world action model framework that integrates code-based planning with joint video and action prediction. We jointly model code, future video, and robot actions as three coupled generative streams within a unified mixture-of-transformers architecture. Within this architecture a code expert generates parameterized skill routines and control logic while video and action experts generate future visual states and low-level motor commands. Code serves two complementary roles: it structures multi-step prediction and control within the world model and represents skills as reusable programs for subsequent agentic execution. We further introduce an automated curation pipeline that labels robot and human video trajectories with aligned programs and consolidates recurring routines into reusable skill libraries. Evaluations on RoboTwin 2.0 and physical bimanual manipulation tasks show improved task performance over VLA and WAM baselines, alongside gains in language following, semantic reasoning and robustness, demonstrating that agentic code enables connection between planning, prediction and execution within WAMs.",
-   "ai_summary": null
-  },
-  {
    "id": "2610.20609",
    "title": "SafeDriveVLA: Navigation-Conditioned World Model Dreaming for Conflict-Aware End-to-End Autonomous Driving",
    "upvotes": 16,
@@ -244,6 +114,86 @@
    "comment": "Accepted at CoRL 2026. Project page: https://safedrive-vla.github.io/SafeDriveVLA/",
    "abstract": "Vision-Language-Action (VLA) models are gaining attention in autonomous driving, inheriting commonsense priors from large language models (LLMs) and widening the navigation interface from a fixed command set to free-form natural-language instructions. However, this open-ended interface exposes a new vulnerability surface: an inattentive driver may issue instructions that are unsafe given the current scene, and a malicious user may issue dangerous ones on purpose. We present the first benchmark suite that evaluates navigation following and conflict awareness together, along with adversarial robustness. Existing VLAs fall short on both: SimLingo completes no language-instructed lane change in closed loop, and all models degrade sharply under conflicting signals. We propose SafeDriveVLA, the first driving VLA that (1) explicitly predicts a three-level navigation-compliance mode to decouple conflict reasoning from action generation, and (2) uses navigation-conditioned world model dreaming to inform this prediction. Unlike prior world models that roll out expert or planned actions, ours dreams of strictly following the navigation signal, showing when following is safe. SafeDriveVLA reaches 88.16 Driving Score (DS) and 68.64% Success Rate (SR) on Bench2Drive, lifts closed-loop language following by 49.3% and reduces collisions under unsafe instructions from 60 to 38 compared to the best SimLingo variant. Video demonstrations are available on our project page.",
    "ai_summary": "SafeDriveVLA improves autonomous driving by predicting navigation compliance and using world-model dreaming to avoid unsafe instructions, outperforming existing vision-language-action models."
+  },
+  {
+   "id": "2610.25376",
+   "title": "TILDE: Teacher-in-the-Loop Distillation from Embodied Foundation Models",
+   "upvotes": 8,
+   "hf_date": "2026-10-23",
+   "published": "2026-10-20",
+   "topics": [
+    "vla"
+   ],
+   "authors": [
+    "Yuxiang Lu",
+    "Yantong Liu",
+    "Jinghua Hou",
+    "Xueli Sun",
+    "Ruihua Han",
+    "Zhe Liu",
+    "Hengshuang Zhao"
+   ],
+   "organization": "The University of Hong Kong",
+   "github": "https://github.com/hku-sail/TILDE",
+   "project": "https://hku-sail.github.io/TILDE/",
+   "arxiv_code": [],
+   "comment": "Project page: https://hku-sail.github.io/TILDE",
+   "abstract": "Large-scale action pretraining equips Embodied Foundation Models (EFMs) with strong manipulation capabilities, with particular strengths in generalization and closed-loop robustness, but reproducing such pretraining requires substantial robot data and computation. To transfer these capabilities from pretrained EFMs to policies without action pretraining, we introduce TILDE (Teacher-In-the-Loop Distillation from EFMs), which synergizes on-policy distillation at student-induced states with learning from teacher-executed recovery trajectories. We further propose AutoDAgger, an autonomous data aggregation pipeline in which a robotic reward model is utilized to monitor task progress and trigger teacher intervention, thereby collecting recovery experience without human monitoring or manual control. AutoDAgger accelerates recovery-trajectory collection by more than 2times compared with the human-in-the-loop method. By unifying learning from demonstrations, on-policy teacher supervision, and teacher's corrective behavior, TILDE improves task performance by up to 4.1times over behavior cloning across three real-world tasks and supports effective cross-architecture distillation.",
+   "ai_summary": "TILDE distills embodied foundation model capabilities into robot policies via on-policy teacher supervision and autonomous recovery data collection, improving real-world task performance without large-scale action pretraining."
+  },
+  {
+   "id": "2610.30043",
+   "title": "TARSphere: A Robot-Oriented Full-Stack Framework for Long-Horizon Embodied Agents in Evolving Physical and Social Environments",
+   "upvotes": 7,
+   "hf_date": "2026-10-23",
+   "published": "2026-10-22",
+   "topics": [
+    "navigation"
+   ],
+   "authors": [
+    "Yicheng Xu",
+    "Zhikai Xu",
+    "Ziyuan Chen",
+    "Yuhang Dong",
+    "Tao Zhang",
+    "Zhucun Xue",
+    "Yong Liu",
+    "Jiangning Zhang"
+   ],
+   "organization": null,
+   "github": "https://github.com/xuyicheng-zju/TARSphere",
+   "project": "https://xuyicheng-zju.github.io/TARSphere/",
+   "arxiv_code": [
+    "https://github.com/xuyicheng-zju/TARSphere"
+   ],
+   "comment": "13 pages, 8 figures, 7 tables. Project page: https://xuyicheng-zju.github.io/TARSphere/ Code: https://github.com/xuyicheng-zju/TARSphere",
+   "abstract": "Robots must act under physical and social constraints while adapting to changes in their environment and human needs. Existing embodied-agent systems often focus on specified goals or abstract execution into symbolic actions, limiting evaluation in an evolving world. We introduce TARSphere, a robot-oriented full-stack framework for physically and socially grounded long-horizon embodied agents. TARSphere-Infra runs robot policies in a physics simulator with embodied NPCs and constrained dialogue. An event-driven finite-state machine (FSM) uses completed actions and delivered information to update task states and evaluate outcomes. TARSphere-Harness, its embodied brain harness, lets a frozen multimodal large language model (MLLM) act through multi-level executable skills, using observations, hierarchical memory, and execution feedback to revise its decisions. On this foundation, agent-in-the-loop curation aligns task semantics, causal dependencies, and scene geometry to construct TARSphere-Bench: 360 episodes across 30 indoor scenes. Five paired conditions assess perceptual robustness, disruption adaptation, task update, human coordination, and intent understanding for navigate-and-report and fetch-and-deliver tasks. Our evaluation of 8 MLLMs shows that general-purpose models can outperform embodied models, while task updates and human interaction remain difficult. Frequent collisions and falls further motivate evaluating execution safety alongside task success, even with a shared action interface and decision budget.",
+   "ai_summary": "TARSphere is a robot framework that integrates physics simulation, embodied NPCs, and a frozen multimodal language model to evaluate long-horizon embodied agents across diverse indoor tasks and social conditions."
+  },
+  {
+   "id": "2610.31474",
+   "title": "Skeleton-Grounded Latent Action Model for Robot World Models",
+   "upvotes": 7,
+   "hf_date": "2026-10-23",
+   "published": "2026-10-23",
+   "topics": [
+    "world-models"
+   ],
+   "authors": [
+    "Qi Lv",
+    "Jiayi Lin",
+    "Yuxin Jiang",
+    "Jianzong Wang",
+    "Xiang Deng",
+    "Mike Shou Zheng"
+   ],
+   "organization": null,
+   "github": null,
+   "project": "https://aopolin-lv.github.io/SkeLAM/",
+   "arxiv_code": [],
+   "comment": "Project Page: https://aopolin-lv.github.io/SkeLAM/",
+   "abstract": "Robot world models simulate how environments evolve in response to robot actions. Latent action models enable learning dynamics from videos by encoding visual transitions as proxy actions. However, reconstruction-driven latent actions mix robot motion with object responses and other scene changes, complicating their correspondence with robot controls. We propose SkeLAM, a skeleton-guided latent action model for controllable robot world modeling. SkeLAM decomposes latent actions into a kinematic component grounded by robot skeleton supervision and a residual component retaining complementary visual dynamics. Cross-modal swap reconstruction encourages RGB-derived and skeleton-derived kinematic representations to be interchangeable during video reconstruction. The world model incorporates both components through separate conditioning pathways, while branch dropout reduces its dependence on future-derived residual information. A lightweight adapter maps robot actions to the kinematic space, and subsequent world-model fine-tuning adapts generation to these predicted conditions. At inference, the model generates future observations from the current observation and robot actions. On DROID, SkeLAM reduces end-effector ADE by 19.5% and LPIPS by 11.1% compared with DreamDojo. Motion probing supports kinematic specialization, while qualitative results demonstrate zero-shot human-to-robot motion transfer in generated rollouts. Policy evaluation shows agreement between predicted success rates and those measured in real robot executions.",
+   "ai_summary": "SkeLAM decomposes latent actions into skeleton-guided kinematic and residual components to improve controllable robot world modeling and motion transfer."
   }
  ]
 }
