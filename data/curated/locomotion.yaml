@@ -220,3 +220,13 @@
   tags: [real, humanoid, unitree-g1, human-video, egocentric, whole-body, foundation-model]
   takeaway_en: HumanVerse, 500 h of egocentric human video with body and hand motion, aligned to the Unitree G1 for mid-training a humanoid model; reports 90% on SIMPLE and 62.5% on real loco-manipulation tasks.
   takeaway_zh: 构建 500 小时的第一视角人类数据集 HumanVerse（含同步的身体与手部动作），对齐到 Unitree G1 后用于人形基础模型 λ0 的中期训练；论文报告 SIMPLE 上成功率 90%、真实移动操作任务 62.5%，人类数据越多下游表现越好。
+- title: "BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion"
+  type: paper
+  arxiv: "2508.08241"
+  year: 2025
+  org: UC Berkeley, Stanford
+  code: https://github.com/HybridRobotics/whole_body_tracking
+  highlight: true
+  tags: [sim2real, humanoid, motion-tracking, diffusion, whole-body]
+  takeaway_en: One motion-tracking recipe with shared hyperparameters learns agile skills (cartwheels, flip-kicks); a guided latent diffusion model composes them for new goals like joystick control, zero-shot on hardware.
+  takeaway_zh: 用同一套超参数的运动跟踪方案学会侧手翻、飞踢、冲刺等敏捷技能，再用带引导的潜空间扩散模型组合这些技能以完成摇杆遥控、避障等新目标，零样本迁移到真机。

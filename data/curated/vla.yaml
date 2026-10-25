@@ -376,3 +376,24 @@
   tags: [survey, agentic, awesome-list, benchmark]
   takeaway_en: Survey framing computer-use and robot agents with five functions — perceive, anticipate, plan, act, verify; across 64 benchmarks it finds only 5 test anticipation and 3 test verification. Companion paper list.
   takeaway_zh: 用"感知、预判、规划、执行、验证"五种能力统一看待电脑操作智能体和机器人智能体的综述；统计 64 个基准后发现只有 5 个评测预判、3 个评测验证。附配套论文列表。
+- title: "MolmoAct: Action Reasoning Models that can Reason in Space"
+  type: paper
+  arxiv: "2508.07917"
+  year: 2025
+  org: Ai2, University of Washington
+  code: https://github.com/allenai/molmoact
+  project: https://allenai.org/blog/molmoact
+  tags: [real, arm, vlm, open-weights, reasoning, spatial]
+  takeaway_en: An open 7B VLA that first outputs depth-aware perception tokens, then an editable 2D trajectory, then actions; reports 70.5% zero-shot on SimplerEnv and 86.6% on LIBERO, with weights, code and data released.
+  takeaway_zh: 开源 7B VLA，先输出深度感知 token，再生成可编辑的二维轨迹，最后输出动作；论文报告 SimplerEnv 零样本 70.5%、LIBERO 86.6%，并开放权重、代码和数据。
+- title: "GraspVLA: a Grasping Foundation Model Pre-trained on Billion-scale Synthetic Action Data"
+  type: paper
+  arxiv: "2505.03233"
+  year: 2025
+  org: Peking University (PKU-EPIC)
+  venue: CoRL 2025
+  code: https://github.com/PKU-EPIC/GraspVLA
+  topics: [manipulation, sim]
+  tags: [sim2real, arm, grasping, synthetic-data, flow-matching]
+  takeaway_en: Pretrains a grasping VLA almost only on SynGrasp-1B, a billion-frame photorealistic sim dataset, co-trained with web data; reports zero-shot sim-to-real open-vocabulary grasping and few-shot adaptation.
+  takeaway_zh: 几乎只用十亿帧级的照片级仿真抓取数据集 SynGrasp-1B（并联合网络语义数据）预训练抓取 VLA；论文报告可零样本从仿真迁移到真实开放词汇抓取，并支持少样本适配。
