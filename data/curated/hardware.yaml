@@ -223,3 +223,36 @@
   tags: [arm, humanoid, teleoperation, force-feedback, open-source]
   takeaway_en: Fully open-source 7-DoF humanoid arm for contact-rich work — CAD, electronics, firmware, ROS 2 and MuJoCo/Genesis models, plus leader–follower force-feedback teleop and gravity compensation.
   takeaway_zh: 完全开源的 7 自由度人形机械臂，面向接触丰富的研究：CAD、电路、固件、ROS 2/MoveIt 2 以及 MuJoCo/Genesis 模型全部公开，支持主从力反馈遥操作与重力补偿（软件 Apache-2.0，硬件 CERN-OHL-S）。
+- title: "TidyBot++: An Open-Source Holonomic Mobile Manipulator for Robot Learning"
+  type: hardware
+  arxiv: "2412.10447"
+  year: 2024
+  venue: CoRL 2024
+  org: Princeton, Stanford
+  code: https://github.com/jimmyyhwu/tidybot2
+  topics: [manipulation]
+  tags: [mobile-manipulator, holonomic, open-source, teleoperation, low-cost]
+  takeaway_en: An inexpensive open-source mobile base with powered casters, so it is fully holonomic; carries arbitrary arms and comes with phone teleoperation for collecting mobile-manipulation demos for imitation learning.
+  takeaway_zh: 低成本开源移动底盘，采用主动脚轮实现全向（完整约束）运动，可搭载任意机械臂，并配有手机遥操作界面，方便为模仿学习采集移动操作示教数据。
+- title: "UMI-on-Legs: Making Manipulation Policies Mobile with Manipulation-Centric Whole-body Controllers"
+  type: paper
+  arxiv: "2407.10353"
+  year: 2024
+  venue: CoRL 2024
+  code: https://github.com/real-stanford/umi-on-legs
+  topics: [locomotion, manipulation]
+  tags: [quadruped, umi, whole-body-control, loco-manipulation, sim, real]
+  takeaway_en: Robot-free UMI gripper demos train the manipulation policy; a sim-trained whole-body controller tracks its end-effector trajectories on a quadruped. Reports >70% success on all tasks and zero-shot reuse of an arm policy.
+  takeaway_zh: 用手持 UMI 夹爪采集无需机器人的示教来训练操作策略，再由仿真训练的全身控制器在四足机器人上跟踪其输出的末端轨迹；报告所有任务成功率超过 70%，并能零样本复用原为固定机械臂训练的策略。
+- title: "DOGlove: Dexterous Manipulation with a Low-Cost Open-Source Haptic Force Feedback Glove"
+  type: hardware
+  arxiv: "2502.07730"
+  year: 2025
+  venue: RSS 2025
+  org: Tsinghua University
+  code: https://github.com/TEA-Lab/DOGlove
+  project: https://do-glove.github.io/
+  topics: [manipulation, tactile]
+  tags: [glove, teleoperation, force-feedback, haptics, dexterous-hand, open-source, low-cost]
+  takeaway_en: An open-source teleoperation glove buildable in hours for under $600, with 21-DoF hand capture, 5-DoF cable-driven force feedback and fingertip haptics; reports the feedback matters for contact-rich tasks without vision.
+  takeaway_zh: 开源遥操作手套，几小时即可组装、成本低于 600 美元：21 自由度手部动捕、5 自由度绳驱力反馈和指尖振动触觉；报告在无视觉输入时力/触觉反馈对接触密集任务至关重要，采集数据可训练模仿学习策略。
