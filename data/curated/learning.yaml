@@ -300,3 +300,15 @@
   tags: [benchmark, self-improvement, vlm-agent, scaling-law, technical-report]
   takeaway_en: PhysRSI-eval scores VLM agents on 18 manipulation tasks under a fixed trial budget on five axes, incl. learning from failure; reports similar benchmark averages hide different improvement speeds.
   takeaway_zh: PhysRSI-eval 在固定交互预算下用 18 个操作任务、五个维度（含从失败中改进）评测 VLM 智能体；报告公开基准平均分相近的模型改进速度差别很大，且早期物理反馈可用于预测后续进展。
+- title: "TILDE: Teacher-in-the-Loop Distillation from Embodied Foundation Models"
+  type: paper
+  arxiv: "2610.25376"
+  year: 2026
+  org: The University of Hong Kong
+  code: https://github.com/hku-sail/TILDE
+  project: https://hku-sail.github.io/TILDE/
+  added: 2026-10-25
+  topics: [learning, vla]
+  tags: [distillation, dagger, recovery, reward-model, real]
+  takeaway_en: Distills a pretrained VLA teacher into a policy without action pretraining via on-policy supervision plus teacher-run recoveries, triggered by a reward model (AutoDAgger); reports up to 4.1x over BC on 3 real tasks.
+  takeaway_zh: 把预训练具身基础模型（教师）蒸馏到未做动作预训练的策略：在学生访问的状态上做在线监督，并由奖励模型监控进度、自动触发教师接管采集纠错轨迹（AutoDAgger，无需人工看护）；报告在 3 个真机任务上比行为克隆最高提升 4.1 倍。
