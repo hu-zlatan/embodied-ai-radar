@@ -397,3 +397,35 @@
   tags: [sim2real, arm, grasping, synthetic-data, flow-matching]
   takeaway_en: Pretrains a grasping VLA almost only on SynGrasp-1B, a billion-frame photorealistic sim dataset, co-trained with web data; reports zero-shot sim-to-real open-vocabulary grasping and few-shot adaptation.
   takeaway_zh: 几乎只用十亿帧级的照片级仿真抓取数据集 SynGrasp-1B（并联合网络语义数据）预训练抓取 VLA；论文报告可零样本从仿真迁移到真实开放词汇抓取，并支持少样本适配。
+- title: "π*0.6: a VLA That Learns From Experience"
+  type: paper
+  arxiv: "2511.14759"
+  year: 2025
+  org: Physical Intelligence
+  venue: RSS 2026
+  project: https://pi.website/blog/pistar06
+  highlight: true
+  topics: [learning]
+  tags: [real, arm, mobile-manipulation, rl, offline-rl, interventions]
+  takeaway_en: "RECAP trains a VLA with RL via advantage conditioning on demos, on-robot rollouts and teleop corrections; reports it more than doubles throughput on hard tasks like laundry folding and espresso making."
+  takeaway_zh: RECAP 通过优势条件化，用演示、机器人自主运行数据和遥操作纠正对 VLA 做强化学习；论文报告在叠衣服、做意式咖啡等难任务上吞吐量提升一倍以上、失败率约减半。
+- title: "X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model"
+  type: paper
+  arxiv: "2510.10274"
+  year: 2025
+  org: Tsinghua AIR, Shanghai AI Lab
+  venue: ICLR 2026
+  code: https://github.com/2toinf/X-VLA
+  project: https://thu-air-dream.github.io/X-VLA/
+  tags: [real, sim, cross-embodiment, flow-matching, open-weights]
+  takeaway_en: Gives each data source its own small set of learnable soft-prompt embeddings, so one plain-Transformer flow-matching policy (0.9B) trains across embodiments; evaluated on 6 sim benchmarks and 3 real robots.
+  takeaway_zh: 为每个数据来源配一组可学习的软提示嵌入，使一个基于标准 Transformer 的流匹配策略（0.9B）能跨本体联合训练；在 6 个仿真基准和 3 台真实机器人上评测。
+- title: "InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy"
+  type: paper
+  arxiv: "2510.13778"
+  year: 2025
+  org: Shanghai AI Lab (Intern Robotics)
+  code: https://github.com/InternRobotics/InternVLA-M1
+  tags: [real, sim, arm, spatial, grounding, synthetic-data]
+  takeaway_en: Pretrains spatial grounding on 2.3M samples ('where to act'), then post-trains actions with spatial prompts ('how to act'); reports +14.6% on SimplerEnv Google Robot over the same model without spatial guidance.
+  takeaway_zh: 先在 230 万条空间推理样本上做空间定位预训练（"在哪里做"），再用空间提示做动作后训练（"怎么做"）；论文报告在 SimplerEnv Google Robot 上比无空间引导的同一模型高 14.6%。

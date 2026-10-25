@@ -20,7 +20,7 @@ SITE = "https://hu-zlatan.github.io/embodied-ai-radar/"
 
 def md_title(t: str) -> str:
     t = re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", t)
-    return t.replace("[", "\\[").replace("]", "\\]")
+    return t.replace("[", "\\[").replace("]", "\\]").replace("*", "\\*")
 
 
 def render(lang: str) -> str:
