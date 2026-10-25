@@ -261,3 +261,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Digest: a local W43 draft had 63 picks in 'Editor's picks' (60 KB). `make_digest.py` now shows the top 8 by community signals with full takeaways and lists the rest compactly by topic (33 KB); `$Δ$`-style TeX in titles rendered. Draft not committed — weekly.yml writes W43 on Monday.
 - verify #81 passed (RUKA, Bidex incl. links); CI and Pages green. Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting; CoRL week Nov 9–12). Next: Mon 10-26 feed + first auto digest W43. End of run 27.
+
+## 2026-10-25 — run 28 (~22:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. Sunday night: no new arXiv day until Mon 10-26. No add_repo tool; clone was detached → `main` reset to `origin/main`. Review queue holds only off-scope items.
+- Gap sweep: grepped curated data for ~60 well-known VLA / humanoid / dataset names; ~28 were missing (one false positive: ExBody is already in as 'Expressive Whole-Body Control'). Added 12 anchors with facts from arXiv abs/HTML pages, PMLR v305, RSS 2026 proceedings, ICLR 2026 / CVPR 2025 listings; repos via GitHub search: BeyondMimic → locomotion; EgoMimic → manipulation; MolmoAct, GraspVLA, π*0.6, X-VLA, InternVLA-M1, Magma, Being-H0 → vla; DexMimicGen → sim; EgoDex → datasets; SAM 3 → perception. Curated: 350.
+- Fix: `build_readme.md_title` escapes `*` (π*0.6 would have opened Markdown emphasis in the README).
+- A slicing slip briefly deleted most of locomotion.yaml locally; validate caught it (start.yaml ids missing) and the file was restored from git before commit.
