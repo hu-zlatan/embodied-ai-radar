@@ -235,3 +235,12 @@
   tags: [visual-grounding, vlm, embodied-brain, data-pipeline]
   takeaway_en: Fine-tunes Qwen3.5-9B on ~1.5M grounding samples auto-built from robot recordings plus other visual data; reports a 75.41 average over seven grounding benchmarks vs 73.68 for GPT-6 Astra.
   takeaway_zh: 用自动标注的机器人操作录像加多来源视觉数据构建约 150 万条可验证的定位监督，微调 Qwen3.5-9B；报告在七个公开视觉定位基准上平均 75.41 分，GPT-6 Astra 为 73.68。
+- title: "SAM 3: Segment Anything with Concepts"
+  type: paper
+  arxiv: "2511.16719"
+  year: 2025
+  org: Meta
+  code: https://github.com/facebookresearch/sam3
+  tags: [segmentation, tracking, open-vocabulary, foundation-model, open-weights]
+  takeaway_en: Segments and tracks every instance of a concept given a short noun phrase or image exemplar, in images and video; trained with a data engine covering 4M concept labels, with open weights and the SA-Co benchmark.
+  takeaway_zh: 给定短名词短语或示例图像，即可在图像和视频中分割并跟踪某一概念的所有实例；数据引擎覆盖 400 万个概念标签，开放权重与 SA-Co 基准，可直接用作机器人开放词汇感知模块。

@@ -429,3 +429,26 @@
   tags: [real, sim, arm, spatial, grounding, synthetic-data]
   takeaway_en: Pretrains spatial grounding on 2.3M samples ('where to act'), then post-trains actions with spatial prompts ('how to act'); reports +14.6% on SimplerEnv Google Robot over the same model without spatial guidance.
   takeaway_zh: 先在 230 万条空间推理样本上做空间定位预训练（"在哪里做"），再用空间提示做动作后训练（"怎么做"）；论文报告在 SimplerEnv Google Robot 上比无空间引导的同一模型高 14.6%。
+- title: "Magma: A Foundation Model for Multimodal AI Agents"
+  type: paper
+  arxiv: "2502.13130"
+  year: 2025
+  org: Microsoft Research
+  venue: CVPR 2025
+  code: https://github.com/microsoft/Magma
+  project: https://microsoft.github.io/Magma
+  tags: [real, sim, arm, vlm, agents, open-weights]
+  takeaway_en: One model for UI navigation and robot manipulation, pretrained on images, videos and robot data labelled with Set-of-Mark (what to act on) and Trace-of-Mark (how things move); model and code are public.
+  takeaway_zh: 同一个模型同时做界面操作与机器人操作：在图像、视频和机器人数据上预训练，用 Set-of-Mark 标注可操作对象、用 Trace-of-Mark 标注运动轨迹；模型与代码公开。
+- title: "Being-H0: Vision-Language-Action Pretraining from Large-Scale Human Videos"
+  type: paper
+  arxiv: "2507.15597"
+  year: 2025
+  org: BeingBeyond
+  venue: ICML 2026
+  code: https://github.com/BeingBeyond/Being-H0
+  project: https://beingbeyond.github.io/Being-H0
+  topics: [manipulation]
+  tags: [real, dexterous-hand, human-video, motion-tokenization]
+  takeaway_en: A dexterous VLA pretrained on human hand motion from mocap, VR and RGB video ('physical instruction tuning'), with part-level motion tokens, then aligned to 3D space and post-trained for real robot hands.
+  takeaway_zh: 灵巧手 VLA：先在动捕、VR 与普通视频中的人手动作上预训练（"物理指令微调"），使用部件级动作 token，再做三维空间对齐，并针对真实机器人灵巧手后训练。
