@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-25 ~23:10 UTC, run 28._
+_Last updated: 2026-10-25 ~23:30 UTC, run 28 (end)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (350 entries, EN/ZH takeaways; 46 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (351 entries, EN/ZH takeaways; 46 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -49,7 +49,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Backlog
 
-- Run 28: gap sweep of well-known 2024–26 papers → 12 anchors (BeyondMimic, EgoMimic, MolmoAct, GraspVLA, DexMimicGen, π*0.6, X-VLA, InternVLA-M1, EgoDex, SAM 3, Magma, Being-H0). Still missing, verify first: DexVLA (2502.05855, CoRL 2025; org + official repo unconfirmed — juruobenruo/DexVLA?), WALL-OSS (2509.11766, X Square Robot) + Wall-OSS-0.5 (2605.30877), MolmoAct 2 (no arXiv found yet; allenai/molmoact2 repo), Hume, TwinVLA, OneTwoVLA, ChatVLA, TinyVLA, GenManip, RoboOS, UnifoLM, VQ-VLA, GigaBrain, Galaxea G0. README `md_title` now escapes `*`.
+- Run 28: gap sweep of well-known 2024–26 papers → 12 anchors (BeyondMimic, EgoMimic, MolmoAct, GraspVLA, DexMimicGen, π*0.6, X-VLA, InternVLA-M1, EgoDex, SAM 3, Magma, Being-H0). Also WALL-OSS (2509.11766). Still missing, verify first: DexVLA (2502.05855, CoRL 2025; org + official repo unconfirmed — juruobenruo/DexVLA?), Wall-OSS-0.5 (2605.30877), MolmoAct 2 (no arXiv found yet; allenai/molmoact2 repo), Hume, TwinVLA, OneTwoVLA, ChatVLA, TinyVLA, GenManip, RoboOS, UnifoLM, VQ-VLA, GigaBrain, Galaxea G0. README `md_title` now escapes `*`.
 
 - Run 27: hardware anchors RUKA (RSS 2025, NYU) and Bidex (CoRL 2024, CMU) → hardware 27. Review queue unchanged (only off-scope items). Candidates: RUKA-v2 (repo ruka-hand-v2/RUKA-v2; find arXiv first), Reachy 2 (no paper; Pollen/HF docs).
 
