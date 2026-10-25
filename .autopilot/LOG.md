@@ -253,3 +253,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Hardware anchors (thinnest topic): TidyBot++ (CoRL 2024), UMI-on-Legs (CoRL 2024), DOGlove (RSS 2025). Facts from PMLR / RSS proceedings pages; repos via GitHub search. Curated: 336.
 - verify #79 (picks) and #80 (hardware anchors) passed; CI green. Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting; CoRL week Nov 9–12). Next: Mon 10-26 feed + first auto digest W43. End of run 26.
+
+## 2026-10-25 — run 27 (~16:40 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. Sunday: no new arXiv days until Mon 10-26. No add_repo tool; clone was detached → `main` reset to `origin/main`. Review queue holds only off-scope items.
+- Hardware anchors RUKA (2504.13165, RSS 2025; repo ruka-hand/RUKA) and Bidex / "Bimanual Dexterity for Complex Tasks" (2411.13677, CoRL 2024; project page only). Facts from RSS proceedings, PMLR v270 and live arXiv abs pages. Curated: 338.
+- Digest: a local W43 draft had 63 picks in 'Editor's picks' (60 KB). `make_digest.py` now shows the top 8 by community signals with full takeaways and lists the rest compactly by topic (33 KB); `$Δ$`-style TeX in titles rendered. Draft not committed — weekly.yml writes W43 on Monday.

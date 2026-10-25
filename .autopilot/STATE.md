@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-25 ~11:15 UTC, run 26 (end)._
+_Last updated: 2026-10-25 ~17:10 UTC, run 27 (end)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (336 entries, EN/ZH takeaways; 46 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (338 entries, EN/ZH takeaways; 46 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -24,6 +24,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - **HF upvotes** (run 19): `scripts/hf_papers.py` (best-effort step in `repo-stats.yml`) reads https://huggingface.co/api/daily_papers?date= for the last 21 days, keeps only our arXiv IDs → `data/hf_papers.json` (`{id: {upvotes, date}}`, kept 60 days, failed days keep old values). '▲ N HF' links on feed/curated cards and search results, `?sort=hf`, home 'Upvoted on Hugging Face' (last 14 days, top 8), digest section. Hidden when there is no data.
 - **HF links + review queue** (run 23): `hf_papers.py` (runs *before* `repo_stats.py` in repo-stats.yml) also stores HF `githubRepo` / `projectPage` per paper (`github`, `project` in `data/hf_papers.json`, sanitised on load). `merge_links()` fills missing feed code/project links in build_site, make_digest and repo_stats (so 404s → 'not public yet'). First real run: 29 of 37 HF-listed papers have a GitHub link. It also writes `.autopilot/review_queue.json` (uncurated papers with ≥5 upvotes: full abstract, authors, org, links, arXiv comment) — **use it as the fact source for picks** (arXiv/HF pages are often not fetchable from the agent's tools).
 - **Robot-type pages** (run 22): `robots/<emb>.html` per entry of `data/embodiments.yaml` (curated entries by computed `emb`, newest 40 auto-tagged feed papers, per-topic search links) + Atom `robots/<emb>.xml` + `robots/index.html`; linked from home (row under Topics), feed page, topics index, READMEs, digest robot-type counts, sitemap.
+- **Digest picks** (run 27): `make_digest.py` ranks the week's picks (highlight, HF upvotes, GitHub stars, has code); top 8 (`TOP_PICKS`) get full EN/ZH takeaways, the rest are one line per topic linking entry pages. Simple TeX in titles is rendered ($Δ$ → Δ). W43 draft went 60 KB → 33 KB.
 - Issue forms: `.github/ISSUE_TEMPLATE/` (suggest an entry / report a mistake, bilingual; contact links to site + Discussions). Footer link `/issues/new` opens the chooser.
 - License: `LICENSE` = MIT (GitHub detects it), data terms in `LICENSE-DATA.md`.
 - Verification: all curated arXiv IDs + links checked by `verify.yml` (since run 8: HTTP 4xx fails; network errors/5xx are retried once and shown as ⚠️ warnings, not failures) (run 2: 10 perception anchors passed). Re-check the latest verify run at the start of each run.
@@ -42,11 +43,13 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 0. New curated entries get BibTeX metadata on the next intake run. A push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started/finished.
 1. Scheduled runs: on 10-23 the 01:11/02:17/04:53 slots never fired; first scheduled intake landed 05:57 UTC, then 07:36, 09:37, 12:51, 15:42, 19:21. So the feed lands ~06:00 UTC — acceptable; no owner action. arXiv does not announce on Sat/Sun nights, so the next new feed day is Mon 10-26 (~00:00 UTC announcement).
 2. Picks: start from `.autopilot/review_queue.json` (uncurated, by upvotes, with full abstracts). Review the newest feed (10-26 onward; 10-23 reviewed in run 17: OpenTac, GelSlim 5.0, one-step flow-matching, UniFlowWAM), papers with code first, promote 2–5 notable ones with `added: <date>` and careful EN/ZH takeaways (≤220 chars EN — validate with `set -o pipefail`; phrase results as "reports").
-3. Monday 2026-10-26: check the first auto digest (2026-W43); add a short human-quality intro paragraph if useful.
+3. Monday 2026-10-26: check the first auto digest (2026-W43, now top-8 picks + compact rest); add a short human-quality intro paragraph if useful.
 3b. From ~2026-10-28: check 'Rising this week' renders with real data (needs 7 days of `data/repo_stars_history.json`). Digest 'Rising on GitHub' section was added in run 16 (first real one: 2026-W44, written Mon 11-02).
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 27: hardware anchors RUKA (RSS 2025, NYU) and Bidex (CoRL 2024, CMU) → hardware 27. Review queue unchanged (only off-scope items). Candidates: RUKA-v2 (repo ruka-hand-v2/RUKA-v2; find arXiv first), Reachy 2 (no paper; Pollen/HF docs).
 
 - Run 26: picks TILDE → learning, TARSphere → navigation, SkeLAM → world-models (review queue now only off-scope items: agent-memory survey, JCA animation, LLM2R, SafeDriveVLA driving). Hardware anchors TidyBot++, UMI-on-Legs, DOGlove (hardware 22 → 25). More hardware candidates (verify first): Mobile ALOHA hardware is in manipulation; Reachy 2, Koch v1.1, LeRobot hardware docs, BiDex, HumanPlus is in locomotion.
 
