@@ -245,3 +245,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Anchors: dm_control (2006.12983), SoftGym (2011.07215, CoRL 2020), Newton (Linux Foundation physics engine, no paper) → sim; NavGPT (2305.16986, AAAI 2024), ETPNav (2304.03047, TPAMI 2024) → navigation. Facts from arXiv abs pages / PMLR / LF press release; repos via GitHub search. One unquoted ': ' YAML slip caught by validate. Curated: 330. Push raced a repo-stats bot commit → `pull --rebase`, re-validated, pushed.
 - verify #77 (picks) and #78 (anchors) passed; CI green. Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting; CoRL week Nov 9–12). Next: Mon 10-26 feed + first auto digest W43. End of run 25.
+
+## 2026-10-25 — run 26 (~10:40 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. Sunday: no new arXiv days until Mon 10-26. No add_repo tool; clone was detached → `main` reset to `origin/main`.
+- Picks from `.autopilot/review_queue.json` (CI-fetched abstracts; repos live per repo_stats feed section): TILDE (HKU; teacher-in-the-loop distillation from VLAs, AutoDAgger) → learning; TARSphere (embodied-agent framework + 360-episode bench) → navigation; SkeLAM (skeleton-grounded latent actions, project only) → world-models. One over-length takeaway caught by validate.
+- Hardware anchors (thinnest topic): TidyBot++ (CoRL 2024), UMI-on-Legs (CoRL 2024), DOGlove (RSS 2025). Facts from PMLR / RSS proceedings pages; repos via GitHub search. Curated: 336.
