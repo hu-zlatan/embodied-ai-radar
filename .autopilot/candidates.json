@@ -436,28 +436,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.31472",
-   "title": "VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing",
-   "published": "2026-10-23",
-   "topics": [
-    "tactile",
-    "hardware"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://jiannnh.github.io/VecTile/"
-   ],
-   "comment": "8 pages, 8 figures. Submitted to IEEE International Conference on Robotics and Automation (ICRA) 2027",
-   "authors": [
-    "Jian Hou",
-    "Xin Zhou",
-    "Adam J. Spiers"
-   ],
-   "abstract": "Tactile sensing provides robots with contact information difficult to obtain from vision alone. Shear force is particularly important for understanding tangential contact, guiding corrective motions, and maintaining grasp stability, yet flexible and low-cost tactile arrays often measure only normal force. We introduce VecTile, a low-cost, 6 mm thin, flexible tactile array capable of three-axis force sensing. VecTile combines a piezoresistive layer with passive silicone nubs that convert normal and shear forces into distinguishable pressure patterns. The sensor can be fabricated in-house without specialized equipment. The complete system costs less than 35 USD for a 4x4 array. We validate the sensing mechanism through finite element analysis and hardware experiments. In controlled single-taxel tests over 1-5 N normal force and up to 1.5 N shear force, VecTile achieves root-mean-square errors of 0.39 N and 0.16 N for normal and shear forces. A VecTile calibrated while flat retains accuracy when curved, while a five-minute manual calibration is sufficient for practical use. Two applications demonstrate its utility. First, shear readings are sensitive enough to stop a sharp scalpel from puncturing a balloon after contact. Second, the sensor substantially improves Diffusion Policy-guided power-plug insertion. All designs and code will be released upon paper acceptance. Project website: https://jiannnh.github.io/VecTile/.",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.31429",
    "title": "PhysTrace: Interpretable Temporal Evaluation of Physical Consistency in Video Generative Models",
    "published": "2026-10-23",
@@ -475,30 +453,6 @@
     "Kyeongbo Kong"
    ],
    "abstract": "World action models increasingly rely on pretrained video models assumed to capture physical dynamics for prediction, planning, and action generation. Existing evaluations assess plausibility, probe representations, or measure predictive surprise, but rarely identify which history-conditioned physical expectations conflict with observations. We introduce PhysTrace, a training-free framework aligning MLLM-generated, history-conditioned expectations with observed video windows to temporally localize physical violations and provide interpretable descriptions without task-specific probes or classifiers. We also introduce IntPhys2-Timing, adding violation intervals to IntPhys2. PhysTrace achieves a Hit Rate of up to 70.7% across physical principles on IntPhys2-Timing and outperforms the compared methods in overall possible-impossible discrimination accuracy on IntPhys2. Applied to reconstructed videos along the trajectories of pretrained diffusion/flow-based video models, PhysTrace reveals attribute- and noise-dependent patterns in physical violation localization, enabling interpretable physical consistency analysis across timesteps.",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.31427",
-   "title": "FastHarness: Experience-Driven Review Scheduling for Vision-Language-Action Policies",
-   "published": "2026-10-23",
-   "topics": [
-    "vla",
-    "learning"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/FastHarness/fast-harness"
-   ],
-   "project": [],
-   "comment": "Github:https://github.com/FastHarness/fast-harness",
-   "authors": [
-    "Tao Lin",
-    "Yuxin Du",
-    "Haoxiao Wang",
-    "Zile Zhong",
-    "Bo Zhao"
-   ],
-   "abstract": "Agentic robot systems combine language-model reasoning with robot policies to monitor execution and recover from failures. However, reviewing every action chunk incurs substantial overhead, even in familiar situations. We introduce FastHarness, an experience-driven execution harness that adaptively schedules GPT-6 Astra supervision of a π0.5 policy. A fast path uses stage memory and reviewed outcomes to reduce review frequency as experience accumulates, while a complementary recovery path focuses supervision on correcting errors. Once recovery is verified, routine execution resumes, with failure experience retained to guide future interventions. The policy remains frozen and generates fresh actions from current observations. Across four simulated manipulation tasks, reviewer token use decreases by an average of 57.2% per task from the first evaluated episode to the mean of the final five episodes. Mean episode time decreases from 85.5 to 52.0 minutes over the same interval. On the same tasks, mean success increases from 80% for GPT-as-Policy (π0.5 + GPT-6 Astra) to 97.19% with FastHarness. These results highlight adaptive supervision as a practical route to more efficient agentic robotics without additional model training.",
    "fetched": "2026-10-26"
   },
   {
@@ -595,33 +549,6 @@
     "Manabu Tsukada"
    ],
    "abstract": "Diffusion trajectory planners with domain-specific experts face a practical question in unseen regions: can they rely on selecting among existing experts, or must the planner itself adapt? We study this question using a planner with a shared adapter and per-domain expert adapters. Across three real-world held-out maps, none of eight test-time routing schemes improves the fleet-mean lateral offset over the static default, which uses the same expert for every scene. Even an oracle that selects the best expert for each scene reduces the mean offset by only 0.9 m. In contrast, reward-based fine-tuning on just 20 target-region scenes yields substantially larger gains. On matched evaluation slices, joint replay achieves a fleet-mean offset of 6.9 m, compared with 12.4 m for the static default. Comparisons under the same target-region training budget show that target-region training drives the improvement, while replaying training scenes limits forgetting on the original ODDs. On nuPlan, fine-tuning across training cities also improves open-loop offsets, although closed-loop performance deteriorates. Further diagnostics reveal that two test-time adaptation baselines achieve low offsets by producing degenerate trajectories. These results show the limited headroom for selecting among existing experts and the greater open-loop gains available from adapting the planner.",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.31064",
-   "title": "AstroBench: Benchmarking Free-Floating Capture and Space Robotic Manipulation",
-   "published": "2026-10-23",
-   "topics": [
-    "manipulation",
-    "datasets"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/AstroUpLab/AstroBench"
-   ],
-   "project": [
-    "https://astroup.com/astrobench/"
-   ],
-   "comment": "12 pages, 5 figures, 9 tables. Code and assets: https://github.com/AstroUpLab/AstroBench ; project website: https://astroup.com/astrobench/",
-   "authors": [
-    "Zizhe Wang",
-    "Jia Deng",
-    "Xin Lu",
-    "Zehao Jia",
-    "Yi Huang",
-    "Yao Zhu"
-   ],
-   "abstract": "Capturing a loose object inside a spacecraft requires a robot to approach a target that can translate and rotate, and whose motion changes when contact is made. These conditions motivate evaluation beyond manipulation of supported objects. We introduce AstroBench, an open benchmark for free-floating capture and space robotic manipulation with a fixed-base arm. The task suite combines four initial-motion tracks with sample-storage operations based on MELFI hardware and cap and captive-screw servicing based on the Robotic Refueling Mission. The two workcells provide nine task definitions and 29 task-target combinations. A metadata-filtered Objaverse inventory supplies 8,414 object instances for asset expansion, alongside five cabin visual contexts and versioned task instructions. We report two acquisition-focused experiments using existing checkpoints. A frozen $π_{0.5}$ DROID joint-position policy captures 2 of 200 static targets and 4 of 200 moving targets across twenty object identities. A cube-specific ACT policy captures 8 of 10 static targets and 6 of 10 moving targets in a separate experiment. Each experiment retains its recorded observation, action and capture configuration. The results document difficult direct transfer for the tested generalist checkpoint and successful task-specific capture behavior, while identifying concrete settings for studying motion-aware perception and contact-sensitive control. Code, task definitions and editable workcell assets are available at https://github.com/AstroUpLab/AstroBench.",
    "fetched": "2026-10-26"
   },
   {
@@ -739,28 +666,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.30438",
-   "title": "Tactile-Based Robotic Manipulation: From Mechanics-Driven to Data-Driven Perspectives",
-   "published": "2026-10-23",
-   "topics": [
-    "manipulation",
-    "tactile"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://www.annualreviews.org"
-   ],
-   "comment": "30 pages. Author accepted manuscript. Posted with permission from the Annual Review of Control, Robotics, and Autonomous Systems, Volume 10; copyright 2027 the author(s), https://www.annualreviews.org",
-   "authors": [
-    "Jingyi Xiang",
-    "Yixuan Wang",
-    "Wenzhen Yuan"
-   ],
-   "abstract": "Tactile sensing provides robots with direct access to physical interactions at the contact interface, making it a critical modality for robust and dexterous manipulation. Over the past several decades, tactile-based manipulation research has evolved from mechanics-driven approaches, which explicitly interpret tactile signals through contact mechanics and task-specific reasoning, to data-driven approaches that learn tactile representations and manipulation policies directly from data. This paper reviews the development of tactile-based manipulation from these two complementary perspectives. We first introduce the fundamentals of tactile sensing, and then review, from a mechanics-driven perspective, how those signals form manipulation-relevant state representations and subsequently influence the robot action. We then examine the recent advances in data-driven tactile manipulation, covering imitation learning, reinforcement learning, vision-language-action models, and predictive models. Finally, we discuss open challenges and future opportunities toward scalable, generalizable, and robust tactile-enabled robotic systems.",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.30197",
    "title": "Alpha: Systematic Fault Injection and Robustness Evaluation for LLM-Driven Embodied Manipulation",
    "published": "2026-10-23",
@@ -824,30 +729,6 @@
     "Stella X. Yu"
    ],
    "abstract": "Humanoid fall recovery requires selecting a motion that suits both the surrounding scene and the task. The same fallen pose can admit several ways to stand, with different routes, support transitions, and final headings. Yet reliable recovery alone does not provide control over which of these alternatives the robot executes. Steering this choice requires anticipating the physical consequences of a requested movement. We present RISE, an approach to perceptive humanoid recovery that lets task objectives steer how the robot returns to standing at inference time. It builds on two insights: diverse recoveries can be composed from shared movements, and anticipating how these movements unfold allows recovery to be steered toward a task objective. We learn a recovery vocabulary that connects intended movements to motor actions through sensory feedback. A visual diffusion planner learns from executions of this vocabulary to predict motion intent as future body states. Task costs guide this prediction toward a desired heading, rise speed, or path. The planner then generates motion latents conditioned on the steered intent, allowing the requested movement to shape its execution. Simulation experiments demonstrate diverse recoveries, terrain adaptation, and test-time steering without retraining, complemented by real-world demonstrations on a Unitree G1. Project page: https://osheraz.github.io/RISE/",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.30051",
-   "title": "From Reasoning to Action: Benchmarking Frontier AI Models on LIBERO-10 Robot Manipulation Tasks",
-   "published": "2026-10-22",
-   "topics": [
-    "manipulation",
-    "datasets"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/IRVLUTD/LLM_LIBERO"
-   ],
-   "project": [
-    "https://irvlutd.github.io/LLM-LIBERO/"
-   ],
-   "comment": "17 pages, 6 figures, 8 tables. May Espinola and Qifan Zhang contributed equally. Project page: https://irvlutd.github.io/LLM-LIBERO/ Code: https://github.com/IRVLUTD/LLM_LIBERO",
-   "authors": [
-    "May Espinola",
-    "Qifan Zhang",
-    "Yu Xiang"
-   ],
-   "abstract": "Recent advances in frontier AI models have demonstrated remarkable capabilities in visual understanding, reasoning, planning, and tool use, raising the possibility of using general-purpose AI models for robot manipulation without task-specific training. However, their manipulation capabilities have not been systematically evaluated on standardized robotics benchmarks. In this report, we present a unified closed-loop manipulation framework for evaluating frontier AI models on the LIBERO-10 benchmark. Our framework enables models to control a robot directly through visual observations, robot proprioception, and structured tool calls, primarily by specifying target end-effector poses and gripper commands, without task-specific fine-tuning or pretrained manipulation skills. We evaluate six frontier AI models, including GPT-6 Astra, GPT-6.1 Sol, GPT-6 Luna, Claude Opus 5, Claude Opus 5.5, and Gemini-4 Argon, across three reasoning effort levels, resulting in 18 configurations and 1,800 evaluation episodes. Our results show that GPT-6 Astra achieves the highest success rate of 44%, followed by Gemini-4 Argon at 43%. Increasing reasoning effort generally improves manipulation performance, but the benefits vary across models and come at additional inference cost. We also observe substantial differences across tasks, with models performing relatively well on object placement tasks but struggling with precise spatial arrangements and complex multi-step interactions. These findings demonstrate both the potential and limitations of frontier AI models for robot manipulation, highlighting the challenges of translating reasoning capabilities into reliable physical actions. We release our evaluation framework and experimental results to support reproducible benchmarking and future research on reasoning-based robot manipulation.",
    "fetched": "2026-10-26"
   },
   {
@@ -1178,56 +1059,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.29030",
-   "title": "PHD-Hand: A Printable Humanoid Dexterous Hand with Linkage-Driven 3-DOA Digits",
-   "published": "2026-10-22",
-   "topics": [
-    "manipulation",
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://lnkd.in/p/er-NRfMn"
-   ],
-   "comment": "Submitted and Accepted at IEEE-RAS International Conference on Humanoid Robots (Humanoids 2026). 8 pages. Supplementary video: https://lnkd.in/p/er-NRfMn",
-   "authors": [
-    "Neel Adwani",
-    "Muhaiminul Islam Akash",
-    "Saffia Ouali",
-    "Ethan Liu",
-    "Cong Wang"
-   ],
-   "abstract": "Currently, dexterous humanoid robot hands are widely considered the final hardware bottleneck that hampers generalist robots from physically assisting people at home and work. As conventional tendon-driven designs suffer from high cost, demanding maintenance, poor reliability, and short durability, alternative linkage-driven designs have increasingly gained attention. Despite their potential to avoid the weaknesses of tendon-driven hands, integrating multiple degrees of actuation (DOA) in a single digit with linkage drivetrains is a challenge for design and fabrication. Only a few studies have managed to present functional humanoid hands that are completely linkage-driven and have at least three DOAs per digit without compromising actuator placement and other design preferences. Our work introduces a new linkage-driven hand featuring a unique flexure hinge. Together with elastic drive rods made of spring steel, the linkage drivetrains are significantly simplified. Unlike other linkage-driven designs of similar dexterity, our design does not require many miniature moving parts. As a result, the hand can be fabricated easily with a budget 3D printer. This not only significantly lowers the barrier to entry for using and developing dexterous humanoid robot hand functions, but also allows the hands to be sized much closer to regular human hands. The design offers desirable kinematic advantages as well. A prototype is evaluated for grasping and object manipulation. In addition, this paper presents our latest findings on kinematics and control of the hand.",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.28948",
-   "title": "COWBOY: A Scalable Sim-to-Real Framework for Learning Contextual Whole-Body Manipulation",
-   "published": "2026-10-22",
-   "topics": [
-    "manipulation",
-    "sim"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://cowboy-manip.com"
-   ],
-   "comment": "Website at https://cowboy-manip.com",
-   "authors": [
-    "Jiahui Yang",
-    "Jason Jingzhou Liu",
-    "Ray Muxin Liu",
-    "Andrew E. Wang",
-    "Kenneth Shaw",
-    "Deepak Pathak",
-    "Ruslan Salakhutdinov"
-   ],
-   "abstract": "Mobile manipulators must adapt not only to objects, but also to the spatial context in which they appear: where to position the base, how to manipulate, and where to look while navigating surrounding scene geometry. To address this, we present COWBOY, a scalable sim-to-real framework for learning such contextual whole-body manipulation. On whole-body dexterous grasping, COWBOY transfers zero-shot to hundreds of objects and diverse in-the-wild scenes, spanning cluttered tabletops, shelves, drawers, and other unstructured settings. Rather than learning scene adaptation directly with RL in simulation, a vectorized environment-aware whole-body controller (WBC) handles reaching in thousands of scenes by coordinating base-arm motion, collision avoidance, and active vision. Then, local RL experts are trained in local scenes for object interaction and can be reused across thousands of full-scene layouts. We distill these composed WBC-RL teachers into a single vision policy that controls the mobile base, arm, dexterous hand, and actuated camera from point-cloud observations. The resulting policy exhibits contextual whole-body behavior, automatically adapting base placement, camera viewpoint, arm trajectory, and grasp strategy to observed scene and object geometry. Videos are available at https://cowboy-manip.com",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.28893",
    "title": "Flexible Language-Guided Representation Editing for Adaptive Robot Behavior",
    "published": "2026-10-22",
@@ -1332,37 +1163,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.28613",
-   "title": "Physical Canvas: A Vision Tactile World Model For Robot Policy Evaluation And Learning",
-   "published": "2026-10-21",
-   "topics": [
-    "tactile",
-    "world-models",
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://zebinx.github.io/PhysCanvas_HomePage/"
-   ],
-   "comment": null,
-   "authors": [
-    "Zebin Xing",
-    "Yuhang Zheng",
-    "Yupeng Zheng",
-    "Yichen Zhang",
-    "Zichen Li",
-    "Shangqing Zhou",
-    "Yujie Zang",
-    "Yuchen Liu",
-    "Zhongpu Xia",
-    "Haoran Li",
-    "Qichao Zhang"
-   ],
-   "abstract": "Evaluating and post-training robot policies through physical interaction is costly and difficult to scale, motivating action-conditioned world models as interactive simulators. However, visually plausible predictions can misrepresent contact dynamics, providing unreliable feedback for policy evaluation and learning. We introduce PhysCanvas, a state-consistent visuo-tactile world model for contact-rich robot manipulation. PhysCanvas unifies multi-view RGB, tactile images, marker displacement, task state, and actions within a unified vision space. All modalities share a video VAE and pretrained generative backbone, allowing optical touch to reuse visual and temporal priors. Motion images derived through forward kinematics and camera projection provide spatially aligned action conditioning, while an initial RGB anchor and updated reference observations guide sequential generation. Our consistency-aware post-training uses the frozen Scene Reward Model, Modality Reward Model, and State Reward Model to supervise scene preservation, visual-tactile compatibility, and agreement with real task outcomes. The resulting world model supports closed-loop policy rollouts for evaluation and provides imagined interactions and rewards for GRPO policy updates. Across four real-world manipulation tasks, when policies are rolled out in the world model, State Reward Model supervision increases the arithmetic mean of task-wise Pearson correlations between world-model and real-world success rates from 0.602 to 0.885. Policy post-training in the reward-guided world model further increases $π_{0.5}$'s mean real-world success rate from a 59.1% SFT baseline to 70.8%. These results demonstrate the value of unified multimodal modeling and consistency-aware post-training for robot policy evaluation and learning. Project page: https://zebinx.github.io/PhysCanvas_HomePage/.",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.28585",
    "title": "SceneRig: An Agentic System for Simulation-Ready 3D Scene Reconstruction from Single Images",
    "published": "2026-10-21",
@@ -1430,26 +1230,6 @@
     "Donghyun Kim"
    ],
    "abstract": "While large-scale human motion capture datasets provide a rich source of demonstrations for humanoid robot learning, retargeting the diverse motions to different humanoid robots remains a nontrivial challenge. Existing kinodynamic trajectory optimization pipelines are computationally expensive and often require manual adjustments per motion. We present FRDV (Fast Retargeting with Dynamics Validation), a scalable framework consisting of rapid constrained kinematic retargeting and an additional dynamics validation pipeline. Its kinematic stage integrates a custom Sequential Quadratic Programming solver, Real-Time Iteration, and parallel chunk-based processing, achieving up to 9,156 frames per second, approximately up to 136 times faster than GMR and ProtoMotions, while robot-specific constraints are incorporated into the optimization to reduce common retargeting artifacts, such as ground penetration and self-collision. For motions requiring additional verification, a contact implicit iLQR controller is utilized to test the retargeted reference under full rigid body dynamics. This dynamics-based validation identifies dynamically infeasible motions and refines contact-related artifacts such as foot floating and foot skating. We evaluate retargeting quality by training motion tracking reinforcement learning policies using several state-of-the-art pipelines and comparing their tracking fidelity and success rates. Furthermore, sim-to-real transfer is demonstrated on a Unitree G1 humanoid. Videos and code are available at: https://daroslab.github.io/frdv/.",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.28465",
-   "title": "MARE: An Open-Source Lunar Rover Simulator with Shadow Ground Truth for Perception and Autonomy",
-   "published": "2026-10-21",
-   "topics": [
-    "sim"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/raulcastar/MARE-Lunar-Simulator"
-   ],
-   "project": [],
-   "comment": "7 pages, 12 figures, 2 tables. Code: https://github.com/raulcastar/MARE-Lunar-Simulator. Video: https://youtu.be/EI4HgbMFbBE",
-   "authors": [
-    "Raúl Castilla-Arquillo",
-    "Miguel Olivares-Mendez"
-   ],
-   "abstract": "Lunar surface exploration increasingly relies on autonomous rovers that must perceive and traverse unstructured terrain under extreme illumination conditions. Near the lunar poles, low sun elevations produce long, high-contrast shadows that challenge stereo vision, terrain segmentation, and localization. Developing perception and navigation algorithms for these conditions requires large amounts of sensor data with accurate ground truth, which field campaigns and analog facilities can only provide at high cost and with limited variety. This paper presents MARE (Modular Autonomy and Rendering Environment), an open-source simulation suite for lunar rover perception and autonomy built on Unreal Engine 5 and ROS 2. MARE consists of three integrated components. Terrain Studio generates cratered and rocky lunar Digital Elevation Maps (DEMs) to build simulation scenes. A dedicated Unreal Engine project hosts two physics-based rovers with plugins for stereo, lidar, event, and Single-Photon Avalanche Diode (SPAD) cameras, streaming time-stamped sensor data and pixel-accurate ground truth. Lastly, a Guidance, Navigation, and Control (GNC) stack provides web-based mission control. Validation shows a mean Intersection over Union (IoU) of 0.79 between predicted and rendered shadows at low sun elevations, and stereo depth analysis verifies decreased pixel coverage in shadowed regions relative to sunlit terrain.",
    "fetched": "2026-10-26"
   },
   {
@@ -2254,33 +2034,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.25959",
-   "title": "EmbodiedWorld-200K: Toward Embodied World Agents via Embodied-Planning Dataset and Interactive World Models",
-   "published": "2026-10-20",
-   "topics": [
-    "world-models",
-    "navigation",
-    "datasets"
-   ],
-   "venue": "NeurIPS 2026",
-   "code": [],
-   "project": [
-    "https://xiaokunfeng.github.io/EmbodiedWorld-200K/"
-   ],
-   "comment": "Accepted by NeurIPS 2026~",
-   "authors": [
-    "X. Feng",
-    "J. Tang",
-    "Z. Lin",
-    "L. Chen",
-    "S. Shao",
-    "Q. Lu",
-    "K. Huang"
-   ],
-   "abstract": "Building embodied agents that can perceive, reason, and act across diverse 3D worlds is a central research direction toward artificial general intelligence. Yet most existing work remains confined to specific tasks in a single scene and transfers poorly to new environments, leaving general embodied agents for open-world settings under-explored. We refer to such agents as Embodied World Agents (EWAs), whose defining property is the ability to understand diverse visual environments and execute general actions in open-world conditions. To advance EWA research, we study open-world embodied navigation-planning and release EmbodiedWorld-200K, a large-scale dataset of over 200K samples spanning diverse scenes. Each example is equipped with multi-level annotations, ranging from low-level camera-motion trajectories to high-level semantic instructions. The dataset also provides unified evaluation splits and task-specific metrics, supporting offline pretraining and fair evaluation of EWAs. Beyond offline supervision, a defining characteristic of an EWA is its interaction with the environment; training solely on offline data is therefore insufficient, especially for generalizing to scenes not covered in the training distribution. Building dedicated real interactive environments, however, is often prohibitively expensive. To address this, we propose a novel training scheme that employs a video world model as a low-cost environment proxy and performs interactive reinforcement-learning (RL) post-training of the EWA within it. Empirically, pretraining on EmbodiedWorld-200K substantially improves the open-world embodied planning ability of the EWA, and further RL post-training inside a world model yields clear gains on out-of-distribution scenes. The dataset, baseline checkpoints, and training and evaluation code are available at https://xiaokunfeng.github.io/EmbodiedWorld-200K/.",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.25930",
    "title": "TESS: LLM-guided Translation, Exploration, Simulation, and Search for Embodied Task Planning",
    "published": "2026-10-20",
@@ -2538,31 +2291,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.25459",
-   "title": "BiDex-100: A Comprehensive Benchmark for Bimanual Dexterous Manipulation Across 100+ Simulation Tasks",
-   "published": "2026-10-20",
-   "topics": [
-    "manipulation",
-    "datasets"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://BiDex-100.github.io/BiDex-100/"
-   ],
-   "comment": null,
-   "authors": [
-    "Yong Wang",
-    "Kecheng Zheng",
-    "Xing Zhu",
-    "Chao Xu",
-    "Yujun Shen",
-    "Shengze Cai"
-   ],
-   "abstract": "Bimanual manipulation with dexterous hands has attracted growing attention in research on robotic action models. However, few studies have developed benchmarks specifically tailored for dexterous manipulation, leaving the dexterous manipulation capabilities of existing models insufficiently characterized. In this paper, we present BiDex-100, a simulation benchmark for bimanual dexterous manipulation that combines broad task coverage, multi-dimensional evaluation, and high-DoF hand embodiments. Concretely, the benchmark comprises 106 tasks organized along five capability axes: generalization, instruction following, limited demonstrations, long horizon, and memory. Each task is paired with an out-of-domain variant featuring controlled visual and spatial changes, allowing systematic assessment of robustness. In addition, the benchmark supports two embodiments and provides 8,080 success-validated teleoperated demonstrations, totaling 6.25 million frames. We evaluate seven recent Vision-Language-Action models under a unified protocol, establishing baselines for capability-specific performance, robustness, and data efficiency. The website is available at https://BiDex-100.github.io/BiDex-100/.",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.25401",
    "title": "Energy-Score Stabilized Attentive Mixture-Density Policy: A Lightweight Approach to Multimodal Robot Motion",
    "published": "2026-10-20",
@@ -2747,31 +2475,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.24610",
-   "title": "Solving a Giant Rubik's Cube with a Quadruped Robot",
-   "published": "2026-10-20",
-   "topics": [
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://leggedrobotics.github.io/rubik-skills/"
-   ],
-   "comment": "L. Amiet and G. Sánchez-Blanco Repgen contributed equally. Project page: https://leggedrobotics.github.io/rubik-skills/",
-   "authors": [
-    "Lukas Amiet",
-    "Gabriel Sánchez-Blanco Repgen",
-    "Mayank Mittal",
-    "Victor Klemm",
-    "Andrei Cramariuc",
-    "Marco Hutter",
-    "Cesar Cadena"
-   ],
-   "abstract": "Pedipulating a freestanding articulated object requires controlling its pose and internal configuration while maintaining balance. We demonstrate this capability by autonomously solving a giant Rubik's Cube with a quadruped using only its feet. The task demands repeated precise interactions, since unintended layer motion can invalidate subsequent operations. We develop an onboard RGB-D perception pipeline that estimates the cube's metric pose and its full color state from partial views acquired through locomotion and flipping. A planner converts the computed solve into robot-executable skill sequences. Learned whole-body skills reorient the cube while preserving its layer configuration and turn its layers with one foot pinning the cube as the other pushes. We train these skills using reinforcement learning with privileged observations and distill them into policies that map onboard depth and proprioception to joint targets. The deployed policies tolerate variations in relative robot-cube placement and recover from external disturbances. The system completes three autonomous hardware solves, each about 30 steps over 8-9 minutes. These results show that combining onboard perception with coordinated pedipulation enables a quadruped to complete extended multi-step physical tasks. Additional material can be found at: https://leggedrobotics.github.io/rubik-skills/",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.24590",
    "title": "Scene-Adaptive VLA: Efficient Autonomous Driving via Dynamic Layer Routing",
    "published": "2026-10-20",
@@ -2793,30 +2496,6 @@
     "Jinglin Li"
    ],
    "abstract": "Vision-Language-Action (VLA) models offer a promising paradigm for autonomous driving. However, the massive parameter scale of VLAs strains onboard computational resources during real-time inference. This directly increases energy consumption and limits vehicle battery range, making it critical to minimize computational overhead without compromising driving capability and explainability. Current research on efficient VLA-based driving focuses on sequential adaptation (\\textit{e.g.}, Chain-of-Thought and token adjustment), leaving structural adaptation underexplored despite parameter redundancy across dynamic driving scenes. To address this gap, we propose Scene-Adaptive VLA, an efficient framework leveraging dynamic layer routing to adjust active parameters based on real-time scenes. Inspired by the temporal continuity of scenes and model predictive uncertainty, our approach characterizes model-perceived scene complexity via frame-level temporal scene variations and decision deviations. To uncover latent scene-to-parameter correspondences, we encode this characterization into scene-aware tokens, alongside two specialized queries. A budget-conditioned layer routing mechanism evaluates these refined queries to allocate a budget that determines the active parameter ratio and subsequently selects appropriate layer combinations. The entire framework is optimized end-to-end. Extensive evaluations on the Bench2Drive benchmark show that when adapted to a state-of-the-art VLA model, our approach significantly reduces inference-time computational overhead by 53.5\\% with negligible degradation in driving and language capabilities. Code is available at https:github.com/yang-luvu/Scene-Adaptive-VLA.",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.24512",
-   "title": "ContactBench 1.0: A Benchmark for Everyday Contact-Rich Robotic Manipulation",
-   "published": "2026-10-20",
-   "topics": [
-    "manipulation",
-    "tactile",
-    "datasets"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://jingyi-xiang.github.io/contactbench"
-   ],
-   "comment": "Project website: https://jingyi-xiang.github.io/contactbench",
-   "authors": [
-    "Jingyi Xiang",
-    "Yixuan Wang",
-    "Jeannette Bohg",
-    "Wenzhen Yuan"
-   ],
-   "abstract": "Contact-rich manipulation underlies many everyday human activities, yet evaluating robots on such tasks remains difficult: the tasks involve diverse contact behaviors and are hard to reproduce across laboratories. Drawing on observations of everyday human manipulation, we identify eight essential skills that provide a practical framework for studying contact-rich manipulation. We introduce ContactBench 1.0, an extensible benchmark that instantiates these skills through 36 reference tasks and more than 40 object assets. The assets capture task-relevant geometry and contact behavior, can be fabricated reproducibly on consumer-grade 3D printers, and are each paired with a matching simulation model. Controlled task variations in both the real world and simulation enable evaluation of how well robot systems generalize. We evaluate recent representative vision-only and visual-tactile policy learning methods on six benchmark tasks. The results reveal that while vision-only policies struggle to perceive or react to contact events, visual-tactile policies do not meaningfully improve their performance, highlighting that contact-rich manipulation remains a significant challenge for current policy learning methods. By providing common task definitions alongside physical and simulated assets, ContactBench 1.0 offers a shared testbed for developing, evaluating, and comparing contact-rich manipulation systems. The benchmark will be open-sourced at https://jingyi-xiang.github.io/contactbench.",
    "fetched": "2026-10-26"
   },
   {
