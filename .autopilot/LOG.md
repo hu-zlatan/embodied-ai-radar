@@ -296,3 +296,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Site: home page now has an 'Accepted at:' row linking this year's venue pages (CoRL 2026 (37), IROS 2026, NeurIPS 2026, …) — venue pages were only reachable from feed/topics pages, and CoRL week is Nov 9–12.
 - verify #95 and #96 passed (all 13 picks incl. code/project links); CI and Pages green. Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: daily picks from `.autopilot/candidates.json` (unpicked list in STATE backlog); 'Rising this week' check from ~10-28; W44 digest Mon 11-02. End of run 31.
+
+## 2026-10-26 — run 32 (~22:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats/intake green, no issues/PRs (GitHub MCP; WebFetch of github.com needs approval nobody can give), 0 stars / 0 forks. No add_repo tool; existing clone on `main`, pulled. No new feed day since 10-26 (arXiv next announces Tue 10-27).
+- Picks from `.autopilot/candidates.json` (CI-fetched full abstracts; code repos live per repo_stats feed section): PICA-WAM → world-models, Vision-Language-Delta-Action (Baidu, LoongForge cookbook link) → vla, LocoPilot (IIT DLS Lab) → hardware, TIDE → learning, InJePA → navigation, Embodied Playground → datasets. One over-length takeaway caught by validate. Curated: 399.
+- End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: picks from the 10-27 feed; 'Rising this week' check from ~10-28; W44 digest Mon 11-02. End of run 32.
