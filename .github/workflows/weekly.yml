@@ -22,5 +22,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add digest
           if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
-          git commit -m "digest: weekly digest $(date -u +%G-W%V)"
+          git commit -m "digest: weekly digest $(git diff --cached --name-only -- digest | head -1 | xargs -r basename | sed 's/\.md$//')"
           for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
