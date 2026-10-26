@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-25 ~23:30 UTC, run 28 (end)._
+_Last updated: 2026-10-26 ~05:00 UTC, run 29._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (351 entries, EN/ZH takeaways; 46 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (366 entries, EN/ZH takeaways; 46 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -43,12 +43,13 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 0. New curated entries get BibTeX metadata on the next intake run. A push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started/finished.
 1. Scheduled runs: on 10-23 the 01:11/02:17/04:53 slots never fired; first scheduled intake landed 05:57 UTC, then 07:36, 09:37, 12:51, 15:42, 19:21. So the feed lands ~06:00 UTC — acceptable; no owner action. arXiv does not announce on Sat/Sun nights, so the next new feed day is Mon 10-26 (~00:00 UTC announcement).
 2. Picks: start from `.autopilot/review_queue.json` (uncurated, by upvotes, with full abstracts). Review the newest feed (10-26 onward; 10-23 reviewed in run 17: OpenTac, GelSlim 5.0, one-step flow-matching, UniFlowWAM), papers with code first, promote 2–5 notable ones with `added: <date>` and careful EN/ZH takeaways (≤220 chars EN — validate with `set -o pipefail`; phrase results as "reports").
-3. Monday 2026-10-26: check the first auto digest (2026-W43, now top-8 picks + compact rest); add a short human-quality intro paragraph if useful.
+3. Weekly digest: W43 written (dispatched 10-26 ~04:55 UTC, run 29 added a short bilingual intro). Do the same for W44 on Mon 11-02 (first one with 'Rising on GitHub'). weekly.yml commit message now names the digest week.
 3b. From ~2026-10-28: check 'Rising this week' renders with real data (needs 7 days of `data/repo_stars_history.json`). Digest 'Rising on GitHub' section was added in run 16 (first real one: 2026-W44, written Mon 11-02).
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
 
+- Run 29: anchors HPT, LAPA, HAMSTER, 3D-VLA, Seer, DexGraspVLA, RynnBrain, GR-2, TraceVLA, OneTwoVLA, DreamGen; picks from 10-26 feed: FLORA (NVIDIA data engine), DexPort, bf16 fine-tuning warning (2610.31859), RynnUnify. Still missing from the gap list (verify first): DexVLA, TinyVLA, ChatVLA, Hume, TwinVLA, GenManip, RoboOS, UnifoLM, VQ-VLA, GigaBrain, Galaxea G0, Helix (no paper), Wall-OSS-0.5, MolmoAct 2.
 - Run 28: gap sweep of well-known 2024–26 papers → 12 anchors (BeyondMimic, EgoMimic, MolmoAct, GraspVLA, DexMimicGen, π*0.6, X-VLA, InternVLA-M1, EgoDex, SAM 3, Magma, Being-H0). Also WALL-OSS (2509.11766). Still missing, verify first: DexVLA (2502.05855, CoRL 2025; org + official repo unconfirmed — juruobenruo/DexVLA?), Wall-OSS-0.5 (2605.30877), MolmoAct 2 (no arXiv found yet; allenai/molmoact2 repo), Hume, TwinVLA, OneTwoVLA, ChatVLA, TinyVLA, GenManip, RoboOS, UnifoLM, VQ-VLA, GigaBrain, Galaxea G0. README `md_title` now escapes `*`.
 
 - Run 27: hardware anchors RUKA (RSS 2025, NYU) and Bidex (CoRL 2024, CMU) → hardware 27. Review queue unchanged (only off-scope items). Candidates: RUKA-v2 (repo ruka-hand-v2/RUKA-v2; find arXiv first), Reachy 2 (no paper; Pollen/HF docs).

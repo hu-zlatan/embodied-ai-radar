@@ -270,3 +270,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - A slicing slip briefly deleted most of locomotion.yaml locally; validate caught it (start.yaml ids missing) and the file was restored from git before commit.
 - Also WALL-OSS (2509.11766, X Square Robot) → vla. Curated: 351. verify #82 and #85 (all 13 new entries incl. code/project links) passed; CI green. BibTeX metadata fills on the next scheduled intake (01:11 UTC slot).
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit still waiting; CoRL week Nov 9–12). Next: Mon 10-26 feed + first auto digest W43; remaining gap list in STATE backlog. End of run 28.
+
+## 2026-10-26 — run 29 (~04:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. No scheduled intake had fired yet (01:11/02:17/04:53 slots) → dispatched intake.yml; 10-26 feed landed (67 papers), repo-stats followed.
+- Anchors (facts from arXiv/HF/NeurIPS/ICLR/PMLR pages; repos via GitHub search): HPT (NeurIPS 2024), LAPA (ICLR 2025), HAMSTER (ICLR 2025, project only), 3D-VLA (ICML 2024), RynnBrain, GR-2 (project only), TraceVLA (ICLR 2025), OneTwoVLA (ICLR 2026) → vla; Seer (ICLR 2025), DexGraspVLA (AAAI 2026) → manipulation; DreamGen (CoRL 2025) → world-models.
+- Picks from 10-26: FLORA (NVIDIA GR00T data engine; project + HF collection) → datasets; DexPort (hand-held dexterous data collection, project) → hardware; 'Full-Weight VLA Fine-Tuning Without an fp32 Master Copy…' (practical bf16 warning) → vla; RynnUnify (Alibaba DAMO, code) → world-models. Several over-length takeaways and two unquoted ': ' slips caught by validate. Curated: 366.
+- Weekly digest W43: weekly.yml had not fired by 04:55 → dispatched; added a short bilingual editor's intro (WAM thread, harnesses around frozen models, CoRL acceptances). Fixed weekly.yml commit message (it said W44 for the W43 file); workflow push accepted.
