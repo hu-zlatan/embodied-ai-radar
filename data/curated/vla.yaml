@@ -579,3 +579,44 @@
   tags: [real, sim, arm, bimanual, efficient, diffusion-policy]
   takeaway_en: A compact VLA built from a small multimodal model (up to 1.4B) with LoRA and a diffusion policy head, without large-scale robot pretraining; reports higher real-robot success than OpenVLA and ~20x faster inference.
   takeaway_zh: 由小型多模态模型（至多 1.4B）加 LoRA 微调与扩散策略头构成的紧凑 VLA，无需大规模机器人预训练；报告真机成功率高于 OpenVLA，推理速度约快 20 倍。
+- title: "ChatVLA: Unified Multimodal Understanding and Robot Control with Vision-Language-Action Model"
+  type: paper
+  arxiv: "2502.14420"
+  year: 2025
+  org: Midea Group / East China Normal University / Shanghai University / Beijing Innovation Center of Humanoid Robotics / Tsinghua
+  venue: EMNLP 2025
+  code: https://github.com/tutujingyugang1/ChatVLA_public
+  project: https://chatvla.github.io
+  tags: [real, arm, vlm, mixture-of-experts]
+  takeaway_en: "Keeps a VLA able to chat: phased alignment training plus a mixture-of-experts split to fight forgetting and task interference; reports strong VQA/MMMU scores and beats OpenVLA on 25 real tasks."
+  takeaway_zh: 让 VLA 保留“对话”能力：通过分阶段对齐训练和混合专家结构缓解遗忘与任务干扰；论文报告在保持 VQA/MMMU 等多模态理解成绩的同时，在 25 个真实操作任务上优于 OpenVLA。
+- title: "Hume: Introducing System-2 Thinking in Visual-Language-Action Model"
+  type: paper
+  arxiv: "2505.21432"
+  year: 2025
+  org: Shanghai AI Lab / SJTU / Fudan / AgiBot
+  project: https://hume-vla.github.io
+  tags: [real, sim, dual-system, flow-matching]
+  takeaway_en: "Dual-system VLA: a value-query head scores sampled action-chunk candidates (System 2, ~4 Hz) and a light cascaded denoiser refines it (System 1, ~90 Hz); reports gains over π0 on LIBERO, SIMPLER and real robots."
+  takeaway_zh: 双系统 VLA：价值查询头对多组候选动作块打分并择优（System 2，约 4 Hz），轻量级级联去噪策略再将其细化为流畅动作（System 1，约 90 Hz）；论文报告在 LIBERO、SIMPLER 和真机上均优于 π0。
+- title: "TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models"
+  type: paper
+  arxiv: "2511.05275"
+  year: 2025
+  org: Yonsei University / Microsoft Research
+  venue: ICLR 2026
+  code: https://github.com/jellyho/TwinVLA
+  project: https://jellyho.github.io/TwinVLA/
+  tags: [real, sim, bimanual]
+  takeaway_en: "Builds a bimanual VLA by composing two copies of a pretrained single-arm VLA instead of pretraining on bimanual data; reports beating a similar-size RDT-1B and narrowing the gap to π0 on real and sim tasks."
+  takeaway_zh: 不做双臂预训练，而是把两份预训练单臂 VLA 组合成协同的双臂 VLA；论文报告在真实与仿真双臂任务上优于同规模 RDT-1B，并缩小了与依赖大量双臂数据的 π0 的差距。
+- title: "VQ-VLA: Improving Vision-Language-Action Models via Scaling Vector-Quantized Action Tokenizers"
+  type: paper
+  arxiv: "2507.01016"
+  year: 2025
+  org: Shanghai AI Lab / SJTU
+  venue: ICCV 2025
+  code: https://github.com/xiaoxiao0406/VQ-VLA
+  tags: [real, sim, arm, action-tokenizer]
+  takeaway_en: "Replaces OpenVLA's per-dimension action bins with a convolutional residual VQ-VAE tokenizer trained on 100x more (real + synthetic) data; reports higher LIBERO-90 and real Franka success and ~2.8x faster inference."
+  takeaway_zh: 用卷积残差 VQ-VAE 动作分词器（以百倍规模的真实+合成数据训练）替换 OpenVLA 的逐维离散分箱；论文报告 LIBERO-90 和真实 Franka 任务成功率提升，推理速度约快 2.8 倍。
