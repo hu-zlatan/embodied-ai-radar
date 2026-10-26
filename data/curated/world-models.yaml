@@ -269,3 +269,15 @@
   tags: [latent-action, video-world-model, droid, policy-evaluation]
   takeaway_en: SkeLAM splits latent actions into a robot-skeleton-grounded kinematic part and a visual residual, so world-model rollouts follow robot controls; on DROID reports 19.5% lower end-effector error than DreamDojo.
   takeaway_zh: SkeLAM 把潜在动作拆成由机器人骨架监督的运动学部分和保留其余视觉动态的残差部分，使世界模型生成更贴合机器人控制指令；报告在 DROID 上末端轨迹误差比 DreamDojo 低 19.5%，预测成功率与真机评测一致。
+- title: "RynnUnify: Towards Unified Embodied Brain"
+  type: paper
+  arxiv: "2610.32965"
+  year: 2026
+  org: Alibaba DAMO Academy
+  code: https://github.com/alibaba-damo-academy/RynnUnify
+  project: https://alibaba-damo-academy.github.io/RynnUnify.github.io/
+  added: 2026-10-26
+  topics: [vla, perception]
+  tags: [unified-model, video-prediction, visual-planning, world-action-model, benchmark]
+  takeaway_en: "A 16B model interleaving video prediction and language reasoning for embodied understanding and long-horizon visual planning, plus a world-action extension for control; reports 51.5% on 20 RoboCasa365 tasks."
+  takeaway_zh: 16B 统一具身模型，交替进行视频预测与语言推理，兼顾具身理解与长程视觉规划，并扩展出用于机器人控制的世界-动作版本；另提出 Rynn-VP、Rynn-GEU 评测，报告在 20 个 RoboCasa365 组合任务上成功率 51.5%。
