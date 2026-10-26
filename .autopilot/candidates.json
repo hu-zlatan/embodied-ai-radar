@@ -988,32 +988,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.29264",
-   "title": "Training in Deployment: Human-in-the-loop Online Post-Training for Robot Manipulation",
-   "published": "2026-10-22",
-   "topics": [
-    "manipulation",
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://logosroboticsgroup.github.io/TIDE/"
-   ],
-   "comment": "9 pages, 8 figures. Project page: https://logosroboticsgroup.github.io/TIDE/",
-   "authors": [
-    "Chun Gu",
-    "Xiaofei Wei",
-    "Yiming Chen",
-    "Bozhou Zhang",
-    "Juntong Zhang",
-    "Xiatian Zhu",
-    "Li Zhang"
-   ],
-   "abstract": "Large pretrained robot foundation models provide strong priors for manipulation, yet adapting them to target tasks with offline teleoperated demonstrations often fails to cover the contact-rich, recovery, and precision-critical states encountered during deployment. Existing methods mitigate this issue by augmenting offline demonstrations with human-in-the-loop data or online reinforcement learning. Despite this, offline post-training adapts slowly because it cannot immediately absorb deployment experience, while online RL typically relies on value functions or auxiliary actor-critic models, increasing both training complexity and instability. We present TIDE (Training In DEployment), a human-in-the-loop online post-training system. TIDE introduces a provenance-conditioned supervised learning framework that updates the policy online from human interventions and policy-generated rollouts collected during deployment, without a learned critic, reward model, or action scorer. Across four real-world bimanual manipulation tasks, TIDE improves milestone-normalized task progress and binary full-task completion over the warm-start policy and matched additional offline demonstrations, and performs comparably to the fixed-policy collection baseline while making updated checkpoints available during deployment. Each task-specific online post-training session, from the start of deployment rollouts until the final checkpoint is available, completes in less than one hour while learning and checkpoint handling run asynchronously.",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.29200",
    "title": "NeuralSRender: G-Buffer Guided Video Diffusion for Sim-to-Real Rendering",
    "published": "2026-10-22",
@@ -1282,32 +1256,6 @@
     "Weinan Zhang"
    ],
    "abstract": "Effective manipulation requires a policy to capture not only about the current scene geometry, but also about how that geometry will evolve under interaction. Existing approaches either augment policies with geometric information from current observations or introduce future prediction as auxiliary supervision, leaving open how predictive geometry should be represented for action generation. Therefore, we propose a two-stage framework, which learns complementary predictive representations from multi-view video clips. During pretraining, a frozen 3D foundation model provides dense geometric features that are compressed into predictive geometric representations and optimized to preserve scene structure and its temporal evolution. Action supervision is then applied to geometric transitions to extract a complementary motor representation that emphasizes action-relevant transitions. During downstream post-training, predictive geometry is transferred through geometry queries, while the motor representation guides intermediate features along the action-generation pathway. Future observations are used only as privileged supervision during training and are not required at inference time. Across LIBERO, LIBERO-Plus, SimplerEnv, and real-world bimanual and single-arm tasks, our approach consistently improves downstream policies, including an absolute gain of 10.4 percentage points on the WidowX evaluation. We further demonstrate transfer across multiple VLA architectures and WAMs, with improvements in both future-world and action prediction. The code will be available at https://github.com/xuxiaoxxxx/CPR.",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.27998",
-   "title": "LocoPilot: Single-Operator Bilateral Teleoperation for Loco-Manipulation Policy Learning",
-   "published": "2026-10-21",
-   "topics": [
-    "manipulation",
-    "learning"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/iit-DLSLab/LocoPilot"
-   ],
-   "project": [],
-   "comment": null,
-   "authors": [
-    "Antonio Langella",
-    "Giovanni Minelli",
-    "Giovanni B. Dessy",
-    "Lorenzo Amatucci",
-    "Giulio Turrisi",
-    "Victor Barasuol",
-    "Claudio Semini"
-   ],
-   "abstract": "Learning loco-manipulation policies requires demonstrations that capture coordinated base and arm motion on the target embodiment. Robot-free interfaces allow demonstrations to be collected independently of the target robot, increasing flexibility but without directly capturing platform-specific commands, proprioception, and body-mounted observations. On-robot teleoperation allows to capture these signals directly, but requires an interface capable of commanding the complete system concurrently. This paper presents LocoPilot, a single-operator bilateral teleoperation and data-collection framework implemented on a 12-DoF Unitree Go2 quadruped equipped with a 6-DoF AgileX Piper L manipulator, an Intel RealSense D435 wrist camera, and an Intel RealSense D405 head camera. A second 6-DoF Piper L arm, used as the leader and two handheld controllers provide simultaneous control of the base, body posture, manipulator, and gripper. The follower arm interaction forces are estimated without a dedicated force/torque sensor and rendered to the operator through a passivity-constrained haptic channel. A ROS~2 pipeline records synchronized multimodal observations together with a unified 11D action shared by teleoperation and policy deployment. Compared to prior work, LocoPilot uniquely unifies robot-in-the-loop legged data collection, force feedback without motion-capture instrumentation, and the same action interface at deployment. We evaluate the interface across multiple loco-manipulation tasks and validate the complete collection-to-deployment pipeline by fine-tuning MolmoAct2 \\cite{MOLMO} on pick-and-place demonstrations and deploying on the physical robot without action retargeting or additional inverse kinematics. Code available at: https://github.com/iit-DLSLab/LocoPilot",
    "fetched": "2026-10-26"
   },
   {
@@ -1613,34 +1561,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.27039",
-   "title": "Embodied Playground: A Long-Horizon Agentic Robotics Benchmark for Physical, Strategic, and Spatial Reasoning",
-   "published": "2026-10-21",
-   "topics": [
-    "datasets"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://winniechen2002.github.io/Agent-bench-website/"
-   ],
-   "comment": "38 pages, 2 figures",
-   "authors": [
-    "Feng Chen",
-    "Pei Zhou",
-    "Lixuan He",
-    "Yunchao Yao",
-    "Li Sun",
-    "Shenghua Gao",
-    "Mingyu Ding",
-    "Kaifeng Zhang",
-    "Kaichen Zhou",
-    "Yi Ma"
-   ],
-   "abstract": "Foundation models offer a promising basis for robotic agents, but long-horizon tasks require them to sustain coherent reasoning and reliable physical execution across interdependent stages. We introduce Embodied Playground, a benchmark for evaluating how foundation-model agents coordinate physical, strategic, and spatial reasoning throughout such tasks. Agents must track task progress, satisfy intermediate constraints, and revise their plans using execution feedback as earlier actions shape subsequent decisions. The playground comprises 410 task environments spanning basic manipulation, sequential puzzles, and multi-stage household activities, with variations in planning depth, geometric constraints, and physical execution demands. We curate EP-100, a representative selection of 100 tasks across five suites and 16 task types, together with the EP-Easy and EP-Hard difficulty splits and the compact EP-20 selection. A shared protocol specifies observation and tool access, resource budgets, repeated trials, and independent checks of goal completion, task-rule compliance, and physical validity. Embodied Playground provides a unified framework for studying whether foundation-model agents can sustain effective reasoning and action over extended task horizons. https://winniechen2002.github.io/Agent-bench-website/",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.26979",
    "title": "Latent Projection for Latent Planning",
    "published": "2026-10-21",
@@ -1713,30 +1633,6 @@
     "Chen Wang"
    ],
    "abstract": "Recent advances in multimodal models have enabled GPT-6 Astra to perform robotic manipulation through in-context learning. Yet contact-rich control and tactile perception are often regarded as strengths of specialist policies, leaving open whether Astra can directly understand and use tactile observations. We provide, to our knowledge, the first demonstration that Astra directly interprets vision-based tactile images and uses their contact cues for manipulation. Tactile RGB images enter through its existing visual interface, enabling few-shot closed-loop control on nineteen simulated UniVTAC and OpenViTac tasks with 210 sampled scene seeds per setting. With visuo-tactile input, Astra achieves mean success rates of 93.8% and 81.8%, exceeding the strongest reported specialist baselines in our comparison by 22.9 and 13.1 percentage points, respectively. Vision-only performance also leads these baselines, reaching 76.3% and 80.6%. Trajectory analysis reveals active probing, cautious grasping, contact-guided alignment, and recovery, alongside difficulties with tangential loading and corrective execution. Our findings challenge the exclusivity of specialist policies in contact-rich manipulation and show that fine-grained vision can partially compensate for missing touch. They also identify vision-based tactile sensing as an interface for scaling contact understanding with foundation models and reveal signs of benchmark saturation. These results motivate joint visual-tactile pretraining, harder contact-rich evaluations, and physical-robot validation.",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.26813",
-   "title": "PICA-WAM: Visual Perturbation Invariance via Cross-Appearance Self-Alignment in World Action Models",
-   "published": "2026-10-20",
-   "topics": [
-    "world-models"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/YudeZou/PICA-WAM-release"
-   ],
-   "project": [],
-   "comment": null,
-   "authors": [
-    "Yude Zou",
-    "Yifei Yao",
-    "Guanbo Jiao",
-    "Jianming Ma",
-    "Guanjie Zheng",
-    "Xing Gao"
-   ],
-   "abstract": "World Action Models (WAMs) jointly predict future video and generate actions, yet remain sensitive to task-irrelevant visual perturbations, i.e., changes in visual appearance that should not affect robot behavior. We identify a gap in conventional WAM training: video prediction encourages representations to preserve appearance information, while action generation does not explicitly enforce invariance to task-irrelevant appearance. Data augmentation exposes WAMs to such perturbations but does not require perturbed and nominal observations to produce consistent action representations, and alignment with external pretrained features does not guarantee the desired invariance. To address this gap, we propose PICA-WAM, a self-supervised training framework that casts perturbation invariance as an auxiliary cross-appearance self-alignment task for WAMs. An exponential-moving-average (EMA) teacher processes the nominal observation to provide a deeper-layer target, while the online WAM processes a perturbed observation and aligns its shallower-layer action representation to this target through a lightweight projection head. Across four strong WAMs evaluated on RoboTwin 2.0, LIBERO-Plus, EBench, and a real robot, PICA-WAM consistently improves robustness under visual perturbations, preserves nominal performance in simulation, and raises the real robot success rate. PICA-WAM further reduces the sensitivity of video features to task-irrelevant appearance and its propagation into actions, as shown by paired layer-wise diagnostics. Code: https://github.com/YudeZou/PICA-WAM-release",
    "fetched": "2026-10-26"
   },
   {
@@ -2056,34 +1952,6 @@
     "Yadong Mu"
    ],
    "abstract": "In this work we focus on the problem of embodied task planning, which requires an agent to accomplish a complex task by separating it into atomic actions. Recent studies have developed LLM-based methods to address this problem. However, the executability and correctness of the generated plans remain suboptimal in complex environments and tasks. On the other hand, classical search algorithms have the potential to solve the planning problems perfectly, yet they require fully observable environments, known state transitions and goal state, which are often unattainable in general task domains. Therefore, we propose to implement an LLM-guided search algorithm that makes the search process possible and efficient by incorporating LLMs' commonsense knowledge. Our method leverages LLMs to (1) translate natural language instructions into formatted goal conditions, (2) facilitate efficient exploration in partially observable environments, (3) implement a rule-based world simulator, and (4) prune the space of candidate actions to improve search efficiency. Experimental results on VirtualHome and ALFWorld demonstrate its superior performance.",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.25874",
-   "title": "Vision-Language-Delta-Action: Learning Compact Deltas as Actionable Transition Interfaces for Robotic Manipulation",
-   "published": "2026-10-20",
-   "topics": [
-    "vla",
-    "manipulation",
-    "world-models"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/baidu-baige/LoongForge"
-   ],
-   "project": [],
-   "comment": "37 pages, including appendix. Code framework: https://github.com/baidu-baige/LoongForge/tree/master/cookbook/loongforge-vlda",
-   "authors": [
-    "Lingsen Zhang",
-    "Wei Li",
-    "Jie He",
-    "Henghua Zhang",
-    "Kai Mo",
-    "Shiyong Li",
-    "Yanpeng Wang",
-    "Rui Shao"
-   ],
-   "abstract": "Robotic manipulation is not merely observation-to-action generation, but the realization of task-specified state changes in the physical world. Existing vision-language-action (VLA) methods directly learn observation-to-action mappings, imposing a substantial learning burden due to the gap between semantic understanding and action execution. Although world-action models (WAMs) improve control through future prediction, modeling complete future states wastes capacity on static appearance and action-irrelevant changes. We propose Vision-Language-Delta-Action (VLDA), a paradigm that reformulates full future prediction as compact actionable transition modeling. Its core is a compact Delta variable that captures latent world-state changes, serving as an interface between vision-language understanding and action generation. VLDA learns Delta through a unified objective composed of the Local Transition Filter (LT-Filter) and Global Transition Anchor (GT-Anchor). LT-Filter captures task-relevant manipulation-centric changes while suppressing static reconstruction biases. GT-Anchor provides coarse future-level regularization to preserve the overall direction of state changes. Delta-Driven Action Refinement (DDAR) further grounds Delta in the action manifold and injects it as a structured seed to guide action denoising. We implement VLDA within LoongForge, an open-source training framework for large-scale foundation and embodied models, using its modular and distributed infrastructure for unified two-stage optimization. Experiments show that VLDA improves long-horizon consistency, robustness, and generalization, validating actionable Delta as an alternative to direct action prediction and full future-state modeling.",
    "fetched": "2026-10-26"
   },
   {
@@ -2636,35 +2504,6 @@
     "Farshad Khorrami"
    ],
    "abstract": "Robots that follow natural-language instructions unlock a wide range of autonomous applications in households, warehouses, and labs. Real-world environments are diverse and often heavily cluttered, requiring robots to plan over multiple steps, act, and replan as they work toward a goal. We present CLARO (CLutter-Aware Robot Orchestrator), a VLM agent that orchestrates a set of perception and manipulation skills: open-vocabulary object detection, segmentation, 6-DoF grasping, and non-prehensile pushing to locate and retrieve a language-specified target in clutter. CLARO maintains a memory of its past actions to support long-horizon execution, and emits manipulation targets (grasp poses/3D waypoints) allowing transfer across robot arms without task-specific training. We evaluate CLARO against a range of methods on a dynamic simulation environment and standard image-based benchmarks, demonstrating strong generalization across object classes, lighting, and clutter levels. CLARO attains an average success rate of 89.1%, a relative improvement of over 16% on the strongest competing method in high cluttered scenes. We further analyze performance along grounding and grasping axes to characterize where each method succeeds and fails. Finally, we deploy CLARO on a robot arm across diverse cluttered scenes, achieving a success rate of 88.8%, and demonstrating strong sim2real generalizability.",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.23896",
-   "title": "InJePA: Intention-First Latent Planning with Coupled JEPA World Models for Visual Navigation",
-   "published": "2026-10-20",
-   "topics": [
-    "world-models",
-    "navigation"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/zhuxun132/InJepa"
-   ],
-   "project": [],
-   "comment": "26 pages, 5 figures. Includes appendices. Code is available at https://github.com/zhuxun132/InJepa",
-   "authors": [
-    "Siming Zhou",
-    "Bowen Ma",
-    "Ruiran Du",
-    "Pengcheng Zheng",
-    "Sheng Zheng",
-    "Dongshen Han",
-    "Zhijie Li",
-    "Wei Dong",
-    "Fan Mo",
-    "Chaoning Zhang"
-   ],
-   "abstract": "Visual navigation requires goal directed planning informed by predictions of environment dynamics. Representative navigation world model methods propose complete action candidates before predicting consequences for selection or search updates. For each candidate, predictions primarily evaluate proposed actions rather than guide its stepwise construction. To this end, we propose InJepa, an intention first planning paradigm centered on latent states. A goal conditioned JEPA proposes latent intentions, and an action conditioned JEPA continually predicts future latent states. Both operate in a shared latent space to align their predictive representations. Within each candidate, predicted consequences feed into the next intention proposal and action inference, forming a closed loop of intention, action, and consequence. This extends the world model's role beyond evaluation to leading candidate construction through latent intentions. We evaluate InJepa through closed loop image goal navigation in Habitat MP3D. The results show effective multistep navigation through intention guided action generation and consequence feedback. Experiments across encoders further support applicability across visual representations. These findings support latent intentions as the central planning object and show that world models can directly guide plan construction through coordinated reasoning about intentions and consequences. Code is available at https://github.com/zhuxun132/InJepa.",
    "fetched": "2026-10-26"
   },
   {
