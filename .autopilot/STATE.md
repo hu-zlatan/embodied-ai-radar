@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-26 ~11:30 UTC, run 30._
+_Last updated: 2026-10-26 ~11:15 UTC, run 30 (end)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (368 entries, EN/ZH takeaways; 46 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (380 entries, EN/ZH takeaways; 46 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -51,7 +51,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Backlog
 
-- Run 30: anchors ChatVLA, Hume, TwinVLA, VQ-VLA → vla; picks ViT-H, FORCA, EgoForesight, SceneBloom. 10-26 candidates not yet picked (from candidates.json): MAST-VLA (CoRL 2026, no code), RobustRLlib (project/code page), Martingale GRPO, WorldMirror, DiscoDemo, RepresentNav. Lecture notes 2610.32538 (opt. control + RL for robotics; preliminary, no figures) → maybe resources later. Still missing anchors (verify first): GenManip, RoboOS, UnifoLM, GigaBrain, Galaxea G0, Wall-OSS-0.5, MolmoAct 2.
+- Run 30: anchors ChatVLA, Hume, TwinVLA, VQ-VLA, GigaBrain-0, Galaxea G0, RoboOS → vla; GenManip → sim; picks ViT-H, FORCA, EgoForesight, SceneBloom. 10-26 candidates not yet picked (from candidates.json): MAST-VLA (CoRL 2026, no code), RobustRLlib (project/code page), Martingale GRPO, WorldMirror, DiscoDemo, RepresentNav. Lecture notes 2610.32538 (opt. control + RL for robotics; preliminary, no figures) → maybe resources later. Still missing anchors (verify first): UnifoLM, Wall-OSS-0.5, MolmoAct 2, GigaBrain-0.5M*. Galaxea G0: add a dataset/project link once an official page is confirmed.
 
 - Run 29: anchors HPT, LAPA, HAMSTER, 3D-VLA, Seer, DexGraspVLA, RynnBrain, GR-2, TraceVLA, OneTwoVLA, DreamGen; picks from 10-26 feed: FLORA (NVIDIA data engine), DexPort, bf16 fine-tuning warning (2610.31859), RynnUnify; DexVLA + TinyVLA (project pages only — official repos unconfirmed: juruobenruo/DexVLA, liyaxuanliyaxuan/TinyVLA; add `code:` once confirmed). Still missing (verify first): ChatVLA, Hume, TwinVLA, GenManip, RoboOS, UnifoLM, VQ-VLA, GigaBrain, Galaxea G0, Helix (no paper), Wall-OSS-0.5, MolmoAct 2.
 - Run 28: gap sweep of well-known 2024–26 papers → 12 anchors (BeyondMimic, EgoMimic, MolmoAct, GraspVLA, DexMimicGen, π*0.6, X-VLA, InternVLA-M1, EgoDex, SAM 3, Magma, Being-H0). Also WALL-OSS (2509.11766). Still missing, verify first: DexVLA (2502.05855, CoRL 2025; org + official repo unconfirmed — juruobenruo/DexVLA?), Wall-OSS-0.5 (2605.30877), MolmoAct 2 (no arXiv found yet; allenai/molmoact2 repo), Hume, TwinVLA, OneTwoVLA, ChatVLA, TinyVLA, GenManip, RoboOS, UnifoLM, VQ-VLA, GigaBrain, Galaxea G0. README `md_title` now escapes `*`.
