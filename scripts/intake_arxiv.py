@@ -18,8 +18,8 @@ import time
 import urllib.parse
 import xml.etree.ElementTree as ET
 
-from radar import (ARXIV_DIR, CURATED_META, arxiv_get, classify, load_arxiv_feed, load_curated,
-                   load_curated_meta, load_topics)
+from radar import (ARXIV_DIR, CURATED_META, ROOT, arxiv_get, classify, load_arxiv_feed, load_curated,
+                   load_curated_meta, load_topics, venue_of)
 
 API = "https://export.arxiv.org/api/query"
 NS = {"a": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
@@ -257,6 +257,61 @@ def retag() -> int:
     return 0
 
 
+CANDIDATES = ROOT / ".autopilot" / "candidates.json"
+CAND_DAYS = 7      # feed days considered
+CAND_FETCH = 100   # full abstracts fetched per run (2 API requests)
+
+
+def write_candidates() -> int:
+    """Pick-review input for the maintainer agent (not published on the site): recent uncurated feed papers
+    with code, a project page or an accepted venue, with the FULL abstract and author list (feed records keep
+    600 chars / 8 authors, and the agent's own tools usually cannot open arXiv pages of brand-new papers).
+    Best-effort; abstracts already in the file are reused, papers older than CAND_DAYS drop out."""
+    today = dt.datetime.now(dt.timezone.utc).date()
+    entries, _ = load_curated(strict=False)
+    curated = {str(e["arxiv"]) for e in entries if e.get("arxiv")}
+    old = {}
+    if CANDIDATES.exists():
+        try:
+            old = {r["id"]: r for r in json.loads(CANDIDATES.read_text(encoding="utf-8")).get("papers", [])
+                   if isinstance(r, dict) and r.get("id")}
+        except (json.JSONDecodeError, AttributeError):
+            old = {}
+    since = (today - dt.timedelta(days=CAND_DAYS)).isoformat()
+    want = [p for p in load_arxiv_feed() if p.get("published", "") >= since and p["id"] not in curated
+            and (p.get("code") or p.get("project") or venue_of(p.get("comment")))]
+    todo = [p["id"] for p in want if p["id"] not in old][:CAND_FETCH]
+    full: dict[str, dict] = {}
+    for i in range(0, len(todo), ENRICH_BATCH):
+        try:
+            root = ET.fromstring(fetch_ids(todo[i:i + ENRICH_BATCH]))
+        except Exception as ex:
+            print(f"warning: candidates stopped: {ex}")
+            break
+        for e in root.findall("a:entry", NS):
+            m = re.search(r"abs/([^v\s]+)(v\d+)?$", clean(e.findtext("a:id", default="", namespaces=NS)))
+            if m:
+                full[m.group(1)] = {
+                    "abstract": clean(e.findtext("a:summary", default="", namespaces=NS))[:4000],
+                    "authors": [clean(a.findtext("a:name", default="", namespaces=NS)) for a in e.findall("a:author", NS)][:20]}
+        time.sleep(4)
+    rows = []
+    for p in want:
+        f = full.get(p["id"]) or old.get(p["id"])
+        if not f or not f.get("abstract"):
+            continue
+        rows.append({"id": p["id"], "title": p["title"], "published": p.get("published"),
+                     "topics": p.get("topics", []), "venue": venue_of(p.get("comment")),
+                     "code": p.get("code", []), "project": p.get("project", []), "comment": p.get("comment"),
+                     "authors": f.get("authors", []), "abstract": f["abstract"],
+                     "fetched": (old.get(p["id"]) or {}).get("fetched") or today.isoformat()})
+    rows.sort(key=lambda r: (r["published"] or "", r["id"]), reverse=True)
+    CANDIDATES.parent.mkdir(exist_ok=True)
+    CANDIDATES.write_text(json.dumps({"updated": today.isoformat(), "papers": rows}, ensure_ascii=False, indent=1)
+                          + "\n", encoding="utf-8")
+    return len(rows)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=3, help="API look-back window in days")
@@ -345,6 +400,10 @@ def main() -> int:
         print(f"{path.relative_to(ARXIV_DIR.parent.parent)}: +{len(merged) - len(existing)} (total {len(merged)})")
     if not args.no_api:
         print(f"curated metadata: +{fill_curated_meta()}")
+        try:
+            print(f"pick candidates (full abstracts): {write_candidates()}")
+        except Exception as ex:  # never fail the intake over the agent's review input
+            print(f"warning: candidates failed: {ex}")
     print(f"done: {len(new)} new papers")
     return 0
 
