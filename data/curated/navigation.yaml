@@ -267,3 +267,13 @@
   tags: [dataset, navigation-planning, video-world-model, rl-finetuning, open-world]
   takeaway_en: "200K+ navigation-planning samples annotated from camera trajectories up to instructions; RL post-training inside a video world model, used as a cheap stand-in environment, reportedly helps on unseen scenes."
   takeaway_zh: 包含 20 万余条导航规划样本的数据集，场景多样，标注从相机运动轨迹到高层语义指令；并把视频世界模型当作低成本交互环境做强化学习后训练，报告称在未见场景上有明显提升。
+- title: "InJePA: Intention-First Latent Planning with Coupled JEPA World Models for Visual Navigation"
+  type: paper
+  arxiv: "2610.23896"
+  year: 2026
+  code: https://github.com/zhuxun132/InJepa
+  added: 2026-10-26
+  topics: [world-models]
+  tags: [jepa, latent-planning, image-goal, habitat, sim]
+  takeaway_en: "Two coupled JEPAs share a latent space: one proposes goal-conditioned latent intentions, the other predicts consequences, closing an intention-action-consequence loop. Evaluated on image-goal navigation in Habitat MP3D."
+  takeaway_zh: 两个耦合的 JEPA 共享隐空间：一个按目标提出隐式“意图”，另一个预测动作后果，形成意图-动作-后果闭环，让世界模型直接参与构造规划；在 Habitat MP3D 图像目标导航上评测。

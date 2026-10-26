@@ -322,3 +322,13 @@
   tags: [real, sim, human-video, egocentric, scaling, dexterous-hand]
   takeaway_en: "Co-trains a VLA on robot demos and noisy egocentric-video actions by weighting each source by reliability and distilling from clean future frames; reports steeper scaling than the baseline up to 30k hours of data."
   takeaway_zh: 将机器人示教与动作标签噪声较大的第一视角视频联合训练 VLA：按数据源可靠性分配监督权重，并从干净的未来画面蒸馏表征；报告在最多 3 万小时预训练数据范围内扩展斜率高于基线。
+- title: "Training in Deployment: Human-in-the-loop Online Post-Training for Robot Manipulation"
+  type: paper
+  arxiv: "2610.29264"
+  year: 2026
+  project: https://logosroboticsgroup.github.io/TIDE/
+  added: 2026-10-26
+  topics: [manipulation]
+  tags: [human-in-the-loop, online-learning, post-training, bimanual, real]
+  takeaway_en: "TIDE updates a pretrained policy online from human interventions and its own rollouts, with no critic or reward model; reports gains on four real bimanual tasks, each session finishing in under an hour."
+  takeaway_zh: TIDE 在部署过程中利用人类干预和策略自身的执行数据在线更新预训练策略，无需价值函数或奖励模型；报告在四个真实双臂任务上优于初始策略，每次在线后训练不到一小时完成。

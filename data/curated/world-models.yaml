@@ -303,3 +303,13 @@
   tags: [visuotactile, video-generation, policy-evaluation, grpo, real, contact-rich]
   takeaway_en: "Action-conditioned world model that predicts multi-view RGB and tactile images together in one video space, post-trained for state consistency; used for closed-loop policy evaluation and GRPO updates."
   takeaway_zh: 动作条件的视触觉世界模型：在统一的视频空间中同时预测多视角 RGB 与触觉图像，并经一致性后训练保证与真实任务状态吻合；可用于闭环策略评估和 GRPO 策略更新。
+- title: "PICA-WAM: Visual Perturbation Invariance via Cross-Appearance Self-Alignment in World Action Models"
+  type: paper
+  arxiv: "2610.26813"
+  year: 2026
+  code: https://github.com/YudeZou/PICA-WAM-release
+  added: 2026-10-26
+  topics: [vla]
+  tags: [wam, robustness, self-supervised, ema-teacher, real]
+  takeaway_en: "Auxiliary training task for world action models: an EMA teacher sees the clean frame, the online model sees a perturbed one and aligns its action features. Reports better robustness for four WAMs."
+  takeaway_zh: 为世界-动作模型加一个自监督辅助任务：EMA 教师看原始画面，在线模型看外观扰动后的画面并对齐其动作表征；报告在 RoboTwin 2.0、LIBERO-Plus 等基准上提升四种 WAM 对视觉扰动的鲁棒性，且不损失原有性能。
