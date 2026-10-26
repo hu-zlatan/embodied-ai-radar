@@ -34,6 +34,19 @@ MAX_PER_QUERY = 1000
 GITHUB_RE = re.compile(r"https?://github\.com/[\w.-]+/[\w.-]+", re.I)
 URL_RE = re.compile(r"https?://[^\s,;()<>\"']+", re.I)
 ABSTRACT_MAX = 600
+URL_JUNK = re.compile(r"[{}\[\]\\|^`]")
+
+
+def tidy_url(u: str) -> str:
+    """Cut LaTeX/Markdown debris off a URL taken from free text: `\\href{a}{b}` leaves
+    'a}{b}', '[text](url)' leaves 'url]'. Keep the part before the first junk char,
+    drop trailing punctuation. Returns '' when nothing URL-like is left."""
+    u = URL_JUNK.split(u, 1)[0].rstrip(".:,'\"")
+    return u if re.match(r"^https?://[^/\s]+\.[^/\s]+", u) else ""
+
+
+def tidy_urls(urls) -> list[str]:
+    return sorted({t for t in (tidy_url(u) for u in urls) if t})
 # URLs in arXiv comments that are not project pages
 NOT_PROJECT = re.compile(r"github\.com|arxiv\.org|doi\.org|creativecommons|ieee\.org|acm\.org|youtu|zenodo|huggingface\.co/datasets", re.I)
 
@@ -69,7 +82,7 @@ def enrich(papers: list[dict]) -> int:
             if r.get("comment"):
                 p["comment"] = r["comment"]
             for k in ("code", "project"):
-                merged = sorted(set(p.get(k, [])) | set(r.get(k, [])))
+                merged = tidy_urls(list(p.get(k, [])) + list(r.get(k, [])))
                 if merged:
                     p[k] = merged[:3]
             p["enriched"] = True
@@ -144,10 +157,9 @@ def parse(xml: bytes) -> list[dict]:
         cats = [c.get("term") for c in e.findall("a:category", NS) if c.get("term")]
         prim = e.find("arxiv:primary_category", NS)
         text_links = abstract + " " + comment
-        code = sorted({u.rstrip(".") for u in GITHUB_RE.findall(text_links)})
-        project = sorted({u.rstrip(".") for u in URL_RE.findall(text_links)
-                          if "github.io" in u or "sites.google.com" in u}
-                         | {u.rstrip(".") for u in URL_RE.findall(comment) if not NOT_PROJECT.search(u)})
+        code = tidy_urls(GITHUB_RE.findall(text_links))
+        project = tidy_urls([u for u in URL_RE.findall(text_links) if "github.io" in u or "sites.google.com" in u]
+                            + [u for u in URL_RE.findall(comment) if not NOT_PROJECT.search(u)])
         rec = {
             "id": aid,
             "title": clean(e.findtext("a:title", default="", namespaces=NS)),
@@ -208,8 +220,8 @@ def fetch_rss() -> list[dict]:
             date = email.utils.parsedate_to_datetime(clean(it.findtext("pubDate"))).date().isoformat()
         except (TypeError, ValueError):
             date = dt.datetime.now(dt.timezone.utc).date().isoformat()
-        code = sorted({u.rstrip(".") for u in GITHUB_RE.findall(abstract)})
-        project = sorted({u.rstrip(".") for u in URL_RE.findall(abstract) if "github.io" in u or "sites.google.com" in u})
+        code = tidy_urls(GITHUB_RE.findall(abstract))
+        project = tidy_urls(u for u in URL_RE.findall(abstract) if "github.io" in u or "sites.google.com" in u)
         rec = {
             "id": m.group(1), "title": title,
             "authors": authors[:8] + ([f"+{len(authors) - 8}"] if len(authors) > 8 else []),
@@ -235,6 +247,11 @@ def retag() -> int:
             print(f"{path.name}: dropped {before - len(data['papers'])} off-topic cross-lists")
         for p in data["papers"]:
             p["topics"] = classify(p.get("abstract", ""), topics, title=p.get("title", ""))
+            for k in ("code", "project"):
+                if k in p:
+                    p[k] = tidy_urls(p[k])[:3]
+                    if not p[k]:
+                        del p[k]
         path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print("retagged")
     return 0
