@@ -620,3 +620,32 @@
   tags: [real, sim, arm, action-tokenizer]
   takeaway_en: "Replaces OpenVLA's per-dimension action bins with a convolutional residual VQ-VAE tokenizer trained on 100x more (real + synthetic) data; reports higher LIBERO-90 and real Franka success and ~2.8x faster inference."
   takeaway_zh: 用卷积残差 VQ-VAE 动作分词器（以百倍规模的真实+合成数据训练）替换 OpenVLA 的逐维离散分箱；论文报告 LIBERO-90 和真实 Franka 任务成功率提升，推理速度约快 2.8 倍。
+- title: "GigaBrain-0: A World Model-Powered Vision-Language-Action Model"
+  type: paper
+  arxiv: "2510.19430"
+  year: 2025
+  org: GigaAI
+  code: https://github.com/open-gigaai/giga-brain-0
+  project: https://gigabrain0.github.io
+  tags: [real, bimanual, mobile-manipulation, world-model-data, flow-matching, edge-deployment]
+  takeaway_en: "Trains a VLA largely on world-model-generated data (re-rendered real videos, new viewpoints, sim2real, human-to-robot video); reports gains over π0 on dexterous and mobile tasks, plus a 402M variant for Jetson Orin."
+  takeaway_zh: VLA 训练大量依赖世界模型生成的数据（真实视频重渲染、新视角、仿真转真实、人类视频转机器人）；论文报告在灵巧与移动操作任务上优于 π0，并提供可在 Jetson Orin 上运行的 4.02 亿参数小模型。
+- title: "Galaxea Open-World Dataset and G0 Dual-System VLA Model"
+  type: paper
+  arxiv: "2509.00576"
+  year: 2025
+  org: Galaxea
+  code: https://github.com/OpenGalaxea/GalaxeaVLA
+  topics: [datasets]
+  tags: [real, mobile-manipulation, bimanual, dual-system, flow-matching, dataset]
+  takeaway_en: "~500 h / 100K trajectories on one mobile bimanual robot (R1 Lite) across 50 real scenes, plus G0: a VLM planner over a flow-matching VLA; reports that single-embodiment pretraining matters most for few-shot transfer."
+  takeaway_zh: 在单一移动双臂机器人（R1 Lite）上采集约 500 小时、10 万条轨迹、覆盖 50 个真实场景，并提出 G0：VLM 规划器 + 流匹配 VLA 执行器的双系统模型；论文报告单本体预训练对少样本迁移最关键。
+- title: "RoboOS: A Hierarchical Embodied Framework for Cross-Embodiment and Multi-Agent Collaboration"
+  type: paper
+  arxiv: "2505.03673"
+  year: 2025
+  org: BAAI / Peking University
+  code: https://github.com/FlagOpen/RoboOS
+  tags: [real, multi-robot, cross-embodiment, planning, system]
+  takeaway_en: "Open-source 'brain–cerebellum' stack: a RoboBrain MLLM plans and assigns tasks across heterogeneous robots, per-robot skill libraries execute, and a shared spatial/temporal/robot memory keeps them in sync."
+  takeaway_zh: 开源的“大脑–小脑”分层系统：RoboBrain 多模态大模型负责跨异构机器人的任务规划与分配，各机器人上的技能库负责执行，共享的空间/时间/本体记忆保持多机协同。

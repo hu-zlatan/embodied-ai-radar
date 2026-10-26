@@ -267,3 +267,14 @@
   tags: [scene-generation, diffusion, simulation-ready, object-navigation]
   takeaway_en: "Generates sim-ready rooms by sampling furniture layouts with diffusion priors, then compiling them into collision-free 3D scenes; nav policies trained there beat ones trained on real scans on held-out real scans."
   takeaway_zh: 先用扩散先验在功能分区内采样家具布局，再“编译”为无碰撞、可直接仿真的 3D 场景；论文报告在其场景中训练的物体导航策略，在留出的真实扫描场景上优于用等量真实扫描训练的策略。
+- title: "GenManip: LLM-driven Simulation for Generalizable Instruction-Following Manipulation"
+  type: paper
+  arxiv: "2506.10966"
+  year: 2025
+  org: Shanghai AI Lab
+  venue: CVPR 2025
+  code: https://github.com/InternRobotics/GenManip
+  topics: [manipulation, datasets]
+  tags: [sim, isaac-sim, benchmark, llm, generalization]
+  takeaway_en: "Isaac Sim platform where an LLM builds tasks and layouts from a task-oriented scene graph over ~10K objects; its 200-scenario benchmark finds modular foundation-model systems generalize better than end-to-end policies."
+  takeaway_zh: 基于 Isaac Sim 的平台：LLM 依据任务导向场景图，从约 1 万个物体中生成任务与布局；其 200 个场景的基准发现，结合基础模型的模块化系统比端到端策略泛化更好。
