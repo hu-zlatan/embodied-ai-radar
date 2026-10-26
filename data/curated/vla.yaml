@@ -560,3 +560,22 @@
   tags: [real, arm, reasoning, long-horizon, hri]
   takeaway_en: "One model that decides when to think and when to act: it reasons at key moments (subtask done, error, human input) and otherwise acts on its latest reasoning; co-trained with synthetic reasoning-rich VL data."
   takeaway_zh: 单一模型自主决定何时“想”、何时“做”：在子任务完成、出错或人类插话等关键时刻进行推理，其余时间依据最新推理结果生成动作；并与合成的推理型视觉-语言数据共同训练。
+- title: "DexVLA: Vision-Language Model with Plug-In Diffusion Expert for General Robot Control"
+  type: paper
+  arxiv: "2502.05855"
+  year: 2025
+  org: Midea Group / East China Normal University
+  venue: CoRL 2025
+  project: https://dex-vla.github.io/
+  tags: [real, sim, cross-embodiment, diffusion-policy, bimanual, dexterous-hand]
+  takeaway_en: Pairs a 2B Qwen2-VL with a ~1B plug-in diffusion action expert with one head per robot, trained in three stages (cross-embodiment, alignment, task); reports shirt folding without task-specific tuning and 97.3 on LIBERO.
+  takeaway_zh: 将 2B 的 Qwen2-VL 与约 1B 参数、按机器人分头输出的可插拔扩散动作专家结合，分三阶段训练（跨本体预训练、本体对齐、任务适配）；报告无需任务专门微调即可叠衬衫，LIBERO 平均 97.3。
+- title: "TinyVLA: Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation"
+  type: paper
+  arxiv: "2409.12514"
+  year: 2024
+  org: East China Normal University / Midea Group
+  project: https://tiny-vla.github.io/
+  tags: [real, sim, arm, bimanual, efficient, diffusion-policy]
+  takeaway_en: A compact VLA built from a small multimodal model (up to 1.4B) with LoRA and a diffusion policy head, without large-scale robot pretraining; reports higher real-robot success than OpenVLA and ~20x faster inference.
+  takeaway_zh: 由小型多模态模型（至多 1.4B）加 LoRA 微调与扩散策略头构成的紧凑 VLA，无需大规模机器人预训练；报告真机成功率高于 OpenVLA，推理速度约快 20 倍。
