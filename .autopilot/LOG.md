@@ -301,4 +301,5 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 
 - Start: CI/Pages/verify/repo-stats/intake green, no issues/PRs (GitHub MCP; WebFetch of github.com needs approval nobody can give), 0 stars / 0 forks. No add_repo tool; existing clone on `main`, pulled. No new feed day since 10-26 (arXiv next announces Tue 10-27).
 - Picks from `.autopilot/candidates.json` (CI-fetched full abstracts; code repos live per repo_stats feed section): PICA-WAM → world-models, Vision-Language-Delta-Action (Baidu, LoongForge cookbook link) → vla, LocoPilot (IIT DLS Lab) → hardware, TIDE → learning, InJePA → navigation, Embodied Playground → datasets. One over-length takeaway caught by validate. Curated: 399.
+- verify #97 passed (all 6 picks incl. links). Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: picks from the 10-27 feed; 'Rising this week' check from ~10-28; W44 digest Mon 11-02. End of run 32.
