@@ -528,3 +528,35 @@
   tags: [fine-tuning, training-recipe, mixed-precision, sim]
   takeaway_en: "Practical warning: fine-tuning VLA weights in bf16 without an fp32 master copy rounds away AdamW updates below 1/512 of a weight; finds this recipe in 9 of 12 open VLA codebases and 79%+ of updates lost on LIBERO."
   takeaway_zh: 实用警示：VLA 权重以 bf16 微调且不保留 fp32 主副本时，小于权重 1/512 的 AdamW 更新会被舍入抹掉；报告 12 个开源 VLA 代码库中 9 个的默认或文档配方如此训练，LIBERO 实验中至少 79% 的更新被抹除。
+- title: "GR-2: A Generative Video-Language-Action Model with Web-Scale Knowledge for Robot Manipulation"
+  type: paper
+  arxiv: "2410.06158"
+  year: 2024
+  org: ByteDance Research
+  project: https://gr2-manipulation.github.io
+  topics: [world-models]
+  tags: [real, arm, video-pretraining, generalist]
+  takeaway_en: Pretrained to generate future video on 38M clips, then fine-tuned to predict frames and actions together; reports 97.7% average success over 100+ real tabletop tasks and roughly double GR-1's success in unseen scenes.
+  takeaway_zh: 先在 3800 万段视频上预训练未来帧生成，再在机器人数据上微调，同时预测视频帧与动作轨迹；报告在 100 多个真机桌面任务上平均成功率 97.7%，在未见场景中成功率约为 GR-1 的两倍。
+- title: "TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies"
+  type: paper
+  arxiv: "2412.10345"
+  year: 2024
+  org: UMD / Microsoft Research
+  venue: ICLR 2025
+  code: https://github.com/umd-huang-lab/tracevla
+  project: https://tracevla.github.io/
+  tags: [real, sim, arm, visual-prompting, open-weights]
+  takeaway_en: Draws the robot's recent motion traces on the input image ('visual trace prompting') and fine-tunes OpenVLA on 150K trajectories; reports ~10% gains on SimplerEnv and 3.5x on real WidowX tasks; 4B variant too.
+  takeaway_zh: 把机器人近期的运动轨迹画在输入图像上（“视觉轨迹提示”），并在 15 万条轨迹上微调 OpenVLA；报告在 SimplerEnv 上提升约 10%、真实 WidowX 任务上提升 3.5 倍，另有基于 Phi-3-Vision 的 4B 精简版。
+- title: "OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning"
+  type: paper
+  arxiv: "2505.11917"
+  year: 2025
+  org: Tsinghua / Shanghai Qi Zhi / Shanghai AI Lab / Fudan / Spirit AI
+  venue: ICLR 2026
+  code: https://github.com/Fanqi-Lin/OneTwoVLA
+  project: https://one-two-vla.github.io
+  tags: [real, arm, reasoning, long-horizon, hri]
+  takeaway_en: "One model that decides when to think and when to act: it reasons at key moments (subtask done, error, human input) and otherwise acts on its latest reasoning; co-trained with synthetic reasoning-rich VL data."
+  takeaway_zh: 单一模型自主决定何时“想”、何时“做”：在子任务完成、出错或人类插话等关键时刻进行推理，其余时间依据最新推理结果生成动作；并与合成的推理型视觉-语言数据共同训练。

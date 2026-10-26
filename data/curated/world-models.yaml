@@ -281,3 +281,15 @@
   tags: [unified-model, video-prediction, visual-planning, world-action-model, benchmark]
   takeaway_en: "A 16B model interleaving video prediction and language reasoning for embodied understanding and long-horizon visual planning, plus a world-action extension for control; reports 51.5% on 20 RoboCasa365 tasks."
   takeaway_zh: 16B 统一具身模型，交替进行视频预测与语言推理，兼顾具身理解与长程视觉规划，并扩展出用于机器人控制的世界-动作版本；另提出 Rynn-VP、Rynn-GEU 评测，报告在 20 个 RoboCasa365 组合任务上成功率 51.5%。
+- title: "DreamGen: Unlocking Generalization in Robot Learning through Video World Models"
+  type: paper
+  arxiv: "2505.12705"
+  year: 2025
+  org: NVIDIA
+  venue: CoRL 2025
+  code: https://github.com/NVIDIA/GR00T-Dreams
+  project: https://research.nvidia.com/labs/gear/dreamgen
+  topics: [learning, locomotion]
+  tags: [synthetic-data, video-world-model, inverse-dynamics, humanoid, real]
+  takeaway_en: Fine-tunes video world models on a robot to dream new demos, labels them with latent actions or an inverse dynamics model, and trains policies on them; a humanoid learns 20+ new behaviors from one-scene teleop data.
+  takeaway_zh: 把视频世界模型微调到目标机器人上“做梦”生成新示范，再用隐动作或逆动力学模型补上动作标签用于训练策略；人形机器人仅凭单一场景的遥操作数据学会 20 多种新行为。
