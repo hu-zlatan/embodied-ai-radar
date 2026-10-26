@@ -461,3 +461,50 @@
   tags: [real, arm, vlm, reasoning, open-weights]
   takeaway_en: "WALL-OSS: an open embodied foundation model that links instruction reasoning, subgoal decomposition and action generation in one differentiable model ('unified cross-level CoT'); training code and checkpoints are public."
   takeaway_zh: WALL-OSS：开源具身基础模型，在同一可微模型中串联指令推理、子目标分解与细粒度动作生成（"统一跨层级思维链"）；训练代码与模型权重已开源。
+- title: "Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers"
+  type: paper
+  arxiv: "2409.20537"
+  year: 2024
+  org: MIT
+  venue: NeurIPS 2024
+  code: https://github.com/liruiw/HPT
+  project: https://liruiw.github.io/hpt/
+  topics: [learning]
+  tags: [real, sim, cross-embodiment, pretraining, open-weights]
+  takeaway_en: "HPT: per-robot stems turn proprioception and vision into a few tokens for one shared transformer trunk, pretrained on 52 datasets (robot, sim, human video); reports 20%+ gains on unseen tasks."
+  takeaway_zh: HPT：为每种机器人设计“输入头”，把本体感知与视觉映射成短 token 序列，送入共享的 Transformer 主干；在 52 个数据集（真机、仿真、人类视频）上预训练，报告在未见任务上微调提升 20% 以上。
+- title: "Latent Action Pretraining from Videos"
+  type: paper
+  arxiv: "2410.11758"
+  year: 2024
+  org: KAIST / UW / Microsoft Research / NVIDIA
+  venue: ICLR 2025
+  code: https://github.com/LatentActionPretraining/LAPA
+  project: https://latentactionpretraining.github.io/
+  topics: [learning]
+  tags: [real, sim, arm, latent-actions, human-video, pretraining]
+  takeaway_en: "LAPA pretrains a VLA without action labels: it learns discrete latent actions between video frames, predicts them from image + text, then maps them to robot actions; reports beating OpenVLA on real tasks."
+  takeaway_zh: LAPA 无需动作标注即可预训练 VLA：先从视频相邻帧间学习离散隐动作，再训练模型由图像和指令预测隐动作，最后用少量机器人数据映射到真实动作；报告在真机任务上优于 OpenVLA。
+- title: "HAMSTER: Hierarchical Action Models for Open-World Robot Manipulation"
+  type: paper
+  arxiv: "2502.05485"
+  year: 2025
+  org: NVIDIA / UW / USC
+  venue: ICLR 2025
+  project: https://hamster-robo.github.io/
+  topics: [manipulation]
+  tags: [real, arm, hierarchical, vlm-planner, 2d-paths]
+  takeaway_en: A hierarchical VLA in which a fine-tuned VLM draws a coarse 2D path for the end effector on the image and a low-level 3D policy follows it, so the VLM can be trained on cheap off-domain data such as sim or videos.
+  takeaway_zh: 分层 VLA：微调后的 VLM 在图像上画出末端执行器的粗略二维路径，再由底层三维策略跟随执行；因此 VLM 可以用仿真、视频等低成本的非本域数据训练。
+- title: "3D-VLA: A 3D Vision-Language-Action Generative World Model"
+  type: paper
+  arxiv: "2403.09631"
+  year: 2024
+  org: UMass Amherst / MIT
+  venue: ICML 2024
+  code: https://github.com/UMass-Embodied-AGI/3D-VLA
+  project: https://vis-www.cs.umass.edu/3dvla
+  topics: [world-models]
+  tags: [3d, point-cloud, goal-generation, dataset]
+  takeaway_en: A 3D-aware LLM with scene, object and action tokens, aligned with diffusion models so it can imagine goal images and point clouds before planning actions; trained on ~2M 3D-language-action pairs the authors assembled.
+  takeaway_zh: 具备三维感知的大语言模型，引入场景、物体与动作交互 token，并与扩散模型对齐，可在规划动作前“想象”目标图像和点云；训练数据为作者整理的约 200 万条三维-语言-动作样本。

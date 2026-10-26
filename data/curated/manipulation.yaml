@@ -284,3 +284,27 @@
   tags: [real, bimanual, human-video, egocentric, imitation]
   takeaway_en: Treats egocentric human video with 3D hand tracking (Project Aria glasses) as robot data and co-trains one policy on both; reports an extra hour of human hand data helps more than an extra hour of robot data.
   takeaway_zh: 把佩戴 Project Aria 眼镜采集、带三维手部跟踪的第一视角人类视频当作机器人数据，与机器人数据共同训练同一个策略；论文报告多 1 小时人手数据比多 1 小时机器人数据更有用。
+- title: "Predictive Inverse Dynamics Models are Scalable Learners for Robotic Manipulation"
+  type: paper
+  arxiv: "2412.15109"
+  year: 2024
+  org: Shanghai AI Lab / PKU / CUHK
+  venue: ICLR 2025
+  code: https://github.com/OpenRobotLab/Seer
+  project: https://nimolty.github.io/Seer/
+  topics: [world-models]
+  tags: [real, sim, arm, inverse-dynamics, foresight, pretraining]
+  takeaway_en: "Seer forecasts the next visual state and feeds it to an inverse dynamics model that outputs actions, trained end to end and pretrained on DROID; reports 4.28 avg. length on CALVIN ABC-D plus LIBERO and real-robot gains."
+  takeaway_zh: Seer 先预测未来视觉状态，再由逆动力学模型据此输出动作，端到端训练并在 DROID 上预训练；报告 CALVIN ABC-D 平均任务长度 4.28，在 LIBERO-LONG 和真机任务上也有提升。
+- title: "DexGraspVLA: A Vision-Language-Action Framework Towards General Dexterous Grasping"
+  type: paper
+  arxiv: "2502.20900"
+  year: 2025
+  org: Peking University / PsiBot
+  venue: AAAI 2026
+  code: https://github.com/Psi-Robot/DexGraspVLA
+  project: https://dexgraspvla.github.io
+  topics: [vla]
+  tags: [real, dexterous-hand, grasping, hierarchical, diffusion-policy]
+  takeaway_en: A pretrained VLM plans and a diffusion controller grasps with a dexterous hand, working on domain-invariant features from foundation models; reports 90%+ grasp success across thousands of unseen cluttered scenes.
+  takeaway_zh: 由预训练 VLM 做高层规划、扩散控制器驱动灵巧手抓取，底层输入为基础模型提取的域不变特征；报告在数千个未见过的杂乱场景中抓取成功率超过 90%。
