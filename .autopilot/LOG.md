@@ -279,3 +279,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Weekly digest W43: weekly.yml had not fired by 04:55 → dispatched; added a short bilingual editor's intro (WAM thread, harnesses around frozen models, CoRL acceptances). Fixed weekly.yml commit message (it said W44 for the W43 file); workflow push accepted.
 - Also DexVLA (CoRL 2025) and TinyVLA → vla (project pages only; official repos unconfirmed). Curated: 368. verify #86, #89, #90 passed (all entries incl. links); CI green. Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: launch kit precondition (first auto digest) now met; CoRL week Nov 9–12 still the suggested moment. Next: daily picks from new feed days + review queue; W44 digest Mon 11-02; 'Rising this week' check from ~10-28. End of run 29.
+
+## 2026-10-26 — run 30 (~10:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`.
+- Fix: 5 feed cards had broken project links from LaTeX `\\href{a}{b}` / Markdown debris in arXiv comments (`…github.io/}{https://…}`, `…/]`). `tidy_url()` in intake + cleanup via `--retag` (topics unchanged).
+- New: intake writes `.autopilot/candidates.json` (full abstracts + authors for recent uncurated papers with code/project/venue), because WebFetch of new arXiv/project pages needs approval nobody can give in scheduled runs. Tested with a mocked API; first CI run filled 100 candidates. Workflow push accepted.
+- Anchors ChatVLA (EMNLP 2025), Hume, TwinVLA (ICLR 2026), VQ-VLA (ICCV 2025) → vla (facts from arXiv / ACL Anthology / alphaXiv; repos via GitHub search). Picks from candidates.json: ViT-H → locomotion, FORCA → manipulation, EgoForesight → learning, SceneBloom → sim. Two over-length takeaways caught by validate. Curated: 376.
