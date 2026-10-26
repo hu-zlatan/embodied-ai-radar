@@ -517,6 +517,12 @@ def build() -> int:
         f'{len([p for p in feed_by_topic[t["id"]] if p.get("published", "") >= week_cut])} {bi("new this week", "本周新增")}</span></a>'
         for t in topics)
     fresh = "".join(feed_card(p, tby, "") for p in feed[:8])
+    # home: row of this year's (and next year's) venue pages, biggest first, e.g. CoRL 2026 during conference season
+    cur_v = sorted((k for k in VENUE_PAGES if int(k.rsplit(" ", 1)[1]) >= today.year),
+                   key=lambda k: (-(len(venues[k]["c"]) + len(venues[k]["f"])), k))[:6]
+    venue_row = (f'<p class="muted">{bi("Accepted at:", "会议/期刊录用：")} '
+                 + " · ".join(f'<a href="venues/{venue_slug(k)}.html">{esc(k)}</a> ({len(venues[k]["c"]) + len(venues[k]["f"])})' for k in cur_v)
+                 + f' · <a href="venues/index.html">{bi("All venues →", "全部 →")}</a></p>') if cur_v else ""
     body = f"""<section class="hero">
 <h1>{bi("The map of embodied AI & robot learning", "具身智能与机器人学习全景图")}</h1>
 <p class="lead">{bi("Hand-verified papers, code, datasets, simulators and hardware with one-line takeaways in English and Chinese — plus every new robotics paper on arXiv, tagged by topic, every day.", "人工核验的论文、代码、数据集、仿真器与硬件，配中英文一句话要点；外加每天自动收录并按主题标注的 arXiv 机器人新论文。")}</p>
@@ -528,6 +534,7 @@ def build() -> int:
 <h2>{bi("Topics", "主题")}</h2>
 <div class="grid">{topic_grid}</div>
 <p class="muted">{bi("By robot type:", "按机器人形态：")} {" · ".join(f'<a href="robots/{m["id"]}.html">{bi(m["en"], m["zh"])}</a>' for m in embs)}</p>
+{venue_row}
 {picks_html}
 {hf_html}
 {rising_html}
