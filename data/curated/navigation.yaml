@@ -256,3 +256,14 @@
   tags: [benchmark, mllm-agent, long-horizon, hri, sim]
   takeaway_en: Simulator with embodied NPCs, dialogue and event-driven task states, plus a skill harness for frozen MLLMs; its 360-episode bench reports general MLLMs can beat embodied ones; task updates and HRI stay hard.
   takeaway_zh: 带具身 NPC、受限对话和事件驱动任务状态机的物理仿真框架，并提供让冻结多模态大模型调用多级技能的执行框架；基于 30 个室内场景构建 360 回合基准，评测 8 个模型，报告通用模型可胜过具身专用模型，任务变更和人机协作仍是难点。
+- title: "EmbodiedWorld-200K: Toward Embodied World Agents via Embodied-Planning Dataset and Interactive World Models"
+  type: paper
+  arxiv: "2610.25959"
+  year: 2026
+  venue: NeurIPS 2026
+  project: https://xiaokunfeng.github.io/EmbodiedWorld-200K/
+  added: 2026-10-26
+  topics: [datasets, world-models]
+  tags: [dataset, navigation-planning, video-world-model, rl-finetuning, open-world]
+  takeaway_en: "200K+ navigation-planning samples annotated from camera trajectories up to instructions; RL post-training inside a video world model, used as a cheap stand-in environment, reportedly helps on unseen scenes."
+  takeaway_zh: 包含 20 万余条导航规划样本的数据集，场景多样，标注从相机运动轨迹到高层语义指令；并把视频世界模型当作低成本交互环境做强化学习后训练，报告称在未见场景上有明显提升。
