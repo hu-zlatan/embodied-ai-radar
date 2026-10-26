@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-26 ~11:15 UTC, run 30 (end)._
+_Last updated: 2026-10-26 ~17:10 UTC, run 31 (end)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (380 entries, EN/ZH takeaways; 46 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (393 entries, EN/ZH takeaways; 59 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -20,6 +20,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - **Picks feed** (run 13): `_site/picks.xml` = Atom feed of the newest 60 agent picks (curated entries with `added:`), bilingual summary, links to entry pages. Linked from home ('Newly added picks') and both READMEs.
 - **Reading path** (run 15): `data/start.yaml` (ordered steps with bilingual notes + curated entry ids, validated) → `start.html`, linked from home hero, resources page, READMEs. Keep it short (≤5 per step); swap entries only for clearly better starting points.
 - **Chinese search** (run 17): `app.js` has a ~100-term ZH→EN dictionary (`ZH`); Chinese queries match English titles/abstracts (unspaced queries split greedily into known terms, ANDed; 机器人/具身 dropped when something more specific is present). Add terms there when users search for something that misses.
+- **Home venue row** (run 31): home page lists this year's/next year's venue pages (top 6 by count, e.g. CoRL 2026 (37)) + 'All venues →'.
 - **Venue pages** (run 18): `venues/<slug>.html` per venue+year with ≥3 papers (curated `venue:` + feed `venue_of()`, feed papers already curated are dropped), `venues/index.html`; venue badges on cards link there; linked from feed page, topics page, sitemap, READMEs, digest 'Accepted at venues'. 16 pages at launch; CoRL 2026 = 36 papers. Search results link them too (index.json `venues` map → app.js `venueBadge`).
 - **HF upvotes** (run 19): `scripts/hf_papers.py` (best-effort step in `repo-stats.yml`) reads https://huggingface.co/api/daily_papers?date= for the last 21 days, keeps only our arXiv IDs → `data/hf_papers.json` (`{id: {upvotes, date}}`, kept 60 days, failed days keep old values). '▲ N HF' links on feed/curated cards and search results, `?sort=hf`, home 'Upvoted on Hugging Face' (last 14 days, top 8), digest section. Hidden when there is no data.
 - **HF links + review queue** (run 23): `hf_papers.py` (runs *before* `repo_stats.py` in repo-stats.yml) also stores HF `githubRepo` / `projectPage` per paper (`github`, `project` in `data/hf_papers.json`, sanitised on load). `merge_links()` fills missing feed code/project links in build_site, make_digest and repo_stats (so 404s → 'not public yet'). First real run: 29 of 37 HF-listed papers have a GitHub link. It also writes `.autopilot/review_queue.json` (uncurated papers with ≥5 upvotes: full abstract, authors, org, links, arXiv comment) — **use it as the fact source for picks** (arXiv/HF pages are often not fetchable from the agent's tools).
@@ -50,6 +51,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 31: picks ContactBench 1.0, tactile-manipulation review (Annual Review CRAS), VecTile, BiDex-100, EmbodiedWorld-200K (NeurIPS 2026), LLM-LIBERO frontier-model benchmark, MARE, PHD-Hand (Humanoids 2026), Rubik's Cube quadruped, COWBOY, FastHarness, Physical Canvas, AstroBench. Still-unpicked candidates worth a look: TIDE (2610.29264, human-in-the-loop online post-training), Embodied Playground (2610.27039), To Route or to Adapt? (CoRL 2026, code; autonomous driving — off-core), SmolVLA-MoE (repo still 404 → wait), DynaSlots (anonymous page), MAST-VLA / FocusVLA / FR-VLA (CoRL 2026, no links yet). ContactBench says assets "will be open-sourced" → add `code:` once released. Search index 807 KB raw / 272 KB gzip at 14 feed days (lazy-loaded).
 
 - Run 30: anchors ChatVLA, Hume, TwinVLA, VQ-VLA, GigaBrain-0, Galaxea G0, RoboOS → vla; GenManip → sim; picks ViT-H, FORCA, EgoForesight, SceneBloom. 10-26 candidates not yet picked (from candidates.json): MAST-VLA (CoRL 2026, no code), RobustRLlib (project/code page), Martingale GRPO, WorldMirror, DiscoDemo, RepresentNav. Lecture notes 2610.32538 (opt. control + RL for robotics; preliminary, no figures) → maybe resources later. Still missing anchors (verify first): UnifoLM, Wall-OSS-0.5, MolmoAct 2, GigaBrain-0.5M*. Galaxea G0: add a dataset/project link once an official page is confirmed.
 
