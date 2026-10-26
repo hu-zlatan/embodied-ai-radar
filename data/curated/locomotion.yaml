@@ -230,3 +230,12 @@
   tags: [sim2real, humanoid, motion-tracking, diffusion, whole-body]
   takeaway_en: One motion-tracking recipe with shared hyperparameters learns agile skills (cartwheels, flip-kicks); a guided latent diffusion model composes them for new goals like joystick control, zero-shot on hardware.
   takeaway_zh: 用同一套超参数的运动跟踪方案学会侧手翻、飞踢、冲刺等敏捷技能，再用带引导的潜空间扩散模型组合这些技能以完成摇杆遥控、避障等新目标，零样本迁移到真机。
+- title: "ViT-H: Generative Video-To-Humanoid Control with Motion Tracking Feedback"
+  type: paper
+  arxiv: "2610.32966"
+  year: 2026
+  project: https://awfuact.github.io/vit-h/
+  added: 2026-10-26
+  tags: [real, humanoid, motion-tracking, human-video, diffusion, teleoperation]
+  takeaway_en: "Skips reconstruction and retargeting: a diffusion model turns monocular human video straight into humanoid reference motion, post-trained with DPO on tracking outcomes; real-time variant teleoperates a G1 under 400 ms."
+  takeaway_zh: 跳过人体重建与重定向：扩散模型直接把单目人类视频生成为人形机器人参考动作，并以运动跟踪结果做 DPO 后训练；自回归版本可在 Unitree G1 上实现低于 400 ms 延迟的实时视频遥操作。

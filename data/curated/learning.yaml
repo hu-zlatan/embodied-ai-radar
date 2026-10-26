@@ -312,3 +312,13 @@
   tags: [distillation, dagger, recovery, reward-model, real]
   takeaway_en: Distills a pretrained VLA teacher into a policy without action pretraining via on-policy supervision plus teacher-run recoveries, triggered by a reward model (AutoDAgger); reports up to 4.1x over BC on 3 real tasks.
   takeaway_zh: 把预训练具身基础模型（教师）蒸馏到未做动作预训练的策略：在学生访问的状态上做在线监督，并由奖励模型监控进度、自动触发教师接管采集纠错轨迹（AutoDAgger，无需人工看护）；报告在 3 个真机任务上比行为克隆最高提升 4.1 倍。
+- title: "EgoForesight: Effectively Scaling Policy Learning with Noisy Egocentric Actions"
+  type: paper
+  arxiv: "2610.31845"
+  year: 2026
+  project: https://lin-shan.com/EgoForesight
+  added: 2026-10-26
+  topics: [vla]
+  tags: [real, sim, human-video, egocentric, scaling, dexterous-hand]
+  takeaway_en: "Co-trains a VLA on robot demos and noisy egocentric-video actions by weighting each source by reliability and distilling from clean future frames; reports steeper scaling than the baseline up to 30k hours of data."
+  takeaway_zh: 将机器人示教与动作标签噪声较大的第一视角视频联合训练 VLA：按数据源可靠性分配监督权重，并从干净的未来画面蒸馏表征；报告在最多 3 万小时预训练数据范围内扩展斜率高于基线。
