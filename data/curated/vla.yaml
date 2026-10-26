@@ -508,3 +508,23 @@
   tags: [3d, point-cloud, goal-generation, dataset]
   takeaway_en: A 3D-aware LLM with scene, object and action tokens, aligned with diffusion models so it can imagine goal images and point clouds before planning actions; trained on ~2M 3D-language-action pairs the authors assembled.
   takeaway_zh: 具备三维感知的大语言模型，引入场景、物体与动作交互 token，并与扩散模型对齐，可在规划动作前“想象”目标图像和点云；训练数据为作者整理的约 200 万条三维-语言-动作样本。
+- title: "RynnBrain: Open Embodied Foundation Models"
+  type: paper
+  arxiv: "2602.14979"
+  year: 2026
+  org: Alibaba DAMO Academy
+  code: https://github.com/alibaba-damo-academy/RynnBrain
+  project: https://alibaba-damo-academy.github.io/RynnBrain.github.io
+  topics: [perception, navigation]
+  tags: [vlm, embodied-brain, spatiotemporal, planning, open-weights]
+  takeaway_en: Open spatiotemporal embodied foundation models (2B, 8B, 30B-A3B MoE) for egocentric understanding, localization, grounded reasoning and planning, plus post-trained Nav, Plan, VLA and CoP variants.
+  takeaway_zh: 开源时空具身基础模型（2B、8B 与 30B-A3B MoE），覆盖第一视角理解、时空定位、物理落地推理与规划，并提供导航、规划、VLA、CoP 等后训练版本。
+- title: "Full-Weight VLA Fine-Tuning Without an fp32 Master Copy Silently Erases Most Updates"
+  type: paper
+  arxiv: "2610.31859"
+  year: 2026
+  added: 2026-10-26
+  topics: [learning]
+  tags: [fine-tuning, training-recipe, mixed-precision, sim]
+  takeaway_en: "Practical warning: fine-tuning VLA weights in bf16 without an fp32 master copy rounds away AdamW updates below 1/512 of a weight; finds this recipe in 9 of 12 open VLA codebases and 79%+ of updates lost on LIBERO."
+  takeaway_zh: 实用警示：VLA 权重以 bf16 微调且不保留 fp32 主副本时，小于权重 1/512 的 AdamW 更新会被舍入抹掉；报告 12 个开源 VLA 代码库中 9 个的默认或文档配方如此训练，LIBERO 实验中至少 79% 的更新被抹除。
