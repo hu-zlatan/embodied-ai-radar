@@ -660,3 +660,13 @@
   tags: [benchmark, sim, llm, tool-use, zero-shot, reasoning]
   takeaway_en: "Six frontier general-purpose models drive a LIBERO-10 arm through tool calls (end-effector poses, gripper), no robot training; best reported success is 44%. More reasoning effort usually helps but costs more."
   takeaway_zh: 让六个前沿通用大模型通过工具调用（指定末端位姿与夹爪开合）直接控制 LIBERO-10 机械臂，无任何机器人专门训练；报告的最高成功率为 44%。提高推理强度通常有帮助，但推理成本更高。
+- title: "FastHarness: Experience-Driven Review Scheduling for Vision-Language-Action Policies"
+  type: paper
+  arxiv: "2610.31427"
+  year: 2026
+  code: https://github.com/FastHarness/fast-harness
+  added: 2026-10-26
+  topics: [manipulation]
+  tags: [sim, agentic, harness, llm, failure-recovery, frozen-policy]
+  takeaway_en: "Harness where a frontier LLM reviews a frozen π0.5 policy less often as experience builds up and focuses on recovery after errors; reports ~57% fewer reviewer tokens and higher success on four sim tasks."
+  takeaway_zh: 让前沿大模型监督冻结的 π0.5 策略的执行框架：随着经验积累逐步减少审查频率，并把监督集中在出错后的恢复上；报告在四个仿真任务上审查 token 平均减少约 57%，成功率也更高。
