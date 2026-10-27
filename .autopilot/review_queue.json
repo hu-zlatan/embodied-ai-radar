@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26",
+ "updated": "2026-10-27",
  "papers": [
   {
    "id": "2610.19366",
@@ -41,7 +41,7 @@
   {
    "id": "2610.31162",
    "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
-   "upvotes": 38,
+   "upvotes": 39,
    "hf_date": "2026-10-26",
    "published": "2026-10-23",
    "topics": [
@@ -139,6 +139,31 @@
    "comment": "Accepted at CoRL 2026. Project page: https://safedrive-vla.github.io/SafeDriveVLA/",
    "abstract": "Vision-Language-Action (VLA) models are gaining attention in autonomous driving, inheriting commonsense priors from large language models (LLMs) and widening the navigation interface from a fixed command set to free-form natural-language instructions. However, this open-ended interface exposes a new vulnerability surface: an inattentive driver may issue instructions that are unsafe given the current scene, and a malicious user may issue dangerous ones on purpose. We present the first benchmark suite that evaluates navigation following and conflict awareness together, along with adversarial robustness. Existing VLAs fall short on both: SimLingo completes no language-instructed lane change in closed loop, and all models degrade sharply under conflicting signals. We propose SafeDriveVLA, the first driving VLA that (1) explicitly predicts a three-level navigation-compliance mode to decouple conflict reasoning from action generation, and (2) uses navigation-conditioned world model dreaming to inform this prediction. Unlike prior world models that roll out expert or planned actions, ours dreams of strictly following the navigation signal, showing when following is safe. SafeDriveVLA reaches 88.16 Driving Score (DS) and 68.64% Success Rate (SR) on Bench2Drive, lifts closed-loop language following by 49.3% and reduces collisions under unsafe instructions from 60 to 38 compared to the best SimLingo variant. Video demonstrations are available on our project page.",
    "ai_summary": "SafeDriveVLA improves autonomous driving by predicting navigation compliance and using world-model dreaming to avoid unsafe instructions, outperforming existing vision-language-action models."
+  },
+  {
+   "id": "2610.32909",
+   "title": "HoloBoxing: A Simple Recipe for Humanoid Boxing with 7 Minutes of Single-GPU Training",
+   "upvotes": 7,
+   "hf_date": "2026-10-26",
+   "published": "2026-10-26",
+   "topics": [
+    "locomotion"
+   ],
+   "authors": [
+    "Xihan Ma",
+    "Bo Zhang",
+    "Boxiong Li",
+    "Yuhan Bao",
+    "Ziyue Liu",
+    "Yucheng Wang"
+   ],
+   "organization": null,
+   "github": null,
+   "project": null,
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "HoloBoxing presents a simple recipe for learning humanoid boxing by building on a pretrained whole-body controller. The recipe separates reusable motor skills from task decisions: a compact planner requests future body-point targets, while the frozen controller handles joint-level execution. A learned decoder maps 32-dimensional actions to structured target windows, and measured-state imitation initializes the planner before reinforcement learning. Task learning then refines interaction behavior while reusing the decoder and controller, avoiding the need to relearn whole-body control. This combination keeps task optimization focused on a compact upper policy and supplies an initial behavior before reward-driven exploration. Starting from that available controller, the recipe accounts for about seven minutes of additional training, including reused representation fitting and a single-GPU task run. This excludes controller pretraining, data preparation, evaluation, and search. Simulated boxing experiments and component controls evaluate the resulting behavior and the roles of imitation initialization and the target representation.",
+   "ai_summary": "HoloBoxing learns humanoid boxing by combining a frozen whole-body controller with a compact planner that predicts body-point targets, using imitation initialization and reinforcement learning to refine interaction behavior with minimal additional training."
   }
  ]
 }
