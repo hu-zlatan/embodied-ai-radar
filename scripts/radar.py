@@ -38,6 +38,26 @@ def load_embodiments() -> list[dict]:
         return yaml.safe_load(f) or []
 
 
+def load_labs() -> list[dict]:
+    """Labs / organizations (data/labs.yaml) for the 'By lab' pages. Missing file -> []."""
+    path = DATA / "labs.yaml"
+    if not path.exists():
+        return []
+    with open(path, encoding="utf-8") as f:
+        labs = yaml.safe_load(f) or []
+    for lab in labs:
+        pats = [p for p in (lab.get("match") or []) if isinstance(p, str) and p]
+        lab["_re"] = re.compile(r"(?<![\w-])(?:" + "|".join(sorted(pats, key=len, reverse=True)) + r")(?![\w-])") if pats else None
+    return labs
+
+
+def labs_of(org: str | None, labs: list[dict]) -> list[str]:
+    """Ids of the labs whose patterns match a curated entry's free-text `org` field."""
+    if not org:
+        return []
+    return [lab["id"] for lab in labs if lab.get("_re") and lab["_re"].search(org)]
+
+
 def slug(text: str) -> str:
     s = re.sub(r"\$[^$]*\$", lambda m: re.sub(r"[^a-z0-9]", "", m.group(0).lower()), text.lower())
     s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")

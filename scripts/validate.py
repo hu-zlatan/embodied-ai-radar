@@ -1,7 +1,7 @@
 """Offline data checks. Exit 1 on any curated-data error. Usage: python scripts/validate.py"""
 import sys
 
-from radar import entry_id, load_arxiv_feed, load_curated, load_embodiments, load_resources, load_start, load_topics
+from radar import entry_id, load_arxiv_feed, load_curated, load_embodiments, load_labs, load_resources, load_start, load_topics
 
 
 def main() -> int:
@@ -21,6 +21,17 @@ def main() -> int:
         for k in ("id", "en", "zh", "keywords"):
             if not em.get(k):
                 errs.append(f"embodiments.yaml: {em.get('id')} missing {k}")
+    try:
+        labs = load_labs()
+    except Exception as ex:  # bad regex in labs.yaml
+        labs = []
+        errs.append(f"labs.yaml: {ex}")
+    if len({lab.get("id") for lab in labs}) != len(labs):
+        errs.append("labs.yaml: duplicate ids")
+    for lab in labs:
+        for k in ("id", "en", "zh", "match"):
+            if not lab.get(k):
+                errs.append(f"labs.yaml: {lab.get('id')} missing {k}")
     entries, cerrs = load_curated()
     errs += cerrs
     resources, rerrs = load_resources()

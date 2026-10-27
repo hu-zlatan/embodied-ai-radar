@@ -19,7 +19,7 @@ from pathlib import Path
 from hf_papers import load as load_hf, merge_links
 from repo_stats import apply_feed_stats, load_feed_stats, load_history, load_stats, repo_key, star_gains
 from radar import (ROOT, bibtex, classify, venue_of, load_arxiv_feed, load_curated, load_curated_meta, load_embodiments,
-                   load_resources, load_start, load_topics)
+                   labs_of, load_labs, load_resources, load_start, load_topics)
 
 OUT = ROOT / "_site"
 SRC = ROOT / "site_src"
@@ -35,6 +35,8 @@ EMB: dict[str, dict] = {}  # embodiment id -> {en, zh}, filled in build()
 STATS: dict[str, dict] = {}  # 'owner/repo' -> {stars, pushed, archived}, from data/repo_stats.json
 VENUE_PAGES: set[str] = set()  # venue keys like 'CoRL 2026' that have a page venues/<slug>.html, filled in build()
 VENUE_MIN = 3  # a venue+year gets its own page once it has this many papers (curated + feed)
+LAB_PAGES: dict[str, dict] = {}  # lab id -> lab (data/labs.yaml) for labs with a page labs/<id>.html, filled in build()
+LAB_MIN = 3  # a lab gets its own page once this many curated entries match it
 
 
 def venue_key(v: str | None) -> str | None:
@@ -133,6 +135,10 @@ def entry_page(e: dict, topics_by_id: dict, related: list[dict], authors: list[s
     au = ""
     if authors:
         au = f'<p class="authors">{bi("Authors (from arXiv): ", "作者（来自 arXiv）：")}{esc(", ".join(authors[:8]))}{" et al." if len(authors) > 8 else ""}</p>'
+    labs = [LAB_PAGES[i] for i in e.get("labs", []) if i in LAB_PAGES]
+    if labs:
+        au += (f'<p class="muted">{bi("More from: ", "同机构更多条目：")}'
+               + " · ".join(f'<a href="../labs/{lab["id"]}.html">{bi(lab["en"], lab["zh"])}</a>' for lab in labs) + "</p>")
     rel = ""
     if related:
         rel = (f'<h2>{bi("More in " + t0["en"], "更多" + t0["zh"] + "条目")}</h2><ul class="tlist">'
@@ -337,6 +343,14 @@ def build() -> int:
     feed = load_arxiv_feed()
     today = dt.datetime.now(dt.timezone.utc).date()
     embs = load_embodiments()
+    labs = load_labs()
+    for e in entries:
+        e["labs"] = labs_of(e.get("org"), labs)
+    by_lab = {lab["id"]: sorted((e for e in entries if lab["id"] in e["labs"]),
+                                key=lambda e: (not e.get("highlight"), -int(e["year"]), e["title"])) for lab in labs}
+    lab_list = sorted((lab for lab in labs if len(by_lab[lab["id"]]) >= LAB_MIN), key=lambda lab: (-len(by_lab[lab["id"]]), lab["en"]))
+    LAB_PAGES.clear()
+    LAB_PAGES.update({lab["id"]: lab for lab in lab_list})
     EMB.clear()
     EMB.update({m["id"]: m for m in embs})
     STATS.clear()
@@ -535,6 +549,7 @@ def build() -> int:
 <div class="grid">{topic_grid}</div>
 <p class="muted">{bi("By robot type:", "按机器人形态：")} {" · ".join(f'<a href="robots/{m["id"]}.html">{bi(m["en"], m["zh"])}</a>' for m in embs)}</p>
 {venue_row}
+<p class="muted">{bi("By lab:", "按机构：")} {" · ".join(f'<a href="labs/{lab["id"]}.html">{bi(lab["en"], lab["zh"])}</a>' for lab in lab_list[:10])} · <a href="labs/index.html">{bi("All labs →", "全部机构 →")}</a></p>
 {picks_html}
 {hf_html}
 {rising_html}
@@ -557,6 +572,7 @@ def build() -> int:
     bibnote += (f'<p>{bi("Reuse the whole curated index (CC BY 4.0):", "复用全部精选数据（CC BY 4.0）：")} '
                 f'<a href="../curated.json">curated.json</a> · <a href="../curated.csv" download>curated.csv</a></p>')
     bibnote += f'<p><a href="../venues/index.html">{bi("Browse papers by venue (CoRL, RSS, ICRA, NeurIPS…) →", "按会议/期刊浏览论文（CoRL、RSS、ICRA、NeurIPS…）→")}</a></p>'
+    bibnote += f'<p><a href="../labs/index.html">{bi("Browse by lab or company (NVIDIA, Stanford, Shanghai AI Lab…) →", "按机构浏览（英伟达、斯坦福、上海人工智能实验室…）→")}</a></p>'
     bibnote += f'<p><a href="../robots/index.html">{bi("Browse papers by robot type (humanoid, quadruped, dexterous hand…) →", "按机器人形态浏览（人形、四足、灵巧手…）→")}</a></p>'
     (OUT / "topics" / "index.html").write_text(page("Topics · Embodied AI Radar", f'<h1>{bi("Topics", "主题")}</h1><ul class="tlist">{tlist}</ul>' + bibnote, "../", desc, "topics/index.html"), encoding="utf-8")
     for t in topics:
@@ -708,7 +724,7 @@ def build() -> int:
 
     # ---- machine-readable export of the curated index (CC BY 4.0), JSON + CSV
     FIELDS = ["id", "title", "type", "arxiv", "year", "venue", "org", "url", "code", "project", "topics", "tags",
-              "robot_types", "highlight", "added", "takeaway_en", "takeaway_zh", "github_stars", "page"]
+              "robot_types", "highlight", "added", "takeaway_en", "takeaway_zh", "github_stars", "page", "labs"]
     rows = []
     for e in entries:
         st = repo_stat(e) or {}
@@ -719,7 +735,8 @@ def build() -> int:
             "robot_types": e.get("emb") or [], "highlight": bool(e.get("highlight")),
             "added": str(e["added"]) if e.get("added") else None,
             "takeaway_en": e["takeaway_en"], "takeaway_zh": e["takeaway_zh"],
-            "github_stars": st.get("stars"), "page": f"{SITE_URL}e/{e['id']}.html"})
+            "github_stars": st.get("stars"), "page": f"{SITE_URL}e/{e['id']}.html",
+            "labs": [i for i in e.get("labs", []) if i in LAB_PAGES]})
     (OUT / "curated.json").write_text(json.dumps({
         "name": "Embodied AI Radar - curated index", "source": SITE_URL,
         "license": "CC BY 4.0 (curated text and data); arXiv metadata CC0",
@@ -801,11 +818,41 @@ def build() -> int:
         f'<p class="muted">{rnote}</p><ul class="tlist">{rrows}</ul>', "../",
         "Embodied AI and robot learning papers grouped by robot type: humanoid, quadruped, dexterous hand, robot arm, mobile robot, drone, autonomous driving.", "robots/index.html"), encoding="utf-8")
 
+    # ---- lab pages: labs/<id>.html per lab with >= LAB_MIN curated entries (matched from `org`), labs/index.html
+    (OUT / "labs").mkdir()
+    lnote = bi("Labs are matched from each entry's affiliation field by simple name rules (data/labs.yaml); joint work appears under every lab named. Only curated entries are listed, because daily arXiv papers carry no affiliations.",
+               "机构由每个条目的机构字段按名称规则匹配（data/labs.yaml），合作工作会出现在所有署名机构下。仅列出精选条目，因为每日 arXiv 论文不含机构信息。")
+    for lab in lab_list:
+        cur = by_lab[lab["id"]]
+        n_code = sum(1 for e in cur if e.get("code"))
+        tcount = " · ".join(f'<a href="../topics/{t["id"]}.html">{bi(t["en"], t["zh"])}</a> <span class="muted">({n})</span>'
+                            for t in topics if (n := sum(1 for e in cur if t["id"] in e["topics"])))
+        newest = sorted((e for e in cur if e.get("added")), key=lambda e: str(e["added"]), reverse=True)[:6]
+        body = (f'<p class="muted"><a href="index.html">{bi("Labs", "机构")}</a> › {bi(lab["en"], lab["zh"])}</p>'
+                f'<h1>{bi(lab["en"] + " · embodied AI & robot learning", lab["zh"] + " · 具身智能与机器人学习")}</h1>'
+                f'<p class="lead">{bi(f"{len(cur)} curated papers, code, datasets and hardware from {lab["en"]} ({n_code} with code), with one-line takeaways.", f"{len(cur)} 个来自{lab["zh"]}的精选论文、代码、数据集与硬件（{n_code} 个附代码），均配一句话要点。")}</p>'
+                f'<p class="muted">{lnote}</p>'
+                + (f'<p class="muted">{bi("By topic:", "按主题：")} {tcount}</p>' if tcount else "")
+                + (f'<h2>{bi("Recently added", "最近加入")}</h2><ul class="tlist">'
+                   + "".join(f'<li><a href="../e/{esc(e["id"])}.html">{title_html(e["title"])}</a> <span class="muted">· {esc(str(e["added"]))}</span></li>' for e in newest)
+                   + "</ul>" if newest else "")
+                + f'<h2>{bi("All entries", "全部条目")} <span class="muted">({len(cur)})</span></h2>'
+                f'<div class="cards">{"".join(curated_card(e, tby, "../") for e in cur)}</div>')
+        (OUT / "labs" / f"{lab['id']}.html").write_text(
+            page(f"{lab['en']} robot learning papers & code · {lab['zh']} · Embodied AI Radar", body, "../",
+                 f"{len(cur)} embodied AI and robot learning papers, code and datasets from {lab['en']}, with EN/中文 takeaways, GitHub stars and BibTeX.",
+                 f"labs/{lab['id']}.html"), encoding="utf-8")
+    lrows = "".join(f'<li><a href="{lab["id"]}.html">{bi(lab["en"], lab["zh"])}</a> <span class="muted">({len(by_lab[lab["id"]])})</span></li>' for lab in lab_list)
+    (OUT / "labs" / "index.html").write_text(page("Embodied AI papers by lab · Embodied AI Radar",
+        f'<h1>{bi("Papers by lab or company", "按机构浏览")}</h1><p class="lead">{bi(f"Universities, labs and companies with at least {LAB_MIN} curated entries, most first.", f"精选条目不少于 {LAB_MIN} 个的高校、实验室与公司，按数量排序。")}</p>'
+        f'<p class="muted">{lnote}</p><ul class="tlist">{lrows or "<li class=muted>—</li>"}</ul>', "../",
+        "Embodied AI and robot learning papers, code and datasets grouped by lab: UC Berkeley, Stanford, NVIDIA, Google DeepMind, Shanghai AI Lab, Tsinghua and more.", "labs/index.html"), encoding="utf-8")
+
     # ---- 404, robots, sitemap, atom
     (OUT / "404.html").write_text(page("Not found · Embodied AI Radar", f'<h1>404</h1><p><a href="{SITE_URL}">{bi("Back to the radar", "返回首页")}</a></p>', SITE_URL, desc, "404.html"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n")
-    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html", "start.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries] + ["venues/index.html"] + [f"venues/{venue_slug(k)}.html" for k in vkeys] + ["robots/index.html"] + [f"robots/{m['id']}.html" for m in embs]
+    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html", "start.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries] + ["venues/index.html"] + [f"venues/{venue_slug(k)}.html" for k in vkeys] + ["robots/index.html"] + [f"robots/{m['id']}.html" for m in embs] + ["labs/index.html"] + [f"labs/{i}.html" for i in LAB_PAGES]
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"<url><loc>{SITE_URL}{u}</loc><lastmod>{today.isoformat()}</lastmod></url>\n" for u in urls)
