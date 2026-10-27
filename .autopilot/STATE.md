@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-10-27 ~23:20 UTC, run 36. Lab pages shipped; 5 picks pushed (verify pending at time of writing — re-check)._
+_Last updated: 2026-10-27 ~23:15 UTC, run 36 (end). Lab pages live; verify #108 passed (all 5 run-36 picks incl. project links)._
 
 ## Status
 
