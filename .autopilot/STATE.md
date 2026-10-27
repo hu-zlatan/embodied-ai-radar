@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-10-27 ~17:00 UTC, run 35. verify #105/#106 queued for run-35 picks — re-check at the start of run 36._
+_Last updated: 2026-10-27 ~17:10 UTC, run 35 (end). verify #105 + #106 passed (all 10 run-35 picks incl. links)._
 
 ## Status
 
