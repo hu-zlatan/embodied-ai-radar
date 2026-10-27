@@ -41,7 +41,7 @@
   {
    "id": "2610.31162",
    "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
-   "upvotes": 39,
+   "upvotes": 41,
    "hf_date": "2026-10-26",
    "published": "2026-10-23",
    "topics": [
@@ -164,6 +164,39 @@
    "comment": null,
    "abstract": "HoloBoxing presents a simple recipe for learning humanoid boxing by building on a pretrained whole-body controller. The recipe separates reusable motor skills from task decisions: a compact planner requests future body-point targets, while the frozen controller handles joint-level execution. A learned decoder maps 32-dimensional actions to structured target windows, and measured-state imitation initializes the planner before reinforcement learning. Task learning then refines interaction behavior while reusing the decoder and controller, avoiding the need to relearn whole-body control. This combination keeps task optimization focused on a compact upper policy and supplies an initial behavior before reward-driven exploration. Starting from that available controller, the recipe accounts for about seven minutes of additional training, including reused representation fitting and a single-GPU task run. This excludes controller pretraining, data preparation, evaluation, and search. Simulated boxing experiments and component controls evaluate the resulting behavior and the roles of imitation initialization and the target representation.",
    "ai_summary": "HoloBoxing learns humanoid boxing by combining a frozen whole-body controller with a compact planner that predicts body-point targets, using imitation initialization and reinforcement learning to refine interaction behavior with minimal additional training."
+  },
+  {
+   "id": "2610.31569",
+   "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
+   "upvotes": 6,
+   "hf_date": "2026-10-26",
+   "published": "2026-10-23",
+   "topics": [
+    "vla"
+   ],
+   "authors": [
+    "Yufeng Liu",
+    "Bohao Fan",
+    "Juntu Zhao",
+    "Xinyi Wang",
+    "Hang Yu",
+    "Wenzhuan Luo",
+    "Yingzhi Wang",
+    "Qinghai Li",
+    "Yingdong Hu",
+    "Junliang Guo",
+    "Richard Wang",
+    "Dequan Wang",
+    "Yang Gao",
+    "Cheng Ma"
+   ],
+   "organization": null,
+   "github": "https://github.com/lyfeng001/Echo-Sim",
+   "project": "https://lyfeng001.github.io/Echo/",
+   "arxiv_code": [],
+   "comment": "Project page: https://lyfeng001.github.io/Echo/",
+   "abstract": "Recognizing task completion and failure enables robots to stop upon success and initiate recovery or replanning after failure. Existing methods augment Vision Language Action (VLA) policies with task status signal prediction to support these execution decisions. However, learning and integrating these signals can require fine-grained supervision, external monitoring models, or complex architectural designs. Moreover, the potential of task status signals to directly guide action generation remains underexplored. We present Echo, a framework that combines task status signal learning without frame-level progress annotations with a compact design for status prediction and action generation within a single VLA. Specifically, Echo represents task status with stop and failure signals, added as two dimensions of each action chunk and denoised together with robot actions. Their combination distinguishes ongoing execution, successful completion, and failure. To learn these signals without fine-grained progress annotations, Echo constructs successful, failed, and recovery trajectories with complementary supervision properties. To enable status signal-guided action generation, Echo controls interactions between the signals and actions and denoises the signals faster than the actions. These allow later action denoising steps to condition on cleaner status estimates while preserving accurate signal prediction. Extensive real-world manipulation experiments show that Echo accurately predicts task status and consistently improves policy performance.",
+   "ai_summary": "Echo integrates stop and failure signals into a vision-language-action model to guide robot execution and recovery without fine-grained progress labels."
   }
  ]
 }
