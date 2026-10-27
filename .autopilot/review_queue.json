@@ -41,7 +41,7 @@
   {
    "id": "2610.31162",
    "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
-   "upvotes": 46,
+   "upvotes": 49,
    "hf_date": "2026-10-26",
    "published": "2026-10-23",
    "topics": [
@@ -141,34 +141,9 @@
    "ai_summary": "SafeDriveVLA improves autonomous driving by predicting navigation compliance and using world-model dreaming to avoid unsafe instructions, outperforming existing vision-language-action models."
   },
   {
-   "id": "2610.32909",
-   "title": "HoloBoxing: A Simple Recipe for Humanoid Boxing with 7 Minutes of Single-GPU Training",
-   "upvotes": 9,
-   "hf_date": "2026-10-26",
-   "published": "2026-10-26",
-   "topics": [
-    "locomotion"
-   ],
-   "authors": [
-    "Xihan Ma",
-    "Bo Zhang",
-    "Boxiong Li",
-    "Yuhan Bao",
-    "Ziyue Liu",
-    "Yucheng Wang"
-   ],
-   "organization": null,
-   "github": null,
-   "project": null,
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "HoloBoxing presents a simple recipe for learning humanoid boxing by building on a pretrained whole-body controller. The recipe separates reusable motor skills from task decisions: a compact planner requests future body-point targets, while the frozen controller handles joint-level execution. A learned decoder maps 32-dimensional actions to structured target windows, and measured-state imitation initializes the planner before reinforcement learning. Task learning then refines interaction behavior while reusing the decoder and controller, avoiding the need to relearn whole-body control. This combination keeps task optimization focused on a compact upper policy and supplies an initial behavior before reward-driven exploration. Starting from that available controller, the recipe accounts for about seven minutes of additional training, including reused representation fitting and a single-GPU task run. This excludes controller pretraining, data preparation, evaluation, and search. Simulated boxing experiments and component controls evaluate the resulting behavior and the roles of imitation initialization and the target representation.",
-   "ai_summary": "HoloBoxing learns humanoid boxing by combining a frozen whole-body controller with a compact planner that predicts body-point targets, using imitation initialization and reinforcement learning to refine interaction behavior with minimal additional training."
-  },
-  {
    "id": "2610.31569",
    "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
-   "upvotes": 8,
+   "upvotes": 9,
    "hf_date": "2026-10-26",
    "published": "2026-10-23",
    "topics": [
@@ -197,6 +172,116 @@
    "comment": "Project page: https://lyfeng001.github.io/Echo/",
    "abstract": "Recognizing task completion and failure enables robots to stop upon success and initiate recovery or replanning after failure. Existing methods augment Vision Language Action (VLA) policies with task status signal prediction to support these execution decisions. However, learning and integrating these signals can require fine-grained supervision, external monitoring models, or complex architectural designs. Moreover, the potential of task status signals to directly guide action generation remains underexplored. We present Echo, a framework that combines task status signal learning without frame-level progress annotations with a compact design for status prediction and action generation within a single VLA. Specifically, Echo represents task status with stop and failure signals, added as two dimensions of each action chunk and denoised together with robot actions. Their combination distinguishes ongoing execution, successful completion, and failure. To learn these signals without fine-grained progress annotations, Echo constructs successful, failed, and recovery trajectories with complementary supervision properties. To enable status signal-guided action generation, Echo controls interactions between the signals and actions and denoises the signals faster than the actions. These allow later action denoising steps to condition on cleaner status estimates while preserving accurate signal prediction. Extensive real-world manipulation experiments show that Echo accurately predicts task status and consistently improves policy performance.",
    "ai_summary": "Echo integrates stop and failure signals into a vision-language-action model to guide robot execution and recovery without fine-grained progress labels."
+  },
+  {
+   "id": "2610.32909",
+   "title": "HoloBoxing: A Simple Recipe for Humanoid Boxing with 7 Minutes of Single-GPU Training",
+   "upvotes": 9,
+   "hf_date": "2026-10-26",
+   "published": "2026-10-26",
+   "topics": [
+    "locomotion"
+   ],
+   "authors": [
+    "Xihan Ma",
+    "Bo Zhang",
+    "Boxiong Li",
+    "Yuhan Bao",
+    "Ziyue Liu",
+    "Yucheng Wang"
+   ],
+   "organization": null,
+   "github": null,
+   "project": null,
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "HoloBoxing presents a simple recipe for learning humanoid boxing by building on a pretrained whole-body controller. The recipe separates reusable motor skills from task decisions: a compact planner requests future body-point targets, while the frozen controller handles joint-level execution. A learned decoder maps 32-dimensional actions to structured target windows, and measured-state imitation initializes the planner before reinforcement learning. Task learning then refines interaction behavior while reusing the decoder and controller, avoiding the need to relearn whole-body control. This combination keeps task optimization focused on a compact upper policy and supplies an initial behavior before reward-driven exploration. Starting from that available controller, the recipe accounts for about seven minutes of additional training, including reused representation fitting and a single-GPU task run. This excludes controller pretraining, data preparation, evaluation, and search. Simulated boxing experiments and component controls evaluate the resulting behavior and the roles of imitation initialization and the target representation.",
+   "ai_summary": "HoloBoxing learns humanoid boxing by combining a frozen whole-body controller with a compact planner that predicts body-point targets, using imitation initialization and reinforcement learning to refine interaction behavior with minimal additional training."
+  },
+  {
+   "id": "2610.31423",
+   "title": "FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models",
+   "upvotes": 5,
+   "hf_date": "2026-10-26",
+   "published": "2026-10-23",
+   "topics": [
+    "vla",
+    "manipulation"
+   ],
+   "authors": [
+    "Huixin Xu",
+    "Ziya Yu",
+    "Peng Li"
+   ],
+   "organization": "Technology Center of Software Engineering of ISCAS",
+   "github": null,
+   "project": null,
+   "arxiv_code": [],
+   "comment": "Accepted at CoRL 2026",
+   "abstract": "Vision-language-action (VLA) models have become an important paradigm for robotic manipulation by unifying visual perception, language understanding, and action generation. Since reliable manipulation requires sufficient observation of objects, end-effectors, and their spatial relationships, multi-view inputs are widely used to provide complementary spatial information. However, our experiments show that existing VLA models do not fully exploit such multi-view complementarity. The policy tends to persistently rely on the wrist view, lacking the ability to dynamically adjust global-local view dependency across manipulation stages, which limits stage adaptability and robustness. To address this issue, we propose FocusVLA, a stage-aware multi-view routing framework. FocusVLA predicts future interaction intent from historical actions and uses it to guide dynamic view routing during action generation. By adaptively coordinating global and local observations across different task stages, FocusVLA improves multi-view utilization. On RoboTwin 2.0, FocusVLA improves the average success rate over the strongest baseline π_{0.5} by 10.10 pp. In real-world evaluation, FocusVLA improves the success rate from 71.7\\% to 85.0\\%, achieving a 13.3\\% gain over π_{0.5}. Moreover, the intent prediction and dynamic routing modules of FocusVLA can be integrated into existing VLA frameworks without modifying their core architectures.",
+   "ai_summary": "FocusVLA improves robotic manipulation by dynamically routing between global and local camera views based on predicted interaction intent across task stages."
+  },
+  {
+   "id": "2610.27782",
+   "title": "RoboJudge: Multimodal Language Models as Judges for Embodied Video Generation",
+   "upvotes": 5,
+   "hf_date": "2026-10-26",
+   "published": "2026-10-21",
+   "topics": [
+    "datasets"
+   ],
+   "authors": [
+    "Siyuan Ma",
+    "Yu Qi",
+    "Cheng Ye",
+    "Ruotian Peng",
+    "Xinyi Xu",
+    "Zitiantao Lin",
+    "Zedong Cai",
+    "Yijian Huang",
+    "Weiyang Liu",
+    "Siyuan Wang",
+    "Yandong Wen"
+   ],
+   "organization": "The Chinese University of Hong Kong",
+   "github": "https://github.com/Sphere-AI-Lab/RoboJudge",
+   "project": "https://spherelab.ai/RoboJudge/",
+   "arxiv_code": [],
+   "comment": "Project page: https://spherelab.ai/RoboJudge",
+   "abstract": "Video generation models are promising foundations for embodied world models, but only if their generated rollouts are physically valid and faithful to task instructions. Multimodal large language models (MLLMs) are increasingly used to judge these properties, yet their agreement with human judgments on embodied videos has not been systematically evaluated. To address this gap, we introduce RoboJudge-Bench, a benchmark for evaluating MLLMs as judges of embodied video generation. The benchmark measures two fundamental dimensions, Physical Adherence and Instruction Alignment, across 800 human-annotated videos from 8 source corpora and 10 video generators, spanning grippers, human hands, and dexterous hands. Experiments reveal uneven alignment between existing judges and human ratings: general-purpose MLLMs show lower agreement on physical adherence, while specialized video judges designed for general-domain physical reasoning do not consistently transfer to embodied scenarios. Motivated by these findings, we construct RoboJudge-Train, comprising 12K videos annotated with 25K human-verified scores and model-assisted rationales for Physical Adherence and Instruction Alignment. We fine-tune a 9B MLLM on this dataset with supervised learning followed by reinforcement learning, yielding RoboJudge-9B. Among the model judges evaluated on RoboJudge-Bench, RoboJudge-9B achieves the highest overall agreement, reaching a Pearson correlation of 0.719 with a statistically significant 0.089 gain over Gemini-3.7-Flash, the best-performing proprietary baseline in our evaluation. Training on RoboJudge-Train also yields gains on external benchmarks, including VideoPhy2 and Physion-Eval. We further use RoboJudge-9B as a downstream evaluator to benchmark video generation models according to Physical Adherence and Instruction Alignment.",
+   "ai_summary": "Researchers introduce a benchmark and training dataset to evaluate multimodal language models as judges of physically valid, instruction-aligned embodied video generation, yielding a fine-tuned 9B judge with high human agreement."
+  }
+ ],
+ "curated_link_updates": [
+  {
+   "id": "2610.22471",
+   "title": "Has GPT-6-Astra Achieved Embodied Intelligence?",
+   "code": "https://github.com/OpenSenseNova/SenseNova-RoboRSI"
+  },
+  {
+   "id": "2610.20442",
+   "title": "Towards Agentic Robots: Model, Data, Environment, and Harness",
+   "code": "https://github.com/chonghanqin/Awesome-Agentic-Robots"
+  },
+  {
+   "id": "2610.30108",
+   "title": "Multimodal Embodied Agents: A Unified Capability-centric Perspective from Computer-Use to Robot-Use",
+   "code": "https://github.com/showlab/Awesome-Multimodal-Embodied-Agent"
+  },
+  {
+   "id": "2610.23479",
+   "title": "HexaShell: A Thin Harness for Exploring the Limits of VLM Agents as Robot Coding Agents",
+   "project": "https://hexafuture.ai/home/"
+  },
+  {
+   "id": "2610.28589",
+   "title": "AgenticRoboRL: Bringing Coding-Agent Post-Training to Agentic Robotics",
+   "code": "https://github.com/xinxinliu-ai/AgenticRoboRL"
+  },
+  {
+   "id": "2610.29677",
+   "title": "Toward Recursive Self-Improvement in Physical AI",
+   "code": "https://github.com/Physical2RSI/Awesome-Physical2RSI"
   }
  ]
 }
