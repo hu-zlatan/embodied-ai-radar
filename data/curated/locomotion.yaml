@@ -299,3 +299,23 @@
   tags: [humanoid, teleoperation, motion-tracking, unitree-g1, real, vr]
   takeaway_en: "Whole-body humanoid teleoperation from a compact target (root height and velocity + 4 keypoint poses, current frame only): ~20 ms headset-to-policy latency; a Unitree G1 catches a tossed ball."
   takeaway_zh: "只用紧凑参考目标（根高度、根速度与 4 个稀疏关键点的当前帧位姿）实现人形机器人全身遥操作：头显到策略输出延迟约 20 ms，Unitree G1 能接住抛来的球并完成移动操作。"
+- title: "SWAP: Test-Time Steerable Humanoid Whole-Body Collision Avoidance"
+  type: paper
+  arxiv: "2610.25711"
+  year: 2026
+  project: https://iscoyizj.github.io/SWAP-steerable-humanoid-oa-website/
+  added: 2026-10-27
+  topics: [locomotion, control]
+  tags: [humanoid, collision-avoidance, diffusion-policy, whole-body-control, unitree-g1, real]
+  takeaway_en: "Diffusion planner proposes multimodal collision-aware motions; a whole-body RL controller tracks them. Trained by placing obstacles outside each motion's swept space. Real G1; steering reports +34% on target rewards."
+  takeaway_zh: "分层框架：感知条件扩散策略生成多模态、考虑碰撞的动作提议，底层全身 RL 控制器负责跟踪与平衡；训练数据靠事后标注获得（只在已执行动作未扫过的空间放置障碍物）。在真实 Unitree G1 上验证，测试时引导使目标奖励平均提升 34%。"
+- title: "Action-Aligned Latent Planning for Versatile Humanoid Loco-Manipulation"
+  type: paper
+  arxiv: "2610.24675"
+  year: 2026
+  project: https://fiberaa.github.io/
+  added: 2026-10-27
+  topics: [locomotion, manipulation]
+  tags: [humanoid, loco-manipulation, behavior-foundation-model, latent-planning, unitree-g1, sim-to-real]
+  takeaway_en: "FIBER plans in the latent space of a frozen behavioral foundation model: skills are projected into it, one perceptive flow planner is trained offline. Reports 42.0% mean sim success (latent replay: 11.6%); real G1."
+  takeaway_zh: "FIBER 以冻结的行为基础模型（BFM）潜在空间作为统一规划表示，把各任务专用策略投影进该空间，再离线训练单一感知流匹配规划器；仿真中搬箱、开门、抓取平均成功率 42.0%（潜在回放基线 11.6%），并在真实 Unitree G1 上验证。"

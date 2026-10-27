@@ -370,3 +370,24 @@
   tags: [imitation-learning, action-chunking, auxiliary-loss, real]
   takeaway_en: "Foresight without predicting future frames: a training-only head forecasts the next action chunk and backpropagates through the policy's latent. No inference cost; reports up to +14 pts on mm-precision real tasks."
   takeaway_zh: "不预测未来图像也能获得“预见性”：仅在训练时用级联头预测下一个动作块，并把损失回传到在线策略的隐状态，推理零额外开销；报告在耳机装配、穿鞋带等毫米级真机任务上最高提升 14 个百分点。"
+- title: "Long-Horizon Multi-Object Rearrangement via Distilled Tree Search over Continuous Actions"
+  type: paper
+  arxiv: "2610.25785"
+  year: 2026
+  venue: CoRL 2026
+  project: https://distilled-search.github.io
+  added: 2026-10-27
+  topics: [manipulation, learning]
+  tags: [rearrangement, mcts, long-horizon, distillation, sim, real]
+  takeaway_en: "DISCO runs progressive-widening MCTS in GPU-parallel simulation, with a learned policy proposing continuous actions, then distills plans into a policy-value model used without search. Reports wins over BC, RL and search."
+  takeaway_zh: "DISCO 在 GPU 并行物理仿真中用渐进展宽 MCTS 搜索长程重排计划，由学习的策略提出连续动作、价值函数打分，并周期性把搜索结果蒸馏回策略-价值模型；部署时无需仿真搜索。报告在仿真与真机重排任务上优于行为克隆、强化学习与搜索基线（CoRL 2026 Oral）。"
+- title: "Real2Sem2Real: 3D Semantic Augmentations for Robot Learning from a Single Human RGB Demonstration"
+  type: paper
+  arxiv: "2610.28880"
+  year: 2026
+  project: https://real2sem2real.github.io/
+  added: 2026-10-27
+  topics: [manipulation, learning]
+  tags: [human-video, data-generation, gaussian-splatting, digital-cousins, vla, real]
+  takeaway_en: "Turns one monocular RGB human demo into thousands of robot demos across object instances: Gaussian-splat pose tracking, aligned 'digital cousins', replay in IsaacSim or MuJoCo. Reports VLAs matching teleop-trained ones."
+  takeaway_zh: "把一段单目 RGB 人类演示扩展为同类别不同物体上的数千条机器人演示：用 DINOv3 蒸馏的高斯溅射跟踪物体位姿，对齐由照片生成的“数字表亲”，在 IsaacSim 或 MuJoCo 中生成数据（约 2 小时 2000+ 条）；报告所训练的 VLA 在真机上达到或超过遥操作数据训练的策略。"

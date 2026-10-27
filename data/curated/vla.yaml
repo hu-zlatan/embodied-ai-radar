@@ -759,3 +759,13 @@
   tags: [vla, failure-detection, recovery, diffusion, real]
   takeaway_en: "Teaches a VLA to know when it is done or failing: stop and failure signals are two extra action dimensions, denoised faster than the actions so they can guide them; no frame-level progress labels. Real-robot tests."
   takeaway_zh: "让 VLA 自己判断任务完成或失败：把停止与失败信号作为动作块的两个额外维度，与动作一起去噪且去噪更快，从而引导后续动作生成；无需逐帧进度标注，在真机操作实验中验证。"
+- title: "Multi-View Latent Action Pretraining for Cross-Embodiment Robot Learning from Videos"
+  type: paper
+  arxiv: "2610.27794"
+  year: 2026
+  project: https://learnsyslab.github.io/multiview_latent_action_pretraining/
+  added: 2026-10-27
+  topics: [vla, learning]
+  tags: [latent-actions, multi-view, cross-embodiment, human-video, flow-matching]
+  takeaway_en: "Latent action model that fuses synchronized camera views to resolve depth and occlusion. Reports 17% better 6D action decodability than single-view and +13.5% policy success (vs +6.2%); human-hand demos help on hardware."
+  takeaway_zh: "融合多路同步相机视角的潜在动作模型（LAM），用交叉注意力解决深度与遮挡问题；报告 6D 动作可解码性比单视角高 17%，下游策略成功率提升 13.5%（单视角为 6.2%），真机上用人手演示也比纯动作策略高 20%。"
