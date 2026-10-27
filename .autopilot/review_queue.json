@@ -141,39 +141,6 @@
    "ai_summary": "SafeDriveVLA improves autonomous driving by predicting navigation compliance and using world-model dreaming to avoid unsafe instructions, outperforming existing vision-language-action models."
   },
   {
-   "id": "2610.31569",
-   "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
-   "upvotes": 12,
-   "hf_date": "2026-10-26",
-   "published": "2026-10-23",
-   "topics": [
-    "vla"
-   ],
-   "authors": [
-    "Yufeng Liu",
-    "Bohao Fan",
-    "Juntu Zhao",
-    "Xinyi Wang",
-    "Hang Yu",
-    "Wenzhuan Luo",
-    "Yingzhi Wang",
-    "Qinghai Li",
-    "Yingdong Hu",
-    "Junliang Guo",
-    "Richard Wang",
-    "Dequan Wang",
-    "Yang Gao",
-    "Cheng Ma"
-   ],
-   "organization": null,
-   "github": "https://github.com/lyfeng001/Echo-Sim",
-   "project": "https://lyfeng001.github.io/Echo/",
-   "arxiv_code": [],
-   "comment": "Project page: https://lyfeng001.github.io/Echo/",
-   "abstract": "Recognizing task completion and failure enables robots to stop upon success and initiate recovery or replanning after failure. Existing methods augment Vision Language Action (VLA) policies with task status signal prediction to support these execution decisions. However, learning and integrating these signals can require fine-grained supervision, external monitoring models, or complex architectural designs. Moreover, the potential of task status signals to directly guide action generation remains underexplored. We present Echo, a framework that combines task status signal learning without frame-level progress annotations with a compact design for status prediction and action generation within a single VLA. Specifically, Echo represents task status with stop and failure signals, added as two dimensions of each action chunk and denoised together with robot actions. Their combination distinguishes ongoing execution, successful completion, and failure. To learn these signals without fine-grained progress annotations, Echo constructs successful, failed, and recovery trajectories with complementary supervision properties. To enable status signal-guided action generation, Echo controls interactions between the signals and actions and denoises the signals faster than the actions. These allow later action denoising steps to condition on cleaner status estimates while preserving accurate signal prediction. Extensive real-world manipulation experiments show that Echo accurately predicts task status and consistently improves policy performance.",
-   "ai_summary": "Echo integrates stop and failure signals into a vision-language-action model to guide robot execution and recovery without fine-grained progress labels."
-  },
-  {
    "id": "2610.32909",
    "title": "HoloBoxing: A Simple Recipe for Humanoid Boxing with 7 Minutes of Single-GPU Training",
    "upvotes": 9,
