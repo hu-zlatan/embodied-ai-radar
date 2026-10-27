@@ -2,30 +2,6 @@
  "updated": "2026-10-27",
  "papers": [
   {
-   "id": "2610.35852",
-   "title": "Differentiable Contact Dynamics for Legged Locomotion: Policy Learning and Contact-Implicit Trajectory Optimization",
-   "published": "2026-10-27",
-   "topics": [
-    "locomotion",
-    "control",
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://diffcontact.github.io"
-   ],
-   "comment": "Submitted to Transactions on Robotics",
-   "authors": [
-    "Gijeong Kim",
-    "Seungbin Oh",
-    "Dongyun Kang",
-    "Hae-Won Park"
-   ],
-   "abstract": "This paper proposes a smooth analytic gradient for frictional contact and applies it to policy learning and contact-implicit trajectory optimization for legged locomotion. The exact contact sensitivity is available in closed form but describes changes within the current contact mode, providing no first-order information toward neighboring contact modes. The proposed gradient replaces this sensitivity only in the backward pass, leaving the hard-contact forward solve unchanged and the realized rollout feasible. A central-path relaxation of the de Saxcé-corrected second-order-cone complementarity problem for Coulomb friction smooths the conditions defining the separating, clamping, and sliding modes. The relaxed sensitivity is evaluated at a point on the central path obtained by a Newton iteration initialized from the hard-contact solution. The sensitivity remains continuous through contact-mode transitions and converges to the exact sensitivity as the relaxation vanishes. Using 100,000 samples and less than 2 min of training on a desktop PC, policy learning with the proposed gradient produces a policy that transfers to hardware without fine-tuning. On hardware, the robot under a trotting policy withstands pushes and traverses debris and slippery ground. In trajectory optimization, the proposed gradient reaches contact-rich solutions missed by exact and Signorini-relaxed gradients. Project page: https://diffcontact.github.io",
-   "fetched": "2026-10-27"
-  },
-  {
    "id": "2610.35733",
    "title": "Multi-Objective Reinforcement Learning Using Routed Ensembles and Trajectory Attribution",
    "published": "2026-10-27",
@@ -236,33 +212,6 @@
    "fetched": "2026-10-27"
   },
   {
-   "id": "2610.35051",
-   "title": "VISTA: Active Exploration for Self-Improvement in Embodied Agents",
-   "published": "2026-10-27",
-   "topics": [
-    "navigation"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/AgenticEI/VISTA"
-   ],
-   "project": [
-    "https://agenticei.github.io/VISTA-page/"
-   ],
-   "comment": "code: https://github.com/AgenticEI/VISTA, project page: https://agenticei.github.io/VISTA-page/",
-   "authors": [
-    "Zhang Zhang",
-    "Shengjun Zhang",
-    "Simin Huang",
-    "Min Chen",
-    "Chong Xia",
-    "Xin Fei",
-    "Yueqi Duan"
-   ],
-   "abstract": "Agentic embodied intelligence plays a foundational role in open-ended, dynamic physical environments. Rather than treating policy learning as an end-to-end mapping from instructions to actions, recent studies reveal that embodied systems depend not only on pre-trained foundation models, but also on harness. Prior approaches largely treat rollouts as static logs for post-hoc reflection, producing harness updates without autonomously testing and refining them through subsequent embodied interaction. To address this challenge, we propose VISTA, a meta-agent framework that transforms post-hoc rollout reflection into active self-exploration for embodied harness improvement. Specifically, VISTA maintains a harness graph that records the lineage of proposed harnesses, which enables the meta-agent to retrieve prior hypotheses, build on effective mechanisms, and avoid repeatedly exploring failed directions. Each iteration begins from a retained harness version and its execution evidence. Rather than directly committing an update from these historical trajectories, the meta-agent actively explores in the environment. It autonomously generates new rollouts, probes execution failures and recovery behaviors, and iteratively modifies the harness based on the resulting evidence. The refined harness is then evaluated afresh and added to the harness graph. We evaluate VISTA on the LIBERO-Pro, RoboCasa, and RoboTwin benchmarks. Experimental results demonstrate that VISTA progressively improves task success and is more rollout-efficient than static reflection, achieving higher success rates with fewer simulator rollouts.",
-   "fetched": "2026-10-27"
-  },
-  {
    "id": "2610.35010",
    "title": "JevVLA: Jev-Inspired Energy-Based Adaptation for Vision-Language-Action Policies",
    "published": "2026-10-27",
@@ -341,45 +290,6 @@
    "fetched": "2026-10-27"
   },
   {
-   "id": "2610.34649",
-   "title": "RobotAgentBench: Towards Open-world Robot Autonomy",
-   "published": "2026-10-27",
-   "topics": [
-    "vla",
-    "world-models"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://aetherlabsai.github.io/RobotAgentBench/"
-   ],
-   "comment": "Project page: https://aetherlabsai.github.io/RobotAgentBench/",
-   "authors": [
-    "Lingjun Mao",
-    "Jinglin Cao",
-    "Lukun He",
-    "Wenpeng Xu",
-    "Yuchen Yan",
-    "Hengyu Jin",
-    "Zijun Zhang",
-    "Jinzhou Tang",
-    "Songyao Jin",
-    "Ziche Liu",
-    "Yifei Shao",
-    "Junbo Huang",
-    "Fang Nan",
-    "Ruobing Han",
-    "Ziqiao Xi",
-    "Ziming Xu",
-    "Shuang Liang",
-    "Sibo Zhu",
-    "Wenyi Wu",
-    "Xinyue Wang"
-   ],
-   "abstract": "Recent advances in vision-language-action (VLA) and world-action models (WAMs) have significantly improved robotic manipulation, yet deploying robots in the open world demands a higher level of autonomy beyond executing predefined tasks. Robot agents offer a promising paradigm for this transition, integrating task discovery, contextual reasoning, physical execution, and adaptive recovery into a closed interaction loop. However, existing benchmarks largely evaluate isolated capabilities, failing to capture the complexity of open-world robot autonomy. We introduce RobotAgentBench (RAB), a comprehensive benchmark for evaluating robot agents in realistic, open-world household environments. Through an agent-assisted, human-in-the-loop real-to-sim pipeline, RAB constructs 50 diverse household layouts with interactive objects and physically grounded tasks, encompassing 90 atomic tasks, 18 short-horizon tasks, 8 long-horizon tasks, and 4 open-ended scenarios. RAB provides a multi-level evaluation of robot agent capabilities: (1) task-level assessments systematically examine five complementary dimensions: task discovery, context reasoning, manipulation, failure recovery, and robustness; (2) scenario-level evaluation assesses how agents integrate these capabilities to autonomously fulfill high-level user needs. Furthermore, RAB enables systematic comparisons of standalone VLA/WAM models and diverse robot agent architectures under a unified planning-execution-verification framework. Extensive experiments reveal substantial gaps between manipulation and autonomy, demonstrate the advantages of agentic architectures and recursive self-improvement, and highlight the remaining challenges toward open-world robot autonomy.",
-   "fetched": "2026-10-27"
-  },
-  {
    "id": "2610.34452",
    "title": "AuRA: From Atoms to Bits through Autonomous Robot Interaction",
    "published": "2026-10-27",
@@ -403,29 +313,6 @@
     "Furong Huang"
    ],
    "abstract": "Simulation enables robot-learning experiments at scale, but acquiring physics-informed digital twins often requires human manipulation and manual annotation of recorded interactions. To reduce this reliance on human effort, we present AuRA, a system that automates robot interaction and data preparation for digital-twin reconstruction. AuRA combines execution-aware grasp selection, gripper-motion measurements derived from robot states, and registered pre-interaction geometry and appearance priors. These choices enable autonomous collection, avoid reliance on visual gripper tracking, and recover object information obscured by the robot. Across 13 deformable objects, AuRA reduces active human labor and wall-clock collection time per successfully reconstructed asset by 88.5% and 55.4%, respectively. Relative to the human-collected PhysTwin baseline, AuRA improves seven of nine metrics for future prediction under known gripper motion, including a 28.1% reduction in one-way $L_1$ Chamfer distance. It also achieves similar mean silhouette IoU and Chamfer distance under the evaluated unseen interactions. These results highlight the potential of autonomous robot interaction to support more efficient digital-twin acquisition with comparable reconstruction quality.",
-   "fetched": "2026-10-27"
-  },
-  {
-   "id": "2610.34280",
-   "title": "AdaPolicy: Action-Driven Anticipatory Robot Policies via Next-Chunk Prediction",
-   "published": "2026-10-27",
-   "topics": [
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://teee111.github.io/AdaPolicy/"
-   ],
-   "comment": null,
-   "authors": [
-    "Fan Yang",
-    "Yuting Su",
-    "Chen Zhao",
-    "Fugui Fan",
-    "Peiguang Jing"
-   ],
-   "abstract": "Endowing robot policies with anticipatory capabilities has proven effective in improving control performance. However, existing methods predominantly rely on explicit supervision derived from future observations, in either pixel or latent space, at the cost of additional architectural and computational complexity. Departing from explicit future supervision, we ask whether such foresight can be elicited directly from the action signal. To this end, we propose \\textbf{AdaPolicy}, an \\textbf{A}ction-\\textbf{d}riven \\textbf{a}nticipatory policy framework that shapes future-aware representations via cascaded next-chunk prediction. Specifically, an Online Action Head jointly produces the current action chunk and an evolved latent state. Building on this state, a cascaded Unrolled Action Head forecasts the next chunk, and the resulting loss flows back through the evolved state to instill implicit foresight into the online policy. Importantly, this training-only unroll requires no future-observation encoding, keeping AdaPolicy lightweight to train with zero inference-time overhead. Experiments on MetaWorld, RoboTwin 2.0, LIBERO, and real-world deployments demonstrate consistent gains across diverse settings, including up to $14$ percentage points on millimeter-precision tasks such as earphone assembly and shoelace threading. More details and visualizations are available at \\href{https://teee111.github.io/AdaPolicy/}{https://teee111.github.io/AdaPolicy/}.",
    "fetched": "2026-10-27"
   },
   {
@@ -513,29 +400,6 @@
     "Yang Gao"
    ],
    "abstract": "Long-horizon manipulation requires actions whose validity depends on earlier interactions, yet visual progress can conceal missing task prerequisites. We propose RoboLongR, an offline-to-online framework that learns history-dependent rewards to guide policy adaptation to new tasks. Its central objective is causal consistency: aligning rewarded progress with prerequisites supported by execution history. Stage-shuffle supervision encourages execution-order sensitivity, recurrent memory preserves evidence of earlier interactions, and two-round training refines trajectory segments using predicted progress. The resulting rewards guide stage-conditioned policy refinement from behavior cloning to online reinforcement learning. Sparse terminal feedback connects policy experience to reward learning by triggering correction for repeated high-scoring failures. Pretrained on demonstrations from 88 RLBench tasks and Open-X data, RoboLongR achieves 31.8% average success on 18 long-horizon tasks excluded from reward pretraining, exceeding the strongest evaluated baseline by 9.2 percentage points. Across four real-robot tasks, it achieves 57.5% success, a 32.5-percentage-point improvement over the comparison method. Reward-level controls probe sensitivity to synthetic order perturbations, while ablations examine the contributions of individual components to policy improvement.",
-   "fetched": "2026-10-27"
-  },
-  {
-   "id": "2610.33852",
-   "title": "AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking",
-   "published": "2026-10-27",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": "CVPR 2026",
-   "code": [],
-   "project": [
-    "https://janebek.github.io/AdaDexTrack/"
-   ],
-   "comment": "CVPR 2026. 18 pages, 14 figures, including supplementary material. Project page: https://janebek.github.io/AdaDexTrack/",
-   "authors": [
-    "Jianibieke Adalibieke",
-    "Qianwei Han",
-    "Xueyi Liu",
-    "Yuzhe Qin",
-    "Li Yi"
-   ],
-   "abstract": "Language is a natural way to command robots, but converting a single instruction into a long-horizon, contact-rich hand-object interaction remains challenging: synthesized references are noisy, human-to-robot retargeting introduces embodiment bias, and fixed-reference tracking lets small errors snowball. We address this with AdaDexTrack, a modulator-in-the-loop framework for language-conditioned manipulation tracking. A distilled generalist tracker serves as the skill carrier, while a tightly aligned modulator performs three feedback corrections: reference modulation (continual adjustment of what to track), object-latent modulation (online adaptation of the object representation to recruit suitable skills), and positional-target modulation (small state-dependent refinements for execution). The tracker is learned via large-scale specialist to generalist distillation on a corpus of language-conditioned hand-object trajectories; the modulator is trained with RL under the same task objective, ensuring tight coupling. Across large-scale evaluations, AdaDexTrack consistently outperforms prior SOTA on unseen-trajectory and unseen-object sets in both average tracking error and success rate, demonstrating robustness and generalization. We further show zero-shot sim-to-real transfer on real hardware, where adding the modulator yields substantial gains over a tracker-only variant. AdaDexTrack reframes language-conditioned dexterous manipulation as modulated tracking, replacing the open-loop, fixed-reference tracking with in-loop modulation that adjusts the reference, object latent, and positional target, yielding drift-resistant execution from noisy text references.",
    "fetched": "2026-10-27"
   },
   {
@@ -992,38 +856,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.31569",
-   "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
-   "published": "2026-10-23",
-   "topics": [
-    "vla"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://lyfeng001.github.io/Echo/"
-   ],
-   "comment": "Project page: https://lyfeng001.github.io/Echo/",
-   "authors": [
-    "Yufeng Liu",
-    "Bohao Fan",
-    "Juntu Zhao",
-    "Xinyi Wang",
-    "Hang Yu",
-    "Wenzhuan Luo",
-    "Yingzhi Wang",
-    "Qinghai Li",
-    "Yingdong Hu",
-    "Junliang Guo",
-    "Richard Wang",
-    "Dequan Wang",
-    "Yang Gao",
-    "Cheng Ma"
-   ],
-   "abstract": "Recognizing task completion and failure enables robots to stop upon success and initiate recovery or replanning after failure. Existing methods augment Vision Language Action (VLA) policies with task status signal prediction to support these execution decisions. However, learning and integrating these signals can require fine-grained supervision, external monitoring models, or complex architectural designs. Moreover, the potential of task status signals to directly guide action generation remains underexplored. We present Echo, a framework that combines task status signal learning without frame-level progress annotations with a compact design for status prediction and action generation within a single VLA. Specifically, Echo represents task status with stop and failure signals, added as two dimensions of each action chunk and denoised together with robot actions. Their combination distinguishes ongoing execution, successful completion, and failure. To learn these signals without fine-grained progress annotations, Echo constructs successful, failed, and recovery trajectories with complementary supervision properties. To enable status signal-guided action generation, Echo controls interactions between the signals and actions and denoises the signals faster than the actions. These allow later action denoising steps to condition on cleaner status estimates while preserving accurate signal prediction. Extensive real-world manipulation experiments show that Echo accurately predicts task status and consistently improves policy performance.",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.31518",
    "title": "SCOPE: Scene-graph Construction Optimized by Plan Error-correction for Robot Long-term Planning Datasets",
    "published": "2026-10-23",
@@ -1348,33 +1180,6 @@
     "Yao Mu"
    ],
    "abstract": "Humanoid loco-manipulation requires an effective interface between high-level task policies and whole-body control. Existing interfaces typically rely on a single action representation for both task intent and whole-body coordination. This may burden the high-level policy or leave one aspect underspecified. We present SP-HLM, a framework built on a sparse-pose-driven interface. The interface combines five task-critical body poses with a learned latent motion prior to represent spatial intent and whole-body coordination in complementary forms. SP-VLA, a vision-language-action model, first predicts task-relevant sparse poses and finger joint positions from multimodal observations and language instructions using asynchronous action-chunk inference. Given these sparse targets, SP-MGM, a motion generation model trained through two-stage distillation, reconstructs coordinated full-body motion in real time. A pretrained motion encoder maps this motion to a compact latent representation. SP-GMT, a general motion tracker, then integrates the explicit sparse targets with this implicit motion prior for whole-body control. Experiments in simulation and on a real humanoid robot demonstrate improved motion tracking, whole-body coordination, and loco-manipulation success over existing approaches. Additional results and videos are available on our \\href{https://sp-hlm.github.io/}{\\textcolor{blue}{project page}}.",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.29903",
-   "title": "HuMiT: Low-Latency Whole-Body Humanoid Teleoperation via Compact Reference Tracking",
-   "published": "2026-10-22",
-   "topics": [
-    "manipulation",
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://xiaohu-art.github.io/Track/"
-   ],
-   "comment": "7 pages, 3 figures, 4 tables. Project page: https://xiaohu-art.github.io/Track/",
-   "authors": [
-    "Liu Cao",
-    "Botian Xu",
-    "Ruoqu Chen",
-    "Jiajun Liu",
-    "Mingzhi Pei",
-    "Zihao Wang",
-    "Zhongyu Li",
-    "Mengdi Xu"
-   ],
-   "abstract": "Real-time whole-body humanoid teleoperation remains challenging due to the computational latency introduced by optimization-based retargeting pipelines and future-frame conditioning. Existing motion tracking policies typically require dense reference targets including full joint positions, body-part transformations, and even future frames, which tightly couples the controller to expensive upstream modules. In this work, we present HuMiT, a whole-body teleoperation system built on a unified tracking policy that requires only a compact reference target, consisting of root height, root velocity, and the SE(3) poses of four sparse keypoints at the current frame, yet achieves competitive tracking fidelity compared to methods relying on more diverse reference states including complete joint positions, dense body-part transformations, and even future frames. Experiments show that our policy achieves a communication-to-inference latency of $\\sim$20 ms measured between headset streaming and policy output and a video-based optical flow latency of 65 ms (median) across different motion types. We validate the system on a Unitree G1 humanoid, showcasing split-second reactive responses such as catching a tossed ball, as well as coordinated loco-manipulation capabilities. Project page: https://xiaohu-art.github.io/Track/.",
    "fetched": "2026-10-26"
   },
   {
@@ -2040,30 +1845,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.27387",
-   "title": "Training Controllable World Models via Action Influence Maximization",
-   "published": "2026-10-21",
-   "topics": [
-    "world-models"
-   ],
-   "venue": "CoRL 2026",
-   "code": [],
-   "project": [],
-   "comment": "31 pages, 13 figures, CoRL 2026",
-   "authors": [
-    "Samuel M. Bateman",
-    "Tenny Yin",
-    "Chongyi Zheng",
-    "Lei Huang",
-    "Brian Wang",
-    "Benjamin Eysenbach",
-    "Jaime Fernández Fisac",
-    "Dhruv Shah"
-   ],
-   "abstract": "Action-conditioned video generative models trained on successful, goal-directed demonstrations tend to ignore the commanded action, rendering a plausible expert-like future regardless of what is asked of them. We trace this failure to training data that lack sufficient action influence. We analyze this metric and prove that it upper bounds the action influence that any model trained on that data can express. Expert demonstrations, whose narrow action distributions let next states be predicted without attending to the action, set a low ceiling that no amount of model capacity alone can raise. Raising it requires collecting different data. We introduce Action Influence Maximization (AIM), an algorithm for actively collecting training data for improving dataset action influence. We compare the performance and data-efficiency of AIM against exploration heuristics and intrinsic-motivation methods on simulated navigation and manipulation tasks. In pixel-based manipulation, AIM is the only method that consistently improves controllability: 500 actively collected episodes added to 3k demonstrations match a world model trained on 300k expert episodes on end-effector controllability, an $85\\times$ reduction in data.",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.27350",
    "title": "Refuses When Asked, Complies When Acting: A Runtime Safety Check for Robot Control Loops",
    "published": "2026-10-21",
@@ -2565,35 +2346,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.25763",
-   "title": "TrajWAM: An Efficient Trajectory-Guided World Action Model for Dynamic Robotic Manipulation",
-   "published": "2026-10-20",
-   "topics": [
-    "manipulation",
-    "world-models"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://kevingeng3.github.io/TrajWAM/"
-   ],
-   "comment": null,
-   "authors": [
-    "Haohan Geng",
-    "Sha Zhang",
-    "Weishuo Sun",
-    "Guanting Ye",
-    "Wenhao Yu",
-    "Yuang Xie",
-    "Qicheng Zeng",
-    "Peng Ye",
-    "Jiajun Deng",
-    "Jianmin Ji"
-   ],
-   "abstract": "Dynamic object manipulation requires robots to anticipate target motion while replanning fast enough to avoid executing outdated actions. Existing approaches either rely on fast reactive control without an explicit future target state or encode anticipated motion only implicitly. World Action Models (WAMs) offer a promising alternative by coupling future visual prediction with action generation, but scene-level video objectives may underrepresent target dynamics that are critical for manipulation, while iterative video-action denoising introduces substantial latency. We present TrajWAM, a trajectory-guided world action model for efficient dynamic robotic manipulation. Our key insight is to explicitly ground future visual imagination in predicted target-object motion and use the resulting future representation to condition action generation, while preserving this anticipation pathway after acceleration. Given a short history of object masks, a history-conditioned motion predictor forecasts future masks encoding the target object's trajectory. A lightweight Trajectory ControlNet then steers a pretrained video model toward trajectory-consistent futures. The resulting future representation conditions an action expert to predict executable action chunks. To enable one-step inference without breaking this interface, we introduce a decoupled distillation scheme that combines distribution matching for the video backbone, Trajectory ControlNet realignment, and action rollout distillation to support accurate one-step action prediction conditioned on the compressed future representation. Comprehensive evaluations in simulation and the real world show that TrajWAM achieves state-of-the-art performance on dynamic object manipulation tasks while enabling efficient one-step video-action inference. Project page: https://kevingeng3.github.io/TrajWAM/.",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.25734",
    "title": "Think Densely, Act Sparsely: Latent Expert Cognitive Chains for Vision-Language-Action Autonomous Driving",
    "published": "2026-10-20",
@@ -2968,34 +2720,6 @@
     "Fabian B. Flohr"
    ],
    "abstract": "Simulation-to-real driving video diffusion models can translate photorealistic scenes, but they typically represent pedestrians and cyclists, vulnerable road users (VRUs), as generic object classes. This is insufficient for vulnerable road users whose safety-relevant appearance depends on articulated pose and identity. We present BodyBridge and Grounded Body Layers (GBL), a simulator-derived, pixel-aligned representation that combines scene geometry, canonical per-pixel body correspondence, and exact VRU masks. GBL provides explicit articulation to the video diffusion model, emphasizes VRU regions during control-branch post-training, and supports additive composition with scene-geometry control at inference. It also enables per-joint evaluation of generated VRUs and a failure taxonomy for identity errors. On CARLA-to-real translation, BodyBridge improves near-range PCK@0.5 by 22% over the released depth-conditioned baseline. Replacing normal-map body control with canonical correspondence reduces body flips by 18%, while composition reduces near-range facing flips by 27%. These results show that explicit body grounding complements scene-level control and improves pose-faithful VRU generation. All code, data, and model checkpoints will be made publicly available to support reproducible, pedestrian-aware autonomous driving research.",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.24285",
-   "title": "ACTS: Learning Visuo-Tactile World Models from Human Physical Interaction",
-   "published": "2026-10-20",
-   "topics": [
-    "manipulation",
-    "tactile",
-    "world-models"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://acts-anon.github.io/"
-   ],
-   "comment": "Project website: https://acts-anon.github.io/",
-   "authors": [
-    "Yuxiang Ma",
-    "Weihan Xu",
-    "Pengfei Ye",
-    "Anna Mei",
-    "Yuxin Ray Song",
-    "Tingle Li",
-    "Haonan Chen",
-    "Edward H. Adelson"
-   ],
-   "abstract": "Abstract Action-conditioned world models for contact-rich manipulation require data that captures how contact forms, slides, and releases under varying force. Such data are slow to collect through robot teleoperation, which often lacks force feedback and is constrained by gripper geometry. We ask whether these dynamics can instead be learned from human physical interaction and transferred to a robot. We present ACTS, a visuo-tactile world model trained only on human interaction data. Operators manipulate handheld GelSight sensors while we record third-person and wrist video, tactile images, 6-DoF sensor motion, and tactile-derived normal force, yielding React, a 4.9-hour bimanual dataset across three objects. We represent actions at the tactile sensor as motion augmented by force change, providing a shared action space for human collection and robot execution. ACTS jointly predicts future scene, wrist, and tactile observations. On held-out human data, ACTS improves scene-view prediction by 0.7-2.0 dB PSNR over the stronger of two visuo-tactile world models trained from scratch on React. Without fine-tuning, in the robot teleoperation rollouts we inspected, predicted tactile imprints still appear and disappear with recorded contact. Visual transfer is less robust: camera predictions exceed frame copying on PushT, are mixed on Rope, and fall below it on Motherboard, while wrist views can blur or hallucinate structure. These results suggest that contact dynamics transfer more reliably than visual appearance from human to robot.",
    "fetched": "2026-10-26"
   },
   {
