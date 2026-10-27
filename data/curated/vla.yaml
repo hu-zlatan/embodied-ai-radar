@@ -748,3 +748,14 @@
   tags: [harness, agent, self-improvement, libero, robotwin, sim]
   takeaway_en: "Meta-agent that improves a robot's harness by exploring: keeps a lineage graph of harness versions and runs new rollouts to probe failures before editing. Reports more success with fewer rollouts than static reflection."
   takeaway_zh: "通过主动探索改进机器人 harness 的元智能体：维护 harness 版本谱系图，先主动生成新回放探查失败与恢复行为再修改；报告在 LIBERO-Pro、RoboCasa、RoboTwin 上比静态反思用更少仿真回放取得更高成功率。"
+- title: "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models"
+  type: paper
+  arxiv: "2610.31569"
+  year: 2026
+  code: https://github.com/lyfeng001/Echo-Sim
+  project: https://lyfeng001.github.io/Echo/
+  added: 2026-10-27
+  topics: [manipulation]
+  tags: [vla, failure-detection, recovery, diffusion, real]
+  takeaway_en: "Teaches a VLA to know when it is done or failing: stop and failure signals are two extra action dimensions, denoised faster than the actions so they can guide them; no frame-level progress labels. Real-robot tests."
+  takeaway_zh: "让 VLA 自己判断任务完成或失败：把停止与失败信号作为动作块的两个额外维度，与动作一起去噪且去噪更快，从而引导后续动作生成；无需逐帧进度标注，在真机操作实验中验证。"
