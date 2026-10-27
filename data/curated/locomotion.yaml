@@ -279,3 +279,23 @@
   tags: [humanoid, motion-tracking, real-world-finetuning, neural-dynamics, unitree-g1]
   takeaway_en: "Fine-tunes humanoid motion-tracking policies online on the real robot: a proprioceptive neural dynamics model learned from real data supplies gradients, no motion capture needed. Shown on Unitree G1."
   takeaway_zh: 在真机上在线微调人形机器人动作跟踪策略：用真实数据训练的本体感知神经动力学模型提供可反传梯度，无需动捕系统。在 Unitree G1 上验证对多种扰动的快速适应。
+- title: "Differentiable Contact Dynamics for Legged Locomotion: Policy Learning and Contact-Implicit Trajectory Optimization"
+  type: paper
+  arxiv: "2610.35852"
+  year: 2026
+  project: https://diffcontact.github.io
+  added: 2026-10-27
+  topics: [control, learning]
+  tags: [quadruped, differentiable-simulation, contact, trajectory-optimization, sim2real, real]
+  takeaway_en: "Smooth analytic contact gradients only in the backward pass, hard-contact forward rollout unchanged: a quadruped trotting policy trains in under 2 min on a desktop and transfers to hardware without fine-tuning."
+  takeaway_zh: "只在反向传播中换用平滑的解析摩擦接触梯度，前向仍是硬接触仿真：四足小跑策略在台式机上不到 2 分钟训练完成，无需微调即可迁移到真机；在接触隐式轨迹优化中也能找到更丰富的接触解。"
+- title: "HuMiT: Low-Latency Whole-Body Humanoid Teleoperation via Compact Reference Tracking"
+  type: paper
+  arxiv: "2610.29903"
+  year: 2026
+  project: https://xiaohu-art.github.io/Track/
+  added: 2026-10-27
+  topics: [manipulation]
+  tags: [humanoid, teleoperation, motion-tracking, unitree-g1, real, vr]
+  takeaway_en: "Whole-body humanoid teleoperation from a compact target (root height and velocity + 4 keypoint poses, current frame only): ~20 ms headset-to-policy latency; a Unitree G1 catches a tossed ball."
+  takeaway_zh: "只用紧凑参考目标（根高度、根速度与 4 个稀疏关键点的当前帧位姿）实现人形机器人全身遥操作：头显到策略输出延迟约 20 ms，Unitree G1 能接住抛来的球并完成移动操作。"

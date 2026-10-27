@@ -349,3 +349,24 @@
   tags: [dexterous, bimanual, human-data, pretraining, action-representation]
   takeaway_en: "ARPG pretrains an action encoder on human manipulation data, then trains a 130M generative policy in its space. Reports bimanual dexterous success up from 10.1% (π0.5) to 44.7% on DexJoCo."
   takeaway_zh: ARPG 把动作表征学习与动作生成解耦：先在大规模人类操作数据上预训练动作编码器，再在其表征空间训练 1.3 亿参数的生成策略。报告在 DexJoCo 双手灵巧任务上平均成功率从 π0.5 的 10.1% 提升到 44.7%。
+- title: "AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking"
+  type: paper
+  arxiv: "2610.33852"
+  year: 2026
+  venue: CVPR 2026
+  project: https://janebek.github.io/AdaDexTrack/
+  added: 2026-10-27
+  topics: [learning]
+  tags: [dexterous, motion-tracking, language-conditioned, rl, distillation, sim2real]
+  takeaway_en: "Language-to-dexterous-manipulation as modulated tracking: a distilled generalist tracker plus an RL-trained modulator that keeps adjusting the reference, object latent and position target; zero-shot sim-to-real."
+  takeaway_zh: "把语言条件灵巧操作变成“可调制的跟踪”：蒸馏得到的通用跟踪器加 RL 训练的调制器，在执行中持续修正参考轨迹、物体隐表征与位置目标，抑制误差累积；零样本迁移到真机。"
+- title: "AdaPolicy: Action-Driven Anticipatory Robot Policies via Next-Chunk Prediction"
+  type: paper
+  arxiv: "2610.34280"
+  year: 2026
+  project: https://teee111.github.io/AdaPolicy/
+  added: 2026-10-27
+  topics: [learning]
+  tags: [imitation-learning, action-chunking, auxiliary-loss, real]
+  takeaway_en: "Foresight without predicting future frames: a training-only head forecasts the next action chunk and backpropagates through the policy's latent. No inference cost; reports up to +14 pts on mm-precision real tasks."
+  takeaway_zh: "不预测未来图像也能获得“预见性”：仅在训练时用级联头预测下一个动作块，并把损失回传到在线策略的隐状态，推理零额外开销；报告在耳机装配、穿鞋带等毫米级真机任务上最高提升 14 个百分点。"

@@ -737,3 +737,14 @@
   tags: [latent-actions, pretraining, human-video, flow-matching, cross-embodiment]
   takeaway_en: "Pretrains a 4B VLA on 3D-grounded latent actions mined from 30K hours of human, robot and sim video, then adapts to real robot actions. Reports 98.8% on LIBERO and 88.6% on RoboTwin 2.0."
   takeaway_zh: 从 3 万小时人类、机器人与仿真视频中学习带 3D 约束的连续潜在动作（RynnLAM），用于预训练 4B 参数 VLA，再适配到具体机器人动作空间。报告 LIBERO 98.8%、RoboTwin 2.0 平均 88.6%。
+- title: "VISTA: Active Exploration for Self-Improvement in Embodied Agents"
+  type: paper
+  arxiv: "2610.35051"
+  year: 2026
+  code: https://github.com/AgenticEI/VISTA
+  project: https://agenticei.github.io/VISTA-page/
+  added: 2026-10-27
+  topics: [learning]
+  tags: [harness, agent, self-improvement, libero, robotwin, sim]
+  takeaway_en: "Meta-agent that improves a robot's harness by exploring: keeps a lineage graph of harness versions and runs new rollouts to probe failures before editing. Reports more success with fewer rollouts than static reflection."
+  takeaway_zh: "通过主动探索改进机器人 harness 的元智能体：维护 harness 版本谱系图，先主动生成新回放探查失败与恢复行为再修改；报告在 LIBERO-Pro、RoboCasa、RoboTwin 上比静态反思用更少仿真回放取得更高成功率。"

@@ -345,3 +345,23 @@
   tags: [dexterous, 3d-dynamics, video-generation, hand-object]
   takeaway_en: "Dexterous-manipulation world model that first predicts object motion and deformation in metric 3D from a hand trajectory, then renders video. Reports 27–40% lower moved-point error than PointWorld."
   takeaway_zh: 灵巧操作世界模型：先根据手部轨迹在度量 3D 空间中显式预测物体运动与形变，再据此渲染视频。报告在 HOT3D、OakInk2、PhysTwin 上运动点误差比 PointWorld 低 27–40%，两步因果生成大幅提速。
+- title: "Training Controllable World Models via Action Influence Maximization"
+  type: paper
+  arxiv: "2610.27387"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-10-27
+  topics: [learning]
+  tags: [world-model, video-generation, data-collection, controllability, active-learning]
+  takeaway_en: "Why action-conditioned video models ignore actions: expert demos carry too little action influence. AIM actively collects data to raise it; 500 such episodes + 3k demos match a 300k-demo model on controllability."
+  takeaway_zh: "解释动作条件视频世界模型为何忽略动作：专家示教的“动作影响力”太低，模型容量再大也无法弥补。AIM 主动采集数据提高这一指标；报告 500 条主动采集数据加 3000 条示教即可在末端可控性上追平 30 万条专家数据。"
+- title: "TrajWAM: An Efficient Trajectory-Guided World Action Model for Dynamic Robotic Manipulation"
+  type: paper
+  arxiv: "2610.25763"
+  year: 2026
+  project: https://kevingeng3.github.io/TrajWAM/
+  added: 2026-10-27
+  topics: [manipulation]
+  tags: [wam, dynamic-manipulation, video-generation, distillation, one-step, real]
+  takeaway_en: "World action model for moving targets: forecasts the object's future masks, steers a video model with a Trajectory ControlNet, and distills the pipeline to one-step video-action inference to cut latency."
+  takeaway_zh: "面向动态目标的世界动作模型：先预测目标物体的未来掩码轨迹，用 Trajectory ControlNet 引导视频模型生成与轨迹一致的未来，再通过解耦蒸馏实现一步视频-动作推理以降低延迟。"
