@@ -310,3 +310,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Picks from `.autopilot/candidates.json` (CI-fetched full abstracts; code repos checked against repo_stats feed section): Horizon-Depth VLA (training-free solver-depth/horizon knob) → vla, DiscoDemo → learning, HAVANA → navigation; from 10-27: OSWAM → world-models, EBench GPT-6-Astra report + PrecisionReach-GS + AGQ (VLA quantization, code) → vla, FLoRe + Zero-HLM → locomotion, BEHAVIOR-Spatial → datasets. Three over-length takeaways caught by validate. Curated: 409.
 - verify #98 (3 picks) still running at run end and #100 (covers all 10 picks) queued — re-check at the start of run 34; fix or drop any failing entry.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: check verify #98/#100; 'Rising this week' check from ~10-28; picks from 10-28 feed; W44 digest Mon 11-02. End of run 33.
+
+## 2026-10-27 — run 34 (~10:45 UTC–)
+
+- Start: CI/Pages/repo-stats/intake green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. verify #100 passed (all run-33 picks); #98 had failed on a real bug.
+- Fix: `norm_title` mapped λ to 'lamda' (Unicode name) but TeX says `\lambda`, so λ0 (2610.18950) failed whenever the arXiv API was rate-limited and the abs-page fallback was used.
+- Picks from `.autopilot/candidates.json` (code repos live per repo_stats feed section): RynnVLA-Latent (Alibaba DAMO) → vla, EmbodiedLab (HexaFuture) → datasets, MOON (SJTU) → navigation, Video World Models Need Predictable Latents + DeXplicit → world-models, HumanoidNDM (CoRL 2026) → locomotion, ARPG → manipulation. Curated: 416.
+- Links: VLA-Rolling gets code (ZJU-OmniAI/VLA-Rolling, listed on its HF page) + project. New `curated_link_updates` list in the review queue (HF-listed repo/project missing from curated entries); applied 10: code for GreenWAM, ScaleNav, DiscoDemo, FLORA; project pages for VLA-Δ, MambaAct, DONIC, Ropedia W0, Fleet Experience, HandsOn.
