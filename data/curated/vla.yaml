@@ -690,3 +690,24 @@
   tags: [deployment, inference, flow-matching, training-free, sim, real, arm]
   takeaway_en: "Deployment knob for flow-matching VLAs: fewer solver steps hurt under fast replanning but help with long open-loop chunks. Tuning both together, training-free, reports higher success and lower latency for π0/π0.5/GR00T."
   takeaway_zh: 流匹配 VLA 的部署调参发现：求解步数少在频繁重规划时会降低精度，但在长时开环执行动作块时反而有利。报告在 π0、π0.5、GR00T 上联合调整两者，无需训练即可提高成功率并降低推理延迟。
+- title: "Profiling a Frontier Agent with EBench: From Direct Control to Harness with Policy"
+  type: paper
+  arxiv: "2610.35832"
+  year: 2026
+  org: InternRobotics
+  project: https://internrobotics.github.io/EBench-Astra-Tech-Report/
+  added: 2026-10-27
+  topics: [manipulation]
+  tags: [benchmark, llm, harness, evaluation, frontier-model, sim]
+  takeaway_en: "Report: GPT-6-Astra drives a robot on EBench via waypoints or by calling a VLA/WAM policy. Direct control leads on short tasks, trails on long-horizon and contact-rich ones; calling a policy cuts token cost."
+  takeaway_zh: 评测报告：在 EBench 上让 GPT-6-Astra 直接输出路径点控制机器人，或通过执行框架调用 VLA/WAM 策略。直接控制在短时任务上领先，但在长时程与接触密集任务上落后；调用策略可显著减少 token 开销。
+- title: "Robot-Aligned 3D Gaussian Splatting for Precise Reaching with Wrist-Camera VLA Policies"
+  type: paper
+  arxiv: "2610.35626"
+  year: 2026
+  project: https://001-wang.github.io/PrecisionReach-GS/
+  added: 2026-10-27
+  topics: [perception]
+  tags: [gaussian-splatting, wrist-camera, data-augmentation, real, arm]
+  takeaway_en: "Renders wrist-camera views from a 3D Gaussian Splatting scan of the real workspace to fine-tune π0.5 for precise reaching in e-waste disassembly; reports 80% vs. 58.7% with 150 teleop demos."
+  takeaway_zh: 用真实工作台的 3D 高斯泼溅重建渲染腕部相机训练视角，微调 π0.5 以完成电子垃圾拆解中的精确抵达；报告成功率 80%，而 150 条遥操作示教为 58.7%，人工采集不到 10 分钟。

@@ -249,3 +249,23 @@
   tags: [real, quadruped, loco-manipulation, rl, sim2real, distillation, rgbd]
   takeaway_en: "A quadruped solves a giant Rubik's Cube with its feet: onboard RGB-D estimates cube pose and colours, a planner sequences skills, and RL whole-body skills turn layers. Reports three full autonomous solves."
   takeaway_zh: 四足机器人只用脚完成巨型魔方：机载 RGB-D 估计魔方位姿与颜色状态，规划器把解法转成技能序列，强化学习训练的全身技能负责翻转魔方、一脚固定一脚推动转层。报告完成三次完全自主求解。
+- title: "Learning Force-Reactive Humanoid Loco-Manipulation"
+  type: paper
+  arxiv: "2610.35862"
+  year: 2026
+  project: https://louis-leee.github.io/FLoRe/
+  added: 2026-10-27
+  topics: [manipulation, control]
+  tags: [humanoid, force-control, whole-body, diffusion-policy, umi, real]
+  takeaway_en: "FLoRe: robot-free demos from force-sensing UMI-style grippers + body trackers train a diffusion policy that outputs per-hand force commands for a compliant whole-body controller; reports 80% vs. 26.7% for position-only."
+  takeaway_zh: FLoRe：用带力传感的 UMI 式手持夹爪与人体追踪器采集无机器人示教，训练扩散策略输出每只手的力指令，由柔顺全身控制器执行；报告在三个接触密集任务上成功率 80%，仅位置控制为 26.7%。
+- title: "Zero-HLM: Generalizable Humanoid Loco-Manipulation without Real Robot Data"
+  type: paper
+  arxiv: "2610.35075"
+  year: 2026
+  project: https://young-bit.github.io/zero-hlm/
+  added: 2026-10-27
+  topics: [manipulation, sim]
+  tags: [humanoid, real-to-sim, gaussian-splatting, data-generation, unitree-g1, sim2real]
+  takeaway_en: "Real-to-sim-to-real: smartphone scans become physics-ready sim scenes, whole-body motions are corrected by rollouts, giving 4,800 demos; a sim-only GR00T N1.7 on Unitree G1 reports 66.7% vs. 46.7% trained on real data."
+  takeaway_zh: 真实到仿真再到真实：用手机拍摄重建可物理仿真的场景，并根据仿真回放修正全身动作，生成 4800 条示教；仅用仿真数据训练的 GR00T N1.7 在宇树 G1 上报告平均成功率 66.7%，真实数据训练为 46.7%。

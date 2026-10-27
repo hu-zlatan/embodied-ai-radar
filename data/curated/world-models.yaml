@@ -313,3 +313,13 @@
   tags: [wam, robustness, self-supervised, ema-teacher, real]
   takeaway_en: "Auxiliary training task for world action models: an EMA teacher sees the clean frame, the online model sees a perturbed one and aligns its action features. Reports better robustness for four WAMs."
   takeaway_zh: 为世界-动作模型加一个自监督辅助任务：EMA 教师看原始画面，在线模型看外观扰动后的画面并对齐其动作表征；报告在 RoboTwin 2.0、LIBERO-Plus 等基准上提升四种 WAM 对视觉扰动的鲁棒性，且不损失原有性能。
+- title: "OSWAM: An Effective World Action Model with One-Step Action Generation"
+  type: paper
+  arxiv: "2610.35850"
+  year: 2026
+  project: https://gwenzhang.github.io/OSWAM/
+  added: 2026-10-27
+  topics: [vla]
+  tags: [wam, one-step, real-time, distillation, driving, sim]
+  takeaway_en: "World action model that acts in one diffusion step: 'imagination tokens' replace random-noise initialisation as an action prior. Reports ~3× speedup over direct-policy WAMs, 40 ms latency on an RTX 5090."
+  takeaway_zh: 单步扩散即可生成动作的世界动作模型：用“想象 token”代替随机噪声初始化，为动作提供先验。报告比直接策略式 WAM 快约 3 倍，编译后在 RTX 5090 上延迟低至 40 毫秒，覆盖自动驾驶与具身控制。
