@@ -41,7 +41,7 @@
   {
    "id": "2610.31162",
    "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
-   "upvotes": 54,
+   "upvotes": 55,
    "hf_date": "2026-10-26",
    "published": "2026-10-23",
    "topics": [
@@ -143,7 +143,7 @@
   {
    "id": "2610.31423",
    "title": "FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models",
-   "upvotes": 9,
+   "upvotes": 11,
    "hf_date": "2026-10-26",
    "published": "2026-10-23",
    "topics": [
@@ -187,6 +187,25 @@
    "comment": null,
    "abstract": "HoloBoxing presents a simple recipe for learning humanoid boxing by building on a pretrained whole-body controller. The recipe separates reusable motor skills from task decisions: a compact planner requests future body-point targets, while the frozen controller handles joint-level execution. A learned decoder maps 32-dimensional actions to structured target windows, and measured-state imitation initializes the planner before reinforcement learning. Task learning then refines interaction behavior while reusing the decoder and controller, avoiding the need to relearn whole-body control. This combination keeps task optimization focused on a compact upper policy and supplies an initial behavior before reward-driven exploration. Starting from that available controller, the recipe accounts for about seven minutes of additional training, including reused representation fitting and a single-GPU task run. This excludes controller pretraining, data preparation, evaluation, and search. Simulated boxing experiments and component controls evaluate the resulting behavior and the roles of imitation initialization and the target representation.",
    "ai_summary": "HoloBoxing learns humanoid boxing by combining a frozen whole-body controller with a compact planner that predicts body-point targets, using imitation initialization and reinforcement learning to refine interaction behavior with minimal additional training."
+  },
+  {
+   "id": "2610.31716",
+   "title": "Does LeWorldModel Preserve Local Action Geometry?",
+   "upvotes": 5,
+   "hf_date": "2026-10-26",
+   "published": "2026-10-26",
+   "topics": [],
+   "authors": [
+    "Vasil Vasilev",
+    "Siddharth Nayak"
+   ],
+   "organization": null,
+   "github": null,
+   "project": "https://geometry.vasi.boo/",
+   "arxiv_code": [],
+   "comment": "13 pages, 3 figures. Accepted as a poster at the NeurIPS 2026 Workshop on Symmetry and Geometry in Neural Representations (NeurReps), Extended Abstract Track",
+   "abstract": "We examine how closely pretrained LeWorldModel (LeWM) reproduces the effects of small action changes. Using matched simulator and model responses, we measure action sensitivity with Gram matrices at three perturbation scales. Across nearly a thousand states from Reacher and OGBench Cube, the most sensitive action directions differ by median angles of about 36^circ and 42^circ, respectively, at the smallest scale. Increasing the perturbation tenfold reduces median normalized Gram discrepancy by roughly 70\\% on Reacher and 47\\% on Cube. Geometry measured in pixels and embeddings varies more across scales than the chosen physical-state geometry. On held-out directions, environment Grams achieve median embedding response errors of 17\\% and 28\\%, compared with 26\\% and 38\\% for an isotropic reference with the same trace. LeWM's errors are higher at this scale. These findings support scale-specific evaluation of action sensitivity; its effect on control remains an open question.",
+   "ai_summary": "Pretrained LeWorldModel's reproduction of small action effects is evaluated via Gram matrices across perturbation scales, showing scale-dependent sensitivity differences and higher errors than environment references."
   },
   {
    "id": "2610.27782",
