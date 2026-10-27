@@ -173,9 +173,20 @@ def write_queue(new: dict[str, dict], raw: dict[str, dict], entries: list[dict])
                      "ai_summary": str(p.get("ai_summary") or "")[:600] or None})
         if len(rows) >= QUEUE_MAX:
             break
-    QUEUE.write_text(json.dumps({"updated": dt.date.today().isoformat(), "papers": rows}, indent=1,
+    # curated entries whose HF page lists a code repo / project page that the entry still lacks
+    links = []
+    for e in entries:
+        v = new.get(str(e.get("arxiv") or ""))
+        if not v:
+            continue
+        miss = {k: v[hk] for k, hk in (("code", "github"), ("project", "project")) if v.get(hk) and not e.get(k)}
+        if miss:
+            links.append({"id": str(e["arxiv"]), "title": str(e.get("title", ""))[:200]} | miss)
+    QUEUE.write_text(json.dumps({"updated": dt.date.today().isoformat(), "papers": rows,
+                                 "curated_link_updates": links}, indent=1,
                                 ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"review queue: {len(rows)} uncurated papers with >= {QUEUE_MIN_UPVOTES} upvotes")
+    print(f"review queue: {len(rows)} uncurated papers with >= {QUEUE_MIN_UPVOTES} upvotes, "
+          f"{len(links)} curated entries with new HF links")
 
 
 if __name__ == "__main__":
