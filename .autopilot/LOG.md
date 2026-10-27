@@ -319,3 +319,8 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Links: VLA-Rolling gets code (ZJU-OmniAI/VLA-Rolling, listed on its HF page) + project. New `curated_link_updates` list in the review queue (HF-listed repo/project missing from curated entries); applied 10: code for GreenWAM, ScaleNav, DiscoDemo, FLORA; project pages for VLA-Δ, MambaAct, DONIC, Ropedia W0, Fleet Experience, HandsOn.
 - verify #104 passed (covers all run-34 picks and links; #102/#103 cancelled by it). BibTeX metadata for new picks fills on the next scheduled intake.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: 'Rising this week' check from 10-28; picks from the 10-28 feed; W44 digest Mon 11-02. End of run 34.
+
+## 2026-10-27 — run 35 (~16:50 UTC–)
+
+- Start: CI/Pages/repo-stats/intake green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. No add_repo tool; clone was detached → switched to `main` and pulled. No new feed day until Wed 10-28.
+- Picks from `.autopilot/candidates.json` and the HF review queue (CI-fetched abstracts; code repos live per repo_stats feed section): DiffContact, HuMiT → locomotion; Action Influence Maximization (CoRL 2026), TrajWAM → world-models; AdaDexTrack (CVPR 2026), AdaPolicy → manipulation; ACTS → tactile; VISTA, Echo → vla; RobotAgentBench → datasets. One over-length takeaway caught before writing. Curated: 426. `curated_link_updates` holds only previously skipped items.
