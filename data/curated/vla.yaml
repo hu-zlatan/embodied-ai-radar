@@ -711,3 +711,13 @@
   tags: [gaussian-splatting, wrist-camera, data-augmentation, real, arm]
   takeaway_en: "Renders wrist-camera views from a 3D Gaussian Splatting scan of the real workspace to fine-tune π0.5 for precise reaching in e-waste disassembly; reports 80% vs. 58.7% with 150 teleop demos."
   takeaway_zh: 用真实工作台的 3D 高斯泼溅重建渲染腕部相机训练视角，微调 π0.5 以完成电子垃圾拆解中的精确抵达；报告成功率 80%，而 150 条遥操作示教为 58.7%，人工采集不到 10 分钟。
+- title: "AGQ: Action-Guided Ultra-Low-Bit Quantization for Vision-Language-Action Models"
+  type: paper
+  arxiv: "2610.33074"
+  year: 2026
+  code: https://github.com/Qiuxu00/AGQ
+  added: 2026-10-27
+  topics: [manipulation]
+  tags: [quantization, compression, deployment, edge, sim]
+  takeaway_en: "Mixed-precision quantization for VLAs that sets each weight matrix's bit width by how much it affects actions; reports 92.7% LIBERO success at 3 bits (above AWQ and GPTQ) and 70.5% at 2.5 bits."
+  takeaway_zh: 面向 VLA 的混合精度量化：根据每个权重矩阵对输出动作的影响分配比特数；报告在 3 比特下 LIBERO 成功率 92.7%（高于 AWQ 与 GPTQ），2.5 比特下仍有 70.5%。

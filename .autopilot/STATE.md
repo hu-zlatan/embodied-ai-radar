@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-26 ~23:10 UTC, run 32 (end)._
+_Last updated: 2026-10-27 ~05:15 UTC, run 33._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (399 entries, EN/ZH takeaways; 65 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (409 entries, EN/ZH takeaways; 65 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -51,6 +51,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 33: picks Horizon-Depth VLA, DiscoDemo, HAVANA (repo = 'will be available' → `project:`), and from 10-27: OSWAM, EBench/GPT-6-Astra report (InternRobotics), PrecisionReach-GS, FLoRe, Zero-HLM, BEHAVIOR-Spatial, AGQ. Still unpicked from 10-27: EmbodiedLab (2610.35385, repo 404 → wait), JevVLA (code), MOON (VLN, code), RetroNav (repo 404), MOTIO, AdaPolicy, DiffContact. Search index 820 KB raw / 276 KB gzip at 15 feed days.
 
 - Run 32: picks PICA-WAM → world-models, VLDA (Baidu LoongForge) → vla, LocoPilot (IIT) → hardware, TIDE → learning, InJePA → navigation, Embodied Playground → datasets. Still unpicked (candidates.json): MAST-VLA / FocusVLA / FR-VLA / AWLS (CoRL 2026, no links yet), SmolVLA-MoE (repo 404), DynaSlots (anonymous page), Horizon-Depth VLA (2610.32102, project), DiscoDemo, HAVANA (VLN video-action model, code). NeuralSRender skipped (driving perception). Next new feed day: Tue 10-27.
 

@@ -303,3 +303,8 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Picks from `.autopilot/candidates.json` (CI-fetched full abstracts; code repos live per repo_stats feed section): PICA-WAM → world-models, Vision-Language-Delta-Action (Baidu, LoongForge cookbook link) → vla, LocoPilot (IIT DLS Lab) → hardware, TIDE → learning, InJePA → navigation, Embodied Playground → datasets. One over-length takeaway caught by validate. Curated: 399.
 - verify #97 passed (all 6 picks incl. links). Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: picks from the 10-27 feed; 'Rising this week' check from ~10-28; W44 digest Mon 11-02. End of run 32.
+
+## 2026-10-27 — run 33 (~04:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. No scheduled intake had fired yet → dispatched intake.yml; 10-27 feed landed ~05:00 (147 papers), repo-stats followed.
+- Picks from `.autopilot/candidates.json` (CI-fetched full abstracts; code repos checked against repo_stats feed section): Horizon-Depth VLA (training-free solver-depth/horizon knob) → vla, DiscoDemo → learning, HAVANA → navigation; from 10-27: OSWAM → world-models, EBench GPT-6-Astra report + PrecisionReach-GS + AGQ (VLA quantization, code) → vla, FLoRe + Zero-HLM → locomotion, BEHAVIOR-Spatial → datasets. Three over-length takeaways caught by validate. Curated: 409.
