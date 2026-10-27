@@ -323,3 +323,23 @@
   tags: [wam, one-step, real-time, distillation, driving, sim]
   takeaway_en: "World action model that acts in one diffusion step: 'imagination tokens' replace random-noise initialisation as an action prior. Reports ~3× speedup over direct-policy WAMs, 40 ms latency on an RTX 5090."
   takeaway_zh: 单步扩散即可生成动作的世界动作模型：用“想象 token”代替随机噪声初始化，为动作提供先验。报告比直接策略式 WAM 快约 3 倍，编译后在 RTX 5090 上延迟低至 40 毫秒，覆盖自动驾驶与具身控制。
+- title: "Video World Models Need Predictable Latents"
+  type: paper
+  arxiv: "2610.34663"
+  year: 2026
+  code: https://github.com/mattia-scardecchia/predictable-latents
+  added: 2026-10-27
+  topics: [learning]
+  tags: [video-world-model, latent-space, autoencoder, policy-evaluation]
+  takeaway_en: "Train the video world model's autoencoder for temporal predictability, not just reconstruction, with a past-conditioned decoder. Reports up to 5× cheaper inference, 7× faster training and lower long-horizon / OOD error."
+  takeaway_zh: 视频世界模型的潜空间不应只为重建而训练：加入时间可预测性目标并配合以历史为条件的解码器。报告推理成本最多降低 5 倍、训练快 7 倍以上，长时域与分布外误差降低 15–24%，与真实策略评测更一致。
+- title: "DeXplicit: Making Physical State Explicit in Dexterous Manipulation World Models"
+  type: paper
+  arxiv: "2610.30781"
+  year: 2026
+  project: https://dexplicit.github.io
+  added: 2026-10-27
+  topics: [manipulation]
+  tags: [dexterous, 3d-dynamics, video-generation, hand-object]
+  takeaway_en: "Dexterous-manipulation world model that first predicts object motion and deformation in metric 3D from a hand trajectory, then renders video. Reports 27–40% lower moved-point error than PointWorld."
+  takeaway_zh: 灵巧操作世界模型：先根据手部轨迹在度量 3D 空间中显式预测物体运动与形变，再据此渲染视频。报告在 HOT3D、OakInk2、PhysTwin 上运动点误差比 PointWorld 低 27–40%，两步因果生成大幅提速。

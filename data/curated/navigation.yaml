@@ -287,3 +287,14 @@
   tags: [vln, video-action-model, dual-system, sim, real]
   takeaway_en: "Dual-system video-action model for VLN: a slow system turns history and instruction into a compact latent plan, a fast one turns plan + latest view into local trajectories; no video is generated at inference."
   takeaway_zh: 面向视觉语言导航的双系统视频-动作模型：慢系统根据历史观测与指令生成紧凑的隐式规划，快系统结合该规划与最新观测输出局部轨迹；推理时不生成未来视频。代码与权重称将在该仓库发布。
+- title: "MOON: Learning When to Forget and How to Move On in Vision-and-Language Navigation"
+  type: paper
+  arxiv: "2610.33546"
+  year: 2026
+  org: SJTU
+  code: https://github.com/AutoLab-SAI-SJTU/MOON
+  added: 2026-10-27
+  topics: [learning]
+  tags: [vln, recovery, memory, grpo, r2r-ce]
+  takeaway_en: "Off-route VLN agents keep following their stale history ('behavioral inertia'). MOON adds a deviation judge that clears it and a GRPO-trained recovery policy (<1% params); reports +5.2 / +6.0 points on R2R-CE / RxR-CE."
+  takeaway_zh: 发现 VLN 智能体偏离路线后会被历史记忆“惯性”拖住。MOON 给冻结的导航策略加上偏航判断器（判断何时清空历史）和 GRPO 训练的恢复策略，参数增加不到 1%；报告在 R2R-CE / RxR-CE 上分别提升 5.2 / 6.0 个百分点。

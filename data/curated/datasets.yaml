@@ -420,3 +420,15 @@
   tags: [benchmark, spatial-reasoning, vlm, instruction-following, behavior-1k]
   takeaway_en: "BEHAVIOR-Spatial, built on BEHAVIOR-1K: spatial QA, point grounding and robot action tests. A baseline policy drops from 41.6% on held-out layouts to 16.1% when the requested target changes; oracle target cues help most."
   takeaway_zh: 基于 BEHAVIOR-1K 的 BEHAVIOR-Spatial 基准：包含空间问答、指点定位与机器人动作评测。基线策略在未见布局上成功率 41.6%，但在同一布局中更换目标物体指令时降至 16.1%；提供真值目标提示带来的提升最大。
+- title: "EmbodiedLab: Benchmarking Embodied Agents That Act to Know"
+  type: paper
+  arxiv: "2610.35385"
+  year: 2026
+  org: HexaFuture
+  code: https://github.com/HexaFuture/EmbodiedLab
+  project: https://hexafuture.ai/benchmarks/embodiedlab/
+  added: 2026-10-27
+  topics: [sim, vla]
+  tags: [benchmark, agents, scientific-discovery, simulated-lab, frontier-models]
+  takeaway_en: "Benchmark where a robot must run physics experiments to find an unknown answer: 30 experiments, 5 disciplines, parameters resampled per instance. Reports even the best frontier agent succeeds under half the time."
+  takeaway_zh: “为求知而行动”的基准：机器人在物理仿真实验室中自行操作仪器、读数，测出每次随机重采样的未知参数。共 30 个实验、5 个学科；报告最强的前沿模型智能体在原生控制下成功率也不到一半，失败多源于与仪器交互。
