@@ -41,7 +41,7 @@
   {
    "id": "2610.31162",
    "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
-   "upvotes": 51,
+   "upvotes": 54,
    "hf_date": "2026-10-26",
    "published": "2026-10-23",
    "topics": [
@@ -141,6 +141,29 @@
    "ai_summary": "SafeDriveVLA improves autonomous driving by predicting navigation compliance and using world-model dreaming to avoid unsafe instructions, outperforming existing vision-language-action models."
   },
   {
+   "id": "2610.31423",
+   "title": "FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models",
+   "upvotes": 9,
+   "hf_date": "2026-10-26",
+   "published": "2026-10-23",
+   "topics": [
+    "vla",
+    "manipulation"
+   ],
+   "authors": [
+    "Huixin Xu",
+    "Ziya Yu",
+    "Peng Li"
+   ],
+   "organization": "Technology Center of Software Engineering of ISCAS",
+   "github": null,
+   "project": null,
+   "arxiv_code": [],
+   "comment": "Accepted at CoRL 2026",
+   "abstract": "Vision-language-action (VLA) models have become an important paradigm for robotic manipulation by unifying visual perception, language understanding, and action generation. Since reliable manipulation requires sufficient observation of objects, end-effectors, and their spatial relationships, multi-view inputs are widely used to provide complementary spatial information. However, our experiments show that existing VLA models do not fully exploit such multi-view complementarity. The policy tends to persistently rely on the wrist view, lacking the ability to dynamically adjust global-local view dependency across manipulation stages, which limits stage adaptability and robustness. To address this issue, we propose FocusVLA, a stage-aware multi-view routing framework. FocusVLA predicts future interaction intent from historical actions and uses it to guide dynamic view routing during action generation. By adaptively coordinating global and local observations across different task stages, FocusVLA improves multi-view utilization. On RoboTwin 2.0, FocusVLA improves the average success rate over the strongest baseline π_{0.5} by 10.10 pp. In real-world evaluation, FocusVLA improves the success rate from 71.7\\% to 85.0\\%, achieving a 13.3\\% gain over π_{0.5}. Moreover, the intent prediction and dynamic routing modules of FocusVLA can be integrated into existing VLA frameworks without modifying their core architectures.",
+   "ai_summary": "FocusVLA improves robotic manipulation by dynamically routing between global and local camera views based on predicted interaction intent across task stages."
+  },
+  {
    "id": "2610.32909",
    "title": "HoloBoxing: A Simple Recipe for Humanoid Boxing with 7 Minutes of Single-GPU Training",
    "upvotes": 9,
@@ -164,29 +187,6 @@
    "comment": null,
    "abstract": "HoloBoxing presents a simple recipe for learning humanoid boxing by building on a pretrained whole-body controller. The recipe separates reusable motor skills from task decisions: a compact planner requests future body-point targets, while the frozen controller handles joint-level execution. A learned decoder maps 32-dimensional actions to structured target windows, and measured-state imitation initializes the planner before reinforcement learning. Task learning then refines interaction behavior while reusing the decoder and controller, avoiding the need to relearn whole-body control. This combination keeps task optimization focused on a compact upper policy and supplies an initial behavior before reward-driven exploration. Starting from that available controller, the recipe accounts for about seven minutes of additional training, including reused representation fitting and a single-GPU task run. This excludes controller pretraining, data preparation, evaluation, and search. Simulated boxing experiments and component controls evaluate the resulting behavior and the roles of imitation initialization and the target representation.",
    "ai_summary": "HoloBoxing learns humanoid boxing by combining a frozen whole-body controller with a compact planner that predicts body-point targets, using imitation initialization and reinforcement learning to refine interaction behavior with minimal additional training."
-  },
-  {
-   "id": "2610.31423",
-   "title": "FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models",
-   "upvotes": 7,
-   "hf_date": "2026-10-26",
-   "published": "2026-10-23",
-   "topics": [
-    "vla",
-    "manipulation"
-   ],
-   "authors": [
-    "Huixin Xu",
-    "Ziya Yu",
-    "Peng Li"
-   ],
-   "organization": "Technology Center of Software Engineering of ISCAS",
-   "github": null,
-   "project": null,
-   "arxiv_code": [],
-   "comment": "Accepted at CoRL 2026",
-   "abstract": "Vision-language-action (VLA) models have become an important paradigm for robotic manipulation by unifying visual perception, language understanding, and action generation. Since reliable manipulation requires sufficient observation of objects, end-effectors, and their spatial relationships, multi-view inputs are widely used to provide complementary spatial information. However, our experiments show that existing VLA models do not fully exploit such multi-view complementarity. The policy tends to persistently rely on the wrist view, lacking the ability to dynamically adjust global-local view dependency across manipulation stages, which limits stage adaptability and robustness. To address this issue, we propose FocusVLA, a stage-aware multi-view routing framework. FocusVLA predicts future interaction intent from historical actions and uses it to guide dynamic view routing during action generation. By adaptively coordinating global and local observations across different task stages, FocusVLA improves multi-view utilization. On RoboTwin 2.0, FocusVLA improves the average success rate over the strongest baseline π_{0.5} by 10.10 pp. In real-world evaluation, FocusVLA improves the success rate from 71.7\\% to 85.0\\%, achieving a 13.3\\% gain over π_{0.5}. Moreover, the intent prediction and dynamic routing modules of FocusVLA can be integrated into existing VLA frameworks without modifying their core architectures.",
-   "ai_summary": "FocusVLA improves robotic manipulation by dynamically routing between global and local camera views based on predicted interaction intent across task stages."
   },
   {
    "id": "2610.27782",
