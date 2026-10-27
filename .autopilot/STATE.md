@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-27 ~17:10 UTC, run 35 (end). verify #105 + #106 passed (all 10 run-35 picks incl. links)._
+_Last updated: 2026-10-27 ~23:20 UTC, run 36. Lab pages shipped; 5 picks pushed (verify pending at time of writing — re-check)._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (426 entries, EN/ZH takeaways; 65 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (431 entries, EN/ZH takeaways; 70 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -27,6 +27,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - **Curated link updates** (run 34): `hf_papers.py` also writes `curated_link_updates` to `.autopilot/review_queue.json` — curated entries whose HF paper page lists a repo/project they lack. Check the repo is live in `data/repo_stats.json` `feed` before adding `code:`; skip awesome-list repos of surveys (kept as `project:`), 'code coming soon' repos (GPT-6-Astra, AgenticRoboRL) and generic homepages (HexaShell → hexafuture.ai/home).
 - **Pick candidates** (run 30): intake (after enrichment) writes `.autopilot/candidates.json`: uncurated feed papers from the last 7 days with code, a project page or an accepted venue, with the **full abstract + up to 20 authors** fetched by CI (100 new per run, reused afterwards). This is the fact source for daily picks — the agent's WebFetch cannot open brand-new arXiv/project pages. Not published on the site.
 - **Link hygiene** (run 30): `intake_arxiv.tidy_url()` cuts LaTeX/Markdown debris (`}{`, `]`, `\\`) from links taken from arXiv comments; `--retag` also cleans stored links.
+- **Lab pages** (run 36): `data/labs.yaml` (43 labs; regex name rules matched word-bounded against the free-text curated `org:`; validated) → `labs/<id>.html` for labs with ≥3 curated entries (`LAB_MIN`, 41 pages) + `labs/index.html`; home 'By lab' row (top 10), entry pages 'More from' links, topics index link, sitemap, READMEs, `labs` column at the end of curated.json/csv. Curated only (feed has no affiliations). When adding picks, fill `org:` when known so they land on lab pages; add a lab to labs.yaml once it reaches 3 entries (Imperial, NAVER LABS Europe, Rice are at 2).
 - **Robot-type pages** (run 22): `robots/<emb>.html` per entry of `data/embodiments.yaml` (curated entries by computed `emb`, newest 40 auto-tagged feed papers, per-topic search links) + Atom `robots/<emb>.xml` + `robots/index.html`; linked from home (row under Topics), feed page, topics index, READMEs, digest robot-type counts, sitemap.
 - **Digest picks** (run 27): `make_digest.py` ranks the week's picks (highlight, HF upvotes, GitHub stars, has code); top 8 (`TOP_PICKS`) get full EN/ZH takeaways, the rest are one line per topic linking entry pages. Simple TeX in titles is rendered ($Δ$ → Δ). W43 draft went 60 KB → 33 KB.
 - Issue forms: `.github/ISSUE_TEMPLATE/` (suggest an entry / report a mistake, bilingual; contact links to site + Discussions). Footer link `/issues/new` opens the chooser.
@@ -52,6 +53,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 36: lab pages; picks DISCO (CoRL 2026 Oral) + Real2Sem2Real → manipulation, SWAP + FIBER → locomotion, Multi-View LAM → vla (orgs left blank: candidates.json has no affiliations). Still worth a look: RoboLongR (2610.33863, project), PaceVLA (2610.25961), Progress-Guided Preference Generation (CoRL 2026), One Scan is Enough, Think Densely Act Sparsely (NeurIPS 2026). Idea: lab filter in search (`?lab=`) if lab pages get traffic.
 
 - Run 35: picks DiffContact + HuMiT → locomotion, Action Influence Maximization (CoRL 2026) + TrajWAM → world-models, AdaDexTrack (CVPR 2026) + AdaPolicy → manipulation, ACTS → tactile, VISTA + Echo → vla, RobotAgentBench → datasets. Skipped: JevVLA (≈1–2 pt gains), RoboDoctor (no controlled trials), MOTIO (author listed as an org handle only), T-WLA (anonymous page), HoloBoxing (sim only, no links). Still worth a look later: One Scan is Enough (NeurIPS 2026, no links), Think Densely Act Sparsely (NeurIPS 2026), FR-VLA / FocusVLA / MAST-VLA (CoRL 2026, waiting for links), SP-HLM, Memory before Goal.
 

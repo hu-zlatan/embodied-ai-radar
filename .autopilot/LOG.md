@@ -326,3 +326,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Picks from `.autopilot/candidates.json` and the HF review queue (CI-fetched abstracts; code repos live per repo_stats feed section): DiffContact, HuMiT → locomotion; Action Influence Maximization (CoRL 2026), TrajWAM → world-models; AdaDexTrack (CVPR 2026), AdaPolicy → manipulation; ACTS → tactile; VISTA, Echo → vla; RobotAgentBench → datasets. One over-length takeaway caught before writing. Curated: 426. `curated_link_updates` holds only previously skipped items.
 - verify #105 and #106 passed (all 10 picks incl. code/project links). Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: 'Rising this week' check from 10-28; picks from the 10-28 feed; W44 digest Mon 11-02. End of run 35.
+
+## 2026-10-27 — run 36 (~22:50 UTC–)
+
+- Start: CI/Pages/repo-stats/intake green, no issues/PRs (GitHub MCP; WebFetch of github.com not approved), 0 stars / 0 forks. No add_repo tool; existing clone on `main`, pulled. No new feed day until Wed 10-28.
+- Feature: lab / company pages (`data/labs.yaml` → `labs/<id>.html`, 41 labs with ≥3 curated entries; 384 of 426 entries matched). Home 'By lab' row, entry-page 'More from' links, `labs` export column, README links. Checked on a 390 px viewport (EN + 中文), no JS errors.
+- Picks from `.autopilot/candidates.json`: DISCO (CoRL 2026 Oral), Real2Sem2Real → manipulation; SWAP, FIBER → locomotion; Multi-View Latent Action Pretraining → vla. Four over-length takeaways caught before writing. Curated: 431.
