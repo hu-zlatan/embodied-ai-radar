@@ -172,47 +172,6 @@
    "fetched": "2026-10-27"
   },
   {
-   "id": "2610.35385",
-   "title": "EmbodiedLab: Benchmarking Embodied Agents That Act to Know",
-   "published": "2026-10-27",
-   "topics": [
-    "navigation",
-    "datasets"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/HexaFuture/EmbodiedLab"
-   ],
-   "project": [
-    "https://hexafuture.ai/benchmarks/embodiedlab/"
-   ],
-   "comment": "Technical report. 19 pages, 10 figures, 9 tables. Project page: https://hexafuture.ai/benchmarks/embodiedlab/",
-   "authors": [
-    "Hongcheng Gao",
-    "Zelin Zheng",
-    "Alex Zhou",
-    "Jay Zhu",
-    "Shijia Ge",
-    "Yazhe Wang",
-    "Xiping Li",
-    "Jianshu Zeng",
-    "Di Wu",
-    "Xuan Shangguan",
-    "Yexing Wan",
-    "Lingyu He",
-    "Yongli Wang",
-    "Xiaohan Yu",
-    "Zhiqi Jia",
-    "Yue Liu",
-    "Bryan Hooi",
-    "Yinpeng Dong",
-    "Wentao Zhang",
-    "Sihang Wu"
-   ],
-   "abstract": "Embodied agents are expected to accomplish real-world goals by deciding for themselves how and when to interact with their surroundings. For many such goals, changing the physical state of the world is the means rather than the end: the agent changes the state of a system through interaction, observes the feedback, and explores until it either achieves the goal itself (e.g., discovering physical laws) or learns what the goal requires; it acts to know. Manipulation benchmarks stop at acting to change, with the target state given; scientific discovery benchmarks evaluate knowing but replace physical experimentation with symbolic actions or numerical queries. We introduce EmbodiedLab, a benchmark in which a robot must act to know. Quantitative science experiments make this setting controllable: the parameters of the system are resampled for every instance, so the result cannot be known in advance, yet it can be scored exactly. Across 30 experiments in five disciplines on 14 apparatus platforms, the agent receives an objective and the apparatus, chooses its own procedure, and operates a physics-based simulated laboratory, reading the instruments through its cameras. Evaluation checks what the agent came to know, grounded in readings recorded during the episode, as well as the physical state the task requires; every experiment is verified to be solvable. We evaluate six frontier models in their developers' coding agents with native observation and control, with added perception and motion planning, and with manipulation skills distilled from the strongest agents. With native control, even the strongest agent succeeds less than half the time; for every agent, most failures arise in interacting with the apparatus, and manipulation skills help weaker agents more than perception and planning. The benchmark and its evaluation code are available at https://github.com/HexaFuture/EmbodiedLab.",
-   "fetched": "2026-10-27"
-  },
-  {
    "id": "2610.35231",
    "title": "Thermal-Headroom Routing for Efficient Robot Perception in Extreme Heat",
    "published": "2026-10-27",
@@ -382,26 +341,6 @@
    "fetched": "2026-10-27"
   },
   {
-   "id": "2610.34663",
-   "title": "Video World Models Need Predictable Latents",
-   "published": "2026-10-27",
-   "topics": [
-    "world-models"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/mattia-scardecchia/predictable-latents"
-   ],
-   "project": [],
-   "comment": "54 pages, 25 figures, 14 tables. Code: https://github.com/mattia-scardecchia/predictable-latents",
-   "authors": [
-    "Mattia Scardecchia",
-    "Sherry Yang"
-   ],
-   "abstract": "Video world models trained on large-scale robot data promise a safe and scalable approach for learning and evaluating policies that act in the physical world. However, they still struggle with long-horizon rollouts and out-of-distribution generalization, and they remain computationally demanding at inference time. Typically, video world models make predictions in the latent space of a reconstruction-trained autoencoder, which however is not directly optimized for dynamics modeling. On the other hand, world models designed for latent planning usually optimize latents to be predictable, but they forgo accurate prediction of observations in pixel space. In this paper, we show that it is possible to achieve the best of both worlds: a latent geometry optimized to make future prediction as simple as possible without sacrificing accurate prediction of future observations. More precisely, we find that temporal objectives for representation learning, paired with a past-conditioned decoder architecture, lead to consistent improvements in generative video world models at the same training budget. The gains include up to 5x cheaper inference, over 7x faster training, and 15-24% lower pixel and perceptual errors out of distribution and over long horizons. Our world models also agree more closely with real-world policy evaluation when using a vision-language model to judge task success from their pixel-space predictions. Overall, our study indicates that temporal predictability is an important design criterion for the latent space of video world models, and provides concrete guidance on how to incorporate it into the training of autoencoders.",
-   "fetched": "2026-10-27"
-  },
-  {
    "id": "2610.34649",
    "title": "RobotAgentBench: Towards Open-world Robot Autonomy",
    "published": "2026-10-27",
@@ -441,32 +380,6 @@
    "fetched": "2026-10-27"
   },
   {
-   "id": "2610.34453",
-   "title": "Scaling Dexterous Manipulation via Action Representation Pretraining",
-   "published": "2026-10-27",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://arpg-project.github.io/"
-   ],
-   "comment": "23 pages. Project page: https://arpg-project.github.io/",
-   "authors": [
-    "Yanjinghao Xu",
-    "Jiexin Zhang",
-    "Huan Zhao",
-    "Jianjia Mo",
-    "Zhenghao Yin",
-    "Dingkang Liang",
-    "Xiang Bai",
-    "Han Ding"
-   ],
-   "abstract": "Large-scale vision, language, and video pretraining has substantially improved the perception and generalization capabilities of robotic manipulation models, but action generation for complex dexterous manipulation remains constrained by the scarcity of robot demonstrations. Limited robot demonstrations must be used to learn both action representations and task-conditioned action distributions, making it difficult to adequately learn action representations and, in turn, limiting the ability of downstream generative models to generate complex dexterous actions. To address this limitation, we propose ARPG (Action Representation Pretraining and Generation), which explicitly separates action representation learning from action generation: we first pretrain an action representation encoder on large-scale human manipulation data. We then freeze the encoder and train a compact generative backbone (130M parameters) to learn task-conditioned action distributions in the encoder's representation space. Experimental results show that ARPG achieves state-of-the-art performance on the DexJoCo benchmark and improves the average success rate on bimanual dexterous manipulation from 10.1% for $π_{0.5}$ to 44.7%. Scaling experiments further show that broader coverage of human manipulation behaviors effectively improves downstream performance. These results indicate that action representation pretraining provides an independent scaling dimension for improving complex dexterous manipulation capabilities.",
-   "fetched": "2026-10-27"
-  },
-  {
    "id": "2610.34452",
    "title": "AuRA: From Atoms to Bits through Autonomous Robot Interaction",
    "published": "2026-10-27",
@@ -493,41 +406,6 @@
    "fetched": "2026-10-27"
   },
   {
-   "id": "2610.34356",
-   "title": "RynnVLA-Latent: Scaling Robotic Manipulation Foundation Models with 3D-Grounded Latent Actions",
-   "published": "2026-10-27",
-   "topics": [
-    "vla",
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/alibaba-damo-academy/RynnVLA-Latent"
-   ],
-   "project": [
-    "https://alibaba-damo-academy.github.io/RynnVLA-Latent.github.io/"
-   ],
-   "comment": "Project page: https://alibaba-damo-academy.github.io/RynnVLA-Latent.github.io/, GitHub: https://github.com/alibaba-damo-academy/RynnVLA-Latent",
-   "authors": [
-    "Haoyu Zhao",
-    "Xingyue Zhao",
-    "Zhian Su",
-    "Bohan Hou",
-    "Yinzhou Tang",
-    "Fengyi Wang",
-    "Kehan Li",
-    "Yuming Jiang",
-    "Siteng Huang",
-    "Xin Li",
-    "Zhenyu Zeng",
-    "Mingxiu Chen",
-    "Deli Zhao",
-    "Zhongyu Li"
-   ],
-   "abstract": "Scaling vision-language-action (VLA) models is constrained by scarce action-labeled demonstrations and incompatible control spaces across robot embodiments. We present RynnVLA-Latent, a framework that turns heterogeneous interaction videos into scalable supervision for robot policy pretraining. At its core, RynnLAM learns continuous, 3D-grounded latent actions from visual transitions without requiring native robot controls. By combining residual future-feature prediction, camera-compensated 3D-flow supervision, and camera-motion decoupling, RynnLAM encourages representations that capture control-relevant motion rather than appearance changes alone. We apply RynnLAM to 30.1K hours of human, robot, and simulation videos, producing 745.52M latent-action descriptors. RynnVLA-Latent then learns to predict latent-action chunks from visual observations and language through flow matching, before adapting its pretrained backbone and action expert to embodiment-specific robot actions. The resulting 4B policy achieves 98.8% success on LIBERO, 84.7% on LIBERO-Plus without benchmark-specific adaptation, 51.9% average success across five VLABench tracks, and 88.6% average success on the RoboTwin 2.0 bimanual benchmark. It also achieves the highest observed success rates among the compared methods on six real-world manipulation tasks across dexterous-hand and mobile-gripper platforms. Together with representation ablations and data-scaling results, these findings demonstrate the potential of latent-action supervision for scaling robot policy learning beyond native action-labeled data.",
-   "fetched": "2026-10-27"
-  },
-  {
    "id": "2610.34280",
    "title": "AdaPolicy: Action-Driven Anticipatory Robot Policies via Next-Chunk Prediction",
    "published": "2026-10-27",
@@ -548,30 +426,6 @@
     "Peiguang Jing"
    ],
    "abstract": "Endowing robot policies with anticipatory capabilities has proven effective in improving control performance. However, existing methods predominantly rely on explicit supervision derived from future observations, in either pixel or latent space, at the cost of additional architectural and computational complexity. Departing from explicit future supervision, we ask whether such foresight can be elicited directly from the action signal. To this end, we propose \\textbf{AdaPolicy}, an \\textbf{A}ction-\\textbf{d}riven \\textbf{a}nticipatory policy framework that shapes future-aware representations via cascaded next-chunk prediction. Specifically, an Online Action Head jointly produces the current action chunk and an evolved latent state. Building on this state, a cascaded Unrolled Action Head forecasts the next chunk, and the resulting loss flows back through the evolved state to instill implicit foresight into the online policy. Importantly, this training-only unroll requires no future-observation encoding, keeping AdaPolicy lightweight to train with zero inference-time overhead. Experiments on MetaWorld, RoboTwin 2.0, LIBERO, and real-world deployments demonstrate consistent gains across diverse settings, including up to $14$ percentage points on millimeter-precision tasks such as earphone assembly and shoelace threading. More details and visualizations are available at \\href{https://teee111.github.io/AdaPolicy/}{https://teee111.github.io/AdaPolicy/}.",
-   "fetched": "2026-10-27"
-  },
-  {
-   "id": "2610.34126",
-   "title": "HumanoidNDM: Closing the Training-Deployment Gap of Motion Tracking via Humanoid Neural Dynamics Model",
-   "published": "2026-10-27",
-   "topics": [
-    "locomotion",
-    "world-models"
-   ],
-   "venue": "CoRL 2026",
-   "code": [],
-   "project": [],
-   "comment": "Accepted to CoRL 2026",
-   "authors": [
-    "Chao Chen",
-    "Zhenrong Wang",
-    "Jilong Wang",
-    "Yusen Feng",
-    "Jiangran Lyu",
-    "Li Yi",
-    "He Wang"
-   ],
-   "abstract": "Humanoid robots have recently achieved remarkable success in motion tracking. However, during real-world deployment, robots inevitably encounter dynamics gaps arising from either extra physical disturbances or inaccurate simulation modeling, resulting in a significant training-deployment gap. Therefore, effectively leveraging real-world data to fine-tune policies represents the crucial last mile for robust deployment. To bridge this gap, we propose HumanoidNDM, an online fine-tuning framework for humanoid motion tracking driven by a real-world-trained neural dynamics model. First, in the data collection stage, we introduce a low-frequency reference perturbation method with an adaptive intensity mechanism, balancing deployment feasibility and exploration efficiency. Second, for the model training stage, we train a robust history-based, proprioceptive neural dynamics model in Euclidean space by incorporating differentiable forward kinematics, eliminating the reliance on costly motion capture systems. Finally, in the policy fine-tuning stage, we directly fine-tune the policy via backpropagated model gradients, achieving high data efficiency. Through physical validation on the Unitree G1 robot, we demonstrate that HumanoidNDM enables rapid real-world adaptation to various perturbations, representing the first online, MoCap-free fine-tuning framework for humanoid tracking policies.",
    "fetched": "2026-10-27"
   },
   {
@@ -731,33 +585,6 @@
     "Yiqun Li"
    ],
    "abstract": "Cooperative transport with heterogeneous legged robots requires coordinating different motion capabilities while supporting an unfixed shared payload. We present HA-DiPO (Heterogeneous-Agent Diffusion Policy Optimization), a hierarchical multi-agent reinforcement learning framework under centralized training with decentralized execution (CTDE). The framework decouples team-level coordination from embodiment-specific motion control: at the high level, a centralized critic uses team-value estimates to jointly train independent coordination policies, aligning robot-specific action responses with a shared transport objective; at the low level, embodiment-specific robust motion policies track the coordination commands. The high-level diffusion policies offer more flexible action distributions than single-Gaussian parameterizations, allowing potentially multimodal coordination responses to be represented. The coordination policies learn from scratch through reward-driven simulator interaction without demonstrations. At execution, each robot generates coordination commands using only local robot and payload observations, without partner-state inputs or inter-robot messages. Simulation comparisons show that HA-DiPO achieves higher final mean returns and velocity-tracking success rates, as well as lower velocity errors, than the evaluated baselines. Real-world experiments further demonstrate quadrupedal-wheeled-legged and human-robot cooperative transport.",
-   "fetched": "2026-10-27"
-  },
-  {
-   "id": "2610.33546",
-   "title": "MOON: Learning When to Forget and How to Move On in Vision-and-Language Navigation",
-   "published": "2026-10-27",
-   "topics": [
-    "navigation"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/AutoLab-SAI-SJTU/MOON"
-   ],
-   "project": [],
-   "comment": null,
-   "authors": [
-    "Jingmeng Zhou",
-    "Seson Sun",
-    "Binyao Xu",
-    "Lingming Zhang",
-    "Hanshi Wang",
-    "Fudong Ge",
-    "Weiming Hu",
-    "Jin Gao",
-    "Zhipeng Zhang"
-   ],
-   "abstract": "Recent vision-and-language navigation (VLN) policies act on their visual history, and an incorrect action can take them off the instructed route. Paired interventions on four VLN policies show that clearing the history doubles pooled success at the onset of a deviation but lowers it on route, while later in a deviation, removing only the off-route frames helps much less. After a deviation, the retained history keeps the policy from turning where a turn is needed, which we call behavioral inertia. We propose MOON, a framework that equips a frozen VLN policy with two lightweight modules, adding less than 1% of its parameters. A deviation judge decides when to forget, raising an alarm that clears the history when it predicts that the agent is off route. A recovery policy, trained with GRPO from alarm states, learns how to move on, turning more of the successes found only by sampling into a single greedy rollout. Experiments on R2R-CE and RxR-CE show that MOON reaches the highest R2R-CE success rate among the compared methods and raises the success rate of its frozen base by 5.2 and 6.0 points, and an ablation with a random trigger indicates that this gain depends on when the history is cleared. Without retraining, MOON also improves zero-shot object-goal navigation on HM3D-OVON. Together, these results suggest that deviation recovery depends on knowing when to forget, not only how to act. Code is available at https://github.com/AutoLab-SAI-SJTU/MOON.",
    "fetched": "2026-10-27"
   },
   {
@@ -1357,30 +1184,6 @@
     "Sungjoon Choi"
    ],
    "abstract": "Humanoid motion-tracking policies can reproduce diverse behaviors, yet connecting independently acquired motions into a continuous sequence remains challenging. Interpolation connects boundary poses without considering whether their relative position, heading, and timing provide suitable conditions for a transition. A generative motion prior can produce richer motion, but poorly arranged boundaries may cause it to generate excessive locomotion, turning, or another unintended action. We present Spatio-Temporal Alignment with a Motion Prior (STAMP), a framework for connecting independently acquired humanoid motions through a Robot-to-Human-to-Robot process. STAMP uses human motion space to draw on rich motion priors and reuse transition knowledge across robot embodiments. Its key component is a learned alignment model that determines the boundary conditions for motion inbetweening. Given the two motions retargeted to a human rig, the alignment model ranks candidate positions, headings, and transition durations for the following motion. A human motion prior generates the transition under the selected alignment. The completed sequence is retargeted to the robot and used as a reference to train a motion-tracking policy. We evaluate the tracking success of the generated transitions on Unitree~G1 and~ROBOTIS K1. Physical robot demonstrations further show that STAMP connects independently acquired motions into long-horizon sequences. Project page: https://childtoy.github.io/STAMP-project",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.30781",
-   "title": "DeXplicit: Making Physical State Explicit in Dexterous Manipulation World Models",
-   "published": "2026-10-23",
-   "topics": [
-    "manipulation",
-    "world-models"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://dexplicit.github.io"
-   ],
-   "comment": "Project page: https://dexplicit.github.io",
-   "authors": [
-    "Adam Lee",
-    "Mutian Xu",
-    "Yukang Cao",
-    "Shulin Tian",
-    "Ziwei Liu"
-   ],
-   "abstract": "Before acting on an object, a robot needs to anticipate how its hand motion will change the physical world and what the resulting scene will look like. Existing approaches typically entangle action-conditioned dynamics, camera motion, and visual synthesis within a video generation model, or represent dynamics as point trajectories without explicit object structure. We introduce DeXplicit, a dexterous manipulation world model that instead predicts how the world evolves explicitly in metric 3D before rendering its visual consequences. Given an initial scene and a future hand trajectory, a lightweight 3D dynamics network predicts object-centric motion and deformation, providing structured and geometrically grounded future world states. These predictions then serve as a strong scaffold for video generation: appearance is transported through the predicted 3D motion and projected into future views, allowing the renderer to focus on completing uncertain and newly visible content rather than implicitly learning world dynamics from pixels. This explicit-3D-first decomposition also enables efficient causal generation, requiring only two denoising steps per block while conditioning on generated history. Across HOT3D, OakInk2, and PhysTwin, DeXplicit reduces moved-point error by 27-40% relative to PointWorld and improves object fidelity IoU+ by 47% on HOT3D under a shared renderer. Our design with two-step causal generation achieves a 57x speedup from our 14B bi-directional configuration in video synthesis.",
    "fetched": "2026-10-26"
   },
   {
