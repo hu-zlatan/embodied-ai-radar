@@ -220,7 +220,10 @@ def norm_title(s: str) -> str:
 
     def greek(ch: str) -> str:
         name = unicodedata.name(ch, "")
-        return name.split()[-1].lower() if name.startswith("GREEK") else ch
+        if not name.startswith("GREEK"):
+            return ch
+        w = name.split()[-1].lower()
+        return "lambda" if w == "lamda" else w  # Unicode spells it LAMDA; TeX says \lambda
     s = "".join(greek(c) for c in s).lower()
     s = re.sub(r"\\([a-z]+)", r"\1", s)  # \delta -> delta
     s = re.sub(r"[\\${}_^]", "", s)
