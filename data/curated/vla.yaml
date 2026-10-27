@@ -680,3 +680,13 @@
   tags: [latent-dynamics, action-refinement, open-framework]
   takeaway_en: "Between direct action prediction and full video prediction: VLDA learns a compact latent 'Delta' of task-relevant state change and uses it to seed action denoising. Built on Baidu's open LoongForge."
   takeaway_zh: 介于直接预测动作与完整预测未来画面之间：VLDA 学习一个紧凑的隐变量 Delta 表示与任务相关的状态变化，并用它引导动作去噪；实现于百度开源训练框架 LoongForge。
+- title: "Coupling Execution Horizon and Sampling Depth in Flow-Matching VLA Policies"
+  type: paper
+  arxiv: "2610.32102"
+  year: 2026
+  project: https://jiabingyang01.github.io/Horizon-Depth-VLA/
+  added: 2026-10-27
+  topics: [manipulation]
+  tags: [deployment, inference, flow-matching, training-free, sim, real, arm]
+  takeaway_en: "Deployment knob for flow-matching VLAs: fewer solver steps hurt under fast replanning but help with long open-loop chunks. Tuning both together, training-free, reports higher success and lower latency for π0/π0.5/GR00T."
+  takeaway_zh: 流匹配 VLA 的部署调参发现：求解步数少在频繁重规划时会降低精度，但在长时开环执行动作块时反而有利。报告在 π0、π0.5、GR00T 上联合调整两者，无需训练即可提高成功率并降低推理延迟。

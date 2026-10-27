@@ -277,3 +277,13 @@
   tags: [jepa, latent-planning, image-goal, habitat, sim]
   takeaway_en: "Two coupled JEPAs share a latent space: one proposes goal-conditioned latent intentions, the other predicts consequences, closing an intention-action-consequence loop. Evaluated on image-goal navigation in Habitat MP3D."
   takeaway_zh: 两个耦合的 JEPA 共享隐空间：一个按目标提出隐式“意图”，另一个预测动作后果，形成意图-动作-后果闭环，让世界模型直接参与构造规划；在 Habitat MP3D 图像目标导航上评测。
+- title: "HAVANA: A Hierarchical Video-Action Model for Vision-Language Navigation"
+  type: paper
+  arxiv: "2610.24122"
+  year: 2026
+  project: https://github.com/Anastasiawd/HAVANA
+  added: 2026-10-27
+  topics: [world-models]
+  tags: [vln, video-action-model, dual-system, sim, real]
+  takeaway_en: "Dual-system video-action model for VLN: a slow system turns history and instruction into a compact latent plan, a fast one turns plan + latest view into local trajectories; no video is generated at inference."
+  takeaway_zh: 面向视觉语言导航的双系统视频-动作模型：慢系统根据历史观测与指令生成紧凑的隐式规划，快系统结合该规划与最新观测输出局部轨迹；推理时不生成未来视频。代码与权重称将在该仓库发布。

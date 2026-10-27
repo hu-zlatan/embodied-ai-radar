@@ -332,3 +332,13 @@
   tags: [human-in-the-loop, online-learning, post-training, bimanual, real]
   takeaway_en: "TIDE updates a pretrained policy online from human interventions and its own rollouts, with no critic or reward model; reports gains on four real bimanual tasks, each session finishing in under an hour."
   takeaway_zh: TIDE 在部署过程中利用人类干预和策略自身的执行数据在线更新预训练策略，无需价值函数或奖励模型；报告在四个真实双臂任务上优于初始策略，每次在线后训练不到一小时完成。
+- title: "DiscoDemo: Discovering Efficient and Diverse Robot Demonstrations for Imitation Learning"
+  type: paper
+  arxiv: "2610.32093"
+  year: 2026
+  project: https://davian-robotics.github.io/DiscoDemo
+  added: 2026-10-27
+  topics: [manipulation]
+  tags: [rl, data-generation, imitation-learning, diversity, sim, real]
+  takeaway_en: "Uses RL as a demo generator, not a controller: a latent-conditioned policy finds several distinct successful solutions, exported as an imitation dataset; reports 78% real-robot success vs. 39% for the best baseline."
+  takeaway_zh: 把强化学习当作示教数据生成器而非部署控制器：以隐变量为条件的策略为同一任务找到多种不同的成功解法，导出为模仿学习数据集；报告真机下游成功率从最强基线的 39% 提升到 78%。
