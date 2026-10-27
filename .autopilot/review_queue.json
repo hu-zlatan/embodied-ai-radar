@@ -141,87 +141,9 @@
    "ai_summary": "SafeDriveVLA improves autonomous driving by predicting navigation compliance and using world-model dreaming to avoid unsafe instructions, outperforming existing vision-language-action models."
   },
   {
-   "id": "2610.35385",
-   "title": "EmbodiedLab: Benchmarking Embodied Agents That Act to Know",
-   "upvotes": 9,
-   "hf_date": "2026-10-27",
-   "published": "2026-10-27",
-   "topics": [
-    "navigation",
-    "datasets"
-   ],
-   "authors": [
-    "Hongcheng Gao",
-    "Zelin Zheng",
-    "Alex Zhou",
-    "Jay Zhu",
-    "Shijia Ge",
-    "Yazhe Wang",
-    "Xiping Li",
-    "Jianshu Zeng",
-    "Di Wu",
-    "Xuan Shangguan",
-    "Yexing Wan",
-    "Lingyu He",
-    "Yongli Wang",
-    "Xiaohan Yu",
-    "Zhiqi Jia",
-    "Yue Liu",
-    "Bryan Hooi",
-    "Yinpeng Dong",
-    "Wentao Zhang",
-    "Sihang Wu"
-   ],
-   "organization": "HexaFuture",
-   "github": "https://github.com/HexaFuture/EmbodiedLab",
-   "project": "https://hexafuture.ai/benchmarks/embodiedlab",
-   "arxiv_code": [
-    "https://github.com/HexaFuture/EmbodiedLab"
-   ],
-   "comment": "Technical report. 19 pages, 10 figures, 9 tables. Project page: https://hexafuture.ai/benchmarks/embodiedlab/",
-   "abstract": "Embodied agents are expected to accomplish real-world goals by deciding for themselves how and when to interact with their surroundings. For many such goals, changing the physical state of the world is the means rather than the end: the agent changes the state of a system through interaction, observes the feedback, and explores until it either achieves the goal itself (e.g., discovering physical laws) or learns what the goal requires; it acts to know. Manipulation benchmarks stop at acting to change, with the target state given; scientific discovery benchmarks evaluate knowing but replace physical experimentation with symbolic actions or numerical queries. We introduce EmbodiedLab, a benchmark in which a robot must act to know. Quantitative science experiments make this setting controllable: the parameters of the system are resampled for every instance, so the result cannot be known in advance, yet it can be scored exactly. Across 30 experiments in five disciplines on 14 apparatus platforms, the agent receives an objective and the apparatus, chooses its own procedure, and operates a physics-based simulated laboratory, reading the instruments through its cameras. Evaluation checks what the agent came to know, grounded in readings recorded during the episode, as well as the physical state the task requires; every experiment is verified to be solvable. We evaluate six frontier models in their developers' coding agents with native observation and control, with added perception and motion planning, and with manipulation skills distilled from the strongest agents. With native control, even the strongest agent succeeds less than half the time; for every agent, most failures arise in interacting with the apparatus, and manipulation skills help weaker agents more than perception and planning. The benchmark and its evaluation code are available at https://github.com/HexaFuture/EmbodiedLab.",
-   "ai_summary": "EmbodiedLab evaluates embodied agents that must physically interact with simulated laboratory apparatus to discover scientific principles through self-directed experimentation."
-  },
-  {
-   "id": "2610.34356",
-   "title": "RynnVLA-Latent: Scaling Robotic Manipulation Foundation Models with 3D-Grounded Latent Actions",
-   "upvotes": 9,
-   "hf_date": "2026-10-27",
-   "published": "2026-10-27",
-   "topics": [
-    "vla",
-    "manipulation"
-   ],
-   "authors": [
-    "Haoyu Zhao",
-    "Xingyue Zhao",
-    "Zhian Su",
-    "Bohan Hou",
-    "Yinzhou Tang",
-    "Fengyi Wang",
-    "Kehan Li",
-    "Yuming Jiang",
-    "Siteng Huang",
-    "Xin Li",
-    "Zhenyu Zeng",
-    "Mingxiu Chen",
-    "Deli Zhao",
-    "Zhongyu Li"
-   ],
-   "organization": "DAMO Academy",
-   "github": "https://github.com/alibaba-damo-academy/RynnVLA-Latent",
-   "project": "https://alibaba-damo-academy.github.io/RynnVLA-Latent.github.io/",
-   "arxiv_code": [
-    "https://github.com/alibaba-damo-academy/RynnVLA-Latent"
-   ],
-   "comment": "Project page: https://alibaba-damo-academy.github.io/RynnVLA-Latent.github.io/, GitHub: https://github.com/alibaba-damo-academy/RynnVLA-Latent",
-   "abstract": "Scaling vision-language-action (VLA) models is constrained by scarce action-labeled demonstrations and incompatible control spaces across robot embodiments. We present RynnVLA-Latent, a framework that turns heterogeneous interaction videos into scalable supervision for robot policy pretraining. At its core, RynnLAM learns continuous, 3D-grounded latent actions from visual transitions without requiring native robot controls. By combining residual future-feature prediction, camera-compensated 3D-flow supervision, and camera-motion decoupling, RynnLAM encourages representations that capture control-relevant motion rather than appearance changes alone. We apply RynnLAM to 30.1K hours of human, robot, and simulation videos, producing 745.52M latent-action descriptors. RynnVLA-Latent then learns to predict latent-action chunks from visual observations and language through flow matching, before adapting its pretrained backbone and action expert to embodiment-specific robot actions. The resulting 4B policy achieves 98.8% success on LIBERO, 84.7% on LIBERO-Plus without benchmark-specific adaptation, 51.9% average success across five VLABench tracks, and 88.6% average success on the RoboTwin 2.0 bimanual benchmark. It also achieves the highest observed success rates among the compared methods on six real-world manipulation tasks across dexterous-hand and mobile-gripper platforms. Together with representation ablations and data-scaling results, these findings demonstrate the potential of latent-action supervision for scaling robot policy learning beyond native action-labeled data.",
-   "ai_summary": "RynnVLA-Latent leverages latent actions derived from diverse video to pretrain large vision-language-action policies, achieving high success across simulated and real-world robot benchmarks without embodiment-specific tuning."
-  },
-  {
    "id": "2610.32909",
    "title": "HoloBoxing: A Simple Recipe for Humanoid Boxing with 7 Minutes of Single-GPU Training",
-   "upvotes": 8,
+   "upvotes": 9,
    "hf_date": "2026-10-26",
    "published": "2026-10-26",
    "topics": [
@@ -246,7 +168,7 @@
   {
    "id": "2610.31569",
    "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
-   "upvotes": 7,
+   "upvotes": 8,
    "hf_date": "2026-10-26",
    "published": "2026-10-23",
    "topics": [
