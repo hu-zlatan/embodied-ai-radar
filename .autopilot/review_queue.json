@@ -64,69 +64,6 @@
    "ai_summary": "This work proposes a two-axis framework for multimodal agent memory covering information formation and adaptive management to support lifelong learning."
   },
   {
-   "id": "2610.36068",
-   "title": "Rollback: Experience Backtracking in World Models for Policy Improvement",
-   "upvotes": 41,
-   "hf_date": "2026-10-28",
-   "published": "2026-10-28",
-   "topics": [
-    "world-models",
-    "learning"
-   ],
-   "authors": [
-    "Jiayi Luo",
-    "Yang Zhang",
-    "Liliang Chen",
-    "Nan Wang",
-    "Chen Gao",
-    "Boxiang Qiu",
-    "Zhuoxuan Li",
-    "Baorui Peng",
-    "Chuankang Li",
-    "Yuxiang Yan",
-    "Si Liu",
-    "Qingyun Sun",
-    "Shuicheng Yan",
-    "Maoqing Yao",
-    "Jianxin Li",
-    "Guanghui Ren"
-   ],
-   "organization": "AgiBot World",
-   "github": null,
-   "project": "https://rollback-wm.github.io/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Action-conditioned world models offer a scalable alternative to costly real-world interaction for improving robot policies. However, existing world-model-based methods largely treat world models as forward-only surrogates of the physical environment, leaving untapped a capability no physical environment affords: rewinding to past decision points to explore counterfactual futures. We introduce Rollback, a policy improvement paradigm that turns world models from passive simulators into counterfactual engines: it rolls back to critical decision points, branches into alternative actions, and contrasts their outcomes to attribute success to individual decisions. This concentrates imagination where it matters most and distills counterfactual outcomes into fine-grained, action-level supervision without a separately learned value model. We build a scalable training system that unifies distributed world-model search with asynchronous real-robot execution, forming a self-reinforcing cycle: real-world experience continually sharpens the world model, and a sharper world model in turn drives further policy improvement. We term the world-model side of this cycle test-time physics grounding, a capability that hand-built physics simulators lack: while the world model serves as the training environment, real transitions from the policy it trains correct its dynamics through a lightweight LoRA pipeline. Experiments on three challenging real-world tasks show that Rollback improves success rates over the strongest baseline by an absolute 10.67%, 11.11%, and 11.85% on block extraction, ball tossing, and tabletop curling, respectively, while achieving more stable improvement throughout training. Although initialized from teleoperated demonstrations far below human level, Rollback surpasses the average success rate of human players on both ball tossing and tabletop curling within 8 hours of training.",
-   "ai_summary": "Rollback improves robot policies by using world models to rewind to past decisions, explore counterfactual actions, and generate fine-grained supervision, while continuously refining dynamics via real-world feedback."
-  },
-  {
-   "id": "2610.37666",
-   "title": "ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning",
-   "upvotes": 38,
-   "hf_date": "2026-10-28",
-   "published": "2026-10-28",
-   "topics": [
-    "vla",
-    "learning"
-   ],
-   "authors": [
-    "Chaehyun Kim",
-    "Chi-Pin Huang",
-    "Jisoo Kim",
-    "Min-Hung Chen",
-    "Yu-Chiang Frank Wang",
-    "Seungryong Kim",
-    "Fu-En Yang"
-   ],
-   "organization": "NVIDIA",
-   "github": null,
-   "project": "https://thinkworld-project.github.io/",
-   "arxiv_code": [],
-   "comment": "Project Page: https://thinkworld-project.github.io/",
-   "abstract": "Vision-Language-Action (VLA) models have made substantial progress in robotic manipulation, but their generalization remains constrained by the diversity and coverage of action-labeled robot demonstrations. Human videos provide much broader behavioral and environmental experience, while learning from them faces a fundamental trade-off between scalable data and explicit action grounding. We introduce ThinkWorld, a VLA learning framework that grounds action reasoning in world dynamics and strengthens it through reinforcement learning with world imagination. ThinkWorld represents each action thought as a Chain-of-Dynamics (CoD), a sequence of discrete motion tokens that captures the intermediate dynamics connecting the current world to a future state and serves as a common action representation across embodiments. We first initialize CoD with action-labeled demonstrations, then predict the future induced by each CoD and reinforce those whose predictions better match the observed outcome. This enables videos without action annotations to provide direct supervision from observed state transitions, allowing human and robot experience to refine the same reasoning space. Experiments in simulation and on real robots demonstrate effective human-to-robot transfer and strong generalization to unseen tasks and environments.",
-   "ai_summary": "ThinkWorld improves robotic generalization by representing actions as dynamics chains and using world imagination to learn from unlabeled human videos."
-  },
-  {
    "id": "2610.28632",
    "title": "Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs",
    "upvotes": 27,
@@ -304,7 +241,7 @@
   {
    "id": "2610.31716",
    "title": "Does LeWorldModel Preserve Local Action Geometry?",
-   "upvotes": 5,
+   "upvotes": 6,
    "hf_date": "2026-10-26",
    "published": "2026-10-26",
    "topics": [],
