@@ -419,3 +419,13 @@
   tags: [wam, 3d-motion, point-tracking, mixture-of-transformers, sim]
   takeaway_en: "Adds future 3D point-motion prediction as an auxiliary task to a world action model (video/motion/action MoT); inference stays one visual pass. Reports gains over Fast-WAM with few demos and under shift."
   takeaway_zh: "在世界动作模型中加入未来三维点运动预测作为辅助目标（视频/运动/动作三专家 MoT），推理仍只需一次视觉前向；报告在少量示范和分布偏移下明显优于 Fast-WAM（RoboCasa-GR1、LIBERO、LIBERO-Plus）。"
+- title: "Adapting Video Models for Robot Control via Motion-guided Asymmetric Prediction"
+  type: paper
+  arxiv: "2610.36624"
+  year: 2026
+  project: https://ismty0805.github.io/mogap/
+  added: 2026-10-28
+  topics: [manipulation]
+  tags: [wam, video-diffusion, auxiliary-loss, sim]
+  takeaway_en: "MoGAP adds a training-only auxiliary path to world action models that corrupts moving regions more than static ones, focusing visual supervision on motion. Reports GR-1 tabletop gains (Fast-WAM 38.8% → 47.5%)."
+  takeaway_zh: "MoGAP 为世界动作模型增加一条仅在训练时使用的辅助预测分支：对运动区域加更重的噪声、以静态区域为上下文重建，使视觉监督聚焦于动态部分；报告在 GR-1 桌面基准上 Fast-WAM 从 38.8% 提升到 47.5%，Cosmos3-Nano 从 52.3% 到 62.3%。"

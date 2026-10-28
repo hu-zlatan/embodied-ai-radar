@@ -341,3 +341,23 @@
   tags: [humanoid, behavior-foundation-model, residual, terrain, depth, unitree-g1, real]
   takeaway_en: "Keeps a humanoid behavior foundation model frozen and trains a small lower-body residual adapter for stairs, gaps and platforms, distilled to onboard depth; tested on four trackers and on a Unitree G1 with SONIC."
   takeaway_zh: "冻结人形行为基础模型，仅训练一个作用于下肢目标的轻量残差适配器来应对台阶、沟壑和平台，并从特权地形信息蒸馏到机载深度；在四种跟踪器上验证，并在 Unitree G1（SONIC）上真机部署。"
+- title: "Whole-Body Humanoid Control via Stochastic Motion Tokenization"
+  type: paper
+  arxiv: "2610.36452"
+  year: 2026
+  venue: Humanoids 2026
+  added: 2026-10-28
+  topics: [learning]
+  tags: [humanoid, motion-tokenizer, whole-body-tracking, text-to-motion, unitree-g1, real]
+  takeaway_en: "A stochastic motion tokenizer gives a high-level generator a compact interface to a whole-body tracking policy; reports better G1 motion reconstruction than FSQ/VQ-VAE and real dance/fight/walk sequences."
+  takeaway_zh: "用随机运动分词器把行为标签或文本生成的动作压缩成离散表示，直接作为全身跟踪策略的参考；报告在 Unitree G1 动作重建上优于 FSQ 与 VQ-VAE，并在真机上执行舞蹈、格斗、行走及 35 秒的格斗转舞蹈序列。"
+- title: "Test-Time Motion Steering for Perceptive Humanoid Fall Recovery"
+  type: paper
+  arxiv: "2610.30061"
+  year: 2026
+  project: https://osheraz.github.io/RISE/
+  added: 2026-10-28
+  topics: [locomotion]
+  tags: [humanoid, fall-recovery, diffusion-planner, perception, unitree-g1, real]
+  takeaway_en: "RISE learns a vocabulary of recovery movements plus a visual diffusion planner whose predicted intent is steered at test time by task costs (heading, speed, path), no retraining; sim and real Unitree G1."
+  takeaway_zh: "RISE 学习一组可组合的起身动作词表，并用视觉扩散规划器预测未来身体状态作为动作意图；推理时用任务代价（朝向、起身速度、路径）引导该意图，无需重新训练即可选择不同起身方式；仿真实验并在 Unitree G1 真机演示。"
