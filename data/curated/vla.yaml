@@ -811,3 +811,13 @@
   tags: [vla, human-video, motion-tokens, reinforcement-learning, cross-embodiment, real]
   takeaway_en: "VLA that reasons in discrete motion tokens (a chain of dynamics) shared across embodiments; predicted futures are scored against what actually happened, so action-free human videos give RL signal. Sim and real tests."
   takeaway_zh: "VLA 用跨本体共享的离散运动 token 链（Chain-of-Dynamics）表达动作思考；预测每条链导致的未来并与真实结果比对来强化，使没有动作标注的人类视频也能提供监督。在仿真与真机上验证人到机器人的迁移。"
+- title: "Retrieve to Act: Motion Primitive Graph Retrieval for Robust VLA Execution"
+  type: paper
+  arxiv: "2610.37215"
+  year: 2026
+  project: https://retrieve2act.github.io/r2a/
+  added: 2026-10-28
+  topics: [manipulation]
+  tags: [test-time, retrieval, robustness, ood, gnn, real, sim]
+  takeaway_en: "Test-time add-on for frozen VLAs: a GNN retrieves future motion primitives from a graph of training demos and gates them into the actions. Reports up to +12% in sim and +40% real (GR00T N1.7, π0.5, StableVLA)."
+  takeaway_zh: "面向冻结 VLA 的测试时插件：把训练示范组织成运动基元图，用 GNN 定位当前执行并检索后续基元，再按维度门控融合到预测动作中；报告在 GR00T N1.7、π0.5 等上仿真最高 +12%、真机 +40%。"

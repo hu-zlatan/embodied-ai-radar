@@ -421,3 +421,23 @@
   tags: [long-horizon, reward-learning, offline-to-online, rlbench, real]
   takeaway_en: "Learns history-aware progress rewards for long-horizon manipulation so missing prerequisites are not rewarded, then refines policies from BC to online RL. Reports 31.8% on 18 held-out RLBench tasks (+9.2 pts)."
   takeaway_zh: "为长时程操作学习依赖执行历史的进度奖励，避免跳过前置步骤也得高分，再从行为克隆过渡到在线强化学习微调策略；报告在 18 个未参与预训练的 RLBench 任务上平均 31.8%（高出最强基线 9.2 个百分点），真机 57.5%。"
+- title: "RoboSTD: Zero-Shot Single-to-Dual Transfer via Sagittal Mirroring for Bimanual Learning"
+  type: paper
+  arxiv: "2610.36685"
+  year: 2026
+  project: https://huahungy.github.io/RoboSTD/
+  added: 2026-10-28
+  topics: [learning]
+  tags: [bimanual, data-augmentation, mirroring, aloha, llm, real, sim]
+  takeaway_en: "Builds pseudo-bimanual demos from single-arm data by sagittal-plane mirroring plus LLM-written coordination constraints. On AgileX ALOHA it reports 2.11× cups collected vs. a single-arm baseline."
+  takeaway_zh: "将单臂示范沿矢状面镜像（观测、本体感觉与动作），再由 LLM 生成时空协调约束，构造伪双臂示范；在 AgileX ALOHA（RoboTwin 仿真与真机）上报告收集杯子数达到单臂基线的 2.11 倍。"
+- title: "cuArms: GPU-Accelerated Conflict-Based Planning for Multi-Arm Manipulation"
+  type: paper
+  arxiv: "2610.36250"
+  year: 2026
+  project: https://cuarms.github.io/
+  added: 2026-10-28
+  topics: [control]
+  tags: [multi-arm, motion-planning, gpu, task-scheduling, real, sim]
+  takeaway_en: "GPU-parallel conflict-based multi-arm planner: reusable per-robot roadmaps, lazy conflict/deadlock resolution and a scheduler proposing task skeletons. Reports real-time first solutions that keep improving."
+  takeaway_zh: "为 GPU 并行而设计的多臂冲突搜索规划器：每台机器人使用可复用的多模态路线图，惰性解决冲突与死锁，并由高层调度器提出任务骨架；报告可实时给出初始解并持续改进运动质量与调度。"

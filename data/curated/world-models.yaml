@@ -409,3 +409,13 @@
   tags: [world-model, counterfactual, policy-improvement, real-world-rl, lora, real]
   takeaway_en: "Rewinds an action-conditioned world model to key decision points to try alternative actions, turning outcomes into action-level supervision; real data keeps correcting the model. Reports +10.7–11.9 pts on 3 real tasks."
   takeaway_zh: "把动作条件世界模型当作反事实引擎：回到关键决策点尝试其他动作并对比结果，得到动作级监督而无需单独的价值模型；真机经验再通过 LoRA 持续修正世界模型。报告在 3 个真实任务上比最强基线高 10.7–11.9 个百分点。"
+- title: "Trace-WAM: Learning to Act via 3D Motion Prediction for World Action Models"
+  type: paper
+  arxiv: "2610.36840"
+  year: 2026
+  project: https://trace-wam.github.io/
+  added: 2026-10-28
+  topics: [manipulation]
+  tags: [wam, 3d-motion, point-tracking, mixture-of-transformers, sim]
+  takeaway_en: "Adds future 3D point-motion prediction as an auxiliary task to a world action model (video/motion/action MoT); inference stays one visual pass. Reports gains over Fast-WAM with few demos and under shift."
+  takeaway_zh: "在世界动作模型中加入未来三维点运动预测作为辅助目标（视频/运动/动作三专家 MoT），推理仍只需一次视觉前向；报告在少量示范和分布偏移下明显优于 Fast-WAM（RoboCasa-GR1、LIBERO、LIBERO-Plus）。"

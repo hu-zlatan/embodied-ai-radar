@@ -319,3 +319,25 @@
   tags: [humanoid, loco-manipulation, behavior-foundation-model, latent-planning, unitree-g1, sim-to-real]
   takeaway_en: "FIBER plans in the latent space of a frozen behavioral foundation model: skills are projected into it, one perceptive flow planner is trained offline. Reports 42.0% mean sim success (latent replay: 11.6%); real G1."
   takeaway_zh: "FIBER 以冻结的行为基础模型（BFM）潜在空间作为统一规划表示，把各任务专用策略投影进该空间，再离线训练单一感知流匹配规划器；仿真中搬箱、开门、抓取平均成功率 42.0%（潜在回放基线 11.6%），并在真实 Unitree G1 上验证。"
+- title: "REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal"
+  type: paper
+  arxiv: "2610.36546"
+  year: 2026
+  venue: Humanoids 2026
+  org: SUSTech
+  project: https://aislab-sustech.github.io/REACH/
+  added: 2026-10-28
+  topics: [locomotion]
+  tags: [humanoid, crawling, rl, unitree-g1, lidar, real]
+  takeaway_en: "Unitree G1 walks at variable height (1.27–0.50 m) and crawls (0.50–0.20 m), with a learned transition policy between modes and a LiDAR planner that sets height targets for confined-space traversal on hardware."
+  takeaway_zh: "让 Unitree G1 在 1.27–0.50 米高度范围内变高步行、在 0.50–0.20 米范围内爬行，并用学习到的过渡策略在两种模式间切换；结合 LiDAR 规划器给出高度目标，在真机上穿越低矮受限空间。"
+- title: "GRAFT: Geometry-Aware Residual Adaptation for Foundation Trackers"
+  type: paper
+  arxiv: "2610.36507"
+  year: 2026
+  project: https://graft-humanoid.github.io/
+  added: 2026-10-28
+  topics: [learning]
+  tags: [humanoid, behavior-foundation-model, residual, terrain, depth, unitree-g1, real]
+  takeaway_en: "Keeps a humanoid behavior foundation model frozen and trains a small lower-body residual adapter for stairs, gaps and platforms, distilled to onboard depth; tested on four trackers and on a Unitree G1 with SONIC."
+  takeaway_zh: "冻结人形行为基础模型，仅训练一个作用于下肢目标的轻量残差适配器来应对台阶、沟壑和平台，并从特权地形信息蒸馏到机载深度；在四种跟踪器上验证，并在 Unitree G1（SONIC）上真机部署。"
