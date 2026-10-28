@@ -299,3 +299,13 @@
   tags: [vln, recovery, memory, grpo, r2r-ce]
   takeaway_en: "Off-route VLN agents keep following their stale history ('behavioral inertia'). MOON adds a deviation judge that clears it and a GRPO-trained recovery policy (<1% params); reports +5.2 / +6.0 points on R2R-CE / RxR-CE."
   takeaway_zh: 发现 VLN 智能体偏离路线后会被历史记忆“惯性”拖住。MOON 给冻结的导航策略加上偏航判断器（判断何时清空历史）和 GRPO 训练的恢复策略，参数增加不到 1%；报告在 R2R-CE / RxR-CE 上分别提升 5.2 / 6.0 个百分点。
+- title: "One Scan is Enough: Demonstration-Free Adaptation for Language-Guided Navigation"
+  type: paper
+  arxiv: "2610.33794"
+  year: 2026
+  venue: NeurIPS 2026
+  added: 2026-10-28
+  topics: [vla]
+  tags: [vln, scene-adaptation, real-to-sim, iphone-scan, real]
+  takeaway_en: "Adapts a language-guided navigation policy to a new building from one iPhone scan, compiled into a training environment with synthetic instructed episodes. Reports 85% real success vs 49% for a demo-fine-tuned baseline."
+  takeaway_zh: "只需用 iPhone 扫描一次新建筑：扫描被编译成训练环境并自动合成带语言指令的导航回合，再用无评论家的闭式 Pareto 效用适配策略；报告真机成功率 85%，用人类示教后训练的基线为 49%。"

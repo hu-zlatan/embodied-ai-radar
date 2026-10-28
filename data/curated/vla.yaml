@@ -769,3 +769,34 @@
   tags: [latent-actions, multi-view, cross-embodiment, human-video, flow-matching]
   takeaway_en: "Latent action model that fuses synchronized camera views to resolve depth and occlusion. Reports 17% better 6D action decodability than single-view and +13.5% policy success (vs +6.2%); human-hand demos help on hardware."
   takeaway_zh: "融合多路同步相机视角的潜在动作模型（LAM），用交叉注意力解决深度与遮挡问题；报告 6D 动作可解码性比单视角高 17%，下游策略成功率提升 13.5%（单视角为 6.2%），真机上用人手演示也比纯动作策略高 20%。"
+- title: "Vision-Language-Action or World-Action? Just Action Models"
+  type: paper
+  arxiv: "2610.37219"
+  year: 2026
+  project: https://y0uroy.github.io/JAM
+  added: 2026-10-28
+  topics: [world-models]
+  tags: [vla, wam, foresight-loss, libero, robotwin]
+  takeaway_en: "Splits the VLA vs WAM debate into backbone, future loss and inference machinery: a foresight loss predicts frozen future features, no video generation. Reports beating FastWAM on LIBERO-Plus (64.5% vs 55.3%)."
+  takeaway_zh: "把 VLA 与世界动作模型（WAM）之争拆成骨干初始化、未来预测损失和推理时是否保留预测模块三个选择：用预测冻结未来特征的前瞻损失，训练与推理都不生成视频；报告在 LIBERO-Plus 上 64.5%，FastWAM 为 55.3%。"
+- title: "PaceVLA: Adaptive Temporal Action Quantization in Vision-Language-Action Models"
+  type: paper
+  arxiv: "2610.25961"
+  year: 2026
+  project: https://pacevla.github.io/
+  added: 2026-10-28
+  topics: [manipulation]
+  tags: [vla, inference-speed, action-chunking, real, sim]
+  takeaway_en: "Lets a VLA pick, at each step, between fine and temporally coarser action decoders: redundant motion runs faster while precision phases stay fine-grained. Tested on 3 sim benchmarks and 6 real tasks."
+  takeaway_zh: "让 VLA 在每一步自行选择细粒度或时间上更粗的动作解码器：冗余动作阶段加速执行，精细接触阶段保持细粒度控制；在 3 个仿真基准和 6 个真实任务上验证效率提升且成功率不降。"
+- title: "OmniBrain-0: A Unified Agentic Model for Embodied Intelligence"
+  type: paper
+  arxiv: "2610.36013"
+  year: 2026
+  org: Xiaomi
+  project: https://public-bots.github.io/OmniBrain-0/
+  added: 2026-10-28
+  topics: [navigation]
+  tags: [embodied-agent, planning, distillation, self-improvement, real]
+  takeaway_en: "Xiaomi's compact embodied agent that plans, tracks progress and recovers from failures across manipulation and navigation, distilled from stronger teachers with a rubric-driven self-improvement loop."
+  takeaway_zh: "小米具身智能团队的轻量统一具身智能体：在操作与导航中负责任务理解、规划、进度跟踪和失败恢复，由更强的教师模型多教师在线蒸馏而来，并配有基于评分细则的自我改进数据飞轮。"

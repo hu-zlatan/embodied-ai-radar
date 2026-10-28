@@ -344,3 +344,25 @@
   tags: [rl, data-generation, imitation-learning, diversity, sim, real]
   takeaway_en: "Uses RL as a demo generator, not a controller: a latent-conditioned policy finds several distinct successful solutions, exported as an imitation dataset; reports 78% real-robot success vs. 39% for the best baseline."
   takeaway_zh: 把强化学习当作示教数据生成器而非部署控制器：以隐变量为条件的策略为同一任务找到多种不同的成功解法，导出为模仿学习数据集；报告真机下游成功率从最强基线的 39% 提升到 78%。
+- title: "HIDRA: Hierarchical Dual-Routing Attention for Replay-Free Lifelong Imitation Learning"
+  type: paper
+  arxiv: "2610.36374"
+  year: 2026
+  venue: NeurIPS 2026
+  code: https://github.com/yfqi/HIDRA
+  added: 2026-10-28
+  topics: [manipulation]
+  tags: [lifelong-learning, imitation-learning, mixture-of-experts, libero]
+  takeaway_en: "Replay-free lifelong imitation learning: hierarchical dual-routing attention retrieves experts by instruction, then refines by context, plus key regularization against drift. Reports beating replay baselines on LIBERO."
+  takeaway_zh: "无回放的终身模仿学习：分层双路由注意力先按指令检索专家、再按上下文细化，并用键级几何正则抑制表征漂移带来的路由干扰；报告在多个 LIBERO 任务序列上优于无回放和有回放基线。"
+- title: "Progress-Guided Preference Generation for Aligning Generative Control Policies"
+  type: paper
+  arxiv: "2610.25692"
+  year: 2026
+  venue: CoRL 2026
+  project: https://pgpg2026.github.io/
+  added: 2026-10-28
+  topics: [manipulation]
+  tags: [preference-learning, diffusion-policy, flow-matching, fine-tuning, long-horizon]
+  takeaway_en: "Fine-tunes diffusion and flow policies with automatic preference labels: rollouts are ranked by progress measured against a few expert demos, no human labels or reward design. Reports beating SFT on long-horizon tasks."
+  takeaway_zh: "用自动生成的偏好标签微调扩散与流匹配策略：以少量专家示教为参照衡量自主回放的顺序进度并据此排序，无需人工标注或手工奖励；报告在长时程操作任务上优于监督微调基线。"

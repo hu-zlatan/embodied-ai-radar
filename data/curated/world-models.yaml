@@ -365,3 +365,36 @@
   tags: [wam, dynamic-manipulation, video-generation, distillation, one-step, real]
   takeaway_en: "World action model for moving targets: forecasts the object's future masks, steers a video model with a Trajectory ControlNet, and distills the pipeline to one-step video-action inference to cut latency."
   takeaway_zh: "面向动态目标的世界动作模型：先预测目标物体的未来掩码轨迹，用 Trajectory ControlNet 引导视频模型生成与轨迹一致的未来，再通过解耦蒸馏实现一步视频-动作推理以降低延迟。"
+- title: "GAWM: A Compact Latent World-Action Model for Multi-Task Robot Manipulation"
+  type: paper
+  arxiv: "2610.37091"
+  year: 2026
+  code: https://github.com/gaoxiang12/ga-wm
+  added: 2026-10-28
+  topics: [manipulation]
+  tags: [wam, dinov3, latent-prediction, robotwin, libero, bimanual]
+  takeaway_en: "Compact (<100M) world-action model: predicts frozen-DINOv3 tokens at two future horizons and decodes action chunks, with no robot or video pretraining. Reports beating billion-parameter WAMs on RoboTwin 2.0."
+  takeaway_zh: "参数不到 1 亿的紧凑世界动作模型：在冻结 DINOv3 特征空间中预测两个未来时刻的 token 并直接回归动作块，无需机器人或视频预训练；报告在 RoboTwin 2.0 上超过十亿参数级 WAM。"
+- title: "TAPESTRY: A Single Backbone for Video Generation and Robot Control"
+  type: paper
+  arxiv: "2610.36823"
+  year: 2026
+  venue: CoRL 2026
+  project: https://tapestry-wam.github.io
+  added: 2026-10-28
+  topics: [manipulation]
+  tags: [wam, video-diffusion, action-tokens, real, sim]
+  takeaway_en: "Turns a pretrained video diffusion transformer into a policy by encoding each action step as one patch in the video latent space; at test time it outputs an action chunk in one DDIM step (84 ms), no video generation."
+  takeaway_zh: "把预训练视频扩散 Transformer 改造成策略：每个时间步的动作编码为视频潜空间中的一个 patch，联合训练视频、视频+动作与纯动作三种扩散目标；测试时一步 DDIM 生成动作块（84 毫秒），无需生成视频。"
+- title: "RynnWorld-Latent: A Cross-Embodiment World Model Conditioned on Universal Latent Actions"
+  type: paper
+  arxiv: "2610.36791"
+  year: 2026
+  org: Alibaba DAMO Academy
+  code: https://github.com/alibaba-damo-academy/RynnWorld-Latent
+  project: https://alibaba-damo-academy.github.io/RynnWorld-Latent.github.io
+  added: 2026-10-28
+  topics: [learning]
+  tags: [world-model, latent-actions, cross-embodiment, human-video, data-generation]
+  takeaway_en: "Cross-embodiment video world model conditioned on RynnLAM's 3D latent actions, pretrained on 23 datasets (~553M frames) of human, robot and sim video; its generated data improves LIBERO and real-robot policies."
+  takeaway_zh: "以 RynnLAM 的三维潜在动作为统一条件接口的跨本体视频世界模型，在 23 个数据集（约 5.5 亿帧）的人类、机器人和仿真视频上预训练；生成的数据提升了 LIBERO 与真机策略成功率。"

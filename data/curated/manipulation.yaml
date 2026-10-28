@@ -391,3 +391,33 @@
   tags: [human-video, data-generation, gaussian-splatting, digital-cousins, vla, real]
   takeaway_en: "Turns one monocular RGB human demo into thousands of robot demos across object instances: Gaussian-splat pose tracking, aligned 'digital cousins', replay in IsaacSim or MuJoCo. Reports VLAs matching teleop-trained ones."
   takeaway_zh: "把一段单目 RGB 人类演示扩展为同类别不同物体上的数千条机器人演示：用 DINOv3 蒸馏的高斯溅射跟踪物体位姿，对齐由照片生成的“数字表亲”，在 IsaacSim 或 MuJoCo 中生成数据（约 2 小时 2000+ 条）；报告所训练的 VLA 在真机上达到或超过遥操作数据训练的策略。"
+- title: "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well"
+  type: paper
+  arxiv: "2610.37652"
+  year: 2026
+  project: https://ian-chuang.github.io/dexsafe/
+  added: 2026-10-28
+  topics: [learning, sim]
+  tags: [dexterous, in-hand, leap-hand, sim2real, safety, real]
+  takeaway_en: "Sim-only RL recipe for in-hand object pose reaching on a LEAP hand, zero-shot to hardware; reports 95.2% of 4,800 unseen goals reached and a tunable residual safety filter that cuts drops by 75%."
+  takeaway_zh: "在仿真中无需人类数据训练 LEAP 灵巧手的手内物体位姿到达策略，零样本迁移到真机；报告在 4800 个未见目标上 95.2% 到达，可调节的残差安全滤波器使掉落减少 75%。"
+- title: "CARD: Contact-Anchored Retargeting for Dexterous Manipulation"
+  type: paper
+  arxiv: "2610.36539"
+  year: 2026
+  project: https://card-retargeting.github.io/
+  added: 2026-10-28
+  topics: [tactile]
+  tags: [dexterous, retargeting, contact, tactile-glove, human-video, real]
+  takeaway_en: "Retargets human hand demos (video, mocap, tactile gloves) by keeping contact-force targets, not just kinematics; a tactile tracking controller replays them. Reports contact kept on 43–78% of frames vs <10%."
+  takeaway_zh: "把人手示教（视频、动捕、触觉手套）重定向到灵巧手时显式保留接触力目标而不只是运动学，并用触觉跟踪控制器回放；报告 43–78% 的接触帧保持接触，纯运动学方法不到 10%。"
+- title: "RoboLongR: Causally Consistent Rewards Teach Robots to Progressively Master Long-Horizon Manipulation"
+  type: paper
+  arxiv: "2610.33863"
+  year: 2026
+  project: https://chenzixuan99.github.io/RoboLongR-public/
+  added: 2026-10-28
+  topics: [learning]
+  tags: [long-horizon, reward-learning, offline-to-online, rlbench, real]
+  takeaway_en: "Learns history-aware progress rewards for long-horizon manipulation so missing prerequisites are not rewarded, then refines policies from BC to online RL. Reports 31.8% on 18 held-out RLBench tasks (+9.2 pts)."
+  takeaway_zh: "为长时程操作学习依赖执行历史的进度奖励，避免跳过前置步骤也得高分，再从行为克隆过渡到在线强化学习微调策略；报告在 18 个未参与预训练的 RLBench 任务上平均 31.8%（高出最强基线 9.2 个百分点），真机 57.5%。"
