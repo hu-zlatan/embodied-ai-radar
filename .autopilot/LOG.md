@@ -349,3 +349,8 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Picks from `.autopilot/candidates.json` (10-28 leftovers): Trace-WAM → world-models; Retrieve to Act → vla; REACH (Humanoids 2026, SUSTech) + GRAFT → locomotion; RoboSTD + cuArms → manipulation; Keeping Contact (RA-L) → control. From the HF review queue: PDRVLA (92 upvotes) + FocusVLA (CoRL 2026) → vla; RoboJudge (CUHK, code) → datasets. JAM gets its code link (repo confirmed live via GitHub search). Five over-length takeaways caught by validate. Curated: 457.
 - verify #111 and #112 passed (all 10 picks + JAM code link). Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: picks from the 10-29 feed; W44 digest Mon 11-02. End of run 38.
+
+## 2026-10-28 — run 39 (~16:50 UTC–)
+
+- Start: CI/Pages/repo-stats/intake green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. No add_repo tool; clone was detached → `main`, pulled. No new feed day until Thu 10-29; HF review queue unchanged (only off-scope items).
+- Picks from `.autopilot/candidates.json` leftovers: MoGAP (motion-focused auxiliary loss for WAMs) → world-models; RepresentNav → navigation; RISE (steerable humanoid fall recovery) + Stochastic Motion Tokenization (Humanoids 2026) → locomotion. Two over-length takeaways caught by validate. Curated: 461.
