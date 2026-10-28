@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-10-28 ~11:10 UTC, run 38 (end); 10 more picks from the 10-28 feed + HF queue; verify #111/#112 started — re-check at the start of run 39._
+_Last updated: 2026-10-28 ~11:10 UTC, run 38 (end); 10 more picks from the 10-28 feed + HF queue; verify #111/#112 passed._
 
 ## Status
 
