@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-28 ~05:20 UTC, run 37 (end); verify #109/#110 passed. 'Rising this week' now live (8 daily snapshots); 16 picks from the 10-28 feed + backlog._
+_Last updated: 2026-10-28 ~11:10 UTC, run 38 (end); 10 more picks from the 10-28 feed + HF queue; verify #111/#112 started — re-check at the start of run 39._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (447 entries, EN/ZH takeaways; 70 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (457 entries, EN/ZH takeaways; 70 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -53,6 +53,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 38: picks Trace-WAM, Retrieve to Act, PDRVLA (HF 92), FocusVLA (CoRL 2026), REACH (Humanoids 2026), GRAFT, RoboSTD, cuArms, Keeping Contact (RA-L), RoboJudge (CUHK); code link added to JAM (y0urOy/JAM, live). GitHub MCP `search_repositories repo:owner/name` works to confirm a repo exists when it is not in repo_stats. Still unpicked from HF queue: HiSTEVE 1.0 (games, off-core), RoboJev (single author, 27B judge; maybe later), HoloBoxing (sim only). Search index 1.0 MB raw / 337 KB gzip (lazy) — revisit at ~1.5 MB.
 
 - Run 37: picks from 10-28: TAPESTRY (CoRL 2026), JAM, GAWM, RynnWorld-Latent, Rollback (AgiBot), ThinkWorld (NVIDIA), OmniBrain-0 (Xiaomi), OpenJaws, SO-101 Bench, DexSafe, CARD, HIDRA (NeurIPS 2026); older backlog: RoboLongR, PaceVLA, PGPG (CoRL 2026), One Scan is Enough (NeurIPS 2026). Still worth a look from 10-28: Trace-WAM (2610.36840), Retrieve to Act (2610.37215), Keeping Contact (RA-L), REACH (Humanoids 2026), cuArms, RoboSTD, GRAFT, RoboJev (HF 9). Skipped: Think Densely Act Sparsely (driving).
 

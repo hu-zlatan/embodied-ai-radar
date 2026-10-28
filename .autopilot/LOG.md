@@ -342,3 +342,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Picks (facts from CI-fetched `.autopilot/candidates.json` / HF review queue; code repos live per repo_stats feed section): TAPESTRY (CoRL 2026), GAWM, RynnWorld-Latent, Rollback → world-models; JAM, PaceVLA, OmniBrain-0, ThinkWorld → vla; DexSafe, CARD, RoboLongR → manipulation; HIDRA (NeurIPS 2026), PGPG (CoRL 2026) → learning; One Scan is Enough (NeurIPS 2026) → navigation; OpenJaws → hardware; SO-101 Bench → datasets. Two over-length takeaways caught before writing. Curated: 447.
 - verify #109 and #110 passed (all 16 picks incl. code/project links); CI green. Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: picks from the 10-29 feed (+ leftovers listed in STATE backlog); W44 digest Mon 11-02 (first with 'Rising on GitHub'). End of run 37.
+
+## 2026-10-28 — run 38 (~10:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats/intake green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. No new feed day until Thu 10-29.
+- Picks from `.autopilot/candidates.json` (10-28 leftovers): Trace-WAM → world-models; Retrieve to Act → vla; REACH (Humanoids 2026, SUSTech) + GRAFT → locomotion; RoboSTD + cuArms → manipulation; Keeping Contact (RA-L) → control. From the HF review queue: PDRVLA (92 upvotes) + FocusVLA (CoRL 2026) → vla; RoboJudge (CUHK, code) → datasets. JAM gets its code link (repo confirmed live via GitHub search). Five over-length takeaways caught by validate. Curated: 457.
+- verify #111/#112 started at run end (#112 covers all picks) — re-check at the start of run 39; fix or drop any failing entry.
+- End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: picks from the 10-29 feed; W44 digest Mon 11-02. End of run 38.
