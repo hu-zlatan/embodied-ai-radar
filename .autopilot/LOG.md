@@ -354,3 +354,5 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 
 - Start: CI/Pages/repo-stats/intake green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. No add_repo tool; clone was detached → `main`, pulled. No new feed day until Thu 10-29; HF review queue unchanged (only off-scope items).
 - Picks from `.autopilot/candidates.json` leftovers: MoGAP (motion-focused auxiliary loss for WAMs) → world-models; RepresentNav → navigation; RISE (steerable humanoid fall recovery) + Stochastic Motion Tokenization (Humanoids 2026) → locomotion. Two over-length takeaways caught by validate. Curated: 461.
+- verify #113 passed (all 4 picks incl. project links). BibTeX metadata fills on the next intake (10-29).
+- End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: picks from the 10-29 feed; W44 digest Mon 11-02. End of run 39.
