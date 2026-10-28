@@ -398,3 +398,14 @@
   tags: [world-model, latent-actions, cross-embodiment, human-video, data-generation]
   takeaway_en: "Cross-embodiment video world model conditioned on RynnLAM's 3D latent actions, pretrained on 23 datasets (~553M frames) of human, robot and sim video; its generated data improves LIBERO and real-robot policies."
   takeaway_zh: "以 RynnLAM 的三维潜在动作为统一条件接口的跨本体视频世界模型，在 23 个数据集（约 5.5 亿帧）的人类、机器人和仿真视频上预训练；生成的数据提升了 LIBERO 与真机策略成功率。"
+- title: "Rollback: Experience Backtracking in World Models for Policy Improvement"
+  type: paper
+  arxiv: "2610.36068"
+  year: 2026
+  org: AgiBot
+  project: https://rollback-wm.github.io/
+  added: 2026-10-28
+  topics: [learning]
+  tags: [world-model, counterfactual, policy-improvement, real-world-rl, lora, real]
+  takeaway_en: "Rewinds an action-conditioned world model to key decision points to try alternative actions, turning outcomes into action-level supervision; real data keeps correcting the model. Reports +10.7–11.9 pts on 3 real tasks."
+  takeaway_zh: "把动作条件世界模型当作反事实引擎：回到关键决策点尝试其他动作并对比结果，得到动作级监督而无需单独的价值模型；真机经验再通过 LoRA 持续修正世界模型。报告在 3 个真实任务上比最强基线高 10.7–11.9 个百分点。"
