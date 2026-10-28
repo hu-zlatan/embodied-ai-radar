@@ -356,3 +356,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Picks from `.autopilot/candidates.json` leftovers: MoGAP (motion-focused auxiliary loss for WAMs) → world-models; RepresentNav → navigation; RISE (steerable humanoid fall recovery) + Stochastic Motion Tokenization (Humanoids 2026) → locomotion. Two over-length takeaways caught by validate. Curated: 461.
 - verify #113 passed (all 4 picks incl. project links). BibTeX metadata fills on the next intake (10-29).
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: picks from the 10-29 feed; W44 digest Mon 11-02. End of run 39.
+
+## 2026-10-28 — run 40 (~22:50 UTC–)
+
+- Start: CI/Pages/repo-stats/intake green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. No new feed day until Thu 10-29.
+- Picks from `.autopilot/candidates.json` leftovers (CI-fetched abstracts; repo live per repo_stats feed): Calibrated for Which Policy? → world-models; MyoAcross → control. Curated: 463. validate + README check + site build clean.
+- End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: picks from the 10-29 feed; W44 digest Mon 11-02. End of run 40.

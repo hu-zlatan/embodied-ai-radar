@@ -429,3 +429,13 @@
   tags: [wam, video-diffusion, auxiliary-loss, sim]
   takeaway_en: "MoGAP adds a training-only auxiliary path to world action models that corrupts moving regions more than static ones, focusing visual supervision on motion. Reports GR-1 tabletop gains (Fast-WAM 38.8% → 47.5%)."
   takeaway_zh: "MoGAP 为世界动作模型增加一条仅在训练时使用的辅助预测分支：对运动区域加更重的噪声、以静态区域为上下文重建，使视觉监督聚焦于动态部分；报告在 GR-1 桌面基准上 Fast-WAM 从 38.8% 提升到 47.5%，Cosmos3-Nano 从 52.3% 到 62.3%。"
+- title: "Calibrated for Which Policy? Conformal Uncertainty for Fixed World Models Under Intervention"
+  type: paper
+  arxiv: "2610.35877"
+  year: 2026
+  code: https://github.com/noumenal-ai/conformal-realrobot-lab
+  added: 2026-10-28
+  topics: [learning]
+  tags: [world-model, uncertainty, conformal-prediction, distribution-shift, theory, real]
+  takeaway_en: "Shows a fixed world model's uncertainty can break when the deployment policy changes; reweights conformal calibration by a learned state-action ratio. Reports 90% sets covering 55.0% vs 90.9% on real Franka data."
+  takeaway_zh: "指出部署策略一变，固定世界模型的不确定性校准就可能失效；用域分类器学到的状态-动作密度比做加权共形校准，并给出覆盖率保证（部分用 Lean 4 形式化验证）。报告在真实 Franka 轨迹上，普通 90% 共形集合仅覆盖 55.0%，加权后为 90.9%。"
