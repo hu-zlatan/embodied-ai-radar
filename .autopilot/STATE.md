@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-10-28 ~05:20 UTC, run 37. 'Rising this week' now live (8 daily snapshots); 16 picks from the 10-28 feed + backlog._
+_Last updated: 2026-10-28 ~05:20 UTC, run 37 (end); verify #109/#110 passed. 'Rising this week' now live (8 daily snapshots); 16 picks from the 10-28 feed + backlog._
 
 ## Status
 
