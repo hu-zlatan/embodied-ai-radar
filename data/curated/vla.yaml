@@ -773,6 +773,7 @@
   type: paper
   arxiv: "2610.37219"
   year: 2026
+  code: https://github.com/y0urOy/JAM
   project: https://y0uroy.github.io/JAM
   added: 2026-10-28
   topics: [world-models]
@@ -821,3 +822,23 @@
   tags: [test-time, retrieval, robustness, ood, gnn, real, sim]
   takeaway_en: "Test-time add-on for frozen VLAs: a GNN retrieves future motion primitives from a graph of training demos and gates them into the actions. Reports up to +12% in sim and +40% real (GR00T N1.7, π0.5, StableVLA)."
   takeaway_zh: "面向冻结 VLA 的测试时插件：把训练示范组织成运动基元图，用 GNN 定位当前执行并检索后续基元，再按维度门控融合到预测动作中；报告在 GR00T N1.7、π0.5 等上仿真最高 +12%、真机 +40%。"
+- title: "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations"
+  type: paper
+  arxiv: "2610.37381"
+  year: 2026
+  added: 2026-10-28
+  topics: [world-models]
+  tags: [vla, physical-dynamics, future-prediction, ecot, public-data, sim]
+  takeaway_en: "Light module turns VLM features into 'physical tokens' trained to predict future RGB, depth and flow features (with world-model supervision); no online video generation. Reports 99.3% LIBERO, 93.6% RoboTwin 2.0."
+  takeaway_zh: "轻量物理动力学模块从视觉-语言特征中提取“物理 token”，通过预测未来 RGB、深度和光流特征（并辅以冻结视频世界模型监督）来学习，推理时无需在线生成视频；仅用公开数据训练，报告 LIBERO 99.3%、RoboTwin 2.0 93.6%。"
+- title: "FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models"
+  type: paper
+  arxiv: "2610.31423"
+  year: 2026
+  venue: CoRL 2026
+  org: ISCAS
+  added: 2026-10-28
+  topics: [manipulation]
+  tags: [vla, multi-view, view-routing, intent-prediction, real, sim]
+  takeaway_en: "Finds VLAs over-rely on the wrist camera; predicts future interaction intent from past actions to route between global and wrist views per stage. Reports +10.1 pp over π0.5 on RoboTwin 2.0 and 71.7% → 85.0% real."
+  takeaway_zh: "发现现有 VLA 过度依赖腕部相机；根据历史动作预测未来交互意图，按任务阶段在全局与腕部视角间动态路由；报告在 RoboTwin 2.0 上比 π0.5 高 10.1 个百分点，真机成功率由 71.7% 提升到 85.0%。"
