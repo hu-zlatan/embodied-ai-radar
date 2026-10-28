@@ -126,29 +126,6 @@
    "fetched": "2026-10-28"
   },
   {
-   "id": "2610.36624",
-   "title": "Adapting Video Models for Robot Control via Motion-guided Asymmetric Prediction",
-   "published": "2026-10-28",
-   "topics": [
-    "world-models"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://ismty0805.github.io/mogap/"
-   ],
-   "comment": "Project page: https://ismty0805.github.io/mogap/",
-   "authors": [
-    "Taeyoung Kim",
-    "Junyoung Sung",
-    "Heeseung Kwon",
-    "Minseop Kim",
-    "Jinwoo Shin"
-   ],
-   "abstract": "World Action Models (WAMs) leverage pretrained video generative models for robotic control by jointly predicting future visual observations and actions. The visual prediction objective plays a key role in adapting pretrained video representations to the target robot domain. Yet standard visual prediction inherited from video pretraining treats all visual regions uniformly, despite their differing relevance to robotic control. We therefore investigate the spatial allocation of visual supervision in WAMs and show that focusing supervision on dynamic regions can substantially improve policy performance. Building on this finding, we introduce Motion-Guided Asymmetric Prediction (MoGAP), which augments WAM training with motion-focused visual prediction. MoGAP allocates noise asymmetrically across regions, training the model to reconstruct more heavily corrupted dynamic regions using less corrupted static regions as context. MoGAP is trained alongside standard video-action prediction through a training-only auxiliary prediction path within the shared video diffusion backbone. It uses motion cues derived directly from training videos, requiring neither an external teacher nor additional modalities. Across robot manipulation benchmarks and WAM architectures, MoGAP consistently improves policy performance, increasing success rates on the GR-1 tabletop benchmark from 38.8% to 47.5% for Fast-WAM (Wan2.2-5B) and from 52.3% to 62.3% for Cosmos3-Nano.",
-   "fetched": "2026-10-28"
-  },
-  {
    "id": "2610.36535",
    "title": "A generalist policy for muscle-driven control across individual musculoskeletal models",
    "published": "2026-10-28",
@@ -223,26 +200,6 @@
     "Alberto Quattrini Li"
    ],
    "abstract": "As expansion and scalability in underwater oper- ations becomes more important and challenging, autonomous underwater vehicles (AUVs) become more relevant and the necessity for reliable autonomy more critical. A fundamental challenge in any autonomous underwater operation, from control to safe navigation and mapping, is state estimation; a notorious hard problem to address, especially in low visibility conditions. In this paper, we tackle this problem, by presenting SVIn+, a multi-sensor framework for robust state estimation of AUVs equipped with an IMU, cameras, a water-pressure sensor, a Doppler Velocity Log (DVL), and a compact 3D sonar. This framework extends an established open-source state-of-the-art visual-inertial SLAM, SVIn, by integrating water-pressure and DVL measurements into a tightly-coupled nonlinear optimiza- tion formulation resulting in improved estimates. To leverage the structural information of recently available 3D acoustic sonars while maintaining computational efficiency, we introduce a hierarchical architecture that incorporates estimates from a decoupled front-end via KISS-ICP, treated as relative pose factors within the factor graph. The proposed framework is validated through field deployments in a shipwreck and coral reef, demonstrating drift mitigation and global consistency. To support further research in underwater multi-modal fusion, the code and the datasets can be found on project website https://cmburgul.github.io/projects/svin+/ https://dartmouthrobotics.github.io/svin-plus",
-   "fetched": "2026-10-28"
-  },
-  {
-   "id": "2610.36452",
-   "title": "Whole-Body Humanoid Control via Stochastic Motion Tokenization",
-   "published": "2026-10-28",
-   "topics": [
-    "locomotion",
-    "learning"
-   ],
-   "venue": "Humanoids 2026",
-   "code": [],
-   "project": [],
-   "comment": "Accepted to the 2026 IEEE-RAS International Conference on Humanoid Robots (Humanoids 2026). (c) 2026 IEEE. Personal use of this material is permitted. Permission from IEEE must be obtained for all oth",
-   "authors": [
-    "Michael Drolet",
-    "Oleg Arenz",
-    "Jan Peters"
-   ],
-   "abstract": "While velocity-commanded RL policies are effective for controlling quadrupeds, they are a limited interface for humanoids that need to perform complex whole-body motions. Furthermore, RL tracking policies for whole-body motions typically have limited information about the desired future motion, preventing them from performing controlled deviations to achieve long-term task success; such information is particularly relevant when a controller must prepare for transitions between behaviors. We address these challenges using concise motion representations that can be generated by a high-level controller, given a behavior label or text command. These representations can be fed directly into a tracking policy to provide a detailed motion reference. Our method exhibits a high degree of flexibility in performing real-world robot motions such as dancing, fighting, or walking based on conditional information. At matched capacity, our adopted stochastic motion tokenizer reconstructs motions from the Unitree G1 at a level that exceeds state-of-the-art approaches such as finite scalar quantization (FSQ) and the vector-quantized autoencoder (VQ-VAE). The resulting discrete interface conditions whole-body tracking policies that execute generated dance, fight, and walk motions lasting 16.8 s each and a 35 s fight-to-dance sequence on a physical Unitree G1.",
    "fetched": "2026-10-28"
   },
   {
@@ -1025,39 +982,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.31762",
-   "title": "See What I Need, Dream What I Want: A Navigation Foundation Model on a Self-Constructed Representation Space",
-   "published": "2026-10-26",
-   "topics": [
-    "navigation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://wang-yinxi.github.io/representnav/"
-   ],
-   "comment": "28 pages. Project page: https://wang-yinxi.github.io/representnav/",
-   "authors": [
-    "Jiawei Chen",
-    "Yinxi Wang",
-    "Zihan Yang",
-    "Meijun Gao",
-    "Yaowei Liu",
-    "Shuming Zhang",
-    "Zecheng Li",
-    "Xiangju Mi",
-    "Yuxuan Liu",
-    "Runzhong Huang",
-    "Tianlin Li",
-    "Xun Zhang",
-    "Zhengyang Wang",
-    "Xu Miao",
-    "Tong Yang"
-   ],
-   "abstract": "What visual representation should a navigation policy act on? Navigation policies built on vision foundation models largely leave representation design to the encoders' pretraining objectives. We present RepresentNav, a navigation foundation model built on a self-constructed representation space: a visual representation constructed by the policy's own objectives from vision foundation models. RepresentNav builds this space with Representation Residuals, a compact three-layer transformer that attends over features spanning the full depth of multiple complementary vision foundation models, so that the policy learns to see what it needs for navigation. In the same space it dreams what it wants: before every action a latent chain-of-thought predicts the representation of the scene a moment ahead. The dream is trained end-to-end with the policy as a joint-embedding predictive architecture (JEPA), with a next-representation prediction loss and a regularizer on its targets. RepresentNav sets a new state of the art on VLNVerse, VLN-CE R2R, EVT-Bench, and two point-goal benchmarks, and its gains carry over to a physical robot amid clutter and moving people. On VLNVerse fine-grained, RepresentNav achieves 83.80% success, outperforming the previous state of the art by 20.05 percentage points, and on EVT-Bench distracted tracking it reaches 85.5% with a single camera (+10.1). With the same encoders, the self-constructed space clearly outperforms concatenating their outputs and learns to weight their layers unevenly, and a dream in it cuts collisions by a quarter. A single dreamed latent decodes into the depth, semantics, and 3D occupancy of the scene a moment ahead, more accurately than pretrained encoders applied to the real future frame, although occupancy is never supervised, and the rollout tracks the robot's own motion over the next second: the dream emerges as a compact latent world model.",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.31670",
    "title": "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success",
    "published": "2026-10-23",
@@ -1348,27 +1272,6 @@
     "Jeong Joon Park"
    ],
    "abstract": "Existing world models typically perceive a scene through current visual frame or a narrow history window. However, these observations may not reveal the physics properties that determine transition dynamics, such as an object's mass distribution, joint damping, or surface friction. Without calibrating these physics factors for world models, predictions tend to regress toward an empirical prior and induce severe drift in novel test scenes. To this end, we propose PhysiCalWorld, which calibrates action-conditioned world models to the instance-specific dynamics via in-context prompting, without fine-tuning or analytical physics modeling. Our method encodes an exploratory interaction clip collected within the test scene into a compact physics descriptor token, which grounds subsequent predictions in the scene's actual physical behavior. PhysiCalWorld is trained end-to-end with the latent prediction loss alone, without physics labels. At inference time, the descriptor token is extracted once and can be reused across rollouts with negligible compute overhead. We evaluate PhysiCalWorld across four environments covering diverse physics variations and show that it substantially improves rollout prediction accuracy and visual planning success rate. The learned descriptors also form a physically structured latent space and generalize beyond the physics ranges seen during training.",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.30061",
-   "title": "Test-Time Motion Steering for Perceptive Humanoid Fall Recovery",
-   "published": "2026-10-22",
-   "topics": [
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://osheraz.github.io/RISE/"
-   ],
-   "comment": null,
-   "authors": [
-    "Osher Azulay",
-    "Cheng-Lin Hsieh",
-    "Stella X. Yu"
-   ],
-   "abstract": "Humanoid fall recovery requires selecting a motion that suits both the surrounding scene and the task. The same fallen pose can admit several ways to stand, with different routes, support transitions, and final headings. Yet reliable recovery alone does not provide control over which of these alternatives the robot executes. Steering this choice requires anticipating the physical consequences of a requested movement. We present RISE, an approach to perceptive humanoid recovery that lets task objectives steer how the robot returns to standing at inference time. It builds on two insights: diverse recoveries can be composed from shared movements, and anticipating how these movements unfold allows recovery to be steered toward a task objective. We learn a recovery vocabulary that connects intended movements to motor actions through sensory feedback. A visual diffusion planner learns from executions of this vocabulary to predict motion intent as future body states. Task costs guide this prediction toward a desired heading, rise speed, or path. The planner then generates motion latents conditioned on the steered intent, allowing the requested movement to shape its execution. Simulation experiments demonstrate diverse recoveries, terrain adaptation, and test-time steering without retraining, complemented by real-world demonstrations on a Unitree G1. Project page: https://osheraz.github.io/RISE/",
    "fetched": "2026-10-26"
   },
   {
