@@ -334,3 +334,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Picks from `.autopilot/candidates.json`: DISCO (CoRL 2026 Oral), Real2Sem2Real → manipulation; SWAP, FIBER → locomotion; Multi-View Latent Action Pretraining → vla. Four over-length takeaways caught before writing. Curated: 431.
 - verify #107/#108 passed (all 5 picks incl. project links). Dispatched intake to fill BibTeX metadata.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: 'Rising this week' check from 10-28; picks from the 10-28 feed; W44 digest Mon 11-02. End of run 36.
+
+## 2026-10-28 — run 37 (~04:50 UTC–)
+
+- Start: CI/Pages/verify/repo-stats green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. No scheduled intake yet → dispatched intake.yml; 10-28 feed landed 04:50 (91 papers), repo-stats followed (8th daily star snapshot).
+- 'Rising this week' now renders on the home page with real 7-day gains (lerobot +163, mujoco +127, …); +N badges on the most-starred list too. No code change needed.
+- Picks (facts from CI-fetched `.autopilot/candidates.json` / HF review queue; code repos live per repo_stats feed section): TAPESTRY (CoRL 2026), GAWM, RynnWorld-Latent, Rollback → world-models; JAM, PaceVLA, OmniBrain-0, ThinkWorld → vla; DexSafe, CARD, RoboLongR → manipulation; HIDRA (NeurIPS 2026), PGPG (CoRL 2026) → learning; One Scan is Enough (NeurIPS 2026) → navigation; OpenJaws → hardware; SO-101 Bench → datasets. Two over-length takeaways caught before writing. Curated: 447.

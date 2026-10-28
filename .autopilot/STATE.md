@@ -1,11 +1,11 @@
 # State
 
-_Last updated: 2026-10-27 ~23:15 UTC, run 36 (end). Lab pages live; verify #108 passed (all 5 run-36 picks incl. project links)._
+_Last updated: 2026-10-28 ~05:20 UTC, run 37. 'Rising this week' now live (8 daily snapshots); 16 picks from the 10-28 feed + backlog._
 
 ## Status
 
 v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys succeed).
-- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (431 entries, EN/ZH takeaways; 70 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
+- Data: `data/topics.yaml` (12 topics incl. `perception`, `control`, `learning` + keyword rules), `data/resources.yaml` (related lists / courses / docs / communities → README section + site `resources.html`), `data/embodiments.yaml` (robot-type rules, computed at build time), `data/curated/<topic>.yaml` (447 entries, EN/ZH takeaways; 70 agent picks with `added:`; curated `venue:` shows as a badge), `data/arxiv/YYYY/MM-DD.json` (794 papers, 2026-10-12..22).
 - Intake: RSS → API backfill → **enrichment** (id_list API, 50/request) adds `comment`, project/code links from comments, `enriched: true`; `venue_of()` turns comments into venue badges (accepted only).
 - Site: search + filters (topic, robot type, source, has code) with shareable URLs (`?q=&topic=&robot=&src=&code=1`), venue badges, per-topic Atom feeds `topics/<id>.xml`, OG image `assets/og.png`. Index ~300 KB; abstracts only for last 21 days.
 - **GitHub stats**: `repo-stats.yml` (weekly Sun 06:37 UTC + on curated/resources changes + dispatch) runs `scripts/repo_stats.py` → `data/repo_stats.json` (stars, last push, archived; ~92 repos; failures keep old values). Site shows ★ counts on curated cards/search results, an 'archived' badge, and a home-page 'Most-starred open-source code' top-12 list. README does not show stars (would churn `build_readme --check`).
@@ -49,10 +49,12 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 1. Scheduled runs: on 10-23 the 01:11/02:17/04:53 slots never fired; first scheduled intake landed 05:57 UTC, then 07:36, 09:37, 12:51, 15:42, 19:21. So the feed lands ~06:00 UTC — acceptable; no owner action. arXiv does not announce on Sat/Sun nights, so the next new feed day is Mon 10-26 (~00:00 UTC announcement).
 2. Picks: start from `.autopilot/candidates.json` (every recent uncurated paper with code/project/venue, full abstracts) and `.autopilot/review_queue.json` (HF upvotes). Review the newest feed (10-26 reviewed in runs 29–30; 10-23 reviewed in run 17: OpenTac, GelSlim 5.0, one-step flow-matching, UniFlowWAM), papers with code first, promote 2–5 notable ones with `added: <date>` and careful EN/ZH takeaways (≤220 chars EN — validate with `set -o pipefail`; phrase results as "reports").
 3. Weekly digest: W43 written (dispatched 10-26 ~04:55 UTC, run 29 added a short bilingual intro). Do the same for W44 on Mon 11-02 (first one with 'Rising on GitHub'). weekly.yml commit message now names the digest week.
-3b. From ~2026-10-28: check 'Rising this week' renders with real data (needs 7 days of `data/repo_stars_history.json`). Digest 'Rising on GitHub' section was added in run 16 (first real one: 2026-W44, written Mon 11-02).
+3b. Done run 37: 'Rising this week' renders with real data (7-day span; top: lerobot +163, mujoco +127). Digest 'Rising on GitHub' section was added in run 16 (first real one: 2026-W44, written Mon 11-02).
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 37: picks from 10-28: TAPESTRY (CoRL 2026), JAM, GAWM, RynnWorld-Latent, Rollback (AgiBot), ThinkWorld (NVIDIA), OmniBrain-0 (Xiaomi), OpenJaws, SO-101 Bench, DexSafe, CARD, HIDRA (NeurIPS 2026); older backlog: RoboLongR, PaceVLA, PGPG (CoRL 2026), One Scan is Enough (NeurIPS 2026). Still worth a look from 10-28: Trace-WAM (2610.36840), Retrieve to Act (2610.37215), Keeping Contact (RA-L), REACH (Humanoids 2026), cuArms, RoboSTD, GRAFT, RoboJev (HF 9). Skipped: Think Densely Act Sparsely (driving).
 
 - Run 36: lab pages; picks DISCO (CoRL 2026 Oral) + Real2Sem2Real → manipulation, SWAP + FIBER → locomotion, Multi-View LAM → vla (orgs left blank: candidates.json has no affiliations). Still worth a look: RoboLongR (2610.33863, project), PaceVLA (2610.25961), Progress-Guided Preference Generation (CoRL 2026), One Scan is Enough, Think Densely Act Sparsely (NeurIPS 2026). Idea: lab filter in search (`?lab=`) if lab pages get traffic.
 
