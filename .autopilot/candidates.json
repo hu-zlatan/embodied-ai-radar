@@ -126,117 +126,6 @@
    "fetched": "2026-10-28"
   },
   {
-   "id": "2610.37215",
-   "title": "Retrieve to Act: Motion Primitive Graph Retrieval for Robust VLA Execution",
-   "published": "2026-10-28",
-   "topics": [
-    "vla"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://retrieve2act.github.io/r2a/"
-   ],
-   "comment": "20 pages, 9 figures, 7 tables",
-   "authors": [
-    "Pham Tri Quang",
-    "Bao-Ngoc Dao",
-    "Minh Duc Nguyen",
-    "Duc-Duy Nguyen",
-    "Hung T. Ho",
-    "Linh Dang Le",
-    "Trong-Bao Ho",
-    "Thien-Loc Ha",
-    "Tan Q. Nguyen",
-    "Tuan Dam",
-    "Vu N. Duong",
-    "Daniel Sonntag",
-    "Ngan Le",
-    "Khoa D. Doan",
-    "Jan Peters",
-    "An Thai Le",
-    "Duy M. H. Nguyen",
-    "Vien Anh Ngo"
-   ],
-   "abstract": "Vision-Language-Action (VLA) policies demonstrate remarkable semantic generalization, yet remain highly vulnerable to out-of-distribution (OOD) visual shifts during execution. While existing test-time methods attempt to suppress spurious visual cues, they fundamentally overlook the rich, uncorrupted kinematic priors embedded in the policy's own training experience. We introduce Retrieve to Act (R2A), a test-time scaling framework that formulates OOD robustness purely as a geometric motion primitive retrieval problem. R2A bypasses fragile visual features by structuring successful training demonstrations into an offline spatiotemporal motion primitive graph. During inference, a query-dependent Graph Neural Network dynamically localizes the robot's ongoing execution within this graph, retrieving structurally compatible future motion primitives. These retrieved geometric priors are then seamlessly harmonized with the frozen VLA's predicted actions via a learned, dimension-wise gating mechanism, adaptively rectifying erroneous spatial trajectories while preserving the policy's local reactivity. Extensive experiments across three state-of-the-art VLA architectures, GR00T N1.7, $π_{0.5}$, and StableVLA, demonstrate that R2A consistently and significantly enhances robustness against diverse contextual perturbations. R2A achieves absolute success rate improvements of up to +12% in simulation benchmarks (LIBERO-Plus, RoboTwin2.0-Plus) and +40% in real-world deployments, without requiring any finetuning of the base policies. Project page: https://retrieve2act.github.io/r2a/",
-   "fetched": "2026-10-28"
-  },
-  {
-   "id": "2610.36961",
-   "title": "Keeping Contact: Task-Adaptive Friction Margins for Bimanual Non-Prehensile Manipulation",
-   "published": "2026-10-28",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": "RA-L",
-   "code": [],
-   "project": [
-    "https://keeping-contact.github.io/"
-   ],
-   "comment": "Accepted for publication in IEEE Robotics and Automation Letters (RA-L)",
-   "authors": [
-    "Qian Ying Lee",
-    "Lin Yang",
-    "Domenico Campolo"
-   ],
-   "abstract": "Maintaining contact in non-prehensile manipulation requires more than nominal friction cone feasibility: a force barely inside the cone and one well inside it are both feasible, but they provide different margins against slip and contact loss. This paper uses signed friction distance to measure friction margin in force space and derives a task-adaptive margin from the force correction needed to balance pivot moment deviations in bimanual tilting. The resulting contact margins are embedded in a sequence of second-order cone programs (SOCPs), each giving a globally optimal contact force solution at a tilt angle. The optimizer balances the object about an environmental pivot while keeping robot and pivot contact forces away from the nominal friction boundary. Optimizer-level results show interpretable force redistribution and adaptation to object property changes. Real-world experiments demonstrate successful execution under object property variations and model mismatch, while fixed margin and no-margin comparisons illustrate the importance of adapting the margin to task demand. These results support signed friction distance margins as a force planning mechanism for maintaining contact in bimanual non-prehensile manipulation. Project page: https://keeping-contact.github.io/",
-   "fetched": "2026-10-28"
-  },
-  {
-   "id": "2610.36840",
-   "title": "Trace-WAM: Learning to Act via 3D Motion Prediction for World Action Models",
-   "published": "2026-10-28",
-   "topics": [
-    "world-models"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://trace-wam.github.io/"
-   ],
-   "comment": "11 pages, 6 figures. Project page: https://trace-wam.github.io/",
-   "authors": [
-    "Xu Hu",
-    "Changjie Wu",
-    "Linzhe Shi",
-    "Hang Zhang",
-    "Chen Yang",
-    "Lingjun Zhang",
-    "Guowen Zhang",
-    "Mu Xu",
-    "Junran Peng",
-    "Qing Li",
-    "Zhaoxiang Zhang"
-   ],
-   "abstract": "World Action Models (WAMs) learn representations for robot control by coupling future visual prediction with action generation. Successful manipulation depends primarily on how the robot and task-relevant objects evolve, whereas future-video prediction must also reconstruct the appearance and background of the entire scene. We therefore propose Trace-WAM, which augments video-action learning with future 3D motion prediction as an auxiliary objective. This objective supervises temporal point correspondence together with image-plane displacement and depth change, directly describing the interaction dynamics and spatial changes involved in manipulation. To this end, we adopt a three-branch Mixture-of-Transformer (Tri-MoT) architecture to jointly learn video prediction, motion prediction, and action generation. The motion expert predicts future trajectories from current visual features, allowing motion supervision to shape the representations used for action generation. Because the action expert does not consume predicted trajectories, inference retains the current-observation policy path: a single visual forward pass followed by action denoising. Experiments on RoboCasa-GR1, LIBERO, and LIBERO-Plus demonstrate strong in-distribution performance and out-of-distribution generalization, with particularly clear gains over Fast-WAM under limited demonstrations and distribution shifts.",
-   "fetched": "2026-10-28"
-  },
-  {
-   "id": "2610.36685",
-   "title": "RoboSTD: Zero-Shot Single-to-Dual Transfer via Sagittal Mirroring for Bimanual Learning",
-   "published": "2026-10-28",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://huahungy.github.io/RoboSTD/"
-   ],
-   "comment": null,
-   "authors": [
-    "Hongyu Wu",
-    "Chong Liu",
-    "Shaoxuan Xie",
-    "Shaqi Luo",
-    "Hanyu Feng",
-    "Shihan Wu",
-    "Guocai Yao"
-   ],
-   "abstract": "Bimanual robot manipulation plays an important role in real-world robotic applications, but the high cost of collecting bimanual demonstrations limits the scalable development of bimanual policy learning. Meanwhile, existing single-arm manipulation data are difficult to directly transfer to bimanual systems due to the Single-to-Dual gap in action spaces, coordination requirements, and arm-side spatial preference. To address this issue, we propose RoboSTD, a zero-shot Single-to-Dual data construction method for bimanual robot learning. RoboSTD first applies sagittal-plane mirroring to observations, proprioception, and actions to construct executable contralateral pseudo-demonstrations. It then uses an LLM to generate structured spatio-temporal coordination constraints that guide the reconstruction of pseudo-bimanual supervision across workspace regions and task stages. We evaluate RoboSTD on the AgileX ALOHA platform in both RoboTwin simulation and real-world settings. Experiments demonstrate the effectiveness of RoboSTD for bimanual policy learning. Without requiring additional bimanual demonstrations, RoboSTD increases the average number of collected cups to 2.11x that of the single-arm baseline in the cup collection task. Project page: https://huahungy.github.io/RoboSTD/",
-   "fetched": "2026-10-28"
-  },
-  {
    "id": "2610.36624",
    "title": "Adapting Video Models for Robot Control via Motion-guided Asymmetric Prediction",
    "published": "2026-10-28",
@@ -257,30 +146,6 @@
     "Jinwoo Shin"
    ],
    "abstract": "World Action Models (WAMs) leverage pretrained video generative models for robotic control by jointly predicting future visual observations and actions. The visual prediction objective plays a key role in adapting pretrained video representations to the target robot domain. Yet standard visual prediction inherited from video pretraining treats all visual regions uniformly, despite their differing relevance to robotic control. We therefore investigate the spatial allocation of visual supervision in WAMs and show that focusing supervision on dynamic regions can substantially improve policy performance. Building on this finding, we introduce Motion-Guided Asymmetric Prediction (MoGAP), which augments WAM training with motion-focused visual prediction. MoGAP allocates noise asymmetrically across regions, training the model to reconstruct more heavily corrupted dynamic regions using less corrupted static regions as context. MoGAP is trained alongside standard video-action prediction through a training-only auxiliary prediction path within the shared video diffusion backbone. It uses motion cues derived directly from training videos, requiring neither an external teacher nor additional modalities. Across robot manipulation benchmarks and WAM architectures, MoGAP consistently improves policy performance, increasing success rates on the GR-1 tabletop benchmark from 38.8% to 47.5% for Fast-WAM (Wan2.2-5B) and from 52.3% to 62.3% for Cosmos3-Nano.",
-   "fetched": "2026-10-28"
-  },
-  {
-   "id": "2610.36546",
-   "title": "REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal",
-   "published": "2026-10-28",
-   "topics": [
-    "locomotion"
-   ],
-   "venue": "Humanoids 2026",
-   "code": [],
-   "project": [
-    "https://aislab-sustech.github.io/REACH/"
-   ],
-   "comment": "To appear at IEEE Humanoids 2026; Project page https://aislab-sustech.github.io/REACH/",
-   "authors": [
-    "Shengzhang Xu",
-    "Yuning Guo",
-    "Weiyi Hu",
-    "Yifeng Xu",
-    "Zhongyu Li",
-    "He Kong"
-   ],
-   "abstract": "Humanoid locomotion in confined spaces requires continuous height adaptation across multiple locomotion modes, yet most existing approaches remain limited to height-adjustable bipedal walking. We present REACH, an RL-based hierarchical framework that enables a Unitree G1 humanoid to traverse height-constrained environments through variable-height bipedal walking and crawling. The learned policies regulate body height over complementary command ranges of 1.27--0.50m in bipedal locomotion and 0.50--0.20m in crawling, extending traversal beyond the clearance limits of crouched walking. To address contact-rich crawling dynamics, we employ a history-conditioned latent representation that captures terrain and interaction context from proprioceptive observations. A bidirectional transition policy further connects crouched bipedal locomotion and crawling across large kinematic and contact discontinuities. These skills are integrated with a LiDAR-based planner that converts point clouds into collision-free three-dimensional paths and locomotion commands, including proactive height targets. Real-world experiments demonstrate accurate height and velocity tracking, robust terrain traversal, reliable mode transitions and confined-space traversal with the proposed pipeline. Code and videos are available at https://aislab-sustech.github.io/REACH/.",
    "fetched": "2026-10-28"
   },
   {
@@ -337,33 +202,6 @@
    "fetched": "2026-10-28"
   },
   {
-   "id": "2610.36507",
-   "title": "GRAFT: Geometry-Aware Residual Adaptation for Foundation Trackers",
-   "published": "2026-10-28",
-   "topics": [
-    "vla"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://graft-humanoid.github.io/"
-   ],
-   "comment": "8 pages, 6 figures, 3 tables. Project page: https://graft-humanoid.github.io/",
-   "authors": [
-    "Liang Li",
-    "Guoyao Zhang",
-    "Xingyu Chen",
-    "Sikai Wu",
-    "Qianyang Wu",
-    "Yuhang Lin",
-    "Renjing Xu",
-    "Mingliang Zhou",
-    "Diyun Xiang"
-   ],
-   "abstract": "Humanoid behavior foundation models (BFMs) provide reusable whole-body motion priors: given a kinematic reference, they generate coordinated joint commands for motion replay, teleoperation, and VLA control. However, trained primarily on flat-ground motion, BFMs lack an explicit mechanism to adapt foot placement, swing clearance, and contact timing to local terrain. Many terrain-aware BFM approaches address this limitation by retraining or fine-tuning the tracker together with perception, incurring substantial data and computation costs while coupling ordinary tracking to the perception pathway. To bridge this gap, we propose GRAFT, a geometry-aware residual adaptation framework for frozen behavior trackers. GRAFT preserves the BFM parameters and motion-reference interface, while a lightweight adapter adds terrain-conditioned corrections only to lower-body execution targets. The adapter is trained with task and foot-geometry rewards, regularized to suppress unnecessary corrections on flat ground, and distilled from privileged terrain observations to onboard depth. Because the frozen BFM already provides whole-body reference tracking and nominal locomotion, GRAFT reduces terrain learning to a focused execution-adaptation problem. We instantiate the framework on four frozen trackers and evaluate stairs, gaps, and platforms in simulation. We further validate it through real-world deployment on a Unitree G1, where the adapted SONIC tracker traverses terrain with onboard depth and unmodified references.",
-   "fetched": "2026-10-28"
-  },
-  {
    "id": "2610.36454",
    "title": "SVIn+: Multi-Modal Framework for Robust Underwater State Estimation using 3D Sonar, Visual-Inertial, Water-Pressure, and DVL",
    "published": "2026-10-28",
@@ -405,29 +243,6 @@
     "Jan Peters"
    ],
    "abstract": "While velocity-commanded RL policies are effective for controlling quadrupeds, they are a limited interface for humanoids that need to perform complex whole-body motions. Furthermore, RL tracking policies for whole-body motions typically have limited information about the desired future motion, preventing them from performing controlled deviations to achieve long-term task success; such information is particularly relevant when a controller must prepare for transitions between behaviors. We address these challenges using concise motion representations that can be generated by a high-level controller, given a behavior label or text command. These representations can be fed directly into a tracking policy to provide a detailed motion reference. Our method exhibits a high degree of flexibility in performing real-world robot motions such as dancing, fighting, or walking based on conditional information. At matched capacity, our adopted stochastic motion tokenizer reconstructs motions from the Unitree G1 at a level that exceeds state-of-the-art approaches such as finite scalar quantization (FSQ) and the vector-quantized autoencoder (VQ-VAE). The resulting discrete interface conditions whole-body tracking policies that execute generated dance, fight, and walk motions lasting 16.8 s each and a 35 s fight-to-dance sequence on a physical Unitree G1.",
-   "fetched": "2026-10-28"
-  },
-  {
-   "id": "2610.36250",
-   "title": "cuArms: GPU-Accelerated Conflict-Based Planning for Multi-Arm Manipulation",
-   "published": "2026-10-28",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://cuarms.github.io/"
-   ],
-   "comment": "8 pages, 8 figures",
-   "authors": [
-    "Philip Huang",
-    "Fabio Ramos",
-    "Jiaoyang Li",
-    "Caelan Garrett",
-    "Lars Johannsmeier"
-   ],
-   "abstract": "Multi-arm manipulation has the potential to dramatically improve the throughput, efficiency, and dexterity of many manipulation tasks. Recent work coordinates multiple robot arms in a shared workcell by allocating and scheduling tasks for greater parallelism, jointly planning multi-arm motions, or directly learning multi-arm policies. So far, these approaches are either too slow, rely on domain-specific assumptions, or scale poorly with the number of robots and task horizon. Thus, we introduce cuArms, a conflict-based planner co-designed with GPU parallelism that efficiently decomposes the search space using reusable multi-modal roadmaps for individual robots and resolves conflicts and deadlocks through a lazy search. To jointly optimize task assignment, schedules, motions, and manipulation skills, we integrate a high-level scheduler that proposes candidate skeletons for cuArms to ground into coordinated manipulation plans. Experimental results show that our method establishes a new state of the art, with real-time initial solutions and anytime improvements in both motion quality and scheduling, without days of domain-specific training required by learning approaches. Videos of both simulated and real-world industrial tasks are available on https://cuarms.github.io/.",
    "fetched": "2026-10-28"
   },
   {
@@ -1325,26 +1140,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.31423",
-   "title": "FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models",
-   "published": "2026-10-23",
-   "topics": [
-    "vla",
-    "manipulation"
-   ],
-   "venue": "CoRL 2026",
-   "code": [],
-   "project": [],
-   "comment": "Accepted at CoRL 2026",
-   "authors": [
-    "Huixin Xu",
-    "Ziya Yu",
-    "Peng Li"
-   ],
-   "abstract": "Vision-language-action (VLA) models have become an important paradigm for robotic manipulation by unifying visual perception, language understanding, and action generation. Since reliable manipulation requires sufficient observation of objects, end-effectors, and their spatial relationships, multi-view inputs are widely used to provide complementary spatial information. However, our experiments show that existing VLA models do not fully exploit such multi-view complementarity. The policy tends to persistently rely on the wrist view, lacking the ability to dynamically adjust global-local view dependency across manipulation stages, which limits stage adaptability and robustness. To address this issue, we propose FocusVLA, a stage-aware multi-view routing framework. FocusVLA predicts future interaction intent from historical actions and uses it to guide dynamic view routing during action generation. By adaptively coordinating global and local observations across different task stages, FocusVLA improves multi-view utilization. On RoboTwin 2.0, FocusVLA improves the average success rate over the strongest baseline $π_{0.5}$ by 10.10 pp. In real-world evaluation, FocusVLA improves the success rate from 71.7\\% to 85.0\\%, achieving a 13.3\\% gain over $π_{0.5}$. Moreover, the intent prediction and dynamic routing modules of FocusVLA can be integrated into existing VLA frameworks without modifying their core architectures.",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.31166",
    "title": "Memory before Goal: Role of Pre-History Memory for Humanoid Loco-Manipulation",
    "published": "2026-10-23",
@@ -2076,35 +1871,6 @@
     "Mai Nishimura"
    ],
    "abstract": "Imitation learning increasingly relies on novice operators, whose demonstrations fall short of experts' in number and inter-trial consistency. Operators act on what they are shown, yet how the rendering of the robot affects their demonstrations, and the policies trained on them, has not been examined. We study this question with PointHand, a teleoperation interface that renders a multi-fingered robot hand as sparse keypoints at its fingertips and joints, the same keypoints a policy can observe. In a simulated mug-in-box task, 18 novices and 4 experts collected 2,200 trials under three renderings: the real shape of the hand, all keypoints emphasized, or the thumb and index finger alone emphasized. The novices shown the thumb and index finger emphasized collected 441 successful demonstrations from 600 trials, against 320 for those shown the real shape. We then trained diffusion policies on these demonstrations, replacing the scene point cloud and proprioceptive state they observe with the hand keypoints and two object keypoints. Within 400 steps these demonstrations went from the weakest of the three novice conditions under the point-cloud policy (46.3%) to the strongest under the keypoint policy (57.3%), a gain of +11.0 percentage points in all five seeds. Those collected with all keypoints emphasized changed by at most +0.7 percentage points, and in no more than three seeds. The value of a demonstration therefore depends on the rendering shown during collection and on what the policy observes together. A shared representation can pay off on both sides, in the number of successful demonstrations and in the success rate of the policy trained on them. Project page: https://omron-sinicx.github.io/point-hand/",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.27782",
-   "title": "RoboJudge: Multimodal Language Models as Judges for Embodied Video Generation",
-   "published": "2026-10-21",
-   "topics": [
-    "datasets"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://spherelab.ai/RoboJudge"
-   ],
-   "comment": "Project page: https://spherelab.ai/RoboJudge",
-   "authors": [
-    "Siyuan Ma",
-    "Yu Qi",
-    "Cheng Ye",
-    "Ruotian Peng",
-    "Xinyi Xu",
-    "Zitiantao Lin",
-    "Zedong Cai",
-    "Yijian Huang",
-    "Weiyang Liu",
-    "Siyuan Wang",
-    "Yandong Wen"
-   ],
-   "abstract": "Video generation models are promising foundations for embodied world models, but only if their generated rollouts are physically valid and faithful to task instructions. Multimodal large language models (MLLMs) are increasingly used to judge these properties, yet their agreement with human judgments on embodied videos has not been systematically evaluated. To address this gap, we introduce RoboJudge-Bench, a benchmark for evaluating MLLMs as judges of embodied video generation. The benchmark measures two fundamental dimensions, Physical Adherence and Instruction Alignment, across 800 human-annotated videos from 8 source corpora and 10 video generators, spanning grippers, human hands, and dexterous hands. Experiments reveal uneven alignment between existing judges and human ratings: general-purpose MLLMs show lower agreement on physical adherence, while specialized video judges designed for general-domain physical reasoning do not consistently transfer to embodied scenarios. Motivated by these findings, we construct RoboJudge-Train, comprising 12K videos annotated with 25K human-verified scores and model-assisted rationales for Physical Adherence and Instruction Alignment. We fine-tune a 9B MLLM on this dataset with supervised learning followed by reinforcement learning, yielding RoboJudge-9B. Among the model judges evaluated on RoboJudge-Bench, RoboJudge-9B achieves the highest overall agreement, reaching a Pearson correlation of 0.719 with a statistically significant 0.089 gain over Gemini-3.7-Flash, the best-performing proprietary baseline in our evaluation. Training on RoboJudge-Train also yields gains on external benchmarks, including VideoPhy2 and Physion-Eval. We further use RoboJudge-9B as a downstream evaluator to benchmark video generation models according to Physical Adherence and Instruction Alignment.",
    "fetched": "2026-10-26"
   },
   {
