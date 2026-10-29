@@ -439,3 +439,13 @@
   tags: [world-model, uncertainty, conformal-prediction, distribution-shift, theory, real]
   takeaway_en: "Shows a fixed world model's uncertainty can break when the deployment policy changes; reweights conformal calibration by a learned state-action ratio. Reports 90% sets covering 55.0% vs 90.9% on real Franka data."
   takeaway_zh: "指出部署策略一变，固定世界模型的不确定性校准就可能失效；用域分类器学到的状态-动作密度比做加权共形校准，并给出覆盖率保证（部分用 Lean 4 形式化验证）。报告在真实 Franka 轨迹上，普通 90% 共形集合仅覆盖 55.0%，加权后为 90.9%。"
+- title: "PhysTrace: Interpretable Temporal Evaluation of Physical Consistency in Video Generative Models"
+  type: paper
+  arxiv: "2610.31429"
+  year: 2026
+  code: https://github.com/PhysTrace/PhysTrace
+  added: 2026-10-29
+  topics: [datasets]
+  tags: [evaluation, video-models, intuitive-physics, mllm, training-free]
+  takeaway_en: "Training-free physics check for video models: an MLLM states history-based expectations and PhysTrace marks when the video breaks them; adds IntPhys2-Timing (reports up to 70.7% hit rate)."
+  takeaway_zh: 无需训练的视频模型物理一致性评测：由多模态大模型根据历史帧给出物理预期，再定位视频中违背预期的时间段并给出可解释描述；新增带违规区间标注的 IntPhys2-Timing（报告命中率最高 70.7%），面向依赖视频模型的世界动作模型。
