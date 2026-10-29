@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-10-28 ~23:00 UTC, run 40 (end); 2 picks from candidates.json leftovers._
+_Last updated: 2026-10-29 ~11:10 UTC, run 41; 6 picks from candidates.json leftovers, actions bumped to Node 24 majors._
 
 ## Status
 
@@ -53,6 +53,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 41: no 10-29 feed day — intake at 06:57 and 08:34 UTC both saw `rss: 0 relevant items` and no new API records (arXiv apparently posted no Thu announcement; not a code fault). Later slots (11:07, 15:29) will pick it up if it appears; if Fri 10-30 also comes back empty, investigate the RSS URL/parser. Workflows moved to actions/checkout@v5 + setup-python@v6 (Node 20 deprecation warnings); configure-pages/upload-pages-artifact/deploy-pages left as is. Picks: SpatialDex → manipulation, S² + PAL → vla, FLEX (CoRL 2026, MIT) → learning, SMR → locomotion, GEMS → navigation. Remaining leftovers in candidates.json are mostly off-core (driving, aerial, space, multi-robot) or previously skipped; RGraph-Eval (code 'will be available'), PhysTrace (video-model physics eval, code) are maybe-later.
 
 - Run 40: picks Calibrated for Which Policy? (conformal calibration for world models, code) → world-models; MyoAcross (musculoskeletal generalist policy) → control. candidates.json is mined out; next real work is the 10-29 feed (announced ~00:00 UTC Thu, intake lands ~05:00–06:00 UTC). Remaining maybe-later: PhysiCalWorld, SmolVLA-MoE (repo 404), MAST-VLA (CoRL 2026, no links).
 

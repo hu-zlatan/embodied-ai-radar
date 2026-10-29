@@ -362,3 +362,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Start: CI/Pages/repo-stats/intake green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. No new feed day until Thu 10-29.
 - Picks from `.autopilot/candidates.json` leftovers (CI-fetched abstracts; repo live per repo_stats feed): Calibrated for Which Policy? → world-models; MyoAcross → control. Curated: 463. validate + README check + site build clean.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: picks from the 10-29 feed; W44 digest Mon 11-02. End of run 40.
+
+## 2026-10-29 — run 41 (~10:50 UTC–)
+
+- Start: CI/Pages/repo-stats/intake green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`.
+- No 10-29 feed day: both intake runs logged `rss: 0 relevant items` and 0 new API papers, so arXiv seems to have posted no announcement; later backup slots will catch it if it appears.
+- CI hygiene: actions/checkout v4 → v5, setup-python v5 → v6 in all 6 workflows (every run warned about Node 20 being forced to Node 24).
+- Picks from `.autopilot/candidates.json` leftovers (CI-fetched abstracts): SpatialDex → manipulation; Sensorimotor Alignment (S²) + PAL → vla; FLEX (CoRL 2026, MIT CLEAR Lab) → learning; SMR → locomotion; GEMS + GEMS-Bench → navigation. Four over-length takeaways caught by validate. Curated: 469.
