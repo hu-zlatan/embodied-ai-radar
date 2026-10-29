@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "papers": [
   {
    "id": "2610.31162",
@@ -143,7 +143,7 @@
   {
    "id": "2610.33718",
    "title": "RoboJev: An Open Vision-Language Judge for Robot Success Detection",
-   "upvotes": 11,
+   "upvotes": 13,
    "hf_date": "2026-10-27",
    "published": "2026-10-27",
    "topics": [
@@ -186,9 +186,34 @@
    "ai_summary": "HoloBoxing learns humanoid boxing by combining a frozen whole-body controller with a compact planner that predicts body-point targets, using imitation initialization and reinforcement learning to refine interaction behavior with minimal additional training."
   },
   {
+   "id": "2610.34674",
+   "title": "Benchmarking Obstacle-Conditioned Safety in Household Robot Navigation",
+   "upvotes": 8,
+   "hf_date": "2026-10-28",
+   "published": "2026-10-27",
+   "topics": [
+    "navigation",
+    "datasets"
+   ],
+   "authors": [
+    "Hyunwoong Bae",
+    "Jisu Han",
+    "Jiyeon Choi",
+    "Dohoon Kim",
+    "Taesup Moon"
+   ],
+   "organization": "Seoul National University",
+   "github": "https://github.com/OSMA-Bench/OSMA-Bench",
+   "project": "https://osma-bench.github.io/",
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "Safe household navigation requires robots to regulate clearance and speed according to what an obstacle is and how close it is, without unnecessary conservatism. Yet existing evaluations do not test whether semantic safety distinctions are reflected in continuous motion. To that end, we introduce OSMA-Bench, an Obstacle-Conditioned Safe Motion Adaptation Benchmark built on spatially matched scenario sets that differ only in obstacle type. We also propose the Semantic Sensitivity Index (SSI), which measures whether clearance and distance-dependent speed and smoothness follow the caution ordering of obstacles. Evaluating VLM-based and vision-language-action (VLA) policies on the benchmark, we find that neither consistently adapts its motion to obstacle safety, even with explicit safety prompts. Our analysis shows that the policies can correctly distinguish obstacles by safety relevance but fail to reflect this distinction in the motion parameters or actions they produce. For VLM-based policies, which recognize the obstacle and then generate a navigation program, adding an explicit parameter-inference step between these two stages improves adaptation. These findings expose a gap in semantic-to-motion grounding, highlighting the need to translate semantic caution into appropriately safe motion.",
+   "ai_summary": "The study introduces a benchmark and metric to evaluate whether robot navigation policies adapt continuous motion to obstacle safety semantics, revealing a gap in translating semantic caution into safe movement."
+  },
+  {
    "id": "2610.31716",
    "title": "Does LeWorldModel Preserve Local Action Geometry?",
-   "upvotes": 6,
+   "upvotes": 7,
    "hf_date": "2026-10-26",
    "published": "2026-10-26",
    "topics": [],
