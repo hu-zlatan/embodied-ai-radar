@@ -202,14 +202,19 @@ def fetch_rss() -> list[dict]:
     xml = arxiv_get(RSS, attempts=4)
     root = ET.fromstring(xml)
     out = []
+    # Diagnostics: an empty day should show 0 items in total, not items that the filters dropped.
+    stats = {"items": 0, "no_id": 0, "replaced": 0, "off_topic": 0}
     for it in root.iter("item"):
+        stats["items"] += 1
         link = clean(it.findtext("link"))
         m = re.search(r"abs/(\d{4}\.\d{4,5})", link)
         if not m:
+            stats["no_id"] += 1
             continue
         desc = it.findtext("description") or ""
         kind = re.search(r"Announce Type:\s*([\w-]+)", desc)
         if kind and kind.group(1) not in ("new", "cross"):
+            stats["replaced"] += 1
             continue  # skip replacements
         abstract = clean(desc.split("Abstract:", 1)[1] if "Abstract:" in desc else desc)
         title = clean(it.findtext("title"))
@@ -234,6 +239,10 @@ def fetch_rss() -> list[dict]:
             rec["project"] = project[:2]
         if is_relevant(rec):
             out.append(rec)
+        else:
+            stats["off_topic"] += 1
+    pub = clean(root.findtext("channel/pubDate") or root.findtext("channel/lastBuildDate") or "")
+    print("rss: " + ", ".join(f"{k}={v}" for k, v in stats.items()) + (f" (channel date: {pub})" if pub else ""))
     return out
 
 
