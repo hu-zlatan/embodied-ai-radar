@@ -371,3 +371,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Picks from `.autopilot/candidates.json` leftovers (CI-fetched abstracts): SpatialDex → manipulation; Sensorimotor Alignment (S²) + PAL → vla; FLEX (CoRL 2026, MIT CLEAR Lab) → learning; SMR → locomotion; GEMS + GEMS-Bench → navigation. Four over-length takeaways caught by validate. Curated: 469.
 - verify #115 passed (all 6 picks incl. project links); CI and Pages green on the new action versions. BibTeX metadata fills on the next intake.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: 10-29 feed if it appears in a later slot, else Fri 10-30; W44 digest Mon 11-02. End of run 41.
+
+## 2026-10-29 — run 42 (~16:50 UTC–)
+
+- Start: CI/Pages/repo-stats/intake green, no issues/PRs (GitHub MCP), 0 stars / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. Intake at 14:38 UTC still had `rss: 0 relevant items`.
+- Intake diagnostics: `fetch_rss()` now prints total items / no-id / replacements / off-topic and the channel date. Dispatched run: `items=0`, channel date Thu 29 Oct 2026 → arXiv published an empty feed today; nothing to fix in the parser.
+- Picks from `.autopilot/candidates.json`: EgoThumb (IROS 2026; open-source supernumerary thumb) → hardware; PhysTrace (training-free physics-consistency eval for video models, code live) → world-models. Two over-length takeaways caught by validate. Curated: 471.
+- End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: Fri 10-30 feed picks; W44 digest Mon 11-02. End of run 42.

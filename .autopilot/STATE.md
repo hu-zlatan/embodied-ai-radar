@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-10-29 ~11:10 UTC, run 41; 6 picks from candidates.json leftovers, actions bumped to Node 24 majors._
+_Last updated: 2026-10-29 ~17:10 UTC, run 42; RSS diagnostics confirm arXiv posted an empty 10-29 feed; picks EgoThumb + PhysTrace._
 
 ## Status
 
@@ -53,6 +53,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 42: intake now logs `rss: items=N, no_id, replaced, off_topic (channel date)`. The 16:57 UTC run showed `items=0` with channel date Thu 29 Oct 2026 → arXiv's 10-29 feed was empty (no parser fault). Next real feed: Fri 10-30. If a weekday shows items=0 again for a whole day, that's arXiv's side; if items>0 but relevant=0, check `is_relevant`. Picks EgoThumb (IROS 2026, open hardware) → hardware, PhysTrace (code) → world-models. Curated: 471. candidates.json leftovers are mined out (rest off-core or skipped before); RGraph-Eval repo has 0★ and 'will be available' → wait.
 
 - Run 41: no 10-29 feed day — intake at 06:57 and 08:34 UTC both saw `rss: 0 relevant items` and no new API records (arXiv apparently posted no Thu announcement; not a code fault). Later slots (11:07, 15:29) will pick it up if it appears; if Fri 10-30 also comes back empty, investigate the RSS URL/parser. Workflows moved to actions/checkout@v5 + setup-python@v6 (Node 20 deprecation warnings); configure-pages/upload-pages-artifact/deploy-pages left as is. Picks: SpatialDex → manipulation, S² + PAL → vla, FLEX (CoRL 2026, MIT) → learning, SMR → locomotion, GEMS → navigation. Remaining leftovers in candidates.json are mostly off-core (driving, aerial, space, multi-robot) or previously skipped; RGraph-Eval (code 'will be available'), PhysTrace (video-model physics eval, code) are maybe-later.
 
