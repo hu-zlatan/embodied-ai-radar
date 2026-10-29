@@ -64,28 +64,6 @@
    "ai_summary": "This work proposes a two-axis framework for multimodal agent memory covering information formation and adaptive management to support lifelong learning."
   },
   {
-   "id": "2610.31670",
-   "title": "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success",
-   "upvotes": 27,
-   "hf_date": "2026-10-29",
-   "published": "2026-10-23",
-   "topics": [],
-   "authors": [
-    "Yunfei Xie",
-    "Howard H. Qian",
-    "Shiyi Lan",
-    "Kaiyu Hang",
-    "Chen Wei"
-   ],
-   "organization": "Rice University",
-   "github": "https://github.com/yunfeixie233/sensorimotor-alignment",
-   "project": "https://yunfeixie233.github.io/s2/",
-   "arxiv_code": [],
-   "comment": "28 pages. Project page and code available at https://yunfeixie233.github.io/s2/",
-   "abstract": "Robot foundation models are typically evaluated through costly closed-loop rollouts, motivating low-cost offline proxies for model capability. The Platonic Representation Hypothesis (PRH) suggests that as representations improve, modalities such as vision and language converge toward a shared statistical model of reality. We ask whether motion trajectories form another such modality: as embodied models become more capable, should their sensory representations converge toward the structure of physical motion? To test this, we propose Sensorimotor Alignment (S^2), a training-free offline metric that measures how well a model's sensory representation aligns with the geometry of physical motion. We find that S^2 correlates positively with downstream robot task success across model families, making it a low-cost offline proxy for prioritizing models before closed-loop evaluation. S^2 can also identify promising vision-language model (VLM) backbones before costly fine-tuning into vision-language-action models (VLAs). Beyond this correlation, S^2 offers representation-level explanations for phenomena observed in VLAs and world action models (WAMs). With S^2, we extend PRH to robotics and make sensorimotor alignment measurable, offering a low-cost, representation-level view of robot foundation models that closed-loop success rates alone cannot reveal.",
-   "ai_summary": "Sensorimotor alignment measures how sensory representations match physical motion geometry, serving as a low-cost offline predictor of robot model performance."
-  },
-  {
    "id": "2610.28632",
    "title": "Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs",
    "upvotes": 27,
@@ -183,6 +161,31 @@
    "ai_summary": "RoboJev-27B is an open-weight vision-language model that predicts robot manipulation success from video frames using LoRA fine-tuning, calibrated token readouts, and source-specific regularization, achieving high accuracy and generalization across labs and robots."
   },
   {
+   "id": "2610.34674",
+   "title": "Benchmarking Obstacle-Conditioned Safety in Household Robot Navigation",
+   "upvotes": 9,
+   "hf_date": "2026-10-28",
+   "published": "2026-10-27",
+   "topics": [
+    "navigation",
+    "datasets"
+   ],
+   "authors": [
+    "Hyunwoong Bae",
+    "Jisu Han",
+    "Jiyeon Choi",
+    "Dohoon Kim",
+    "Taesup Moon"
+   ],
+   "organization": "Seoul National University",
+   "github": "https://github.com/OSMA-Bench/OSMA-Bench",
+   "project": "https://osma-bench.github.io/",
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "Safe household navigation requires robots to regulate clearance and speed according to what an obstacle is and how close it is, without unnecessary conservatism. Yet existing evaluations do not test whether semantic safety distinctions are reflected in continuous motion. To that end, we introduce OSMA-Bench, an Obstacle-Conditioned Safe Motion Adaptation Benchmark built on spatially matched scenario sets that differ only in obstacle type. We also propose the Semantic Sensitivity Index (SSI), which measures whether clearance and distance-dependent speed and smoothness follow the caution ordering of obstacles. Evaluating VLM-based and vision-language-action (VLA) policies on the benchmark, we find that neither consistently adapts its motion to obstacle safety, even with explicit safety prompts. Our analysis shows that the policies can correctly distinguish obstacles by safety relevance but fail to reflect this distinction in the motion parameters or actions they produce. For VLM-based policies, which recognize the obstacle and then generate a navigation program, adding an explicit parameter-inference step between these two stages improves adaptation. These findings expose a gap in semantic-to-motion grounding, highlighting the need to translate semantic caution into appropriately safe motion.",
+   "ai_summary": "The study introduces a benchmark and metric to evaluate whether robot navigation policies adapt continuous motion to obstacle safety semantics, revealing a gap in translating semantic caution into safe movement."
+  },
+  {
    "id": "2610.32909",
    "title": "HoloBoxing: A Simple Recipe for Humanoid Boxing with 7 Minutes of Single-GPU Training",
    "upvotes": 9,
@@ -206,31 +209,6 @@
    "comment": null,
    "abstract": "HoloBoxing presents a simple recipe for learning humanoid boxing by building on a pretrained whole-body controller. The recipe separates reusable motor skills from task decisions: a compact planner requests future body-point targets, while the frozen controller handles joint-level execution. A learned decoder maps 32-dimensional actions to structured target windows, and measured-state imitation initializes the planner before reinforcement learning. Task learning then refines interaction behavior while reusing the decoder and controller, avoiding the need to relearn whole-body control. This combination keeps task optimization focused on a compact upper policy and supplies an initial behavior before reward-driven exploration. Starting from that available controller, the recipe accounts for about seven minutes of additional training, including reused representation fitting and a single-GPU task run. This excludes controller pretraining, data preparation, evaluation, and search. Simulated boxing experiments and component controls evaluate the resulting behavior and the roles of imitation initialization and the target representation.",
    "ai_summary": "HoloBoxing learns humanoid boxing by combining a frozen whole-body controller with a compact planner that predicts body-point targets, using imitation initialization and reinforcement learning to refine interaction behavior with minimal additional training."
-  },
-  {
-   "id": "2610.34674",
-   "title": "Benchmarking Obstacle-Conditioned Safety in Household Robot Navigation",
-   "upvotes": 8,
-   "hf_date": "2026-10-28",
-   "published": "2026-10-27",
-   "topics": [
-    "navigation",
-    "datasets"
-   ],
-   "authors": [
-    "Hyunwoong Bae",
-    "Jisu Han",
-    "Jiyeon Choi",
-    "Dohoon Kim",
-    "Taesup Moon"
-   ],
-   "organization": "Seoul National University",
-   "github": "https://github.com/OSMA-Bench/OSMA-Bench",
-   "project": "https://osma-bench.github.io/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Safe household navigation requires robots to regulate clearance and speed according to what an obstacle is and how close it is, without unnecessary conservatism. Yet existing evaluations do not test whether semantic safety distinctions are reflected in continuous motion. To that end, we introduce OSMA-Bench, an Obstacle-Conditioned Safe Motion Adaptation Benchmark built on spatially matched scenario sets that differ only in obstacle type. We also propose the Semantic Sensitivity Index (SSI), which measures whether clearance and distance-dependent speed and smoothness follow the caution ordering of obstacles. Evaluating VLM-based and vision-language-action (VLA) policies on the benchmark, we find that neither consistently adapts its motion to obstacle safety, even with explicit safety prompts. Our analysis shows that the policies can correctly distinguish obstacles by safety relevance but fail to reflect this distinction in the motion parameters or actions they produce. For VLM-based policies, which recognize the obstacle and then generate a navigation program, adding an explicit parameter-inference step between these two stages improves adaptation. These findings expose a gap in semantic-to-motion grounding, highlighting the need to translate semantic caution into appropriately safe motion.",
-   "ai_summary": "The study introduces a benchmark and metric to evaluate whether robot navigation policies adapt continuous motion to obstacle safety semantics, revealing a gap in translating semantic caution into safe movement."
   },
   {
    "id": "2610.31716",
@@ -267,6 +245,11 @@
    "id": "2610.30108",
    "title": "Multimodal Embodied Agents: A Unified Capability-centric Perspective from Computer-Use to Robot-Use",
    "code": "https://github.com/showlab/Awesome-Multimodal-Embodied-Agent"
+  },
+  {
+   "id": "2610.31670",
+   "title": "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success",
+   "code": "https://github.com/yunfeixie233/sensorimotor-alignment"
   },
   {
    "id": "2610.23479",
