@@ -669,26 +669,6 @@
    "fetched": "2026-10-27"
   },
   {
-   "id": "2610.33158",
-   "title": "Gaussian Episodic Memory for Long-Term Spatiotemporal Reasoning",
-   "published": "2026-10-27",
-   "topics": [],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://abwerby.github.io/GEMS/"
-   ],
-   "comment": "Code and data: https://abwerby.github.io/GEMS/",
-   "authors": [
-    "Ling-Chia Chen",
-    "Abdelrhman Werby",
-    "Kaan Aytekin",
-    "Kai O. Arras"
-   ],
-   "abstract": "Real-world environments undergo continual semi-static changes, requiring a memory representation that captures both the spatial and temporal evolution of a scene. Existing spatio-temporal memories for robots typically rely either on structured representations, which are limited to the entities and attributes captured during construction, or on image-based memories, which are constrained to previously observed viewpoints. We introduce GEMS, a framework that combines a persistent spatio-temporal 3D Gaussian Splatting (3DGS) map with an agentic reasoning pipeline. The 3DGS map is reconstructed once and subsequently updated only in regions where the scene changes, storing only these modifications while preserving visual detail across time. The agentic pipeline leverages this map to render novel views on demand, iteratively accumulating evidence to answer spatio-temporal questions and ground objects from natural-language queries. To advance future research, we introduce GEMS-Bench, a spatiotemporal question-answering benchmark focused on semi-static environments. It comprises 3 real-world and 12 synthetic environments, spanning 473 question-answer pairs. We evaluate GEMS on novel-view synthesis quality across scene updates, 3D object grounding, spatiotemporal question answering, and storage efficiency. GEMS outperforms recent baselines in 3D object grounding and spatiotemporal question answering, while achieving rendering quality on par with dedicated scene-update methods. Code and data: https://abwerby.github.io/GEMS/",
-   "fetched": "2026-10-27"
-  },
-  {
    "id": "2610.32971",
    "title": "RobustRLlib: A Unified Library and Benchmark for Robust Reinforcement Learning Algorithms",
    "published": "2026-10-26",
@@ -931,27 +911,6 @@
     "Ken Goldberg"
    ],
    "abstract": "Segmenting robot demonstration data into disjoint temporal and semantic subsegments is valuable for learning, cleaning, retrieval, and analysis. Segmentation is often performed manually in a tedious and error prone process. Multimodal Large Language Models (MLLMs) have the potential for automating this process, but directly ingesting raw multi camera video streams into MLLMs can be costly and can quickly exhaust context windows. In this paper, we introduce KiRoSe (Kinematics for Robot Segmentation), a novel framework that focuses on the companion stream of robot kinematic data. Inspired by the principle of classical entropy coding, such as Huffman coding, where frequently occurring symbols are represented more compactly, we propose Sparse Motion Tokens (SMTs), a discrete kinematic vocabulary designed to compactly represent recurring, temporally localized motion patterns, which we refer to as kinematic events. SMTs are learned by encoding kinematic trajectories with temporal segment supervision and quantizing the resulting features. We use increasingly available robot demonstration subtask annotations to supervise an open language model to interpret the resulting token sequences. Evaluation against human labeled segmentation shows that KiRoSe can substantially outperform baseline segmentation methods in F1 quality and transfers zero shot to unseen robot embodiments and egocentric human motion, while preserving the language models open vocabulary knowledge. Beyond segmentation, KiRoSe tracks task progress on an unseen robot and detects when an action is being reversed.(website: https://berkeleyautomation.github.io/kirose/)",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.31670",
-   "title": "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success",
-   "published": "2026-10-23",
-   "topics": [],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://yunfeixie233.github.io/s2/"
-   ],
-   "comment": "28 pages. Project page and code available at https://yunfeixie233.github.io/s2/",
-   "authors": [
-    "Yunfei Xie",
-    "Howard H. Qian",
-    "Shiyi Lan",
-    "Kaiyu Hang",
-    "Chen Wei"
-   ],
-   "abstract": "Robot foundation models are typically evaluated through costly closed-loop rollouts, motivating low-cost offline proxies for model capability. The Platonic Representation Hypothesis (PRH) suggests that as representations improve, modalities such as vision and language converge toward a shared statistical model of reality. We ask whether motion trajectories form another such modality: as embodied models become more capable, should their sensory representations converge toward the structure of physical motion? To test this, we propose Sensorimotor Alignment ($S^2$), a training-free offline metric that measures how well a model's sensory representation aligns with the geometry of physical motion. We find that $S^2$ correlates positively with downstream robot task success across model families, making it a low-cost offline proxy for prioritizing models before closed-loop evaluation. $S^2$ can also identify promising vision-language model (VLM) backbones before costly fine-tuning into vision-language-action models (VLAs). Beyond this correlation, $S^2$ offers representation-level explanations for phenomena observed in VLAs and world action models (WAMs). With $S^2$, we extend PRH to robotics and make sensorimotor alignment measurable, offering a low-cost, representation-level view of robot foundation models that closed-loop success rates alone cannot reveal.",
    "fetched": "2026-10-26"
   },
   {
@@ -1260,33 +1219,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.29716",
-   "title": "Reconstruction-Augmented Visuomotor Pre-Training of 3D-Grounded Bimanual Dexterity from RGB-Only Human Videos",
-   "published": "2026-10-22",
-   "topics": [
-    "manipulation",
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://spatial-dex.github.io/"
-   ],
-   "comment": "Project page: https://spatial-dex.github.io/",
-   "authors": [
-    "Xingyi He",
-    "Zhiwen Qiu",
-    "Adhitya Polavaram",
-    "Yunhao Cao",
-    "Cory Fan",
-    "Julius Samwer",
-    "Saleh Kalantari",
-    "Kuan Fang"
-   ],
-   "abstract": "We present SpatialDex, a framework that learns 3D-grounded bimanual dexterity from RGB-only human videos through reconstruction-augmented visuomotor pre-training. The central idea is to learn human behavior together with its spatial context. From each video, we reconstruct the scene geometry and estimate the hand motion, align them at a shared video-level scale using the hand-size prior of 3D hand estimates. We retain the reconstructed geometry as both a policy input and a prediction target. The policy grounds the token grid of a pre-trained vision-language model in this geometry through gated residual fusion, is trained to predict future scene geometry alongside wrist and finger actions, and generates finger motion conditioned on the predicted trajectories of both wrists. Pre-trained on 1M human-video clips and fine-tuned with a small number of robot demonstrations, SpatialDex outperforms the state-of-the-art methods by 16.5 points on nine simulated dexterous tasks across two embodiments and by 38.3 points on six real-world bimanual dexterous tasks. Under a matched comparison, pre-training with reconstructed geometry improves success by 14.2 points over pre-training on hand motion alone.",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.29702",
    "title": "CausGround: Causal Interaction Grounding for Adaptive Embodied Planning",
    "published": "2026-10-22",
@@ -1429,33 +1361,6 @@
    "fetched": "2026-10-26"
   },
   {
-   "id": "2610.29329",
-   "title": "Plan First, Act Later: Streaming Reasoning for Executable Memory in Robot Control",
-   "published": "2026-10-22",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://qinghangliu.github.io/pal-webpage/"
-   ],
-   "comment": null,
-   "authors": [
-    "Qinghang Liu",
-    "Conglin Wang",
-    "Zongsheng Li",
-    "Boyong He",
-    "Han Gao",
-    "Pengcheng Wang",
-    "Tao Sun",
-    "Lige Liu",
-    "Chang Liu"
-   ],
-   "abstract": "Long-horizon robot manipulation requires a robot to remember task-relevant information beyond its short observation window. Existing memory-augmented policies typically retrieve relevant information from history and reason over it at execution time, placing a heavy reasoning burden on the high-level model. To address this challenge, we propose PAL (\\textbf{P}lan first, \\textbf{A}ct \\textbf{L}ater), a hierarchical memory framework for vision-language robot manipulation. It maintains a short-term visual buffer, a semantic-event memory, and an executable \\texttt{subtask\\_list}. A high-level vision-language model (VLM) converts streaming visual observations into the \\texttt{subtask\\_list}. At execution time, the VLM selects the currently relevant subtask from the \\texttt{subtask\\_list} and passes it to a low-level vision-language-action (VLA) policy. To teach the model what to write to memory and when to update it, we introduce a two-stage data generation procedure that first expands sparse update supervision and then uses self-labeling with task-grounded verification to generate training data that better match the state distribution encountered during execution. We evaluate our approach on memory-dependent benchmarks and real-world manipulation tasks. On RoboMME, PAL achieves a \\textbf{56.05\\%} success rate, outperforming the strongest baseline, FrameSamp-Modul, at 44.51\\%. In real-world experiments across four manipulation tasks, \\pal{} reaches \\textbf{60.83\\%} overall success, surpassing MemER (45.00\\%) and FrameSamp-Modul (28.33\\%). These results show that proactively writing future-relevant subtasks into hierarchical memory improves long-horizon visual reasoning and robot control. Code and videos can be found on our website: https://qinghangliu.github.io/pal-webpage/",
-   "fetched": "2026-10-26"
-  },
-  {
    "id": "2610.29200",
    "title": "NeuralSRender: G-Buffer Guided Video Diffusion for Sim-to-Real Rendering",
    "published": "2026-10-22",
@@ -1476,48 +1381,6 @@
     "Zhen Dong"
    ],
    "abstract": "The scarcity of high-quality annotated visual data remains a critical bottleneck for autonomous-driving perception. Simulators provide training data at scale, but the limited realism of synthetic videos compromises perception performance in real-world applications. To address this limitation, we propose NeuralSRender, a sim-to-real video translation framework that enhances the photorealism of synthetic videos while maintaining geometric consistency with the source scenes. Built on a pretrained video diffusion transformer (DiT), NeuralSRender uses a lightweight projector to inject geometric and material priors from G-buffers, and LoRA enables parameter-efficient adaptation. The model is trained in two stages: it first learns G-buffer conditioning from synthetic videos with accurate G-buffers, then adapts to real-world appearance using real videos with estimated G-buffers. During the second stage, an additional LoRA module is trained while the projector and first-stage LoRA remain frozen to reduce interference from estimation noise. NeuralSRender introduces only 1.45\\% parameter overhead and can be trained on consumer-grade GPUs with 24 GB of memory. To support training and evaluation, we introduce GenReal, a large-scale driving video dataset comprising synthetic and real-world videos with corresponding G-buffers. Experiments demonstrate improved photorealism with competitive geometric consistency. Training perception models on our translated videos instead of raw simulator renders improves detection $\\mathrm{AP}_{50}$ on nuImages from 35.1 to 40.6 and segmentation mIoU on Cityscapes from 32.4 to 40.8. Our code, data, and model weights are available at: https://github.com/WHU-USI3DV/NeuralSRender.",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.29169",
-   "title": "SMR: Learning streaming motion retargeting for humanoids from human semantic",
-   "published": "2026-10-22",
-   "topics": [
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://logosroboticsgroup.github.io/SMR/"
-   ],
-   "comment": "17 pages, 6 figures. Project page: https://logosroboticsgroup.github.io/SMR/",
-   "authors": [
-    "Chun Gu",
-    "Juntong Zhang",
-    "Jingyu Li",
-    "Li Zhang"
-   ],
-   "abstract": "Retargeting human motion to humanoids requires preserving motion semantics while accounting for the robot's physical constraints. Kinematic pipelines prescribe a robot trajectory through geometric matching, without establishing whether it can be executed under the robot's dynamics. Prior physics-supervised neural methods train bidirectional full-sequence models on physics-refined kinematic trajectories, remaining tied to prescribed kinematic solutions and requiring noncausal context. We propose SMR, a streaming neural motion retargeter learned from semantic-conditioned physics experts. We convert human motion into robot-aware task-space targets for body landmark positions, orientations, and velocities. Physics experts track these targets directly in simulation under contact, dynamics, and actuator constraints. We train a single strictly causal Transformer on their executed state trajectories that complete the motion and pass semantic and physical validity checks. At each incoming frame, the student uses only current and past human observations to generate a robot motion reference for a downstream whole-body controller. Experiments demonstrate that semantic-conditioned physics experts generate motion with higher semantic fidelity and physical validity than direct optimization-based retargeting, while the resulting streaming retargeter achieves improved closed-loop performance over kinematic and physics-refined baselines under a common whole-body controller.",
-   "fetched": "2026-10-26"
-  },
-  {
-   "id": "2610.28893",
-   "title": "Flexible Language-Guided Representation Editing for Adaptive Robot Behavior",
-   "published": "2026-10-22",
-   "topics": [],
-   "venue": "CoRL 2026",
-   "code": [],
-   "project": [
-    "https://mit-clear-lab.github.io/FLEX/"
-   ],
-   "comment": "Accepted to the 10th Conference on Robot Learning (CoRL 2026), Austin, TX. 25 pages, 7 figures, 2 tables",
-   "authors": [
-    "Audrey Lee",
-    "Nathaniel Dennler",
-    "Ilia Sucholutsky",
-    "Andreea Bobu"
-   ],
-   "abstract": "Trajectory demonstrations show robots how to behave but not why, leaving them to guess which features of the task actually matter. Incorrect guesses produce misaligned internal representations and lead to incorrect robot behaviors. Because task features are often semantically defined, we argue that natural language is better suited for specifying features rather than relying on demonstrations. Although existing representation editing methods have proposed using language to specify new features, only allowing additive edits produces feature sets that are often over-specified or too narrowly scoped, especially in sequential editing tasks. We propose the Flexible Feature Editing Pipeline (FLEX), which uses language models to iteratively refine a robot's internal representation of task features from natural language corrections via three complementary operations: Add missing features, Generalize existing specific features, and Mask irrelevant features. We evaluate FLEX on 2D navigation scenarios, 7DoF Franka tabletop manipulation tasks, and a real-world study using naturalistic human language corrections and real-robot demonstrations. Comparisons against single-operation and unscaffolded baselines show that all three operations are necessary in interactive scenarios, and that FLEX achieves consistently higher normalized reward compared to other feature editing approaches while maintaining compact, transferable representations. Project available at https://mit-clear-lab.github.io/FLEX/",
    "fetched": "2026-10-26"
   },
   {
