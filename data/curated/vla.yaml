@@ -842,3 +842,23 @@
   tags: [vla, multi-view, view-routing, intent-prediction, real, sim]
   takeaway_en: "Finds VLAs over-rely on the wrist camera; predicts future interaction intent from past actions to route between global and wrist views per stage. Reports +10.1 pp over π0.5 on RoboTwin 2.0 and 71.7% → 85.0% real."
   takeaway_zh: "发现现有 VLA 过度依赖腕部相机；根据历史动作预测未来交互意图，按任务阶段在全局与腕部视角间动态路由；报告在 RoboTwin 2.0 上比 π0.5 高 10.1 个百分点，真机成功率由 71.7% 提升到 85.0%。"
+- title: "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success"
+  type: paper
+  arxiv: "2610.31670"
+  year: 2026
+  project: https://yunfeixie233.github.io/s2/
+  added: 2026-10-29
+  topics: [datasets]
+  tags: [evaluation, representation, offline-metric, vlm-backbone, wam]
+  takeaway_en: "S² is a training-free offline metric of how well a model's representation aligns with physical motion. Reports it tracks robot task success across model families and can rank VLM backbones before VLA fine-tuning."
+  takeaway_zh: "S² 是一种无需训练的离线指标，衡量模型视觉表征与物理运动几何的对齐程度（把柏拉图表征假说扩展到机器人）；报告它与多类模型的真实任务成功率正相关，可在微调成 VLA 之前筛选 VLM 骨干。"
+- title: "Plan First, Act Later: Streaming Reasoning for Executable Memory in Robot Control"
+  type: paper
+  arxiv: "2610.29329"
+  year: 2026
+  project: https://qinghangliu.github.io/pal-webpage/
+  added: 2026-10-29
+  topics: [manipulation]
+  tags: [memory, long-horizon, hierarchical, vlm-planner, real]
+  takeaway_en: "PAL has a high-level VLM write future-relevant subtasks into an executable memory while watching, then hand the current one to a low-level VLA. Reports 56.05% vs 44.51% on RoboMME and 60.83% on 4 real tasks."
+  takeaway_zh: "PAL 让高层 VLM 在观察过程中把未来需要的子任务提前写入可执行记忆（subtask_list），执行时再挑出当前子任务交给底层 VLA；报告在 RoboMME 上成功率 56.05%（最强基线 44.51%），4 个真实任务总体 60.83%。"

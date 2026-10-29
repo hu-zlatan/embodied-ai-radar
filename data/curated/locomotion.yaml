@@ -361,3 +361,13 @@
   tags: [humanoid, fall-recovery, diffusion-planner, perception, unitree-g1, real]
   takeaway_en: "RISE learns a vocabulary of recovery movements plus a visual diffusion planner whose predicted intent is steered at test time by task costs (heading, speed, path), no retraining; sim and real Unitree G1."
   takeaway_zh: "RISE 学习一组可组合的起身动作词表，并用视觉扩散规划器预测未来身体状态作为动作意图；推理时用任务代价（朝向、起身速度、路径）引导该意图，无需重新训练即可选择不同起身方式；仿真实验并在 Unitree G1 真机演示。"
+- title: "SMR: Learning streaming motion retargeting for humanoids from human semantic"
+  type: paper
+  arxiv: "2610.29169"
+  year: 2026
+  project: https://logosroboticsgroup.github.io/SMR/
+  added: 2026-10-29
+  topics: [control]
+  tags: [humanoid, motion-retargeting, streaming, transformer, whole-body-control, sim]
+  takeaway_en: "SMR distils physics experts that track robot-aware targets into a strictly causal Transformer, retargeting human motion to humanoids frame by frame. Reports better closed-loop results than kinematic baselines."
+  takeaway_zh: "SMR 先让物理专家在仿真中跟踪由人体动作转换来的机器人任务空间目标，再用其执行轨迹训练严格因果的 Transformer，实现逐帧流式的人形动作重定向；报告在相同全身控制器下闭环表现优于运动学与物理精修基线。"

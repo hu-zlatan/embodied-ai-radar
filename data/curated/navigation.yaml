@@ -319,3 +319,13 @@
   tags: [vln, foundation-model, jepa, latent-prediction, real]
   takeaway_en: "RepresentNav fuses several vision foundation models into a policy-learned space and predicts the next latent before acting (JEPA-style); reports 83.8% on VLNVerse fine-grained (+20.05 pts), real-robot tests."
   takeaway_zh: "RepresentNav 用一个小型 Transformer 融合多个视觉基础模型各层特征，构建由导航目标自行塑造的表示空间，并在每步动作前预测下一时刻的潜在表示（JEPA 式）；报告 VLNVerse 细粒度成功率 83.8%（领先 20.05 个百分点），并在真机上验证。"
+- title: "Gaussian Episodic Memory for Long-Term Spatiotemporal Reasoning"
+  type: paper
+  arxiv: "2610.33158"
+  year: 2026
+  project: https://abwerby.github.io/GEMS/
+  added: 2026-10-29
+  topics: [perception, datasets]
+  tags: [3dgs, spatiotemporal-memory, scene-change, question-answering, benchmark, real, sim]
+  takeaway_en: "GEMS keeps a 3D Gaussian Splatting map that is updated only where the scene changes, and an agent renders views on demand to answer when/where questions. Introduces GEMS-Bench (15 scenes, 473 QA pairs)."
+  takeaway_zh: "GEMS 维护一张只在场景变化处增量更新的 3DGS 地图，智能体按需渲染新视角来回答时空问题和定位物体；同时发布 GEMS-Bench（3 个真实 + 12 个合成环境，473 个问答对），报告在物体定位和时空问答上优于近期基线。"
