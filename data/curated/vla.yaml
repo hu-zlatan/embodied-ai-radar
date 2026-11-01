@@ -390,6 +390,26 @@
   tags: [real, arm, vlm, open-weights, reasoning, spatial]
   takeaway_en: An open 7B VLA that first outputs depth-aware perception tokens, then an editable 2D trajectory, then actions; reports 70.5% zero-shot on SimplerEnv and 86.6% on LIBERO, with weights, code and data released.
   takeaway_zh: 开源 7B VLA，先输出深度感知 token，再生成可编辑的二维轨迹，最后输出动作；论文报告 SimplerEnv 零样本 70.5%、LIBERO 86.6%，并开放权重、代码和数据。
+- title: "MolmoAct2: Action Reasoning Models for Real-world Deployment"
+  type: paper
+  arxiv: "2605.02881"
+  year: 2026
+  org: Ai2
+  code: https://github.com/allenai/molmoact2
+  project: https://allenai.org/blog/molmoact2
+  tags: [real, arm, bimanual, vlm, open-weights, open-data, reasoning, flow-matching, tokenizer]
+  takeaway_en: "Fully open successor to MolmoAct: a flow-matching action expert on an embodied-reasoning VLM, the OpenFAST tokenizer and a 720 h bimanual YAM dataset; reports beating π0.5 on 7 sim and real benchmarks."
+  takeaway_zh: MolmoAct 的全开源后继：在具身推理 VLM（MolmoER）上挂接流匹配连续动作专家，并发布开源动作分词器 OpenFAST 与 720 小时双臂 YAM 遥操作数据集；论文报告在 7 个仿真与真机基准上超过 π0.5 等基线，权重、训练代码与数据全部开放。
+- title: "UnifoLM-VLA-0"
+  type: code
+  year: 2026
+  org: Unitree
+  code: https://github.com/unitreerobotics/unifolm-vla
+  project: https://unigen-x.github.io/unifolm-vla.github.io
+  topics: [locomotion]
+  tags: [real, humanoid, unitree-g1, open-weights, libero]
+  takeaway_en: "Unitree's open VLA for humanoid manipulation: a VLM further pretrained on robot data, fine-tuned on 12 open Unitree G1 datasets; the README reports one policy handling 12 task categories on a real G1."
+  takeaway_zh: 宇树开源的人形机器人操作 VLA：在 UnifoLM-VLM 基础上用机器人操作数据继续预训练，再在 12 个公开的 Unitree G1 数据集上微调；README 称单一策略可在真实 G1 上完成 12 类复杂操作任务，另提供 LIBERO 微调权重。
 - title: "GraspVLA: a Grasping Foundation Model Pre-trained on Billion-scale Synthetic Action Data"
   type: paper
   arxiv: "2505.03233"
