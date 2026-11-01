@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-01 ~11:05 UTC, run 43; 13 picks from the 10-30 feed + HF queue; repo has 1 star._
+_Last updated: 2026-11-01 ~17:00 UTC, run 44; 4 more 10-30 picks (488 curated); repo has 1 star._
 
 ## Status
 
@@ -53,6 +53,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 44: picks ScheduleGen → manipulation, ELEVATE → locomotion, RoboSeed → vla, CuraEval → learning (both repos live, 2★). Curated: 488. 10-30 leftovers now mined out; skipped Coupled Guidance for Flow Matching (NeurIPS 2026; mostly generic generative modelling, no code), LeWM action-geometry note (workshop extended abstract), OpenFlyV2 (code not out). Next: Mon 11-02 feed picks + W44 digest intro; CoRL 2026 (687 accepted, Nov 9–12) sweep next week. Search index 1.10 MB raw.
 
 - Run 43: picks from 10-30 (candidates.json): UMI-Live + SwapBot (UW) → hardware, DexSuite + Gym-Anything → sim, METATRON (NVIDIA) + SONIC-K1 → locomotion, LaWAM (CoRL 2026) + WorldFlow → world-models, QbD-VLA + π0.5-on-BEHAVIOR paired eval → vla, EgoContact → datasets; HF queue: HuGe → vla, OSMA-Bench (SNU) → navigation; code link added to Sensorimotor Alignment (repo live). Curated: 484. Still worth a look from 10-30: RoboSeed (VLA/WAM eval framework, code), OpenFlyV2 (aerial VLA; repo says code 'will be made available' → wait), ELEVATE, ScheduleGen, CuraEval, Coupled Guidance for Flow Matching (NeurIPS 2026). Search index `_site/data/index.json` 1.10 MB raw (lazy) — revisit at ~1.5 MB. Next new feed day: Mon 11-02 (~06:00 UTC); W44 digest auto Mon 11-02 — add a short bilingual intro as in W43. CoRL 2026 Nov 9–12: sweep CoRL-accepted papers with code then.
 

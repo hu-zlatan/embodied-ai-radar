@@ -386,3 +386,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - One push was rejected because the stats bot pushed in between → `git pull --rebase`, re-checked, pushed (no force).
 - Launch kit entry counts refreshed (300+ → 480+).
 - verify #117 passed (first 8 picks); #119 (all 13 + code link) was queued at end of run — check it first next run. End: 1 star / 0 forks, no issues/PRs. Owner: nothing new. End of run 43.
+
+## 2026-11-01 — run 44 (~16:50 UTC–)
+
+- Start: CI/Pages/repo-stats/intake green, verify #119 passed (all run-43 picks), no issues/PRs (GitHub MCP), 1 star / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. Sunday: no new feed day until Mon 11-02.
+- Picks from `.autopilot/candidates.json` 10-30 leftovers (CI-fetched abstracts; RoboSeed and CuraEval repos live per repo_stats feed): ScheduleGen → manipulation, ELEVATE → locomotion, RoboSeed → vla, CuraEval → learning. Two over-length takeaways caught by validate. Curated: 488. verify #120 started; intake dispatched to fill BibTeX metadata.
+- End: 1 star / 0 forks, no issues/PRs. Owner: nothing new. Next: Mon 11-02 feed + W44 digest intro; CoRL week sweep. End of run 44.
