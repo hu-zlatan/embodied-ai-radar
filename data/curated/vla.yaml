@@ -846,6 +846,7 @@
   type: paper
   arxiv: "2610.31670"
   year: 2026
+  code: https://github.com/yunfeixie233/sensorimotor-alignment
   project: https://yunfeixie233.github.io/s2/
   added: 2026-10-29
   topics: [datasets]
@@ -873,3 +874,15 @@
   tags: [quantization, efficiency, deployment, libero, mixed-precision, real]
   takeaway_en: "Assigns VLA bit widths from short closed-loop task-success tests, not calibration sensitivity: ~4-bit weights on LIBERO across four models. Honest caveat: allocations transfer to a real arm for X-VLA but fail for π0.5."
   takeaway_zh: 用短时闭环任务成功率（而非校准数据敏感度）为 VLA 各组件分配权重/激活位宽，并考虑组件间相互影响；在四个 VLA 与 LIBERO 全部套件上约 4 比特权重仍保持较强表现。作者如实指出：仿真选出的方案在真机上对 X-VLA 无损，对 π0.5 却失败。
+
+- title: "HuGe: Scaling Humanoid Generalist Vision-Language-Action Models with Egocentric Experience"
+  type: paper
+  arxiv: "2610.34186"
+  year: 2026
+  code: https://github.com/yliu-cs/HuGe
+  project: https://yliu-cs.github.io/HuGe
+  added: 2026-11-01
+  topics: [locomotion]
+  tags: [humanoid, egocentric-video, human-data, whole-body-control, unitree-g1, cross-embodiment, real]
+  takeaway_en: "Humanoid VLA family pre-trained on 2,000+ h of egocentric human and robot data, predicting latent motion tokens for a whole-body controller; uses pseudo-proprioception and arm re-rendering to bridge the embodiment gap."
+  takeaway_zh: 人形机器人通用 VLA 系列：在 2,000 多小时第一视角人类与机器人数据上预训练，输出潜在动作 token 驱动预训练的全身控制器并附手部信号；通过仿真回放构造伪本体感知、重渲染手臂外观缩小人-机差异，报告 HumanoidArena 最优，并在 Unitree G1 上验证人类数据增益。

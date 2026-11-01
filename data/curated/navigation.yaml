@@ -329,3 +329,16 @@
   tags: [3dgs, spatiotemporal-memory, scene-change, question-answering, benchmark, real, sim]
   takeaway_en: "GEMS keeps a 3D Gaussian Splatting map that is updated only where the scene changes, and an agent renders views on demand to answer when/where questions. Introduces GEMS-Bench (15 scenes, 473 QA pairs)."
   takeaway_zh: "GEMS 维护一张只在场景变化处增量更新的 3DGS 地图，智能体按需渲染新视角来回答时空问题和定位物体；同时发布 GEMS-Bench（3 个真实 + 12 个合成环境，473 个问答对），报告在物体定位和时空问答上优于近期基线。"
+
+- title: "Benchmarking Obstacle-Conditioned Safety in Household Robot Navigation"
+  type: paper
+  arxiv: "2610.34674"
+  year: 2026
+  org: Seoul National University
+  code: https://github.com/OSMA-Bench/OSMA-Bench
+  project: https://osma-bench.github.io/
+  added: 2026-11-01
+  topics: [datasets]
+  tags: [safety, benchmark, household, vlm, vla, evaluation]
+  takeaway_en: "OSMA-Bench: matched scenes that differ only in obstacle type test whether navigation policies slow down and keep clearance by how risky an obstacle is. VLM and VLA policies recognise the risk but rarely act on it."
+  takeaway_zh: OSMA-Bench 用仅障碍物类型不同的配对场景，检验导航策略能否按障碍物危险程度调整间距与速度，并提出语义敏感度指数 SSI。结果显示 VLM 与 VLA 策略能识别哪些障碍更危险，却很少把这种判断体现在实际运动中；在 VLM 方案中加入显式参数推断步骤有所改善。
