@@ -166,37 +166,6 @@
    "fetched": "2026-10-30"
   },
   {
-   "id": "2610.40026",
-   "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models: Capability, Resource Affordability, and Research Evidence",
-   "published": "2026-10-30",
-   "topics": [
-    "vla",
-    "world-models"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/PrimitiveX/RoboSeed"
-   ],
-   "project": [],
-   "comment": "Project repository: https://github.com/PrimitiveX/RoboSeed",
-   "authors": [
-    "Xin Ma",
-    "Furong Chen",
-    "Xinlong Man",
-    "Bo Zhang",
-    "Yalong Guo",
-    "Haolan Lei",
-    "Chaochen Cui",
-    "Hongyuan Zhang",
-    "Mulin Chen",
-    "Yi Wang",
-    "Lap-pui Chau",
-    "Chuang Yang"
-   ],
-   "abstract": "Choosing a robot action model requires evidence about task capability, adaptation cost, deployment requirements, and the reliability of reported conclusions. Success rates alone offer limited guidance to researchers with different computing budgets and goals. We propose RoboSeed, a multidimensional evaluation framework for vision-language-action (VLA) and world-action models (WAM), within a continuing program to train, evaluate, and openly release robot models with verifiable evidence for model selection. The framework defines five dimensions: capability, downstream training affordability, deployment affordability, locally verified research value, and reproduction evidence. It maps empirical measurements and audit criteria to 0-100 profiles using fixed normalization anchors, with balanced, training-constrained, and deployment-constrained preference settings. Interface and protocol checks establish when comparisons are appropriate. Missing measurements remain explicit, incomplete aggregate scores are withheld, and weighted input coverage identifies evidence gaps. We apply the framework to representative VLA and WAM models, drawing on local training, released-weight evaluation, task-level audits, and an evaluation-system study. The results reveal budget-dependent backbone choices, sensitivity to adaptation recipes, and differences between language and visual task interfaces. Reproducible scoring code and machine-readable evidence support extension to additional models. The study provides dimension-level assessments and priorities for further measurement, while incomplete serving traces and heterogeneous protocols preclude overall numerical rankings.",
-   "fetched": "2026-10-30"
-  },
-  {
    "id": "2610.39798",
    "title": "Surrogate Uncertainty for Black-box Visual Grounding",
    "published": "2026-10-30",
@@ -263,32 +232,6 @@
     "Francisco J. Rodríguez Lera"
    ],
    "abstract": "Planning at run time, as in robots that re-plan while they act, needs a planner that reads the PDDL its users write (durative actions, numeric resources, time windows, continuous change), answers quickly, and delivers only validated plans. Specialised planners are strong on individual fragments of PDDL, but they differ in coverage, latency and in what their failures mean. We study whether selecting heterogeneous engines from the semantics of each task can give broad coverage of PDDL, from STRIPS to PDDL+, while remaining competitive with specialised planners and making explicit what each answer guarantees. Kairos profiles each task to decide which of five engines apply (ground heuristic search, compressed and snap-action temporal search, time steps for hybrid dynamics, lifted search) and schedules them under one budget of time and memory. Every candidate plan is checked by a validator independent of the planner's transformations, and \"unsolvable\" is reported only when a search whose exhaustion is a proof exhausts its space. On 1,756 tasks from nine comparative suites, Kairos solves more tasks at the full limits than the strongest evaluated planner of each suite, with the largest differences on numeric, temporal, PDDL3 and PDDL+ planning, and it also solves the most tasks at 100 ms and 1 s. Resampling over domains, the gain is above zero in six of the nine suites, while on classical planning against LAMA it is within the noise. A further 450 feature-oriented tasks and 26 one-feature probes show that Kairos handles all seventeen features probed, where no other planner evaluated handles more than eight. Ablations identify compressed temporal search and the novelty fallback as major contributors, and a comparison with VAL traces every disagreement to a PDDL+ convention or to a documented VAL defect. Planner and benchmark are open source.",
-   "fetched": "2026-10-30"
-  },
-  {
-   "id": "2610.39429",
-   "title": "ScheduleGen: Demonstration Generation via Skill Scheduling for Multi-Arm Imitation Learning",
-   "published": "2026-10-30",
-   "topics": [
-    "manipulation",
-    "learning",
-    "datasets"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://schedulegen.github.io/"
-   ],
-   "comment": "22 pages, 9 figures, 5 tables. Project website and videos: https://schedulegen.github.io/",
-   "authors": [
-    "Neel Jawale",
-    "Stephan Pleines",
-    "Soha Pouya",
-    "Yuke Zhu",
-    "Ajay Mandlekar",
-    "Caelan Garrett"
-   ],
-   "abstract": "Multi-arm robot platforms, including bimanual and humanoid robots, have the capability to complete tasks with lower cycle times than single-arm systems, but they are more difficult to safely control due to the presence of multi-arm constraints. The paradigm of training generalist robot policies from massive datasets is a promising approach to address general-purpose multi-arm manipulation, but the acquisition of large multi-arm manipulation datasets remains a bottleneck. Automated demonstration generation can alleviate this burden by synthesizing new demonstrations from a handful of source demonstrations, but existing algorithms ignore multi-arm constraints and as a result often induce unsafe and unsuccessful behaviors. We address this limitation by introducing ScheduleGen, an integrated planning & scheduling algorithm for multi-arm demonstration generation. We evaluate ScheduleGen on 28 simulation task variants, including seven externally authored RoboDojo tasks and settings inaccessible to prior systems; it achieves 79.6% mean data-generation success and trains policies with 65.5% mean success. ScheduleGen policies outperform those trained on a state-of-the-art data generation baseline, and achieve 50-80% success across eight real-world variants through zero-shot sim-to-real and real-to-sim-to-real transfer. Videos and more at: https://schedulegen.github.io/",
    "fetched": "2026-10-30"
   },
   {
@@ -557,28 +500,6 @@
    "fetched": "2026-10-30"
   },
   {
-   "id": "2610.38388",
-   "title": "ELEVATE: Agentic Controller Acquisition from Task Failure for Quadrupedal Manipulation",
-   "published": "2026-10-30",
-   "topics": [
-    "manipulation",
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://agentic-quad-elevate.github.io/public/"
-   ],
-   "comment": "23 pages, 14 figures, including appendix. Project page and videos: https://agentic-quad-elevate.github.io/public/",
-   "authors": [
-    "Shiqi Liu",
-    "Radu Corcodel",
-    "Ding Zhao"
-   ],
-   "abstract": "Quadrupedal manipulators can extend their workspace through whole-body interaction, but task-planning agents' capabilities remain limited by their available controllers. We present ELEVATE, a framework that uses persistent failures during task-program refinement to identify and acquire missing whole-body control capabilities. When these failures suggest a missing physical capability, a coding agent formulates and iteratively refines a reinforcement-learning problem, specifying behavior-specific rewards, curricula, and termination conditions. Validated controllers are added to the capability library and composed with existing controllers to retry the task. Starting from a single pretrained loco-manipulation controller, ELEVATE autonomously acquires controllers for wall-supported elevation, supported manipulation, and wall descent across a sequence of seven simulation tasks. These controllers are reused in subsequent reaching and object-manipulation tasks. On the five tasks beyond the initial controller's workspace, ELEVATE achieves mean success rates of 98.4%-100% across five independent runs, while coding-agent baselines with a fixed controller library fail to complete these tasks. The synthesized task programs, together with the acquired controllers, also transfer to a physical quadrupedal manipulator without real-robot training or fine-tuning, achieving 18/20 successes in rack retrieval and 16/20 in floor-to-rack placement. Videos and demonstrations are available at https://agentic-quad-elevate.github.io/public/.",
-   "fetched": "2026-10-30"
-  },
-  {
    "id": "2610.38357",
    "title": "CSO: Refining Robotic Policies via Skill Distribution Alignment and Skill-Grained Optimization",
    "published": "2026-10-30",
@@ -647,26 +568,6 @@
     "Xiaopeng Zhang"
    ],
    "abstract": "Embodied systems can update policies, world models, skills, and executable programs from deployment experience, allowing one interaction to benefit later tasks. When a system also revises and reuses its data-acquisition, feedback, or learning procedures, experience changes the process that produces capability, introducing recursive self-improvement. This paper surveys research in physical AI through the connection between persistent capability and its improvement process. We first explain the functional distinction between learner updates and improvers, then compare policy learning, imagined experience, memory and skill accumulation, and executable harnesses. These approaches connect to revisions of curricula, rewards, and research programs in different ways. Contact validity, recovery, retention, and resource costs determine whether the resulting gains accumulate during continued deployment. An L0-L3 rubric distinguishes task-local adaptation, persistent capability gain, inherited process revision, and verified improver gain. Representative benchmarks and within-study contrasts relate these distinctions to existing results. We further propose common-data and interactive comparisons that evaluate reference and revised improvers from shared learner starts, separating the use of experience from its acquisition. This perspective connects the diverse methods, physical operating conditions, and evaluation evidence, underpinning embodied RSI. A comprehensive list of studies in this survey is available at https://github.com/nkd-lkz/physical-ai-rsi-survey.",
-   "fetched": "2026-10-30"
-  },
-  {
-   "id": "2610.38221",
-   "title": "CuraEval: Evaluating Demonstration Curation on Mixed-Skill Robot Data",
-   "published": "2026-10-30",
-   "topics": [],
-   "venue": null,
-   "code": [
-    "https://github.com/jiuyixu25/CuraEval"
-   ],
-   "project": [],
-   "comment": "Accepted by the CoRL 2026 Workshop \"Oops, I Erred\". 10 pages, 2 figures, 2 tables",
-   "authors": [
-    "Jiuyi Xu",
-    "Meida Chen",
-    "Yang Ye",
-    "Yangming Shi"
-   ],
-   "abstract": "Robot imitation learning uses demonstrations from operators of varying skill, but selecting training data remains challenging. Existing methods score demonstrations using smoothness, diversity, or estimated influence on policy performance, but differences in selection and evaluation protocols make it difficult to determine whether they outperform simple baselines. We introduce \\textbf{CuraEval}, a framework combining mathematical analysis of demonstration scores with controlled comparisons against fixed size-matched random subsets and full-data training on mixed-skill robomimic data using Diffusion Policy and BC-RNN. We show that the evaluated PSD score depends only on episode length and squared position magnitudes, and produces nearly the same ranking as episode length on \\textit{square} ($ρ=0.999$). With Diffusion Policy, selecting the shortest 50\\% of demonstrations improves \\textit{square} success from 70.7\\% under random selection to 76.5\\%. Compared with random selection, our adapted geometric-entropy LOO selector reduces success at 25\\% retention from 94.7\\% to 74.0\\% on \\textit{can} and achieves 41.7\\% on \\textit{square}, below the mean success rates of all three independently sampled random subsets (59.8--62.5\\%). On the same 3 \\textit{square} Diffusion Policy training seeds, length-based selection at 75\\% retention improves success over full-data training from 76.7\\% to 86.7\\% under the original protocol, but lowers it from 80.5\\% to 79.5\\% after checkpoint reporting, rollout count, and evaluation seed change jointly. No evaluated curated condition significantly outperforms full-data training after Holm correction, although confidence intervals still permit useful gains. Code is available at https://github.com/jiuyixu25/CuraEval.",
    "fetched": "2026-10-30"
   },
   {
