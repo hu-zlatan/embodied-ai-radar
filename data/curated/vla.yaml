@@ -654,6 +654,16 @@
   tags: [real, bimanual, mobile-manipulation, world-model-data, flow-matching, edge-deployment]
   takeaway_en: "Trains a VLA largely on world-model-generated data (re-rendered real videos, new viewpoints, sim2real, human-to-robot video); reports gains over π0 on dexterous and mobile tasks, plus a 402M variant for Jetson Orin."
   takeaway_zh: VLA 训练大量依赖世界模型生成的数据（真实视频重渲染、新视角、仿真转真实、人类视频转机器人）；论文报告在灵巧与移动操作任务上优于 π0，并提供可在 Jetson Orin 上运行的 4.02 亿参数小模型。
+- title: "GigaBrain-0.5M*: a VLA That Learns From World Model-Based Reinforcement Learning"
+  type: paper
+  arxiv: "2602.12099"
+  year: 2026
+  org: GigaBrain Team
+  project: https://gigabrain05m.github.io
+  topics: [world-models, learning]
+  tags: [real, bimanual, rl, world-model, long-horizon]
+  takeaway_en: "Post-trains a VLA (GigaBrain-0.5, 10k+ h of robot data) with RL conditioned on a video world model's predictions (RAMP); reports ~30% over the RECAP baseline on laundry folding, box packing and espresso making."
+  takeaway_zh: 在 GigaBrain-0.5（预训练于 1 万多小时机器人操作数据）基础上，用以视频世界模型预测为条件的强化学习（RAMP）做后训练；论文报告在叠衣服、装箱和制作浓缩咖啡等难任务上比 RECAP 基线提升约 30%。
 - title: "Galaxea Open-World Dataset and G0 Dual-System VLA Model"
   type: paper
   arxiv: "2509.00576"

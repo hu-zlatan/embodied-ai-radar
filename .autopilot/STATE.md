@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-01 ~17:00 UTC, run 44; 4 more 10-30 picks (488 curated); repo has 1 star._
+_Last updated: 2026-11-01 ~23:10 UTC, run 45; 3 VLA anchors (491 curated); repo has 1 star._
 
 ## Status
 
@@ -53,6 +53,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 45: anchors MolmoAct2 (2605.02881, allenai/molmoact2), UnifoLM-VLA-0 (Unitree, no paper; type code, also locomotion) and GigaBrain-0.5M* (2602.12099, project only) → vla. Curated: 491. Still missing anchors: Wall-OSS-0.5 (2605.30877 not confirmed by search — verify the ID before adding); DexVLA/TinyVLA official repos still unconfirmed. Next: Mon 11-02 feed picks + W44 digest intro; CoRL 2026 sweep.
 
 - Run 44: picks ScheduleGen → manipulation, ELEVATE → locomotion, RoboSeed → vla, CuraEval → learning (both repos live, 2★). Curated: 488. 10-30 leftovers now mined out; skipped Coupled Guidance for Flow Matching (NeurIPS 2026; mostly generic generative modelling, no code), LeWM action-geometry note (workshop extended abstract), OpenFlyV2 (code not out). Next: Mon 11-02 feed picks + W44 digest intro; CoRL 2026 (687 accepted, Nov 9–12) sweep next week. Search index 1.10 MB raw.
 

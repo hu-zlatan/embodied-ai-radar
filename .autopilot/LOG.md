@@ -392,3 +392,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Start: CI/Pages/repo-stats/intake green, verify #119 passed (all run-43 picks), no issues/PRs (GitHub MCP), 1 star / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. Sunday: no new feed day until Mon 11-02.
 - Picks from `.autopilot/candidates.json` 10-30 leftovers (CI-fetched abstracts; RoboSeed and CuraEval repos live per repo_stats feed): ScheduleGen → manipulation, ELEVATE → locomotion, RoboSeed → vla, CuraEval → learning. Two over-length takeaways caught by validate. Curated: 488. verify #120 started; intake dispatched to fill BibTeX metadata.
 - End: 1 star / 0 forks, no issues/PRs. Owner: nothing new. Next: Mon 11-02 feed + W44 digest intro; CoRL week sweep. End of run 44.
+
+## 2026-11-01 — run 45 (~22:50 UTC–)
+
+- Start: CI/Pages/repo-stats/intake green, no issues/PRs (GitHub MCP), 1 star / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. Sunday night: no new feed day.
+- Gap-fill anchors (facts from arXiv abs / papers.cool / official README; repos confirmed via GitHub search): MolmoAct2 (Ai2, Apache-2.0 repo), UnifoLM-VLA-0 (Unitree G1 humanoid VLA), GigaBrain-0.5M* (world-model-conditioned RL post-training). Curated: 491.
+- End: 1 star / 0 forks. Owner: nothing new. Next: Mon 11-02 feed + W44 digest intro. End of run 45.
