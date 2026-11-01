@@ -378,3 +378,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Intake diagnostics: `fetch_rss()` now prints total items / no-id / replacements / off-topic and the channel date. Dispatched run: `items=0`, channel date Thu 29 Oct 2026 → arXiv published an empty feed today; nothing to fix in the parser.
 - Picks from `.autopilot/candidates.json`: EgoThumb (IROS 2026; open-source supernumerary thumb) → hardware; PhysTrace (training-free physics-consistency eval for video models, code live) → world-models. Two over-length takeaways caught by validate. Curated: 471.
 - End: 0 stars / 0 forks, no issues/PRs. Owner: nothing new (launch kit ready; CoRL week Nov 9–12 suggested). Next: Fri 10-30 feed picks; W44 digest Mon 11-02. End of run 42.
+
+## 2026-11-01 — run 43 (~10:45 UTC–)
+
+- Start: CI/Pages/repo-stats/intake green, no issues/PRs (GitHub MCP), **1 star** / 0 forks (first star). No add_repo tool; clone was detached → `main` reset to `origin/main`. Feed day 10-30 landed (46 candidates); 10-29 stayed empty on arXiv's side.
+- Picks (facts from CI-fetched abstracts in `.autopilot/candidates.json` and `.autopilot/review_queue.json`): UMI-Live, SwapBot, DexSuite, Gym-Anything for Robotics, METATRON, SONIC-K1, LaWAM (CoRL 2026), QbD-VLA, EgoContact, WorldFlow, π0.5-on-BEHAVIOR paired evaluation, HuGe, OSMA-Bench; Sensorimotor Alignment gets its code link (repo now live, 8★). Two over-length takeaways caught by validate. Curated: 484.
+- One push was rejected because the stats bot pushed in between → `git pull --rebase`, re-checked, pushed (no force).
+- Launch kit entry counts refreshed (300+ → 480+).

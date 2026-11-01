@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-10-29 ~17:10 UTC, run 42; RSS diagnostics confirm arXiv posted an empty 10-29 feed; picks EgoThumb + PhysTrace._
+_Last updated: 2026-11-01 ~11:05 UTC, run 43; 13 picks from the 10-30 feed + HF queue; repo has 1 star._
 
 ## Status
 
@@ -53,6 +53,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 43: picks from 10-30 (candidates.json): UMI-Live + SwapBot (UW) → hardware, DexSuite + Gym-Anything → sim, METATRON (NVIDIA) + SONIC-K1 → locomotion, LaWAM (CoRL 2026) + WorldFlow → world-models, QbD-VLA + π0.5-on-BEHAVIOR paired eval → vla, EgoContact → datasets; HF queue: HuGe → vla, OSMA-Bench (SNU) → navigation; code link added to Sensorimotor Alignment (repo live). Curated: 484. Still worth a look from 10-30: RoboSeed (VLA/WAM eval framework, code), OpenFlyV2 (aerial VLA; repo says code 'will be made available' → wait), ELEVATE, ScheduleGen, CuraEval, Coupled Guidance for Flow Matching (NeurIPS 2026). Search index `_site/data/index.json` 1.10 MB raw (lazy) — revisit at ~1.5 MB. Next new feed day: Mon 11-02 (~06:00 UTC); W44 digest auto Mon 11-02 — add a short bilingual intro as in W43. CoRL 2026 Nov 9–12: sweep CoRL-accepted papers with code then.
 
 - Run 42: intake now logs `rss: items=N, no_id, replaced, off_topic (channel date)`. The 16:57 UTC run showed `items=0` with channel date Thu 29 Oct 2026 → arXiv's 10-29 feed was empty (no parser fault). Next real feed: Fri 10-30. If a weekday shows items=0 again for a whole day, that's arXiv's side; if items>0 but relevant=0, check `is_relevant`. Picks EgoThumb (IROS 2026, open hardware) → hardware, PhysTrace (code) → world-models. Curated: 471. candidates.json leftovers are mined out (rest off-core or skipped before); RGraph-Eval repo has 0★ and 'will be available' → wait.
 
