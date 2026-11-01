@@ -461,3 +461,13 @@
   tags: [wam, latent-world-model, latent-action, libero, robotwin, real]
   takeaway_en: "World action model without video generation: predicts future features in a vision foundation model's latent space as policy subgoals. Reports 98.6% on LIBERO and up to 24× lower latency than pixel WAMs."
   takeaway_zh: 不生成视频的世界动作模型：在视觉基础模型的特征空间中训练潜动作模型，预测未来观测特征作为“潜在视觉子目标”来条件化动作生成。报告 LIBERO 98.6%、RoboTwin 91.22%，每个动作块推理 187 ms，比像素级 WAM 延迟低最多 24 倍。
+
+- title: "WorldFlow: Joint Video and 3D Motion Prediction via Large-Scale Pretraining"
+  type: paper
+  arxiv: "2610.39278"
+  year: 2026
+  project: https://worldflow-rbs.github.io/
+  added: 2026-11-01
+  tags: [video-world-model, 3d-trajectories, rectified-flow, mixture-of-transformers, benchmark]
+  takeaway_en: "World model that jointly denoises future video and 3D point trajectories in one Mixture-of-Transformers, trained on 1.44M samples; adds WorldFlowBench, reports 54% lower ADE than the best baseline on SpatialCog."
+  takeaway_zh: 同时预测未来视频与查询点 3D 轨迹的生成式世界模型：3D 运动以与视频网格对齐的位移 token 表示，由统一的 Mixture-of-Transformers 在 rectified flow 目标下联合去噪；在 144 万样本上训练，新建 WorldFlowBench，报告 SpatialCog 上 ADE 比最强外部基线降低 54.2%。
