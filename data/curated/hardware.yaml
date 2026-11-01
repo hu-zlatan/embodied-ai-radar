@@ -331,3 +331,26 @@
   tags: [wearable, supernumerary-finger, tendon-driven, imitation-learning, egocentric, open-hardware, real]
   takeaway_en: "Open-source wearable extra thumb: a tendon-driven finger with motors moved to the forearm; an imitation policy maps palm-camera images to joint positions, inferring intent without explicit triggers."
   takeaway_zh: 开源的可穿戴“第六指”：紧凑的双腱驱动手指，电机移到前臂以减轻末端重量；模仿学习策略直接把掌心相机图像映射为关节位置，从视觉中推断使用者意图，无需显式手势触发，软硬件全部开源。
+
+- title: "UMI-Live for In-The-Wild Bimanual Robotics Data Collection"
+  type: paper
+  arxiv: "2610.39385"
+  year: 2026
+  project: https://umi-live.github.io/
+  added: 2026-11-01
+  topics: [datasets, manipulation]
+  tags: [umi, bimanual, data-collection, lidar-inertial, slam, open-hardware, real]
+  takeaway_en: "Open-source bimanual UMI with camera, LiDAR-inertial sensing, compute and power on board: no external tracking or calibration; parallel SLAM outputs training-ready data. Releases 40 h of data and hardware files."
+  takeaway_zh: 全栈开源的双手 UMI 野外数据采集系统：手持设备集成相机、激光雷达-惯性传感、板载算力与电源，无需外部追踪或现场标定；异步 SLAM 流水线直接产出可训练数据集，并发布 40 小时数据、硬件设计与复现指南，用 π0.5 和 MolmoAct2 微调验证数据质量。
+
+- title: "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing"
+  type: paper
+  arxiv: "2610.40646"
+  year: 2026
+  org: University of Washington
+  project: https://personalrobotics.github.io/SwapBot
+  added: 2026-11-01
+  topics: [manipulation, tactile]
+  tags: [end-effector, tool-use, tool-swapping, teleoperation, imitation-learning, real]
+  takeaway_en: "Instead of one universal gripper: a fixed robot-side coupling plus cheap tool-side adapters with tactile sensors turn household tools into swappable end effectors; imitation policies cook tofu and flip meat."
+  takeaway_zh: 不追求万能夹爪，而是用固定的机器人侧接口加低成本、带触觉传感器的工具侧适配器，把日常厨具变成可自动更换的末端执行器，兼容多种机器人平台；配套遥操作采集示范，模仿学习策略完成煎豆腐、拌沙拉、翻肉等工具任务。

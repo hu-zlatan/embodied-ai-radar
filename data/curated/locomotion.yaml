@@ -371,3 +371,25 @@
   tags: [humanoid, motion-retargeting, streaming, transformer, whole-body-control, sim]
   takeaway_en: "SMR distils physics experts that track robot-aware targets into a strictly causal Transformer, retargeting human motion to humanoids frame by frame. Reports better closed-loop results than kinematic baselines."
   takeaway_zh: "SMR 先让物理专家在仿真中跟踪由人体动作转换来的机器人任务空间目标，再用其执行轨迹训练严格因果的 Transformer，实现逐帧流式的人形动作重定向；报告在相同全身控制器下闭环表现优于运动学与物理精修基线。"
+
+- title: "METATRON: A Promptable Whole-Body Execution Layer for Humanoids"
+  type: paper
+  arxiv: "2610.38027"
+  year: 2026
+  org: NVIDIA
+  project: https://research.nvidia.com/labs/par/projects/metatron/
+  added: 2026-11-01
+  topics: [control]
+  tags: [humanoid, whole-body-control, generative-policy, prompting, coding-agents, unitree-g1, real]
+  takeaway_en: "One frozen humanoid policy driven by prompts (timed body-part targets, velocity, style); skills are plain code, refined by coding agents. On a Unitree G1 it walks, recovers, picks up objects and sits."
+  takeaway_zh: 可“提示”的人形全身执行层：冻结的生成式基础策略接收部分目标（定时的身体部位目标、速度指令、风格）生成全身动作；技能是普通代码，可由编码智能体分析动作数据后自动改进，无需按任务重训。在 Unitree G1 上一个检查点即可行走、恢复、遥操作抓取和坐下。
+
+- title: "SONIC-K1: Porting a Universal Humanoid Motion Tracker to a Small Humanoid on a Single GPU"
+  type: paper
+  arxiv: "2610.39327"
+  year: 2026
+  project: https://kyry.me/sonic-k1
+  added: 2026-11-01
+  tags: [humanoid, motion-tracking, booster-k1, open-weights, low-compute, sim-to-real]
+  takeaway_en: "Open-weights whole-body motion tracker for the small Booster K1, adapting SONIC and trained on one shared GPU. Tracks most held-out clips in MuJoCo; on hardware, upper-body and slow motions work, stepping less so."
+  takeaway_zh: 将 SONIC 通用动作跟踪框架移植到小型人形 Booster K1，在一张共享 GPU 上从头训练并开放权重与代码。MuJoCo 中几乎能跟踪所有留出动作片段；真机上上半身和慢速动作表现良好，迈步与转身仍不稳定，作者坦诚指出对动作延迟敏感。

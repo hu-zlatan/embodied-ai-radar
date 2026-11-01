@@ -862,3 +862,14 @@
   tags: [memory, long-horizon, hierarchical, vlm-planner, real]
   takeaway_en: "PAL has a high-level VLM write future-relevant subtasks into an executable memory while watching, then hand the current one to a low-level VLA. Reports 56.05% vs 44.51% on RoboMME and 60.83% on 4 real tasks."
   takeaway_zh: "PAL 让高层 VLM 在观察过程中把未来需要的子任务提前写入可执行记忆（subtask_list），执行时再挑出当前子任务交给底层 VLA；报告在 RoboMME 上成功率 56.05%（最强基线 44.51%），4 个真实任务总体 60.83%。"
+
+- title: "Quantize by Doing: Task-Guided Mixed-Precision Quantization of Vision-Language-Action Models"
+  type: paper
+  arxiv: "2610.38661"
+  year: 2026
+  code: https://github.com/jiuyixu25/QbD-VLA
+  added: 2026-11-01
+  topics: [learning]
+  tags: [quantization, efficiency, deployment, libero, mixed-precision, real]
+  takeaway_en: "Assigns VLA bit widths from short closed-loop task-success tests, not calibration sensitivity: ~4-bit weights on LIBERO across four models. Honest caveat: allocations transfer to a real arm for X-VLA but fail for π0.5."
+  takeaway_zh: 用短时闭环任务成功率（而非校准数据敏感度）为 VLA 各组件分配权重/激活位宽，并考虑组件间相互影响；在四个 VLA 与 LIBERO 全部套件上约 4 比特权重仍保持较强表现。作者如实指出：仿真选出的方案在真机上对 X-VLA 无损，对 π0.5 却失败。
