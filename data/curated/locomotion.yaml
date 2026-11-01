@@ -393,3 +393,14 @@
   tags: [humanoid, motion-tracking, booster-k1, open-weights, low-compute, sim-to-real]
   takeaway_en: "Open-weights whole-body motion tracker for the small Booster K1, adapting SONIC and trained on one shared GPU. Tracks most held-out clips in MuJoCo; on hardware, upper-body and slow motions work, stepping less so."
   takeaway_zh: 将 SONIC 通用动作跟踪框架移植到小型人形 Booster K1，在一张共享 GPU 上从头训练并开放权重与代码。MuJoCo 中几乎能跟踪所有留出动作片段；真机上上半身和慢速动作表现良好，迈步与转身仍不稳定，作者坦诚指出对动作延迟敏感。
+
+- title: "ELEVATE: Agentic Controller Acquisition from Task Failure for Quadrupedal Manipulation"
+  type: paper
+  arxiv: "2610.38388"
+  year: 2026
+  project: https://agentic-quad-elevate.github.io/public/
+  added: 2026-11-01
+  topics: [locomotion, manipulation, learning]
+  tags: [quadruped, loco-manipulation, coding-agent, llm, reinforcement-learning, skill-library, sim-to-real, real]
+  takeaway_en: "When a quadruped manipulator keeps failing, a coding agent writes an RL problem to learn the missing whole-body skill, adds it to a library and retries; transfers to a real robot (18/20 rack retrieval)."
+  takeaway_zh: 四足机械臂反复失败时，由编码智能体判断缺少哪种全身控制能力，自动编写强化学习问题（奖励、课程、终止条件）训练新控制器并加入技能库再重试；习得扶墙抬升等技能，仿真五项超出初始能力的任务成功率 98.4–100%，无需真机训练即迁移到实体机器人（货架取物 18/20）。

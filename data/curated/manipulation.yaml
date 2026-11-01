@@ -451,3 +451,14 @@
   tags: [dexterous, bimanual, human-video, 3d-reconstruction, pretraining, real, sim]
   takeaway_en: "SpatialDex pre-trains a VLM-based dexterous policy on scene geometry and hand motion reconstructed from 1M RGB-only human clips. Reports +38.3 pts over prior methods on 6 real bimanual tasks."
   takeaway_zh: "SpatialDex 从 100 万段纯 RGB 人类视频中重建场景几何与手部运动，并以几何作为输入和预测目标预训练基于 VLM 的灵巧策略；报告在 9 个仿真任务上比现有方法高 16.5 分、6 个真实双臂灵巧任务上高 38.3 分。"
+
+- title: "ScheduleGen: Demonstration Generation via Skill Scheduling for Multi-Arm Imitation Learning"
+  type: paper
+  arxiv: "2610.39429"
+  year: 2026
+  project: https://schedulegen.github.io/
+  added: 2026-11-01
+  topics: [manipulation, datasets, learning]
+  tags: [data-generation, bimanual, multi-arm, task-and-motion-planning, imitation-learning, sim-to-real, sim, real]
+  takeaway_en: "MimicGen-style demo synthesis that respects multi-arm constraints: plans and schedules skills across arms. Reports 79.6% generation success on 28 sim variants and 50-80% real success via zero-shot sim-to-real."
+  takeaway_zh: 面向双臂/多臂机器人的示范自动生成：在少量源示范基础上联合做规划与技能调度，显式处理多臂间约束，避免现有生成方法产生的碰撞与失败。28 个仿真任务变体上数据生成成功率 79.6%，训练出的策略经零样本 sim-to-real 在 8 个真实变体上成功率 50–80%。
