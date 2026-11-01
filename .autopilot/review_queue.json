@@ -64,34 +64,9 @@
    "ai_summary": "This work proposes a two-axis framework for multimodal agent memory covering information formation and adaptive management to support lifelong learning."
   },
   {
-   "id": "2610.28632",
-   "title": "Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs",
-   "upvotes": 27,
-   "hf_date": "2026-10-21",
-   "published": "2026-10-21",
-   "topics": [],
-   "authors": [
-    "Noam Rotstein",
-    "Yoad Tewel",
-    "Chen Tessler",
-    "Haggai Maron",
-    "Gal Chechik",
-    "Or Litany",
-    "Yoni Kasten",
-    "Yuval Atzmon"
-   ],
-   "organization": "NVIDIA",
-   "github": null,
-   "project": "https://research.nvidia.com/labs/par/projects/jca/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Video generation models can now depict remarkably realistic motion. Yet it is unclear how to use this motion beyond pixels: to animate a specific 3D asset and replay the animation in its 3D scene. For instance, a video model can show a monkey jumping over a crossbar, but it cannot return that jump as replayable 3D motion placed in the 3D scene. Here we present a model that directly co-generates the video and 3D motion for any supplied rig, along with a camera that registers this motion to the scene. Prior video-motion models either handle only human skeletons, often adding billions of parameters, or triangulate 3D motion from generated 2D pose maps. We instead keep 3D motion in a separate model that supports arbitrary skeletons, and connect it to a pretrained video model through a small set of cross-attention layers. This separation lets the motion model first learn how skeletons move from motion-only data, which is easier to obtain and augment than paired video. Additionally, our model learns to locate each joint in the video frames, which lets us recover the camera and place the 3D motion in the scene. To train across many skeletons, we use a generative video editor to place animated 3D assets in scenes suited to their actions, curating the edits so their known motion remains valid. Together with human and robot video, this yields nearly 200K training pairs. Our evaluations demonstrate that our model animates diverse rigs from text more faithfully than video-first pipelines, and its motion responds to the surrounding scene. It also turns video into rig motion, rig motion into video, and enables keyframe-based control of the 3D motion. Videos and additional results are available on our project page: https://research.nvidia.com/labs/par/projects/jca/.",
-   "ai_summary": "The model co-generates video and 3D motion for arbitrary skeletons via cross-attention with a pretrained video generator, enabling scene-registered animation and bidirectional video-motion conversion."
-  },
-  {
    "id": "2610.34186",
    "title": "HuGe: Scaling Humanoid Generalist Vision-Language-Action Models with Egocentric Experience",
-   "upvotes": 25,
+   "upvotes": 28,
    "hf_date": "2026-10-29",
    "published": "2026-10-27",
    "topics": [
@@ -126,6 +101,31 @@
    "ai_summary": "HuGe pre-trains vision-language-action models on egocentric human and robot data with pseudo-proprioception and visual adaptation to enable whole-body humanoid control."
   },
   {
+   "id": "2610.28632",
+   "title": "Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs",
+   "upvotes": 27,
+   "hf_date": "2026-10-21",
+   "published": "2026-10-21",
+   "topics": [],
+   "authors": [
+    "Noam Rotstein",
+    "Yoad Tewel",
+    "Chen Tessler",
+    "Haggai Maron",
+    "Gal Chechik",
+    "Or Litany",
+    "Yoni Kasten",
+    "Yuval Atzmon"
+   ],
+   "organization": "NVIDIA",
+   "github": null,
+   "project": "https://research.nvidia.com/labs/par/projects/jca/",
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "Video generation models can now depict remarkably realistic motion. Yet it is unclear how to use this motion beyond pixels: to animate a specific 3D asset and replay the animation in its 3D scene. For instance, a video model can show a monkey jumping over a crossbar, but it cannot return that jump as replayable 3D motion placed in the 3D scene. Here we present a model that directly co-generates the video and 3D motion for any supplied rig, along with a camera that registers this motion to the scene. Prior video-motion models either handle only human skeletons, often adding billions of parameters, or triangulate 3D motion from generated 2D pose maps. We instead keep 3D motion in a separate model that supports arbitrary skeletons, and connect it to a pretrained video model through a small set of cross-attention layers. This separation lets the motion model first learn how skeletons move from motion-only data, which is easier to obtain and augment than paired video. Additionally, our model learns to locate each joint in the video frames, which lets us recover the camera and place the 3D motion in the scene. To train across many skeletons, we use a generative video editor to place animated 3D assets in scenes suited to their actions, curating the edits so their known motion remains valid. Together with human and robot video, this yields nearly 200K training pairs. Our evaluations demonstrate that our model animates diverse rigs from text more faithfully than video-first pipelines, and its motion responds to the surrounding scene. It also turns video into rig motion, rig motion into video, and enables keyframe-based control of the 3D motion. Videos and additional results are available on our project page: https://research.nvidia.com/labs/par/projects/jca/.",
+   "ai_summary": "The model co-generates video and 3D motion for arbitrary skeletons via cross-attention with a pretrained video generator, enabling scene-registered animation and bidirectional video-motion conversion."
+  },
+  {
    "id": "2610.18604",
    "title": "LLM2R: From Large Language Models to 3D Reassemblers",
    "upvotes": 25,
@@ -146,36 +146,6 @@
    "comment": "20 pages, 5 figures, 7 tables",
    "abstract": "3D part assembly aims to reconstruct a complete shape from a set of unassembled parts by predicting a rigid SE(3) transformation for each part. Because the placement of a part is rarely determined by its own geometry, the task demands reasoning over the entire part set, and existing methods, which rely on pairwise relations or iterative generation and verification, scale poorly to objects with many parts. We present LLM2R, which casts part assembly as sequence modeling with a pretrained decoder-only large language model (LLM): a Point-BERT encoder and a Q-Former compress each part into a block of geometric tokens, the blocks of all parts are concatenated, and a causal LLM adapted with Low-Rank Adaptation (LoRA) processes the sequence in one forward pass. Causal attention, however, lets the hidden states of a part observe only the parts that precede it. LLM2R therefore appends a block of learnable summary tokens after the last part: these tokens follow every part, so their states aggregate the whole assembly at a constant token cost, and a part-aware pose head fuses each part's states with them before predicting its rotation and translation. One architecture thus handles semantic and geometric assembly and predicts all poses in a single non-autoregressive pass. LLM2R achieves the highest part accuracy and success rate on all three PartNet categories, the best rotation error, translation error, and part accuracy on PartNeXt, and the lowest translation error and fastest inference on Breaking Bad, where only a fracture-specialized method is more accurate. Its advantage grows with the number of parts: at 100 parts it exceeds GARF by 33.5 points in part accuracy on Breaking Bad and Assembler by 29.1 points on PartNet, and it transfers zero-shot to unseen categories with more than 16 points higher part accuracy than the strongest of three baselines.",
    "ai_summary": "LLM2R treats 3D part assembly as sequence modeling with a pretrained decoder-only LLM, using geometric tokens and learnable summary tokens to predict all part poses in a single pass with improved scalability and accuracy."
-  },
-  {
-   "id": "2610.20609",
-   "title": "SafeDriveVLA: Navigation-Conditioned World Model Dreaming for Conflict-Aware End-to-End Autonomous Driving",
-   "upvotes": 12,
-   "hf_date": "2026-10-15",
-   "published": "2026-10-14",
-   "topics": [
-    "vla",
-    "world-models",
-    "navigation"
-   ],
-   "authors": [
-    "Shaoyuan Xie",
-    "Zihan Zhang",
-    "Jingxuan Wang",
-    "Jiashu Qu",
-    "Xiaoqing Liang",
-    "Lingdong Kong",
-    "Junchi Lu",
-    "Henrik I. Christensen",
-    "Qi Alfred Chen"
-   ],
-   "organization": "University of California, Irvine ",
-   "github": "https://github.com/ASGuard-UCI/safedrive-vla",
-   "project": "https://safedrive-vla.github.io/SafeDriveVLA",
-   "arxiv_code": [],
-   "comment": "Accepted at CoRL 2026. Project page: https://safedrive-vla.github.io/SafeDriveVLA/",
-   "abstract": "Vision-Language-Action (VLA) models are gaining attention in autonomous driving, inheriting commonsense priors from large language models (LLMs) and widening the navigation interface from a fixed command set to free-form natural-language instructions. However, this open-ended interface exposes a new vulnerability surface: an inattentive driver may issue instructions that are unsafe given the current scene, and a malicious user may issue dangerous ones on purpose. We present the first benchmark suite that evaluates navigation following and conflict awareness together, along with adversarial robustness. Existing VLAs fall short on both: SimLingo completes no language-instructed lane change in closed loop, and all models degrade sharply under conflicting signals. We propose SafeDriveVLA, the first driving VLA that (1) explicitly predicts a three-level navigation-compliance mode to decouple conflict reasoning from action generation, and (2) uses navigation-conditioned world model dreaming to inform this prediction. Unlike prior world models that roll out expert or planned actions, ours dreams of strictly following the navigation signal, showing when following is safe. SafeDriveVLA reaches 88.16 Driving Score (DS) and 68.64% Success Rate (SR) on Bench2Drive, lifts closed-loop language following by 49.3% and reduces collisions under unsafe instructions from 60 to 38 compared to the best SimLingo variant. Video demonstrations are available on our project page.",
-   "ai_summary": "SafeDriveVLA improves autonomous driving by predicting navigation compliance and using world-model dreaming to avoid unsafe instructions, outperforming existing vision-language-action models."
   },
   {
    "id": "2610.34674",
@@ -203,6 +173,36 @@
    "ai_summary": "The study introduces a benchmark and metric to evaluate whether robot navigation policies adapt continuous motion to obstacle safety semantics, revealing a gap in translating semantic caution into safe movement."
   },
   {
+   "id": "2610.20609",
+   "title": "SafeDriveVLA: Navigation-Conditioned World Model Dreaming for Conflict-Aware End-to-End Autonomous Driving",
+   "upvotes": 11,
+   "hf_date": "2026-10-15",
+   "published": "2026-10-14",
+   "topics": [
+    "vla",
+    "world-models",
+    "navigation"
+   ],
+   "authors": [
+    "Shaoyuan Xie",
+    "Zihan Zhang",
+    "Jingxuan Wang",
+    "Jiashu Qu",
+    "Xiaoqing Liang",
+    "Lingdong Kong",
+    "Junchi Lu",
+    "Henrik I. Christensen",
+    "Qi Alfred Chen"
+   ],
+   "organization": "University of California, Irvine ",
+   "github": "https://github.com/ASGuard-UCI/safedrive-vla",
+   "project": "https://safedrive-vla.github.io/SafeDriveVLA",
+   "arxiv_code": [],
+   "comment": "Accepted at CoRL 2026. Project page: https://safedrive-vla.github.io/SafeDriveVLA/",
+   "abstract": "Vision-Language-Action (VLA) models are gaining attention in autonomous driving, inheriting commonsense priors from large language models (LLMs) and widening the navigation interface from a fixed command set to free-form natural-language instructions. However, this open-ended interface exposes a new vulnerability surface: an inattentive driver may issue instructions that are unsafe given the current scene, and a malicious user may issue dangerous ones on purpose. We present the first benchmark suite that evaluates navigation following and conflict awareness together, along with adversarial robustness. Existing VLAs fall short on both: SimLingo completes no language-instructed lane change in closed loop, and all models degrade sharply under conflicting signals. We propose SafeDriveVLA, the first driving VLA that (1) explicitly predicts a three-level navigation-compliance mode to decouple conflict reasoning from action generation, and (2) uses navigation-conditioned world model dreaming to inform this prediction. Unlike prior world models that roll out expert or planned actions, ours dreams of strictly following the navigation signal, showing when following is safe. SafeDriveVLA reaches 88.16 Driving Score (DS) and 68.64% Success Rate (SR) on Bench2Drive, lifts closed-loop language following by 49.3% and reduces collisions under unsafe instructions from 60 to 38 compared to the best SimLingo variant. Video demonstrations are available on our project page.",
+   "ai_summary": "SafeDriveVLA improves autonomous driving by predicting navigation compliance and using world-model dreaming to avoid unsafe instructions, outperforming existing vision-language-action models."
+  },
+  {
    "id": "2610.33718",
    "title": "RoboJev: An Open Vision-Language Judge for Robot Success Detection",
    "upvotes": 7,
@@ -221,25 +221,6 @@
    "comment": "15 pages, 5 figures",
    "abstract": "Many robot manipulation videos do not indicate whether the task was successfully completed. RoboJev-27B is an open-weight vision-language model that takes a task instruction, 10 frames of a manipulation attempt, and (if available) final frames from auxiliary cameras and predicts whether the robot accomplished the task. RoboJev-27B is a variant of JEV-27B-VL, trained with a rank-32 LoRA adapter on the language model only (keeping the vision encoder frozen) using 52,598 episode records. It also uses a source-specific KL penalty that applies only to research data, anchoring predictions closer to the original model on those sources. It uses a calibrated two-token readout that outputs success/failure probabilities in a single forward pass. On 268 held-out episodes of the same robot model (SO-101), RoboJev-27B attains 95.2% balanced accuracy and 0.993 AUROC. It also generalises to episodes collected by unseen labs/robots (AUROC = 0.890 over 459 episodes) as well as to clearly labelled community-collected episodes (accuracy = 93.3% over 135 episodes), where the base model attains an AUROC = 0.900 on the unseen-lab/robot subset with the same inputs. It takes 0.26 seconds per episode (median, serial) to infer on a single H100, which is about \\0.19 per 1,000 success predictions at 2.69 per GPU-hour (not including media processing and serving costs). RoboJev-27B is released together with its inference code, along with a transparent evaluation: 20,628 predictions organized into 29 model/protocol entries are made available to facilitate browsing and to enable reproducible benchmarking of success detection. We also compare against strong API-based frontier VLMs, which take in fewer input frames (4 images from the primary camera only); note that this comparison is not strictly like-for-like because RoboJev-27B is given more frames at inference.",
    "ai_summary": "RoboJev-27B is an open-weight vision-language model that predicts robot manipulation success from video frames using LoRA fine-tuning, calibrated token readouts, and source-specific regularization, achieving high accuracy and generalization across labs and robots."
-  },
-  {
-   "id": "2610.31716",
-   "title": "Does LeWorldModel Preserve Local Action Geometry?",
-   "upvotes": 7,
-   "hf_date": "2026-10-26",
-   "published": "2026-10-26",
-   "topics": [],
-   "authors": [
-    "Vasil Vasilev",
-    "Siddharth Nayak"
-   ],
-   "organization": null,
-   "github": null,
-   "project": "https://geometry.vasi.boo/",
-   "arxiv_code": [],
-   "comment": "13 pages, 3 figures. Accepted as a poster at the NeurIPS 2026 Workshop on Symmetry and Geometry in Neural Representations (NeurReps), Extended Abstract Track",
-   "abstract": "We examine how closely pretrained LeWorldModel (LeWM) reproduces the effects of small action changes. Using matched simulator and model responses, we measure action sensitivity with Gram matrices at three perturbation scales. Across nearly a thousand states from Reacher and OGBench Cube, the most sensitive action directions differ by median angles of about 36^circ and 42^circ, respectively, at the smallest scale. Increasing the perturbation tenfold reduces median normalized Gram discrepancy by roughly 70\\% on Reacher and 47\\% on Cube. Geometry measured in pixels and embeddings varies more across scales than the chosen physical-state geometry. On held-out directions, environment Grams achieve median embedding response errors of 17\\% and 28\\%, compared with 26\\% and 38\\% for an isotropic reference with the same trace. LeWM's errors are higher at this scale. These findings support scale-specific evaluation of action sensitivity; its effect on control remains an open question.",
-   "ai_summary": "Pretrained LeWorldModel's reproduction of small action effects is evaluated via Gram matrices across perturbation scales, showing scale-dependent sensitivity differences and higher errors than environment references."
   },
   {
    "id": "2610.32909",
@@ -299,6 +280,25 @@
    "comment": "12page, 6figures",
    "abstract": "Human cognition flexibly draws on a shared perceptual foundation to understand environments, attend to referenced entities, reason about spatial relationships, and act. Endowing aerial robots with an analogous functional organization remains challenging, as existing systems are often specialized for individual capabilities, dependent on offboard computation, or unable to sustain closed-loop operation on resource-constrained platforms. We present OpenFlyV2, a unified onboard vision-language-action architecture that uses a shared vision-language representation to support semantic understanding, language-grounded perception, spatial reasoning, and continuous aerial control within a single model. A compact action expert converts the shared multimodal context into short-horizon flight waypoints, while motion-aware temporal memory and action priors reduce the computational cost of closed-loop execution. We construct , a simulation-based dataset comprising approximately 70,000 navigation trajectories and 60,000 vision-language instruction--response pairs. OpenFlyV2 generates action chunks, each comprising 12 waypoints, entirely onboard at 10 Hz using an NVIDIA Jetson Orin NX. It transfers zero-shot from simulation to physical quadrotor flight, achieving a 48\\% navigation success rate across four real-world environments without real-world aerial training data. Extensive results demonstrate that broad vision-language competence and continuous closed-loop flight can coexist within a single model on a resource-constrained aerial platform. Code will be made publicly available at https://github.com/Ideal-ljl/AeroBrain.",
    "ai_summary": "OpenFlyV2 is a unified onboard vision-language-action model that enables real-time aerial navigation and reasoning on resource-constrained hardware using shared multimodal representations."
+  },
+  {
+   "id": "2610.31716",
+   "title": "Does LeWorldModel Preserve Local Action Geometry?",
+   "upvotes": 6,
+   "hf_date": "2026-10-26",
+   "published": "2026-10-26",
+   "topics": [],
+   "authors": [
+    "Vasil Vasilev",
+    "Siddharth Nayak"
+   ],
+   "organization": null,
+   "github": null,
+   "project": "https://geometry.vasi.boo/",
+   "arxiv_code": [],
+   "comment": "13 pages, 3 figures. Accepted as a poster at the NeurIPS 2026 Workshop on Symmetry and Geometry in Neural Representations (NeurReps), Extended Abstract Track",
+   "abstract": "We examine how closely pretrained LeWorldModel (LeWM) reproduces the effects of small action changes. Using matched simulator and model responses, we measure action sensitivity with Gram matrices at three perturbation scales. Across nearly a thousand states from Reacher and OGBench Cube, the most sensitive action directions differ by median angles of about 36^circ and 42^circ, respectively, at the smallest scale. Increasing the perturbation tenfold reduces median normalized Gram discrepancy by roughly 70\\% on Reacher and 47\\% on Cube. Geometry measured in pixels and embeddings varies more across scales than the chosen physical-state geometry. On held-out directions, environment Grams achieve median embedding response errors of 17\\% and 28\\%, compared with 26\\% and 38\\% for an isotropic reference with the same trace. LeWM's errors are higher at this scale. These findings support scale-specific evaluation of action sensitivity; its effect on control remains an open question.",
+   "ai_summary": "Pretrained LeWorldModel's reproduction of small action effects is evaluated via Gram matrices across perturbation scales, showing scale-dependent sensitivity differences and higher errors than environment references."
   }
  ],
  "curated_link_updates": [
