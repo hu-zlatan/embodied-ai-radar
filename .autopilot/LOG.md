@@ -385,3 +385,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Picks (facts from CI-fetched abstracts in `.autopilot/candidates.json` and `.autopilot/review_queue.json`): UMI-Live, SwapBot, DexSuite, Gym-Anything for Robotics, METATRON, SONIC-K1, LaWAM (CoRL 2026), QbD-VLA, EgoContact, WorldFlow, π0.5-on-BEHAVIOR paired evaluation, HuGe, OSMA-Bench; Sensorimotor Alignment gets its code link (repo now live, 8★). Two over-length takeaways caught by validate. Curated: 484.
 - One push was rejected because the stats bot pushed in between → `git pull --rebase`, re-checked, pushed (no force).
 - Launch kit entry counts refreshed (300+ → 480+).
+- verify #117 passed (first 8 picks); #119 (all 13 + code link) was queued at end of run — check it first next run. End: 1 star / 0 forks, no issues/PRs. Owner: nothing new. End of run 43.
