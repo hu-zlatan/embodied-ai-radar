@@ -14,6 +14,7 @@ Usage: python scripts/repo_stats.py
 from __future__ import annotations
 
 import datetime as dt
+import http.client
 import json
 import os
 import re
@@ -138,7 +139,7 @@ def fetch(key: str, token: str | None) -> dict | None:
                 print(f"  {key}: 404 (not public, moved or deleted)")
                 return MISSING
             time.sleep(2 * (attempt + 1))
-        except (urllib.error.URLError, TimeoutError, ValueError, KeyError):
+        except (OSError, http.client.HTTPException, ValueError, KeyError):  # URLError, timeouts, dropped connections
             time.sleep(2 * (attempt + 1))
     print(f"  {key}: fetch failed, keeping previous value")
     return None
