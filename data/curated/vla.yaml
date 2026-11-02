@@ -1068,3 +1068,43 @@
   tags: [code-as-policy, post-training, rl, libero, real]
   takeaway_en: "Turns a small open VLM into a code-as-policy agent: SFT, then multi-turn RL with a physical critic. Reports Qwen3.5-4B going from 0% to 73.8% on held-out LIBERO; code, data and weights released."
   takeaway_zh: "把小型开放 VLM 训练成“代码即策略”机器人智能体的开源流水线：先 SFT，再做多轮 RL，并用读取仿真特权状态的物理评论家为每次请求分配贡献。报告 Qwen3.5-4B 在留出的 LIBERO 上由 0% 升到 73.8%，并公开代码、数据和权重。"
+
+- title: "RoboArchitect: Automating the Design of Robotic Agents with Persistent Memory"
+  type: paper
+  arxiv: "2610.42141"
+  year: 2026
+  project: https://roboarchitect-ai.github.io/
+  added: 2026-11-02
+  tags: [agent-harness, frozen-policy, coding-agent]
+  takeaway_en: "A coding model reads rollouts of a frozen policy and rewrites its harness, with no weight updates. Reports average success rising from 9.7% to 43.3% on unseen scenes and 12.7% to 40.2% on unseen tasks."
+  takeaway_zh: "让编码模型观察冻结策略的执行轨迹、诊断失败并反复改写外围 harness，不更新任何权重。报告在未见场景上平均成功率从 9.7% 升到 43.3%，未见任务上从 12.7% 升到 40.2%。"
+
+- title: "Cross-Controller Transfer via In-Context Behavior Adaptation"
+  type: paper
+  arxiv: "2610.39280"
+  year: 2026
+  project: https://controller-transfer.github.io
+  added: 2026-11-02
+  tags: [cross-embodiment, controllers, context-encoder, real]
+  takeaway_en: "Pools robot data across six controller types by showing the policy examples of commanded actions and the motions they caused. Reports 33 points better average success than naive pooling in real experiments."
+  takeaway_zh: "跨六类控制器共享机器人数据：把“指令动作与实际运动”的交互样例编码为上下文，让同一策略在线适应。真实实验报告平均成功率比直接混合数据高 33 个百分点。"
+
+- title: "From Reasoning to Action: Consequence-Grounded Alignment for Vision-Language-Action Models"
+  type: paper
+  arxiv: "2610.39543"
+  year: 2026
+  project: https://onlyxingxingzyx.github.io/CoRAct/
+  added: 2026-11-02
+  tags: [chain-of-thought, noise-optimization, real]
+  takeaway_en: "CoRAct turns a VLA's stated movement and waypoints into checkable signals, then steers action noise toward agreeing with them, so actions align with the reasoning. Tested on RoboCasa, VLABench and real tasks."
+  takeaway_zh: "CoRAct 把 VLA 思维链中的运动意图与路点变成可验证信号，再用一致性奖励优化初始动作噪声，让动作真正对齐推理，而不只是以推理为条件。在 RoboCasa、VLABench 与真实任务上测试。"
+
+- title: "Embodied at Sea: Imitation Learning for Multi-Task Underwater Manipulation"
+  type: paper
+  arxiv: "2610.38199"
+  year: 2026
+  project: https://lair-research-nyu.github.io/Embodied-at-Sea/
+  added: 2026-11-02
+  tags: [underwater, field-robotics, act, real]
+  takeaway_en: "Trains VLA models on 1,616 underwater episodes and grades 1,260 pool rollouts, best model 93.3% including partial successes. In a field case study at a WWII wreck, single-task ACT beat generalist SmolVLA 47.9% to 7.9%."
+  takeaway_zh: "用 1616 条水下数据训练 VLA，并在水池评估 1260 次，最佳模型成功率 93.3%（含部分成功）。在二战沉船实地案例中，单任务 ACT 以 47.9% 对 7.9% 明显胜过通用的 SmolVLA。"

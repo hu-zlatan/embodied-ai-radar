@@ -445,3 +445,23 @@
   tags: [loco-manipulation, whole-body-control, safety, ood]
   takeaway_en: "CoRL 2026 Spotlight. Hardens whole-body end-effector tracking for legged manipulators against out-of-distribution inputs such as sensor noise or infeasible commands, using a frame-wise single-step safety manifold."
   takeaway_zh: "CoRL 2026 Spotlight。提升足式移动操作臂全身末端跟踪对分布外输入（传感器噪声、不可行指令）的鲁棒性：用逐帧安全方案把无限时域安全约束转化为计算高效的单步流形约束。"
+
+- title: "FORGE: Feasible Online Reduced-Order Reference Generation and Whole-Body Execution for Agile Humanoid Locomotion"
+  type: paper
+  arxiv: "2610.37974"
+  year: 2026
+  venue: Humanoids 2026
+  added: 2026-11-02
+  tags: [humanoid, reduced-order-model, unitree-g1, real]
+  takeaway_en: "Learns a reduced-order reference generator, then trains a whole-body tracker on its online rollouts, so one pair of policies covers many gaits. On a Unitree G1: -2.0 to 2.8 m/s, hopping and continuous transitions."
+  takeaway_zh: "先学习降阶模型参考生成器，再用其在线输出训练全身跟踪策略，一对策略即可覆盖多种步态。Unitree G1 实机实现 -2.0 到 2.8 m/s 行走、单腿跳与连续切换。"
+
+- title: "HIPC: Humanoid Iterative Planning and Control via Goal-Conditioned Motion Closure"
+  type: paper
+  arxiv: "2610.41334"
+  year: 2026
+  project: https://hipc-humanoid.github.io/
+  added: 2026-11-02
+  tags: [humanoid, generative-motion, closed-loop]
+  takeaway_en: "Closes the loop between a generative motion model and a humanoid tracker, which usually run open-loop and drift. Deviation-decayed recovery and history re-anchoring keep the feedback from causing jitter or falls."
+  takeaway_zh: "把通常开环运行、会累积漂移的生成式运动模型与人形跟踪器闭环耦合。真实状态反馈易致抖动甚至摔倒，因此加入偏差衰减恢复、历史重锚定与延迟补偿。"
