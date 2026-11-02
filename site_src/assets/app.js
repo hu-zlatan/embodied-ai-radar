@@ -31,6 +31,7 @@
         if (ok) shown++;
       });
       vn.textContent = shown + ' / ' + vcards.length;
+      Array.prototype.forEach.call(document.querySelectorAll('.pg-sess'), function (b) { b.hidden = !b.querySelector('.card:not([hidden])'); });
       var u = new URLSearchParams();
       if (q) u.set('q', vq.value.trim());
       if (t) u.set('topic', t);

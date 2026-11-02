@@ -16,9 +16,11 @@ import shutil
 import sys
 from pathlib import Path
 
+import yaml
+
 from hf_papers import load as load_hf, merge_links
 from repo_stats import apply_feed_stats, load_feed_stats, load_history, load_stats, repo_key, star_gains
-from radar import (ROOT, bibtex, classify, honor_of, venue_of, load_arxiv_feed, load_curated, load_curated_meta, load_embodiments,
+from radar import (ROOT, bibtex, classify, honor_of, load_program, venue_of, load_arxiv_feed, load_curated, load_curated_meta, load_embodiments,
                    labs_of, load_labs, load_resources, load_start, load_topics, load_venue_papers)
 
 OUT = ROOT / "_site"
@@ -38,6 +40,21 @@ VENUE_FILTER_MIN = 40  # venue pages this long get a client-side filter box
 VENUE_MIN = 3  # a venue+year gets its own page once it has this many papers (curated + feed)
 LAB_PAGES: dict[str, dict] = {}  # lab id -> lab (data/labs.yaml) for labs with a page labs/<id>.html, filled in build()
 LAB_MIN = 3  # a lab gets its own page once this many curated entries match it
+
+
+def paper_venue(p: dict) -> str | None:
+    """Accepted venue of a feed paper: the official program when it lists the paper, else the arXiv comment."""
+    return p["prog"]["venue"] if p.get("prog") else venue_of(p.get("comment"))
+
+
+def paper_honor(p: dict) -> str | None:
+    """'Oral' / 'Spotlight' from the official program, else from the arXiv comment."""
+    if p.get("prog"):
+        kinds = p["prog"]["sessions"]
+        if kinds:
+            return "Oral" if any(k.startswith("O") for k in kinds) else "Spotlight"
+        return None
+    return honor_of(p.get("comment"))
 
 
 def venue_key(v: str | None) -> str | None:
@@ -128,6 +145,100 @@ SCHEMA_TYPE = {"paper": "ScholarlyArticle", "code": "SoftwareSourceCode", "datas
                "benchmark": "Dataset", "simulator": "SoftwareSourceCode", "hardware": "CreativeWork"}
 
 
+PROGRAM = "corl-2026"
+PROGRAM_HOME_UNTIL = dt.date(2026, 11, 30)  # home-page link to the conference guide stops after this date
+
+
+def load_program_extra(slug: str) -> dict:
+    """Hand-kept extras for a program page (Chinese session names, keynotes, workshops). Missing → {}."""
+    try:
+        return yaml.safe_load((ROOT / "data" / "program" / f"{slug}-extra.yaml").read_text(encoding="utf-8")) or {}
+    except (OSError, yaml.YAMLError):
+        return {}
+
+
+def program_card(x: dict, s: dict | None, cur: dict | None, rec: dict | None, tby: dict) -> str:
+    """One paper on the program page: official title and slots, plus what we know from arXiv."""
+    aid = x.get("arxiv")
+    topics = (cur or {}).get("topics") or (rec or {}).get("topics") or []
+    code = ((cur or {}).get("code") and [cur["code"]]) or (rec or {}).get("code") or []
+    project = (cur or {}).get("project") or ((rec or {}).get("project") or [None])[0]
+    url = f"https://arxiv.org/abs/{aid}" if aid else f"https://openreview.net/forum?id={x['or']}"
+    tags = []
+    for sid in x["sessions"]:
+        tags.append(f'<a class="badge venue" href="#s-{esc(sid)}">{"Oral" if sid.startswith("O") else "Spotlight"} {esc(sid)}</a>')
+    if x.get("poster"):
+        tags.append(f'<a class="badge" href="#s-{esc(x["poster"])}">{bi("Poster", "海报")} {esc(x["poster"][1:])} · #{x.get("poster_no", "")}</a>')
+    if code:
+        tags.append('<span class="badge code">code</span>')
+    links = [f'<a href="{esc(url)}" rel="noopener">{"arXiv" if aid else "OpenReview"}</a>']
+    if aid:
+        links.append(f'<a href="https://openreview.net/forum?id={esc(x["or"])}" rel="noopener">OpenReview</a>')
+    if code:
+        links.append(f'<a href="{esc(code[0])}" rel="noopener">{bi("Code", "代码")}</a>')
+    if project:
+        links.append(f'<a href="{esc(project)}" rel="noopener">{bi("Project", "项目页")}</a>')
+    if cur:
+        links.append(f'<a href="../e/{esc(cur["id"])}.html">{bi("Details", "详情")}</a>')
+    authors = (rec or {}).get("authors", [])
+    au = ", ".join(authors[:4]) + (" et al." if len(authors) > 4 else "")
+    chips = "".join(f'<a class="chip topic" href="../topics/{t}.html">{bi(tby[t]["en"], tby[t]["zh"])}</a>' for t in topics if t in tby)
+    take = f'<p class="take">{bi(cur["takeaway_en"], cur["takeaway_zh"])}</p>' if cur else ""
+    return (f'<article class="card" data-t="{esc(" ".join(topics))}"{" data-c=1" if code else ""}{" data-h=1" if x["sessions"] else ""}>'
+            f'<div class="meta">{" ".join(tags)}</div><h3><a href="{esc(url)}" rel="noopener">{esc(x["title"])}</a></h3>'
+            + (f'<p class="authors">{esc(au)}</p>' if au else "") + take
+            + f'<div class="links">{" · ".join(links)}</div>' + (f'<div class="chips">{chips}</div>' if chips else "") + "</article>")
+
+
+def program_page(prog: dict, extra: dict, cur_by_id: dict, rec_by_id: dict, tby: dict) -> str:
+    name, papers = prog["venue"], prog["papers"]
+    n_arxiv = sum(1 for x in papers if x.get("arxiv"))
+    n_code = sum(1 for x in papers if x.get("arxiv") and (cur_by_id.get(str(x["arxiv"]), {}).get("code") or rec_by_id.get(str(x["arxiv"]), {}).get("code")))
+    zh = extra.get("session_zh") or {}
+    by_sess: dict[str, list[dict]] = {}
+    for x in papers:
+        for sid in x["sessions"]:
+            by_sess.setdefault(sid, []).append(x)
+        if x.get("poster"):
+            by_sess.setdefault(x["poster"], []).append(x)
+    by_sess = {k: sorted(v, key=lambda x: x.get("poster_no", 0) if k.startswith("P") else x["title"].lower()) for k, v in by_sess.items()}
+    tn: dict[str, int] = {}
+    for x in papers:
+        c, r = cur_by_id.get(str(x.get("arxiv"))), rec_by_id.get(str(x.get("arxiv")))
+        for t in (c or {}).get("topics") or (r or {}).get("topics") or []:
+            tn[t] = tn.get(t, 0) + 1
+    topt = "".join(f'<option value="{esc(t)}" data-en="{esc(tby[t]["en"])} ({n})" data-zh="{esc(tby[t]["zh"])} ({n})">{esc(tby[t]["en"])} ({n})</option>'
+                   for t, n in sorted(tn.items(), key=lambda v: -v[1]) if t in tby)
+    days = "".join(f'<li><a href="#d-{esc(d["id"])}">{esc(d["label"])}</a>: '
+                   + " · ".join(f'<a href="#s-{esc(s["id"])}">{esc(s["id"])}</a>' for s in prog["sessions"] if s["day"] == d["id"]) + "</li>" for d in prog["days"])
+    parts = [f'<p class="muted"><a href="index.html">{bi("Venues", "会议/期刊")}</a> › <a href="{PROGRAM}.html">{esc(name)}</a> › {bi("Program", "日程")}</p>',
+             f'<h1>{esc(name)} · {bi("program guide", "会议指南")}</h1>',
+             f'<p class="lead">{bi(f"All {len(papers)} accepted papers by session and poster number. {n_arxiv} are linked to arXiv, {n_code} have code; the rest link to OpenReview.", f"按日程与海报编号列出全部 {len(papers)} 篇录用论文：{n_arxiv} 篇已关联 arXiv，{n_code} 篇附代码，其余链接至 OpenReview。")}</p>',
+             f'<p class="muted">{bi("November 9–12, 2026, Austin, Texas. Orals and spotlights are at the Hilton Austin, posters at the JW Marriott.", "2026 年 11 月 9–12 日，美国得克萨斯州奥斯汀。Oral 与 Spotlight 在 Hilton Austin，海报在 JW Marriott。")} '
+             f'{bi("Sessions, titles and poster numbers come from the", "日程、标题与海报编号来自")} <a href="{esc(prog["source"])}" rel="noopener">{bi("official list", "官方列表")}</a> ({esc(prog["updated"])}); '
+             f'{bi("arXiv links are matched by title, so check there for last-minute changes.", "arXiv 链接按标题匹配；临时变动请以官方页面为准。")}</p>',
+             f'<ul class="tlist">{days}<li><a href="#workshops">{bi("Thursday, November 12: workshops", "11 月 12 日（周四）：研讨会")}</a></li></ul>',
+             f'''<div class="filters" id="vf"><input id="vf-q" type="search" aria-label="Filter" data-en="Filter by title or author" data-zh="按标题或作者筛选" placeholder="Filter by title or author">
+<select id="vf-t" aria-label="Topic"><option value="" data-en="All topics" data-zh="全部主题">All topics</option>{topt}</select>
+<label><input id="vf-c" type="checkbox"> {bi("Has code", "有代码")}</label> <label><input id="vf-h" type="checkbox"> {bi("Oral / Spotlight", "Oral / Spotlight")}</label> <span class="muted" id="vf-n"></span></div>''']
+    for d in prog["days"]:
+        parts.append(f'<h2 id="d-{esc(d["id"])}">{esc(d["label"])}</h2>')
+        for s in prog["sessions"]:
+            if s["day"] != d["id"] or s["id"] not in by_sess:
+                continue
+            label = {"oral": "Oral", "spotlight": "Spotlight", "poster": ""}[s["kind"]]
+            title = esc(s["name"]) if not zh.get(s["id"]) else bi(s["name"], zh[s["id"]])
+            cards = "".join(program_card(x, s, cur_by_id.get(str(x.get("arxiv"))), rec_by_id.get(str(x.get("arxiv"))), tby) for x in by_sess[s["id"]])
+            parts.append(f'<section class="pg-sess"><h3 id="s-{esc(s["id"])}">{label} {esc(s["id"]) if label else ""} {title}</h3><p class="muted">{esc(s["where"])}</p><div class="cards">{cards}</div></section>')
+    if extra.get("workshops"):
+        rows = "".join(f'<li><a href="{esc(w["url"])}" rel="noopener">{esc(w["title"])}</a></li>' for w in extra["workshops"])
+        parts.append(f'<h2 id="workshops">{bi(f"Workshops, Thursday, November 12 ({len(extra["workshops"])})", f"研讨会，11 月 12 日周四（{len(extra["workshops"])} 场）")}</h2>'
+                     f'<p class="muted">{bi("From the", "来自")} <a href="https://www.corl.org/program/workshops" rel="noopener">{bi("official workshop page", "官方研讨会页面")}</a>. {bi("Rooms and times are on each workshop site.", "地点与时间见各研讨会网站。")}</p><ul class="tlist">{rows}</ul>')
+    return page(f"{name} program guide: sessions, posters, all {len(papers)} papers · Embodied AI Radar", "".join(parts), "../",
+                f"All {len(papers)} papers accepted at {name} by session and poster number, with arXiv, code and topic links, in English and Chinese.",
+                f"venues/{PROGRAM}-program.html")
+
+
 def entry_page(e: dict, topics_by_id: dict, related: list[dict], authors: list[str]) -> str:
     """Body of e/<id>.html: one curated entry with its takeaway, links, BibTeX and related entries."""
     t0 = topics_by_id[e["topics"][0]]
@@ -209,10 +320,10 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
         code += f' <span class="gh" title="GitHub stars">★ {fmt_stars(p["stars"])}</span>'
     proj = "".join(f' · <a href="{esc(u)}" rel="noopener">{bi("Project", "项目页")}</a>' for u in p.get("project", [])[:1])
     has_code = '<span class="badge code">code</span>' if p.get("code") else ""
-    v = venue_of(p.get("comment"))
+    v = paper_venue(p)
     if v:
         has_code += " " + venue_badge(v, root)
-    honor = honor_of(p.get("comment"))
+    honor = paper_honor(p)
     if honor:
         has_code += f' <span class="badge venue">{honor}</span>'
     return f"""<article class="card feed" id="arxiv-{esc(p['id'])}" data-t="{esc(' '.join(p.get('topics', [])))}"{' data-c="1"' if p.get('code') else ''}{' data-h="1"' if honor else ''}>
@@ -374,6 +485,13 @@ def build() -> int:
     for e in entries:
         if e.get("arxiv") and str(e["arxiv"]) in hf:
             e["hf"] = hf[str(e["arxiv"])]
+    prog = load_program(PROGRAM)
+    prog_by_id = {str(x["arxiv"]): x for x in (prog or {}).get("papers", []) if x.get("arxiv")}
+    for x in prog_by_id.values():
+        x["venue"] = prog["venue"]
+    for p in feed + backfill:
+        if p["id"] in prog_by_id:
+            p["prog"] = prog_by_id[p["id"]]
     meta = load_curated_meta()
     for e in entries:
         m = meta.get(e.get("arxiv") or "")
@@ -392,8 +510,14 @@ def build() -> int:
         c = comments.get(e.get("arxiv"))
         if venue_key(venue_of(c)) == venue_key(e.get("venue")) and honor_of(c):
             e["honor"] = honor_of(c)
+        x = prog_by_id.get(e.get("arxiv"))  # the official program wins, and fills in a missing venue
+        if x:
+            e["venue"] = e.get("venue") or x["venue"]
+            h = paper_honor({"prog": x})
+            if h:
+                e["honor"] = h
     for p in feed + backfill:
-        k = venue_key(venue_of(p.get("comment")))
+        k = venue_key(paper_venue(p))
         if k and p["id"] not in cur_ids:  # agent picks are curated entries already
             venues.setdefault(k, {"c": [], "f": []})["f"].append(p)
     VENUE_PAGES.clear()
@@ -426,7 +550,7 @@ def build() -> int:
     for p in [p for p in feed if p.get("published", "") >= site_cut] + backfill:
         it = {"k": "f", "id": p["id"], "t": p["title"], "d": p.get("published", ""),
               "au": ", ".join(p.get("authors", [])[:4]), "tp": p.get("topics", []), "em": p["emb"],
-              "c": (p.get("code") or [None])[0], "pc": p.get("primary", ""), "v": venue_of(p.get("comment")),
+              "c": (p.get("code") or [None])[0], "pc": p.get("primary", ""), "v": paper_venue(p),
               "pj": (p.get("project") or [None])[0], "s": p.get("stars") if p.get("code") else None,
               "u": (p.get("hf") or {}).get("upvotes")}
         if it["d"] >= ab_cut:  # keep the index small: older papers are searchable by title/authors only
@@ -547,6 +671,8 @@ def build() -> int:
     v_cut = (today - dt.timedelta(days=30)).isoformat()
     cur_v = sorted((k for k in VENUE_PAGES if int(k.rsplit(" ", 1)[1]) >= today.year),
                    key=lambda k: (-sum(p.get("published", "") >= v_cut for p in venues[k]["f"]), -(len(venues[k]["c"]) + len(venues[k]["f"])), k))[:6]
+    prog_row = (f'<p class="start-link"><a class="more" href="venues/{PROGRAM}-program.html">{bi(f"{prog['venue']}: program guide with every accepted paper, sessions and posters →", f"{prog['venue']}：会议指南，含全部录用论文、日程与海报 →")}</a></p>'
+                if prog and today <= PROGRAM_HOME_UNTIL else "")
     venue_row = (f'<p class="muted">{bi("Accepted at:", "会议/期刊录用：")} '
                  + " · ".join(f'<a href="venues/{venue_slug(k)}.html">{esc(k)}</a> ({len(venues[k]["c"]) + len(venues[k]["f"])})' for k in cur_v)
                  + f' · <a href="venues/index.html">{bi("All venues →", "全部 →")}</a></p>') if cur_v else ""
@@ -554,6 +680,7 @@ def build() -> int:
 <h1>{bi("The map of embodied AI & robot learning", "具身智能与机器人学习全景图")}</h1>
 <p class="lead">{bi("Hand-verified papers, code, datasets, simulators and hardware with one-line takeaways in English and Chinese — plus every new robotics paper on arXiv, tagged by topic, every day.", "人工核验的论文、代码、数据集、仿真器与硬件，配中英文一句话要点；外加每天自动收录并按主题标注的 arXiv 机器人新论文。")}</p>
 {stats}
+{prog_row}
 <p class="start-link"><a class="more" href="start.html">{bi("New to embodied AI? Start with the reading path →", "刚入门具身智能？从入门路线开始 →")}</a></p>
 </section>
 {search}
@@ -629,7 +756,7 @@ def build() -> int:
 
     def day_summary(ps: list[dict]) -> str:
         n_code = sum(1 for p in ps if p.get("code"))
-        n_venue = sum(1 for p in ps if venue_of(p.get("comment")))
+        n_venue = sum(1 for p in ps if paper_venue(p))
         return (f'<p class="muted">{len(ps)} {bi("papers", "篇论文")} · {n_code} {bi("with code", "附代码")}'
                 + (f' · {n_venue} {bi("accepted at a venue", "已被会议/期刊接收")}' if n_venue else "") + "</p>")
 
@@ -772,15 +899,16 @@ def build() -> int:
         g = venues[k]
         cur = sorted(g["c"], key=lambda e: (not e.get("honor"), not e.get("highlight"), e["title"]))
         fp = sorted(g["f"], key=lambda p: p.get("published", ""), reverse=True)
-        fp.sort(key=lambda p: (not honor_of(p.get("comment")), not p.get("code")))  # stable: newest first within each group
+        fp.sort(key=lambda p: (not paper_honor(p), not p.get("code")))  # stable: newest first within each group
         n_code = sum(1 for p in fp if p.get("code")) + sum(1 for e in cur if e.get("code"))
-        n_honor = sum(1 for p in fp if honor_of(p.get("comment"))) + sum(1 for e in cur if e.get("honor"))
+        n_honor = sum(1 for p in fp if paper_honor(p)) + sum(1 for e in cur if e.get("honor"))
         honor_link = (f' <a href="?honor=1">{bi(f"Show the {n_honor} Oral / Spotlight papers →", f"只看 {n_honor} 篇 Oral / Spotlight →")}</a>'
                       if n_honor and len(cur) + len(fp) >= VENUE_FILTER_MIN else "")
         parts = [f'<p class="muted"><a href="index.html">{bi("Venues", "会议/期刊")}</a> › {esc(k)}</p>',
                  f'<h1>{esc(k)} · {bi("papers", "论文")}</h1>',
                  f'<p class="lead">{bi(f"{len(cur) + len(fp)} embodied-AI and robotics papers accepted at {k}, {n_code} with code.", f"{len(cur) + len(fp)} 篇被 {k} 接收的具身智能与机器人论文，其中 {n_code} 篇附代码。")}{honor_link}</p>',
                  f'<p class="muted">{vnote}</p>',
+                 (f'<p><a class="more" href="{PROGRAM}-program.html">{bi("Program guide: sessions, rooms and all accepted papers →", "会议指南：日程、会场与全部录用论文 →")}</a></p>' if prog and k == prog["venue"] else ""),
                  f'<p><a href="../index.html?venue={esc(k.rsplit(" ", 1)[0])}#search">{bi("Search within this venue series →", "在该会议/期刊系列中搜索 →")}</a></p>']
         if len(cur) + len(fp) >= VENUE_FILTER_MIN:
             tn: dict[str, int] = {}
@@ -801,6 +929,10 @@ def build() -> int:
             page(f"{k} papers: embodied AI & robotics · Embodied AI Radar", "".join(parts), "../",
                  f"{len(cur) + len(fp)} embodied AI and robotics papers accepted at {k}, with code links, topics and BibTeX; updated daily from arXiv.",
                  f"venues/{venue_slug(k)}.html"), encoding="utf-8")
+    if prog:
+        cur_by_id = {str(e["arxiv"]): e for e in entries if e.get("arxiv")}
+        rec_by_id = {p["id"]: p for p in feed + backfill}
+        (OUT / "venues" / f"{PROGRAM}-program.html").write_text(program_page(prog, load_program_extra(PROGRAM), cur_by_id, rec_by_id, tby), encoding="utf-8")
     vrows = "".join(f'<li><a href="{venue_slug(k)}.html">{esc(k)}</a> <span class="muted">({len(venues[k]["c"]) + len(venues[k]["f"])})</span></li>' for k in vkeys)
     (OUT / "venues" / "index.html").write_text(page("Papers by venue · Embodied AI Radar",
         f'<h1>{bi("Papers by venue", "按会议/期刊浏览")}</h1><p class="lead">{bi(f"Conferences and journals with at least {VENUE_MIN} papers in the radar, newest year first.", f"收录论文不少于 {VENUE_MIN} 篇的会议与期刊，按年份从新到旧排列。")}</p>'
@@ -879,7 +1011,7 @@ def build() -> int:
     (OUT / "404.html").write_text(page("Not found · Embodied AI Radar", f'<h1>404</h1><p><a href="{SITE_URL}">{bi("Back to the radar", "返回首页")}</a></p>', SITE_URL, desc, "404.html"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n")
-    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html", "start.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries] + ["venues/index.html"] + [f"venues/{venue_slug(k)}.html" for k in vkeys] + ["robots/index.html"] + [f"robots/{m['id']}.html" for m in embs] + ["labs/index.html"] + [f"labs/{i}.html" for i in LAB_PAGES]
+    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html", "start.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries] + ["venues/index.html"] + [f"venues/{venue_slug(k)}.html" for k in vkeys] + ([f"venues/{PROGRAM}-program.html"] if prog else []) + ["robots/index.html"] + [f"robots/{m['id']}.html" for m in embs] + ["labs/index.html"] + [f"labs/{i}.html" for i in LAB_PAGES]
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"<url><loc>{SITE_URL}{u}</loc><lastmod>{today.isoformat()}</lastmod></url>\n" for u in urls)
