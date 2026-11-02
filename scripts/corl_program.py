@@ -129,7 +129,7 @@ def main() -> int:
     feed = load_arxiv_feed()
     venue_recs = {p["id"]: p for p in load_venue_papers()}
     known = {norm_title(p["title"]): p["id"] for p in feed + list(venue_recs.values())}
-    known.update({norm_title(e["title"]): str(e["arxiv"]) for e in load_curated() if e.get("arxiv")})
+    known.update({norm_title(e["title"]): str(e["arxiv"]) for e in load_curated()[0] if e.get("arxiv")})
     local = 0
     for p in fresh["papers"]:
         k = known.get(norm_title(p["title"]))
