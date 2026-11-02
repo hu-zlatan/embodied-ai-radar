@@ -406,3 +406,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Venue backfill shipped and ran (2 dispatches, both green): 1,030 accepted papers; CoRL 2026 page 37 → 174. Audit of comments found one 'rejected by RSS 2026 AND CoRL 2026', an ICRA late-breaking poster and a challenge solution → `venue_of()` tightened.
 - Venue pages: filter box and Oral/Spotlight badges (tested in Chromium at phone width, both languages).
 - Curated 491 → 496: Wall-OSS-0.5, EagleVLA, LIFT, AgentCanvas, FiberTune.
+- W44 digest dispatched (landed ~05:20 UTC) and got its bilingual intro. End: 1 star / 0 forks. Owner: CoRL week is the moment for the launch kit, if wanted. Monday's feed had not landed at end of run; next run picks it up. End of run 46.

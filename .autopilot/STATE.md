@@ -56,7 +56,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Backlog
 
-- Run 46: anchor Wall-OSS-0.5 (2605.30877 confirmed; repo X-Square-Robot/wall-x) → vla; CoRL 2026 picks EagleVLA, LIFT, AgentCanvas, FiberTune. Worth a look for CoRL week (`data/venue_papers.json`, comments with Spotlight/Oral): REACT 2610.12007, Visible Touch 2609.14156, Demystifying When and Why VLAs Fail 2608.01402, CMP 2604.07457, WireCraft 2606.18097, Attention from Action 2608.13422, X-WBC. Backfill abstracts are capped at 600 chars, so only write what they state. Search index 1.36 MB raw / 450 KB gzip (lazy): if it passes ~1.5 MB, drop `au` for backfill items. Next: Mon 11-02 feed picks; W44 digest intro.
+- Run 46: anchor Wall-OSS-0.5 (2605.30877 confirmed; repo X-Square-Robot/wall-x) → vla; CoRL 2026 picks EagleVLA, LIFT, AgentCanvas, FiberTune. Worth a look for CoRL week (`data/venue_papers.json`, comments with Spotlight/Oral): REACT 2610.12007, Visible Touch 2609.14156, Demystifying When and Why VLAs Fail 2608.01402, CMP 2604.07457, WireCraft 2606.18097, Attention from Action 2608.13422, X-WBC. Backfill abstracts are capped at 600 chars, so only write what they state. Search index 1.36 MB raw / 450 KB gzip (lazy): if it passes ~1.5 MB, drop `au` for backfill items. W44 digest intro done. Next: Mon 11-02 feed picks, more CoRL picks.
 
 - Run 45: anchors MolmoAct2 (2605.02881, allenai/molmoact2), UnifoLM-VLA-0 (Unitree, no paper; type code, also locomotion) and GigaBrain-0.5M* (2602.12099, project only) → vla. Curated: 491. Still missing anchors: Wall-OSS-0.5 (2605.30877 not confirmed by search — verify the ID before adding); DexVLA/TinyVLA official repos still unconfirmed. Next: Mon 11-02 feed picks + W44 digest intro; CoRL 2026 sweep.
 
