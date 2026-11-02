@@ -188,6 +188,11 @@ ROBOT_CTX = re.compile(r"\b(robot\w*|embodied|humanoid\w*|vision-language-action
                        r"gripper|end-effector|sim-to-real|sim2real|teleoperat\w*)\b", re.I)
 
 
+def enrich_topics(recs, topics: list[dict]) -> None:
+    for r in recs:
+        r["topics"] = classify(r["abstract"], topics, title=r["title"])
+
+
 def is_relevant(rec: dict) -> bool:
     """cs.RO papers always count; cross-listed papers need a robotics title keyword AND robot context
     in the abstract (filters e.g. 'face manipulation' deepfake papers)."""

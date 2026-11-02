@@ -1,0 +1,38 @@
+name: Venue backfill
+on:
+  schedule:
+    - cron: "23 9 * * 2"   # weekly, Tuesdays: authors add 'Accepted to …' in later arXiv versions
+  workflow_dispatch:
+    inputs:
+      venues:
+        description: Comma-separated subset, e.g. "CoRL 2026,IROS 2026" (empty = all)
+        default: ""
+permissions:
+  contents: write
+concurrency:
+  group: arxiv-api
+  cancel-in-progress: false
+jobs:
+  backfill:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Search arXiv comments for accepted papers
+        env:
+          VENUES: ${{ github.event.inputs.venues }}
+        run: python scripts/venue_backfill.py --venues "$VENUES"
+      - name: Commit and push
+        if: always()
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ ! -f data/venue_papers.json ]; then echo "nothing fetched"; exit 0; fi
+          git add data/venue_papers.json
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "data: venue backfill $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done

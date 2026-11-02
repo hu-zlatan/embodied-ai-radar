@@ -19,7 +19,7 @@ from pathlib import Path
 from hf_papers import load as load_hf, merge_links
 from repo_stats import apply_feed_stats, load_feed_stats, load_history, load_stats, repo_key, star_gains
 from radar import (ROOT, bibtex, classify, venue_of, load_arxiv_feed, load_curated, load_curated_meta, load_embodiments,
-                   labs_of, load_labs, load_resources, load_start, load_topics)
+                   labs_of, load_labs, load_resources, load_start, load_topics, load_venue_papers)
 
 OUT = ROOT / "_site"
 SRC = ROOT / "site_src"
@@ -356,9 +356,11 @@ def build() -> int:
     STATS.clear()
     STATS.update(load_stats())
     hf = load_hf()
-    merge_links(feed, hf)  # code/project links from Hugging Face paper pages when the arXiv comment has none
-    apply_feed_stats(feed, load_feed_stats())
-    for p in feed:
+    feed_ids = {p["id"] for p in feed}
+    backfill = [p for p in load_venue_papers() if p["id"] not in feed_ids]  # venue pages + search only, not day pages
+    merge_links(feed + backfill, hf)  # code/project links from Hugging Face paper pages when the arXiv comment has none
+    apply_feed_stats(feed + backfill, load_feed_stats())
+    for p in feed + backfill:
         if p["id"] in hf:
             p["hf"] = hf[p["id"]]
     for e in entries:
@@ -371,7 +373,7 @@ def build() -> int:
         m = meta.get(e.get("arxiv") or "")
         if m:
             e["bib"] = bibtex(e["arxiv"], e["title"], m["authors"], m.get("published", ""), m.get("primary", ""))
-    for p in feed:
+    for p in feed + backfill:
         p["emb"] = classify(p.get("abstract", ""), embs, title=p.get("title", ""), threshold=1)
     venues: dict[str, dict] = {}  # 'CoRL 2026' -> {"c": [curated entries], "f": [feed papers]}
     for e in entries:
@@ -379,7 +381,7 @@ def build() -> int:
         if k:
             venues.setdefault(k, {"c": [], "f": []})["c"].append(e)
     cur_ids = {e.get("arxiv") for e in entries if e.get("arxiv")}
-    for p in feed:
+    for p in feed + backfill:
         k = venue_key(venue_of(p.get("comment")))
         if k and p["id"] not in cur_ids:  # agent picks are curated entries already
             venues.setdefault(k, {"c": [], "f": []})["f"].append(p)
@@ -410,9 +412,7 @@ def build() -> int:
                     "v": str(e["venue"]) if e.get("venue") else None,
                     "s": (repo_stat(e) or {}).get("stars"), "u": (e.get("hf") or {}).get("upvotes")})
     ab_cut = (today - dt.timedelta(days=FEED_ABSTRACT_DAYS)).isoformat()
-    for p in feed:
-        if p.get("published", "") < site_cut:
-            break
+    for p in [p for p in feed if p.get("published", "") >= site_cut] + backfill:
         it = {"k": "f", "id": p["id"], "t": p["title"], "d": p.get("published", ""),
               "au": ", ".join(p.get("authors", [])[:4]), "tp": p.get("topics", []), "em": p["emb"],
               "c": (p.get("code") or [None])[0], "pc": p.get("primary", ""), "v": venue_of(p.get("comment")),
@@ -753,8 +753,8 @@ def build() -> int:
     # ---- venue pages: venues/<slug>.html per venue+year with >= VENUE_MIN papers, venues/index.html
     (OUT / "venues").mkdir()
     vkeys = sorted(VENUE_PAGES, key=lambda k: (-int(k.rsplit(" ", 1)[1]), -(len(venues[k]["c"]) + len(venues[k]["f"])), k))
-    vnote = bi("Feed papers are listed when their arXiv comment says they were accepted (e.g. 'Accepted to CoRL 2026'); papers that do not say so are missing, and the list grows as authors post camera-ready versions. Curated entries carry a hand-checked venue.",
-               "日常 arXiv 论文仅在其 arXiv 备注写明已被接收（如 “Accepted to CoRL 2026”）时列入；未注明的论文不会出现，列表会随作者上传终稿而增加。精选条目的会议/期刊信息经过人工核对。")
+    vnote = bi("arXiv papers are listed when their arXiv comment says they were accepted (e.g. 'Accepted to CoRL 2026'); papers that do not say so are missing, and the list grows as authors post camera-ready versions. Curated entries carry a hand-checked venue.",
+               "arXiv 论文仅在其 arXiv 备注写明已被接收（如 “Accepted to CoRL 2026”）时列入；未注明的论文不会出现，列表会随作者上传终稿而增加。精选条目的会议/期刊信息经过人工核对。")
     for k in vkeys:
         g = venues[k]
         cur = sorted(g["c"], key=lambda e: (not e.get("highlight"), e["title"]))
@@ -769,7 +769,7 @@ def build() -> int:
         if cur:
             parts.append(f'<h2>{bi("Curated", "精选")} ({len(cur)})</h2><div class="cards">{"".join(curated_card(e, tby, "../") for e in cur)}</div>')
         if fp:
-            parts.append(f'<h2>{bi("From the daily arXiv feed", "来自每日 arXiv")} ({len(fp)})</h2><div class="cards">{"".join(feed_card(p, tby, "../") for p in fp)}</div>')
+            parts.append(f'<h2>{bi("From arXiv", "来自 arXiv")} ({len(fp)})</h2><div class="cards">{"".join(feed_card(p, tby, "../") for p in fp)}</div>')
         (OUT / "venues" / f"{venue_slug(k)}.html").write_text(
             page(f"{k} papers: embodied AI & robotics · Embodied AI Radar", "".join(parts), "../",
                  f"{len(cur) + len(fp)} embodied AI and robotics papers accepted at {k}, with code links, topics and BibTeX; updated daily from arXiv.",

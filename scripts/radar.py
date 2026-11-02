@@ -208,6 +208,18 @@ def load_arxiv_feed() -> list[dict]:
     return out
 
 
+VENUE_PAPERS = ROOT / "data" / "venue_papers.json"  # accepted papers older than the feed (scripts/venue_backfill.py)
+
+
+def load_venue_papers() -> list[dict]:
+    """Backfilled accepted papers. Missing or malformed file → [], never fatal."""
+    try:
+        data = json.loads(VENUE_PAPERS.read_text(encoding="utf-8"))
+        return [p for p in data.get("papers", []) if isinstance(p, dict) and p.get("id") and p.get("title")]
+    except (OSError, json.JSONDecodeError, AttributeError):
+        return []
+
+
 def classify(text: str, topics: list[dict], title: str | None = None, threshold: int = 2) -> list[str]:
     """Rule-based topic tags for feed papers, from topics.yaml keywords.
 
