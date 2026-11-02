@@ -7,11 +7,43 @@
     root.lang = l === 'zh' ? 'zh-CN' : 'en';
     try { localStorage.setItem('lang', l); } catch (e) {}
     document.querySelectorAll('option[data-en]').forEach(function (o) { o.textContent = o.dataset[l]; });
+    document.querySelectorAll('input[data-en]').forEach(function (o) { o.placeholder = o.dataset[l]; });
     if (window.__radarRender) window.__radarRender();
   }
   var btn = document.getElementById('lang');
   if (btn) btn.addEventListener('click', function () { setLang(lang() === 'zh' ? 'en' : 'zh'); });
   setLang(lang());
+
+  // Filter box on long venue pages: ?q=&topic=&code=1 keeps a filtered view shareable.
+  var vf = document.getElementById('vf');
+  if (vf) {
+    var vq = document.getElementById('vf-q'), vt = document.getElementById('vf-t'), vc = document.getElementById('vf-c'), vn = document.getElementById('vf-n');
+    var vcards = Array.prototype.slice.call(document.querySelectorAll('.cards .card'));
+    var vtext = vcards.map(function (c) {
+      var h = c.querySelector('h3'), a = c.querySelector('.authors');
+      return ((h ? h.textContent : '') + ' ' + (a ? a.textContent : '')).toLowerCase();
+    });
+    var vapply = function () {
+      var q = vq.value.trim().toLowerCase(), t = vt.value, code = vc.checked, shown = 0;
+      vcards.forEach(function (c, i) {
+        var ok = (!q || vtext[i].indexOf(q) >= 0) && (!t || (' ' + c.dataset.t + ' ').indexOf(' ' + t + ' ') >= 0) && (!code || c.dataset.c);
+        c.hidden = !ok;
+        if (ok) shown++;
+      });
+      vn.textContent = shown + ' / ' + vcards.length;
+      var u = new URLSearchParams();
+      if (q) u.set('q', vq.value.trim());
+      if (t) u.set('topic', t);
+      if (code) u.set('code', '1');
+      try { history.replaceState(null, '', u.toString() ? '?' + u : location.pathname); } catch (e) {}
+    };
+    var vp = new URLSearchParams(location.search);
+    vq.value = vp.get('q') || '';
+    vt.value = vp.get('topic') || '';
+    vc.checked = vp.get('code') === '1';
+    [vq, vt, vc].forEach(function (el) { el.addEventListener(el === vq ? 'input' : 'change', vapply); });
+    vapply();
+  }
 
   // BibTeX copy buttons (cards are static HTML; the <pre> stays selectable without JS).
   document.addEventListener('click', function (ev) {

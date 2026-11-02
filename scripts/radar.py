@@ -294,7 +294,7 @@ def arxiv_get(url: str, attempts: int = 6) -> bytes:
 VENUE_RE = re.compile(
     r"\b(CoRL|RSS|ICRA|IROS|NeurIPS|ICLR|ICML|CVPR|ICCV|ECCV|RA-?L|T-RO|TRO|Humanoids|AAAI|IJCAI|"
     r"Science Robotics|IJRR|WAFR|HRI|CASE|L4DC|ISRR|3DV|WACV)\b\)?(?:\s*['’]?\s*(20\d\d|\d\d)\b)?")
-NOT_ACCEPTED_RE = re.compile(r"submi\w*|under review|in submission|preprint version of a submission|workshop", re.I)
+NOT_ACCEPTED_RE = re.compile(r"submi\w*|under review|in submission|preprint version of a submission|workshop|reject\w*|late.breaking|\bchallenge\b|competition", re.I)
 
 
 def venue_of(comment: str | None) -> str | None:

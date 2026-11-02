@@ -34,6 +34,7 @@ esc = html.escape
 EMB: dict[str, dict] = {}  # embodiment id -> {en, zh}, filled in build()
 STATS: dict[str, dict] = {}  # 'owner/repo' -> {stars, pushed, archived}, from data/repo_stats.json
 VENUE_PAGES: set[str] = set()  # venue keys like 'CoRL 2026' that have a page venues/<slug>.html, filled in build()
+VENUE_FILTER_MIN = 40  # venue pages this long get a client-side filter box
 VENUE_MIN = 3  # a venue+year gets its own page once it has this many papers (curated + feed)
 LAB_PAGES: dict[str, dict] = {}  # lab id -> lab (data/labs.yaml) for labs with a page labs/<id>.html, filled in build()
 LAB_MIN = 3  # a lab gets its own page once this many curated entries match it
@@ -181,7 +182,7 @@ def curated_card(e: dict, topics_by_id: dict, root: str, detail: bool = False) -
     h = "h1" if detail else "h3"
     if e.get("venue"):
         meta += " " + venue_badge(str(e["venue"]), root)
-    return f"""<article class="card" id="{esc(e['id'])}">
+    return f"""<article class="card" id="{esc(e['id'])}" data-t="{esc(' '.join(e['topics']))}"{' data-c="1"' if e.get('code') else ''}>
 <div class="meta"><span class="badge">{bi(en, zh)}</span> {meta} {star}</div>
 <{h}><a href="{esc(main)}" rel="noopener">{title_html(e['title'])}</a></{h}>
 <p class="take">{bi(e['takeaway_en'], e['takeaway_zh'])}</p>
@@ -209,7 +210,7 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
     v = venue_of(p.get("comment"))
     if v:
         has_code += " " + venue_badge(v, root)
-    return f"""<article class="card feed" id="arxiv-{esc(p['id'])}">
+    return f"""<article class="card feed" id="arxiv-{esc(p['id'])}" data-t="{esc(' '.join(p.get('topics', [])))}"{' data-c="1"' if p.get('code') else ''}>
 <div class="meta"><span class="badge">arXiv {esc(p.get('primary', ''))}</span> {esc(p.get('published', ''))} {has_code}</div>
 <h3><a href="https://arxiv.org/abs/{esc(p['id'])}" rel="noopener">{esc(p['title'])}</a></h3>
 <p class="authors">{esc(authors)}</p>
@@ -531,9 +532,11 @@ def build() -> int:
         f'{len([p for p in feed_by_topic[t["id"]] if p.get("published", "") >= week_cut])} {bi("new this week", "本周新增")}</span></a>'
         for t in topics)
     fresh = "".join(feed_card(p, tby, "") for p in feed[:8])
-    # home: row of this year's (and next year's) venue pages, biggest first, e.g. CoRL 2026 during conference season
+    # home: row of this year's (and next year's) venue pages, those with the most papers posted in the last 30 days
+    # first (the backfill would otherwise put last spring's ICRA above next week's CoRL)
+    v_cut = (today - dt.timedelta(days=30)).isoformat()
     cur_v = sorted((k for k in VENUE_PAGES if int(k.rsplit(" ", 1)[1]) >= today.year),
-                   key=lambda k: (-(len(venues[k]["c"]) + len(venues[k]["f"])), k))[:6]
+                   key=lambda k: (-sum(p.get("published", "") >= v_cut for p in venues[k]["f"]), -(len(venues[k]["c"]) + len(venues[k]["f"])), k))[:6]
     venue_row = (f'<p class="muted">{bi("Accepted at:", "会议/期刊录用：")} '
                  + " · ".join(f'<a href="venues/{venue_slug(k)}.html">{esc(k)}</a> ({len(venues[k]["c"]) + len(venues[k]["f"])})' for k in cur_v)
                  + f' · <a href="venues/index.html">{bi("All venues →", "全部 →")}</a></p>') if cur_v else ""
@@ -766,6 +769,15 @@ def build() -> int:
                  f'<p class="lead">{bi(f"{len(cur) + len(fp)} embodied-AI and robotics papers accepted at {k}, {n_code} with code.", f"{len(cur) + len(fp)} 篇被 {k} 接收的具身智能与机器人论文，其中 {n_code} 篇附代码。")}</p>',
                  f'<p class="muted">{vnote}</p>',
                  f'<p><a href="../index.html?venue={esc(k.rsplit(" ", 1)[0])}#search">{bi("Search within this venue series →", "在该会议/期刊系列中搜索 →")}</a></p>']
+        if len(cur) + len(fp) >= VENUE_FILTER_MIN:
+            tn: dict[str, int] = {}
+            for t in [t for e in cur for t in e["topics"]] + [t for p in fp for t in p.get("topics", [])]:
+                tn[t] = tn.get(t, 0) + 1
+            topt = "".join(f'<option value="{esc(t)}" data-en="{esc(tby[t]["en"])} ({n})" data-zh="{esc(tby[t]["zh"])} ({n})">{esc(tby[t]["en"])} ({n})</option>'
+                           for t, n in sorted(tn.items(), key=lambda x: -x[1]) if t in tby)
+            parts.append(f'''<div class="filters" id="vf"><input id="vf-q" type="search" aria-label="Filter" data-en="Filter by title or author" data-zh="按标题或作者筛选" placeholder="Filter by title or author">
+<select id="vf-t" aria-label="Topic"><option value="" data-en="All topics" data-zh="全部主题">All topics</option>{topt}</select>
+<label><input id="vf-c" type="checkbox"> {bi("Has code", "有代码")}</label> <span class="muted" id="vf-n"></span></div>''')
         if cur:
             parts.append(f'<h2>{bi("Curated", "精选")} ({len(cur)})</h2><div class="cards">{"".join(curated_card(e, tby, "../") for e in cur)}</div>')
         if fp:
