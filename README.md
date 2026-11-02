@@ -12,6 +12,8 @@ Hand-verified papers, code, datasets, simulators and hardware with one-line take
 
 ![Screenshot of the Embodied AI Radar website](docs/screenshot.png)
 
+**CoRL 2026 (Nov 9–12, Austin):** the [program guide](https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026-program.html) lists all 687 accepted papers by session and poster number, with filters and arXiv/code links, plus the 32 workshops.
+
 **New to the field?** Follow the [reading path](https://hu-zlatan.github.io/embodied-ai-radar/start.html): 10 steps from RL and imitation basics through visuomotor policies, VLA models, simulation, locomotion and world models to hardware you can build — 41 hand-picked entries, each with a bilingual takeaway.
 
 ## Why this one

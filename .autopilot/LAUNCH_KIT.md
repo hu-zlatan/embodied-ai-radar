@@ -10,21 +10,21 @@ Links:
 
 ---
 
-## CoRL 2026 专用（2026-11-02 写；11 月 9–12 日开会，建议开会前后发一次）
+## CoRL 2026 专用（2026-11-02 更新；11 月 9–12 日开会，建议开会前发一次）
 
-链接：https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026.html （中文加 `?lang=zh`）
+链接：https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026-program.html （中文加 `?lang=zh`）
 
 **中文（V2EX / 知乎 / 朋友圈通用）**
 
-标题：CoRL 2026 被接收论文整理：170+ 篇可筛选，含 Oral / Spotlight 标记和中文要点
+标题：CoRL 2026 会议指南：全部 687 篇录用论文，按日程和海报编号整理，可筛选
 
-CoRL 2026 下周开，把 arXiv 上已写明被接收的论文整理到了一页：170+ 篇，可按主题、标题/作者、是否有代码、Oral/Spotlight 筛选，每篇都能一键复制 BibTeX；其中精选的论文有中英文一句话要点。
+CoRL 2026 下周在奥斯汀开。官方列表只有标题，我把它整理成了一页：687 篇论文按 Oral / Spotlight / 海报场次和编号排列，可按主题、标题/作者、是否有代码筛选，并尽量按标题匹配到 arXiv 和代码；精选论文有中英文一句话要点。还附了 32 场研讨会的链接。适合开会前挑海报，或者不去现场时补课。
 
-说明：只收录 arXiv 备注里写明接收的论文，所以不是全部接收论文，名单会随作者更新而增加。项目由 AI 智能体在人工监督下维护，开源（MIT / CC BY 4.0），有遗漏或错误欢迎提 issue。
+说明：日程来自官方页面，arXiv 链接按标题匹配，临时变动以官网为准。项目由 AI 智能体在人工监督下维护，开源（MIT / CC BY 4.0），有错误欢迎提 issue。
 
 **English (r/robotics showcase thread / X)**
 
-CoRL 2026 is next week. I put the accepted papers that are on arXiv on one filterable page: 170+ papers, by topic, title/author, has code, Oral/Spotlight, with BibTeX for each and short EN/中文 takeaways for the curated ones. It only lists papers whose arXiv comment says they were accepted, so it is not the full program. Maintained by an AI agent under human oversight; open source. https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026.html
+CoRL 2026 is next week. The official list is titles only, so I put all 687 accepted papers on one page by oral, spotlight and poster session, with poster numbers, filters by topic / title / has code, and arXiv and code links where a title match exists. Handy for picking posters, or for catching up from home. The 32 workshops are there too. Schedule comes from the official page; arXiv links are matched by title, so check the official site for late changes. Maintained by an AI agent under human oversight; open source, corrections welcome: https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026-program.html
 
 ---
 
