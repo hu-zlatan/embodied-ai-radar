@@ -182,7 +182,9 @@ def curated_card(e: dict, topics_by_id: dict, root: str, detail: bool = False) -
     h = "h1" if detail else "h3"
     if e.get("venue"):
         meta += " " + venue_badge(str(e["venue"]), root)
-    return f"""<article class="card" id="{esc(e['id'])}" data-t="{esc(' '.join(e['topics']))}"{' data-c="1"' if e.get('code') else ''}>
+    if e.get("honor"):
+        meta += f' <span class="badge venue">{e["honor"]}</span>'
+    return f"""<article class="card" id="{esc(e['id'])}" data-t="{esc(' '.join(e['topics']))}"{' data-c="1"' if e.get('code') else ''}{' data-h="1"' if e.get('honor') else ''}>
 <div class="meta"><span class="badge">{bi(en, zh)}</span> {meta} {star}</div>
 <{h}><a href="{esc(main)}" rel="noopener">{title_html(e['title'])}</a></{h}>
 <p class="take">{bi(e['takeaway_en'], e['takeaway_zh'])}</p>
@@ -385,6 +387,11 @@ def build() -> int:
         if k:
             venues.setdefault(k, {"c": [], "f": []})["c"].append(e)
     cur_ids = {e.get("arxiv") for e in entries if e.get("arxiv")}
+    comments = {p["id"]: p.get("comment") for p in feed + backfill}
+    for e in entries:  # Oral / Spotlight comes from the arXiv comment, also for curated papers
+        c = comments.get(e.get("arxiv"))
+        if venue_key(venue_of(c)) == venue_key(e.get("venue")) and honor_of(c):
+            e["honor"] = honor_of(c)
     for p in feed + backfill:
         k = venue_key(venue_of(p.get("comment")))
         if k and p["id"] not in cur_ids:  # agent picks are curated entries already
@@ -763,13 +770,16 @@ def build() -> int:
                "arXiv 论文仅在其 arXiv 备注写明已被接收（如 “Accepted to CoRL 2026”）时列入；未注明的论文不会出现，列表会随作者上传终稿而增加。精选条目的会议/期刊信息经过人工核对。")
     for k in vkeys:
         g = venues[k]
-        cur = sorted(g["c"], key=lambda e: (not e.get("highlight"), e["title"]))
+        cur = sorted(g["c"], key=lambda e: (not e.get("honor"), not e.get("highlight"), e["title"]))
         fp = sorted(g["f"], key=lambda p: p.get("published", ""), reverse=True)
         fp.sort(key=lambda p: (not honor_of(p.get("comment")), not p.get("code")))  # stable: newest first within each group
         n_code = sum(1 for p in fp if p.get("code")) + sum(1 for e in cur if e.get("code"))
+        n_honor = sum(1 for p in fp if honor_of(p.get("comment"))) + sum(1 for e in cur if e.get("honor"))
+        honor_link = (f' <a href="?honor=1">{bi(f"Show the {n_honor} Oral / Spotlight papers →", f"只看 {n_honor} 篇 Oral / Spotlight →")}</a>'
+                      if n_honor and len(cur) + len(fp) >= VENUE_FILTER_MIN else "")
         parts = [f'<p class="muted"><a href="index.html">{bi("Venues", "会议/期刊")}</a> › {esc(k)}</p>',
                  f'<h1>{esc(k)} · {bi("papers", "论文")}</h1>',
-                 f'<p class="lead">{bi(f"{len(cur) + len(fp)} embodied-AI and robotics papers accepted at {k}, {n_code} with code.", f"{len(cur) + len(fp)} 篇被 {k} 接收的具身智能与机器人论文，其中 {n_code} 篇附代码。")}</p>',
+                 f'<p class="lead">{bi(f"{len(cur) + len(fp)} embodied-AI and robotics papers accepted at {k}, {n_code} with code.", f"{len(cur) + len(fp)} 篇被 {k} 接收的具身智能与机器人论文，其中 {n_code} 篇附代码。")}{honor_link}</p>',
                  f'<p class="muted">{vnote}</p>',
                  f'<p><a href="../index.html?venue={esc(k.rsplit(" ", 1)[0])}#search">{bi("Search within this venue series →", "在该会议/期刊系列中搜索 →")}</a></p>']
         if len(cur) + len(fp) >= VENUE_FILTER_MIN:
@@ -779,7 +789,7 @@ def build() -> int:
             topt = "".join(f'<option value="{esc(t)}" data-en="{esc(tby[t]["en"])} ({n})" data-zh="{esc(tby[t]["zh"])} ({n})">{esc(tby[t]["en"])} ({n})</option>'
                            for t, n in sorted(tn.items(), key=lambda x: -x[1]) if t in tby)
             honor_box = (f' <label><input id="vf-h" type="checkbox"> {bi("Oral / Spotlight", "Oral / Spotlight")}</label>'
-                         if any(honor_of(p.get("comment")) for p in fp) else "")
+                         if n_honor else "")
             parts.append(f'''<div class="filters" id="vf"><input id="vf-q" type="search" aria-label="Filter" data-en="Filter by title or author" data-zh="按标题或作者筛选" placeholder="Filter by title or author">
 <select id="vf-t" aria-label="Topic"><option value="" data-en="All topics" data-zh="全部主题">All topics</option>{topt}</select>
 <label><input id="vf-c" type="checkbox"> {bi("Has code", "有代码")}</label>{honor_box} <span class="muted" id="vf-n"></span></div>''')
