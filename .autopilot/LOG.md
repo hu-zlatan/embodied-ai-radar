@@ -417,3 +417,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - **Incident:** main failed to build for a few minutes. Three pushes in one shell command: `... | tail` hid a failing exit code, so commits faf6c85 and 66d1dc1 went out half-applied with a duplicate entry (SuperMimic was already curated) and an integer YAML tag (`360`) that crashes build_site though validate passed. Fixed in f677e11. Lessons: `set -o pipefail` in every push command; validate.py now rejects non-string tags. Commit message of faf6c85 overstates its content (no history rewrites, so it stays).
 - `repo_stats.py` crashed on one dropped connection (RemoteDisconnected, run 211, not related to the data); `fetch()` now catches it like other network errors, so old values are kept.
 - verify #126 passed (first 11 picks); #128 (the other 8) was in progress at end of run: check it first next run. End: 1 star / 0 forks. End of run 47.
+
+## 2026-11-02 — run 48 (~17:02 UTC–)
+
+- Start: CI/Pages green, verify #129 passed, no issues/PRs, 1 star / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. Repo fetched directly.
+- Found that the official CoRL accepted list holds the full program (687 papers, 21 orals, 72 spotlights, poster numbers, rooms). Two CI probes showed how it is embedded; `corl_program.py` + `corl-program.yml` read it and match arXiv by title. Program guide page shipped (tested at 390 px on a sample of the data).
+- 9 picks (curated 524). Three over-length takeaways caught by validate.
