@@ -220,6 +220,18 @@ def load_venue_papers() -> list[dict]:
         return []
 
 
+PROGRAM_DIR = ROOT / "data" / "program"  # conference programs (scripts/corl_program.py)
+
+
+def load_program(slug: str) -> dict | None:
+    """data/program/<slug>.json. Missing or malformed file → None, never fatal."""
+    try:
+        data = json.loads((PROGRAM_DIR / f"{slug}.json").read_text(encoding="utf-8"))
+        return data if isinstance(data.get("papers"), list) and isinstance(data.get("sessions"), list) else None
+    except (OSError, json.JSONDecodeError, AttributeError):
+        return None
+
+
 def classify(text: str, topics: list[dict], title: str | None = None, threshold: int = 2) -> list[str]:
     """Rule-based topic tags for feed papers, from topics.yaml keywords.
 

@@ -1,0 +1,42 @@
+name: CoRL program
+on:
+  schedule:
+    - cron: "17 8 * * *"   # daily until the conference ends; rooms and papers still change
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: arxiv-api
+  cancel-in-progress: false
+jobs:
+  corl:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Read the official program
+        run: python scripts/corl_program.py --parse-only
+      - name: Commit and push
+        if: always()
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/program data/venue_papers.json
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "data: CoRL 2026 program $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
+      - name: Find arXiv versions by title
+        run: python scripts/corl_program.py --minutes 50
+      - name: Commit and push
+        if: always()
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/program data/venue_papers.json
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "data: CoRL 2026 program $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
