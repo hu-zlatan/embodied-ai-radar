@@ -404,3 +404,56 @@
   tags: [quadruped, loco-manipulation, coding-agent, llm, reinforcement-learning, skill-library, sim-to-real, real]
   takeaway_en: "When a quadruped manipulator keeps failing, a coding agent writes an RL problem to learn the missing whole-body skill, adds it to a library and retries; transfers to a real robot (18/20 rack retrieval)."
   takeaway_zh: 四足机械臂反复失败时，由编码智能体判断缺少哪种全身控制能力，自动编写强化学习问题（奖励、课程、终止条件）训练新控制器并加入技能库再重试；习得扶墙抬升等技能，仿真五项超出初始能力的任务成功率 98.4–100%，无需真机训练即迁移到实体机器人（货架取物 18/20）。
+
+- title: "Movens-Zero: Scaling Humanoid Motion Foundation Models with Large-Scale Human Videos"
+  type: paper
+  arxiv: "2610.41877"
+  year: 2026
+  project: https://movens-zero.github.io
+  added: 2026-11-02
+  tags: [humanoid, motion-foundation-model, dataset, flow-matching]
+  takeaway_en: "Movens-5M: 5M execution-verified humanoid motions from web videos, aligned with text, RGB, speech and music. Movens-Zero trains one flow-matching action expert on seven tasks for real-time closed-loop control."
+  takeaway_zh: "Movens-5M 从互联网视频构建 500 万条经执行验证的人形动作（超 1 万小时），对齐文本、RGB、语音和音乐。Movens-Zero 用一个流匹配动作专家联合训练七种生成任务，支持实时闭环执行；另有四赛道基准 Movens-Intent。"
+
+- title: "DiffWBC: Unlocking Steerable General Humanoid Motion Tracking via One-Step Diffusion Whole-Body Control"
+  type: paper
+  arxiv: "2610.41354"
+  year: 2026
+  project: https://diffwbc.github.io/
+  added: 2026-11-02
+  tags: [humanoid, whole-body-control, diffusion, unitree-g1, real]
+  takeaway_en: "Humanoid tracker as a one-step diffusion model: one forward pass per 50 Hz step, test-time steering via cost gradients, failure discovery from plan dispersion without simulation. Deployed on a Unitree G1."
+  takeaway_zh: "用一步扩散模型做人形全身跟踪：每个 50 Hz 控制步只需一次前向；用可微代价梯度在测试时操控冻结的控制器，无需重训；用规划分散度在不做物理仿真的情况下发现跟踪失败。已部署到 Unitree G1。"
+
+- title: "ROOF: Learning Humanoid Fall Recovery under Overhead Constraints"
+  type: paper
+  arxiv: "2610.42097"
+  year: 2026
+  project: https://lu-yidan.github.io/ROOF/
+  added: 2026-11-02
+  tags: [humanoid, fall-recovery, proprioception, unitree-g1, real]
+  takeaway_en: "Fall recovery beneath overhead obstacles from proprioception alone: rewards reducing robot-obstacle overlap, no prescribed path. Reports 95 of 150 recoveries on a Unitree G1 across seven real obstacle scenes."
+  takeaway_zh: "人形在头顶障碍物下跌倒后的恢复，仅用本体感知：奖励减少机器人与障碍物的重叠，而不预设逃脱路径，由单一策略学会何时清障、建立支撑并站起。报告 Unitree G1 在七个真实场景中 150 次尝试成功 95 次。"
+
+- title: "SuperMimic: Scaling Humanoid Whole-Body Control with One Differentiable World Model"
+  type: paper
+  arxiv: "2610.28480"
+  year: 2026
+  venue: CoRL 2026
+  project: https://supermimic.github.io
+  added: 2026-11-02
+  topics: [world-models]
+  tags: [humanoid, whole-body-control, differentiable-world-model, motion-tracking]
+  takeaway_en: "CoRL 2026 Oral. Amortizes humanoid motion tracking across all motions with one differentiable world model of their shared dynamics, fit from simulator transitions and trained in one loop with the tracking policy."
+  takeaway_zh: "CoRL 2026 Oral。用一个描述共享动力学的可微世界模型，在全部动作上摊销人形动作跟踪学习；该模型由刚体仿真器的转移日志拟合，并与跟踪策略在同一循环内联合训练。"
+
+- title: "CMP: Robust Whole-Body Tracking for Loco-Manipulation via Competence Manifold Projection"
+  type: paper
+  arxiv: "2604.07457"
+  year: 2026
+  venue: CoRL 2026
+  project: https://shepherd1226.github.io/CMP
+  added: 2026-11-02
+  tags: [loco-manipulation, whole-body-control, safety, ood]
+  takeaway_en: "CoRL 2026 Spotlight. Hardens whole-body end-effector tracking for legged manipulators against out-of-distribution inputs such as sensor noise or infeasible commands, using a frame-wise single-step safety manifold."
+  takeaway_zh: "CoRL 2026 Spotlight。提升足式移动操作臂全身末端跟踪对分布外输入（传感器噪声、不可行指令）的鲁棒性：用逐帧安全方案把无限时域安全约束转化为计算高效的单步流形约束。"

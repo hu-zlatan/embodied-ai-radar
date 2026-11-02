@@ -462,3 +462,24 @@
   tags: [data-generation, bimanual, multi-arm, task-and-motion-planning, imitation-learning, sim-to-real, sim, real]
   takeaway_en: "MimicGen-style demo synthesis that respects multi-arm constraints: plans and schedules skills across arms. Reports 79.6% generation success on 28 sim variants and 50-80% real success via zero-shot sim-to-real."
   takeaway_zh: 面向双臂/多臂机器人的示范自动生成：在少量源示范基础上联合做规划与技能调度，显式处理多臂间约束，避免现有生成方法产生的碰撞与失败。28 个仿真任务变体上数据生成成功率 79.6%，训练出的策略经零样本 sim-to-real 在 8 个真实变体上成功率 50–80%。
+
+- title: "Contact Imitation Interface: Transferring Dexterous Skills by Showing How Contact Unfolds"
+  type: paper
+  arxiv: "2610.41028"
+  year: 2026
+  org: National University of Singapore
+  project: https://nus-lins-lab.github.io/CIMIWeb/
+  added: 2026-11-02
+  tags: [dexterous, human-demonstrations, retargeting, contact, open-hardware, real]
+  takeaway_en: "Robot-free dexterous demos with shared contact geometry, fingertip RGB and contact-first retargeting. Reports at least 50 points higher final-stage success than baselines on LEAP and Wuji hands; hardware is open."
+  takeaway_zh: "免机器人灵巧演示框架：共享接触几何、指尖 RGB 视角、接触对齐优先的重定向，加上预测接触面轨迹的层次策略。报告在 LEAP 和 Wuji 手的六组手-任务上，最终阶段成功率比基线至少高 50 个百分点；硬件与软件公开。"
+
+- title: "RTPolicy: Real-Time (32.9 Hz) Multi-View Visuomotor Policy for Robotic Manipulation on Edge Devices"
+  type: paper
+  arxiv: "2610.41625"
+  year: 2026
+  project: https://d-robotics-ai-lab.github.io/RTPolicy.project
+  added: 2026-11-02
+  tags: [edge, real-time, flow-matching, robotwin, bimanual, real]
+  takeaway_en: "Multi-view policy compressing camera views into a compact token for a flow-matching action head. Reports 52.26% on RoboTwin 2.0 (50 tasks; π0 46.4%) and 32.9 Hz inference on an RDK S600 edge device in INT16."
+  takeaway_zh: "把多视角视觉融合压缩为紧凑 token，再条件化流匹配动作生成的轻量策略。报告 RoboTwin 2.0 五十任务平均 52.26%（π0 为 46.4%），真实双臂平台 72.0%，在 RDK S600 边缘设备上以 INT16 推理达 32.9 Hz。"
