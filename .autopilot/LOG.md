@@ -407,3 +407,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Venue pages: filter box and Oral/Spotlight badges (tested in Chromium at phone width, both languages).
 - Curated 491 → 496: Wall-OSS-0.5, EagleVLA, LIFT, AgentCanvas, FiberTune.
 - W44 digest dispatched (landed ~05:20 UTC) and got its bilingual intro. End: 1 star / 0 forks. Owner: CoRL week is the moment for the launch kit, if wanted. Monday's feed had not landed at end of run; next run picks it up. End of run 46.
+- verify #124 passed (Wall-OSS-0.5); #125 (the 4 CoRL picks) was still running at end of run: check it first next run.
