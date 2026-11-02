@@ -227,8 +227,10 @@ def load_program(slug: str) -> dict | None:
     """data/program/<slug>.json. Missing or malformed file → None, never fatal."""
     try:
         data = json.loads((PROGRAM_DIR / f"{slug}.json").read_text(encoding="utf-8"))
-        return data if isinstance(data.get("papers"), list) and isinstance(data.get("sessions"), list) else None
-    except (OSError, json.JSONDecodeError, AttributeError):
+        sessions = [x for x in data["sessions"] if isinstance(x, dict) and x.get("id") and x.get("kind") in ("oral", "spotlight", "poster")]
+        papers = [x for x in data["papers"] if isinstance(x, dict) and x.get("or") and x.get("title") and isinstance(x.get("sessions"), list)]
+        return {**data, "sessions": sessions, "papers": papers} if papers and data.get("venue") else None
+    except (OSError, json.JSONDecodeError, AttributeError, KeyError, TypeError):
         return None
 
 
