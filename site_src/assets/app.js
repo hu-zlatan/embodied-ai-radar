@@ -17,16 +17,16 @@
   // Filter box on long venue pages: ?q=&topic=&code=1 keeps a filtered view shareable.
   var vf = document.getElementById('vf');
   if (vf) {
-    var vq = document.getElementById('vf-q'), vt = document.getElementById('vf-t'), vc = document.getElementById('vf-c'), vn = document.getElementById('vf-n');
+    var vq = document.getElementById('vf-q'), vt = document.getElementById('vf-t'), vc = document.getElementById('vf-c'), vn = document.getElementById('vf-n'), vh = document.getElementById('vf-h');
     var vcards = Array.prototype.slice.call(document.querySelectorAll('.cards .card'));
     var vtext = vcards.map(function (c) {
       var h = c.querySelector('h3'), a = c.querySelector('.authors');
       return ((h ? h.textContent : '') + ' ' + (a ? a.textContent : '')).toLowerCase();
     });
     var vapply = function () {
-      var q = vq.value.trim().toLowerCase(), t = vt.value, code = vc.checked, shown = 0;
+      var q = vq.value.trim().toLowerCase(), t = vt.value, code = vc.checked, honor = vh && vh.checked, shown = 0;
       vcards.forEach(function (c, i) {
-        var ok = (!q || vtext[i].indexOf(q) >= 0) && (!t || (' ' + c.dataset.t + ' ').indexOf(' ' + t + ' ') >= 0) && (!code || c.dataset.c);
+        var ok = (!q || vtext[i].indexOf(q) >= 0) && (!t || (' ' + c.dataset.t + ' ').indexOf(' ' + t + ' ') >= 0) && (!code || c.dataset.c) && (!honor || c.dataset.h);
         c.hidden = !ok;
         if (ok) shown++;
       });
@@ -35,13 +35,15 @@
       if (q) u.set('q', vq.value.trim());
       if (t) u.set('topic', t);
       if (code) u.set('code', '1');
+      if (honor) u.set('honor', '1');
       try { history.replaceState(null, '', u.toString() ? '?' + u : location.pathname); } catch (e) {}
     };
     var vp = new URLSearchParams(location.search);
     vq.value = vp.get('q') || '';
     vt.value = vp.get('topic') || '';
     vc.checked = vp.get('code') === '1';
-    [vq, vt, vc].forEach(function (el) { el.addEventListener(el === vq ? 'input' : 'change', vapply); });
+    if (vh) vh.checked = vp.get('honor') === '1';
+    [vq, vt, vc].concat(vh ? [vh] : []).forEach(function (el) { el.addEventListener(el === vq ? 'input' : 'change', vapply); });
     vapply();
   }
 

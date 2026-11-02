@@ -951,3 +951,58 @@
   tags: [real, open-weights, cross-embodiment, pretraining]
   takeaway_en: "Wall-OSS-0.5: open 4B VLA on a Qwen2.5-VL-3B backbone, pretrained across 20+ embodiments; reports 60.5% task progress after fine-tuning on 15 real tasks, against 43.0% for π0.5."
   takeaway_zh: Wall-OSS-0.5：自变量机器人（X Square Robot）开源的 40 亿参数 VLA 模型，基于 Qwen2.5-VL-3B 视觉语言主干，在 20 余种机器人形态上预训练；报告在 15 个真机任务上微调后平均任务进度 60.5%，π0.5 为 43.0%。
+
+- title: "EagleVLA: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference"
+  type: paper
+  arxiv: "2607.12659"
+  year: 2026
+  org: PKU SEC Lab
+  venue: CoRL 2026
+  code: https://github.com/PKU-SEC-Lab/EagleVLA
+  added: 2026-11-02
+  topics: [vla]
+  tags: [real, onboard, jetson, async-inference, spotlight]
+  takeaway_en: "EagleVLA: asynchronous VLA inference for low-power onboard chips such as Jetson Orin, tackling perception-execution misalignment and slow reaction; a CoRL 2026 Spotlight, formerly titled Jetson-PI."
+  takeaway_zh: EagleVLA：面向 Jetson Orin 等低功耗机载设备的 VLA 异步推理方法，针对异步执行带来的感知-执行错位与反应慢两个问题；CoRL 2026 Spotlight，曾用名 Jetson-PI。
+
+
+- title: "Never Too Late for Force: Accelerating VLA Post-Training with Reactive Force Injection"
+  type: paper
+  arxiv: "2607.14236"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/y-wng/lift
+  project: https://lift-policy.github.io/
+  added: 2026-11-02
+  topics: [vla, tactile]
+  tags: [real, force, post-training, contact, spotlight]
+  takeaway_en: "LIFT: grafts a reactive force-driven action expert onto a pretrained, vision-driven VLA, keeping its output unchanged at initialization, so post-training gains contact reactivity; CoRL 2026 Spotlight."
+  takeaway_zh: LIFT：在以视觉为主的预训练 VLA 旁接入由力觉驱动的反应式动作专家，初始化时保持原策略输出不变，使后训练获得接触反应能力，应对遮挡、深度歧义等接触阶段难题；CoRL 2026 Spotlight。
+
+
+- title: "Automating the Design of Embodied Agent Architectures"
+  type: paper
+  arxiv: "2606.30111"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/jianzhou0420/AgentCanvas
+  project: https://jianzhou0420.github.io/agentcanvas
+  added: 2026-11-02
+  topics: [navigation, vla]
+  tags: [agents, architecture-search, memory, planning]
+  takeaway_en: "Tests whether agent architecture search, so far used on text agents, transfers to perceptual embodied agents; AgentCanvas makes perception, memory, planning and action wiring searchable."
+  takeaway_zh: 研究原用于文本智能体的智能体架构搜索（AAS）能否迁移到有感知的具身智能体；提出 AgentCanvas，把感知、记忆、规划与动作模块的组合方式变成可搜索的设计空间。
+
+
+- title: "FiberTune: Preserving Action-Fiber Visual Residuals in Vision-Language-Action Fine-Tuning"
+  type: paper
+  arxiv: "2606.08653"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/fibertune/FiberTune
+  project: https://fibertune.github.io/
+  added: 2026-11-02
+  topics: [vla]
+  tags: [fine-tuning, representation, no-inference-overhead]
+  takeaway_en: "FiberTune: action-supervised VLA fine-tuning can collapse visual structure the action loss barely constrains; a training-time objective keeps those residuals, with no added inference cost."
+  takeaway_zh: FiberTune：动作监督微调会压缩动作损失约束较弱的视觉结构（沿局部动作纤维的残差坍塌）；提出训练期目标函数，对齐冻结的视觉教师以保留这些残差，不增加推理开销。

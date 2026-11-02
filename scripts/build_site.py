@@ -18,7 +18,7 @@ from pathlib import Path
 
 from hf_papers import load as load_hf, merge_links
 from repo_stats import apply_feed_stats, load_feed_stats, load_history, load_stats, repo_key, star_gains
-from radar import (ROOT, bibtex, classify, venue_of, load_arxiv_feed, load_curated, load_curated_meta, load_embodiments,
+from radar import (ROOT, bibtex, classify, honor_of, venue_of, load_arxiv_feed, load_curated, load_curated_meta, load_embodiments,
                    labs_of, load_labs, load_resources, load_start, load_topics, load_venue_papers)
 
 OUT = ROOT / "_site"
@@ -210,7 +210,10 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
     v = venue_of(p.get("comment"))
     if v:
         has_code += " " + venue_badge(v, root)
-    return f"""<article class="card feed" id="arxiv-{esc(p['id'])}" data-t="{esc(' '.join(p.get('topics', [])))}"{' data-c="1"' if p.get('code') else ''}>
+    honor = honor_of(p.get("comment"))
+    if honor:
+        has_code += f' <span class="badge venue">{honor}</span>'
+    return f"""<article class="card feed" id="arxiv-{esc(p['id'])}" data-t="{esc(' '.join(p.get('topics', [])))}"{' data-c="1"' if p.get('code') else ''}{' data-h="1"' if honor else ''}>
 <div class="meta"><span class="badge">arXiv {esc(p.get('primary', ''))}</span> {esc(p.get('published', ''))} {has_code}</div>
 <h3><a href="https://arxiv.org/abs/{esc(p['id'])}" rel="noopener">{esc(p['title'])}</a></h3>
 <p class="authors">{esc(authors)}</p>
@@ -762,7 +765,7 @@ def build() -> int:
         g = venues[k]
         cur = sorted(g["c"], key=lambda e: (not e.get("highlight"), e["title"]))
         fp = sorted(g["f"], key=lambda p: p.get("published", ""), reverse=True)
-        fp = [p for p in fp if p.get("code")] + [p for p in fp if not p.get("code")]
+        fp.sort(key=lambda p: (not honor_of(p.get("comment")), not p.get("code")))  # stable: newest first within each group
         n_code = sum(1 for p in fp if p.get("code")) + sum(1 for e in cur if e.get("code"))
         parts = [f'<p class="muted"><a href="index.html">{bi("Venues", "会议/期刊")}</a> › {esc(k)}</p>',
                  f'<h1>{esc(k)} · {bi("papers", "论文")}</h1>',
@@ -775,9 +778,11 @@ def build() -> int:
                 tn[t] = tn.get(t, 0) + 1
             topt = "".join(f'<option value="{esc(t)}" data-en="{esc(tby[t]["en"])} ({n})" data-zh="{esc(tby[t]["zh"])} ({n})">{esc(tby[t]["en"])} ({n})</option>'
                            for t, n in sorted(tn.items(), key=lambda x: -x[1]) if t in tby)
+            honor_box = (f' <label><input id="vf-h" type="checkbox"> {bi("Oral / Spotlight", "Oral / Spotlight")}</label>'
+                         if any(honor_of(p.get("comment")) for p in fp) else "")
             parts.append(f'''<div class="filters" id="vf"><input id="vf-q" type="search" aria-label="Filter" data-en="Filter by title or author" data-zh="按标题或作者筛选" placeholder="Filter by title or author">
 <select id="vf-t" aria-label="Topic"><option value="" data-en="All topics" data-zh="全部主题">All topics</option>{topt}</select>
-<label><input id="vf-c" type="checkbox"> {bi("Has code", "有代码")}</label> <span class="muted" id="vf-n"></span></div>''')
+<label><input id="vf-c" type="checkbox"> {bi("Has code", "有代码")}</label>{honor_box} <span class="muted" id="vf-n"></span></div>''')
         if cur:
             parts.append(f'<h2>{bi("Curated", "精选")} ({len(cur)})</h2><div class="cards">{"".join(curated_card(e, tby, "../") for e in cur)}</div>')
         if fp:

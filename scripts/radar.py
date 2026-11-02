@@ -315,6 +315,15 @@ def venue_of(comment: str | None) -> str | None:
     return f"{name} {year}" if year else name
 
 
+HONOR_RE = re.compile(r"\b(oral|spotlight)\b", re.I)
+
+
+def honor_of(comment: str | None) -> str | None:
+    """'Oral' or 'Spotlight' when an accepted paper's arXiv comment says so."""
+    m = HONOR_RE.search(comment or "") if venue_of(comment) else None
+    return m.group(1).capitalize() if m else None
+
+
 CURATED_META = ARXIV_DIR / "curated_meta.json"  # authors + first-version date of curated arXiv papers (CI-filled)
 
 
