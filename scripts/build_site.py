@@ -893,8 +893,8 @@ def build() -> int:
     # ---- venue pages: venues/<slug>.html per venue+year with >= VENUE_MIN papers, venues/index.html
     (OUT / "venues").mkdir()
     vkeys = sorted(VENUE_PAGES, key=lambda k: (-int(k.rsplit(" ", 1)[1]), -(len(venues[k]["c"]) + len(venues[k]["f"])), k))
-    vnote = bi("arXiv papers are listed when their arXiv comment says they were accepted (e.g. 'Accepted to CoRL 2026'); papers that do not say so are missing, and the list grows as authors post camera-ready versions. Curated entries carry a hand-checked venue.",
-               "arXiv 论文仅在其 arXiv 备注写明已被接收（如 “Accepted to CoRL 2026”）时列入；未注明的论文不会出现，列表会随作者上传终稿而增加。精选条目的会议/期刊信息经过人工核对。")
+    vnote = bi("arXiv papers are listed when their arXiv comment says they were accepted (e.g. 'Accepted to CoRL 2026'); papers that do not say so are missing, and the list grows as authors post camera-ready versions. Curated entries carry a hand-checked venue. For CoRL 2026 the official program is used as well.",
+               "arXiv 论文仅在其 arXiv 备注写明已被接收（如 “Accepted to CoRL 2026”）时列入；未注明的论文不会出现，列表会随作者上传终稿而增加。精选条目的会议/期刊信息经过人工核对。CoRL 2026 另依据官方日程。")
     for k in vkeys:
         g = venues[k]
         cur = sorted(g["c"], key=lambda e: (not e.get("honor"), not e.get("highlight"), e["title"]))

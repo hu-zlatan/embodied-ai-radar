@@ -423,3 +423,6 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Start: CI/Pages green, verify #129 passed, no issues/PRs, 1 star / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. Repo fetched directly.
 - Found that the official CoRL accepted list holds the full program (687 papers, 21 orals, 72 spotlights, poster numbers, rooms). Two CI probes showed how it is embedded; `corl_program.py` + `corl-program.yml` read it and match arXiv by title. Program guide page shipped (tested at 390 px on a sample of the data).
 - 9 picks (curated 524). Three over-length takeaways caught by validate.
+- Program run 1 failed on a wrong `load_curated()` unpack and runs 2-3 were cancelled while pending (a newer run in the `arxiv-api` group replaces a pending one). Fixed, tested the whole flow with mocks, run 4 green: 554 of 687 papers linked to arXiv in 48 min.
+- 17 CoRL orals curated (541 total). CoRL page 556 papers. Launch kit CoRL post rewritten around the guide; OWNER_TODO link updated.
+- End: 1 star / 0 forks, no issues/PRs. Owner: CoRL week is the moment for the launch kit, if wanted. verify run for the orals was in progress at end of run: check it first next run. End of run 48.
