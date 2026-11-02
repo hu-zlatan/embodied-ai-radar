@@ -2,28 +2,6 @@
  "updated": "2026-11-02",
  "papers": [
   {
-   "id": "2610.42141",
-   "title": "RoboArchitect: Automating the Design of Robotic Agents with Persistent Memory",
-   "published": "2026-11-02",
-   "topics": [],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://roboarchitect-ai.github.io/"
-   ],
-   "comment": "Project Website: https://roboarchitect-ai.github.io/",
-   "authors": [
-    "Shengguang Wu",
-    "Suning Huang",
-    "Cherie Ho",
-    "Ria Doshi",
-    "Hao Zhu",
-    "Serena Yeung-Levy"
-   ],
-   "abstract": "Recent work shows that a frozen robot policy performs far better inside an agent harness, where control code decides when to query the policy, consult vision tools, or command the arm directly. Yet today these harnesses are built by hand and redesigned for each new robot or benchmark. We show that harness design can be automated, offering a strong alternative to finetuning on a novel setup. In RoboArchitect, a coding model observes a robot's rollouts, diagnoses failures, and iteratively revises the harness around the frozen policy. The harness evolves on a set of episodes for its optimization and is evaluated on held-out scenes and tasks. Without updating any model weights, RoboArchitect raises average success from 9.7% to 43.3% on unseen scenes (4.5x) and from 12.7% to 40.2% on unseen tasks (3.2x), across multiple benchmarks and policies. The gains are largest where the benchmark is far from the policy's training data: wrapping a general-purpose policy, the evolved harness yields a specialist that often outperforms even the finetuned version. Intuitive control strategies are automatically designed, such as lifting a jammed arm clear or reaching in horizontally when an obstacle blocks the way from above. The harness also evolves its own persistent memory, carrying learned experience, such as effective grasp depths, into later decisions. These results suggest that substantial headroom in robotic manipulation lies in the agent harness, and its design can be effectively automated and optimized without weight updates.",
-   "fetched": "2026-11-02"
-  },
-  {
    "id": "2610.41978",
    "title": "Language-Conditioned Behavioral Cloning for Autonomous Endoscope Guidance",
    "published": "2026-11-02",
@@ -143,37 +121,6 @@
     "Hao Dong"
    ],
    "abstract": "Continual adaptation to new tasks is essential for robots deployed in the real world, but adapting pre-trained policies remains challenging due to parameter growth and the need for continual demonstration collection. Parameter-Efficient Continual Fine-Tuning (PECFT) isolates task-specific updates, but adapter-per-task designs require demonstrations and grow with the task set. We propose ResMerge, a two-stage framework that learns mergeable residual policies atop a frozen pre-trained policy: residual reinforcement learning (RL) acquires task-specific corrections without additional expert demonstrations during adaptation, and parameter-space merging consolidates compatible residuals to reduce stored parameters. We introduce Residual-Field Consistency (RFC), a simple, bounded, and interpretable metric that assesses compatibility in residual action-field space by comparing correction direction and magnitude. Experiments on LIBERO across two backbones and on a real-world Franka robot show improved continual learning performance over strong PECFT baselines, while selective merging reduces the residual-parameter footprint. Project website: https://resmerge.github.io/.",
-   "fetched": "2026-11-02"
-  },
-  {
-   "id": "2610.41334",
-   "title": "HIPC: Humanoid Iterative Planning and Control via Goal-Conditioned Motion Closure",
-   "published": "2026-11-02",
-   "topics": [
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://hipc-humanoid.github.io/"
-   ],
-   "comment": "Website: https://hipc-humanoid.github.io/",
-   "authors": [
-    "Yi Han",
-    "Xingyu Chen",
-    "Zixuan Lang",
-    "Qianyang Wu",
-    "Yuhang Lin",
-    "Ji Ma",
-    "Liang Li",
-    "Dongting Li",
-    "Xinpeng Liu",
-    "Ruoli Dai",
-    "Hesheng Wang",
-    "Renjing Xu",
-    "Lei Han"
-   ],
-   "abstract": "Recent generative models are widely used to provide whole-body motion for humanoid tracking. Current methods combine motion generators with controllers in an open-loop paradigm, which leads to critical issues: tracking errors can accumulate into spatial drift, and the planner cannot adapt to unexpected physical disturbances without feedback from physical execution. However, directly feeding realized states back to the planner in a closed loop can cause discontinuities, resulting in physical jitter and even falls, since such states are out of distribution during training. To bridge this gap, we propose HIPC, a real-time Humanoid Iterative Planning and Control framework that couples a generative model with motion tracking into a unified planning-and-control paradigm. HIPC introduces a goal-conditioned motion planning trained with a canonical motion representation that avoids gimbal-lock singularities under extreme orientations and supports motion generation on diverse geometric and semantic conditions. Then, HIPC adopts two strategies, deviation-decayed recovery and history re-anchoring, to mitigate the out-of-distribution shift caused by realized-state feedback. Finally, HIPC operates a real-time asynchronous planning-and-control system, with latency compensation to reduce temporal mismatch for inference delay. Extensive experiments confirm the effectiveness of HIPC under switching and composition of diverse conditions. Results show that HIPC achieves state-of-the-art goal-reaching accuracy among existing methods while simultaneously demonstrating robustness to physical perturbations and the ability to recover from falls.",
    "fetched": "2026-11-02"
   },
   {
@@ -323,59 +270,6 @@
    "fetched": "2026-10-30"
   },
   {
-   "id": "2610.40559",
-   "title": "A Tutorial on Shape Servoing of Deformable Objects-Part I: Fundamentals",
-   "published": "2026-10-30",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/nachocz/tutorial_on_shape_servoing_of_deformable_objects"
-   ],
-   "project": [
-    "https://nachocz.github.io/tutorial_on_shape_servoing_of_deformable_objects/"
-   ],
-   "comment": "Part I of a two-part tutorial. 9 pages, 5 figures. Code: https://github.com/nachocz/tutorial_on_shape_servoing_of_deformable_objects. Interactive demos: https://nachocz.github.io/tutorial_on_shape_ser",
-   "authors": [
-    "Ignacio Cuiral-Zueco",
-    "Alessio Caporali",
-    "Miguel Aranda",
-    "Gianluca Palli",
-    "Gonzalo López-Nicolás",
-    "Youcef Mezouar"
-   ],
-   "abstract": "In robotics, shape control (or shape servoing) refers to the automatic manipulation of a deformable object to achieve a desired shape. It involves a feedback loop that exploits the relation between robot motion and changes in the measured shape. This relation, known as the interaction Jacobian or, in this context, the deformation Jacobian, depends on the object's mechanical properties, geometry, and boundary conditions (e.g., where the object is grasped). Because these factors are often difficult to model accurately, the deformation Jacobian can be estimated locally from observed shape changes produced by commanded robot motions, without requiring a fine-tuned mechanical model. This article is the first of a two-part tutorial on data-driven Jacobian-based shape control of deformable objects. It introduces the central elements of the approach: the formulation of the shape-control problem, shape representation, estimation and online update of the deformation Jacobian, and a standard control law from the literature. It then assembles these elements into a complete shape-servoing loop, derives a local stability condition for this loop, and illustrates why some target shapes cannot be reached. Part II covers more advanced topics. Throughout both parts, a simulated planar example in which two robot arms manipulate an elastic rod observed by a camera illustrates the concepts.",
-   "fetched": "2026-10-30"
-  },
-  {
-   "id": "2610.40532",
-   "title": "BURGER: Benchmarking and Understanding Robotic Generalization via Embodied Drawing",
-   "published": "2026-10-30",
-   "topics": [
-    "vla",
-    "datasets"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://siyingzhao.github.io/BURGER/"
-   ],
-   "comment": "Preprint version",
-   "authors": [
-    "Xiangyu Xu",
-    "Bangshuai Peng",
-    "Ziyi Liu",
-    "Mengjie Zhao",
-    "Chenhao Lu",
-    "Zhengyang Fan",
-    "Huazhe Xu",
-    "Kaizhe Hu"
-   ],
-   "abstract": "How effectively can vision-language-action (VLA) models learn diverse language-conditioned behaviors as training data scales? Investigating this question requires large and varied robot datasets, whose collection on physical robots remains costly. We introduce BURGER, a language-conditioned robotic drawing benchmark with a scalable, prompt-driven pipeline for generating continuous drawing trajectories, both in simulation and the real world. In BURGER, an agent starts from the same blank canvas and controls a robot arm to draw the object or spatial composition specified by language, while each instruction allows an open-ended variety of valid drawings and stroke orders. Using 28,200 simulated demonstrations spanning 282 drawing tasks, we evaluate five representative VLA models across data scales, language grounding, and multimodal behavior. BURGER supports fine-grained analysis of language grounding, spatial composition, and action generation, revealing distinct failure patterns across VLA models. Our experiments suggest that some VLA models can benefit from greater task diversity and demonstration scale, capture multimodal drawing behaviors, and generalize to unseen compositions of familiar objects. Finally, we deploy a trained policy on a Franka Panda arm, demonstrating the ability to draw reactively under human intervention. Project homepage and code can be found at https://siyingzhao.github.io/BURGER/.",
-   "fetched": "2026-10-30"
-  },
-  {
    "id": "2610.40473",
    "title": "Fundamental Limits of Sampling-Based Reachability: Geometry and Flow Distortion",
    "published": "2026-10-30",
@@ -459,33 +353,6 @@
     "Amir Rasouli"
    ],
    "abstract": "Guidance methods are essential tools for steering the generation process in diffusion models, improving the generalizability of stochastic robotic controllers and enabling high-quality controlled image synthesis. Despite strong parallels between flow-matching and diffusion, integrating guidance into flow-matching models remains quite challenging. Recent work has proposed general guidance frameworks for flow-matching, however, they are direct adaptations of diffusion guidance methods and can prove unstable. In this work, we conduct a theoretical analysis of guidance in flow-matching and show that a naive translation of diffusion-based guidance to flow-matching breaks the coupling distribution used during training, resulting in weaker control over sampling accuracy. Building on this insight, we propose Coupled Guidance, a flow-matching-specific guidance mechanism derived from a geometric perspective that leverages the coupling structure inherent to flow-matching training. To validate the effectiveness of our approach, we conduct extensive experimentation on a custom robotic collision avoidance task using ManiSkill3, four robotic dexterous manipulation tasks from the Adroit benchmark, and three image generation tasks, namely inpainting, super-resolution, and deblurring, using the ImageNet-128 and CelebA-HQ-256 datasets. Our findings show that our framework improves sample quality and guidance stability across all tasks, without imposing any additional overhead.",
-   "fetched": "2026-10-30"
-  },
-  {
-   "id": "2610.39543",
-   "title": "From Reasoning to Action: Consequence-Grounded Alignment for Vision-Language-Action Models",
-   "published": "2026-10-30",
-   "topics": [
-    "vla"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://onlyxingxingzyx.github.io/CoRAct/"
-   ],
-   "comment": "Project page: https://onlyxingxingzyx.github.io/CoRAct/",
-   "authors": [
-    "Yixue Zhang",
-    "Wenke Xia",
-    "Kun Wu",
-    "Wenbo Yu",
-    "Pei Ren",
-    "Junnan Nie",
-    "Di Hu",
-    "Zhengping Che",
-    "Chang Liu"
-   ],
-   "abstract": "Reasoning informs decision-making by connecting intended actions with their expected consequences. Recent vision-language-action (VLA) models incorporate embodied chains of thought (ECoTs) to guide action generation. However, such guidance remains implicit, as actions are conditioned on ECoTs rather than explicitly optimized to align with them. We introduce CoRAct, a consequence-grounded reasoning-to-action alignment framework that explicitly aligns reasoning and action through reward-guided optimization in action noise space. CoRAct formulates two physically grounded ECoT components as verifiable signals: movement specifies intended motion, while waypoints encode expected spatial consequences. A unified Mixture-of-Transformers jointly models ECoT reasoning, action generation, and action-conditioned future prediction. For candidate actions generated from sampled noise, CoRAct computes alignment rewards based on movement consistency and agreement between predicted outcomes and specified waypoints. These rewards guide group-relative optimization of the initial noise distribution, steering action generation toward consistency with intended actions and expected consequences. Experiments across RoboCasa, VLABench, and real-world manipulation tasks demonstrate improvements in task success, generalization, and reasoning-execution alignment over strong ECoT-based VLA baselines. CoRAct also grounds externally provided ECoTs in executable behavior, enabling zero-shot adaptation to novel scenarios by leveraging knowledge from powerful vision-language models. Project page and dataset: https://onlyxingxingzyx.github.io/CoRAct/",
    "fetched": "2026-10-30"
   },
   {
@@ -580,25 +447,6 @@
     "Yu Hu"
    ],
    "abstract": "Online vectorized map construction provides autonomous vehicles with essential, real-time semantic and geometric scene understanding. While leveraging prior maps presents an opportunity to improve accuracy, they are often biased due to outdated information or temporary road changes. Existing methods, which typically treat priors as fully reliable or only consider limited noise patterns, suffer severe performance degradation when these priors are imperfect. To address this, we propose PriorMaskMap, a robust framework for prior-guided vectorized map construction. Its first innovation is a Prior-Aware Confidence Estimator (PACE) that evaluates the input rasterized map against current visual observations. It assigns confidence scores to regions classified as reliable, erroneous, or blank, creating a foundational mask that guides two subsequent branches. In one branch, the Dual-Prior Query Generator (DPQG) selectively filters and embeds both rasterized and vectorized priors to initialize informative queries from trustworthy map structures. In the other, the Confidence-Guided Prior Fusion (CGPF) module spatially propagates and refines the mask, using the refined version to govern the fusion of BEV features with the prior map, thereby providing rich contextual representations for the map decoder. Evaluation on the nuScenes dataset shows that PriorMaskMap achieves superior mapping precision over existing approaches and exhibits marked robustness when provided with priors containing apparent errors. Our code is released at https://github.com/healenrens/PriorMaskMap.",
-   "fetched": "2026-10-30"
-  },
-  {
-   "id": "2610.39280",
-   "title": "Cross-Controller Transfer via In-Context Behavior Adaptation",
-   "published": "2026-10-30",
-   "topics": [],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://controller-transfer.github.io"
-   ],
-   "comment": "9 pages, 6 figures",
-   "authors": [
-    "Jonathan Yang",
-    "Chelsea Finn",
-    "Dorsa Sadigh"
-   ],
-   "abstract": "Generalist robot policies increasingly learn from data collected across diverse tasks and embodiments, yet typically assume a single controller for each robot. This assumption limits transfer because different controllers can assign different physical meanings to the same action and may require different strategies to complete a task. We study how to transfer robot data across both embodiments and controllers without allowing conflicting action interpretations to interfere with learning. Our setting spans six controller types as well as variations in controller gains and compliance. We propose a framework that encodes behavioral interaction under a controller through examples of commanded actions and the resulting robot motions. A transformer context encoder summarizes these interactions, allowing a single policy to adapt in context. Across real-world experiments, our method improves average success by 33 percentage points over naive data pooling, achieves 50\\% success on unseen controller modes and 52\\% on unseen controller gains, and transfers to tasks with limited controller-specific data. On contact-rich tasks such as USB insertion and surface wiping, behavioral interaction context enables the policy to adapt not only its actions but also its strategy. Our results provide a path toward generalist robot policies that can leverage data collected across diverse action interpretations. For more information, visit \\href{https://controller-transfer.github.io}{https://controller-transfer.github.io}.",
    "fetched": "2026-10-30"
   },
   {
@@ -823,57 +671,6 @@
    "fetched": "2026-10-30"
   },
   {
-   "id": "2610.38266",
-   "title": "Recursive Self-Improvement in Physical AI: Mechanisms, Evidence, and Evaluation",
-   "published": "2026-10-30",
-   "topics": [],
-   "venue": null,
-   "code": [
-    "https://github.com/nkd-lkz/physical-ai-rsi-survey"
-   ],
-   "project": [],
-   "comment": null,
-   "authors": [
-    "Xiaofeng Han",
-    "Kaize Luo",
-    "Zenghuang Fu",
-    "Zichong Zhu",
-    "Zhe Feng",
-    "Changwei Wang",
-    "Rongtao Xu",
-    "Weiliang Meng",
-    "Xiaopeng Zhang"
-   ],
-   "abstract": "Embodied systems can update policies, world models, skills, and executable programs from deployment experience, allowing one interaction to benefit later tasks. When a system also revises and reuses its data-acquisition, feedback, or learning procedures, experience changes the process that produces capability, introducing recursive self-improvement. This paper surveys research in physical AI through the connection between persistent capability and its improvement process. We first explain the functional distinction between learner updates and improvers, then compare policy learning, imagined experience, memory and skill accumulation, and executable harnesses. These approaches connect to revisions of curricula, rewards, and research programs in different ways. Contact validity, recovery, retention, and resource costs determine whether the resulting gains accumulate during continued deployment. An L0-L3 rubric distinguishes task-local adaptation, persistent capability gain, inherited process revision, and verified improver gain. Representative benchmarks and within-study contrasts relate these distinctions to existing results. We further propose common-data and interactive comparisons that evaluate reference and revised improvers from shared learner starts, separating the use of experience from its acquisition. This perspective connects the diverse methods, physical operating conditions, and evaluation evidence, underpinning embodied RSI. A comprehensive list of studies in this survey is available at https://github.com/nkd-lkz/physical-ai-rsi-survey.",
-   "fetched": "2026-10-30"
-  },
-  {
-   "id": "2610.38199",
-   "title": "Embodied at Sea: Imitation Learning for Multi-Task Underwater Manipulation",
-   "published": "2026-10-30",
-   "topics": [
-    "vla",
-    "manipulation",
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://lair-research-nyu.github.io/Embodied-at-Sea/"
-   ],
-   "comment": "8 pages, 8 figures. For associated files, see https://lair-research-nyu.github.io/Embodied-at-Sea/",
-   "authors": [
-    "Greta Perez-Haiek",
-    "Luca Macesanu",
-    "Kevin Angers",
-    "Mohammed Imam",
-    "Timothy Gambin",
-    "Christopher Clark"
-   ],
-   "abstract": "Behavior Cloning has demonstrated promising generalization capabilities for robotic manipulation in terrestrial environments. However, marine visual distortions and dynamic currents create a severe domain shift that remains a key bottleneck in adapting generalist architectures to underwater field manipulation. To address this, 1616 episodes of underwater manipulation data were collected in calm and turbulent waters and were used to train 14 generalist Vision-Language-Action (VLA) models (DynamicVLA) with varying proprioception observation configurations. Across three tasks on 1260 gradable on-hardware rollouts in a pool, 10 models outperformed the baseline, with the highest-performing model achieving a 93.3% overall success rate, including partial successes. Results are also introduced from a case study evaluating the performance of a single-task Action Chunking Transformer (ACT) and a generalist VLA (SmolVLA) policy for two tasks in marine archaeology and conservation: grasping and mooring. Experiments are performed on an ROV on and around the WWII wreck Coralita X127 and at Manoel Island Marina, Malta. Across 748 collected episodes and 508 gradable on-hardware rollouts, the ACT policy substantially outperformed SmolVLA (47.9% vs. 7.9% pooled success rate), earning a 66.7% success rate on the most successful task at the marine archaeological site. To enable further contributions to embodied intelligence in marine field robotics, the BLUEMBODIED KIT used to collect data, train models, and deploy policies on the ROV has been open sourced.",
-   "fetched": "2026-10-30"
-  },
-  {
    "id": "2610.38141",
    "title": "SKiD-SLAM: Resource-Aware Distributed Multi-Robot LiDAR SLAM for Planetary Missions with Field Deployments at Analog Sites",
    "published": "2026-10-30",
@@ -899,26 +696,6 @@
     "Younggun Cho"
    ],
    "abstract": "Future planetary exploration missions require teams of robots to collaboratively map unknown environments under severe communication limits, constrained onboard computation, and no central infrastructure. In this field report, we present SKiD-SLAM, a distributed multi-robot LiDAR simultaneous localization and mapping (SLAM) system for such environments, and report its deployment across two mission concepts: cave exploration and scientific surface exploration. We survey the communication and computation budgets of actual planetary missions and select modules that fit these budgets for inter-robot place recognition, relative pose estimation, and distributed trajectory fusion. Before field deployment, we verify the assembled system on public datasets resembling planetary environments and in a simulator built on NASA JPL's Open Source Rover. We then validate SKiD-SLAM through field deployments in South Korea: a team of wheeled rovers explores the Majang lava-tube cave on Jeju Island, and quadruped robots carry out a crater-and-rock science scenario on a planetary analog terrain at the Korea Institute of Civil Engineering and Building Technology (KICT) in Yeoncheon. Across both deployments, SKiD-SLAM reliably performed distributed multi-robot LiDAR SLAM within a 250 kbps inter-robot communication budget, demonstrating its feasibility under challenging field conditions. Supplementary materials, including code and field data, are available at https://sparolab.github.io/research/skid_slam/.",
-   "fetched": "2026-10-30"
-  },
-  {
-   "id": "2610.37974",
-   "title": "FORGE: Feasible Online Reduced-Order Reference Generation and Whole-Body Execution for Agile Humanoid Locomotion",
-   "published": "2026-10-30",
-   "topics": [
-    "locomotion"
-   ],
-   "venue": "Humanoids 2026",
-   "code": [],
-   "project": [],
-   "comment": "8 pages, 6 figures. Accepted to the 2026 IEEE-RAS 25th International Conference on Humanoid Robots (Humanoids)",
-   "authors": [
-    "Adrian B. Ghansah",
-    "Yujin An",
-    "Jeeseop Kim",
-    "Soon-Jo Chung"
-   ],
-   "abstract": "This paper presents a two-stage learning framework for versatile and agile humanoid locomotion that couples online reduced-order model (ROM) reference generation with whole-body tracking control. In the first stage, we train a command-conditioned whole-body reference generator using single rigid body dynamics combined with full humanoid kinematics. In the second stage, the frozen ROM policy is rolled out online to generate references for training a whole-body tracking policy on the full-order dynamics model. Learning a kino-dynamically consistent reference generator in the simplified ROM space enables us to generate references over a broad command space and over multiple locomotion strategies using a single unified framework. We demonstrate the approach on a Unitree G1 humanoid robot, achieving longitudinal velocities from -2.0 m/s to 2.8 m/s, lateral velocities up to +-1.0 m/s, angular velocities up to +-3.0 rad/s, one-legged hopping, and continuous transitions across the commands, all using one unified reference policy and one whole-body tracking policy.",
    "fetched": "2026-10-30"
   },
   {
