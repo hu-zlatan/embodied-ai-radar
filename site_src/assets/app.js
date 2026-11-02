@@ -23,10 +23,11 @@
       var h = c.querySelector('h3'), a = c.querySelector('.authors');
       return ((h ? h.textContent : '') + ' ' + (a ? a.textContent : '')).toLowerCase();
     });
+    var vm = document.getElementById('vf-m'), my = null;
     var vapply = function () {
       var q = vq.value.trim().toLowerCase(), t = vt.value, code = vc.checked, honor = vh && vh.checked, shown = 0;
       vcards.forEach(function (c, i) {
-        var ok = (!q || vtext[i].indexOf(q) >= 0) && (!t || (' ' + c.dataset.t + ' ').indexOf(' ' + t + ' ') >= 0) && (!code || c.dataset.c) && (!honor || c.dataset.h);
+        var ok = (!q || vtext[i].indexOf(q) >= 0) && (!t || (' ' + c.dataset.t + ' ').indexOf(' ' + t + ' ') >= 0) && (!code || c.dataset.c) && (!honor || c.dataset.h) && (!(vm && vm.checked) || my.has(c.dataset.id));
         c.hidden = !ok;
         if (ok) shown++;
       });
@@ -37,6 +38,7 @@
       if (t) u.set('topic', t);
       if (code) u.set('code', '1');
       if (honor) u.set('honor', '1');
+      if (vm && vm.checked) u.set('mine', '1');
       try { history.replaceState(null, '', u.toString() ? '?' + u : location.pathname); } catch (e) {}
     };
     var vp = new URLSearchParams(location.search);
@@ -44,8 +46,112 @@
     vt.value = vp.get('topic') || '';
     vc.checked = vp.get('code') === '1';
     if (vh) vh.checked = vp.get('honor') === '1';
-    [vq, vt, vc].concat(vh ? [vh] : []).forEach(function (el) { el.addEventListener(el === vq ? 'input' : 'change', vapply); });
+    if (vm) my = mySchedule(vf, vm, vp, vcards, function () { vapply(); });
+    [vq, vt, vc].concat(vh ? [vh] : []).concat(vm ? [vm] : []).forEach(function (el) { el.addEventListener(el === vq ? 'input' : 'change', vapply); });
     vapply();
+  }
+
+  // Program guide: a personal schedule. ☆ on a card saves it in this browser; the panel lists saved papers
+  // by session, with a share link (?my=id,id), plain text and a calendar file. Nothing leaves the browser.
+  function mySchedule(vf, vm, params, cards, refilter) {
+    var key = 'my:' + vf.dataset.store, panel = document.getElementById('pg-my'), mem = new Set();
+    function bi(en, zh) { return '<span lang="en">' + en + '</span><span lang="zh">' + zh + '</span>'; }
+    function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+    function save() { try { localStorage.setItem(key, Array.from(mem).join(',')); } catch (e) {} }
+    try { (localStorage.getItem(key) || '').split(',').filter(Boolean).forEach(function (i) { mem.add(i); }); } catch (e) {}
+    var known = new Set(cards.map(function (c) { return c.dataset.id; }));
+    var shared = (params.get('my') || '').split(',').filter(function (i) { return known.has(i) && !mem.has(i); });
+    shared.forEach(function (i) { mem.add(i); });
+    if (shared.length) save();
+    vm.checked = params.get('mine') === '1';
+    function sessions() {  // sessions in page order, each with its saved papers
+      var out = [];
+      document.querySelectorAll('.pg-sess').forEach(function (b) {
+        var ps = [];
+        b.querySelectorAll('.card[data-id]').forEach(function (c) {
+          if (!mem.has(c.dataset.id)) return;
+          var pb = c.querySelector('.badge[href^="#s-P"]');
+          ps.push({ title: c.querySelector('h3').textContent, url: c.querySelector('h3 a').href, no: pb ? pb.textContent.split('#').pop().trim() : '' });
+        });
+        if (ps.length) out.push({ b: b, ps: ps });
+      });
+      return out;
+    }
+    function asText(list) {
+      return list.map(function (s) {
+        var h = s.b.querySelector('h3').cloneNode(true), other = lang() === 'zh' ? 'en' : 'zh';
+        h.querySelectorAll('[lang="' + other + '"]').forEach(function (e) { e.remove(); });
+        return h.textContent.replace(/\s+/g, ' ').trim() + ' — ' + s.b.querySelector('p.muted').textContent + '\n' +
+          s.ps.map(function (p) { return '  - ' + (s.b.dataset.kind === 'poster' && p.no ? '#' + p.no + ' ' : '') + p.title + ' ' + p.url; }).join('\n');
+      }).join('\n\n');
+    }
+    function icsEsc(s) { return s.replace(/\\/g, '\\\\').replace(/([,;])/g, '\\$1').replace(/\n/g, '\\n'); }
+    function fold(l) { var o = []; while (l.length > 70) { o.push(l.slice(0, 70)); l = ' ' + l.slice(70); } o.push(l); return o.join('\r\n'); }
+    function ics(list) {
+      var name = panel.dataset.name, stamp = new Date().toISOString().replace(/[-:]|\.\d+/g, '');
+      var lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Embodied AI Radar//Program guide//EN', 'CALSCALE:GREGORIAN'];
+      list.forEach(function (s) {
+        var w = s.b.dataset.when.split('/'), k = s.b.dataset.kind;
+        if (w.length !== 2) return;
+        var summary = name + ' ' + (k === 'poster' ? 'Poster session ' : k === 'oral' ? 'Oral ' : 'Spotlight ') + s.b.dataset.sid + (k === 'poster' ? '' : ': ' + s.b.dataset.name);
+        var desc = s.ps.map(function (p) { return (k === 'poster' && p.no ? '#' + p.no + ' ' : '') + p.title; }).join('\n');
+        lines.push('BEGIN:VEVENT', 'UID:' + s.b.dataset.sid + '-' + w[0] + '@embodied-ai-radar', 'DTSTAMP:' + stamp, 'DTSTART:' + w[0], 'DTEND:' + w[1],
+          fold('SUMMARY:' + icsEsc(summary)), fold('LOCATION:' + icsEsc(s.b.dataset.place)), fold('DESCRIPTION:' + icsEsc(desc)), 'END:VEVENT');
+      });
+      lines.push('END:VCALENDAR');
+      return lines.join('\r\n') + '\r\n';
+    }
+    function link() { return location.origin + location.pathname + '?my=' + Array.from(mem).join(','); }
+    function render() {
+      document.querySelectorAll('.pg-save').forEach(function (b) {
+        var on = mem.has(b.dataset.id);
+        b.setAttribute('aria-pressed', on);
+        b.innerHTML = on ? '★ ' + bi('Saved', '已保存') : '☆ ' + bi('Save', '保存');
+      });
+      panel.hidden = !mem.size;
+      if (!mem.size) { panel.innerHTML = ''; if (vm.checked) vm.checked = false; return; }
+      var list = sessions();
+      panel.innerHTML = '<details open><summary>' + bi('My schedule', '我的日程') + ' (' + mem.size + ')</summary>' +
+        (shared.length ? '<p class="muted">' + bi('Added ' + shared.length + ' from the shared link.', '已从分享链接添加 ' + shared.length + ' 篇。') + '</p>' : '') +
+        list.map(function (s) {
+          return '<h4>' + s.b.querySelector('h3').innerHTML + '</h4><p class="muted">' + esc(s.b.querySelector('p.muted').textContent) + '</p><ul>' + s.ps.map(function (p) {
+            return '<li>' + (s.b.dataset.kind === 'poster' && p.no ? '<b>#' + esc(p.no) + '</b> ' : '') + '<a href="' + esc(p.url) + '" rel="noopener">' + esc(p.title) + '</a></li>';
+          }).join('') + '</ul>';
+        }).join('') +
+        '<div class="pg-acts"><button type="button" data-a="link">' + bi('Copy share link', '复制分享链接') + '</button><button type="button" data-a="text">' + bi('Copy as text', '复制为文本') + '</button><button type="button" data-a="ics">' + bi('Calendar file (.ics)', '日历文件 (.ics)') + '</button><button type="button" data-a="clear">' + bi('Clear', '清空') + '</button></div></details>';
+    }
+    cards.forEach(function (c) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'pg-save'; b.dataset.id = c.dataset.id;
+      c.querySelector('.meta').appendChild(b);
+    });
+    document.addEventListener('click', function (ev) {
+      var b = ev.target.closest && ev.target.closest('.pg-save');
+      if (b) {
+        if (mem.has(b.dataset.id)) mem.delete(b.dataset.id); else mem.add(b.dataset.id);
+        shared = []; save(); render(); refilter();
+        return;
+      }
+      var a = ev.target.closest && ev.target.closest('#pg-my button[data-a]');
+      if (!a) return;
+      var act = a.dataset.a, list = sessions();
+      if (act === 'clear') {
+        if (!confirm(lang() === 'zh' ? '清空我的日程？' : 'Clear your schedule?')) return;
+        mem.clear(); shared = []; save(); render(); refilter();
+      } else if (act === 'ics') {
+        var u = URL.createObjectURL(new Blob([ics(list)], { type: 'text/calendar;charset=utf-8' })), l = document.createElement('a');
+        l.href = u; l.download = vf.dataset.store + '-my-schedule.ics'; document.body.appendChild(l); l.click(); l.remove();
+        setTimeout(function () { URL.revokeObjectURL(u); }, 1000);
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(act === 'link' ? link() : asText(list)).then(function () {
+          var old = a.innerHTML;
+          a.textContent = lang() === 'zh' ? '已复制 ✓' : 'Copied ✓';
+          setTimeout(function () { a.innerHTML = old; }, 1500);
+        });
+      }
+    });
+    render();
+    return mem;
   }
 
   // BibTeX copy buttons (cards are static HTML; the <pre> stays selectable without JS).

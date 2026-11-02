@@ -184,10 +184,23 @@ def program_card(x: dict, s: dict | None, cur: dict | None, rec: dict | None, tb
     au = ", ".join(authors[:4]) + (" et al." if len(authors) > 4 else "")
     chips = "".join(f'<a class="chip topic" href="../topics/{t}.html">{bi(tby[t]["en"], tby[t]["zh"])}</a>' for t in topics if t in tby)
     take = f'<p class="take">{bi(cur["takeaway_en"], cur["takeaway_zh"])}</p>' if cur else ""
-    return (f'<article class="card" data-t="{esc(" ".join(topics))}"{" data-c=1" if code else ""}{" data-h=1" if x["sessions"] else ""}>'
+    return (f'<article class="card" data-id="{esc(x["or"])}" data-t="{esc(" ".join(topics))}"{" data-c=1" if code else ""}{" data-h=1" if x["sessions"] else ""}>'
             f'<div class="meta">{" ".join(tags)}</div><h3><a href="{esc(url)}" rel="noopener">{esc(x["title"])}</a></h3>'
             + (f'<p class="authors">{esc(au)}</p>' if au else "") + take
             + f'<div class="links">{" · ".join(links)}</div>' + (f'<div class="chips">{chips}</div>' if chips else "") + "</article>")
+
+
+def session_utc(where: str, offset_h: int = 6) -> str:
+    """'Mon 11/9, 9:00–9:30 AM · …' → '20261109T150000Z/20261109T153000Z' for calendar files (CoRL 2026: Austin, CST = UTC−6). '' if it does not parse."""
+    m = re.search(r"(\d+)/(\d+), (\d+):(\d\d)(?: ([AP]M))?–(\d+):(\d\d) ([AP]M)", where)
+    if not m:
+        return ""
+    mo, day, h1, m1, ap1, h2, m2, ap2 = m.groups()
+
+    def at(h: str, mi: str, ap: str) -> str:
+        t = dt.datetime(2026, int(mo), int(day), int(h) % 12 + (12 if ap == "PM" else 0), int(mi)) + dt.timedelta(hours=offset_h)
+        return t.strftime("%Y%m%dT%H%M00Z")
+    return f"{at(h1, m1, ap1 or ap2)}/{at(h2, m2, ap2)}"
 
 
 def program_page(prog: dict, extra: dict, cur_by_id: dict, rec_by_id: dict, tby: dict) -> str:
@@ -218,9 +231,11 @@ def program_page(prog: dict, extra: dict, cur_by_id: dict, rec_by_id: dict, tby:
              f'{bi("Sessions, titles and poster numbers come from the", "日程、标题与海报编号来自")} <a href="{esc(prog["source"])}" rel="noopener">{bi("official list", "官方列表")}</a> ({esc(prog["updated"])}); '
              f'{bi("arXiv links are matched by title, so check there for last-minute changes.", "arXiv 链接按标题匹配；临时变动请以官方页面为准。")}</p>',
              f'<ul class="tlist">{days}<li><a href="#workshops">{bi("Thursday, November 12: workshops", "11 月 12 日（周四）：研讨会")}</a></li></ul>',
-             f'''<div class="filters" id="vf"><input id="vf-q" type="search" aria-label="Filter" data-en="Filter by title or author" data-zh="按标题或作者筛选" placeholder="Filter by title or author">
+             f'''<p class="muted">{bi("Press ☆ on the papers you want to see: you get your own schedule, sorted by time, with a link to share and a calendar file. The list stays in this browser; nothing is sent anywhere.", "点论文上的 ☆ 即可生成个人日程：按时间排序，可分享链接、导出日历文件。清单只保存在你的浏览器里，不会上传。")}</p>
+<div class="filters" id="vf" data-store="{esc(PROGRAM)}"><input id="vf-q" type="search" aria-label="Filter" data-en="Filter by title or author" data-zh="按标题或作者筛选" placeholder="Filter by title or author">
 <select id="vf-t" aria-label="Topic"><option value="" data-en="All topics" data-zh="全部主题">All topics</option>{topt}</select>
-<label><input id="vf-c" type="checkbox"> {bi("Has code", "有代码")}</label> <label><input id="vf-h" type="checkbox"> {bi("Oral / Spotlight", "Oral / Spotlight")}</label> <span class="muted" id="vf-n"></span></div>''']
+<label><input id="vf-c" type="checkbox"> {bi("Has code", "有代码")}</label> <label><input id="vf-h" type="checkbox"> {bi("Oral / Spotlight", "Oral / Spotlight")}</label> <label><input id="vf-m" type="checkbox"> {bi("My list", "我的清单")}</label> <span class="muted" id="vf-n"></span></div>
+<div id="pg-my" data-name="{esc(name)}" hidden></div>''']
     for d in prog["days"]:
         parts.append(f'<h2 id="d-{esc(d["id"])}">{esc(d["label"])}</h2>')
         for s in prog["sessions"]:
@@ -229,7 +244,7 @@ def program_page(prog: dict, extra: dict, cur_by_id: dict, rec_by_id: dict, tby:
             label = {"oral": "Oral", "spotlight": "Spotlight", "poster": ""}[s["kind"]]
             title = esc(s["name"]) if not zh.get(s["id"]) else bi(s["name"], zh[s["id"]])
             cards = "".join(program_card(x, s, cur_by_id.get(str(x.get("arxiv"))), rec_by_id.get(str(x.get("arxiv"))), tby) for x in by_sess[s["id"]])
-            parts.append(f'<section class="pg-sess"><h3 id="s-{esc(s["id"])}">{label} {esc(s["id"]) if label else ""} {title}</h3><p class="muted">{esc(s["where"])}</p><div class="cards">{cards}</div></section>')
+            parts.append(f'<section class="pg-sess" data-sid="{esc(s["id"])}" data-name="{esc(s["name"])}" data-kind="{esc(s["kind"])}" data-when="{session_utc(s["where"])}" data-place="{esc(s["where"].split(" · ")[1])}"><h3 id="s-{esc(s["id"])}">{label} {esc(s["id"]) if label else ""} {title}</h3><p class="muted">{esc(s["where"])}</p><div class="cards">{cards}</div></section>')
     if extra.get("workshops"):
         rows = "".join(f'<li><a href="{esc(w["url"])}" rel="noopener">{esc(w["title"])}</a></li>' for w in extra["workshops"])
         parts.append(f'<h2 id="workshops">{bi(f"Workshops, Thursday, November 12 ({len(extra["workshops"])})", f"研讨会，11 月 12 日周四（{len(extra["workshops"])} 场）")}</h2>'
@@ -918,7 +933,8 @@ def build() -> int:
                            for t, n in sorted(tn.items(), key=lambda x: -x[1]) if t in tby)
             honor_box = (f' <label><input id="vf-h" type="checkbox"> {bi("Oral / Spotlight", "Oral / Spotlight")}</label>'
                          if n_honor else "")
-            parts.append(f'''<div class="filters" id="vf"><input id="vf-q" type="search" aria-label="Filter" data-en="Filter by title or author" data-zh="按标题或作者筛选" placeholder="Filter by title or author">
+            parts.append(f'''<p class="muted">{bi("Press ☆ on the papers you want to see: you get your own schedule, sorted by time, with a link to share and a calendar file. The list stays in this browser; nothing is sent anywhere.", "点论文上的 ☆ 即可生成个人日程：按时间排序，可分享链接、导出日历文件。清单只保存在你的浏览器里，不会上传。")}</p>
+<div class="filters" id="vf" data-store="{esc(PROGRAM)}"><input id="vf-q" type="search" aria-label="Filter" data-en="Filter by title or author" data-zh="按标题或作者筛选" placeholder="Filter by title or author">
 <select id="vf-t" aria-label="Topic"><option value="" data-en="All topics" data-zh="全部主题">All topics</option>{topt}</select>
 <label><input id="vf-c" type="checkbox"> {bi("Has code", "有代码")}</label>{honor_box} <span class="muted" id="vf-n"></span></div>''')
         if cur:
