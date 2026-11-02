@@ -426,3 +426,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Program run 1 failed on a wrong `load_curated()` unpack and runs 2-3 were cancelled while pending (a newer run in the `arxiv-api` group replaces a pending one). Fixed, tested the whole flow with mocks, run 4 green: 554 of 687 papers linked to arXiv in 48 min.
 - 17 CoRL orals curated (541 total). CoRL page 556 papers. Launch kit CoRL post rewritten around the guide; OWNER_TODO link updated.
 - End: 1 star / 0 forks, no issues/PRs. Owner: CoRL week is the moment for the launch kit, if wanted. verify run for the orals was in progress at end of run: check it first next run. End of run 48.
+
+## 2026-11-02 — run 49 (~22:50 UTC–)
+
+- Start: CI/Pages/intake green, verify #133 passed (the orals), no issues/PRs, 1 star / 0 forks. No add_repo tool; detached shallow clone → `main` reset to `origin/main`. Tue feed not out yet.
+- Program guide: personal schedule (save, share link, text, .ics, 'My list' filter). Tested in Chromium at 390 px, both languages, reload and shared link; no JS errors. One bug found in testing (text export glued EN+ZH session names) and fixed before pushing.
+- Curated 541 → 573: 32 CoRL Spotlights. Local link check over 684 pages: no broken internal links. Launch kit CoRL post mentions the schedule.
+- End: 1 star / 0 forks. Owner: CoRL week is the moment for the launch kit, if wanted. Verify run for the spotlights was in progress at end of run: check it first next run. End of run 49.
