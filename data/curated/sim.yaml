@@ -310,3 +310,14 @@
   tags: [coding-agents, sim-generation, rl-environments, benchmark, frontier-models, sim]
   takeaway_en: "Coding agents build robotics simulations, checked by an adversarial create-and-audit loop; result RoboWorld: 25 sims chosen by U.S. GDP share, 200 RL envs. Best frontier models average just 0.06 reward on test tasks."
   takeaway_zh: 把“写仿真”当作编码智能体任务：智能体生成机器人仿真与任务，再由对抗式的创建-审核循环把关；据此构建 RoboWorld（按美国 GDP 构成挑选的 25 个仿真、200 个强化学习环境），最强前沿模型在测试任务上平均奖励仅 0.06。
+
+- title: "When the Simulator Fails, Not the Policy: Auditing Contact Artifacts in Simulated Robot Benchmarks"
+  type: paper
+  arxiv: "2610.41857"
+  year: 2026
+  code: https://github.com/ALEXander22568/simuguard
+  highlight: true
+  added: 2026-11-02
+  tags: [benchmark-audit, physx, robotwin, libero, contact]
+  takeaway_en: "Many benchmark 'policy failures' are physics-engine ejections. SimuGuard traced RoboTwin artifacts to one collision constant; changing it cut artifact episodes from 12/100 to none and lifted five tasks 89% → 98%."
+  takeaway_zh: "审计仿真基准：不少“策略失败”其实是物理引擎把物体弹飞。SimuGuard 为 LIBERO、RoboTwin、RoboCasa、RoboDojo 提供审计插件，把 RoboTwin 上的问题追溯到碰撞检测的一个常量；仅改动它，异常回合由 100 回合 12 次降到 0，五个容器任务成功率由 89% 升到 98%。"

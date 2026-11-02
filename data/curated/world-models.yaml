@@ -471,3 +471,23 @@
   tags: [video-world-model, 3d-trajectories, rectified-flow, mixture-of-transformers, benchmark]
   takeaway_en: "World model that jointly denoises future video and 3D point trajectories in one Mixture-of-Transformers, trained on 1.44M samples; adds WorldFlowBench, reports 54% lower ADE than the best baseline on SpatialCog."
   takeaway_zh: 同时预测未来视频与查询点 3D 轨迹的生成式世界模型：3D 运动以与视频网格对齐的位移 token 表示，由统一的 Mixture-of-Transformers 在 rectified flow 目标下联合去噪；在 144 万样本上训练，新建 WorldFlowBench，报告 SpatialCog 上 ADE 比最强外部基线降低 54.2%。
+
+- title: "Hierarchical World Models with Implicit Dynamics"
+  type: paper
+  arxiv: "2610.42146"
+  year: 2026
+  project: https://id-wm.github.io
+  added: 2026-11-02
+  tags: [hierarchical, planning, mpc, inverse-dynamics]
+  takeaway_en: "ID-WM pairs a high-level model that samples reachable transitions with a low-level world model used as an inverse-dynamics solver. Reports a 135% gain over single-level world-model MPC on long-horizon tasks."
+  takeaway_zh: "ID-WM 将状态可达性与局部控制解耦：高层模型在状态流形上采样可行转移，低层世界模型充当逆动力学求解器，把子目标落实为精确动作。报告比单层世界模型 MPC 提升 135%，比最优策略与扩散规划器提升 38.5%。"
+
+- title: "WorldBridge: Bridging Video and Action for Task Generalization in World Action Models"
+  type: paper
+  arxiv: "2610.40748"
+  year: 2026
+  project: https://worldbridge-jd.github.io/
+  added: 2026-11-02
+  tags: [wam, task-generalization, robotwin, flow-matching]
+  takeaway_en: "Separates video and action generalization in WAMs: on RoboTwin 2.0 unseen tasks, adding action-free videos lifts success from 25.07% to 55.90%, and one labeled demo per task to 70.70%."
+  takeaway_zh: "拆解世界动作模型（WAM）的视频泛化与动作泛化：在 RoboTwin 2.0 的分布外任务上，加入无动作标签视频使成功率由 25.07% 升到 55.90%，每任务再加一条带标签演示升到 70.70%。WorldBridge 全数据设定报告 96.23%。"

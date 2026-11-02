@@ -1006,3 +1006,65 @@
   tags: [fine-tuning, representation, no-inference-overhead]
   takeaway_en: "FiberTune: action-supervised VLA fine-tuning can collapse visual structure the action loss barely constrains; a training-time objective keeps those residuals, with no added inference cost."
   takeaway_zh: FiberTune：动作监督微调会压缩动作损失约束较弱的视觉结构（沿局部动作纤维的残差坍塌）；提出训练期目标函数，对齐冻结的视觉教师以保留这些残差，不增加推理开销。
+
+- title: "VLA Policies Do Not Know When Not to Act: Unintended Task Execution and Start Suppression"
+  type: paper
+  arxiv: "2610.41609"
+  year: 2026
+  added: 2026-11-02
+  tags: [safety, evaluation, libero, gr00t, sim]
+  takeaway_en: "Given an empty instruction, all six tested VLA checkpoints still moved in every LIBERO-Goal episode; five often finished an unrequested task. A 'do not move' prefix stopped none; an action-similarity gate held five."
+  takeaway_zh: "指令为空时，六个 VLA 检查点在 LIBERO-Goal 的每个回合都仍会启动，其中五个常常完成了未被要求的任务。给指令加“无任务就别动”前缀对六个都无效；比较首个动作块与空指令动作块的门控在五个上能让机器人保持不动。"
+
+- title: "TinyAstral: Transferring Self-Evolving Harnesses to Tiny Generalist Manipulation Agents"
+  type: paper
+  arxiv: "2610.41216"
+  year: 2026
+  project: https://garfield-kh.github.io/TinyAstral/
+  added: 2026-11-02
+  tags: [harness, recursive-self-improvement, distillation, robotwin]
+  takeaway_en: "Evolves a frozen teacher's harness by recursive self-improvement with paired statistical tests, then distills a 4B student into it. Reports RoboTwin 33.4% → 63.6% for the teacher, 62.8% for the student."
+  takeaway_zh: "先冻结开放权重教师模型，用递归自我改进演化其 harness（每次修改须通过配对统计检验），再把 4B 学生模型蒸馏进同一 harness。报告 RoboTwin 上教师成功率由 33.4% 升到 63.6%，学生达 62.8%，加速器时间约为教师的五分之一。"
+
+- title: "REA: A Routed Embodied Agent Runtime for Asynchronous Brain-Cerebellum Control"
+  type: paper
+  arxiv: "2610.42053"
+  year: 2026
+  project: https://mikeeeeeeeeeeeeee.github.io/REA/
+  added: 2026-11-02
+  tags: [agent-runtime, routing, libero-pro, humanoid, real]
+  takeaway_en: "Runtime pairing a slow brain with fast policies under one rule: no running policy waits on the brain. Reports 95.9% over 3,000 LIBERO-Pro episodes vs 94.7% for the best single baseline, with 17% less control time."
+  takeaway_zh: "让慢速“大脑”（基础模型）与快速“小脑”（VLA、全身控制）协同的统一运行时，核心规则是运行中的策略绝不等待大脑。用路由记忆与边界触发的判定门替代逐次求助；报告 LIBERO-Pro 3000 回合成功率 95.9%（最佳单体基线 94.7%），控制时间减少 17%。"
+
+- title: "REACT: Rolling Denoising and Dual Decoupling for Reactive Robot Control with VLA Models"
+  type: paper
+  arxiv: "2610.12007"
+  year: 2026
+  venue: CoRL 2026
+  project: https://react-vla.github.io
+  added: 2026-11-02
+  tags: [flow-matching, action-chunking, reactive-control]
+  takeaway_en: "CoRL 2026 Spotlight. Instead of regenerating action chunks from scratch, keeps a persistent action buffer with staggered flow timesteps, so flow-based VLAs get more reactive while preserving long-horizon context."
+  takeaway_zh: "CoRL 2026 Spotlight。不再每次从头生成动作块，而是维护一个流时间步错开的持久动作缓冲区，让基于流的 VLA 更具反应性，同时保留长时域上下文。"
+
+- title: "Demystifying When and Why VLAs Fail in Contact-Rich Tasks and How to Fix Them"
+  type: paper
+  arxiv: "2608.01402"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-02
+  tags: [contact-rich, failure-analysis, force]
+  takeaway_en: "CoRL 2026 Spotlight. Studies why VLA models struggle in contact-rich manipulation and separates two failure modes: precision failures, where policies struggle to produce small corrective actions, and force failures."
+  takeaway_zh: "CoRL 2026 Spotlight。分析 VLA 模型为何难以完成接触丰富的操作任务，并区分两类失败模式：难以输出接触时所需微小修正动作的精度失败，以及力失败。"
+
+- title: "CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents"
+  type: paper
+  arxiv: "2610.40799"
+  year: 2026
+  code: https://github.com/waltstephen/CaPtain
+  project: https://waltstephen.github.io/captain/
+  added: 2026-11-02
+  topics: [learning]
+  tags: [code-as-policy, post-training, rl, libero, real]
+  takeaway_en: "Turns a small open VLM into a code-as-policy agent: SFT, then multi-turn RL with a physical critic. Reports Qwen3.5-4B going from 0% to 73.8% on held-out LIBERO; code, data and weights released."
+  takeaway_zh: "把小型开放 VLM 训练成“代码即策略”机器人智能体的开源流水线：先 SFT，再做多轮 RL，并用读取仿真特权状态的物理评论家为每次请求分配贡献。报告 Qwen3.5-4B 在留出的 LIBERO 上由 0% 升到 73.8%，并公开代码、数据和权重。"
