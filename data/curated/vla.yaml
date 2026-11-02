@@ -1156,3 +1156,103 @@
   tags: [dynamic-manipulation, temporal-context]
   takeaway_en: "CoRL 2026 Oral. Argues VLAs fail at dynamic tasks because one observation brings motion ambiguity and state aliasing, and adds learned temporal context to resolve both."
   takeaway_zh: "CoRL 2026 Oral。指出 VLA 难以应对动态任务，是因为单帧观测带来运动歧义与状态混淆，并通过学习时序上下文同时解决这两个问题。"
+
+- title: "MEM: Multi-Scale Embodied Memory for Vision Language Action Models"
+  type: paper
+  arxiv: "2603.03596"
+  year: 2026
+  venue: CoRL 2026
+  org: Physical Intelligence
+  project: https://pi.website/research/memory
+  added: 2026-11-02
+  tags: [memory, long-horizon]
+  takeaway_en: "CoRL 2026 Spotlight. Gives VLAs memory at several timescales: abstract long-term state (which recipe stages are done) plus short-term recall of recent events and occluded objects."
+  takeaway_zh: "CoRL 2026 Spotlight。为 VLA 提供多时间尺度记忆：长期记住抽象状态（如菜谱进行到哪一步），短期记住近期事件与被遮挡物体。"
+
+- title: "Learning What to Say to Your VLA: Mostly Harmless Vision Language Action Model Steering"
+  type: paper
+  arxiv: "2606.12299"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-02
+  tags: [language-steering, evaluation]
+  takeaway_en: "CoRL 2026 Spotlight. Similar prompts can make VLAs behave very differently, so this framework interactively searches for language sequences that raise closed-loop task performance."
+  takeaway_zh: "CoRL 2026 Spotlight。语义相近的指令可能让 VLA 行为迥异，该框架通过交互搜索语言序列来提升闭环任务表现。"
+
+- title: "EmbodiSteer: Steering Embodiment-Agnostic Visuomotor Policies with Joint-Space Guidance for Zero-Shot Cross-Embodiment Deployment"
+  type: paper
+  arxiv: "2606.12965"
+  year: 2026
+  venue: CoRL 2026
+  project: https://frankwang67.github.io/EmbodiSteer-Page
+  added: 2026-11-02
+  tags: [cross-embodiment, guidance]
+  takeaway_en: "CoRL 2026 Spotlight. Training-free steering that makes Cartesian, embodiment-agnostic policies aware of the deployed robot's body, using joint-space guidance for constraints such as whole-body collision avoidance."
+  takeaway_zh: "CoRL 2026 Spotlight。无需训练的引导框架：用关节空间引导让与本体无关的笛卡尔策略感知实际机器人本体，处理全身避碰等约束。"
+
+- title: "When Vision Overrides Language: Evaluating and Mitigating Counterfactual Failures in VLAs"
+  type: paper
+  arxiv: "2602.17659"
+  year: 2026
+  venue: CoRL 2026
+  project: https://vla-cf.github.io/
+  added: 2026-11-02
+  tags: [counterfactual, benchmark, language-following]
+  takeaway_en: "CoRL 2026 Spotlight. VLAs can ignore language and follow vision shortcuts from dataset bias. Introduces LIBERO-CF, a counterfactual benchmark for language following."
+  takeaway_zh: "CoRL 2026 Spotlight。VLA 可能忽略语言、沿用数据偏差形成的视觉捷径。论文提出反事实基准 LIBERO-CF，用于评测语言遵循能力。"
+
+- title: "ZETA: A Controlled Study of Zero-Shot Cross-Embodiment VLA Transfer for Tabletop Manipulation"
+  type: paper
+  arxiv: "2609.02546"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-02
+  tags: [cross-embodiment, evaluation]
+  takeaway_en: "CoRL 2026 Spotlight. A controlled study of zero-shot VLA transfer that isolates embodiment change from tasks, scenes and protocols, and separates strict zero-shot from looser definitions."
+  takeaway_zh: "CoRL 2026 Spotlight。对 VLA 零样本跨形态迁移的对照研究：将本体变化与任务、场景、流程隔离，并把严格零样本与宽松定义区分开。"
+
+- title: "BitVLA: 1-bit Vision-Language-Action Models for Robotics Manipulation"
+  type: paper
+  arxiv: "2506.07530"
+  year: 2025
+  venue: CoRL 2026
+  code: https://github.com/ustcwhy/BitVLA
+  added: 2026-11-02
+  tags: [1-bit, edge-deployment]
+  takeaway_en: "CoRL 2026 Spotlight. A fully native 1-bit VLA with ternary weights, built on BitNet b1.58 2B4T, designed for edge devices instead of relying on post-hoc compression."
+  takeaway_zh: "CoRL 2026 Spotlight。原生 1-bit VLA，权重三值化，基于 BitNet b1.58 2B4T，面向边缘设备设计，而非依赖事后压缩。"
+
+- title: "Diagnosing Compositional Generalization in Sequential Robot Tasks"
+  type: paper
+  arxiv: "2607.29687"
+  year: 2026
+  venue: CoRL 2026
+  project: https://yixiaowang7.github.io/Diagnosing_Compositional_Generalization_Robot_Page/
+  added: 2026-11-02
+  tags: [compositional-generalization, evaluation]
+  takeaway_en: "CoRL 2026 Spotlight. Splits the generalization gap of sequential instruction-following policies into marginal, compositional and context-action shift, viewed through instruction-space coverage."
+  takeaway_zh: "CoRL 2026 Spotlight。从指令空间覆盖出发，把序列任务策略的泛化差距分解为边际偏移、组合偏移与上下文-动作偏移。"
+
+- title: "GaP: A Graph-as-Policy Multi-Agent Self-Learning Harness For Variational Automation Tasks"
+  type: paper
+  arxiv: "2607.05369"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/graph-robots/graph-as-policy
+  project: https://graph-robots.github.io/gap
+  added: 2026-11-02
+  tags: [agentic, harness, variational-automation]
+  takeaway_en: "CoRL 2026 Spotlight. A multi-agent self-learning harness aimed at Variational Automation, industrial tasks with more object variation than fixed automation, which need sustained reliability."
+  takeaway_zh: "CoRL 2026 Spotlight。面向“可变自动化”的多智能体自学习框架：这类工业任务的物体变化大于固定自动化，且要求持续可靠。"
+
+- title: "Playful Agentic Robot Learning"
+  type: paper
+  arxiv: "2606.19419"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/Playful-RATs/rats
+  project: https://playful-rats.github.io/
+  added: 2026-11-02
+  tags: [agentic, code-as-policy, play]
+  takeaway_en: "CoRL 2026 Spotlight. RATs, teams of embodied coding agents, propose exploratory tasks and learn skills through self-directed play before any downstream task arrives."
+  takeaway_zh: "CoRL 2026 Spotlight。具身编程智能体团队 RATs 在下游任务到来之前，自行提出探索任务，并通过自主玩耍学习技能。"
