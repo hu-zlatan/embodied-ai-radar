@@ -19,7 +19,7 @@ Links:
 最近在跟具身智能 / 机器人学习方向，发现现有的 awesome list 要么很久不更新，要么只是每日 arXiv 列表、没有筛选。于是做了个小网站：
 
 - 精选索引：VLA、操作与灵巧手、触觉、人形与足式、世界模型、导航、感知与 SLAM、规划控制与安全、强化学习与模仿学习、仿真与 sim-to-real、数据集、开源硬件 12 个主题、480 多条，每条都有中英文一句话要点，arXiv 编号和链接由 CI 自动核验
-- 每日 arXiv：GitHub Actions 每天抓 cs.RO 以及 CV/LG/AI/CL 里的机器人论文，按主题和机器人形态（机械臂/灵巧手/人形/四足/无人机…）自动标注，可筛选"有代码"，并从作者备注中识别已接收的会议，并按会议汇总成页面（如 CoRL 2026：https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026.html?lang=zh）
+- 每日 arXiv：GitHub Actions 每天抓 cs.RO 以及 CV/LG/AI/CL 里的机器人论文，按主题和机器人形态（机械臂/灵巧手/人形/四足/无人机…）自动标注，可筛选"有代码"，并从作者备注中识别已接收的会议，并按会议汇总成页面（如 CoRL 2026，170+ 篇，可按主题、有代码、Oral/Spotlight 筛选：https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026.html?lang=zh）
 - 纯静态站，搜索即时（可直接用中文关键词搜英文论文，如“人形 强化学习”“触觉”），手机可用，支持 EN/中文 切换，有 Atom 订阅
 - 每篇论文一键复制 BibTeX；每个精选条目有独立可分享页面（如 LEAP Hand：https://hu-zlatan.github.io/embodied-ai-radar/e/arxiv-2309.06440.html ）；显示各开源代码的 GitHub 星标和 Hugging Face 每日论文点赞数；按机器人形态（人形、四足、灵巧手…）也有单独页面和订阅
 
@@ -75,7 +75,7 @@ Body:
 Embodied AI Radar is a free, open-source site that tries to fix two things that bug me about paper lists: they go stale, and daily arXiv dumps are unfiltered.
 
 - A curated index of 480+ entries across 12 topics (VLA & foundation models, manipulation, tactile, locomotion & humanoids, world models, navigation, perception & SLAM, planning/control & safety, RL & imitation learning, sim-to-real, datasets, open hardware). Each entry has a one-line takeaway; CI checks every arXiv ID against arXiv and every link weekly.
-- A daily feed of new cs.RO papers (plus robotics papers cross-listed from CV/LG/AI/CL), auto-tagged by topic and robot type (arm, hand, humanoid, legged, drone…), with venue badges parsed from author comments and a page per conference (e.g. CoRL 2026: https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026.html), filterable by "has code", with Atom feeds per topic and per robot type, plus GitHub stars and Hugging Face upvotes as quick signals.
+- A daily feed of new cs.RO papers (plus robotics papers cross-listed from CV/LG/AI/CL), auto-tagged by topic and robot type (arm, hand, humanoid, legged, drone…), with venue badges parsed from author comments and a page per conference (e.g. CoRL 2026, 170+ papers, filterable by topic, code and Oral/Spotlight: https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026.html), filterable by "has code", with Atom feeds per topic and per robot type, plus GitHub stars and Hugging Face upvotes as quick signals.
 - English and Chinese throughout.
 
 Transparency: the repo is maintained by an AI agent (Claude) on a schedule, with a human owner setting direction. Feedback and suggestions very welcome — especially what's missing.

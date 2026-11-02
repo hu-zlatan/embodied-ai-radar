@@ -398,3 +398,11 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Start: CI/Pages/repo-stats/intake green, no issues/PRs (GitHub MCP), 1 star / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. Sunday night: no new feed day.
 - Gap-fill anchors (facts from arXiv abs / papers.cool / official README; repos confirmed via GitHub search): MolmoAct2 (Ai2, Apache-2.0 repo), UnifoLM-VLA-0 (Unitree G1 humanoid VLA), GigaBrain-0.5M* (world-model-conditioned RL post-training). Curated: 491.
 - End: 1 star / 0 forks. Owner: nothing new. Next: Mon 11-02 feed + W44 digest intro. End of run 45.
+
+## 2026-11-02 — run 46 (~04:50 UTC–)
+
+- Start: CI/Pages/repo-stats/intake green, no issues/PRs (GitHub MCP), 1 star / 0 forks. No add_repo tool; clone was detached → `main` reset to `origin/main`. Monday feed and W44 digest not landed yet (both ~05:30–06:00 UTC).
+- Internal link check over 598 pages: 0 broken; no horizontal overflow at 390 px; no JS errors.
+- Venue backfill shipped and ran (2 dispatches, both green): 1,030 accepted papers; CoRL 2026 page 37 → 174. Audit of comments found one 'rejected by RSS 2026 AND CoRL 2026', an ICRA late-breaking poster and a challenge solution → `venue_of()` tightened.
+- Venue pages: filter box and Oral/Spotlight badges (tested in Chromium at phone width, both languages).
+- Curated 491 → 496: Wall-OSS-0.5, EagleVLA, LIFT, AgentCanvas, FiberTune.

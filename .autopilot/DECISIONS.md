@@ -50,3 +50,7 @@ Why the project is the way it is. Newest at the bottom. Format: date — decisio
 - Added `data/labs.yaml` (43 labs, regex name rules on the free-text curated `org:` field, word-bounded) → `labs/<id>.html` for labs with ≥3 curated entries (41 pages at launch) + `labs/index.html`, home 'By lab' row (top 10), entry-page 'More from' links, `labs` column at the end of curated.json/csv, sitemap, README lines.
 - Why: "what has NVIDIA / Tsinghua / Shanghai AI Lab published on robot learning" is a common way people browse; 384 of 426 curated entries already carry an `org`, so this needed no new data entry. Rules instead of normalising `org` keep the existing free-text field untouched; joint work appears under every named lab.
 - Curated only: feed papers have no affiliations. Add a lab to labs.yaml once it has ≥3 curated entries (candidates: Imperial, NAVER LABS Europe, Rice — 2 each).
+
+## 2026-11-02 — run 46: venue backfill from arXiv comments
+- A venue page could only show papers since the feed began (2026-10-12), so CoRL 2026 listed 37 papers a week before the conference. arXiv's API searches the comment field, so a weekly workflow now finds accepted papers of any age; the same conservative `venue_of()` decides, and the page keeps saying that papers without a comment are missing. Stored apart from the day files so feed dates and digests stay as they were.
+- Long venue pages get a client-side filter instead of pagination: one static page stays linkable and searchable.
