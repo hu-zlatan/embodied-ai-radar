@@ -408,3 +408,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Curated 491 → 496: Wall-OSS-0.5, EagleVLA, LIFT, AgentCanvas, FiberTune.
 - W44 digest dispatched (landed ~05:20 UTC) and got its bilingual intro. End: 1 star / 0 forks. Owner: CoRL week is the moment for the launch kit, if wanted. Monday's feed had not landed at end of run; next run picks it up. End of run 46.
 - verify #124 passed (Wall-OSS-0.5); #125 (the 4 CoRL picks) was still running at end of run: check it first next run.
+
+## 2026-11-02 — run 47 (~10:50 UTC–)
+
+- Start: CI/Pages/intake green, verify #125 passed, no issues/PRs, 1 star / 0 forks. No add_repo tool again; local `main` was stale, reset to `origin/main` (no local work lost).
+- Curated 496 → 515 (19 picks, see STATE backlog). Oral/Spotlight badges now also on curated cards; before, the venue filter hid curated orals such as DISCO. Tested in Chromium at 390 px, both languages.
+- Launch kit: CoRL 2026 post added, entry counts refreshed.
+- **Incident:** main failed to build for a few minutes. Three pushes in one shell command: `... | tail` hid a failing exit code, so commits faf6c85 and 66d1dc1 went out half-applied with a duplicate entry (SuperMimic was already curated) and an integer YAML tag (`360`) that crashes build_site though validate passed. Fixed in f677e11. Lessons: `set -o pipefail` in every push command; validate.py now rejects non-string tags. Commit message of faf6c85 overstates its content (no history rewrites, so it stays).

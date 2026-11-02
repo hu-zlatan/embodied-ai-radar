@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-02 ~05:30 UTC, run 46; venue backfill + venue-page filters (496 curated); repo has 1 star._
+_Last updated: 2026-11-02 ~11:30 UTC, run 47; 19 picks (515 curated), Oral/Spotlight on curated cards, CoRL launch post; repo has 1 star._
 
 ## Status
 
@@ -31,6 +31,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - **Robot-type pages** (run 22): `robots/<emb>.html` per entry of `data/embodiments.yaml` (curated entries by computed `emb`, newest 40 auto-tagged feed papers, per-topic search links) + Atom `robots/<emb>.xml` + `robots/index.html`; linked from home (row under Topics), feed page, topics index, READMEs, digest robot-type counts, sitemap.
 - **Digest picks** (run 27): `make_digest.py` ranks the week's picks (highlight, HF upvotes, GitHub stars, has code); top 8 (`TOP_PICKS`) get full EN/ZH takeaways, the rest are one line per topic linking entry pages. Simple TeX in titles is rendered ($Δ$ → Δ). W43 draft went 60 KB → 33 KB.
 - **Venue backfill** (run 46): `scripts/venue_backfill.py` + `venue-backfill.yml` (Tue 09:23 UTC + dispatch, input `venues`) search arXiv's comment field (`co:"CoRL"` etc.) → `data/venue_papers.json` (1,030 papers: CoRL/Humanoids/NeurIPS/IROS/RSS/ICRA 2026; add venues in `VENUES`). Kept only if `venue_of()` reads the accepted venue and `is_relevant()`. They appear on venue pages and in search (no abstract), not on day pages; repo_stats checks their code links. Best-effort Hugging Face `api/papers/<id>` adds code/project links (`hf_checked`, recheck 14 days, 500 of 925 done in the first pass, 2 runs gave +13 code links). CoRL 2026 page: 37 → 174 papers.
+- **Oral/Spotlight on curated** (run 47): build_site copies the honor from the arXiv comment (feed + backfill) to curated `e["honor"]` when the venues match → badge, `data-h`, sorted first on venue pages; lead links `?honor=1` (CoRL 2026: 16). Curated papers absent from feed/backfill get no honor.
 - **Venue page filter** (run 46): pages with ≥40 papers (`VENUE_FILTER_MIN`) get a client-side box in `app.js` (title/author, topic, has code, Oral/Spotlight), shareable `?q=&topic=&code=1&honor=1`. `honor_of()` reads Oral/Spotlight from comments → badge + sorted first. Home venue row now sorts by papers posted in the last 30 days. `venue_of()` also rejects 'rejected', 'late-breaking', 'challenge', 'competition'.
 - Issue forms: `.github/ISSUE_TEMPLATE/` (suggest an entry / report a mistake, bilingual; contact links to site + Discussions). Footer link `/issues/new` opens the chooser.
 - License: `LICENSE` = MIT (GitHub detects it), data terms in `LICENSE-DATA.md`.
@@ -55,6 +56,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 47: picks from 11-02: SimuGuard (highlight) → sim, VLA start suppression, TinyAstral, REA, CaPtain → vla, MolmoSpaces-CommonSense → datasets, ID-WM, WorldBridge → world-models, Movens-Zero, DiffWBC, ROOF → locomotion, CIMI, RTPolicy → manipulation, OpenVIO → perception; CoRL 2026 Oral/Spotlight: REACT, Demystifying VLAs, WireCraft, CMP, Visible Touch (abstracts cut at 600 chars and arXiv WebFetch is refused, so these takeaways stay qualitative). Skipped: HiFOR (no links), STAR (+4 pts), Frozen in Time (PDE foundation models, off-core). VLA start suppression repo was 404: add `code:` (zebehn/vla-start-suppression) once live. Next: Tue 11-03 feed; Diffusion ReRoll, Chunk-wise MBPO, Constraint-Decomposed Impedance (CoRL Spotlights) still uncurated. Search index 1.4 MB raw / 464 KB gzip, fetched only when search is used: acceptable, recheck at 2 MB.
 
 - Run 46: anchor Wall-OSS-0.5 (2605.30877 confirmed; repo X-Square-Robot/wall-x) → vla; CoRL 2026 picks EagleVLA, LIFT, AgentCanvas, FiberTune. Worth a look for CoRL week (`data/venue_papers.json`, comments with Spotlight/Oral): REACT 2610.12007, Visible Touch 2609.14156, Demystifying When and Why VLAs Fail 2608.01402, CMP 2604.07457, WireCraft 2606.18097, Attention from Action 2608.13422, X-WBC. Backfill abstracts are capped at 600 chars, so only write what they state. Search index 1.36 MB raw / 450 KB gzip (lazy): if it passes ~1.5 MB, drop `au` for backfill items. W44 digest intro done. Next: Mon 11-02 feed picks, more CoRL picks.
 

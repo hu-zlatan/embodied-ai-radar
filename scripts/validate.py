@@ -34,6 +34,8 @@ def main() -> int:
                 errs.append(f"labs.yaml: {lab.get('id')} missing {k}")
     entries, cerrs = load_curated()
     errs += cerrs
+    errs += [f"curated: {e['title'][:60]}: tag {t!r} must be a string (quote it)"
+             for e in entries for t in (e.get("tags") or []) if not isinstance(t, str)]
     resources, rerrs = load_resources()
     errs += rerrs
     _, serrs = load_start({entry_id(e) for e in entries})

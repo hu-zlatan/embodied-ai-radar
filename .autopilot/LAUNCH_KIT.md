@@ -10,6 +10,24 @@ Links:
 
 ---
 
+## CoRL 2026 专用（2026-11-02 写；11 月 9–12 日开会，建议开会前后发一次）
+
+链接：https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026.html （中文加 `?lang=zh`）
+
+**中文（V2EX / 知乎 / 朋友圈通用）**
+
+标题：CoRL 2026 被接收论文整理：170+ 篇可筛选，含 Oral / Spotlight 标记和中文要点
+
+CoRL 2026 下周开，把 arXiv 上已写明被接收的论文整理到了一页：170+ 篇，可按主题、标题/作者、是否有代码、Oral/Spotlight 筛选，每篇都能一键复制 BibTeX；其中精选的论文有中英文一句话要点。
+
+说明：只收录 arXiv 备注里写明接收的论文，所以不是全部接收论文，名单会随作者更新而增加。项目由 AI 智能体在人工监督下维护，开源（MIT / CC BY 4.0），有遗漏或错误欢迎提 issue。
+
+**English (r/robotics showcase thread / X)**
+
+CoRL 2026 is next week. I put the accepted papers that are on arXiv on one filterable page: 170+ papers, by topic, title/author, has code, Oral/Spotlight, with BibTeX for each and short EN/中文 takeaways for the curated ones. It only lists papers whose arXiv comment says they were accepted, so it is not the full program. Maintained by an AI agent under human oversight; open source. https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026.html
+
+---
+
 ## V2EX（节点：分享创造）
 
 **标题：** 做了一个中英双语的具身智能雷达：精选论文 + 每天自动收录 arXiv 机器人新论文
@@ -74,7 +92,7 @@ Body:
 
 Embodied AI Radar is a free, open-source site that tries to fix two things that bug me about paper lists: they go stale, and daily arXiv dumps are unfiltered.
 
-- A curated index of 480+ entries across 12 topics (VLA & foundation models, manipulation, tactile, locomotion & humanoids, world models, navigation, perception & SLAM, planning/control & safety, RL & imitation learning, sim-to-real, datasets, open hardware). Each entry has a one-line takeaway; CI checks every arXiv ID against arXiv and every link weekly.
+- A curated index of 510+ entries across 12 topics (VLA & foundation models, manipulation, tactile, locomotion & humanoids, world models, navigation, perception & SLAM, planning/control & safety, RL & imitation learning, sim-to-real, datasets, open hardware). Each entry has a one-line takeaway; CI checks every arXiv ID against arXiv and every link weekly.
 - A daily feed of new cs.RO papers (plus robotics papers cross-listed from CV/LG/AI/CL), auto-tagged by topic and robot type (arm, hand, humanoid, legged, drone…), with venue badges parsed from author comments and a page per conference (e.g. CoRL 2026, 170+ papers, filterable by topic, code and Oral/Spotlight: https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026.html), filterable by "has code", with Atom feeds per topic and per robot type, plus GitHub stars and Hugging Face upvotes as quick signals.
 - English and Chinese throughout.
 
@@ -90,7 +108,7 @@ Site: https://hu-zlatan.github.io/embodied-ai-radar/ · Code (MIT): https://gith
 
 Text:
 
-This is a static site plus a few GitHub Actions: every day it pulls new robotics papers from arXiv, tags them by topic with simple keyword rules, and rebuilds the site. A small curated index (480+ entries now) sits on top, with one-line takeaways in English and Chinese, and a CI job that checks each arXiv ID and link so the list can't silently rot.
+This is a static site plus a few GitHub Actions: every day it pulls new robotics papers from arXiv, tags them by topic with simple keyword rules, and rebuilds the site. A small curated index (510+ entries now) sits on top, with one-line takeaways in English and Chinese, and a CI job that checks each arXiv ID and link so the list can't silently rot.
 
 An unusual part: the repository is maintained by an AI agent (Claude) that runs on a schedule, reads its own state/log files in the repo, and pushes small increments; a human owner steers it through a charter file. The charter, run log and decisions are all public in the repo.
 
