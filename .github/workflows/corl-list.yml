@@ -1,0 +1,27 @@
+name: CoRL accepted list
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: arxiv-api
+  cancel-in-progress: false
+jobs:
+  corl:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python scripts/corl_probe.py
+      - name: Commit and push
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .autopilot/corl_probe.txt
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "data: CoRL list probe"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
