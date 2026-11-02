@@ -2,31 +2,6 @@
  "updated": "2026-11-02",
  "papers": [
   {
-   "id": "2610.42146",
-   "title": "Hierarchical World Models with Implicit Dynamics",
-   "published": "2026-11-02",
-   "topics": [
-    "world-models"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://id-wm.github.io"
-   ],
-   "comment": null,
-   "authors": [
-    "Gaoyue Zhou",
-    "Yvonne Wu",
-    "Zichen Jeff Cui",
-    "Nicolas Ballas",
-    "Mido Assran",
-    "Lerrel Pinto",
-    "Yann LeCun"
-   ],
-   "abstract": "Planning with world models enables test-time adaptation for embodied agents, offering superior generalization over direct policy learning. However, long-horizon tasks remain hindered by cumulative errors and search complexity. Existing hierarchical methods often use rigid macro-actions or latent skills, leading to brittle representations and limited fine-grained control. We introduce ID-WM (Implicit Dynamics World Models), a hierarchical world model that decouples state-space reachability from local control. Our framework utilizes a high-level model to sample feasible transitions across the state manifold and a low-level world model as an inverse dynamics solver to ground these transitions into precise actions. This allows the planner to identify reachable subgoals without being constrained by low-level execution details. By prioritizing local physical feasibility over global behavioral patterns, ID-WM synthesizes novel long-horizon plans from short segments, transcending the specific behavioral modes seen during training. We demonstrate its effectiveness across three navigation and manipulation suites, achieving a 38.5% improvement over state-of-the-art policy and diffusion-based planners. Crucially, by leveraging this hierarchical structure to mitigate compounding errors, our approach yields a 135% performance gain over single-level world model MPC, particularly in complex, unseen configurations for long-horizon tasks. Videos can be viewed at https://id-wm.github.io",
-   "fetched": "2026-11-02"
-  },
-  {
    "id": "2610.42141",
    "title": "RoboArchitect: Automating the Design of Robotic Agents with Persistent Memory",
    "published": "2026-11-02",
@@ -49,32 +24,6 @@
    "fetched": "2026-11-02"
   },
   {
-   "id": "2610.42097",
-   "title": "ROOF: Learning Humanoid Fall Recovery under Overhead Constraints",
-   "published": "2026-11-02",
-   "topics": [
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://lu-yidan.github.io/ROOF/"
-   ],
-   "comment": "8 pages, 4 figures",
-   "authors": [
-    "Yidan Lu",
-    "Jiayuan Yu",
-    "Zongrui Cai",
-    "Jingwen Sun",
-    "Jinrui Han",
-    "Jing Wang",
-    "Ping Luo",
-    "Peng Lu"
-   ],
-   "abstract": "A fallen humanoid beneath an overhead obstacle faces a coupled recovery problem. It must create clearance while organizing support for a stable rise, since attempting to stand before making room can further increase obstruction. We introduce a reinforcement learning method with contact-supported geometric escape guidance, which rewards incremental reduction of robot-obstacle overlap without prescribing an escape path. To achieve this, a learned motion prior, together with posture-dependent support and joint-stall costs, is proposed to shape a single policy that learns when to clear the obstacle, how to establish support, and when to complete the rise, all using proprioception alone. In simulation, it recovers in 88.5% of trials beneath plates that can only be lifted, compared with 18.9% without geometric guidance, and in 98.6% of trials beneath free plates with randomized size, mass and placement. On a Unitree G1, the deployed policy recovered in 95 of 150 attempts across seven real-world obstacle scenes, including furniture and multi-object arrangements absent from training. Project page: https://lu-yidan.github.io/ROOF/",
-   "fetched": "2026-11-02"
-  },
-  {
    "id": "2610.41978",
    "title": "Language-Conditioned Behavioral Cloning for Autonomous Endoscope Guidance",
    "published": "2026-11-02",
@@ -92,72 +41,6 @@
     "Stefanie Speidel"
    ],
    "abstract": "Automated endoscope guidance reduces the need for continuous manual camera control during minimally invasive surgery. However, the desired camera motion depends on the surgeon's immediate intentions and cannot always be inferred from the visual operative scene alone. We propose to automate the task using language-conditioned behavioral cloning; we define 6 clinically relevant guidance behaviors and collect 235 subtask demonstrations. In preliminary phantom experiments, our policy achieves 100% success on focus, overview, and stop, 80% on search-tip and follow-tip behaviors, and 50% on horizon leveling. These results demonstrate the feasibility of learning heterogeneous surgeon-requested camera behaviors with a single visuomotor policy, while the observed failure modes motivate future work on adding temporal context for more demanding guidance tasks.",
-   "fetched": "2026-11-02"
-  },
-  {
-   "id": "2610.41877",
-   "title": "Movens-Zero: Scaling Humanoid Motion Foundation Models with Large-Scale Human Videos",
-   "published": "2026-11-02",
-   "topics": [
-    "locomotion",
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://movens-zero.github.io"
-   ],
-   "comment": "Technical report. 86 pages, 31 figures, 15 tables. Project page: https://movens-zero.github.io",
-   "authors": [
-    "Wendong Bu",
-    "Tinghong Ye",
-    "Qizhou Wang",
-    "Jiacheng Li",
-    "Zhiqi Ge",
-    "Yuze Lin",
-    "Zhongqi Yue",
-    "Yi Su",
-    "Jingyu Wang",
-    "Kai Shen",
-    "Jingdong Liu",
-    "Chengyuan Deng",
-    "Xiaoxuan Chen",
-    "Xin Tan",
-    "Jiaming Ji",
-    "Wenqiao Zhang",
-    "Chenghong Jiang",
-    "Tuoyu Li",
-    "Siliang Tang",
-    "Jun Xiao"
-   ],
-   "abstract": "Scaling humanoid motion foundation models is constrained by the scarcity of diverse, robot-executable data and by the difficulty of jointly learning from heterogeneous multimodal inputs while supporting real-time closed-loop control. We present Movens-5M, constructed from raw Internet videos through clip generation, quality filtering, semantic annotation, motion recovery, and physical refinement with humanoid retargeting and execution verification. It contains 15 million human-motion sequences and 5 million physically executable humanoid-motion sequences spanning over 10,000 hours, aligned with text, RGB video, speech, and music. Building on this data, we introduce Movens-Zero, a scalable understanding-generation-execution architecture that supports joint learning across modalities and real-time closed-loop execution. Task-mixed flow-matching training jointly optimizes a single action expert across seven generation tasks, enabling direct motion generation from text, speech, music, and video. Multimodal Real-Time Chunking connects overlapping chunks under continuously updated instructions and robot states for continuous closed-loop execution. We further introduce Movens-Intent, a four-track benchmark with 8,192 expert-verified condition-motion pairs across text, speech, music, and video. Experiments show consistent gains across all four modalities when scaling execution-verified data from 1% to 100% and action-expert capacity from 64M to 911M parameters, while demonstrating that data quality and cross-modal supervision improve generation and execution.",
-   "fetched": "2026-11-02"
-  },
-  {
-   "id": "2610.41857",
-   "title": "When the Simulator Fails, Not the Policy: Auditing Contact Artifacts in Simulated Robot Benchmarks",
-   "published": "2026-11-02",
-   "topics": [
-    "sim",
-    "datasets"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/ALEXander22568/simuguard"
-   ],
-   "project": [],
-   "comment": "https://github.com/ALEXander22568/simuguard",
-   "authors": [
-    "Alex Zhou",
-    "Junhao Wu",
-    "Xueyang Zhou",
-    "Yixiao Huo",
-    "Hongcheng Gao",
-    "Di Zhu",
-    "Zhenghao Zhang",
-    "Yongchao Chen"
-   ],
-   "abstract": "Simulation benchmarks score robot policies by success rate, and every failed episode counts against the policy. Many of these failures are the simulator's fault, not the policy's; we find the cause and fix it. Testing a vision language action model and a world action model in simulation, we find that the policy often places the object and the simulator then ejects it, and that the benchmark's own scripted demonstrations fail the same way. We present SimuGuard, an auditing plugin for LIBERO, RoboTwin, RoboCasa and RoboDojo. It leaves the evaluation unchanged. At every physics step, it records the state and flags an object that starts moving at a contact faster than the robot's contact or gravity account for. It replays a recorded episode bit for bit, and it reruns the episode with one simulation parameter changed. With it we trace these episodes on RoboTwin to the collision detection of the physics engine: for geometry one to two centimeters apart, the engine reports a penetration of about two centimeters, and the solver throws the object out at several meters per second. The cause is one constant: the distance algorithm discards triangles below a fixed area threshold, which valid triangles fall below at the centimeter scale. With that constant changed and nothing else, episodes with an artifact fall from 12 in 100 to none, and the success rate on five container tasks rises from 89% to 98%. Success rates in simulation thus count failures that the simulator causes. Benchmarks on PhysX 5.3.1 or earlier should rerun in a repaired engine. Where the engine cannot change, they should report the success rate together with the range it spans when every flagged episode fails or passes: 75.8% to 98.5% around a reported 83.1% for LingBot-VA.",
    "fetched": "2026-11-02"
   },
   {
@@ -208,26 +91,6 @@
     "Tamar R. Makin"
    ],
    "abstract": "Wearable force-augmentation technologies, including exoskeletons and soft exosuits, are being developed for occupational and rehabilitation settings to enhance performance by reducing the muscular demands of movements. Yet enhanced performance also requires users to perceive the environment accurately, adapt to changing conditions, and decide whether actions are worth their physical cost. We used an elbow-assisting exosuit to investigate the physiological, perceptual and cognitive consequences of force augmentation during lifting. We assessed weight perception, adaptation in a volatile environment, and effort-based decision-making with and without assistance. While assistance reduced muscle activity, its behavioural outcomes did not simply reflect this biomechanical change. Assistance reduced perceived weight, but this effect was strongly shaped by participants' initial experience. Assistance also selectively reduced adaptation to changing environmental contingencies. Finally, reducing the muscular demands of lifting did not translate straightforwardly into how demanding the action felt or whether participants chose to perform it: differences in effort-based decisions were shaped by initial experience rather than simply tracking reductions in muscle activity or perceived fatigue. Together, we show that the perceptual and cognitive consequences of force augmentation cannot be inferred from its biomechanical benefits alone. Effective augmentation therefore requires perceptual and cognitive outcomes to be evaluated alongside physical performance.",
-   "fetched": "2026-11-02"
-  },
-  {
-   "id": "2610.41671",
-   "title": "OpenVIO: A Versatile Open-Source Visual-Inertial Odometry System",
-   "published": "2026-11-02",
-   "topics": [
-    "perception",
-    "datasets"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/93won/openvio"
-   ],
-   "project": [],
-   "comment": "7 pages, 6 figures",
-   "authors": [
-    "Seungwon Choi"
-   ],
-   "abstract": "Visual-inertial odometry (VIO) is a fundamental topic in robotics research. Beyond research, VIO has been adopted in a wide range of products. In this manuscript, we present OpenVIO, an open-source VIO system for research and practical applications. It is released under the MIT license. OpenVIO supports pinhole and fisheye cameras and extends this support to stitched 360° images. We describe each part of the system together with its design considerations. We also report benchmark results with other open-source VIO systems on public datasets. OpenVIO is available as open source at https://github.com/93won/openvio.",
    "fetched": "2026-11-02"
   },
   {
@@ -283,101 +146,6 @@
    "fetched": "2026-11-02"
   },
   {
-   "id": "2610.41625",
-   "title": "RTPolicy: Real-Time (32.9 Hz) Multi-View Visuomotor Policy for Robotic Manipulation on Edge Devices",
-   "published": "2026-11-02",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://d-robotics-ai-lab.github.io/RTPolicy.project"
-   ],
-   "comment": null,
-   "authors": [
-    "Xianbao Hou",
-    "Zehao Ni",
-    "Yonghao He",
-    "Lingfeng Qian",
-    "Xin Shi",
-    "Hu Su",
-    "Wei Sui",
-    "Cong Yang"
-   ],
-   "abstract": "Low inference latency is critical for closed-loop robotic manipulation, especially under asynchronous inference, where action chunks must be updated promptly to correct accumulated deviations. However, existing visuomotor policies rely on computationally expensive visual backbones, resulting in high inference latency and deployment overhead. In this paper, we propose RTPolicy, a multi-view visuomotor policy that attains accurate manipulation with high inference efficiency. Its core design combines view-aware feature fusion with visual compression to aggregate complementary information across camera views into a compact token representation. The representation conditions a flow-matching action generator with the robot state and flow time, reducing the cost of action generation. Extensive experiments demonstrate that this design reduces the computational cost of visual representation and action generation while preserving visual information required for manipulation. On the RoboTwin~2.0 single-task clean evaluation across 50 tasks, RTPolicy attains a mean success rate of 52.26\\%, outperforming the strongest leaderboard baseline $π_0$ (46.4\\%). We further evaluate RTPolicy under asynchronous streaming inference on a real bimanual platform, where RTPolicy attains a mean success rate of 72.0\\% and sustains real-time inference at 30.35 ms (32.9 Hz) on the RDK S600 and 149.72 ms (6.7 Hz) on the RDK S100, both in INT16. Project Page: https://d-robotics-ai-lab.github.io/RTPolicy.project.",
-   "fetched": "2026-11-02"
-  },
-  {
-   "id": "2610.41609",
-   "title": "VLA Policies Do Not Know When Not to Act: Unintended Task Execution and Start Suppression",
-   "published": "2026-11-02",
-   "topics": [
-    "vla"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/zebehn/vla-start-suppression"
-   ],
-   "project": [],
-   "comment": "17 pages, 3 figures, 13 tables. Code: https://github.com/zebehn/vla-start-suppression",
-   "authors": [
-    "Minsu Jang",
-    "Jae-Woo Choi",
-    "Youngwoo Yoon",
-    "Dohyung Kim"
-   ],
-   "abstract": "A robot should act only on an instruction from a person or on an intent that the robot explicitly represents and generates. Unintended actions taken without such an instruction can cause risk or inconvenience to people and the environment. We examine how recent vision-language-action (VLA) policies respond when the instruction is missing or meaningless. We apply a paired protocol with empty, neutral, nonsense, infeasible, and wrong-task instructions to six model checkpoints in LIBERO-Goal simulation. Holding the initial state fixed and varying only the instruction, we ask three questions: whether the robot starts to move, which task it completes, and what the instruction determines. Even when the instruction was empty, the robot started moving in every episode with all six checkpoints, and with five of them it often completed a task that the instruction had not specified. On two GR00T checkpoints, the instruction determined which task was executed but not whether the robot started moving; the robot moved even on infeasible instructions. We then tested three methods for suppressing the start: prepending \"if no task is given do not move\" to the instruction; a gate that holds the robot when the first action chunk for the given instruction nearly equals that for an empty instruction; and fine-tuning the policy to hold still on non-task inputs. The prefix stopped the robot in none of the six checkpoints, and the gate held it on non-task inputs in five of the six checkpoints. The fine-tuned policy never completed a task on non-task inputs, but it did not reliably keep the robot still, and it failed to suppress the start on infeasible instructions.",
-   "fetched": "2026-11-02"
-  },
-  {
-   "id": "2610.41377",
-   "title": "MolmoSpaces-CommonSense: Evaluating Commonsense in Robotic Manipulation Policies",
-   "published": "2026-11-02",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/allenai/molmospaces"
-   ],
-   "project": [],
-   "comment": "Project page: https://github.com/allenai/molmospaces",
-   "authors": [
-    "Arjun Guru",
-    "Max Argus",
-    "Jae Sung Park",
-    "Jiafei Duan",
-    "Ali Farhadi",
-    "Ranjay Krishna"
-   ],
-   "abstract": "Real-world robotic manipulation requires reasoning about cluttered scenes, partially observable or hidden objects, and semantically appropriate actions, in addition to low-level execution within those scenes. However, existing simulation benchmarks primarily test the latter and remain dominated by comparatively clean environments with limited clutter and narrowly scoped task structure, leaving many forms of commonsense reasoning untested. We address this by introducing a taxonomy of reasoning processes for robotic manipulation grounded in developmental cognitive science. We operationalize this taxonomy through a new benchmark of robot tasks, MolmoSpaces-CommonSense, that requires reasoning about occlusion, containment, support relations, semantically correct grasp points, spatial affordances, and hidden objects. These evaluations require policies not only to recognize relevant scene structure but also to execute correct actions in them. We evaluate several zero-shot generalist manipulation policies. Across model types and architectures, we observe consistent failures in commonsense reasoning: success rates in cluttered scenes drop by over 50% as distractors increase, policies act on incorrect objects in cluttered settings 30% of the time, and affordance-sensitive grasping remains unreliable even with highly specific language prompts, with correct object part selection happening only about 50% of the time. Further, VLM-based success estimation struggles to reliably evaluate rollouts in these settings, suggesting that the challenge extends beyond control to the broader perception-reasoning-action stack. Our results suggest that existing benchmarks may substantially overestimate zero-shot real-world readiness. Code and policy leaderboard link at https://github.com/allenai/molmospaces.",
-   "fetched": "2026-11-02"
-  },
-  {
-   "id": "2610.41354",
-   "title": "DiffWBC: Unlocking Steerable General Humanoid Motion Tracking via One-Step Diffusion Whole-Body Control",
-   "published": "2026-11-02",
-   "topics": [
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://diffwbc.github.io/#selfassess"
-   ],
-   "comment": null,
-   "authors": [
-    "Yifei Huang",
-    "Yazhao Yang",
-    "Weijia Li",
-    "Zhiheng Ma",
-    "Dian Shen"
-   ],
-   "abstract": "General humanoid motion trackers typically rely on deterministic policies that cannot adapt online without brittle reference editing or costly retraining. We present DiffWBC, shifting whole-body control to a generative paradigm via a one-step diffusion model. By modeling distributions over future trajectories, DiffWBC unifies general tracking, test-time steering, and simulation-free failure discovery within a single controller: (1) Generative general tracking: DiffWBC requires a single forward pass per 50 Hz control step and can be distilled from an RL teacher or trained from scratch via model-based RL, achieving the lowest local tracking error among six general trackers on held-out benchmarks (20.1 mm on BONES) and deploying on a physical Unitree G1. (2) Zero-shot test-time steering: differentiable cost gradients and body-group masks modulate the frozen controller online, substantially outperforming kinematic reference editing (0.84 clean pass at 1.25 m ceiling vs. 0.10) and zero-shot generalizing across hurdles, spatial reaching, actuator faults, and tray balancing. (3) Simulation-free failure discovery: plan dispersion across generation noise effectively identifies physical tracking failures (91% precision in top 2%) without physics simulations; targeted fine-tuning on flagged clips resolves 50% of failure cases. Videos and interactive demonstrations are available at https://diffwbc.github.io/#selfassess.",
-   "fetched": "2026-11-02"
-  },
-  {
    "id": "2610.41334",
    "title": "HIPC: Humanoid Iterative Planning and Control via Goal-Conditioned Motion Closure",
    "published": "2026-11-02",
@@ -406,35 +174,6 @@
     "Lei Han"
    ],
    "abstract": "Recent generative models are widely used to provide whole-body motion for humanoid tracking. Current methods combine motion generators with controllers in an open-loop paradigm, which leads to critical issues: tracking errors can accumulate into spatial drift, and the planner cannot adapt to unexpected physical disturbances without feedback from physical execution. However, directly feeding realized states back to the planner in a closed loop can cause discontinuities, resulting in physical jitter and even falls, since such states are out of distribution during training. To bridge this gap, we propose HIPC, a real-time Humanoid Iterative Planning and Control framework that couples a generative model with motion tracking into a unified planning-and-control paradigm. HIPC introduces a goal-conditioned motion planning trained with a canonical motion representation that avoids gimbal-lock singularities under extreme orientations and supports motion generation on diverse geometric and semantic conditions. Then, HIPC adopts two strategies, deviation-decayed recovery and history re-anchoring, to mitigate the out-of-distribution shift caused by realized-state feedback. Finally, HIPC operates a real-time asynchronous planning-and-control system, with latency compensation to reduce temporal mismatch for inference delay. Extensive experiments confirm the effectiveness of HIPC under switching and composition of diverse conditions. Results show that HIPC achieves state-of-the-art goal-reaching accuracy among existing methods while simultaneously demonstrating robustness to physical perturbations and the ability to recover from falls.",
-   "fetched": "2026-11-02"
-  },
-  {
-   "id": "2610.41216",
-   "title": "TinyAstral: Transferring Self-Evolving Harnesses to Tiny Generalist Manipulation Agents",
-   "published": "2026-11-02",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://garfield-kh.github.io/TinyAstral/"
-   ],
-   "comment": "16 pages, 5 figures. Project page: https://garfield-kh.github.io/TinyAstral/",
-   "authors": [
-    "Kehong Gong",
-    "Xiaoxu Zheng",
-    "Guanli Hou",
-    "Seunghun Lee",
-    "Mengqi Guo",
-    "Runjia Tan",
-    "Zhengyu Wen",
-    "Qi Wang",
-    "Xiaoyu He",
-    "Mingyuan Zhang",
-    "Michael Bi Mi"
-   ],
-   "abstract": "Robot agents built on vision-language models depend on both the planner and its harness: the tools, feedback, memory, and recovery logic around it. Can improvements to a large teacher's harness be carried into a compact agent with lower inference compute cost? We present TinyAstral, a two-stage approach. We first freeze an open-weight teacher and improve its harness through recursive self-improvement (RSI): frontier LLM agents read the teacher's trajectories and propose harness edits, and each edit is accepted only if it passes a paired statistical test. We then freeze the final harness, collect teacher trajectories with reasoning and failure recovery, and distill a small student that replaces the teacher in the same harness. On RoboTwin, harness evolution raises the teacher's success from 33.4% to 63.6%; the final 4B student reaches 62.8%. Across four harness versions, distilled 4B students score close to their corresponding teachers, and later versions yield stronger students, showing that harness evolution gains carry into compact models. The harness gains also transfer to other frozen planners without retraining. On identical episodes, the final 4B student outperforms open 4B agents, the open 27B harness-RSI model SenseNova-RoboRSI, and our own teacher model placed in three competitors' harnesses. It stays close to its teacher on all three training benchmarks, and on three benchmarks never used for RSI or training it scores close to a 552B planner running the same harness. On the measured deployment episodes, it uses about one fifth of its teacher's accelerator time.",
    "fetched": "2026-11-02"
   },
   {
@@ -510,32 +249,6 @@
    "fetched": "2026-11-02"
   },
   {
-   "id": "2610.41028",
-   "title": "Contact Imitation Interface: Transferring Dexterous Skills by Showing How Contact Unfolds",
-   "published": "2026-11-02",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://nus-lins-lab.github.io/CIMIWeb/"
-   ],
-   "comment": "15 pages (8-page main paper and 7-page supplementary material). Project website with code and hardware designs: https://nus-lins-lab.github.io/CIMIWeb/",
-   "authors": [
-    "Zhixuan Xu",
-    "Yichen Li",
-    "Bingchen Wu",
-    "Rui Wang",
-    "Yiwen Hou",
-    "Zixuan Liu",
-    "Tianyu Qiu",
-    "Lin Shao"
-   ],
-   "abstract": "Robot-free human demonstrations offer a promising route to scaling dexterous manipulation data. The key challenge is to preserve the demonstrator's natural dexterity while producing contact-grounded observations and actions that transfer to robot hands. We present Contact Imitation Interface (CIMI), a framework with contact-grounded demonstration and learning interfaces. The demonstration interface combines shared contact geometry and fingertip RGB views with contact-alignment-first retargeting and reprojection of wider scene views. The learning interface introduces a hierarchical policy in which a contact-surface planner predicts relative contact-surface trajectories and a controller coordinates wrist and finger commands to improve contact alignment. CIMI combines contact-grounded observations, retargeting, and action representations, improving mean final-stage success by at least 50 percentage points over baseline policies across six hand-task pairs on LEAP and Wuji. Hardware designs and software are publicly available.",
-   "fetched": "2026-11-02"
-  },
-  {
    "id": "2610.41009",
    "title": "STAR: Steering Action Representations during Inference",
    "published": "2026-11-02",
@@ -582,36 +295,6 @@
     "Payel Mukhopadhyay"
    ],
    "abstract": "Scientific foundation models (SciFMs) have achieved remarkable performance on a wide range of PDEs, including the ability to efficiently adapt to unseen data distributions with additional finetuning. As with all neural architectures, finetuning such models comes with the risk of catastrophic forgetting, whereby adapting to new tasks degrades prior knowledge of the model. We study catastrophic forgetting in Walrus-1.3B, a SciFM for continuum dynamics, over the course of a two-stage sim-to-real adaptation: first finetuning on simulated flow around a cylinder and then adapting to experimental data of the same system. We find that finetuning on the simulations rapidly degrades rollout performance on the original pretraining datasets, with one-step errors increasing up to 35x after just 20 epochs. Subsequent adaptation to real data further erodes performance on the simulated task. We characterize the potential drivers of forgetting, such as dataset dependence and task representation similarity. We then show that replaying as little as 1% simulated data during real-data finetuning recovers most of the lost simulation performance while retaining effective adaptation to the experimental dynamics. Our results identify catastrophic forgetting as a practical obstacle to sim-to-real adaptation of SciFMs and show that lightweight replay strategies significantly improve retention.",
-   "fetched": "2026-11-02"
-  },
-  {
-   "id": "2610.40748",
-   "title": "WorldBridge: Bridging Video and Action for Task Generalization in World Action Models",
-   "published": "2026-11-02",
-   "topics": [
-    "world-models"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://worldbridge-jd.github.io/"
-   ],
-   "comment": "Authors are listed in alphabetical order. Project page: https://worldbridge-jd.github.io/",
-   "authors": [
-    "Jun Cen",
-    "Yubo Guo",
-    "Hao Li",
-    "Liangkai Li",
-    "Yaoxu Lyu",
-    "Meng Wei",
-    "Zeqi Xiao",
-    "Sizhe Yang",
-    "Yuqiang Yang",
-    "Yifan Ye",
-    "Shanghang Zhang",
-    "Duo Zheng"
-   ],
-   "abstract": "Achieving the broad task generalization of embodied models in physical environments remains a central challenge in robot learning. We study this challenge in World Action Models (WAMs) through two complementary capabilities: video generalization, which predicts the visual evolution of new tasks, and action generalization, which translates these predictions into executable behavior through a video-to-action bridge. By varying video and action supervision for tasks outside an initial training set, we examine their respective contributions to task transfer. On RoboTwin 2.0, using only in-distribution video-action supervision yields a 25.07% success rate on out-of-distribution tasks. Introducing videos of these tasks without their action labels raises success to 55.90%, while adding just one action-labeled demonstration per task further improves it to 70.70%. These findings suggest that broader video coverage enables task transfer by leveraging existing inverse-dynamics capabilities, while even sparse action supervision further strengthens those capabilities. Guided by this perspective, we introduce WorldBridge, a WAM with separate video and action experts connected through structured attention and trained with joint flow matching. WorldBridge incorporates visual memory at two temporal scales and action forcing, alongside a unified data processing pipeline that standardizes and filters heterogeneous robot trajectories and egocentric hand-derived supervision. Across multiple manipulation benchmarks, WorldBridge achieves state-of-the-art performance among the compared methods, including 96.23% on RoboTwin 2.0 full data setting and 80.9% on clean to random setting, 82.8% on RoboCasa GR1 TableTop, and 57.6% on DOMINO Level-1. Our study highlights the complementary roles of video prediction and action grounding in developing robots that generalize across tasks.",
    "fetched": "2026-11-02"
   },
   {
