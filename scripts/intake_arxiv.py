@@ -337,6 +337,7 @@ def main() -> int:
     if args.retag:
         return retag()
     cutoff = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=args.days)).strftime("%Y-%m-%d")
+    today = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
     topics = load_topics()
     known = {p["id"] for p in load_arxiv_feed()}
     new: dict[str, dict] = {}
@@ -370,6 +371,11 @@ def main() -> int:
                         break
                     for r in recs:
                         if r["published"] >= cutoff and is_relevant(r):
+                            # Normal runs: the API only fills in what RSS lacks, so a paper new to us was
+                            # announced today. Filing it under its submission date would split one
+                            # announcement over several day pages, some of them weekends (2026-11-03).
+                            if args.days <= 3:
+                                r["published"] = today
                             add(r)
                     if recs[-1]["published"] < cutoff:
                         break
