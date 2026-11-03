@@ -4,7 +4,7 @@ on:
     - cron: "37 6 * * 0"   # weekly, Sundays
   push:
     branches: [main]
-    paths: ["data/curated/**", "data/resources.yaml", "scripts/repo_stats.py", "scripts/hf_papers.py"]
+    paths: ["data/curated/**", "data/resources.yaml", "scripts/repo_stats.py", "scripts/hf_papers.py", "scripts/project_code.py"]
   workflow_run:  # re-check feed code links (often 404 until release) after each intake
     workflows: ["Daily arXiv intake", "Venue backfill", "CoRL program"]
     types: [completed]
@@ -26,6 +26,12 @@ jobs:
       - name: Hugging Face Daily Papers upvotes for our papers + links (best-effort; first, so repo_stats checks HF GitHub links)
         continue-on-error: true
         run: python scripts/hf_papers.py
+      - name: Code links on project pages (best-effort; before repo_stats, so it checks them)
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/project_code.py
       - name: Fetch stars / last push / archived for curated and recent feed GitHub repos
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -36,6 +42,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/repo_stats.json data/repo_stars_history.json
           if [ -f data/hf_papers.json ]; then git add data/hf_papers.json; fi
+          if [ -f data/project_code.json ]; then git add data/project_code.json; fi
           if [ -f .autopilot/review_queue.json ]; then git add .autopilot/review_queue.json; fi
           if git diff --cached --quiet; then echo "no changes"; exit 0; fi
           git commit -m "data: GitHub repo stats $(date -u +%F)"

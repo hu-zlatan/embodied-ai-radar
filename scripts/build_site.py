@@ -19,6 +19,7 @@ from pathlib import Path
 import yaml
 
 from hf_papers import load as load_hf, merge_links
+from project_code import merge as merge_project_code
 from repo_stats import apply_feed_stats, load_feed_stats, load_history, load_stats, repo_key, star_gains
 from radar import (ROOT, bibtex, classify, honor_of, load_program, venue_of, load_arxiv_feed, load_curated, load_curated_meta, load_embodiments,
                    labs_of, load_labs, load_resources, load_start, load_topics, load_venue_papers)
@@ -491,6 +492,7 @@ def build() -> int:
     feed_ids = {p["id"] for p in feed}
     backfill = [p for p in load_venue_papers() if p["id"] not in feed_ids]  # venue pages + search only, not day pages
     merge_links(feed + backfill, hf)  # code/project links from Hugging Face paper pages when the arXiv comment has none
+    merge_project_code(feed + backfill)  # code links found on the authors' project pages
     apply_feed_stats(feed + backfill, load_feed_stats())
     for p in feed + backfill:
         if p["id"] in hf:
