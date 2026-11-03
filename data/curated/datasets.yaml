@@ -618,3 +618,31 @@
   tags: [benchmark, garment, deformable, data-generation, sim]
   takeaway_en: "Sim platform where a fine-tuned VLA generates nearly 8,000 successful garment trajectories, re-rendered for RGB policies. Those beat policies trained on the original human data, but unseen garments stay hard."
   takeaway_zh: "仿真平台：用微调后的 VLA 生成近 8000 条成功的衣物操作轨迹，并重新渲染供 RGB 策略训练，效果优于直接用人类数据训练，但泛化到未见衣物仍是难题。"
+- title: "Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines"
+  type: paper
+  arxiv: "2604.23001"
+  year: 2026
+  org: University of Maryland
+  project: https://github.com/ziyaow1010/vla-datasets-benchmarks
+  topics: [vla]
+  tags: [survey]
+  takeaway_en: "Argues VLA progress now depends more on data engines and evaluation than on architectures; finds a fidelity-versus-cost trade-off in datasets and gaps in compositional and long-horizon benchmarks."
+  takeaway_zh: "认为 VLA 的进展更取决于数据引擎和评测，而不是模型架构；指出数据集存在保真度与成本的权衡，评测基准在组合任务和长时程任务上仍有缺口。"
+- title: "RoboChallenge: Large-scale Real-robot Evaluation of Embodied Policies"
+  type: paper
+  arxiv: "2510.17950"
+  year: 2025
+  topics: [vla]
+  tags: [benchmark, real, online-evaluation]
+  takeaway_en: "Report on an online system for testing many robot policies on many real tasks, plus a study of recent VLAs on its first benchmark, Table30."
+  takeaway_zh: "介绍一套在线系统，用于在真机上大规模评测多种机器人策略，并报告近期 VLA 在首个基准 Table30 上的表现。"
+- title: "Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds"
+  type: paper
+  arxiv: "2610.40364"
+  year: 2026
+  code: https://github.com/Solvro/ml-wojtek-ued
+  added: 2026-11-03
+  topics: [locomotion]
+  tags: [benchmark, curriculum, quadruped, sim, mjx]
+  takeaway_en: "Runs fourteen curricula under one protocol on five quadrupeds in MuJoCo MJX: no method tops every robot and level set, and methods with easy training levels lead on in-distribution random terrain."
+  takeaway_zh: "在 MuJoCo MJX 中用统一协议在五款四足上比较 14 种课程方法：没有方法在所有机器人和地形集上都领先，而训练关卡偏简单的方法在分布内随机地形上表现靠前。"

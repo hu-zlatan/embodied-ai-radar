@@ -1302,6 +1302,7 @@
   type: paper
   arxiv: "2610.35604"
   year: 2026
+  code: https://github.com/THUSI-Lab/RoboDoctor
   project: https://robodoctor-rsi.github.io/
   added: 2026-11-03
   tags: [agents, policy-execution, self-improvement]
@@ -1353,3 +1354,86 @@
   tags: [memory, real, hierarchical]
   takeaway_en: "Gives a VLA working memory by keeping task history as explicit text, updated only when events are detected. Tested on 10 real non-Markovian tasks, including ones that need context across episodes."
   takeaway_zh: "用显式文本保存任务历史、只在检测到事件时更新，为 VLA 增加工作记忆。在 10 个真实的非马尔可夫任务上测试，其中包括需要跨回合保持上下文的任务。"
+- title: "A Pragmatic VLA Foundation Model"
+  type: paper
+  arxiv: "2601.18692"
+  year: 2026
+  org: Robbyant
+  code: https://github.com/Robbyant/lingbot-vla
+  project: https://technology.robbyant.com/lingbot-vla
+  highlight: true
+  tags: [real, bimanual, open-weights, open-data, cross-embodiment]
+  takeaway_en: "LingBot-VLA: an Apache-2.0 foundation model trained on about 20,000 hours of real data from nine dual-arm setups, tested on four platforms with 100 tasks each; code, base model and benchmark data are released."
+  takeaway_zh: "LingBot-VLA：Apache-2.0 开源的基础模型，用九种双臂构型约 2 万小时真实数据训练，并在四个平台各 100 项任务上评测；代码、基座模型和评测数据一并开放。"
+- title: "Isaac GR00T N1.7"
+  type: code
+  year: 2026
+  org: NVIDIA
+  code: https://github.com/NVIDIA/Isaac-GR00T
+  project: https://huggingface.co/blog/nvidia/gr00t-n1-7
+  topics: [locomotion]
+  tags: [real, humanoid, dexterous, open-weights, vlm, diffusion-policy, human-demonstrations]
+  takeaway_en: "Commercially licensed 3B-parameter humanoid VLA: a Cosmos-Reason2 backbone plans and a diffusion transformer outputs motor commands. NVIDIA reports training on about 20,854 hours of human egocentric video."
+  takeaway_zh: "可商用的 30 亿参数人形 VLA：Cosmos-Reason2 主干负责推理规划，扩散 Transformer 输出电机指令。NVIDIA 称用约 20,854 小时人类第一视角视频训练。"
+- title: "Gemini Robotics 1.5: Pushing the Frontier of Generalist Robots with Advanced Embodied Reasoning, Thinking, and Motion Transfer"
+  type: paper
+  arxiv: "2510.03342"
+  year: 2025
+  org: Google DeepMind
+  tags: [real, vlm, cross-embodiment, reasoning]
+  takeaway_en: "Tech report on a multi-embodiment VLA plus the ER 1.5 reasoning model: Motion Transfer learns across varied robot data, and actions interleave with natural-language reasoning so the robot can think before acting."
+  takeaway_zh: "技术报告：跨本体 VLA 与具身推理模型 ER 1.5。Motion Transfer 让模型从不同机器人的数据中学习，动作与自然语言推理交替进行，使机器人先想后做。"
+- title: "VLA-JEPA: Enhancing Vision-Language-Action Model with Latent World Model"
+  type: paper
+  arxiv: "2602.10098"
+  year: 2026
+  venue: ECCV 2026
+  code: https://github.com/ginwind/VLA-JEPA
+  project: https://ginwind.github.io/VLA-JEPA/
+  topics: [world-models]
+  tags: [jepa, latent-world-model, pretraining, libero, open-weights]
+  takeaway_en: "JEPA-style VLA pretraining: future frames are only a latent target and the student sees the current observation alone, so it avoids leakage and learns dynamics rather than pixel changes; then fine-tune an action head."
+  takeaway_zh: "JEPA 式 VLA 预训练：未来帧只作为潜空间监督目标，学生网络只看当前观测，避免信息泄漏，学动力学而非像素变化；之后再微调动作头。"
+- title: "FASTER: Rethinking Real-Time Flow VLAs"
+  type: paper
+  arxiv: "2603.19199"
+  year: 2026
+  venue: NeurIPS 2026
+  code: https://github.com/hku-sail/FASTER
+  org: HKU
+  tags: [real-time, flow-matching, latency, real]
+  takeaway_en: "Shows reaction time hinges on time to first action, then uses a schedule that spends denoising on near-term actions: one step for the immediate reaction, about 10× faster for π0.5 and X-VLA; demoed on table tennis."
+  takeaway_zh: "指出反应速度取决于首动作耗时，并让去噪优先照顾近期动作：即时反应只需一步，π0.5 和 X-VLA 上约快 10 倍；真机演示包括乒乓球。"
+- title: "DeeR-VLA: Dynamic Inference of Multimodal Large Language Models for Efficient Robot Execution"
+  type: paper
+  arxiv: "2411.02359"
+  year: 2024
+  code: https://github.com/yueyang130/DeeR-VLA
+  tags: [efficiency, early-exit, calvin]
+  takeaway_en: "Multi-exit VLA that stops at the smallest model fit for the moment, with budgets for power, latency and GPU memory; on CALVIN it reports 5.2–6.5× lower LLM compute and 2–6× less memory without hurting performance."
+  takeaway_zh: "多出口 VLA：按当前情境停在够用的最小模型，并按功耗、时延和显存预算设定退出条件；在 CALVIN 上报告 LLM 计算量降低 5.2–6.5 倍、显存降低 2–6 倍，性能不降。"
+- title: "Robotic Control via Embodied Chain-of-Thought Reasoning"
+  type: paper
+  arxiv: "2407.08693"
+  year: 2024
+  venue: CoRL 2024
+  project: https://embodied-cot.github.io
+  tags: [reasoning, chain-of-thought, openvla]
+  takeaway_en: "Trains VLAs to reason through plans, subtasks, motions and visual features before acting; synthetic reasoning data gives OpenVLA a reported 28% success gain on hard generalization tasks with no extra robot data."
+  takeaway_zh: "训练 VLA 在动作前依次推理计划、子任务、动作和视觉特征；用合成的推理数据，OpenVLA 在困难泛化任务上成功率提升 28%，无需额外机器人数据。"
+- title: "A Survey on Vision-Language-Action Models: An Action Tokenization Perspective"
+  type: paper
+  arxiv: "2507.01925"
+  year: 2025
+  project: https://github.com/Psi-Robot/Awesome-VLA-Papers
+  tags: [survey]
+  takeaway_en: "Survey that reads every VLA as one pipeline producing ever more actionable tokens, and reviews eight token types from language and code to trajectories, latents, raw actions and reasoning."
+  takeaway_zh: "综述：把所有 VLA 看作生成越来越可执行 token 的同一流程，并梳理语言、代码、可供性、轨迹、目标状态、潜表示、原始动作和推理八类 token。"
+- title: "Pure Vision Language Action (VLA) Models: A Comprehensive Survey"
+  type: paper
+  arxiv: "2509.19012"
+  year: 2025
+  org: Lanzhou University, NUS
+  tags: [survey]
+  takeaway_en: "Survey of over three hundred studies with a taxonomy of autoregression, diffusion, reinforcement, hybrid and specialized VLAs, plus the datasets, benchmarks and simulators used to test them."
+  takeaway_zh: "综述三百多项研究，把 VLA 分为自回归、扩散、强化学习、混合和专用几类，并介绍常用数据集、评测基准和仿真平台。"
