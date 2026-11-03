@@ -6,7 +6,7 @@ Runs in GitHub Actions (repo-stats.yml), since the agent's shell cannot reach pr
 data/project_code.json:
   {"updated": "YYYY-MM-DD",
    "papers": {arxiv_id: {"github": url, "page": url, "checked": date}},
-   "none": {arxiv_id: date},          # looked, nothing usable; retried after RECHECK_DAYS
+   "none": {arxiv_id: date},          # looked, nothing usable; retried after RECHECK_DAYS ("9999-rejected" = wrong link, found by hand; never retried)
    "curated": {arxiv_id: {...}}}      # same as "papers", for curated entries: the agent reviews these by hand
 Precision beats recall: a missing link is harmless, a wrong one is not, so an unclear page yields nothing.
 Failed fetches keep old values, and every step is best-effort.
@@ -35,7 +35,7 @@ OUT = ROOT / "data" / "project_code.json"
 RECHECK_DAYS = 7     # authors publish code around the conference, so look again
 MAX_PAGE = 1_500_000
 MAX_STARS_UNNAMED = 2000  # a repo this big that is not named after the paper is a dependency, not the paper's code
-MAX_AGE_UNNAMED = 730     # likewise a repo much older than the paper
+MAX_AGE_UNNAMED = 450     # likewise a repo much older than the paper
 NOT_CODE_LANG = {None, "HTML", "CSS", "SCSS", "Less", "TeX"}  # no language = README only
 GH_LINK = re.compile(r"https?://(?:www\.)?github\.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)")
 NOT_OWNERS = {"sponsors", "features", "orgs", "topics", "marketplace", "settings", "login", "users", "about", "site", "apps"}
@@ -43,7 +43,7 @@ TEMPLATES = {"keunhong/nerfies", "nerfies/nerfies.github.io", "eliahuhorwitz/aca
              "jonbarron/website", "shunzh/project_website", "alshedivat/al-folio", "academicpages/academicpages.github.io",
              "twbs/bootstrap", "mrdoob/three.js", "google/model-viewer", "jekyll/jekyll", "mmistakes/minimal-mistakes",
              "ai-robotic-kitchen/ai-robotic-kitchen.github.io", "gkioxari/aims2_project_page"}
-SITE_WORDS = re.compile(r"website|homepage|project-?page|\.github\.io|template|theme|awesome|paper-?list", re.I)
+SITE_WORDS = re.compile(r"website|homepage|blog|project-?page|\.github\.io|template|theme|awesome|paper-?list", re.I)
 SITE_TEXT = re.compile(r"template|website|theme|inspired by|borrowed|adapted from|based on", re.I)
 CODE_WORD = re.compile(r"\b(code|codes|github|source|repo|repository|implementation|software|open[- ]source)\b", re.I)
 SOON = re.compile(r"coming soon|to be released|will be (?:released|available|made)|\bsoon\b|\bTBD\b", re.I)
