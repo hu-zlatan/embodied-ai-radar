@@ -568,3 +568,13 @@
   tags: [hierarchical, humanoid, energy-based, sim-to-real]
   takeaway_en: "Picks at runtime which low-level policy to run and with which goal, using a learned energy per policy. New policies join by training their own energy model, with no retraining of others. Deployed on a real humanoid."
   takeaway_zh: "运行时为每个底层策略学习能量函数，据此选择执行哪个策略、给它什么目标。新增策略只需训练自己的能量模型，无需重训其他策略或中央调度器；已部署到真实人形的移动操作任务。"
+- title: "MAPO: Mixture of Experts with Alternating Policy Optimization for Universal Humanoid Motion Tracking"
+  type: paper
+  arxiv: "2611.02613"
+  year: 2026
+  project: https://mapo-corl2026.github.io/MAPO/
+  added: 2026-11-03
+  topics: [learning]
+  tags: [humanoid, motion-tracking, mixture-of-experts, ppo]
+  takeaway_en: "Dynamic routing makes policy-update divergence misestimated in mixture-of-experts policies, so MAPO optimizes router and experts in turn. Reports tracking 182 motions PPO with MoE fails on, against one the other way."
+  takeaway_zh: "动态路由会让混合专家策略的更新散度估计失准，MAPO 因此交替优化路由与专家。报告可跟踪 182 个 PPO+MoE 失败的动作，反过来只有 1 个。"

@@ -458,3 +458,32 @@
   tags: [reward, vlm, zero-shot, prompting]
   takeaway_en: "Prompt-only task-progress scoring: the VLM first describes what happens and defines absolute success, then scores with an explicit rubric. This curbs hallucinated progress on failed runs, and the rewards can drive RL."
   takeaway_zh: "只靠提示词的任务进度评估：先让 VLM 客观描述画面并定义绝对成功标准，再按明确评分表打分，减少对失败执行“幻觉式”的进度判断，其奖励可用于下游强化学习。"
+- title: "When Robots Outweigh Objects: How Inertia Mismatch Shapes Robot Policy Learning"
+  type: paper
+  arxiv: "2611.03501"
+  year: 2026
+  project: https://younghyopark.me/inertia-mismatch/
+  added: 2026-11-03
+  topics: [manipulation]
+  tags: [imitation-learning, reinforcement-learning, contact, hardware-design, sim]
+  takeaway_en: "Simulation study varying robot and object mass: RL copes, but behavior cloning does better when the robot is lighter than the object, and more data narrows the gap without closing it. Lower-inertia demos help."
+  takeaway_zh: "在仿真中改变机器人与物体质量：强化学习影响不大，行为克隆则在机器人比物体轻时更可靠，增加数据只能缩小而无法消除差距。采集低惯量示教可部分缓解。"
+- title: "Beyond Validation Loss: Coverage and Reliability Dynamics in Robot Policy Pretraining"
+  type: paper
+  arxiv: "2611.01565"
+  year: 2026
+  project: https://zhanyisun.github.io/robot-policy-learning-dynamics/
+  added: 2026-11-03
+  tags: [evaluation, generative-policy, post-training, checkpoint-selection]
+  takeaway_en: "Tracks closed-loop pass@k, the chance that one of k rollouts succeeds. Checkpoints with equal pass@1 can post-train differently, so it proposes offline checkpoint selection that balances coverage and reliability."
+  takeaway_zh: "提出跟踪闭环 pass@k（k 次尝试至少成功一次的概率）。pass@1 相同的检查点在后训练中可能表现不同，因此给出兼顾覆盖度与可靠性的离线检查点选择方法。"
+- title: "Behavior Graphs: Unsupervised Graph Structures for Interpreting Robot Deployment Data"
+  type: paper
+  arxiv: "2611.00405"
+  year: 2026
+  project: https://try.behavior-graphs.com/
+  added: 2026-11-03
+  topics: [datasets]
+  tags: [deployment-data, interpretability, data-flywheel, user-study, real]
+  takeaway_en: "Compresses policy rollouts into one directed graph of behavior modes linked to outcomes, to guide what data to collect next. In a user study on three real tasks, 16 of 18 participants preferred it to rollout videos."
+  takeaway_zh: "把策略回放压缩成一张有向图，将行为模式与结果相连，帮助决定下一步采集什么数据。在三个真实任务的用户研究中，18 名参与者有 16 名更喜欢它而非回放视频。"

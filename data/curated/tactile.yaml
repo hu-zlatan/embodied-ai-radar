@@ -363,3 +363,24 @@
   tags: [benchmark, sim, tactile-world-model]
   takeaway_en: "128 simulated tactile tasks in three regimes (Precise, Recognition, Dynamic) with 12 perturbations, plus a tactile world model that treats touch as an evolving state and refines actions with predicted contact."
   takeaway_zh: "128 个仿真触觉任务，分精确、识别、动态三类，含 12 种扰动；并提出动作条件的触觉世界模型，把触觉当作随时间演化的状态，用预测的触觉信息修正动作。"
+- title: "Evaluating Tactile Foundation Models for End-to-End Imitation Learning in Contact-Rich Manipulation"
+  type: paper
+  arxiv: "2611.00957"
+  year: 2026
+  venue: SII 2027
+  project: https://mmurooka.github.io/tfm4il-project-page/
+  added: 2026-11-03
+  topics: [manipulation, learning]
+  tags: [benchmark, diffusion-policy, tactile, real, sim]
+  takeaway_en: "Plugs several pretrained tactile foundation models into Diffusion Policy and compares them in one setup, including fine-tuning and mid-training strategies, with over 5,000 real-world rollouts."
+  takeaway_zh: "把多种预训练触觉基础模型接入 Diffusion Policy，在统一设置下比较，并考察编码器微调与任务专用中训练策略，含 5000 多次真实机器人回合。"
+- title: "$TF^2$-Steering: Action Refinement with Tactile Forecasts and Feedback via Velocity-Field Steering"
+  type: paper
+  arxiv: "2611.01483"
+  year: 2026
+  project: https://yiming-cc.github.io/tf2-steering/
+  added: 2026-11-03
+  topics: [manipulation]
+  tags: [flow-matching, residual-policy, tactile, real, sim]
+  takeaway_en: "Keeps a vision-based flow-matching policy and learns to steer its velocity field from tactile forecasts and live feedback, so touch can correct actions. Reports gains over baselines in six sim and six real tasks."
+  takeaway_zh: "保留视觉流匹配策略，用触觉预测与实时反馈学习对其速度场的残差引导，让触觉能修正动作。报告在六个仿真和六个真实任务上优于基线。"

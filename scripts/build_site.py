@@ -191,6 +191,28 @@ def program_card(x: dict, s: dict | None, cur: dict | None, rec: dict | None, tb
             + f'<div class="links">{" · ".join(links)}</div>' + (f'<div class="chips">{chips}</div>' if chips else "") + "</article>")
 
 
+def program_signals(papers: list[dict], cur_by_id: dict, rec_by_id: dict, n: int = 10) -> str:
+    """Most-starred code among the program's papers. '' when there is no data."""
+    items = []
+    for x in papers:
+        cur, rec = cur_by_id.get(str(x.get("arxiv"))), rec_by_id.get(str(x.get("arxiv")))
+        code = (cur or {}).get("code") or ((rec or {}).get("code") or [None])[0]
+        st = (cur and repo_stat(cur) or {}).get("stars") or (rec or {}).get("stars")
+        if code and st:
+            items.append((st, x, code))
+    rows = []
+    for st, x, code in sorted(items, key=lambda i: (-i[0], i[1]["title"]))[:n]:
+        slot = x["sessions"][0] if x["sessions"] else x.get("poster")
+        num = f' · #{x["poster_no"]}' if slot == x.get("poster") and x.get("poster_no") else ""
+        where = f' <a class="muted" href="#s-{esc(slot)}">{esc(slot)}{num}</a>' if slot else ""
+        rows.append(f'<li>★ {st:,} <a href="https://arxiv.org/abs/{esc(str(x["arxiv"]))}" rel="noopener">{esc(x["title"])}</a>{where} · <a href="{esc(code)}" rel="noopener">{bi("Code", "代码")}</a></li>')
+    if not rows:
+        return ""
+    return (f'<h2 id="signals">{bi("Most-starred code", "GitHub 星标最多的代码")}</h2>'
+            f'<p class="muted">{bi("A public signal, not a quality ranking: a star count can belong to a larger project, and papers without code cannot appear here.", "这只是公开信号，并非质量排名：星标可能属于更大的项目，没有代码的论文也不会出现在这里。")}</p>'
+            f'<ol class="tlist">{"".join(rows)}</ol>')
+
+
 def session_utc(where: str, offset_h: int = 6) -> str:
     """'Mon 11/9, 9:00–9:30 AM · …' → '20261109T150000Z/20261109T153000Z' for calendar files (CoRL 2026: Austin, CST = UTC−6). '' if it does not parse."""
     m = re.search(r"(\d+)/(\d+), (\d+):(\d\d)(?: ([AP]M))?–(\d+):(\d\d) ([AP]M)", where)
@@ -232,6 +254,7 @@ def program_page(prog: dict, extra: dict, cur_by_id: dict, rec_by_id: dict, tby:
              f'{bi("Sessions, titles and poster numbers come from the", "日程、标题与海报编号来自")} <a href="{esc(prog["source"])}" rel="noopener">{bi("official list", "官方列表")}</a> ({esc(prog["updated"])}); '
              f'{bi("arXiv links are matched by title, so check there for last-minute changes. Code links come from arXiv comments, Hugging Face and the authors' project pages.", "arXiv 链接按标题匹配；临时变动请以官方页面为准。代码链接来自 arXiv 备注、Hugging Face 与作者项目页。")}</p>',
              f'<ul class="tlist">{days}<li><a href="#workshops">{bi("Thursday, November 12: workshops", "11 月 12 日（周四）：研讨会")}</a></li></ul>',
+             program_signals(papers, cur_by_id, rec_by_id),
              f'''<p class="muted">{bi("Press ☆ on the papers you want to see: you get your own schedule, sorted by time, with a link to share and a calendar file. The list stays in this browser; nothing is sent anywhere.", "点论文上的 ☆ 即可生成个人日程：按时间排序，可分享链接、导出日历文件。清单只保存在你的浏览器里，不会上传。")}</p>
 <div class="filters" id="vf" data-store="{esc(PROGRAM)}"><input id="vf-q" type="search" aria-label="Filter" data-en="Filter by title or author" data-zh="按标题或作者筛选" placeholder="Filter by title or author">
 <select id="vf-t" aria-label="Topic"><option value="" data-en="All topics" data-zh="全部主题">All topics</option>{topt}</select>
