@@ -433,3 +433,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Program guide: personal schedule (save, share link, text, .ics, 'My list' filter). Tested in Chromium at 390 px, both languages, reload and shared link; no JS errors. One bug found in testing (text export glued EN+ZH session names) and fixed before pushing.
 - Curated 541 → 573: 32 CoRL Spotlights. Local link check over 684 pages: no broken internal links. Launch kit CoRL post mentions the schedule.
 - End: 1 star / 0 forks. Owner: CoRL week is the moment for the launch kit, if wanted. Verify run for the spotlights was in progress at end of run: check it first next run. End of run 49.
+
+## 2026-11-03 — run 50 (~04:50 UTC–)
+
+- Start: CI/Pages/intake green, verify #134 passed (the spotlights), no issues/PRs, 1 star / 0 forks. No add_repo tool; detached clone → `main` reset to `origin/main`. Tue feed not out yet.
+- Found the CoRL guide's 'Has code' filter was thin: 57 of 554 arXiv-linked papers, while 275 more had a project page. Shipped `project_code.py` (reads those pages in CI, checks repos on the GitHub API). First run: 284 papers, 64 curated, 3 min. CoRL guide 57 → 178 with code.
+- Audit by hand: all 34 links not named after the paper and the 106 named by loose match. One wrong link (DriveCritic → author's older LiRaFusion) and one blog repo rejected; age limit tightened. 60 of 64 curated code links applied (survey and 'coming soon' repos left out).
+- Curated 573 → 583 (10 picks from the 10-26..11-02 feeds, see STATE backlog). Note: a pipe into `head` under pipefail gave exit 141 after a good push; confirmed on origin.
