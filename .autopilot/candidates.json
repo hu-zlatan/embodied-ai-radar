@@ -2,6 +2,89 @@
  "updated": "2026-11-03",
  "papers": [
   {
+   "id": "2611.00455",
+   "title": "TacMind: Benchmarking and Modeling Tactile Interaction States for Robotic Manipulation",
+   "published": "2026-11-03",
+   "topics": [
+    "manipulation",
+    "tactile",
+    "datasets"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://tacmind-bench.github.io/"
+   ],
+   "comment": "Project Page: https://tacmind-bench.github.io/",
+   "authors": [
+    "Jiaxin Shi",
+    "Zibin Wu",
+    "Yichi Zhang",
+    "Jianghua Duan",
+    "Siyu Zhu",
+    "Weihao Yuan"
+   ],
+   "abstract": "Tactile sensing provides robots with direct observations of contact physics, local geometry, and interaction dynamics, making it a vital source of feedback for contact-rich manipulation. However, existing tactile manipulation studies are often developed and evaluated within specific task settings, making it difficult to systematically compare how tactile information contributes under different interaction conditions. In this work, we develop a benchmark in simulation comprising 128 tasks organized around three complementary evaluation regimes: Precise, Recognition, and Dynamic. The benchmark further includes controlled static and dynamic task variants and 12 perturbation settings for evaluating robustness under changes in visual and physical conditions. These settings motivate studying tactile information as a temporally evolving interaction representation rather than only as an instantaneous observation. We therefore propose an action-conditioned latent predictive world model that integrates tactile history and learns a tactile state through prediction of future tactile latents. Building on this representation, we design a model that conditions action generation on the learned tactile state and uses predicted future tactile information to refine candidate actions through predictive tactile reflection. Experiments on the proposed benchmark show consistent gains from incorporating tactile information across the evaluated regimes. Project Page: https://tacmind-bench.github.io/",
+   "fetched": "2026-11-03"
+  },
+  {
+   "id": "2611.00405",
+   "title": "Behavior Graphs: Unsupervised Graph Structures for Interpreting Robot Deployment Data",
+   "published": "2026-11-03",
+   "topics": [
+    "datasets"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://try.behavior-graphs.com/"
+   ],
+   "comment": "8 pages, 6 figures, 3 tables. Project website: https://try.behavior-graphs.com/",
+   "authors": [
+    "Erik Bauer",
+    "Jakob Thumm",
+    "Christopher Agia",
+    "Rohan Sinha",
+    "Chen Xu",
+    "Haruki Nishimura",
+    "Jeannette Bohg",
+    "Marco Pavone",
+    "Masha Itkina"
+   ],
+   "abstract": "Data flywheels promise continuous improvement via insights from deployment data. Understanding how the deployed model succeeds and fails can steer subsequent data collection towards patching failures and reinforcing successes. However, robot deployments create large volumes of high-dimensional rollout data, which is challenging to understand and confidently ground data collection decisions in. To make deployment data easier to analyze and act on, we propose behavior graphs, which compress policy rollouts into a single interpretable, directed graph. We construct the graphs by learning to identify similar behavior modes across rollouts, connecting the behaviors temporally, and finally linking them to outcomes. In a user study on three real-world tasks, where participants analyzed rollouts to choose a data collection strategy, 16 of 18 preferred behavior graphs to rollout videos, reaching comparable conclusions with 40.3% lower perceived temporal demand and 37.6% lower effort. Beyond interpretability for deployment data, behavior graphs are capable progress predictors: across 43 datasets, they improve the rank correlation between predicted progress and true temporal order by 22.9% and reduce mean absolute error by 53.5% relative to the strongest baseline. As the number of deployed robots grows, behavior graphs lend structure to high-dimensional policy rollouts and make deployment data easier to interpret and reason about.",
+   "fetched": "2026-11-03"
+  },
+  {
+   "id": "2611.00243",
+   "title": "OmniPiano: Diverse Dexterous Piano-Playing Challenges for Standard, Robust, Safe, and Multi-Agent RL",
+   "published": "2026-11-03",
+   "topics": [
+    "manipulation",
+    "learning",
+    "datasets"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://sail-research-lab.github.io/omnipiano/"
+   ],
+   "comment": null,
+   "authors": [
+    "Fan Xu",
+    "Fan Yang",
+    "Yifan Xu",
+    "Ruiyuan Zhang",
+    "Yimou Wu",
+    "Nuo Yi",
+    "Muning Wen",
+    "Guang Chen",
+    "Costas Spanos",
+    "Shangding Gu"
+   ],
+   "abstract": "Dexterous robotic manipulation remains a major challenge in robotics, exemplified by piano playing, which requires coordinated control of fingers and provides a demanding testbed for reinforcement learning (RL). Although previous work established a benchmark for robotic piano playing, it is restricted to two hands and does not support unified evaluation. To address this gap, we introduce OmniPiano, a benchmark that provides one to up to five Shadow Hands and supports standard, robust, safe, and multi-agent RL within a shared piano-playing task family. OmniPiano is developed for scalable and diverse piano-playing tasks with configurable perturbations, explicit safety constraints, and decentralized cooperation settings. Particularly, to facilitate usability and extendability, OmniPiano adopts a highly modular design and provides comprehensive tasks to support RL study of task performance, robustness, safety, and cooperation in dexterous control. With at least 912 task settings and 36 baseline algorithms, OmniPiano further incorporates LLM-based agents to broaden the evaluation scope and reveal new insights. Extensive evaluations show that state-of-the-art RL algorithms and frontier LLM-based agents still struggle on challenging piano-playing tasks, even under standard RL settings, highlighting substantial room for improvement in dexterous control. The code, dataset, tutorial, and demo are available at https://sail-research-lab.github.io/omnipiano/.",
+   "fetched": "2026-11-03"
+  },
+  {
    "id": "2611.03648",
    "title": "Pixel: A Co-Designed Full-Stack Robot System for Learning General-Purpose Mobile Manipulation",
    "published": "2026-11-02",
