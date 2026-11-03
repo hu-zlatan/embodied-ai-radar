@@ -41,27 +41,6 @@
    "fetched": "2026-11-03"
   },
   {
-   "id": "2611.03501",
-   "title": "When Robots Outweigh Objects: How Inertia Mismatch Shapes Robot Policy Learning",
-   "published": "2026-11-03",
-   "topics": [
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://younghyopark.me/inertia-mismatch/"
-   ],
-   "comment": "9 pages, 17 figures. Project website: https://younghyopark.me/inertia-mismatch/",
-   "authors": [
-    "Younghyo Park",
-    "Antonia Bronars",
-    "Pulkit Agrawal"
-   ],
-   "abstract": "Conventional robot arms can be extremely heavy compared with the everyday objects they manipulate, creating a significant inertia mismatch at contact. Even a small accidental bump from a heavy arm can knock a light object out of place. Modern learning methods have nevertheless demonstrated a wide range of successful manipulation behaviors on these platforms, suggesting that even extreme inertia mismatch can be overcome with sufficient data. However, it remains unclear whether high inertia imposes a hidden cost on learning, potentially worsening scaling with data or lowering the performance ceiling of modern robot learning methods. We investigate this question through controlled simulation experiments that vary robot and object masses. We find that reinforcement learning succeeds across a broad range of mass combinations, while behavior cloning learns more reliable policies when a lighter robot manipulates a heavier object, and more data narrows the resulting gap without closing it. Behavior cloning likewise degrades on a simulated robot arm as its motors reflect more inertia through their gearing, even though its weight stays the same. Finally, because new hardware is rarely an option, we explore ways to lower contact inertia on the arm one already has, either by choosing a lower-inertia workspace before collecting data or by steering the demonstrator toward lower-inertia solutions of the task. In both simulated cases, the lower-inertia demonstrations are imitated more reliably. Project website: https://younghyopark.me/inertia-mismatch/",
-   "fetched": "2026-11-03"
-  },
-  {
    "id": "2611.03307",
    "title": "Safe-Ballbot: Tilt-Consistent MPC with Control Barrier Functions for Ballbot Navigation",
    "published": "2026-11-03",
@@ -129,31 +108,6 @@
     "Jianlong Wu"
    ],
    "abstract": "Fine-grained manipulation couples instruction grounding, local visual precision, and sustained execution. We present FineCraft, a framework that adapts pretrained models for fine-grained manipulation in the MetaFine Challenge. A task-routed mixture of policies selects independently adapted DINOv2-DiT or pretrained $π_{0.5}$ policies through a common observation-action interface. Local visual features help identify the instructed object parts, demonstrations and expert continuations teach the required actions, and new observations guide replanning during execution. FineCraft ranks fourth with an overall score of $0.878$, exceeding the published reference on all five tasks. Official results and local diagnostics characterize performance across visual perturbations, instruction changes, and multi-stage manipulation. Code is available at https://github.com/eqcy/FineCraft",
-   "fetched": "2026-11-03"
-  },
-  {
-   "id": "2611.03059",
-   "title": "BeyondContact: A Reinforcement Learning Framework for Airflow-Based Non-Contact Manipulation",
-   "published": "2026-11-03",
-   "topics": [
-    "manipulation",
-    "learning"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/iit-DLSLab/BeyondContact"
-   ],
-   "project": [],
-   "comment": "Peiyu Yang and Mohamad S. Moudallal contributed equally. This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no",
-   "authors": [
-    "Peiyu Yang",
-    "Mohamad S. Moudallal",
-    "Antonio Langella",
-    "Giulio Turrisi",
-    "Victor Barasuol",
-    "Claudio Semini"
-   ],
-   "abstract": "Contact-based robotic manipulation is constrained by end-effector reachability and the mechanical properties of objects. Airflow can exert forces without direct robot-object contact, enabling manipulation of objects beyond the reach or when direct contact is undesirable. However, the lack of suitable simulation has hindered the application of reinforcement learning to airflow-based manipulation, limiting the broader adoption of this mechanism compared with contact-based methods. To address this gap, we developed a robot- and task-agnostic airflow extension for Isaac Lab that supports massively parallel training. The extension uses experimentally identified airflow models to compute the forces and torques exerted on objects. Based on this extension, we train a hybrid push-blow (HPB) policy that combines contact-based pushing with airflow manipulation and a rectangular reorientation (RR) policy that controls a cuboid's heading using airflow alone. To enable physical execution, we design a lightweight, high-speed blower that coexists with a gripper. In zero-shot real-world deployment, HPB achieves an 80% success rate over 20 trials, while RR achieves a mean absolute heading error of 2.6 degrees across four target headings. The project materials are available at https://github.com/iit-DLSLab/BeyondContact.",
    "fetched": "2026-11-03"
   },
   {
@@ -233,29 +187,6 @@
    "fetched": "2026-11-03"
   },
   {
-   "id": "2611.02613",
-   "title": "MAPO: Mixture of Experts with Alternating Policy Optimization for Universal Humanoid Motion Tracking",
-   "published": "2026-11-03",
-   "topics": [
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://mapo-corl2026.github.io/MAPO/"
-   ],
-   "comment": "21 pages",
-   "authors": [
-    "Seonghyeon Lim",
-    "Hyeonwoo Lee",
-    "Mincheol Kim",
-    "Kimin Lee",
-    "Hyun Myung"
-   ],
-   "abstract": "Universal humanoid motion tracking is essential for enabling humanoid robots to perform diverse tasks in human environments. To capture the wide diversity of human motions, mixture-of-experts (MoE) policies have been widely adopted, leveraging dynamic routing to enhance policy expressiveness. However, we identify that divergence between old and updated policies can be misestimated during policy-gradient updates of MoE policies, due to their dynamic routing. Because most policy-gradient algorithms regulate policy updates based on the divergence, this misestimation can lead to either overly conservative or excessively large updates, which can yield a suboptimal policy. In this paper, we propose Mixture of Experts with Alternating Policy Optimization (MAPO), which alternately optimizes the router and the experts to avoid the divergence misestimation. MAPO consistently tracks 182 motions that PPO with MoE fails to track, whereas PPO with MoE tracks only one motion that MAPO fails to track. MAPO also attains the highest tracking success rate among the compared methods and the lowest tracking error across most error metrics, demonstrating its superior performance. Videos can be found on the project website: https://mapo-corl2026.github.io/MAPO/",
-   "fetched": "2026-11-03"
-  },
-  {
    "id": "2611.02076",
    "title": "Scene-Adaptive Readout and Decoding in Diffusion Driving VLAs",
    "published": "2026-11-03",
@@ -299,52 +230,6 @@
    "fetched": "2026-11-03"
   },
   {
-   "id": "2611.01565",
-   "title": "Beyond Validation Loss: Coverage and Reliability Dynamics in Robot Policy Pretraining",
-   "published": "2026-11-03",
-   "topics": [
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://zhanyisun.github.io/robot-policy-learning-dynamics/"
-   ],
-   "comment": null,
-   "authors": [
-    "Zhanyi Sun",
-    "Max Simchowitz",
-    "Shuran Song"
-   ],
-   "abstract": "In modern robot learning, generative robot policies are first pretrained through supervised learning from demonstrations, then refined through reinforcement learning, supervised finetuning, or other forms of posttraining. Yet conventional pretraining metrics, such as validation loss and average task success, provide an incomplete account of which policies support both effective direct deployment and subsequent posttraining. In this work, we study closed-loop pass@k, which evaluates the probability that k rollouts from the same initial condition attain at least one success. Thus, pass@1 measures mean task success; large-k pass@k measures whether success remains reachable under repeated sampling. Across a wide range of posttraining recipes, we show that large-k pass@k reveals posttraining differences not captured by pass@1. In particular, checkpoints with similar pass@1 but different large-k pass@k have different posttraining performance. Moreover, we show pass@k peaks at different checkpoints during supervised pretraining, revealing a coverage-reliability tradeoff over the course of training. Based on these observations, we propose two practical interventions: (1) a purely offline checkpoint-selection criterion that balances coverage and reliability without closed-loop evaluation, and (2) a generative data augmentation procedure that expands supervision beyond the finite demonstration set, preserving large-k pass@k while maintaining or improving pass@1 and raising the observed coverage-reliability Pareto frontier. Together, our results motivate evaluation, checkpoint selection, and training procedures that explicitly account for posttraining. Blog post, visualizations, and code are available at https://zhanyisun.github.io/robot-policy-learning-dynamics/.",
-   "fetched": "2026-11-03"
-  },
-  {
-   "id": "2611.01483",
-   "title": "$TF^2$-Steering: Action Refinement with Tactile Forecasts and Feedback via Velocity-Field Steering",
-   "published": "2026-11-03",
-   "topics": [
-    "manipulation",
-    "tactile"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://yiming-cc.github.io/tf2-steering/"
-   ],
-   "comment": "19 pages, 6 figures. Project page: https://yiming-cc.github.io/tf2-steering/",
-   "authors": [
-    "Yiming Chen",
-    "Xiaofei Wei",
-    "Chun Gu",
-    "Wei Xiao",
-    "Peidong Liu",
-    "Li Zhang"
-   ],
-   "abstract": "Tactile sensing plays a crucial role in everyday human interaction. Consider inserting a plug into a tight socket, vision alone provides limited guidance during the final insertion stage, and we instead rely on both anticipated contact and realized tactile feedback to ajust the insertion motion. The same capability is equally important for robots, particularly in dexterous manipulation tasks. Yet many contemporary robot policies remain vision-dominant. This visual bias, compounded by limited tactile data and sparse contact events, can cause directly incorporated tactile signals to be ignored or even compromise the policy's pretrained capabilities, yielding degrading performance as observed in our experiments. We present $TF^2$-Steering, which refines actions via learned residual steering of the flow-matching action expert's velocity field, using a tactile mixture-of-experts architecture to integrate both tactile forecasts and real-time tactile feedback. Together with specific designed three stages training recipe, $TF^2$-Steering enables tactile signals to correct and, when necessary, redirect the flow-matching action-generation process, while building on the strong action-generation capacity of the vision-based foundation policy. Extensive experiments across six simulated and six real-world manipulation tasks demonstrate the effectiveness of $TF^2$-Steering. It outperforms the strongest evaluated baselines by 10.7 percentage points in average simulation success rate and 9.1 percentage points in average real-world progress success rate. Project page: https://yiming-cc.github.io/tf2-steering/.",
-   "fetched": "2026-11-03"
-  },
-  {
    "id": "2611.01442",
    "title": "Dual Path Following for an Aerial Manipulator Under State and Input Constraints via Transverse Feedback Linearization",
    "published": "2026-11-03",
@@ -360,57 +245,6 @@
     "Adeel Akhtar"
    ],
    "abstract": "This paper studies dual path following for a quadrotor carrying a three-degree-of-freedom arm. The center of mass of the combined system must follow a vehicle path and the end effector must follow a second path, while the arm respects its joint limits and avoids its singular postures. The vehicle and the arm are mechanically coupled, so one controller must handle both paths. With the center of mass and the end-effector path coordinates as outputs, and a dynamic extension of the thrust, the system admits a normal form without internal dynamics. We characterize the states where this normal form fails. We formulate the transverse feedback linearizing controller as a quadratic program that relaxes only the speed of the end effector along its path and imposes safety and actuator limits as inequality constraints. The program reduces to a scalar problem with a closed-form solution. If it remains strictly feasible for all time, the feedback is locally Lipschitz, both paths are invariant and attractive, and every constraint holds. In the physics engine Drake, the controller resolves a conflict between the two speed references by slowing the end effector while both paths remain invariant. By contrast, a cascade with a safety filter leaves both paths. Code and animations are available at https://gradslab.github.io/am_dual_pf-/",
-   "fetched": "2026-11-03"
-  },
-  {
-   "id": "2611.01190",
-   "title": "ClothDojo: Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding",
-   "published": "2026-11-03",
-   "topics": [
-    "manipulation",
-    "datasets"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://clothdojo.github.io/"
-   ],
-   "comment": "8 pages, 6 figures, 7 tables. Project page: https://clothdojo.github.io/",
-   "authors": [
-    "Zilong Huang",
-    "Zipeng Ye",
-    "Caicheng Wang",
-    "Yuchen Xie",
-    "Jiaxiang Luo"
-   ],
-   "abstract": "Garment flattening and folding require robots to identify garment structure during manipulation and adapt their actions as the cloth deforms. We present ClothDojo, a simulation platform that generates adaptive manipulation trajectories at scale across diverse garments and initial states and evaluates policies in closed loop. ClothDojo encodes each garment's canonical mesh coordinates as an NOCS texture, providing canonical surface-position cues through the visual interface of a pretrained vision-language-action model. We fine-tune the model on human demonstrations and corrections to obtain a data-generation policy. The policy autonomously generates simulated manipulation trajectories, and we retain rollouts that satisfy task-specific success criteria. Each retained trajectory is re-rendered under a randomly sampled appearance to provide RGB observations for downstream policies that do not receive NOCS. Across both tasks, the policy produces nearly 8,000 successful trajectories over hundreds of garments. RGB policies trained on these generated trajectories outperform those trained directly on the original human demonstrations and corrections across all evaluated garment splits and appearance settings. Evaluations across multiple policy models show that overall performance and appearance robustness vary across models and tasks, while generalization to unseen garments remains a common challenge.",
-   "fetched": "2026-11-03"
-  },
-  {
-   "id": "2611.00957",
-   "title": "Evaluating Tactile Foundation Models for End-to-End Imitation Learning in Contact-Rich Manipulation",
-   "published": "2026-11-03",
-   "topics": [
-    "manipulation",
-    "tactile",
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://mmurooka.github.io/tfm4il-project-page/"
-   ],
-   "comment": "Accepted for the 2027 IEEE/SICE International Symposium on System Integration (SII 2027)",
-   "authors": [
-    "Masaki Murooka",
-    "Ryoichi Nakajo",
-    "Tomohiro Motoda",
-    "Koshi Makihara",
-    "Hanbit Oh",
-    "Keisuke Shirai",
-    "Yukiyasu Domae"
-   ],
-   "abstract": "Tactile sensing plays an important role in imitation learning for contact-rich manipulation by providing direct observations of physical contact with objects. Recently, several tactile foundation models (TFMs) have been proposed to learn general-purpose tactile representations through pretraining on large-scale tactile datasets. However, how these pretrained tactile representations should be leveraged for end-to-end imitation learning remains insufficiently explored. In this work, we integrate multiple TFMs into Diffusion Policy and systematically evaluate their effectiveness for contact-rich manipulation under common experimental settings. We further investigate adaptation strategies, including encoder fine-tuning and task-specific mid-training, to understand how pretrained tactile representations can be effectively used for downstream imitation learning. Through extensive evaluation across diverse manipulation tasks in both real-world and simulation environments, including more than 5,000 real-world policy rollouts, we provide empirical insights into the use of TFMs for end-to-end imitation learning. Project page: https://mmurooka.github.io/tfm4il-project-page/",
    "fetched": "2026-11-03"
   },
   {
@@ -525,33 +359,6 @@
     "Leslie Pack Kaelbling"
    ],
    "abstract": "When searching for an object, humans naturally combine semantic intuition - reasoning about where the object is likely to be stored - with geometric awareness of what parts of the space are visible, occluded, or unexplored. Effective robot object search requires the same joint reasoning, yet existing methods rely on only one: geometric methods maintain principled spatial beliefs but lack deep semantic understanding, while language-model based methods leverage commonsense knowledge but maintain no explicit belief over space. We argue that jointly reasoning over semantic and geometric evidence in an explicit 3D belief enables human-like interactive object search that outperforms either modality alone. To test this claim, we build a system that accumulates per-object VLM plausibility scores and geometric occupancy evidence via Bayesian log-odds filtering into a unified 3D voxel belief field. High-belief regions in the combined belief field drive action selection at each step: taking a closer look from a different viewpoint, navigating toward an unexplored region of the workspace, or physically interacting with a closed cabinet. We deploy this system end-to-end on a bimanual mobile humanoid and find that it outperforms geometry-only search and LLM-based planning methods. Project website - https://skymanaditya1.github.io/objsearch-website/",
-   "fetched": "2026-11-03"
-  },
-  {
-   "id": "2611.00405",
-   "title": "Behavior Graphs: Unsupervised Graph Structures for Interpreting Robot Deployment Data",
-   "published": "2026-11-03",
-   "topics": [
-    "datasets"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://try.behavior-graphs.com/"
-   ],
-   "comment": "8 pages, 6 figures, 3 tables. Project website: https://try.behavior-graphs.com/",
-   "authors": [
-    "Erik Bauer",
-    "Jakob Thumm",
-    "Christopher Agia",
-    "Rohan Sinha",
-    "Chen Xu",
-    "Haruki Nishimura",
-    "Jeannette Bohg",
-    "Marco Pavone",
-    "Masha Itkina"
-   ],
-   "abstract": "Data flywheels promise continuous improvement via insights from deployment data. Understanding how the deployed model succeeds and fails can steer subsequent data collection towards patching failures and reinforcing successes. However, robot deployments create large volumes of high-dimensional rollout data, which is challenging to understand and confidently ground data collection decisions in. To make deployment data easier to analyze and act on, we propose behavior graphs, which compress policy rollouts into a single interpretable, directed graph. We construct the graphs by learning to identify similar behavior modes across rollouts, connecting the behaviors temporally, and finally linking them to outcomes. In a user study on three real-world tasks, where participants analyzed rollouts to choose a data collection strategy, 16 of 18 preferred behavior graphs to rollout videos, reaching comparable conclusions with 40.3% lower perceived temporal demand and 37.6% lower effort. Beyond interpretability for deployment data, behavior graphs are capable progress predictors: across 43 datasets, they improve the rank correlation between predicted progress and true temporal order by 22.9% and reduce mean absolute error by 53.5% relative to the strongest baseline. As the number of deployed robots grows, behavior graphs lend structure to high-dimensional policy rollouts and make deployment data easier to interpret and reason about.",
    "fetched": "2026-11-03"
   },
   {
