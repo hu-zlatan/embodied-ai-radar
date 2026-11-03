@@ -1256,3 +1256,43 @@
   tags: [agentic, code-as-policy, play]
   takeaway_en: "CoRL 2026 Spotlight. RATs, teams of embodied coding agents, propose exploratory tasks and learn skills through self-directed play before any downstream task arrives."
   takeaway_zh: "CoRL 2026 Spotlight。具身编程智能体团队 RATs 在下游任务到来之前，自行提出探索任务，并通过自主玩耍学习技能。"
+
+- title: "ResMerge: Residual Policy Learning and Merging for Continual Adaptation of Pre-trained Robot Policies"
+  type: paper
+  arxiv: "2610.41663"
+  year: 2026
+  code: https://github.com/ResMerge/resmerge-official
+  project: https://resmerge.github.io/
+  added: 2026-11-03
+  tags: [vla, continual-learning, residual-rl]
+  takeaway_en: "Adapts a frozen pre-trained policy with residual RL instead of new demos, then merges compatible residuals to cut stored parameters; tested on LIBERO and a real Franka."
+  takeaway_zh: "在冻结的预训练策略上用残差强化学习适配新任务（无需新演示），再合并相容的残差以减少参数；在 LIBERO 与真实 Franka 上验证。"
+
+- title: "STAR: Steering Action Representations during Inference"
+  type: paper
+  arxiv: "2610.41009"
+  year: 2026
+  code: https://github.com/PKU-VaLuE-Lab/STAR
+  added: 2026-11-03
+  tags: [vla, inference-time]
+  takeaway_en: "A training-free tweak for pre-trained VLAs: an EMA over late-layer updates keeps object-aware directions near the action output; reports about 4 points higher average task success."
+  takeaway_zh: "面向预训练 VLA 的免训练方法：对后层残差更新做 EMA，让靠近动作输出的表征保留物体感知方向；报告平均任务成功率提升约 4 个百分点。"
+
+- title: "HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model"
+  type: paper
+  arxiv: "2610.40373"
+  year: 2026
+  added: 2026-11-03
+  tags: [vla, foresight, world-model]
+  takeaway_en: "Jointly predicts short-term states, semantic milestones and goal states across horizons, then lets the action query retrieve only the relevant parts of that imagined future."
+  takeaway_zh: "跨时间尺度联合预测短期状态、语义里程碑与目标状态，再由动作查询从中检索相关的未来表征。"
+
+- title: "RoboDoctor: Training-Free Recursive Self-Improvement for Robot Policies"
+  type: paper
+  arxiv: "2610.35604"
+  year: 2026
+  project: https://robodoctor-rsi.github.io/
+  added: 2026-11-03
+  tags: [agents, policy-execution, self-improvement]
+  takeaway_en: "Keeps model weights fixed and adapts during execution: an agent diagnoses, intervenes and stores linked experience records, revising how the policy is used rather than the policy."
+  takeaway_zh: "不改模型权重，在执行中适配：智能体负责诊断、干预并保存关联的经验记录，修订的是策略的使用方式而非策略本身。"
