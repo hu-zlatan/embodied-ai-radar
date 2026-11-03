@@ -454,4 +454,6 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 
 - Start: CI/Pages/intake green, no issues/PRs. **Verify #137 (run 51's picks) had failed**: DiffContact title changed on arXiv, OpenNWM project page 404, robocolosseum.ai 401. Live site was unaffected (verify does not gate deploys), but three facts were wrong or unconfirmed for ~6 hours.
 - Fixed: DiffContact title updated to arXiv's; OpenNWM's dead project link replaced by its repo, now live; RoboColosseum project link removed from the curated entry because it answers 401 to CI and the reason could not be checked (it is the link the paper gives; restore when public).
+- CoRL guide: 'Most-starred code' top 10 with session or poster number (no overflow at 390 px, no JS errors). HF list dropped: only 3 CoRL papers had upvotes.
+- Curated 604 → 612: 8 picks from the 11-03 feed. Project links come from the papers and could not be opened from here, so the verify run on this push decides.
 

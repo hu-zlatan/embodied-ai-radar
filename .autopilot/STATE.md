@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-03 ~11:15 UTC, run 51; 11-03 feed repaired (RSS empty at 07:50) and 21 picks, 604 curated; repo has 1 star._
+_Last updated: 2026-11-03 ~17:15 UTC, run 52; verify #137 failures fixed, CoRL guide most-starred list, 8 picks, 612 curated; repo has 1 star._
 
 ## Status
 
@@ -58,6 +58,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 52: verify #137 failed on run 51's picks, fixed. RoboColosseum `project:` removed (robocolosseum.ai answered 401 to CI; WebFetch has no access either): restore https://robocolosseum.ai/ when it answers. An arXiv title can change after picking (DiffContact): verify fails until the curated title is updated. CoRL guide has a 'Most-starred code' list (`program_signals`, top 10); a Hugging Face list was tried and dropped, only 3 papers had upvotes. Picks: When Robots Outweigh Objects, Beyond Validation Loss, Behavior Graphs → learning; tactile foundation model evaluation, TF2-Steering → tactile; BeyondContact → manipulation; MAPO → locomotion; ClothDojo → datasets. Add `code:` once live: VLALagBench, zebehn/vla-start-suppression, MINT-SJTU/CTR. Next: Wed 11-04 feed; W45 digest intro Mon 11-09.
 
 - Run 51: picks from the 11-03 announcement (156 papers): RoboColosseum (highlight), uni-robot-agent, Auriga, VLALagBench, HeLM → vla; Pixel (highlight), KlaskTron → hardware; Pixel-UMI, ForceLDM, TAMPAgent → manipulation; PanoTac, TacMind → tactile; HuG, EPO → locomotion; OpenNWM, pico-WAM, Xiaomi Auto WM 2.0 → world-models; DexArena, OmniPiano, Rollout then Recycle → datasets; D&A → learning. Add `code:` once live: VLALagBench (codestrongestx/VLALagBench), OpenNWM (OpenSpace-Lab/OpenNWM), both 404 at stats time. KlaskTron also has klask_software. Maybe later: Leap-VLA, Anchor 1 (Archon Robotics), ClothDojo, Behavior Graphs, Does Validation Loss Predict Real-Robot Success?, Beyond Validation Loss, Reflex, W2A, ReContact. Next: Wed 11-04 feed; W45 digest intro Mon 11-09; CoRL starts 11-09.
 
