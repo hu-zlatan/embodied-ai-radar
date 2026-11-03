@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02",
+ "updated": "2026-11-03",
  "papers": [
   {
    "id": "2610.31162",
@@ -89,31 +89,9 @@
    "ai_summary": "The model co-generates video and 3D motion for arbitrary skeletons via cross-attention with a pretrained video generator, enabling scene-registered animation and bidirectional video-motion conversion."
   },
   {
-   "id": "2610.18604",
-   "title": "LLM2R: From Large Language Models to 3D Reassemblers",
-   "upvotes": 25,
-   "hf_date": "2026-10-21",
-   "published": "2026-10-13",
-   "topics": [],
-   "authors": [
-    "Zhouhan Zhong",
-    "Qiuhong Shen",
-    "Xingyi Yang",
-    "Jinyi Xu",
-    "Xinchao Wang"
-   ],
-   "organization": "National University of Singapore",
-   "github": null,
-   "project": null,
-   "arxiv_code": [],
-   "comment": "20 pages, 5 figures, 7 tables",
-   "abstract": "3D part assembly aims to reconstruct a complete shape from a set of unassembled parts by predicting a rigid SE(3) transformation for each part. Because the placement of a part is rarely determined by its own geometry, the task demands reasoning over the entire part set, and existing methods, which rely on pairwise relations or iterative generation and verification, scale poorly to objects with many parts. We present LLM2R, which casts part assembly as sequence modeling with a pretrained decoder-only large language model (LLM): a Point-BERT encoder and a Q-Former compress each part into a block of geometric tokens, the blocks of all parts are concatenated, and a causal LLM adapted with Low-Rank Adaptation (LoRA) processes the sequence in one forward pass. Causal attention, however, lets the hidden states of a part observe only the parts that precede it. LLM2R therefore appends a block of learnable summary tokens after the last part: these tokens follow every part, so their states aggregate the whole assembly at a constant token cost, and a part-aware pose head fuses each part's states with them before predicting its rotation and translation. One architecture thus handles semantic and geometric assembly and predicts all poses in a single non-autoregressive pass. LLM2R achieves the highest part accuracy and success rate on all three PartNet categories, the best rotation error, translation error, and part accuracy on PartNeXt, and the lowest translation error and fastest inference on Breaking Bad, where only a fracture-specialized method is more accurate. Its advantage grows with the number of parts: at 100 parts it exceeds GARF by 33.5 points in part accuracy on Breaking Bad and Assembler by 29.1 points on PartNet, and it transfers zero-shot to unseen categories with more than 16 points higher part accuracy than the strongest of three baselines.",
-   "ai_summary": "LLM2R treats 3D part assembly as sequence modeling with a pretrained decoder-only LLM, using geometric tokens and learnable summary tokens to predict all part poses in a single pass with improved scalability and accuracy."
-  },
-  {
    "id": "2610.40373",
    "title": "HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model",
-   "upvotes": 23,
+   "upvotes": 26,
    "hf_date": "2026-11-02",
    "published": "2026-10-30",
    "topics": [
@@ -135,6 +113,28 @@
    "comment": null,
    "abstract": "Vision-Language-Action (VLA) models have demonstrated promising capabilities in robotic manipulation by integrating visual perception, language understanding, and action generation. Recent advances have further incorporated future prediction to enhance the understanding of environmental dynamics and task progression. However, existing methods often model short-term dynamics and long-term task objectives separately, while directly incorporating predicted futures into action policies without sufficiently considering their relevance to current action requirements. To address these limitations, we propose HiFOR, a hierarchical foresight framework with action-guided world retrieval. Specifically, Hierarchical Foresight Prediction jointly predicts short-term state evolution, semantic milestones, and final goal states through a Hierarchical Dependency Mask (HDM), establishing dependencies across temporal horizons. Building upon these predictions, Structure-Aware Latent World Modeling organizes future latent representations along the horizon, view, and spatial dimensions to facilitate fine-grained retrieval. Furthermore, Action-Guided Factorized World Retrieval adaptively retrieves relevant future information from the structured latent world based on evolving action representations during denoising, providing targeted guidance for action generation. Extensive experiments on two simulation benchmarks and six real-world robotic manipulation tasks demonstrate the effectiveness of our approach.",
    "ai_summary": "HiFOR improves robotic manipulation by hierarchically predicting future states and retrieving relevant future information to guide action generation."
+  },
+  {
+   "id": "2610.18604",
+   "title": "LLM2R: From Large Language Models to 3D Reassemblers",
+   "upvotes": 25,
+   "hf_date": "2026-10-21",
+   "published": "2026-10-13",
+   "topics": [],
+   "authors": [
+    "Zhouhan Zhong",
+    "Qiuhong Shen",
+    "Xingyi Yang",
+    "Jinyi Xu",
+    "Xinchao Wang"
+   ],
+   "organization": "National University of Singapore",
+   "github": null,
+   "project": null,
+   "arxiv_code": [],
+   "comment": "20 pages, 5 figures, 7 tables",
+   "abstract": "3D part assembly aims to reconstruct a complete shape from a set of unassembled parts by predicting a rigid SE(3) transformation for each part. Because the placement of a part is rarely determined by its own geometry, the task demands reasoning over the entire part set, and existing methods, which rely on pairwise relations or iterative generation and verification, scale poorly to objects with many parts. We present LLM2R, which casts part assembly as sequence modeling with a pretrained decoder-only large language model (LLM): a Point-BERT encoder and a Q-Former compress each part into a block of geometric tokens, the blocks of all parts are concatenated, and a causal LLM adapted with Low-Rank Adaptation (LoRA) processes the sequence in one forward pass. Causal attention, however, lets the hidden states of a part observe only the parts that precede it. LLM2R therefore appends a block of learnable summary tokens after the last part: these tokens follow every part, so their states aggregate the whole assembly at a constant token cost, and a part-aware pose head fuses each part's states with them before predicting its rotation and translation. One architecture thus handles semantic and geometric assembly and predicts all poses in a single non-autoregressive pass. LLM2R achieves the highest part accuracy and success rate on all three PartNet categories, the best rotation error, translation error, and part accuracy on PartNeXt, and the lowest translation error and fastest inference on Breaking Bad, where only a fracture-specialized method is more accurate. Its advantage grows with the number of parts: at 100 parts it exceeds GARF by 33.5 points in part accuracy on Breaking Bad and Assembler by 29.1 points on PartNet, and it transfers zero-shot to unseen categories with more than 16 points higher part accuracy than the strongest of three baselines.",
+   "ai_summary": "LLM2R treats 3D part assembly as sequence modeling with a pretrained decoder-only LLM, using geometric tokens and learnable summary tokens to predict all part poses in a single pass with improved scalability and accuracy."
   },
   {
    "id": "2610.20609",
@@ -165,6 +165,40 @@
    "comment": "Accepted at CoRL 2026. Project page: https://safedrive-vla.github.io/SafeDriveVLA/",
    "abstract": "Vision-Language-Action (VLA) models are gaining attention in autonomous driving, inheriting commonsense priors from large language models (LLMs) and widening the navigation interface from a fixed command set to free-form natural-language instructions. However, this open-ended interface exposes a new vulnerability surface: an inattentive driver may issue instructions that are unsafe given the current scene, and a malicious user may issue dangerous ones on purpose. We present the first benchmark suite that evaluates navigation following and conflict awareness together, along with adversarial robustness. Existing VLAs fall short on both: SimLingo completes no language-instructed lane change in closed loop, and all models degrade sharply under conflicting signals. We propose SafeDriveVLA, the first driving VLA that (1) explicitly predicts a three-level navigation-compliance mode to decouple conflict reasoning from action generation, and (2) uses navigation-conditioned world model dreaming to inform this prediction. Unlike prior world models that roll out expert or planned actions, ours dreams of strictly following the navigation signal, showing when following is safe. SafeDriveVLA reaches 88.16 Driving Score (DS) and 68.64% Success Rate (SR) on Bench2Drive, lifts closed-loop language following by 49.3% and reduces collisions under unsafe instructions from 60 to 38 compared to the best SimLingo variant. Video demonstrations are available on our project page.",
    "ai_summary": "SafeDriveVLA improves autonomous driving by predicting navigation compliance and using world-model dreaming to avoid unsafe instructions, outperforming existing vision-language-action models."
+  },
+  {
+   "id": "2610.39287",
+   "title": "OpenFlyV2: An onboard vision-language-action model for aerial perception and navigation",
+   "upvotes": 8,
+   "hf_date": "2026-10-30",
+   "published": "2026-10-30",
+   "topics": [
+    "vla",
+    "navigation"
+   ],
+   "authors": [
+    "Junli Liu",
+    "Zhongrui You",
+    "Chenhui Li",
+    "Zhen Li",
+    "Yuyang Tian",
+    "Qizhen Chen",
+    "Delin Qu",
+    "Haoming Song",
+    "Dong Wang",
+    "Xuelong Li",
+    "Zhigang Wang",
+    "Bin Zhao"
+   ],
+   "organization": "IPEC at Shanghai AI Laboratory",
+   "github": "https://github.com/Ideal-ljl/AeroBrain",
+   "project": "https://ideal-ljl.github.io/AeroBrain/",
+   "arxiv_code": [
+    "https://github.com/Ideal-ljl/AeroBrain"
+   ],
+   "comment": "12page, 6figures",
+   "abstract": "Human cognition flexibly draws on a shared perceptual foundation to understand environments, attend to referenced entities, reason about spatial relationships, and act. Endowing aerial robots with an analogous functional organization remains challenging, as existing systems are often specialized for individual capabilities, dependent on offboard computation, or unable to sustain closed-loop operation on resource-constrained platforms. We present OpenFlyV2, a unified onboard vision-language-action architecture that uses a shared vision-language representation to support semantic understanding, language-grounded perception, spatial reasoning, and continuous aerial control within a single model. A compact action expert converts the shared multimodal context into short-horizon flight waypoints, while motion-aware temporal memory and action priors reduce the computational cost of closed-loop execution. We construct , a simulation-based dataset comprising approximately 70,000 navigation trajectories and 60,000 vision-language instruction--response pairs. OpenFlyV2 generates action chunks, each comprising 12 waypoints, entirely onboard at 10 Hz using an NVIDIA Jetson Orin NX. It transfers zero-shot from simulation to physical quadrotor flight, achieving a 48\\% navigation success rate across four real-world environments without real-world aerial training data. Extensive results demonstrate that broad vision-language competence and continuous closed-loop flight can coexist within a single model on a resource-constrained aerial platform. Code will be made publicly available at https://github.com/Ideal-ljl/AeroBrain.",
+   "ai_summary": "OpenFlyV2 is a unified onboard vision-language-action model that enables real-time aerial navigation and reasoning on resource-constrained hardware using shared multimodal representations."
   },
   {
    "id": "2610.33718",
@@ -212,40 +246,6 @@
    "ai_summary": "HoloBoxing learns humanoid boxing by combining a frozen whole-body controller with a compact planner that predicts body-point targets, using imitation initialization and reinforcement learning to refine interaction behavior with minimal additional training."
   },
   {
-   "id": "2610.39287",
-   "title": "OpenFlyV2: An onboard vision-language-action model for aerial perception and navigation",
-   "upvotes": 7,
-   "hf_date": "2026-10-30",
-   "published": "2026-10-30",
-   "topics": [
-    "vla",
-    "navigation"
-   ],
-   "authors": [
-    "Junli Liu",
-    "Zhongrui You",
-    "Chenhui Li",
-    "Zhen Li",
-    "Yuyang Tian",
-    "Qizhen Chen",
-    "Delin Qu",
-    "Haoming Song",
-    "Dong Wang",
-    "Xuelong Li",
-    "Zhigang Wang",
-    "Bin Zhao"
-   ],
-   "organization": "IPEC at Shanghai AI Laboratory",
-   "github": "https://github.com/Ideal-ljl/AeroBrain",
-   "project": "https://ideal-ljl.github.io/AeroBrain/",
-   "arxiv_code": [
-    "https://github.com/Ideal-ljl/AeroBrain"
-   ],
-   "comment": "12page, 6figures",
-   "abstract": "Human cognition flexibly draws on a shared perceptual foundation to understand environments, attend to referenced entities, reason about spatial relationships, and act. Endowing aerial robots with an analogous functional organization remains challenging, as existing systems are often specialized for individual capabilities, dependent on offboard computation, or unable to sustain closed-loop operation on resource-constrained platforms. We present OpenFlyV2, a unified onboard vision-language-action architecture that uses a shared vision-language representation to support semantic understanding, language-grounded perception, spatial reasoning, and continuous aerial control within a single model. A compact action expert converts the shared multimodal context into short-horizon flight waypoints, while motion-aware temporal memory and action priors reduce the computational cost of closed-loop execution. We construct , a simulation-based dataset comprising approximately 70,000 navigation trajectories and 60,000 vision-language instruction--response pairs. OpenFlyV2 generates action chunks, each comprising 12 waypoints, entirely onboard at 10 Hz using an NVIDIA Jetson Orin NX. It transfers zero-shot from simulation to physical quadrotor flight, achieving a 48\\% navigation success rate across four real-world environments without real-world aerial training data. Extensive results demonstrate that broad vision-language competence and continuous closed-loop flight can coexist within a single model on a resource-constrained aerial platform. Code will be made publicly available at https://github.com/Ideal-ljl/AeroBrain.",
-   "ai_summary": "OpenFlyV2 is a unified onboard vision-language-action model that enables real-time aerial navigation and reasoning on resource-constrained hardware using shared multimodal representations."
-  },
-  {
    "id": "2610.31716",
    "title": "Does LeWorldModel Preserve Local Action Geometry?",
    "upvotes": 6,
@@ -280,6 +280,11 @@
    "id": "2610.30108",
    "title": "Multimodal Embodied Agents: A Unified Capability-centric Perspective from Computer-Use to Robot-Use",
    "code": "https://github.com/showlab/Awesome-Multimodal-Embodied-Agent"
+  },
+  {
+   "id": "2610.41216",
+   "title": "TinyAstral: Transferring Self-Evolving Harnesses to Tiny Generalist Manipulation Agents",
+   "code": "https://github.com/Garfield-kh/TinyAstral"
   },
   {
    "id": "2610.42141",
