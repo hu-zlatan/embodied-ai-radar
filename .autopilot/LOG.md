@@ -465,3 +465,5 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - QA: internal links 0 broken across 724 pages; 9 main pages clean at phone width (no overflow, no JS errors).
 - Gap sweep against an external VLA list: 13 missing anchors added with facts read from arXiv/HF/official pages; 5 picks from candidates.json; 4 code links. Curated: 630.
 - CI: `scripts/check_links.py` step added so internal link breaks fail the build.
+- verify #141 passed (all new IDs, titles and links). CI green with the link check.
+- End: 1 star / 0 forks, no issues/PRs. Owner: post the CoRL program text by Sun 11-08 if wanted. Next: Wed 11-04 feed; more gap sweeps; W45 digest intro Mon 11-09. End of run 53.
