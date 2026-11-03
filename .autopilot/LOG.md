@@ -459,3 +459,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Verify #138 (the three fixes) passed. #139 (the picks) was cancelled while pending, as a newer run in the `arxiv-api` group replaced it, so the push had no check; re-dispatched as #140, passed, all 8 project and code links good. **Watch for this:** a 'cancelled' verify means the push was not checked.
 - End: see the summary to the owner. Not fixed: verify still has no retry when cancelled. End of run 52.
 
+## 2026-11-03 — run 53 (~22:50 UTC–)
+
+- Start: CI/Pages/intake/repo-stats/verify green, no issues/PRs (GitHub MCP), 1 star / 0 forks (search API). No add_repo tool; clone was detached → `main` reset to `origin/main`. No new feed until Wed 11-04.
+- QA: internal links 0 broken across 724 pages; 9 main pages clean at phone width (no overflow, no JS errors).
+- Gap sweep against an external VLA list: 13 missing anchors added with facts read from arXiv/HF/official pages; 5 picks from candidates.json; 4 code links. Curated: 630.
+- CI: `scripts/check_links.py` step added so internal link breaks fail the build.

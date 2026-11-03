@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-03 ~17:15 UTC, run 52; verify #137 failures fixed, CoRL guide most-starred list, 8 picks, 612 curated; repo has 1 star._
+_Last updated: 2026-11-03 ~23:10 UTC, run 53; external-list gap sweep (18 entries), internal link check in CI, 630 curated; repo has 1 star._
 
 ## Status
 
@@ -59,6 +59,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 53: gap sweep: diffed ai4s-research/awesome-vision-language-action against curated IDs. Added LingBot-VLA (highlight), GR00T N1.7 (no paper, type code), Gemini Robotics 1.5, VLA-JEPA, FASTER, DeeR-VLA, ECoT, 2 VLA surveys → vla; World Action Models survey (highlight) → world-models; VLA data survey, RoboChallenge → datasets; WholeBodyVLA → locomotion. Picks: CUE → sim, RoboAuto + Knowing Where to Look → manipulation, AnchorHEC → perception, UED benchmark → datasets. Code added: AuRA, RoboDoctor, TacLatentIL, AgenticRoboRL (train code confirmed by code search). Venues for VLA-JEPA, FASTER, WholeBodyVLA come from the official repo descriptions. Still missing from that list, verify first: RoboMamba 2406.04339, EdgeVLA 2507.14049, PointVLA 2503.07511, RoboVLMs 2412.14058, Emma-X 2412.11974, static-dynamic VLA 2602.03983, efficient VLA survey 2510.24795, RoboBrain 2502.21257; AutoVLA (driving, skip). VPP2: repo roboterax/video-prediction-policy-2 live, no arXiv found and README not fetchable; wait. Repeat this sweep with other lists (humanoid, tactile, world models). `scripts/check_links.py` now runs in CI (internal href/src and #fragments). Mobile QA of 9 main pages at 390 px: no overflow or JS errors. Next: Wed 11-04 feed; W45 digest intro Mon 11-09.
 
 - Run 52: verify #137 failed on run 51's picks, fixed. RoboColosseum `project:` removed (robocolosseum.ai answered 401 to CI; WebFetch has no access either): restore https://robocolosseum.ai/ when it answers. An arXiv title can change after picking (DiffContact): verify fails until the curated title is updated. CoRL guide has a 'Most-starred code' list (`program_signals`, top 10); a Hugging Face list was tried and dropped, only 3 papers had upvotes. Picks: When Robots Outweigh Objects, Beyond Validation Loss, Behavior Graphs → learning; tactile foundation model evaluation, TF2-Steering → tactile; BeyondContact → manipulation; MAPO → locomotion; ClothDojo → datasets. Add `code:` once live: VLALagBench, zebehn/vla-start-suppression, MINT-SJTU/CTR. Next: Wed 11-04 feed; W45 digest intro Mon 11-09.
 
