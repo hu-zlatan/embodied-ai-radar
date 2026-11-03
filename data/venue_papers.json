@@ -1,7 +1,177 @@
 {
- "updated": "2026-11-02",
+ "updated": "2026-11-03",
  "source": "arXiv API (metadata CC0)",
  "papers": [
+  {
+   "id": "2611.03548",
+   "title": "Mediating Human-Swarm Interactions Through a Robot Helper: A Shepherding-Inspired Approach",
+   "authors": [
+    "Arihant Yadav",
+    "Sophie Jörg",
+    "Eakta Jain"
+   ],
+   "abstract": "This work investigates human-swarm interaction (HSI) for steering large collectives through an intermediary robot helper. While prior robot-swarm control and HSI techniques commonly assume swarm members are addressable, these assumptions often fail for ``ungovernable'' swarms such as wildlife flocks and schools of fish. Motivated by pastoral shepherding, we compare low-level teleoperation to a higher-autonomy motion-primitives interface in a virtual reality (VR) shepherding task under varied swarm cohesion dynamics. Results indicate that motion primitives that operate on collective shape …",
+   "published": "2026-11-02",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.HC"
+   ],
+   "comment": "Accepted at IROS 2026",
+   "topics": [],
+   "hf_checked": "2026-11-03"
+  },
+  {
+   "id": "2611.03294",
+   "title": "ForceLDM: A Force-aware Latent Dynamics Model for Contact-Rich Manipulation",
+   "authors": [
+    "Peiyuan Tang",
+    "Yao Li",
+    "Xiaodong Zhang",
+    "Wuyang Zhang",
+    "Qin Xia",
+    "Yanyong Zhang",
+    "Zijiang Yang"
+   ],
+   "abstract": "Contact-rich manipulation requires fine-grained control and complex physical interactions with the environment, posing significant challenges for robot policy learning. Vision-only policies struggle with such tasks, as contact states and interaction forces are difficult to infer from visual observations alone. Existing methods mitigate this issue by incorporating force or tactile sensing. However, they often treat these signals as auxiliary observations without fully exploiting their role in modeling future interaction dynamics. To address this, we propose ForceLDM, a force-aware latent …",
+   "published": "2026-11-02",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "NeurIPS 2026",
+   "project": [
+    "https://tpy001.github.io/ForceLDM/"
+   ],
+   "topics": [
+    "manipulation",
+    "tactile",
+    "world-models",
+    "learning"
+   ],
+   "hf_checked": "2026-11-03"
+  },
+  {
+   "id": "2611.02891",
+   "title": "Gibbs Variational Last Layers for Long-Horizon Dynamics Learning",
+   "authors": [
+    "Paul Brunzema",
+    "Henrik Hose",
+    "Sebastian Trimpe"
+   ],
+   "abstract": "Accurate long-horizon probabilistic predictions of dynamical systems are a prerequisite for model-based decision-making. Variational Bayesian last layers (VBLLs) are an attractive model class for this setting, offering tractable uncertainty at near-deterministic cost, yet they are trained exclusively with single-step likelihood objectives that may be insufficient for reliable multi-step rollouts. We revisit VBLLs through the lens of Gibbs variational inference, which decouples posterior inference from the choice of training loss. Building on this perspective, we introduce a family of …",
+   "published": "2026-11-02",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG",
+    "cs.RO"
+   ],
+   "comment": "Accepted at NeurIPS 2026",
+   "topics": [],
+   "hf_checked": "2026-11-03"
+  },
+  {
+   "id": "2611.02546",
+   "title": "Energy-Based Policy Orchestration",
+   "authors": [
+    "Weirui Ye",
+    "Yen-Jen Wang",
+    "Elvis Hsieh",
+    "Zhiyang Dou",
+    "Shibo Zhao",
+    "Pieter Abbeel",
+    "Yilun Du",
+    "Leslie Pack Kaelbling",
+    "+1"
+   ],
+   "abstract": "Hierarchical control scales robot behavior by separating task-level planning from low-level control. In dynamic, high-dimensional tasks, however, a fixed planner-to-policy interface can fail when contacts, balance, or disturbances evolve faster than high-level policy updates. Execution therefore requires choosing not only which low-level policy to run, but also which policy-specific goal should be given to it. We formulate this problem as policy orchestration: runtime selection of a policy-goal pair that is likely to remain feasible while tracking the planner target. We develop EPO, an …",
+   "published": "2026-11-02",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.LG"
+   ],
+   "comment": "CoRL 2026",
+   "project": [
+    "https://yewr.github.io/epo"
+   ],
+   "topics": [],
+   "hf_checked": "2026-11-03"
+  },
+  {
+   "id": "2611.01659",
+   "title": "HuG: Learning Humanoid Whole-Body Affordance-Aware Grasping with Active Perception",
+   "authors": [
+    "Xuanbin Peng",
+    "Lai Wei",
+    "Yuze Zhai",
+    "Qingyuan Yu",
+    "Keyi Wang",
+    "Jianglong Ye",
+    "Xiaolong Wang"
+   ],
+   "abstract": "Acquiring objects in human environments is hard for humanoids: targets are partially occluded under egocentric viewpoints, and reaching them demands coordinated whole-body motion that keeps the target visible and reachable while the base stays stable. We present HuG, a framework for whole-body affordance-aware grasping with active perception that couples perception and action through a Perceive-Align-Grasp pipeline: belief-driven active perception resolves occlusion by treating viewpoint as an explicit decision variable; a point-cloud-conditioned affordance policy proposes whole-body grasps; …",
+   "published": "2026-11-01",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "CoRL 2026. Project page: https://xuanbinpeng.com/hug",
+   "project": [
+    "https://xuanbinpeng.com/hug"
+   ],
+   "topics": [
+    "manipulation",
+    "locomotion"
+   ],
+   "hf_checked": "2026-11-03"
+  },
+  {
+   "id": "2611.00718",
+   "title": "STEER: Route-Aware Adaptive Reasoning for Autonomous Driving",
+   "authors": [
+    "Yangang Zou",
+    "Pei Liu",
+    "Nan Song",
+    "Bozhou Zhang",
+    "Mingyu Guo",
+    "Jun Ma",
+    "Jiankang Deng",
+    "Xiatian Zhu",
+    "+1"
+   ],
+   "abstract": "Vision-language action (VLA) models excel for end-to-end autonomous driving, yet their tendency to over-invoke chain-of-thought (CoT) reasoning mirrors a human cognitive pitfall: overthinking. Just as deliberate reasoning can slow or mislead human judgment in routine tasks, excessive CoT in VLA incurs unnecessary compute overhead and can paradoxically degrade planning performance. Recent research tackles this via adaptive reasoning, which dynamically modulates inference complexity by selectively triggering CoT for complex scenes while responding directly to routine ones. While prior adaptive …",
+   "published": "2026-10-31",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "Accepted at NeurIPS 2026",
+   "topics": [
+    "vla"
+   ],
+   "hf_checked": "2026-11-03"
+  },
+  {
+   "id": "2611.00509",
+   "title": "MESSPa: A Multi-modal Embodiment Stimulation Shoulder Pad for Preserving the Sense of Agency in a Detachable Robotic Arm",
+   "authors": [
+    "Vitvasin Vimolmongkolporn",
+    "Guillaume Gourmelen",
+    "Yukiko Iwasaki",
+    "Hiroyasu Iwata"
+   ],
+   "abstract": "Wearable robots such as supernumerary robotic limbs (SRLs) can augment human capability, but their effectiveness depends strongly on the operator's sense of embodiment, comprising the sense of agency (SoA) and the sense of ownership (SoO). When an SRL is detached from the body so that the operator can act in two places at once, both the sense of agency and task performance tend to degrade. This paper presents the Multi-modal Embodiment Stimulation Shoulder Pad (MESSPa), a wearable interface that combines one-to-one motion transfer with spatially distributed pneumatic (balloon) haptic feedback …",
+   "published": "2026-10-31",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.HC"
+   ],
+   "comment": "8 pages, 8 figures. Accepted to the 2026 IEEE-RAS International Conference on Humanoid Robots (Humanoids 2026)",
+   "topics": [],
+   "hf_checked": "2026-11-03"
+  },
   {
    "id": "2610.41978",
    "title": "Language-Conditioned Behavioral Cloning for Autonomous Endoscope Guidance",
@@ -1356,10 +1526,10 @@
     "world-models",
     "navigation"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/ASGuard-UCI/safedrive-vla"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2610.20607",
@@ -3009,10 +3179,10 @@
     "manipulation",
     "navigation"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/kaiknower/MobiAgent"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2610.03333",
@@ -3043,10 +3213,10 @@
     "tactile",
     "learning"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/Kenn3o3/Vista"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2610.03132",
@@ -3384,10 +3554,10 @@
     "locomotion",
     "sim"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/amazon-far/PRISM"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2609.37922",
@@ -5635,10 +5805,10 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/kianhk6/IMLE-VLA"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2609.10706",
@@ -5668,10 +5838,10 @@
     "vla",
     "learning"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/3587jjh/HuRo"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2609.10283",
@@ -8711,14 +8881,14 @@
     "Hyunsoo Cha",
     "Hanbyul Joo"
    ],
-   "abstract": "Action-conditioned video world models predict future observations from an initial observation and an action signal. In robotics, actions influence future observations through two distinct processes: they are first realized into robot motion by the robot body and controller, and the scene then responds through contact and object motion. Conditioning directly on action commands asks the world model to learn the realization process itself, while conditioning on logged future states leaks the interaction outcomes it is meant to predict. We propose robot-factored world models, which move two …",
+   "abstract": "Action-conditioned video world models predict future observations from an initial observation and an action signal. We propose robot-factored world models (RoFacto), which move two robot-specific factors outside the world model to separate action realization from scene-response prediction. First, action realization: each command sequence is rolled through the robot's own controller and kinematics without scene contact into a deployment-available nominal trajectory that does not require future realized states. Second, robot rendering: this nominal trajectory is rendered through the robot URDF, …",
    "published": "2026-07-24",
    "primary": "cs.RO",
    "categories": [
     "cs.RO",
     "cs.CV"
    ],
-   "comment": "Project Page: https://bjkim95.github.io/rofacto/",
+   "comment": "Project page: https://bjkim95.github.io/rofacto/. Camera-ready version for CoRL 2026",
    "project": [
     "https://bjkim95.github.io/rofacto/"
    ],
@@ -10523,10 +10693,10 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/sarthakchittawar/pixelloop"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2607.12784",
@@ -14805,10 +14975,10 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/joon-stack/PoLAR"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2606.21100",
@@ -16045,10 +16215,10 @@
     "world-models",
     "learning"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/RLinf/LaWAM"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2606.15587",
@@ -16340,13 +16510,13 @@
    "topics": [
     "tactile"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/zoharri/LESS"
    ],
    "project": [
     "https://zoharri.github.io/LESS/"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2606.14218",
@@ -16477,10 +16647,10 @@
    "topics": [
     "world-models"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/Yoonkyo/mu0"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2606.13675",
@@ -19027,10 +19197,10 @@
    "topics": [
     "world-models"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/CMU-IntentLab/StressDream"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2605.31271",
@@ -20014,13 +20184,13 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/mfpeticco/karma-hand-metric"
    ],
    "project": [
     "https://martinpeticco.com/karma/"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2605.15122",
@@ -20926,10 +21096,10 @@
    "topics": [
     "datasets"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/Princeton-Robot-Planning-and-Learning/kindergarden"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2604.25284",
@@ -22111,10 +22281,10 @@
     "https://m80hz.github.io/kite/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/m80hz/kite"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2604.06589",
@@ -22195,10 +22365,10 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02",
    "project": [
     "https://holiday-robot.github.io/FlashSAC"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2604.04138",
@@ -22624,10 +22794,10 @@
     "perception",
     "sim"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/miya-tomoya/drum"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2603.26206",
@@ -25922,10 +26092,10 @@
     "learning",
     "datasets"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/jellyho/LPS"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2603.05108",
@@ -26093,7 +26263,7 @@
    "categories": [
     "cs.RO"
    ],
-   "comment": "Accepted for publication at the 2026 IEEE International Conference on Robotics and Automation (ICRA)",
+   "comment": "Published at the 2026 IEEE International Conference on Robotics and Automation (ICRA 2026). Oral Presentation",
    "topics": [
     "learning"
    ],
@@ -26910,10 +27080,10 @@
     "learning",
     "sim"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/MMintLab/hydroshear"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2603.00351",
@@ -29202,13 +29372,13 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/santimontiel/gaussiancar"
    ],
    "project": [
     "https://www.santimontiel.eu/projects/gaussiancar/"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2602.08776",
@@ -29408,10 +29578,10 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02",
    "project": [
     "https://rlinf.readthedocs.io/en/latest/rst_source/publications/rlinf_user.html"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2602.07629",
@@ -30507,10 +30677,10 @@
     "navigation",
     "learning"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/ntnu-arl/active-perception-RL-navigation"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2602.01189",
@@ -31629,10 +31799,10 @@
     "navigation",
     "datasets"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/leggedrobotics/navitrace_evaluation"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2510.26236",
@@ -32136,10 +32306,10 @@
     "learning",
     "sim"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/phys2real/phys2real"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2510.09976",
@@ -33098,13 +33268,13 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/llm-tale/llm_tale"
    ],
    "project": [
     "https://llm-tale.github.io/"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2509.16552",
@@ -33179,10 +33349,10 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/RobotControlStack/rcs"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2509.14787",
@@ -33584,10 +33754,10 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/nijkah/YOPO"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2508.03099",
@@ -33755,10 +33925,10 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/OpenRobotLab/StreamVLN"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2507.03831",
@@ -33783,10 +33953,10 @@
     "perception",
     "datasets"
    ],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/arplaboratory/QAA"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2507.02438",
