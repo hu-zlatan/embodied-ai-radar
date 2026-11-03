@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-03 ~05:20 UTC, run 50; code links from project pages (CoRL guide 57 → 178 with code), 583 curated; repo has 1 star._
+_Last updated: 2026-11-03 ~11:15 UTC, run 51; 11-03 feed repaired (RSS empty at 07:50) and 21 picks, 604 curated; repo has 1 star._
 
 ## Status
 
@@ -42,6 +42,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Known issues
 
+- arXiv RSS can be empty for hours after an announcement (10-29; 11-03 at 07:50 UTC, filled by 09:37). Since run 51, API finds in normal runs (`--days` ≤ 3) get `published` = today, so one announcement stays on one day page. `--days` > 3 keeps submission dates for backfills.
 - arXiv export API returns 429 to GitHub runners often; RSS covers the daily path. API backfill is best-effort.
 - RSS dates = announcement date; API dates = first-submission date. Mixed but deduped by ID.
 - ~27% of feed papers get no topic (run 16: was 31%; remaining are mostly autonomous driving, multi-robot, aerial/space, HRI, soft/bio-inspired design). Shown as untagged; robot-type filter covers driving/drones. `classify()` now pads punctuation and splits glued acronyms (FlowVLA → Flow VLA, only after ≥2 lowercase letters so LiDAR stays intact).
@@ -57,6 +58,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 51: picks from the 11-03 announcement (156 papers): RoboColosseum (highlight), uni-robot-agent, Auriga, VLALagBench, HeLM → vla; Pixel (highlight), KlaskTron → hardware; Pixel-UMI, ForceLDM, TAMPAgent → manipulation; PanoTac, TacMind → tactile; HuG, EPO → locomotion; OpenNWM, pico-WAM, Xiaomi Auto WM 2.0 → world-models; DexArena, OmniPiano, Rollout then Recycle → datasets; D&A → learning. Add `code:` once live: VLALagBench (codestrongestx/VLALagBench), OpenNWM (OpenSpace-Lab/OpenNWM), both 404 at stats time. KlaskTron also has klask_software. Maybe later: Leap-VLA, Anchor 1 (Archon Robotics), ClothDojo, Behavior Graphs, Does Validation Loss Predict Real-Robot Success?, Beyond Validation Loss, Reflex, W2A, ReContact. Next: Wed 11-04 feed; W45 digest intro Mon 11-09; CoRL starts 11-09.
 
 - Run 50: picks ResMerge, STAR, HiFOR, RoboDoctor (vla), GenSight (world-models), HoloBoxing, TACOS (locomotion), OpenFlyV2 (navigation), AuRA (sim), RoboJev (datasets). Skipped code for AgenticRoboRL and GPT-6-Astra report (earlier 'coming soon'; recheck the repos), Towards Agentic Robots (page links NVlabs/sage, a survey). New entries in `project_code.json` `curated` need the same hand review each few runs. Search index 1.57 MB raw / 510 KB gzip (lazy-loaded, venue papers included): acceptable; `ab` is the largest field if it needs trimming. Next: Tue 11-03 feed.
 - Run 49: **My schedule** on the program guide (`app.js` `mySchedule`, only when `#vf-m` exists): ☆ on cards (`data-id` = OpenReview id) saved in localStorage `my:corl-2026`; panel `#pg-my` lists saved papers by session in page order; share link `?my=id,id` (merged into the visitor's list), plain text, `.ics` (one event per session; `.pg-sess` carries `data-when` from `session_utc()`, fixed UTC−6 for Austin in November, `data-place`, `data-kind`, `data-name`); 'My list' filter `?mine=1`. For a next conference, pass the right offset to `session_utc`. Picks: 32 of 54 uncurated spotlights (abstracts capped at 600 chars, so takeaways stay qualitative and state no results). Left out: FedGuide, PRTS, Semantic Anchoring, TARC, KPGrasp, Combining Constrained Sampling, Articulated 3D Scene Graphs, cloth (SILR), PGRD, depth-noise encoding, Robustness without Wrinkles, Shape Your Body, Bayesian intent, Control-Ready Uncertainty, Meta-Ctrl, deep unfolding, SMPC loco-manipulation, ResSafe, instance-level VLN, MosaicIMU, SCoCaT, UAV-UGV. Year convention: `year` = arXiv year, `venue` = conference year. Next: Tue 11-03 feed.

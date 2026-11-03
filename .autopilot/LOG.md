@@ -441,3 +441,11 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Audit by hand: all 34 links not named after the paper and the 106 named by loose match. One wrong link (DriveCritic → author's older LiRaFusion) and one blog repo rejected; age limit tightened. 60 of 64 curated code links applied (survey and 'coming soon' repos left out).
 - Curated 573 → 583 (10 picks from the 10-26..11-02 feeds, see STATE backlog). Note: a pipe into `head` under pipefail gave exit 141 after a good push; confirmed on origin.
 - End: 1 star / 0 forks, CI and Pages green. Owner: CoRL week is the moment for the launch kit, if wanted. Verify #135 and #136 (picks + 60 code links) were in progress at end of run: check them first next run. End of run 50.
+
+## 2026-11-03 — run 51 (~10:50 UTC–)
+
+- Start: CI/Pages/intake green, verify #135 and #136 passed, no issues/PRs, 1 star / 0 forks. No add_repo tool; detached shallow clone → `main` reset to `origin/main` (the 'forced update' from fetch was the shallow clone, not a rewrite).
+- Found the Tue announcement scattered: RSS gave items=0 at 07:50 UTC, so the API filed 139 papers under submission dates (10-31, 11-01, 11-02) and the newest day page showed 17 of 156. Fixed intake (API finds in normal runs use today's date) and moved the 139 to 11-03. The 10-31 and 11-01 day pages existed for about 3 hours and are gone.
+- Curated 583 → 604: 21 picks (the commit message says 22; 21 is correct). 10 over-length takeaways caught by validate. Code links only for repos live in `repo_stats.json`.
+- Local link check over 716 pages: no broken internal links.
+- End: 1 star / 0 forks. Owner: CoRL week is the moment for the launch kit, if wanted. Verify run for the picks was in progress at end of run: check it first next run. End of run 51.
