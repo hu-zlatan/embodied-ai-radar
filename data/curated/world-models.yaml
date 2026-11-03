@@ -539,3 +539,32 @@
   tags: [world-model, video-diffusion, 4d-perception]
   takeaway_en: "GenSight puts future video generation and dense perception (depth, embodiment segmentation, 2D flow) into one video diffusion transformer with a shared prediction space."
   takeaway_zh: "GenSight 把未来视频生成与稠密感知（深度、本体分割、二维光流）放进同一个视频扩散 Transformer，共用一个预测空间。"
+- title: "OpenNWM: A Generalist Navigation World Model with Latent Action Pretraining"
+  type: paper
+  arxiv: "2611.01844"
+  year: 2026
+  project: https://openspace-lab.github.io/OpenNWM/
+  added: 2026-11-03
+  topics: [navigation]
+  tags: [navigation, latent-actions, pretraining, dataset]
+  takeaway_en: "Learns latent actions from action-free video, then aligns them with physical motion in post-training. Comes with NavAnywhere: 17.5M observations from 15 sources across ground robots, people and drones."
+  takeaway_zh: "先从无动作标注的视频中学习潜在动作，再在后训练阶段对齐真实运动。配套数据集 NavAnywhere 含 17.5M 条视觉观测，来自 15 个来源，覆盖地面机器人、人和无人机。"
+- title: "pico-WAM: Evaluating Counterfactual Prediction and Planning Error in a Compact World Action Model"
+  type: paper
+  arxiv: "2611.01039"
+  year: 2026
+  code: https://github.com/keivalya/pico-wam
+  added: 2026-11-03
+  tags: [world-action-model, diagnostics, push-t, sim]
+  takeaway_en: "Is a failing world action model limited by proposals or scoring? On Push-T, simulator costs in place of learned scores add 12.2 points of coverage; simulator states in proposals show no detected gain."
+  takeaway_zh: "世界动作模型失败时，问题出在动作提议还是轨迹评分？在 Push-T 上，把学习的评分换成仿真器代价可提升 12.2 个百分点的覆盖率，而在提议阶段换用仿真器状态未见增益。提供可复现的诊断流程。"
+- title: "Xiaomi Auto World Model 2.0: Causal World Models for Real-World Driving and Embodied Intelligence"
+  type: paper
+  arxiv: "2611.01677"
+  year: 2026
+  org: Xiaomi
+  project: https://xiaomiautoworldmodel.github.io/CausalWorldModel/
+  added: 2026-11-03
+  tags: [driving, streaming, 3d-gaussians, physical-ai]
+  takeaway_en: "A streaming multi-view causal world model. Its 3D Gaussian reconstruction feeds renderings back as scene context for long rollouts; the model targets closed-loop simulation, training and world action models."
+  takeaway_zh: "流式多视角因果世界模型：用 3D 高斯重建的渲染结果作为场景上下文来维持长时生成，面向闭环仿真、闭环训练和世界动作模型应用。"

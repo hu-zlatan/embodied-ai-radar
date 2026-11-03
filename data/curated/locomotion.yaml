@@ -546,3 +546,25 @@
   tags: [legged, self-supervised, footstep-planning]
   takeaway_en: "Scores footstep instability from factor-graph residuals in legged state estimation and projects it into earlier images to supervise a dense visual predictor."
   takeaway_zh: "用足式状态估计因子图的残差给落足不稳定性打分，并投影到之前的图像上，监督稠密视觉预测器。"
+- title: "HuG: Learning Humanoid Whole-Body Affordance-Aware Grasping with Active Perception"
+  type: paper
+  arxiv: "2611.01659"
+  year: 2026
+  venue: CoRL 2026
+  project: https://xuanbinpeng.com/hug
+  added: 2026-11-03
+  topics: [manipulation]
+  tags: [humanoid, grasping, active-perception, sim-to-real, real]
+  takeaway_en: "Trained in simulation with no real demos. Controller-in-the-loop filtering rejects 73% of kinematically valid grasps that would destabilize the robot; reports 87.5% real-world success on a multi-level shelf task."
+  takeaway_zh: "完全在仿真中训练，无真实示范。把控制器放进回路筛选数据，剔除 73% 运动学可行但会使机器人失稳的抓取；作者报告多层货架任务真实成功率 87.5%。"
+- title: "Energy-Based Policy Orchestration"
+  type: paper
+  arxiv: "2611.02546"
+  year: 2026
+  venue: CoRL 2026
+  project: https://yewr.github.io/epo
+  added: 2026-11-03
+  topics: [control]
+  tags: [hierarchical, humanoid, energy-based, sim-to-real]
+  takeaway_en: "Picks at runtime which low-level policy to run and with which goal, using a learned energy per policy. New policies join by training their own energy model, with no retraining of others. Deployed on a real humanoid."
+  takeaway_zh: "运行时为每个底层策略学习能量函数，据此选择执行哪个策略、给它什么目标。新增策略只需训练自己的能量模型，无需重训其他策略或中央调度器；已部署到真实人形的移动操作任务。"

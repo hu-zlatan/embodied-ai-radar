@@ -579,3 +579,35 @@
   tags: [mobile-manipulation, neural-map, long-horizon]
   takeaway_en: "CoRL 2026 Spotlight. Conditions a mobile manipulation policy on a spatiotemporal map of neural points that represents environment and robot body in one latent space, updated online."
   takeaway_zh: "CoRL 2026 Spotlight。用时空神经点地图作为移动操作策略的条件：环境与机器人本体处于同一隐空间，并在线更新。"
+- title: "Pixel-UMI: Learning Environment-Aware Whole-Body Manipulation from Sensorized Human Demonstrations"
+  type: paper
+  arxiv: "2611.03647"
+  year: 2026
+  project: https://pixel-robot.com/pixel-umi
+  added: 2026-11-03
+  topics: [hardware]
+  tags: [mobile-manipulation, human-demonstrations, retargeting, whole-body, real]
+  takeaway_en: "Sensorized human demos to whole-body policies: scene-aware retargeting, masking of mismatched views in training, then DAgger corrections. Reports 87.0% task progress on five tasks."
+  takeaway_zh: "把传感化的人类示范变成全身策略：结合重建的场景几何做重定向，训练时用重定向误差遮蔽不匹配的视角，再用 DAgger 人工纠正补足接触。作者报告五个任务平均进度 87.0%。"
+- title: "ForceLDM: A Force-aware Latent Dynamics Model for Contact-Rich Manipulation"
+  type: paper
+  arxiv: "2611.03294"
+  year: 2026
+  venue: NeurIPS 2026
+  code: https://github.com/tpy001/ForceLDM-code
+  project: https://tpy001.github.io/ForceLDM/
+  added: 2026-11-03
+  topics: [tactile, world-models]
+  tags: [force, contact-rich, knowledge-distillation, real]
+  takeaway_en: "A teacher sees future force/torque and optical flow; its features are distilled into a student using only current observations, so the policy anticipates contact. Tested on five real contact-rich tasks."
+  takeaway_zh: "教师网络看到未来的力/力矩与光流，再把动力学特征蒸馏给只用当前观测的学生网络，使策略在部署时能预判接触。在五个真实接触丰富任务上测试。"
+- title: "TAMPAgent: Agentic Belief-Space Planning for Mobile Manipulation"
+  type: paper
+  arxiv: "2611.03584"
+  year: 2026
+  project: https://umishra.me/TAMPAgent/
+  added: 2026-11-03
+  topics: [navigation]
+  tags: [agent, tamp, belief-space, mobile-manipulation, real]
+  takeaway_en: "An LLM agent writes partial task plans over perception, planning and control tools; classical search completes them and geometric constraints are bound through the tools. Run in closed loop on Rainbow Y1 and Unitree G1."
+  takeaway_zh: "大模型智能体基于感知、规划、控制工具生成部分任务规划，再由经典搜索补全，并通过工具满足几何约束；在 Rainbow Y1 与 Unitree G1 上闭环运行，交替观察与操作。"

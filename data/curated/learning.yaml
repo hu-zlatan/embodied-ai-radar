@@ -447,3 +447,14 @@
   tags: [diffusion, sequence-prediction]
   takeaway_en: "CoRL 2026 Spotlight. Diffusion sequence prediction with selective re-noising, so segments of the horizon can be refined again using context from the rest."
   takeaway_zh: "CoRL 2026 Spotlight。在扩散序列预测中选择性重新加噪，让时间跨度内的片段可以借助其余片段的上下文再次修正。"
+- title: "D&A: Decoupling Description and Assessment Enables VLMs as Zero-Shot Robotic Reward Models"
+  type: paper
+  arxiv: "2611.03622"
+  year: 2026
+  org: University of Washington
+  code: https://github.com/memmelma/dna
+  project: https://weirdlabuw.github.io/dna
+  added: 2026-11-03
+  tags: [reward, vlm, zero-shot, prompting]
+  takeaway_en: "Prompt-only task-progress scoring: the VLM first describes what happens and defines absolute success, then scores with an explicit rubric. This curbs hallucinated progress on failed runs, and the rewards can drive RL."
+  takeaway_zh: "只靠提示词的任务进度评估：先让 VLM 客观描述画面并定义绝对成功标准，再按明确评分表打分，减少对失败执行“幻觉式”的进度判断，其奖励可用于下游强化学习。"

@@ -1307,3 +1307,50 @@
   tags: [agents, policy-execution, self-improvement]
   takeaway_en: "Keeps model weights fixed and adapts during execution: an agent diagnoses, intervenes and stores linked experience records, revising how the policy is used rather than the policy."
   takeaway_zh: "不改模型权重，在执行中适配：智能体负责诊断、干预并保存关联的经验记录，修订的是策略的使用方式而非策略本身。"
+- title: "RoboColosseum: Evaluating Physical Intelligence at Scale In-The-Wild"
+  type: paper
+  arxiv: "2611.02497"
+  year: 2026
+  project: https://robocolosseum.ai/
+  added: 2026-11-03
+  highlight: true
+  tags: [benchmark, evaluation, real, fine-tuning]
+  takeaway_en: "Blinded pairwise trials at 124 sites compare VLAs and frontier agents. Rankings barely agree across robots (W = 0.24), and open rankings poorly predict results after fine-tuning; no policy finishes a G1 task."
+  takeaway_zh: "在 124 个站点做盲测两两对比，横跨四种机器人评测 VLA 与前沿智能体。不同机器人的排名几乎不一致（Kendall W = 0.24），开箱排名也难以预测微调后的表现；G1 人形上没有策略完成任何任务。"
+- title: "Democratizing Robot-Use Agents: A Unified Harness with Open Models"
+  type: paper
+  arxiv: "2611.01560"
+  year: 2026
+  code: https://github.com/Open-RUA/uni-robot-agent
+  added: 2026-11-03
+  tags: [agent, harness, open-weights, benchmark]
+  takeaway_en: "uni-robot-agent: an open harness for robot-use agents on open-weight models. It reports a RoboDojo score of 31.39 with an off-the-shelf Qwen3.8 model, above the published GPT-6 Astra-RoboProbe result of 28.97."
+  takeaway_zh: "uni-robot-agent：面向开放权重模型的机器人操作智能体（Robot-use Agent）框架，便于继续训练。作者报告现成的 Qwen3.8 模型在 RoboDojo 上得 31.39 分，高于已发表的 GPT-6 Astra-RoboProbe 的 28.97 分。"
+- title: "Auriga Technical Report: A Task-Agnostic Agent Harness for Zero-Shot Embodied Manipulation"
+  type: paper
+  arxiv: "2611.01112"
+  year: 2026
+  code: https://github.com/lose4578/Auriga
+  project: https://auriga.stelledge.com/
+  added: 2026-11-03
+  tags: [agent, harness, benchmark, sim]
+  takeaway_en: "The LLM decides; the harness adds calibrated 3D measurements, trajectory previews and stop-on-divergence checks. Reports first place on RoboDojo with 57.7% success, over double the reference harness."
+  takeaway_zh: "任务决策交给大模型，框架提供标定后的三维测量、轨迹预览和偏差即停的执行检查。作者报告在 RoboDojo 榜单排名第一，成功率 57.7%，是同模型参考框架的两倍多。"
+- title: "VLALagBench: Understanding When and Why VLA Inference Latency Matters"
+  type: paper
+  arxiv: "2611.03103"
+  year: 2026
+  added: 2026-11-03
+  tags: [benchmark, latency, evaluation, sim]
+  takeaway_en: "Benchmark of VLA latency sensitivity across tasks, object speeds and execution modes: 100 ms can nearly halve success on moving targets. An empirical model then predicts success from limited calibration data."
+  takeaway_zh: "评测 VLA 对推理延迟的敏感度，覆盖不同任务、物体速度与同步/异步执行：100 ms 延迟就可能让移动目标任务的成功率几乎减半。作者还给出经验模型，用少量标定数据预测成功率。代码尚待发布。"
+- title: "HeLM: Hierarchical Explicit Language Memory for Non-Markovian Manipulation"
+  type: paper
+  arxiv: "2611.02660"
+  year: 2026
+  code: https://github.com/kimspacehuni/HeLM
+  project: https://kimspacehuni.github.io/HeLM/
+  added: 2026-11-03
+  tags: [memory, real, hierarchical]
+  takeaway_en: "Gives a VLA working memory by keeping task history as explicit text, updated only when events are detected. Tested on 10 real non-Markovian tasks, including ones that need context across episodes."
+  takeaway_zh: "用显式文本保存任务历史、只在检测到事件时更新，为 VLA 增加工作记忆。在 10 个真实的非马尔可夫任务上测试，其中包括需要跨回合保持上下文的任务。"
