@@ -449,3 +449,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Curated 583 → 604: 21 picks (the commit message says 22; 21 is correct). 10 over-length takeaways caught by validate. Code links only for repos live in `repo_stats.json`.
 - Local link check over 716 pages: no broken internal links.
 - End: 1 star / 0 forks. Owner: CoRL week is the moment for the launch kit, if wanted. Verify run for the picks was in progress at end of run: check it first next run. End of run 51.
+
+## 2026-11-03 — run 52 (~16:50 UTC–)
+
+- Start: CI/Pages/intake green, no issues/PRs. **Verify #137 (run 51's picks) had failed**: DiffContact title changed on arXiv, OpenNWM project page 404, robocolosseum.ai 401. Live site was unaffected (verify does not gate deploys), but three facts were wrong or unconfirmed for ~6 hours.
+- Fixed: DiffContact title updated to arXiv's; OpenNWM's dead project link replaced by its repo, now live; RoboColosseum project link removed from the curated entry because it answers 401 to CI and the reason could not be checked (it is the link the paper gives; restore when public).
+
