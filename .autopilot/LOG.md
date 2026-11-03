@@ -456,4 +456,6 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Fixed: DiffContact title updated to arXiv's; OpenNWM's dead project link replaced by its repo, now live; RoboColosseum project link removed from the curated entry because it answers 401 to CI and the reason could not be checked (it is the link the paper gives; restore when public).
 - CoRL guide: 'Most-starred code' top 10 with session or poster number (no overflow at 390 px, no JS errors). HF list dropped: only 3 CoRL papers had upvotes.
 - Curated 604 → 612: 8 picks from the 11-03 feed. Project links come from the papers and could not be opened from here, so the verify run on this push decides.
+- Verify #138 (the three fixes) passed. #139 (the picks) was cancelled while pending, as a newer run in the `arxiv-api` group replaced it, so the push had no check; re-dispatched as #140, passed, all 8 project and code links good. **Watch for this:** a 'cancelled' verify means the push was not checked.
+- End: see the summary to the owner. Not fixed: verify still has no retry when cancelled. End of run 52.
 

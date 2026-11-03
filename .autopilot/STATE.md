@@ -50,6 +50,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
+00. After a curated push, confirm verify really ran: a pending run can be cancelled by a newer one in the `arxiv-api` group (run 52, #139). Re-dispatch if so.
 0. New curated entries get BibTeX metadata on the next intake run. A push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started/finished.
 1. Scheduled runs: on 10-23 the 01:11/02:17/04:53 slots never fired; first scheduled intake landed 05:57 UTC, then 07:36, 09:37, 12:51, 15:42, 19:21. So the feed lands ~06:00 UTC — acceptable; no owner action. arXiv does not announce on Sat/Sun nights, so the next new feed day is Mon 10-26 (~00:00 UTC announcement).
 2. Picks: start from `.autopilot/candidates.json` (every recent uncurated paper with code/project/venue, full abstracts) and `.autopilot/review_queue.json` (HF upvotes). Review the newest feed (10-26 reviewed in runs 29–30; 10-23 reviewed in run 17: OpenTac, GelSlim 5.0, one-step flow-matching, UniFlowWAM), papers with code first, promote 2–5 notable ones with `added: <date>` and careful EN/ZH takeaways (≤220 chars EN — validate with `set -o pipefail`; phrase results as "reports").
