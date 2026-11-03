@@ -2,34 +2,9 @@
  "updated": "2026-11-03",
  "papers": [
   {
-   "id": "2610.31162",
-   "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
-   "upvotes": 58,
-   "hf_date": "2026-10-26",
-   "published": "2026-10-23",
-   "topics": [
-    "vla"
-   ],
-   "authors": [
-    "Zecong Tang",
-    "Zian Guan",
-    "Yuncheng Guo",
-    "Zhanqiu Zhang",
-    "Yiwen Guo",
-    "Bo Dai"
-   ],
-   "organization": "Tencent",
-   "github": "https://github.com/Andytonglove/HiSTEVE-1.0",
-   "project": null,
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Building virtual embodied agents that operate in open-ended games like human players is a long-standing goal requiring both long-horizon autonomy and reliable native-interface control. As a procedurally generated open world, Minecraft provides a natural testbed for studying the integration of these capabilities. Existing agents typically provide either native visuomotor control without long-horizon autonomy or high-level planning executed through environment APIs or predefined skills. To bridge this gap, we propose HiSTEVE, a hierarchical VLA agent with a capability-aware agent harness. At the orchestration level, we equip the harness with structured memory for tracking progress and a VLM planner for selecting subtasks within the VLA's capabilities. To reliably determine subtask completion, we further introduce a policy-coupled task completion state detector that conditions on VLA policy context to signal candidate completion. At the control level, a single VLA executes all subtasks with vision-only perception and native keyboard-and-mouse actions. To mitigate interference between heterogeneous GUI and non-GUI interactions, we introduce regime-specific RMSNorm branches and separate mouse-movement token embeddings. We also train the VLA through world knowledge injection, imitation learning, and reinforcement learning with environment feedback to improve reliability and recovery. HiSTEVE achieves state-of-the-art atomic-task performance, scoring 85.0% on MineStudio Bench and a 37.4% average success rate on OpenHA, while also completing long-horizon tasks such as crafting an iron pickaxe from scratch like human players.",
-   "ai_summary": "HiSTEVE is a hierarchical vision-language-action agent that combines long-horizon planning with native keyboard-and-mouse control to perform complex open-ended tasks in Minecraft."
-  },
-  {
    "id": "2610.19366",
    "title": "Seeing, Maintaining, and Learning: The Evolution of Multimodal Agent Memory",
-   "upvotes": 52,
+   "upvotes": 49,
    "hf_date": "2026-10-15",
    "published": "2026-10-14",
    "topics": [],
@@ -64,48 +39,34 @@
    "ai_summary": "This work proposes a two-axis framework for multimodal agent memory covering information formation and adaptive management to support lifelong learning."
   },
   {
-   "id": "2611.01560",
-   "title": "Democratizing Robot-Use Agents: A Unified Harness with Open Models",
-   "upvotes": 32,
-   "hf_date": "2026-11-03",
-   "published": "2026-11-01",
+   "id": "2610.31162",
+   "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
+   "upvotes": 39,
+   "hf_date": "2026-10-26",
+   "published": "2026-10-23",
    "topics": [
     "vla"
    ],
    "authors": [
-    "Jiarui Yuan",
-    "Yuxin Zuo",
-    "Xiaoyu Huang",
-    "Wenbo Zhang",
-    "Kwanyoung Park",
-    "Junlin Yang",
-    "Tianxiang Zhang",
-    "Ruoqu Chen",
-    "Yutao Ouyang",
-    "Bingxiang He",
-    "Xingtai Lv",
-    "Hongjin Wu",
-    "Jiajun Liu",
-    "Jiahao Zhao",
-    "Tianwei Luo",
-    "Haozhan Li",
-    "Cheng Qian",
-    "Jiaxin Ge",
-    "Huan-ang Gao",
-    "Kaisen Yang"
+    "Zecong Tang",
+    "Zian Guan",
+    "Yuncheng Guo",
+    "Zhanqiu Zhang",
+    "Yiwen Guo",
+    "Bo Dai"
    ],
-   "organization": null,
-   "github": "https://github.com/Open-RUA/uni-robot-agent",
-   "project": "https://openrua.ai/uni-robot-agent",
+   "organization": "Tencent",
+   "github": "https://github.com/Andytonglove/HiSTEVE-1.0",
+   "project": null,
    "arxiv_code": [],
    "comment": null,
-   "abstract": "Robot-use Agents (RUAs) have shown promising zero-shot manipulation capabilities, but reliance on frontier, proprietary models limits research into further training. To democratize RUA research, we introduce uni-robot-agent, a unified harness for competitive open-weight robot use that supports further training. Without privileged inputs, an out-of-the-box Qwen3.8-Flash-Next achieves a RoboDojo Score of 31.39, surpassing the published GPT-6 Astra-RoboProbe result of 28.97 and many VLA/WAM baselines, and performs competitively on 19 real-world tasks. Our analysis across model generations, families, and sizes links effective robot use to four general capabilities, suggesting that future RUA training should develop them jointly.",
-   "ai_summary": "Uni-robot-agent enables open-weight robot-use agents to surpass proprietary models in zero-shot manipulation and suggests joint development of four core capabilities for future training."
+   "abstract": "Building virtual embodied agents that operate in open-ended games like human players is a long-standing goal requiring both long-horizon autonomy and reliable native-interface control. As a procedurally generated open world, Minecraft provides a natural testbed for studying the integration of these capabilities. Existing agents typically provide either native visuomotor control without long-horizon autonomy or high-level planning executed through environment APIs or predefined skills. To bridge this gap, we propose HiSTEVE, a hierarchical VLA agent with a capability-aware agent harness. At the orchestration level, we equip the harness with structured memory for tracking progress and a VLM planner for selecting subtasks within the VLA's capabilities. To reliably determine subtask completion, we further introduce a policy-coupled task completion state detector that conditions on VLA policy context to signal candidate completion. At the control level, a single VLA executes all subtasks with vision-only perception and native keyboard-and-mouse actions. To mitigate interference between heterogeneous GUI and non-GUI interactions, we introduce regime-specific RMSNorm branches and separate mouse-movement token embeddings. We also train the VLA through world knowledge injection, imitation learning, and reinforcement learning with environment feedback to improve reliability and recovery. HiSTEVE achieves state-of-the-art atomic-task performance, scoring 85.0% on MineStudio Bench and a 37.4% average success rate on OpenHA, while also completing long-horizon tasks such as crafting an iron pickaxe from scratch like human players.",
+   "ai_summary": "HiSTEVE is a hierarchical vision-language-action agent that combines long-horizon planning with native keyboard-and-mouse control to perform complex open-ended tasks in Minecraft."
   },
   {
    "id": "2610.28632",
    "title": "Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs",
-   "upvotes": 27,
+   "upvotes": 26,
    "hf_date": "2026-10-21",
    "published": "2026-10-21",
    "topics": [],
@@ -130,7 +91,7 @@
   {
    "id": "2610.18604",
    "title": "LLM2R: From Large Language Models to 3D Reassemblers",
-   "upvotes": 25,
+   "upvotes": 24,
    "hf_date": "2026-10-21",
    "published": "2026-10-13",
    "topics": [],
@@ -150,9 +111,34 @@
    "ai_summary": "LLM2R treats 3D part assembly as sequence modeling with a pretrained decoder-only LLM, using geometric tokens and learnable summary tokens to predict all part poses in a single pass with improved scalability and accuracy."
   },
   {
+   "id": "2610.22362",
+   "title": "CoDA: Co-Evolution of Data Engines and Action Policies",
+   "upvotes": 10,
+   "hf_date": "2026-10-16",
+   "published": "2026-10-15",
+   "topics": [],
+   "authors": [
+    "Tianjiao Yu",
+    "Zhilin Ou",
+    "Yifan Shen",
+    "Xinzhuo Li",
+    "Yuanzhe Liu",
+    "Onkar Kishor Susladkar",
+    "Fan Wang",
+    "Ismini Lourentzou"
+   ],
+   "organization": "PLAN Lab @University of Illinois Urbana-Champaign",
+   "github": null,
+   "project": "https://plan-lab.github.io/coda",
+   "arxiv_code": [],
+   "comment": "Project Website: https://plan-lab.github.io/projects/coda/",
+   "abstract": "Generative simulation can automate robot environment construction, but physically valid environments are not necessarily useful for training. The challenge is to identify environments that address a policy's failures and supervision that helps it overcome them. We introduce CoDA, a framework in which a simulation data engine and an action policy co-evolve through a shared heterogeneous memory of environment construction, policy failures, and learning progress. The memory compiles validated diagnoses from a vision-language critic into generation programs that recreate difficulties and training programs that help the policy overcome them. We further propose Text2potential to convert these diagnoses into staged potentials for action-chunk value learning, providing dense supervision for policy updates while preserving the task's optimal policy under standard shaping assumptions. Measured learning progress guides further generation and program refinement. Across four manipulation task families, CoDA improves out-of-distribution success from 5.3% after supervised fine-tuning to 27.6%, exceeding the strongest closed-loop baseline by 9.5 percentage points with the same generation budget. On LIBERO-Pro, 15 rounds of generation and training raise success from 25% to 84% under position perturbations and from 1% to 76% under instruction perturbations.",
+   "ai_summary": "CoDA co-evolves a simulation engine and robot policy via shared memory of failures and progress, using vision-language diagnostics and staged potential rewards to improve out-of-distribution manipulation success."
+  },
+  {
    "id": "2610.20609",
    "title": "SafeDriveVLA: Navigation-Conditioned World Model Dreaming for Conflict-Aware End-to-End Autonomous Driving",
-   "upvotes": 11,
+   "upvotes": 7,
    "hf_date": "2026-10-15",
    "published": "2026-10-14",
    "topics": [
@@ -182,7 +168,7 @@
   {
    "id": "2610.31716",
    "title": "Does LeWorldModel Preserve Local Action Geometry?",
-   "upvotes": 6,
+   "upvotes": 5,
    "hf_date": "2026-10-26",
    "published": "2026-10-26",
    "topics": [],
@@ -214,6 +200,11 @@
    "id": "2610.30108",
    "title": "Multimodal Embodied Agents: A Unified Capability-centric Perspective from Computer-Use to Robot-Use",
    "code": "https://github.com/showlab/Awesome-Multimodal-Embodied-Agent"
+  },
+  {
+   "id": "2611.01560",
+   "title": "Democratizing Robot-Use Agents: A Unified Harness with Open Models",
+   "project": "https://openrua.ai/uni-robot-agent"
   },
   {
    "id": "2610.23479",
