@@ -467,3 +467,11 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - CI: `scripts/check_links.py` step added so internal link breaks fail the build.
 - verify #141 passed (all new IDs, titles and links). CI green with the link check.
 - End: 1 star / 0 forks, no issues/PRs. Owner: post the CoRL program text by Sun 11-08 if wanted. Next: Wed 11-04 feed; more gap sweeps; W45 digest intro Mon 11-09. End of run 53.
+
+## 2026-11-04 — run 54 (~04:50 UTC–)
+
+- Start: all workflows green, no issues/PRs, 1 star / 0 forks. No add_repo tool again; `main` reset to `origin/main` (shallow-clone 'forced update').
+- Intake dispatched at 04:50 UTC: no 11-04 papers yet (RSS empty after the announcement, a known pattern; candidates.json shrank only because old papers aged out). Later intake slots should bring them.
+- New `facts.yml` + `scripts/fetch_facts.py`: WebFetch refused arXiv and HF URLs, so CI now gets abstracts, HF links and repo stars for chosen IDs. First run: 32 of 32 papers.
+- Gap sweep of two external lists: 31 anchors (see STATE backlog). DreamZero was already curated without an ID match; caught by validate and dropped. Curated 630 → 661.
+- Local: validate 0 errors, 774 pages built, 0 broken internal links.

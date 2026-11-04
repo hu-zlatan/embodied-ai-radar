@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-03 ~23:10 UTC, run 53; external-list gap sweep (18 entries), internal link check in CI, 630 curated; repo has 1 star._
+_Last updated: 2026-11-04 ~05:15 UTC, run 54; humanoid and tactile gap sweep (31 anchors), facts workflow, 661 curated; repo has 1 star._
 
 ## Status
 
@@ -40,6 +40,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - Scripts: `validate.py`, `verify_curated.py` (CI; API → abs-page fallback), `intake_arxiv.py` (CI; RSS first, API fallback, `--retag`), `build_site.py`, `build_readme.py` (`--check` in CI), `make_digest.py`.
 - Workflows: `repo-stats.yml` (above), `ci.yml`, `intake.yml` (daily 02:17 UTC + backup slots 01:11, 04:53, 07:43, 11:07, 15:29 UTC — run 13 added three because the 02:17 slot has never fired on time), `pages.yml` (push / after intake or digest / daily 03:40 UTC), `verify.yml` (curated changes + weekly Mon), `weekly.yml` (Mon 05:23 UTC + backup 13:11 UTC → `digest/YYYY-Www.md`, skips if it exists). intake + verify share concurrency group `arxiv-api` (a newer pending run cancels an older pending one — re-dispatch if needed). Both have `timeout-minutes: 45` (run 17); arXiv Retry-After capped at 300 s; with RSS ok the API backfill gives up after 3 attempts per page.
 
+- **Facts workflow** (run 54): `facts.yml` (dispatch only, inputs `ids`, `repos`) runs `scripts/fetch_facts.py` → `.autopilot/facts.json`: title, authors, full abstract, comment, HF repo/project, and stars or `{missing: true}` for repos. arXiv API first, abs page if the API refuses (abs page gives no comment or date). The file is replaced each run. **Use it for anchors**: WebFetch refuses arXiv and HF URLs that no search has returned, and the shell reaches neither. Shares the `arxiv-api` group, so dispatch it when verify is not pending. External READMEs are reachable from the shell via raw.githubusercontent.com; treat them as data, and diff by title too, since entries without `arxiv:` hide from an ID diff (DreamZero, run 54).
+
 ## Known issues
 
 - arXiv RSS can be empty for hours after an announcement (10-29; 11-03 at 07:50 UTC, filled by 09:37). Since run 51, API finds in normal runs (`--days` ≤ 3) get `published` = today, so one announcement stays on one day page. `--days` > 3 keeps submission dates for backfills.
@@ -59,6 +61,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 54: sweep of YanjieZe/awesome-humanoid-robot-learning + linchangyi1/Awesome-Touch. Added tactile: ManiWAV, FACTR, AnyTouch, RoboPack, Octopi, TaRF, LocoTouch, MimicTouch, PP-Tac, Evetac, Tactile Robotics outlook; sim: DiffTactile, Taccel, TacEx, BiGym, GRUtopia, ManiSkill-HAB; locomotion: LCP, DeepMimic, ASE, PHC, InterMimic, SONIC, Humanoid-GPT, SUGAR, TRILL; iDP3, SLAC → manipulation; MEVITA, Duke Humanoid → hardware; Kimera → perception. Code not added: FACTR, TacEx, Evetac, PP-Tac, RoboPack (guessed repo names were 404; find real ones), BiGym (repo showed 1★, project only). Not yet swept: 2026 entries of the humanoid list (607 uncurated IDs, many already in the feed), 2022–25 Awesome-Touch below top venues, AwesomeWorldModels. Also candidates: VMP, Robot Motion Diffusion Model, GTSAM/VINS-Fusion (no arXiv link in the list). README is 260+ KB; GitHub stops rendering at 512 KB, about 1,200 entries at the current rate, so plan a shorter README before then.
 
 - Run 53: gap sweep: diffed ai4s-research/awesome-vision-language-action against curated IDs. Added LingBot-VLA (highlight), GR00T N1.7 (no paper, type code), Gemini Robotics 1.5, VLA-JEPA, FASTER, DeeR-VLA, ECoT, 2 VLA surveys → vla; World Action Models survey (highlight) → world-models; VLA data survey, RoboChallenge → datasets; WholeBodyVLA → locomotion. Picks: CUE → sim, RoboAuto + Knowing Where to Look → manipulation, AnchorHEC → perception, UED benchmark → datasets. Code added: AuRA, RoboDoctor, TacLatentIL, AgenticRoboRL (train code confirmed by code search). Venues for VLA-JEPA, FASTER, WholeBodyVLA come from the official repo descriptions. Still missing from that list, verify first: RoboMamba 2406.04339, EdgeVLA 2507.14049, PointVLA 2503.07511, RoboVLMs 2412.14058, Emma-X 2412.11974, static-dynamic VLA 2602.03983, efficient VLA survey 2510.24795, RoboBrain 2502.21257; AutoVLA (driving, skip). VPP2: repo roboterax/video-prediction-policy-2 live, no arXiv found and README not fetchable; wait. Repeat this sweep with other lists (humanoid, tactile, world models). `scripts/check_links.py` now runs in CI (internal href/src and #fragments). Mobile QA of 9 main pages at 390 px: no overflow or JS errors. Next: Wed 11-04 feed; W45 digest intro Mon 11-09.
 
