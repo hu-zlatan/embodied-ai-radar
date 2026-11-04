@@ -31,7 +31,7 @@ def week_bounds(week: str) -> tuple[dt.date, dt.date]:
 
 
 def clean_title(t: str) -> str:
-    t = re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", t)
+    t = re.sub(r"\$([πΨ])_\{?([^}$]+)\}?\$", r"\1\2", t)
     t = re.sub(r"\$([^$]{1,12})\$", lambda m: re.sub(r"[_{}\\]", "", m.group(1)), t)  # $Δ$ -> Δ, $λ_0$ -> λ0
     return t.replace("[", "(").replace("]", ")")
 

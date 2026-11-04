@@ -23,7 +23,7 @@ README_TOP = 12  # entries per topic in the README
 
 
 def md_title(t: str) -> str:
-    t = re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", t)
+    t = re.sub(r"\$([πΨ])_\{?([^}$]+)\}?\$", r"\1\2", t)
     return t.replace("[", "\\[").replace("]", "\\]").replace("*", "\\*")
 
 

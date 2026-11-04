@@ -14,7 +14,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - ⭐ **[π0: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/abs/2410.24164)** (2024) — VLM 主干加流匹配动作专家，跨多种机器人训练，能完成叠衣服等长时程灵巧任务。 · [代码](https://github.com/Physical-Intelligence/openpi)
 - ⭐ **[OpenVLA: An Open-Source Vision-Language-Action Model](https://arxiv.org/abs/2406.09246)** (2024) — 基于 Llama 2 与 DINOv2/SigLIP 的 7B 开源 VLA，是 VLA 研究与 LoRA 微调的事实开源基线。 · [代码](https://github.com/openvla/openvla)
 - ⭐ **[RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control](https://arxiv.org/abs/2307.15818)** (2023) — 提出 "VLA" 概念：把网络规模的视觉语言模型联合微调为输出动作 token，把语义知识迁移到机器人控制。 · [项目页](https://robotics-transformer2.github.io/)
-- **[$Ψ_0$: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation](https://arxiv.org/abs/2603.12263)** (2026) — 面向人形移动操作的开放基础模型，主张因运动学差异，不宜直接混合人类与人形数据共同训练。
+- **[Ψ0: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation](https://arxiv.org/abs/2603.12263)** (2026) — 面向人形移动操作的开放基础模型，主张因运动学差异，不宜直接混合人类与人形数据共同训练。
 - **[π0.7: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities](https://arxiv.org/abs/2604.15483)** (2026) — CoRL 2026 Oral。可引导的通用基础模型：在未见环境中执行多样指令，跨形态零样本完成叠衣等任务，无需任务专用微调。 · [项目页](https://www.pi.website/blog/pi07)
 - **[AGQ: Action-Guided Ultra-Low-Bit Quantization for Vision-Language-Action Models](https://arxiv.org/abs/2610.33074)** (2026) — 面向 VLA 的混合精度量化：根据每个权重矩阵对输出动作的影响分配比特数；报告在 3 比特下 LIBERO 成功率 92.7%（高于 AWQ 与 GPTQ），2.5 比特下仍有 70.5%。 · [代码](https://github.com/Qiuxu00/AGQ)
 - **[Asynchronous Robot Policies](https://arxiv.org/abs/2611.05155)** (2026) — 把低频更新语义记忆的大型 VLM 与高频出动作的轻量专家解耦，并针对陈旧和延迟训练；报告 VLM 降到标称频率十分之一时性能无明显损失。 · [项目页](https://arp.insait.ai)

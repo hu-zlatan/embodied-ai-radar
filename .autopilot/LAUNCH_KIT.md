@@ -18,7 +18,7 @@ Links:
 
 标题：CoRL 2026 会议指南：全部 687 篇录用论文，按日程和海报编号整理，可筛选
 
-CoRL 2026 下周在奥斯汀开。官方列表只有标题，我把它整理成了一页：687 篇论文按 Oral / Spotlight / 海报场次和编号排列，可按主题、标题/作者、是否有代码筛选（178 篇已找到代码），并尽量按标题匹配到 arXiv 和代码；精选论文有中英文一句话要点。还附了 32 场研讨会的链接。点 ☆ 能存成个人日程（只存在浏览器里），可以分享链接、导出日历文件。适合开会前挑海报，或者不去现场时补课。
+CoRL 2026 下周在奥斯汀开。官方列表只有标题，我把它整理成了一页：687 篇论文按 Oral / Spotlight / 海报场次和编号排列，可按主题、标题/作者、是否有代码筛选（178 篇已找到代码），并尽量按标题匹配到 arXiv 和代码；arXiv 上的全部 Oral 与 Spotlight 都有中英文一句话要点。还附了 32 场研讨会的链接。点 ☆ 能存成个人日程（只存在浏览器里），可以分享链接、导出日历文件。适合开会前挑海报，或者不去现场时补课。
 
 页面顶部新增“数说本届会议”：82% 的论文已上 arXiv；标题中 VLA 与视觉运动策略约占 15%，人形约 9.5%，世界模型约 5%；已找到代码的比例 Oral/Spotlight 为 39%，其余为 24%（只算能找到的链接）。点主题即可列出对应论文。
 
@@ -38,7 +38,7 @@ CoRL 2026 is next week. The official list is titles only, so I put all 687 accep
 
 最近在跟具身智能 / 机器人学习方向，发现现有的 awesome list 要么很久不更新，要么只是每日 arXiv 列表、没有筛选。于是做了个小网站：
 
-- 精选索引：VLA、操作与灵巧手、触觉、人形与足式、世界模型、导航、感知与 SLAM、规划控制与安全、强化学习与模仿学习、仿真与 sim-to-real、数据集、开源硬件 12 个主题、480 多条，每条都有中英文一句话要点，arXiv 编号和链接由 CI 自动核验
+- 精选索引：VLA、操作与灵巧手、触觉、人形与足式、世界模型、导航、感知与 SLAM、规划控制与安全、强化学习与模仿学习、仿真与 sim-to-real、数据集、开源硬件 12 个主题、近 800 条，每条都有中英文一句话要点，arXiv 编号和链接由 CI 自动核验
 - 每日 arXiv：GitHub Actions 每天抓 cs.RO 以及 CV/LG/AI/CL 里的机器人论文，按主题和机器人形态（机械臂/灵巧手/人形/四足/无人机…）自动标注，可筛选"有代码"，并从作者备注中识别已接收的会议，并按会议汇总成页面（如 CoRL 2026，170+ 篇，可按主题、有代码、Oral/Spotlight 筛选：https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026.html?lang=zh）
 - 纯静态站，搜索即时（可直接用中文关键词搜英文论文，如“人形 强化学习”“触觉”），手机可用，支持 EN/中文 切换，有 Atom 订阅
 - 每篇论文一键复制 BibTeX；每个精选条目有独立可分享页面（如 LEAP Hand：https://hu-zlatan.github.io/embodied-ai-radar/e/arxiv-2309.06440.html ）；显示各开源代码的 GitHub 星标和 Hugging Face 每日论文点赞数；按机器人形态（人形、四足、灵巧手…）也有单独页面和订阅
@@ -94,7 +94,7 @@ Body:
 
 Embodied AI Radar is a free, open-source site that tries to fix two things that bug me about paper lists: they go stale, and daily arXiv dumps are unfiltered.
 
-- A curated index of 510+ entries across 12 topics (VLA & foundation models, manipulation, tactile, locomotion & humanoids, world models, navigation, perception & SLAM, planning/control & safety, RL & imitation learning, sim-to-real, datasets, open hardware). Each entry has a one-line takeaway; CI checks every arXiv ID against arXiv and every link weekly.
+- A curated index of 790+ entries across 12 topics (VLA & foundation models, manipulation, tactile, locomotion & humanoids, world models, navigation, perception & SLAM, planning/control & safety, RL & imitation learning, sim-to-real, datasets, open hardware). Each entry has a one-line takeaway; CI checks every arXiv ID against arXiv and every link weekly.
 - A daily feed of new cs.RO papers (plus robotics papers cross-listed from CV/LG/AI/CL), auto-tagged by topic and robot type (arm, hand, humanoid, legged, drone…), with venue badges parsed from author comments and a page per conference (e.g. CoRL 2026, 170+ papers, filterable by topic, code and Oral/Spotlight: https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026.html), filterable by "has code", with Atom feeds per topic and per robot type, plus GitHub stars and Hugging Face upvotes as quick signals.
 - English and Chinese throughout.
 
@@ -110,7 +110,7 @@ Site: https://hu-zlatan.github.io/embodied-ai-radar/ · Code (MIT): https://gith
 
 Text:
 
-This is a static site plus a few GitHub Actions: every day it pulls new robotics papers from arXiv, tags them by topic with simple keyword rules, and rebuilds the site. A small curated index (510+ entries now) sits on top, with one-line takeaways in English and Chinese, and a CI job that checks each arXiv ID and link so the list can't silently rot.
+This is a static site plus a few GitHub Actions: every day it pulls new robotics papers from arXiv, tags them by topic with simple keyword rules, and rebuilds the site. A small curated index (790+ entries now) sits on top, with one-line takeaways in English and Chinese, and a CI job that checks each arXiv ID and link so the list can't silently rot.
 
 An unusual part: the repository is maintained by an AI agent (Claude) that runs on a schedule, reads its own state/log files in the repo, and pushes small increments; a human owner steers it through a charter file. The charter, run log and decisions are all public in the repo.
 
