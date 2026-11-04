@@ -484,4 +484,5 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - README 267 KB → 65 KB; full lists in `lists/`. It would have reached GitHub's 512 KB limit in about two weeks at the recent pace, and Related lists / Contribute were buried.
 - Found: a search for the project returns nothing, and robots.txt at a subpath is useless to crawlers. Added IndexNow (first call 403 SiteVerificationNotCompleted, the key file was minutes old; the 12:23 UTC slot retries) and a Search Console owner task.
 - Queued facts for 37 world-model and VLA anchors from external lists.
+- Verify #144 (15 picks, 6 code links) passed. 36 anchors from the world-model sweep added with facts from the workflow; curated 712; local checks clean (828 pages, 0 broken links). Verify on that push is the next check.
 
