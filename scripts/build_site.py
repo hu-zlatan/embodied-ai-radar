@@ -26,6 +26,7 @@ from radar import (ROOT, bibtex, classify, honor_of, load_program, venue_of, loa
 
 OUT = ROOT / "_site"
 SRC = ROOT / "site_src"
+INDEXNOW_KEY = "a585a6743cfcfea081943fb8fcf4bd9e"  # public by design: it must be readable on the site
 DIGEST = ROOT / "digest"
 SITE_URL = "https://hu-zlatan.github.io/embodied-ai-radar/"
 REPO_URL = "https://github.com/hu-zlatan/embodied-ai-radar"
@@ -1052,6 +1053,14 @@ def build() -> int:
     (OUT / "404.html").write_text(page("Not found · Embodied AI Radar", f'<h1>404</h1><p><a href="{SITE_URL}">{bi("Back to the radar", "返回首页")}</a></p>', SITE_URL, desc, "404.html"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n")
+    # IndexNow proves ownership with a public key file; see scripts/indexnow.py.
+    (OUT / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY)
+    # Search-engine ownership files the owner drops into site_src/verify/ are served from the site root.
+    verify_dir = SRC / "verify"
+    if verify_dir.is_dir():
+        for f in verify_dir.iterdir():
+            if f.is_file():
+                shutil.copy(f, OUT / f.name)
     urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html", "start.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries] + ["venues/index.html"] + [f"venues/{venue_slug(k)}.html" for k in vkeys] + ([f"venues/{PROGRAM}-program.html"] if prog else []) + ["robots/index.html"] + [f"robots/{m['id']}.html" for m in embs] + ["labs/index.html"] + [f"labs/{i}.html" for i in LAB_PAGES]
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'

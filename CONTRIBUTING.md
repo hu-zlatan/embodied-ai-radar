@@ -27,7 +27,7 @@ Rules: entries must be real and links must work (CI checks arXiv titles and URLs
 ```bash
 pip install -r requirements.txt
 python scripts/validate.py        # offline schema checks
-python scripts/build_readme.py    # regenerate README lists
+python scripts/build_readme.py    # regenerate README and lists/
 python scripts/build_site.py      # site → _site/ (open _site/index.html)
 ```
 
