@@ -2,7 +2,7 @@
 
 _Motion planning, trajectory optimization, MPC, safety filters and safe learning-based control._
 
-28 entries, ⭐ = highlight. Generated from [`data/curated/control.yaml`](../data/curated/control.yaml); edit the YAML, not this file.
+29 entries, ⭐ = highlight. Generated from [`data/curated/control.yaml`](../data/curated/control.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/control.html) · [中文](control.zh-CN.md)
 
@@ -12,6 +12,7 @@ _Motion planning, trajectory optimization, MPC, safety filters and safe learning
 - **[A generalist policy for muscle-driven control across individual musculoskeletal models](https://arxiv.org/abs/2610.36535)** (2026) — MyoAcross trains one morphology-conditioned policy that tracks reference motions on unseen individual musculoskeletal models without fine-tuning. Reports 99.24% completion on 31 held-out models and 22.6% lower error. · [project](https://woodater-thu.github.io/MyoAcross/)
 - **[CusADi2: Latency-Optimized Batch Computation of Robot Kinematics, Jacobians, and Hessians on the GPU](https://arxiv.org/abs/2610.25476)** (2026) — Evaluates batches of kinematics, Jacobians and Hessians on the GPU with low wall-clock latency, targeting online sampling- and gradient-based trajectory optimization. · [code](https://github.com/johnviljoen/cusadi2)
 - **[Keeping Contact: Task-Adaptive Friction Margins for Bimanual Non-Prehensile Manipulation](https://arxiv.org/abs/2610.36961)** (2026) — Signed friction distance as a task-adaptive slip margin for bimanual tilting about a pivot; a sequence of SOCPs gives optimal contact forces. Real tests show adaptive margins beat fixed or no margins. · [project](https://keeping-contact.github.io/)
+- **[PolicyIK: High-Precision Inverse Kinematics for Robot Arms with Reinforcement Learning](https://arxiv.org/abs/2611.05372)** (2026) — Learned goal-conditioned inverse kinematics that can hold the offset a position controller needs at rest; reports errors within 1 mm and 0.2° on 93.5% of held-out simulated tasks and training directly on a real arm. · [code](https://github.com/Tinaliu0123/PolicyIK)
 - **[PrismPlan: A Shared GPU Substrate for Motion Planning Across Paradigms](https://arxiv.org/abs/2610.23884)** (2026) — Builds batched GPU collision checking and forward kinematics once and runs sampling, search and optimization planners on top, so the three paradigms can be compared fairly. · [code](https://github.com/XiaoyubotMotionTeam/PrismPlan)
 - **[RAM: Reachability Across Morphologies](https://arxiv.org/abs/2606.09108)** (2026) — CoRL 2026 Spotlight. A morphology-conditioned implicit neural model of pose reachability, differentiable, self-collision aware and able to generalize to unseen morphologies. · [code](https://github.com/TimWalter/ram) · [project](https://timwalter.github.io/ram)
 - **[Sub-Millisecond Reflexes for Continuous Physical Human-Robot Interaction](https://arxiv.org/abs/2610.21913)** (2026) — An open-source ROS 2 multimode controller that switches control modes and triggers safety reflexes in under a millisecond, without stopping the task; shown on a Franka arm. · [code](https://github.com/RoboRef/franka_reflex_engine)

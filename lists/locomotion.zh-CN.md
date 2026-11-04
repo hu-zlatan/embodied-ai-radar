@@ -2,7 +2,7 @@
 
 _足式运动、人形全身控制与跑酷。_
 
-共 69 条，⭐ 为重点推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
+共 70 条，⭐ 为重点推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/locomotion.html) · [English](locomotion.md)
 
@@ -16,6 +16,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[$λ_0$: Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.18950)** (2026) — 构建 500 小时的第一视角人类数据集 HumanVerse（含同步的身体与手部动作），对齐到 Unitree G1 后用于人形基础模型 λ0 的中期训练；论文报告 SIMPLE 上成功率 90%、真实移动操作任务 62.5%，人类数据越多下游表现越好。 · [代码](https://github.com/LambdaHumanoid/openlambda) · [项目页](https://lambdahumanoid.github.io/)
 - **[Action-Aligned Latent Planning for Versatile Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.24675)** (2026) — FIBER 以冻结的行为基础模型（BFM）潜在空间作为统一规划表示，把各任务专用策略投影进该空间，再离线训练单一感知流匹配规划器；仿真中搬箱、开门、抓取平均成功率 42.0%（潜在回放基线 11.6%），并在真实 Unitree G1 上验证。 · [项目页](https://fiberaa.github.io/)
 - **[CMP: Robust Whole-Body Tracking for Loco-Manipulation via Competence Manifold Projection](https://arxiv.org/abs/2604.07457)** (2026) — CoRL 2026 Spotlight。提升足式移动操作臂全身末端跟踪对分布外输入（传感器噪声、不可行指令）的鲁棒性：用逐帧安全方案把无限时域安全约束转化为计算高效的单步流形约束。 · [项目页](https://shepherd1226.github.io/CMP)
+- **[Coordinating Humanoid Loco-Manipulation through Action-Conditioned Latent Foresight](https://arxiv.org/abs/2611.04839)** (2026) — 用潜空间世界动作模型在执行前为人形指令序列打分，并逐步重规划；报告七项真机任务成功率 85.7%，GR00T N1.7 为 70.0%。 · [项目页](https://ju6276.github.io/Action-Grounded-Foresight/)
 - **[DiffContact: Differentiable Contact Dynamics for Policy Learning and Contact-Implicit Trajectory Optimization](https://arxiv.org/abs/2610.35852)** (2026) — 只在反向传播中换用平滑的解析摩擦接触梯度，前向仍是硬接触仿真：四足小跑策略在台式机上不到 2 分钟训练完成，无需微调即可迁移到真机；在接触隐式轨迹优化中也能找到更丰富的接触解。 · [项目页](https://diffcontact.github.io)
 - **[DiffWBC: Unlocking Steerable General Humanoid Motion Tracking via One-Step Diffusion Whole-Body Control](https://arxiv.org/abs/2610.41354)** (2026) — 用一步扩散模型做人形全身跟踪：每个 50 Hz 控制步只需一次前向；用可微代价梯度在测试时操控冻结的控制器，无需重训；用规划分散度在不做物理仿真的情况下发现跟踪失败。已部署到 Unitree G1。 · [项目页](https://diffwbc.github.io/)
 - **[ELEVATE: Agentic Controller Acquisition from Task Failure for Quadrupedal Manipulation](https://arxiv.org/abs/2610.38388)** (2026) — 四足机械臂反复失败时，由编码智能体判断缺少哪种全身控制能力，自动编写强化学习问题（奖励、课程、终止条件）训练新控制器并加入技能库再重试；习得扶墙抬升等技能，仿真五项超出初始能力的任务成功率 98.4–100%，无需真机训练即迁移到实体机器人（货架取物 18/20）。 · [项目页](https://agentic-quad-elevate.github.io/public/)

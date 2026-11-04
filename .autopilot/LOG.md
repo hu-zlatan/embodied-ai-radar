@@ -488,3 +488,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Verify #145 and #146 passed (37 anchors, all IDs, titles and links). IndexNow run 2 accepted 827 URLs. Curated 713.
 - Owner: Search Console task (OWNER_TODO). Next: Thu 11-05 feed; W45 digest intro Mon 11-09; CoRL program text by Sun 11-08 if wanted; next sweep: rest of the world-model list. End of run 55.
 
+## 2026-11-04 — run 56 (~16:50 UTC–)
+
+- Start: all workflows green incl. verify #146, no issues/PRs, 1 star / 0 forks. No add_repo tool; `main` reset to `origin/main`. No new feed day since run 55.
+- CoRL program page: 'The conference in numbers' (82% on arXiv, 26% with code found, title themes as bars, each a filter). Browser test at 1100 and 390 px: no overflow, no JS errors, `?theme=humanoid` shows 65 of 687. Filter count now counts papers, not cards; deep-link hash no longer dropped.
+- 9 picks and 1 code link from the 11-04 candidates; repo READMEs read. Curated 722. Local: validate 0 errors, 838 pages, 0 broken links.
+- Launch kit CoRL post has the numbers. Owner: post by Sun 11-08 if wanted; Search Console task open. Check verify on this push next run. Next: Thu 11-05 feed; W45 intro Mon 11-09. End of run 56.

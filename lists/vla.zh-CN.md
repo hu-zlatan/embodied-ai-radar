@@ -2,7 +2,7 @@
 
 _视觉-语言-动作模型与通用机器人策略。_
 
-共 148 条，⭐ 为重点推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
+共 150 条，⭐ 为重点推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [English](vla.md)
 
@@ -28,6 +28,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[Democratizing Robot-Use Agents: A Unified Harness with Open Models](https://arxiv.org/abs/2611.01560)** (2026) — uni-robot-agent：面向开放权重模型的机器人操作智能体（Robot-use Agent）框架，便于继续训练。作者报告现成的 Qwen3.8 模型在 RoboDojo 上得 31.39 分，高于已发表的 GPT-6 Astra-RoboProbe 的 28.97 分。 · [代码](https://github.com/Open-RUA/uni-robot-agent)
 - **[Demystifying When and Why VLAs Fail in Contact-Rich Tasks and How to Fix Them](https://arxiv.org/abs/2608.01402)** (2026) — CoRL 2026 Spotlight。分析 VLA 模型为何难以完成接触丰富的操作任务，并区分两类失败模式：难以输出接触时所需微小修正动作的精度失败，以及力失败。
 - **[Diagnosing Compositional Generalization in Sequential Robot Tasks](https://arxiv.org/abs/2607.29687)** (2026) — CoRL 2026 Spotlight。从指令空间覆盖出发，把序列任务策略的泛化差距分解为边际偏移、组合偏移与上下文-动作偏移。 · [代码](https://github.com/YixiaoWang7/Diagnosing_Compositional_Generalization_Robot) · [项目页](https://yixiaowang7.github.io/Diagnosing_Compositional_Generalization_Robot_Page/)
+- **[Do Agentic Policies Need to Look at Every Step? Geometric Abstraction for Reasoning and Action](https://arxiv.org/abs/2611.05058)** (2026) — 把常规空间推理从图像转到文本：语言模型直接读取局部刷新的三维符号场景，仅在需要时看图；报告多步任务完成度提高，图像查询大幅减少。 · [项目页](https://geometric-abstraction.github.io)
 - **[EagleVLA: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference](https://arxiv.org/abs/2607.12659)** (2026) — EagleVLA：面向 Jetson Orin 等低功耗机载设备的 VLA 异步推理方法，针对异步执行带来的感知-执行错位与反应慢两个问题；CoRL 2026 Spotlight，曾用名 Jetson-PI。 · [代码](https://github.com/PKU-SEC-Lab/EagleVLA)
 - **[Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models](https://arxiv.org/abs/2610.31569)** (2026) — 让 VLA 自己判断任务完成或失败：把停止与失败信号作为动作块的两个额外维度，与动作一起去噪且去噪更快，从而引导后续动作生成；无需逐帧进度标注，在真机操作实验中验证。 · [代码](https://github.com/lyfeng001/Echo-Sim) · [项目页](https://lyfeng001.github.io/Echo/)
 - **[Efficient Long-Horizon Vision-Language-Action Models via Static-Dynamic Disentanglement](https://arxiv.org/abs/2602.03983)** (2026) — DySta 把视觉输入分成静态和动态 token，静态部分只保留一份并复用 KV 缓存，从而延长 VLA 上下文并加快推理。
@@ -47,6 +48,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[HeLM: Hierarchical Explicit Language Memory for Non-Markovian Manipulation](https://arxiv.org/abs/2611.02660)** (2026) — 用显式文本保存任务历史、只在检测到事件时更新，为 VLA 增加工作记忆。在 10 个真实的非马尔可夫任务上测试，其中包括需要跨回合保持上下文的任务。 · [代码](https://github.com/kimspacehuni/HeLM) · [项目页](https://kimspacehuni.github.io/HeLM/)
 - **[HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model](https://arxiv.org/abs/2610.40373)** (2026) — 跨时间尺度联合预测短期状态、语义里程碑与目标状态，再由动作查询从中检索相关的未来表征。
 - **[HuGe: Scaling Humanoid Generalist Vision-Language-Action Models with Egocentric Experience](https://arxiv.org/abs/2610.34186)** (2026) — 人形机器人通用 VLA 系列：在 2,000 多小时第一视角人类与机器人数据上预训练，输出潜在动作 token 驱动预训练的全身控制器并附手部信号；通过仿真回放构造伪本体感知、重渲染手臂外观缩小人-机差异，报告 HumanoidArena 最优，并在 Unitree G1 上验证人类数据增益。 · [代码](https://github.com/yliu-cs/HuGe) · [项目页](https://yliu-cs.github.io/HuGe)
+- **[Human-to-Robot Transfer via Bridging Representation and Action Space in VLAs](https://arxiv.org/abs/2611.04391)** (2026) — H2RB 用非配对的人类与机器人示教微调预训练 VLA：按几何对齐观测，并共享动作潜变量；报告真机任务的物体迁移得分从 8.0 升至 51.8。 · [项目页](https://junhyeong-park.me/h2rb/)
 - **[Isaac GR00T N1.7](https://github.com/NVIDIA/Isaac-GR00T)** (2026) — 可商用的 30 亿参数人形 VLA：Cosmos-Reason2 主干负责推理规划，扩散 Transformer 输出电机指令。NVIDIA 称用约 20,854 小时人类第一视角视频训练。 · [项目页](https://huggingface.co/blog/nvidia/gr00t-n1-7)
 - **[LTM: Latent Transition Based In-Context Memory for Vision-Language-Action Models](https://arxiv.org/abs/2610.21362)** (2026) — 通过缓存相邻观测之间的紧凑潜在转移，为 π0.5 加入记忆，面向关键物体移出视野的任务。 · [代码](https://github.com/buaa-colalab/LTM-pi)
 - **[Learning What to Say to Your VLA: Mostly Harmless Vision Language Action Model Steering](https://arxiv.org/abs/2606.12299)** (2026) — CoRL 2026 Spotlight。语义相近的指令可能让 VLA 行为迥异，该框架通过交互搜索语言序列来提升闭环任务表现。

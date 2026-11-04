@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 47 条，⭐ 为重点推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 48 条，⭐ 为重点推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [English](learning.md)
 
@@ -22,6 +22,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Flexible Language-Guided Representation Editing for Adaptive Robot Behavior](https://arxiv.org/abs/2610.28893)** (2026) — FLEX 用自然语言纠正来迭代修改机器人的任务特征集合，支持添加、泛化、屏蔽三种操作（而非只能添加）；在二维导航、Franka 桌面操作和真实用户研究中报告比其他特征编辑方法获得更高的归一化奖励。 · [项目页](https://mit-clear-lab.github.io/FLEX/)
 - **[Flow Policy Gradients for Robot Control](https://arxiv.org/abs/2602.02481)** (2026) — CoRL 2026 Oral。让流匹配策略梯度可用于机器人控制：绕过动作似然计算，策略不再限于高斯分布。应用于足式运动、人形动作跟踪与操作。 · [代码](https://github.com/amazon-far/fpo-control) · [项目页](https://hongsukchoi.github.io/fpo-control)
 - **[FlowDAgger: Human-in-the-Loop Adaptation of Generative Robot Policies in Latent Space](https://arxiv.org/abs/2607.08877)** (2026) — CoRL 2026 Spotlight。在隐空间中根据人类干预适配冻结的生成式策略，替代大规模采集或实机在线强化学习。 · [代码](https://github.com/microsoft/FlowDAgger) · [项目页](https://microsoft.github.io/FlowDAgger)
+- **[GSBR: Geometric Support Behavior Regularization for Online RL](https://arxiv.org/abs/2611.05295)** (2026) — 在预训练策略之上做在线强化学习，按动作到其支撑集的距离施加惩罚：集内不罚，集外平滑增长；报告 19 个基准任务的平均成功率从 33% 升至 95%。 · [项目页](https://charlesxu0124.github.io/gsbr/)
 - **[HIDRA: Hierarchical Dual-Routing Attention for Replay-Free Lifelong Imitation Learning](https://arxiv.org/abs/2610.36374)** (2026) — 无回放的终身模仿学习：分层双路由注意力先按指令检索专家、再按上下文细化，并用键级几何正则抑制表征漂移带来的路由干扰；报告在多个 LIBERO 任务序列上优于无回放和有回放基线。 · [代码](https://github.com/yfqi/HIDRA)
 - **[Learning from Fleet Experience: Collective Experience Learning Across 96 Robots](https://arxiv.org/abs/2610.25736)** (2026) — 部署中的机器人共享执行经验：用失败片段在机群经验库中检索相似的成功片段来微调策略，无需新增示教或人工纠正。论文报告五个真机任务成功率 93–99%，96 台机器人把手机装盒任务从 79% 提升到 98%。 · [代码](https://github.com/RLinf/RLinf) · [项目页](https://cel-robot-learning.github.io)
 - **[Progress-Guided Preference Generation for Aligning Generative Control Policies](https://arxiv.org/abs/2610.25692)** (2026) — 用自动生成的偏好标签微调扩散与流匹配策略：以少量专家示教为参照衡量自主回放的顺序进度并据此排序，无需人工标注或手工奖励；报告在长时程操作任务上优于监督微调基线。 · [项目页](https://pgpg2026.github.io/)

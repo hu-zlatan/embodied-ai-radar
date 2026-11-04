@@ -2,13 +2,14 @@
 
 _Vision-language navigation, embodied question answering, mobile manipulation and LLM planners._
 
-38 entries, ⭐ = highlight. Generated from [`data/curated/navigation.yaml`](../data/curated/navigation.yaml); edit the YAML, not this file.
+39 entries, ⭐ = highlight. Generated from [`data/curated/navigation.yaml`](../data/curated/navigation.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/navigation.html) · [中文](navigation.zh-CN.md)
 
 [VLA & Robot Foundation Models](vla.md) · [Manipulation & Dexterous Hands](manipulation.md) · [Tactile & Visuotactile Sensing](tactile.md) · [Locomotion & Humanoids](locomotion.md) · [World Models](world-models.md) · **Navigation & Embodied Agents** · [Perception, SLAM & 3D Mapping](perception.md) · [Planning, Control & Safety](control.md) · [Robot Learning: RL & Imitation](learning.md) · [Sim-to-Real & Simulators](sim.md) · [Datasets & Benchmarks](datasets.md) · [Hardware & Open-Source Robots](hardware.md)
 
 - ⭐ **[Do As I Can, Not As I Say: Grounding Language in Robotic Affordances](https://arxiv.org/abs/2204.01691)** (2022) — SayCan — an LLM proposes steps and learned value functions score what the robot can actually do right now.
+- **[Aero-VPA: Few-Step Flow-Matching Control over Non-Reconstructive JEPA Latents for Agile Flight on Edge Hardware](https://arxiv.org/abs/2611.04392)** (2026) — A compact JEPA-plus-flow-matching quadrotor policy with an unusually candid report: cloning failed all 60 missions, DAgger plateaued, and a runtime shield raised simulated forest success from 21.1% to 52.2%. · [code](https://github.com/ylee-sling/Aero-VPA) · [project](https://huggingface.co/ylee-sling/aero-vpa)
 - **[Benchmarking Obstacle-Conditioned Safety in Household Robot Navigation](https://arxiv.org/abs/2610.34674)** (2026) — OSMA-Bench: matched scenes that differ only in obstacle type test whether navigation policies slow down and keep clearance by how risky an obstacle is. VLM and VLA policies recognise the risk but rarely act on it. · [code](https://github.com/OSMA-Bench/OSMA-Bench) · [project](https://osma-bench.github.io/)
 - **[Cracking Mobile Manipulation: From Failure Diagnosis to Agentic Robot System](https://arxiv.org/abs/2610.19600)** (2026) — Finds a VLA at 80% on atomic skills drops to 19% when composed into mobile manipulation, diagnoses why, and builds an agentic system around it. · [code](https://github.com/PKU-VaLuE-Lab/Cracking-Mobile-Manipulation)
 - **[EmbodiedWorld-200K: Toward Embodied World Agents via Embodied-Planning Dataset and Interactive World Models](https://arxiv.org/abs/2610.25959)** (2026) — 200K+ navigation-planning samples annotated from camera trajectories up to instructions; RL post-training inside a video world model, used as a cheap stand-in environment, reportedly helps on unseen scenes. · [code](https://github.com/XiaokunFeng/EmbodiedWorld-200K) · [project](https://xiaokunfeng.github.io/EmbodiedWorld-200K/)

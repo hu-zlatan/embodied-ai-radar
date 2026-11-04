@@ -2,13 +2,14 @@
 
 _视觉语言导航、具身问答、移动操作与大模型规划。_
 
-共 38 条，⭐ 为重点推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
+共 39 条，⭐ 为重点推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/navigation.html) · [English](navigation.md)
 
 [VLA 与机器人基础模型](vla.zh-CN.md) · [操作与灵巧手](manipulation.zh-CN.md) · [触觉与视触觉感知](tactile.zh-CN.md) · [运动控制与人形机器人](locomotion.zh-CN.md) · [世界模型](world-models.zh-CN.md) · **导航与具身智能体** · [感知、SLAM 与三维建图](perception.zh-CN.md) · [规划、控制与安全](control.zh-CN.md) · [机器人学习：强化学习与模仿学习](learning.zh-CN.md) · [仿真与 Sim-to-Real](sim.zh-CN.md) · [数据集与基准](datasets.zh-CN.md) · [硬件与开源机器人](hardware.zh-CN.md)
 
 - ⭐ **[Do As I Can, Not As I Say: Grounding Language in Robotic Affordances](https://arxiv.org/abs/2204.01691)** (2022) — SayCan：大模型提出步骤，学习到的价值函数评估机器人当下实际能做什么。
+- **[Aero-VPA: Few-Step Flow-Matching Control over Non-Reconstructive JEPA Latents for Agile Flight on Edge Hardware](https://arxiv.org/abs/2611.04392)** (2026) — 紧凑的 JEPA 加流匹配四旋翼策略，报告异常坦率：行为克隆 60 次任务全败，DAgger 进入瓶颈，运行时安全层将仿真森林任务成功率从 21.1% 提至 52.2%。 · [代码](https://github.com/ylee-sling/Aero-VPA) · [项目页](https://huggingface.co/ylee-sling/aero-vpa)
 - **[Benchmarking Obstacle-Conditioned Safety in Household Robot Navigation](https://arxiv.org/abs/2610.34674)** (2026) — OSMA-Bench 用仅障碍物类型不同的配对场景，检验导航策略能否按障碍物危险程度调整间距与速度，并提出语义敏感度指数 SSI。结果显示 VLM 与 VLA 策略能识别哪些障碍更危险，却很少把这种判断体现在实际运动中；在 VLM 方案中加入显式参数推断步骤有所改善。 · [代码](https://github.com/OSMA-Bench/OSMA-Bench) · [项目页](https://osma-bench.github.io/)
 - **[Cracking Mobile Manipulation: From Failure Diagnosis to Agentic Robot System](https://arxiv.org/abs/2610.19600)** (2026) — 发现 VLA 在原子技能上 80% 成功率、组合成移动操作后仅 19%，分析失败原因并据此构建智能体式系统。 · [代码](https://github.com/PKU-VaLuE-Lab/Cracking-Mobile-Manipulation)
 - **[EmbodiedWorld-200K: Toward Embodied World Agents via Embodied-Planning Dataset and Interactive World Models](https://arxiv.org/abs/2610.25959)** (2026) — 包含 20 万余条导航规划样本的数据集，场景多样，标注从相机运动轨迹到高层语义指令；并把视频世界模型当作低成本交互环境做强化学习后训练，报告称在未见场景上有明显提升。 · [代码](https://github.com/XiaokunFeng/EmbodiedWorld-200K) · [项目页](https://xiaokunfeng.github.io/EmbodiedWorld-200K/)

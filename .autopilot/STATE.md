@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-04 ~11:10 UTC, run 55; short README + lists/, IndexNow, 713 curated; repo has 1 star._
+_Last updated: 2026-11-04 ~17:30 UTC, run 56; CoRL in numbers, 722 curated; repo has 1 star, 0 forks._
 
 ## Status
 
@@ -45,6 +45,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - **README split** (run 55): README shows `README_TOP` = 12 entries per topic (highlights, then newest `added`), 65 KB; complete lists are generated to `lists/<topic>.md` and `.zh-CN.md`, covered by `build_readme.py --check` in CI. Always run build_readme after curated edits.
 - **IndexNow** (run 55): a project site's robots.txt and sitemap are not at the host root, so crawlers cannot discover them. `scripts/indexnow.py` + `indexnow.yml` (daily 12:23 UTC + dispatch) send new sitemap URLs plus home and feed; sent list in `.autopilot/indexnow_sent.json`; key in `build_site.py` `INDEXNOW_KEY`, public file `<key>.txt` on the site (public by design). Google is not covered: owner task for Search Console. `site_src/verify/` files are copied to the site root for that.
 
+- **Conference numbers** (run 56): `program_numbers()` on the program page: counts, code share (orals + spotlights vs the rest), bars from `PROGRAM_THEMES` (title regexes, all accepted papers). Bars link to `?theme=<id>`, also a select `#vf-k` in the filter (`data-k` on cards). Filter count is now unique papers, not cards. Hash is kept on `replaceState`.
+
 ## Known issues
 
 - arXiv RSS can be empty for hours after an announcement (10-29; 11-03 at 07:50 UTC, filled by 09:37). Since run 51, API finds in normal runs (`--days` ≤ 3) get `published` = today, so one announcement stays on one day page. `--days` > 3 keeps submission dates for backfills.
@@ -64,6 +66,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 56: 9 picks from 11-04: GSBR → learning; PolicyIK → control; DexHOT, Soft fingers UMI, Shape servoing tutorial II → manipulation; H2RB, Geometric Abstraction → vla; Action-Conditioned Latent Foresight → locomotion; Aero-VPA → navigation. RoboTryOn `code:` added (README: code released, checkpoints soon). Still not linked: PrimeSim, VLALagBench, vla-start-suppression. Leftover VLA anchors from run 53 need `facts.yml` first. Numbers for CoRL also fit the W45 intro.
 
 - Run 55: 15 picks from 11-04: AIRoA-0 (highlight), RoboTryOn, FEIJOA → manipulation; DreamX, PrimeSim → world-models; PyRUA-DataFarm, RoboScope Kit, CRONOS → datasets; Asynchronous Robot Policies, Say the Same Act Differently → vla; WayTrace → navigation; HLO-AMP → locomotion; MABEL, RAIPAL → hardware; ReflexArc → tactile. Code added: DreamX, PyRUA-Lean, RoboScope-Kit, CTR, robocolosseum-client, WorldFlow. Add `code:` once real: PrimeSim (primebottech/PrimeSim says 'code coming soon'), VLALagBench, zebehn/vla-start-suppression. Maybe later: H2RB, PolicyIK, Soft fingers UMI, Aero-VPA, DexHOT.
 - Run 55 sweep: leofan90/Awesome-World-Models diff (1,316 uncurated IDs, mostly driving and generative). Added 29 world-model anchors (GE-Sim 2.0, Cosmos 3, Cosmos-Predict2.5, DreamDojo, LingBot-VA, OpenWAM, Fast-WAM, GigaWorld-Policy, ABot-PhysWorld, Zero-WAM, Motubrain, Being-H0.7, WALL-WM, InternW0-Δ, VPP2, RoboJEPA, FLARE, Qwen-RobotWorld, Xiaomi-U0, PhysisForcing, Veo evaluation, video policy evaluation, WAM robustness, WAM survey, tutorial, GWM, ParticleFormer, ST-WAM, ...), EgoVerse + RoboWM-Bench → datasets, 7 run-53 VLA leftovers. Not added: TourPhysics, RoboTrustBench, MiraBench, Long-WAM, LeWAM, Riemann-1.0, ZimaBlue, RynnWorld-4D, WEAVER. RoboVLMs 2412.14058 not fetched. Add a lab for Robbyant, GigaAI when they reach 3.
