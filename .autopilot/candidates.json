@@ -2,52 +2,6 @@
  "updated": "2026-11-04",
  "papers": [
   {
-   "id": "2611.05372",
-   "title": "PolicyIK: High-Precision Inverse Kinematics for Robot Arms with Reinforcement Learning",
-   "published": "2026-11-04",
-   "topics": [
-    "vla",
-    "learning"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/Tinaliu0123/PolicyIK"
-   ],
-   "project": [],
-   "comment": null,
-   "authors": [
-    "Yuhan Liu",
-    "Xinqi Liu",
-    "Zixuan Dong",
-    "Keith W. Ross",
-    "Shenji Wan"
-   ],
-   "abstract": "Inverse kinematics (IK) converts end-effector pose commands into joint motion, and many vision-language-action (VLA) policies rely on it to act on a given arm and to transfer across embodiments. Precise IK remains laborious: redundancy and singularities complicate the inverse mapping, execution depends on hand-tuned controllers, and training data on physical robots are costly to collect. We present PolicyIK, a goal-conditioned reinforcement learning policy for high-precision IK. It updates joint-position references from pose feedback and observes its accumulated reference relative to the measured joints, so it can retain the offset that the position controller needs at rest. Two-scale pose errors with an error-dependent action gain resolve millimeter residuals while preserving large motions. Progress and dwell rewards teach it to both reach the tolerance and stay within it. In simulation, a single attempt by the trained PPO policy keeps the mean errors over the final second within 1 mm and 0.2° on 93.5% of held-out tasks, and a deployment protocol raises success to 98.9%. When trained directly on a physical arm with an off-policy RL learner, PolicyIK achieves higher reaching and holding success than all four classical IK controllers under the same time budgets. In simulated pick-and-place, PolicyIK executes the end-effector commands of the $π_{0.5}$ VLA policy with 95.7% success. These results show that reinforcement learning can provide high-precision inverse kinematics for robot arms. Code is available at https://github.com/Tinaliu0123/PolicyIK.",
-   "fetched": "2026-11-04"
-  },
-  {
-   "id": "2611.05295",
-   "title": "GSBR: Geometric Support Behavior Regularization for Online RL",
-   "published": "2026-11-04",
-   "topics": [
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://charlesxu0124.github.io/gsbr/"
-   ],
-   "comment": null,
-   "authors": [
-    "Charles Xu",
-    "Jacob Berg",
-    "Liyiming Ke",
-    "Sergey Levine"
-   ],
-   "abstract": "Regularizing online reinforcement learning (RL) toward a pretrained base policy can improve sample efficiency and learning stability, but regularization that is too restrictive limits how much the policy can improve. Base policies -- typically diffusion or flow-matching models trained by imitation learning on large, diverse datasets -- capture many behaviors that are reasonable but suboptimal. Existing regularizers using such base policies are too restrictive in one of two ways: behavioral cloning regularizers pull the actor toward the full base-policy distribution, penalizing it for discarding suboptimal modes, while hard support constraints forbid improvements that lie just outside the base policy's support. We propose Geometric Support Behavior Regularization (GSBR), which penalizes actions by their distance from the base policy's support. Actions within the support incur no penalty, so the actor can concentrate on high-value modes; outside the support, where value estimates are less reliable, the penalty grows smoothly with distance while still permitting improvement when the value gained outweighs the penalty. GSBR estimates this distance from a finite set of base-policy samples, so it requires only sample access to the base policy. Across 19 tasks on four robotic benchmarks, GSBR raises the average success rate from 33% for the base policy to 95%, achieving the highest average success rate and throughput among all compared methods, with about 23% higher normalized throughput than the next-best RL method. Project website and open-source code at https://charlesxu0124.github.io/gsbr/ .",
-   "fetched": "2026-11-04"
-  },
-  {
    "id": "2611.05172",
    "title": "PadLoc: Training-Free Floor-Plan Localization by Sparse Geometric Matching",
    "published": "2026-11-04",
@@ -65,51 +19,6 @@
     "Frank Neumann"
    ],
    "abstract": "We propose PadLoc, a training-free localization back-end that places a moving sensor within a known floor plan. Floor plans are cheap, persistent, and robust to appearance change, but recent learned-depth methods localize against them by filtering per-frame depth through dense $(x,y,θ)$ pose grids. PadLoc keeps the swappable depth front-end and replaces the dense grid back-end with sparse geometric matching: dominant wall orientations define a small pose-candidate set, masked normalized cross-correlation scores observed free space against the plan, and a moving-pose Gaussian-mixture Bayes filter plus consensus readout decodes the trajectory. Holding each competitor's depth fixed, PadLoc matches or beats UnLoc's forward filter and the F3Loc filter at every Gibson trajectory length, and UnLoc's offline refinement from $T=35$ on; it exceeds Z-FLoc's published results with a shared MapAnything front-end. On Bonn LiLocBench, PadLoc improves pooled SR@1m over UnLoc by 23-32 pp under wheel odometry and 35-43 pp with ground-truth motion; with full-FOV LiDAR plus wheel odometry the same readout reaches 100% SR@1m at 9-10 cm median error on the static sequence. On the Hilti-Trimble Localization Challenge PadLoc localizes a camera-only fisheye rig on construction floors hundreds of metres across at 0.90-0.98 online SR@2m on three of five sessions; adding learned wall isolation, applied to every session, covers all five at 0.67-0.92 with the localizer unchanged throughout. PadLoc thus matches or outperforms dense grid back-ends while preserving sensor modularity and a compact state that does not grow with trajectory length.",
-   "fetched": "2026-11-04"
-  },
-  {
-   "id": "2611.05119",
-   "title": "DexHOT: Learning Hand-Object Configuration Transfer for Dexterous Manipulation",
-   "published": "2026-11-04",
-   "topics": [
-    "manipulation",
-    "perception"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://dex-hot.github.io/"
-   ],
-   "comment": "9 pages, 4 figures",
-   "authors": [
-    "Zhewei Gui",
-    "Anthony Bolton",
-    "Jiyao Zhang",
-    "Zeyuan Chen",
-    "Qiyang Yan",
-    "Tianyu Wang",
-    "Hao Dong"
-   ],
-   "abstract": "Dexterous manipulation involves not only moving objects, but also arranging the hand around them to maintain useful contacts and enable subsequent actions. Yet many learning-based systems specify goals primarily through object poses or trajectories, leaving hand-object configurations to emerge implicitly. We introduce DexHOT, which formulates dexterous manipulation as hand-object configuration transfer: moving between feasible configurations that jointly specify hand articulation and object pose relative to the wrist. DexHOT learns a reusable relation-conditioned transfer primitive from synthetic feasible configuration pairs, without human reference motions, and composes long-horizon behaviors through closed-loop tracking of configuration subgoals. On DexHOTBench with 120 objects, a single policy achieves 80.5% transfer success on seen objects and 69.4% on unseen objects; on a real dexterous hand, it achieves 61.5% success over 200 real-robot transfers and 90% task success across six demonstration-guided tasks. These results show that explicit hand-object goals provide an expressive and composable interface for dexterous manipulation. More details and videos are available at https://dex-hot.github.io/.",
-   "fetched": "2026-11-04"
-  },
-  {
-   "id": "2611.05058",
-   "title": "Do Agentic Policies Need to Look at Every Step? Geometric Abstraction for Reasoning and Action",
-   "published": "2026-11-04",
-   "topics": [],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://geometric-abstraction.github.io"
-   ],
-   "comment": "Accepted to the CoRL 2026 Workshop on Agentic Robotics. 13 pages, 8 figures. Project page: https://geometric-abstraction.github.io",
-   "authors": [
-    "Yihang Liu",
-    "Yiming Chen",
-    "Mingzhe Zheng"
-   ],
-   "abstract": "Recent multimodal language models can reason directly about robot scenes, but it is unclear whether they need to repeatedly reinterpret raw visual observations at every step of an interaction. We propose shifting routine spatial reasoning from images to text and symbols through a 3D geometric abstraction that is refreshed locally from observations and read directly by the language models. Specifically, our interface represents scene geometry via typed, evidence-aware symbolic references to object parts, grounds them from calibrated RGB-D, and returns compact textual checkpoints with metric residuals after each action. Symbolic task structure can thus be reused across decisions while metric values are rebound to the current scene, with direct visual reasoning invoked only on demand. Across offline policy synthesis and continuous online execution, reasoning over grounded text and symbols improves multi-step manipulation completion while substantially reducing repeated multimodal queries, positioning explicit geometric state as an effective substrate for agentic robot policies.",
    "fetched": "2026-11-04"
   },
   {
@@ -131,41 +40,6 @@
     "Hyun-Suk Lee"
    ],
    "abstract": "We investigate the automated generation of executable robot reinforcement learning (RL) policies from natural-language task descriptions. Rather than using large language models (LLMs) as execution-time decision makers, we use them as designers that construct RL pipelines before deployment, including Markov decision process (MDP) formulation and simulator implementation. We identify a phase-wise structure in this problem: MDP formulation is dependency-structured and sequential, whereas simulator implementation becomes modular once the formulation is fixed. Based on this structure, we propose ARPG, a dependency-aware agentic framework that performs sequential MDP modeling, localized verification and correction, and simulator-structured implementation while externalizing intermediate artifacts. ARPG targets a key failure mode of automated policy generation: executable code may still yield non-learnable policies when state, action, reward, and termination artifacts are not semantically aligned. Experiments in Isaac Sim show that ARPG improves modeling correctness, environment executability, and policy-generation success compared with monolithic LLM baselines and off-the-shelf agentic systems. Additional demonstrations on custom robotics, standard RL, and engineering-domain MDPs further suggest that the same modeling pipeline can be reused beyond the main benchmark suite.",
-   "fetched": "2026-11-04"
-  },
-  {
-   "id": "2611.04839",
-   "title": "Coordinating Humanoid Loco-Manipulation through Action-Conditioned Latent Foresight",
-   "published": "2026-11-04",
-   "topics": [
-    "manipulation",
-    "locomotion",
-    "world-models"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://ju6276.github.io/Action-Grounded-Foresight/"
-   ],
-   "comment": "10 pages, including supplementary material",
-   "authors": [
-    "Ju Dong",
-    "Xinyu Xiao",
-    "Yiming Zhou",
-    "Tianshuo Yang",
-    "Xuerong Liu",
-    "Lei Zhang",
-    "Jian Chen",
-    "Haocheng Zhao",
-    "Yu Fu",
-    "Yujie Wei",
-    "Diwen Zheng",
-    "Alois Christian Knoll",
-    "Angela P. Schoellig",
-    "Ping Luo",
-    "Jianwei Zhang"
-   ],
-   "abstract": "Humanoid loco-manipulation requires coordinated body motion and hand interaction over time, and a plausible-looking command sequence can still drop a held object or leave an interaction incomplete. We present action-conditioned latent foresight, a latent world-action model (WAM) that evaluates proposed command sequences before execution. An action generator proposes joint motion-hand command sequences from vision, language, and the robot state. An action-conditioned endpoint predictor estimates the visual features each sequence prefix reaches and measures progress toward a demonstration-derived subgoal, while a joint temporal prior scores temporal consistency given the robot state and preceding commands. The robot executes the first commands of the best-scoring sequence and replans from the next observation. During training, action consistency regularization reconstructs the first demonstrated command from observed and predicted feature changes, encouraging the predictor to retain action-relevant information. On ten tasks in the humanoid loco-manipulation simulation benchmark SIMPLE, our method achieves 89.7% average success, compared with 73.7% for Psi-Zero and 82.0% for DiT4DiT. On seven real-robot tasks, it achieves 85.7% under standard conditions and 65.7% under unseen object configurations, while GR00T N1.7 achieves 70.0% and 48.6%, respectively. Project page: https://ju6276.github.io/Action-Grounded-Foresight/",
    "fetched": "2026-11-04"
   },
   {
@@ -216,50 +90,6 @@
     "Yilin Mo"
    ],
    "abstract": "Diffusion-based policies have achieved strong performance on single-task robotic manipulation. However, a single model trained jointly on multiple tasks consistently underperforms the per-task specialists trained on the same demonstrations. We focus on two challenges. First, the convolutional encoders commonly used in diffusion-based policies produce visual conditions that are not discriminative enough. Second, gradients from incompatible action modes update the shared denoiser's dense parameters along the same directions, causing destructive interference during joint training. To address both, we propose SR-DP (Spectrally Routed Diffusion Policy). A frozen VGGT encoder with a spatial-compression adapter produces compact multi-scale semantic-geometric tokens, a task-discriminative visual condition for tasks that share a workspace. We first train the denoiser as a standard diffusion policy, then decompose selected linear layers by SVD into a frozen basis of orthogonal rank-one experts, adapted through spectral routing and Householder input rotations. On six RoboTwin tasks, SR-DP averages a 68.4% success rate, surpassing multi-task VO-DP by 21.8 points and the strongest per-task baseline by 3.8 points. On four real-world bimanual tasks, Stage 2 reaches a 43.0% average success rate and improves over Stage 1 by 19.0 points.",
-   "fetched": "2026-11-04"
-  },
-  {
-   "id": "2611.04392",
-   "title": "Aero-VPA: Few-Step Flow-Matching Control over Non-Reconstructive JEPA Latents for Agile Flight on Edge Hardware",
-   "published": "2026-11-04",
-   "topics": [
-    "vla"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/ylee-sling/Aero-VPA"
-   ],
-   "project": [
-    "https://huggingface.co/ylee-sling/aero-vpa"
-   ],
-   "comment": "38 pages, 3 figures, 22 tables. Simulation study (PX4 SITL + Gazebo Harmonic). Version 2 of a preprint first posted on Zenodo (doi:10.5281/zenodo.23633375). Code: https://github.com/ylee-sling/Aero-VP",
-   "authors": [
-    "Yeonseok Lee"
-   ],
-   "abstract": "Vision-Language-Action (VLA) models generalize across tasks, but their autoregressive decoders need sequential forward passes in proportion to the action horizon, each bounded below on embedded aerial platforms by streaming billions of parameters from memory. We present Aero-VPA, a lightweight Vision-Predictor-Action architecture for 3D navigation on edge hardware. A compact RGB-D Vision Transformer and a five-head ensemble predictor, trained without pixel reconstruction, forecast the next latent state; a Conditional Flow Matching solver generates a velocity and yaw-rate chunk in two Euler steps, so each decision takes five sequential network evaluations; and the ensemble dispersion drives an uncertainty fallback. Version 1 specified the architecture, deployment and protocol without results. This version reports the first closed-loop evaluation: PX4 software-in-the-loop simulation of quadrotor missions in procedurally generated forests. Behaviour cloning failed on all 60 missions despite open-loop errors of 0.02-0.04 m/s: the policy copies its last command, a copycat form of causal confusion. DAgger with a privileged, safety-gated supervisor gave the first successes but plateaued at 11.1-21.1% across six checkpoints. A map-free runtime shield with a 15 s depth memory, barrier constraints, a cap on motion outside the 73-degree field of view and backoff along the flown path raised the first DAgger policy's success on 180 paired missions from 21.1% to 52.2% (95% CI [45.0, 59.4]; exact McNemar p = 1.2 x 10^-10) and cut its crashes from 72.2% to 22.2%, while timeouts rose from 2.8% to 23.3%. All six checkpoints gained 30.0-34.4 percentage points, at mean speeds of 1.16-1.36 m/s. The code (https://github.com/ylee-sling/Aero-VPA), the trained policy (72.6 MB, https://huggingface.co/ylee-sling/aero-vpa) and the full benchmark dataset are public.",
-   "fetched": "2026-11-04"
-  },
-  {
-   "id": "2611.04391",
-   "title": "Human-to-Robot Transfer via Bridging Representation and Action Space in VLAs",
-   "published": "2026-11-04",
-   "topics": [
-    "vla"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://junhyeong-park.me/h2rb/"
-   ],
-   "comment": "Accepted for Oral Presentation at the CoRL 2026 Workshop on Scaling H2R. Project page: https://junhyeong-park.me/h2rb/",
-   "authors": [
-    "Junhyeong Park",
-    "Wook Jung",
-    "Taeyoung Kim",
-    "Huiwon Jang",
-    "Jinwoo Shin"
-   ],
-   "abstract": "Pretrained Vision-Language-Action (VLA) policies provide a strong starting point for deployment, but adapting them to a target robot and environment still requires costly embodiment-specific demonstrations. Human demonstrations are far easier to collect, yet directly leveraging them is challenging due to the substantial human-robot embodiment gap, particularly when the underlying VLA has been pretrained primarily on robot data. We introduce H2RB (Human-To-Robot Bridge), a human-robot co-training framework for adapting pretrained VLA policies from unpaired human and robot demonstrations. H2RB bridges the embodiment gap at both interfaces: geometry-anchored alignment grounds human and robot observations in a compatible representation, while a decoupled-decoder tokenizer shares action latents without forcing both domains through a single action mapping. This design allows human demonstrations to provide useful behavioral supervision while retaining the rich visual, semantic, and control priors of the pretrained VLA. Across real-world tasks, H2RB substantially improves object transfer performance from 8.0 to 51.8 and enables skill transfer to score 62.7, in settings where co-train baselines totally fail to transfer human-demonstrated skills. The benefit also persists under object-placement shifts, improving out-of-distribution transfer from 6.0 to 45.3. H2RB suggests a way for human demonstrations to serve as a scalable supervision source for adapting pretrained robotic policies, reducing the dependence on costly target-robot data collection.",
    "fetched": "2026-11-04"
   },
   {
@@ -360,55 +190,6 @@
     "Boyu Wang"
    ],
    "abstract": "Feature matching underpins many robotic perception tasks, including visual localization, mapping, SLAM, and autonomous navigation. Existing semi-dense matchers predict confidence on fixed grids, limiting correspondences to predefined locations and requiring costly high-resolution grids for precise localization. We present CoReMatch (Coordinate Refinement Match), a recurrent framework that refines correspondences directly in continuous coordinate space rather than predicting discrete confidence maps. CoReMatch progressively improves correspondence estimates by propagating information across iterations. At the coarse stage, a Deep Aggregated Transformer captures global context and iteratively updates correspondence coordinates, while a lightweight regression head further sharpens their localization. Experiments on indoor and outdoor benchmarks show that CoReMatch strikes a strong balance between accuracy and efficiency, outperforming Efficient LoFTR in accuracy while running more than 10x faster on embedded edge hardware. These results demonstrate that recurrent coordinate refinement offers an efficient and scalable approach to real-time feature matching for robotic perception.",
-   "fetched": "2026-11-04"
-  },
-  {
-   "id": "2611.03825",
-   "title": "A Tutorial on Shape Servoing of Deformable Objects-Part II: Advanced Concepts",
-   "published": "2026-11-04",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/nachocz/tutorial_on_shape_servoing_of_deformable_objects"
-   ],
-   "project": [
-    "https://nachocz.github.io/tutorial_on_shape_servoing_of_deformable_objects/"
-   ],
-   "comment": "Part II of a two-part tutorial. 10 pages, 9 figures. Code: https://github.com/nachocz/tutorial_on_shape_servoing_of_deformable_objects. Interactive demos: https://nachocz.github.io/tutorial_on_shape_s",
-   "authors": [
-    "Ignacio Cuiral-Zueco",
-    "Alessio Caporali",
-    "Miguel Aranda",
-    "Gianluca Palli",
-    "Gonzalo López-Nicolás",
-    "Youcef Mezouar"
-   ],
-   "abstract": "In robotics, shape control, or shape servoing, refers to the automatic manipulation of a deformable object toward a desired shape. This article is the second of a two-part tutorial on data-driven, Jacobian-based shape control, in which the deformation Jacobian, a local model of how robot motion changes the measured shape, is estimated from measurements. Part I built the shape-servoing loop and derived a local stability condition. This paper starts by using the singular value decomposition of the deformation Jacobian to identify shape changes that can be produced by small robot motions, those that require large robot motions, and those that are locally unavailable. It then analyses how the choice of shape features determines how the controller regulates the object's shape and, therefore, how much the object deforms on its way to the target. It then describes three ways in which the shape control loop can fail: loss of controllability, loss of observability, and occurrence of mechanical instabilities. It closes with shape-control extensions to time-varying targets, secondary tasks, and three-dimensional objects.",
-   "fetched": "2026-11-04"
-  },
-  {
-   "id": "2611.03779",
-   "title": "Robot-Matched Soft Fingers for UMI Data Collection: Lessons from 100 Hours of Pick and Place",
-   "published": "2026-11-04",
-   "topics": [
-    "manipulation",
-    "datasets"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://lute-corp.github.io/soft-yubi-site/"
-   ],
-   "comment": "8 pages, 3 figures, 3 tables. Accepted as a poster at the CoRL 2026 UMI Arena Workshop (Track 3). Project page: https://lute-corp.github.io/soft-yubi-site/",
-   "authors": [
-    "Kobi Kelemen",
-    "Tomasz Niedziałkowski",
-    "Marcin Paszczak",
-    "Victoriano Montesinos"
-   ],
-   "abstract": "Training robot policies for multi-task pick and place requires demonstrations on many objects, which handheld Universal Manipulation Interfaces (UMIs) can collect quickly and cheaply. However, existing UMIs depend on external base stations, use rigid fingers that give no signal about contact forces, or use parallel-jaw fingers that limit grip strength. We present a battery-powered handheld interface, built on YUBI, whose soft, angled fingers wrap around objects, deform visibly under load as a visual proxy for force, and match the grippers of the robot. With it, we collect a 99.7-hour dataset over 53 objects, train $π_{0.5}$ policies on 49 of them, and hold out the other 4 as unseen objects. We find that a top camera raises success by 13 points even when only about half of the data includes it, and that mid-training on our multi-task data raises success after fine-tuning on unseen objects from 35% to 57%. Finger design, dataset, and data processing code: https://lute-corp.github.io/soft-yubi-site/",
    "fetched": "2026-11-04"
   },
   {
