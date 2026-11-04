@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 86 条，⭐ 为重点推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 87 条，⭐ 为重点推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html) · [English](world-models.md)
 
@@ -28,6 +28,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Fast-WAM: Do World Action Models Need Test-time Future Imagination?](https://arxiv.org/abs/2603.16666)** (2026) — 追问世界动作模型在测试时是否需要想象未来：训练时保留视频联合训练，推理时跳过视频生成，以对照实验区分两者的作用。 · [代码](https://github.com/yuantianyuan01/FastWAM) · [项目页](https://yuantianyuan01.github.io/FastWAM/)
 - **[From World Models to World Action Models: A Concise Tutorial for Robotics](https://arxiv.org/abs/2607.00836)** (2026) — 简明教程而非综述：界定机器人领域的世界模型和世界动作模型，并在统一视角下比较空间智能模型、JEPA 和 Cosmos。 · [代码](https://github.com/clearlab-sustech/WorldModelSurvey)
 - **[GAWM: A Compact Latent World-Action Model for Multi-Task Robot Manipulation](https://arxiv.org/abs/2610.37091)** (2026) — 参数不到 1 亿的紧凑世界动作模型：在冻结 DINOv3 特征空间中预测两个未来时刻的 token 并直接回归动作块，无需机器人或视频预训练；报告在 RoboTwin 2.0 上超过十亿参数级 WAM。 · [代码](https://github.com/gaoxiang12/ga-wm)
+- **[GE-Sim 2.0: A Roadmap Towards Comprehensive Closed-loop Video World Simulators for Robotic Manipulation](https://arxiv.org/abs/2605.27491)** (2026) — 闭环视频世界模拟器，用数千小时真机数据重新训练，加入状态专家和为推演打分的世界评判器，在单张 H100 上 2.3 秒生成 25 帧推演。 · [代码](https://github.com/AgibotTech/GE-Sim-V2) · [项目页](https://ge-sim-v2.github.io/)
 - **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — 以动作为中心的世界动作模型：由观测预测动作，视频生成变为可选，动作精度不再依赖视频预测质量，推理开销也更低。 · [代码](https://github.com/open-gigaai/giga-world-policy) · [项目页](https://gigaai-research.github.io/GigaWorld-Policy/)
 - **[GreenWAM: A World Foundation Model for Robotics](https://arxiv.org/abs/2610.18774)** (2026) — 同一个世界模型兼作策略，用共享的关节坐标动作空间覆盖 20 类机器人；论文报告其在 WorldArena、RoboTwin 2.0、LIBERO-plus 上表现突出，并蒸馏出可实时运行的单步人形机器人策略。 · [代码](https://github.com/greenvla/GreenWAM) · [项目页](https://greenvla.github.io/GreenWAM)
 - **[Hierarchical World Models with Implicit Dynamics](https://arxiv.org/abs/2610.42146)** (2026) — ID-WM 将状态可达性与局部控制解耦：高层模型在状态流形上采样可行转移，低层世界模型充当逆动力学求解器，把子目标落实为精确动作。报告比单层世界模型 MPC 提升 135%，比最优策略与扩散规划器提升 38.5%。 · [项目页](https://id-wm.github.io)
