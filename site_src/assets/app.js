@@ -17,7 +17,7 @@
   // Filter box on long venue pages: ?q=&topic=&code=1 keeps a filtered view shareable.
   var vf = document.getElementById('vf');
   if (vf) {
-    var vq = document.getElementById('vf-q'), vt = document.getElementById('vf-t'), vc = document.getElementById('vf-c'), vn = document.getElementById('vf-n'), vh = document.getElementById('vf-h');
+    var vq = document.getElementById('vf-q'), vt = document.getElementById('vf-t'), vc = document.getElementById('vf-c'), vn = document.getElementById('vf-n'), vh = document.getElementById('vf-h'), vk = document.getElementById('vf-k');
     var vcards = Array.prototype.slice.call(document.querySelectorAll('.cards .card'));
     var vtext = vcards.map(function (c) {
       var h = c.querySelector('h3'), a = c.querySelector('.authors');
@@ -25,29 +25,31 @@
     });
     var vm = document.getElementById('vf-m'), my = null;
     var vapply = function () {
-      var q = vq.value.trim().toLowerCase(), t = vt.value, code = vc.checked, honor = vh && vh.checked, shown = 0;
+      var q = vq.value.trim().toLowerCase(), t = vt.value, code = vc.checked, honor = vh && vh.checked, k = vk ? vk.value : '', shown = new Set();
       vcards.forEach(function (c, i) {
-        var ok = (!q || vtext[i].indexOf(q) >= 0) && (!t || (' ' + c.dataset.t + ' ').indexOf(' ' + t + ' ') >= 0) && (!code || c.dataset.c) && (!honor || c.dataset.h) && (!(vm && vm.checked) || my.has(c.dataset.id));
+        var ok = (!q || vtext[i].indexOf(q) >= 0) && (!t || (' ' + c.dataset.t + ' ').indexOf(' ' + t + ' ') >= 0) && (!k || (' ' + c.dataset.k + ' ').indexOf(' ' + k + ' ') >= 0) && (!code || c.dataset.c) && (!honor || c.dataset.h) && (!(vm && vm.checked) || my.has(c.dataset.id));
         c.hidden = !ok;
-        if (ok) shown++;
+        if (ok) shown.add(c.dataset.id || i);
       });
-      vn.textContent = shown + ' / ' + vcards.length;
+      vn.textContent = shown.size + ' / ' + new Set(vcards.map(function (c, i) { return c.dataset.id || i; })).size;
       Array.prototype.forEach.call(document.querySelectorAll('.pg-sess'), function (b) { b.hidden = !b.querySelector('.card:not([hidden])'); });
       var u = new URLSearchParams();
       if (q) u.set('q', vq.value.trim());
       if (t) u.set('topic', t);
+      if (k) u.set('theme', k);
       if (code) u.set('code', '1');
       if (honor) u.set('honor', '1');
       if (vm && vm.checked) u.set('mine', '1');
-      try { history.replaceState(null, '', u.toString() ? '?' + u : location.pathname); } catch (e) {}
+      try { history.replaceState(null, '', (u.toString() ? '?' + u : location.pathname) + location.hash); } catch (e) {}
     };
     var vp = new URLSearchParams(location.search);
     vq.value = vp.get('q') || '';
     vt.value = vp.get('topic') || '';
+    if (vk) vk.value = vp.get('theme') || '';
     vc.checked = vp.get('code') === '1';
     if (vh) vh.checked = vp.get('honor') === '1';
     if (vm) my = mySchedule(vf, vm, vp, vcards, function () { vapply(); });
-    [vq, vt, vc].concat(vh ? [vh] : []).concat(vm ? [vm] : []).forEach(function (el) { el.addEventListener(el === vq ? 'input' : 'change', vapply); });
+    [vq, vt, vc].concat(vh ? [vh] : []).concat(vk ? [vk] : []).concat(vm ? [vm] : []).forEach(function (el) { el.addEventListener(el === vq ? 'input' : 'change', vapply); });
     vapply();
   }
 

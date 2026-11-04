@@ -151,6 +151,59 @@ PROGRAM = "corl-2026"
 PROGRAM_HOME_UNTIL = dt.date(2026, 11, 30)  # home-page link to the conference guide stops after this date
 
 
+# Themes of a conference, counted on titles only so every accepted paper counts, with or without arXiv.
+PROGRAM_THEMES = [
+    ("vla", "Vision-language-action & visuomotor", "VLA 与视觉运动策略", r"\bVLAs?\b|vision-language-action|visuomotor"),
+    ("tactile", "Tactile, force & contact", "触觉、力与接触", r"tactile|\btouch|\bforce\b|contact-rich"),
+    ("humanoid", "Humanoids", "人形机器人", r"humanoid"),
+    ("dex", "Dexterous hands", "灵巧手", r"dexter|\bhands?\b|\bfingers?\b"),
+    ("loco", "Locomotion & whole-body", "运动与全身控制", r"locomotion|legged|quadruped|parkour|whole-body"),
+    ("imitation", "Imitation & demonstrations", "模仿学习与示教", r"imitation|behaviou?ral cloning|demonstration"),
+    ("world", "World models", "世界模型", r"world[- ]models?|\bJEPA\b|latent dynamics"),
+    ("gen", "Diffusion & flow", "扩散与流匹配", r"diffusion|flow[- ]matching|flow polic"),
+    ("rl", "Reinforcement learning", "强化学习", r"reinforcement learning|\bRL\b"),
+    ("human", "Learning from human video", "从人类视频学习", r"egocentric|human[- ]video|human demonstration|human-to-robot"),
+    ("nav", "Navigation", "导航", r"navigat"),
+    ("agent", "LLMs & agents", "大模型与智能体", r"\bLLMs?\b|\bVLMs?\b|\bagentic\b|language model"),
+    ("memory", "Memory", "记忆", r"\bmemory\b"),
+    ("s2r", "Sim-to-real", "仿真到现实", r"sim[- ]?(?:to|2)[- ]?real"),
+]
+
+
+def program_themes_of(title: str) -> list[str]:
+    return [t[0] for t in PROGRAM_THEMES if re.search(t[3], title, re.I)]
+
+
+def has_program_code(x: dict, cur_by_id: dict, rec_by_id: dict) -> bool:
+    return bool(x.get("arxiv") and (cur_by_id.get(str(x["arxiv"]), {}).get("code") or rec_by_id.get(str(x["arxiv"]), {}).get("code")))
+
+
+def program_numbers(papers: list[dict], cur_by_id: dict, rec_by_id: dict) -> str:
+    """'The conference in numbers': a few counts and one bar per title theme, each bar a link to that filter."""
+    total = len(papers)
+    honored = [x for x in papers if x["sessions"]]
+    others = [x for x in papers if not x["sessions"]]
+
+    def code_pct(rows: list[dict]) -> int:
+        return round(100 * sum(1 for x in rows if has_program_code(x, cur_by_id, rec_by_id)) / len(rows)) if rows else 0
+    n_arxiv = sum(1 for x in papers if x.get("arxiv"))
+    stats = [(str(total), "accepted papers", "篇录用论文"),
+             (str(len(honored)), "orals & spotlights", "篇 Oral / Spotlight"),
+             (f"{round(100 * n_arxiv / total)}%", "on arXiv", "已上 arXiv"),
+             (f"{code_pct(papers)}%", "with code found", "已找到代码")]
+    counts = [(t, sum(1 for x in papers if t[0] in program_themes_of(x["title"]))) for t in PROGRAM_THEMES]
+    counts.sort(key=lambda c: -c[1])
+    top = max((n for _, n in counts), default=0) or 1
+    bars = "".join(f'<li><a href="?theme={t[0]}#vf">{bi(t[1], t[2])}</a><span class="nb-track"><span class="nb-bar" style="width:{100 * n / top:.0f}%"></span></span>'
+                   f'<span class="nb-n">{n}<span class="muted"> · {100 * n / total:.1f}%</span></span></li>' for t, n in counts if n)
+    tiles = "".join(f'<div class="nb-stat"><b>{v}</b><span class="muted">{bi(en, zh)}</span></div>' for v, en, zh in stats)
+    a, b = code_pct(honored), code_pct(others)
+    return (f'<h2 id="numbers">{bi("The conference in numbers", "数说本届会议")}</h2><div class="nb-stats">{tiles}</div>'
+            f'<p class="muted">{bi(f"Code found: {a}% of orals and spotlights, {b}% of the other papers. This counts only links we could find, so the real share is higher.", f"已找到代码：Oral 与 Spotlight 中占 {a}%，其余论文中占 {b}%。这里只统计我们能找到的链接，实际比例更高。")}</p>'
+            f'<h3>{bi("Themes in paper titles", "论文标题中的主题")}</h3><ul class="nb-list">{bars}</ul>'
+            f'<p class="muted">{bi("Keyword counts on the titles of all accepted papers: a paper can count in several themes, and a paper that does not name a theme in its title is not counted. Click a theme to list its papers.", "基于全部录用论文标题的关键词统计：一篇论文可计入多个主题，标题未提及的不计入。点击主题可列出对应论文。")}</p>')
+
+
 def load_program_extra(slug: str) -> dict:
     """Hand-kept extras for a program page (Chinese session names, keynotes, workshops). Missing → {}."""
     try:
@@ -186,7 +239,7 @@ def program_card(x: dict, s: dict | None, cur: dict | None, rec: dict | None, tb
     au = ", ".join(authors[:4]) + (" et al." if len(authors) > 4 else "")
     chips = "".join(f'<a class="chip topic" href="../topics/{t}.html">{bi(tby[t]["en"], tby[t]["zh"])}</a>' for t in topics if t in tby)
     take = f'<p class="take">{bi(cur["takeaway_en"], cur["takeaway_zh"])}</p>' if cur else ""
-    return (f'<article class="card" data-id="{esc(x["or"])}" data-t="{esc(" ".join(topics))}"{" data-c=1" if code else ""}{" data-h=1" if x["sessions"] else ""}>'
+    return (f'<article class="card" data-id="{esc(x["or"])}" data-t="{esc(" ".join(topics))}" data-k="{" ".join(program_themes_of(x["title"]))}"{" data-c=1" if code else ""}{" data-h=1" if x["sessions"] else ""}>'
             f'<div class="meta">{" ".join(tags)}</div><h3><a href="{esc(url)}" rel="noopener">{esc(x["title"])}</a></h3>'
             + (f'<p class="authors">{esc(au)}</p>' if au else "") + take
             + f'<div class="links">{" · ".join(links)}</div>' + (f'<div class="chips">{chips}</div>' if chips else "") + "</article>")
@@ -230,7 +283,7 @@ def session_utc(where: str, offset_h: int = 6) -> str:
 def program_page(prog: dict, extra: dict, cur_by_id: dict, rec_by_id: dict, tby: dict) -> str:
     name, papers = prog["venue"], prog["papers"]
     n_arxiv = sum(1 for x in papers if x.get("arxiv"))
-    n_code = sum(1 for x in papers if x.get("arxiv") and (cur_by_id.get(str(x["arxiv"]), {}).get("code") or rec_by_id.get(str(x["arxiv"]), {}).get("code")))
+    n_code = sum(1 for x in papers if has_program_code(x, cur_by_id, rec_by_id))
     zh = extra.get("session_zh") or {}
     by_sess: dict[str, list[dict]] = {}
     for x in papers:
@@ -255,10 +308,12 @@ def program_page(prog: dict, extra: dict, cur_by_id: dict, rec_by_id: dict, tby:
              f'{bi("Sessions, titles and poster numbers come from the", "日程、标题与海报编号来自")} <a href="{esc(prog["source"])}" rel="noopener">{bi("official list", "官方列表")}</a> ({esc(prog["updated"])}); '
              f'{bi("arXiv links are matched by title, so check there for last-minute changes. Code links come from arXiv comments, Hugging Face and the authors' project pages.", "arXiv 链接按标题匹配；临时变动请以官方页面为准。代码链接来自 arXiv 备注、Hugging Face 与作者项目页。")}</p>',
              f'<ul class="tlist">{days}<li><a href="#workshops">{bi("Thursday, November 12: workshops", "11 月 12 日（周四）：研讨会")}</a></li></ul>',
+             program_numbers(papers, cur_by_id, rec_by_id),
              program_signals(papers, cur_by_id, rec_by_id),
              f'''<p class="muted">{bi("Press ☆ on the papers you want to see: you get your own schedule, sorted by time, with a link to share and a calendar file. The list stays in this browser; nothing is sent anywhere.", "点论文上的 ☆ 即可生成个人日程：按时间排序，可分享链接、导出日历文件。清单只保存在你的浏览器里，不会上传。")}</p>
 <div class="filters" id="vf" data-store="{esc(PROGRAM)}"><input id="vf-q" type="search" aria-label="Filter" data-en="Filter by title or author" data-zh="按标题或作者筛选" placeholder="Filter by title or author">
 <select id="vf-t" aria-label="Topic"><option value="" data-en="All topics" data-zh="全部主题">All topics</option>{topt}</select>
+<select id="vf-k" aria-label="Theme"><option value="" data-en="All title themes" data-zh="全部标题主题">All title themes</option>{"".join(f'<option value="{t[0]}" data-en="{esc(t[1])}" data-zh="{esc(t[2])}">{esc(t[1])}</option>' for t in PROGRAM_THEMES)}</select>
 <label><input id="vf-c" type="checkbox"> {bi("Has code", "有代码")}</label> <label><input id="vf-h" type="checkbox"> {bi("Oral / Spotlight", "Oral / Spotlight")}</label> <label><input id="vf-m" type="checkbox"> {bi("My list", "我的清单")}</label> <span class="muted" id="vf-n"></span></div>
 <div id="pg-my" data-name="{esc(name)}" hidden></div>''']
     for d in prog["days"]:
