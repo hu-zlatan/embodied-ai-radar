@@ -588,3 +588,106 @@
   tags: [humanoid, real, loco-manipulation, human-demonstrations]
   takeaway_en: "Latent VLA that learns from cheap action-free egocentric video, paired with an RL controller for advancing, turning and squatting; reports a 21.3% improvement over a baseline on the AgiBot X2."
   takeaway_zh: "潜空间 VLA 从低成本、无动作标注的第一视角视频学习，再配合面向前进、转向、下蹲的强化学习控制器；在智元 X2 上报告比基线提升 21.3%。"
+- title: "Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies"
+  type: paper
+  arxiv: "2410.11825"
+  year: 2024
+  code: https://github.com/zixuan417/smooth-humanoid-locomotion
+  added: 2026-11-04
+  tags: [humanoid, sim-to-real, rl, lipschitz]
+  takeaway_en: "Imposes a Lipschitz constraint on the learned policy as a general route to smooth motion, replacing hand-tuned low-pass filters and smoothness rewards."
+  takeaway_zh: "对学习到的策略施加 Lipschitz 约束，作为获得平滑动作的通用方法，取代需手动调参的低通滤波和平滑奖励。"
+- title: "DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills"
+  type: paper
+  arxiv: "1804.02717"
+  year: 2018
+  venue: SIGGRAPH 2018
+  org: UC Berkeley
+  code: https://github.com/xbpeng/DeepMimic
+  highlight: true
+  added: 2026-11-04
+  topics: [control]
+  tags: [character, motion-imitation, rl]
+  takeaway_en: "Showed RL can imitate a wide range of motion clips, flips and spins included, while staying robust. The motion-imitation template much humanoid work builds on."
+  takeaway_zh: "证明强化学习能模仿包括空翻在内的大量动作片段并保持鲁棒，是后续人形动作模仿工作的基本范式。"
+- title: "ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters"
+  type: paper
+  arxiv: "2205.01906"
+  year: 2022
+  venue: SIGGRAPH 2022
+  org: NVIDIA
+  code: https://github.com/nv-tlabs/ASE
+  added: 2026-11-04
+  topics: [control]
+  tags: [character, skill-embedding, adversarial]
+  takeaway_en: "Learns reusable skill embeddings for simulated characters by combining adversarial imitation and unsupervised RL, so new tasks need not start from scratch."
+  takeaway_zh: "结合对抗模仿与无监督强化学习，为仿真角色学习可复用的技能嵌入，新任务不必从零训练。"
+- title: "Perpetual Humanoid Control for Real-time Simulated Avatars"
+  type: paper
+  arxiv: "2305.06456"
+  year: 2023
+  venue: ICCV 2023
+  code: https://github.com/ZhengyiLuo/PHC
+  project: https://zhengyiluo.github.io/PHC/
+  added: 2026-11-04
+  topics: [control]
+  tags: [character, motion-tracking, humanoid]
+  takeaway_en: "Humanoid controller that scales to ten thousand motion clips with no external stabilising forces and recovers from falls by itself, so resets are not needed."
+  takeaway_zh: "人形控制器可扩展到一万条动作片段且无需外部稳定力，并能自行从跌倒中恢复，无需重置。"
+- title: "InterMimic: Towards Universal Whole-Body Control for Physics-Based Human-Object Interactions"
+  type: paper
+  arxiv: "2502.20390"
+  year: 2025
+  venue: CVPR 2025
+  code: https://github.com/Sirui-Xu/InterMimic
+  added: 2026-11-04
+  topics: [control]
+  tags: [human-object-interaction, motion-imitation, teacher-student]
+  takeaway_en: "One policy learns full-body interaction with varied objects from hours of imperfect MoCap: subject-specific teachers refine the data first, then scale up."
+  takeaway_zh: "单一策略从数小时不完美动捕数据学习全身人-物交互：先用个体教师策略精修数据，再扩展规模。"
+- title: "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control"
+  type: paper
+  arxiv: "2511.07820"
+  year: 2025
+  org: NVIDIA
+  highlight: true
+  added: 2026-11-04
+  topics: [control]
+  tags: [humanoid, motion-tracking, whole-body, scaling]
+  takeaway_en: "Tests scaling on humanoid control: more network, data and compute yield a generalist motion-tracking foundation model, with no manual reward engineering."
+  takeaway_zh: "检验规模定律在人形控制上的效果：扩大网络、数据和算力，得到通用动作跟踪基础模型，无需手工设计奖励。"
+- title: "Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking"
+  type: paper
+  arxiv: "2606.03985"
+  year: 2026
+  org: Galbot
+  code: https://github.com/GalaxyGeneralRobotics/Humanoid-GPT
+  project: https://qizekun.github.io/Humanoid-GPT/
+  added: 2026-11-04
+  topics: [control]
+  tags: [humanoid, motion-tracking, transformer, sim-to-real]
+  takeaway_en: "A GPT-style causal Transformer pretrained on a 2B-frame retargeted motion corpus, tracking dynamic whole-body motion with zero-shot generalization to unseen motions."
+  takeaway_zh: "在 20 亿帧重定向动作语料上预训练的 GPT 式因果 Transformer，跟踪高动态全身动作，并零次微调泛化到未见动作。"
+- title: "SUGAR: A Scalable Human-Video-Driven Generalizable Humanoid Loco-Manipulation Learning Framework"
+  type: paper
+  arxiv: "2605.20373"
+  year: 2026
+  code: https://github.com/tianshuwu/SUGAR
+  project: https://tianshuwu.github.io/sugar-humanoid/
+  added: 2026-11-04
+  topics: [manipulation]
+  tags: [humanoid, loco-manipulation, human-video]
+  takeaway_en: "Turns diverse human videos into deployable humanoid loco-manipulation skills without task-specific rewards, despite occlusion and retargeting errors in the priors."
+  takeaway_zh: "把多样的人类视频转化为可部署的人形移动操作技能，无需任务专用奖励，能应对先验中的遮挡与重定向误差。"
+- title: "Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation"
+  type: paper
+  arxiv: "2309.01952"
+  year: 2023
+  venue: Humanoids 2023
+  code: https://github.com/UT-Austin-RPL/TRILL
+  project: https://ut-austin-rpl.github.io/TRILL
+  added: 2026-11-04
+  topics: [manipulation]
+  tags: [humanoid, teleoperation, whole-body, imitation]
+  takeaway_en: "TRILL collects VR demonstrations and uses a whole-body controller to turn task-space commands into joint torques, for data-efficient loco-manipulation imitation."
+  takeaway_zh: "TRILL 用 VR 采集演示，由全身控制器把任务空间指令转为关节力矩，实现数据高效的人形移动操作模仿。"

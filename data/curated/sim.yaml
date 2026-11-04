@@ -366,3 +366,65 @@
   tags: [real2sim, system-identification, agentic, real]
   takeaway_en: "CUE (CoRL 2026 Late Breaking Results): an agent identifies friction and restitution by choosing interactions where its simulation is least accurate; on billiards it reports 72% lower held-out position error."
   takeaway_zh: "CUE（CoRL 2026 Late Breaking Results）：智能体主动选择仿真最不准的交互来辨识摩擦和恢复系数；在台球任务上报告留出位置误差比最强基线低 72%，并部署到真实球桌。"
+- title: "DIFFTACTILE: A Physics-based Differentiable Tactile Simulator for Contact-rich Robotic Manipulation"
+  type: simulator
+  arxiv: "2403.08716"
+  year: 2024
+  venue: ICLR 2024
+  code: https://github.com/Genesis-Embodied-AI/DiffTactile
+  added: 2026-11-04
+  topics: [tactile]
+  tags: [differentiable, tactile, fem]
+  takeaway_en: "Differentiable tactile simulator with an FEM soft-body elastomer model, built for contact with many material types rather than mostly rigid objects."
+  takeaway_zh: "可微触觉仿真器，用 FEM 软体模型模拟弹性体，面向多种材料的接触，而非主要针对刚体。"
+- title: "Taccel: Scaling Up Vision-based Tactile Robotics via High-performance GPU Simulation"
+  type: simulator
+  arxiv: "2504.12908"
+  year: 2025
+  venue: NeurIPS 2025
+  added: 2026-11-04
+  topics: [tactile]
+  tags: [gpu, vision-based-tactile, ipc]
+  takeaway_en: "GPU tactile simulation combining IPC and ABD; the authors report running 18 times faster than real time across thousands of parallel environments."
+  takeaway_zh: "结合 IPC 与 ABD 的 GPU 触觉仿真；作者报告在数千并行环境下达到实时速度的 18 倍。"
+- title: "TacEx: GelSight Tactile Simulation in Isaac Sim -- Combining Soft-Body and Visuotactile Simulators"
+  type: simulator
+  arxiv: "2411.04776"
+  year: 2024
+  added: 2026-11-04
+  topics: [tactile]
+  tags: [isaac, vision-based-tactile, rl]
+  takeaway_en: "Brings GIPC soft-body contact and the Taxim and FOTS tactile simulators into Isaac Sim for GelSight Mini, with Isaac Lab RL environments."
+  takeaway_zh: "把 GIPC 软体接触与 Taxim、FOTS 触觉仿真器接入 Isaac Sim，模拟 GelSight Mini，并提供 Isaac Lab 强化学习环境。"
+- title: "BiGym: A Demo-Driven Mobile Bi-Manual Manipulation Benchmark"
+  type: benchmark
+  arxiv: "2407.07788"
+  year: 2024
+  project: https://chernyadev.github.io/bigym/
+  added: 2026-11-04
+  topics: [datasets, manipulation]
+  tags: [bimanual, mobile-manipulation, benchmark, human-demonstrations]
+  takeaway_en: "Benchmark of 40 home tasks for mobile bimanual robots, from reaching to kitchen cleaning, each with human-collected demonstrations."
+  takeaway_zh: "面向移动双臂机器人的基准，含 40 个家庭任务（从抓取到厨房清洁），均配人类采集的演示。"
+- title: "GRUtopia: Dream General Robots in a City at Scale"
+  type: simulator
+  arxiv: "2407.10943"
+  year: 2024
+  org: OpenRobotLab
+  code: https://github.com/OpenRobotLab/GRUtopia
+  added: 2026-11-04
+  topics: [datasets]
+  tags: [city-scale, scenes, humanoid]
+  takeaway_en: "Simulated interactive 3D society for many robot types; its GRScenes set has 100k annotated scenes across 89 categories that combine into city-scale worlds."
+  takeaway_zh: "面向多种机器人的交互式三维仿真社会；GRScenes 含 10 万标注场景、89 个类别，可组合成城市级环境。"
+- title: "ManiSkill-HAB: A Benchmark for Low-Level Manipulation in Home Rearrangement Tasks"
+  type: benchmark
+  arxiv: "2412.13211"
+  year: 2024
+  venue: ICLR 2025
+  code: https://github.com/arth-shukla/mshab
+  added: 2026-11-04
+  topics: [datasets, manipulation]
+  tags: [gpu, benchmark, home, rearrangement]
+  takeaway_en: "GPU-accelerated Home Assistant Benchmark with realistic low-level control; the authors report over 3x the speed of prior magical-grasp versions."
+  takeaway_zh: "GPU 加速的 Home Assistant Benchmark，采用真实低层控制；作者报告速度超过此前“魔法抓取”实现的 3 倍。"

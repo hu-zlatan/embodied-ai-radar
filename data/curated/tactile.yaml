@@ -385,3 +385,116 @@
   tags: [flow-matching, residual-policy, tactile, real, sim]
   takeaway_en: "Keeps a vision-based flow-matching policy and learns to steer its velocity field from tactile forecasts and live feedback, so touch can correct actions. Reports gains over baselines in six sim and six real tasks."
   takeaway_zh: "保留视觉流匹配策略，用触觉预测与实时反馈学习对其速度场的残差引导，让触觉能修正动作。报告在六个仿真和六个真实任务上优于基线。"
+- title: "ManiWAV: Learning Robot Manipulation from In-the-Wild Audio-Visual Data"
+  type: paper
+  arxiv: "2406.19464"
+  year: 2024
+  venue: CoRL 2024
+  org: Stanford
+  code: https://github.com/real-stanford/maniwav
+  added: 2026-11-04
+  topics: [manipulation]
+  tags: [audio, human-demonstrations, real, contact-rich]
+  takeaway_en: "An 'ear-in-hand' gripper records audio with vision during human demos in the wild; contact sound then helps policies when vision alone is ambiguous."
+  takeaway_zh: "“手上长耳朵”：夹爪在野外人类演示时同步录制音频与视觉；当视觉信息不足时，接触声帮助策略完成接触密集操作。"
+- title: "FACTR: Force-Attending Curriculum Training for Contact-Rich Policy Learning"
+  type: paper
+  arxiv: "2502.17432"
+  year: 2025
+  venue: RSS 2025
+  added: 2026-11-04
+  topics: [manipulation]
+  tags: [force-feedback, teleoperation, real, contact-rich]
+  takeaway_en: "Low-cost bilateral teleop relays arm forces to the operator, and a curriculum corrupts vision less and less over training so policies learn to attend to force."
+  takeaway_zh: "低成本双边遥操作把机械臂受力反馈给操作者；训练时对视觉的破坏逐渐减弱，让策略学会关注力信息。"
+- title: "AnyTouch: Learning Unified Static-Dynamic Representation across Multiple Visuo-tactile Sensors"
+  type: paper
+  arxiv: "2502.12191"
+  year: 2025
+  venue: ICLR 2025
+  code: https://github.com/GeWu-Lab/AnyTouch
+  added: 2026-11-04
+  topics: [perception]
+  tags: [representation, vision-based-tactile, dataset]
+  takeaway_en: "Learns one static-and-dynamic representation across different visuo-tactile sensors, and contributes TacQuad, an aligned multi-sensor tactile dataset."
+  takeaway_zh: "跨多种视触觉传感器学习统一的静态-动态表征，并贡献对齐的多传感器触觉数据集 TacQuad。"
+- title: "RoboPack: Learning Tactile-Informed Dynamics Models for Dense Packing"
+  type: paper
+  arxiv: "2407.01418"
+  year: 2024
+  venue: RSS 2024
+  added: 2026-11-04
+  topics: [manipulation, world-models]
+  tags: [dynamics-model, graph-network, mpc, real]
+  takeaway_en: "A recurrent graph network estimates object state and latent physics from visuo-tactile history; the learned dynamics model drives MPC for tasks like dense packing."
+  takeaway_zh: "循环图网络从视触觉历史估计物体状态与潜在物理属性，学到的动力学模型用于 MPC，完成密集装箱等任务。"
+- title: "Octopi: Object Property Reasoning with Large Tactile-Language Models"
+  type: paper
+  arxiv: "2405.02794"
+  year: 2024
+  venue: RSS 2024
+  code: https://github.com/clear-nus/octopi
+  added: 2026-11-04
+  topics: [vla]
+  tags: [tactile-language, dataset, reasoning]
+  takeaway_en: "Combines tactile perception with language so an embodied system can reason about physical properties learned by touch; contributes the PhysiCLeAR dataset."
+  takeaway_zh: "把触觉感知与语言结合，让具身系统对触摸获得的物理属性做常识推理；贡献 PhysiCLeAR 数据集。"
+- title: "Tactile-Augmented Radiance Fields"
+  type: paper
+  arxiv: "2405.04534"
+  year: 2024
+  venue: CVPR 2024
+  code: https://github.com/dou-yiming/TaRF
+  added: 2026-11-04
+  topics: [perception]
+  tags: [radiance-field, vision-based-tactile, diffusion]
+  takeaway_en: "TaRF puts vision and touch in one 3D space: touch probes are registered to photos, and a conditional diffusion model estimates touch at unprobed positions."
+  takeaway_zh: "TaRF 把视觉与触觉放进同一三维空间：将触摸采样配准到照片，并用条件扩散模型估计未采样位置的触觉。"
+- title: "LocoTouch: Learning Dynamic Quadrupedal Transport with Tactile Sensing"
+  type: paper
+  arxiv: "2505.23175"
+  year: 2025
+  venue: CoRL 2025
+  code: https://github.com/linchangyi1/LocoTouch
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [quadruped, sim-to-real, tactile]
+  takeaway_en: "A high-density tactile sensor across a quadruped's back lets it carry unsecured cylinders over long distances, a task that usually needs mounting hardware."
+  takeaway_zh: "在四足机器人背部铺设高密度触觉传感器，无需固定装置即可长距离运输未固定的圆柱物体。"
+- title: "MimicTouch: Leveraging Multi-modal Human Tactile Demonstrations for Contact-rich Manipulation"
+  type: paper
+  arxiv: "2310.16917"
+  year: 2023
+  venue: CoRL 2024
+  added: 2026-11-04
+  topics: [manipulation]
+  tags: [human-demonstrations, contact-rich, tactile]
+  takeaway_en: "Learns tactile policies from demonstrations given with human hands, closing the gap of teleop where operators steer by sight while the policy needs touch."
+  takeaway_zh: "从人手直接演示学习触觉策略，弥补遥操作中“人靠视觉控制、策略却要用触觉”的落差。"
+- title: "PP-Tac: Paper Picking Using Tactile Feedback in Dexterous Robotic Hands"
+  type: paper
+  arxiv: "2504.16649"
+  year: 2025
+  venue: RSS 2025
+  added: 2026-11-04
+  topics: [manipulation]
+  tags: [dexterous, deformable, real]
+  takeaway_en: "Picks up paper-like thin objects with a multi-fingered hand carrying high-resolution omnidirectional tactile sensors, tackling state estimation and grasp planning."
+  takeaway_zh: "用带高分辨率全向触觉传感器的多指手抓取纸张类薄物体，同时解决状态估计与抓取规划。"
+- title: "Evetac: An Event-based Optical Tactile Sensor for Robotic Manipulation"
+  type: hardware
+  arxiv: "2312.01236"
+  year: 2023
+  added: 2026-11-04
+  topics: [hardware]
+  tags: [sensor, event-camera, vision-based-tactile]
+  takeaway_en: "Replaces the RGB camera of an optical tactile sensor with an event camera; touch processing runs online at 1000 Hz and senses vibrations up to 498 Hz."
+  takeaway_zh: "用事件相机取代光学触觉传感器的 RGB 相机；触觉处理以 1000 Hz 在线运行，可感知最高 498 Hz 的振动。"
+- title: "Tactile Robotics: An Outlook"
+  type: paper
+  arxiv: "2508.11261"
+  year: 2025
+  added: 2026-11-04
+  tags: [survey, tactile]
+  takeaway_en: "A broad outlook on tactile robotics, covering piezoresistive, piezoelectric, capacitive, magnetic and optical sensors and where the field is heading."
+  takeaway_zh: "对触觉机器人的综合展望，涵盖压阻、压电、电容、磁性和光学等传感方式及领域走向。"
