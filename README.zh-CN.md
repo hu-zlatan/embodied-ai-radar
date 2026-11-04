@@ -47,13 +47,13 @@ _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与�
 - ⭐ **[OpenVLA: An Open-Source Vision-Language-Action Model](https://arxiv.org/abs/2406.09246)** (2024) — 基于 Llama 2 与 DINOv2/SigLIP 的 7B 开源 VLA，是 VLA 研究与 LoRA 微调的事实开源基线。 · [代码](https://github.com/openvla/openvla)
 - ⭐ **[RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control](https://arxiv.org/abs/2307.15818)** (2023) — 提出 "VLA" 概念：把网络规模的视觉语言模型联合微调为输出动作 token，把语义知识迁移到机器人控制。 · [项目页](https://robotics-transformer2.github.io/)
 - **[Asynchronous Robot Policies](https://arxiv.org/abs/2611.05155)** (2026) — 把低频更新语义记忆的大型 VLM 与高频出动作的轻量专家解耦，并针对陈旧和延迟训练；报告 VLM 降到标称频率十分之一时性能无明显损失。 · [项目页](https://arp.insait.ai)
+- **[Efficient Long-Horizon Vision-Language-Action Models via Static-Dynamic Disentanglement](https://arxiv.org/abs/2602.03983)** (2026) — DySta 把视觉输入分成静态和动态 token，静态部分只保留一份并复用 KV 缓存，从而延长 VLA 上下文并加快推理。
 - **[Say the Same, Act Differently: Diagnosing and Steering Text-Action Divergence in Reasoning VLAs](https://arxiv.org/abs/2611.04166)** (2026) — 展示视觉扰动可以改变推理型 VLA 的动作，而解释文本一字不变（在 Alpamayo 和 InstructVLA 上测试），因此监控必须直接检查动作通道，不能只看文本。
-- **[Auriga Technical Report: A Task-Agnostic Agent Harness for Zero-Shot Embodied Manipulation](https://arxiv.org/abs/2611.01112)** (2026) — 任务决策交给大模型，框架提供标定后的三维测量、轨迹预览和偏差即停的执行检查。作者报告在 RoboDojo 榜单排名第一，成功率 57.7%，是同模型参考框架的两倍多。 · [代码](https://github.com/lose4578/Auriga) · [项目页](https://auriga.stelledge.com/)
-- **[Democratizing Robot-Use Agents: A Unified Harness with Open Models](https://arxiv.org/abs/2611.01560)** (2026) — uni-robot-agent：面向开放权重模型的机器人操作智能体（Robot-use Agent）框架，便于继续训练。作者报告现成的 Qwen3.8 模型在 RoboDojo 上得 31.39 分，高于已发表的 GPT-6 Astra-RoboProbe 的 28.97 分。 · [代码](https://github.com/Open-RUA/uni-robot-agent)
-- **[HeLM: Hierarchical Explicit Language Memory for Non-Markovian Manipulation](https://arxiv.org/abs/2611.02660)** (2026) — 用显式文本保存任务历史、只在检测到事件时更新，为 VLA 增加工作记忆。在 10 个真实的非马尔可夫任务上测试，其中包括需要跨回合保持上下文的任务。 · [代码](https://github.com/kimspacehuni/HeLM) · [项目页](https://kimspacehuni.github.io/HeLM/)
-- **[HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model](https://arxiv.org/abs/2610.40373)** (2026) — 跨时间尺度联合预测短期状态、语义里程碑与目标状态，再由动作查询从中检索相关的未来表征。
+- **[A Survey on Efficient Vision-Language-Action Models](https://arxiv.org/abs/2510.24795)** (2025) — 综述高效 VLA，贯穿模型、训练和数据全流程，用统一分类梳理实时推理、训练成本和可扩展数据采集方面的工作。 · [项目页](https://evla-survey.github.io/)
+- **[EdgeVLA: Efficient Vision-Language-Action Models](https://arxiv.org/abs/2507.14049)** (2025) — 通过去掉末端位姿的自回归预测（报告提速 7 倍）并使用小型语言模型，加快 VLA 在边缘设备上的推理。 · [代码](https://github.com/kscalelabs/evla)
+- **[PointVLA: Injecting the 3D World into Vision-Language-Action Models](https://arxiv.org/abs/2503.07511)** (2025) — 无需重训即可为预训练 VLA 加入点云输入：冻结动作专家，只向跳块分析认定作用较小的模块注入 3D 特征。
 
-**[查看全部 141 条 →](lists/vla.zh-CN.md)**
+**[查看全部 148 条 →](lists/vla.zh-CN.md)**
 
 <a id="manipulation"></a>
 ### 操作与灵巧手
@@ -120,20 +120,20 @@ _足式运动、人形全身控制与跑酷。_ [在网站上查看与最新论�
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_ [在网站上查看与最新论文 →](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html)
 
+- ⭐ **[Cosmos 3: Omnimodal World Models for Physical AI](https://arxiv.org/abs/2606.02800)** (2026) — 全模态世界模型家族，用一个 Mixture-of-Transformers 同时处理语言、图像、视频、音频和动作，把 VLM、视频生成、世界模拟器和世界动作模型并入同一框架。 · [代码](https://github.com/nvidia/cosmos) · [项目页](https://research.nvidia.com/labs/cosmos-lab/cosmos3/)
+- ⭐ **[DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos](https://arxiv.org/abs/2602.06949)** (2026) — 在 4.4 万小时第一视角人类视频上预训练的基础世界模型，用连续潜动作代替缺失的动作标签，再用小规模机器人数据后训练。 · [项目页](https://dreamdojo-world.github.io/)
+- ⭐ **[OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining](https://arxiv.org/abs/2609.07398)** (2026) — 开放研究栈，把世界动作模型拆成可组合模块，并通过对照实验研究该从视频先验继承什么、世界学习与动作学习如何相互作用。 · [代码](https://github.com/OpenWAM-Official/OpenWAM) · [项目页](https://openwam-official.github.io/)
+- ⭐ **[RoboJEPA: Scaling Robotic Latent World Models](https://arxiv.org/abs/2610.10515)** (2026) — 跨 12 种机器人形态训练的 JEPA 世界模型；其想象误差随算力服从幂律，因此可以预测超出拟合规模时的模型质量。 · [代码](https://github.com/facebookresearch/robo_jepa) · [项目页](https://robojepa.github.io/)
 - ⭐ **[World Action Models: A Survey](https://arxiv.org/abs/2606.20781)** (2026) — 厘清 WAM 与世界模型、视频生成模型、VLA 的区别，并按生成内容（渲染、潜空间或不生成）和架构分类；结论是领域正走向少生成未来，只保留控制所需。 · [项目页](https://world-action-models.github.io/)
 - ⭐ **[Mastering Diverse Domains through World Models](https://arxiv.org/abs/2301.04104)** (2023) — DreamerV3：一套超参数适用于 150 多个任务，包括从零开始在《我的世界》中挖到钻石。 · [代码](https://github.com/danijar/dreamerv3)
+- **[ABot-PhysWorld: Interactive World Foundation Model for Robotic Manipulation with Physics Alignment](https://arxiv.org/abs/2603.23376)** (2026) — 14B 动作可控视频模型，基于 300 万条操作片段训练，用 DPO 式后训练抑制穿模等非物理现象，并提出 EZSbench 基准。 · [代码](https://github.com/amap-cvlab/ABot-PhysWorld)
+- **[Being-H0.7: A Latent World-Action Model from Egocentric Videos](https://arxiv.org/abs/2605.00078)** (2026) — 潜空间世界动作模型，在 VLA 式策略中加入面向未来的潜查询，并用利用未来信息的分支训练，全程不生成未来帧。
+- **[Causal World Modeling for Robot Control](https://arxiv.org/abs/2601.21998)** (2026) — LingBot-VA：同时学习帧预测和策略的自回归扩散框架，具有视频动作共享潜空间、闭环推演和异步推理。 · [代码](https://github.com/Robbyant/lingbot-va) · [项目页](https://technology.robbyant.com/lingbot-va)
+- **[Do World Action Models Generalize Better than VLAs? A Robustness Study](https://arxiv.org/abs/2603.22078)** (2026) — 在扰动下对比世界动作模型与 VLA 的鲁棒性研究，用于检验显式未来预测能带来更好泛化这一说法。 · [项目页](https://robot-robustness.github.io/RoboTwin2.0-Plus/)
 - **[DreamX: Video Diffusion Model is a Universal Latent Action Learner](https://arxiv.org/abs/2611.05377)** (2026) — 复用预训练视频扩散模型提取紧凑潜动作（每帧 1,200 压到 4 个 token），作为人、机器人和不同环境之间的共享接口，并支持零示教动作迁移。 · [代码](https://github.com/cvlab-kaist/DreamX) · [项目页](https://cvlab-kaist.github.io/DreamX/)
-- **[PrimeSim: A Generalist World Model Simulator from Large-Scale Cross-Embodiment Demonstrations](https://arxiv.org/abs/2611.04870)** (2026) — 自回归多视角世界模型，运行 10.1 FPS，100 至 200 步梯度即可适配未见平台；作者开放权重和代码，并说明细粒度局部标定仍落后于同类。 · [项目页](https://primebottech.github.io/PrimeSim-website/)
-- **[OpenNWM: A Generalist Navigation World Model with Latent Action Pretraining](https://arxiv.org/abs/2611.01844)** (2026) — 先从无动作标注的视频中学习潜在动作，再在后训练阶段对齐真实运动。配套数据集 NavAnywhere 含 17.5M 条视觉观测，来自 15 个来源，覆盖地面机器人、人和无人机。 · [代码](https://github.com/OpenSpace-Lab/OpenNWM)
-- **[Seeing and Imagining as One: Unified Video Generation and 4D Perception for Embodied World Modeling](https://arxiv.org/abs/2610.39232)** (2026) — GenSight 把未来视频生成与稠密感知（深度、本体分割、二维光流）放进同一个视频扩散 Transformer，共用一个预测空间。 · [项目页](https://gensight-rbs.github.io/)
-- **[Xiaomi Auto World Model 2.0: Causal World Models for Real-World Driving and Embodied Intelligence](https://arxiv.org/abs/2611.01677)** (2026) — 流式多视角因果世界模型：用 3D 高斯重建的渲染结果作为场景上下文来维持长时生成，面向闭环仿真、闭环训练和世界动作模型应用。 · [项目页](https://xiaomiautoworldmodel.github.io/CausalWorldModel/)
-- **[pico-WAM: Evaluating Counterfactual Prediction and Planning Error in a Compact World Action Model](https://arxiv.org/abs/2611.01039)** (2026) — 世界动作模型失败时，问题出在动作提议还是轨迹评分？在 Push-T 上，把学习的评分换成仿真器代价可提升 12.2 个百分点的覆盖率，而在提议阶段换用仿真器状态未见增益。提供可复现的诊断流程。 · [代码](https://github.com/keivalya/pico-wam)
-- **[Chunk-wise Model-based Policy Optimization](https://arxiv.org/abs/2610.14564)** (2026) — CoRL 2026 Spotlight。将分块世界模型用作训练期可微评估器的模型式强化学习，针对累积误差、推理延迟与 BPTT 不稳定问题。 · [代码](https://github.com/song-wx/CMPO) · [项目页](https://song-wx.github.io/cmpo.github.io/)
-- **[Hierarchical World Models with Implicit Dynamics](https://arxiv.org/abs/2610.42146)** (2026) — ID-WM 将状态可达性与局部控制解耦：高层模型在状态流形上采样可行转移，低层世界模型充当逆动力学求解器，把子目标落实为精确动作。报告比单层世界模型 MPC 提升 135%，比最优策略与扩散规划器提升 38.5%。 · [项目页](https://id-wm.github.io)
-- **[Targeting World Models to Compromise Robot Learning Pipelines](https://arxiv.org/abs/2606.09499)** (2026) — CoRL 2026 Spotlight。展示世界模型可成为隐蔽的数据投毒入口：即使真实训练数据看似安全，部署的策略仍可能被破坏。
-- **[World Action Models are Zero-shot Policies](https://arxiv.org/abs/2602.15922)** (2026) — CoRL 2026 Oral。DreamZero：基于预训练视频扩散骨干的世界动作模型，联合预测视频与动作，可从异构机器人数据学习技能，无需重复示范。 · [代码](https://github.com/dreamzero0/dreamzero) · [项目页](https://dreamzero0.github.io/)
+- **[Fast-WAM: Do World Action Models Need Test-time Future Imagination?](https://arxiv.org/abs/2603.16666)** (2026) — 追问世界动作模型在测试时是否需要想象未来：训练时保留视频联合训练，推理时跳过视频生成，以对照实验区分两者的作用。 · [代码](https://github.com/yuantianyuan01/FastWAM) · [项目页](https://yuantianyuan01.github.io/FastWAM/)
 
-**[查看全部 59 条 →](lists/world-models.zh-CN.md)**
+**[查看全部 86 条 →](lists/world-models.zh-CN.md)**
 
 <a id="navigation"></a>
 ### 导航与具身智能体
@@ -244,16 +244,16 @@ _大规模机器人数据集、第一视角数据与评测基准。_ [在网站�
 - ⭐ **[LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning](https://arxiv.org/abs/2306.03310)** (2023) — 四个套件共 130 个语言条件任务，现已成为 VLA 论文最常用的仿真基准。 · [代码](https://github.com/Lifelong-Robot-Learning/LIBERO)
 - ⭐ **[Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://arxiv.org/abs/2310.08864)** (2023) — 30 多个实验室汇集 22 种机器人的 100 多万条轨迹；在其上训练的 RT-X 优于单机器人基线。 · [代码](https://github.com/google-deepmind/open_x_embodiment)
 - **[CRONOS: Benchmarking Non-Episodic Reinforcement Learning for Robotic Manipulation](https://arxiv.org/abs/2611.05080)** (2026) — 面向无频繁重置场景下 VLA 强化学习微调的仿真基准；发现直接微调会因物体和末端位姿偏移而失败，定向分配重置并处理预训练偏差可以缓解。 · [项目页](https://embodiedai-ntu.github.io/cronos/)
+- **[EgoVerse: An Egocentric Human Dataset for Robot Learning from Around the World](https://arxiv.org/abs/2604.07607)** (2026) — 面向人类数据机器人学习的共享平台和数据集：1,362 小时、8 万条片段，覆盖 1,965 项任务和 2,087 名演示者，接受学界和业界贡献。
 - **[PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data](https://arxiv.org/abs/2611.05320)** (2026) — 编程智能体凭一条标定轨迹在仿真中重建任务，再由视频模型渲染成写实数据；报告真机 100 次成功 93 次，遥操作数据为 84 次，每小时数据约 107 美元。 · [代码](https://github.com/DAGroup-PKU/PyRUA-Lean) · [项目页](https://dagroup-pku.github.io/PyRUA-Lean/DataFarm)
 - **[RoboScope Kit: Unified Interfaces for Fast and Scalable Embodied-AI Evaluation](https://arxiv.org/abs/2611.03850)** (2026) — 模型和基准各封装一次，把仿真 worker 与策略副本分成两个池调度；报告单卡评测比官方 StarVLA 评测器快 4.45 到 6.16 倍。 · [代码](https://github.com/MINT-SJTU/RoboScope-Kit) · [项目页](https://roboscope.pages.dev/)
+- **[RoboWM-Bench: A Benchmark for Evaluating World Models in Robotic Manipulation](https://arxiv.org/abs/2604.19092)** (2026) — 评估视频世界模型时不只看画面是否逼真，而是把生成的操作转成动作，在物理仿真中验证能否执行。
 - **[ClothDojo: Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding](https://arxiv.org/abs/2611.01190)** (2026) — 仿真平台：用微调后的 VLA 生成近 8000 条成功的衣物操作轨迹，并重新渲染供 RGB 策略训练，效果优于直接用人类数据训练，但泛化到未见衣物仍是难题。 · [项目页](https://clothdojo.github.io/)
 - **[DexArena: A Unified Benchmark for Long-Horizon Dexterous Manipulation](https://arxiv.org/abs/2611.02629)** (2026) — 10 个长时序和 30 个阶段级双手灵巧任务，每个阶段都有物理判定的成功条件，可衡量中间进度；提供经过验证的遥操作示范和统一接口。 · [项目页](https://sipair-elastic.github.io/DexArena-website/)
 - **[Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](https://arxiv.org/abs/2610.40364)** (2026) — 在 MuJoCo MJX 中用统一协议在五款四足上比较 14 种课程方法：没有方法在所有机器人和地形集上都领先，而训练关卡偏简单的方法在分布内随机地形上表现靠前。 · [代码](https://github.com/Solvro/ml-wojtek-ued)
 - **[OmniPiano: Diverse Dexterous Piano-Playing Challenges for Standard, Robust, Safe, and Multi-Agent RL](https://arxiv.org/abs/2611.00243)** (2026) — 把机器人弹钢琴扩展到 1 至 5 只 Shadow 手，并支持鲁棒、安全和多智能体强化学习：至少 912 种任务设置、36 个基线算法。作者报告前沿算法与大模型智能体在高难任务上仍很吃力。 · [代码](https://github.com/SAIL-Research-Lab/omnipiano) · [项目页](https://sail-research-lab.github.io/omnipiano/)
-- **[RoboJev: An Open Vision-Language Judge for Robot Success Detection](https://arxiv.org/abs/2610.33718)** (2026) — 开放权重模型，根据视频帧判断操作是否成功，可用于标注数据；在未见过的实验室与机器人上报告 AUROC 0.89。 · [项目页](https://robo-jev.com)
-- **[Rollout then Recycle: 3,718 Labelled Real-Robot Episodes from Benchmarking 7 Policies on 12 Tasks](https://arxiv.org/abs/2611.03168)** (2026) — 公开 ArmnetBench v0.1 在 SO-101 机械臂上的全部回合：600 条遥操作示范和 3118 条带标注的策略执行，其中 73% 是失败，可以在同一任务上比较多种策略的错误。
 
-**[查看全部 65 条 →](lists/datasets.zh-CN.md)**
+**[查看全部 67 条 →](lists/datasets.zh-CN.md)**
 
 <a id="hardware"></a>
 ### 硬件与开源机器人

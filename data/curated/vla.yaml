@@ -1456,3 +1456,66 @@
   added: 2026-11-04
   takeaway_en: "Shows visual perturbations can change a reasoning VLA's action while its rationale stays word-for-word identical, tested on Alpamayo and InstructVLA, so monitors must check the action channel, not the text."
   takeaway_zh: "展示视觉扰动可以改变推理型 VLA 的动作，而解释文本一字不变（在 Alpamayo 和 InstructVLA 上测试），因此监控必须直接检查动作通道，不能只看文本。"
+- title: "EdgeVLA: Efficient Vision-Language-Action Models"
+  type: paper
+  arxiv: "2507.14049"
+  year: 2025
+  org: K-Scale Labs
+  code: https://github.com/kscalelabs/evla
+  tags: [edge, efficiency]
+  added: 2026-11-04
+  takeaway_en: "Speeds up VLA inference on edge devices by dropping the autoregressive end-effector prediction, reported as a 7x speedup, and by using small language models."
+  takeaway_zh: "通过去掉末端位姿的自回归预测（报告提速 7 倍）并使用小型语言模型，加快 VLA 在边缘设备上的推理。"
+- title: "RoboMamba: Efficient Vision-Language-Action Model for Robotic Reasoning and Manipulation"
+  type: paper
+  arxiv: "2406.04339"
+  year: 2024
+  venue: NeurIPS 2024
+  project: https://sites.google.com/view/robomamba-web
+  tags: [mamba, efficiency]
+  added: 2026-11-04
+  takeaway_en: "An end-to-end VLA built on Mamba state space models, aiming for both robotic reasoning and cheap fine-tuning and inference."
+  takeaway_zh: "基于 Mamba 状态空间模型的端到端 VLA，兼顾机器人推理能力和较低的微调与推理成本。"
+- title: "PointVLA: Injecting the 3D World into Vision-Language-Action Models"
+  type: paper
+  arxiv: "2503.07511"
+  year: 2025
+  tags: [point-cloud, 3d]
+  added: 2026-11-04
+  takeaway_en: "Adds point cloud input to pretrained VLAs without retraining: freezes the action expert and injects 3D features only into blocks that a skip-block analysis finds less useful."
+  takeaway_zh: "无需重训即可为预训练 VLA 加入点云输入：冻结动作专家，只向跳块分析认定作用较小的模块注入 3D 特征。"
+- title: "Emma-X: An Embodied Multimodal Action Model with Grounded Chain of Thought and Look-ahead Spatial Reasoning"
+  type: paper
+  arxiv: "2412.11974"
+  year: 2024
+  code: https://github.com/declare-lab/Emma-X
+  tags: [reasoning, chain-of-thought]
+  added: 2026-11-04
+  takeaway_en: "A VLA with grounded chain of thought and look-ahead spatial reasoning, trained on a dataset built from BridgeV2 with 60,000 auto-annotated trajectories."
+  takeaway_zh: "具备落地链式思考和前瞻空间推理的 VLA，基于 BridgeV2 构建并自动标注的 6 万条轨迹数据集训练。"
+- title: "A Survey on Efficient Vision-Language-Action Models"
+  type: paper
+  arxiv: "2510.24795"
+  year: 2025
+  venue: TPAMI 2026
+  project: https://evla-survey.github.io/
+  tags: [survey, efficiency]
+  added: 2026-11-04
+  takeaway_en: "A survey of efficient VLAs across the model, training and data pipeline, with a unified taxonomy of work on real-time inference, training cost and scalable data collection."
+  takeaway_zh: "综述高效 VLA，贯穿模型、训练和数据全流程，用统一分类梳理实时推理、训练成本和可扩展数据采集方面的工作。"
+- title: "RoboBrain: A Unified Brain Model for Robotic Manipulation from Abstract to Concrete"
+  type: paper
+  arxiv: "2502.21257"
+  year: 2025
+  tags: [mllm, affordance, dataset]
+  added: 2026-11-04
+  takeaway_en: "Trains a multimodal language model for task planning, object affordance and trajectory prediction, using ShareRobot, a dataset labelled for all three."
+  takeaway_zh: "训练多模态语言模型完成任务规划、物体可供性和轨迹预测，并配套标注了这三类信息的 ShareRobot 数据集。"
+- title: "Efficient Long-Horizon Vision-Language-Action Models via Static-Dynamic Disentanglement"
+  type: paper
+  arxiv: "2602.03983"
+  year: 2026
+  tags: [efficiency, kv-cache]
+  added: 2026-11-04
+  takeaway_en: "DySta splits visual input into static and dynamic tokens, keeping one copy of the static tokens and reusing their KV cache, to extend VLA context and speed up inference."
+  takeaway_zh: "DySta 把视觉输入分成静态和动态 token，静态部分只保留一份并复用 KV 缓存，从而延长 VLA 上下文并加快推理。"

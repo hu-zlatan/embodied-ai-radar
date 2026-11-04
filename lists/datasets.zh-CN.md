@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 65 条，⭐ 为重点推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 67 条，⭐ 为重点推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/datasets.html) · [English](datasets.md)
 
@@ -23,6 +23,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[Ego2Robot: Scalable Robot Data Synthesis from Egocentric Human Data](https://arxiv.org/abs/2608.02580)** (2026) — CoRL 2026 Spotlight。把第一视角人类操作视频转换为机器人训练数据的流程，并检验其能否大规模助力 VLA 预训练。 · [项目页](https://www-ye.github.io/ego2robot_blog/)
 - **[EgoContact: Evaluating Physical Intelligence with Egocentric Video](https://arxiv.org/abs/2610.39167)** (2026) — 第一视角接触点预测基准：2.25 万个人工核验的交互事件，每个含接触前画面、语义意图与像素级接触位置。现有方法常常定位不准甚至找不到目标物体；把 EgoContact 用作已有可供性迁移策略的记忆库，真机抓取成功率从 16% 提升到 58%。 · [项目页](https://egocontact.github.io)
 - **[EgoExplorer: A Vision-Motion-Touch Observatory for Human Loco-Manipulation In Situ](https://arxiv.org/abs/2610.18872)** (2026) — 用可穿戴设备采集的 100 小时人类移动操作数据，侧重职业场景，对齐第一视角视频、全身与手指动作、触觉和步骤级文字描述；其补全全身动作的方法报告身体关键点误差比最强基线低 71.9%。 · [代码](https://github.com/InternRobotics/EgoExplorer) · [项目页](https://internrobotics.github.io/egoexplorer.github.io/)
+- **[EgoVerse: An Egocentric Human Dataset for Robot Learning from Around the World](https://arxiv.org/abs/2604.07607)** (2026) — 面向人类数据机器人学习的共享平台和数据集：1,362 小时、8 万条片段，覆盖 1,965 项任务和 2,087 名演示者，接受学界和业界贡献。
 - **[Embodied Playground: A Long-Horizon Agentic Robotics Benchmark for Physical, Strategic, and Spatial Reasoning](https://arxiv.org/abs/2610.27039)** (2026) — 面向基础模型机器人智能体的长程任务基准：410 个任务环境（基础操作、序列谜题、多阶段家务），精选 EP-100 子集，统一协议同时检查目标完成、任务规则与物理有效性。 · [代码](https://github.com/Winniechen2002/Embodied-Playground) · [项目页](https://winniechen2002.github.io/Agent-bench-website/)
 - **[Embodied Skill Bench: Benchmarking How Well Agents with Embodied Skills Perform on Physical Tasks](https://arxiv.org/abs/2610.16238)** (2026) — 将 VLA 策略、感知模型与经验知识封装成 250 个可复用的“具身技能”，评测它们对大模型智能体完成物理任务的帮助。 · [代码](https://github.com/HanZhi306/EmbodiedSkill-Bench)
 - **[EmbodiedLab: Benchmarking Embodied Agents That Act to Know](https://arxiv.org/abs/2610.35385)** (2026) — “为求知而行动”的基准：机器人在物理仿真实验室中自行操作仪器、读数，测出每次随机重采样的未知参数。共 30 个实验、5 个学科；报告最强的前沿模型智能体在原生控制下成功率也不到一半，失败多源于与仪器交互。 · [代码](https://github.com/HexaFuture/EmbodiedLab) · [项目页](https://hexafuture.ai/benchmarks/embodiedlab/)
@@ -38,6 +39,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[RoboJudge: Multimodal Language Models as Judges for Embodied Video Generation](https://arxiv.org/abs/2610.27782)** (2026) — 评测多模态大模型能否评判具身视频生成：800 条人工标注视频（10 个生成模型，夹爪/人手/灵巧手），考察物理合理性与指令一致性；另提供 1.2 万条训练视频及 RoboJudge-9B（与人类评分 Pearson 0.719）。 · [代码](https://github.com/Sphere-AI-Lab/RoboJudge) · [项目页](https://spherelab.ai/RoboJudge/)
 - **[RoboScope Kit: Unified Interfaces for Fast and Scalable Embodied-AI Evaluation](https://arxiv.org/abs/2611.03850)** (2026) — 模型和基准各封装一次，把仿真 worker 与策略副本分成两个池调度；报告单卡评测比官方 StarVLA 评测器快 4.45 到 6.16 倍。 · [代码](https://github.com/MINT-SJTU/RoboScope-Kit) · [项目页](https://roboscope.pages.dev/)
 - **[RoboValue: A Fine-Grained Sim-and-Real Benchmark for Unified Evaluation of Robotic Value Models](https://arxiv.org/abs/2610.26663)** (2026) — 在 15 个仿真和 20 个真实任务上评测机器人价值（进度）模型，覆盖任务状态、进度监测、失败与恢复、一致性四个维度；报告称前向进度得分高的模型在依赖历史和恢复判断上仍然薄弱。 · [代码](https://github.com/RoboValue-Benchmark/RoboValue) · [项目页](https://robovalue-benchmark.github.io/)
+- **[RoboWM-Bench: A Benchmark for Evaluating World Models in Robotic Manipulation](https://arxiv.org/abs/2604.19092)** (2026) — 评估视频世界模型时不只看画面是否逼真，而是把生成的操作转成动作，在物理仿真中验证能否执行。
 - **[RobotAgentBench: Towards Open-world Robot Autonomy](https://arxiv.org/abs/2610.34649)** (2026) — 面向开放世界机器人智能体的基准：通过真实到仿真流水线构建 50 个家居布局，任务从 90 个原子任务到 4 个开放场景，评测任务发现、上下文推理、操作、失败恢复与鲁棒性，可统一比较 VLA、WAM 与智能体架构。 · [代码](https://github.com/AetherLabsAI/RobotAgentBench) · [项目页](https://aetherlabsai.github.io/RobotAgentBench/)
 - **[Rollout then Recycle: 3,718 Labelled Real-Robot Episodes from Benchmarking 7 Policies on 12 Tasks](https://arxiv.org/abs/2611.03168)** (2026) — 公开 ArmnetBench v0.1 在 SO-101 机械臂上的全部回合：600 条遥操作示范和 3118 条带标注的策略执行，其中 73% 是失败，可以在同一任务上比较多种策略的错误。
 - **[SO-101 Bench: Accessible Spatial Manipulation](https://arxiv.org/abs/2610.36420)** (2026) — 基于 Isaac Lab 数字孪生的低成本 SO-101 机械臂语言条件空间操作基准（138 个物体、916 个评测回合）；仿真中的策略排名与真机完全一致。最好的 VLA 约 61%，由 LLM 写代码调用抓取策略的方案达 83.2%。 · [代码](https://github.com/5hadytru/so101_bench) · [项目页](https://so101-bench.github.io/)

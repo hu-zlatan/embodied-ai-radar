@@ -600,3 +600,289 @@
   added: 2026-11-04
   takeaway_en: "An autoregressive multiview world model running at 10.1 FPS that adapts to held-out robots in 100 to 200 gradient steps; its authors release weights and code and note that fine local calibration still trails."
   takeaway_zh: "自回归多视角世界模型，运行 10.1 FPS，100 至 200 步梯度即可适配未见平台；作者开放权重和代码，并说明细粒度局部标定仍落后于同类。"
+- title: "Cosmos 3: Omnimodal World Models for Physical AI"
+  type: paper
+  arxiv: "2606.02800"
+  year: 2026
+  org: NVIDIA
+  code: https://github.com/nvidia/cosmos
+  project: https://research.nvidia.com/labs/cosmos-lab/cosmos3/
+  highlight: true
+  tags: [world-foundation-model, open-weights]
+  added: 2026-11-04
+  takeaway_en: "A family of omnimodal models that handles language, image, video, audio and action in one mixture-of-transformers, folding VLMs, video generators, world simulators and world-action models into a single framework."
+  takeaway_zh: "全模态世界模型家族，用一个 Mixture-of-Transformers 同时处理语言、图像、视频、音频和动作，把 VLM、视频生成、世界模拟器和世界动作模型并入同一框架。"
+- title: "World Simulation with Video Foundation Models for Physical AI"
+  type: paper
+  arxiv: "2511.00062"
+  year: 2025
+  org: NVIDIA
+  code: https://github.com/nvidia-cosmos/cosmos-predict2.5
+  topics: [sim]
+  tags: [world-foundation-model, open-weights]
+  added: 2026-11-04
+  takeaway_en: "A flow-based world foundation model unifying Text2World, Image2World and Video2World, released at 2B and 14B, with Cosmos-Transfer2.5 for Sim2Real translation."
+  takeaway_zh: "基于流的世界基础模型，统一 Text2World、Image2World 和 Video2World，发布 2B 和 14B 两种规模，并配有用于 Sim2Real 转换的 Cosmos-Transfer2.5。"
+- title: "DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos"
+  type: paper
+  arxiv: "2602.06949"
+  year: 2026
+  org: NVIDIA
+  project: https://dreamdojo-world.github.io/
+  highlight: true
+  tags: [human-video, dexterous, latent-action]
+  added: 2026-11-04
+  takeaway_en: "A foundation world model pretrained on 44k hours of egocentric human video, using continuous latent actions as proxies for missing labels, then post-trained on small robot datasets."
+  takeaway_zh: "在 4.4 万小时第一视角人类视频上预训练的基础世界模型，用连续潜动作代替缺失的动作标签，再用小规模机器人数据后训练。"
+- title: "Causal World Modeling for Robot Control"
+  type: paper
+  arxiv: "2601.21998"
+  year: 2026
+  org: Robbyant
+  code: https://github.com/Robbyant/lingbot-va
+  project: https://technology.robbyant.com/lingbot-va
+  topics: [vla]
+  tags: [wam, autoregressive, real]
+  added: 2026-11-04
+  takeaway_en: "LingBot-VA: an autoregressive diffusion framework that learns frame prediction and policy together, with shared video-action latents, closed-loop rollout and asynchronous inference."
+  takeaway_zh: "LingBot-VA：同时学习帧预测和策略的自回归扩散框架，具有视频动作共享潜空间、闭环推演和异步推理。"
+- title: "OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining"
+  type: paper
+  arxiv: "2609.07398"
+  year: 2026
+  code: https://github.com/OpenWAM-Official/OpenWAM
+  project: https://openwam-official.github.io/
+  topics: [vla]
+  highlight: true
+  tags: [wam, open-weights, framework]
+  added: 2026-11-04
+  takeaway_en: "An open research stack that splits world-action models into composable modules, then runs controlled studies on what to inherit from video priors and how world and action learning interact."
+  takeaway_zh: "开放研究栈，把世界动作模型拆成可组合模块，并通过对照实验研究该从视频先验继承什么、世界学习与动作学习如何相互作用。"
+- title: "Fast-WAM: Do World Action Models Need Test-time Future Imagination?"
+  type: paper
+  arxiv: "2603.16666"
+  year: 2026
+  code: https://github.com/yuantianyuan01/FastWAM
+  project: https://yuantianyuan01.github.io/FastWAM/
+  topics: [vla]
+  tags: [wam, latency]
+  added: 2026-11-04
+  takeaway_en: "Asks whether WAMs need future imagination at test time: keeps video co-training during training but skips video generation at inference, separating the two effects in a controlled comparison."
+  takeaway_zh: "追问世界动作模型在测试时是否需要想象未来：训练时保留视频联合训练，推理时跳过视频生成，以对照实验区分两者的作用。"
+- title: "GigaWorld-Policy: An Efficient Action-Centered World--Action Model"
+  type: paper
+  arxiv: "2603.17240"
+  year: 2026
+  org: GigaAI
+  code: https://github.com/open-gigaai/giga-world-policy
+  project: https://gigaai-research.github.io/GigaWorld-Policy/
+  topics: [vla]
+  tags: [wam, action-centered]
+  added: 2026-11-04
+  takeaway_en: "An action-centered WAM that predicts actions from the observation and makes video generation optional, so motion accuracy depends less on forecast quality and inference is cheaper."
+  takeaway_zh: "以动作为中心的世界动作模型：由观测预测动作，视频生成变为可选，动作精度不再依赖视频预测质量，推理开销也更低。"
+- title: "ABot-PhysWorld: Interactive World Foundation Model for Robotic Manipulation with Physics Alignment"
+  type: paper
+  arxiv: "2603.23376"
+  year: 2026
+  org: AMAP
+  code: https://github.com/amap-cvlab/ABot-PhysWorld
+  tags: [world-foundation-model, physics, benchmark]
+  added: 2026-11-04
+  takeaway_en: "A 14B action-controllable video model trained on three million manipulation clips, with DPO-style post-training that suppresses unphysical results such as penetration, plus the EZSbench benchmark."
+  takeaway_zh: "14B 动作可控视频模型，基于 300 万条操作片段训练，用 DPO 式后训练抑制穿模等非物理现象，并提出 EZSbench 基准。"
+- title: "Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization"
+  type: paper
+  arxiv: "2608.26103"
+  year: 2026
+  org: Robbyant
+  code: https://github.com/robbyant-research/Zero-WAM
+  project: https://robbyant-research.github.io/Zero-WAM/
+  tags: [wam, human-video, zero-shot]
+  added: 2026-11-04
+  takeaway_en: "Performs unseen manipulation tasks by following a human video placed in context, with no parameter update; it turns robot trajectories into matched human videos to get paired training data."
+  takeaway_zh: "通过跟随上下文中的人类视频执行未见过的操作任务，无需更新参数；并把机器人轨迹自动转成匹配的人类视频，以获得成对训练数据。"
+- title: "Motubrain: An Advanced World Action Model for Robot Control"
+  type: paper
+  arxiv: "2604.27792"
+  year: 2026
+  org: ShengShu
+  project: https://www.shengshu.com/en/motubrain
+  tags: [wam, multiview]
+  added: 2026-11-04
+  takeaway_en: "A three-stream world action model under a UniDiffuser formulation; one model covers policy, world modeling, video generation and inverse dynamics, and it scales to video-only and cross-embodiment data."
+  takeaway_zh: "基于 UniDiffuser 的三流世界动作模型，一个模型同时覆盖策略、世界建模、视频生成和逆动力学，并可利用纯视频和跨形态数据。"
+- title: "Being-H0.7: A Latent World-Action Model from Egocentric Videos"
+  type: paper
+  arxiv: "2605.00078"
+  year: 2026
+  topics: [vla]
+  tags: [wam, latent, human-video]
+  added: 2026-11-04
+  takeaway_en: "A latent world-action model that adds future-aware latent queries to a VLA-style policy and trains them with a future-informed branch, without generating future frames."
+  takeaway_zh: "潜空间世界动作模型，在 VLA 式策略中加入面向未来的潜查询，并用利用未来信息的分支训练，全程不生成未来帧。"
+- title: "WALL-WM: Carving World Action Modeling at the Event Joints"
+  type: paper
+  arxiv: "2606.01955"
+  year: 2026
+  org: X Square Robot
+  code: https://github.com/X-Square-Robot/wall-x
+  project: https://x2robot.com/pages/wm
+  topics: [vla]
+  tags: [wam, event-based]
+  added: 2026-11-04
+  takeaway_en: "Uses semantically coherent action events rather than fixed-length chunks as the unit of learning, to resolve the timescale mismatch between language, vision and control."
+  takeaway_zh: "用语义完整的动作事件代替固定长度动作块作为学习单元，以解决语言、视觉和控制之间的时间尺度不匹配。"
+- title: "InternW0-$Δ$: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data"
+  type: paper
+  arxiv: "2609.31394"
+  year: 2026
+  org: InternRobotics
+  code: https://github.com/InternRobotics/InternW0-Delta
+  project: https://internrobotics.github.io/InternW0-Delta/
+  tags: [wam, open-data]
+  added: 2026-11-04
+  takeaway_en: "A WAM combining a video expert, an action expert, a frozen VLM and training-only 4D geometric distillation, pretrained on a heterogeneous corpus with over 20K hours of open data."
+  takeaway_zh: "结合视频专家、动作专家、冻结 VLM 和仅训练时使用的 4D 几何蒸馏的世界动作模型，在含 2 万多小时开放数据的异构语料上预训练。"
+- title: "Video Prediction Policy 2: Predict Better, Act Better"
+  type: paper
+  arxiv: "2610.10270"
+  year: 2026
+  org: RobotEra
+  code: https://github.com/roboterax/video-prediction-policy-2
+  project: https://robert-gyj.github.io/video-prediction-policy-2
+  tags: [wam, video-prediction]
+  added: 2026-11-04
+  takeaway_en: "Blames WAM motion errors on video bases not tuned for manipulation and on naive action add-ons, then continues pretraining the video model on manipulation clips with event-level captions."
+  takeaway_zh: "认为世界动作模型的运动错误来自未针对操作优化的视频底座和粗糙的动作模块，因此在带事件级描述的操作视频上继续预训练视频模型。"
+- title: "RoboJEPA: Scaling Robotic Latent World Models"
+  type: paper
+  arxiv: "2610.10515"
+  year: 2026
+  org: Meta
+  code: https://github.com/facebookresearch/robo_jepa
+  project: https://robojepa.github.io/
+  highlight: true
+  tags: [jepa, scaling-laws]
+  added: 2026-11-04
+  takeaway_en: "A JEPA world model trained across 12 robot embodiments; its imagination error follows a power law in compute, so model quality can be predicted beyond the fitted scale."
+  takeaway_zh: "跨 12 种机器人形态训练的 JEPA 世界模型；其想象误差随算力服从幂律，因此可以预测超出拟合规模时的模型质量。"
+- title: "FLARE: Robot Learning with Implicit World Modeling"
+  type: paper
+  arxiv: "2505.15659"
+  year: 2025
+  org: NVIDIA
+  project: https://research.nvidia.com/labs/gear/flare
+  topics: [vla]
+  tags: [latent, diffusion, humanoid]
+  added: 2026-11-04
+  takeaway_en: "Adds a few tokens to a VLA-style diffusion transformer and aligns them with latents of future observations, so the policy anticipates the future without a separate world model."
+  takeaway_zh: "只在 VLA 式扩散 Transformer 中加入少量 token，并让它们对齐未来观测的潜表示，使策略无需独立世界模型就能预判未来。"
+- title: "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation"
+  type: paper
+  arxiv: "2606.17030"
+  year: 2026
+  org: Alibaba
+  project: https://pre.qwen.ai/blog?id=qwen-robotworld
+  tags: [language-conditioned, world-foundation-model]
+  added: 2026-11-04
+  takeaway_en: "A language-conditioned video world model using language as a shared action interface across manipulation, driving, indoor navigation and human-to-robot transfer."
+  takeaway_zh: "语言条件视频世界模型，把自然语言作为操作、驾驶、室内导航和人到机器人迁移的统一动作接口。"
+- title: "Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model"
+  type: paper
+  arxiv: "2607.11643"
+  year: 2026
+  org: Xiaomi
+  code: https://github.com/XiaomiRobotics/Xiaomi-Robotics-U0
+  tags: [world-foundation-model, autoregressive]
+  added: 2026-11-04
+  takeaway_en: "A 38-billion-parameter multimodal autoregressive model that treats embodied generation as an extension of image and video generation, keeping the prior of the pretrained world foundation model."
+  takeaway_zh: "380 亿参数的多模态自回归模型，把具身生成视为图像和视频生成的延伸，以保留预训练世界基础模型的先验。"
+- title: "PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation"
+  type: paper
+  arxiv: "2606.28128"
+  year: 2026
+  org: Peking University
+  code: https://github.com/DAGroup-PKU/PhysisForcing
+  project: https://dagroup-pku.github.io/PhysisForcing.github.io/
+  tags: [physics, video-world-model]
+  added: 2026-11-04
+  takeaway_en: "A training framework that improves the physical consistency of video world simulators by focusing supervision on physics-informative regions at pixel and semantic levels."
+  takeaway_zh: "训练框架，把监督集中在具有物理信息的区域，在像素和语义两个层面提升视频世界模拟器的物理一致性。"
+- title: "Evaluating Gemini Robotics Policies in a Veo World Simulator"
+  type: paper
+  arxiv: "2512.10675"
+  year: 2025
+  org: Google DeepMind
+  project: https://veo-robotics.github.io/
+  tags: [policy-evaluation, video-world-model]
+  added: 2026-11-04
+  takeaway_en: "Uses a Veo-based generative system for robot policy evaluation across nominal performance, out-of-distribution generalization, and physical and semantic safety."
+  takeaway_zh: "用基于 Veo 的生成系统评估机器人策略，覆盖常规性能、分布外泛化以及物理和语义安全。"
+- title: "Scalable Policy Evaluation with Video World Models"
+  type: paper
+  arxiv: "2511.11520"
+  year: 2025
+  project: https://miscsubmission.github.io/world_model_policy_eval/
+  tags: [policy-evaluation, video-world-model]
+  added: 2026-11-04
+  takeaway_en: "Adds action conditioning to pretrained video generators to get learned world models for policy evaluation, as an alternative to costly real tests and hand-built simulation."
+  takeaway_zh: "给预训练视频生成模型加入动作条件，得到可用于策略评估的世界模型，替代昂贵的真机测试和手工搭建的仿真。"
+- title: "Do World Action Models Generalize Better than VLAs? A Robustness Study"
+  type: paper
+  arxiv: "2603.22078"
+  year: 2026
+  project: https://robot-robustness.github.io/RoboTwin2.0-Plus/
+  topics: [vla]
+  tags: [robustness, wam]
+  added: 2026-11-04
+  takeaway_en: "A robustness study that compares world action models against VLAs under perturbation, to test the claim that explicit future prediction gives better generalization."
+  takeaway_zh: "在扰动下对比世界动作模型与 VLA 的鲁棒性研究，用于检验显式未来预测能带来更好泛化这一说法。"
+- title: "World-Action Models for Robot Learning and Control: A Survey"
+  type: paper
+  arxiv: "2609.16074"
+  year: 2026
+  project: https://rcl-robotics.github.io/Awesome-World-Action-Models
+  tags: [survey, wam]
+  added: 2026-11-04
+  takeaway_en: "A robotics-oriented WAM survey that separates WAMs from world models, model-based RL and reactive VLAs, with a taxonomy of representations, architectures, training and data."
+  takeaway_zh: "面向机器人的世界动作模型综述，厘清其与世界模型、基于模型的强化学习和反应式 VLA 的区别，并按表示、架构、训练和数据分类。"
+- title: "From World Models to World Action Models: A Concise Tutorial for Robotics"
+  type: paper
+  arxiv: "2607.00836"
+  year: 2026
+  code: https://github.com/clearlab-sustech/WorldModelSurvey
+  tags: [tutorial, wam]
+  added: 2026-11-04
+  takeaway_en: "A concise tutorial rather than a survey: defines world models and WAMs for robotics and compares spatial intelligence models, JEPA and Cosmos in a single frame."
+  takeaway_zh: "简明教程而非综述：界定机器人领域的世界模型和世界动作模型，并在统一视角下比较空间智能模型、JEPA 和 Cosmos。"
+- title: "GWM: Towards Scalable Gaussian World Models for Robotic Manipulation"
+  type: paper
+  arxiv: "2508.17600"
+  year: 2025
+  venue: ICCV 2025
+  code: https://github.com/Gaussian-World-Model/gaussianwm
+  project: https://gaussian-world-model.github.io/
+  tags: [gaussian-splatting, 3d]
+  added: 2026-11-04
+  takeaway_en: "Predicts future states by propagating Gaussian primitives under robot actions with a latent DiT and 3D VAE, usable for representation learning and as a neural simulator."
+  takeaway_zh: "用潜空间 DiT 和 3D VAE 预测高斯基元在机器人动作下的传播，可用于表征学习，也可作为神经模拟器。"
+- title: "ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation"
+  type: paper
+  arxiv: "2506.23126"
+  year: 2025
+  project: https://suninghuang19.github.io/particleformer_page/
+  tags: [3d, point-cloud, deformable]
+  added: 2026-11-04
+  takeaway_en: "A Transformer point cloud world model for interactions among rigid, deformable and flexible materials, trained from real perception data without elaborate scene reconstruction."
+  takeaway_zh: "Transformer 点云世界模型，可描述刚体、可变形和柔性材料之间的交互，直接用真实感知数据训练，无需复杂场景重建。"
+- title: "ST-WAM: Semantic-Temporal World Action Model for Robust Manipulation under Visual Distribution Shifts"
+  type: paper
+  arxiv: "2607.28993"
+  year: 2026
+  code: https://github.com/Thu-WangMX/ST-WAM-Semantic-Temporal-World-Action-Model
+  project: https://thu-wangmx.github.io/st-wam/
+  tags: [wam, robustness, dinov3]
+  added: 2026-11-04
+  takeaway_en: "Finds that WAM futures can hallucinate training-domain content under visual shift, and uses DINOv3 as the shared representation for future prediction and history retrieval to keep actions robust."
+  takeaway_zh: "发现视觉偏移下世界动作模型预测的未来会幻想出训练域内容，于是用 DINOv3 作为未来预测和历史检索的共享表示，以保持动作鲁棒。"
