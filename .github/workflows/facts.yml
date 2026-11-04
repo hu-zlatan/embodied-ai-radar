@@ -1,0 +1,39 @@
+name: Fetch facts
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: Comma-separated arXiv IDs
+        required: true
+      repos:
+        description: Comma-separated owner/name repos to check
+        default: ""
+permissions:
+  contents: write
+concurrency:
+  group: arxiv-api
+  cancel-in-progress: false
+jobs:
+  facts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Fetch
+        env:
+          IDS: ${{ inputs.ids }}
+          REPOS: ${{ inputs.repos }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/fetch_facts.py --ids "$IDS" --repos "$REPOS"
+      - name: Commit and push
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .autopilot/facts.json
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "data: facts for curated review"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
