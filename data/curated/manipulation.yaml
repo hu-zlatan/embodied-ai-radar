@@ -173,6 +173,7 @@
   arxiv: "2610.26507"
   year: 2026
   org: SJTU
+  code: https://github.com/MINT-SJTU/CTR
   added: 2026-10-20
   topics: [learning]
   tags: [bimanual, imitation, data-augmentation]
@@ -664,3 +665,34 @@
   tags: [real-world-rl, mobile-manipulation, latent-action, sim-to-real]
   takeaway_en: "Pretrains a task-agnostic latent action space in a low-fidelity simulator so real-world RL on high-DoF mobile manipulators becomes safe and efficient."
   takeaway_zh: "在低保真仿真器中预训练与任务无关的潜在动作空间，让高自由度移动操作机器人的真实世界强化学习安全高效。"
+- title: "AIRoA-0: Long-Horizon, Precise, Cross-Embodiment Manipulation from Handheld Data"
+  type: paper
+  arxiv: "2611.03815"
+  year: 2026
+  org: AIRoA
+  project: https://a-0.airoa.io
+  topics: [vla, datasets]
+  highlight: true
+  tags: [real, bimanual, handheld, open-weights]
+  added: 2026-11-04
+  takeaway_en: "Learned from 16,151 hours of handheld gripper demos with no robot data; reports 78% average success over ten tasks versus 27% for the best other VLA, and releases the dataset, weights and post-training recipe."
+  takeaway_zh: "从 16,151 小时手持夹爪演示中学习，全程不采机器人数据；报告十项任务平均成功率 78%，其他 VLA 最好为 27%，并开放数据集、权重和后训练方案。"
+- title: "RoboTryOn: Synthesizing Dexterous Robot Demonstrations from Human Videos via Virtual Try-On"
+  type: paper
+  arxiv: "2611.05163"
+  year: 2026
+  project: https://ryan-seungyong-lee.github.io/RoboTryOn
+  tags: [real, dexterous, humanoid, human-video]
+  added: 2026-11-04
+  takeaway_en: "Treats human-to-robot transfer as virtual try-on: keeps the motion and swaps the person for a target robot in video; reports novel-task success rising from 2% to 60% with no real demos of those tasks."
+  takeaway_zh: "把人到机器人的迁移看作虚拟试穿：保留动作，把视频中的人换成目标机器人；报告在没有这些任务真机演示时，新任务成功率从 2% 升到 60%。"
+- title: "FEIJOA: Task-Driven Grounding and Execution for Mobile Manipulation"
+  type: paper
+  arxiv: "2611.04080"
+  year: 2026
+  org: MIT
+  project: https://williamshen-nz.github.io/feijoa/
+  tags: [real, mobile-manipulation, agent]
+  added: 2026-11-04
+  takeaway_en: "A language-model agent resolves instructions against a posed RGB-D scan at test time instead of a prebuilt representation; 35 of 50 real Spot trials succeed, and most failures come from physical skills."
+  takeaway_zh: "语言模型智能体在测试时对带位姿的 RGB-D 扫描做指令落地，不依赖预建表示；Spot 真机 50 次试验成功 35 次，失败大多来自物理技能而非推理。"

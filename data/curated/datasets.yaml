@@ -646,3 +646,37 @@
   tags: [benchmark, curriculum, quadruped, sim, mjx]
   takeaway_en: "Runs fourteen curricula under one protocol on five quadrupeds in MuJoCo MJX: no method tops every robot and level set, and methods with easy training levels lead on in-distribution random terrain."
   takeaway_zh: "在 MuJoCo MJX 中用统一协议在五款四足上比较 14 种课程方法：没有方法在所有机器人和地形集上都领先，而训练关卡偏简单的方法在分布内随机地形上表现靠前。"
+- title: "PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data"
+  type: paper
+  arxiv: "2611.05320"
+  year: 2026
+  org: Peking University
+  code: https://github.com/DAGroup-PKU/PyRUA-Lean
+  project: https://dagroup-pku.github.io/PyRUA-Lean/DataFarm
+  topics: [sim]
+  tags: [agent, synthetic-data, real]
+  added: 2026-11-04
+  takeaway_en: "A coding agent rebuilds a task in simulation from one calibration episode, then a video model renders photographic data; reports 93 vs. 84 of 100 real successes against teleop data, at about $107 per hour of data."
+  takeaway_zh: "编程智能体凭一条标定轨迹在仿真中重建任务，再由视频模型渲染成写实数据；报告真机 100 次成功 93 次，遥操作数据为 84 次，每小时数据约 107 美元。"
+- title: "RoboScope Kit: Unified Interfaces for Fast and Scalable Embodied-AI Evaluation"
+  type: paper
+  arxiv: "2611.03850"
+  year: 2026
+  org: Shanghai Jiao Tong University
+  code: https://github.com/MINT-SJTU/RoboScope-Kit
+  project: https://roboscope.pages.dev/
+  topics: [vla]
+  tags: [benchmark, evaluation, tooling]
+  added: 2026-11-04
+  takeaway_en: "Wraps each model once and each benchmark once, then schedules simulator workers and policy replicas as separate pools; reports evaluation 4.45x to 6.16x faster than the official StarVLA evaluator on one GPU."
+  takeaway_zh: "模型和基准各封装一次，把仿真 worker 与策略副本分成两个池调度；报告单卡评测比官方 StarVLA 评测器快 4.45 到 6.16 倍。"
+- title: "CRONOS: Benchmarking Non-Episodic Reinforcement Learning for Robotic Manipulation"
+  type: paper
+  arxiv: "2611.05080"
+  year: 2026
+  project: https://embodiedai-ntu.github.io/cronos/
+  topics: [vla]
+  tags: [benchmark, rl, sim]
+  added: 2026-11-04
+  takeaway_en: "A simulation benchmark for RL fine-tuning of VLAs without frequent resets; finds naive fine-tuning fails from object and end-effector shifts, and that targeted reset allocation and bias fixes mitigate it."
+  takeaway_zh: "面向无频繁重置场景下 VLA 强化学习微调的仿真基准；发现直接微调会因物体和末端位姿偏移而失败，定向分配重置并处理预训练偏差可以缓解。"

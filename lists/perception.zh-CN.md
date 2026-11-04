@@ -1,0 +1,43 @@
+# 感知、SLAM 与三维建图
+
+_视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与开放词汇场景地图。_
+
+共 29 条，⭐ 为重点推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
+
+[返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/perception.html) · [English](perception.md)
+
+[VLA 与机器人基础模型](vla.zh-CN.md) · [操作与灵巧手](manipulation.zh-CN.md) · [触觉与视触觉感知](tactile.zh-CN.md) · [运动控制与人形机器人](locomotion.zh-CN.md) · [世界模型](world-models.zh-CN.md) · [导航与具身智能体](navigation.zh-CN.md) · **感知、SLAM 与三维建图** · [规划、控制与安全](control.zh-CN.md) · [机器人学习：强化学习与模仿学习](learning.zh-CN.md) · [仿真与 Sim-to-Real](sim.zh-CN.md) · [数据集与基准](datasets.zh-CN.md) · [硬件与开源机器人](hardware.zh-CN.md)
+
+- ⭐ **[Segment Anything](https://arxiv.org/abs/2304.02643)** (2023) — SAM：可用点、框、掩码提示的分割模型，在 10 亿级掩码上训练；已成为机器人感知流程中获取物体掩码的常用基础组件。 · [代码](https://github.com/facebookresearch/segment-anything)
+- ⭐ **[ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM](https://arxiv.org/abs/2007.11898)** (2020) — 最常用的特征点 SLAM 库：支持单目、双目与 RGB-D，可融合 IMU，并支持多地图重定位。 · [代码](https://github.com/UZ-SLAMLab/ORB_SLAM3)
+- **[ACE-Brain-0.6: Scaling Spatial Grounding for Physical Foundation Models](https://arxiv.org/abs/2610.27040)** (2026) — 用自动标注的机器人操作录像加多来源视觉数据构建约 150 万条可验证的定位监督，微调 Qwen3.5-9B；报告在七个公开视觉定位基准上平均 75.41 分，GPT-6 Astra 为 73.68。 · [代码](https://github.com/DAXIAORobotics/ACE-Brain-0.6) · [项目页](https://daxiaorobotics.github.io/ACE-Brain-0.6/)
+- **[Anchor3R: Streaming 3D Reconstruction with Transient Anchors for Long-Horizon Visual Mapping](https://arxiv.org/abs/2606.05035)** (2026) — CoRL 2026 Spotlight。以当前帧为中心的流式三维重建：在当前帧坐标系预测窗口相对位姿与局部几何，以抑制长时漂移。 · [代码](https://github.com/polar-explorer/Anchor3R)
+- **[AnchorHEC: Targetless Hand-Eye Calibration of Wrist and Fixed Cameras](https://arxiv.org/abs/2611.02884)** (2026) — 无需标定板，用 RGB、正运动学和三维基础模型同时标定腕部与固定相机；仿真中平移和旋转误差比基于重建的基线分别降低 86.4% 和 71.6%，并在真机上验证。 · [项目页](https://hwanggb.github.io/AnchorHEC/)
+- **[OpenVIO: A Versatile Open-Source Visual-Inertial Odometry System](https://arxiv.org/abs/2610.41671)** (2026) — MIT 许可的开源视觉惯性里程计，面向科研与实际应用。支持针孔、鱼眼相机及拼接 360° 图像，并在公开数据集上与其他开源 VIO 系统做了对比。 · [代码](https://github.com/93won/openvio)
+- **[SpaRV: Sparse Radiance Voxels for Scalable Geometrically Consistent LiDAR-Visual Mapping and Rendering](https://arxiv.org/abs/2610.25665)** (2026) — 用激光雷达与相机数据构建稀疏体素辐射场地图，针对机器人数据视角少、位姿有误差、场景大的问题，在保证几何精度的同时控制显存占用。 · [代码](https://github.com/hku-mars/SpaRV)
+- **[Vision as Proprioception: Estimating Humanoid Robot Pose from Video](https://arxiv.org/abs/2610.25288)** (2026) — HumanoidPose 仅凭视频恢复人形机器人的全身关节构型：适用于拿不到机载状态的场景，也能把网上的机器人视频变成训练数据。 · [代码](https://github.com/eth-siplab/HumanoidPose)
+- **[Which Depth Estimator for Jetson AGX Orin? A 2026 Benchmark of Monocular and Stereo Methods](https://arxiv.org/abs/2610.27199)** (2026) — 给机器人开发者的实测数据：在 Jetson AGX Orin 上用 TensorRT 运行九类单目与双目深度估计模型（Depth Anything V2/3、Depth Pro、MoGe-2、Fast-FoundationStereo 等），并评测度量精度与速度。 · [代码](https://github.com/nodarhub/orin-depth-benchmark)
+- **[FoundationStereo: Zero-Shot Stereo Matching](https://arxiv.org/abs/2501.09898)** (2025) — 在大规模合成数据上训练的双目深度模型，报告称在真实场景上零样本精度很强；可直接作为双目相机机器人的深度来源。 · [代码](https://github.com/NVlabs/FoundationStereo)
+- **[SAM 3: Segment Anything with Concepts](https://arxiv.org/abs/2511.16719)** (2025) — 给定短名词短语或示例图像，即可在图像和视频中分割并跟踪某一概念的所有实例；数据引擎覆盖 400 万个概念标签，开放权重与 SA-Co 基准，可直接用作机器人开放词汇感知模块。 · [代码](https://github.com/facebookresearch/sam3)
+- **[VGGT: Visual Geometry Grounded Transformer](https://arxiv.org/abs/2503.11651)** (2025) — 单个前馈 Transformer 一次性为多视角图像预测相机参数、深度、点图与跟踪，约一秒完成。 · [代码](https://github.com/facebookresearch/vggt)
+- **[Depth Anything V2](https://arxiv.org/abs/2406.09414)** (2024) — 先只用深度精确的合成图像训练大教师模型，再给大量真实图像打伪标签来训练小模型；单目深度比 V1 更锐利、更鲁棒。 · [代码](https://github.com/DepthAnything/Depth-Anything-V2)
+- **[Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data](https://arxiv.org/abs/2401.10891)** (2024) — 在数千万张伪标注图像上训练的单目深度模型，常被机器人系统直接拿来作为深度先验。 · [代码](https://github.com/LiheYoung/Depth-Anything)
+- **[FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry](https://arxiv.org/abs/2408.14035)** (2024) — FAST-LIVO2：在同一滤波器中融合激光雷达、相机与 IMU，两种传感器都采用直接法（无需提取特征）更新，并共用一张体素地图，图像块挂载在激光点上。 · [代码](https://github.com/hku-mars/FAST-LIVO2)
+- **[Grounding Image Matching in 3D with MASt3R](https://arxiv.org/abs/2406.09756)** (2024) — 在 DUSt3R 基础上加入稠密局部特征头，同一网络既输出三维点图又给出视角间精确的像素匹配，适用于免标定的三维重建与定位。 · [代码](https://github.com/naver/mast3r)
+- **[SAM 2: Segment Anything in Images and Videos](https://arxiv.org/abs/2408.00714)** (2024) — 用流式记忆把 SAM 扩展到视频：一次提示得到的掩码可在后续帧中持续跟踪，适合在操作过程中跟随目标物体。 · [代码](https://github.com/facebookresearch/sam2)
+- **[BundleSDF: Neural 6-DoF Tracking and 3D Reconstruction of Unknown Objects](https://arxiv.org/abs/2303.14158)** (2023) — 在 RGB-D 视频中跟踪从未见过物体的六自由度位姿，同时在线构建其神经三维模型，无需 CAD 模型；适用于操作新物体。 · [代码](https://github.com/NVlabs/BundleSDF)
+- **[CoTracker: It is Better to Track Together](https://arxiv.org/abs/2307.07635)** (2023) — 联合跟踪视频中大量点（而非逐点独立跟踪）的 Transformer，遮挡下依然稳健；常用于从人类或机器人视频中提取运动轨迹来学习策略。 · [代码](https://github.com/facebookresearch/co-tracker)
+- **[ConceptGraphs: Open-Vocabulary 3D Scene Graphs for Perception and Planning](https://arxiv.org/abs/2309.16650)** (2023) — 用视觉语言模型构建带语义标注的物体级三维场景图，大模型规划器可以用自然语言查询。 · [代码](https://github.com/concept-graphs/concept-graphs) · [项目页](https://concept-graphs.github.io/)
+- **[DINOv2: Learning Robust Visual Features without Supervision](https://arxiv.org/abs/2304.07193)** (2023) — 自监督学习的图像特征，冻结即可用于深度估计、分割和检索；是 VLA（如 OpenVLA）和潜空间世界模型常用的视觉骨干。 · [代码](https://github.com/facebookresearch/dinov2)
+- **[DUSt3R: Geometric 3D Vision Made Easy](https://arxiv.org/abs/2312.14132)** (2023) — 不需要已知相机内参或位姿，直接从图像对回归三维点图，开启了“三维基础模型”这一方向。 · [代码](https://github.com/naver/dust3r)
+- **[FoundationPose: Unified 6D Pose Estimation and Tracking of Novel Objects](https://arxiv.org/abs/2312.08344)** (2023) — 只需 CAD 模型或少量参考图像即可对未见过的物体做 6D 位姿估计与跟踪，无需逐物体训练。 · [代码](https://github.com/NVlabs/FoundationPose)
+- **[Gaussian Splatting SLAM](https://arxiv.org/abs/2312.06741)** (2023) — MonoGS：直接在三维高斯地图上做 SLAM，仅用单个相机即可同时完成相机跟踪与照片级稠密建图。 · [代码](https://github.com/muskie82/MonoGS)
+- **[Grounding DINO: Marrying DINO with Grounded Pre-Training for Open-Set Object Detection](https://arxiv.org/abs/2303.05499)** (2023) — 开放集目标检测器，可根据任意文本提示找到物体；常与 SAM 组合（Grounded-SAM），把语言指令变成物体掩码。 · [代码](https://github.com/IDEA-Research/GroundingDINO)
+- **[DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras](https://arxiv.org/abs/2108.10869)** (2021) — 端到端学习的视觉 SLAM：循环光流更新加上可微分的光束法平差层。 · [代码](https://github.com/princeton-vl/DROID-SLAM)
+- **[FAST-LIO2: Fast Direct LiDAR-inertial Odometry](https://arxiv.org/abs/2107.06829)** (2021) — 用增量 k-d 树把原始激光点直接配准到地图，速度足以在无人机和机器人机载计算机上运行。 · [代码](https://github.com/hku-mars/FAST_LIO)
+- **[LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping](https://arxiv.org/abs/2007.00258)** (2020) — 基于因子图的激光-惯性里程计，GPS 与回环可以作为额外因子直接加入。 · [代码](https://github.com/TixiaoShan/LIO-SAM)
+- **[Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping](https://arxiv.org/abs/1910.02490)** (2019) — 开源 C++ 实时度量-语义视觉惯性 SLAM 库，模块化包含 VIO、鲁棒位姿图、快速三维网格与稠密语义重建。 · [代码](https://github.com/MIT-SPARK/Kimera)
+
+**另见**
+
+[Aligning Cyber Space with Physical World](vla.zh-CN.md), [RynnBrain](vla.zh-CN.md), [Robot-Aligned 3D Gaussian Splatting for Precise Reaching with Wrist-Camera VLA Policies](vla.zh-CN.md), [Contact-GraspNet](manipulation.zh-CN.md), [AnyGrasp](manipulation.zh-CN.md), [Neural feels with neural fields](tactile.zh-CN.md), [GelSlim 5.0](tactile.zh-CN.md), [AnyTouch](tactile.zh-CN.md), [Tactile-Augmented Radiance Fields](tactile.zh-CN.md), [Watch Your Step](locomotion.zh-CN.md), [Solving a Giant Rubik's Cube with a Quadruped Robot](locomotion.zh-CN.md), [RynnUnify](world-models.zh-CN.md), [Object Goal Navigation using Goal-Oriented Semantic Exploration](navigation.zh-CN.md), [Learning to Explore using Active Neural SLAM](navigation.zh-CN.md), [Gaussian Episodic Memory for Long-Term Spatiotemporal Reasoning](navigation.zh-CN.md), [MARE](sim.zh-CN.md), [ScanNet](datasets.zh-CN.md), [DexYCB](datasets.zh-CN.md), [Rescaling Egocentric Vision](datasets.zh-CN.md), [HOI4D](datasets.zh-CN.md), [ARCTIC](datasets.zh-CN.md), [EgoContact](datasets.zh-CN.md)

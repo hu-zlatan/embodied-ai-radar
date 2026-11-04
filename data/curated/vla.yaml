@@ -1312,6 +1312,7 @@
   type: paper
   arxiv: "2611.02497"
   year: 2026
+  code: https://github.com/RoboColosseum/robocolosseum-client
   added: 2026-11-03
   highlight: true
   tags: [benchmark, evaluation, real, fine-tuning]
@@ -1437,3 +1438,21 @@
   tags: [survey]
   takeaway_en: "Survey of over three hundred studies with a taxonomy of autoregression, diffusion, reinforcement, hybrid and specialized VLAs, plus the datasets, benchmarks and simulators used to test them."
   takeaway_zh: "综述三百多项研究，把 VLA 分为自回归、扩散、强化学习、混合和专用几类，并介绍常用数据集、评测基准和仿真平台。"
+- title: "Asynchronous Robot Policies"
+  type: paper
+  arxiv: "2611.05155"
+  year: 2026
+  org: INSAIT
+  project: https://arp.insait.ai
+  tags: [real, arm, latency]
+  added: 2026-11-04
+  takeaway_en: "Splits a large VLM that slowly updates a semantic memory from a light expert that acts at high rate, trained on staleness and delay; reports running the VLM at a tenth of its nominal rate with no significant loss."
+  takeaway_zh: "把低频更新语义记忆的大型 VLM 与高频出动作的轻量专家解耦，并针对陈旧和延迟训练；报告 VLM 降到标称频率十分之一时性能无明显损失。"
+- title: "Say the Same, Act Differently: Diagnosing and Steering Text-Action Divergence in Reasoning VLAs"
+  type: paper
+  arxiv: "2611.04166"
+  year: 2026
+  tags: [safety, adversarial, neurips]
+  added: 2026-11-04
+  takeaway_en: "Shows visual perturbations can change a reasoning VLA's action while its rationale stays word-for-word identical, tested on Alpamayo and InstructVLA, so monitors must check the action channel, not the text."
+  takeaway_zh: "展示视觉扰动可以改变推理型 VLA 的动作，而解释文本一字不变（在 Alpamayo 和 InstructVLA 上测试），因此监控必须直接检查动作通道，不能只看文本。"
