@@ -1,0 +1,718 @@
+{
+ "updated": "2026-11-04",
+ "missing": [],
+ "papers": {
+  "2406.19464": {
+   "title": "ManiWAV: Learning Robot Manipulation from In-the-Wild Audio-Visual Data",
+   "abstract": "Audio signals provide rich information for the robot interaction and object properties through contact. This information can surprisingly ease the learning of contact-rich robot manipulation skills, especially when the visual information alone is ambiguous or incomplete. However, the usage of audio data in robot manipulation has been constrained to teleoperated demonstrations collected by either attaching a microphone to the robot or object, which significantly limits its usage in robot learning pipelines. In this work, we introduce ManiWAV: an 'ear-in-hand' data collection device to collect in-the-wild human demonstrations with synchronous audio and visual feedback, and a corresponding policy interface to learn robot manipulation policy directly from the demonstrations. We demonstrate the capabilities of our system through four contact-rich manipulation tasks that require either passively sensing the contact events and modes, or actively sensing the object surface materials and states. In addition, we show that our system can generalize to unseen in-the-wild environments by learning from diverse in-the-wild human demonstrations.",
+   "comment": null,
+   "authors": [
+    "Liu, Zeyi",
+    "Chi, Cheng",
+    "Cousineau, Eric",
+    "Kuppuswamy, Naveen",
+    "Burchfiel, Benjamin",
+    "Song, Shuran"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2502.17432": {
+   "title": "FACTR: Force-Attending Curriculum Training for Contact-Rich Policy Learning",
+   "abstract": "Many contact-rich tasks humans perform, such as box pickup or rolling dough, rely on force feedback for reliable execution. However, this force information, which is readily available in most robot arms, is not commonly used in teleoperation and policy learning. Consequently, robot behavior is often limited to quasi-static kinematic tasks that do not require intricate force-feedback. In this paper, we first present a low-cost, intuitive, bilateral teleoperation setup that relays external forces of the follower arm back to the teacher arm, facilitating data collection for complex, contact-rich tasks. We then introduce FACTR, a policy learning method that employs a curriculum which corrupts the visual input with decreasing intensity throughout training. The curriculum prevents our transformer-based policy from over-fitting to the visual input and guides the policy to properly attend to the force modality. We demonstrate that by fully utilizing the force information, our method significantly improves generalization to unseen objects by 43\\% compared to baseline approaches without a curriculum. Video results, codebases, and instructions at https://jasonjzliu.com/factr/",
+   "comment": null,
+   "authors": [
+    "Liu, Jason Jingzhou",
+    "Li, Yulong",
+    "Shaw, Kenneth",
+    "Tao, Tony",
+    "Salakhutdinov, Ruslan",
+    "Pathak, Deepak"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2502.12191": {
+   "title": "AnyTouch: Learning Unified Static-Dynamic Representation across Multiple Visuo-tactile Sensors",
+   "abstract": "Visuo-tactile sensors aim to emulate human tactile perception, enabling robots to precisely understand and manipulate objects. Over time, numerous meticulously designed visuo-tactile sensors have been integrated into robotic systems, aiding in completing various tasks. However, the distinct data characteristics of these low-standardized visuo-tactile sensors hinder the establishment of a powerful tactile perception system. We consider that the key to addressing this issue lies in learning unified multi-sensor representations, thereby integrating the sensors and promoting tactile knowledge transfer between them. To achieve unified representation of this nature, we introduce TacQuad, an aligned multi-modal multi-sensor tactile dataset from four different visuo-tactile sensors, which enables the explicit integration of various sensors. Recognizing that humans perceive the physical environment by acquiring diverse tactile information such as texture and pressure changes, we further propose to learn unified multi-sensor representations from both static and dynamic perspectives. By integrating tactile images and videos, we present AnyTouch, a unified static-dynamic multi-sensor representation learning framework with a multi-level structure, aimed at both enhancing comprehensive perceptual abilities and enabling effective cross-sensor transfer. This multi-level architecture captures pixel-level details from tactile data via masked modeling and enhances perception and transferability by learning semantic-level sensor-agnostic features through multi-modal alignment and cross-sensor matching. We provide a comprehensive analysis of multi-sensor transferability, and validate our method on various datasets and in the real-world pouring task. Experimental results show that our method outperforms existing methods, exhibits outstanding static and dynamic perception capabilities across various sensors.",
+   "comment": null,
+   "authors": [
+    "Feng, Ruoxuan",
+    "Hu, Jiangyu",
+    "Xia, Wenke",
+    "Gao, Tianci",
+    "Shen, Ao",
+    "Sun, Yuhao",
+    "Fang, Bin",
+    "Hu, Di"
+   ],
+   "code": [],
+   "project": []
+  },
+  "2407.01418": {
+   "title": "RoboPack: Learning Tactile-Informed Dynamics Models for Dense Packing",
+   "abstract": "Tactile feedback is critical for understanding the dynamics of both rigid and deformable objects in many manipulation tasks, such as non-prehensile manipulation and dense packing. We introduce an approach that combines visual and tactile sensing for robotic manipulation by learning a neural, tactile-informed dynamics model. Our proposed framework, RoboPack, employs a recurrent graph neural network to estimate object states, including particles and object-level latent physics information, from historical visuo-tactile observations and to perform future state predictions. Our tactile-informed dynamics model, learned from real-world data, can solve downstream robotics tasks with model-predictive control. We demonstrate our approach on a real robot equipped with a compliant Soft-Bubble tactile sensor on non-prehensile manipulation and dense packing tasks, where the robot must infer the physics properties of objects from direct and indirect interactions. Trained on only an average of 30 minutes of real-world interaction data per task, our model can perform online adaptation and make touch-informed predictions. Through extensive evaluations in both long-horizon dynamics prediction and real-world manipulation, our method demonstrates superior effectiveness compared to previous learning-based and physics-based simulation systems.",
+   "comment": null,
+   "authors": [
+    "Ai, Bo",
+    "Tian, Stephen",
+    "Shi, Haochen",
+    "Wang, Yixuan",
+    "Tan, Cheston",
+    "Li, Yunzhu",
+    "Wu, Jiajun"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2403.08716": {
+   "title": "DIFFTACTILE: A Physics-based Differentiable Tactile Simulator for Contact-rich Robotic Manipulation",
+   "abstract": "We introduce DIFFTACTILE, a physics-based differentiable tactile simulation system designed to enhance robotic manipulation with dense and physically accurate tactile feedback. In contrast to prior tactile simulators which primarily focus on manipulating rigid bodies and often rely on simplified approximations to model stress and deformations of materials in contact, DIFFTACTILE emphasizes physics-based contact modeling with high fidelity, supporting simulations of diverse contact modes and interactions with objects possessing a wide range of material properties. Our system incorporates several key components, including a Finite Element Method (FEM)-based soft body model for simulating the sensing elastomer, a multi-material simulator for modeling diverse object types (such as elastic, elastoplastic, cables) under manipulation, a penalty-based contact model for handling contact dynamics. The differentiable nature of our system facilitates gradient-based optimization for both 1) refining physical properties in simulation using real-world data, hence narrowing the sim-to-real gap and 2) efficient learning of tactile-assisted grasping and contact-rich manipulation skills. Additionally, we introduce a method to infer the optical response of our tactile sensor to contact using an efficient pixel-based neural module. We anticipate that DIFFTACTILE will serve as a useful platform for studying contact-rich manipulations, leveraging the benefits of dense tactile feedback and differentiable physics. Code and supplementary materials are available at the project website https://difftactile.github.io/.",
+   "comment": null,
+   "authors": [
+    "Si, Zilin",
+    "Zhang, Gu",
+    "Ben, Qingwei",
+    "Romero, Branden",
+    "Xian, Zhou",
+    "Liu, Chao",
+    "Gan, Chuang"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2504.12908": {
+   "title": "Taccel: Scaling Up Vision-based Tactile Robotics via High-performance GPU Simulation",
+   "abstract": "Tactile sensing is crucial for achieving human-level robotic capabilities in manipulation tasks. As a promising solution, Vision-Based Tactile Sensors (VBTSs) offer high spatial resolution and cost-effectiveness, but present unique challenges in robotics for their complex physical characteristics and visual signal processing requirements. The lack of efficient and accurate simulation tools for VBTSs has significantly limited the scale and scope of tactile robotics research. We present Taccel, a high-performance simulation platform that integrates IPC and ABD to model robots, tactile sensors, and objects with both accuracy and unprecedented speed, achieving an 18-fold acceleration over real-time across thousands of parallel environments. Unlike previous simulators that operate at sub-real-time speeds with limited parallelization, Taccel provides precise physics simulation and realistic tactile signals while supporting flexible robot-sensor configurations through user-friendly APIs. Through extensive validation in object recognition, robotic grasping, and articulated object manipulation, we demonstrate precise simulation and successful sim-to-real transfer. These capabilities position Taccel as a powerful tool for scaling up tactile robotics research and development, potentially transforming how robots interact with and understand their physical environment.",
+   "comment": null,
+   "authors": [
+    "Li, Yuyang",
+    "Du, Wenxin",
+    "Yu, Chang",
+    "Li, Puhao",
+    "Zhao, Zihang",
+    "Liu, Tengyu",
+    "Jiang, Chenfanfu",
+    "Zhu, Yixin",
+    "Huang, Siyuan"
+   ],
+   "code": [],
+   "project": []
+  },
+  "2411.04776": {
+   "title": "TacEx: GelSight Tactile Simulation in Isaac Sim -- Combining Soft-Body and Visuotactile Simulators",
+   "abstract": "Training robot policies in simulation is becoming increasingly popular; nevertheless, a precise, reliable, and easy-to-use tactile simulator for contact-rich manipulation tasks is still missing. To close this gap, we develop TacEx -- a modular tactile simulation framework. We embed a state-of-the-art soft-body simulator for contacts named GIPC and vision-based tactile simulators Taxim and FOTS into Isaac Sim to achieve robust and plausible simulation of the visuotactile sensor GelSight Mini. We implement several Isaac Lab environments for Reinforcement Learning (RL) leveraging our TacEx simulation, including object pushing, lifting, and pole balancing. We validate that the simulation is stable and that the high-dimensional observations, such as the gel deformation and the RGB images from the GelSight camera, can be used for training. The code, videos, and additional results will be released online https://sites.google.com/view/tacex.",
+   "comment": null,
+   "authors": [
+    "Nguyen, Duc Huy",
+    "Schneider, Tim",
+    "Duret, Guillaume",
+    "Kshirsagar, Alap",
+    "Belousov, Boris",
+    "Peters, Jan"
+   ],
+   "code": [],
+   "project": []
+  },
+  "2312.01236": {
+   "title": "Evetac: An Event-based Optical Tactile Sensor for Robotic Manipulation",
+   "abstract": "Optical tactile sensors have recently become popular. They provide high spatial resolution, but struggle to offer fine temporal resolutions. To overcome this shortcoming, we study the idea of replacing the RGB camera with an event-based camera and introduce a new event-based optical tactile sensor called Evetac. Along with hardware design, we develop touch processing algorithms to process its measurements online at 1000 Hz. We devise an efficient algorithm to track the elastomer's deformation through the imprinted markers despite the sensor's sparse output. Benchmarking experiments demonstrate Evetac's capabilities of sensing vibrations up to 498 Hz, reconstructing shear forces, and significantly reducing data rates compared to RGB optical tactile sensors. Moreover, Evetac's output and the marker tracking provide meaningful features for learning data-driven slip detection and prediction models. The learned models form the basis for a robust and adaptive closed-loop grasp controller capable of handling a wide range of objects. We believe that fast and efficient event-based tactile sensors like Evetac will be essential for bringing human-like manipulation capabilities to robotics. The sensor design is open-sourced at https://sites.google.com/view/evetac .",
+   "comment": null,
+   "authors": [
+    "Funk, Niklas",
+    "Helmut, Erik",
+    "Chalvatzaki, Georgia",
+    "Calandra, Roberto",
+    "Peters, Jan"
+   ],
+   "code": [],
+   "project": []
+  },
+  "2405.02794": {
+   "title": "Octopi: Object Property Reasoning with Large Tactile-Language Models",
+   "abstract": "Physical reasoning is important for effective robot manipulation. Recent work has investigated both vision and language modalities for physical reasoning; vision can reveal information about objects in the environment and language serves as an abstraction and communication medium for additional context. Although these works have demonstrated success on a variety of physical reasoning tasks, they are limited to physical properties that can be inferred from visual or language inputs. In this work, we investigate combining tactile perception with language, which enables embodied systems to obtain physical properties through interaction and apply commonsense reasoning. We contribute a new dataset PhysiCLeAR, which comprises both physical/property reasoning tasks and annotated tactile videos obtained using a GelSight tactile sensor. We then introduce Octopi, a system that leverages both tactile representation learning and large vision-language models to predict and reason about tactile inputs with minimal language fine-tuning. Our evaluations on PhysiCLeAR show that Octopi is able to effectively use intermediate physical property predictions to improve its performance on various tactile-related tasks. PhysiCLeAR and Octopi are available at https://github.com/clear-nus/octopi.",
+   "comment": null,
+   "authors": [
+    "Yu, Samson",
+    "Lin, Kelvin",
+    "Xiao, Anxing",
+    "Duan, Jiafei",
+    "Soh, Harold"
+   ],
+   "code": [],
+   "project": []
+  },
+  "2405.04534": {
+   "title": "Tactile-Augmented Radiance Fields",
+   "abstract": "We present a scene representation, which we call a tactile-augmented radiance field (TaRF), that brings vision and touch into a shared 3D space. This representation can be used to estimate the visual and tactile signals for a given 3D position within a scene. We capture a scene's TaRF from a collection of photos and sparsely sampled touch probes. Our approach makes use of two insights: (i) common vision-based touch sensors are built on ordinary cameras and thus can be registered to images using methods from multi-view geometry, and (ii) visually and structurally similar regions of a scene share the same tactile features. We use these insights to register touch signals to a captured visual scene, and to train a conditional diffusion model that, provided with an RGB-D image rendered from a neural radiance field, generates its corresponding tactile signal. To evaluate our approach, we collect a dataset of TaRFs. This dataset contains more touch samples than previous real-world datasets, and it provides spatially aligned visual signals for each captured touch signal. We demonstrate the accuracy of our cross-modal generative model and the utility of the captured visual-tactile data on several downstream tasks. Project page: https://dou-yiming.github.io/TaRF",
+   "comment": null,
+   "authors": [
+    "Dou, Yiming",
+    "Yang, Fengyu",
+    "Liu, Yi",
+    "Loquercio, Antonio",
+    "Owens, Andrew"
+   ],
+   "code": [],
+   "project": []
+  },
+  "2505.23175": {
+   "title": "LocoTouch: Learning Dynamic Quadrupedal Transport with Tactile Sensing",
+   "abstract": "Quadrupedal robots have demonstrated remarkable agility and robustness in traversing complex terrains. However, they struggle with dynamic object interactions, where contact must be precisely sensed and controlled. To bridge this gap, we present LocoTouch, a system that equips quadrupedal robots with tactile sensing to address a particularly challenging task in this category: long-distance transport of unsecured cylindrical objects, which typically requires custom mounting or fastening mechanisms to maintain stability. For efficient large-area tactile sensing, we design a high-density distributed tactile sensor that covers the entire back of the robot. To effectively leverage tactile feedback for robot control, we develop a simulation environment with high-fidelity tactile signals, and train tactile-aware transport policies using a two-stage learning pipeline. Furthermore, we design a novel reward function to promote robust, symmetric, and frequency-adaptive locomotion gaits. After training in simulation, LocoTouch transfers zero-shot to the real world, reliably transporting a wide range of unsecured cylindrical objects with diverse sizes, weights, and surface properties. Moreover, it remains robust over long distances, on uneven terrain, and under severe perturbations.",
+   "comment": null,
+   "authors": [
+    "Lin, Changyi",
+    "Song, Yuxin Ray",
+    "Huo, Boda",
+    "Yu, Mingyang",
+    "Wang, Yikai",
+    "Liu, Shiqi",
+    "Yang, Yuxiang",
+    "Yu, Wenhao",
+    "Zhang, Tingnan",
+    "Tan, Jie",
+    "Luo, Yiyue",
+    "Zhao, Ding"
+   ],
+   "code": [],
+   "project": []
+  },
+  "2310.16917": {
+   "title": "MimicTouch: Leveraging Multi-modal Human Tactile Demonstrations for Contact-rich Manipulation",
+   "abstract": "Tactile sensing is critical to fine-grained, contact-rich manipulation tasks, such as insertion and assembly. Prior research has shown the possibility of learning tactile-guided policy from teleoperated demonstration data. However, to provide the demonstration, human users often rely on visual feedback to control the robot. This creates a gap between the sensing modality used for controlling the robot (visual) and the modality of interest (tactile). To bridge this gap, we introduce \"MimicTouch\", a novel framework for learning policies directly from demonstrations provided by human users with their hands. The key innovations are i) a human tactile data collection system which collects multi-modal tactile dataset for learning human's tactile-guided control strategy, ii) an imitation learning-based framework for learning human's tactile-guided control strategy through such data, and iii) an online residual RL framework to bridge the embodiment gap between the human hand and the robot gripper. Through comprehensive experiments, we highlight the efficacy of utilizing human's tactile-guided control strategy to resolve contact-rich manipulation tasks. The project website is at https://sites.google.com/view/MimicTouch.",
+   "comment": null,
+   "authors": [
+    "Yu, Kelin",
+    "Han, Yunhai",
+    "Wang, Qixian",
+    "Saxena, Vaibhav",
+    "Xu, Danfei",
+    "Zhao, Ye"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2508.11261": {
+   "title": "Tactile Robotics: An Outlook",
+   "abstract": "Robotics research has long sought to give robots the ability to perceive the physical world through touch in an analogous manner to many biological systems. Developing such tactile capabilities is important for numerous emerging applications that require robots to co-exist and interact closely with humans. Consequently, there has been growing interest in tactile sensing, leading to the development of various technologies, including piezoresistive and piezoelectric sensors, capacitive sensors, magnetic sensors, and optical tactile sensors. These diverse approaches utilise different transduction methods and materials to equip robots with distributed sensing capabilities, enabling more effective physical interactions. These advances have been supported in recent years by simulation tools that generate large-scale tactile datasets to support sensor designs and algorithms to interpret and improve the utility of tactile data. The integration of tactile sensing with other modalities, such as vision, as well as with action strategies for active tactile perception highlights the growing scope of this field. To further the transformative progress in tactile robotics, a holistic approach is essential. In this outlook article, we examine several challenges associated with the current state of the art in tactile robotics and explore potential solutions to inspire innovations across multiple domains, including manufacturing, healthcare, recycling and agriculture.",
+   "comment": null,
+   "authors": [
+    "Luo, Shan",
+    "Lepora, Nathan F.",
+    "Yuan, Wenzhen",
+    "Althoefer, Kaspar",
+    "Cheng, Gordon",
+    "Dahiya, Ravinder"
+   ],
+   "code": [],
+   "project": []
+  },
+  "2504.16649": {
+   "title": "PP-Tac: Paper Picking Using Tactile Feedback in Dexterous Robotic Hands",
+   "abstract": "Robots are increasingly envisioned as human companions, assisting with everyday tasks that often involve manipulating deformable objects. Although recent advances in robotic hardware and embodied AI have expanded their capabilities, current systems still struggle with handling thin, flat, and deformable objects such as paper and fabric. This limitation arises from the lack of suitable perception techniques for robust state estimation under diverse object appearances, as well as the absence of planning techniques for generating appropriate grasp motions. To bridge these gaps, this paper introduces PP-Tac, a robotic system for picking up paper-like objects. PP-Tac features a multi-fingered robotic hand with high-resolution omnidirectional tactile sensors \\sensorname. This hardware configuration enables real-time slip detection and online frictional force control that mitigates such slips. Furthermore, grasp motion generation is achieved through a trajectory synthesis pipeline, which first constructs a dataset of finger's pinching motions. Based on this dataset, a diffusion-based policy is trained to control the hand-arm robotic system. Experiments demonstrate that PP-Tac can effectively grasp paper-like objects of varying material, thickness, and stiffness, achieving an overall success rate of 87.5\\%. To our knowledge, this work is the first attempt to grasp paper-like deformable objects using a tactile dexterous hand. Our project webpage can be found at: https://peilin-666.github.io/projects/PP-Tac/",
+   "comment": null,
+   "authors": [
+    "Lin, Pei",
+    "Huang, Yuzhe",
+    "Li, Wanlin",
+    "Ma, Jianpeng",
+    "Xiao, Chenxi",
+    "Jiao, Ziyuan"
+   ],
+   "code": [],
+   "project": []
+  },
+  "2410.10803": {
+   "title": "Generalizable Humanoid Manipulation with 3D Diffusion Policies",
+   "abstract": "Humanoid robots capable of autonomous operation in diverse environments have long been a goal for roboticists. However, autonomous manipulation by humanoid robots has largely been restricted to one specific scene, primarily due to the difficulty of acquiring generalizable skills and the expensiveness of in-the-wild humanoid robot data. In this work, we build a real-world robotic system to address this challenging problem. Our system is mainly an integration of 1) a whole-upper-body robotic teleoperation system to acquire human-like robot data, 2) a 25-DoF humanoid robot platform with a height-adjustable cart and a 3D LiDAR sensor, and 3) an improved 3D Diffusion Policy learning algorithm for humanoid robots to learn from noisy human data. We run more than 2000 episodes of policy rollouts on the real robot for rigorous policy evaluation. Empowered by this system, we show that using only data collected in one single scene and with only onboard computing, a full-sized humanoid robot can autonomously perform skills in diverse real-world scenarios. Videos are available at https://humanoid-manipulation.github.io .",
+   "comment": null,
+   "authors": [
+    "Ze, Yanjie",
+    "Chen, Zixuan",
+    "Wang, Wenhao",
+    "Chen, Tianyi",
+    "He, Xialin",
+    "Yuan, Ying",
+    "Peng, Xue Bin",
+    "Wu, Jiajun"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": "https://github.com/YanjieZe/Improved-3D-Diffusion-Policy",
+   "hf_project": "https://humanoid-manipulation.github.io/"
+  },
+  "2410.11825": {
+   "title": "Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies",
+   "abstract": "Reinforcement learning combined with sim-to-real transfer offers a general framework for developing locomotion controllers for legged robots. To facilitate successful deployment in the real world, smoothing techniques, such as low-pass filters and smoothness rewards, are often employed to develop policies with smooth behaviors. However, because these techniques are non-differentiable and usually require tedious tuning of a large set of hyperparameters, they tend to require extensive manual tuning for each robotic platform. To address this challenge and establish a general technique for enforcing smooth behaviors, we propose a simple and effective method that imposes a Lipschitz constraint on a learned policy, which we refer to as Lipschitz-Constrained Policies (LCP). We show that the Lipschitz constraint can be implemented in the form of a gradient penalty, which provides a differentiable objective that can be easily incorporated with automatic differentiation frameworks. We demonstrate that LCP effectively replaces the need for smoothing rewards or low-pass filters and can be easily integrated into training frameworks for many distinct humanoid robots. We extensively evaluate LCP in both simulation and real-world humanoid robots, producing smooth and robust locomotion controllers. All simulation and deployment code, along with complete checkpoints, is available on our project page: https://lipschitz-constrained-policy.github.io.",
+   "comment": null,
+   "authors": [
+    "Chen, Zixuan",
+    "He, Xialin",
+    "Wang, Yen-Jen",
+    "Liao, Qiayuan",
+    "Ze, Yanjie",
+    "Li, Zhongyu",
+    "Sastry, S. Shankar",
+    "Wu, Jiajun",
+    "Sreenath, Koushil",
+    "Gupta, Saurabh",
+    "Peng, Xue Bin"
+   ],
+   "code": [],
+   "project": []
+  },
+  "1804.02717": {
+   "title": "DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills",
+   "abstract": "A longstanding goal in character animation is to combine data-driven specification of behavior with a system that can execute a similar behavior in a physical simulation, thus enabling realistic responses to perturbations and environmental variation. We show that well-known reinforcement learning (RL) methods can be adapted to learn robust control policies capable of imitating a broad range of example motion clips, while also learning complex recoveries, adapting to changes in morphology, and accomplishing user-specified goals. Our method handles keyframed motions, highly-dynamic actions such as motion-captured flips and spins, and retargeted motions. By combining a motion-imitation objective with a task objective, we can train characters that react intelligently in interactive settings, e.g., by walking in a desired direction or throwing a ball at a user-specified target. This approach thus combines the convenience and motion quality of using motion clips to define the desired style and appearance, with the flexibility and generality afforded by RL methods and physics-based animation. We further explore a number of methods for integrating multiple clips into the learning process to develop multi-skilled agents capable of performing a rich repertoire of diverse skills. We demonstrate results using multiple characters (human, Atlas robot, bipedal dinosaur, dragon) and a large variety of skills, including locomotion, acrobatics, and martial arts.",
+   "comment": null,
+   "authors": [
+    "Peng, Xue Bin",
+    "Abbeel, Pieter",
+    "Levine, Sergey",
+    "van de Panne, Michiel"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2205.01906": {
+   "title": "ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters",
+   "abstract": "The incredible feats of athleticism demonstrated by humans are made possible in part by a vast repertoire of general-purpose motor skills, acquired through years of practice and experience. These skills not only enable humans to perform complex tasks, but also provide powerful priors for guiding their behaviors when learning new tasks. This is in stark contrast to what is common practice in physics-based character animation, where control policies are most typically trained from scratch for each task. In this work, we present a large-scale data-driven framework for learning versatile and reusable skill embeddings for physically simulated characters. Our approach combines techniques from adversarial imitation learning and unsupervised reinforcement learning to develop skill embeddings that produce life-like behaviors, while also providing an easy to control representation for use on new downstream tasks. Our models can be trained using large datasets of unstructured motion clips, without requiring any task-specific annotation or segmentation of the motion data. By leveraging a massively parallel GPU-based simulator, we are able to train skill embeddings using over a decade of simulated experiences, enabling our model to learn a rich and versatile repertoire of skills. We show that a single pre-trained model can be effectively applied to perform a diverse set of new tasks. Our system also allows users to specify tasks through simple reward functions, and the skill embedding then enables the character to automatically synthesize complex and naturalistic strategies in order to achieve the task objectives.",
+   "comment": null,
+   "authors": [
+    "Peng, Xue Bin",
+    "Guo, Yunrong",
+    "Halper, Lina",
+    "Levine, Sergey",
+    "Fidler, Sanja"
+   ],
+   "code": [],
+   "project": []
+  },
+  "2305.06456": {
+   "title": "Perpetual Humanoid Control for Real-time Simulated Avatars",
+   "abstract": "We present a physics-based humanoid controller that achieves high-fidelity motion imitation and fault-tolerant behavior in the presence of noisy input (e.g. pose estimates from video or generated from language) and unexpected falls. Our controller scales up to learning ten thousand motion clips without using any external stabilizing forces and learns to naturally recover from fail-state. Given reference motion, our controller can perpetually control simulated avatars without requiring resets. At its core, we propose the progressive multiplicative control policy (PMCP), which dynamically allocates new network capacity to learn harder and harder motion sequences. PMCP allows efficient scaling for learning from large-scale motion databases and adding new tasks, such as fail-state recovery, without catastrophic forgetting. We demonstrate the effectiveness of our controller by using it to imitate noisy poses from video-based pose estimators and language-based motion generators in a live and real-time multi-person avatar use case.",
+   "comment": null,
+   "authors": [
+    "Luo, Zhengyi",
+    "Cao, Jinkun",
+    "Winkler, Alexander",
+    "Kitani, Kris",
+    "Xu, Weipeng"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": null,
+   "hf_project": "https://zhengyiluo.github.io/PHC/"
+  },
+  "2502.20390": {
+   "title": "InterMimic: Towards Universal Whole-Body Control for Physics-Based Human-Object Interactions",
+   "abstract": "Achieving realistic simulations of humans interacting with a wide range of objects has long been a fundamental goal. Extending physics-based motion imitation to complex human-object interactions (HOIs) is challenging due to intricate human-object coupling, variability in object geometries, and artifacts in motion capture data, such as inaccurate contacts and limited hand detail. We introduce InterMimic, a framework that enables a single policy to robustly learn from hours of imperfect MoCap data covering diverse full-body interactions with dynamic and varied objects. Our key insight is to employ a curriculum strategy -- perfect first, then scale up. We first train subject-specific teacher policies to mimic, retarget, and refine motion capture data. Next, we distill these teachers into a student policy, with the teachers acting as online experts providing direct supervision, as well as high-quality references. Notably, we incorporate RL fine-tuning on the student policy to surpass mere demonstration replication and achieve higher-quality solutions. Our experiments demonstrate that InterMimic produces realistic and diverse interactions across multiple HOI datasets. The learned policy generalizes in a zero-shot manner and seamlessly integrates with kinematic generators, elevating the framework from mere imitation to generative modeling of complex human-object interactions.",
+   "comment": null,
+   "authors": [
+    "Xu, Sirui",
+    "Ling, Hung Yu",
+    "Wang, Yu-Xiong",
+    "Gui, Liang-Yan"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2407.07788": {
+   "title": "BiGym: A Demo-Driven Mobile Bi-Manual Manipulation Benchmark",
+   "abstract": "We introduce BiGym, a new benchmark and learning environment for mobile bi-manual demo-driven robotic manipulation. BiGym features 40 diverse tasks set in home environments, ranging from simple target reaching to complex kitchen cleaning. To capture the real-world performance accurately, we provide human-collected demonstrations for each task, reflecting the diverse modalities found in real-world robot trajectories. BiGym supports a variety of observations, including proprioceptive data and visual inputs such as RGB, and depth from 3 camera views. To validate the usability of BiGym, we thoroughly benchmark the state-of-the-art imitation learning algorithms and demo-driven reinforcement learning algorithms within the environment and discuss the future opportunities.",
+   "comment": null,
+   "authors": [
+    "Chernyadev, Nikita",
+    "Backshall, Nicholas",
+    "Ma, Xiao",
+    "Lu, Yunfan",
+    "Seo, Younggyo",
+    "James, Stephen"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": "https://github.com/chernyadev/bigym",
+   "hf_project": "https://chernyadev.github.io/bigym/"
+  },
+  "2407.10943": {
+   "title": "GRUtopia: Dream General Robots in a City at Scale",
+   "abstract": "Recent works have been exploring the scaling laws in the field of Embodied AI. Given the prohibitive costs of collecting real-world data, we believe the Simulation-to-Real (Sim2Real) paradigm is a crucial step for scaling the learning of embodied models. This paper introduces project GRUtopia, the first simulated interactive 3D society designed for various robots. It features several advancements: (a) The scene dataset, GRScenes, includes 100k interactive, finely annotated scenes, which can be freely combined into city-scale environments. In contrast to previous works mainly focusing on home, GRScenes covers 89 diverse scene categories, bridging the gap of service-oriented environments where general robots would be initially deployed. (b) GRResidents, a Large Language Model (LLM) driven Non-Player Character (NPC) system that is responsible for social interaction, task generation, and task assignment, thus simulating social scenarios for embodied AI applications. (c) The benchmark, GRBench, supports various robots but focuses on legged robots as primary agents and poses moderately challenging tasks involving Object Loco-Navigation, Social Loco-Navigation, and Loco-Manipulation. We hope that this work can alleviate the scarcity of high-quality data in this field and provide a more comprehensive assessment of Embodied AI research. The project is available at https://github.com/OpenRobotLab/GRUtopia.",
+   "comment": null,
+   "authors": [
+    "Wang, Hanqing",
+    "Chen, Jiahe",
+    "Huang, Wensi",
+    "Ben, Qingwei",
+    "Wang, Tai",
+    "Mi, Boyu",
+    "Huang, Tao",
+    "Zhao, Siheng",
+    "Chen, Yilun",
+    "Yang, Sizhe",
+    "Cao, Peizhou",
+    "Yu, Wenye",
+    "Ye, Zichao",
+    "Li, Jialun",
+    "Long, Junfeng",
+    "Wang, Zirui",
+    "Wang, Huiling",
+    "Zhao, Ying",
+    "Tu, Zhongying",
+    "Qiao, Yu"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": "https://github.com/openrobotlab/grutopia",
+   "hf_project": null
+  },
+  "2412.13211": {
+   "title": "ManiSkill-HAB: A Benchmark for Low-Level Manipulation in Home Rearrangement Tasks",
+   "abstract": "High-quality benchmarks are the foundation for embodied AI research, enabling significant advancements in long-horizon navigation, manipulation and rearrangement tasks. However, as frontier tasks in robotics get more advanced, they require faster simulation speed, more intricate test environments, and larger demonstration datasets. To this end, we present MS-HAB, a holistic benchmark for low-level manipulation and in-home object rearrangement. First, we provide a GPU-accelerated implementation of the Home Assistant Benchmark (HAB). We support realistic low-level control and achieve over 3x the speed of prior magical grasp implementations at a fraction of the GPU memory usage. Second, we train extensive reinforcement learning (RL) and imitation learning (IL) baselines for future work to compare against. Finally, we develop a rule-based trajectory filtering system to sample specific demonstrations from our RL policies which match predefined criteria for robot behavior and safety. Combining demonstration filtering with our fast environments enables efficient, controlled data generation at scale.",
+   "comment": null,
+   "authors": [
+    "Shukla, Arth",
+    "Tao, Stone",
+    "Su, Hao"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": "https://github.com/arth-shukla/mshab",
+   "hf_project": null
+  },
+  "2506.04147": {
+   "title": "SLAC: Safe and Efficient Real-Robot Reinforcement Learning via Unsupervised Simulation Pre-Training",
+   "abstract": "Building capable household and industrial robots requires mastering the control of versatile, high-degree-of-freedom (DoF) systems such as mobile manipulators. While reinforcement learning (RL) holds promise for autonomously acquiring robot control policies, scaling it to high-DoF embodiments remains challenging. Direct RL in the real world demands both safe exploration and high sample efficiency, which are difficult to achieve in practice. Sim-to-real RL, on the other hand, is often brittle due to the reality gap. This paper introduces SLAC, a method that renders real-world RL feasible for complex embodiments by leveraging a low-fidelity simulator to pretrain a task-agnostic latent action space. SLAC trains this latent action space via a customized unsupervised skill discovery method designed to promote temporal abstraction, disentanglement, and safety, thereby facilitating efficient downstream learning. Once a latent action space is learned, SLAC uses it as the action interface for a novel off-policy RL algorithm to autonomously learn downstream tasks through real-world interactions. We evaluate SLAC against existing methods on a suite of bimanual mobile manipulation tasks, where it achieves state-of-the-art performance. Notably, SLAC learns contact-rich whole-body tasks in under an hour of real-world interactions, without relying on any demonstrations or hand-crafted behavior priors. More information and robot videos at robo-rl.github.io",
+   "comment": null,
+   "authors": [
+    "Hu, Jiaheng",
+    "Stone, Peter",
+    "Martín-Martín, Roberto"
+   ],
+   "code": [],
+   "project": []
+  },
+  "2508.17684": {
+   "title": "MEVITA: Open-Source Bipedal Robot Assembled from E-Commerce Components via Sheet Metal Welding",
+   "abstract": "Various bipedal robots have been developed to date, and in recent years, there has been a growing trend toward releasing these robots as open-source platforms. This shift is fostering an environment in which anyone can freely develop bipedal robots and share their knowledge, rather than relying solely on commercial products. However, most existing open-source bipedal robots are designed to be fabricated using 3D printers, which limits their scalability in size and often results in fragile structures. On the other hand, some metal-based bipedal robots have been developed, but they typically involve a large number of components, making assembly difficult, and in some cases, the parts themselves are not readily available through e-commerce platforms. To address these issues, we developed MEVITA, an open-source bipedal robot that can be built entirely from components available via e-commerce. Aiming for the minimal viable configuration for a bipedal robot, we utilized sheet metal welding to integrate complex geometries into single parts, thereby significantly reducing the number of components and enabling easy assembly for anyone. Through reinforcement learning in simulation and Sim-to-Real transfer, we demonstrated robust walking behaviors across various environments, confirming the effectiveness of our approach. All hardware, software, and training environments can be obtained from https://github.com/haraduka/mevita .",
+   "comment": null,
+   "authors": [
+    "Kawaharazuka, Kento",
+    "Sawaguchi, Shogo",
+    "Iwata, Ayumu",
+    "Yoneda, Keita",
+    "Suzuki, Temma",
+    "Okada, Kei"
+   ],
+   "code": [],
+   "project": []
+  },
+  "2409.19795": {
+   "title": "The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics",
+   "abstract": "We present the Duke Humanoid, an open-source 10-degrees-of-freedom humanoid, as an extensible platform for locomotion research. The design mimics human physiology, with symmetrical body alignment in the frontal plane to maintain static balance with straight knees. We develop a reinforcement learning policy that can be deployed zero-shot on the hardware for velocity-tracking walking tasks. Additionally, to enhance energy efficiency in locomotion, we propose an end-to-end reinforcement learning algorithm that encourages the robot to leverage passive dynamics. Our experimental results show that our passive policy reduces the cost of transport by up to $50\\%$ in simulation and $31\\%$ in real-world tests. Our website is http://generalroboticslab.com/DukeHumanoidv1/ .",
+   "comment": null,
+   "authors": [
+    "Xia, Boxi",
+    "Li, Bokuan",
+    "Lee, Jacob",
+    "Scutari, Michael",
+    "Chen, Boyuan"
+   ],
+   "code": [],
+   "project": []
+  },
+  "2309.01952": {
+   "title": "Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation",
+   "abstract": "We tackle the problem of developing humanoid loco-manipulation skills with deep imitation learning. The difficulty of collecting task demonstrations and training policies for humanoids with a high degree of freedom presents substantial challenges. We introduce TRILL, a data-efficient framework for training humanoid loco-manipulation policies from human demonstrations. In this framework, we collect human demonstration data through an intuitive Virtual Reality (VR) interface. We employ the whole-body control formulation to transform task-space commands by human operators into the robot's joint-torque actuation while stabilizing its dynamics. By employing high-level action abstractions tailored for humanoid loco-manipulation, our method can efficiently learn complex sensorimotor skills. We demonstrate the effectiveness of TRILL in simulation and on a real-world robot for performing various loco-manipulation tasks. Videos and additional materials can be found on the project page: https://ut-austin-rpl.github.io/TRILL.",
+   "comment": null,
+   "authors": [
+    "Seo, Mingyo",
+    "Han, Steve",
+    "Sim, Kyutae",
+    "Bang, Seung Hyeon",
+    "Gonzalez, Carlos",
+    "Sentis, Luis",
+    "Zhu, Yuke"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": "https://github.com/UT-Austin-RPL/TRILL",
+   "hf_project": "https://ut-austin-rpl.github.io/TRILL"
+  },
+  "2511.07820": {
+   "title": "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control",
+   "abstract": "Despite the rise of billion-parameter foundation models trained across thousands of graphical processing units (GPUs), similar scaling gains have not been shown for humanoid control. Current neural controllers for humanoids remain modest in size, target a limited set of behaviors, and are trained on a handful of GPUs. We show that scaling model capacity, data, and compute yields a generalist humanoid controller capable of natural, robust whole-body movements. We position motion tracking as a scalable task for humanoid control, leveraging dense supervision from diverse motion-capture data to acquire human motion priors without manual reward engineering. We build a foundation model for motion tracking by scaling along three axes: network size (1.2M to 42M parameters), dataset volume (100M+ frames from 700 hours of motion capture), and compute (21k GPU hours). Beyond demonstrating the benefits of scale, we further show downstream utility through a real-time kinematic planner that bridges motion tracking to tasks such as navigation, enabling natural and interactive control, as well as a unified token space that supports virtual reality (VR) teleoperation and vision-language-action (VLA) models with a single policy. Through this interface, we demonstrate autonomous VLA-driven whole-body loco-manipulation requiring coordinated hand and foot placement. Scaling motion tracking exhibits favorable properties: performance improves steadily with compute and data diversity, and learned policies generalize to unseen motions, establishing motion tracking at scale as a practical foundation for humanoid control.",
+   "comment": null,
+   "authors": [
+    "Luo, Zhengyi",
+    "Yuan, Ye",
+    "Wang, Tingwu",
+    "Li, Chenran",
+    "Castañeda, Fernando",
+    "Chen, Sirui",
+    "Cao, Zi-Ang",
+    "Li, Jiefeng",
+    "Minor, David",
+    "Ben, Qingwei",
+    "Park, Jinhyung",
+    "Sami, David",
+    "Wang, Zi",
+    "Da, Xingye",
+    "Ding, Runyu",
+    "Hogg, Cyrus",
+    "Song, Lina",
+    "Lim, Edy",
+    "Jeong, Eugene",
+    "He, Tairan"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2602.15922": {
+   "title": "World Action Models are Zero-shot Policies",
+   "abstract": "State-of-the-art Vision-Language-Action (VLA) models excel at semantic generalization but struggle to generalize to unseen physical motions in novel environments. We introduce DreamZero, a World Action Model (WAM) built upon a pretrained video diffusion backbone. Unlike VLAs, WAMs learn physical dynamics by predicting future world states and actions, using video as a dense representation of how the world evolves. By jointly modeling video and action, DreamZero learns diverse skills effectively from heterogeneous robot data without relying on repetitive demonstrations. This results in over 2x improvement in generalization to new tasks and environments compared to state-of-the-art VLAs in real robot experiments. Crucially, through model and system optimizations, we enable a 14B autoregressive video diffusion model to perform real-time closed-loop control at 7Hz. Finally, we demonstrate two forms of cross-embodiment transfer: video-only demonstrations from other robots or humans yield a relative improvement of over 42% on unseen task performance with just 10-20 minutes of data. More surprisingly, DreamZero enables few-shot embodiment adaptation, transferring to a new embodiment with only 30 minutes of play data while retaining zero-shot generalization.",
+   "comment": null,
+   "authors": [
+    "Ye, Seonghyeon",
+    "Ge, Yunhao",
+    "Zheng, Kaiyuan",
+    "Gao, Shenyuan",
+    "Yu, Sihyun",
+    "Kurian, George",
+    "Indupuru, Suneel",
+    "Tan, You Liang",
+    "Zhu, Chuning",
+    "Xiang, Jiannan",
+    "Malik, Ayaan",
+    "Lee, Kyungmin",
+    "Liang, William",
+    "Ranawaka, Nadun",
+    "Gu, Jiasheng",
+    "Xu, Yinzhen",
+    "Wang, Guanzhi",
+    "Hu, Fengyuan",
+    "Narayan, Avnish",
+    "Bjorck, Johan"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": "https://github.com/dreamzero0/dreamzero",
+   "hf_project": "https://dreamzero0.github.io/"
+  },
+  "1910.02490": {
+   "title": "Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping",
+   "abstract": "We provide an open-source C++ library for real-time metric-semantic visual-inertial Simultaneous Localization And Mapping (SLAM). The library goes beyond existing visual and visual-inertial SLAM libraries (e.g., ORB-SLAM, VINS- Mono, OKVIS, ROVIO) by enabling mesh reconstruction and semantic labeling in 3D. Kimera is designed with modularity in mind and has four key components: a visual-inertial odometry (VIO) module for fast and accurate state estimation, a robust pose graph optimizer for global trajectory estimation, a lightweight 3D mesher module for fast mesh reconstruction, and a dense 3D metric-semantic reconstruction module. The modules can be run in isolation or in combination, hence Kimera can easily fall back to a state-of-the-art VIO or a full SLAM system. Kimera runs in real-time on a CPU and produces a 3D metric-semantic mesh from semantically labeled images, which can be obtained by modern deep learning methods. We hope that the flexibility, computational efficiency, robustness, and accuracy afforded by Kimera will build a solid basis for future metric-semantic SLAM and perception research, and will allow researchers across multiple areas (e.g., VIO, SLAM, 3D reconstruction, segmentation) to benchmark and prototype their own efforts without having to start from scratch.",
+   "comment": null,
+   "authors": [
+    "Rosinol, Antoni",
+    "Abate, Marcus",
+    "Chang, Yun",
+    "Carlone, Luca"
+   ],
+   "code": [],
+   "project": []
+  },
+  "2606.03985": {
+   "title": "Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking",
+   "abstract": "We introduce Humanoid-GPT, a GPT-style Transformer with causal attention trained on a billion-scale motion corpus for whole-body control. Unlike prior shallow MLP trackers constrained by scarce data and an agility-generalization trade-off, Humanoid-GPT is pre-trained on a 2B-frame retargeted corpus that unifies all major mocap datasets with large-scale in-house recordings. Scaling both data and model capacity yields a single generative Transformer that tracks highly dynamic behaviors while achieving unprecedented zero-shot generalization to unseen motions and control tasks. Extensive experiments and scaling analyses show that our model establishes a new performance frontier, demonstrating robust zero-shot generalization to unseen tasks while simultaneously tracking highly dynamic and complex motions.",
+   "comment": null,
+   "authors": [
+    "Qi, Zekun",
+    "Chen, Xuchuan",
+    "Liu, Dairu",
+    "Lin, Chenghuai",
+    "Lian, Yunrui",
+    "Liang, Sikai",
+    "Zhang, Zhikai",
+    "Guan, Yu",
+    "Wang, Jilong",
+    "Zhang, Wenyao",
+    "Yu, Xinqiang",
+    "Wang, He",
+    "Yi, Li"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": "https://github.com/GalaxyGeneralRobotics/Humanoid-GPT",
+   "hf_project": "https://qizekun.github.io/Humanoid-GPT/"
+  },
+  "2605.20373": {
+   "title": "SUGAR: A Scalable Human-Video-Driven Generalizable Humanoid Loco-Manipulation Learning Framework",
+   "abstract": "Building humanoid robots capable of generalizable whole-body loco-manipulation in the real world remains a fundamental challenge. Existing methods either rely on laborious task-specific reward engineering, rigidly replay reference motions that fail to generalize, or depend on costly teleoperation that limits scalability. While human videos capture diverse human behaviors, motion priors inferred from them are inherently imperfect, suffering from occlusion, contact artifacts, and retargeting errors that render them unsuitable for direct policy learning. To address this, we present SUGAR, a scalable data-driven framework that converts diverse human videos into deployable humanoid loco-manipulation skills, without any task-specific reward engineering or reference-motion conditioning at inference. SUGAR proceeds in three stages. First, a fully automated pipeline extracts kinematic interaction priors including human-object motion trajectories and contact labels from unstructured human videos. Second, a privileged physics-based refiner uses a unified mimic reward and progressive state pool to transform imperfect priors into physically feasible, high-fidelity skills. Third, refined skills are distilled into a hierarchical autonomous policy consisting of a command generator and a command tracker. We evaluate SUGAR on six representative loco-manipulation tasks in simulation and real-world humanoid hardware. Our method substantially outperforms reference-tracking baselines, and performance scales clearly with the amount of human video data. It also achieves zero-shot real-world transfer with reliable closed-loop execution, autonomous failure recovery, and stable long-horizon performance under external perturbations. Project Page: https://tianshuwu.github.io/sugar-humanoid/",
+   "comment": null,
+   "authors": [
+    "Wu, Tianshu",
+    "Kong, Xiangqi",
+    "Chen, Yue",
+    "Yu, Qize",
+    "Ye, Hang",
+    "Li, Jia",
+    "Wang, Yizhou",
+    "Dong, Hao"
+   ],
+   "code": [],
+   "project": [],
+   "hf_github": "https://github.com/tianshuwu/SUGAR",
+   "hf_project": "https://tianshuwu.github.io/sugar-humanoid/"
+  }
+ },
+ "repos": {
+  "GalaxyGeneralRobotics/Humanoid-GPT": {
+   "stars": 496,
+   "pushed": "2026-08-20",
+   "archived": false
+  },
+  "GeWu-Lab/AnyTouch": {
+   "stars": 97,
+   "pushed": "2026-01-13",
+   "archived": false
+  },
+  "Genesis-Embodied-AI/DiffTactile": {
+   "stars": 316,
+   "pushed": "2024-03-20",
+   "archived": false
+  },
+  "JasonJZLiu/FACTR": {
+   "missing": true
+  },
+  "MIT-SPARK/Kimera": {
+   "stars": 2142,
+   "pushed": "2021-01-30",
+   "archived": false
+  },
+  "OpenRobotLab/GRUtopia": {
+   "stars": 1306,
+   "pushed": "2025-09-04",
+   "archived": false
+  },
+  "Sirui-Xu/InterMimic": {
+   "stars": 553,
+   "pushed": "2026-04-21",
+   "archived": false
+  },
+  "TacEx/TacEx": {
+   "missing": true
+  },
+  "UT-Austin-RPL/TRILL": {
+   "stars": 126,
+   "pushed": "2025-08-07",
+   "archived": false
+  },
+  "YanjieZe/Improved-3D-Diffusion-Policy": {
+   "stars": 559,
+   "pushed": "2025-06-16",
+   "archived": false
+  },
+  "ZhengyiLuo/PHC": {
+   "stars": 1307,
+   "pushed": "2025-08-21",
+   "archived": false
+  },
+  "arth-shukla/mshab": {
+   "stars": 208,
+   "pushed": "2026-05-09",
+   "archived": false
+  },
+  "chernyadev/bigym": {
+   "stars": 1,
+   "pushed": "2026-05-27",
+   "archived": false
+  },
+  "clear-nus/octopi": {
+   "stars": 78,
+   "pushed": "2026-06-19",
+   "archived": false
+  },
+  "dou-yiming/TaRF": {
+   "stars": 69,
+   "pushed": "2025-02-09",
+   "archived": false
+  },
+  "dreamzero0/dreamzero": {
+   "stars": 2754,
+   "pushed": "2026-04-19",
+   "archived": false
+  },
+  "galaxygeneralrobotics/humanoid-gpt": {
+   "stars": 496,
+   "pushed": "2026-08-20",
+   "archived": false
+  },
+  "generalroboticslab/dukeHumanoidHardwareControl": {
+   "stars": 26,
+   "pushed": "2024-10-06",
+   "archived": false
+  },
+  "haonan16/Tactile-Rearrangement": {
+   "missing": true
+  },
+  "intuitive-robots/evetac": {
+   "missing": true
+  },
+  "linchangyi1/LocoTouch": {
+   "stars": 62,
+   "pushed": "2026-05-15",
+   "archived": false
+  },
+  "nv-tlabs/ASE": {
+   "stars": 1131,
+   "pushed": "2025-12-07",
+   "archived": false
+  },
+  "openrobotlab/grutopia": {
+   "stars": 1306,
+   "pushed": "2025-09-04",
+   "archived": false
+  },
+  "real-stanford/maniwav": {
+   "stars": 68,
+   "pushed": "2024-07-14",
+   "archived": false
+  },
+  "tianshuwu/SUGAR": {
+   "stars": 132,
+   "pushed": "2026-06-08",
+   "archived": false
+  },
+  "tianshuwu/sugar": {
+   "stars": 132,
+   "pushed": "2026-06-08",
+   "archived": false
+  },
+  "ut-austin-rpl/trill": {
+   "stars": 126,
+   "pushed": "2025-08-07",
+   "archived": false
+  },
+  "xbpeng/DeepMimic": {
+   "stars": 3121,
+   "pushed": "2025-11-27",
+   "archived": false
+  },
+  "yanjieze/improved-3d-diffusion-policy": {
+   "stars": 559,
+   "pushed": "2025-06-16",
+   "archived": false
+  },
+  "zixuan417/smooth-humanoid-locomotion": {
+   "stars": 244,
+   "pushed": "2025-06-16",
+   "archived": false
+  }
+ }
+}
