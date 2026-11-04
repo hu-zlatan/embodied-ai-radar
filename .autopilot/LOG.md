@@ -475,3 +475,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - New `facts.yml` + `scripts/fetch_facts.py`: WebFetch refused arXiv and HF URLs, so CI now gets abstracts, HF links and repo stars for chosen IDs. First run: 32 of 32 papers.
 - Gap sweep of two external lists: 31 anchors (see STATE backlog). DreamZero was already curated without an ID match; caught by validate and dropped. Curated 630 → 661.
 - Local: validate 0 errors, 774 pages built, 0 broken internal links.
+- Verify #142 took 33 min (arXiv API 503/429, abs-page fallback). All 31 new anchors passed. It failed on one older entry: arXiv retitled 2610.37652, now updated. `vis-www.cs.umass.edu/3dvla` gave a network warning only. Re-check verify for the retitle push next run. W45 intro due Mon 11-09; CoRL program text by Sun 11-08 if the owner wants it. End of run 54.
