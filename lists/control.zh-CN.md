@@ -2,7 +2,7 @@
 
 _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的学习型控制。_
 
-共 29 条，⭐ 为重点推荐。由 [`data/curated/control.yaml`](../data/curated/control.yaml) 生成，请勿直接编辑。
+共 30 条，⭐ 为重点推荐。由 [`data/curated/control.yaml`](../data/curated/control.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/control.html) · [English](control.md)
 
@@ -15,6 +15,7 @@ _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的�
 - **[PolicyIK: High-Precision Inverse Kinematics for Robot Arms with Reinforcement Learning](https://arxiv.org/abs/2611.05372)** (2026) — 学习式目标条件逆运动学，能保持位置控制器静止时所需的偏置；报告在 93.5% 的留出仿真任务上误差低于 1 mm 和 0.2°，并可直接在真实机械臂上训练。 · [代码](https://github.com/Tinaliu0123/PolicyIK)
 - **[PrismPlan: A Shared GPU Substrate for Motion Planning Across Paradigms](https://arxiv.org/abs/2610.23884)** (2026) — 一次性实现批量 GPU 碰撞检测与正运动学，在其上运行采样、搜索和优化三类规划器，使三种范式可以公平比较。 · [代码](https://github.com/XiaoyubotMotionTeam/PrismPlan)
 - **[RAM: Reachability Across Morphologies](https://arxiv.org/abs/2606.09108)** (2026) — CoRL 2026 Spotlight。以形态为条件的隐式神经位姿可达性模型，可微、考虑自碰撞，并能泛化到未见形态。 · [代码](https://github.com/TimWalter/ram) · [项目页](https://timwalter.github.io/ram)
+- **[Scalable Deep Unfolding of Conic Optimizers](https://arxiv.org/abs/2606.13825)** (2026) — 通过无矩阵隐式微分和稳定的半正定投影梯度，让深度展开适用于大规模锥优化求解器；报告在基于 SDP 的规划上最高提速 50 倍。
 - **[Sub-Millisecond Reflexes for Continuous Physical Human-Robot Interaction](https://arxiv.org/abs/2610.21913)** (2026) — 开源的 ROS 2 多模式控制器，可在亚毫秒内切换控制模式并触发安全反射而无需中断任务；在 Franka 机械臂上验证。 · [代码](https://github.com/RoboRef/franka_reflex_engine)
 - **[TAM: Torque Adaptation Module for Robust Motion Transfer in Manipulation](https://arxiv.org/abs/2606.06218)** (2026) — CoRL 2026 Spotlight。面向富接触动作迁移的模块，应对仿真到现实、负载与个体差异，用于替代域随机化或系统辨识。 · [代码](https://github.com/Dongwon-Son/TAM) · [项目页](https://dongwon-son.github.io/tam-project-page/)
 - **[Motions in Microseconds via Vectorized Sampling-Based Planning](https://arxiv.org/abs/2309.14545)** (2023) — VAMP：用 CPU SIMD 指令把碰撞检测向量化，使 RRT-Connect 等基于采样的规划器在微秒到毫秒级求解机械臂运动规划，无需 GPU。 · [代码](https://github.com/KavrakiLab/vamp)
@@ -40,4 +41,4 @@ _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的�
 
 **另见**
 
-[cuArms](manipulation.zh-CN.md), [Learning Force-Reactive Humanoid Loco-Manipulation](locomotion.zh-CN.md), [DiffContact](locomotion.zh-CN.md), [SWAP](locomotion.zh-CN.md), [SMR](locomotion.zh-CN.md), [METATRON](locomotion.zh-CN.md), [Energy-Based Policy Orchestration](locomotion.zh-CN.md), [DeepMimic](locomotion.zh-CN.md), [ASE](locomotion.zh-CN.md), [Perpetual Humanoid Control for Real-time Simulated Avatars](locomotion.zh-CN.md), [InterMimic](locomotion.zh-CN.md), [SONIC](locomotion.zh-CN.md), [Humanoid-GPT](locomotion.zh-CN.md), [TD-MPC2](world-models.zh-CN.md)
+[cuArms](manipulation.zh-CN.md), [Robustness without Wrinkles](manipulation.zh-CN.md), [Learning Force-Reactive Humanoid Loco-Manipulation](locomotion.zh-CN.md), [DiffContact](locomotion.zh-CN.md), [SWAP](locomotion.zh-CN.md), [SMR](locomotion.zh-CN.md), [METATRON](locomotion.zh-CN.md), [Energy-Based Policy Orchestration](locomotion.zh-CN.md), [DeepMimic](locomotion.zh-CN.md), [ASE](locomotion.zh-CN.md), [Perpetual Humanoid Control for Real-time Simulated Avatars](locomotion.zh-CN.md), [InterMimic](locomotion.zh-CN.md), [SONIC](locomotion.zh-CN.md), [Humanoid-GPT](locomotion.zh-CN.md), [ResSafe](locomotion.zh-CN.md), [TD-MPC2](world-models.zh-CN.md), [SCoCaT](learning.zh-CN.md), [Control-Ready Uncertainty for Trajectory Diffusion](learning.zh-CN.md)

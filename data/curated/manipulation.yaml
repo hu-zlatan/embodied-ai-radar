@@ -725,3 +725,56 @@
   added: 2026-11-04
   takeaway_en: "Second part of a tutorial on data-driven, Jacobian-based shape control: which shape changes are reachable, how feature choice shapes behaviour, and the three ways the control loop fails."
   takeaway_zh: "基于数据与雅可比的形状控制教程第二部分：哪些形变可达、特征选择如何影响行为，以及控制回路失效的三种方式。"
+- title: "Robustness without Wrinkles: Parallel Simulation and Robust MPC for Certified Deformable Manipulation"
+  type: paper
+  arxiv: "2606.14188"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-04
+  topics: [manipulation, control, sim]
+  tags: [deformable, robust-mpc, conformal-prediction]
+  takeaway_en: "CORD-SLS pairs a GPU-parallel differentiable simulator with robust MPC and conformal bounds for rope and cloth, reporting millisecond planning with safety margins on hardware."
+  takeaway_zh: "CORD-SLS 将 GPU 并行可微仿真与鲁棒 MPC、共形预测误差界结合，用于绳索和布料操作，报告在实机上以毫秒级规划并保持安全裕度。"
+- title: "Enabling Robust Cloth Manipulation via Inference-Time Simulator-in-the-Loop Refinement"
+  type: paper
+  arxiv: "2606.24552"
+  year: 2026
+  venue: CoRL 2026
+  project: https://silr-cloth.github.io/
+  added: 2026-11-04
+  topics: [manipulation, sim]
+  tags: [deformable, mppi, real-to-sim]
+  takeaway_en: "Refines cloth actions online from one RGB image: a real-to-sim module estimates the cloth state, then simulator rollouts with prior-guided MPPI correct the policy's trajectory."
+  takeaway_zh: "仅凭单张 RGB 在线修正布料动作：先由 real-to-sim 模块估计布料状态，再用仿真器并行推演和先验引导的 MPPI 修正策略轨迹。"
+- title: "Noise-Invariant Spatial Encoding for 3D Manipulation Policies under Depth Corruption"
+  type: paper
+  arxiv: "2610.24674"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-04
+  topics: [manipulation, perception]
+  tags: [3d-policy, depth-noise, robustness]
+  takeaway_en: "NISE targets the sharp failure of 3D policies under realistic depth noise, carrying position uncertainty into attention; tested on transparent and reflective objects with commodity RGB-D."
+  takeaway_zh: "NISE 针对 3D 策略在真实深度噪声下的急剧失效，把位置不确定性带入注意力计算；在透明和反光物体上用普通 RGB-D 相机测试。"
+- title: "KPGrasp: Scalable Keypoint Flow Matching for Dexterous Grasp Generation"
+  type: paper
+  arxiv: "2606.09314"
+  year: 2026
+  venue: CoRL 2026
+  project: https://yuansen-huang.github.io/KPGrasp-page/
+  added: 2026-11-04
+  topics: [manipulation]
+  tags: [dexterous, grasping, flow-matching]
+  takeaway_en: "Generates dexterous grasps as 3D hand keypoints with a plain Transformer flow model, with no contact losses or refinement; reports 76.3% success on Dexonomy and 0.032 s per grasp."
+  takeaway_zh: "以 3D 手部关键点表示灵巧抓取，用普通 Transformer 流模型生成，无需接触损失或后处理优化；报告 Dexonomy 成功率 76.3%，每次抓取 0.032 秒。"
+- title: "Combining Constrained Sampling and Reinforcement Learning for Manipulation"
+  type: paper
+  arxiv: "2602.08557"
+  year: 2026
+  venue: CoRL 2026
+  project: https://www.user.tu-berlin.de/mtoussai/26-CSRL/
+  added: 2026-11-04
+  topics: [manipulation, learning]
+  tags: [rl, contact-rich, reset-strategy]
+  takeaway_en: "Helps RL explore contact-rich tasks by resetting episodes with a contact-aware constrained state sampler, covering diverse contact modes; trains universal in-hand and whole-body policies."
+  takeaway_zh: "用感知接触的约束状态采样器重置回合，覆盖多样接触模式，帮助 RL 探索接触丰富任务；可训练通用的手内和全身操作策略。"

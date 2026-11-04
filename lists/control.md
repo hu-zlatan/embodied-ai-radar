@@ -2,7 +2,7 @@
 
 _Motion planning, trajectory optimization, MPC, safety filters and safe learning-based control._
 
-29 entries, ⭐ = highlight. Generated from [`data/curated/control.yaml`](../data/curated/control.yaml); edit the YAML, not this file.
+30 entries, ⭐ = highlight. Generated from [`data/curated/control.yaml`](../data/curated/control.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/control.html) · [中文](control.zh-CN.md)
 
@@ -15,6 +15,7 @@ _Motion planning, trajectory optimization, MPC, safety filters and safe learning
 - **[PolicyIK: High-Precision Inverse Kinematics for Robot Arms with Reinforcement Learning](https://arxiv.org/abs/2611.05372)** (2026) — Learned goal-conditioned inverse kinematics that can hold the offset a position controller needs at rest; reports errors within 1 mm and 0.2° on 93.5% of held-out simulated tasks and training directly on a real arm. · [code](https://github.com/Tinaliu0123/PolicyIK)
 - **[PrismPlan: A Shared GPU Substrate for Motion Planning Across Paradigms](https://arxiv.org/abs/2610.23884)** (2026) — Builds batched GPU collision checking and forward kinematics once and runs sampling, search and optimization planners on top, so the three paradigms can be compared fairly. · [code](https://github.com/XiaoyubotMotionTeam/PrismPlan)
 - **[RAM: Reachability Across Morphologies](https://arxiv.org/abs/2606.09108)** (2026) — CoRL 2026 Spotlight. A morphology-conditioned implicit neural model of pose reachability, differentiable, self-collision aware and able to generalize to unseen morphologies. · [code](https://github.com/TimWalter/ram) · [project](https://timwalter.github.io/ram)
+- **[Scalable Deep Unfolding of Conic Optimizers](https://arxiv.org/abs/2606.13825)** (2026) — Makes deep unfolding work for large conic solvers via matrix-free implicit differentiation and a stable PSD-projection gradient; reports up to 50× speedups on SDP-based planning.
 - **[Sub-Millisecond Reflexes for Continuous Physical Human-Robot Interaction](https://arxiv.org/abs/2610.21913)** (2026) — An open-source ROS 2 multimode controller that switches control modes and triggers safety reflexes in under a millisecond, without stopping the task; shown on a Franka arm. · [code](https://github.com/RoboRef/franka_reflex_engine)
 - **[TAM: Torque Adaptation Module for Robust Motion Transfer in Manipulation](https://arxiv.org/abs/2606.06218)** (2026) — CoRL 2026 Spotlight. A module for contact-rich motion transfer across sim-to-real gaps, payloads and robot instances, as an alternative to domain randomization or system ID. · [code](https://github.com/Dongwon-Son/TAM) · [project](https://dongwon-son.github.io/tam-project-page/)
 - **[Motions in Microseconds via Vectorized Sampling-Based Planning](https://arxiv.org/abs/2309.14545)** (2023) — VAMP — vectorizes collision checking with CPU SIMD so sampling-based planners like RRT-Connect solve arm motion-planning queries in microseconds to milliseconds, no GPU needed. · [code](https://github.com/KavrakiLab/vamp)
@@ -40,4 +41,4 @@ _Motion planning, trajectory optimization, MPC, safety filters and safe learning
 
 **See also**
 
-[cuArms](manipulation.md), [Learning Force-Reactive Humanoid Loco-Manipulation](locomotion.md), [DiffContact](locomotion.md), [SWAP](locomotion.md), [SMR](locomotion.md), [METATRON](locomotion.md), [Energy-Based Policy Orchestration](locomotion.md), [DeepMimic](locomotion.md), [ASE](locomotion.md), [Perpetual Humanoid Control for Real-time Simulated Avatars](locomotion.md), [InterMimic](locomotion.md), [SONIC](locomotion.md), [Humanoid-GPT](locomotion.md), [TD-MPC2](world-models.md)
+[cuArms](manipulation.md), [Robustness without Wrinkles](manipulation.md), [Learning Force-Reactive Humanoid Loco-Manipulation](locomotion.md), [DiffContact](locomotion.md), [SWAP](locomotion.md), [SMR](locomotion.md), [METATRON](locomotion.md), [Energy-Based Policy Orchestration](locomotion.md), [DeepMimic](locomotion.md), [ASE](locomotion.md), [Perpetual Humanoid Control for Real-time Simulated Avatars](locomotion.md), [InterMimic](locomotion.md), [SONIC](locomotion.md), [Humanoid-GPT](locomotion.md), [ResSafe](locomotion.md), [TD-MPC2](world-models.md), [SCoCaT](learning.md), [Control-Ready Uncertainty for Trajectory Diffusion](learning.md)

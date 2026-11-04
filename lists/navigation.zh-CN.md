@@ -2,7 +2,7 @@
 
 _视觉语言导航、具身问答、移动操作与大模型规划。_
 
-共 39 条，⭐ 为重点推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
+共 42 条，⭐ 为重点推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/navigation.html) · [English](navigation.md)
 
@@ -11,8 +11,11 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - ⭐ **[Do As I Can, Not As I Say: Grounding Language in Robotic Affordances](https://arxiv.org/abs/2204.01691)** (2022) — SayCan：大模型提出步骤，学习到的价值函数评估机器人当下实际能做什么。
 - **[Aero-VPA: Few-Step Flow-Matching Control over Non-Reconstructive JEPA Latents for Agile Flight on Edge Hardware](https://arxiv.org/abs/2611.04392)** (2026) — 紧凑的 JEPA 加流匹配四旋翼策略，报告异常坦率：行为克隆 60 次任务全败，DAgger 进入瓶颈，运行时安全层将仿真森林任务成功率从 21.1% 提至 52.2%。 · [代码](https://github.com/ylee-sling/Aero-VPA) · [项目页](https://huggingface.co/ylee-sling/aero-vpa)
 - **[Benchmarking Obstacle-Conditioned Safety in Household Robot Navigation](https://arxiv.org/abs/2610.34674)** (2026) — OSMA-Bench 用仅障碍物类型不同的配对场景，检验导航策略能否按障碍物危险程度调整间距与速度，并提出语义敏感度指数 SSI。结果显示 VLM 与 VLA 策略能识别哪些障碍更危险，却很少把这种判断体现在实际运动中；在 VLM 方案中加入显式参数推断步骤有所改善。 · [代码](https://github.com/OSMA-Bench/OSMA-Bench) · [项目页](https://osma-bench.github.io/)
+- **[Collaborative Planning for UAV-UGV Teams under Operational Constraints via Masked Error-bounded Neuro-Symbolic Diffusion](https://arxiv.org/abs/2610.18850)** (2026) — MEND 用掩码扩散规划无人机与地面车协同充电任务，在执行时通过逻辑动作掩码强制满足运行约束；在真实地图和实体机器人队伍上测试。
 - **[Cracking Mobile Manipulation: From Failure Diagnosis to Agentic Robot System](https://arxiv.org/abs/2610.19600)** (2026) — 发现 VLA 在原子技能上 80% 成功率、组合成移动操作后仅 19%，分析失败原因并据此构建智能体式系统。 · [代码](https://github.com/PKU-VaLuE-Lab/Cracking-Mobile-Manipulation)
+- **[Driving, Fast or Slow? Neuro-Symbolic Guidance for Motion Prediction in Multi-Modal Ground Mobility](https://arxiv.org/abs/2606.15251)** (2026) — TraCS 将由自然语言交规生成的可解释概率逻辑加到黑盒运动预测模型上；报告在 Argoverse 2 上稳定提升。Oral 论文。
 - **[EmbodiedWorld-200K: Toward Embodied World Agents via Embodied-Planning Dataset and Interactive World Models](https://arxiv.org/abs/2610.25959)** (2026) — 包含 20 万余条导航规划样本的数据集，场景多样，标注从相机运动轨迹到高层语义指令；并把视频世界模型当作低成本交互环境做强化学习后训练，报告称在未见场景上有明显提升。 · [代码](https://github.com/XiaokunFeng/EmbodiedWorld-200K) · [项目页](https://xiaokunfeng.github.io/EmbodiedWorld-200K/)
+- **[From Region Arrival to Instance-Level Grounding in Vision-and-Language Navigation](https://arxiv.org/abs/2607.03792)** (2026) — 指出 VLN 成功率掩盖了“最后 3 米定位缺口”：智能体停在附近却未对准目标。提出实例级指标和可接入任意主干的修正模块 REALM。
 - **[Gaussian Episodic Memory for Long-Term Spatiotemporal Reasoning](https://arxiv.org/abs/2610.33158)** (2026) — GEMS 维护一张只在场景变化处增量更新的 3DGS 地图，智能体按需渲染新视角来回答时空问题和定位物体；同时发布 GEMS-Bench（3 个真实 + 12 个合成环境，473 个问答对），报告在物体定位和时空问答上优于近期基线。 · [项目页](https://abwerby.github.io/GEMS/)
 - **[HAVANA: A Hierarchical Video-Action Model for Vision-Language Navigation](https://arxiv.org/abs/2610.24122)** (2026) — 面向视觉语言导航的双系统视频-动作模型：慢系统根据历史观测与指令生成紧凑的隐式规划，快系统结合该规划与最新观测输出局部轨迹；推理时不生成未来视频。代码与权重称将在该仓库发布。 · [代码](https://github.com/Anastasiawd/HAVANA) · [项目页](https://github.com/Anastasiawd/HAVANA)
 - **[Hierarchical Residual Policy Learning for Real-World Mobile Manipulation with Sparse Human Guidance](https://arxiv.org/abs/2610.20607)** (2026) — HiRe-MoMa 在真实环境中通过学习残差修正来微调冻结的移动操作策略，只需偶尔的人类引导。 · [代码](https://github.com/tasl-lab/HiRe-MoMa) · [项目页](https://hire-moma.github.io/)
@@ -50,4 +53,4 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 
 **另见**
 
-[Has GPT-6-Astra Achieved Embodied Intelligence?](vla.zh-CN.md), [Aligning Cyber Space with Physical World](vla.zh-CN.md), [RynnBrain](vla.zh-CN.md), [OmniBrain-0](vla.zh-CN.md), [Automating the Design of Embodied Agent Architectures](vla.zh-CN.md), [TAMPAgent](manipulation.zh-CN.md), [Knowing Where to Look](manipulation.zh-CN.md), [Agile But Safe](locomotion.zh-CN.md), [OpenNWM](world-models.zh-CN.md), [ConceptGraphs](perception.zh-CN.md), [Kimera](perception.zh-CN.md), [Habitat 3.0](sim.zh-CN.md), [Habitat 2.0](sim.zh-CN.md), [SceneBloom](sim.zh-CN.md), [MARE](sim.zh-CN.md), [Habitat](datasets.zh-CN.md), [Embodied Skill Bench](datasets.zh-CN.md), [Habitat-Matterport 3D Dataset (HM3D)](datasets.zh-CN.md), [The Design of Stretch](hardware.zh-CN.md)
+[Has GPT-6-Astra Achieved Embodied Intelligence?](vla.zh-CN.md), [Aligning Cyber Space with Physical World](vla.zh-CN.md), [RynnBrain](vla.zh-CN.md), [OmniBrain-0](vla.zh-CN.md), [Automating the Design of Embodied Agent Architectures](vla.zh-CN.md), [TAMPAgent](manipulation.zh-CN.md), [Knowing Where to Look](manipulation.zh-CN.md), [Agile But Safe](locomotion.zh-CN.md), [OpenNWM](world-models.zh-CN.md), [ConceptGraphs](perception.zh-CN.md), [Kimera](perception.zh-CN.md), [MosaicIMU](perception.zh-CN.md), [Habitat 3.0](sim.zh-CN.md), [Habitat 2.0](sim.zh-CN.md), [SceneBloom](sim.zh-CN.md), [MARE](sim.zh-CN.md), [Habitat](datasets.zh-CN.md), [Embodied Skill Bench](datasets.zh-CN.md), [Habitat-Matterport 3D Dataset (HM3D)](datasets.zh-CN.md), [The Design of Stretch](hardware.zh-CN.md)

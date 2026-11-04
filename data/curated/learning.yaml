@@ -497,3 +497,45 @@
   added: 2026-11-04
   takeaway_en: "Online RL on top of a pretrained policy, penalised by distance from that policy's support: free inside it, smoothly costly outside; reports average success rising from 33% to 95% across 19 benchmark tasks."
   takeaway_zh: "在预训练策略之上做在线强化学习，按动作到其支撑集的距离施加惩罚：集内不罚，集外平滑增长；报告 19 个基准任务的平均成功率从 33% 升至 95%。"
+- title: "SCoCaT: Success Conditioned Constrained Reinforcement Learning for Spacecraft Docking"
+  type: paper
+  arxiv: "2609.06061"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-04
+  topics: [learning, control]
+  tags: [safe-rl, constrained-rl, space]
+  takeaway_en: "Shows termination-based constrained RL can learn to avoid the goal when constraints tighten near it, and fixes this with a dense success critic; validated on spacecraft docking tasks."
+  takeaway_zh: "发现基于终止的约束强化学习在目标附近约束收紧时会学会回避目标，并用稠密成功信号的辅助价值网络解决；在航天器对接任务上验证。"
+- title: "Control-Ready Uncertainty for Trajectory Diffusion"
+  type: paper
+  arxiv: "2610.12431"
+  year: 2026
+  venue: CoRL 2026
+  project: https://zackaxue.github.io/SCOPE-project-page/
+  added: 2026-11-04
+  topics: [learning, control]
+  tags: [diffusion, uncertainty]
+  takeaway_en: "SCOPE gives diffusion trajectory models calibrated uncertainty tubes without Monte Carlo sampling, by distilling score curvature; tested in crowd navigation and Franka manipulation."
+  takeaway_zh: "SCOPE 通过蒸馏得分函数曲率，让扩散轨迹模型无需蒙特卡洛采样即可给出校准的不确定性管道；在人群导航和 Franka 操作上测试。"
+- title: "TARC: Time-Adaptive Robotic Control"
+  type: paper
+  arxiv: "2510.23176"
+  year: 2026
+  venue: CoRL 2026
+  project: https://arnavsukhija.github.io/projects/tarc
+  added: 2026-11-04
+  topics: [learning, locomotion]
+  tags: [rl, control-frequency]
+  takeaway_en: "A policy predicts each action and how long to hold it. Reports matching high-frequency control at under half the rate on an RC car and Unitree Go1, plus simulated VLA inference."
+  takeaway_zh: "策略同时预测动作及其保持时长。报告在遥控车、Unitree Go1 和仿真 VLA 上以不到一半的控制频率达到高频控制的性能。"
+- title: "FedGuide: Diffusion Prior Alignment and Value Baseline Guidance for Heterogeneous Federated Reinforcement Learning"
+  type: paper
+  arxiv: "2609.18964"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-04
+  topics: [learning]
+  tags: [federated-rl, diffusion]
+  takeaway_en: "Federated RL for heterogeneous clients that aggregates diffusion behavior priors with optimal transport rather than averaging policies, plus a low-variance DICE value baseline."
+  takeaway_zh: "面向异构客户端的联邦强化学习：不再平均策略，而是用最优传输聚合扩散行为先验，并加入低方差的 DICE 价值基线。"

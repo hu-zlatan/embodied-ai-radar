@@ -284,6 +284,7 @@ def program_page(prog: dict, extra: dict, cur_by_id: dict, rec_by_id: dict, tby:
     name, papers = prog["venue"], prog["papers"]
     n_arxiv = sum(1 for x in papers if x.get("arxiv"))
     n_code = sum(1 for x in papers if has_program_code(x, cur_by_id, rec_by_id))
+    n_take = sum(1 for x in papers if str(x.get("arxiv")) in cur_by_id)
     zh = extra.get("session_zh") or {}
     by_sess: dict[str, list[dict]] = {}
     for x in papers:
@@ -303,7 +304,7 @@ def program_page(prog: dict, extra: dict, cur_by_id: dict, rec_by_id: dict, tby:
                    + " · ".join(f'<a href="#s-{esc(s["id"])}">{esc(s["id"])}</a>' for s in prog["sessions"] if s["day"] == d["id"]) + "</li>" for d in prog["days"])
     parts = [f'<p class="muted"><a href="index.html">{bi("Venues", "会议/期刊")}</a> › <a href="{PROGRAM}.html">{esc(name)}</a> › {bi("Program", "日程")}</p>',
              f'<h1>{esc(name)} · {bi("program guide", "会议指南")}</h1>',
-             f'<p class="lead">{bi(f"All {len(papers)} accepted papers by session and poster number. {n_arxiv} are linked to arXiv, {n_code} have code; the rest link to OpenReview.", f"按日程与海报编号列出全部 {len(papers)} 篇录用论文：{n_arxiv} 篇已关联 arXiv，{n_code} 篇附代码，其余链接至 OpenReview。")}</p>',
+             f'<p class="lead">{bi(f"All {len(papers)} accepted papers by session and poster number. {n_arxiv} are linked to arXiv, {n_code} have code; the rest link to OpenReview. {n_take} have a one-line takeaway, including every oral and spotlight on arXiv.", f"按日程与海报编号列出全部 {len(papers)} 篇录用论文：{n_arxiv} 篇已关联 arXiv，{n_code} 篇附代码，其余链接至 OpenReview。{n_take} 篇附一句话要点，覆盖 arXiv 上的全部 Oral 与 Spotlight。")}</p>',
              f'<p class="muted">{bi("November 9–12, 2026, Austin, Texas. Orals and spotlights are at the Hilton Austin, posters at the JW Marriott.", "2026 年 11 月 9–12 日，美国得克萨斯州奥斯汀。Oral 与 Spotlight 在 Hilton Austin，海报在 JW Marriott。")} '
              f'{bi("Sessions, titles and poster numbers come from the", "日程、标题与海报编号来自")} <a href="{esc(prog["source"])}" rel="noopener">{bi("official list", "官方列表")}</a> ({esc(prog["updated"])}); '
              f'{bi("arXiv links are matched by title, so check there for last-minute changes. Code links come from arXiv comments, Hugging Face and the authors' project pages.", "arXiv 链接按标题匹配；临时变动请以官方页面为准。代码链接来自 arXiv 备注、Hugging Face 与作者项目页。")}</p>',
