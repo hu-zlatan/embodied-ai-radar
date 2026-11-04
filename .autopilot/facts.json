@@ -2,103 +2,1130 @@
  "updated": "2026-11-04",
  "missing": [],
  "papers": {
-  "2611.04870": {
-   "title": "PrimeSim: A Generalist World Model Simulator from Large-Scale Cross-Embodiment Demonstrations",
-   "published": "2026-11-03",
+  "2606.28128": {
+   "title": "PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation",
+   "published": "2026-06-26",
+   "comment": "Github: https://github.com/DAGroup-PKU/PhysisForcing Project website: https://dagroup-pku.github.io/PhysisForcing.github.io/#",
+   "code": [
+    "https://github.com/DAGroup-PKU/PhysisForcing"
+   ],
+   "project": [
+    "https://dagroup-pku.github.io/PhysisForcing.github.io/#"
+   ],
+   "abstract": "Video generation models have emerged as a promising paradigm for embodied world simulation. However, both general-domain video generators and robot-specific data fine-tuned models can still produce physically implausible manipulations, including discontinuous motion trajectories and inconsistent robot-object interactions, which limits their reliability as world simulators. Through extensive experiments, we find that such physical instability mainly arises from two factors: deformation of moving objects and implausible spatio-temporal correlations among interacting entities, particularly during contact. Building on this observation, we propose PhysisForcing, a scalable training framework that strengthens physical consistency by focusing supervision on physics-informative regions through joint optimization of pixel-level and semantic-level features. The framework consists of a pixel-level trajectory alignment loss, which supervises DiT features using reference point trajectories, and a semantic-level relational alignment loss, which aligns DiT features with inter-region relations extracted from a frozen video understanding encoder. Extensive experiments on R-Bench, PAI-Bench, and EZS-Bench show that PhysisForcing consistently improves embodied video generation over strong baselines, improving the Wan2.2-I2V-A14B and Cosmos3-Nano base models on R-Bench by 22.3\\% and 9.2\\% (7.1\\% and 3.7\\% over vanilla finetuning), with the Cosmos3-Nano variant attaining the best overall score. Beyond generation, as a world model under the WorldArena action-planner protocol it raises the closed-loop success rate from 16.0\\% to 24.0\\% and further improves downstream policy success, indicating that physically aligned video models yield stronger representations for robotic manipulation.",
+   "authors": [
+    "Peiwen Zhang",
+    "Yufan Deng",
+    "Shangkun Sun",
+    "Juncheng Ma",
+    "Duomin Wang",
+    "Jonas Du",
+    "Zilin Pan",
+    "Ye Huang",
+    "Hao Liang",
+    "Songyan Huang",
+    "Ruihua Zhang",
+    "Enze Xie",
+    "Ming-Yu Liu",
+    "Daquan Zhou"
+   ],
+   "hf_github": "https://github.com/DAGroup-PKU/PhysisForcing",
+   "hf_project": "https://dagroup-pku.github.io/PhysisForcing.github.io/"
+  },
+  "2606.17030": {
+   "title": "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation",
+   "published": "2026-06-15",
    "comment": null,
    "code": [],
    "project": [],
-   "abstract": "A robot world model that serves as a simulator must do more than generate plausible videos: it must faithfully follow commanded actions, maintain consistency across camera views, and sustain coherent long-horizon rollouts. We present PrimeSim, an action-conditioned, multiview world model simulator that addresses these challenges through progressive midtraining and posttraining. Starting from a pretrained video generator, we midtrain on 30,110 hours of robot demonstrations spanning 22 platforms. To improve action following, we introduce a unified cross-embodiment action representation and frame-aligned dual-path conditioning to strengthen action-frame correspondence. To maintain multiview consistency, we develop view-aware interleaved attention with explicit camera identities, enabling cross-view information exchange while preserving view-specific representations. We further introduce a fast-video, slow-memory posttraining framework that transforms the bidirectional video generator into an efficient autoregressive simulator. By combining fast causal generation, self-rollout training, and hierarchical temporal memory, PrimeSim mitigates error accumulation from self-generated histories and supports coherent long-horizon simulation. PrimeSim runs at 10.1 FPS, remains stable over long-horizon rollouts on rigid and deformable manipulation tasks, and transfers to held-out platforms within 100 to 200 gradient steps where the pretrained backbone does not. Against five open-source action-conditioned world models it leads four of the five WorldSimProbe suites and posts the best overall EWMBench score, while fine-grained local calibration still trails the field; its rollouts are faithful enough to support GRPO-based policy optimization. We release the model weights, inference code, and training code.",
+   "abstract": "We introduce Qwen-RobotWorld, a language-conditioned video world model for embodied intelligence. With natural language as a unified action interface, it predicts physically grounded future visual trajectories from current observations across robotic manipulation, autonomous driving, indoor navigation, and human-to-robot transfer. This unified formulation provides three promising application directions: synthetic data generation for policy training augmentation, scalable virtual environments for policy evaluation, and language-guided planning signals for downstream robot control. This is achieved through a three-part design: a) Double-Stream MMDiT with MLLM Action Encoding, where a 60-layer double-stream diffusion transformer couples frozen Qwen2.5-VL semantics with video-VAE latents through layer-wise joint attention; b) Embodied World Knowledge (EWK), an 8.6M video-text corpus (200M+ frames) with action-language mapping over 20+ embodiments and 500+ action categories; and c) General+Expert Progressive Curriculum, a two-stage training strategy that first learns general visual priors and then injects embodied specialization under a shared language interface. Extensive results show strong competitiveness: ranks 1st overall on EWMBench and DreamGen Bench, outperforms all open-source models on WorldModelBench and PBench. Additional zero-shot analyses on RoboTwin-IF benchmark further support robust generalization and multi-view consistency.",
    "authors": [
-    "Travis Davies",
-    "Wentao Ma",
-    "Lihao Guo",
-    "Tengfei Ma",
-    "Xiaowen Chang",
-    "Jiafeng Xu",
-    "Shilong Wang",
-    "Yiqi Deng",
-    "Shaowen He",
-    "Xiaoqi Li",
-    "Qian Zhu",
-    "Ran Cheng",
-    "Hao Dong"
+    "Jie Zhang",
+    "Xiaoyue Chen",
+    "Anzhe Chen",
+    "Dayiheng Liu",
+    "Deqing Li",
+    "Gengze Zhou",
+    "Hale Yin",
+    "Haoqi Yuan",
+    "Haoyang Li",
+    "Jiahao Li",
+    "Jiazhao Zhang",
+    "Jingren Zhou",
+    "Kaiyuan Gao",
+    "Kun Yan",
+    "Lihan Jiang",
+    "Ningyuan Tang",
+    "Pei Lin",
+    "Qihang Peng",
+    "Shengming Yin",
+    "Tianhe Wu"
    ],
    "hf_github": null,
-   "hf_project": "https://primebottech.github.io/PrimeSim-website/"
+   "hf_project": "https://pre.qwen.ai/blog?id=qwen-robotworld"
   },
-  "2611.05372": {
-   "title": "PolicyIK: High-Precision Inverse Kinematics for Robot Arms with Reinforcement Learning",
-   "published": "2026-11-03",
+  "2603.22078": {
+   "title": "Do World Action Models Generalize Better than VLAs? A Robustness Study",
+   "published": "2026-03-23",
    "comment": null,
+   "code": [],
+   "project": [
+    "https://robot-robustness.github.io/RoboTwin2.0-Plus/"
+   ],
+   "abstract": "Robot action planning in the real world is challenging as it requires not only understanding the current state of the environment but also predicting how it will evolve in response to actions. Vision-language-action (VLA), which repurpose large-scale vision-language models for robot action generation using action experts, have achieved notable success across a variety of robotic tasks. Nevertheless, their performance remains constrained by the scope of their training data, exhibiting limited generalization to unseen scenarios and vulnerability to diverse contextual perturbations. More recently, world models have been revisited as an alternative to VLAs. These models, referred to as world action models (WAMs), are built upon world models that are trained on large corpora of video data to predict future states. With minor adaptations, their latent representation can be decoded into robot actions. It has been suggested that their explicit dynamic prediction capacity, combined with spatiotemporal priors acquired from web-scale video pretraining, enables WAMs to generalize more effectively than VLAs. In this paper, we conduct a comparative study of prominent state-of-the-art VLA policies and recently released WAMs. We evaluate their performance on the LIBERO-Plus and RoboTwin 2.0-Plus benchmarks under various visual and language perturbations. Our results show that WAMs achieve strong robustness, with LingBot-VA reaching 74.2% success rate on RoboTwin 2.0-Plus and Cosmos-Policy achieving 82.2% on LIBERO-Plus. While VLAs such as $π_{0.5}$ can achieve comparable robustness on certain tasks, they typically require extensive training with diverse robotic datasets and varied learning objectives. The evaluation code for the RoboTwin2.0-Plus benchmark is available at: https://robot-robustness.github.io/RoboTwin2.0-Plus/.",
+   "authors": [
+    "Zhanguang Zhang",
+    "Zhiyuan Li",
+    "Behnam Rahmati",
+    "Rui Heng Yang",
+    "Yintao Ma",
+    "Amir Rasouli",
+    "Sajjad Pakdamansavoji",
+    "Yangzheng Wu",
+    "Lingfeng Zhang",
+    "Tongtong Cao",
+    "Feng Wen",
+    "Xinyu Wang",
+    "Xingyue Quan",
+    "Yingxue Zhang"
+   ],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2510.24795": {
+   "title": "A Survey on Efficient Vision-Language-Action Models",
+   "published": "2025-10-27",
+   "comment": "Accepted by IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI). 20 pages, 8 figures",
+   "code": [],
+   "project": [
+    "https://evla-survey.github.io/"
+   ],
+   "abstract": "Vision-Language-Action models (VLAs) represent a significant frontier in embodied intelligence, aiming to bridge digital knowledge with physical-world interaction. Despite their remarkable performance, foundational VLAs are hindered by the prohibitive computational and data demands inherent to their large-scale architectures. To this end, recent studies improve VLA efficiency from different views, e.g., real-time inference, training computation, and scalable data collection. However, these efforts are mostly studied separately. A unified view is still missing for understanding how efficiency should be optimized across the full VLA lifecycle. To bridge this gap, this survey presents the first comprehensive review of Efficient Vision-Language-Action models (Efficient VLAs) across the entire model-training-data pipeline. Specifically, we introduce a unified taxonomy to systematically organize the disparate efforts in this domain, categorizing current techniques into three core pillars: (1) Efficient Model Design, focusing on efficient architectures and model compression; (2) Efficient Training, which reduces computational burdens during model learning; and (3) Efficient Data Collection, which addresses the bottlenecks in acquiring and utilizing robotic data. Through a critical review of state-of-the-art methods within this framework, this survey provides an organized reference for the community and summarizes representative applications, delineates key challenges, and charts a roadmap for future research. We maintain a continuously updated project page to track our latest developments: https://evla-survey.github.io/.",
+   "authors": [
+    "Zhaoshu Yu",
+    "Bo Wang",
+    "Pengpeng Zeng",
+    "Haonan Zhang",
+    "Ji Zhang",
+    "Zheng Wang",
+    "Lianli Gao",
+    "Jingkuan Song",
+    "Nicu Sebe",
+    "Heng Tao Shen"
+   ],
+   "hf_github": "https://github.com/YuZhaoshu/Efficient-VLAs-Survey",
+   "hf_project": "https://evla-survey.github.io/"
+  },
+  "2609.07398": {
+   "title": "OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining",
+   "published": "2026-09-07",
+   "comment": "Project Page: https://openwam-official.github.io/; Code: https://github.com/OpenWAM-Official/OpenWAM; Model & Data: https://huggingface.co/OpenWAM",
    "code": [
-    "https://github.com/Tinaliu0123/PolicyIK"
+    "https://github.com/OpenWAM-Official/OpenWAM"
+   ],
+   "project": [
+    "https://huggingface.co/OpenWAM",
+    "https://openwam-official.github.io/"
+   ],
+   "abstract": "World-Action Models inherit world knowledge from video-generative priors, and channel it into executable control signals through embodied experience. Existing systems, however, are monolithic: the generative backbone, visual representation, architecture, information flow, inference procedure, and training data are tightly coupled, obscuring which design choices matter and why. We introduce OpenWAM, an open research stack that turns world-action pretraining into a controlled experimental program. OpenWAM-Infra factorizes the WAM design space into composable modules with unified training, inference, deployment, and evaluation. On this substrate, OpenWAM-Study examines three questions through controlled experiments: what to inherit, how world and action learning interact, and how their synergy scales; and distills three principles: upstream knowledge transfers through a sufficiently capable generative backbone and a compact, information-rich latent space; world-action synergy requires dedicated action capacity, explicit world-to-action information flow, and synchronized joint denoising; and embodied pretraining principally improves out-of-domain generalization, with one-stage co-training over egocentric and robot data integrating world coverage and action grounding. Composing these principles, we build OpenWAM-α, an open WAM pretrained on roughly 6,400 hours of egocentric human and robot data and evaluated across simulation and real-world benchmarks. Across the eight simulation benchmarks and the real-robot experiments, which together span embodiments from single-arm and bimanual manipulation to dexterous hands, OpenWAM-α delivers consistently excellent performance, sustaining its top-tier standing from simulation to the physical world. We release the full stack, including infrastructure, evaluation protocols, pretrained models, and data recipes, to facilitate future research.",
+   "authors": [
+    "Yuran Wang",
+    "Siqiao Huang",
+    "Mingleyang Li",
+    "Chenhao Zhang",
+    "Jiaqi Liang",
+    "Weiyang Jin",
+    "Yue Chen",
+    "Xuemin Chi",
+    "Donghao Zhou",
+    "Qize Yu",
+    "Yu-Kai Wang",
+    "Yuhan Rui",
+    "Shenzhe Yao",
+    "Zhen Yuan",
+    "Zhenhao Shen",
+    "Kefei Zhu",
+    "Zijie Zhu",
+    "Ning Gao",
+    "Xiaowei Chi",
+    "Guanqi He"
+   ],
+   "hf_github": "https://github.com/OpenWAM-Official/OpenWAM",
+   "hf_project": "https://openwam-official.github.io/"
+  },
+  "2601.21998": {
+   "title": "Causal World Modeling for Robot Control",
+   "published": "2026-01-29",
+   "comment": "Project page: https://technology.robbyant.com/lingbot-va Code: https://github.com/robbyant/lingbot-va",
+   "code": [
+    "https://github.com/robbyant/lingbot-va"
+   ],
+   "project": [
+    "https://technology.robbyant.com/lingbot-va"
+   ],
+   "abstract": "This work highlights that video world modeling, alongside vision-language pre-training, establishes a fresh and independent foundation for robot learning. Intuitively, video world models provide the ability to imagine the near future by understanding the causality between actions and visual dynamics. Inspired by this, we introduce LingBot-VA, an autoregressive diffusion framework that learns frame prediction and policy execution simultaneously. Our model features three carefully crafted designs: (1) a shared latent space, integrating vision and action tokens, driven by a Mixture-of-Transformers (MoT) architecture, (2) a closed-loop rollout mechanism, allowing for ongoing acquisition of environmental feedback with ground-truth observations, (3) an asynchronous inference pipeline, parallelizing action prediction and motor execution to support efficient control. We evaluate our model on both simulation benchmarks and real-world scenarios, where it shows significant promise in long-horizon manipulation, data efficiency in post-training, and strong generalizability to novel configurations. The code and model are made publicly available to facilitate the community.",
+   "authors": [
+    "Lin Li",
+    "Qihang Zhang",
+    "Yiming Luo",
+    "Shuai Yang",
+    "Ruilin Wang",
+    "Fei Han",
+    "Mingrui Yu",
+    "Zelin Gao",
+    "Nan Xue",
+    "Xing Zhu",
+    "Yujun Shen",
+    "Yinghao Xu"
+   ],
+   "hf_github": "https://github.com/robbyant/lingbot-va",
+   "hf_project": "https://technology.robbyant.com/lingbot-va"
+  },
+  "2603.16666": {
+   "title": "Fast-WAM: Do World Action Models Need Test-time Future Imagination?",
+   "published": "2026-03-17",
+   "comment": null,
+   "code": [],
+   "project": [
+    "https://yuantianyuan01.github.io/FastWAM/"
+   ],
+   "abstract": "World Action Models (WAMs) have emerged as a promising alternative to Vision-Language-Action (VLA) models for embodied control because they explicitly model how visual observations may evolve under action. Most existing WAMs follow an imagine-then-execute paradigm, incurring substantial test-time latency from iterative video denoising, yet it remains unclear whether explicit future imagination is actually necessary for strong action performance. In this paper, we ask whether WAMs need explicit future imagination at test time, or whether their benefit comes primarily from video modeling during training. We disentangle the role of video modeling during training from explicit future generation during inference by proposing \\textbf{Fast-WAM}, a WAM architecture that retains video co-training during training but skips future prediction at test time. We further instantiate several Fast-WAM variants to enable a controlled comparison of these two factors. Across these variants, we find that Fast-WAM remains competitive with imagine-then-execute variants, while removing video co-training causes a much larger performance drop. Empirically, Fast-WAM achieves competitive results with state-of-the-art methods both on simulation benchmarks (LIBERO and RoboTwin) and real-world tasks, without embodied pretraining. It runs in real time with 190ms latency, over 4$\\times$ faster than existing imagine-then-execute WAMs. These results suggest that the main value of video prediction in WAMs may lie in improving world representations during training rather than generating future observations at test time. Project page: https://yuantianyuan01.github.io/FastWAM/",
+   "authors": [
+    "Tianyuan Yuan",
+    "Zibin Dong",
+    "Yicheng Liu",
+    "Hang Zhao"
+   ],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2603.17240": {
+   "title": "GigaWorld-Policy: An Efficient Action-Centered World--Action Model",
+   "published": "2026-03-18",
+   "comment": "Added references",
+   "code": [],
+   "project": [],
+   "abstract": "World-Action Models (WAM) initialized from pre-trained video generation backbones have demonstrated remarkable potential for robot policy learning. However, existing approaches face two critical bottlenecks that hinder performance and deployment. First, jointly reasoning over future visual dynamics and corresponding actions incurs substantial inference overhead. Second, joint modeling often entangles visual and motion representations, making motion prediction accuracy heavily dependent on the quality of future video forecasts. To address these issues, we introduce GigaWorld-Policy, an action-centered WAM that learns 2D pixel-action dynamics while enabling efficient action decoding, with optional video generation. Specifically, we formulate policy training into two coupled components: the model predicts future action sequences conditioned on the current observation, and simultaneously generates future videos conditioned on the predicted actions and the same observation. The policy is supervised by both action prediction and video generation, providing richer learning signals and encouraging physically plausible actions through visual-dynamics constraints. With a causal design that prevents future-video tokens from influencing action tokens, explicit future-video generation is optional at inference time, allowing faster action prediction during deployment. To support this paradigm, we curate a diverse, large-scale robot dataset to pre-train an action-centered video generation model, which is then adapted as the backbone for robot policy learning. Experimental results on real-world robotic platforms show that GigaWorld-Policy runs 9x faster than the leading WAM baseline, Motus, while improving task success rates by 7%. Moreover, compared with pi-0.5, GigaWorld-Policy improves performance by 95% on RoboTwin 2.0.",
+   "authors": [
+    "Angen Ye",
+    "Boyuan Wang",
+    "Chaojun Ni",
+    "Guan Huang",
+    "Guosheng Zhao",
+    "Hao Li",
+    "Hengtao Li",
+    "Jie Li",
+    "Jindi Lv",
+    "Jingyu Liu",
+    "Min Cao",
+    "Peng Li",
+    "Qiuping Deng",
+    "Wenjun Mei",
+    "Xiaofeng Wang",
+    "Xinze Chen",
+    "Xinyu Zhou",
+    "Yang Wang",
+    "Yifan Chang",
+    "Yifan Li"
+   ],
+   "hf_github": "https://github.com/open-gigaai/giga-world-policy",
+   "hf_project": "https://gigaai-research.github.io/GigaWorld-Policy/"
+  },
+  "2603.23376": {
+   "title": "ABot-PhysWorld: Interactive World Foundation Model for Robotic Manipulation with Physics Alignment",
+   "published": "2026-03-24",
+   "comment": "Code: https://github.com/amap-cvlab/ABot-PhysWorld.git",
+   "code": [
+    "https://github.com/amap-cvlab/ABot-PhysWorld.git"
    ],
    "project": [],
-   "abstract": "Inverse kinematics (IK) converts end-effector pose commands into joint motion, and many vision-language-action (VLA) policies rely on it to act on a given arm and to transfer across embodiments. Precise IK remains laborious: redundancy and singularities complicate the inverse mapping, execution depends on hand-tuned controllers, and training data on physical robots are costly to collect. We present PolicyIK, a goal-conditioned reinforcement learning policy for high-precision IK. It updates joint-position references from pose feedback and observes its accumulated reference relative to the measured joints, so it can retain the offset that the position controller needs at rest. Two-scale pose errors with an error-dependent action gain resolve millimeter residuals while preserving large motions. Progress and dwell rewards teach it to both reach the tolerance and stay within it. In simulation, a single attempt by the trained PPO policy keeps the mean errors over the final second within 1 mm and 0.2° on 93.5% of held-out tasks, and a deployment protocol raises success to 98.9%. When trained directly on a physical arm with an off-policy RL learner, PolicyIK achieves higher reaching and holding success than all four classical IK controllers under the same time budgets. In simulated pick-and-place, PolicyIK executes the end-effector commands of the $π_{0.5}$ VLA policy with 95.7% success. These results show that reinforcement learning can provide high-precision inverse kinematics for robot arms. Code is available at https://github.com/Tinaliu0123/PolicyIK.",
+   "abstract": "Video-based world models offer a powerful paradigm for embodied simulation and planning, yet state-of-the-art models often generate physically implausible manipulations - such as object penetration and anti-gravity motion - due to training on generic visual data and likelihood-based objectives that ignore physical laws. We present ABot-PhysWorld, a 14B Diffusion Transformer model that generates visually realistic, physically plausible, and action-controllable videos. Built on a curated dataset of three million manipulation clips with physics-aware annotation, it uses a novel DPO-based post-training framework with decoupled discriminators to suppress unphysical behaviors while preserving visual quality. A parallel context block enables precise spatial action injection for cross-embodiment control. To better evaluate generalization, we introduce EZSbench, the first training-independent embodied zero-shot benchmark combining real and synthetic unseen robot-task-scene combinations. It employs a decoupled protocol to separately assess physical realism and action alignment. ABot-PhysWorld achieves new state-of-the-art performance on PBench and EZSbench, surpassing Veo 3.1 and Sora v2 Pro in physical plausibility and trajectory consistency. We will release EZSbench to promote standardized evaluation in embodied video generation.",
    "authors": [
-    "Yuhan Liu",
-    "Xinqi Liu",
-    "Zixuan Dong",
-    "Keith W. Ross",
-    "Shenji Wan"
+    "Yuzhi Chen",
+    "Ronghan Chen",
+    "Dongjie Huo",
+    "Yandan Yang",
+    "Dekang Qi",
+    "Haoyun Liu",
+    "Tong Lin",
+    "Shuang Zeng",
+    "Junjin Xiao",
+    "Xinyuan Chang",
+    "Feng Xiong",
+    "Xing Wei",
+    "Zhiheng Ma",
+    "Mu Xu"
+   ],
+   "hf_github": "https://github.com/amap-cvlab/ABot-PhysWorld",
+   "hf_project": null
+  },
+  "2608.26103": {
+   "title": "Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization",
+   "published": "2026-08-26",
+   "comment": "https://robbyant-research.github.io/Zero-WAM/",
+   "code": [],
+   "project": [
+    "https://robbyant-research.github.io/Zero-WAM/"
+   ],
+   "abstract": "Zero-shot cross-task generalization, where a policy must execute manipulation tasks never seen during training, remains a central challenge in robot learning. In large language models, a novel task can be performed simply by specifying it in the context, without any parameter update. This form of in-context learning (ICL) turns generalization into a problem of task specification. To achieve cross-task generalization, we bring this paradigm to robotic manipulation, and argue that the natural task specification for manipulation is a human video: unlike language, it provides rich visual cues about the intended task evolution. We present Zero-WAM, a causal video-action model that executes unseen tasks by following in-context human video guidance. To address the scarcity of task-rich paired human-robot data, we propose an automatic pipeline that converts task-sampled robot trajectories into semantically matched human videos, yielding HumanGen, a dataset of 74.2K human-robot ICL pairs across 8.6K tasks. For model training, we further introduce an in-context future chunk prediction (IFP) objective that suppresses shortcuts learned from seen tasks and forces the policy to draw task information from the video prompt. On seven unseen tasks in RoboTwin 2.0 simulation, Zero-WAM achieves a 47.0% average success rate, an absolute improvement of 29.5 percentage points over the strongest video-action baseline. In real-world evaluations, it follows human video guidance to generalize to unseen task configurations involving multi-object scenes, long-horizon manipulation, and fine-grained insertion.",
+   "authors": [
+    "Jiaming Zhou",
+    "Qihang Zhang",
+    "Gangwei Xu",
+    "Cunxin Fan",
+    "Yujie Zhao",
+    "Ruilin Wang",
+    "Yiming Luo",
+    "Shuai Yang",
+    "Xing Zhu",
+    "Yujun Shen",
+    "Junwei Liang",
+    "Yinghao Xu"
+   ],
+   "hf_github": "https://github.com/robbyant-research/Zero-WAM",
+   "hf_project": "https://robbyant-research.github.io/Zero-WAM"
+  },
+  "2604.07607": {
+   "title": "EgoVerse: An Egocentric Human Dataset for Robot Learning from Around the World",
+   "published": "2026-04-08",
+   "comment": null,
+   "code": [],
+   "project": [],
+   "abstract": "Robot learning increasingly depends on large and diverse data, yet robot data collection remains expensive and difficult to scale. Egocentric human data offer a promising alternative by capturing rich manipulation behavior across everyday environments. However, existing human datasets are often limited in scope, difficult to extend, and fragmented across institutions. We introduce EgoVerse, a collaborative platform for human data-driven robot learning that unifies data collection, processing, and access under a shared framework, enabling contributions from individual researchers, academic labs, and industry partners. The current release includes 1,362 hours (80k episodes) of human demonstrations spanning 1,965 tasks, 240 scenes, and 2,087 unique demonstrators, with standardized formats, manipulation-relevant annotations, and tooling for downstream learning. Beyond the dataset, we conduct a large-scale study of human-to-robot transfer with experiments replicated across multiple labs, tasks, and robot embodiments under shared protocols. We find that policy performance generally improves with increased human data, but that effective scaling depends on alignment between human data and robot learning objectives. Together, the dataset, platform, and study establish a foundation for reproducible progress in human data-driven robot learning. Videos and additional information can be found at https://egoverse.ai/",
+   "authors": [
+    "Ryan Punamiya",
+    "Simar Kareer",
+    "Zeyi Liu",
+    "Josh Citron",
+    "Ri-Zhao Qiu",
+    "Xiongyi Cai",
+    "Alexey Gavryushin",
+    "Jiaqi Chen",
+    "Davide Liconti",
+    "Lawrence Y. Zhu",
+    "Patcharapong Aphiwetsa",
+    "Baoyu Li",
+    "Aniketh Cheluva",
+    "Pranav Kuppili",
+    "Yangcen Liu",
+    "Dhruv Patel",
+    "Aidan Gao",
+    "Hye-Young Chung",
+    "Ryan Co",
+    "Renee Zbizika"
+   ],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2607.28993": {
+   "title": "ST-WAM: Semantic-Temporal World Action Model for Robust Manipulation under Visual Distribution Shifts",
+   "published": "2026-07-31",
+   "comment": "9 pages, 5 figures",
+   "code": [],
+   "project": [],
+   "abstract": "World Action Models (WAMs) have emerged as a promising paradigm by jointly modeling robot actions and future visual dynamics. However, their reliance on pixel-generative future supervision can entangle action-relevant state transitions with task-irrelevant visual content, limiting robustness under visual distribution shifts. We identify Training-Distribution Hallucination, a recurring phenomenon in which futures conditioned on visually shifted observations hallucinate training-domain content rather than remain faithful to the current scene. A controlled frame-triplet diagnosis further shows that DINOv3 features remain more stable across visual shifts while better preserving task-state distinctions than Wan-VAE latents. Rather than correcting the predicted futures, we propose Semantic-Temporal WAM (ST-WAM) to improve action robustness by using DINOv3 as a shared semantic representation for future prediction and history retrieval while retaining fine-grained VAE dynamics. Its Dual-Space Future Experts (DSFE) jointly predict future VAE latents and DINO features, while Current-Anchored Intent Retrieval (CAIR) retrieves task-relevant evidence from recent DINO history under the current visual-language context. ST-WAM is trained end-to-end without additional embodied pretraining or task-specific annotations, and requires no explicit future generation at inference. It achieves 98.7% on LIBERO and 92.8% on RoboTwin 2.0; more importantly, compared with Fast-WAM, it improves zero-shot LIBERO-Plus performance by 21.3 percentage points and more than doubles real-world success under visual shifts from 25.8% to 61.5%. These results demonstrate that semantic-temporal modeling effectively complements pixel-generative dynamics for robust manipulation.",
+   "authors": [
+    "Mingxin Wang",
+    "Bin Hu",
+    "Bin Qian",
+    "Kaitao Jiang",
+    "Haoning Wu",
+    "Feng Yan",
+    "Bowen Jing",
+    "Ruiyang Hao",
+    "Enyi Wang",
+    "Kangning Niu",
+    "Yandan Yang",
+    "Mu Xu",
+    "Yan Wang",
+    "Houde Liu",
+    "Tianlun Li"
+   ],
+   "hf_github": "https://github.com/Thu-WangMX/ST-WAM-Semantic-Temporal-World-Action-Model",
+   "hf_project": "https://thu-wangmx.github.io/st-wam/"
+  },
+  "2607.00836": {
+   "title": "From World Models to World Action Models: A Concise Tutorial for Robotics",
+   "published": "2026-07-01",
+   "comment": "Github page: https://github.com/clearlab-sustech/WorldModelSurvey",
+   "code": [
+    "https://github.com/clearlab-sustech/WorldModelSurvey"
+   ],
+   "project": [],
+   "abstract": "Rather than providing an exhaustive survey, this paper presents a concise tutorial on world models and world action models for robotics. After reading the tutorial, readers should have a clear understanding of what constitutes a \"world\", how world models and world action models are defined, and what roles they play within robotic AI systems. The tutorial also develops a unified perspective for comparing representative approaches, such as World Labs' spatial intelligence models, Yann LeCun's JEPA framework, and NVIDIA's Cosmos platform, and clarifies how these models differ in their representations, predictive capabilities, and interaction mechanisms.",
+   "authors": [
+    "Xiaoxiong Zhang",
+    "Xiong Zeng",
+    "Wei Zhang"
+   ]
+  },
+  "2609.31394": {
+   "title": "InternW0-$Δ$: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data",
+   "published": "2026-09-25",
+   "comment": null,
+   "code": [],
+   "project": [
+    "https://internrobotics.github.io/InternW0-Delta/"
+   ],
+   "abstract": "World Action Models (WAMs) jointly model visual dynamics and action generation for generalist robot manipulation. A central challenge is to integrate priors from large-scale pretrained models---including visual dynamics, scene semantics, geometry, and motion---into a unified framework for robot action generation. We introduce InternW0-$Δ$, a unified WAM pretrained on a heterogeneous corpus that outperforms prior methods across simulation benchmarks and real-robot platforms. InternW0-$Δ$ combines pretrained visual dynamics, scene-level semantics, 4D geometric and motion priors, and action generation within a Mixture-of-Transformers (MoT) framework. A pretrained video expert and an action expert interact under semantic guidance from a frozen VLM, while a pretrained 4D foundation model injects geometric and motion priors through training-only distillation. We further introduce Causal Imprint, which learns future-relevant scene changes from training-only future supervision and provides predictive representations directly to the action expert without future-video rollout at inference. For large-scale joint training, we construct a heterogeneous corpus of robot demonstrations, UMI data, egocentric human demonstrations, and Ego2Robot data, curated and aligned under a common state-action representation. The resulting corpus contains over 20K hours of processed training data, to our knowledge the largest open-source corpus of its kind. We pretrain InternW0-$Δ$ on this corpus and demonstrate strong performance across simulation benchmarks and real-robot platforms. We will open source the training code, model weights, infrastructure, data-processing pipeline, and processed data where licenses permit. Project page: https://internrobotics.github.io/InternW0-Delta/",
+   "authors": [
+    "Xingyu Miao",
+    "Zizun Li",
+    "Baole Fang",
+    "Kaiwen Song",
+    "Tenghui Wang",
+    "Hanxue Zhang",
+    "Yating Wang",
+    "Xudong Li",
+    "Yuping He",
+    "Xueyuan Wei",
+    "Chao Gao",
+    "Xijie Yang",
+    "Yingxiang Xu",
+    "Kerui Ren",
+    "Wenqi Guo",
+    "Jianjun Zhou",
+    "Xinzhe Wang",
+    "Weiguang Zhao",
+    "Ni Yang",
+    "Zetao Cai"
+   ],
+   "hf_github": null,
+   "hf_project": "https://internrobotics.github.io/InternW0-Delta/"
+  },
+  "2610.10270": {
+   "title": "Video Prediction Policy 2: Predict Better, Act Better",
+   "published": "2026-10-07",
+   "comment": "Project Page: https://robert-gyj.github.io/video-prediction-policy-2",
+   "code": [],
+   "project": [
+    "https://robert-gyj.github.io/video-prediction-policy-2"
+   ],
+   "abstract": "World action models (WAMs) have emerged as an important class of generalist robot policies, aiming to transfer video prediction priors to action learning. However, we find that existing WAMs frequently produce incorrect motion predictions in open-ended environment, leading to erroneous actions. We attribute this limitation to two factors: (1) base video models are not optimized for manipulation, and (2) naively incorporating action components into video models can substantially degrade their generalization capabilities. We introduce Video Prediction Policy 2 (VPP2), a WAM that enables strong zero-shot generalization in both video prediction and action generation. First, we curate a large-scale, diverse dataset of manipulation videos to continue pretraining the base video foundation model. We annotate video clips with detailed captions and perform \\textit{event-level} video pretraining to promote generalization across open-ended manipulation tasks. Second, we post-train and distill the video model into a single-step visual planner with fixed prediction horizon. Finally, we introduce action module via a mixture-of-transformers (MoT) architecture to learn implicit inverse dynamics model. Experiments demonstrate three key results: (1) VPP2-14B outperforms Cosmos3-64B by 11.0\\% points in video prediction instruction-following success rate on open-ended tasks; (2) VPP2 surpasses the strongest baseline by 18.5\\% points in success rate on real-world zero-shot ALOHA manipulation tasks; and (3) following benchmark-specific post-training, VPP2 achieves the highest success rates among evaluated methods on the challenging LIBERO-Pro, LIBERO-OOD, and RoboDojo benchmarks.",
+   "authors": [
+    "Yanjiang Guo",
+    "Haodong Yan",
+    "Zhide Zhong",
+    "Zhongru Zhang",
+    "Qingyuan Yang",
+    "Qingzhou Lu",
+    "Xiaoyu Chen",
+    "Yen-Jen Wang",
+    "Shuying Deng",
+    "Chenghan Yang",
+    "Puzhen Yuan",
+    "Chenxin Liu",
+    "Tun Ban",
+    "Xiang Zhu",
+    "Yichen Liu",
+    "Kun Feng",
+    "Haoang Li",
+    "Jianyu Chen"
+   ],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2610.10515": {
+   "title": "RoboJEPA: Scaling Robotic Latent World Models",
+   "published": "2026-10-07",
+   "comment": null,
+   "code": [],
+   "project": [],
+   "abstract": "Latent world models have shown a remarkable ability to predict future states and to plan in the real world. In practice, however, we lack a principled way to estimate how their capabilities scale with model size, data, and compute, an open problem that slows progress in the field. In this work we present RoboJEPA, a world model based on the Joint Embedding Predictive Architecture (JEPA) and trained on a large-scale dataset spanning 12 robotic embodiments. We show that RoboJEPA's imagination error, the error of its latent rollouts, follows a second-order power law in compute, allowing us to predict model quality well beyond the scale at which the law is fit. We further show that downstream robotic planning performance improves predictably with compute, and that imagination error is strongly correlated with it, making it a reliable proxy for real-robot evaluation. Finally, we demonstrate that latent world models can be deployed zero-shot as robotic agents, planning toward a single goal image to solve tasks requiring long-horizon planning on real hardware. We release all model checkpoints together with our training and robot deployment code. To our knowledge, this is the first work to establish scaling laws for multi-embodiment robotic world models trained on real robot data, and RoboJEPA, at 8B parameters, is the largest JEPA predictor model trained to date.",
+   "authors": [
+    "Artem Zholus",
+    "Nicolas Beltran-Velez",
+    "Jianhao Yuan",
+    "Sarath Chandar",
+    "Tushar Nagarajan",
+    "Daniel Severo",
+    "Koustuv Sinha",
+    "Michal Drozdzal",
+    "Adriana Romero Soriano",
+    "Jeannette Bohg",
+    "Nicolas Ballas",
+    "Mahmoud Assran"
+   ],
+   "hf_github": null,
+   "hf_project": "http://robojepa.github.io/"
+  },
+  "2511.00062": {
+   "title": "World Simulation with Video Foundation Models for Physical AI",
+   "published": "2025-10-28",
+   "comment": null,
+   "code": [
+    "https://github.com/nvidia-cosmos/cosmos-predict2.5",
+    "https://github.com/nvidia-cosmos/cosmos-transfer2.5"
+   ],
+   "project": [],
+   "abstract": "We introduce [Cosmos-Predict2.5], the latest generation of the Cosmos World Foundation Models for Physical AI. Built on a flow-based architecture, [Cosmos-Predict2.5] unifies Text2World, Image2World, and Video2World generation in a single model and leverages [Cosmos-Reason1], a Physical AI vision-language model, to provide richer text grounding and finer control of world simulation. Trained on 200M curated video clips and refined with reinforcement learning-based post-training, [Cosmos-Predict2.5] achieves substantial improvements over [Cosmos-Predict1] in video quality and instruction alignment, with models released at 2B and 14B scales. These capabilities enable more reliable synthetic data generation, policy evaluation, and closed-loop simulation for robotics and autonomous systems. We further extend the family with [Cosmos-Transfer2.5], a control-net style framework for Sim2Real and Real2Real world translation. Despite being 3.5$\\times$ smaller than [Cosmos-Transfer1], it delivers higher fidelity and robust long-horizon video generation. Together, these advances establish [Cosmos-Predict2.5] and [Cosmos-Transfer2.5] as versatile tools for scaling embodied intelligence. To accelerate research and deployment in Physical AI, we release source code, pretrained checkpoints, and curated benchmarks under the NVIDIA Open Model License at https://github.com/nvidia-cosmos/cosmos-predict2.5 and https://github.com/nvidia-cosmos/cosmos-transfer2.5. We hope these open resources lower the barrier to adoption and foster innovation in building the next generation of embodied intelligence.",
+   "authors": [
+    "NVIDIA",
+    ":",
+    "Arslan Ali",
+    "Junjie Bai",
+    "Maciej Bala",
+    "Yogesh Balaji",
+    "Aaron Blakeman",
+    "Tiffany Cai",
+    "Jiaxin Cao",
+    "Tianshi Cao",
+    "Elizabeth Cha",
+    "Yu-Wei Chao",
+    "Prithvijit Chattopadhyay",
+    "Mike Chen",
+    "Yongxin Chen",
+    "Yu Chen",
+    "Shuai Cheng",
+    "Yin Cui",
+    "Jenna Diamond",
+    "Yifan Ding"
+   ],
+   "hf_github": "https://github.com/nvidia-cosmos/cosmos-predict2.5",
+   "hf_project": null
+  },
+  "2604.19092": {
+   "title": "RoboWM-Bench: A Benchmark for Evaluating World Models in Robotic Manipulation",
+   "published": "2026-04-21",
+   "comment": null,
+   "code": [],
+   "project": [],
+   "abstract": "Recent advances in large-scale video world models have enabled increasingly realistic future prediction, raising the prospect of using generated videos as scalable supervision for robot learning. However, for embodied manipulation, perceptual realism alone is not sufficient: generated interactions must also be physically consistent and executable by robotic agents. Existing benchmarks provide valuable assessments of visual quality and physical plausibility, but they do not systematically evaluate whether predicted behaviors can be translated into executable actions that complete manipulation tasks. We introduce RoboWM-Bench, a manipulation-centric benchmark for embodiment-grounded evaluation of video world models. RoboWM-Bench converts generated human-hand and robotic manipulation videos into embodied action sequences and validates them through execution in physically grounded simulation environments. Built on real-to-sim scene reconstruction and diverse manipulation tasks, RoboWM-Bench enables standardized, reproducible, and scalable evaluation of physical executability. Using RoboWM-Bench, we evaluate state-of-the-art video world models and observe that visual plausibility and embodied executability are not always aligned. Our analysis highlights several recurring factors that affect execution performance, including spatial reasoning, contact prediction, and non-physical geometric distortions, particularly in complex and long-horizon interactions. These findings provide a more fine-grained view of current model capabilities and underscore the value of embodiment-aware evaluation for guiding physically grounded world modeling in robotic manipulation.",
+   "authors": [
+    "Feng Jiang",
+    "Yang Chen",
+    "Kyle Xu",
+    "Yuchen Liu",
+    "Haifeng Wang",
+    "Zhenhao Shen",
+    "Jasper Lu",
+    "Shengze Huang",
+    "Yuanfei Wang",
+    "Chen Xie",
+    "Ruihai Wu"
+   ]
+  },
+  "2505.15659": {
+   "title": "FLARE: Robot Learning with Implicit World Modeling",
+   "published": "2025-05-21",
+   "comment": "Project Webpage / Blogpost: https://research.nvidia.com/labs/gear/flare",
+   "code": [],
+   "project": [
+    "https://research.nvidia.com/labs/gear/flare"
+   ],
+   "abstract": "We introduce $\\textbf{F}$uture $\\textbf{LA}$tent $\\textbf{RE}$presentation Alignment ($\\textbf{FLARE}$), a novel framework that integrates predictive latent world modeling into robot policy learning. By aligning features from a diffusion transformer with latent embeddings of future observations, $\\textbf{FLARE}$ enables a diffusion transformer policy to anticipate latent representations of future observations, allowing it to reason about long-term consequences while generating actions. Remarkably lightweight, $\\textbf{FLARE}$ requires only minimal architectural modifications -- adding a few tokens to standard vision-language-action (VLA) models -- yet delivers substantial performance gains. Across two challenging multitask simulation imitation learning benchmarks spanning single-arm and humanoid tabletop manipulation, $\\textbf{FLARE}$ achieves state-of-the-art performance, outperforming prior policy learning baselines by up to 26%. Moreover, $\\textbf{FLARE}$ unlocks the ability to co-train with human egocentric video demonstrations without action labels, significantly boosting policy generalization to a novel object with unseen geometry with as few as a single robot demonstration. Our results establish $\\textbf{FLARE}$ as a general and scalable approach for combining implicit world modeling with high-frequency robotic control.",
+   "authors": [
+    "Ruijie Zheng",
+    "Jing Wang",
+    "Scott Reed",
+    "Johan Bjorck",
+    "Yu Fang",
+    "Fengyuan Hu",
+    "Joel Jang",
+    "Kaushil Kundalia",
+    "Zongyu Lin",
+    "Loic Magne",
+    "Avnish Narayan",
+    "You Liang Tan",
+    "Guanzhi Wang",
+    "Qi Wang",
+    "Jiannan Xiang",
+    "Yinzhen Xu",
+    "Seonghyeon Ye",
+    "Jan Kautz",
+    "Furong Huang",
+    "Yuke Zhu"
+   ],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2507.14049": {
+   "title": "EdgeVLA: Efficient Vision-Language-Action Models",
+   "published": "2025-07-18",
+   "comment": null,
+   "code": [
+    "https://github.com/kscalelabs/evla"
+   ],
+   "project": [],
+   "abstract": "Vision-Language Models (VLMs) have emerged as a promising approach to address the data scarcity challenge in robotics, enabling the development of generalizable visuomotor control policies. While models like OpenVLA showcase the potential of this paradigm, deploying large-scale VLMs on resource-constrained mobile manipulation systems remains a significant hurdle. This paper introduces Edge VLA (EVLA), a novel approach designed to significantly enhance the inference speed of Vision-Language-Action (VLA) models. EVLA maintains the representational power of these models while enabling real-time performance on edge devices. We achieve this through two key innovations: 1) Eliminating the autoregressive requirement for end-effector position prediction, leading to a 7x speedup in inference, and 2) Leveraging the efficiency of Small Language Models (SLMs), demonstrating comparable training performance to larger models with significantly reduced computational demands. Our early results demonstrate that EVLA achieves comparable training characteristics to OpenVLA while offering substantial gains in inference speed and memory efficiency. We release our model checkpoints and training \\href{https://github.com/kscalelabs/evla }{codebase} to foster further research.",
+   "authors": [
+    "Paweł Budzianowski",
+    "Wesley Maa",
+    "Matthew Freed",
+    "Jingxiang Mo",
+    "Winston Hsiao",
+    "Aaron Xie",
+    "Tomasz Młoduchowski",
+    "Viraj Tipnis",
+    "Benjamin Bolte"
+   ]
+  },
+  "2406.04339": {
+   "title": "RoboMamba: Efficient Vision-Language-Action Model for Robotic Reasoning and Manipulation",
+   "published": "2024-06-06",
+   "comment": "Accepted by Neurips 2024",
+   "code": [],
+   "project": [
+    "https://sites.google.com/view/robomamba-web"
+   ],
+   "abstract": "A fundamental objective in robot manipulation is to enable models to comprehend visual scenes and execute actions. Although existing Vision-Language-Action (VLA) models for robots can handle a range of basic tasks, they still face challenges in two areas: (1) insufficient reasoning ability to tackle complex tasks, and (2) high computational costs for VLA model fine-tuning and inference. The recently proposed state space model (SSM) known as Mamba demonstrates promising capabilities in non-trivial sequence modeling with linear inference complexity. Inspired by this, we introduce RoboMamba, an end-to-end robotic VLA model that leverages Mamba to deliver both robotic reasoning and action capabilities, while maintaining efficient fine-tuning and inference. Specifically, we first integrate the vision encoder with Mamba, aligning visual tokens with language embedding through co-training, empowering our model with visual common sense and robotic-related reasoning. To further equip RoboMamba with SE(3) pose prediction abilities, we explore an efficient fine-tuning strategy with a simple policy head. We find that once RoboMamba possesses sufficient reasoning capability, it can acquire manipulation skills with minimal fine-tuning parameters (0.1\\% of the model) and time. In experiments, RoboMamba demonstrates outstanding reasoning capabilities on general and robotic evaluation benchmarks. Meanwhile, our model showcases impressive pose prediction results in both simulation and real-world experiments, achieving inference speeds 3 times faster than existing VLA models. Our project web page: https://sites.google.com/view/robomamba-web",
+   "authors": [
+    "Jiaming Liu",
+    "Mengzhen Liu",
+    "Zhenyu Wang",
+    "Pengju An",
+    "Xiaoqi Li",
+    "Kaichen Zhou",
+    "Senqiao Yang",
+    "Renrui Zhang",
+    "Yandong Guo",
+    "Shanghang Zhang"
+   ],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2606.02800": {
+   "title": "Cosmos 3: Omnimodal World Models for Physical AI",
+   "published": "2026-06-01",
+   "comment": null,
+   "code": [
+    "https://github.com/nvidia/cosmos"
+   ],
+   "project": [],
+   "abstract": "We introduce Cosmos 3, a family of omnimodal world models designed to jointly process and generate language, image, video, audio, and action sequences within a unified mixture-of-transformers architecture. By supporting highly flexible input-output configurations, Cosmos 3 seamlessly unifies critical modalities for Physical AI -- effectively subsuming vision-language models, video generators, world simulators, and world-action models into a single framework. Our evaluation demonstrates that Cosmos 3 establishes a new state-of-the-art across a diverse suite of understanding and generation tasks, demonstrating omnimodal world models as scalable, general-purpose backbones for embodied agents. Our post-trained Cosmos 3 models were ranked as the best open-source Text-to-Image and Image-to-Video models by Artificial Analysis, and the best policy model by RoboArena at the time the technical report was written. To accelerate open research and deployment in Physical AI, we make our code, model checkpoints, curated synthetic datasets, and evaluation benchmark available under the Linux Foundation's OpenMDW-1.1 License at https://github.com/nvidia/cosmos and https://huggingface.co/collections/nvidia/cosmos3. The project website is available at https://research.nvidia.com/labs/cosmos-lab/cosmos3.",
+   "authors": [
+    "NVIDIA",
+    ":",
+    "Aditi",
+    "Niket Agarwal",
+    "Arslan Ali",
+    "Jon Allen",
+    "Martin Antolini",
+    "Adeline Aubame",
+    "Alisson Azzolini",
+    "Junjie Bai",
+    "Maciej Bala",
+    "Yogesh Balaji",
+    "Josh Bapst",
+    "Aarti Basant",
+    "Mukesh Beladiya",
+    "Mohammad Qazim Bhat",
+    "Zaid Pervaiz Bhat",
+    "Dan Blick",
+    "Vanni Brighella",
+    "Han Cai"
+   ],
+   "hf_github": "https://github.com/NVIDIA/cosmos",
+   "hf_project": "https://research.nvidia.com/labs/cosmos-lab/cosmos3/"
+  },
+  "2606.01955": {
+   "title": "WALL-WM: Carving World Action Modeling at the Event Joints",
+   "published": "2026-06-01",
+   "comment": null,
+   "code": [],
+   "project": [],
+   "abstract": "WALL-WM is a World Action Model that shifts video-action learning from chunk-centric optimization to event-grounded Vision-Language-Action pretraining, using semantically coherent action events as the atomic unit of learning. Existing WAMs commonly initialize from multimodal or video foundation models and then optimize fixed-length action chunks conditioned directly on the current observation and instruction. Although convenient, this chunk-centric formulation creates a fundamental granularity mismatch. Language describes semantic goals and events, vision evolves through continuous scene dynamics, and actions operate at control-level timescales; forcing all three into the same fixed-length prediction window turns VLA training into short-horizon correlation fitting. WALL-WM addresses this mismatch by organizing both supervision and data around semantic events. Specifically, it pairs event-grounded VLA pretraining with a data ecosystem built from event-level captions and cluster-balanced sampling, enabling scalable learning over diverse behaviors, scenes, and task structures. From the same event-pretrained backbone, WALL-WM supports two complementary inference modes. The event mode consumes next-event descriptions and enables variable-length execution chunks, while the unified mode uses a VLM with Staircase Decoding to condition conventional fixed-length chunk inference while preserving a gradient-continuous VLA path. Together with Muon-optimizer-based large-scale pretraining infrastructure, WALL-WM provides a practical scale-up recipe for general-purpose WAMs. Experiments show that WALL-WM generalizes broadly across language, scenes, and tasks, achieving state-of-the-art performance in large-scale real-world generalization evaluation.",
+   "authors": [
+    "Shalfun Li",
+    "Victor Yao",
+    "Charles Yang",
+    "Truth Qu",
+    "Regis Cheng",
+    "Ryan Yu",
+    "Howard Lu",
+    "Newton Von",
+    "Vincent Chen",
+    "Yohann Tang",
+    "Maeve Zhang",
+    "Ellie Ma",
+    "Gody Li",
+    "Starrick Liu",
+    "Sage Yang",
+    "Lorien Shu",
+    "J. W. Gao",
+    "Ethan Chen",
+    "Colin Ye",
+    "Yu Sun"
+   ],
+   "hf_github": "https://github.com/X-Square-Robot/wall-x",
+   "hf_project": "https://x2robot.com/pages/wm"
+  },
+  "2609.16074": {
+   "title": "World-Action Models for Robot Learning and Control: A Survey",
+   "published": "2026-09-13",
+   "comment": "19 pages",
+   "code": [],
+   "project": [
+    "https://rcl-robotics.github.io/Awesome-World-Action-Models"
+   ],
+   "abstract": "Robots operating in open environments act under partial observability, physical constraints, and dynamic task contexts. Beyond mapping observations and language instructions to actions, they must anticipate how candidate actions may affect future states and task-relevant outcomes. Recent advances in world models, video generation, and Vision-Language-Action (VLA) policies have motivated the development of World-Action Models (WAMs), which couple future world prediction with executable action generation. This survey provides a robotics-oriented review of WAMs. We clarify their scope relative to conventional world models, model-based reinforcement learning, action-conditioned video generation, and reactive VLA policies, and organize existing methods through a unified taxonomy covering representations, transition modeling, action interfaces, architectures, training pipelines, data modalities, and scaling strategies. We further review applications of WAMs in manipulation, navigation, and autonomous driving, and we summarize the datasets, benchmarks, metrics, and protocols used to evaluate WAM systems. Finally, we discuss key challenges in action alignment, world-action factorization, spatial and multi-view consistency, long-horizon memory, neural simulation for closed-loop policy learning, and efficient inference. Taken together, this survey aims to provide a concise technical foundation for integrating predictive world modeling with action generation, toward more reliable embodied robot intelligence. Project page: https://rcl-robotics.github.io/Awesome-World-Action-Models.",
+   "authors": [
+    "Zuxing Lu",
+    "Hongjia Zhai",
+    "Guanzhi Wang",
+    "Huajian Zeng",
+    "Jiaqi Yang",
+    "Jingyu Liu",
+    "Lei Cheng",
+    "Yuantai Zhang",
+    "Yuheng Qiu",
+    "Zezhou Cheng",
+    "Ivan Laptev",
+    "Danfei Xu",
+    "Benjamin Riviere",
+    "Giuseppe Loianno",
+    "Eric Xing",
+    "Xingxing Zuo"
+   ]
+  },
+  "2412.11974": {
+   "title": "Emma-X: An Embodied Multimodal Action Model with Grounded Chain of Thought and Look-ahead Spatial Reasoning",
+   "published": "2024-12-16",
+   "comment": "https://github.com/declare-lab/Emma-X, https://huggingface.co/declare-lab/Emma-X",
+   "code": [
+    "https://github.com/declare-lab/Emma-X"
+   ],
+   "project": [
+    "https://huggingface.co/declare-lab/Emma-X"
+   ],
+   "abstract": "Traditional reinforcement learning-based robotic control methods are often task-specific and fail to generalize across diverse environments or unseen objects and instructions. Visual Language Models (VLMs) demonstrate strong scene understanding and planning capabilities but lack the ability to generate actionable policies tailored to specific robotic embodiments. To address this, Visual-Language-Action (VLA) models have emerged, yet they face challenges in long-horizon spatial reasoning and grounded task planning. In this work, we propose the Embodied Multimodal Action Model with Grounded Chain of Thought and Look-ahead Spatial Reasoning, Emma-X. Emma-X leverages our constructed hierarchical embodiment dataset based on BridgeV2, containing 60,000 robot manipulation trajectories auto-annotated with grounded task reasoning and spatial guidance. Additionally, we introduce a trajectory segmentation strategy based on gripper states and motion trajectories, which can help mitigate hallucination in grounding subtask reasoning generation. Experimental results demonstrate that Emma-X achieves superior performance over competitive baselines, particularly in real-world robotic tasks requiring spatial reasoning.",
+   "authors": [
+    "Qi Sun",
+    "Pengfei Hong",
+    "Tej Deep Pala",
+    "Vernon Toh",
+    "U-Xuan Tan",
+    "Deepanway Ghosal",
+    "Soujanya Poria"
+   ],
+   "hf_github": "https://github.com/declare-lab/emma-x",
+   "hf_project": null
+  },
+  "2512.10675": {
+   "title": "Evaluating Gemini Robotics Policies in a Veo World Simulator",
+   "published": "2025-12-11",
+   "comment": null,
+   "code": [],
+   "project": [],
+   "abstract": "Generative world models hold significant potential for simulating interactions with visuomotor policies in varied environments. Frontier video models can enable generation of realistic observations and environment interactions in a scalable and general manner. However, the use of video models in robotics has been limited primarily to in-distribution evaluations, i.e., scenarios that are similar to ones used to train the policy or fine-tune the base video model. In this report, we demonstrate that video models can be used for the entire spectrum of policy evaluation use cases in robotics: from assessing nominal performance to out-of-distribution (OOD) generalization, and probing physical and semantic safety. We introduce a generative evaluation system built upon a frontier video foundation model (Veo). The system is optimized to support robot action conditioning and multi-view consistency, while integrating generative image-editing and multi-view completion to synthesize realistic variations of real-world scenes along multiple axes of generalization. We demonstrate that the system preserves the base capabilities of the video model to enable accurate simulation of scenes that have been edited to include novel interaction objects, novel visual backgrounds, and novel distractor objects. This fidelity enables accurately predicting the relative performance of different policies in both nominal and OOD conditions, determining the relative impact of different axes of generalization on policy performance, and performing red teaming of policies to expose behaviors that violate physical or semantic safety constraints. We validate these capabilities through 1600+ real-world evaluations of eight Gemini Robotics policy checkpoints and five tasks for a bimanual manipulator.",
+   "authors": [
+    "Gemini Robotics Team",
+    "Krzysztof Choromanski",
+    "Coline Devin",
+    "Yilun Du",
+    "Debidatta Dwibedi",
+    "Ruiqi Gao",
+    "Abhishek Jindal",
+    "Thomas Kipf",
+    "Sean Kirmani",
+    "Isabel Leal",
+    "Fangchen Liu",
+    "Anirudha Majumdar",
+    "Andrew Marmon",
+    "Carolina Parada",
+    "Yulia Rubanova",
+    "Dhruv Shah",
+    "Vikas Sindhwani",
+    "Jie Tan",
+    "Fei Xia",
+    "Ted Xiao"
+   ],
+   "hf_github": null,
+   "hf_project": "https://veo-robotics.github.io/"
+  },
+  "2511.11520": {
+   "title": "Scalable Policy Evaluation with Video World Models",
+   "published": "2025-11-14",
+   "comment": null,
+   "code": [],
+   "project": [],
+   "abstract": "Training generalist policies for robotic manipulation has shown great promise, as they enable language-conditioned, multi-task behaviors across diverse scenarios. However, evaluating these policies remains difficult because real-world testing is expensive, time-consuming, and labor-intensive. It also requires frequent environment resets and carries safety risks when deploying unproven policies on physical robots. Manually creating and populating simulation environments with assets for robotic manipulation has not addressed these issues, primarily due to the significant engineering effort required and the substantial sim-to-real gap, both in terms of physics and rendering. In this paper, we explore the use of action-conditional video generation models as a scalable way to learn world models for policy evaluation. We demonstrate how to incorporate action conditioning into existing pre-trained video generation models. This allows leveraging internet-scale in-the-wild online videos during the pre-training stage and alleviates the need for a large dataset of paired video-action data, which is expensive to collect for robotic manipulation. Our paper examines the effect of dataset diversity, pre-trained weights, and common failure cases for the proposed evaluation pipeline. Our experiments demonstrate that across various metrics, including policy ranking and the correlation between actual policy values and predicted policy values, these models offer a promising approach for evaluating policies without requiring real-world interactions.",
+   "authors": [
+    "Wei-Cheng Tseng",
+    "Jinwei Gu",
+    "Qinsheng Zhang",
+    "Hanzi Mao",
+    "Ming-Yu Liu",
+    "Florian Shkurti",
+    "Lin Yen-Chen"
+   ],
+   "hf_github": null,
+   "hf_project": "https://miscsubmission.github.io/world_model_policy_eval/"
+  },
+  "2605.00078": {
+   "title": "Being-H0.7: A Latent World-Action Model from Egocentric Videos",
+   "published": "2026-04-30",
+   "comment": null,
+   "code": [],
+   "project": [],
+   "abstract": "Visual-Language-Action models (VLAs) have advanced generalist robot control by mapping multimodal observations and language instructions directly to actions, but sparse action supervision often encourages shortcut mappings rather than representations of dynamics, contact, and task progress. Recent world-action models introduce future prediction through video rollouts, yet pixel-space prediction is a costly and indirect substrate for control, as it may model visual details irrelevant to action generation and introduces substantial training or inference overhead. We present Being-H0.7, a latent world-action model that brings future-aware reasoning into VLA-style policies without generating future frames. Being-H0.7 inserts learnable latent queries between perception and action as a compact reasoning interface, and trains them with a future-informed dual-branch design: a deployable prior branch infers latent states from the current context, while a training-only posterior branch replaces the queries with embeddings from future observations. Jointly aligning the two branches at the latent reasoning space leads the prior branch to reason future-aware, action-useful structure from current observations alone. At inference, Being-H0.7 discards the posterior branch and performs no visual rollout. Experiments across six simulation benchmarks and diverse real-world tasks show that Being-H0.7 achieves state-of-the-art or comparable performance, combining the predictive benefits of world models with the efficiency and deployability of direct VLA policies.",
+   "authors": [
+    "Hao Luo",
+    "Wanpeng Zhang",
+    "Yicheng Feng",
+    "Sipeng Zheng",
+    "Haiweng Xu",
+    "Chaoyi Xu",
+    "Ziheng Xi",
+    "Yuhui Fu",
+    "Zongqing Lu"
+   ],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2607.11643": {
+   "title": "Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model",
+   "published": "2026-07-13",
+   "comment": null,
+   "code": [],
+   "project": [],
+   "abstract": "Recent foundation image and video generation models offer strong generalization and controllability, but their direct application to embodied scenarios is limited by requirements for multi-view consistency, geometric coherence, and robot embodiment constraints. Existing methods typically adapt foundation models with limited robot data, often sacrificing visual knowledge acquired during large-scale pre-training. We present Xiaomi-Robotics-U0, a 38-billion-parameter multimodal autoregressive model for unified embodied synthesis. It treats embodied generation as an extension of foundation image and video generation and jointly optimizes text-to-image generation, image editing, embodied scene generation, embodied transfer, and embodied video generation. This unified framework preserves the generalization of the pre-trained world foundation model while adapting it to embodied settings. Xiaomi-Robotics-U0 is the first model to support high-quality multi-view scene generation across multiple robot embodiments and to introduce structured, controllable embodied transfer for fine-grained editing while preserving multi-view consistency and interaction dynamics. It achieves state-of-the-art results on single-step and sequential generation tasks, outperforming GPT-Image-2.0 in human evaluations of embodied scene generation and transfer, ranking first on World Arena for embodied video generation, and improving the out-of-distribution success rate of pi_0.5 from 36.9% to 63.2% on challenging real-world manipulation tasks. These results show that foundation world models can serve both as embodied world models and scalable data engines for embodied intelligence. Code and checkpoints are available at https://robotics.xiaomi.com/xiaomi-robotics-u0.html.",
+   "authors": [
+    "Xinghang Li",
+    "Jun Guo",
+    "Qiwei Li",
+    "Long Qian",
+    "Hang Lai",
+    "Yueze Wang",
+    "Hongyu Yan",
+    "Jiahang Cao",
+    "Xi Chen",
+    "Jingen Qu",
+    "Jiaxi Song",
+    "Nan Sun",
+    "Hanye Zhao",
+    "Futeng Liu",
+    "Wanli Peng",
+    "Heyun Wang",
+    "Yunhong Wang",
+    "Caoyu Xia",
+    "Jack Zhao",
+    "Diyun Xiang"
+   ],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2604.27792": {
+   "title": "Motubrain: An Advanced World Action Model for Robot Control",
+   "published": "2026-04-30",
+   "comment": null,
+   "code": [],
+   "project": [],
+   "abstract": "Vision-Language-Action (VLA) models generalize semantically well but often lack fine-grained modeling of world dynamics. We present Motubrain, a unified World Action Model that jointly models video and action under a UniDiffuser formulation with a three-stream Mixture-of-Transformers architecture. A single model supports policy learning, world modeling, video generation, inverse dynamics, and joint video-action prediction, while scaling to heterogeneous multimodal data such as video-only, task-agnostic, and cross-embodiment robot data. Building on Motus, Motubrain further introduces unified multiview modeling, an independent text stream for stronger language-action coupling, a shared cross-embodiment action representation, and an efficient post-training and deployment recipe for long-horizon real-world control. Our inference stack combines step reduction, compilation, FP8 quantization, DiT caching, V2A-style action-only inference, and real-time chunked closed-loop execution, achieving over 50x speedup over a naive baseline and up to 11 Hz inference. Experimentally, Motubrain achieves 95.8% and 96.1% average success on RoboTwin 2.0 under clean and randomized settings, respectively, attains the strongest reported EWMScore in our WorldArena comparison, and adapts to new humanoid embodiments with only 50--100 trajectories. These results show that unified world action models can scale in generality, predictive accuracy, and real-world deployability.",
+   "authors": [
+    "Motubrain Team",
+    "Chendong Xiang",
+    "Fan Bao",
+    "Haitian Liu",
+    "Hengkai Tan",
+    "Hongzhe Bi",
+    "James Li",
+    "Jiabao Liu",
+    "Jingrui Pang",
+    "Kiro Jing",
+    "Louis Liu",
+    "Mengchen Cai",
+    "Rongxu Cui",
+    "Ruowen Zhao",
+    "Runqing Wang",
+    "Shuhe Huang",
+    "Yao Feng",
+    "Yinze Rong",
+    "Zeyuan Wang",
+    "Jun Zhu"
+   ],
+   "hf_github": null,
+   "hf_project": "https://www.shengshu.com/en/motubrain"
+  },
+  "2503.07511": {
+   "title": "PointVLA: Injecting the 3D World into Vision-Language-Action Models",
+   "published": "2025-03-10",
+   "comment": null,
+   "code": [],
+   "project": [],
+   "abstract": "Vision-Language-Action (VLA) models excel at robotic tasks by leveraging large-scale 2D vision-language pretraining, but their reliance on RGB images limits spatial reasoning critical for real-world interaction. Retraining these models with 3D data is computationally prohibitive, while discarding existing 2D datasets wastes valuable resources. To bridge this gap, we propose PointVLA, a framework that enhances pre-trained VLAs with point cloud inputs without requiring retraining. Our method freezes the vanilla action expert and injects 3D features via a lightweight modular block. To identify the most effective way of integrating point cloud representations, we conduct a skip-block analysis to pinpoint less useful blocks in the vanilla action expert, ensuring that 3D features are injected only into these blocks--minimizing disruption to pre-trained representations. Extensive experiments demonstrate that PointVLA outperforms state-of-the-art 2D imitation learning methods, such as OpenVLA, Diffusion Policy and DexVLA, across both simulated and real-world robotic tasks. Specifically, we highlight several key advantages of PointVLA enabled by point cloud integration: (1) Few-shot multi-tasking, where PointVLA successfully performs four different tasks using only 20 demonstrations each; (2) Real-vs-photo discrimination, where PointVLA distinguishes real objects from their images, leveraging 3D world knowledge to improve safety and reliability; (3) Height adaptability, Unlike conventional 2D imitation learning methods, PointVLA enables robots to adapt to objects at varying table height that unseen in train data. Furthermore, PointVLA achieves strong performance in long-horizon tasks, such as picking and packing objects from a moving conveyor belt, showcasing its ability to generalize across complex, dynamic environments.",
+   "authors": [
+    "Chengmeng Li",
+    "Junjie Wen",
+    "Yan Peng",
+    "Yaxin Peng",
+    "Feifei Feng",
+    "Yichen Zhu"
+   ],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2506.23126": {
+   "title": "ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation",
+   "published": "2025-06-29",
+   "comment": null,
+   "code": [],
+   "project": [
+    "https://suninghuang19.github.io/particleformer_page/"
+   ],
+   "abstract": "3D world models (i.e., learning-based 3D dynamics models) offer a promising approach to generalizable robotic manipulation by capturing the underlying physics of environment evolution conditioned on robot actions. However, existing 3D world models are primarily limited to single-material dynamics using a particle-based Graph Neural Network model, and often require time-consuming 3D scene reconstruction to obtain 3D particle tracks for training. In this work, we present ParticleFormer, a Transformer-based point cloud world model trained with a hybrid point cloud reconstruction loss, supervising both global and local dynamics features in multi-material, multi-object robot interactions. ParticleFormer captures fine-grained multi-object interactions between rigid, deformable, and flexible materials, trained directly from real-world robot perception data without an elaborate scene reconstruction. We demonstrate the model's effectiveness both in 3D scene forecasting tasks, and in downstream manipulation tasks using a Model Predictive Control (MPC) policy. In addition, we extend existing dynamics learning benchmarks to include diverse multi-material, multi-object interaction scenarios. We validate our method on six simulation and three real-world experiments, where it consistently outperforms leading baselines by achieving superior dynamics prediction accuracy and less rollout error in downstream visuomotor tasks. Experimental videos are available at https://suninghuang19.github.io/particleformer_page/.",
+   "authors": [
+    "Suning Huang",
+    "Qianzhong Chen",
+    "Xiaohan Zhang",
+    "Jiankai Sun",
+    "Mac Schwager"
+   ]
+  },
+  "2508.17600": {
+   "title": "GWM: Towards Scalable Gaussian World Models for Robotic Manipulation",
+   "published": "2025-08-25",
+   "comment": "Published at ICCV 2025. Project page: https://gaussian-world-model.github.io/",
+   "code": [],
+   "project": [
+    "https://gaussian-world-model.github.io/"
+   ],
+   "abstract": "Training robot policies within a learned world model is trending due to the inefficiency of real-world interactions. The established image-based world models and policies have shown prior success, but lack robust geometric information that requires consistent spatial and physical understanding of the three-dimensional world, even pre-trained on internet-scale video sources. To this end, we propose a novel branch of world model named Gaussian World Model (GWM) for robotic manipulation, which reconstructs the future state by inferring the propagation of Gaussian primitives under the effect of robot actions. At its core is a latent Diffusion Transformer (DiT) combined with a 3D variational autoencoder, enabling fine-grained scene-level future state reconstruction with Gaussian Splatting. GWM can not only enhance the visual representation for imitation learning agent by self-supervised future prediction training, but can serve as a neural simulator that supports model-based reinforcement learning. Both simulated and real-world experiments depict that GWM can precisely predict future scenes conditioned on diverse robot actions, and can be further utilized to train policies that outperform the state-of-the-art by impressive margins, showcasing the initial data scaling potential of 3D world model.",
+   "authors": [
+    "Guanxing Lu",
+    "Baoxiong Jia",
+    "Puhao Li",
+    "Yixin Chen",
+    "Ziwei Wang",
+    "Yansong Tang",
+    "Siyuan Huang"
+   ]
+  },
+  "2502.21257": {
+   "title": "RoboBrain: A Unified Brain Model for Robotic Manipulation from Abstract to Concrete",
+   "published": "2025-02-28",
+   "comment": null,
+   "code": [],
+   "project": [],
+   "abstract": "Recent advancements in Multimodal Large Language Models (MLLMs) have shown remarkable capabilities across various multimodal contexts. However, their application in robotic scenarios, particularly for long-horizon manipulation tasks, reveals significant limitations. These limitations arise from the current MLLMs lacking three essential robotic brain capabilities: Planning Capability, which involves decomposing complex manipulation instructions into manageable sub-tasks; Affordance Perception, the ability to recognize and interpret the affordances of interactive objects; and Trajectory Prediction, the foresight to anticipate the complete manipulation trajectory necessary for successful execution. To enhance the robotic brain's core capabilities from abstract to concrete, we introduce ShareRobot, a high-quality heterogeneous dataset that labels multi-dimensional information such as task planning, object affordance, and end-effector trajectory. ShareRobot's diversity and accuracy have been meticulously refined by three human annotators. Building on this dataset, we developed RoboBrain, an MLLM-based model that combines robotic and general multi-modal data, utilizes a multi-stage training strategy, and incorporates long videos and high-resolution images to improve its robotic manipulation capabilities. Extensive experiments demonstrate that RoboBrain achieves state-of-the-art performance across various robotic tasks, highlighting its potential to advance robotic brain capabilities.",
+   "authors": [
+    "Yuheng Ji",
+    "Huajie Tan",
+    "Jiayu Shi",
+    "Xiaoshuai Hao",
+    "Yuan Zhang",
+    "Hengyuan Zhang",
+    "Pengwei Wang",
+    "Mengdi Zhao",
+    "Yao Mu",
+    "Pengju An",
+    "Xinda Xue",
+    "Qinghang Su",
+    "Huaihai Lyu",
+    "Xiaolong Zheng",
+    "Jiaming Liu",
+    "Zhongyuan Wang",
+    "Shanghang Zhang"
+   ],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2602.06949": {
+   "title": "DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos",
+   "published": "2026-02-06",
+   "comment": "Project page: https://dreamdojo-world.github.io/",
+   "code": [],
+   "project": [
+    "https://dreamdojo-world.github.io/"
+   ],
+   "abstract": "Being able to simulate the outcomes of actions in varied environments will revolutionize the development of generalist agents at scale. However, modeling these world dynamics, especially for dexterous robotics tasks, poses significant challenges due to limited data coverage and scarce action labels. As an endeavor towards this end, we introduce DreamDojo, a foundation world model that learns diverse interactions and dexterous controls from 44k hours of egocentric human videos. Our data mixture represents the largest video dataset to date for world model pretraining, spanning a wide range of daily scenarios with diverse objects and skills. To address the scarcity of action labels, we introduce continuous latent actions as unified proxy actions, enhancing interaction knowledge transfer from unlabeled videos. After post-training on small-scale target robot data, DreamDojo demonstrates a strong understanding of physics and precise action controllability. We also devise a distillation pipeline that accelerates DreamDojo to a real-time speed of 10.81 FPS and further improves context consistency. Our work enables several important applications based on generative world models, including live teleoperation, policy evaluation, and model-based planning. Systematic evaluation on multiple challenging out-of-distribution (OOD) benchmarks verifies the significance of our method for simulating open-world, contact-rich tasks, paving the way for general-purpose robot world models.",
+   "authors": [
+    "Shenyuan Gao",
+    "William Liang",
+    "Kaiyuan Zheng",
+    "Ayaan Malik",
+    "Seonghyeon Ye",
+    "Sihyun Yu",
+    "Wei-Cheng Tseng",
+    "Yuzhu Dong",
+    "Kaichun Mo",
+    "Chen-Hsuan Lin",
+    "Qianli Ma",
+    "Seungjun Nah",
+    "Loic Magne",
+    "Jiannan Xiang",
+    "Yuqi Xie",
+    "Ruijie Zheng",
+    "Dantong Niu",
+    "You Liang Tan",
+    "K. R. Zentner",
+    "George Kurian"
+   ],
+   "hf_github": null,
+   "hf_project": "https://dreamdojo-world.github.io/"
+  },
+  "2605.27491": {
+   "title": "GE-Sim 2.0: A Roadmap Towards Comprehensive Closed-loop Video World Simulators for Robotic Manipulation",
+   "published": "2026-05-26",
+   "comment": null,
+   "code": [],
+   "project": [],
+   "abstract": "We introduce GE-Sim 2.0 (Genie Envisioner World Simulator 2.0), a closed-loop video world simulator for robotic manipulation. Building on the action-conditioned video generation framework of Genie Envisioner, GE-Sim 2.0 is re-trained on thousands of hours of real-world robot data spanning teleoperation, contact-rich interaction, and on-robot policy deployment, substantially improving action-following fidelity and trajectory coverage. On top of this foundation, three new modules close the loop from video simulation to policy learning: a state expert that decodes proprioceptive state from video latents to support next-chunk prediction by downstream VLA policies; a world judge that scores generated rollouts against task instructions, yielding machine-verifiable success signals and rewards in place of manual inspection; and an acceleration framework that delivers a 25-frame rollout in 2.3 seconds on a single H100, with up to 4* frame skipping at inference for long-horizon evaluation. GE-Sim 2.0 tops the public WorldArena leaderboard at only 2B parameters, outperforming both dedicated robotic world models and closed-source general video generators, and policies trained against its rollouts and rewards translate into measurable real-world gains, establishing GE-Sim 2.0 as a practical platform for scalable evaluation and closed-loop learning of manipulation policies.",
+   "authors": [
+    "Boxiang Qiu",
+    "Liliang Chen",
+    "Yue Liao",
+    "Nan Wang",
+    "Lintao Wang",
+    "Jiayi Luo",
+    "Wenzhi Zhao",
+    "Shengcong Chen",
+    "Di Chen",
+    "Ye Li",
+    "Chen Gao",
+    "Shuicheng Yan",
+    "Si Liu",
+    "Maoqing Yao",
+    "Guanghui Ren"
+   ],
+   "hf_github": "https://github.com/AgibotTech/GE-Sim-V2",
+   "hf_project": "https://ge-sim-v2.github.io/"
+  },
+  "2602.03983": {
+   "title": "Efficient Long-Horizon Vision-Language-Action Models via Static-Dynamic Disentanglement",
+   "published": "2026-02-03",
+   "comment": null,
+   "code": [],
+   "project": [],
+   "abstract": "Vision-Language-Action (VLA) models have recently emerged as a promising paradigm for generalist robotic control. Built upon vision-language model (VLM) architectures, VLAs predict actions conditioned on visual observations and language instructions, achieving strong performance and generalization across tasks. However, VLAs face two major challenges: a limited context window for input frames and inefficient inference due to the quadratic attention complexity and large parameter counts. To this end, we propose DySta, a framework that disentangles visual inputs into multi-level static and dynamic tokens, which enables (1) retaining a single copy of static tokens across frames to significantly reduce context length, and (2) reusing the key-value (KV) cache of static tokens through a lightweight recache gate that updates only when necessary. This design enables efficient multi-frame integration and efficient inference. In addition, we introduce a new benchmark that more effectively evaluates the multi-frame integration ability of VLAs. Experiments show that Dysta improves multi-frame integration by 24.5% across metrics on our benchmark and 23.3% in absolute success rate on real-world memory-dependent tasks, while accelerating inference by 2.0x (with +2.3% success rate) on simulation benchmarks and 2.2x (with +10.6% success rate) on real-world general tasks.",
+   "authors": [
+    "Weikang Qiu",
+    "Huashuo Lei",
+    "Tinglin Huang",
+    "Rex Ying"
    ]
   }
  },
  "repos": {
-  "DAGroup-PKU/PyRUA-Lean": {
-   "stars": 174,
-   "pushed": "2026-11-04",
+  "Gaussian-World-Model/gaussianwm": {
+   "stars": 143,
+   "pushed": "2025-10-13",
    "archived": false
   },
-  "MINT-SJTU/CTR": {
-   "stars": 1,
-   "pushed": "2026-11-04",
+  "InternRobotics/InternW0-Delta": {
+   "stars": 137,
+   "pushed": "2026-10-09",
    "archived": false
   },
-  "MINT-SJTU/RoboScope-Kit": {
-   "stars": 4,
-   "pushed": "2026-11-04",
+  "OpenWAM-Official/OpenWAM": {
+   "stars": 1163,
+   "pushed": "2026-11-02",
    "archived": false
   },
-  "RoboColosseum/robocolosseum-client": {
-   "stars": 3,
-   "pushed": "2026-10-28",
+  "Robbyant/lingbot-va": {
+   "stars": 1975,
+   "pushed": "2026-07-09",
    "archived": false
   },
-  "Tinaliu0123/PolicyIK": {
-   "stars": 3,
-   "pushed": "2026-11-04",
+  "Thu-WangMX/ST-WAM-Semantic-Temporal-World-Action-Model": {
+   "stars": 25,
+   "pushed": "2026-08-17",
    "archived": false
   },
-  "codestrongestx/VLALagBench": {
-   "missing": true
-  },
-  "cvlab-kaist/DreamX": {
-   "stars": 4,
-   "pushed": "2026-11-04",
+  "XiaomiRobotics/Xiaomi-Robotics-U0": {
+   "stars": 189,
+   "pushed": "2026-09-10",
    "archived": false
   },
-  "primebottech/PrimeSim": {
-   "stars": 1,
-   "pushed": "2026-11-04",
+  "agibottech/ge-sim-v2": {
+   "stars": 164,
+   "pushed": "2026-10-20",
    "archived": false
   },
-  "robotmabel/MABEL": {
-   "missing": true
-  },
-  "tinaliu0123/policyik": {
-   "stars": 3,
-   "pushed": "2026-11-04",
+  "amap-cvlab/abot-physworld": {
+   "stars": 372,
+   "pushed": "2026-04-24",
    "archived": false
   },
-  "worldflow-rbs/worldflow": {
-   "stars": 19,
+  "clearlab-sustech/worldmodelsurvey": {
+   "stars": 53,
+   "pushed": "2026-08-19",
+   "archived": false
+  },
+  "dagroup-pku/PhysisForcing": {
+   "stars": 136,
+   "pushed": "2026-09-08",
+   "archived": false
+  },
+  "dagroup-pku/physisforcing": {
+   "stars": 136,
+   "pushed": "2026-09-08",
+   "archived": false
+  },
+  "declare-lab/emma-x": {
+   "stars": 85,
+   "pushed": "2025-05-17",
+   "archived": false
+  },
+  "facebookresearch/robo_jepa": {
+   "stars": 77,
+   "pushed": "2026-10-09",
+   "archived": false
+  },
+  "kscalelabs/evla": {
+   "stars": 109,
+   "pushed": "2025-04-29",
+   "archived": false
+  },
+  "nvidia-cosmos/cosmos-predict2.5": {
+   "stars": 1392,
+   "pushed": "2026-06-08",
+   "archived": false
+  },
+  "nvidia-cosmos/cosmos-transfer2.5": {
+   "stars": 760,
+   "pushed": "2026-06-30",
+   "archived": false
+  },
+  "nvidia/cosmos": {
+   "stars": 12250,
    "pushed": "2026-10-30",
    "archived": false
   },
-  "zebehn/vla-start-suppression": {
-   "missing": true
+  "open-gigaai/giga-world-policy": {
+   "stars": 1410,
+   "pushed": "2026-07-21",
+   "archived": false
+  },
+  "openwam-official/openwam": {
+   "stars": 1163,
+   "pushed": "2026-11-02",
+   "archived": false
+  },
+  "robbyant-research/zero-wam": {
+   "stars": 448,
+   "pushed": "2026-09-15",
+   "archived": false
+  },
+  "robbyant/lingbot-va": {
+   "stars": 1975,
+   "pushed": "2026-07-09",
+   "archived": false
+  },
+  "roboterax/video-prediction-policy-2": {
+   "stars": 362,
+   "pushed": "2026-10-19",
+   "archived": false
+  },
+  "thu-wangmx/st-wam-semantic-temporal-world-action-model": {
+   "stars": 25,
+   "pushed": "2026-08-17",
+   "archived": false
+  },
+  "x-square-robot/wall-x": {
+   "stars": 1313,
+   "pushed": "2026-09-18",
+   "archived": false
+  },
+  "yuantianyuan01/FastWAM": {
+   "stars": 1641,
+   "pushed": "2026-08-20",
+   "archived": false
+  },
+  "yuzhaoshu/efficient-vlas-survey": {
+   "stars": 207,
+   "pushed": "2026-09-10",
+   "archived": false
   }
  }
 }
