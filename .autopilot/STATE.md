@@ -53,7 +53,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 - arXiv export API returns 429 to GitHub runners often; RSS covers the daily path. API backfill is best-effort.
 - RSS dates = announcement date; API dates = first-submission date. Mixed but deduped by ID.
 - ~27% of feed papers get no topic (run 16: was 31%; remaining are mostly autonomous driving, multi-robot, aerial/space, HRI, soft/bio-inspired design). Shown as untagged; robot-type filter covers driving/drones. `classify()` now pads punctuation and splits glued acronyms (FlowVLA → Flow VLA, only after ≥2 lowercase letters so LiDAR stays intact).
-- Search index: 711 KB raw / 239 KB gzip at 13 feed days (1,188 items; abstracts = 37%, capped to 21 days). Projected ~1.9 MB raw / ~650 KB gzip at 60 days. Revisit when it passes ~1 MB raw (likely early Nov): e.g. drop `au` for feed items older than 21 days, or split index by month.
+- Search index: 1.57 MB raw / 511 KB gzip at 3,637 items (run 57; lazy-loaded on first search; abstracts capped to 14 days, 240 chars since run 57). Projected ~1.9 MB raw / ~650 KB gzip at 60 days. Revisit when it passes ~1 MB raw (likely early Nov): e.g. drop `au` for feed items older than 21 days, or split index by month.
 
 ## Next steps
 

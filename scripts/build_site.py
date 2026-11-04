@@ -32,7 +32,7 @@ SITE_URL = "https://hu-zlatan.github.io/embodied-ai-radar/"
 REPO_URL = "https://github.com/hu-zlatan/embodied-ai-radar"
 FEED_DAYS_ON_SITE = 60   # feed papers kept in the search index
 TOPIC_FEED_MAX = 40      # recent feed papers per topic page
-FEED_ABSTRACT_DAYS = 21  # abstracts (for search) kept in the index only for this many days
+FEED_ABSTRACT_DAYS = 14  # abstracts (for search) kept in the index only for this many days
 
 esc = html.escape
 EMB: dict[str, dict] = {}  # embodiment id -> {en, zh}, filled in build()
@@ -650,7 +650,7 @@ def build() -> int:
               "pj": (p.get("project") or [None])[0], "s": p.get("stars") if p.get("code") else None,
               "u": (p.get("hf") or {}).get("upvotes")}
         if it["d"] >= ab_cut:  # keep the index small: older papers are searchable by title/authors only
-            it["ab"] = p.get("abstract", "")[:300]
+            it["ab"] = p.get("abstract", "")[:240]
         idx.append({k: v for k, v in it.items() if v not in (None, [], "")} | {"k": "f", "id": p["id"], "t": p["title"]})
     topics_js = {t["id"]: [t["en"], t["zh"]] for t in topics}
     emb_js = {m["id"]: [m["en"], m["zh"]] for m in embs}
