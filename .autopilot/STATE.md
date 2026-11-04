@@ -57,6 +57,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
+000. Run 57: check verify #148 and #149 (humanoid anchors, head 27616f9). Both were still running or queued at the end of run 57. #149 can be cancelled by a pending intake; if so, re-dispatch. Fix any title or link failures first. Next sweep: unread sections of vergilshawn/Awesome-Humanoid-Robot-Learning (Locomotion, Sim-to-Real, Hardware); a WebFetch truncates at Teleoperation. Skipped from the sweep: ULC 2507.06905, UniTracker 2507.07356, TOP 2508.00355, PACE 2509.21690, the bipedal DRL survey 2404.17070.
 00. After a curated push, confirm verify really ran: a pending run can be cancelled by a newer one in the `arxiv-api` group (run 52, #139). Re-dispatch if so.
 0. New curated entries get BibTeX metadata on the next intake run. A push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started/finished.
 1. Scheduled runs: on 10-23 the 01:11/02:17/04:53 slots never fired; first scheduled intake landed 05:57 UTC, then 07:36, 09:37, 12:51, 15:42, 19:21. So the feed lands ~06:00 UTC — acceptable; no owner action. arXiv does not announce on Sat/Sun nights, so the next new feed day is Mon 10-26 (~00:00 UTC announcement).
