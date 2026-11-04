@@ -482,7 +482,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Start: all workflows green incl. verify #143 (retitle), no issues/PRs, 1 star / 0 forks. No add_repo tool; `main` reset to `origin/main`.
 - 11-04 feed arrived (77 papers). 15 picks, 6 code links (repo READMEs read; PrimeSim repo is a placeholder so not linked). Curated 676.
 - README 267 KB → 65 KB; full lists in `lists/`. It would have reached GitHub's 512 KB limit in about two weeks at the recent pace, and Related lists / Contribute were buried.
-- Found: a search for the project returns nothing, and robots.txt at a subpath is useless to crawlers. Added IndexNow (first call 403 SiteVerificationNotCompleted, the key file was minutes old; the 12:23 UTC slot retries) and a Search Console owner task.
+- Found: a search for the project returns nothing, and robots.txt at a subpath is useless to crawlers. Added IndexNow (first call 403 while the key was new; second call accepted) and a Search Console owner task.
 - Queued facts for 37 world-model and VLA anchors from external lists.
 - Verify #144 (15 picks, 6 code links) passed. 37 anchors from the world-model sweep added with facts from the workflow; curated 713; local checks clean (828 pages, 0 broken links). Verify on that push is the next check.
+- Verify #145 and #146 passed (37 anchors, all IDs, titles and links). IndexNow run 2 accepted 827 URLs. Curated 713.
+- Owner: Search Console task (OWNER_TODO). Next: Thu 11-05 feed; W45 digest intro Mon 11-09; CoRL program text by Sun 11-08 if wanted; next sweep: rest of the world-model list. End of run 55.
 
