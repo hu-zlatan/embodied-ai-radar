@@ -2,7 +2,7 @@
 
 _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 
-共 44 条，⭐ 为重点推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
+共 46 条，⭐ 为重点推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/sim.html) · [English](sim.md)
 
@@ -14,6 +14,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 - **[AuRA: From Atoms to Bits through Autonomous Robot Interaction](https://arxiv.org/abs/2610.34452)** (2026) — 自动完成物理数字孪生所需的机器人交互与数据准备；在 13 种柔性物体上报告每个资产的人工投入减少 88.5%。 · [代码](https://github.com/Yoonkyo/AuRA) · [项目页](https://aura-robot.github.io/)
 - **[Closing the Dynamics Gap through Self-Directed Robotic Interaction](https://arxiv.org/abs/2611.02691)** (2026) — CUE（CoRL 2026 Late Breaking Results）：智能体主动选择仿真最不准的交互来辨识摩擦和恢复系数；在台球任务上报告留出位置误差比最强基线低 72%，并部署到真实球桌。 · [项目页](https://cue-dynamics.github.io/)
 - **[DexSuite: An All-in-One Framework for Dexterous Manipulation Across Arms, Hands, and Tasks](https://arxiv.org/abs/2610.37799)** (2026) — 基于 Genesis 仿真器的开源灵巧操作一体化框架：30 个任务，10 种机械臂与 12 种末端（从平行夹爪到灵巧手）组合出 100 多种单臂机器人和大量双臂组合；自带统一环境 API、遥操作、仿真触觉，定义 16 组任务-本体基准，并发布 4,700 条成功示范。 · [项目页](https://dexsuiteorg.github.io)
+- **[Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot](https://arxiv.org/abs/2601.02078)** (2026) — Genie Sim 3.0：面向操作的仿真平台，用 LLM 工具依自然语言生成场景，并提供基于 LLM 与 VLM 的自动化评测基准。 · [代码](https://github.com/AgibotTech/genie_sim)
 - **[Gym-Anything for Robotics: Scaling physical simulations with digital agents](https://arxiv.org/abs/2610.40565)** (2026) — 把“写仿真”当作编码智能体任务：智能体生成机器人仿真与任务，再由对抗式的创建-审核循环把关；据此构建 RoboWorld（按美国 GDP 构成挑选的 25 个仿真、200 个强化学习环境），最强前沿模型在测试任务上平均奖励仅 0.06。 · [代码](https://github.com/gym-anything/robotics) · [项目页](https://gym-anything.github.io/robotics)
 - **[HyperDrone: Simulation-to-Reality Transfer at Millions of Frames per Second](https://arxiv.org/abs/2610.28950)** (2026) — 以 GPU 批量渲染为核心的四旋翼仿真器；报告比现有批量四旋翼仿真器快 20 倍以上，新的光线追踪引擎（支持 OptiX、Vulkan、Metal、WebGPU）可渲染 RGB、深度、分割、法向和光流（CoRL 2026）。
 - **[Kamino: GPU-based Simulation of Rigid Multi-Body Physics with Kinematic Loops](https://arxiv.org/abs/2603.16536)** (2026) — CoRL 2026 Spotlight。基于 NVIDIA Warp 的 Python GPU 物理求解器，集成于 Newton，可并行仿真含真实运动学闭环的机器人，而非树形近似。
@@ -21,6 +22,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 - **[MARE: An Open-Source Lunar Rover Simulator with Shadow Ground Truth for Perception and Autonomy](https://arxiv.org/abs/2610.28465)** (2026) — 基于 Unreal Engine 5 与 ROS 2 的开源月球车仿真：可生成带陨石坑的地形，两台月球车配备双目、激光雷达、事件相机与 SPAD 相机，提供极区低太阳角下像素级的阴影真值，并附 GNC 导航控制栈。 · [代码](https://github.com/raulcastar/MARE-Lunar-Simulator)
 - **[MolmoB0T: Large-Scale Simulation Enables Zero-Shot Manipulation](https://arxiv.org/abs/2603.16861)** (2026) — CoRL 2026 Oral。挑战“仅靠仿真不够”的观点：足够大规模、多样的合成数据即可零样本迁移到真实静态与移动操作。MolmoBot-Engine 是开源的程序化数据管线。 · [代码](https://github.com/allenai/MolmoBot) · [项目页](https://allenai.github.io/MolmoBot)
 - **[SceneBloom: Agentic Indoor Environment Generation with Realistic and Diverse Layouts for Embodied Learning](https://arxiv.org/abs/2610.32978)** (2026) — 先用扩散先验在功能分区内采样家具布局，再“编译”为无碰撞、可直接仿真的 3D 场景；论文报告在其场景中训练的物体导航策略，在留出的真实扫描场景上优于用等量真实扫描训练的策略。 · [代码](https://github.com/Tinaliu0123/scenebloom)
+- **[GaussGym: An open-source real-to-sim framework for learning locomotion from pixels](https://arxiv.org/abs/2510.15352)** (2025) — 把 3D 高斯溅射作为渲染器接入矢量化物理仿真，报告在消费级 GPU 上超过每秒 10 万步，用于从像素学习。
 - **[GenManip: LLM-driven Simulation for Generalizable Instruction-Following Manipulation](https://arxiv.org/abs/2506.10966)** (2025) — 基于 Isaac Sim 的平台：LLM 依据任务导向场景图，从约 1 万个物体中生成任务与布局；其 200 个场景的基准发现，结合基础模型的模块化系统比端到端策略泛化更好。 · [代码](https://github.com/InternRobotics/GenManip)
 - **[Isaac Lab: A GPU-Accelerated Simulation Framework for Multi-Modal Robot Learning](https://arxiv.org/abs/2511.04831)** (2025) — Isaac Lab（Orbit 的后继）的正式论文：GPU 并行的物理、渲染与传感器仿真，内置机器人与任务，面向强化学习和模仿学习。 · [代码](https://github.com/isaac-sim/IsaacLab)
 - **[MuJoCo Playground](https://arxiv.org/abs/2502.08844)** (2025) — 基于 MJX 的 GPU 加速运动与操作环境，几分钟即可训练并迁移到真实机器人。 · [代码](https://github.com/google-deepmind/mujoco_playground)

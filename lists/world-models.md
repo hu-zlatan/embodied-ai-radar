@@ -2,7 +2,7 @@
 
 _Learned dynamics, video world models, world action models (WAM) and model-based RL for embodied agents._
 
-87 entries, ⭐ = highlight. Generated from [`data/curated/world-models.yaml`](../data/curated/world-models.yaml); edit the YAML, not this file.
+88 entries, ⭐ = highlight. Generated from [`data/curated/world-models.yaml`](../data/curated/world-models.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html) · [中文](world-models.zh-CN.md)
 
@@ -84,6 +84,7 @@ _Learned dynamics, video world models, world action models (WAM) and model-based
 - **[WorldVLA: Towards Autoregressive Action World Model](https://arxiv.org/abs/2506.21539)** (2025) — One autoregressive model that is both a VLA policy and an image-predicting world model; the two help each other on LIBERO, and an attention mask hiding earlier actions curbs error build-up in action chunks. · [code](https://github.com/alibaba-damo-academy/WorldVLA)
 - **[DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning](https://arxiv.org/abs/2411.04983)** (2024) — Predicts future DINOv2 patch features instead of pixels, so a world model trained on offline data can plan to new visual goals at test time. · [code](https://github.com/gaoyuezhou/dino_wm)
 - **[Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391)** (2024) — Learns playable environments and latent actions from unlabeled internet videos alone.
+- **[Hierarchical World Models as Visual Whole-Body Humanoid Controllers](https://arxiv.org/abs/2405.18418)** (2024) — Hierarchical world model for visual whole-body humanoid control: a high-level agent commands a low-level one, with no reward design or skill primitives. · [code](https://github.com/nicklashansen/puppeteer) · [project](https://nicklashansen.com/rlpuppeteer)
 - **[Unleashing Large-Scale Video Generative Pre-training for Visual Robot Manipulation](https://arxiv.org/abs/2312.13139)** (2024) — GR-1 — a GPT-style model that predicts both actions and future frames; pre-training on Ego4D video prediction before robot fine-tuning lifts CALVIN unseen-scene success from 53.3% to 85.4% (as reported). · [code](https://github.com/bytedance/GR-1)
 - **[Learning Interactive Real-World Simulators](https://arxiv.org/abs/2310.06114)** (2023) — UniSim — an action-conditioned video model used as a simulator to train policies that transfer to the real world.
 - **[Learning Universal Policies via Text-Guided Video Generation](https://arxiv.org/abs/2302.00111)** (2023) — UniPi — casts decision making as text-conditioned video generation, then recovers actions from the generated frames with an inverse dynamics model.

@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 67 条，⭐ 为重点推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 68 条，⭐ 为重点推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/datasets.html) · [English](datasets.md)
 
@@ -51,6 +51,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[PHUMA: Physically Reliable Humanoid Locomotion Dataset](https://arxiv.org/abs/2510.26236)** (2025) — CoRL 2026 Spotlight。源自网络视频的人形运动数据集，针对此前视频数据常见的悬空、穿透与脚滑问题。 · [代码](https://github.com/davian-robotics/PHUMA) · [项目页](https://davian-robotics.github.io/PHUMA)
 - **[RoboChallenge: Large-scale Real-robot Evaluation of Embodied Policies](https://arxiv.org/abs/2510.17950)** (2025) — 介绍一套在线系统，用于在真机上大规模评测多种机器人策略，并报告近期 VLA 在首个基准 Table30 上的表现。
 - **[RoboVerse: Towards a Unified Platform, Dataset and Benchmark for Scalable and Generalizable Robot Learning](https://arxiv.org/abs/2504.18904)** (2025) — MetaSim 用统一接口封装多种仿真器（Isaac Sim/Gym、MuJoCo、Genesis、SAPIEN、PyBullet 等）；提供由公开基准迁移而来的大规模合成数据集，以及按泛化层级划分的统一模仿学习/强化学习基准。 · [代码](https://github.com/RoboVerseOrg/RoboVerse) · [项目页](https://roboverseorg.github.io/)
+- **[TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System](https://arxiv.org/abs/2511.02832)** (2025) — 基于 VR 头显的便携式免动捕人形遥操作与数据采集系统，目标是让全身示教数据能够规模化采集。 · [代码](https://github.com/amazon-far/TWIST2) · [项目页](https://twist-data.github.io)
 - **[DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset](https://arxiv.org/abs/2403.12945)** (2024) — 由多家机构在数百个真实场景中采集的 7.6 万条 Franka 遥操作轨迹。 · [代码](https://github.com/droid-dataset/droid)
 - **[Evaluating Real-World Robot Manipulation Policies in Simulation](https://arxiv.org/abs/2405.05941)** (2024) — SimplerEnv：真实到仿真的评测环境，其得分与 RT-1/Octo 类策略的真机表现相关。 · [代码](https://github.com/simpler-env/SimplerEnv)
 - **[HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation](https://arxiv.org/abs/2403.10506)** (2024) — 27 个仿真任务（12 个运动、15 个全身操作），机器人为带两只灵巧手的 Unitree H1；报告 DreamerV3、TD-MPC2、SAC、PPO 在大多数任务上未达标，长时程全身协调任务尤甚。 · [代码](https://github.com/carlosferrazza/humanoid-bench) · [项目页](https://humanoid-bench.github.io)

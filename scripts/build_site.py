@@ -134,12 +134,12 @@ def bib_block(b: str | None) -> str:
 
 
 def plain_title(t: str) -> str:
-    return re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", t)
+    return re.sub(r"\$([πΨ])_\{?([^}$]+)\}?\$", r"\1\2", t)
 
 
 def title_html(t: str) -> str:
     # Render the few LaTeX titles we have ($π_0$, $π_{0.5}$) readably.
-    t = re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", t)
+    t = re.sub(r"\$([πΨ])_\{?([^}$]+)\}?\$", r"\1\2", t)
     return esc(t).replace("π0.5", "π<sub>0.5</sub>").replace("π0", "π<sub>0</sub>")
 
 
@@ -637,7 +637,7 @@ def build() -> int:
     site_cut = (today - dt.timedelta(days=FEED_DAYS_ON_SITE)).isoformat()
     idx = []
     for e in entries:
-        idx.append({"k": "c", "id": e["id"], "t": re.sub(r"\$π_\{?([^}$]+)\}?\$", r"π\1", e["title"]), "y": e["year"], "ty": e["type"],
+        idx.append({"k": "c", "id": e["id"], "t": re.sub(r"\$([πΨ])_\{?([^}$]+)\}?\$", r"\1\2", e["title"]), "y": e["year"], "ty": e["type"],
                     "o": e.get("org", ""), "en": e["takeaway_en"], "zh": e["takeaway_zh"],
                     "tp": e["topics"], "em": e["emb"], "tg": e.get("tags") or [], "h": 1 if e.get("highlight") else 0,
                     "l": links_of(e)[0][2], "a": e.get("arxiv"), "c": e.get("code"), "p": e.get("project"),

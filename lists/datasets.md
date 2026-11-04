@@ -2,7 +2,7 @@
 
 _Large robot datasets, egocentric data and evaluation suites._
 
-67 entries, ⭐ = highlight. Generated from [`data/curated/datasets.yaml`](../data/curated/datasets.yaml); edit the YAML, not this file.
+68 entries, ⭐ = highlight. Generated from [`data/curated/datasets.yaml`](../data/curated/datasets.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/datasets.html) · [中文](datasets.zh-CN.md)
 
@@ -51,6 +51,7 @@ _Large robot datasets, egocentric data and evaluation suites._
 - **[PHUMA: Physically Reliable Humanoid Locomotion Dataset](https://arxiv.org/abs/2510.26236)** (2025) — CoRL 2026 Spotlight. Humanoid locomotion dataset from internet video that targets the floating, penetration and foot skating common in earlier video-derived data. · [code](https://github.com/davian-robotics/PHUMA) · [project](https://davian-robotics.github.io/PHUMA)
 - **[RoboChallenge: Large-scale Real-robot Evaluation of Embodied Policies](https://arxiv.org/abs/2510.17950)** (2025) — Report on an online system for testing many robot policies on many real tasks, plus a study of recent VLAs on its first benchmark, Table30.
 - **[RoboVerse: Towards a Unified Platform, Dataset and Benchmark for Scalable and Generalizable Robot Learning](https://arxiv.org/abs/2504.18904)** (2025) — MetaSim puts many simulators (Isaac Sim/Gym, MuJoCo, Genesis, SAPIEN…) behind one interface; adds a large synthetic dataset migrated from public benchmarks and unified IL/RL benchmarks. · [code](https://github.com/RoboVerseOrg/RoboVerse) · [project](https://roboverseorg.github.io/)
+- **[TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System](https://arxiv.org/abs/2511.02832)** (2025) — Portable, mocap-free humanoid teleoperation and data collection built around a VR headset, aimed at making whole-body demonstrations scale. · [code](https://github.com/amazon-far/TWIST2) · [project](https://twist-data.github.io)
 - **[DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset](https://arxiv.org/abs/2403.12945)** (2024) — 76k teleoperated Franka trajectories collected in hundreds of real scenes across many institutions. · [code](https://github.com/droid-dataset/droid)
 - **[Evaluating Real-World Robot Manipulation Policies in Simulation](https://arxiv.org/abs/2405.05941)** (2024) — SimplerEnv — real-to-sim environments whose scores correlate with real-robot results for RT-1/Octo-style policies. · [code](https://github.com/simpler-env/SimplerEnv)
 - **[HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation](https://arxiv.org/abs/2403.10506)** (2024) — 27 simulated tasks (12 locomotion, 15 whole-body manipulation) on a Unitree H1 with two dexterous hands; reports that DreamerV3, TD-MPC2, SAC and PPO fail most of them, especially long-horizon whole-body ones. · [code](https://github.com/carlosferrazza/humanoid-bench) · [project](https://humanoid-bench.github.io)

@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-04 ~17:30 UTC, run 56; CoRL in numbers, 722 curated; repo has 1 star, 0 forks._
+_Last updated: 2026-11-04 ~23:30 UTC, run 57; every CoRL oral/spotlight on arXiv has a takeaway, humanoid gap sweep, 798 curated; repo has 1 star, 0 forks._
 
 ## Status
 

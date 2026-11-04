@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 87 条，⭐ 为重点推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 88 条，⭐ 为重点推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html) · [English](world-models.md)
 
@@ -84,6 +84,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[WorldVLA: Towards Autoregressive Action World Model](https://arxiv.org/abs/2506.21539)** (2025) — 单个自回归模型同时充当 VLA 策略与预测未来图像的世界模型，二者在 LIBERO 上相互促进；论文还发现自回归生成动作块会累积误差，用屏蔽先前动作的注意力掩码可以缓解。 · [代码](https://github.com/alibaba-damo-academy/WorldVLA)
 - **[DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning](https://arxiv.org/abs/2411.04983)** (2024) — 预测未来的 DINOv2 图像块特征而非像素，使基于离线数据训练的世界模型能在测试时规划到新的视觉目标。 · [代码](https://github.com/gaoyuezhou/dino_wm)
 - **[Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391)** (2024) — 仅从无标注的网络视频中学习可交互环境与潜在动作。
+- **[Hierarchical World Models as Visual Whole-Body Humanoid Controllers](https://arxiv.org/abs/2405.18418)** (2024) — 用于视觉全身人形控制的分层世界模型：高层智能体指挥低层智能体，不依赖奖励设计或技能基元。 · [代码](https://github.com/nicklashansen/puppeteer) · [项目页](https://nicklashansen.com/rlpuppeteer)
 - **[Unleashing Large-Scale Video Generative Pre-training for Visual Robot Manipulation](https://arxiv.org/abs/2312.13139)** (2024) — GR-1：GPT 式模型同时预测动作与未来画面；先在 Ego4D 上做视频预测预训练、再用机器人数据微调，论文报告 CALVIN 未见场景成功率从 53.3% 提升到 85.4%。 · [代码](https://github.com/bytedance/GR-1)
 - **[Learning Interactive Real-World Simulators](https://arxiv.org/abs/2310.06114)** (2023) — UniSim：以动作为条件的视频生成模型充当仿真器，训练出的策略可迁移到真实世界。
 - **[Learning Universal Policies via Text-Guided Video Generation](https://arxiv.org/abs/2302.00111)** (2023) — UniPi：把决策问题转化为文本条件的视频生成，再用逆动力学模型从生成的画面中恢复动作。

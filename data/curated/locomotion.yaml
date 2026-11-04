@@ -730,3 +730,394 @@
   tags: [humanoid, safety, residual-rl]
   takeaway_en: "Separates performance from safety on humanoids: the nominal policy handles the task while a residual RL policy acts as an implicit safety filter, avoiding competing reward terms."
   takeaway_zh: "在人形机器人上分离性能与安全：名义策略负责任务，残差 RL 策略充当隐式安全过滤器，避免相互竞争的奖励项。"
+- title: "GMT: General Motion Tracking for Humanoid Whole-Body Control"
+  type: paper
+  arxiv: "2506.14770"
+  year: 2025
+  code: https://github.com/zixuan417/humanoid-general-motion-tracking
+  project: https://gmt-humanoid.github.io
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, motion-tracking]
+  takeaway_en: "Trains one unified policy to track diverse human motions on a real humanoid, instead of one policy per skill, using adaptive sampling and a motion mixture-of-experts."
+  takeaway_zh: "训练单一统一策略，让真实人形机器人跟踪多样的人体动作，而非每个技能一个策略；核心是自适应采样和动作混合专家结构。"
+- title: "TWIST: Teleoperated Whole-Body Imitation System"
+  type: paper
+  arxiv: "2505.02833"
+  year: 2025
+  project: https://humanoid-teleop.github.io
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, teleoperation, whole-body]
+  takeaway_en: "Whole-body humanoid teleoperation: retargeted mocap clips train an RL+BC controller, covering coordinated skills instead of isolated walking or manipulation."
+  takeaway_zh: "人形全身遥操作：用重定向后的动捕片段训练 RL+BC 控制器，覆盖协调性全身技能，而不限于单独的行走或操作。"
+- title: "A Unified and General Humanoid Whole-Body Controller for Versatile Locomotion"
+  type: paper
+  arxiv: "2502.03206"
+  year: 2025
+  venue: RSS 2025
+  project: https://hugwbc.github.io/
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, whole-body]
+  takeaway_en: "HugWBC: one controller covering running, jumping and hopping, with adjustable gait parameters such as frequency and foot height."
+  takeaway_zh: "HugWBC：用一个控制器覆盖跑、跳、单脚跳等动作，并可调节步频、抬脚高度等步态参数。"
+- title: "AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control"
+  type: paper
+  arxiv: "2505.03738"
+  year: 2025
+  project: https://amo-humanoid.github.io
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, trajectory-optimization, whole-body]
+  takeaway_en: "AMO joins sim-to-real RL with trajectory optimization for adaptive whole-body control, enabling large-workspace tasks such as picking objects off the ground."
+  takeaway_zh: "AMO 将 sim-to-real 强化学习与轨迹优化结合，实现自适应全身控制，支持从地面拾物等大工作空间任务。"
+- title: "BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning"
+  type: paper
+  arxiv: "2511.04131"
+  year: 2025
+  venue: ICLR 2026
+  added: 2026-11-04
+  topics: [locomotion, learning]
+  tags: [humanoid, behavior-foundation-model, unsupervised-rl]
+  takeaway_en: "A promptable humanoid foundation model: a shared latent space embeds motions, goals and rewards, so one policy can be prompted for different tasks on a real robot."
+  takeaway_zh: "可提示的人形基础模型：用共享隐空间嵌入动作、目标和奖励，同一策略可在真机上按提示执行不同任务。"
+- title: "Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking"
+  type: paper
+  arxiv: "2510.02252"
+  year: 2025
+  code: https://github.com/YanjieZe/GMR
+  project: https://jaraujo98.github.io/retargeting_matters
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, retargeting]
+  takeaway_en: "Shows retargeting artifacts such as foot sliding hurt tracking policies, and offers GMR, a general retargeter. Its open-source repo is widely used for humanoid data."
+  takeaway_zh: "说明脚滑等重定向瑕疵会损害跟踪策略，并提出通用重定向方法 GMR；其开源仓库在人形数据处理中使用广泛。"
+- title: "OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction"
+  type: paper
+  arxiv: "2509.26633"
+  year: 2025
+  project: https://omniretarget.github.io
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, retargeting, interaction]
+  takeaway_en: "Retargeting that preserves human-object and human-scene interaction rather than only body pose, generating physically plausible data for humanoid loco-manipulation."
+  takeaway_zh: "不仅保持身体姿态，还保留人与物体、人与场景交互的重定向方法，为人形移动操作生成物理上合理的数据。"
+- title: "VisualMimic: Visual Humanoid Loco-Manipulation via Motion Tracking and Generation"
+  type: paper
+  arxiv: "2509.20322"
+  year: 2025
+  code: https://github.com/operator22th/VisualMimic
+  project: https://visualmimic.github.io
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, vision, loco-manipulation]
+  takeaway_en: "Sim-to-real visual loco-manipulation with a task-agnostic keypoint tracker below a policy that generates motion, so egocentric vision replaces external motion capture."
+  takeaway_zh: "视觉移动操作 sim-to-real 框架：底层是任务无关的关键点跟踪器，上层策略生成动作，以第一视角视觉取代外部动捕。"
+- title: "ResMimic: From General Motion Tracking to Humanoid Whole-body Loco-Manipulation via Residual Learning"
+  type: paper
+  arxiv: "2510.05070"
+  year: 2025
+  project: https://resmimic.github.io/
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, residual-learning, loco-manipulation]
+  takeaway_en: "Two-stage humanoid loco-manipulation: a general motion-tracking policy trained on human data, then a residual policy adds object-aware precision."
+  takeaway_zh: "两阶段人形移动操作：先用人体数据训练通用动作跟踪策略，再用残差策略补上感知物体的精确控制。"
+- title: "FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation"
+  type: paper
+  arxiv: "2505.06776"
+  year: 2025
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, force-control, loco-manipulation]
+  takeaway_en: "Dual-agent RL for force-adaptive loco-manipulation: a lower-body agent keeps walking stable while an upper-body agent tracks the end effector under external forces."
+  takeaway_zh: "面向力自适应移动操作的双智能体强化学习：下半身智能体保持行走稳定，上半身智能体在外力下跟踪末端位置。"
+- title: "HuB: Learning Extreme Humanoid Balance"
+  type: paper
+  arxiv: "2505.07294"
+  year: 2025
+  venue: CoRL 2025
+  project: https://hub-robot.github.io
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, balance, rl]
+  takeaway_en: "Tackles balance-heavy skills such as one-leg stands and high kicks, where motion tracking usually fails because of reference errors. Oral at CoRL 2025."
+  takeaway_zh: "攻克单脚站立、高踢腿等强平衡技能，这类动作常因参考动作误差导致跟踪失败。CoRL 2025 Oral。"
+- title: "KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills"
+  type: paper
+  arxiv: "2506.12851"
+  year: 2025
+  venue: NeurIPS 2025
+  code: https://github.com/TeleHuman/PBHC
+  project: https://kungfubot.github.io
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, motion-tracking, agile]
+  takeaway_en: "Learns highly dynamic skills such as kung fu and dancing, through multi-step motion processing and adaptive motion tracking."
+  takeaway_zh: "通过多步动作处理和自适应动作跟踪，学习功夫、舞蹈等高动态技能。"
+- title: "BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds"
+  type: paper
+  arxiv: "2502.10363"
+  year: 2025
+  venue: RSS 2025
+  project: https://why618188.github.io/beamdojo
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, sparse-footholds, rl]
+  takeaway_en: "Agile humanoid walking on sparse footholds, using a sampling-based foothold reward to overcome how rarely good footsteps occur during learning."
+  takeaway_zh: "让人形机器人在稀疏落脚点上敏捷行走，用基于采样的落脚奖励解决学习中有效落脚过于稀少的问题。"
+- title: "ExBody2: Advanced Expressive Humanoid Whole-Body Control"
+  type: paper
+  arxiv: "2412.13196"
+  year: 2024
+  project: https://exbody2.github.io
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, motion-tracking]
+  takeaway_en: "Expressive whole-body tracking trained on mocap and simulated data, decoupling whole-body velocity tracking from body-landmark tracking."
+  takeaway_zh: "基于动捕和仿真数据训练的表现性全身跟踪，将整体速度跟踪与身体关键点跟踪解耦。"
+- title: "SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending"
+  type: paper
+  arxiv: "2506.09366"
+  year: 2025
+  code: https://github.com/Humanoid-SkillBlender/SkillBlender
+  project: https://usc-gvl.github.io/SkillBlender-web/
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, skill-blending, loco-manipulation]
+  takeaway_en: "Blends reusable skills for humanoid whole-body loco-manipulation, avoiding the task-specific tuning most controllers need."
+  takeaway_zh: "通过融合可复用技能实现人形全身移动操作，避免多数控制器所需的按任务调参。"
+- title: "DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion"
+  type: paper
+  arxiv: "2509.14353"
+  year: 2025
+  project: https://genrobo.github.io/DreamControl/
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, diffusion, rl]
+  takeaway_en: "A diffusion prior trained on human motion guides RL in simulation, so policies find whole-body solutions for tasks such as opening a drawer that direct RL misses."
+  takeaway_zh: "用人体动作训练的扩散先验引导仿真中的 RL，使策略找到开抽屉等任务的全身解法，而直接 RL 难以发现。"
+- title: "PhysHSI: Towards a Real-World Generalizable and Natural Humanoid-Scene Interaction System"
+  type: paper
+  arxiv: "2510.11072"
+  year: 2025
+  project: https://why618188.github.io/physhsi/
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, scene-interaction]
+  takeaway_en: "PhysHSI: a real-world humanoid-scene interaction system for tasks such as carrying objects and sitting on chairs, keeping motion natural and scene perception robust."
+  takeaway_zh: "PhysHSI：面向搬物、坐椅等任务的真实人形-场景交互系统，兼顾动作自然与场景感知鲁棒。"
+- title: "HDMI: Learning Interactive Humanoid Whole-Body Control from Human Videos"
+  type: paper
+  arxiv: "2509.16757"
+  year: 2025
+  project: https://hdmi-humanoid.github.io
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, object-interaction, video]
+  takeaway_en: "HDMI learns whole-body humanoid-object interaction from monocular RGB videos, by extracting robot and object trajectories and co-tracking them with RL."
+  takeaway_zh: "HDMI 从单目 RGB 视频学习人形全身与物体的交互：提取并重定向人与物体轨迹，再用 RL 同时跟踪二者。"
+- title: "Harmon: Whole-Body Motion Generation of Humanoid Robots from Language Descriptions"
+  type: paper
+  arxiv: "2410.12773"
+  year: 2024
+  venue: CoRL 2024
+  project: https://ut-austin-rpl.github.io/Harmon/
+  added: 2026-11-04
+  topics: [locomotion, vla]
+  tags: [humanoid, language, motion-generation]
+  takeaway_en: "Generates humanoid whole-body motion from language, starting from human motion priors and refining with LLM commonsense reasoning. Oral at CoRL 2024."
+  takeaway_zh: "从语言描述生成人形全身动作：以人体动作先验初始化，再用 LLM 的常识推理加以修正。CoRL 2024 Oral。"
+- title: "HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning"
+  type: paper
+  arxiv: "2508.21043"
+  year: 2025
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, table-tennis, planning]
+  takeaway_en: "Humanoid table tennis with a model-based planner and an RL whole-body controller; reports up to 106 consecutive shots with a human opponent."
+  takeaway_zh: "人形乒乓球系统，结合基于模型的规划器和 RL 全身控制器；报告与人对打最多连续 106 拍。"
+- title: "Mobile-TeleVision: Predictive Motion Priors for Humanoid Whole-Body Control"
+  type: paper
+  arxiv: "2412.07773"
+  year: 2024
+  venue: ICRA 2025
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, teleoperation, whole-body]
+  takeaway_en: "Keeps IK and retargeting for precise upper-body control, and uses RL with Predictive Motion Priors for robust legs."
+  takeaway_zh: "上半身保留 IK 与重定向以求精确，腿部用结合预测运动先验的 RL 保证鲁棒。"
+- title: "Embrace Collisions: Humanoid Shadowing for Deployable Contact-Agnostics Motions"
+  type: paper
+  arxiv: "2502.01465"
+  year: 2025
+  project: https://project-instinct.github.io
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, contact, motion-tracking]
+  takeaway_en: "Humanoid shadowing that allows contact with any body part, such as sitting, rolling and getting up, instead of only feet and hands."
+  takeaway_zh: "允许任意身体部位接触环境的人形动作跟随，可完成坐、滚、起身等动作，而不只限于手脚接触。"
+- title: "WoCoCo: Learning Whole-Body Humanoid Control with Sequential Contacts"
+  type: paper
+  arxiv: "2406.06005"
+  year: 2024
+  project: https://lecar-lab.github.io/wococo/
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, contact, rl]
+  takeaway_en: "Learns humanoid tasks as sequences of contacts, reducing the task-specific tuning and state machines RL usually needs."
+  takeaway_zh: "把人形任务建模为接触序列来学习，减少 RL 通常需要的按任务调参和状态机设计。"
+- title: "Learning Humanoid Standing-up Control across Diverse Postures"
+  type: paper
+  arxiv: "2502.08378"
+  year: 2025
+  venue: RSS 2025
+  code: https://github.com/OpenRobotLab/HoST
+  project: https://taohuang13.github.io/humanoid-standingup.github.io/
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, fall-recovery, rl]
+  takeaway_en: "HoST learns to stand up from diverse postures with RL, without predefined ground-specific motions, and deploys on real robots."
+  takeaway_zh: "HoST 用强化学习从多种姿态起身，无需预定义的特定地面动作，并部署到真机。"
+- title: "Learning Getting-Up Policies for Real-World Humanoid Robots"
+  type: paper
+  arxiv: "2502.12152"
+  year: 2025
+  venue: RSS 2025
+  code: https://github.com/RunpeiDong/humanup
+  project: https://humanoid-getup.github.io/
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, fall-recovery, rl]
+  takeaway_en: "A learning framework for getting up from varied fallen configurations on varied terrains, where hand-designed controllers struggle."
+  takeaway_zh: "针对不同跌倒姿态和地形学习起身控制器，而这类场景很难手工设计控制器。"
+- title: "Unleashing Humanoid Reaching Potential via Real-world-Ready Skill Space"
+  type: paper
+  arxiv: "2505.10918"
+  year: 2025
+  code: https://github.com/GalaxyGeneralRobotics/OpenWBT
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, reaching, skill-space]
+  takeaway_en: "R2S2 tunes primitive skills for sim-to-real, ensembles them into a latent space, and trains a planner over it for large-space humanoid reaching."
+  takeaway_zh: "R2S2 先调好可迁移到真机的基础技能，再融合成隐空间，并在其上训练规划器，实现人形大范围够取。"
+- title: "Deep Whole-body Parkour"
+  type: paper
+  arxiv: "2601.07701"
+  year: 2026
+  code: https://github.com/project-instinct/InstinctLab
+  project: https://project-instinct.github.io/deep-whole-body-parkour
+  added: 2026-11-04
+  topics: [locomotion, perception]
+  tags: [humanoid, parkour, perception]
+  takeaway_en: "Adds exteroceptive sensing to whole-body motion tracking, so a humanoid performs dynamic non-locomotion skills on uneven terrain."
+  takeaway_zh: "将外部感知融入全身动作跟踪，让人形机器人在不平整地形上完成高动态的非行走类技能。"
+- title: "Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids"
+  type: paper
+  arxiv: "2601.07718"
+  year: 2026
+  project: https://project-instinct.github.io/hiking-in-the-wild
+  added: 2026-11-04
+  topics: [locomotion, perception]
+  tags: [humanoid, parkour, depth]
+  takeaway_en: "An end-to-end perceptive framework mapping depth to control for humanoid hiking over diverse unstructured terrain."
+  takeaway_zh: "端到端感知框架，将深度输入映射到控制，实现人形机器人在多样非结构化地形上徒步。"
+- title: "Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching"
+  type: paper
+  arxiv: "2602.15827"
+  year: 2026
+  project: https://php-parkour.github.io/
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, parkour, motion-matching]
+  takeaway_en: "Chains dynamic human skills with motion matching so a humanoid does agile, perception-driven parkour."
+  takeaway_zh: "用动作匹配串联高动态人类技能，让人形机器人完成敏捷的感知驱动跑酷。"
+- title: "OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control"
+  type: paper
+  arxiv: "2602.23843"
+  year: 2026
+  code: https://github.com/Perkins729/OmniXtreme
+  project: https://extreme-humanoid.github.io/
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, motion-tracking, agile]
+  takeaway_en: "Targets the 'generality barrier': tracking fidelity collapsing as motion libraries grow, especially for high-dynamic motions on real hardware."
+  takeaway_zh: "针对“通用性壁垒”：动作库扩大后跟踪精度崩塌，在真机高动态动作上尤为明显。"
+- title: "HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human Videos"
+  type: paper
+  arxiv: "2602.02473"
+  year: 2026
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, interaction, video]
+  takeaway_en: "Compiles human video into generalizable real-world humanoid interaction skills, without task-specific design."
+  takeaway_zh: "把人类视频转化为可泛化的真实人形交互技能，无需按任务设计。"
+- title: "SoftMimic: Learning Compliant Whole-body Control from Examples"
+  type: paper
+  arxiv: "2510.17792"
+  year: 2025
+  project: https://gmargo11.github.io/softmimic/
+  added: 2026-11-04
+  topics: [locomotion, control]
+  tags: [humanoid, compliance]
+  takeaway_en: "Learns compliant whole-body control from example motions, so a humanoid yields to unexpected contact instead of stiffly correcting back to the reference."
+  takeaway_zh: "从示例动作学习柔顺全身控制，使人形机器人在意外接触时顺应，而不是僵硬地回到参考动作。"
+- title: "GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction"
+  type: paper
+  arxiv: "2511.04679"
+  year: 2025
+  project: https://gentle-humanoid.axell.top
+  added: 2026-11-04
+  topics: [locomotion, control]
+  tags: [humanoid, compliance, impedance]
+  takeaway_en: "Integrates impedance control into whole-body tracking so a humanoid's upper body stays compliant in contact with people and objects."
+  takeaway_zh: "将阻抗控制融入全身跟踪，使人形上半身在接触人和物体时保持柔顺。"
+- title: "CHIP: Adaptive Compliance for Humanoid Control through Hindsight Perturbation"
+  type: paper
+  arxiv: "2512.14689"
+  year: 2025
+  project: https://nvlabs.github.io/CHIP/
+  added: 2026-11-04
+  topics: [locomotion, control]
+  tags: [humanoid, compliance]
+  takeaway_en: "CHIP is a plug-and-play module adding controllable end-effector stiffness to agile tracking policies, for forceful tasks such as wiping and pushing carts."
+  takeaway_zh: "CHIP 是即插即用模块，为敏捷跟踪策略加入可控的末端刚度，用于擦拭、推车等需要施力的任务。"
+- title: "ZEST: Zero-shot Embodied Skill Transfer for Athletic Robot Control"
+  type: paper
+  arxiv: "2602.00401"
+  year: 2026
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [humanoid, zero-shot, motion-imitation]
+  takeaway_en: "Motion imitation trained from mocap, noisy monocular video and animation, deployed to hardware zero-shot with less per-skill tuning."
+  takeaway_zh: "基于动捕、含噪单目视频和动画数据训练动作模仿策略，零样本部署到真机，减少逐技能调参。"
+- title: "One Policy to Run Them All: an End-to-end Learning Approach to Multi-Embodiment Locomotion"
+  type: paper
+  arxiv: "2409.06366"
+  year: 2024
+  code: https://github.com/nico-bohlinger/one_policy_to_run_them_all
+  added: 2026-11-04
+  topics: [locomotion, learning]
+  tags: [cross-embodiment, multi-embodiment]
+  takeaway_en: "URMA: one end-to-end architecture that controls many legged morphologies, including quadrupeds, humanoids and hexapods."
+  takeaway_zh: "URMA：用一个端到端架构控制四足、人形、六足等多种足式形态。"
+- title: "A Survey of Behavior Foundation Model: Next-Generation Whole-Body Control System of Humanoid Robots"
+  type: paper
+  arxiv: "2506.20487"
+  year: 2025
+  project: https://github.com/yuanmingqi/awesome-bfm-papers
+  added: 2026-11-04
+  topics: [locomotion]
+  tags: [survey, humanoid, behavior-foundation-model]
+  takeaway_en: "Survey of behavior foundation models, pretrained generalist whole-body controllers that avoid costly retraining for each new task. Has a companion paper list."
+  takeaway_zh: "综述行为基础模型：预训练的通用全身控制器，避免每个新任务都重新训练。附配套论文列表。"
+- title: "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning"
+  type: paper
+  arxiv: "2501.02116"
+  year: 2025
+  added: 2026-11-04
+  topics: [locomotion, manipulation]
+  tags: [survey, humanoid]
+  takeaway_en: "Survey of humanoid locomotion and manipulation across control, planning and learning, from model-based methods onward."
+  takeaway_zh: "综述人形移动与操作，涵盖控制、规划与学习，从基于模型的方法讲起。"

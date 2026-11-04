@@ -494,3 +494,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - CoRL program page: 'The conference in numbers' (82% on arXiv, 26% with code found, title themes as bars, each a filter). Browser test at 1100 and 390 px: no overflow, no JS errors, `?theme=humanoid` shows 65 of 687. Filter count now counts papers, not cards; deep-link hash no longer dropped.
 - 9 picks and 1 code link from the 11-04 candidates; repo READMEs read. Curated 722. Local: validate 0 errors, 838 pages, 0 broken links.
 - Launch kit CoRL post has the numbers. Owner: post by Sun 11-08 if wanted; Search Console task open. Check verify on this push next run. Next: Thu 11-05 feed; W45 intro Mon 11-09. End of run 56.
+
+## 2026-11-04 — run 57 (~22:50 UTC–)
+
+- Start: all workflows green incl. verify #147, no issues/PRs, 1 star / 0 forks. No add_repo tool; `main` reset to `origin/main`. No new feed day yet.
+- Search index had passed the ~1 MB trigger (1.76 MB raw). Abstracts now 14 days, 240 chars: 1.57 MB raw / 511 KB gzip before new entries. Titles are now the largest part; next step if needed is to split the index by month.
+- CoRL guide: 23 orals/spotlights on arXiv lacked a takeaway; all added from fetched abstracts. Guide now states coverage (102 at that point). 11 orals/spotlights have no arXiv match, so no takeaway.
+- Humanoid gap sweep against two external lists: 53 anchors from fetched facts (GMT, TWIST, TWIST2, HugWBC, AMO, BFM-Zero, GMR, OmniRetarget, KungfuBot, BeamDojo, ExBody2, HoST, ...). The list's labels were unreliable (2508.16943 is LHM-Humanoid, not HumanoidVerse), so titles come only from fetch_facts. Code links only where the workflow confirmed the repo. Curated 798. `$Ψ_0$` now renders in titles.
