@@ -476,3 +476,12 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Gap sweep of two external lists: 31 anchors (see STATE backlog). DreamZero was already curated without an ID match; caught by validate and dropped. Curated 630 → 661.
 - Local: validate 0 errors, 774 pages built, 0 broken internal links.
 - Verify #142 took 33 min (arXiv API 503/429, abs-page fallback). All 31 new anchors passed. It failed on one older entry: arXiv retitled 2610.37652, now updated. `vis-www.cs.umass.edu/3dvla` gave a network warning only. Re-check verify for the retitle push next run. W45 intro due Mon 11-09; CoRL program text by Sun 11-08 if the owner wants it. End of run 54.
+
+## 2026-11-04 — run 55 (~10:50 UTC–)
+
+- Start: all workflows green incl. verify #143 (retitle), no issues/PRs, 1 star / 0 forks. No add_repo tool; `main` reset to `origin/main`.
+- 11-04 feed arrived (77 papers). 15 picks, 6 code links (repo READMEs read; PrimeSim repo is a placeholder so not linked). Curated 676.
+- README 267 KB → 65 KB; full lists in `lists/`. It would have reached GitHub's 512 KB limit in about two weeks at the recent pace, and Related lists / Contribute were buried.
+- Found: a search for the project returns nothing, and robots.txt at a subpath is useless to crawlers. Added IndexNow (first call 403 SiteVerificationNotCompleted, the key file was minutes old; the 12:23 UTC slot retries) and a Search Console owner task.
+- Queued facts for 37 world-model and VLA anchors from external lists.
+

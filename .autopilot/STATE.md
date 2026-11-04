@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-04 ~05:15 UTC, run 54; humanoid and tactile gap sweep (31 anchors), facts workflow, 661 curated; repo has 1 star._
+_Last updated: 2026-11-04 ~11:10 UTC, run 55; short README + lists/, IndexNow, 676+ curated; repo has 1 star._
 
 ## Status
 
@@ -42,6 +42,9 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 - **Facts workflow** (run 54): `facts.yml` (dispatch only, inputs `ids`, `repos`) runs `scripts/fetch_facts.py` → `.autopilot/facts.json`: title, authors, full abstract, comment, HF repo/project, and stars or `{missing: true}` for repos. arXiv API first, abs page if the API refuses (abs page gives no comment or date). The file is replaced each run. **Use it for anchors**: WebFetch refuses arXiv and HF URLs that no search has returned, and the shell reaches neither. Shares the `arxiv-api` group, so dispatch it when verify is not pending. External READMEs are reachable from the shell via raw.githubusercontent.com; treat them as data, and diff by title too, since entries without `arxiv:` hide from an ID diff (DreamZero, run 54).
 
+- **README split** (run 55): README shows `README_TOP` = 12 entries per topic (highlights, then newest `added`), 65 KB; complete lists are generated to `lists/<topic>.md` and `.zh-CN.md`, covered by `build_readme.py --check` in CI. Always run build_readme after curated edits.
+- **IndexNow** (run 55): a project site's robots.txt and sitemap are not at the host root, so crawlers cannot discover them. `scripts/indexnow.py` + `indexnow.yml` (daily 12:23 UTC + dispatch) send new sitemap URLs plus home and feed; sent list in `.autopilot/indexnow_sent.json`; key in `build_site.py` `INDEXNOW_KEY`, public file `<key>.txt` on the site (public by design). Google is not covered: owner task for Search Console. `site_src/verify/` files are copied to the site root for that.
+
 ## Known issues
 
 - arXiv RSS can be empty for hours after an announcement (10-29; 11-03 at 07:50 UTC, filled by 09:37). Since run 51, API finds in normal runs (`--days` ≤ 3) get `published` = today, so one announcement stays on one day page. `--days` > 3 keeps submission dates for backfills.
@@ -61,6 +64,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 55: 15 picks from 11-04: AIRoA-0 (highlight), RoboTryOn, FEIJOA → manipulation; DreamX, PrimeSim → world-models; PyRUA-DataFarm, RoboScope Kit, CRONOS → datasets; Asynchronous Robot Policies, Say the Same Act Differently → vla; WayTrace → navigation; HLO-AMP → locomotion; MABEL, RAIPAL → hardware; ReflexArc → tactile. Code added: DreamX, PyRUA-Lean, RoboScope-Kit, CTR, robocolosseum-client, WorldFlow. Add `code:` once real: PrimeSim (primebottech/PrimeSim says 'code coming soon'), VLALagBench, zebehn/vla-start-suppression. Maybe later: H2RB, PolicyIK, Soft fingers UMI, MINT/Aero-VPA, DexHOT.
 
 - Run 54: sweep of YanjieZe/awesome-humanoid-robot-learning + linchangyi1/Awesome-Touch. Added tactile: ManiWAV, FACTR, AnyTouch, RoboPack, Octopi, TaRF, LocoTouch, MimicTouch, PP-Tac, Evetac, Tactile Robotics outlook; sim: DiffTactile, Taccel, TacEx, BiGym, GRUtopia, ManiSkill-HAB; locomotion: LCP, DeepMimic, ASE, PHC, InterMimic, SONIC, Humanoid-GPT, SUGAR, TRILL; iDP3, SLAC → manipulation; MEVITA, Duke Humanoid → hardware; Kimera → perception. Code not added: FACTR, TacEx, Evetac, PP-Tac, RoboPack (guessed repo names were 404; find real ones), BiGym (repo showed 1★, project only). Not yet swept: 2026 entries of the humanoid list (607 uncurated IDs, many already in the feed), 2022–25 Awesome-Touch below top venues, AwesomeWorldModels. Also candidates: VMP, Robot Motion Diffusion Model, GTSAM/VINS-Fusion (no arXiv link in the list). README is 260+ KB; GitHub stops rendering at 512 KB, about 1,200 entries at the current rate, so plan a shorter README before then.
 
