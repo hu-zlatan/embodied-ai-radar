@@ -1,7 +1,7 @@
 """Fetch GitHub stars / last push / archived flag for every GitHub repo linked from curated data.
 
 Runs in GitHub Actions (repo-stats.yml) with GITHUB_TOKEN; writes data/repo_stats.json:
-  {"updated": "YYYY-MM-DD", "repos": {"owner/repo": {"stars": int, "pushed": "YYYY-MM-DD", "archived": bool}},
+  {"updated": "YYYY-MM-DD", "repos": {"owner/repo": {"stars": int, "pushed": "YYYY-MM-DD", "archived": bool, "license": "MIT"}},
    "feed": {"owner/repo": {"stars": int} | {"missing": true}}}
 "repos" covers curated entries and resources. "feed" covers code links that authors put in the arXiv comments
 of papers from the last FEED_DAYS days: such repos often 404 until the code is released, so the site shows
@@ -135,7 +135,9 @@ def fetch(key: str, token: str | None) -> dict | None:
             with urllib.request.urlopen(req, timeout=20) as r:
                 d = json.load(r)
             return {"stars": int(d["stargazers_count"]), "pushed": (d.get("pushed_at") or "")[:10],
-                    "archived": bool(d.get("archived"))}
+                    "archived": bool(d.get("archived")),
+                    # SPDX id as GitHub detects it; "" = no license file, NOASSERTION = a file GitHub could not classify
+                    "license": ((d.get("license") or {}).get("spdx_id") or "")}
         except urllib.error.HTTPError as e:
             if e.code == 404:
                 print(f"  {key}: 404 (not public, moved or deleted)")
