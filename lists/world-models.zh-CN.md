@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 89 条，⭐ 为重点推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 90 条，⭐ 为重点推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html) · [English](world-models.md)
 
@@ -44,6 +44,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation](https://arxiv.org/abs/2606.28128)** (2026) — 训练框架，把监督集中在具有物理信息的区域，在像素和语义两个层面提升视频世界模拟器的物理一致性。 · [代码](https://github.com/DAGroup-PKU/PhysisForcing) · [项目页](https://dagroup-pku.github.io/PhysisForcing.github.io/)
 - **[PrimeSim: A Generalist World Model Simulator from Large-Scale Cross-Embodiment Demonstrations](https://arxiv.org/abs/2611.04870)** (2026) — 自回归多视角世界模型，运行 10.1 FPS，100 至 200 步梯度即可适配未见平台；作者开放权重和代码，并说明细粒度局部标定仍落后于同类。 · [项目页](https://primebottech.github.io/PrimeSim-website/)
 - **[Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation](https://arxiv.org/abs/2606.17030)** (2026) — 语言条件视频世界模型，把自然语言作为操作、驾驶、室内导航和人到机器人迁移的统一动作接口。 · [项目页](https://pre.qwen.ai/blog?id=qwen-robotworld)
+- **[ReactWorld: Structuring Interaction Responses for Embodied Video Generation](https://arxiv.org/abs/2611.06120)** (2026) — 视频世界模型：先预测物体对接触的响应位置和方式，再反馈到物体特征与时序注意力；报告在 RBench 上比 PhysisForcing 高 3.29 分。 · [项目页](https://metaengine-world.github.io/ReactWorld/)
 - **[Robotic Video World Models: A Survey of Applications, Research Challenges, Future Directions](https://arxiv.org/abs/2601.07823)** (2026) — 机器人视频世界模型综述：它们在哪些场景可替代或补充物理仿真器（如可变形物体）、主要应用与开放挑战，并附持续更新的论文列表。 · [代码](https://github.com/irom-princeton/awesome-robotics-video-world-model-papers)
 - **[Rollback: Experience Backtracking in World Models for Policy Improvement](https://arxiv.org/abs/2610.36068)** (2026) — 把动作条件世界模型当作反事实引擎：回到关键决策点尝试其他动作并对比结果，得到动作级监督而无需单独的价值模型；真机经验再通过 LoRA 持续修正世界模型。报告在 3 个真实任务上比最强基线高 10.7–11.9 个百分点。 · [项目页](https://rollback-wm.github.io/)
 - **[Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience](https://arxiv.org/abs/2610.26855)** (2026) — 同时覆盖移动与操作的第一人称世界模型，在约 1 万小时人类视频和约 3 千小时机器人数据上训练，用统一的运动学表示描述不同本体的动作。 · [代码](https://github.com/Ropedia/ropedia-w0) · [项目页](https://ropedia.github.io/ropedia-w0/)

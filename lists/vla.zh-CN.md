@@ -2,7 +2,7 @@
 
 _视觉-语言-动作模型与通用机器人策略。_
 
-共 170 条，⭐ 为重点推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
+共 171 条，⭐ 为重点推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [English](vla.md)
 
@@ -26,6 +26,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[Bayesian Active Learning for Intent Disambiguation in Interactive Robot Planning](https://arxiv.org/abs/2609.34270)** (2026) — 把澄清提问视为信号时序逻辑规约上的贝叶斯主动学习，机器人提问更少，并向形式化规划器交付可验证的任务。
 - **[Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization](https://arxiv.org/abs/2601.12993)** (2026) — CoRL 2026 Oral。跨形态 VLA，把人类交互轨迹当作通用“母语”，在 UniHand-2.0 上预训练：超过 3.5 万小时多模态数据，覆盖 30 种机器人形态。 · [代码](https://github.com/BeingBeyond/Being-H) · [项目页](https://research.beingbeyond.com/being-h05)
 - **[CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents](https://arxiv.org/abs/2610.40799)** (2026) — 把小型开放 VLM 训练成“代码即策略”机器人智能体的开源流水线：先 SFT，再做多轮 RL，并用读取仿真特权状态的物理评论家为每次请求分配贡献。报告 Qwen3.5-4B 在留出的 LIBERO 上由 0% 升到 73.8%，并公开代码、数据和权重。 · [代码](https://github.com/waltstephen/CaPtain) · [项目页](https://waltstephen.github.io/captain/)
+- **[Can Astra Solve RoboMME without Breaking the Bank?](https://arxiv.org/abs/2611.06184)** (2026) — CoRL 2026 研讨会论文：大模型规划子任务，π0.5 策略执行，小型微调监视器判断何时再次调用规划器；报告在 RoboMME 上成功率 79.13%，每回合约调用规划器 3.6 次。 · [项目页](https://bingaochen.github.io/Astra-on-RoboMME/)
 - **[CarryOn: A Dual-Loop Harness for Personalized and Reliable Robot Assistance](https://arxiv.org/abs/2610.21453)** (2026) — 给冻结的 VLA 套上双环框架：规划环保存用户偏好与场景记忆以做个性化任务分解，执行环拦截危险接触并调用可复用的恢复技能；报告安全违规率从 52.6% 降到 6.1%，失败恢复成功率从 13% 提升到 80%。 · [代码](https://github.com/JIA-Lab-research/CarryOn) · [项目页](https://vincent2311.github.io/Projects/CarryOn/)
 - **[CondenseVLA: Learnable History Condensation for Efficient Multi-Frame VLA](https://arxiv.org/abs/2610.25927)** (2026) — 不靠简单加长历史帧窗口，而是学习把过去的帧压缩成少量 token，保留短暂接触、遮挡等转瞬即逝的线索。 · [代码](https://github.com/FeiyangHong/CondenseVLA)
 - **[Coupling Execution Horizon and Sampling Depth in Flow-Matching VLA Policies](https://arxiv.org/abs/2610.32102)** (2026) — 流匹配 VLA 的部署调参发现：求解步数少在频繁重规划时会降低精度，但在长时开环执行动作块时反而有利。报告在 π0、π0.5、GR00T 上联合调整两者，无需训练即可提高成功率并降低推理延迟。 · [项目页](https://jiabingyang01.github.io/Horizon-Depth-VLA/)

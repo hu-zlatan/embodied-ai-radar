@@ -2,7 +2,7 @@
 
 _Vision-language-action models and generalist robot policies._
 
-170 entries, ⭐ = highlight. Generated from [`data/curated/vla.yaml`](../data/curated/vla.yaml); edit the YAML, not this file.
+171 entries, ⭐ = highlight. Generated from [`data/curated/vla.yaml`](../data/curated/vla.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [中文](vla.zh-CN.md)
 
@@ -26,6 +26,7 @@ _Vision-language-action models and generalist robot policies._
 - **[Bayesian Active Learning for Intent Disambiguation in Interactive Robot Planning](https://arxiv.org/abs/2609.34270)** (2026) — Treats clarifying questions as Bayesian active learning over Signal Temporal Logic specs, so the robot asks fewer questions and hands a formal planner a verifiable task.
 - **[Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization](https://arxiv.org/abs/2601.12993)** (2026) — CoRL 2026 Oral. Cross-embodiment VLA that treats human interaction traces as a shared language, pre-trained on UniHand-2.0: over 35,000 hours of multimodal data across 30 robot embodiments. · [code](https://github.com/BeingBeyond/Being-H) · [project](https://research.beingbeyond.com/being-h05)
 - **[CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents](https://arxiv.org/abs/2610.40799)** (2026) — Turns a small open VLM into a code-as-policy agent: SFT, then multi-turn RL with a physical critic. Reports Qwen3.5-4B going from 0% to 73.8% on held-out LIBERO; code, data and weights released. · [code](https://github.com/waltstephen/CaPtain) · [project](https://waltstephen.github.io/captain/)
+- **[Can Astra Solve RoboMME without Breaking the Bank?](https://arxiv.org/abs/2611.06184)** (2026) — CoRL 2026 workshop paper: a planner picks subtasks, a π0.5 policy acts, and a small fine-tuned monitor decides when to call the planner again; reports 79.13% on RoboMME with about 3.6 planner calls per episode. · [project](https://bingaochen.github.io/Astra-on-RoboMME/)
 - **[CarryOn: A Dual-Loop Harness for Personalized and Reliable Robot Assistance](https://arxiv.org/abs/2610.21453)** (2026) — Wraps a frozen VLA in two loops — one keeps user preferences and scene memory for planning, one blocks hazardous actions and calls recovery skills; reports violations down from 52.6% to 6.1%, recovery up from 13% to 80%. · [code](https://github.com/JIA-Lab-research/CarryOn) · [project](https://vincent2311.github.io/Projects/CarryOn/)
 - **[CondenseVLA: Learnable History Condensation for Efficient Multi-Frame VLA](https://arxiv.org/abs/2610.25927)** (2026) — Instead of feeding a VLA a longer frame history, learns to condense past frames into a few tokens that keep short-lived cues such as brief contacts and occlusions. · [code](https://github.com/FeiyangHong/CondenseVLA)
 - **[Coupling Execution Horizon and Sampling Depth in Flow-Matching VLA Policies](https://arxiv.org/abs/2610.32102)** (2026) — Deployment knob for flow-matching VLAs: fewer solver steps hurt under fast replanning but help with long open-loop chunks. Tuning both together, training-free, reports higher success and lower latency for π0/π0.5/GR00T. · [project](https://jiabingyang01.github.io/Horizon-Depth-VLA/)
