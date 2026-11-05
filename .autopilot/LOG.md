@@ -513,3 +513,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Web fetches refused in this run (unanswered permission prompt): vergilshawn sweep skipped, not routed around.
 - CI #327 failed on the LeVERB commit: I skipped `build_readme.py`, so lists/vla were stale for about 4 minutes; #328 on the next commit is green. Run `build_readme.py` after any curated edit.
 - End: 1 star / 0 forks. Verify #150 still running and #151 pending at the end of this run, so the LeVERB URL and 4 picks are not CI-checked yet; the live site could not be opened from here. End of run 58.
+
+## 2026-11-05 — run 59 (~10:50 UTC–)
+
+- Start: no issues/PRs, 1 star / 0 forks. No add_repo tool; clone was detached and shallow, `main` reset to `origin/main`. Workflows green except verify #150/#151.
+- Verify failures fixed: HexaShell title changed on arXiv; kyry.me/sonic-k1 404 → https://huggingface.co/Kyry10/sonic-k1 (found by search); FLoRe project page 404, line removed (no replacement found). LeVERB link passed, so the moved URL stands.
+- 11 picks from the 11-05 feed: NEO-VLA, Open-HumanScale, HALO (highlights), Ctrl-F, Cosmos interactive simulation, MESA, BEAKER, RACE, ELA, GRASP, OdorSpaces. Curated 813.
+- Overlap sweep started: 10 external lists fetched from the shell, 62 uncurated IDs appear in ≥2 independent lists; `facts.yml` dispatched for them.
