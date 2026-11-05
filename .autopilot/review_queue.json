@@ -27,25 +27,6 @@
    "ai_summary": "HiSTEVE is a hierarchical vision-language-action agent that combines long-horizon planning with native keyboard-and-mouse control to perform complex open-ended tasks in Minecraft."
   },
   {
-   "id": "2610.31716",
-   "title": "Does LeWorldModel Preserve Local Action Geometry?",
-   "upvotes": 27,
-   "hf_date": "2026-10-26",
-   "published": "2026-10-26",
-   "topics": [],
-   "authors": [
-    "Vasil Vasilev",
-    "Siddharth Nayak"
-   ],
-   "organization": null,
-   "github": null,
-   "project": "https://geometry.vasi.boo/",
-   "arxiv_code": [],
-   "comment": "13 pages, 3 figures. Accepted as a poster at the NeurIPS 2026 Workshop on Symmetry and Geometry in Neural Representations (NeurReps), Extended Abstract Track",
-   "abstract": "We examine how closely pretrained LeWorldModel (LeWM) reproduces the effects of small action changes. Using matched simulator and model responses, we measure action sensitivity with Gram matrices at three perturbation scales. Across nearly a thousand states from Reacher and OGBench Cube, the most sensitive action directions differ by median angles of about 36^circ and 42^circ, respectively, at the smallest scale. Increasing the perturbation tenfold reduces median normalized Gram discrepancy by roughly 70\\% on Reacher and 47\\% on Cube. Geometry measured in pixels and embeddings varies more across scales than the chosen physical-state geometry. On held-out directions, environment Grams achieve median embedding response errors of 17\\% and 28\\%, compared with 26\\% and 38\\% for an isotropic reference with the same trace. LeWM's errors are higher at this scale. These findings support scale-specific evaluation of action sensitivity; its effect on control remains an open question.",
-   "ai_summary": "Pretrained LeWorldModel's reproduction of small action effects is evaluated via Gram matrices across perturbation scales, showing scale-dependent sensitivity differences and higher errors than environment references."
-  },
-  {
    "id": "2610.28632",
    "title": "Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs",
    "upvotes": 26,
@@ -91,58 +72,6 @@
    "comment": "20 pages, 5 figures, 7 tables",
    "abstract": "3D part assembly aims to reconstruct a complete shape from a set of unassembled parts by predicting a rigid SE(3) transformation for each part. Because the placement of a part is rarely determined by its own geometry, the task demands reasoning over the entire part set, and existing methods, which rely on pairwise relations or iterative generation and verification, scale poorly to objects with many parts. We present LLM2R, which casts part assembly as sequence modeling with a pretrained decoder-only large language model (LLM): a Point-BERT encoder and a Q-Former compress each part into a block of geometric tokens, the blocks of all parts are concatenated, and a causal LLM adapted with Low-Rank Adaptation (LoRA) processes the sequence in one forward pass. Causal attention, however, lets the hidden states of a part observe only the parts that precede it. LLM2R therefore appends a block of learnable summary tokens after the last part: these tokens follow every part, so their states aggregate the whole assembly at a constant token cost, and a part-aware pose head fuses each part's states with them before predicting its rotation and translation. One architecture thus handles semantic and geometric assembly and predicts all poses in a single non-autoregressive pass. LLM2R achieves the highest part accuracy and success rate on all three PartNet categories, the best rotation error, translation error, and part accuracy on PartNeXt, and the lowest translation error and fastest inference on Breaking Bad, where only a fracture-specialized method is more accurate. Its advantage grows with the number of parts: at 100 parts it exceeds GARF by 33.5 points in part accuracy on Breaking Bad and Assembler by 29.1 points on PartNet, and it transfers zero-shot to unseen categories with more than 16 points higher part accuracy than the strongest of three baselines.",
    "ai_summary": "LLM2R treats 3D part assembly as sequence modeling with a pretrained decoder-only LLM, using geometric tokens and learnable summary tokens to predict all part poses in a single pass with improved scalability and accuracy."
-  },
-  {
-   "id": "2610.22362",
-   "title": "CoDA: Co-Evolution of Data Engines and Action Policies",
-   "upvotes": 10,
-   "hf_date": "2026-10-16",
-   "published": "2026-10-15",
-   "topics": [],
-   "authors": [
-    "Tianjiao Yu",
-    "Zhilin Ou",
-    "Yifan Shen",
-    "Xinzhuo Li",
-    "Yuanzhe Liu",
-    "Onkar Kishor Susladkar",
-    "Fan Wang",
-    "Ismini Lourentzou"
-   ],
-   "organization": "PLAN Lab @University of Illinois Urbana-Champaign",
-   "github": null,
-   "project": "https://plan-lab.github.io/coda",
-   "arxiv_code": [],
-   "comment": "Project Website: https://plan-lab.github.io/projects/coda/",
-   "abstract": "Generative simulation can automate robot environment construction, but physically valid environments are not necessarily useful for training. The challenge is to identify environments that address a policy's failures and supervision that helps it overcome them. We introduce CoDA, a framework in which a simulation data engine and an action policy co-evolve through a shared heterogeneous memory of environment construction, policy failures, and learning progress. The memory compiles validated diagnoses from a vision-language critic into generation programs that recreate difficulties and training programs that help the policy overcome them. We further propose Text2potential to convert these diagnoses into staged potentials for action-chunk value learning, providing dense supervision for policy updates while preserving the task's optimal policy under standard shaping assumptions. Measured learning progress guides further generation and program refinement. Across four manipulation task families, CoDA improves out-of-distribution success from 5.3% after supervised fine-tuning to 27.6%, exceeding the strongest closed-loop baseline by 9.5 percentage points with the same generation budget. On LIBERO-Pro, 15 rounds of generation and training raise success from 25% to 84% under position perturbations and from 1% to 76% under instruction perturbations.",
-   "ai_summary": "CoDA co-evolves a simulation engine and robot policy via shared memory of failures and progress, using vision-language diagnostics and staged potential rewards to improve out-of-distribution manipulation success."
-  },
-  {
-   "id": "2611.06768",
-   "title": "PyRUA-REAL: Robot Exploration and Adaptive Learning through RSI in the Real World",
-   "upvotes": 8,
-   "hf_date": "2026-11-05",
-   "published": "2026-11-05",
-   "topics": [],
-   "authors": [
-    "Qiang Wang",
-    "Jianxin Bi",
-    "Shulong Jiang",
-    "Ruiyang Si",
-    "Wenbo Huang",
-    "Kaiqi Chen",
-    "Jiaxin Li",
-    "Liyun Li",
-    "Xuanyi Li",
-    "Daquan Zhou"
-   ],
-   "organization": null,
-   "github": null,
-   "project": "https://dagroup-pku.github.io/PyRUA-Lean/real/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Coding agents powered by models such as GPT-6-Astra connect spatial reasoning with executable robot behavior, raising the question of how such agents can produce lasting improvements in robot capabilities from physical interaction. In this work, we study embodied recursive self-improvement (RSI) through real-world exploration, code refinement, and deployment using PyRUA-REAL, a framework in which coding agents retain interaction experience as persistent memory and reusable executable skills that inform subsequent exploration and improvement. Our empirical study places physical manipulation at the center of the improvement process, examining how agents collaborate, what kinds of execution feedback support effective code refinement, and how task specifications and previously acquired skills influence robustness and task transfer. We further investigate the efficiency and capability of the resulting programs when deployed without involving an online agent for decision-making. Across eight real-world tasks, PyRUA-REAL achieves an average success rate of 91.1%. In complementary evaluation on 42 tasks from the RoboDojo benchmark, it achieves an average success rate of 84.4%. This study provides empirical guidance for turning physical exploration into reusable robot skills that support continued improvement and robust, efficient deployment.",
-   "ai_summary": "PyRUA-REAL enables coding agents to convert physical robot exploration into persistent executable skills, achieving high success rates across real-world and benchmark tasks through recursive self-improvement."
   }
  ],
  "curated_link_updates": [
