@@ -533,3 +533,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Picks: PHIL, CSO (NeurIPS 2026), object-centric motion priors (AAAI 2026 oral) to manipulation; Astra on RoboMME to vla; ReactWorld to world-models. Curated 864.
 - Real license data landed: 458 repos, 304 permissive, 8 copyleft, 65 custom, 81 none. Site rebuilt locally with it: 989 pages, 0 broken links.
 - End: verify #154 still running and #155 pending at the end of this run, so the 5 picks and 59 code links are not CI-checked yet; next run checks them (STATE next steps). Live site not opened from here. No new owner task; CoRL post still fits until Sun 11-08, Search Console still open. End of run 60.
+- Stars at end of run: 2, forks 0 (first new star since launch).
