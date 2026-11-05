@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-04 ~23:30 UTC, run 57; every CoRL oral/spotlight on arXiv has a takeaway, humanoid gap sweep, 798 curated; repo has 1 star, 0 forks._
+_Last updated: 2026-11-05 ~05:30 UTC, run 58; CoRL guide has a Now/Next bar and viewer-local times, 802 curated; repo has 1 star, 0 forks._
 
 ## Status
 
@@ -57,7 +57,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
-000. Run 57: check verify #148 and #149 (humanoid anchors, head 27616f9). Both were still running or queued at the end of run 57. #149 can be cancelled by a pending intake; if so, re-dispatch. Fix any title or link failures first. Next sweep: unread sections of vergilshawn/Awesome-Humanoid-Robot-Learning (Locomotion, Sim-to-Real, Hardware); a WebFetch truncates at Teleoperation. Skipped from the sweep: ULC 2507.06905, UniTracker 2507.07356, TOP 2508.00355, PACE 2509.21690, the bipedal DRL survey 2404.17070.
+000. Run 58: check verify on the LeVERB link (now https://ember-center-berkeley.github.io/LeVERB-Website/, derived from the moved repo found by repo search, not opened by us). If it 404s, delete the `project:` line. Verify #148 passed; #149 passed all 76 new IDs and titles, its only failure was that link. Thu 11-05 feed was not in at 05:00 UTC. Next sweep: unread sections of vergilshawn/Awesome-Humanoid-Robot-Learning (Locomotion, Sim-to-Real, Hardware); a WebFetch truncates at Teleoperation. Skipped from the sweep: ULC 2507.06905, UniTracker 2507.07356, TOP 2508.00355, PACE 2509.21690, the bipedal DRL survey 2404.17070.
 00. After a curated push, confirm verify really ran: a pending run can be cancelled by a newer one in the `arxiv-api` group (run 52, #139). Re-dispatch if so.
 0. New curated entries get BibTeX metadata on the next intake run. A push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started/finished.
 1. Scheduled runs: on 10-23 the 01:11/02:17/04:53 slots never fired; first scheduled intake landed 05:57 UTC, then 07:36, 09:37, 12:51, 15:42, 19:21. So the feed lands ~06:00 UTC — acceptable; no owner action. arXiv does not announce on Sat/Sun nights, so the next new feed day is Mon 10-26 (~00:00 UTC announcement).
@@ -67,6 +67,8 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 4. Owner: launch kit ready in `.autopilot/LAUNCH_KIT.md` (recommend posting after the first auto digest).
 
 ## Backlog
+
+- Run 58: CoRL guide: `sessionClock()` in app.js + `#pg-now`: Now/Next bar (hidden after the conference) and a 'Your time' line per session when the viewer is not on UTC−6. Picks from 11-04: SR-DP → manipulation, CoReMatch → perception, FineCraft → vla, ARPG → learning. Web fetches were refused in this run (permission prompt unanswered), so the vergilshawn sweep did not happen.
 
 - Run 56: 9 picks from 11-04: GSBR → learning; PolicyIK → control; DexHOT, Soft fingers UMI, Shape servoing tutorial II → manipulation; H2RB, Geometric Abstraction → vla; Action-Conditioned Latent Foresight → locomotion; Aero-VPA → navigation. RoboTryOn `code:` added (README: code released, checkpoints soon). Still not linked: PrimeSim, VLALagBench, vla-start-suppression. Leftover VLA anchors from run 53 need `facts.yml` first. Numbers for CoRL also fit the W45 intro.
 

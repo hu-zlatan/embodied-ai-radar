@@ -309,6 +309,7 @@ def program_page(prog: dict, extra: dict, cur_by_id: dict, rec_by_id: dict, tby:
              f'{bi("Sessions, titles and poster numbers come from the", "日程、标题与海报编号来自")} <a href="{esc(prog["source"])}" rel="noopener">{bi("official list", "官方列表")}</a> ({esc(prog["updated"])}); '
              f'{bi("arXiv links are matched by title, so check there for last-minute changes. Code links come from arXiv comments, Hugging Face and the authors' project pages.", "arXiv 链接按标题匹配；临时变动请以官方页面为准。代码链接来自 arXiv 备注、Hugging Face 与作者项目页。")}</p>',
              f'<ul class="tlist">{days}<li><a href="#workshops">{bi("Thursday, November 12: workshops", "11 月 12 日（周四）：研讨会")}</a></li></ul>',
+             '<div id="pg-now" hidden></div>',
              program_numbers(papers, cur_by_id, rec_by_id),
              program_signals(papers, cur_by_id, rec_by_id),
              f'''<p class="muted">{bi("Press ☆ on the papers you want to see: you get your own schedule, sorted by time, with a link to share and a calendar file. The list stays in this browser; nothing is sent anywhere.", "点论文上的 ☆ 即可生成个人日程：按时间排序，可分享链接、导出日历文件。清单只保存在你的浏览器里，不会上传。")}</p>

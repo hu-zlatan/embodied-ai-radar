@@ -2,7 +2,7 @@
 
 _Visual / LiDAR SLAM and odometry, 3D reconstruction, object pose, depth and open-vocabulary scene maps for robots._
 
-31 entries, ⭐ = highlight. Generated from [`data/curated/perception.yaml`](../data/curated/perception.yaml); edit the YAML, not this file.
+32 entries, ⭐ = highlight. Generated from [`data/curated/perception.yaml`](../data/curated/perception.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/perception.html) · [中文](perception.zh-CN.md)
 
@@ -14,6 +14,7 @@ _Visual / LiDAR SLAM and odometry, 3D reconstruction, object pose, depth and ope
 - **[Anchor3R: Streaming 3D Reconstruction with Transient Anchors for Long-Horizon Visual Mapping](https://arxiv.org/abs/2606.05035)** (2026) — CoRL 2026 Spotlight. Current-centric streaming 3D reconstruction that predicts window-relative poses and local geometry in the current frame, to limit drift on long runs. · [code](https://github.com/polar-explorer/Anchor3R)
 - **[AnchorHEC: Targetless Hand-Eye Calibration of Wrist and Fixed Cameras](https://arxiv.org/abs/2611.02884)** (2026) — Calibrates wrist and fixed cameras together with no target, from RGB, kinematics and a 3D foundation model; reports 86.4% lower translation and 71.6% lower rotation error in simulation than reconstruction baselines. · [project](https://hwanggb.github.io/AnchorHEC/)
 - **[Articulated 3D Scene Graphs for Open-World Mobile Manipulation](https://arxiv.org/abs/2602.16356)** (2026) — MoMa-SG builds 3D scene graphs that encode how objects articulate, from RGB-D sequences, and adds the Arti4D-Semantic dataset; demonstrated on a quadruped and a mobile manipulator. · [project](https://momasg.cs.uni-freiburg.de)
+- **[CoReMatch: Recurrent Continuous Coordinate Refinement for Real-Time Robotic Feature Matching](https://arxiv.org/abs/2611.03932)** (2026) — Feature matcher that refines correspondences recurrently in continuous coordinates instead of on fixed grids; reports higher accuracy than Efficient LoFTR at over 10x its speed on embedded hardware.
 - **[MosaicIMU: Composing Carrier Experts for Generalizable Neural Inertial Odometry](https://arxiv.org/abs/2606.09355)** (2026) — Neural inertial odometry across carriers: a router composes carrier-specific experts, and a light residual branch adapts to new ones. Reports 40% lower ATE than learned baselines.
 - **[OpenVIO: A Versatile Open-Source Visual-Inertial Odometry System](https://arxiv.org/abs/2610.41671)** (2026) — MIT-licensed visual-inertial odometry for research and products. Supports pinhole and fisheye cameras plus stitched 360° images, with benchmarks against other open-source VIO systems on public datasets. · [code](https://github.com/93won/openvio)
 - **[SpaRV: Sparse Radiance Voxels for Scalable Geometrically Consistent LiDAR-Visual Mapping and Rendering](https://arxiv.org/abs/2610.25665)** (2026) — A sparse-voxel radiance map built from LiDAR and camera data, aimed at robot logs — few viewpoints, imperfect poses and large scenes — while keeping geometry accurate and GPU memory in check. · [code](https://github.com/hku-mars/SpaRV)

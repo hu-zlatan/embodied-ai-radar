@@ -2,7 +2,7 @@
 
 _视觉-语言-动作模型与通用机器人策略。_
 
-共 158 条，⭐ 为重点推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
+共 159 条，⭐ 为重点推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [English](vla.md)
 
@@ -40,6 +40,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[FastHarness: Experience-Driven Review Scheduling for Vision-Language-Action Policies](https://arxiv.org/abs/2610.31427)** (2026) — 让前沿大模型监督冻结的 π0.5 策略的执行框架：随着经验积累逐步减少审查频率，并把监督集中在出错后的恢复上；报告在四个仿真任务上审查 token 平均减少约 57%，成功率也更高。 · [代码](https://github.com/FastHarness/fast-harness)
 - **[FastVLA: Task-Conditioned and Temporally Adaptive Visual Token Compression for Efficient Vision-Language-Action Models](https://arxiv.org/abs/2610.22146)** (2026) — 只保留当前任务所需的视觉 token、并让 token 预算随时间步变化，以加快 VLA 推理。 · [代码](https://github.com/jiuyixu25/FastVLA)
 - **[FiberTune: Preserving Action-Fiber Visual Residuals in Vision-Language-Action Fine-Tuning](https://arxiv.org/abs/2606.08653)** (2026) — FiberTune：动作监督微调会压缩动作损失约束较弱的视觉结构（沿局部动作纤维的残差坍塌）；提出训练期目标函数，对齐冻结的视觉教师以保留这些残差，不增加推理开销。 · [代码](https://github.com/fibertune/FiberTune) · [项目页](https://fibertune.github.io/)
+- **[FineCraft: Enhancing VLA Models for Fine-Grained Manipulation](https://arxiv.org/abs/2611.03163)** (2026) — MetaFine 挑战赛第四名方案：任务路由在统一接口下选择微调后的 DINOv2-DiT 或 π0.5 策略，是把预训练策略适配到精细任务的实用做法。 · [代码](https://github.com/eqcy/FineCraft)
 - **[FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models](https://arxiv.org/abs/2610.31423)** (2026) — 发现现有 VLA 过度依赖腕部相机；根据历史动作预测未来交互意图，按任务阶段在全局与腕部视角间动态路由；报告在 RoboTwin 2.0 上比 π0.5 高 10.1 个百分点，真机成功率由 71.7% 提升到 85.0%。
 - **[From Reasoning to Action: Benchmarking Frontier AI Models on LIBERO-10 Robot Manipulation Tasks](https://arxiv.org/abs/2610.30051)** (2026) — 让六个前沿通用大模型通过工具调用（指定末端位姿与夹爪开合）直接控制 LIBERO-10 机械臂，无任何机器人专门训练；报告的最高成功率为 44%。提高推理强度通常有帮助，但推理成本更高。 · [代码](https://github.com/IRVLUTD/LLM_LIBERO) · [项目页](https://irvlutd.github.io/LLM-LIBERO/)
 - **[From Reasoning to Action: Consequence-Grounded Alignment for Vision-Language-Action Models](https://arxiv.org/abs/2610.39543)** (2026) — CoRAct 把 VLA 思维链中的运动意图与路点变成可验证信号，再用一致性奖励优化初始动作噪声，让动作真正对齐推理，而不只是以推理为条件。在 RoboCasa、VLABench 与真实任务上测试。 · [项目页](https://onlyxingxingzyx.github.io/CoRAct/)
@@ -131,7 +132,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[Hume: Introducing System-2 Thinking in Visual-Language-Action Model](https://arxiv.org/abs/2505.21432)** (2025) — 双系统 VLA：价值查询头对多组候选动作块打分并择优（System 2，约 4 Hz），轻量级级联去噪策略再将其细化为流畅动作（System 1，约 90 Hz）；论文报告在 LIBERO、SIMPLER 和真机上均优于 π0。 · [代码](https://github.com/hume-vla/hume) · [项目页](https://hume-vla.github.io)
 - **[Igniting VLMs toward the Embodied Space](https://arxiv.org/abs/2509.11766)** (2025) — WALL-OSS：开源具身基础模型，在同一可微模型中串联指令推理、子目标分解与细粒度动作生成（"统一跨层级思维链"）；训练代码与模型权重已开源。 · [代码](https://github.com/X-Square-Robot/wall-x)
 - **[InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy](https://arxiv.org/abs/2510.13778)** (2025) — 先在 230 万条空间推理样本上做空间定位预训练（"在哪里做"），再用空间提示做动作后训练（"怎么做"）；论文报告在 SimplerEnv Google Robot 上比无空间引导的同一模型高 14.6%。 · [代码](https://github.com/InternRobotics/InternVLA-M1)
-- **[LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction](https://arxiv.org/abs/2506.13751)** (2025) — 用视觉语言隐空间指令驱动人形全身控制，让 VLA 摆脱手工定义的底层动作词表和准静态任务的限制。 · [项目页](https://ember-lab-berkeley.github.io/LeVERB-Website/)
+- **[LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction](https://arxiv.org/abs/2506.13751)** (2025) — 用视觉语言隐空间指令驱动人形全身控制，让 VLA 摆脱手工定义的底层动作词表和准静态任务的限制。 · [项目页](https://ember-center-berkeley.github.io/LeVERB-Website/)
 - **[Magma: A Foundation Model for Multimodal AI Agents](https://arxiv.org/abs/2502.13130)** (2025) — 同一个模型同时做界面操作与机器人操作：在图像、视频和机器人数据上预训练，用 Set-of-Mark 标注可操作对象、用 Trace-of-Mark 标注运动轨迹；模型与代码公开。 · [代码](https://github.com/microsoft/Magma) · [项目页](https://microsoft.github.io/Magma)
 - **[MolmoAct: Action Reasoning Models that can Reason in Space](https://arxiv.org/abs/2508.07917)** (2025) — 开源 7B VLA，先输出深度感知 token，再生成可编辑的二维轨迹，最后输出动作；论文报告 SimplerEnv 零样本 70.5%、LIBERO 86.6%，并开放权重、代码和数据。 · [代码](https://github.com/allenai/molmoact) · [项目页](https://allenai.org/blog/molmoact)
 - **[OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](https://arxiv.org/abs/2505.11917)** (2025) — 单一模型自主决定何时“想”、何时“做”：在子任务完成、出错或人类插话等关键时刻进行推理，其余时间依据最新推理结果生成动作；并与合成的推理型视觉-语言数据共同训练。 · [代码](https://github.com/Fanqi-Lin/OneTwoVLA) · [项目页](https://one-two-vla.github.io)

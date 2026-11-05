@@ -2,7 +2,7 @@
 
 _Reinforcement learning, imitation learning and policy post-training methods for robots, on any embodiment._
 
-53 entries, ⭐ = highlight. Generated from [`data/curated/learning.yaml`](../data/curated/learning.yaml); edit the YAML, not this file.
+54 entries, ⭐ = highlight. Generated from [`data/curated/learning.yaml`](../data/curated/learning.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [中文](learning.zh-CN.md)
 
@@ -26,6 +26,7 @@ _Reinforcement learning, imitation learning and policy post-training methods for
 - **[FlowDAgger: Human-in-the-Loop Adaptation of Generative Robot Policies in Latent Space](https://arxiv.org/abs/2607.08877)** (2026) — CoRL 2026 Spotlight. Adapts frozen generative policies from human interventions in latent space, as a cheaper alternative to mass data collection or online RL on hardware. · [code](https://github.com/microsoft/FlowDAgger) · [project](https://microsoft.github.io/FlowDAgger)
 - **[GSBR: Geometric Support Behavior Regularization for Online RL](https://arxiv.org/abs/2611.05295)** (2026) — Online RL on top of a pretrained policy, penalised by distance from that policy's support: free inside it, smoothly costly outside; reports average success rising from 33% to 95% across 19 benchmark tasks. · [project](https://charlesxu0124.github.io/gsbr/)
 - **[HIDRA: Hierarchical Dual-Routing Attention for Replay-Free Lifelong Imitation Learning](https://arxiv.org/abs/2610.36374)** (2026) — Replay-free lifelong imitation learning: hierarchical dual-routing attention retrieves experts by instruction, then refines by context, plus key regularization against drift. Reports beating replay baselines on LIBERO. · [code](https://github.com/yfqi/HIDRA)
+- **[LLMs as MDP Designers: A Dependency-Aware Agentic Framework for Automated Robot Policy Generation](https://arxiv.org/abs/2611.04974)** (2026) — ARPG has an LLM design the RL pipeline before deployment: MDP first, then simulator code, with checks that state, action and reward agree; reports more successful policies than monolithic LLM baselines in Isaac Sim.
 - **[Learning from Fleet Experience: Collective Experience Learning Across 96 Robots](https://arxiv.org/abs/2610.25736)** (2026) — Deployed robots pool their runs; failures retrieve matching successful segments from the fleet buffer to fine-tune on, with no new demos. Reports 93–99% on five real tasks; 96 robots lift phone packing 79% → 98%. · [code](https://github.com/RLinf/RLinf) · [project](https://cel-robot-learning.github.io)
 - **[Progress-Guided Preference Generation for Aligning Generative Control Policies](https://arxiv.org/abs/2610.25692)** (2026) — Fine-tunes diffusion and flow policies with automatic preference labels: rollouts are ranked by progress measured against a few expert demos, no human labels or reward design. Reports beating SFT on long-horizon tasks. · [project](https://pgpg2026.github.io/)
 - **[RL Token: Bootstrapping Online RL with Vision-Language-Action Models](https://arxiv.org/abs/2604.23073)** (2026) — CoRL 2026 Oral. Adapts a VLA to expose a compact RL token, an interface for sample-efficient online RL, so a pretrained policy gains precision and speed from a few hours of real-world practice.

@@ -502,3 +502,12 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - CoRL guide: 23 orals/spotlights on arXiv lacked a takeaway; all added from fetched abstracts. Guide now states coverage (102 at that point). 11 orals/spotlights have no arXiv match, so no takeaway.
 - Humanoid gap sweep against two external lists: 53 anchors from fetched facts (GMT, TWIST, TWIST2, HugWBC, AMO, BFM-Zero, GMR, OmniRetarget, KungfuBot, BeamDojo, ExBody2, HoST, ...). The list's labels were unreliable (2508.16943 is LHM-Humanoid, not HumanoidVerse), so titles come only from fetch_facts. Code links only where the workflow confirmed the repo. Curated 798. `$Ψ_0$` now renders in titles.
 - Local: validate 0 errors, 914 pages, 0 broken links. Verify #148 still running and #149 queued at the end of this run, so the 76 new entries are not CI-checked yet (see STATE next steps). Launch kit numbers updated. Owner: CoRL post by Sun 11-08 if wanted; Search Console task open. End of run 57.
+
+## 2026-11-05 — run 58 (~04:50 UTC–)
+
+- Start: no issues/PRs, 1 star / 0 forks. No add_repo tool; `main` reset to `origin/main`. Verify #149 failed on one link only: LeVERB's project page 404 after its org moved. All 76 new entries otherwise passed.
+- LeVERB link pointed to the new org's Pages URL, derived from the repo found by repo search; not opened by us, verify decides.
+- Intake dispatched 04:50 UTC: no 11-05 papers yet (known RSS pattern); scheduled slots should bring them.
+- CoRL guide: Now/Next bar and per-session 'Your time' line for viewers outside Austin. Browser test with mocked clock and time zones (Shanghai 390 px, Chicago 1100 px, before/during/after): no overflow, no JS errors.
+- 4 picks from leftover 11-04 candidates (SR-DP, CoReMatch, FineCraft, ARPG). Curated 802. Local: validate 0 errors, 918 pages, 0 broken links.
+- Web fetches refused in this run (unanswered permission prompt): vergilshawn sweep skipped, not routed around.

@@ -49,8 +49,54 @@
     vc.checked = vp.get('code') === '1';
     if (vh) vh.checked = vp.get('honor') === '1';
     if (vm) my = mySchedule(vf, vm, vp, vcards, function () { vapply(); });
+    if (vm) sessionClock();
     [vq, vt, vc].concat(vh ? [vh] : []).concat(vk ? [vk] : []).concat(vm ? [vm] : []).forEach(function (el) { el.addEventListener(el === vq ? 'input' : 'change', vapply); });
     vapply();
+  }
+
+  // Program guide: 'Now / Next' bar and session times in the viewer's own time zone, both from data-when (UTC).
+  // The bar shows only before and during the conference. Listed times stay in venue time; a line is added for remote viewers.
+  function sessionClock() {
+    var bar = document.getElementById('pg-now');
+    function bi(en, zh) { return '<span lang="en">' + en + '</span><span lang="zh">' + zh + '</span>'; }
+    function utc(s) { var m = /^(\d{4})(\d\d)(\d\d)T(\d\d)(\d\d)/.exec(s || ''); return m ? new Date(Date.UTC(+m[1], m[2] - 1, +m[3], +m[4], +m[5])) : null; }
+    var list = [];
+    document.querySelectorAll('.pg-sess').forEach(function (b) {
+      var w = (b.dataset.when || '').split('/'), s = utc(w[0]), e = utc(w[1]);
+      if (s && e) list.push({ b: b, s: s, e: e });
+    });
+    if (!bar || !list.length) return;
+    list.sort(function (x, y) { return x.s - y.s; });
+    function fmt(d, loc, day) {
+      var o = { hour: '2-digit', minute: '2-digit', hour12: false };
+      if (day) { o.weekday = 'short'; o.month = 'numeric'; o.day = 'numeric'; }
+      try { return d.toLocaleString(loc, o); } catch (e) { return d.toISOString().slice(0, 16).replace('T', ' ') + ' UTC'; }
+    }
+    if (list[0].s.getTimezoneOffset() !== 360) {  // venue is UTC-6 in November
+      list.forEach(function (x) {
+        var p = document.createElement('p');
+        p.className = 'pg-local';
+        p.innerHTML = bi('Your time: ' + fmt(x.s, 'en-US', true) + '–' + fmt(x.e, 'en-US'), '你的时间：' + fmt(x.s, 'zh-CN', true) + '–' + fmt(x.e, 'zh-CN'));
+        x.b.querySelector('p.muted').after(p);
+      });
+    }
+    function name(x) { return '<a href="#' + x.b.querySelector('h3').id + '">' + x.b.querySelector('h3').innerHTML + '</a>'; }
+    function until(ms) {
+      var m = Math.max(1, Math.ceil(ms / 60000)), h = Math.round(m / 60), d = Math.round(m / 1440);
+      if (m < 60) return bi('in ' + m + ' min', m + ' 分钟后');
+      if (m < 2880) return bi('in ' + h + ' h', h + ' 小时后');
+      return bi('in ' + d + ' days', d + ' 天后');
+    }
+    function tick() {
+      var now = new Date(), on = list.filter(function (x) { return x.s <= now && now < x.e; }), later = list.filter(function (x) { return x.s > now; });
+      var next = later.filter(function (x) { return +x.s === +later[0].s; }), html = '';
+      if (on.length) html += '<p><b>' + bi('Now', '正在进行') + '</b> ' + on.map(name).join(' · ') + '</p>';
+      if (next.length) html += '<p><b>' + bi('Next', '接下来') + '</b> ' + until(next[0].s - now) + ': ' + next.map(name).join(' · ') + '</p>';
+      bar.innerHTML = html;
+      bar.hidden = !html;
+    }
+    tick();
+    setInterval(tick, 60000);
   }
 
   // Program guide: a personal schedule. ☆ on a card saves it in this browser; the panel lists saved papers
