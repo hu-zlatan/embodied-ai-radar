@@ -116,6 +116,33 @@
    "comment": "Project Website: https://plan-lab.github.io/projects/coda/",
    "abstract": "Generative simulation can automate robot environment construction, but physically valid environments are not necessarily useful for training. The challenge is to identify environments that address a policy's failures and supervision that helps it overcome them. We introduce CoDA, a framework in which a simulation data engine and an action policy co-evolve through a shared heterogeneous memory of environment construction, policy failures, and learning progress. The memory compiles validated diagnoses from a vision-language critic into generation programs that recreate difficulties and training programs that help the policy overcome them. We further propose Text2potential to convert these diagnoses into staged potentials for action-chunk value learning, providing dense supervision for policy updates while preserving the task's optimal policy under standard shaping assumptions. Measured learning progress guides further generation and program refinement. Across four manipulation task families, CoDA improves out-of-distribution success from 5.3% after supervised fine-tuning to 27.6%, exceeding the strongest closed-loop baseline by 9.5 percentage points with the same generation budget. On LIBERO-Pro, 15 rounds of generation and training raise success from 25% to 84% under position perturbations and from 1% to 76% under instruction perturbations.",
    "ai_summary": "CoDA co-evolves a simulation engine and robot policy via shared memory of failures and progress, using vision-language diagnostics and staged potential rewards to improve out-of-distribution manipulation success."
+  },
+  {
+   "id": "2611.06768",
+   "title": "PyRUA-REAL: Robot Exploration and Adaptive Learning through RSI in the Real World",
+   "upvotes": 7,
+   "hf_date": "2026-11-05",
+   "published": "2026-11-05",
+   "topics": [],
+   "authors": [
+    "Qiang Wang",
+    "Jianxin Bi",
+    "Shulong Jiang",
+    "Ruiyang Si",
+    "Wenbo Huang",
+    "Kaiqi Chen",
+    "Jiaxin Li",
+    "Liyun Li",
+    "Xuanyi Li",
+    "Daquan Zhou"
+   ],
+   "organization": null,
+   "github": null,
+   "project": "https://dagroup-pku.github.io/PyRUA-Lean/real/",
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "Coding agents powered by models such as GPT-6-Astra connect spatial reasoning with executable robot behavior, raising the question of how such agents can produce lasting improvements in robot capabilities from physical interaction. In this work, we study embodied recursive self-improvement (RSI) through real-world exploration, code refinement, and deployment using PyRUA-REAL, a framework in which coding agents retain interaction experience as persistent memory and reusable executable skills that inform subsequent exploration and improvement. Our empirical study places physical manipulation at the center of the improvement process, examining how agents collaborate, what kinds of execution feedback support effective code refinement, and how task specifications and previously acquired skills influence robustness and task transfer. We further investigate the efficiency and capability of the resulting programs when deployed without involving an online agent for decision-making. Across eight real-world tasks, PyRUA-REAL achieves an average success rate of 91.1%. In complementary evaluation on 42 tasks from the RoboDojo benchmark, it achieves an average success rate of 84.4%. This study provides empirical guidance for turning physical exploration into reusable robot skills that support continued improvement and robust, efficient deployment.",
+   "ai_summary": "PyRUA-REAL enables coding agents to convert physical robot exploration into persistent executable skills, achieving high success rates across real-world and benchmark tasks through recursive self-improvement."
   }
  ],
  "curated_link_updates": [
