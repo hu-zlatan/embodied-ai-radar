@@ -57,7 +57,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
-000. Run 60: check verify on run 59's 46 anchors (http → https was forced for moma-llm, unrealzoo, susie; if one fails, restore or drop that `project:`). Overlap method works better than per-list sweeps: fetch lists with curl from raw.githubusercontent.com, count uncurated IDs per independent list (the two humanoid lists are near mirrors, count as one), run `facts.yml`, write from its abstracts. 16 of 62 skipped. 1,163 IDs appear in one list only; not worth it unless a topic looks thin.
+000. Verify #153 passed all 46 anchors of run 59. Next: Fri 11-06 feed picks; W45 intro Mon 11-09; CoRL starts 11-09. Overlap method works better than per-list sweeps: fetch lists with curl from raw.githubusercontent.com, count uncurated IDs per independent list (the two humanoid lists are near mirrors, count as one), run `facts.yml`, write from its abstracts. 16 of 62 skipped. 1,163 IDs appear in one list only; not worth it unless a topic looks thin.
 00. After a curated push, confirm verify really ran: a pending run can be cancelled by a newer one in the `arxiv-api` group (run 52, #139). Re-dispatch if so.
 0. New curated entries get BibTeX metadata on the next intake run. A push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started/finished.
 1. Scheduled runs: on 10-23 the 01:11/02:17/04:53 slots never fired; first scheduled intake landed 05:57 UTC, then 07:36, 09:37, 12:51, 15:42, 19:21. So the feed lands ~06:00 UTC — acceptable; no owner action. arXiv does not announce on Sat/Sun nights, so the next new feed day is Mon 10-26 (~00:00 UTC announcement).
