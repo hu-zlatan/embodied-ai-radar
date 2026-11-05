@@ -48,52 +48,6 @@
    "fetched": "2026-11-05"
   },
   {
-   "id": "2611.06184",
-   "title": "Can Astra Solve RoboMME without Breaking the Bank?",
-   "published": "2026-11-05",
-   "topics": [
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://bingaochen.github.io/Astra-on-RoboMME/"
-   ],
-   "comment": "Accepted at the Workshop on Memory for Robot Foundation Models and the Workshop on Agentic Robotics, CoRL 2026. Project page: https://bingaochen.github.io/Astra-on-RoboMME/",
-   "authors": [
-    "Bingao Chen",
-    "Haoquan Fang",
-    "C. Karen Liu"
-   ],
-   "abstract": "Robotic manipulation often requires remembering information that is no longer visible, such as an object's location before occlusion or the order of a demonstrated action sequence. A large vision-language planner can read this history, but calling it before every action chunk is slow and costly. We present a three-tier system for the RoboMME benchmark. GPT-6 Astra (System 2) selects a grounded subtask from stored visual history, a $π_{0.5}$ vision-language-action policy (System 1) executes it, and a fine-tuned Qwen3-VL-4B monitor (System 1.5) checks after each action chunk whether the subtask is finished. The instruction is kept until the monitor reports completion or a task-specific event occurs, while the policy keeps acting on new observations. On RoboMME, the system succeeds in 79.13% of episodes with an average of 3.63 Astra calls and 80.84 seconds per episode. This is 34.62 points above the best published non-oracle baseline and 4.95 points below GroundSG+Oracle, which gives the low-level policy ground-truth subgoals.",
-   "fetched": "2026-11-05"
-  },
-  {
-   "id": "2611.06120",
-   "title": "ReactWorld: Structuring Interaction Responses for Embodied Video Generation",
-   "published": "2026-11-05",
-   "topics": [],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://metaengine-world.github.io/ReactWorld/"
-   ],
-   "comment": "10 pages, 7 figures. Project page: https://metaengine-world.github.io/ReactWorld/",
-   "authors": [
-    "Hanwei Liu",
-    "Huijia Zhang",
-    "Hanzhang Wang",
-    "Guangyu Liu",
-    "Hanbei Zhan",
-    "Linjie Hu",
-    "Bin Xiao",
-    "Xuan Zhou",
-    "Dong Zhang"
-   ],
-   "abstract": "Embodied video world models predict scene changes caused by robot actions, yet generated object responses may remain inconsistent with task intent and contact dynamics. Critical responses in embodied scenes often concentrate in local regions and specific time intervals. Inspired by chain-of-thought reasoning, we introduce ReactWorld, an embodied video generation model guided by structured interaction anticipation. In the generation backbone's feature space, an interaction response field predictor anticipates how the interaction will unfold, explicitly describing participant roles, future motion response intensity, and local motion changes. A response feedback adapter forms increments to object features from the difference between the object branch's outputs with predicted and zeroed local dynamics inputs. It also converts predicted displacements into positional biases for temporal attention. These two mechanisms guide object feature updates and information retrieval across frames, respectively. Through interaction anticipation and generative feedback, ReactWorld achieves an average score of 77.51 on RBench, outperforming PhysisForcing by 3.29 points with improvements in all nine categories. On EZS-Bench, it achieves a Domain score of 86.98 and an average score of 81.87.",
-   "fetched": "2026-11-05"
-  },
-  {
    "id": "2611.06118",
    "title": "Online Adaptation to Latent Physical Properties for Learning from Demonstration",
    "published": "2026-11-05",
@@ -113,53 +67,6 @@
     "Fumio Kanehiro"
    ],
    "abstract": "Manipulating visually identical objects with different physical properties requires adapting actions based on information acquired through interaction. We address the problem of learning from demonstrations how to adapt manipulation actions, such as regrasping and changing contact locations, based on physical-property information acquired during interaction. To this end, we propose a learning-from-demonstration method that learns latent representations of physical properties needed to predict object responses and conditions a policy on online estimates of these representations. A dynamics model and object-specific latent representations are jointly learned from demonstrations that include behaviors adapting to the objects' physical properties, and the learned representations are then used to condition an imitation policy. During execution, the dynamics model and policy weights remain fixed, while the latent representation is updated based on the discrepancy between predicted and actual observations, allowing interaction with the object to inform action generation. Real-world and simulation experiments with objects whose centers of mass differ suggest that online adaptation through latent representations of physical properties can improve task success rates. However, in simulation, success rates on center-of-mass locations absent from the demonstrations remained around 30%, indicating limited adaptation to unseen physical properties. Project page: https://isri-aist.github.io/latent-dynamics-project-page/",
-   "fetched": "2026-11-05"
-  },
-  {
-   "id": "2611.05979",
-   "title": "Learning Object-Centric Motion Priors from Human for Robotic Dexterous Manipulation",
-   "published": "2026-11-05",
-   "topics": [
-    "manipulation",
-    "datasets"
-   ],
-   "venue": "AAAI 2026",
-   "code": [],
-   "project": [
-    "https://ojs.aaai.org/index.php/AAAI/article/view/38892"
-   ],
-   "comment": "Accepted as an oral paper at AAAI 2026 (Website: https://ojs.aaai.org/index.php/AAAI/article/view/38892)",
-   "authors": [
-    "Zhengdong Hong",
-    "Guofeng Zhang"
-   ],
-   "abstract": "Manipulating diverse objects with multi-fingered dexterous hands is challenging due to the high dimensionality and complex dynamics. Human-Object Interaction (HOI) datasets provide rich knowledge about task information and embodied interactions. Instead of solely imitating the human demonstrations, our method learns to holistically predict future hand-object states by leveraging these datasets. The predicted future states of the object can serve as a general-purpose reward term for reinforcement learning, reducing reliance on task-specific reward engineering and enhancing generalization across tasks. We conduct extensive experiments on three manipulation tasks in simulation and the real world. Our approach outperforms existing SOTA methods in both success rate and generalizability on novel objects. Furthermore, we validate the cross-embodiment compatibility of our methods by successfully deploying the skills on different robot hands.",
-   "fetched": "2026-11-05"
-  },
-  {
-   "id": "2611.05667",
-   "title": "Correct Robots Before They Make Mistakes: Proactive Human-in-the-Loop Intervention via Preference Learning",
-   "published": "2026-11-05",
-   "topics": [],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://intuitive-robots.github.io/PHIL-page/"
-   ],
-   "comment": null,
-   "authors": [
-    "Xinkai Jiang",
-    "Jing Jiang",
-    "Hongyi Zhou",
-    "Pankhuri Vanjani",
-    "Ahmad Baki",
-    "Jakub Suliga",
-    "Ge Li",
-    "Zhuoyue Li",
-    "Gerhard Neumann",
-    "Rudolf Lioutikov"
-   ],
-   "abstract": "This paper presents Proactive Human-in-the-Loop (PHIL), a framework for proactive policy correction and preference-based post-training. PHIL enables operators to preview policy-predicted future motion and intervene before anticipated undesirable actions. During takeover, PHIL continues querying the policy and displaying its predicted trajectories in the physical workspace through an extended reality (XR) interface. PHIL pairs rejected policy predictions with corrective action chunks subsequently executed from the same physical state over the same horizon, and preference-based post-training encourages the policy to favor these corrections. This paper evaluates PHIL on four real-world manipulation tasks using a diffusion policy and a pretrained vision-language-action policy. With five correction episodes per condition, PHIL increases mean success rates across the evaluated tasks and demonstration budgets from 44.0% to 70.3% for the diffusion policy and from 57.8% to 76.9% for X-VLA, compared with HG-DAgger. Separately, policies trained with proactive corrections show fewer unnecessary recovery behaviors in successful episodes. Project page: https://intuitive-robots.github.io/PHIL-page/.",
    "fetched": "2026-11-05"
   },
   {
@@ -1068,26 +975,6 @@
     "Ahmad Kalhor"
    ],
    "abstract": "Robotic grasping relies on large manually annotated datasets, which are costly to create. We introduce a straight-skeleton-based algorithm for generating two-finger grasp keypoints and identifying regions suitable for stable, feasible grasps. Our automated pipeline produces consistent grasp annotations without human intervention. We also propose the Skeleton-based Generative Grasp Convolutional Neural Network (SkelGG-CNN), a 4-DoF architecture that learns geometric grasp features from skeleton-based guidance. To extend auto-labeling to 6-DoF grasping, we develop a generalized quasi-3D skeletonization algorithm that operates directly on point clouds. Using automatically generated 4-DoF labels, SkelGG-CNN achieves accuracies of 95.42%, 96.55%, and 97.1% on Jacquard V1, Jacquard V2, and Cornell, respectively. On the GraspNet novel split, 6-DoF auto-labeling achieves an average precision of 18.33, comparable to state-of-the-art model-based approaches. In simulation, the 6-DoF method achieves success rates of 98.4% on Dex-Net and 89.1% on EGAD!. Real-world experiments with a Delta parallel robot show success rates of 97.4% on single household objects and 95.0% in cluttered scenes, outperforming state-of-the-art methods without domain adaptation. The 4-DoF pipeline adapts across environments and produces annotations approaching human-level precision, enabling efficient training of lightweight models on small datasets. The generalized 6-DoF method provides scalable, geometry-aware annotations for cluttered 3D scenes.",
-   "fetched": "2026-10-30"
-  },
-  {
-   "id": "2610.38357",
-   "title": "CSO: Refining Robotic Policies via Skill Distribution Alignment and Skill-Grained Optimization",
-   "published": "2026-10-30",
-   "topics": [],
-   "venue": "NeurIPS 2026",
-   "code": [],
-   "project": [],
-   "comment": "Accepted at NeurIPS 2026. 31 pages, including appendices and checklist",
-   "authors": [
-    "Zhiyuan Xiang",
-    "Xiang Deng",
-    "Wanjie Tao",
-    "Xu Chen",
-    "Zhao Jielun",
-    "Weili Guan"
-   ],
-   "abstract": "Discretizing continuous actions into discrete skills using methods like VQ-VAE has emerged as a powerful paradigm for robotic manipulation. However, quantization errors yield a suboptimal distribution for the skill prior, degrading its performance. While reinforcement learning offers a path for refinement, its direct application faces unstable encoder updates and a granularity dilemma in importance sampling. To address these challenges, we introduce Cascaded Skills Optimization (CSO), a two-stage post-training framework. First, Rejection-Sampling Supervised Fine-tuning aligns the model's observation-to-skill mapping with the distribution of successful online trajectories via supervised fine-tuning. Second, with the observation encoder frozen, Skills Policy Optimization computes an independent, clipped importance ratio for each complete skill, enabling stable and efficient updates. With a lightweight QueST-style policy, CSO raises overall LIBERO success from 80.1% to 97.5%, improves performance on RoboTwin2.0, and achieves 61.0% success across five physical single-arm tasks. Additional comparisons with FAST, discrete BEAST, and fixed-buffer IQL further validate the effectiveness of our two-stage post-training strategy.",
    "fetched": "2026-10-30"
   },
   {
