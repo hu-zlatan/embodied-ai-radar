@@ -2,7 +2,7 @@
 
 _Vision-language-action models and generalist robot policies._
 
-171 entries, ⭐ = highlight. Generated from [`data/curated/vla.yaml`](../data/curated/vla.yaml); edit the YAML, not this file.
+172 entries, ⭐ = highlight. Generated from [`data/curated/vla.yaml`](../data/curated/vla.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [中文](vla.zh-CN.md)
 
@@ -76,6 +76,7 @@ _Vision-language-action models and generalist robot policies._
 - **[Playful Agentic Robot Learning](https://arxiv.org/abs/2606.19419)** (2026) — CoRL 2026 Spotlight. RATs, teams of embodied coding agents, propose exploratory tasks and learn skills through self-directed play before any downstream task arrives. · [code](https://github.com/Playful-RATs/rats) · [project](https://playful-rats.github.io/)
 - **[Post-hoc Epistemic Uncertainty for Vision-Language-Action Policies](https://arxiv.org/abs/2610.29730)** (2026) — Post-hoc kernel-variance heads (Gaussian-process variance over training-demo embeddings) estimate one VLA policy's epistemic uncertainty without an ensemble, so the robot knows when to ask for help. · [code](https://github.com/post-hoc-vla-uncertainty/post-hoc-vla-uncertainty)
 - **[Profiling a Frontier Agent with EBench: From Direct Control to Harness with Policy](https://arxiv.org/abs/2610.35832)** (2026) — Report: GPT-6-Astra drives a robot on EBench via waypoints or by calling a VLA/WAM policy. Direct control leads on short tasks, trails on long-horizon and contact-rich ones; calling a policy cuts token cost. · [project](https://internrobotics.github.io/EBench-Astra-Tech-Report/)
+- **[PyRUA-REAL: Robot Exploration and Adaptive Learning through RSI in the Real World](https://arxiv.org/abs/2611.06768)** (2026) — Coding agents keep real-robot experience as memory and reusable code skills, refining them through physical trials; reports 91.1% success on eight real tasks and 84.4% on 42 RoboDojo tasks. · [project](https://dagroup-pku.github.io/PyRUA-Lean/real/)
 - **[Quantize by Doing: Task-Guided Mixed-Precision Quantization of Vision-Language-Action Models](https://arxiv.org/abs/2610.38661)** (2026) — Assigns VLA bit widths from short closed-loop task-success tests, not calibration sensitivity: ~4-bit weights on LIBERO across four models. Honest caveat: allocations transfer to a real arm for X-VLA but fail for π0.5. · [code](https://github.com/jiuyixu25/QbD-VLA)
 - **[Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments](https://arxiv.org/abs/2605.30280)** (2026) — Qwen-VLA studies whether manipulation, navigation and other decision tasks can share one VLA model across tasks, environments and robots.
 - **[RDT2: Exploring the Scaling Limit of UMI Data Towards Zero-Shot Cross-Embodiment Generalization](https://arxiv.org/abs/2602.03310)** (2026) — RDT2 builds a robot foundation model on a 7B-parameter VLM and tests how far UMI data scales toward zero-shot deployment on new embodiments. · [code](https://github.com/thu-ml/RDT2) · [project](https://rdt-robotics.github.io/rdt2/)

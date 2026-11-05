@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 90 条，⭐ 为重点推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 92 条，⭐ 为重点推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html) · [English](world-models.md)
 
@@ -24,6 +24,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Chunk-wise Model-based Policy Optimization](https://arxiv.org/abs/2610.14564)** (2026) — CoRL 2026 Spotlight。将分块世界模型用作训练期可微评估器的模型式强化学习，针对累积误差、推理延迟与 BPTT 不稳定问题。 · [代码](https://github.com/song-wx/CMPO) · [项目页](https://song-wx.github.io/cmpo.github.io/)
 - **[DeXplicit: Making Physical State Explicit in Dexterous Manipulation World Models](https://arxiv.org/abs/2610.30781)** (2026) — 灵巧操作世界模型：先根据手部轨迹在度量 3D 空间中显式预测物体运动与形变，再据此渲染视频。报告在 HOT3D、OakInk2、PhysTwin 上运动点误差比 PointWorld 低 27–40%，两步因果生成大幅提速。 · [代码](https://github.com/Abecid/DeXplicit) · [项目页](https://dexplicit.github.io)
 - **[Do World Action Models Generalize Better than VLAs? A Robustness Study](https://arxiv.org/abs/2603.22078)** (2026) — 在扰动下对比世界动作模型与 VLA 的鲁棒性研究，用于检验显式未来预测能带来更好泛化这一说法。 · [代码](https://github.com/Robot-Robustness/RoboTwin2.0-Plus) · [项目页](https://robot-robustness.github.io/RoboTwin2.0-Plus/)
+- **[Does LeWorldModel Preserve Local Action Geometry?](https://arxiv.org/abs/2610.31716)** (2026) — 比较预训练 LeWorldModel 与仿真器对微小动作变化的响应；最小尺度下最敏感方向的中位夹角相差约 36–42°，说明评估应按尺度进行。 · [项目页](https://geometry.vasi.boo/)
 - **[DreamX: Video Diffusion Model is a Universal Latent Action Learner](https://arxiv.org/abs/2611.05377)** (2026) — 复用预训练视频扩散模型提取紧凑潜动作（每帧 1,200 压到 4 个 token），作为人、机器人和不同环境之间的共享接口，并支持零示教动作迁移。 · [代码](https://github.com/cvlab-kaist/DreamX) · [项目页](https://cvlab-kaist.github.io/DreamX/)
 - **[Fast-WAM: Do World Action Models Need Test-time Future Imagination?](https://arxiv.org/abs/2603.16666)** (2026) — 追问世界动作模型在测试时是否需要想象未来：训练时保留视频联合训练，推理时跳过视频生成，以对照实验区分两者的作用。 · [代码](https://github.com/yuantianyuan01/FastWAM) · [项目页](https://yuantianyuan01.github.io/FastWAM/)
 - **[From World Models to World Action Models: A Concise Tutorial for Robotics](https://arxiv.org/abs/2607.00836)** (2026) — 简明教程而非综述：界定机器人领域的世界模型和世界动作模型，并在统一视角下比较空间智能模型、JEPA 和 Cosmos。 · [代码](https://github.com/clearlab-sustech/WorldModelSurvey)
@@ -34,6 +35,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Hierarchical World Models with Implicit Dynamics](https://arxiv.org/abs/2610.42146)** (2026) — ID-WM 将状态可达性与局部控制解耦：高层模型在状态流形上采样可行转移，低层世界模型充当逆动力学求解器，把子目标落实为精确动作。报告比单层世界模型 MPC 提升 135%，比最优策略与扩散规划器提升 38.5%。 · [项目页](https://id-wm.github.io)
 - **[Interactive World Simulation with Cosmos for Physical AI](https://arxiv.org/abs/2611.06627)** (2026) — 将 Cosmos 模型用于实时交互仿真的统一框架：根据动作流式生成观测，或依据外部仿真器的物理状态生成观测。示例涵盖操作、可控视频迁移和多视角自动驾驶。 · [代码](https://github.com/nvidia/cosmos) · [项目页](https://research.nvidia.com/labs/cosmos-lab/cosmos-simulation)
 - **[InternW0-$Δ$: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data](https://arxiv.org/abs/2609.31394)** (2026) — 结合视频专家、动作专家、冻结 VLM 和仅训练时使用的 4D 几何蒸馏的世界动作模型，在含 2 万多小时开放数据的异构语料上预训练。 · [代码](https://github.com/InternRobotics/InternW0-Delta) · [项目页](https://internrobotics.github.io/InternW0-Delta/)
+- **[Jev with Foresight: Safe Language-Guided Autonomous Driving via a Language World Model](https://arxiv.org/abs/2611.05448)** (2026) — 预测每个候选动作下周围车辆的反应，再把后果交给类型化决策模型比较；报告在回放的 NGSIM 片段中碰撞率从 48.2% 降至 2.8%。 · [项目页](https://ys-qu.github.io/jev-ad-website)
 - **[LaWAM: Latent World Action Models for Efficient Dynamics-Aware Robot Policies](https://arxiv.org/abs/2606.15768)** (2026) — 不生成视频的世界动作模型：在视觉基础模型的特征空间中训练潜动作模型，预测未来观测特征作为“潜在视觉子目标”来条件化动作生成。报告 LIBERO 98.6%、RoboTwin 91.22%，每个动作块推理 187 ms，比像素级 WAM 延迟低最多 24 倍。 · [代码](https://github.com/RLinf/LaWAM) · [项目页](https://rlinf.github.io/LaWAM/)
 - **[Motubrain: An Advanced World Action Model for Robot Control](https://arxiv.org/abs/2604.27792)** (2026) — 基于 UniDiffuser 的三流世界动作模型，一个模型同时覆盖策略、世界建模、视频生成和逆动力学，并可利用纯视频和跨形态数据。 · [项目页](https://www.shengshu.com/en/motubrain)
 - **[OSWAM: An Effective World Action Model with One-Step Action Generation](https://arxiv.org/abs/2610.35850)** (2026) — 单步扩散即可生成动作的世界动作模型：用“想象 token”代替随机噪声初始化，为动作提供先验。报告比直接策略式 WAM 快约 3 倍，编译后在 RTX 5090 上延迟低至 40 毫秒，覆盖自动驾驶与具身控制。 · [代码](https://github.com/PolyU-VCLab/OSWAM) · [项目页](https://gwenzhang.github.io/OSWAM/)

@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 72 条，⭐ 为重点推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 73 条，⭐ 为重点推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/datasets.html) · [English](datasets.md)
 
@@ -16,6 +16,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[BEAKER: An Expert-Curated Benchmark for Embodied Brains in Self-Driving Chemical Laboratories](https://arxiv.org/abs/2611.06911)** (2026) — 1000 道专家整理的题目、11 种图像和视频任务，检验多模态大模型能否担任自动化化学实验室的“大脑”：可供性、轨迹、仪器搭建、安全与步骤推理。
 - **[BURGER: Benchmarking and Understanding Robotic Generalization via Embodied Drawing](https://arxiv.org/abs/2610.40532)** (2026) — 语言条件绘画基准：同一指令有无数种合法画法。含 282 个任务的 28,200 条仿真示范，用于比较五种 VLA 模型在数据规模、语言落地和多模态行为上的差异。 · [代码](https://github.com/Qxjyqzw/BURGER) · [项目页](https://siyingzhao.github.io/BURGER/)
 - **[Behavior Spatial Benchmark: Evaluating Spatial Understanding for Robotics](https://arxiv.org/abs/2610.34051)** (2026) — 基于 BEHAVIOR-1K 的 BEHAVIOR-Spatial 基准：包含空间问答、指点定位与机器人动作评测。基线策略在未见布局上成功率 41.6%，但在同一布局中更换目标物体指令时降至 16.1%；提供真值目标提示带来的提升最大。 · [项目页](https://arielchen07.github.io/behavior-spatial/)
+- **[Beyond Infraction Scores: Failure-Boundary Profiles for Closed-Loop Evaluation of Driving and Robot Navigation Agents](https://arxiv.org/abs/2611.06453)** (2026) — 每类场景只改变一个可测因素，并认证智能体此时该通过还是该停下；CARLA 中得分最高的学习型智能体决策准确率为 0.60，规则专家为 0.74。 · [代码](https://github.com/speedym/failure-boundary-profiles)
 - **[BiDex-100: A Comprehensive Benchmark for Bimanual Dexterous Manipulation Across 100+ Simulation Tasks](https://arxiv.org/abs/2610.25459)** (2026) — 双灵巧手仿真基准：106 个任务按泛化、指令遵循、少示教、长时程、记忆五个维度组织，每个任务配有域外变体；提供 8,080 条遥操作示教，并在统一协议下评测了七个 VLA 模型。 · [项目页](https://BiDex-100.github.io/BiDex-100/)
 - **[CRONOS: Benchmarking Non-Episodic Reinforcement Learning for Robotic Manipulation](https://arxiv.org/abs/2611.05080)** (2026) — 面向无频繁重置场景下 VLA 强化学习微调的仿真基准；发现直接微调会因物体和末端位姿偏移而失败，定向分配重置并处理预训练偏差可以缓解。 · [项目页](https://embodiedai-ntu.github.io/cronos/)
 - **[ClothDojo: Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding](https://arxiv.org/abs/2611.01190)** (2026) — 仿真平台：用微调后的 VLA 生成近 8000 条成功的衣物操作轨迹，并重新渲染供 RGB 策略训练，效果优于直接用人类数据训练，但泛化到未见衣物仍是难题。 · [项目页](https://clothdojo.github.io/)

@@ -2,7 +2,7 @@
 
 _视觉-语言-动作模型与通用机器人策略。_
 
-共 171 条，⭐ 为重点推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
+共 172 条，⭐ 为重点推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [English](vla.md)
 
@@ -76,6 +76,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[Playful Agentic Robot Learning](https://arxiv.org/abs/2606.19419)** (2026) — CoRL 2026 Spotlight。具身编程智能体团队 RATs 在下游任务到来之前，自行提出探索任务，并通过自主玩耍学习技能。 · [代码](https://github.com/Playful-RATs/rats) · [项目页](https://playful-rats.github.io/)
 - **[Post-hoc Epistemic Uncertainty for Vision-Language-Action Policies](https://arxiv.org/abs/2610.29730)** (2026) — 在训练完成后为单个 VLA 策略加上轻量的核方差头（基于训练示教嵌入的高斯过程方差）来估计认知不确定性，无需训练和运行策略集成，让机器人知道何时该求助或补充示教。 · [代码](https://github.com/post-hoc-vla-uncertainty/post-hoc-vla-uncertainty)
 - **[Profiling a Frontier Agent with EBench: From Direct Control to Harness with Policy](https://arxiv.org/abs/2610.35832)** (2026) — 评测报告：在 EBench 上让 GPT-6-Astra 直接输出路径点控制机器人，或通过执行框架调用 VLA/WAM 策略。直接控制在短时任务上领先，但在长时程与接触密集任务上落后；调用策略可显著减少 token 开销。 · [项目页](https://internrobotics.github.io/EBench-Astra-Tech-Report/)
+- **[PyRUA-REAL: Robot Exploration and Adaptive Learning through RSI in the Real World](https://arxiv.org/abs/2611.06768)** (2026) — 让编码智能体把真机交互经验存为记忆和可复用的代码技能，并在实物试验中持续改进；报告八个真实任务成功率 91.1%，RoboDojo 的 42 个任务成功率 84.4%。 · [项目页](https://dagroup-pku.github.io/PyRUA-Lean/real/)
 - **[Quantize by Doing: Task-Guided Mixed-Precision Quantization of Vision-Language-Action Models](https://arxiv.org/abs/2610.38661)** (2026) — 用短时闭环任务成功率（而非校准数据敏感度）为 VLA 各组件分配权重/激活位宽，并考虑组件间相互影响；在四个 VLA 与 LIBERO 全部套件上约 4 比特权重仍保持较强表现。作者如实指出：仿真选出的方案在真机上对 X-VLA 无损，对 π0.5 却失败。 · [代码](https://github.com/jiuyixu25/QbD-VLA)
 - **[Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments](https://arxiv.org/abs/2605.30280)** (2026) — Qwen-VLA 研究操作、导航等决策任务能否由同一 VLA 模型统一，跨任务、环境和机器人形态。
 - **[RDT2: Exploring the Scaling Limit of UMI Data Towards Zero-Shot Cross-Embodiment Generalization](https://arxiv.org/abs/2602.03310)** (2026) — RDT2 基于 70 亿参数 VLM 构建机器人基础模型，探索 UMI 数据规模能把零微调跨形态部署推到多远。 · [代码](https://github.com/thu-ml/RDT2) · [项目页](https://rdt-robotics.github.io/rdt2/)

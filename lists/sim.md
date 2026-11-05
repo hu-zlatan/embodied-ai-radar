@@ -2,7 +2,7 @@
 
 _Physics simulators, GPU-parallel training and transfer to real robots._
 
-48 entries, ⭐ = highlight. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
+49 entries, ⭐ = highlight. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/sim.html) · [中文](sim.zh-CN.md)
 
@@ -13,6 +13,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._
 - **[Active Generative Simulation: Meta-Learning What to Simulate for Sim-and-Real Policy Co-Training](https://arxiv.org/abs/2610.19479)** (2026) — MetaGenSim learns which simulated data to generate, using meta-gradients from real-world performance, instead of sampling the simulator uniformly. · [project](https://meta-gensim.github.io)
 - **[AuRA: From Atoms to Bits through Autonomous Robot Interaction](https://arxiv.org/abs/2610.34452)** (2026) — Automates the robot interaction and data preparation behind physics-informed digital twins; reports 88.5% less active human labor per asset across 13 deformable objects. · [code](https://github.com/Yoonkyo/AuRA) · [project](https://aura-robot.github.io/)
 - **[Closing the Dynamics Gap through Self-Directed Robotic Interaction](https://arxiv.org/abs/2611.02691)** (2026) — CUE (CoRL 2026 Late Breaking Results): an agent identifies friction and restitution by choosing interactions where its simulation is least accurate; on billiards it reports 72% lower held-out position error. · [project](https://cue-dynamics.github.io/)
+- **[CoDA: Co-Evolution of Data Engines and Action Policies](https://arxiv.org/abs/2610.22362)** (2026) — Turns diagnosed policy failures into new simulated scenes and shaped training signals, so generator and policy improve together; on LIBERO-Pro, reports success rising from 25% to 84% under position perturbations. · [project](https://plan-lab.github.io/projects/coda/)
 - **[DexSuite: An All-in-One Framework for Dexterous Manipulation Across Arms, Hands, and Tasks](https://arxiv.org/abs/2610.37799)** (2026) — Open dexterous-manipulation framework on Genesis: 30 tasks, 10 arms × 12 end effectors (100+ single-arm robots), teleoperation, simulated touch, a 16-pair benchmark and 4,700 demo episodes. · [project](https://dexsuiteorg.github.io)
 - **[Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot](https://arxiv.org/abs/2601.02078)** (2026) — Genie Sim 3.0: a manipulation simulation platform whose LLM tool builds scenes from natural language, with an LLM- and VLM-based automated benchmark. · [code](https://github.com/AgibotTech/genie_sim)
 - **[Gym-Anything for Robotics: Scaling physical simulations with digital agents](https://arxiv.org/abs/2610.40565)** (2026) — Coding agents build robotics simulations, checked by an adversarial create-and-audit loop; result RoboWorld: 25 sims chosen by U.S. GDP share, 200 RL envs. Best frontier models average just 0.06 reward on test tasks. · [code](https://github.com/gym-anything/robotics) · [project](https://gym-anything.github.io/robotics)
