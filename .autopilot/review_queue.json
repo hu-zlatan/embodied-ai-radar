@@ -1,43 +1,6 @@
 {
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "papers": [
-  {
-   "id": "2610.19366",
-   "title": "Seeing, Maintaining, and Learning: The Evolution of Multimodal Agent Memory",
-   "upvotes": 49,
-   "hf_date": "2026-10-15",
-   "published": "2026-10-14",
-   "topics": [],
-   "authors": [
-    "Minghao Guo",
-    "Qingyue Jiao",
-    "Xiujin Liu",
-    "Jianhong Pang",
-    "Ruimeng Yang",
-    "Naihao Xu",
-    "Liwei Che",
-    "Haochen Xue",
-    "Ziqi Wang",
-    "Xinying Cai",
-    "Jiaxuan Luo",
-    "Jiaxin Deng",
-    "Xuesong Ye",
-    "Jintao Qu",
-    "Wenyao Gao",
-    "Jingwen Gu",
-    "Chenyang Zhao",
-    "Shichun Liu",
-    "Guibin Zhang",
-    "Zefang Liu"
-   ],
-   "organization": "Fudan University",
-   "github": "https://github.com/Seeing-Maintaining-Learning/multimodal-agent-memory-evolution",
-   "project": null,
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Multimodal models and agents have emerged to enable AI systems to learn from and interact with the real world more like humans by integrating information across multiple modalities. However, enabling multimodal agents to continually acquire useful information from complex, heterogeneous multimodal data remains a significant challenge as they move toward long-horizon tasks and lifelong settings. Addressing this challenge requires effective memory mechanisms that can maintain continuity across sessions, adapt to changing users and environments, and refine memory-management policies through accumulated experience. We introduce a two-axis analytical framework for multimodal agent memory structured around two key questions: how multimodal information is formed and represented (Axis I, Formation and Representation), and how its management adapts with accumulated experience (Axis II, Memory Management). Axis I, Formation and Representation, characterizes what information is retained and how it is encoded (e.g., modality-specific embeddings, textual and structured records, latent and parametric representations) to support subsequent reasoning and action. Axis II, Memory Management, distinguishes three tiers: T1 Static Memory reuses fixed memory; T2 Dynamic Memory updates memory through a stable policy; and T3 Self-Evolving Memory updates memory through an evolving policy. Based on this framework, we synthesize recurring design patterns and derive principles for balancing source fidelity with abstraction, maintaining temporal validity and provenance, grounding memory use in recoverable evidence, and evolving memory policies over time. Furthermore, we discuss the challenges and potential future directions for the memory mechanism of multimodal agents.",
-   "ai_summary": "This work proposes a two-axis framework for multimodal agent memory covering information formation and adaptive management to support lifelong learning."
-  },
   {
    "id": "2610.31162",
    "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
@@ -153,36 +116,6 @@
    "comment": "Project Website: https://plan-lab.github.io/projects/coda/",
    "abstract": "Generative simulation can automate robot environment construction, but physically valid environments are not necessarily useful for training. The challenge is to identify environments that address a policy's failures and supervision that helps it overcome them. We introduce CoDA, a framework in which a simulation data engine and an action policy co-evolve through a shared heterogeneous memory of environment construction, policy failures, and learning progress. The memory compiles validated diagnoses from a vision-language critic into generation programs that recreate difficulties and training programs that help the policy overcome them. We further propose Text2potential to convert these diagnoses into staged potentials for action-chunk value learning, providing dense supervision for policy updates while preserving the task's optimal policy under standard shaping assumptions. Measured learning progress guides further generation and program refinement. Across four manipulation task families, CoDA improves out-of-distribution success from 5.3% after supervised fine-tuning to 27.6%, exceeding the strongest closed-loop baseline by 9.5 percentage points with the same generation budget. On LIBERO-Pro, 15 rounds of generation and training raise success from 25% to 84% under position perturbations and from 1% to 76% under instruction perturbations.",
    "ai_summary": "CoDA co-evolves a simulation engine and robot policy via shared memory of failures and progress, using vision-language diagnostics and staged potential rewards to improve out-of-distribution manipulation success."
-  },
-  {
-   "id": "2610.20609",
-   "title": "SafeDriveVLA: Navigation-Conditioned World Model Dreaming for Conflict-Aware End-to-End Autonomous Driving",
-   "upvotes": 7,
-   "hf_date": "2026-10-15",
-   "published": "2026-10-14",
-   "topics": [
-    "vla",
-    "world-models",
-    "navigation"
-   ],
-   "authors": [
-    "Shaoyuan Xie",
-    "Zihan Zhang",
-    "Jingxuan Wang",
-    "Jiashu Qu",
-    "Xiaoqing Liang",
-    "Lingdong Kong",
-    "Junchi Lu",
-    "Henrik I. Christensen",
-    "Qi Alfred Chen"
-   ],
-   "organization": "University of California, Irvine ",
-   "github": "https://github.com/ASGuard-UCI/safedrive-vla",
-   "project": "https://safedrive-vla.github.io/SafeDriveVLA",
-   "arxiv_code": [],
-   "comment": "Accepted at CoRL 2026. Project page: https://safedrive-vla.github.io/SafeDriveVLA/",
-   "abstract": "Vision-Language-Action (VLA) models are gaining attention in autonomous driving, inheriting commonsense priors from large language models (LLMs) and widening the navigation interface from a fixed command set to free-form natural-language instructions. However, this open-ended interface exposes a new vulnerability surface: an inattentive driver may issue instructions that are unsafe given the current scene, and a malicious user may issue dangerous ones on purpose. We present the first benchmark suite that evaluates navigation following and conflict awareness together, along with adversarial robustness. Existing VLAs fall short on both: SimLingo completes no language-instructed lane change in closed loop, and all models degrade sharply under conflicting signals. We propose SafeDriveVLA, the first driving VLA that (1) explicitly predicts a three-level navigation-compliance mode to decouple conflict reasoning from action generation, and (2) uses navigation-conditioned world model dreaming to inform this prediction. Unlike prior world models that roll out expert or planned actions, ours dreams of strictly following the navigation signal, showing when following is safe. SafeDriveVLA reaches 88.16 Driving Score (DS) and 68.64% Success Rate (SR) on Bench2Drive, lifts closed-loop language following by 49.3% and reduces collisions under unsafe instructions from 60 to 38 compared to the best SimLingo variant. Video demonstrations are available on our project page.",
-   "ai_summary": "SafeDriveVLA improves autonomous driving by predicting navigation compliance and using world-model dreaming to avoid unsafe instructions, outperforming existing vision-language-action models."
   }
  ],
  "curated_link_updates": [
@@ -210,6 +143,16 @@
    "id": "2611.01560",
    "title": "Democratizing Robot-Use Agents: A Unified Harness with Open Models",
    "project": "https://openrua.ai/uni-robot-agent"
+  },
+  {
+   "id": "2611.04166",
+   "title": "Say the Same, Act Differently: Diagnosing and Steering Text-Action Divergence in Reasoning VLAs",
+   "project": "https://say-the-same.github.io/"
+  },
+  {
+   "id": "2611.04391",
+   "title": "Human-to-Robot Transfer via Bridging Representation and Action Space in VLAs",
+   "code": "https://github.com/jun-brro/h2rb-code"
   },
   {
    "id": "2610.23479",
