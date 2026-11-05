@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 56 条，⭐ 为重点推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 60 条，⭐ 为重点推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [English](learning.md)
 
@@ -43,15 +43,19 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Where is Physical RSI capability from? An Observational Scaling Law of LLM-as-policy](https://arxiv.org/abs/2610.26848)** (2026) — PhysRSI-eval 在固定交互预算下用 18 个操作任务、五个维度（含从失败中改进）评测 VLM 智能体；报告公开基准平均分相近的模型改进速度差别很大，且早期物理反馈可用于预测后续进展。 · [代码](https://github.com/PhysRSI-Eval/PhysRSI-Eval-code) · [项目页](https://physrsi-eval.github.io/)
 - **[Flow Q-Learning](https://arxiv.org/abs/2502.02538)** (2025) — FQL：先用行为克隆训练流匹配策略，再训练一个最大化 Q 值、同时向流策略蒸馏的单步策略；避免对多步流采样反向传播，在 73 个 OGBench / D4RL 离线及离线转在线任务上表现突出。 · [代码](https://github.com/seohongpark/fql) · [项目页](https://seohong.me/projects/fql/)
 - **[RLinf-VLA: A Unified and Efficient Framework for Reinforcement Learning of Vision-Language-Action Models](https://arxiv.org/abs/2510.06710)** (2025) — 面向 VLA 的开源强化学习训练框架（PPO/GRPO，支持 GPU 并行仿真器）；论文报告经 RL 后在 130 个 LIBERO 任务上成功率 98.11%、25 个 ManiSkill 任务上 97.66%，是 VLA+RL 研究常用的底座。 · [代码](https://github.com/RLinf/RLinf)
+- **[Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation](https://arxiv.org/abs/2503.24361)** (2025) — 简单的联合训练做法：同时使用真实和仿真数据，弥补视觉操作中真实数据采集昂贵的问题。 · [项目页](https://co-training.github.io/)
 - **[SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning](https://arxiv.org/abs/2509.09674)** (2025) — 在 OpenVLA-OFT 上用 GRPO 与仅"成功/失败"二值奖励做在线强化学习，并加入若干促进探索的改动；论文报告 LIBERO 成功率 99.1%、RoboTwin 1.0 为 70.4%（SFT 基线 39.8%）。 · [代码](https://github.com/PRIME-RL/SimpleVLA-RL)
 - **[Steering Your Diffusion Policy with Latent Space Reinforcement Learning](https://arxiv.org/abs/2506.15799)** (2025) — DSRL：不改扩散策略的权重，而是对其输入的初始噪声做强化学习来"引导"输出动作；只需前向推理、可用于 π0，论文报告真机任务在不到 50 次在线交互内成功率从 20% 升至 90%。 · [代码](https://github.com/ajwagen/dsrl) · [项目页](https://diffusion-steering.github.io)
 - **[Towards Embodiment Scaling Laws in Robot Locomotion](https://arxiv.org/abs/2505.05753)** (2025) — 在约 1000 个生成的机器人形态上检验“形态缩放定律”：用更多形态训练能否提升对未见形态的泛化？ · [项目页](https://embodiment-scaling-laws.github.io/)
 - **[Diffusion Policy Policy Optimization](https://arxiv.org/abs/2409.00588)** (2024) — DPPO：把去噪步骤视为 MDP 的一部分，用 PPO 微调预训练扩散策略；报告称比其他强化学习微调方法更稳定，并实现了仿真到真机迁移。 · [代码](https://github.com/irom-princeton/dppo)
 - **[SERL: A Software Suite for Sample-Efficient Robotic Reinforcement Learning](https://arxiv.org/abs/2401.16013)** (2024) — 在真实机械臂上用强化学习训练操作策略的开源软件栈：学习式奖励分类器、免重置训练与阻抗控制器。 · [代码](https://github.com/rail-berkeley/serl)
+- **[Towards Generalist Robot Learning from Internet Video: A Survey](https://arxiv.org/abs/2404.19664)** (2024) — 综述从视频学习的方法，以互联网规模视频缓解机器人学习的数据瓶颈。
 - **[Cal-QL: Calibrated Offline RL Pre-Training for Efficient Online Fine-Tuning](https://arxiv.org/abs/2303.05479)** (2023) — 约束保守的离线 Q 值不低于参考策略的价值，从而避免离线预训练策略开始在线微调时常见的性能先降后升。 · [代码](https://github.com/nakamotoo/Cal-QL)
 - **[Efficient Online Reinforcement Learning with Offline Data](https://arxiv.org/abs/2302.02948)** (2023) — RLPD：对离策略强化学习做几处简单改动（离线/在线数据对称采样、层归一化、集成），让已有数据加速在线学习。 · [代码](https://github.com/ikostrikov/rlpd)
+- **[LLM+P: Empowering Large Language Models with Optimal Planning Proficiency](https://arxiv.org/abs/2304.11477)** (2023) — LLM+P 让大模型把问题转成规范形式交给经典规划器，解决大模型不擅长的长程规划。 · [代码](https://github.com/Cranial-XIX/llm-pddl)
 - **[Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions](https://arxiv.org/abs/2309.10150)** (2023) — 将每个动作维度离散化，用 Transformer 自回归地逐维预测 Q 值，并加入保守正则；在混合演示与自主采集数据的大规模真实机器人数据集上离线训练。
 - **[Behavior Transformers: Cloning $k$ modes with one stone](https://arxiv.org/abs/2206.11251)** (2022) — BeT：把动作聚成 k 个类别再加连续偏移，让 Transformer 能模仿多模态示教，而不是把不同模式平均掉。 · [代码](https://github.com/notmahi/bet)
+- **[LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models](https://arxiv.org/abs/2212.04088)** (2022) — 较早把大模型用作具身智能体的少样本规划器，在视觉环境中执行自然语言指令。 · [项目页](https://dki-lab.github.io/LLM-Planner)
 - **[Decision Transformer: Reinforcement Learning via Sequence Modeling](https://arxiv.org/abs/2106.01345)** (2021) — 把强化学习改写成序列建模：GPT 式模型以期望回报为条件预测动作；是 Transformer 与控制结合的早期代表。 · [代码](https://github.com/kzl/decision-transformer)
 - **[Implicit Behavioral Cloning](https://arxiv.org/abs/2109.00137)** (2021) — 用基于能量的模型（而非直接回归）表示策略，更好地处理多模态、不连续的示范数据。
 - **[Mastering Visual Continuous Control: Improved Data-Augmented Reinforcement Learning](https://arxiv.org/abs/2107.09645)** (2021) — DrQ-v2：带图像增强的简单无模型 actor-critic，单 GPU 即可从像素学习连续控制（包括 DeepMind Control Suite 的人形任务），是常用的视觉强化学习基线。 · [代码](https://github.com/facebookresearch/drqv2)

@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 70 条，⭐ 为重点推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 72 条，⭐ 为重点推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/datasets.html) · [English](datasets.md)
 
@@ -57,9 +57,11 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset](https://arxiv.org/abs/2403.12945)** (2024) — 由多家机构在数百个真实场景中采集的 7.6 万条 Franka 遥操作轨迹。 · [代码](https://github.com/droid-dataset/droid)
 - **[Evaluating Real-World Robot Manipulation Policies in Simulation](https://arxiv.org/abs/2405.05941)** (2024) — SimplerEnv：真实到仿真的评测环境，其得分与 RT-1/Octo 类策略的真机表现相关。 · [代码](https://github.com/simpler-env/SimplerEnv)
 - **[HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation](https://arxiv.org/abs/2403.10506)** (2024) — 27 个仿真任务（12 个运动、15 个全身操作），机器人为带两只灵巧手的 Unitree H1；报告 DreamerV3、TD-MPC2、SAC、PPO 在大多数任务上未达标，长时程全身协调任务尤甚。 · [代码](https://github.com/carlosferrazza/humanoid-bench) · [项目页](https://humanoid-bench.github.io)
+- **[Point Cloud Matters: Rethinking the Impact of Different Observation Spaces on Robot Learning](https://arxiv.org/abs/2402.02500)** (2024) — OBSBench 在统一设置下比较 RGB、RGB-D 和点云观测对机器人学习的影响。 · [代码](https://github.com/HaoyiZhu/PointCloudMatters)
 - **[RoboMIND: Benchmark on Multi-embodiment Intelligence Normative Data for Robot Manipulation](https://arxiv.org/abs/2412.13877)** (2024) — 在统一规范下采集的大规模真机遥操作数据集，覆盖单臂、双臂与人形等多种本体，并保留了标注失败原因的失败演示。 · [项目页](https://x-humanoid-robomind.github.io/)
 - **[THE COLOSSEUM: A Benchmark for Evaluating Generalization for Robotic Manipulation](https://arxiv.org/abs/2402.08191)** (2024) — 20 个 RLBench 任务 × 14 种扰动因素（颜色、纹理、光照、干扰物、相机位姿、摩擦、质量……）；报告主流策略成功率下降 30–50%，多种扰动叠加时下降 75% 以上。 · [代码](https://github.com/robot-colosseum/robot-colosseum) · [项目页](https://robot-colosseum.github.io)
 - **[VLABench: A Large-Scale Benchmark for Language-Conditioned Robotics Manipulation with Long-Horizon Reasoning Tasks](https://arxiv.org/abs/2412.18194)** (2024) — 100 类任务、2000 多个物体，任务需要常识、世界知识与多步推理，而不只是照指令执行；在同一套件中评测 VLA、具身智能体与 VLM。 · [代码](https://github.com/OpenMOSS/VLABench) · [项目页](https://vlabench.github.io/)
+- **[ARNOLD: A Benchmark for Language-Grounded Task Learning With Continuous States in Realistic 3D Scenes](https://arxiv.org/abs/2304.04321)** (2023) — 面向语言任务的基准，目标是连续物体状态（多数基准只有二值目标），场景为真实感三维环境。 · [项目页](https://arnold-benchmark.github.io)
 - **[BridgeData V2: A Dataset for Robot Learning at Scale](https://arxiv.org/abs/2308.12952)** (2023) — 在低成本 WidowX 机械臂上采集、涵盖众多厨房与任务的 6 万条轨迹，常用作预训练数据。
 - **[Ego-Exo4D: Understanding Skilled Human Activity from First- and Third-Person Perspectives](https://arxiv.org/abs/2311.18259)** (2023) — 人们进行技能活动（烹饪、运动、维修等）时同步采集的第一人称与第三人称视频，附丰富标注，是从人类视频学习操作技能的重要数据来源。
 - **[RH20T: A Comprehensive Robotic Dataset for Learning Diverse Skills in One-Shot](https://arxiv.org/abs/2307.00595)** (2023) — 11 万多条接触丰富的序列，包含视觉、力、音频及配对的人类演示视频。

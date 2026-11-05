@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-05 ~11:30 UTC, run 59; 813 curated, repo has 1 star, 0 forks._
+_Last updated: 2026-11-05 ~11:30 UTC, run 59; 859 curated, repo has 1 star, 0 forks._
 
 ## Status
 
@@ -57,7 +57,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
-000. Run 58: check verify on the LeVERB link (now https://ember-center-berkeley.github.io/LeVERB-Website/, derived from the moved repo found by repo search, not opened by us). If it 404s, delete the `project:` line. Verify #148 passed; #149 passed all 76 new IDs and titles, its only failure was that link. Thu 11-05 feed was not in at 05:00 UTC. Next sweep: unread sections of vergilshawn/Awesome-Humanoid-Robot-Learning (Locomotion, Sim-to-Real, Hardware); a WebFetch truncates at Teleoperation. Skipped from the sweep: ULC 2507.06905, UniTracker 2507.07356, TOP 2508.00355, PACE 2509.21690, the bipedal DRL survey 2404.17070.
+000. Run 60: check verify on run 59's 46 anchors (http → https was forced for moma-llm, unrealzoo, susie; if one fails, restore or drop that `project:`). Overlap method works better than per-list sweeps: fetch lists with curl from raw.githubusercontent.com, count uncurated IDs per independent list (the two humanoid lists are near mirrors, count as one), run `facts.yml`, write from its abstracts. 16 of 62 skipped. 1,163 IDs appear in one list only; not worth it unless a topic looks thin.
 00. After a curated push, confirm verify really ran: a pending run can be cancelled by a newer one in the `arxiv-api` group (run 52, #139). Re-dispatch if so.
 0. New curated entries get BibTeX metadata on the next intake run. A push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started/finished.
 1. Scheduled runs: on 10-23 the 01:11/02:17/04:53 slots never fired; first scheduled intake landed 05:57 UTC, then 07:36, 09:37, 12:51, 15:42, 19:21. So the feed lands ~06:00 UTC — acceptable; no owner action. arXiv does not announce on Sat/Sun nights, so the next new feed day is Mon 10-26 (~00:00 UTC announcement).

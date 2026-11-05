@@ -53,7 +53,7 @@ _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与�
 - **[Asynchronous Robot Policies](https://arxiv.org/abs/2611.05155)** (2026) — 把低频更新语义记忆的大型 VLM 与高频出动作的轻量专家解耦，并针对陈旧和延迟训练；报告 VLM 降到标称频率十分之一时性能无明显损失。 · [项目页](https://arp.insait.ai)
 - **[Bayesian Active Learning for Intent Disambiguation in Interactive Robot Planning](https://arxiv.org/abs/2609.34270)** (2026) — 把澄清提问视为信号时序逻辑规约上的贝叶斯主动学习，机器人提问更少，并向形式化规划器交付可验证的任务。
 
-**[查看全部 161 条 →](lists/vla.zh-CN.md)**
+**[查看全部 170 条 →](lists/vla.zh-CN.md)**
 
 <a id="manipulation"></a>
 ### 操作与灵巧手
@@ -73,7 +73,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_ [在网站上�
 - **[Enabling Robust Cloth Manipulation via Inference-Time Simulator-in-the-Loop Refinement](https://arxiv.org/abs/2606.24552)** (2026) — 仅凭单张 RGB 在线修正布料动作：先由 real-to-sim 模块估计布料状态，再用仿真器并行推演和先验引导的 MPPI 修正策略轨迹。 · [项目页](https://silr-cloth.github.io/)
 - **[FEIJOA: Task-Driven Grounding and Execution for Mobile Manipulation](https://arxiv.org/abs/2611.04080)** (2026) — 语言模型智能体在测试时对带位姿的 RGB-D 扫描做指令落地，不依赖预建表示；Spot 真机 50 次试验成功 35 次，失败大多来自物理技能而非推理。 · [项目页](https://williamshen-nz.github.io/feijoa/)
 
-**[查看全部 81 条 →](lists/manipulation.zh-CN.md)**
+**[查看全部 99 条 →](lists/manipulation.zh-CN.md)**
 
 <a id="tactile"></a>
 ### 触觉与视触觉感知
@@ -113,7 +113,7 @@ _足式运动、人形全身控制与跑酷。_ [在网站上查看与最新论�
 - **[Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids](https://arxiv.org/abs/2601.07718)** (2026) — 端到端感知框架，将深度输入映射到控制，实现人形机器人在多样非结构化地形上徒步。 · [项目页](https://project-instinct.github.io/hiking-in-the-wild)
 - **[HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human Videos](https://arxiv.org/abs/2602.02473)** (2026) — 把人类视频转化为可泛化的真实人形交互技能，无需按任务设计。
 
-**[查看全部 112 条 →](lists/locomotion.zh-CN.md)**
+**[查看全部 116 条 →](lists/locomotion.zh-CN.md)**
 
 <a id="world-models"></a>
 ### 世界模型
@@ -153,7 +153,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网�
 - **[Benchmarking Obstacle-Conditioned Safety in Household Robot Navigation](https://arxiv.org/abs/2610.34674)** (2026) — OSMA-Bench 用仅障碍物类型不同的配对场景，检验导航策略能否按障碍物危险程度调整间距与速度，并提出语义敏感度指数 SSI。结果显示 VLM 与 VLA 策略能识别哪些障碍更危险，却很少把这种判断体现在实际运动中；在 VLM 方案中加入显式参数推断步骤有所改善。 · [代码](https://github.com/OSMA-Bench/OSMA-Bench) · [项目页](https://osma-bench.github.io/)
 - **[Gaussian Episodic Memory for Long-Term Spatiotemporal Reasoning](https://arxiv.org/abs/2610.33158)** (2026) — GEMS 维护一张只在场景变化处增量更新的 3DGS 地图，智能体按需渲染新视角来回答时空问题和定位物体；同时发布 GEMS-Bench（3 个真实 + 12 个合成环境，473 个问答对），报告在物体定位和时空问答上优于近期基线。 · [项目页](https://abwerby.github.io/GEMS/)
 
-**[查看全部 43 条 →](lists/navigation.zh-CN.md)**
+**[查看全部 46 条 →](lists/navigation.zh-CN.md)**
 
 <a id="perception"></a>
 ### 感知、SLAM 与三维建图
@@ -173,7 +173,7 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - **[Which Depth Estimator for Jetson AGX Orin? A 2026 Benchmark of Monocular and Stereo Methods](https://arxiv.org/abs/2610.27199)** (2026) — 给机器人开发者的实测数据：在 Jetson AGX Orin 上用 TensorRT 运行九类单目与双目深度估计模型（Depth Anything V2/3、Depth Pro、MoGe-2、Fast-FoundationStereo 等），并评测度量精度与速度。 · [代码](https://github.com/nodarhub/orin-depth-benchmark)
 - **[SpaRV: Sparse Radiance Voxels for Scalable Geometrically Consistent LiDAR-Visual Mapping and Rendering](https://arxiv.org/abs/2610.25665)** (2026) — 用激光雷达与相机数据构建稀疏体素辐射场地图，针对机器人数据视角少、位姿有误差、场景大的问题，在保证几何精度的同时控制显存占用。 · [代码](https://github.com/hku-mars/SpaRV)
 
-**[查看全部 32 条 →](lists/perception.zh-CN.md)**
+**[查看全部 36 条 →](lists/perception.zh-CN.md)**
 
 <a id="control"></a>
 ### 规划、控制与安全
@@ -213,7 +213,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Towards Embodiment Scaling Laws in Robot Locomotion](https://arxiv.org/abs/2505.05753)** (2025) — 在约 1000 个生成的机器人形态上检验“形态缩放定律”：用更多形态训练能否提升对未见形态的泛化？ · [项目页](https://embodiment-scaling-laws.github.io/)
 - **[Behavior Graphs: Unsupervised Graph Structures for Interpreting Robot Deployment Data](https://arxiv.org/abs/2611.00405)** (2026) — 把策略回放压缩成一张有向图，将行为模式与结果相连，帮助决定下一步采集什么数据。在三个真实任务的用户研究中，18 名参与者有 16 名更喜欢它而非回放视频。 · [项目页](https://try.behavior-graphs.com/)
 
-**[查看全部 56 条 →](lists/learning.zh-CN.md)**
+**[查看全部 60 条 →](lists/learning.zh-CN.md)**
 
 <a id="sim"></a>
 ### 仿真与 Sim-to-Real
@@ -233,7 +233,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_ [在网站上
 - **[TacEx: GelSight Tactile Simulation in Isaac Sim -- Combining Soft-Body and Visuotactile Simulators](https://arxiv.org/abs/2411.04776)** (2024) — 把 GIPC 软体接触与 Taxim、FOTS 触觉仿真器接入 Isaac Sim，模拟 GelSight Mini，并提供 Isaac Lab 强化学习环境。
 - **[AuRA: From Atoms to Bits through Autonomous Robot Interaction](https://arxiv.org/abs/2610.34452)** (2026) — 自动完成物理数字孪生所需的机器人交互与数据准备；在 13 种柔性物体上报告每个资产的人工投入减少 88.5%。 · [代码](https://github.com/Yoonkyo/AuRA) · [项目页](https://aura-robot.github.io/)
 
-**[查看全部 46 条 →](lists/sim.zh-CN.md)**
+**[查看全部 48 条 →](lists/sim.zh-CN.md)**
 
 <a id="datasets"></a>
 ### 数据集与基准
@@ -253,7 +253,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_ [在网站�
 - **[TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System](https://arxiv.org/abs/2511.02832)** (2025) — 基于 VR 头显的便携式免动捕人形遥操作与数据采集系统，目标是让全身示教数据能够规模化采集。 · [代码](https://github.com/amazon-far/TWIST2) · [项目页](https://twist-data.github.io)
 - **[ClothDojo: Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding](https://arxiv.org/abs/2611.01190)** (2026) — 仿真平台：用微调后的 VLA 生成近 8000 条成功的衣物操作轨迹，并重新渲染供 RGB 策略训练，效果优于直接用人类数据训练，但泛化到未见衣物仍是难题。 · [项目页](https://clothdojo.github.io/)
 
-**[查看全部 70 条 →](lists/datasets.zh-CN.md)**
+**[查看全部 72 条 →](lists/datasets.zh-CN.md)**
 
 <a id="hardware"></a>
 ### 硬件与开源机器人

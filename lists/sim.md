@@ -2,7 +2,7 @@
 
 _Physics simulators, GPU-parallel training and transfer to real robots._
 
-46 entries, ⭐ = highlight. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
+48 entries, ⭐ = highlight. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/sim.html) · [中文](sim.zh-CN.md)
 
@@ -39,7 +39,9 @@ _Physics simulators, GPU-parallel training and transfer to real robots._
 - **[ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI](https://arxiv.org/abs/2410.00425)** (2024) — GPU-parallel simulation and rendering with many manipulation tasks; fast visual RL and data generation. · [code](https://github.com/haosulab/ManiSkill)
 - **[RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots](https://arxiv.org/abs/2406.02523)** (2024) — 120 kitchen scenes, 2,500+ objects and 100 tasks with generated demonstrations for training generalist policies. · [code](https://github.com/robocasa/robocasa)
 - **[TacEx: GelSight Tactile Simulation in Isaac Sim -- Combining Soft-Body and Visuotactile Simulators](https://arxiv.org/abs/2411.04776)** (2024) — Brings GIPC soft-body contact and the Taxim and FOTS tactile simulators into Isaac Sim for GelSight Mini, with Isaac Lab RL environments.
+- **[UnrealZoo: Enriching Photo-realistic Virtual Worlds for Embodied AI](https://arxiv.org/abs/2412.20977)** (2024) — Over 100 photorealistic Unreal Engine worlds with playable humans, animals, robots and vehicles for embodied AI research. · [project](https://unrealzoo.site/)
 - **[Habitat 3.0: A Co-Habitat for Humans, Avatars and Robots](https://arxiv.org/abs/2310.13724)** (2023) — Adds simulated humanoid avatars and a human-in-the-loop interface to Habitat, so robots can be trained and evaluated on tasks shared with people, such as social navigation and social rearrangement. · [code](https://github.com/facebookresearch/habitat-lab)
+- **[ManiSkill2: A Unified Benchmark for Generalizable Manipulation Skills](https://arxiv.org/abs/2302.04659)** (2023) — Unified manipulation benchmark built to add object-level geometric and topological variation that earlier suites lacked. · [project](https://maniskill2.github.io/)
 - **[MimicGen: A Data Generation System for Scalable Robot Learning using Human Demonstrations](https://arxiv.org/abs/2310.17596)** (2023) — Turns a handful of human demos into thousands by splitting them into object-centric segments and replaying those segments in new scenes; widely reused to scale imitation data. · [code](https://github.com/NVlabs/mimicgen)
 - **[Orbit: A Unified Simulation Framework for Interactive Robot Learning Environments](https://arxiv.org/abs/2301.04195)** (2023) — The framework that became Isaac Lab — modular robots, sensors and tasks on top of Isaac Sim. · [code](https://github.com/isaac-sim/IsaacLab)
 - **[BEHAVIOR-1K: A Human-Centered, Embodied AI Benchmark with 1,000 Everyday Activities and Realistic Simulation](https://arxiv.org/abs/2403.09227)** (2022) — 1,000 household activities chosen from a survey of what people want robots to do, defined in a logic language and simulated in OmniGibson with realistic physics and rendering. · [code](https://github.com/StanfordVL/BEHAVIOR-1K)

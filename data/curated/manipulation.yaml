@@ -837,3 +837,148 @@
   tags: [retargeting, dexterous, humanoid, sampling, mpc, real]
   takeaway_en: "Retargets human demos under contact without a differentiable simulator: gradients come from archived sampling rollouts. Reports 92.8% success on 1,352 bimanual OakInk2 demos with no task-specific contact rewards."
   takeaway_zh: 无需可微仿真器即可在接触动力学下重定向人类示教：从存档的采样轨迹中恢复梯度。报告在 1352 条双手 OakInk2 示教上成功率 92.8%，且不用任务专属接触奖励。
+- title: "Act3D: 3D Feature Field Transformers for Multi-Task Robotic Manipulation"
+  type: paper
+  arxiv: "2306.17817"
+  year: 2023
+  project: https://act3d.github.io/
+  tags: [3d, transformer, multi-task, rlbench]
+  takeaway_en: "Act3D samples 3D feature fields at adaptive resolutions to get high spatial precision without a costly high-resolution voxel grid."
+  takeaway_zh: "Act3D 用自适应分辨率采样三维特征场，无需昂贵的高分辨率体素也能获得高空间精度。"
+- title: "3D Diffuser Actor: Policy Diffusion with 3D Scene Representations"
+  type: paper
+  arxiv: "2402.10885"
+  year: 2024
+  tags: [diffusion-policy, 3d, multi-task]
+  takeaway_en: "3D Diffuser Actor conditions diffusion policies on 3D scene features aggregated from one or more camera views."
+  takeaway_zh: "3D Diffuser Actor 用单视角或多视角聚合的三维场景特征来条件化扩散策略。"
+- title: "Hierarchical Diffusion Policy for Kinematics-Aware Multi-Task Robotic Manipulation"
+  type: paper
+  arxiv: "2403.03890"
+  year: 2024
+  venue: CVPR 2024
+  project: https://yusufma03.github.io/projects/hdp/
+  tags: [diffusion-policy, hierarchical, kinematics]
+  takeaway_en: "HDP splits a policy into a high-level next-best-pose planner and a low-level goal-conditioned diffusion policy that generates motion to reach it."
+  takeaway_zh: "HDP 把策略分为高层“下一最佳位姿”规划与低层目标条件扩散策略，由后者生成到达该位姿的运动。"
+- title: "Consistency Policy: Accelerated Visuomotor Policies via Consistency Distillation"
+  type: paper
+  arxiv: "2405.07503"
+  year: 2024
+  project: https://consistency-policy.github.io/
+  tags: [diffusion-policy, consistency, fast-inference]
+  takeaway_en: "Distils a diffusion teacher into a consistency model so visuomotor policies run fast on robots without high-end GPUs."
+  takeaway_zh: "把扩散教师模型蒸馏为一致性模型，让视觉运动策略在没有高端 GPU 的机器人上快速运行。"
+- title: "ManiCM: Real-time 3D Diffusion Policy via Consistency Model for Robotic Manipulation"
+  type: paper
+  arxiv: "2406.01586"
+  year: 2024
+  project: https://manicm-fast.github.io/
+  tags: [diffusion-policy, consistency, 3d, real-time]
+  takeaway_en: "ManiCM applies consistency models to 3D diffusion policies, removing most denoising steps for real-time inference."
+  takeaway_zh: "ManiCM 把一致性模型用于三维扩散策略，去掉大部分去噪步骤以实现实时推理。"
+- title: "Streaming Diffusion Policy: Fast Policy Synthesis with Variable Noise Diffusion Models"
+  type: paper
+  arxiv: "2406.04806"
+  year: 2024
+  tags: [diffusion-policy, fast-inference]
+  takeaway_en: "Streaming Diffusion Policy speeds up action synthesis using variable-noise diffusion, aimed at tasks that need fast reactive policies."
+  takeaway_zh: "Streaming Diffusion Policy 用可变噪声扩散加速动作生成，面向需要快速反应的任务。"
+- title: "Sparse Diffusion Policy: A Sparse, Reusable, and Flexible Policy for Robot Learning"
+  type: paper
+  arxiv: "2407.01531"
+  year: 2024
+  venue: CoRL 2024
+  project: https://forrest-110.github.io/sparse_diffusion_policy/
+  tags: [diffusion-policy, multi-task, continual-learning]
+  takeaway_en: "Sparse Diffusion Policy reuses sparse expert modules across tasks instead of one universal policy, for multitask and continual learning."
+  takeaway_zh: "Sparse Diffusion Policy 在任务间复用稀疏专家模块而非单一通用策略，用于多任务和持续学习。"
+- title: "Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal Goals"
+  type: paper
+  arxiv: "2407.05996"
+  year: 2024
+  venue: RSS 2024
+  project: https://intuitive-robots.github.io/mdt_policy/
+  tags: [diffusion-policy, transformer, multimodal-goals]
+  takeaway_en: "MDT is a diffusion transformer that learns versatile behaviour from multimodal goals with few language annotations, using two self-supervised objectives."
+  takeaway_zh: "MDT 是扩散 Transformer，借助两个自监督目标，在语言标注很少时从多模态目标学习多样行为。"
+- title: "Crossway Diffusion: Improving Diffusion-based Visuomotor Policy via Self-supervised Learning"
+  type: paper
+  arxiv: "2307.01849"
+  year: 2023
+  code: https://github.com/LostXine/crossway_diffusion
+  tags: [diffusion-policy, self-supervised]
+  takeaway_en: "Adds a self-supervised reconstruction objective to diffusion policy training to improve imitation learning."
+  takeaway_zh: "为扩散策略训练加入自监督重建目标，以改进模仿学习。"
+- title: "SAM2Act: Integrating Visual Foundation Model with A Memory Architecture for Robotic Manipulation"
+  type: paper
+  arxiv: "2501.18564"
+  year: 2025
+  project: https://sam2act.github.io
+  tags: [memory, sam, 3d, transformer]
+  takeaway_en: "SAM2Act builds on a visual foundation model and adds a memory architecture for multitask manipulation and tasks that need spatial memory."
+  takeaway_zh: "SAM2Act 基于视觉基础模型并加入记忆架构，用于多任务操作和需要空间记忆的任务。"
+- title: "ThinkGrasp: A Vision-Language System for Strategic Part Grasping in Clutter"
+  type: paper
+  arxiv: "2407.11298"
+  year: 2024
+  venue: CoRL 2024
+  project: https://h-freax.github.io/thinkgrasp_page/
+  tags: [grasping, clutter, llm, vlm]
+  takeaway_en: "ThinkGrasp uses GPT-4o reasoning to pick which object and part to grasp in heavy clutter, a plug-and-play vision-language system."
+  takeaway_zh: "ThinkGrasp 借助 GPT-4o 推理，在严重杂乱中决定抓哪个物体的哪个部位，是即插即用的视觉-语言系统。"
+- title: "Scaling Up and Distilling Down: Language-Guided Robot Skill Acquisition"
+  type: paper
+  arxiv: "2307.14535"
+  year: 2023
+  project: https://www.cs.columbia.edu/~huy/scalingup/
+  tags: [llm, data-generation, diffusion-policy]
+  takeaway_en: "Uses an LLM plus sampling-based planners to generate language-labelled robot data, then distils it into one language-conditioned visuomotor policy."
+  takeaway_zh: "用大模型加采样规划器生成带语言标注的机器人数据，再蒸馏为一个语言条件视觉运动策略。"
+- title: "Zero-Shot Robotic Manipulation with Pretrained Image-Editing Diffusion Models"
+  type: paper
+  arxiv: "2310.10639"
+  year: 2023
+  project: https://rail-berkeley.github.io/susie
+  tags: [diffusion, subgoals, zero-shot]
+  takeaway_en: "SuSIE uses a pretrained image-editing diffusion model as a high-level planner that proposes intermediate subgoal images."
+  takeaway_zh: "SuSIE 用预训练图像编辑扩散模型作高层规划器，提出中间子目标图像。"
+- title: "Manipulate-Anything: Automating Real-World Robots using Vision-Language Models"
+  type: paper
+  arxiv: "2406.18915"
+  year: 2024
+  project: https://robot-ma.github.io/
+  tags: [vlm, data-generation, real]
+  takeaway_en: "Manipulate-Anything uses vision-language models to generate real-world robot demonstrations automatically."
+  takeaway_zh: "Manipulate-Anything 用视觉-语言模型自动生成真实世界机器人示教数据。"
+- title: "AHA: A Vision-Language-Model for Detecting and Reasoning Over Failures in Robotic Manipulation"
+  type: paper
+  arxiv: "2410.00371"
+  year: 2024
+  project: https://aha-vlm.github.io/
+  tags: [vlm, failure-detection]
+  takeaway_en: "AHA is a vision-language model for detecting and reasoning about manipulation failures, a gap in earlier VLM work."
+  takeaway_zh: "AHA 是用于检测和推理操作失败的视觉-语言模型，填补此前 VLM 研究的空白。"
+- title: "Look Before You Leap: Unveiling the Power of GPT-4V in Robotic Vision-Language Planning"
+  type: paper
+  arxiv: "2311.17842"
+  year: 2023
+  tags: [vlm, planning, gpt-4v]
+  takeaway_en: "Early study of GPT-4V for physically grounded vision-language task planning on robots."
+  takeaway_zh: "较早研究 GPT-4V 用于机器人基于物理场景的视觉-语言任务规划。"
+- title: "Physically Grounded Vision-Language Models for Robotic Manipulation"
+  type: paper
+  arxiv: "2309.02561"
+  year: 2023
+  venue: ICRA 2024
+  tags: [vlm, physical-properties]
+  takeaway_en: "Teaches vision-language models about physical object properties so they can reason better for manipulation."
+  takeaway_zh: "让视觉-语言模型理解物体的物理属性，从而更好地为操作任务推理。"
+- title: "A Survey of Embodied Learning for Object-Centric Robotic Manipulation"
+  type: paper
+  arxiv: "2408.11537"
+  year: 2024
+  code: https://github.com/RayYoh/OCRM_survey
+  tags: [survey, object-centric]
+  takeaway_en: "Survey of embodied learning for object-centric robotic manipulation."
+  takeaway_zh: "综述面向物体的机器人操作中的具身学习方法。"

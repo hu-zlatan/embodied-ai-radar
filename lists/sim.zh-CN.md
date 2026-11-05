@@ -2,7 +2,7 @@
 
 _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 
-共 46 条，⭐ 为重点推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
+共 48 条，⭐ 为重点推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/sim.html) · [English](sim.md)
 
@@ -39,7 +39,9 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 - **[ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI](https://arxiv.org/abs/2410.00425)** (2024) — GPU 并行仿真与渲染，内置大量操作任务，适合快速视觉强化学习与数据生成。 · [代码](https://github.com/haosulab/ManiSkill)
 - **[RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots](https://arxiv.org/abs/2406.02523)** (2024) — 120 个厨房场景、2500 多个物体与 100 个任务，并附生成演示，用于训练通用策略。 · [代码](https://github.com/robocasa/robocasa)
 - **[TacEx: GelSight Tactile Simulation in Isaac Sim -- Combining Soft-Body and Visuotactile Simulators](https://arxiv.org/abs/2411.04776)** (2024) — 把 GIPC 软体接触与 Taxim、FOTS 触觉仿真器接入 Isaac Sim，模拟 GelSight Mini，并提供 Isaac Lab 强化学习环境。
+- **[UnrealZoo: Enriching Photo-realistic Virtual Worlds for Embodied AI](https://arxiv.org/abs/2412.20977)** (2024) — 100 多个基于虚幻引擎的高真实感世界，含可操控的人、动物、机器人和车辆，服务具身智能研究。 · [项目页](https://unrealzoo.site/)
 - **[Habitat 3.0: A Co-Habitat for Humans, Avatars and Robots](https://arxiv.org/abs/2310.13724)** (2023) — 为 Habitat 加入仿真人形化身和真人在环交互接口，可在与人协作的任务（如社交导航、社交重排）上训练和评测机器人。 · [代码](https://github.com/facebookresearch/habitat-lab)
+- **[ManiSkill2: A Unified Benchmark for Generalizable Manipulation Skills](https://arxiv.org/abs/2302.04659)** (2023) — 统一的操作基准，补上早期环境缺少的物体级几何与拓扑变化。 · [项目页](https://maniskill2.github.io/)
 - **[MimicGen: A Data Generation System for Scalable Robot Learning using Human Demonstrations](https://arxiv.org/abs/2310.17596)** (2023) — 把少量人类演示切分为以物体为中心的片段，并在新场景中变换重放，从而扩增为数千条演示；被广泛用于扩充模仿学习数据。 · [代码](https://github.com/NVlabs/mimicgen)
 - **[Orbit: A Unified Simulation Framework for Interactive Robot Learning Environments](https://arxiv.org/abs/2301.04195)** (2023) — Isaac Lab 的前身，在 Isaac Sim 之上提供模块化的机器人、传感器与任务。 · [代码](https://github.com/isaac-sim/IsaacLab)
 - **[BEHAVIOR-1K: A Human-Centered, Embodied AI Benchmark with 1,000 Everyday Activities and Realistic Simulation](https://arxiv.org/abs/2403.09227)** (2022) — 依据人们希望机器人做什么的调查挑选出 1000 项家务活动，用逻辑语言定义，并在具备真实物理与渲染的 OmniGibson 中仿真。 · [代码](https://github.com/StanfordVL/BEHAVIOR-1K)

@@ -2,7 +2,7 @@
 
 _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 
-共 81 条，⭐ 为重点推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
+共 99 条，⭐ 为重点推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/manipulation.html) · [English](manipulation.md)
 
@@ -68,17 +68,35 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation](https://arxiv.org/abs/2507.23523)** (2025) — H-RDT 用人类操作数据预训练扩散 Transformer，规避跨机器人数据集的形态差异问题。
 - **[Humanoid Policy ~ Human Policy](https://arxiv.org/abs/2503.13441)** (2025) — 把第一视角人类示教作为人形操作策略的跨形态数据，从数据和模型两方面缩小人与机器人的差距。 · [代码](https://github.com/RogerQi/human-policy) · [项目页](https://human-as-robot.github.io/)
 - **[Lightning Grasp: High Performance Procedural Grasp Synthesis with Contact Fields](https://arxiv.org/abs/2511.07418)** (2025) — 过程式灵巧抓取合成，报告提速数个量级，无需精调能量函数，并适用于不规则的工具类物体。 · [代码](https://github.com/zhaohengyin/lightning-grasp)
+- **[SAM2Act: Integrating Visual Foundation Model with A Memory Architecture for Robotic Manipulation](https://arxiv.org/abs/2501.18564)** (2025) — SAM2Act 基于视觉基础模型并加入记忆架构，用于多任务操作和需要空间记忆的任务。 · [项目页](https://sam2act.github.io)
 - **[SLAC: Safe and Efficient Real-Robot Reinforcement Learning via Unsupervised Simulation Pre-Training](https://arxiv.org/abs/2506.04147)** (2025) — 在低保真仿真器中预训练与任务无关的潜在动作空间，让高自由度移动操作机器人的真实世界强化学习安全高效。 · [项目页](https://robo-rl.github.io/)
 - **[Vision in Action: Learning Active Perception from Human Demonstrations](https://arxiv.org/abs/2506.15666)** (2025) — 从人类示教学习主动感知：6 自由度机械颈加 VR 界面，让双臂机器人能搜索、跟踪和聚焦目标。
+- **[3D Diffuser Actor: Policy Diffusion with 3D Scene Representations](https://arxiv.org/abs/2402.10885)** (2024) — 3D Diffuser Actor 用单视角或多视角聚合的三维场景特征来条件化扩散策略。
 - **[3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://arxiv.org/abs/2403.03954)** (2024) — 用紧凑点云编码作为扩散策略条件，比图像输入更省数据、对视角更鲁棒。 · [代码](https://github.com/YanjieZe/3D-Diffusion-Policy)
+- **[A Survey of Embodied Learning for Object-Centric Robotic Manipulation](https://arxiv.org/abs/2408.11537)** (2024) — 综述面向物体的机器人操作中的具身学习方法。 · [代码](https://github.com/RayYoh/OCRM_survey)
+- **[AHA: A Vision-Language-Model for Detecting and Reasoning Over Failures in Robotic Manipulation](https://arxiv.org/abs/2410.00371)** (2024) — AHA 是用于检测和推理操作失败的视觉-语言模型，填补此前 VLM 研究的空白。 · [项目页](https://aha-vlm.github.io/)
+- **[Consistency Policy: Accelerated Visuomotor Policies via Consistency Distillation](https://arxiv.org/abs/2405.07503)** (2024) — 把扩散教师模型蒸馏为一致性模型，让视觉运动策略在没有高端 GPU 的机器人上快速运行。 · [项目页](https://consistency-policy.github.io/)
 - **[DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation](https://arxiv.org/abs/2403.07788)** (2024) — 可穿戴动捕手套与相机采集人手动作，重定向后用于训练灵巧机器人手。
 - **[EgoMimic: Scaling Imitation Learning via Egocentric Video](https://arxiv.org/abs/2410.24221)** (2024) — 把佩戴 Project Aria 眼镜采集、带三维手部跟踪的第一视角人类视频当作机器人数据，与机器人数据共同训练同一个策略；论文报告多 1 小时人手数据比多 1 小时机器人数据更有用。 · [代码](https://github.com/SimarKareer/EgoMimic) · [项目页](https://egomimic.github.io/)
+- **[Hierarchical Diffusion Policy for Kinematics-Aware Multi-Task Robotic Manipulation](https://arxiv.org/abs/2403.03890)** (2024) — HDP 把策略分为高层“下一最佳位姿”规划与低层目标条件扩散策略，由后者生成到达该位姿的运动。 · [项目页](https://yusufma03.github.io/projects/hdp/)
+- **[ManiCM: Real-time 3D Diffusion Policy via Consistency Model for Robotic Manipulation](https://arxiv.org/abs/2406.01586)** (2024) — ManiCM 把一致性模型用于三维扩散策略，去掉大部分去噪步骤以实现实时推理。 · [项目页](https://manicm-fast.github.io/)
+- **[Manipulate-Anything: Automating Real-World Robots using Vision-Language Models](https://arxiv.org/abs/2406.18915)** (2024) — Manipulate-Anything 用视觉-语言模型自动生成真实世界机器人示教数据。 · [项目页](https://robot-ma.github.io/)
 - **[Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation](https://arxiv.org/abs/2401.02117)** (2024) — 将 ALOHA 装上移动底盘；与静态 ALOHA 数据联合训练显著提升做饭、开柜等移动任务表现。 · [代码](https://github.com/MarkFzp/mobile-aloha)
+- **[Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal Goals](https://arxiv.org/abs/2407.05996)** (2024) — MDT 是扩散 Transformer，借助两个自监督目标，在语言标注很少时从多模态目标学习多样行为。 · [项目页](https://intuitive-robots.github.io/mdt_policy/)
 - **[Predictive Inverse Dynamics Models are Scalable Learners for Robotic Manipulation](https://arxiv.org/abs/2412.15109)** (2024) — Seer 先预测未来视觉状态，再由逆动力学模型据此输出动作，端到端训练并在 DROID 上预训练；报告 CALVIN ABC-D 平均任务长度 4.28，在 LIBERO-LONG 和真机任务上也有提升。 · [代码](https://github.com/OpenRobotLab/Seer) · [项目页](https://nimolty.github.io/Seer/)
 - **[ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation](https://arxiv.org/abs/2409.01652)** (2024) — ReKep：由视觉语言模型把操作任务写成定义在三维关键点上的 Python 代价函数（关系关键点约束），再由分层优化器实时求解；零样本，无需针对任务训练。 · [代码](https://github.com/huangwl18/ReKep)
+- **[Sparse Diffusion Policy: A Sparse, Reusable, and Flexible Policy for Robot Learning](https://arxiv.org/abs/2407.01531)** (2024) — Sparse Diffusion Policy 在任务间复用稀疏专家模块而非单一通用策略，用于多任务和持续学习。 · [项目页](https://forrest-110.github.io/sparse_diffusion_policy/)
+- **[Streaming Diffusion Policy: Fast Policy Synthesis with Variable Noise Diffusion Models](https://arxiv.org/abs/2406.04806)** (2024) — Streaming Diffusion Policy 用可变噪声扩散加速动作生成，面向需要快速反应的任务。
+- **[ThinkGrasp: A Vision-Language System for Strategic Part Grasping in Clutter](https://arxiv.org/abs/2407.11298)** (2024) — ThinkGrasp 借助 GPT-4o 推理，在严重杂乱中决定抓哪个物体的哪个部位，是即插即用的视觉-语言系统。 · [项目页](https://h-freax.github.io/thinkgrasp_page/)
+- **[Act3D: 3D Feature Field Transformers for Multi-Task Robotic Manipulation](https://arxiv.org/abs/2306.17817)** (2023) — Act3D 用自适应分辨率采样三维特征场，无需昂贵的高分辨率体素也能获得高空间精度。 · [项目页](https://act3d.github.io/)
+- **[Crossway Diffusion: Improving Diffusion-based Visuomotor Policy via Self-supervised Learning](https://arxiv.org/abs/2307.01849)** (2023) — 为扩散策略训练加入自监督重建目标，以改进模仿学习。 · [代码](https://github.com/LostXine/crossway_diffusion)
+- **[Look Before You Leap: Unveiling the Power of GPT-4V in Robotic Vision-Language Planning](https://arxiv.org/abs/2311.17842)** (2023) — 较早研究 GPT-4V 用于机器人基于物理场景的视觉-语言任务规划。
 - **[On Bringing Robots Home](https://arxiv.org/abs/2311.16098)** (2023) — Dobb-E 用低成本的手持夹取“棒”采集家庭示范数据并预训练，在新家庭任务上只需几分钟数据即可适配。 · [代码](https://github.com/notmahi/dobb-e)
+- **[Physically Grounded Vision-Language Models for Robotic Manipulation](https://arxiv.org/abs/2309.02561)** (2023) — 让视觉-语言模型理解物体的物理属性，从而更好地为操作任务推理。
 - **[RVT: Robotic View Transformer for 3D Object Manipulation](https://arxiv.org/abs/2306.14896)** (2023) — RVT：把点云重新渲染为若干虚拟视角，再用多视角 Transformer 预测关键帧位姿；论文报告在 RLBench 上训练与推理都比基于体素的 PerAct 快得多。代码库同时包含 RVT-2。 · [代码](https://github.com/NVlabs/RVT)
+- **[Scaling Up and Distilling Down: Language-Guided Robot Skill Acquisition](https://arxiv.org/abs/2307.14535)** (2023) — 用大模型加采样规划器生成带语言标注的机器人数据，再蒸馏为一个语言条件视觉运动策略。 · [项目页](https://www.cs.columbia.edu/~huy/scalingup/)
 - **[VoxPoser: Composable 3D Value Maps for Robotic Manipulation with Language Models](https://arxiv.org/abs/2307.05973)** (2023) — 大模型编写代码组合 3D 可供性/约束地图，再由规划器生成轨迹，无需机器人训练。
+- **[Zero-Shot Robotic Manipulation with Pretrained Image-Editing Diffusion Models](https://arxiv.org/abs/2310.10639)** (2023) — SuSIE 用预训练图像编辑扩散模型作高层规划器，提出中间子目标图像。 · [项目页](https://rail-berkeley.github.io/susie)
 - **[AnyGrasp: Robust and Efficient Grasp Perception in Spatial and Temporal Domains](https://arxiv.org/abs/2212.08333)** (2022) — AnyGrasp：基于真实传感器数据与解析标注训练、考虑物体质心的稠密 7 自由度平行夹爪抓取检测，并能跨帧跟踪抓取以应对运动物体；以 SDK 形式发布。 · [代码](https://github.com/graspnet/anygrasp_sdk)
 - **[DexGraspNet: A Large-Scale Robotic Dexterous Grasp Dataset for General Objects Based on Simulation](https://arxiv.org/abs/2210.02697)** (2022) — 通过优化可微的力封闭能量合成、并经物理仿真验证的百万级 ShadowHand 抓取，覆盖数千个物体，是灵巧抓取模型的常用训练集。 · [代码](https://github.com/PKU-EPIC/DexGraspNet)
 - **[Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation](https://arxiv.org/abs/2209.05451)** (2022) — PerAct：在体素化的 RGB-D 观测上运行 Perceiver Transformer，把下一关键帧夹爪位姿当作体素分类来预测；一个语言条件策略即可覆盖众多 RLBench 与真机任务。 · [代码](https://github.com/peract/peract)

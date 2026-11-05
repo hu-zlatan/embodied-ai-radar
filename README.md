@@ -62,7 +62,7 @@ _Vision-language-action models and generalist robot policies._ [Browse with the 
 - **[Asynchronous Robot Policies](https://arxiv.org/abs/2611.05155)** (2026) — Splits a large VLM that slowly updates a semantic memory from a light expert that acts at high rate, trained on staleness and delay; reports running the VLM at a tenth of its nominal rate with no significant loss. · [project](https://arp.insait.ai)
 - **[Bayesian Active Learning for Intent Disambiguation in Interactive Robot Planning](https://arxiv.org/abs/2609.34270)** (2026) — Treats clarifying questions as Bayesian active learning over Signal Temporal Logic specs, so the robot asks fewer questions and hands a formal planner a verifiable task.
 
-**[All 161 entries →](lists/vla.md)**
+**[All 170 entries →](lists/vla.md)**
 
 <a id="manipulation"></a>
 ### Manipulation & Dexterous Hands
@@ -82,7 +82,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - **[Enabling Robust Cloth Manipulation via Inference-Time Simulator-in-the-Loop Refinement](https://arxiv.org/abs/2606.24552)** (2026) — Refines cloth actions online from one RGB image: a real-to-sim module estimates the cloth state, then simulator rollouts with prior-guided MPPI correct the policy's trajectory. · [project](https://silr-cloth.github.io/)
 - **[FEIJOA: Task-Driven Grounding and Execution for Mobile Manipulation](https://arxiv.org/abs/2611.04080)** (2026) — A language-model agent resolves instructions against a posed RGB-D scan at test time instead of a prebuilt representation; 35 of 50 real Spot trials succeed, and most failures come from physical skills. · [project](https://williamshen-nz.github.io/feijoa/)
 
-**[All 81 entries →](lists/manipulation.md)**
+**[All 99 entries →](lists/manipulation.md)**
 
 <a id="tactile"></a>
 ### Tactile & Visuotactile Sensing
@@ -122,7 +122,7 @@ _Legged locomotion, humanoid whole-body control and parkour._ [Browse with the l
 - **[Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids](https://arxiv.org/abs/2601.07718)** (2026) — An end-to-end perceptive framework mapping depth to control for humanoid hiking over diverse unstructured terrain. · [project](https://project-instinct.github.io/hiking-in-the-wild)
 - **[HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human Videos](https://arxiv.org/abs/2602.02473)** (2026) — Compiles human video into generalizable real-world humanoid interaction skills, without task-specific design.
 
-**[All 112 entries →](lists/locomotion.md)**
+**[All 116 entries →](lists/locomotion.md)**
 
 <a id="world-models"></a>
 ### World Models
@@ -162,7 +162,7 @@ _Vision-language navigation, embodied question answering, mobile manipulation an
 - **[Benchmarking Obstacle-Conditioned Safety in Household Robot Navigation](https://arxiv.org/abs/2610.34674)** (2026) — OSMA-Bench: matched scenes that differ only in obstacle type test whether navigation policies slow down and keep clearance by how risky an obstacle is. VLM and VLA policies recognise the risk but rarely act on it. · [code](https://github.com/OSMA-Bench/OSMA-Bench) · [project](https://osma-bench.github.io/)
 - **[Gaussian Episodic Memory for Long-Term Spatiotemporal Reasoning](https://arxiv.org/abs/2610.33158)** (2026) — GEMS keeps a 3D Gaussian Splatting map that is updated only where the scene changes, and an agent renders views on demand to answer when/where questions. Introduces GEMS-Bench (15 scenes, 473 QA pairs). · [project](https://abwerby.github.io/GEMS/)
 
-**[All 43 entries →](lists/navigation.md)**
+**[All 46 entries →](lists/navigation.md)**
 
 <a id="perception"></a>
 ### Perception, SLAM & 3D Mapping
@@ -182,7 +182,7 @@ _Visual / LiDAR SLAM and odometry, 3D reconstruction, object pose, depth and ope
 - **[Which Depth Estimator for Jetson AGX Orin? A 2026 Benchmark of Monocular and Stereo Methods](https://arxiv.org/abs/2610.27199)** (2026) — Measured numbers for robot builders: nine monocular and stereo depth families (Depth Anything V2/3, Depth Pro, MoGe-2, Fast-FoundationStereo, ...) run on a Jetson AGX Orin, scored for metric accuracy and speed. · [code](https://github.com/nodarhub/orin-depth-benchmark)
 - **[SpaRV: Sparse Radiance Voxels for Scalable Geometrically Consistent LiDAR-Visual Mapping and Rendering](https://arxiv.org/abs/2610.25665)** (2026) — A sparse-voxel radiance map built from LiDAR and camera data, aimed at robot logs — few viewpoints, imperfect poses and large scenes — while keeping geometry accurate and GPU memory in check. · [code](https://github.com/hku-mars/SpaRV)
 
-**[All 32 entries →](lists/perception.md)**
+**[All 36 entries →](lists/perception.md)**
 
 <a id="control"></a>
 ### Planning, Control & Safety
@@ -222,7 +222,7 @@ _Reinforcement learning, imitation learning and policy post-training methods for
 - **[Towards Embodiment Scaling Laws in Robot Locomotion](https://arxiv.org/abs/2505.05753)** (2025) — Tests 'embodiment scaling laws' on about 1,000 generated robots: does training on more bodies improve generalization to unseen ones? · [project](https://embodiment-scaling-laws.github.io/)
 - **[Behavior Graphs: Unsupervised Graph Structures for Interpreting Robot Deployment Data](https://arxiv.org/abs/2611.00405)** (2026) — Compresses policy rollouts into one directed graph of behavior modes linked to outcomes, to guide what data to collect next. In a user study on three real tasks, 16 of 18 participants preferred it to rollout videos. · [project](https://try.behavior-graphs.com/)
 
-**[All 56 entries →](lists/learning.md)**
+**[All 60 entries →](lists/learning.md)**
 
 <a id="sim"></a>
 ### Sim-to-Real & Simulators
@@ -242,7 +242,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._ [Browse
 - **[TacEx: GelSight Tactile Simulation in Isaac Sim -- Combining Soft-Body and Visuotactile Simulators](https://arxiv.org/abs/2411.04776)** (2024) — Brings GIPC soft-body contact and the Taxim and FOTS tactile simulators into Isaac Sim for GelSight Mini, with Isaac Lab RL environments.
 - **[AuRA: From Atoms to Bits through Autonomous Robot Interaction](https://arxiv.org/abs/2610.34452)** (2026) — Automates the robot interaction and data preparation behind physics-informed digital twins; reports 88.5% less active human labor per asset across 13 deformable objects. · [code](https://github.com/Yoonkyo/AuRA) · [project](https://aura-robot.github.io/)
 
-**[All 46 entries →](lists/sim.md)**
+**[All 48 entries →](lists/sim.md)**
 
 <a id="datasets"></a>
 ### Datasets & Benchmarks
@@ -262,7 +262,7 @@ _Large robot datasets, egocentric data and evaluation suites._ [Browse with the 
 - **[TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System](https://arxiv.org/abs/2511.02832)** (2025) — Portable, mocap-free humanoid teleoperation and data collection built around a VR headset, aimed at making whole-body demonstrations scale. · [code](https://github.com/amazon-far/TWIST2) · [project](https://twist-data.github.io)
 - **[ClothDojo: Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding](https://arxiv.org/abs/2611.01190)** (2026) — Sim platform where a fine-tuned VLA generates nearly 8,000 successful garment trajectories, re-rendered for RGB policies. Those beat policies trained on the original human data, but unseen garments stay hard. · [project](https://clothdojo.github.io/)
 
-**[All 70 entries →](lists/datasets.md)**
+**[All 72 entries →](lists/datasets.md)**
 
 <a id="hardware"></a>
 ### Hardware & Open-Source Robots

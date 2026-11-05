@@ -2,7 +2,7 @@
 
 _足式运动、人形全身控制与跑酷。_
 
-共 112 条，⭐ 为重点推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
+共 116 条，⭐ 为重点推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/locomotion.html) · [English](locomotion.md)
 
@@ -79,12 +79,15 @@ _足式运动、人形全身控制与跑酷。_
 - **[HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning](https://arxiv.org/abs/2508.21043)** (2025) — 人形乒乓球系统，结合基于模型的规划器和 RL 全身控制器；报告与人对打最多连续 106 拍。
 - **[HuB: Learning Extreme Humanoid Balance](https://arxiv.org/abs/2505.07294)** (2025) — 攻克单脚站立、高踢腿等强平衡技能，这类动作常因参考动作误差导致跟踪失败。CoRL 2025 Oral。 · [项目页](https://hub-robot.github.io)
 - **[Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning](https://arxiv.org/abs/2501.02116)** (2025) — 综述人形移动与操作，涵盖控制、规划与学习，从基于模型的方法讲起。
+- **[Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration](https://arxiv.org/abs/2502.14795)** (2025) — Humanoid-VLA 融合语言理解、第一视角感知和运动控制，面向通用人形控制。
 - **[InterMimic: Towards Universal Whole-Body Control for Physics-Based Human-Object Interactions](https://arxiv.org/abs/2502.20390)** (2025) — 单一策略从数小时不完美动捕数据学习全身人-物交互：先用个体教师策略精修数据，再扩展规模。 · [代码](https://github.com/Sirui-Xu/InterMimic)
 - **[KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills](https://arxiv.org/abs/2506.12851)** (2025) — 通过多步动作处理和自适应动作跟踪，学习功夫、舞蹈等高动态技能。 · [代码](https://github.com/TeleHuman/PBHC) · [项目页](https://kungfubot.github.io)
 - **[Learning Getting-Up Policies for Real-World Humanoid Robots](https://arxiv.org/abs/2502.12152)** (2025) — 针对不同跌倒姿态和地形学习起身控制器，而这类场景很难手工设计控制器。 · [代码](https://github.com/RunpeiDong/humanup) · [项目页](https://humanoid-getup.github.io/)
 - **[Learning Humanoid Standing-up Control across Diverse Postures](https://arxiv.org/abs/2502.08378)** (2025) — HoST 用强化学习从多种姿态起身，无需预定义的特定地面动作，并部署到真机。 · [代码](https://github.com/OpenRobotLab/HoST) · [项目页](https://taohuang13.github.io/humanoid-standingup.github.io/)
+- **[NIL: No-data Imitation Learning by Leveraging Pre-trained Video Diffusion Models](https://arxiv.org/abs/2503.10626)** (2025) — NIL 借助预训练视频扩散模型学习人形、四足等形态的运动技能，无需示教数据。
 - **[OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction](https://arxiv.org/abs/2509.26633)** (2025) — 不仅保持身体姿态，还保留人与物体、人与场景交互的重定向方法，为人形移动操作生成物理上合理的数据。 · [项目页](https://omniretarget.github.io)
 - **[PhysHSI: Towards a Real-World Generalizable and Natural Humanoid-Scene Interaction System](https://arxiv.org/abs/2510.11072)** (2025) — PhysHSI：面向搬物、坐椅等任务的真实人形-场景交互系统，兼顾动作自然与场景感知鲁棒。 · [项目页](https://why618188.github.io/physhsi/)
+- **[RHINO: Learning Real-Time Humanoid-Human-Object Interaction from Human Demonstrations](https://arxiv.org/abs/2502.13134)** (2025) — RHINO 从人类示教学习实时人形-人-物交互，根据人的信号反应，而非固定任务阶段。 · [项目页](https://humanoid-interaction.github.io/)
 - **[ResMimic: From General Motion Tracking to Humanoid Whole-body Loco-Manipulation via Residual Learning](https://arxiv.org/abs/2510.05070)** (2025) — 两阶段人形移动操作：先用人体数据训练通用动作跟踪策略，再用残差策略补上感知物体的精确控制。 · [项目页](https://resmimic.github.io/)
 - **[Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking](https://arxiv.org/abs/2510.02252)** (2025) — 说明脚滑等重定向瑕疵会损害跟踪策略，并提出通用重定向方法 GMR；其开源仓库在人形数据处理中使用广泛。 · [代码](https://github.com/YanjieZe/GMR) · [项目页](https://jaraujo98.github.io/retargeting_matters)
 - **[SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending](https://arxiv.org/abs/2506.09366)** (2025) — 通过融合可复用技能实现人形全身移动操作，避免多数控制器所需的按任务调参。 · [代码](https://github.com/Humanoid-SkillBlender/SkillBlender) · [项目页](https://usc-gvl.github.io/SkillBlender-web/)
@@ -112,6 +115,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[DreamWaQ: Learning Robust Quadrupedal Locomotion With Implicit Terrain Imagination via Deep Reinforcement Learning](https://arxiv.org/abs/2301.10602)** (2023) — 盲视四足策略：借助上下文辅助估计器从本体感觉历史中隐式推断地形特性，无需相机即可稳健地走楼梯和崎岖地面。
 - **[Extreme Parkour with Legged Robots](https://arxiv.org/abs/2309.14341)** (2023) — 端到端深度相机策略让小型四足机器人完成跳远、跳高和倒立。 · [代码](https://github.com/chengxuxin/extreme-parkour)
 - **[Perpetual Humanoid Control for Real-time Simulated Avatars](https://arxiv.org/abs/2305.06456)** (2023) — 人形控制器可扩展到一万条动作片段且无需外部稳定力，并能自行从跌倒中恢复，无需重置。 · [代码](https://github.com/ZhengyiLuo/PHC) · [项目页](https://zhengyiluo.github.io/PHC/)
+- **[Prompt a Robot to Walk with Large Language Models](https://arxiv.org/abs/2309.09969)** (2023) — 直接让大模型输出机器人的行走动作，是把大模型用于底层控制的早期尝试。 · [项目页](https://prompt2walk.github.io/)
 - **[Robot Parkour Learning](https://arxiv.org/abs/2309.05665)** (2023) — 将多个跑酷专家技能蒸馏为单一视觉策略，让低成本四足机器人攀爬、跳跃和匍匐。 · [代码](https://github.com/ZiwenZhuang/parkour)
 - **[ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters](https://arxiv.org/abs/2205.01906)** (2022) — 结合对抗模仿与无监督强化学习，为仿真角色学习可复用的技能嵌入，新任务不必从零训练。 · [代码](https://github.com/nv-tlabs/ASE)
 - **[Learning robust perceptive locomotion for quadrupedal robots in the wild](https://arxiv.org/abs/2201.08117)** (2022) — ANYmal 通过学习的信念编码器融合本体感知与带噪声的高程图感知，在高山徒步路线等复杂地形上完成行走。

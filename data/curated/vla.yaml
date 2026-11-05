@@ -1653,3 +1653,74 @@
   tags: [egocentric, human-video, world-action-model, pretraining, open-data]
   takeaway_en: "Opens a 50,000-hour annotated egocentric video corpus with pipelines and checkpoints. Reports a log-linear law between pretraining hours and robot success, and 84.6% on RoboTwin 2.0 Clean2Random."
   takeaway_zh: 开源 5 万小时带标注的第一视角视频语料及流程和权重。报告预训练时长与机器人成功率之间的对数线性规律，后训练后在 RoboTwin 2.0 Clean2Random 上达到 84.6%。
+- title: "What Matters in Building Vision-Language-Action Models for Generalist Robots"
+  type: paper
+  arxiv: "2412.14058"
+  year: 2024
+  project: https://robovlms.github.io/
+  tags: [vla, empirical]
+  takeaway_en: "Systematic study of what actually drives VLA manipulation performance, from model design to data; introduces the RoboVLMs family."
+  takeaway_zh: "系统研究哪些因素真正决定 VLA 操作性能（模型设计到数据），并提出 RoboVLMs 系列。"
+- title: "RDT2: Exploring the Scaling Limit of UMI Data Towards Zero-Shot Cross-Embodiment Generalization"
+  type: paper
+  arxiv: "2602.03310"
+  year: 2026
+  project: https://rdt-robotics.github.io/rdt2/
+  tags: [vla, umi, cross-embodiment]
+  takeaway_en: "RDT2 builds a robot foundation model on a 7B-parameter VLM and tests how far UMI data scales toward zero-shot deployment on new embodiments."
+  takeaway_zh: "RDT2 基于 70 亿参数 VLM 构建机器人基础模型，探索 UMI 数据规模能把零微调跨形态部署推到多远。"
+- title: "ABot-M0: VLA Foundation Model for Robotic Manipulation with Action Manifold Learning"
+  type: paper
+  arxiv: "2602.11236"
+  year: 2026
+  code: https://github.com/amap-cvlab/ABot-Manipulation
+  project: https://amap-cvlab.github.io/ABot-Manipulation/
+  tags: [vla, cross-embodiment, action-manifold]
+  takeaway_en: "ABot-M0 pairs a data curation pipeline with action manifold learning for one model across hardware, the \"one brain, many forms\" goal."
+  takeaway_zh: "ABot-M0 结合数据整理流程与动作流形学习，让一个模型跨不同硬件工作，即“一脑多形”。"
+- title: "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments"
+  type: paper
+  arxiv: "2605.30280"
+  year: 2026
+  tags: [vla, cross-embodiment, unified]
+  takeaway_en: "Qwen-VLA studies whether manipulation, navigation and other decision tasks can share one VLA model across tasks, environments and robots."
+  takeaway_zh: "Qwen-VLA 研究操作、导航等决策任务能否由同一 VLA 模型统一，跨任务、环境和机器人形态。"
+- title: "Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos"
+  type: paper
+  arxiv: "2510.21571"
+  year: 2025
+  project: https://microsoft.github.io/VITRA/
+  tags: [vla, human-video, pretraining]
+  takeaway_en: "VITRA pretrains VLA models on unscripted in-the-wild human videos, treating the human hand as a dexterous end-effector, with no annotations needed."
+  takeaway_zh: "VITRA 用无脚本的真实人类活动视频预训练 VLA，把人手视为灵巧末端执行器，无需人工标注。"
+- title: "What Can RL Bring to VLA Generalization? An Empirical Study"
+  type: paper
+  arxiv: "2505.19789"
+  year: 2025
+  venue: NeurIPS 2025
+  project: https://rlvla.github.io
+  tags: [vla, rl, fine-tuning]
+  takeaway_en: "Empirical study of whether RL fine-tuning generalises better than supervised fine-tuning, which suffers compounding errors under distribution shift."
+  takeaway_zh: "实证研究强化学习微调是否比监督微调泛化更好；后者在分布偏移下易累积误差。"
+- title: "RoboUniView: Visual-Language Model with Unified View Representation for Robotic Manipulation"
+  type: paper
+  arxiv: "2406.18977"
+  year: 2024
+  code: https://github.com/liufanfanlff/RoboUniview
+  tags: [vla, multi-view, bev]
+  takeaway_en: "RoboUniView learns a unified view representation so a VLM-based policy depends less on camera specs and mounting positions."
+  takeaway_zh: "RoboUniView 学习统一视角表征，降低基于 VLM 的策略对相机参数和安装位置的依赖。"
+- title: "Robot Learning in the Era of Foundation Models: A Survey"
+  type: paper
+  arxiv: "2311.14379"
+  year: 2023
+  tags: [survey, foundation-models]
+  takeaway_en: "Survey of how foundation models are reshaping robot learning, alongside traditional learning methods."
+  takeaway_zh: "综述基础模型如何与传统学习方法结合，改变机器人学习。"
+- title: "Toward General-Purpose Robots via Foundation Models: A Survey and Meta-Analysis"
+  type: paper
+  arxiv: "2312.08782"
+  year: 2023
+  tags: [survey, meta-analysis, foundation-models]
+  takeaway_en: "Survey and meta-analysis arguing robots are limited by task-specific design, and how foundation models could enable general-purpose ones."
+  takeaway_zh: "综述与元分析：指出机器人受限于任务专用设计，并讨论基础模型如何走向通用机器人。"

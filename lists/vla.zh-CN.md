@@ -2,7 +2,7 @@
 
 _视觉-语言-动作模型与通用机器人策略。_
 
-共 161 条，⭐ 为重点推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
+共 170 条，⭐ 为重点推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [English](vla.md)
 
@@ -18,6 +18,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - ⭐ **[RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control](https://arxiv.org/abs/2307.15818)** (2023) — 提出 "VLA" 概念：把网络规模的视觉语言模型联合微调为输出动作 token，把语义知识迁移到机器人控制。 · [项目页](https://robotics-transformer2.github.io/)
 - **[Ψ0: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation](https://arxiv.org/abs/2603.12263)** (2026) — 面向人形移动操作的开放基础模型，主张因运动学差异，不宜直接混合人类与人形数据共同训练。
 - **[π0.7: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities](https://arxiv.org/abs/2604.15483)** (2026) — CoRL 2026 Oral。可引导的通用基础模型：在未见环境中执行多样指令，跨形态零样本完成叠衣等任务，无需任务专用微调。 · [项目页](https://www.pi.website/blog/pi07)
+- **[ABot-M0: VLA Foundation Model for Robotic Manipulation with Action Manifold Learning](https://arxiv.org/abs/2602.11236)** (2026) — ABot-M0 结合数据整理流程与动作流形学习，让一个模型跨不同硬件工作，即“一脑多形”。 · [代码](https://github.com/amap-cvlab/ABot-Manipulation) · [项目页](https://amap-cvlab.github.io/ABot-Manipulation/)
 - **[AGQ: Action-Guided Ultra-Low-Bit Quantization for Vision-Language-Action Models](https://arxiv.org/abs/2610.33074)** (2026) — 面向 VLA 的混合精度量化：根据每个权重矩阵对输出动作的影响分配比特数；报告在 3 比特下 LIBERO 成功率 92.7%（高于 AWQ 与 GPTQ），2.5 比特下仍有 70.5%。 · [代码](https://github.com/Qiuxu00/AGQ)
 - **[Asynchronous Robot Policies](https://arxiv.org/abs/2611.05155)** (2026) — 把低频更新语义记忆的大型 VLM 与高频出动作的轻量专家解耦，并针对陈旧和延迟训练；报告 VLM 降到标称频率十分之一时性能无明显损失。 · [项目页](https://arp.insait.ai)
 - **[Auriga Technical Report: A Task-Agnostic Agent Harness for Zero-Shot Embodied Manipulation](https://arxiv.org/abs/2611.01112)** (2026) — 任务决策交给大模型，框架提供标定后的三维测量、轨迹预览和偏差即停的执行检查。作者报告在 RoboDojo 榜单排名第一，成功率 57.7%，是同模型参考框架的两倍多。 · [代码](https://github.com/lose4578/Auriga) · [项目页](https://auriga.stelledge.com/)
@@ -75,6 +76,8 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[Post-hoc Epistemic Uncertainty for Vision-Language-Action Policies](https://arxiv.org/abs/2610.29730)** (2026) — 在训练完成后为单个 VLA 策略加上轻量的核方差头（基于训练示教嵌入的高斯过程方差）来估计认知不确定性，无需训练和运行策略集成，让机器人知道何时该求助或补充示教。 · [代码](https://github.com/post-hoc-vla-uncertainty/post-hoc-vla-uncertainty)
 - **[Profiling a Frontier Agent with EBench: From Direct Control to Harness with Policy](https://arxiv.org/abs/2610.35832)** (2026) — 评测报告：在 EBench 上让 GPT-6-Astra 直接输出路径点控制机器人，或通过执行框架调用 VLA/WAM 策略。直接控制在短时任务上领先，但在长时程与接触密集任务上落后；调用策略可显著减少 token 开销。 · [项目页](https://internrobotics.github.io/EBench-Astra-Tech-Report/)
 - **[Quantize by Doing: Task-Guided Mixed-Precision Quantization of Vision-Language-Action Models](https://arxiv.org/abs/2610.38661)** (2026) — 用短时闭环任务成功率（而非校准数据敏感度）为 VLA 各组件分配权重/激活位宽，并考虑组件间相互影响；在四个 VLA 与 LIBERO 全部套件上约 4 比特权重仍保持较强表现。作者如实指出：仿真选出的方案在真机上对 X-VLA 无损，对 π0.5 却失败。 · [代码](https://github.com/jiuyixu25/QbD-VLA)
+- **[Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments](https://arxiv.org/abs/2605.30280)** (2026) — Qwen-VLA 研究操作、导航等决策任务能否由同一 VLA 模型统一，跨任务、环境和机器人形态。
+- **[RDT2: Exploring the Scaling Limit of UMI Data Towards Zero-Shot Cross-Embodiment Generalization](https://arxiv.org/abs/2602.03310)** (2026) — RDT2 基于 70 亿参数 VLM 构建机器人基础模型，探索 UMI 数据规模能把零微调跨形态部署推到多远。 · [项目页](https://rdt-robotics.github.io/rdt2/)
 - **[REA: A Routed Embodied Agent Runtime for Asynchronous Brain-Cerebellum Control](https://arxiv.org/abs/2610.42053)** (2026) — 让慢速“大脑”（基础模型）与快速“小脑”（VLA、全身控制）协同的统一运行时，核心规则是运行中的策略绝不等待大脑。用路由记忆与边界触发的判定门替代逐次求助；报告 LIBERO-Pro 3000 回合成功率 95.9%（最佳单体基线 94.7%），控制时间减少 17%。 · [项目页](https://mikeeeeeeeeeeeeee.github.io/REA/)
 - **[REACT: Rolling Denoising and Dual Decoupling for Reactive Robot Control with VLA Models](https://arxiv.org/abs/2610.12007)** (2026) — CoRL 2026 Spotlight。不再每次从头生成动作块，而是维护一个流时间步错开的持久动作缓冲区，让基于流的 VLA 更具反应性，同时保留长时域上下文。 · [代码](https://github.com/houlong-xiong/REACT) · [项目页](https://react-vla.github.io)
 - **[REKI: Registering Knowledge in VLAs](https://arxiv.org/abs/2610.22178)** (2026) — 仅用公开数据预训练的 2.4B VLM + 流匹配 VLA；报告称只输给约两倍大的模型，并用少量寄存器 token 实现低成本记忆。 · [代码](https://github.com/kyutai-labs/reki)
@@ -143,11 +146,13 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[RoboBrain 2.0 Technical Report](https://arxiv.org/abs/2507.02029)** (2025) — 开源具身视觉语言模型（7B 与 32B），面向空间定位、可供性、轨迹预测与多步任务规划，作为底层策略之上的“大脑”。 · [代码](https://github.com/FlagOpen/RoboBrain2.0)
 - **[RoboBrain: A Unified Brain Model for Robotic Manipulation from Abstract to Concrete](https://arxiv.org/abs/2502.21257)** (2025) — 训练多模态语言模型完成任务规划、物体可供性和轨迹预测，并配套标注了这三类信息的 ShareRobot 数据集。
 - **[RoboOS: A Hierarchical Embodied Framework for Cross-Embodiment and Multi-Agent Collaboration](https://arxiv.org/abs/2505.03673)** (2025) — 开源的“大脑–小脑”分层系统：RoboBrain 多模态大模型负责跨异构机器人的任务规划与分配，各机器人上的技能库负责执行，共享的空间/时间/本体记忆保持多机协同。 · [代码](https://github.com/FlagOpen/RoboOS)
+- **[Scalable Vision-Language-Action Model Pretraining for Robotic Manipulation with Real-Life Human Activity Videos](https://arxiv.org/abs/2510.21571)** (2025) — VITRA 用无脚本的真实人类活动视频预训练 VLA，把人手视为灵巧末端执行器，无需人工标注。 · [项目页](https://microsoft.github.io/VITRA/)
 - **[SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics](https://arxiv.org/abs/2506.01844)** (2025) — 约 4.5 亿参数的 VLA，用社区 LeRobot 数据训练，可在消费级 GPU 上运行。 · [代码](https://github.com/huggingface/lerobot)
 - **[SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model](https://arxiv.org/abs/2501.15830)** (2025) — 为视觉 token 加入 3D 位置编码，并用自适应动作网格表示动作，在 110 万条真机轨迹上预训练；迁移到新机器人时只需重新划分动作网格。 · [代码](https://github.com/SpatialVLA/SpatialVLA)
 - **[TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models](https://arxiv.org/abs/2511.05275)** (2025) — 不做双臂预训练，而是把两份预训练单臂 VLA 组合成协同的双臂 VLA；论文报告在真实与仿真双臂任务上优于同规模 RDT-1B，并缩小了与依赖大量双臂数据的 π0 的差距。 · [代码](https://github.com/jellyho/TwinVLA) · [项目页](https://jellyho.github.io/TwinVLA/)
 - **[UniVLA: Learning to Act Anywhere with Task-centric Latent Actions](https://arxiv.org/abs/2505.06111)** (2025) — 在 DINO 特征空间中、借助语言指令过滤，从视频里学习“任务相关”的隐动作，使策略可跨机器人与人类视频预训练；报告以少得多的预训练算力超过 OpenVLA。 · [代码](https://github.com/OpenDriveLab/UniVLA)
 - **[VQ-VLA: Improving Vision-Language-Action Models via Scaling Vector-Quantized Action Tokenizers](https://arxiv.org/abs/2507.01016)** (2025) — 用卷积残差 VQ-VAE 动作分词器（以百倍规模的真实+合成数据训练）替换 OpenVLA 的逐维离散分箱；论文报告 LIBERO-90 和真实 Franka 任务成功率提升，推理速度约快 2.8 倍。 · [代码](https://github.com/xiaoxiao0406/VQ-VLA)
+- **[What Can RL Bring to VLA Generalization? An Empirical Study](https://arxiv.org/abs/2505.19789)** (2025) — 实证研究强化学习微调是否比监督微调泛化更好；后者在分布偏移下易累积误差。 · [项目页](https://rlvla.github.io)
 - **[X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](https://arxiv.org/abs/2510.10274)** (2025) — 为每个数据来源配一组可学习的软提示嵌入，使一个基于标准 Transformer 的流匹配策略（0.9B）能跨本体联合训练；在 6 个仿真基准和 3 台真实机器人上评测。 · [代码](https://github.com/2toinf/X-VLA) · [项目页](https://thu-air-dream.github.io/X-VLA/)
 - **[3D-VLA: A 3D Vision-Language-Action Generative World Model](https://arxiv.org/abs/2403.09631)** (2024) — 具备三维感知的大语言模型，引入场景、物体与动作交互 token，并与扩散模型对齐，可在规划动作前“想象”目标图像和点云；训练数据为作者整理的约 200 万条三维-语言-动作样本。 · [代码](https://github.com/UMass-Embodied-AGI/3D-VLA) · [项目页](https://vis-www.cs.umass.edu/3dvla)
 - **[A Survey on Vision-Language-Action Models for Embodied AI](https://arxiv.org/abs/2405.14093)** (2024) — 较早的 VLA 综述：把相关工作分为组件研究（视觉、语言、世界模型等）、底层控制策略与高层任务规划器，并汇总数据集、仿真器与基准；附配套论文列表。 · [项目页](https://github.com/yueen-ma/Awesome-VLA)
@@ -160,12 +165,16 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[Octo: An Open-Source Generalist Robot Policy](https://arxiv.org/abs/2405.12213)** (2024) — 在 Open X-Embodiment 上预训练的开源扩散头 Transformer 策略，可快速微调到新机器人和新传感器。 · [代码](https://github.com/octo-models/octo)
 - **[RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation](https://arxiv.org/abs/2410.07864)** (2024) — 12 亿参数扩散 Transformer，采用跨机器人统一动作空间，面向双臂操作。 · [代码](https://github.com/thu-ml/RoboticsDiffusionTransformer)
 - **[RoboMamba: Efficient Vision-Language-Action Model for Robotic Reasoning and Manipulation](https://arxiv.org/abs/2406.04339)** (2024) — 基于 Mamba 状态空间模型的端到端 VLA，兼顾机器人推理能力和较低的微调与推理成本。 · [项目页](https://sites.google.com/view/robomamba-web)
+- **[RoboUniView: Visual-Language Model with Unified View Representation for Robotic Manipulation](https://arxiv.org/abs/2406.18977)** (2024) — RoboUniView 学习统一视角表征，降低基于 VLM 的策略对相机参数和安装位置的依赖。 · [代码](https://github.com/liufanfanlff/RoboUniview)
 - **[Robotic Control via Embodied Chain-of-Thought Reasoning](https://arxiv.org/abs/2407.08693)** (2024) — 训练 VLA 在动作前依次推理计划、子任务、动作和视觉特征；用合成的推理数据，OpenVLA 在困难泛化任务上成功率提升 28%，无需额外机器人数据。 · [项目页](https://embodied-cot.github.io)
 - **[Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://arxiv.org/abs/2409.20537)** (2024) — HPT：为每种机器人设计“输入头”，把本体感知与视觉映射成短 token 序列，送入共享的 Transformer 主干；在 52 个数据集（真机、仿真、人类视频）上预训练，报告在未见任务上微调提升 20% 以上。 · [代码](https://github.com/liruiw/HPT) · [项目页](https://liruiw.github.io/hpt/)
 - **[TinyVLA: Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation](https://arxiv.org/abs/2409.12514)** (2024) — 由小型多模态模型（至多 1.4B）加 LoRA 微调与扩散策略头构成的紧凑 VLA，无需大规模机器人预训练；报告真机成功率高于 OpenVLA，推理速度约快 20 倍。 · [代码](https://github.com/liyaxuanliyaxuan/TinyVLA) · [项目页](https://tiny-vla.github.io/)
 - **[TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies](https://arxiv.org/abs/2412.10345)** (2024) — 把机器人近期的运动轨迹画在输入图像上（“视觉轨迹提示”），并在 15 万条轨迹上微调 OpenVLA；报告在 SimplerEnv 上提升约 10%、真实 WidowX 任务上提升 3.5 倍，另有基于 Phi-3-Vision 的 4B 精简版。 · [代码](https://github.com/umd-huang-lab/tracevla) · [项目页](https://tracevla.github.io/)
+- **[What Matters in Building Vision-Language-Action Models for Generalist Robots](https://arxiv.org/abs/2412.14058)** (2024) — 系统研究哪些因素真正决定 VLA 操作性能（模型设计到数据），并提出 RoboVLMs 系列。 · [项目页](https://robovlms.github.io/)
 - **[Foundation Models in Robotics: Applications, Challenges, and the Future](https://arxiv.org/abs/2312.07843)** (2023) — 综述预训练基础模型如何用于机器人的感知、决策与控制，以及主要瓶颈：机器人数据稀缺、安全性与不确定性量化、实时执行。 · [项目页](https://github.com/robotics-survey/Awesome-Robotics-Foundation-Models)
 - **[PaLM-E: An Embodied Multimodal Language Model](https://arxiv.org/abs/2303.03378)** (2023) — 将连续传感器嵌入注入 5620 亿参数语言模型，用于具身推理与规划。
+- **[Robot Learning in the Era of Foundation Models: A Survey](https://arxiv.org/abs/2311.14379)** (2023) — 综述基础模型如何与传统学习方法结合，改变机器人学习。
+- **[Toward General-Purpose Robots via Foundation Models: A Survey and Meta-Analysis](https://arxiv.org/abs/2312.08782)** (2023) — 综述与元分析：指出机器人受限于任务专用设计，并讨论基础模型如何走向通用机器人。
 - **[A Generalist Agent](https://arxiv.org/abs/2205.06175)** (2022) — Gato：同一套权重的 Transformer 既能玩游戏、写图像描述，也能用真实机械臂堆积木。
 - **[RT-1: Robotics Transformer for Real-World Control at Scale](https://arxiv.org/abs/2212.06817)** (2022) — 将动作离散化为 token，用 13 万条真实演示训练 Transformer，证明机器人策略会随数据多样性扩展。 · [代码](https://github.com/google-research/robotics_transformer)
 - **[VIMA: General Robot Manipulation with Multimodal Prompts](https://arxiv.org/abs/2210.03094)** (2022) — 把多种桌面任务统一成图文交错的提示，交给一个 Transformer 策略执行，并配套 VIMA-Bench 用于系统性泛化评测。 · [代码](https://github.com/vimalabs/VIMA)
