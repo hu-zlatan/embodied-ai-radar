@@ -543,3 +543,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - New: 'Similar entries' on entry pages (TF-IDF over title, tags, takeaway) replaces the same-topic list. Spot check on RT-1, AIRoA-0, failure-boundary: results make sense. Local: validate 0 errors, 995 pages, 0 broken links.
 - Search index reviewed (known issue): capped and lazy, left as is.
 - A search for the project name still finds nothing from this site; Search Console remains the owner's task.
+- End: 2 stars / 0 forks. CI and Pages green on 68d99dd. Verify #157 still pending at the end of this run, so the 6 picks and 2 project links are not CI-checked yet; next run checks them. Live site not opened from here. No new owner task; CoRL post still fits until Sun 11-08, Search Console still open. End of run 61.
