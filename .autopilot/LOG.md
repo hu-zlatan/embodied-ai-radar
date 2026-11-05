@@ -534,3 +534,12 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Real license data landed: 458 repos, 304 permissive, 8 copyleft, 65 custom, 81 none. Site rebuilt locally with it: 989 pages, 0 broken links.
 - End: verify #154 still running and #155 pending at the end of this run, so the 5 picks and 59 code links are not CI-checked yet; next run checks them (STATE next steps). Live site not opened from here. No new owner task; CoRL post still fits until Sun 11-08, Search Console still open. End of run 60.
 - Stars at end of run: 2, forks 0 (first new star since launch).
+
+## 2026-11-05 — run 61 (~22:50 UTC–)
+
+- Start: no issues/PRs, 2 stars / 0 forks. No add_repo tool; repo was already cloned. Workflows green except verify #155.
+- Verify #155: all 59 code links of run 60 passed but airoa-org/AIRoA-0 (404). `code:` removed; project page stays. Could not read a-0.airoa.io: web fetches timed out on an unanswered permission prompt, not routed around. Two warnings only (Qwen RobotWorld blog, 3DVLA page: network errors).
+- 6 picks: PyRUA-REAL, CoDA, failure-boundary profiles, latent property adaptation, Jev-AD, LeWM action geometry. Project links added to uni-robot-agent and Say the Same (from HF, verify decides). PrimeSim README still says 'code coming soon', so no code link. Curated 870.
+- New: 'Similar entries' on entry pages (TF-IDF over title, tags, takeaway) replaces the same-topic list. Spot check on RT-1, AIRoA-0, failure-boundary: results make sense. Local: validate 0 errors, 995 pages, 0 broken links.
+- Search index reviewed (known issue): capped and lazy, left as is.
+- A search for the project name still finds nothing from this site; Search Console remains the owner's task.

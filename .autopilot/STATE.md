@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-05 ~17:15 UTC, run 60; 864 curated, repo has 2 stars, 0 forks._
+_Last updated: 2026-11-05 ~23:30 UTC, run 61; 870 curated, repo has 2 stars, 0 forks._
 
 ## Status
 
@@ -47,6 +47,9 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 - **Conference numbers** (run 56): `program_numbers()` on the program page: counts, code share (orals + spotlights vs the rest), bars from `PROGRAM_THEMES` (title regexes, all accepted papers). Bars link to `?theme=<id>`, also a select `#vf-k` in the filter (`data-k` on cards). Filter count is now unique papers, not cards. Hash is kept on `replaceState`.
 
+- **Similar entries** (run 61): `similar_entries()` in build_site: TF-IDF cosine over title + tags (double) + English takeaway, top 6 at score ≥0.12, on `e/<id>.html`; filled from the same topic when text is thin. 870 entries build in about 2 s total.
+- **Search index** (run 61 review): 1.68 MB raw / 544 KB gzip, loaded only on first search and capped by `FEED_DAYS_ON_SITE`; left as is. If it needs cutting: `t` 127 KB, `au` 89, `ab` 89, `zh` 82, `en` 65 KB gzip.
+
 - **Code tracker** (run 60): `code.html` = `code_page()` in build_site, one row per repo (`by_repo`, curated only), static list by stars; `app.js` filters by text, topic, license group, 6-month activity and sorts by stars / gain / last push, shareable `?q=&topic=&license=&sort=&active=1`. License = SPDX id GitHub detects, stored by `repo_stats.py` as `license` ("" none, NOASSERTION custom); `license_class()` groups them. Also on entry pages and `code_license` at the end of curated.csv/json. Page text warns that weights and data may have other terms. Feed repos have no license (only stars are stored for them).
 
 ## Known issues
@@ -59,7 +62,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
-0000. Check verify after run 60: 59 new `code:` links + 5 picks. If a code repo fails, remove that line. `project_code.json` `curated` is empty of unreviewed items except skips: CANVAS (CostNav, wrong), 2507.01925 survey (LAPA, wrong), TARC (66-byte README; recheck).
+0000. Check verify after run 61 (6 picks, 2 project links, AIRoA-0 code removed). Verify #155 passed all 59 code links of run 60 except airoa-org/AIRoA-0 (404; it passed `repo_ok` on 11-04, so it may return: restore `code:` once live, a project_code run re-offers it). `project_code.json` `curated` skips stay: CANVAS, 2507.01925, TARC.
 000. Verify #153 passed all 46 anchors of run 59. Next: Fri 11-06 feed picks; W45 intro Mon 11-09; CoRL starts 11-09. Overlap method works better than per-list sweeps: fetch lists with curl from raw.githubusercontent.com, count uncurated IDs per independent list (the two humanoid lists are near mirrors, count as one), run `facts.yml`, write from its abstracts. 16 of 62 skipped. 1,163 IDs appear in one list only; not worth it unless a topic looks thin.
 00. After a curated push, confirm verify really ran: a pending run can be cancelled by a newer one in the `arxiv-api` group (run 52, #139). Re-dispatch if so.
 0. New curated entries get BibTeX metadata on the next intake run. A push touching curated data queues verify.yml in the `arxiv-api` group and cancels a *pending* intake — dispatch intake only after verify has started/finished.

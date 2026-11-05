@@ -11,9 +11,11 @@ import datetime as dt
 import html
 import io
 import json
+import math
 import re
 import shutil
 import sys
+from collections import Counter
 from pathlib import Path
 
 import yaml
@@ -406,6 +408,38 @@ def code_page(by_repo: dict[str, dict], gains: dict[str, int], span: int, topics
     return f'<h1>{bi("Open-source code tracker", "开源代码追踪")}</h1>{lead}{note}{box}<ol class="repolist" id="cf-list">{"".join(rows)}</ol>'
 
 
+SIMILAR_STOP = set("the and for with from that this into than then its their over under via using use used uses based new one two can are was were has have not but more most our we which while when where how what also both each only such".split())
+
+
+def similar_entries(entries: list[dict], n: int = 6, min_score: float = 0.12) -> dict[str, list[dict]]:
+    """Entry id -> up to n most similar entries: TF-IDF cosine over title, takeaway and tags (titles and tags count double)."""
+    def words(e: dict) -> list[str]:
+        title_tags = e["title"] + " " + " ".join(str(t).replace("-", " ") for t in e.get("tags") or [])
+        return [w for w in re.findall(r"[a-z][a-z0-9]+", f'{title_tags} {title_tags} {e["takeaway_en"]}'.lower()) if w not in SIMILAR_STOP]
+    tf = {e["id"]: Counter(words(e)) for e in entries}
+    df = Counter(w for c in tf.values() for w in c)
+    n_docs = len(entries)
+    vecs: dict[str, dict[str, float]] = {}
+    postings: dict[str, list[tuple[str, float]]] = {}
+    for i, c in tf.items():
+        v = {w: (1 + math.log(k)) * math.log(n_docs / df[w]) for w, k in c.items() if 1 < df[w] < n_docs / 4}
+        norm = math.sqrt(sum(x * x for x in v.values())) or 1.0
+        vecs[i] = {w: x / norm for w, x in v.items()}
+        for w, x in vecs[i].items():
+            postings.setdefault(w, []).append((i, x))
+    by_id = {e["id"]: e for e in entries}
+    out = {}
+    for i, v in vecs.items():
+        score: dict[str, float] = {}
+        for w, x in v.items():
+            for j, y in postings[w]:
+                if j != i:
+                    score[j] = score.get(j, 0.0) + x * y
+        top = sorted(((s, j) for j, s in score.items() if s >= min_score), key=lambda t: (-t[0], t[1]))[:n]
+        out[i] = [by_id[j] for _, j in top]
+    return out
+
+
 def entry_page(e: dict, topics_by_id: dict, related: list[dict], authors: list[str]) -> str:
     """Body of e/<id>.html: one curated entry with its takeaway, links, BibTeX and related entries."""
     t0 = topics_by_id[e["topics"][0]]
@@ -423,7 +457,7 @@ def entry_page(e: dict, topics_by_id: dict, related: list[dict], authors: list[s
         au += f'<p class="muted"><a href="../code.html">{bi("Code license", "代码许可证")}</a> {bi("(detected by GitHub): ", "（GitHub 检测）：")}{license_label(lic)}</p>'
     rel = ""
     if related:
-        rel = (f'<h2>{bi("More in " + t0["en"], "更多" + t0["zh"] + "条目")}</h2><ul class="tlist">'
+        rel = (f'<h2>{bi("Similar entries", "相似条目")}</h2><ul class="tlist">'
                + "".join(f'<li><a href="{esc(r["id"])}.html">{title_html(r["title"])}</a> '
                          f'<span class="muted">· {esc(str(r["year"]))}{" · " + esc(r["org"]) if r.get("org") else ""}</span></li>'
                          for r in related)
@@ -911,10 +945,14 @@ def build() -> int:
 
     # ---- one permalink page per curated entry: e/<id>.html
     (OUT / "e").mkdir()
+    similar = similar_entries(entries)
     for e in entries:
         t0 = e["topics"][0]
-        related = sorted((r for r in by_topic[t0] if r["id"] != e["id"]),
-                         key=lambda r: (not r.get("highlight"), -int(r["year"]), r["title"]))[:8]
+        related = similar[e["id"]]
+        if len(related) < 6:  # thin text: fill up with the best of the same topic
+            seen = {r["id"] for r in related} | {e["id"]}
+            related = related + sorted((r for r in by_topic[t0] if r["id"] not in seen),
+                                       key=lambda r: (not r.get("highlight"), -int(r["year"]), r["title"]))[:6 - len(related)]
         authors = (meta.get(e.get("arxiv") or "") or {}).get("authors") or []
         desc_e = f"{e['takeaway_en']} {e['takeaway_zh']}"
         (OUT / "e" / f"{e['id']}.html").write_text(
