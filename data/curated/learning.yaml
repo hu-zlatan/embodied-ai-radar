@@ -560,3 +560,23 @@
   tags: [llm, rl, agent, isaac-sim]
   takeaway_en: "ARPG has an LLM design the RL pipeline before deployment: MDP first, then simulator code, with checks that state, action and reward agree; reports more successful policies than monolithic LLM baselines in Isaac Sim."
   takeaway_zh: "ARPG 让大模型在部署前设计强化学习流程：先定 MDP，再写仿真代码，并校验状态、动作与奖励是否一致；报告在 Isaac Sim 中成功率高于单体式大模型基线。"
+- title: "RACE: Calibrated Cumulative Scoring for Rollout-Free Robot Policy Checkpoint Selection"
+  type: paper
+  arxiv: "2611.05838"
+  year: 2026
+  project: https://changyeon.site/race
+  added: 2026-11-05
+  topics: [learning]
+  tags: [evaluation, checkpoint-selection, imitation-learning, real]
+  takeaway_en: "Ranks checkpoints without rollouts: action deviations are calibrated against state-dependent thresholds from held-out demos, then combined in a running product. Reports rankings that align with real deployment."
+  takeaway_zh: 无需实机回放即可排序检查点：用保留示教得到的状态相关阈值校准动作偏差，再按累乘聚合。论文报告其排序与真实机器人部署成功率一致。
+- title: "ELA: End-to-End Latent Action Policy Learning from Video Demonstrations"
+  type: paper
+  arxiv: "2611.05571"
+  year: 2026
+  project: https://end2end-latent-action.github.io/
+  added: 2026-11-05
+  topics: [learning, manipulation]
+  tags: [imitation-learning, latent-action, video-demonstrations, real]
+  takeaway_en: "Jointly trains a latent action model, latent policy and action decoder, so plentiful action-free video plus a few labelled robot demos can train a policy. Reports beating prior latent-action baselines."
+  takeaway_zh: 联合训练潜在动作模型、潜在策略和动作解码器，用大量无动作标注的视频加少量带标注示教即可训练策略。报告在仿真和真实任务上优于已有潜在动作方法。

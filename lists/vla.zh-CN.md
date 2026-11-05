@@ -2,13 +2,15 @@
 
 _视觉-语言-动作模型与通用机器人策略。_
 
-共 159 条，⭐ 为重点推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
+共 161 条，⭐ 为重点推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [English](vla.md)
 
 **VLA 与机器人基础模型** · [操作与灵巧手](manipulation.zh-CN.md) · [触觉与视触觉感知](tactile.zh-CN.md) · [运动控制与人形机器人](locomotion.zh-CN.md) · [世界模型](world-models.zh-CN.md) · [导航与具身智能体](navigation.zh-CN.md) · [感知、SLAM 与三维建图](perception.zh-CN.md) · [规划、控制与安全](control.zh-CN.md) · [机器人学习：强化学习与模仿学习](learning.zh-CN.md) · [仿真与 Sim-to-Real](sim.zh-CN.md) · [数据集与基准](datasets.zh-CN.md) · [硬件与开源机器人](hardware.zh-CN.md)
 
 - ⭐ **[A Pragmatic VLA Foundation Model](https://arxiv.org/abs/2601.18692)** (2026) — LingBot-VLA：Apache-2.0 开源的基础模型，用九种双臂构型约 2 万小时真实数据训练，并在四个平台各 100 项任务上评测；代码、基座模型和评测数据一并开放。 · [代码](https://github.com/Robbyant/lingbot-vla) · [项目页](https://technology.robbyant.com/lingbot-vla)
+- ⭐ **[From Pixels to Actions - Towards Native Vision-Language-Action Policies](https://arxiv.org/abs/2611.06918)** (2026) — NEO-VLA 去掉独立视觉编码器：图像与语言在同一主干中共同演化，流匹配动作专家从多个深度读取特征。逐层探测显示，对动作关键的信号往往在最终视觉层之前达到峰值。 · [代码](https://github.com/EvolvingLMMs-Lab/NEO) · [项目页](https://weichenfan.github.io/NEO-VLA-Page/)
+- ⭐ **[Open-HumanScale: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models](https://arxiv.org/abs/2611.06817)** (2026) — 开源 5 万小时带标注的第一视角视频语料及流程和权重。报告预训练时长与机器人成功率之间的对数线性规律，后训练后在 RoboTwin 2.0 Clean2Random 上达到 84.6%。 · [代码](https://github.com/DAGroup-PKU/HumanNet) · [项目页](https://dagroup-pku.github.io/open-humanscale/)
 - ⭐ **[RoboColosseum: Evaluating Physical Intelligence at Scale In-The-Wild](https://arxiv.org/abs/2611.02497)** (2026) — 在 124 个站点做盲测两两对比，横跨四种机器人评测 VLA 与前沿智能体。不同机器人的排名几乎不一致（Kendall W = 0.24），开箱排名也难以预测微调后的表现；G1 人形上没有策略完成任何任务。 · [代码](https://github.com/RoboColosseum/robocolosseum-client)
 - ⭐ **[π\*0.6: a VLA That Learns From Experience](https://arxiv.org/abs/2511.14759)** (2025) — RECAP 通过优势条件化，用演示、机器人自主运行数据和遥操作纠正对 VLA 做强化学习；论文报告在叠衣服、做意式咖啡等难任务上吞吐量提升一倍以上、失败率约减半。 · [项目页](https://pi.website/blog/pistar06)
 - ⭐ **[π0: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/abs/2410.24164)** (2024) — VLM 主干加流匹配动作专家，跨多种机器人训练，能完成叠衣服等长时程灵巧任务。 · [代码](https://github.com/Physical-Intelligence/openpi)

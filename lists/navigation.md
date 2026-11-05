@@ -2,7 +2,7 @@
 
 _Vision-language navigation, embodied question answering, mobile manipulation and LLM planners._
 
-42 entries, ⭐ = highlight. Generated from [`data/curated/navigation.yaml`](../data/curated/navigation.yaml); edit the YAML, not this file.
+43 entries, ⭐ = highlight. Generated from [`data/curated/navigation.yaml`](../data/curated/navigation.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/navigation.html) · [中文](navigation.zh-CN.md)
 
@@ -22,6 +22,7 @@ _Vision-language navigation, embodied question answering, mobile manipulation an
 - **[InJePA: Intention-First Latent Planning with Coupled JEPA World Models for Visual Navigation](https://arxiv.org/abs/2610.23896)** (2026) — Two coupled JEPAs share a latent space: one proposes goal-conditioned latent intentions, the other predicts consequences, closing an intention-action-consequence loop. Evaluated on image-goal navigation in Habitat MP3D. · [code](https://github.com/zhuxun132/InJepa)
 - **[MOON: Learning When to Forget and How to Move On in Vision-and-Language Navigation](https://arxiv.org/abs/2610.33546)** (2026) — Off-route VLN agents keep following their stale history ('behavioral inertia'). MOON adds a deviation judge that clears it and a GRPO-trained recovery policy (<1% params); reports +5.2 / +6.0 points on R2R-CE / RxR-CE. · [code](https://github.com/AutoLab-SAI-SJTU/MOON)
 - **[OSCAR: Obstacle Survival Curves for Adaptive Robot Navigation](https://arxiv.org/abs/2606.00990)** (2026) — CoRL 2026 Spotlight. Decides whether to wait or reroute at a blocked route by modeling how long each obstacle class tends to persist.
+- **[OdorSpaces: Visual-Olfactory Embodied Navigation in 3D Environments](https://arxiv.org/abs/2611.05738)** (2026) — Adds simulated odour transport to Habitat-Sim using Fire Dynamics Simulator, giving a smell-and-vision navigation benchmark for finding invisible gas leaks and early-stage fires, with a multimodal RL baseline.
 - **[One Scan is Enough: Demonstration-Free Adaptation for Language-Guided Navigation](https://arxiv.org/abs/2610.33794)** (2026) — Adapts a language-guided navigation policy to a new building from one iPhone scan, compiled into a training environment with synthetic instructed episodes. Reports 85% real success vs 49% for a demo-fine-tuned baseline.
 - **[OpenFlyV2: An onboard vision-language-action model for aerial perception and navigation](https://arxiv.org/abs/2610.39287)** (2026) — A single onboard VLA for drones: one shared vision-language representation serves semantic understanding, spatial reasoning and closed-loop waypoint control. · [code](https://github.com/Ideal-ljl/AeroBrain) · [project](https://ideal-ljl.github.io/AeroBrain/)
 - **[ScaleNav: Scalable Internet Video Pretraining for Language-Conditioned Local Navigation](https://arxiv.org/abs/2610.25690)** (2026) — Pretrains on internet egocentric video to learn how the view changes when approaching a described target, then aligns to actions in sim; reports 94.9% success on its HabitatGS-LN benchmark plus a real quadruped. · [code](https://github.com/MachEmbodied/ScaleNav) · [project](https://zju3dv.github.io/ScaleNav/)

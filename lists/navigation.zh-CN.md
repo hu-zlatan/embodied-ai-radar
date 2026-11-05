@@ -2,7 +2,7 @@
 
 _视觉语言导航、具身问答、移动操作与大模型规划。_
 
-共 42 条，⭐ 为重点推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
+共 43 条，⭐ 为重点推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/navigation.html) · [English](navigation.md)
 
@@ -22,6 +22,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - **[InJePA: Intention-First Latent Planning with Coupled JEPA World Models for Visual Navigation](https://arxiv.org/abs/2610.23896)** (2026) — 两个耦合的 JEPA 共享隐空间：一个按目标提出隐式“意图”，另一个预测动作后果，形成意图-动作-后果闭环，让世界模型直接参与构造规划；在 Habitat MP3D 图像目标导航上评测。 · [代码](https://github.com/zhuxun132/InJepa)
 - **[MOON: Learning When to Forget and How to Move On in Vision-and-Language Navigation](https://arxiv.org/abs/2610.33546)** (2026) — 发现 VLN 智能体偏离路线后会被历史记忆“惯性”拖住。MOON 给冻结的导航策略加上偏航判断器（判断何时清空历史）和 GRPO 训练的恢复策略，参数增加不到 1%；报告在 R2R-CE / RxR-CE 上分别提升 5.2 / 6.0 个百分点。 · [代码](https://github.com/AutoLab-SAI-SJTU/MOON)
 - **[OSCAR: Obstacle Survival Curves for Adaptive Robot Navigation](https://arxiv.org/abs/2606.00990)** (2026) — CoRL 2026 Spotlight。通过建模各类障碍物通常停留多久，决定在路线受阻时等待还是改道。
+- **[OdorSpaces: Visual-Olfactory Embodied Navigation in 3D Environments](https://arxiv.org/abs/2611.05738)** (2026) — 用 Fire Dynamics Simulator 为 Habitat-Sim 加入气味传输仿真，构成视觉加嗅觉的导航基准，任务是定位不可见的气体泄漏和早期火源，并提供多模态强化学习基线。
 - **[One Scan is Enough: Demonstration-Free Adaptation for Language-Guided Navigation](https://arxiv.org/abs/2610.33794)** (2026) — 只需用 iPhone 扫描一次新建筑：扫描被编译成训练环境并自动合成带语言指令的导航回合，再用无评论家的闭式 Pareto 效用适配策略；报告真机成功率 85%，用人类示教后训练的基线为 49%。
 - **[OpenFlyV2: An onboard vision-language-action model for aerial perception and navigation](https://arxiv.org/abs/2610.39287)** (2026) — 面向无人机的机载 VLA：同一视觉-语言表征同时支撑语义理解、空间推理与闭环航点控制。 · [代码](https://github.com/Ideal-ljl/AeroBrain) · [项目页](https://ideal-ljl.github.io/AeroBrain/)
 - **[ScaleNav: Scalable Internet Video Pretraining for Language-Conditioned Local Navigation](https://arxiv.org/abs/2610.25690)** (2026) — 先在互联网第一视角视频上预训练，学习"朝描述的目标走近时画面如何变化"，再用仿真数据对齐到动作；论文报告在自建 HabitatGS-LN 基准上成功率 94.9%，并在真实四足机器人上部署。 · [代码](https://github.com/MachEmbodied/ScaleNav) · [项目页](https://zju3dv.github.io/ScaleNav/)

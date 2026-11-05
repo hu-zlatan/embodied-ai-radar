@@ -129,7 +129,7 @@
   tags: [whole-arm, non-prehensile, human-demos]
   takeaway_en: WACL learns from human demos to push and hold with the whole arm, choosing where on the arm to make contact while keeping the gripper's constraints.
   takeaway_zh: WACL 从人类示范中学习用整条手臂推、抵物体，自主选择手臂上的接触位置，同时满足末端执行器的约束。
-- title: "HexaShell: A Thin Harness for Exploring the Limits of VLM Agents as Robot Coding Agents"
+- title: "HexaShell: A Universal Harness for Robot Coding Agents in Simulation and the Real World"
   type: paper
   arxiv: "2610.23479"
   year: 2026
@@ -827,3 +827,13 @@
   tags: [diffusion-policy, multi-task, bimanual]
   takeaway_en: "SR-DP splits a trained diffusion denoiser by SVD into rank-one experts with task routing, so joint training stops hurting single tasks; reports beating per-task baselines on six RoboTwin tasks."
   takeaway_zh: "SR-DP 用 SVD 把训练好的扩散去噪器拆成秩一专家并按任务路由，缓解多任务联合训练的相互干扰；报告在六个 RoboTwin 任务上超过逐任务基线。"
+- title: "GRASP: Gradient-Guided Sampling for Contact-Rich Physics-Based Motion Retargeting"
+  type: paper
+  arxiv: "2611.05754"
+  year: 2026
+  project: https://computationalrobotics.seas.harvard.edu/GRASP/
+  added: 2026-11-05
+  topics: [manipulation, locomotion]
+  tags: [retargeting, dexterous, humanoid, sampling, mpc, real]
+  takeaway_en: "Retargets human demos under contact without a differentiable simulator: gradients come from archived sampling rollouts. Reports 92.8% success on 1,352 bimanual OakInk2 demos with no task-specific contact rewards."
+  takeaway_zh: 无需可微仿真器即可在接触动力学下重定向人类示教：从存档的采样轨迹中恢复梯度。报告在 1352 条双手 OakInk2 示教上成功率 92.8%，且不用任务专属接触奖励。

@@ -2,13 +2,15 @@
 
 _Vision-language-action models and generalist robot policies._
 
-159 entries, ⭐ = highlight. Generated from [`data/curated/vla.yaml`](../data/curated/vla.yaml); edit the YAML, not this file.
+161 entries, ⭐ = highlight. Generated from [`data/curated/vla.yaml`](../data/curated/vla.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [中文](vla.zh-CN.md)
 
 **VLA & Robot Foundation Models** · [Manipulation & Dexterous Hands](manipulation.md) · [Tactile & Visuotactile Sensing](tactile.md) · [Locomotion & Humanoids](locomotion.md) · [World Models](world-models.md) · [Navigation & Embodied Agents](navigation.md) · [Perception, SLAM & 3D Mapping](perception.md) · [Planning, Control & Safety](control.md) · [Robot Learning: RL & Imitation](learning.md) · [Sim-to-Real & Simulators](sim.md) · [Datasets & Benchmarks](datasets.md) · [Hardware & Open-Source Robots](hardware.md)
 
 - ⭐ **[A Pragmatic VLA Foundation Model](https://arxiv.org/abs/2601.18692)** (2026) — LingBot-VLA: an Apache-2.0 foundation model trained on about 20,000 hours of real data from nine dual-arm setups, tested on four platforms with 100 tasks each; code, base model and benchmark data are released. · [code](https://github.com/Robbyant/lingbot-vla) · [project](https://technology.robbyant.com/lingbot-vla)
+- ⭐ **[From Pixels to Actions - Towards Native Vision-Language-Action Policies](https://arxiv.org/abs/2611.06918)** (2026) — NEO-VLA drops the visual encoder: images and language evolve in one backbone and a flow-matching action expert reads several depths. Layer probing shows action signals often peak before the final visual layer. · [code](https://github.com/EvolvingLMMs-Lab/NEO) · [project](https://weichenfan.github.io/NEO-VLA-Page/)
+- ⭐ **[Open-HumanScale: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models](https://arxiv.org/abs/2611.06817)** (2026) — Opens a 50,000-hour annotated egocentric video corpus with pipelines and checkpoints. Reports a log-linear law between pretraining hours and robot success, and 84.6% on RoboTwin 2.0 Clean2Random. · [code](https://github.com/DAGroup-PKU/HumanNet) · [project](https://dagroup-pku.github.io/open-humanscale/)
 - ⭐ **[RoboColosseum: Evaluating Physical Intelligence at Scale In-The-Wild](https://arxiv.org/abs/2611.02497)** (2026) — Blinded pairwise trials at 124 sites compare VLAs and frontier agents. Rankings barely agree across robots (W = 0.24), and open rankings poorly predict results after fine-tuning; no policy finishes a G1 task. · [code](https://github.com/RoboColosseum/robocolosseum-client)
 - ⭐ **[π\*0.6: a VLA That Learns From Experience](https://arxiv.org/abs/2511.14759)** (2025) — RECAP trains a VLA with RL via advantage conditioning on demos, on-robot rollouts and teleop corrections; reports it more than doubles throughput on hard tasks like laundry folding and espresso making. · [project](https://pi.website/blog/pistar06)
 - ⭐ **[π0: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/abs/2410.24164)** (2024) — A VLM backbone with a flow-matching action expert, trained across many robots, doing long dexterous tasks like laundry folding. · [code](https://github.com/Physical-Intelligence/openpi)

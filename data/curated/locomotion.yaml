@@ -254,7 +254,6 @@
   type: paper
   arxiv: "2610.35862"
   year: 2026
-  project: https://louis-leee.github.io/FLoRe/
   added: 2026-10-27
   topics: [manipulation, control]
   tags: [humanoid, force-control, whole-body, diffusion-policy, umi, real]
@@ -392,7 +391,7 @@
   arxiv: "2610.39327"
   code: https://github.com/Kyk0/sonic-k1
   year: 2026
-  project: https://kyry.me/sonic-k1
+  project: https://huggingface.co/Kyry10/sonic-k1
   added: 2026-11-01
   tags: [humanoid, motion-tracking, booster-k1, open-weights, low-compute, sim-to-real]
   takeaway_en: "Open-weights whole-body motion tracker for the small Booster K1, adapting SONIC and trained on one shared GPU. Tracks most held-out clips in MuJoCo; on hardware, upper-body and slow motions work, stepping less so."
@@ -1121,3 +1120,25 @@
   tags: [survey, humanoid]
   takeaway_en: "Survey of humanoid locomotion and manipulation across control, planning and learning, from model-based methods onward."
   takeaway_zh: "综述人形移动与操作，涵盖控制、规划与学习，从基于模型的方法讲起。"
+- title: "Perceptive Humanoid Motion from Simulation"
+  type: paper
+  arxiv: "2611.06908"
+  year: 2026
+  org: Apple
+  project: https://apple-aiml-research.github.io/ml-halo/
+  added: 2026-11-05
+  highlight: true
+  topics: [locomotion, sim]
+  tags: [humanoid, sim2real, synthetic-data, vision, language, real]
+  takeaway_en: "HALO trains humanoid skills on vision-language-motion data synthesised in a thousand procedural homes, so data scales with compute. Reports zero-shot transfer: 91% over 360 trials in six real environments."
+  takeaway_zh: HALO 在上千个程序化生成的家庭场景中合成视觉-语言-动作数据来训练人形技能，数据量随算力增长。报告零微调迁移：六个未建图真实环境的 360 次试验成功率 91%。
+- title: "Ctrl-F: Force as an Interface for Humanoid Loco-Manipulation"
+  type: paper
+  arxiv: "2611.05507"
+  year: 2026
+  project: https://forcectrl.github.io/
+  added: 2026-11-05
+  topics: [locomotion, manipulation, control]
+  tags: [humanoid, force-control, motion-tracking, loco-manipulation, real]
+  takeaway_en: "Adds an explicit 3-D force command per contact body to motion tracking, set online by a planner. On hardware it pushes and kicks boxes up to 20 kg where a force-blind baseline fails, and adapts to added loads."
+  takeaway_zh: 在动作跟踪中为每个接触部位加入显式三维力指令，由高层规划器在线给出。实机可推、踢最重 20 kg 的箱子（不感知力的基线会失败），并能适应任务中途增加的负载。

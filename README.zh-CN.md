@@ -41,6 +41,8 @@
 _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与最新论文 →](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html)
 
 - ⭐ **[A Pragmatic VLA Foundation Model](https://arxiv.org/abs/2601.18692)** (2026) — LingBot-VLA：Apache-2.0 开源的基础模型，用九种双臂构型约 2 万小时真实数据训练，并在四个平台各 100 项任务上评测；代码、基座模型和评测数据一并开放。 · [代码](https://github.com/Robbyant/lingbot-vla) · [项目页](https://technology.robbyant.com/lingbot-vla)
+- ⭐ **[From Pixels to Actions - Towards Native Vision-Language-Action Policies](https://arxiv.org/abs/2611.06918)** (2026) — NEO-VLA 去掉独立视觉编码器：图像与语言在同一主干中共同演化，流匹配动作专家从多个深度读取特征。逐层探测显示，对动作关键的信号往往在最终视觉层之前达到峰值。 · [代码](https://github.com/EvolvingLMMs-Lab/NEO) · [项目页](https://weichenfan.github.io/NEO-VLA-Page/)
+- ⭐ **[Open-HumanScale: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models](https://arxiv.org/abs/2611.06817)** (2026) — 开源 5 万小时带标注的第一视角视频语料及流程和权重。报告预训练时长与机器人成功率之间的对数线性规律，后训练后在 RoboTwin 2.0 Clean2Random 上达到 84.6%。 · [代码](https://github.com/DAGroup-PKU/HumanNet) · [项目页](https://dagroup-pku.github.io/open-humanscale/)
 - ⭐ **[RoboColosseum: Evaluating Physical Intelligence at Scale In-The-Wild](https://arxiv.org/abs/2611.02497)** (2026) — 在 124 个站点做盲测两两对比，横跨四种机器人评测 VLA 与前沿智能体。不同机器人的排名几乎不一致（Kendall W = 0.24），开箱排名也难以预测微调后的表现；G1 人形上没有策略完成任何任务。 · [代码](https://github.com/RoboColosseum/robocolosseum-client)
 - ⭐ **[π\*0.6: a VLA That Learns From Experience](https://arxiv.org/abs/2511.14759)** (2025) — RECAP 通过优势条件化，用演示、机器人自主运行数据和遥操作纠正对 VLA 做强化学习；论文报告在叠衣服、做意式咖啡等难任务上吞吐量提升一倍以上、失败率约减半。 · [项目页](https://pi.website/blog/pistar06)
 - ⭐ **[π0: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/abs/2410.24164)** (2024) — VLM 主干加流匹配动作专家，跨多种机器人训练，能完成叠衣服等长时程灵巧任务。 · [代码](https://github.com/Physical-Intelligence/openpi)
@@ -50,10 +52,8 @@ _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与�
 - **[Ψ0: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation](https://arxiv.org/abs/2603.12263)** (2026) — 面向人形移动操作的开放基础模型，主张因运动学差异，不宜直接混合人类与人形数据共同训练。
 - **[Asynchronous Robot Policies](https://arxiv.org/abs/2611.05155)** (2026) — 把低频更新语义记忆的大型 VLM 与高频出动作的轻量专家解耦，并针对陈旧和延迟训练；报告 VLM 降到标称频率十分之一时性能无明显损失。 · [项目页](https://arp.insait.ai)
 - **[Bayesian Active Learning for Intent Disambiguation in Interactive Robot Planning](https://arxiv.org/abs/2609.34270)** (2026) — 把澄清提问视为信号时序逻辑规约上的贝叶斯主动学习，机器人提问更少，并向形式化规划器交付可验证的任务。
-- **[Do Agentic Policies Need to Look at Every Step? Geometric Abstraction for Reasoning and Action](https://arxiv.org/abs/2611.05058)** (2026) — 把常规空间推理从图像转到文本：语言模型直接读取局部刷新的三维符号场景，仅在需要时看图；报告多步任务完成度提高，图像查询大幅减少。 · [项目页](https://geometric-abstraction.github.io)
-- **[Efficient Long-Horizon Vision-Language-Action Models via Static-Dynamic Disentanglement](https://arxiv.org/abs/2602.03983)** (2026) — DySta 把视觉输入分成静态和动态 token，静态部分只保留一份并复用 KV 缓存，从而延长 VLA 上下文并加快推理。
 
-**[查看全部 159 条 →](lists/vla.zh-CN.md)**
+**[查看全部 161 条 →](lists/vla.zh-CN.md)**
 
 <a id="manipulation"></a>
 ### 操作与灵巧手
@@ -65,15 +65,15 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_ [在网站上�
 - ⭐ **[Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329)** (2024) — 手持夹爪加 GoPro 可随处采集演示，训练出的策略可直接迁移到机械臂。 · [代码](https://github.com/real-stanford/universal_manipulation_interface)
 - ⭐ **[Diffusion Policy: Visuomotor Policy Learning via Action Diffusion](https://arxiv.org/abs/2303.04137)** (2023) — 以去噪方式生成动作序列，比回归更能处理多模态演示，已成为模仿学习标准基线。 · [代码](https://github.com/real-stanford/diffusion_policy)
 - ⭐ **[Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](https://arxiv.org/abs/2304.13705)** (2023) — ALOHA + ACT：约 2 万美元的双臂遥操作平台，加上动作分块 Transformer，约 50 条演示即可学会精细任务。 · [代码](https://github.com/tonyzhaozh/act)
+- **[GRASP: Gradient-Guided Sampling for Contact-Rich Physics-Based Motion Retargeting](https://arxiv.org/abs/2611.05754)** (2026) — 无需可微仿真器即可在接触动力学下重定向人类示教：从存档的采样轨迹中恢复梯度。报告在 1352 条双手 OakInk2 示教上成功率 92.8%，且不用任务专属接触奖励。 · [项目页](https://computationalrobotics.seas.harvard.edu/GRASP/)
 - **[Spectrally Routed Diffusion Policy for Multi-Task Robotic Manipulation](https://arxiv.org/abs/2611.04477)** (2026) — SR-DP 用 SVD 把训练好的扩散去噪器拆成秩一专家并按任务路由，缓解多任务联合训练的相互干扰；报告在六个 RoboTwin 任务上超过逐任务基线。
 - **[A Tutorial on Shape Servoing of Deformable Objects-Part II: Advanced Concepts](https://arxiv.org/abs/2611.03825)** (2026) — 基于数据与雅可比的形状控制教程第二部分：哪些形变可达、特征选择如何影响行为，以及控制回路失效的三种方式。 · [代码](https://github.com/nachocz/tutorial_on_shape_servoing_of_deformable_objects) · [项目页](https://nachocz.github.io/tutorial_on_shape_servoing_of_deformable_objects/)
 - **[Combining Constrained Sampling and Reinforcement Learning for Manipulation](https://arxiv.org/abs/2602.08557)** (2026) — 用感知接触的约束状态采样器重置回合，覆盖多样接触模式，帮助 RL 探索接触丰富任务；可训练通用的手内和全身操作策略。 · [项目页](https://www.user.tu-berlin.de/mtoussai/26-CSRL/)
 - **[DexHOT: Learning Hand-Object Configuration Transfer for Dexterous Manipulation](https://arxiv.org/abs/2611.05119)** (2026) — 把灵巧操作目标定义为手与物体的联合构型，从合成构型对学习统一的转移基元，无需人类动作；报告仿真未见物体成功率 69.4%，200 次真机转移成功率 61.5%。 · [项目页](https://dex-hot.github.io/)
 - **[Enabling Robust Cloth Manipulation via Inference-Time Simulator-in-the-Loop Refinement](https://arxiv.org/abs/2606.24552)** (2026) — 仅凭单张 RGB 在线修正布料动作：先由 real-to-sim 模块估计布料状态，再用仿真器并行推演和先验引导的 MPPI 修正策略轨迹。 · [项目页](https://silr-cloth.github.io/)
 - **[FEIJOA: Task-Driven Grounding and Execution for Mobile Manipulation](https://arxiv.org/abs/2611.04080)** (2026) — 语言模型智能体在测试时对带位姿的 RGB-D 扫描做指令落地，不依赖预建表示；Spot 真机 50 次试验成功 35 次，失败大多来自物理技能而非推理。 · [项目页](https://williamshen-nz.github.io/feijoa/)
-- **[KPGrasp: Scalable Keypoint Flow Matching for Dexterous Grasp Generation](https://arxiv.org/abs/2606.09314)** (2026) — 以 3D 手部关键点表示灵巧抓取，用普通 Transformer 流模型生成，无需接触损失或后处理优化；报告 Dexonomy 成功率 76.3%，每次抓取 0.032 秒。 · [项目页](https://yuansen-huang.github.io/KPGrasp-page/)
 
-**[查看全部 80 条 →](lists/manipulation.zh-CN.md)**
+**[查看全部 81 条 →](lists/manipulation.zh-CN.md)**
 
 <a id="tactile"></a>
 ### 触觉与视触觉感知
@@ -100,20 +100,20 @@ _触觉传感器、触觉表征与接触丰富的控制。_ [在网站上查看�
 
 _足式运动、人形全身控制与跑酷。_ [在网站上查看与最新论文 →](https://hu-zlatan.github.io/embodied-ai-radar/topics/locomotion.html)
 
+- ⭐ **[Perceptive Humanoid Motion from Simulation](https://arxiv.org/abs/2611.06908)** (2026) — HALO 在上千个程序化生成的家庭场景中合成视觉-语言-动作数据来训练人形技能，数据量随算力增长。报告零微调迁移：六个未建图真实环境的 360 次试验成功率 91%。 · [项目页](https://apple-aiml-research.github.io/ml-halo/)
 - ⭐ **[BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion](https://arxiv.org/abs/2508.08241)** (2025) — 用同一套超参数的运动跟踪方案学会侧手翻、飞踢、冲刺等敏捷技能，再用带引导的潜空间扩散模型组合这些技能以完成摇杆遥控、避障等新目标，零样本迁移到真机。 · [代码](https://github.com/HybridRobotics/whole_body_tracking)
 - ⭐ **[SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control](https://arxiv.org/abs/2511.07820)** (2025) — 检验规模定律在人形控制上的效果：扩大网络、数据和算力，得到通用动作跟踪基础模型，无需手工设计奖励。
 - ⭐ **[Real-World Humanoid Locomotion with Reinforcement Learning](https://arxiv.org/abs/2303.03381)** (2023) — 在仿真中训练的因果 Transformer 策略零样本驱动全尺寸人形机器人在户外行走。
 - ⭐ **[Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning](https://arxiv.org/abs/2109.11978)** (2021) — 数千个 GPU 并行环境几分钟就能训练出四足行走策略；legged_gym 成为标准入门框架。 · [代码](https://github.com/leggedrobotics/legged_gym)
 - ⭐ **[DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills](https://arxiv.org/abs/1804.02717)** (2018) — 证明强化学习能模仿包括空翻在内的大量动作片段并保持鲁棒，是后续人形动作模仿工作的基本范式。 · [代码](https://github.com/xbpeng/DeepMimic)
+- **[Ctrl-F: Force as an Interface for Humanoid Loco-Manipulation](https://arxiv.org/abs/2611.05507)** (2026) — 在动作跟踪中为每个接触部位加入显式三维力指令，由高层规划器在线给出。实机可推、踢最重 20 kg 的箱子（不感知力的基线会失败），并能适应任务中途增加的负载。 · [项目页](https://forcectrl.github.io/)
 - **[Coordinating Humanoid Loco-Manipulation through Action-Conditioned Latent Foresight](https://arxiv.org/abs/2611.04839)** (2026) — 用潜空间世界动作模型在执行前为人形指令序列打分，并逐步重规划；报告七项真机任务成功率 85.7%，GR00T N1.7 为 70.0%。 · [项目页](https://ju6276.github.io/Action-Grounded-Foresight/)
 - **[Deep Whole-body Parkour](https://arxiv.org/abs/2601.07701)** (2026) — 将外部感知融入全身动作跟踪，让人形机器人在不平整地形上完成高动态的非行走类技能。 · [代码](https://github.com/project-instinct/InstinctLab) · [项目页](https://project-instinct.github.io/deep-whole-body-parkour)
 - **[HLO-AMP: Hierarchical Loco-Manipulation from Object-Aware Motion Priors](https://arxiv.org/abs/2611.05113)** (2026) — 让人形底层控制器在场景中真实带着物体做动作模仿训练，再在其上训练高层策略；在宇树 G1 上可搬运不同箱子，并能从掉落中恢复。
 - **[Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids](https://arxiv.org/abs/2601.07718)** (2026) — 端到端感知框架，将深度输入映射到控制，实现人形机器人在多样非结构化地形上徒步。 · [项目页](https://project-instinct.github.io/hiking-in-the-wild)
 - **[HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human Videos](https://arxiv.org/abs/2602.02473)** (2026) — 把人类视频转化为可泛化的真实人形交互技能，无需按任务设计。
-- **[Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking](https://arxiv.org/abs/2606.03985)** (2026) — 在 20 亿帧重定向动作语料上预训练的 GPT 式因果 Transformer，跟踪高动态全身动作，并零次微调泛化到未见动作。 · [代码](https://github.com/GalaxyGeneralRobotics/Humanoid-GPT) · [项目页](https://qizekun.github.io/Humanoid-GPT/)
-- **[Learning Loco-Manipulation From SMPC Demonstrations With Sparse Offline-to-Online RL](https://arxiv.org/abs/2608.12063)** (2026) — 在仿真中用采样 MPC 自动生成专家数据，再以稀疏奖励训练离策略 RL，免去奖励塑形；已部署到带臂 Spot 和 G1 人形机器人。
 
-**[查看全部 110 条 →](lists/locomotion.zh-CN.md)**
+**[查看全部 112 条 →](lists/locomotion.zh-CN.md)**
 
 <a id="world-models"></a>
 ### 世界模型
@@ -126,14 +126,14 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - ⭐ **[RoboJEPA: Scaling Robotic Latent World Models](https://arxiv.org/abs/2610.10515)** (2026) — 跨 12 种机器人形态训练的 JEPA 世界模型；其想象误差随算力服从幂律，因此可以预测超出拟合规模时的模型质量。 · [代码](https://github.com/facebookresearch/robo_jepa) · [项目页](https://robojepa.github.io/)
 - ⭐ **[World Action Models: A Survey](https://arxiv.org/abs/2606.20781)** (2026) — 厘清 WAM 与世界模型、视频生成模型、VLA 的区别，并按生成内容（渲染、潜空间或不生成）和架构分类；结论是领域正走向少生成未来，只保留控制所需。 · [项目页](https://world-action-models.github.io/)
 - ⭐ **[Mastering Diverse Domains through World Models](https://arxiv.org/abs/2301.04104)** (2023) — DreamerV3：一套超参数适用于 150 多个任务，包括从零开始在《我的世界》中挖到钻石。 · [代码](https://github.com/danijar/dreamerv3)
+- **[Interactive World Simulation with Cosmos for Physical AI](https://arxiv.org/abs/2611.06627)** (2026) — 将 Cosmos 模型用于实时交互仿真的统一框架：根据动作流式生成观测，或依据外部仿真器的物理状态生成观测。示例涵盖操作、可控视频迁移和多视角自动驾驶。 · [代码](https://github.com/nvidia/cosmos) · [项目页](https://research.nvidia.com/labs/cosmos-lab/cosmos-simulation)
 - **[ABot-PhysWorld: Interactive World Foundation Model for Robotic Manipulation with Physics Alignment](https://arxiv.org/abs/2603.23376)** (2026) — 14B 动作可控视频模型，基于 300 万条操作片段训练，用 DPO 式后训练抑制穿模等非物理现象，并提出 EZSbench 基准。 · [代码](https://github.com/amap-cvlab/ABot-PhysWorld)
 - **[Being-H0.7: A Latent World-Action Model from Egocentric Videos](https://arxiv.org/abs/2605.00078)** (2026) — 潜空间世界动作模型，在 VLA 式策略中加入面向未来的潜查询，并用利用未来信息的分支训练，全程不生成未来帧。
 - **[Causal World Modeling for Robot Control](https://arxiv.org/abs/2601.21998)** (2026) — LingBot-VA：同时学习帧预测和策略的自回归扩散框架，具有视频动作共享潜空间、闭环推演和异步推理。 · [代码](https://github.com/Robbyant/lingbot-va) · [项目页](https://technology.robbyant.com/lingbot-va)
 - **[Do World Action Models Generalize Better than VLAs? A Robustness Study](https://arxiv.org/abs/2603.22078)** (2026) — 在扰动下对比世界动作模型与 VLA 的鲁棒性研究，用于检验显式未来预测能带来更好泛化这一说法。 · [项目页](https://robot-robustness.github.io/RoboTwin2.0-Plus/)
 - **[DreamX: Video Diffusion Model is a Universal Latent Action Learner](https://arxiv.org/abs/2611.05377)** (2026) — 复用预训练视频扩散模型提取紧凑潜动作（每帧 1,200 压到 4 个 token），作为人、机器人和不同环境之间的共享接口，并支持零示教动作迁移。 · [代码](https://github.com/cvlab-kaist/DreamX) · [项目页](https://cvlab-kaist.github.io/DreamX/)
-- **[Fast-WAM: Do World Action Models Need Test-time Future Imagination?](https://arxiv.org/abs/2603.16666)** (2026) — 追问世界动作模型在测试时是否需要想象未来：训练时保留视频联合训练，推理时跳过视频生成，以对照实验区分两者的作用。 · [代码](https://github.com/yuantianyuan01/FastWAM) · [项目页](https://yuantianyuan01.github.io/FastWAM/)
 
-**[查看全部 88 条 →](lists/world-models.zh-CN.md)**
+**[查看全部 89 条 →](lists/world-models.zh-CN.md)**
 
 <a id="navigation"></a>
 ### 导航与具身智能体
@@ -141,6 +141,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网站上查看与最新论文 →](https://hu-zlatan.github.io/embodied-ai-radar/topics/navigation.html)
 
 - ⭐ **[Do As I Can, Not As I Say: Grounding Language in Robotic Affordances](https://arxiv.org/abs/2204.01691)** (2022) — SayCan：大模型提出步骤，学习到的价值函数评估机器人当下实际能做什么。
+- **[OdorSpaces: Visual-Olfactory Embodied Navigation in 3D Environments](https://arxiv.org/abs/2611.05738)** (2026) — 用 Fire Dynamics Simulator 为 Habitat-Sim 加入气味传输仿真，构成视觉加嗅觉的导航基准，任务是定位不可见的气体泄漏和早期火源，并提供多模态强化学习基线。
 - **[Aero-VPA: Few-Step Flow-Matching Control over Non-Reconstructive JEPA Latents for Agile Flight on Edge Hardware](https://arxiv.org/abs/2611.04392)** (2026) — 紧凑的 JEPA 加流匹配四旋翼策略，报告异常坦率：行为克隆 60 次任务全败，DAgger 进入瓶颈，运行时安全层将仿真森林任务成功率从 21.1% 提至 52.2%。 · [代码](https://github.com/ylee-sling/Aero-VPA) · [项目页](https://huggingface.co/ylee-sling/aero-vpa)
 - **[Collaborative Planning for UAV-UGV Teams under Operational Constraints via Masked Error-bounded Neuro-Symbolic Diffusion](https://arxiv.org/abs/2610.18850)** (2026) — MEND 用掩码扩散规划无人机与地面车协同充电任务，在执行时通过逻辑动作掩码强制满足运行约束；在真实地图和实体机器人队伍上测试。
 - **[Driving, Fast or Slow? Neuro-Symbolic Guidance for Motion Prediction in Multi-Modal Ground Mobility](https://arxiv.org/abs/2606.15251)** (2026) — TraCS 将由自然语言交规生成的可解释概率逻辑加到黑盒运动预测模型上；报告在 Argoverse 2 上稳定提升。Oral 论文。
@@ -151,9 +152,8 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网�
 - **[SidewalkBench: Benchmarking Visual Navigation on Urban Sidewalks](https://arxiv.org/abs/2606.16953)** (2026) — CoRL 2026 Spotlight。城市人行道视觉导航基准，基于 Isaac Sim，包含程序生成与真实世界环境。 · [代码](https://github.com/VAIL-UCLA/SidewalkBench) · [项目页](https://vail-ucla.github.io/SidewalkBench/)
 - **[Benchmarking Obstacle-Conditioned Safety in Household Robot Navigation](https://arxiv.org/abs/2610.34674)** (2026) — OSMA-Bench 用仅障碍物类型不同的配对场景，检验导航策略能否按障碍物危险程度调整间距与速度，并提出语义敏感度指数 SSI。结果显示 VLM 与 VLA 策略能识别哪些障碍更危险，却很少把这种判断体现在实际运动中；在 VLM 方案中加入显式参数推断步骤有所改善。 · [代码](https://github.com/OSMA-Bench/OSMA-Bench) · [项目页](https://osma-bench.github.io/)
 - **[Gaussian Episodic Memory for Long-Term Spatiotemporal Reasoning](https://arxiv.org/abs/2610.33158)** (2026) — GEMS 维护一张只在场景变化处增量更新的 3DGS 地图，智能体按需渲染新视角来回答时空问题和定位物体；同时发布 GEMS-Bench（3 个真实 + 12 个合成环境，473 个问答对），报告在物体定位和时空问答上优于近期基线。 · [项目页](https://abwerby.github.io/GEMS/)
-- **[One Scan is Enough: Demonstration-Free Adaptation for Language-Guided Navigation](https://arxiv.org/abs/2610.33794)** (2026) — 只需用 iPhone 扫描一次新建筑：扫描被编译成训练环境并自动合成带语言指令的导航回合，再用无评论家的闭式 Pareto 效用适配策略；报告真机成功率 85%，用人类示教后训练的基线为 49%。
 
-**[查看全部 42 条 →](lists/navigation.zh-CN.md)**
+**[查看全部 43 条 →](lists/navigation.zh-CN.md)**
 
 <a id="perception"></a>
 ### 感知、SLAM 与三维建图
@@ -202,7 +202,9 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 
 - ⭐ **[Precise and Dexterous Robotic Manipulation via Human-in-the-Loop Reinforcement Learning](https://arxiv.org/abs/2410.21845)** (2024) — HIL-SERL：结合人类纠正的真机强化学习，报告称在精密装配与动态任务上经数小时训练即可接近满分成功率。 · [代码](https://github.com/rail-berkeley/hil-serl)
 - ⭐ **[Proximal Policy Optimization Algorithms](https://arxiv.org/abs/1707.06347)** (2017) — 采用截断目标的策略梯度方法，是大多数 GPU 并行仿真训练（运动控制、灵巧操作）背后的算法。
+- **[ELA: End-to-End Latent Action Policy Learning from Video Demonstrations](https://arxiv.org/abs/2611.05571)** (2026) — 联合训练潜在动作模型、潜在策略和动作解码器，用大量无动作标注的视频加少量带标注示教即可训练策略。报告在仿真和真实任务上优于已有潜在动作方法。 · [项目页](https://end2end-latent-action.github.io/)
 - **[LLMs as MDP Designers: A Dependency-Aware Agentic Framework for Automated Robot Policy Generation](https://arxiv.org/abs/2611.04974)** (2026) — ARPG 让大模型在部署前设计强化学习流程：先定 MDP，再写仿真代码，并校验状态、动作与奖励是否一致；报告在 Isaac Sim 中成功率高于单体式大模型基线。
+- **[RACE: Calibrated Cumulative Scoring for Rollout-Free Robot Policy Checkpoint Selection](https://arxiv.org/abs/2611.05838)** (2026) — 无需实机回放即可排序检查点：用保留示教得到的状态相关阈值校准动作偏差，再按累乘聚合。论文报告其排序与真实机器人部署成功率一致。 · [项目页](https://changyeon.site/race)
 - **[Control-Ready Uncertainty for Trajectory Diffusion](https://arxiv.org/abs/2610.12431)** (2026) — SCOPE 通过蒸馏得分函数曲率，让扩散轨迹模型无需蒙特卡洛采样即可给出校准的不确定性管道；在人群导航和 Franka 操作上测试。 · [项目页](https://zackaxue.github.io/SCOPE-project-page/)
 - **[FedGuide: Diffusion Prior Alignment and Value Baseline Guidance for Heterogeneous Federated Reinforcement Learning](https://arxiv.org/abs/2609.18964)** (2026) — 面向异构客户端的联邦强化学习：不再平均策略，而是用最优传输聚合扩散行为先验，并加入低方差的 DICE 价值基线。
 - **[GSBR: Geometric Support Behavior Regularization for Online RL](https://arxiv.org/abs/2611.05295)** (2026) — 在预训练策略之上做在线强化学习，按动作到其支撑集的距离施加惩罚：集内不罚，集外平滑增长；报告 19 个基准任务的平均成功率从 33% 升至 95%。 · [项目页](https://charlesxu0124.github.io/gsbr/)
@@ -210,10 +212,8 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[TARC: Time-Adaptive Robotic Control](https://arxiv.org/abs/2510.23176)** (2026) — 策略同时预测动作及其保持时长。报告在遥控车、Unitree Go1 和仿真 VLA 上以不到一半的控制频率达到高频控制的性能。 · [项目页](https://arnavsukhija.github.io/projects/tarc)
 - **[Towards Embodiment Scaling Laws in Robot Locomotion](https://arxiv.org/abs/2505.05753)** (2025) — 在约 1000 个生成的机器人形态上检验“形态缩放定律”：用更多形态训练能否提升对未见形态的泛化？ · [项目页](https://embodiment-scaling-laws.github.io/)
 - **[Behavior Graphs: Unsupervised Graph Structures for Interpreting Robot Deployment Data](https://arxiv.org/abs/2611.00405)** (2026) — 把策略回放压缩成一张有向图，将行为模式与结果相连，帮助决定下一步采集什么数据。在三个真实任务的用户研究中，18 名参与者有 16 名更喜欢它而非回放视频。 · [项目页](https://try.behavior-graphs.com/)
-- **[Beyond Validation Loss: Coverage and Reliability Dynamics in Robot Policy Pretraining](https://arxiv.org/abs/2611.01565)** (2026) — 提出跟踪闭环 pass@k（k 次尝试至少成功一次的概率）。pass@1 相同的检查点在后训练中可能表现不同，因此给出兼顾覆盖度与可靠性的离线检查点选择方法。 · [项目页](https://zhanyisun.github.io/robot-policy-learning-dynamics/)
-- **[D&A: Decoupling Description and Assessment Enables VLMs as Zero-Shot Robotic Reward Models](https://arxiv.org/abs/2611.03622)** (2026) — 只靠提示词的任务进度评估：先让 VLM 客观描述画面并定义绝对成功标准，再按明确评分表打分，减少对失败执行“幻觉式”的进度判断，其奖励可用于下游强化学习。 · [代码](https://github.com/memmelma/dna) · [项目页](https://weirdlabuw.github.io/dna)
 
-**[查看全部 54 条 →](lists/learning.zh-CN.md)**
+**[查看全部 56 条 →](lists/learning.zh-CN.md)**
 
 <a id="sim"></a>
 ### 仿真与 Sim-to-Real
@@ -243,6 +243,8 @@ _大规模机器人数据集、第一视角数据与评测基准。_ [在网站�
 - ⭐ **[LeRobot](https://github.com/huggingface/lerobot)** (2024) — PyTorch 机器人学习库，提供数据集、预训练策略（ACT、Diffusion、SmolVLA）与低成本机械臂驱动。
 - ⭐ **[LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning](https://arxiv.org/abs/2306.03310)** (2023) — 四个套件共 130 个语言条件任务，现已成为 VLA 论文最常用的仿真基准。 · [代码](https://github.com/Lifelong-Robot-Learning/LIBERO)
 - ⭐ **[Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://arxiv.org/abs/2310.08864)** (2023) — 30 多个实验室汇集 22 种机器人的 100 多万条轨迹；在其上训练的 RT-X 优于单机器人基线。 · [代码](https://github.com/google-deepmind/open_x_embodiment)
+- **[BEAKER: An Expert-Curated Benchmark for Embodied Brains in Self-Driving Chemical Laboratories](https://arxiv.org/abs/2611.06911)** (2026) — 1000 道专家整理的题目、11 种图像和视频任务，检验多模态大模型能否担任自动化化学实验室的“大脑”：可供性、轨迹、仪器搭建、安全与步骤推理。
+- **[MESA: An Evaluation Framework for Compositional, Semantic, and Spatial Generalization in Robotics](https://arxiv.org/abs/2611.05567)** (2026) — 五组评测分别隔离空间布局、物体实例、物体类别和子任务组合上的泛化能力，并提供双臂版 BiMESA。七种基线中最好的也只有 52% 和 49%，仍有很大提升空间。 · [项目页](https://pairlab.github.io/MESA)
 - **[CRONOS: Benchmarking Non-Episodic Reinforcement Learning for Robotic Manipulation](https://arxiv.org/abs/2611.05080)** (2026) — 面向无频繁重置场景下 VLA 强化学习微调的仿真基准；发现直接微调会因物体和末端位姿偏移而失败，定向分配重置并处理预训练偏差可以缓解。 · [项目页](https://embodiedai-ntu.github.io/cronos/)
 - **[EgoVerse: An Egocentric Human Dataset for Robot Learning from Around the World](https://arxiv.org/abs/2604.07607)** (2026) — 面向人类数据机器人学习的共享平台和数据集：1,362 小时、8 万条片段，覆盖 1,965 项任务和 2,087 名演示者，接受学界和业界贡献。
 - **[PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data](https://arxiv.org/abs/2611.05320)** (2026) — 编程智能体凭一条标定轨迹在仿真中重建任务，再由视频模型渲染成写实数据；报告真机 100 次成功 93 次，遥操作数据为 84 次，每小时数据约 107 美元。 · [代码](https://github.com/DAGroup-PKU/PyRUA-Lean) · [项目页](https://dagroup-pku.github.io/PyRUA-Lean/DataFarm)
@@ -250,10 +252,8 @@ _大规模机器人数据集、第一视角数据与评测基准。_ [在网站�
 - **[RoboWM-Bench: A Benchmark for Evaluating World Models in Robotic Manipulation](https://arxiv.org/abs/2604.19092)** (2026) — 评估视频世界模型时不只看画面是否逼真，而是把生成的操作转成动作，在物理仿真中验证能否执行。
 - **[TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System](https://arxiv.org/abs/2511.02832)** (2025) — 基于 VR 头显的便携式免动捕人形遥操作与数据采集系统，目标是让全身示教数据能够规模化采集。 · [代码](https://github.com/amazon-far/TWIST2) · [项目页](https://twist-data.github.io)
 - **[ClothDojo: Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding](https://arxiv.org/abs/2611.01190)** (2026) — 仿真平台：用微调后的 VLA 生成近 8000 条成功的衣物操作轨迹，并重新渲染供 RGB 策略训练，效果优于直接用人类数据训练，但泛化到未见衣物仍是难题。 · [项目页](https://clothdojo.github.io/)
-- **[DexArena: A Unified Benchmark for Long-Horizon Dexterous Manipulation](https://arxiv.org/abs/2611.02629)** (2026) — 10 个长时序和 30 个阶段级双手灵巧任务，每个阶段都有物理判定的成功条件，可衡量中间进度；提供经过验证的遥操作示范和统一接口。 · [项目页](https://sipair-elastic.github.io/DexArena-website/)
-- **[Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](https://arxiv.org/abs/2610.40364)** (2026) — 在 MuJoCo MJX 中用统一协议在五款四足上比较 14 种课程方法：没有方法在所有机器人和地形集上都领先，而训练关卡偏简单的方法在分布内随机地形上表现靠前。 · [代码](https://github.com/Solvro/ml-wojtek-ued)
 
-**[查看全部 68 条 →](lists/datasets.zh-CN.md)**
+**[查看全部 70 条 →](lists/datasets.zh-CN.md)**
 
 <a id="hardware"></a>
 ### 硬件与开源机器人

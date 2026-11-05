@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 88 条，⭐ 为重点推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 89 条，⭐ 为重点推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html) · [English](world-models.md)
 
@@ -32,6 +32,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — 以动作为中心的世界动作模型：由观测预测动作，视频生成变为可选，动作精度不再依赖视频预测质量，推理开销也更低。 · [代码](https://github.com/open-gigaai/giga-world-policy) · [项目页](https://gigaai-research.github.io/GigaWorld-Policy/)
 - **[GreenWAM: A World Foundation Model for Robotics](https://arxiv.org/abs/2610.18774)** (2026) — 同一个世界模型兼作策略，用共享的关节坐标动作空间覆盖 20 类机器人；论文报告其在 WorldArena、RoboTwin 2.0、LIBERO-plus 上表现突出，并蒸馏出可实时运行的单步人形机器人策略。 · [代码](https://github.com/greenvla/GreenWAM) · [项目页](https://greenvla.github.io/GreenWAM)
 - **[Hierarchical World Models with Implicit Dynamics](https://arxiv.org/abs/2610.42146)** (2026) — ID-WM 将状态可达性与局部控制解耦：高层模型在状态流形上采样可行转移，低层世界模型充当逆动力学求解器，把子目标落实为精确动作。报告比单层世界模型 MPC 提升 135%，比最优策略与扩散规划器提升 38.5%。 · [项目页](https://id-wm.github.io)
+- **[Interactive World Simulation with Cosmos for Physical AI](https://arxiv.org/abs/2611.06627)** (2026) — 将 Cosmos 模型用于实时交互仿真的统一框架：根据动作流式生成观测，或依据外部仿真器的物理状态生成观测。示例涵盖操作、可控视频迁移和多视角自动驾驶。 · [代码](https://github.com/nvidia/cosmos) · [项目页](https://research.nvidia.com/labs/cosmos-lab/cosmos-simulation)
 - **[InternW0-$Δ$: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data](https://arxiv.org/abs/2609.31394)** (2026) — 结合视频专家、动作专家、冻结 VLM 和仅训练时使用的 4D 几何蒸馏的世界动作模型，在含 2 万多小时开放数据的异构语料上预训练。 · [代码](https://github.com/InternRobotics/InternW0-Delta) · [项目页](https://internrobotics.github.io/InternW0-Delta/)
 - **[LaWAM: Latent World Action Models for Efficient Dynamics-Aware Robot Policies](https://arxiv.org/abs/2606.15768)** (2026) — 不生成视频的世界动作模型：在视觉基础模型的特征空间中训练潜动作模型，预测未来观测特征作为“潜在视觉子目标”来条件化动作生成。报告 LIBERO 98.6%、RoboTwin 91.22%，每个动作块推理 187 ms，比像素级 WAM 延迟低最多 24 倍。 · [代码](https://github.com/RLinf/LaWAM) · [项目页](https://rlinf.github.io/LaWAM/)
 - **[Motubrain: An Advanced World Action Model for Robot Control](https://arxiv.org/abs/2604.27792)** (2026) — 基于 UniDiffuser 的三流世界动作模型，一个模型同时覆盖策略、世界建模、视频生成和逆动力学，并可利用纯视频和跨形态数据。 · [项目页](https://www.shengshu.com/en/motubrain)
@@ -99,4 +100,4 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 
 **另见**
 
-[WAVE-0](vla.zh-CN.md), [3D-VLA](vla.zh-CN.md), [GR-2](vla.zh-CN.md), [GigaBrain-0.5M\*](vla.zh-CN.md), [Vision-Language-Delta-Action](vla.zh-CN.md), [Vision-Language-Action or World-Action? Just Action Models](vla.zh-CN.md), [ThinkWorld](vla.zh-CN.md), [PDRVLA](vla.zh-CN.md), [RoboSeed](vla.zh-CN.md), [VLA-JEPA](vla.zh-CN.md), [Predictive Inverse Dynamics Models are Scalable Learners for Robotic Manipulation](manipulation.zh-CN.md), [ForceLDM](manipulation.zh-CN.md), [ACTS](tactile.zh-CN.md), [TacMind](tactile.zh-CN.md), [RoboPack](tactile.zh-CN.md), [SuperMimic](locomotion.zh-CN.md), [EmbodiedWorld-200K](navigation.zh-CN.md), [InJePA](navigation.zh-CN.md), [HAVANA](navigation.zh-CN.md), [See What I Need, Dream What I Want](navigation.zh-CN.md), [Planning with Diffusion for Flexible Behavior Synthesis](control.zh-CN.md), [RoboJudge](datasets.zh-CN.md), [RoboWM-Bench](datasets.zh-CN.md)
+[WAVE-0](vla.zh-CN.md), [3D-VLA](vla.zh-CN.md), [GR-2](vla.zh-CN.md), [GigaBrain-0.5M\*](vla.zh-CN.md), [Vision-Language-Delta-Action](vla.zh-CN.md), [Vision-Language-Action or World-Action? Just Action Models](vla.zh-CN.md), [ThinkWorld](vla.zh-CN.md), [PDRVLA](vla.zh-CN.md), [RoboSeed](vla.zh-CN.md), [VLA-JEPA](vla.zh-CN.md), [Open-HumanScale](vla.zh-CN.md), [Predictive Inverse Dynamics Models are Scalable Learners for Robotic Manipulation](manipulation.zh-CN.md), [ForceLDM](manipulation.zh-CN.md), [ACTS](tactile.zh-CN.md), [TacMind](tactile.zh-CN.md), [RoboPack](tactile.zh-CN.md), [SuperMimic](locomotion.zh-CN.md), [EmbodiedWorld-200K](navigation.zh-CN.md), [InJePA](navigation.zh-CN.md), [HAVANA](navigation.zh-CN.md), [See What I Need, Dream What I Want](navigation.zh-CN.md), [Planning with Diffusion for Flexible Behavior Synthesis](control.zh-CN.md), [RoboJudge](datasets.zh-CN.md), [RoboWM-Bench](datasets.zh-CN.md)
