@@ -511,3 +511,5 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - CoRL guide: Now/Next bar and per-session 'Your time' line for viewers outside Austin. Browser test with mocked clock and time zones (Shanghai 390 px, Chicago 1100 px, before/during/after): no overflow, no JS errors.
 - 4 picks from leftover 11-04 candidates (SR-DP, CoReMatch, FineCraft, ARPG). Curated 802. Local: validate 0 errors, 918 pages, 0 broken links.
 - Web fetches refused in this run (unanswered permission prompt): vergilshawn sweep skipped, not routed around.
+- CI #327 failed on the LeVERB commit: I skipped `build_readme.py`, so lists/vla were stale for about 4 minutes; #328 on the next commit is green. Run `build_readme.py` after any curated edit.
+- End: 1 star / 0 forks. Verify #150 still running and #151 pending at the end of this run, so the LeVERB URL and 4 picks are not CI-checked yet; the live site could not be opened from here. End of run 58.
