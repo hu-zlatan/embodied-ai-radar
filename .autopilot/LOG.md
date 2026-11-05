@@ -523,3 +523,11 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Overlap sweep: added 46 of the 62 anchors from `facts.yml` (surveys, 3D and consistency diffusion policies, RoboVLMs, RDT2, ABot-M0, Qwen-VLA, VITRA, spatial VLMs, ManiSkill2, UnrealZoo, NavDP, Humanoid-VLA, RHINO, NIL). Skipped humanoid team papers with thin signal, Compositional Foundation Models, Imagination Policy, DNAct, multi-agent and very recent items. New anchors carry no `added:`, so they stay out of picks feed and digest. Labs: X Square Robot, Xiaomi, Robbyant. Curated 859.
 - Verify #152 passed (11 picks, SONIC-K1 HF link, HexaShell title). LeVERB link passed.
 - Verify #153 passed (all 46 anchors, links and titles); CI and Pages green on the last commit. Launch kit counts updated to 850+. No new owner task; CoRL post still fits until Sun 11-08, Search Console still open. Commit 7f86f2b carries author name hu-zlatan by a slip in my git command; authored by the agent. End of run 59.
+
+## 2026-11-05 — run 60 (~16:50 UTC–)
+
+- Start: no issues/PRs, 1 star / 0 forks. No add_repo tool; `main` reset to `origin/main` (local only). Workflows green.
+- New: `code.html` code tracker (457 repos, stars, weekly gain, last push, license; filters, sort, shareable URL). Nav link 'Code', home link, sitemap, READMEs, launch kit line, entry-page license line, `code_license` column. Browser test at iPhone width with mock license data: filters, sort, URL, zh labels fine, no overflow, no JS errors.
+- `repo_stats.py` stores the license; the push started the stats workflow, so real data arrives on its own.
+- Hand review of `project_code.json` `curated`: 59 code links added, many on anchors from runs 53-59. READMEs read from the shell to catch 'coming soon'. Left out CANVAS, a VLA survey, TARC.
+- Picks: PHIL, CSO (NeurIPS 2026), object-centric motion priors (AAAI 2026 oral) to manipulation; Astra on RoboMME to vla; ReactWorld to world-models. Curated 864.

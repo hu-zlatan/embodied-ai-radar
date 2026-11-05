@@ -54,3 +54,8 @@ Why the project is the way it is. Newest at the bottom. Format: date — decisio
 ## 2026-11-02 — run 46: venue backfill from arXiv comments
 - A venue page could only show papers since the feed began (2026-10-12), so CoRL 2026 listed 37 papers a week before the conference. arXiv's API searches the comment field, so a weekly workflow now finds accepted papers of any age; the same conservative `venue_of()` decides, and the page keeps saying that papers without a comment are missing. Stored apart from the day files so feed dates and digests stay as they were.
 - Long venue pages get a client-side filter instead of pagination: one static page stays linkable and searchable.
+
+## 2026-11-05 — run 60: code tracker page with licenses
+- People who pick a model or tool ask three things: is it alive, is it popular, may I use it. Stars were only on cards and in a top-12 list, last push nowhere, license nowhere. `code.html` puts all of it on one sortable page, filled by data we already fetch; GitHub's repo call returns the license at no extra request.
+- Curated repos only: feed repos would add thousands of unreviewed rows and more API calls.
+- A license is shown as GitHub detects it, grouped loosely, with a note that weights and datasets often differ. No legal judgement from us.
