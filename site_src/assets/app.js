@@ -14,6 +14,43 @@
   if (btn) btn.addEventListener('click', function () { setLang(lang() === 'zh' ? 'en' : 'zh'); });
   setLang(lang());
 
+  // Code tracker: filter and sort the static list; ?q=&topic=&license=&sort=&active=1 keeps a view shareable.
+  var cfl = document.getElementById('cf-list');
+  if (cfl) {
+    var cq = document.getElementById('cf-q'), ct = document.getElementById('cf-t'), cl = document.getElementById('cf-l'), cs = document.getElementById('cf-s'), ca = document.getElementById('cf-a'), cn = document.getElementById('cf-n');
+    var crows = Array.prototype.slice.call(cfl.children);
+    var ctext = crows.map(function (r) { return r.textContent.toLowerCase(); });
+    var cpar = new URLSearchParams(location.search);
+    var cset = function (el, v) { if (el && v && Array.prototype.some.call(el.options, function (o) { return o.value === v; })) el.value = v; };
+    cq.value = cpar.get('q') || ''; cset(ct, cpar.get('topic')); cset(cl, cpar.get('license')); cset(cs, cpar.get('sort')); ca.checked = cpar.get('active') === '1';
+    var csince = new Date(Date.now() - 183 * 864e5).toISOString().slice(0, 10);
+    var capply = function () {
+      var q = cq.value.trim().toLowerCase().split(/\s+/).filter(Boolean), t = ct.value, l = cl ? cl.value : '', k = cs.value, a = ca.checked, n = 0;
+      crows.forEach(function (r, i) {
+        var d = r.dataset;
+        var ok = (!t || d.t.split(' ').indexOf(t) >= 0) && (!l || d.l === l) && (!a || d.p >= csince) && q.every(function (w) { return ctext[i].indexOf(w) >= 0; });
+        r.hidden = !ok; if (ok) n++;
+      });
+      crows.slice().sort(function (x, y) {
+        var a1 = x.dataset, b1 = y.dataset;
+        if (k === 'p') return b1.p < a1.p ? -1 : b1.p > a1.p ? 1 : b1.s - a1.s;
+        return (b1[k] - a1[k]) || (b1.s - a1.s);
+      }).forEach(function (r) { cfl.appendChild(r); });
+      cn.textContent = n + ' / ' + crows.length;
+      var u = new URLSearchParams();
+      if (cq.value.trim()) u.set('q', cq.value.trim());
+      if (t) u.set('topic', t);
+      if (l) u.set('license', l);
+      if (k !== 's') u.set('sort', k);
+      if (a) u.set('active', '1');
+      if (cpar.get('lang')) u.set('lang', cpar.get('lang'));
+      var str = u.toString();
+      history.replaceState(null, '', location.pathname + (str ? '?' + str : ''));
+    };
+    [cq, ct, cl, cs, ca].forEach(function (el) { if (el) el.addEventListener(el === cq ? 'input' : 'change', capply); });
+    capply();
+  }
+
   // Filter box on long venue pages: ?q=&topic=&code=1 keeps a filtered view shareable.
   var vf = document.getElementById('vf');
   if (vf) {

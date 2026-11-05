@@ -51,6 +51,14 @@ def load_stats() -> dict:
     return _load("repos")
 
 
+def stats_updated() -> str:
+    """Date of the last stats run, '' without data."""
+    try:
+        return json.loads(OUT.read_text(encoding="utf-8")).get("updated", "")
+    except (OSError, ValueError):
+        return ""
+
+
 def load_feed_stats() -> dict:
     return _load("feed")
 

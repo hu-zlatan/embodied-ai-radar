@@ -20,7 +20,7 @@ import yaml
 
 from hf_papers import load as load_hf, merge_links
 from project_code import merge as merge_project_code
-from repo_stats import apply_feed_stats, load_feed_stats, load_history, load_stats, repo_key, star_gains
+from repo_stats import apply_feed_stats, load_feed_stats, load_history, load_stats, repo_key, star_gains, stats_updated
 from radar import (ROOT, bibtex, classify, honor_of, load_program, venue_of, load_arxiv_feed, load_curated, load_curated_meta, load_embodiments,
                    labs_of, load_labs, load_resources, load_start, load_topics, load_venue_papers)
 
@@ -78,6 +78,29 @@ def venue_badge(v: str, root: str) -> str:
 
 def fmt_stars(n: int) -> str:
     return f"{n / 1000:.1f}k".replace(".0k", "k") if n >= 1000 else str(n)
+
+
+def license_class(spdx: str | None) -> str:
+    """Filter group of a GitHub-detected SPDX id. None = not fetched yet, '' = no license detected."""
+    if spdx is None:
+        return ""
+    if not spdx:
+        return "none"
+    if spdx == "NOASSERTION":
+        return "other"
+    if "-NC" in spdx:
+        return "nc"
+    if spdx.startswith(("GPL", "AGPL", "LGPL", "MPL", "EPL", "EUPL", "CC-BY-SA", "OSL")):
+        return "copyleft"
+    return "perm"
+
+
+def license_label(spdx: str | None) -> str:
+    if spdx is None:
+        return ""
+    if not spdx:
+        return bi("no license found", "未检测到许可证")
+    return bi("custom license", "自定义许可证") if spdx == "NOASSERTION" else esc(spdx)
 
 
 def repo_stat(e: dict) -> dict | None:
@@ -336,6 +359,53 @@ def program_page(prog: dict, extra: dict, cur_by_id: dict, rec_by_id: dict, tby:
                 f"venues/{PROGRAM}-program.html")
 
 
+def code_page(by_repo: dict[str, dict], gains: dict[str, int], span: int, topics: list[dict], today: dt.date) -> str:
+    """Body of code.html. Rows are static HTML, stars first, so the list works without JS."""
+    rows, counts, tcount = [], {}, {}
+    recent = (today - dt.timedelta(days=90)).isoformat()
+    n_recent = n_arch = 0
+    for k, e in sorted(by_repo.items(), key=lambda x: (-STATS[x[0]]["stars"], x[0])):
+        st = STATS[k]
+        lc = license_class(st.get("license"))
+        counts[lc] = counts.get(lc, 0) + 1
+        for t in e["topics"]:
+            tcount[t] = tcount.get(t, 0) + 1
+        g = gains.get(k, 0)
+        pushed = st.get("pushed") or ""
+        n_recent += pushed >= recent
+        n_arch += bool(st.get("archived"))
+        rise = f' <span class="badge rise" title="GitHub stars gained in the last {span} days">+{fmt_stars(g)}</span>' if g > 0 else ""
+        arch = f' <span class="badge">{bi("archived", "已归档")}</span>' if st.get("archived") else ""
+        lab = license_label(st.get("license"))
+        org = f' · {esc(e["org"])}' if e.get("org") else ""
+        title = title_html(e["title"]) if len(e["title"]) < 90 else title_html(e["title"][:87]) + "…"
+        rows.append(f'<li data-t="{esc(" ".join(e["topics"]))}" data-s="{st["stars"]}" data-g="{g}" data-p="{esc(pushed)}" data-l="{lc}">'
+                    f'<a class="cr-n" href="{esc(e.get("code") or f"https://github.com/{k}")}" rel="noopener">{esc(k)}</a>'
+                    f' <span class="gh">★ {fmt_stars(st["stars"])}</span>{rise}{arch}'
+                    f'<br><span class="muted"><a href="e/{esc(e["id"])}.html">{title}</a>{org}'
+                    f'{" · " + lab if lab else ""}{" · " + bi("updated ", "更新于 ") + esc(pushed) if pushed else ""}</span></li>')
+    def opt(v: str, en: str, zh: str, n: int | None = None) -> str:
+        c = f" ({n})" if n is not None else ""
+        return f'<option value="{esc(v)}" data-en="{esc(en + c)}" data-zh="{esc(zh + c)}">{esc(en + c)}</option>'
+    topt = opt("", "All topics", "全部主题") + "".join(opt(t["id"], t["en"], t["zh"], tcount[t["id"]]) for t in topics if t["id"] in tcount)
+    lic_names = [("perm", "Permissive (MIT, Apache, BSD...)", "宽松（MIT、Apache、BSD 等）"), ("copyleft", "Copyleft (GPL, AGPL, MPL...)", "传染性（GPL、AGPL、MPL 等）"),
+                 ("nc", "Non-commercial", "仅限非商业"), ("other", "Custom license", "自定义许可证"), ("none", "No license found", "未检测到许可证")]
+    lopt = opt("", "Any license", "任意许可证") + "".join(opt(c, en, zh, counts[c]) for c, en, zh in lic_names if counts.get(c))
+    known = sum(n for c, n in counts.items() if c)
+    lsel = f'<select id="cf-l" aria-label="License">{lopt}</select>' if known else ""
+    perm = f', {counts.get("perm", 0)} {bi("under a permissive license", "使用宽松许可证")}' if known else ""
+    sort = (opt("s", "Most stars", "星标最多") + opt("g", f"Most stars gained ({span} days)", f"近 {span} 天新增星标最多") + opt("p", "Recently updated", "最近更新"))
+    lead = (f'<p class="lead">{bi(f"Every open-source repo linked from the curated index: {len(rows)} repos", f"精选索引收录的全部开源代码：{len(rows)} 个仓库")}{perm}, '
+            f'{bi(f"{n_recent} updated in the last 90 days, {n_arch} archived.", f"{n_recent} 个在最近 90 天有更新，{n_arch} 个已归档。")}</p>')
+    updated = stats_updated()
+    note = (f'<p class="muted">{bi(f"Stars, last push and license come from the GitHub API (data of {updated}). The license is what GitHub detects for the code; model weights and datasets often have their own terms, so read the repo before you ship anything.", f"星标、最后推送与许可证来自 GitHub API（数据日期 {updated}）。许可证是 GitHub 对代码的检测结果；模型权重和数据集往往另有条款，实际使用前请查看仓库原文。")}</p>')
+    box = (f'<div class="filters" id="cf"><input type="search" id="cf-q" aria-label="Filter" data-en="Repo, paper or lab" data-zh="仓库、论文或机构" placeholder="Repo, paper or lab">'
+           f'<select id="cf-t" aria-label="Topic">{topt}</select>{lsel}<select id="cf-s" aria-label="Sort">{sort}</select>'
+           f'<label><input type="checkbox" id="cf-a">{bi("Updated in the last 6 months", "最近 6 个月有更新")}</label>'
+           f'<span class="muted" id="cf-n"></span></div>')
+    return f'<h1>{bi("Open-source code tracker", "开源代码追踪")}</h1>{lead}{note}{box}<ol class="repolist" id="cf-list">{"".join(rows)}</ol>'
+
+
 def entry_page(e: dict, topics_by_id: dict, related: list[dict], authors: list[str]) -> str:
     """Body of e/<id>.html: one curated entry with its takeaway, links, BibTeX and related entries."""
     t0 = topics_by_id[e["topics"][0]]
@@ -348,6 +418,9 @@ def entry_page(e: dict, topics_by_id: dict, related: list[dict], authors: list[s
     if labs:
         au += (f'<p class="muted">{bi("More from: ", "同机构更多条目：")}'
                + " · ".join(f'<a href="../labs/{lab["id"]}.html">{bi(lab["en"], lab["zh"])}</a>' for lab in labs) + "</p>")
+    lic = (repo_stat(e) or {}).get("license")
+    if lic is not None:
+        au += f'<p class="muted"><a href="../code.html">{bi("Code license", "代码许可证")}</a> {bi("(detected by GitHub): ", "（GitHub 检测）：")}{license_label(lic)}</p>'
     rel = ""
     if related:
         rel = (f'<h2>{bi("More in " + t0["en"], "更多" + t0["zh"] + "条目")}</h2><ul class="tlist">'
@@ -438,6 +511,7 @@ def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") 
     nav = (f'<a href="{root}index.html">{bi("Home", "首页")}</a>'
            f'<a href="{root}feed.html">{bi("Daily arXiv", "每日 arXiv")}</a>'
            f'<a href="{root}topics/index.html">{bi("Topics", "主题")}</a>'
+           f'<a href="{root}code.html">{bi("Code", "代码")}</a>'
            f'<a href="{root}digest/index.html">{bi("Weekly", "周报")}</a>'
            f'<a href="{root}resources.html">{bi("Learn", "资源")}</a>'
            f'<a href="{REPO_URL}" rel="noopener">GitHub</a>')
@@ -719,7 +793,8 @@ def build() -> int:
             for st, e in popular)
         popular_html = (f'<h2>{bi("Most-starred open-source code", "最受关注的开源代码")}</h2>'
                         f'<p class="muted">{bi("GitHub stars of curated entries, refreshed weekly.", "精选条目的 GitHub 星标数，每周更新。")}</p>'
-                        f'<ol class="poplist">{rows}</ol>')
+                        f'<ol class="poplist">{rows}</ol>'
+                        f'<p><a class="more" href="code.html">{bi(f"All {len(by_repo)} repos: sort by stars or activity, filter by license →", f"全部 {len(by_repo)} 个代码仓库：可按星标、活跃度排序，按许可证筛选 →")}</a></p>')
     # repos that gained the most GitHub stars over the last week (curated code + code of recent feed papers)
     rising_html = ""
     if gains:
@@ -962,7 +1037,7 @@ def build() -> int:
 
     # ---- machine-readable export of the curated index (CC BY 4.0), JSON + CSV
     FIELDS = ["id", "title", "type", "arxiv", "year", "venue", "org", "url", "code", "project", "topics", "tags",
-              "robot_types", "highlight", "added", "takeaway_en", "takeaway_zh", "github_stars", "page", "labs"]
+              "robot_types", "highlight", "added", "takeaway_en", "takeaway_zh", "github_stars", "page", "labs", "code_license"]
     rows = []
     for e in entries:
         st = repo_stat(e) or {}
@@ -974,7 +1049,7 @@ def build() -> int:
             "added": str(e["added"]) if e.get("added") else None,
             "takeaway_en": e["takeaway_en"], "takeaway_zh": e["takeaway_zh"],
             "github_stars": st.get("stars"), "page": f"{SITE_URL}e/{e['id']}.html",
-            "labs": [i for i in e.get("labs", []) if i in LAB_PAGES]})
+            "labs": [i for i in e.get("labs", []) if i in LAB_PAGES], "code_license": st.get("license")})
     (OUT / "curated.json").write_text(json.dumps({
         "name": "Embodied AI Radar - curated index", "source": SITE_URL,
         "license": "CC BY 4.0 (curated text and data); arXiv metadata CC0",
@@ -1106,6 +1181,10 @@ def build() -> int:
         f'<p class="muted">{lnote}</p><ul class="tlist">{lrows or "<li class=muted>—</li>"}</ul>', "../",
         "Embodied AI and robot learning papers, code and datasets grouped by lab: UC Berkeley, Stanford, NVIDIA, Google DeepMind, Shanghai AI Lab, Tsinghua and more.", "labs/index.html"), encoding="utf-8")
 
+    # ---- code.html: every curated repo, sortable and filterable in the browser
+    (OUT / "code.html").write_text(page("Open-source robot learning code tracker · Embodied AI Radar", code_page(by_repo, gains, span, topics, today), "",
+        f"{len(by_repo)} open-source embodied AI and robot learning repos with GitHub stars, weekly gain, last update and license.", "code.html"), encoding="utf-8")
+
     # ---- 404, robots, sitemap, atom
     (OUT / "404.html").write_text(page("Not found · Embodied AI Radar", f'<h1>404</h1><p><a href="{SITE_URL}">{bi("Back to the radar", "返回首页")}</a></p>', SITE_URL, desc, "404.html"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("")
@@ -1118,7 +1197,7 @@ def build() -> int:
         for f in verify_dir.iterdir():
             if f.is_file():
                 shutil.copy(f, OUT / f.name)
-    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html", "start.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries] + ["venues/index.html"] + [f"venues/{venue_slug(k)}.html" for k in vkeys] + ([f"venues/{PROGRAM}-program.html"] if prog else []) + ["robots/index.html"] + [f"robots/{m['id']}.html" for m in embs] + ["labs/index.html"] + [f"labs/{i}.html" for i in LAB_PAGES]
+    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html", "start.html", "code.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries] + ["venues/index.html"] + [f"venues/{venue_slug(k)}.html" for k in vkeys] + ([f"venues/{PROGRAM}-program.html"] if prog else []) + ["robots/index.html"] + [f"robots/{m['id']}.html" for m in embs] + ["labs/index.html"] + [f"labs/{i}.html" for i in LAB_PAGES]
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"<url><loc>{SITE_URL}{u}</loc><lastmod>{today.isoformat()}</lastmod></url>\n" for u in urls)
