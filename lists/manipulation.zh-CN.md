@@ -2,7 +2,7 @@
 
 _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 
-共 150 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
+共 155 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/manipulation.html) · [English](manipulation.md)
 
@@ -54,9 +54,11 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[DexHOT: Learning Hand-Object Configuration Transfer for Dexterous Manipulation](https://arxiv.org/abs/2611.05119)** (2026) — 把灵巧操作目标定义为手与物体的联合构型，从合成构型对学习统一的转移基元，无需人类动作；报告仿真未见物体成功率 69.4%，200 次真机转移成功率 61.5%。 · [项目页](https://dex-hot.github.io/)
 - **[Dexterous In-Hand Object Pose Reaching with Learned Safety Filters](https://arxiv.org/abs/2610.37652)** (2026) — 在仿真中无需人类数据训练 LEAP 灵巧手的手内物体位姿到达策略，零样本迁移到真机；报告在 4800 个未见目标上 95.2% 到达，可调节的残差安全滤波器使掉落减少 75%。 · [项目页](https://ian-chuang.github.io/dexsafe/)
 - **[DiffMorphGrasp: A Diffusion Framework Conditioned on Hand Morphology for Cross-Embodiment Grasp Generation](https://arxiv.org/abs/2602.00915)** (2026) — 以手部运动学结构图为条件的扩散抓取生成模型，可零样本迁移到未见过的机器人手型；同时提出跨手型抓取评测基准。 · [项目页](https://georgewuzy.github.io/DiffMorphGrasp-website)
+- **[ESCAPE: Egocentric Sensing for Collision Avoidance and Policy Execution](https://arxiv.org/abs/2610.23943)** (2026) — 机器人身上的分布式深度传感器汇成障碍感知点云；在 10 万多条仿真安全关键轨迹上训练的流匹配策略据此生成无碰撞运动，零样本迁移到真机。
 - **[Efficient and Reliable Teleoperation through Real-to-Sim-to-Real Shared Autonomy](https://arxiv.org/abs/2603.17016)** (2026) — CoRL 2026 Spotlight。为富接触遥操作叠加在仿真中学到的纠正行为，并用简单的 kNN 模型替代人类操作员进行训练。 · [代码](https://github.com/shuosha/Residual_Copilot) · [项目页](https://residual-copilot.github.io/)
 - **[EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data](https://arxiv.org/abs/2602.16710)** (2026) — CoRL 2026 Oral。用超过 20,854 小时带动作标注的第一视角人类视频训练 VLA，检验大规模人类数据能否支撑高自由度精细灵巧操作。
 - **[Enabling Robust Cloth Manipulation via Inference-Time Simulator-in-the-Loop Refinement](https://arxiv.org/abs/2606.24552)** (2026) — 仅凭单张 RGB 在线修正布料动作：先由 real-to-sim 模块估计布料状态，再用仿真器并行推演和先验引导的 MPPI 修正策略轨迹。 · [项目页](https://silr-cloth.github.io/)
+- **[F2F-AP: Flow-to-Future Asynchronous Policy for Real-time Dynamic Manipulation](https://arxiv.org/abs/2604.02408)** (2026) — 利用预测的物体流合成未来观测，并以对比学习目标使其特征与真实未来帧对齐，让异步策略能提前补偿自身延迟，处理运动中的物体。
 - **[FEIJOA: Task-Driven Grounding and Execution for Mobile Manipulation](https://arxiv.org/abs/2611.04080)** (2026) — 语言模型智能体在测试时对带位姿的 RGB-D 扫描做指令落地，不依赖预建表示；Spot 真机 50 次试验成功 35 次，失败大多来自物理技能而非推理。 · [项目页](https://williamshen-nz.github.io/feijoa/)
 - **[FOCI Policy: Focus on Object-Centric Interactions for Relational Manipulation Policies](https://arxiv.org/abs/2609.08743)** (2026) — 把技能表示为任务物体之间相对 SE(3) 运动的短交互片段，与场景布局和机器人无关。在 RLBench 与 COLOSSEUM 上所需数据明显少于以往方法。 · [项目页](https://fitz0401.github.io/foci-page/)
 - **[FORCA: A Force-Aware Coding Agent for Contact-Rich Robot Manipulation](https://arxiv.org/abs/2610.31841)** (2026) — 同时读取腕部力/力矩与图像的编程智能体：编写接触探测与力反馈控制程序，并在每次执行后依据力记录诊断失败、修改代码；无需示教或训练。在 5 个真实任务上优于仅视觉版本。 · [项目页](https://tanoom.github.io/forca/)
@@ -69,10 +71,12 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[GeoHAT: Geometry-Adaptive Hybrid Action Transformer for Mobile Manipulation](https://arxiv.org/abs/2606.13394)** (2026) — 面向全身移动操作的扩散策略：傅里叶编码器把逐像素 3D 坐标变成几何 token，并按深度可靠性门控注入视觉基础模型特征；混合解码器为机械臂与底盘分配独立的动作子空间。
 - **[GeoProp: Grounding Robot State in Vision for Generalist Manipulation](https://arxiv.org/abs/2607.07101)** (2026) — 即插即用适配器：把机器人状态投影到图像平面，采样局部视觉特征构成“落地”的状态 token，并用 FiLM 调制对应特征。报告仿真中 Diffusion Policy 提升 8.7%，真机平均提升 10.6%。 · [项目页](https://alibaba-damo-academy.github.io/GeoProp/)
 - **[Going with the Flow: Koopman Behavioral Models as Pseudo Planners for Visuo-Motor Dexterity](https://arxiv.org/abs/2602.07413)** (2026) — 把灵巧技能建模为潜在线性（Koopman）系统，视觉特征流与机器人动作流共同演化；当观测与预测的视觉流偏离时自动重规划。性能与强基线相当，推理快得多。 · [项目页](https://k-ubm.github.io/)
+- **[Grounding Generative Policies in Physics: Optimization-Guided Diffusion for Robot Control](https://arxiv.org/abs/2606.24208)** (2026) — 把扩散反向过程中的采样扰动替换为经优化得到的修正，从而在采样时满足可达性、避碰或可跟踪性约束，无需重新训练扩散模型。
 - **[HUGS: Guiding Unified Dexterous Grasp Synthesis Across Modes and Scales via Learned Human Priors](https://arxiv.org/abs/2607.04554)** (2026) — 从 1800 次人类抓取中学习物体条件的人类先验，用来选择接触模式和手腕初值以指导力封闭优化；合成 320 万个抓取，覆盖两指捏取到双手抓取、2–30 cm 物体。 · [项目页](https://hugs-dex.github.io/)
 - **[HiFun: a Hierarchical Framework for Efficient Functional Dexterous Manipulation Learning](https://arxiv.org/abs/2610.19518)** (2026) — 面向功能性灵巧操作的分层真机强化学习：手部技能负责精确接触，臂-手协调策略负责手臂运动与技能触发。报告在六个任务上一小时在线训练即达 98.3% 平均成功率。 · [项目页](https://hly-123.github.io/HiFun/)
 - **[How to Peel with a Knife: Aligning Fine-Grained Manipulation with Human Preference](https://arxiv.org/abs/2603.03280)** (2026) — 以用刀削皮为例研究“质量难以量化”的精细操作：先做力感知模仿学习，再用学习到的奖励模型按人类偏好微调。报告在黄瓜、苹果、土豆上成功率 100%。 · [项目页](https://toruowo.github.io/peel)
 - **[Human2Any: Human-to-Robot Transfer via Constraint-Aware Compositional Planning](https://arxiv.org/abs/2606.28813)** (2026) — 从人类视频学习以物体间交互运动表示的先验，再与机器人可行性推理和运动规划组合，同一先验无需机器人数据即可用于 Franka 与 RBY-1 移动人形机器人。 · [项目页](https://human2any.github.io/)
+- **[Inference-Time Robot Behavior Steering through Physically-Aware Reconfiguration of Task-Structure](https://arxiv.org/abs/2606.26588)** (2026) — ReStruct 把视觉运动策略分解为状态机骨架和残差控制器；VLM 把语言偏好编译成时序逻辑自动机来重构骨架。真机上偏好遵循成功率 92.5%。
 - **[Instant-Fold: In-Context Imitation Learning for Deformable Object Manipulation](https://arxiv.org/abs/2606.04269)** (2026) — 面向折叠的上下文模仿学习：只看一条人类演示，流匹配 Transformer 即可推断并执行其中的折叠方式，无需梯度更新。完全在仿真训练，零样本迁移到真机。 · [项目页](https://instant-fold.github.io)
 - **[KPGrasp: Scalable Keypoint Flow Matching for Dexterous Grasp Generation](https://arxiv.org/abs/2606.09314)** (2026) — 以 3D 手部关键点表示灵巧抓取，用普通 Transformer 流模型生成，无需接触损失或后处理优化；报告 Dexonomy 成功率 76.3%，每次抓取 0.032 秒。 · [代码](https://github.com/Yuansen-Huang/KPGrasp) · [项目页](https://yuansen-huang.github.io/KPGrasp-page/)
 - **[Knowing Where to Look: Interactive Object Search via Spatial-Semantic Fusion](https://arxiv.org/abs/2611.00499)** (2026) — 把逐物体的 VLM 合理性评分与几何占据证据融合为统一的三维体素信念，决定下一步看哪、去哪、开哪个柜子；在双臂移动人形上优于纯几何搜索和 LLM 规划。 · [项目页](https://skymanaditya1.github.io/objsearch-website/)
@@ -86,6 +90,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[MobiAgent: Dual-Loop Recursive Policy Self-Improvement for Long-Horizon Mobile Manipulation](https://arxiv.org/abs/2610.03476)** (2026) — 双循环移动操作智能体：内循环由 VLM 规划并组合流匹配技能，外循环从部署数据中自动发现并微调技能。报告在 BEHAVIOR-1K 上比 π0.5 高 22.5 个百分点。 · [代码](https://github.com/kaiknower/MobiAgent) · [项目页](https://kaiknower.github.io/mobiagent)
 - **[Online Adaptation to Latent Physical Properties for Learning from Demonstration](https://arxiv.org/abs/2611.06118)** (2026) — 执行中在线更新物体隐藏物性的潜变量，并以此调节模仿策略；对质心变化有帮助，但报告仿真中未见过的质心位置成功率仅约 30%。 · [项目页](https://isri-aist.github.io/latent-dynamics-project-page/)
 - **[OpenDexGrasp: Open-vocabulary Task-Oriented Dexterous Grasping](https://arxiv.org/abs/2609.18117)** (2026) — CoRL 2026 Oral。根据自由语言生成可执行的灵巧抓取：结合多视角图像与几何推断任务所需的功能，由 OpenDexVerse 数据支撑。 · [项目页](https://opendexgrasp.github.io/)
+- **[Perfect Demo Makes Poor Teacher: Learning Robust Alignment from Critical Motion Segments](https://arxiv.org/abs/2606.15587)** (2026) — 熟练的示教会把对准与纠错一带而过，导致策略在关键处缺少监督。在这些片段放慢、重采样有帮助；STAIR 进一步在 VLM 与动作专家之间加入紧凑的短时运动特征。
 - **[Phase-Conditioned Affordance Fields for SE(3)-Equivariant Visuomotor Policies](https://arxiv.org/abs/2610.17281)** (2026) — 为 SE(3) 等变策略加入随阶段变化的可学习可供性场，以当前作用区域而非夹爪坐标系作为观测与动作的锚点。在 MimicGen 与多物体真机任务上都有提升。 · [项目页](https://paf-policy.github.io/)
 - **[Pixel-UMI: Learning Environment-Aware Whole-Body Manipulation from Sensorized Human Demonstrations](https://arxiv.org/abs/2611.03647)** (2026) — 把传感化的人类示范变成全身策略：结合重建的场景几何做重定向，训练时用重定向误差遮蔽不匹配的视角，再用 DAgger 人工纠正补足接触。作者报告五个任务平均进度 87.0%。 · [项目页](https://pixel-robot.com/pixel-umi)
 - **[Play2Perfect: What Matters in Dexterous Play Pretraining for Precise Assembly?](https://arxiv.org/abs/2606.26428)** (2026) — CoRL 2026 Oral。探究灵巧“玩耍”预训练究竟需要什么，才能胜任精密装配这类富接触、稀疏奖励、模仿与直接 RL 都难以解决的任务。 · [代码](https://github.com/kushal2000/play2perfect) · [项目页](https://play2perfect.github.io)

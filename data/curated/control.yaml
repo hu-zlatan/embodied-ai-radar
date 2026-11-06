@@ -412,3 +412,48 @@
   tags: [cbf, safety, hj-reachability, real]
   takeaway_en: "Learns neural CBFs from an HJ value approximation; with control-affine dynamics and polytope inputs the optimum is at a vertex, so GPU vertex tree search makes labels. 15 systems + a robot among pedestrians."
   takeaway_zh: "通过近似 HJ 价值函数学习神经控制障碍函数；在控制仿射动力学和多面体输入集下最优解位于顶点，于是用 GPU 并行顶点树搜索生成监督点。在 15 个系统和行人避让真机实验中验证。"
+- title: "BarrierFormer: Transformer-Guided Predictive Barrier Enforcement for Safe Robot Control"
+  type: paper
+  arxiv: "2609.23896"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [cbf, safety, transformer, model-free]
+  takeaway_en: "A causal transformer predicts a rollout (in place of a model) and a residual fix to a nominal controller; a barrier critic scores CBF violations along the rollout, so safety looks ahead like MPC."
+  takeaway_zh: "因果 Transformer 预测未来推演（代替动力学模型）并给名义控制器输出残差修正；障碍评估器沿推演检查 CBF 约束违例，从而像 MPC 一样前瞻安全，却无需在线求解优化。"
+- title: "Learning Unions of Convex Sets via Invertible Latent Decomposition for Path Planning"
+  type: paper
+  arxiv: "2606.12027"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [motion-planning, convex-sets, gcs, invertible-network]
+  takeaway_en: "Learns an invertible map plus convex polytopes in its latent space, so convex-set planners work in high-DoF spaces and paths decode back feasible. Tested from 2D to 14-DoF; no false positives after refinement."
+  takeaway_zh: "联合学习可逆映射及其潜空间中的凸多面体并集，使基于凸集的规划可用于高自由度空间，解码回原空间的路径仍可行。在 2D 至 14 自由度场景测试，细化后未观察到误报。"
+- title: "When Should a Robot Replan? Regret-Guided Update Scheduling in Time-Varying MDPs"
+  type: paper
+  arxiv: "2606.16972"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [replanning, regret, time-varying-mdp, quadrotor]
+  takeaway_en: "With a limited budget for re-estimation and replanning under drifting dynamics, a dynamic-regret bound gives an online rule for when to update. Tested on simulated rover slip and a Crazyflie quadrotor."
+  takeaway_zh: "在动力学漂移、重估与重规划次数有限时，用动态遗憾界推导出何时更新的在线规则。在模拟的打滑漫游车和 Crazyflie 四旋翼上验证。"
+- title: "On the Limits of Sampling-Based Reachability: Geometry, Dynamics, and Sample Complexity"
+  type: paper
+  arxiv: "2607.18606"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [reachability, theory, sample-complexity]
+  takeaway_en: "Theory: gives conditions under which sampled reachable sets are accurate in Hausdorff distance, and shows the sample need grows exponentially in both state dimension and horizon, with a matching lower bound."
+  takeaway_zh: "理论工作：给出采样可达集在 Hausdorff 距离意义下准确的条件，并证明所需样本数随状态维度和时间跨度都呈指数增长，且给出相应下界。"
+- title: "Optimal Control with Learned Critics under Unmodeled State Dependencies"
+  type: paper
+  arxiv: "2610.05359"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [mpc, ilqr, model-based-rl, gpu]
+  takeaway_en: "Adds a residual dynamics network and a learned Q critic to iLQR MPC, with a GPU batched iLQR that solves thousands of problems in parallel, for model-based RL when contacts are poorly modeled."
+  takeaway_zh: "在 iLQR 模型预测控制中加入残差动力学网络和学习得到的动作价值评估器，并实现 GPU 批量 iLQR 并行求解数千个问题，用于接触难以建模时的基于模型强化学习。"

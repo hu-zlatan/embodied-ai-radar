@@ -1230,3 +1230,12 @@
   tags: [world-model, post-training, video-prediction, vlm-judge, grpo]
   takeaway_en: "RoboImagine post-trains autoregressive robot world models by comparing candidate futures, scored by a frozen multimodal judge plus pixel/perceptual terms. Reports +1.26 dB PSNR on RT-1 over continued SFT."
   takeaway_zh: "RoboImagine 通过比较多条候选未来来后训练自回归机器人世界模型：冻结的多模态评估器给出语义偏好，像素与感知层面的一致性项约束视觉误差。在 RT-1 上报告 PSNR 比继续监督微调高 1.26 dB。"
+- title: "W2A: Distilling World Priors into Action Models for Real-Time Robotic Control"
+  type: paper
+  arxiv: "2611.02600"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [world-action-model, distillation, video-diffusion, libero]
+  takeaway_en: "Distills intermediate denoising features of a video diffusion model into an action model during training and drops the video model at test time. Reports 95.9% on LIBERO and about 21x faster inference than a WAM baseline."
+  takeaway_zh: "训练时把视频扩散模型的中间去噪表示蒸馏进动作模型，测试时完全丢弃视频模型。在 LIBERO 上报告 95.9% 平均成功率，推理比代表性世界动作模型快约 21 倍。"

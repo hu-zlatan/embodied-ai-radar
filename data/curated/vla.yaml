@@ -2297,3 +2297,120 @@
   tags: [lifelong-learning, lora, replay, forgetting, real]
   takeaway_en: "Lifelong VLA learning with short-term and long-term LoRA adapters mixed by a task-aware gate, plus cheap stochastic replay. Learns new skills while keeping old ones; tested on a real xArm."
   takeaway_zh: "终身学习 VLA：短期与长期两条 LoRA 适配通路由任务感知门控融合，再配合低存储的随机回放，兼顾学新与保旧。在真实 xArm 上验证。"
+- title: "ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies"
+  type: paper
+  arxiv: "2606.31132"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [test-time-compute, diffusion-policy, meta-rl, sim]
+  takeaway_en: "Learns, with RL, a meta-policy that picks per state how many denoising steps (sequential) and candidate samples (parallel) a frozen diffusion/flow policy gets, trading success against compute."
+  takeaway_zh: "用强化学习训练一个元策略，按状态决定冻结的扩散/流策略在每步分配多少去噪步数（串行）和多少候选采样（并行），在成功率与计算量之间权衡。"
+- title: "FlashVLA: Streaming Action Decoding for Fast and Asynchronous VLA Inference"
+  type: paper
+  arxiv: "2608.27384"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [vla, latency, async-execution, flow-matching, real]
+  takeaway_en: "Keeps a streaming buffer of action chunks at different noise levels with chunk-wise causal attention, so each inference step emits one executable chunk and asynchronous execution stays smooth."
+  takeaway_zh: "维护一个包含多个不同噪声水平动作块的流式缓冲区，并使用块级因果注意力，使每次推理产出一个可执行动作块，异步执行时动作保持连贯。"
+- title: "Cloak: Zero-Shot Cross-Embodiment Manipulation by Masking the End-Effector from the VLA"
+  type: paper
+  arxiv: "2606.22836"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [cross-embodiment, wrist-camera, masking, zero-shot, real]
+  takeaway_en: "Masks the end-effector in the wrist camera (rendered from known geometry, plus mask augmentation). A VLA trained on one parallel gripper then transfers zero-shot to another gripper, another arm and a five-finger hand."
+  takeaway_zh: "在腕部相机画面中遮住末端执行器（依据已知几何实时渲染遮罩，并做遮罩增强）。只用单一平行夹爪数据训练的 VLA 可零样本迁移到其他夹爪、其他机械臂和五指手。"
+- title: "H-VLA: Hierarchical Vision-Language-Action Model with Key-Action Reasoning and Motion Planning in a Unified Action Space"
+  type: paper
+  arxiv: "2609.22895"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [vla, hierarchical, key-actions, simplerenv]
+  takeaway_en: "Splits a VLA into a key-action model (next subgoal) and a motion model (dense actions toward it) in a shared camera-centric action space across datasets and robots. Reports 91% on SimplerEnv Google Robot visual matching."
+  takeaway_zh: "把 VLA 拆为关键动作模型（预测下一个子目标）与运动规划模型（生成通往它的稠密动作），并统一到以相机为中心的动作空间。在 SimplerEnv Google Robot 视觉匹配上报告 91%。"
+- title: "Direct Action-Head Injection of A Grounded 3D Point Unlocks Spatial and Task Generalization"
+  type: paper
+  arxiv: "2606.27663"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [vla, grounding, 3d, libero-pro, real]
+  takeaway_en: "Feeds a grounded 3D target point through a two-layer MLP straight into a VLA's action head. On LIBERO-PRO it lifts GR00T-N1.6 from 31.2 to 77.5 under task perturbation; π0.5 gains similarly."
+  takeaway_zh: "把一个已定位的 3D 目标点经两层 MLP 直接注入 VLA 的动作头。在 LIBERO-PRO 任务扰动下，GR00T-N1.6 成功率从 31.2 提升到 77.5，π0.5 也有类似提升。"
+- title: "ELAN4D: Embodiment-Centric 4D Supervision for Vision-Language-Action Models via Plug-and-Play Adaptation"
+  type: paper
+  arxiv: "2605.30484"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [vla, auxiliary-loss, keypoint-tracks, libero, robotwin]
+  takeaway_en: "Adds an auxiliary branch that predicts future 3D tracks of robot keypoints, computed for free by forward kinematics, with gradient isolation from the VLM. The branch is dropped at inference."
+  takeaway_zh: "增加一个辅助分支，预测机器人关键点未来的 3D 轨迹（由正运动学免费得到），并与视觉语言主干做梯度隔离。推理时丢弃该分支，策略接口不变。"
+- title: "DIRECT: When and Where Should You Allocate Test-Time Compute in Embodied Planners?"
+  type: paper
+  arxiv: "2606.12402"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [test-time-compute, vlm-planner, routing, real]
+  takeaway_en: "A router picks a VLM planner per subtask from scene context (CoT depth, model size, memory). On a Franka DROID setup it matches a stronger model's success at up to 65% lower average latency."
+  takeaway_zh: "路由器根据场景上下文为每个子任务选择 VLM 规划器（思维链深度、模型规模、记忆长度）。在 Franka DROID 平台上以最多降低 65% 的平均延迟达到更强模型的成功率。"
+- title: "Information-Theoretic Constraints for Continual Vision-Language-Action Alignment"
+  type: paper
+  arxiv: "2603.13335"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [continual-learning, vla, forgetting, libero]
+  takeaway_en: "Info-VLA fights forgetting in continual VLA learning by keeping cross-modal structure: replay anchors from a frozen teacher for contrastive alignment, plus a vision-language mutual-information term."
+  takeaway_zh: "Info-VLA 通过保持跨模态信息结构来缓解 VLA 持续学习中的遗忘：以冻结教师模型构造回放锚点做对比对齐，并加入视觉-语言互信息约束。"
+- title: "Real-Time Execution with Autoregressive Policies"
+  type: paper
+  arxiv: "2606.13355"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [autoregressive, async-execution, tokenization, real]
+  takeaway_en: "Shows autoregressive policies can run in real time by tuning the tokenization horizon and constrained decoding under strict latency bounds; reports they beat an equivalent flow-matching policy."
+  takeaway_zh: "说明通过调整分词时域并在严格延迟上限下做约束解码，自回归策略也能实时执行；报告其表现优于同级别的流匹配策略。"
+- title: "SeeTraceAct: Visibility-Aware Latent Planning from Cross-Embodiment Demonstration Videos"
+  type: paper
+  arxiv: "2606.02745"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [one-shot, demo-conditioned, vla, human-video, benchmark]
+  takeaway_en: "A VLA conditioned on one demo video of an unseen task predicts visibility-aware future end-effector traces for precise grounding. Releases RoboCasa-DC; reports +9.5 pts real-world success from human demos."
+  takeaway_zh: "以未见任务的一段示教视频为条件的 VLA，通过预测考虑可见性的未来末端轨迹实现精确定位。发布 RoboCasa-DC 基准；在以人类示教为条件的真机实验中成功率提升 9.5 个百分点。"
+- title: "Barrier-Constrained Guidance For Real-time Asynchronous VLA Execution"
+  type: paper
+  arxiv: "2610.14997"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [async-execution, training-free, cbf, flow-matching]
+  takeaway_en: "FreeBar: training-free plugin that keeps consecutive action chunks of flow-based VLAs consistent with a CBF-style constraint solved in closed form, with little extra inference cost."
+  takeaway_zh: "FreeBar：无需训练的推理插件，用闭式求解的类 CBF 一致性约束让流式 VLA 的相邻动作块与已执行动作衔接，额外推理开销很小。"
+- title: "MAST-VLA: Skill-Conditioned Adaptation with Trajectory-Affordance Priors for Multi-Skill Robot Manipulation"
+  type: paper
+  arxiv: "2610.32312"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [vla, lora-moe, affordance, calvin]
+  takeaway_en: "Adds skill-conditioned LoRA mixture-of-experts adapters to the LLM backbone and turns a predicted affordance heatmap into a spatial prior for the action head. Reports Avg. Len 4.65 on CALVIN ABC→D."
+  takeaway_zh: "在大模型主干中加入以技能为条件的 LoRA 混合专家适配器，并把预测的可供性热图转为动作头的空间先验。在 CALVIN ABC→D 上报告平均完成长度 4.65。"
+- title: "Relational Spatial Alignment for Vision-Language-Action Models"
+  type: paper
+  arxiv: "2610.24705"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [vla, 3d, representation-alignment, spatial-reasoning]
+  takeaway_en: "Aligning VLA features point-wise with 3D foundation models causes rank collapse; aligning pairwise relations instead adds 3D awareness without losing expressivity. Adds a new spatial reasoning benchmark."
+  takeaway_zh: "将 VLA 特征逐点对齐到 3D 基础模型会导致秩坍塌；改为对齐成对关系，可在不损失表达力的前提下注入 3D 空间感知。并提出新的空间推理基准。"

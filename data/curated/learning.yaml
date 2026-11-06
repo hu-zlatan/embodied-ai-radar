@@ -1107,3 +1107,48 @@
   tags: [contrastive-rl, goal-conditioned, sim2real]
   takeaway_en: "Contrastive RL struggles when contact changes the dynamics mode. Interaction-weighted Resampling samples around before/during/after contact, reporting a 19.8% average gain in sim, including robot air hockey."
   takeaway_zh: "接触会改变动力学模式，使对比式强化学习难以处理操作任务。交互加权重采样在接触前、中、后阶段重点采样，仿真中平均提升 19.8%，任务包括机器人空气曲棍球。"
+- title: "Improving Robotic Generalist Policies via Flow Reversal Steering"
+  type: paper
+  arxiv: "2606.13675"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [flow-matching, steering, generalist-policy, rl, real]
+  takeaway_en: "Runs rough actions (from a human or a VLM) backwards through a flow policy to their noise, then forward again to land on a nearby good action mode. Distilling this reports up to 95-point success gains in under a minute."
+  takeaway_zh: "把粗糙动作（来自人或 VLM 的指引）反向送入流策略得到其噪声，再正向生成，落到附近的优质动作模态。将其蒸馏后，不到一分钟训练即可报告最高 95 个百分点的成功率提升。"
+- title: "Leave It Better Than Found: Value-Guided Cooperation in Sequential Tasks"
+  type: paper
+  arxiv: "2611.08075"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [multi-robot, value-functions, ad-hoc-cooperation, real]
+  takeaway_en: "Robots that never trained together share value functions, so a robot finishing a task leaves the workspace in a state the next robot prefers; a KNN uncertainty filter blocks overconfident values. Up to +48.5 pts."
+  takeaway_zh: "从未共同训练的机器人通过共享价值函数来协作，前一个机器人会把工作空间留在后一个机器人偏好的状态；KNN 不确定性过滤避免分布外的过度自信。成功率最高提升 48.5 个百分点。"
+- title: "Proxy Policy Steering"
+  type: paper
+  arxiv: "2609.09148"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [steering, diffusion-policy, adaptation, generalist-policy]
+  takeaway_en: "Adapts a frozen generalist policy at inference: two small proxies (one copies base behaviour, one is fine-tuned on the task) and their velocity difference steers each denoising step. Base weights are not needed."
+  takeaway_zh: "推理时适配冻结的通用策略：训练两个小代理策略（一个模仿基座行为，一个在目标任务上微调），以二者的速度场差值引导每一步去噪。无需访问基座参数。"
+- title: "What Do You Need for Compositional Generalization in Diffusion Planning?"
+  type: paper
+  arxiv: "2505.18083"
+  year: 2025
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [diffusion-planner, stitching, compositional-generalization]
+  takeaway_en: "Finds that shift equivariance, local receptive fields and inference choices let diffusion planners stitch sub-trajectories without TD learning; locality matters most. Proposes the Eq-Net architecture."
+  takeaway_zh: "发现平移等变性、局部感受野和推理设置使扩散规划器无需 TD 学习就能拼接子轨迹，其中局部性最关键；据此提出 Eq-Net 架构。"
+- title: "Simultaneous Forward and Inverse Human-in-the-Loop Optimization"
+  type: paper
+  arxiv: "2609.22630"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [human-in-the-loop, preference-learning, assistive, reward-learning]
+  takeaway_en: "For assistive devices with costly user trials: a forward model predicts user outcomes from control policies and drives active queries to learn each user's reward, then picks the final policy without more trials."
+  takeaway_zh: "面向用户试验代价高的辅助设备：先训练前向模型从控制策略预测用户结果，用它主动选择查询来学习个体奖励，再在不增加试验的情况下选出最终策略。"

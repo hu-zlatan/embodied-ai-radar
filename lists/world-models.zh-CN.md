@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 117 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 118 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html) · [English](world-models.md)
 
@@ -93,6 +93,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[UniFlowWAM: A Unified World-Action Model with Visual Semantics and 4D Geometry](https://arxiv.org/abs/2610.30991)** (2026) — 世界动作模型：把场景级三维流（跟踪的三维点）纳入策略内部，而不是作为独立模块或额外输出头，让 4D 几何、视觉语义与动作一起建模。 · [项目页](https://kksham111.github.io/UniFlowWAM_ProjectPage/)
 - **[Video Prediction Policy 2: Predict Better, Act Better](https://arxiv.org/abs/2610.10270)** (2026) — 认为世界动作模型的运动错误来自未针对操作优化的视频底座和粗糙的动作模块，因此在带事件级描述的操作视频上继续预训练视频模型。 · [代码](https://github.com/roboterax/video-prediction-policy-2) · [项目页](https://robert-gyj.github.io/video-prediction-policy-2)
 - **[Video World Models Need Predictable Latents](https://arxiv.org/abs/2610.34663)** (2026) — 视频世界模型的潜空间不应只为重建而训练：加入时间可预测性目标并配合以历史为条件的解码器。报告推理成本最多降低 5 倍、训练快 7 倍以上，长时域与分布外误差降低 15–24%，与真实策略评测更一致。 · [代码](https://github.com/mattia-scardecchia/predictable-latents)
+- **[W2A: Distilling World Priors into Action Models for Real-Time Robotic Control](https://arxiv.org/abs/2611.02600)** (2026) — 训练时把视频扩散模型的中间去噪表示蒸馏进动作模型，测试时完全丢弃视频模型。在 LIBERO 上报告 95.9% 平均成功率，推理比代表性世界动作模型快约 21 倍。
 - **[What Makes Video World Model Latents Action-Relevant: Prediction over Reconstruction](https://arxiv.org/abs/2606.07687)** (2026) — 探测哪些视频世界模型的潜变量含有动作信息：关键在于时序视频预训练，而非像素重建质量；V-JEPA 类编码器取得最佳权衡。 · [代码](https://github.com/k1seul/corl2026-action-relevant-latents)
 - **[WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL](https://arxiv.org/abs/2602.13977)** (2026) — 在视频世界模型中对 VLA 做强化学习后训练，通过关键帧初始化的短推演和世界模型-策略协同演化来抑制幻觉。报告 LIBERO 表现优异并在多个真机平台上提升。 · [项目页](https://wovr-corl.github.io)
 - **[World-Action Models for Robot Learning and Control: A Survey](https://arxiv.org/abs/2609.16074)** (2026) — 面向机器人的世界动作模型综述，厘清其与世界模型、基于模型的强化学习和反应式 VLA 的区别，并按表示、架构、训练和数据分类。 · [项目页](https://rcl-robotics.github.io/Awesome-World-Action-Models)

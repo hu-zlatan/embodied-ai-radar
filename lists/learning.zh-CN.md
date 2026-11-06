@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 109 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 114 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [English](learning.md)
 
@@ -53,6 +53,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[HiRE: Hindsight Reward Editing for Policy Finetuning](https://arxiv.org/abs/2609.27068)** (2026) — 免训练的奖励修正：事后对比成功与失败轨迹，惩罚被基础模型奖励高估、最终却导致失败的“陷阱状态”。报告性能至少是基础策略的 3 倍。 · [项目页](https://hire-project.github.io)
 - **[How to Learn from What a Human Would Avoid? Intervention-Aware World Models with Real-World RL for Dexterous Manipulation](https://arxiv.org/abs/2609.06009)** (2026) — 人在回路强化学习：潜在世界模型额外预测操作者何时会接管，并据此让策略远离高风险状态。在 16 自由度 LEAP 手上抓取成功率 96.7%，人工干预最多减少 84%。 · [项目页](https://whirl-dexterous.github.io/)
 - **[Imitation from Heterogeneous Demonstrations using Grounded Latent-Action World Models](https://arxiv.org/abs/2606.21672)** (2026) — 通过让不同数据源对未来观测的预测保持一致来“落地”一个共享潜在动作空间，使无动作标签和动作空间不同的数据都能训练同一个行为克隆策略。报告五个任务平均成功率提升 48%。 · [项目页](https://viccccciv.github.io/glam/)
+- **[Improving Robotic Generalist Policies via Flow Reversal Steering](https://arxiv.org/abs/2606.13675)** (2026) — 把粗糙动作（来自人或 VLM 的指引）反向送入流策略得到其噪声，再正向生成，落到附近的优质动作模态。将其蒸馏后，不到一分钟训练即可报告最高 95 个百分点的成功率提升。
 - **[LLMs as MDP Designers: A Dependency-Aware Agentic Framework for Automated Robot Policy Generation](https://arxiv.org/abs/2611.04974)** (2026) — ARPG 让大模型在部署前设计强化学习流程：先定 MDP，再写仿真代码，并校验状态、动作与奖励是否一致；报告在 Isaac Sim 中成功率高于单体式大模型基线。
 - **[LUCID: Learning Embodiment-Agnostic Intent Models from Unstructured Human Videos for Scalable Dexterous Robot Skill Acquisition](https://arxiv.org/abs/2606.11628)** (2026) — 从互联网人类视频学习预测“场景接下来该发生什么”的短时意图模型，再与在大规模并行仿真中训练的本体专用策略结合；同一意图模型可驱动灵巧手和平行夹爪。 · [项目页](https://lucid-robot.github.io/)
 - **[Learning Additively Compositional Latent Actions for Embodied AI](https://arxiv.org/abs/2604.03340)** (2026) — 对潜在动作空间施加短时可加组合约束（恒等、逆、循环一致），使潜在动作只编码运动而非场景细节，并为下游策略学习提供更好的监督。
@@ -60,6 +61,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Learning Object Manipulation from Scratch via Contrastive Interaction](https://arxiv.org/abs/2606.11525)** (2026) — 接触会改变动力学模式，使对比式强化学习难以处理操作任务。交互加权重采样在接触前、中、后阶段重点采样，仿真中平均提升 19.8%，任务包括机器人空气曲棍球。
 - **[Learning While Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies](https://arxiv.org/abs/2605.00416)** (2026) — 车队规模的离线到在线强化学习：利用自主执行与人工干预数据持续后训练通用 VLA。在 16 台双臂机器人、八个任务上报告平均成功率 95%。 · [项目页](https://learning-while-deploying.github.io/)
 - **[Learning to Be Different: Component Specialization for Compositional Diffusion Policies](https://arxiv.org/abs/2610.27194)** (2026) — 组合式扩散策略的各个分量常常学成相同的副本。即插即用的得分去相关损失让各分量各自专门化，且不损失多任务性能。 · [项目页](https://al3cl1.github.io/robotics-score-decorrelation)
+- **[Leave It Better Than Found: Value-Guided Cooperation in Sequential Tasks](https://arxiv.org/abs/2611.08075)** (2026) — 从未共同训练的机器人通过共享价值函数来协作，前一个机器人会把工作空间留在后一个机器人偏好的状态；KNN 不确定性过滤避免分布外的过度自信。成功率最高提升 48.5 个百分点。
 - **[Localized Visual Feature Aggregation via Focus Pooling for Visuomotor Policies](https://arxiv.org/abs/2609.08408)** (2026) — 以机器人当前本体状态为查询，对 CNN 中间特征做注意力池化，保留与控制相关的局部信息。报告比常规池化与显式裁剪方法分别高 36.2% 和 41.2%，仅需训练 5.8% 的编码器参数。
 - **[MIRROR: Reflecting Hidden Symmetries from Offline Robot Interaction Data](https://arxiv.org/abs/2610.17422)** (2026) — 从离线交互数据中学习已知对称群如何同时作用于像素观测和动作，再用于帧平均行为克隆。报告在四个 Robosuite 任务上平均成功率从 80.5% 升到 85.1%。 · [项目页](https://pomdp-mirror.github.io)
 - **[Memory Anchors for Continual Robot Learning](https://arxiv.org/abs/2608.26545)** (2026) — 发现回放缓冲中少数“观测相似但所需动作冲突”的样本（记忆锚点）承担了防遗忘的主要作用：仅剔除其中 10% 就会让 LIBERO 上的遗忘增加 4.5 倍以上。 · [项目页](https://robot-adaptation.github.io/MemoryAnchors)
@@ -67,6 +69,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Online World Modeling Enables Real-World Inverse Reinforcement Learning from Observation](https://arxiv.org/abs/2602.24121)** (2026) — 仅从观测（视频，无动作和奖励）做逆强化学习，借助在线世界模型在真机上实现。报告不到 40 分钟从零学会抓放，成功率 82%。 · [代码](https://github.com/UWRobotLearning/mpail2) · [项目页](https://uwrobotlearning.github.io/mpail2/)
 - **[Preference-Calibrated Human-in-the-Loop Reinforcement Learning for Robotic Manipulation](https://arxiv.org/abs/2606.03949)** (2026) — 人在回路强化学习：把每次人工干预视为偏好（人类动作优于策略动作），对次优片段做信用重新分配。报告五个真机任务平均成功率提升 24.5%，收敛快 1.3 倍。
 - **[Progress-Guided Preference Generation for Aligning Generative Control Policies](https://arxiv.org/abs/2610.25692)** (2026) — 用自动生成的偏好标签微调扩散与流匹配策略：以少量专家示教为参照衡量自主回放的顺序进度并据此排序，无需人工标注或手工奖励；报告在长时程操作任务上优于监督微调基线。 · [项目页](https://pgpg2026.github.io/)
+- **[Proxy Policy Steering](https://arxiv.org/abs/2609.09148)** (2026) — 推理时适配冻结的通用策略：训练两个小代理策略（一个模仿基座行为，一个在目标任务上微调），以二者的速度场差值引导每一步去噪。无需访问基座参数。
 - **[RACE: Calibrated Cumulative Scoring for Rollout-Free Robot Policy Checkpoint Selection](https://arxiv.org/abs/2611.05838)** (2026) — 无需实机回放即可排序检查点：用保留示教得到的状态相关阈值校准动作偏差，再按累乘聚合。论文报告其排序与真实机器人部署成功率一致。 · [项目页](https://changyeon.site/race)
 - **[RARM: Confidence-Gated Progress Reward Modeling for RL in Manipulation](https://arxiv.org/abs/2606.22027)** (2026) — 只在通用视频上训练一次的视觉比较器，可把一条成功演示变成稠密的进度奖励，并只奖励置信度高的前进。在 9 个仿真和 4 个真机任务的强化学习中成功率最高。
 - **[RL Token: Bootstrapping Online RL with Vision-Language-Action Models](https://arxiv.org/abs/2604.23073)** (2026) — CoRL 2026 Oral。让 VLA 输出紧凑的 RL token 作为在线强化学习接口，预训练策略只需几小时真实练习即可提升精度与速度。
@@ -77,6 +80,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[RoboFFT: Finetuning generative robot policy via online reinforcement learning with forward process](https://arxiv.org/abs/2609.32236)** (2026) — 为扩散与流匹配策略做 PPO 式微调：用前向加噪与得分/流匹配损失构造替代的策略比率，绕开似然计算；在仿真与真机上验证。 · [项目页](https://student-of-holmes.github.io/RoboFFT/)
 - **[Robot-WATCHDOG : failure detection through object-centric graph representation](https://arxiv.org/abs/2610.13403)** (2026) — 仅用正常演示做自监督失败检测：把操作场景建模为以物体为中心的时空图，所提两种失败评分都优于基于图像的检测器，尤其擅长语义和交互层面的失败。 · [项目页](https://cea-list.github.io/Robot-WATCHDOG/)
 - **[SCoCaT: Success Conditioned Constrained Reinforcement Learning for Spacecraft Docking](https://arxiv.org/abs/2609.06061)** (2026) — 发现基于终止的约束强化学习在目标附近约束收紧时会学会回避目标，并用稠密成功信号的辅助价值网络解决；在航天器对接任务上验证。
+- **[Simultaneous Forward and Inverse Human-in-the-Loop Optimization](https://arxiv.org/abs/2609.22630)** (2026) — 面向用户试验代价高的辅助设备：先训练前向模型从控制策略预测用户结果，用它主动选择查询来学习个体奖励，再在不增加试验的情况下选出最终策略。
 - **[SynthICL: Scalable In-context Imitation Learning with Synthetic Data](https://arxiv.org/abs/2606.08154)** (2026) — 完全用 RGB 合成数据训练的上下文模仿学习策略，并预测下一个子目标图像。报告仅给一条演示时，在 16 个未见真机任务上平均成功率 79%。 · [项目页](https://synth-icl.github.io)
 - **[TARC: Time-Adaptive Robotic Control](https://arxiv.org/abs/2510.23176)** (2026) — 策略同时预测动作及其保持时长。报告在遥控车、Unitree Go1 和仿真 VLA 上以不到一半的控制频率达到高频控制的性能。 · [项目页](https://arnavsukhija.github.io/projects/tarc)
 - **[TILDE: Teacher-in-the-Loop Distillation from Embodied Foundation Models](https://arxiv.org/abs/2610.25376)** (2026) — 把预训练具身基础模型（教师）蒸馏到未做动作预训练的策略：在学生访问的状态上做在线监督，并由奖励模型监控进度、自动触发教师接管采集纠错轨迹（AutoDAgger，无需人工看护）；报告在 3 个真机任务上比行为克隆最高提升 4.1 倍。 · [代码](https://github.com/hku-sail/TILDE) · [项目页](https://hku-sail.github.io/TILDE/)
@@ -99,6 +103,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation](https://arxiv.org/abs/2503.24361)** (2025) — 简单的联合训练做法：同时使用真实和仿真数据，弥补视觉操作中真实数据采集昂贵的问题。 · [项目页](https://co-training.github.io/)
 - **[Steering Your Diffusion Policy with Latent Space Reinforcement Learning](https://arxiv.org/abs/2506.15799)** (2025) — DSRL：不改扩散策略的权重，而是对其输入的初始噪声做强化学习来"引导"输出动作；只需前向推理、可用于 π0，论文报告真机任务在不到 50 次在线交互内成功率从 20% 升至 90%。 · [代码](https://github.com/ajwagen/dsrl) · [项目页](https://diffusion-steering.github.io)
 - **[Towards Embodiment Scaling Laws in Robot Locomotion](https://arxiv.org/abs/2505.05753)** (2025) — 在约 1000 个生成的机器人形态上检验“形态缩放定律”：用更多形态训练能否提升对未见形态的泛化？ · [代码](https://github.com/BoAi01/embodiment-scaling-laws) · [项目页](https://embodiment-scaling-laws.github.io/)
+- **[What Do You Need for Compositional Generalization in Diffusion Planning?](https://arxiv.org/abs/2505.18083)** (2025) — 发现平移等变性、局部感受野和推理设置使扩散规划器无需 TD 学习就能拼接子轨迹，其中局部性最关键；据此提出 Eq-Net 架构。
 - **[Diffusion Policy Policy Optimization](https://arxiv.org/abs/2409.00588)** (2024) — DPPO：把去噪步骤视为 MDP 的一部分，用 PPO 微调预训练扩散策略；报告称比其他强化学习微调方法更稳定，并实现了仿真到真机迁移。 · [代码](https://github.com/irom-princeton/dppo)
 - **[SERL: A Software Suite for Sample-Efficient Robotic Reinforcement Learning](https://arxiv.org/abs/2401.16013)** (2024) — 在真实机械臂上用强化学习训练操作策略的开源软件栈：学习式奖励分类器、免重置训练与阻抗控制器。 · [代码](https://github.com/rail-berkeley/serl)
 - **[Towards Generalist Robot Learning from Internet Video: A Survey](https://arxiv.org/abs/2404.19664)** (2024) — 综述从视频学习的方法，以互联网规模视频缓解机器人学习的数据瓶颈。

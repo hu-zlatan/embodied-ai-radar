@@ -2,7 +2,7 @@
 
 _Vision-language navigation, embodied question answering, mobile manipulation and LLM planners._
 
-77 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/navigation.yaml`](../data/curated/navigation.yaml); edit the YAML, not this file.
+78 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/navigation.yaml`](../data/curated/navigation.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/navigation.html) · [中文](navigation.zh-CN.md)
 
@@ -26,6 +26,7 @@ _Vision-language navigation, embodied question answering, mobile manipulation an
 - **[CostNav: A Navigation Benchmark for Real-World Economic-Cost Evaluation of Physical AI Agents](https://arxiv.org/abs/2511.20216)** (2026) — Scores delivery-robot navigation by money: cost, revenue and break-even, using Isaac Sim plus public filings and injury data. Reports that none of seven baselines is economically viable yet. · [code](https://github.com/worv-ai/CostNav)
 - **[Cracking Mobile Manipulation: From Failure Diagnosis to Agentic Robot System](https://arxiv.org/abs/2610.19600)** (2026) — Finds a VLA at 80% on atomic skills drops to 19% when composed into mobile manipulation, diagnoses why, and builds an agentic system around it. · [code](https://github.com/PKU-VaLuE-Lab/Cracking-Mobile-Manipulation)
 - **[EmbodiedWorld-200K: Toward Embodied World Agents via Embodied-Planning Dataset and Interactive World Models](https://arxiv.org/abs/2610.25959)** (2026) — 200K+ navigation-planning samples annotated from camera trajectories up to instructions; RL post-training inside a video world model, used as a cheap stand-in environment, reportedly helps on unseen scenes. · [code](https://github.com/XiaokunFeng/EmbodiedWorld-200K) · [project](https://xiaokunfeng.github.io/EmbodiedWorld-200K/)
+- **[EvoPlan: Evolutionary Neuro-Symbolic Robot Planning with Spatio-Temporal Guarantees](https://arxiv.org/abs/2607.06724)** (2026) — Mines a Signal Temporal Logic constraint from demos (e.g. social-navigation comfort) by evolutionary search to shield policies, and runs an evolutionary PDDL planner where a local LLM proposes and repairs plans.
 - **[From Imitation to Alignment: Human-Preference Flow Policies for Long-Horizon Sidewalk Navigation](https://arxiv.org/abs/2606.12603)** (2026) — FlowPilot: a mapless, monocular-RGB sidewalk navigation policy pre-trained with anchored flow matching on fleet data, then tuned on a small set of human interventions by preference learning.
 - **[From Region Arrival to Instance-Level Grounding in Vision-and-Language Navigation](https://arxiv.org/abs/2607.03792)** (2026) — Argues VLN success metrics hide a 'last-3-meter grounding gap': agents stop nearby without facing the target. Adds instance-level metrics and REALM, a refinement module for any backbone.
 - **[G2-Nav: Grounded and Guarded Vision-Language Costmaps for Robot Social Navigation](https://arxiv.org/abs/2607.16956)** (2026) — Social navigation where the VLM writes a costmap instead of choosing actions, checks upstream tracking, and a fast safety check guards against latency. Real-world tests. · [code](https://github.com/centiLinda/G2-Nav)
