@@ -587,7 +587,7 @@ def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📡%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="{root}assets/style.css?v={ASSET_V}">
-<script>try{{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang')||((navigator.language||'').startsWith('zh')?'zh':'en');if(l==='zh')document.documentElement.classList.add('zh');document.documentElement.lang=l==='zh'?'zh-CN':'en'}}catch(e){{}}</script>
+<script>try{{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang')||((navigator.language||'').startsWith('zh')?'zh':'en');if(l==='zh')document.documentElement.classList.add('zh');if(localStorage.getItem('starbar')==='off')document.documentElement.classList.add('nostar');document.documentElement.lang=l==='zh'?'zh-CN':'en'}}catch(e){{}}</script>
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -596,7 +596,13 @@ def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") 
 {hsearch}
 {star_btn}
 <button id="lang" class="lang" type="button" aria-label="Switch language"><span lang="en">中文</span><span lang="zh">EN</span></button>
-</div></header>
+</div>
+<div class="starbar" id="starbar"><div class="wrap">
+<p>{bi("Most of this project is curated by Claude. Drop a star to cheer Claude on!", "本项目大量由 Claude 整理维护，点个 Star 给克劳德大小姐鼓励一下！")}</p>
+<a class="ghstar" id="starbar-go" href="{REPO_URL}" rel="noopener"><span class="s">★</span> {bi("Feed a star", "投喂 Star")}</a>
+<button type="button" class="sb-x" id="starbar-x" title="Close">{bi("No thanks ✕", "拒绝投喂，换蓝色大肥鲸 ✕")}</button>
+</div></div>
+</header>
 <main class="wrap">
 {body}
 </main>
@@ -904,14 +910,11 @@ def build() -> int:
     venue_row = (f'<p class="muted">{bi("Accepted at:", "会议/期刊录用：")} '
                  + " · ".join(f'<a href="venues/{venue_slug(k)}.html">{esc(k)}</a> ({len(venues[k]["c"]) + len(venues[k]["f"])})' for k in cur_v)
                  + f' · <a href="venues/index.html">{bi("All venues →", "全部 →")}</a></p>') if cur_v else ""
-    star_box = (f'<div class="starbox"><p>{bi("Useful? A GitHub star helps others find it and tells us to keep going.", "觉得有用？在 GitHub 点个 Star，帮更多人找到它，也是对项目的鼓励。")}</p>'
-                f'<a class="ghstar big" href="{REPO_URL}" rel="noopener"><span class="s">★</span> {bi("Star on GitHub", "去 GitHub 点 Star")}</a></div>')
     trend_cols = "".join(f'<div class="tcol">{h}</div>' for h in (hf_html, rising_html, popular_html) if h)
     trend = f'<div class="trend">{trend_cols}</div>' if trend_cols else ""
     body = f"""<h1 class="sr-only">{bi("Embodied AI Radar: the map of embodied AI & robot learning", "具身智能雷达：具身智能与机器人学习全景图")}</h1>
 {prog_row}
 {trend}
-{star_box}
 {stats}
 <p class="start-link"><a class="more" href="start.html">{bi("New to embodied AI? Start with the reading path →", "刚入门具身智能？从入门路线开始 →")}</a> · <a class="more" href="search.html">{bi("Search and filter everything →", "搜索与筛选全部内容 →")}</a></p>
 <div id="home-static">

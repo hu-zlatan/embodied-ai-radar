@@ -252,6 +252,11 @@
     });
   });
 
+  // Star banner under the header: hidden for good once closed or clicked (per browser).
+  function starbarOff() { root.classList.add('nostar'); try { localStorage.setItem('starbar', 'off'); } catch (e) {} }
+  var sbx = document.getElementById('starbar-x'), sbg = document.getElementById('starbar-go');
+  if (sbx) sbx.addEventListener('click', starbarOff);
+  if (sbg) sbg.addEventListener('click', starbarOff);
   var q = document.getElementById('q');
   // Search moved from the home page to search.html: forward old shared links (index.html?q=…&topic=…).
   if (!q && document.getElementById('home-static')) {
