@@ -972,3 +972,120 @@
   tags: [real-world-rl, human-in-the-loop, world-model, dexterous, leap-hand]
   takeaway_en: "Human-in-the-loop RL whose latent world model also predicts when the operator would take over, steering the policy away from risky states. On a 16-DoF LEAP Hand: 96.7% grasp success, up to 84% less intervention."
   takeaway_zh: "人在回路强化学习：潜在世界模型额外预测操作者何时会接管，并据此让策略远离高风险状态。在 16 自由度 LEAP 手上抓取成功率 96.7%，人工干预最多减少 84%。"
+- title: "AI Coaching for Accelerating Human Skill Development with Reinforcement Learning"
+  type: paper
+  arxiv: "2606.25337"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [human-skill, coaching, shared-control, user-study, drone]
+  takeaway_en: "RL-trained AI coach that steps back as the learner improves, modelled as a game between learner and coach. A 33-person FPV drone-racing study shows faster human skill gains than prior AI coaching."
+  takeaway_zh: "用强化学习训练的 AI 教练：随学习者进步逐步减少辅助，把教练与学习者建模为非合作动态博弈。33 人第一视角无人机竞速研究显示，人类技能提升快于已有 AI 教练方法。"
+- title: "HARBOR: A Harness Framework for Agentic Robot Reinforcement Learning"
+  type: paper
+  arxiv: "2606.08610"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [agents, rl-automation, reward-design, sim-to-real, benchmark]
+  takeaway_en: "Agent harness that automates sim RL from environment setup to trained policy: staged specialist agents, executable gates, parallel trials and reusable knowledge. 16 tasks across 6 benchmarks, some moved to real robots."
+  takeaway_zh: "自动化仿真强化学习全流程的智能体框架：从环境搭建、奖励设计到调参训练，由分阶段的专职智能体、可执行检查点、并行试验与经验复用完成。覆盖 6 个基准 16 个任务，部分迁移到真机。"
+- title: "Localized Visual Feature Aggregation via Focus Pooling for Visuomotor Policies"
+  type: paper
+  arxiv: "2609.08408"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [visual-representation, attention-pooling, data-efficiency, cnn, real]
+  takeaway_en: "Attention pooling over intermediate CNN features, weighted by the robot's current proprioception, to keep control-relevant local detail. Reports +36.2% and +41.2% over pooling and explicit-crop methods."
+  takeaway_zh: "以机器人当前本体状态为查询，对 CNN 中间特征做注意力池化，保留与控制相关的局部信息。报告比常规池化与显式裁剪方法分别高 36.2% 和 41.2%，仅需训练 5.8% 的编码器参数。"
+- title: "Chameleon: Control-Indexed Prospective Memory for Visuomotor Manipulation"
+  type: paper
+  arxiv: "2603.24576"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [memory, visuomotor-policy, benchmark, libero, real]
+  takeaway_en: "~60M-parameter policy with event memory for tasks where the deciding cue comes long before the action, plus the real-robot Camo-Dataset. Reports decision success up from 22.5% to 80.8% and 87.1% on LIBERO-10."
+  takeaway_zh: "约 6000 万参数的视觉运动策略，带事件记忆，面向“决定性线索早于动作很久出现”的任务，并发布真机基准 Camo-Dataset。报告决策成功率从 22.5% 提升到 80.8%，LIBERO-10 达 87.1%。"
+- title: "Object-Centric Conditioning for Visuomotor Flow Matching"
+  type: paper
+  arxiv: "2609.24155"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [flow-matching, object-centric, robustness, distractors, real]
+  takeaway_en: "Action-to-action flow-matching policy conditioned on object-centric 'what' features and image-plane 'where' cues, improving robustness to distractors and object shifts while keeping few-step inference."
+  takeaway_zh: "以物体为中心的动作到动作流匹配策略：把观测拆成语义“是什么”特征与图像平面“在哪里”线索作为条件，在保持少步推理的同时提升对干扰物和位置偏移的鲁棒性。"
+- title: "Preference-Calibrated Human-in-the-Loop Reinforcement Learning for Robotic Manipulation"
+  type: paper
+  arxiv: "2606.03949"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [human-in-the-loop, credit-assignment, preferences, actor-critic, real]
+  takeaway_en: "Human-in-the-loop RL that treats each intervention as a preference (human action over policy action) and corrects credit on suboptimal segments. Reports +24.5% average success and 1.3x faster convergence."
+  takeaway_zh: "人在回路强化学习：把每次人工干预视为偏好（人类动作优于策略动作），对次优片段做信用重新分配。报告五个真机任务平均成功率提升 24.5%，收敛快 1.3 倍。"
+- title: "Learning Additively Compositional Latent Actions for Embodied AI"
+  type: paper
+  arxiv: "2604.03340"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [latent-actions, video, compositionality, pretraining, real]
+  takeaway_en: "Latent action model constrained to compose additively over short horizons (identity, inverse, cycle), so latents capture motion rather than scene detail and give better supervision for policies."
+  takeaway_zh: "对潜在动作空间施加短时可加组合约束（恒等、逆、循环一致），使潜在动作只编码运动而非场景细节，并为下游策略学习提供更好的监督。"
+- title: "Learning Coordinated Visuomotor Box-Pushing from Solo Demonstrations"
+  type: paper
+  arxiv: "2610.05677"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [multi-robot, imitation-learning, decentralized, box-pushing, real]
+  takeaway_en: "Studies whether single-robot teleop data can train decentralised coordinated box-pushing; tests with up to 40 robots show coordination is hard to learn just by watching other robots."
+  takeaway_zh: "研究能否只用单机遥操作数据训练去中心化的多机协同推箱；多达 40 台机器人的实验表明，仅靠被动观察其他机器人很难学会协调。"
+- title: "Workspace Models: Lightweight Robotic Memory via Saliency-Driven Supervision"
+  type: paper
+  arxiv: "2609.20820"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [memory, distillation, vlm, long-horizon, real]
+  takeaway_en: "Uses a VLM only at training time to pick task-relevant current and past information, distilled into a 'workspace token' the policy reads at deployment. Beats conditioning on curated past frames."
+  takeaway_zh: "仅在训练时用 VLM 挑出完成任务所需的当前与历史信息，蒸馏成策略部署时读取的“工作区 token”。效果优于直接输入精选历史帧。"
+- title: "RARM: Confidence-Gated Progress Reward Modeling for RL in Manipulation"
+  type: paper
+  arxiv: "2606.22027"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [reward-model, progress, one-demo, cloth-folding, real]
+  takeaway_en: "Video comparator trained once on general videos that turns one successful demo into a dense progress reward, paying only for confident forward progress. Best RL success on 9 sim and 4 real tasks."
+  takeaway_zh: "只在通用视频上训练一次的视觉比较器，可把一条成功演示变成稠密的进度奖励，并只奖励置信度高的前进。在 9 个仿真和 4 个真机任务的强化学习中成功率最高。"
+- title: "Asking Smarter Questions: Targeted Active Preference Learning for Underspecified Rewards"
+  type: paper
+  arxiv: "2610.22285"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [reward-learning, active-learning, preferences, explanations, user-study]
+  takeaway_en: "When teaching data under-specifies some reward features, the robot targets preference queries at those features and explains what to look at. Up to 30.8% better than standard active preference learning with few queries."
+  takeaway_zh: "当示教数据对某些奖励特征监督不足时，机器人把偏好询问集中在这些特征上，并附带解释提示人该关注什么。少量询问下比标准主动偏好学习高最多 30.8%。"
+- title: "Rethinking the Implications of Human Feedback for Preference Learning in Human-Robot Collaboration"
+  type: paper
+  arxiv: "2609.13982"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [preference-learning, human-feedback, hri, reward-learning, user-study]
+  takeaway_en: "Shows fixed rules for deriving labels from human feedback often disagree with what people mean, and learns these implications instead. Better preference estimates, incl. a real pizza-making study."
+  takeaway_zh: "发现从人类反馈推导未选动作标签的固定规则常与人的真实意图不符，改为学习这种“隐含含义”。偏好估计更准，并在真实做披萨协作实验中验证。"
+- title: "Task-Space Imitation Guidance for Efficient Reinforcement Learning"
+  type: paper
+  arxiv: "2610.07527"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [rl, imitation-guidance, dense-rewards, safety, real]
+  takeaway_en: "Uses an imitation policy's predicted action chunks as short task-space references for dense progress rewards in sparse-reward RL, plus guided pretraining. Better early sample efficiency and fewer safety violations."
+  takeaway_zh: "把模仿策略预测的动作块转成短时末端参考轨迹，为稀疏奖励强化学习提供稠密进度奖励，并用于引导预训练。提升早期样本效率、减少安全违规。"

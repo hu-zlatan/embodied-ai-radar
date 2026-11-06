@@ -2,7 +2,7 @@
 
 _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的学习型控制。_
 
-共 38 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/control.yaml`](../data/curated/control.yaml) 生成，请勿直接编辑。
+共 39 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/control.yaml`](../data/curated/control.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/control.html) · [English](control.md)
 
@@ -29,6 +29,7 @@ _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的�
 - **[Exploring the Intrinsic Geometry of Diffusion Models with Constrained Inverse Kinematics](https://arxiv.org/abs/2606.26408)** (2026) — 以解流形可精确知道的约束逆运动学为试验场，检验扩散模型学到的几何结构。在 UR5 和 Franka 上，从得分函数估计的内在维度与解析自由度一致。 · [项目页](https://papers.starslab.ca/diffusion-ik-geometry/)
 - **[Keeping Contact: Task-Adaptive Friction Margins for Bimanual Non-Prehensile Manipulation](https://arxiv.org/abs/2610.36961)** (2026) — 以带符号摩擦距离度量防滑裕度，并在双臂绕支点倾转物体时按任务需求自适应调整；一系列二阶锥规划给出全局最优接触力。真机实验显示自适应裕度优于固定裕度和无裕度。 · [项目页](https://keeping-contact.github.io/)
 - **[LEMCA: LLM-Guided Synthesis of Efficient Mode-Switching Control Architectures](https://arxiv.org/abs/2609.21319)** (2026) — 用 LLM 驱动的进化搜索，把多模式切换控制器写成可解释程序并迭代优化，使简单阶段使用低开销模式。报告找到的设计超越单一结构控制器的帕累托前沿。 · [项目页](https://lemca-robotics.github.io/)
+- **[M$^3$P-R1: Reinforcement Learning for Large Language Model Guided Multi-Modal Motion Planning via MIP Code Generation](https://arxiv.org/abs/2609.18669)** (2026) — 用求解器结果作为奖励对 LLM 做强化学习微调，让它为多模态运动规划（如先走再抓）编写可执行的混合整数规划代码，而不是直接给出答案。
 - **[PAKT: Physically-Aligned Kinesthetic Teaching for Reinforcement Learning](https://arxiv.org/abs/2609.25630)** (2026) — 面向真实世界强化学习的示教框架：人手拖动示教时轨迹始终满足策略可执行的运动学限制，并配套阻抗控制栈。报告工业插装任务节拍时间比 HIL-SERL 缩短 23–48%。 · [项目页](https://pakt-website.github.io/pakt-website)
 - **[PRISM: Polynomial Representations for Interaction-Structured Motor Control](https://arxiv.org/abs/2607.23473)** (2026) — 把策略 MLP 的第一层替换为可学习的乘性（双线性）特征，即插即用于强化学习与模仿学习。报告人形机器人存活率从 51.0% 提升到 92.5%，在摩擦、负载变化下依然有效。 · [项目页](https://lsh3163.github.io/prism/)
 - **[PolicyIK: High-Precision Inverse Kinematics for Robot Arms with Reinforcement Learning](https://arxiv.org/abs/2611.05372)** (2026) — 学习式目标条件逆运动学，能保持位置控制器静止时所需的偏置；报告在 93.5% 的留出仿真任务上误差低于 1 mm 和 0.2°，并可直接在真实机械臂上训练。 · [代码](https://github.com/Tinaliu0123/PolicyIK)

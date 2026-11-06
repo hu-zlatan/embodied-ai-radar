@@ -2189,3 +2189,111 @@
   tags: [3d, bev, cross-embodiment, alignment, real]
   takeaway_en: "Lifts 2D inputs to 3D with per-pixel vertex maps and expresses camera views and actions in one shared bird's-eye-view frame, aligning data across robots, cameras and datasets."
   takeaway_zh: "用逐像素顶点图把 2D 输入提升到 3D，并把各相机视角与机器人动作统一表示在同一鸟瞰（BEV）坐标系中，对齐不同机器人、相机与数据集的数据。"
+- title: "Coarse-to-Control: Action-Token Planning for Vision-Language-Action Models"
+  type: paper
+  arxiv: "2606.07107"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [planning, action-tokens, long-horizon, libero, real]
+  takeaway_en: "Plan-then-execute VLA that first predicts a short sequence of coarse action tokens summarising the intended trajectory, then the executable tokens conditioned on it. Largest gains on long multi-stage tasks."
+  takeaway_zh: "先规划后执行的 VLA：先预测概括未来轨迹的少量粗粒度动作 token，再以此为条件生成可执行动作 token；规划与执行共享同一离散动作词表。长程多阶段任务提升最大。"
+- title: "NAC: Neural Action Codec for Vision-Language-Action Models"
+  type: paper
+  arxiv: "2606.21372"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [action-tokenizer, audio-codec, rvq, libero, real]
+  takeaway_en: "Action tokenizer adapted from neural audio codecs (multi-scale RVQGAN with a Vocos-style decoder). Reports higher success than binning, FAST and earlier VQ tokenizers on LIBERO-10, RoboMimic and real tasks."
+  takeaway_zh: "借鉴神经音频编解码器的动作 tokenizer（多尺度 RVQGAN + Vocos 式解码器）。报告在 LIBERO-10、RoboMimic 与真机任务上成功率高于分箱、FAST 和已有 VQ 方法。"
+- title: "MotionVLA: Injecting Geometric Motion into Vision-Language-Action Model"
+  type: paper
+  arxiv: "2606.08288"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [memory, motion-history, trajectory-fields, long-horizon, sim]
+  takeaway_en: "Gives a VLA memory as motion rather than frames: a short past video becomes continuous trajectory-field tokens that current visual tokens query. Smoother, more direct long-horizon execution."
+  takeaway_zh: "让 VLA 记住“运动”而非“帧”：把一小段历史视频转成时间连续的轨迹场 token，供当前视觉 token 查询。长程操作更平滑、更直接。"
+- title: "Trust-Calibrated VLA Policy Post-Training with Evolving Imagination"
+  type: paper
+  arxiv: "2610.16517"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [rl, world-model, trust, libero-pro, real]
+  takeaway_en: "RL post-training of VLAs with an online-updated world model whose measured reliability decides how much imagined data and how long rollouts to use. Reports 79.7% on perturbed LIBERO-PRO."
+  takeaway_zh: "VLA 强化学习后训练：在线更新的世界模型与奖励头作为模拟器，按其可信度动态决定想象数据比例和推演长度。报告扰动版 LIBERO-PRO 平均成功率 79.7%。"
+- title: "CoRE-VLA: Towards Scalable and Robust Vision-Language-Action Modeling via Conditional Routing of Experts"
+  type: paper
+  arxiv: "2607.03693"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [mixture-of-experts, missing-sensors, depth, robustness, real]
+  takeaway_en: "VLA with sparse experts: sensor availability gates modality experts, so it degrades gracefully when depth is missing, and task intent routes action experts. Strong on LIBERO, RoboCasa GR1 and real dual-arm tasks."
+  takeaway_zh: "稀疏专家 VLA：传感器是否可用决定模态专家的开关，缺少深度时也能平稳退化；任务意图再路由到动作专家。在 LIBERO、RoboCasa GR1 和真实双臂任务上表现强。"
+- title: "EXPO-FT: Sample-Efficient Reinforcement Learning Finetuning for Vision-Language-Action Models"
+  type: paper
+  arxiv: "2605.25477"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [rl-finetuning, sample-efficiency, precision, open-source, real]
+  takeaway_en: "System for stable, sample-efficient RL fine-tuning of pretrained VLAs; reports 30/30 success on every task (e.g. plugging in string lights, pool shots) after ~19 minutes of robot data on average."
+  takeaway_zh: "稳定且样本高效的 VLA 强化学习微调系统；报告在插灯串插头、台球击球入袋等所有任务上均 30/30 成功，平均只需约 19 分钟在线机器人数据。"
+- title: "Watch, Recall, Act: Always-On Robots in Concurrent Embodied Streams"
+  type: paper
+  arxiv: "2609.28429"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [streaming, memory, bimanual, asynchronous, real]
+  takeaway_en: "Always-on dual-arm robot: a π0.5 backbone with three light async modules that watch the live stream, track embodied state and recall its own past actions. Reports 45% vs 28% on the combined task."
+  takeaway_zh: "“永远在线”的双臂机器人：在 π0.5 主干上加三个轻量异步模块，分别监看实时流、跟踪本体状态、回忆自己过去的动作，两臂可并行执行。报告综合任务成功率 45%，最强基线 28%。"
+- title: "ActionCodec: What Makes for Good Action Tokenizers"
+  type: paper
+  arxiv: "2602.15397"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [action-tokenizer, information-theory, design-principles, libero, real]
+  takeaway_en: "Derives design rules for action tokenizers from VLA optimisation (token overlap, low redundancy, independence) and builds one: a 2.2B SmolVLM2 reaches 95.5% on LIBERO with no robot pretraining."
+  takeaway_zh: "从 VLA 优化角度总结动作 tokenizer 的设计原则（时间重叠、低冗余、模态互信息、独立性）并据此构建 ActionCodec：2.2B 的 SmolVLM2 在无机器人预训练下 LIBERO 达 95.5%。"
+- title: "Think Proprioceptively: State-Grounded Visual Token Selection for VLA Policies"
+  type: paper
+  arxiv: "2602.06575"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [proprioception, token-pruning, efficiency, calvin, real]
+  takeaway_en: "Turns robot state into VLM-vocabulary tokens that, with the instruction, choose which image patches the VLM processes. Keeping ~12% of visual tokens beats the full-token baseline on CALVIN with lower latency."
+  takeaway_zh: "把机器人状态离散成 VLM 词表 token，与指令一起决定哪些图像块进入 VLM 计算。仅保留约 12% 的视觉 token 就在 CALVIN 上超过全 token 基线，同时降低延迟。"
+- title: "ThinkingVLA: Interleaved Vision and Language Reasoning for Robotic Manipulation"
+  type: paper
+  arxiv: "2606.17937"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [reasoning, chain-of-thought, image-prediction, mixture-of-transformers, real]
+  takeaway_en: "Interleaves text and image reasoning in one model: a forward chain predicts the next subgoal image, an inverse chain reasons about the actions to reach it, then actions are generated. Biggest gains on long tasks."
+  takeaway_zh: "在同一模型中交替进行文本与图像推理：正向推理预测下一个子目标图像，逆向推理据此分析如何到达，再生成动作。长程任务提升最大。"
+- title: "FlowVLA: Enabling World Dynamics Understanding through Pluggable 3D Flow Learning"
+  type: paper
+  arxiv: "2610.16160"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [3d-flow, auxiliary-loss, dynamics, data-efficiency, real]
+  takeaway_en: "Training-only 3D flow heads (point-level and gripper-level) teach a 2D VLA how the scene moves; no extra sensors or inference cost. Improves success, zero-shot robustness and data efficiency."
+  takeaway_zh: "仅在训练时加入 3D 流预测头（点级与末端级双重监督），让 2D VLA 学到场景动力学；推理时无需额外传感器或计算。提升成功率、零样本鲁棒性与数据效率。"
+- title: "Towards Human-like Physical Intelligence: Lifelong Vision-Language-Action Learning for Robotic Manipulation"
+  type: paper
+  arxiv: "2607.14852"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [lifelong-learning, lora, replay, forgetting, real]
+  takeaway_en: "Lifelong VLA learning with short-term and long-term LoRA adapters mixed by a task-aware gate, plus cheap stochastic replay. Learns new skills while keeping old ones; tested on a real xArm."
+  takeaway_zh: "终身学习 VLA：短期与长期两条 LoRA 适配通路由任务感知门控融合，再配合低存储的随机回放，兼顾学新与保旧。在真实 xArm 上验证。"

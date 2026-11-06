@@ -2,7 +2,7 @@
 
 _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 
-共 143 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
+共 145 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/manipulation.html) · [English](manipulation.md)
 
@@ -78,6 +78,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[Learning Beyond What Humans Can Demonstrate](https://arxiv.org/abs/2609.24996)** (2026) — 针对人难以遥操作完成的任务，由 LLM 编写基于状态的护栏来过滤遥操作与策略指令。报告数据采集成功率从 0–10% 提升到 70–90%。 · [项目页](https://guardrail-policy.github.io/)
 - **[LiMA: Bridging Long-term Imagination to Real-time Dexterous Manipulation via Asynchronous Diffusion](https://arxiv.org/abs/2609.28431)** (2026) — 慢系统生成稀疏的长时程意图，快系统细化高频动作，二者以潜空间薛定谔桥耦合。报告延迟比 Cosmos-Policy 低 45.8%，六个双臂灵巧任务成功率 70.8%。 · [项目页](https://ccdcs.github.io/LiMA_repo/)
 - **[MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation](https://arxiv.org/abs/2611.08372)** (2026) — 用高斯泼溅与动作重定向为移动操作示教合成新的底盘位姿视角，连被操作的运动物体也一起重渲染。报告在未见底盘位姿下成功率是最强基线的两倍以上。 · [项目页](https://robin-lab.cs.utexas.edu/momasplat)
+- **[Mixture of Frames Policy: Multi-Frame Action Denoising for Bimanual Mobile Manipulation](https://arxiv.org/abs/2607.11884)** (2026) — 扩散策略在多个坐标系中同步去噪同一动作：各坐标系有专门的去噪器，再把噪声预测融合回规范坐标系。在九个双臂任务上优于“最优单坐标系”选择，并在两个真实移动操作任务上验证。
 - **[MoDex: Towards Universal Multi-Object Dexterous Grasping](https://arxiv.org/abs/2610.23888)** (2026) — 让灵巧手一次抓取多个物体：学习对参考轨迹的单步残差修正，并根据物体的空间布局调整抓取策略。 · [代码](https://github.com/Aurora-Xiong/MoDex)
 - **[MobiAgent: Dual-Loop Recursive Policy Self-Improvement for Long-Horizon Mobile Manipulation](https://arxiv.org/abs/2610.03476)** (2026) — 双循环移动操作智能体：内循环由 VLM 规划并组合流匹配技能，外循环从部署数据中自动发现并微调技能。报告在 BEHAVIOR-1K 上比 π0.5 高 22.5 个百分点。 · [代码](https://github.com/kaiknower/MobiAgent) · [项目页](https://kaiknower.github.io/mobiagent)
 - **[Online Adaptation to Latent Physical Properties for Learning from Demonstration](https://arxiv.org/abs/2611.06118)** (2026) — 执行中在线更新物体隐藏物性的潜变量，并以此调节模仿策略；对质心变化有帮助，但报告仿真中未见过的质心位置成功率仅约 30%。 · [项目页](https://isri-aist.github.io/latent-dynamics-project-page/)
@@ -87,6 +88,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[Play2Perfect: What Matters in Dexterous Play Pretraining for Precise Assembly?](https://arxiv.org/abs/2606.26428)** (2026) — CoRL 2026 Oral。探究灵巧“玩耍”预训练究竟需要什么，才能胜任精密装配这类富接触、稀疏奖励、模仿与直接 RL 都难以解决的任务。 · [代码](https://github.com/kushal2000/play2perfect) · [项目页](https://play2perfect.github.io)
 - **[ProxiDex: Learning Dynamics-Guided Proximity Policy for Dexterous Manipulation](https://arxiv.org/abs/2609.16586)** (2026) — 以重建点云得到的手-物距离作为与硬件无关的接触信号，用于 VR 遥操作反馈，并训练带接近度动力学的策略；在遮挡下更稳健。 · [项目页](https://proxidex.github.io/)
 - **[RTPolicy: Real-Time (32.9 Hz) Multi-View Visuomotor Policy for Robotic Manipulation on Edge Devices](https://arxiv.org/abs/2610.41625)** (2026) — 把多视角视觉融合压缩为紧凑 token，再条件化流匹配动作生成的轻量策略。报告 RoboTwin 2.0 五十任务平均 52.26%（π0 为 46.4%），真实双臂平台 72.0%，在 RDK S600 边缘设备上以 INT16 推理达 32.9 Hz。 · [代码](https://github.com/D-Robotics-AI-Lab/RTPolicy) · [项目页](https://d-robotics-ai-lab.github.io/RTPolicy.project)
+- **[Reactive Task-Oriented Robot-Human Handovers via Generative Hypothesis Selection](https://arxiv.org/abs/2610.08003)** (2026) — 面向任务的机器人递物：用 VLM 生成人在该任务下如何握持物体的图像假设，并与实时观测的人手姿态匹配。12 名参与者中 83.3% 认为它比已有方法更懂任务。
 - **[Real2Sem2Real: 3D Semantic Augmentations for Robot Learning from a Single Human RGB Demonstration](https://arxiv.org/abs/2610.28880)** (2026) — 把一段单目 RGB 人类演示扩展为同类别不同物体上的数千条机器人演示：用 DINOv3 蒸馏的高斯溅射跟踪物体位姿，对齐由照片生成的“数字表亲”，在 IsaacSim 或 MuJoCo 中生成数据（约 2 小时 2000+ 条）；报告所训练的 VLA 在真机上达到或超过遥操作数据训练的策略。 · [项目页](https://real2sem2real.github.io/)
 - **[Reconstruction-Augmented Visuomotor Pre-Training of 3D-Grounded Bimanual Dexterity from RGB-Only Human Videos](https://arxiv.org/abs/2610.29716)** (2026) — SpatialDex 从 100 万段纯 RGB 人类视频中重建场景几何与手部运动，并以几何作为输入和预测目标预训练基于 VLM 的灵巧策略；报告在 9 个仿真任务上比现有方法高 16.5 分、6 个真实双臂灵巧任务上高 38.3 分。 · [项目页](https://spatial-dex.github.io/)
 - **[RoboAug: One Annotation to Hundreds of Scenes via Region-Contrastive Data Augmentation for Robotic Manipulation](https://arxiv.org/abs/2602.14032)** (2026) — 只需一张带框标注的图片即可做生成式语义增强，并用区域对比损失把注意力引向任务相关区域。在 UR5e、AgileX 与天工 2.0 上，面对背景、干扰物和光照变化时优于其他增强方法。 · [项目页](https://x-roboaug.github.io/)

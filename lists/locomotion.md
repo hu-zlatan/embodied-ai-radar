@@ -2,7 +2,7 @@
 
 _Legged locomotion, humanoid whole-body control and parkour._
 
-137 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml); edit the YAML, not this file.
+138 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/locomotion.html) · [中文](locomotion.zh-CN.md)
 
@@ -40,6 +40,7 @@ _Legged locomotion, humanoid whole-body control and parkour._
 - **[ELEVATE: Agentic Controller Acquisition from Task Failure for Quadrupedal Manipulation](https://arxiv.org/abs/2610.38388)** (2026) — When a quadruped manipulator keeps failing, a coding agent writes an RL problem to learn the missing whole-body skill, adds it to a library and retries; transfers to a real robot (18/20 rack retrieval). · [project](https://agentic-quad-elevate.github.io/public/)
 - **[Energy-Based Policy Orchestration](https://arxiv.org/abs/2611.02546)** (2026) — Picks at runtime which low-level policy to run and with which goal, using a learned energy per policy. New policies join by training their own energy model, with no retraining of others. Deployed on a real humanoid. · [project](https://yewr.github.io/epo)
 - **[ExtremControl: Low-Latency Humanoid Teleoperation with Scaled Velocity Feedforward](https://arxiv.org/abs/2602.11321)** (2026) — Low-latency humanoid teleoperation: scaled velocity feedforward cuts tracking delay by ~70 ms and link-pose control skips retargeting. End-to-end latency down to 50 ms, enough for juggling and ping-pong ball balancing. · [project](https://extremcontrol.github.io/)
+- **[Eye, Robot: Learning Expressive Gaze Dynamics via a VLM-Guided Transformer-VAE](https://arxiv.org/abs/2610.19635)** (2026) — Humanoid gaze system: a VLM picks where to look and a Transformer-VAE trained on retargeted human recordings generates coordinated eye, neck and eyelid motion. Lowest joint error on a 2-second benchmark.
 - **[FADA: Few-Shot Domain Adaptation via Dynamics Alignment for Humanoid Control](https://arxiv.org/abs/2606.28476)** (2026) — Planner plus inverse-dynamics student distilled from a privileged policy; at deployment only the IDM is fine-tuned on about 2 minutes of target-domain rollouts. Beats in-context and end-to-end adaptation baselines. · [project](https://lecar-lab.github.io/FADA-humanoid/)
 - **[FORGE: Feasible Online Reduced-Order Reference Generation and Whole-Body Execution for Agile Humanoid Locomotion](https://arxiv.org/abs/2610.37974)** (2026) — Learns a reduced-order reference generator, then trains a whole-body tracker on its online rollouts, so one pair of policies covers many gaits. On a Unitree G1: -2.0 to 2.8 m/s, hopping and continuous transitions.
 - **[GRAFT: Geometry-Aware Residual Adaptation for Foundation Trackers](https://arxiv.org/abs/2610.36507)** (2026) — Keeps a humanoid behavior foundation model frozen and trains a small lower-body residual adapter for stairs, gaps and platforms, distilled to onboard depth; tested on four trackers and on a Unitree G1 with SONIC. · [project](https://graft-humanoid.github.io/)

@@ -2,7 +2,7 @@
 
 _足式运动、人形全身控制与跑酷。_
 
-共 137 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
+共 138 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/locomotion.html) · [English](locomotion.md)
 
@@ -40,6 +40,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[ELEVATE: Agentic Controller Acquisition from Task Failure for Quadrupedal Manipulation](https://arxiv.org/abs/2610.38388)** (2026) — 四足机械臂反复失败时，由编码智能体判断缺少哪种全身控制能力，自动编写强化学习问题（奖励、课程、终止条件）训练新控制器并加入技能库再重试；习得扶墙抬升等技能，仿真五项超出初始能力的任务成功率 98.4–100%，无需真机训练即迁移到实体机器人（货架取物 18/20）。 · [项目页](https://agentic-quad-elevate.github.io/public/)
 - **[Energy-Based Policy Orchestration](https://arxiv.org/abs/2611.02546)** (2026) — 运行时为每个底层策略学习能量函数，据此选择执行哪个策略、给它什么目标。新增策略只需训练自己的能量模型，无需重训其他策略或中央调度器；已部署到真实人形的移动操作任务。 · [项目页](https://yewr.github.io/epo)
 - **[ExtremControl: Low-Latency Humanoid Teleoperation with Scaled Velocity Feedforward](https://arxiv.org/abs/2602.11321)** (2026) — 低延迟人形遥操作：缩放速度前馈让跟踪延迟减少约 70 ms，直接控制末端连杆位姿省去关节重定向。端到端延迟低至 50 ms，可完成抛接与乒乓球平衡等反应型动作。 · [项目页](https://extremcontrol.github.io/)
+- **[Eye, Robot: Learning Expressive Gaze Dynamics via a VLM-Guided Transformer-VAE](https://arxiv.org/abs/2610.19635)** (2026) — 人形机器人注视系统：VLM 选择注视目标，基于重定向人类录像训练的 Transformer-VAE 生成协调的眼、颈与眼睑运动。在 2 秒基准上关节误差最低。
 - **[FADA: Few-Shot Domain Adaptation via Dynamics Alignment for Humanoid Control](https://arxiv.org/abs/2606.28476)** (2026) — 从特权策略蒸馏出“规划器+逆动力学模型”学生策略；部署时冻结规划器，只用约 2 分钟目标域数据微调逆动力学模型。优于上下文自适应与端到端适应基线。 · [项目页](https://lecar-lab.github.io/FADA-humanoid/)
 - **[FORGE: Feasible Online Reduced-Order Reference Generation and Whole-Body Execution for Agile Humanoid Locomotion](https://arxiv.org/abs/2610.37974)** (2026) — 先学习降阶模型参考生成器，再用其在线输出训练全身跟踪策略，一对策略即可覆盖多种步态。Unitree G1 实机实现 -2.0 到 2.8 m/s 行走、单腿跳与连续切换。
 - **[GRAFT: Geometry-Aware Residual Adaptation for Foundation Trackers](https://arxiv.org/abs/2610.36507)** (2026) — 冻结人形行为基础模型，仅训练一个作用于下肢目标的轻量残差适配器来应对台阶、沟壑和平台，并从特权地形信息蒸馏到机载深度；在四种跟踪器上验证，并在 Unitree G1（SONIC）上真机部署。 · [项目页](https://graft-humanoid.github.io/)
