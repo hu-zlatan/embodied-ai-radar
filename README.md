@@ -63,7 +63,7 @@ _Vision-language-action models and generalist robot policies._ [Browse with the 
 - ⭐ **[EagleVLA: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference](https://arxiv.org/abs/2607.12659)** (2026) — EagleVLA: asynchronous VLA inference for low-power onboard chips such as Jetson Orin, tackling perception-execution misalignment and slow reaction; a CoRL 2026 Spotlight, formerly titled Jetson-PI. · [code](https://github.com/PKU-SEC-Lab/EagleVLA)
 - ⭐ **[GigaBrain-0.5M\*: a VLA That Learns From World Model-Based Reinforcement Learning](https://arxiv.org/abs/2602.12099)** (2026) — Post-trains a VLA (GigaBrain-0.5, 10k+ h of robot data) with RL conditioned on a video world model's predictions (RAMP); reports ~30% over the RECAP baseline on laundry folding, box packing and espresso making. · [code](https://github.com/open-gigaai/giga-brain-0) · [project](https://gigabrain05m.github.io)
 
-**[All 243 entries →](lists/vla.md)**
+**[All 246 entries →](lists/vla.md)**
 
 <a id="manipulation"></a>
 ### Manipulation & Dexterous Hands
@@ -92,6 +92,7 @@ _Tactile sensors, touch representations and contact-rich control._ [Browse with 
 
 - ⭐⭐⭐ **[DIGIT: A Novel Design for a Low-Cost Compact High-Resolution Tactile Sensor with Application to In-Hand Manipulation](https://arxiv.org/abs/2005.14679)** (2020) — An inexpensive, compact GelSight-style fingertip sensor that made vision-based touch widely accessible. · [code](https://github.com/facebookresearch/digit-interface)
 - ⭐ **[Visible Touch: Rendering Contact for Visuomotor Policies](https://arxiv.org/abs/2609.14156)** (2026) — CoRL 2026 Spotlight. Brings contact into image-conditioned policies by rendering it, targeting the gap left by approaches that need tactile hardware, separate tactile encoders or non-image backbones. · [code](https://github.com/qaz1678249/visibletouch) · [project](https://visibletouch.github.io/)
+- **[Blind Dexterous Grasping via Real2Sim2Real Tactile Policy Learning](https://arxiv.org/abs/2606.11767)** (2026) — Tactile-only blind grasping on a LEAP Hand: calibrate a digital twin to reproduce real touch signals, pretrain a layout-aware tactile encoder, and distill object-specific RL experts into a diffusion policy.
 - **[Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2610.03333)** (2026) — VISTA: equivariant visuotactile diffusion policy that fuses touch into spherical visual tokens and rotates them with the gripper pose, for more data-efficient contact-rich imitation. · [code](https://github.com/Kenn3o3/Vista) · [project](https://vista-paper.github.io/)
 - **[FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation](https://arxiv.org/abs/2607.18231)** (2026) — Gives a VLA memory through compact force-history tokens from a pretrained VAE, for tasks like pressing a button a set number of times. Reports over 80% success on three memory-dependent tasks. · [project](https://qft-333.github.io/FM-VLA-Page/)
 - **[FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation](https://arxiv.org/abs/2606.13102)** (2026) — Tactile policy pretrained on ~3,000 hours from 26 sources and 21 sensors, mapping image, array and state signals into shared tokens. Reports +17.2% on seen setups and +31% on two unseen sensor setups. · [project](https://ftp1-policy.github.io)
@@ -101,9 +102,8 @@ _Tactile sensors, touch representations and contact-rich control._ [Browse with 
 - **[Learning with Object-centric Representations of Tactile Interactive Perception for Robot Manipulation](https://arxiv.org/abs/2609.33235)** (2026) — Learns object representations from tactile exploration, aligned with text descriptions of properties, and uses them as context for manipulation. Reports task success from 41% to 92% (seen) and 19% to 67% (unseen). · [project](https://xinyiyxyx.github.io/tactile-object-centric/)
 - **[Modular Sensory Stream for Integrating Physical Feedback in Vision-Language-Action Models](https://arxiv.org/abs/2604.23272)** (2026) — Adds separate tactile, force and torque streams to a pretrained VLA through joint cross-modal attention, with staged training and an auxiliary task that predicts future physical signals. Real-robot tests. · [project](https://jiminlx.github.io/MoSS)
 - **[Multi-Resolution Tactile Imitation Learning for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2606.06281)** (2026) — Fuses an RGB camera, a GelSight Mini and a high-rate event-based tactile sensor for a flow-matching policy. Reports 80% average success on five contact-rich tasks vs 35.5% vision-only. · [project](https://mitas-touch.github.io)
-- **[Multisensory Continual Learning: Adapting Pretrained Visuomotor Policies to Force](https://arxiv.org/abs/2606.30988)** (2026) — Adds force-torque sensing to a pretrained vision-only world-action model with staged fusion, multisensory future prediction and replay of pretraining data; strong on contact tasks without losing original skills. · [project](https://jadenvc.github.io/multisensory-continual-learning/)
 
-**[All 72 entries →](lists/tactile.md)**
+**[All 73 entries →](lists/tactile.md)**
 
 <a id="locomotion"></a>
 ### Locomotion & Humanoids
@@ -123,7 +123,7 @@ _Legged locomotion, humanoid whole-body control and parkour._ [Browse with the l
 - ⭐ **[OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction](https://arxiv.org/abs/2509.26633)** (2025) — Retargeting that preserves human-object and human-scene interaction rather than only body pose, generating physically plausible data for humanoid loco-manipulation. · [code](https://github.com/amazon-far/holosoma) · [project](https://omniretarget.github.io)
 - ⭐ **[Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking](https://arxiv.org/abs/2510.02252)** (2025) — Shows retargeting artifacts such as foot sliding hurt tracking policies, and offers GMR, a general retargeter. Its open-source repo is widely used for humanoid data. · [code](https://github.com/YanjieZe/GMR) · [project](https://jaraujo98.github.io/retargeting_matters)
 
-**[All 138 entries →](lists/locomotion.md)**
+**[All 151 entries →](lists/locomotion.md)**
 
 <a id="world-models"></a>
 ### World Models
@@ -143,7 +143,7 @@ _Learned dynamics, video world models, world action models (WAM) and model-based
 - ⭐ **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — An action-centered WAM that predicts actions from the observation and makes video generation optional, so motion accuracy depends less on forecast quality and inference is cheaper. · [code](https://github.com/open-gigaai/giga-world-policy) · [project](https://gigaai-research.github.io/GigaWorld-Policy/)
 - ⭐ **[GreenWAM: A World Foundation Model for Robotics](https://arxiv.org/abs/2610.18774)** (2026) — One world model that is also the policy, across 20 robot families mapped to a shared joint-space action format; reports strong WorldArena, RoboTwin 2.0 and LIBERO-plus results and a one-step distilled humanoid policy. · [code](https://github.com/greenvla/GreenWAM) · [project](https://greenvla.github.io/GreenWAM)
 
-**[All 119 entries →](lists/world-models.md)**
+**[All 123 entries →](lists/world-models.md)**
 
 <a id="navigation"></a>
 ### Navigation & Embodied Agents
@@ -155,15 +155,15 @@ _Vision-language navigation, embodied question answering, mobile manipulation an
 - ⭐ **[ViNT: A Foundation Model for Visual Navigation](https://arxiv.org/abs/2306.14846)** (2023) — A Transformer navigation policy trained on many robots' driving data that adapts to new goal types and robots with light fine-tuning. · [code](https://github.com/robodhruv/visualnav-transformer)
 - ⭐ **[GNM: A General Navigation Model to Drive Any Robot](https://arxiv.org/abs/2210.03370)** (2022) — The predecessor of ViNT — one goal-conditioned navigation policy trained on pooled data from several different robots, which transfers to new robots including ones not seen in training. · [code](https://github.com/robodhruv/visualnav-transformer)
 - ⭐ **[The Marathon 2: A Navigation System](https://arxiv.org/abs/2003.00368)** (2020) — The paper behind Nav2, the standard ROS 2 navigation stack - behavior-tree orchestration of planners, controllers and recovery behaviors, validated by long marathon runs on real robots. · [code](https://github.com/ros-navigation/navigation2)
+- **[AcroRL: Learning Aggressive Quadrotor Inversion using Bidirectional Thrust](https://arxiv.org/abs/2605.24301)** (2026) — RL policies modulate a reference trajectory for compact quadrotor flips with reversible thrust, one policy per direction. In JAX simulation: 32% lower position RMSE and 57% shorter settling than baselines.
 - **[Adaptive Risk-Certified Event-Triggered Replanning for Dynamic Navigation](https://arxiv.org/abs/2610.09302)** (2026) — Uses calibrated barrier risk (CVaR along the MPC rollout) as an early warning to switch to a safer planning mode. Reports 83.3% fewer collisions than a safety-filter-only baseline. · [project](https://nail-uh.github.io/corl2026.github.io/)
 - **[An Agentic Framework for Proactive Robots with Procedural Assistance Memory](https://arxiv.org/abs/2610.21211)** (2026) — Proactive assistant robot: a VLM reads a state-machine memory of the user's routine to decide when to help, and a VLA executes. The memory is revised daily by reflection, without retraining. · [project](https://davian-robotics.github.io/PAM/)
+- **[Approximate Imitation Learning for Event-based Quadrotor Flight in Cluttered Environments](https://arxiv.org/abs/2603.07578)** (2026) — Event-camera drone flight: learn the representation offline from a large dataset, then fine-tune the policy online on cheap state only, with no event rendering. Training drops from 52.44 h to 1.86 h.
 - **[AsyncVLA: An Asynchronous VLA for Fast and Robust Navigation on the Edge](https://arxiv.org/abs/2602.13476)** (2026) — A large foundation model on a remote workstation gives high-level guidance while a light onboard Edge Adapter refines actions at high rate. Reports 40% higher success than baselines with delays up to 6 s.
 - **[COOL: Curiosity-Driven Object Ownership Learning for Personalized Robotic Assistance](https://arxiv.org/abs/2610.09358)** (2026) — Learns who owns which objects from everyday observation and keeps a long-term spatial memory refreshed by curiosity-driven exploration, so commands like 'find my bottle' work.
 - **[CoFL-S: Spatially Queryable Sector Flow Fields for Local Language-Conditioned Navigation](https://arxiv.org/abs/2607.02222)** (2026) — Low-level VLN action head that predicts a language-conditioned flow field over the visible sector and rolls it out into trajectories. Adds a continuous-time Habitat benchmark. · [code](https://github.com/ut-dragon-lab/CoFL)
-- **[CoSMO: Conformal Semantic Mapping for Open-World Safe Robot Navigation](https://arxiv.org/abs/2610.18321)** (2026) — Calibrates VLM semantic maps with online conformal prediction so each object class gets a safety margin with coverage guarantees as the vocabulary grows. Reports 61.6% fewer semantic collisions on MP3D. · [project](https://yangming911.github.io/cosmo-page/)
-- **[CoopUQ: Robust Multi-Robot Social Navigation via Uncertainty-Aware Cooperative Forecasting](https://arxiv.org/abs/2610.26852)** (2026) — Multi-robot social navigation: robots fuse features to forecast occupancy maps with uncertainty, and a constrained multi-agent RL policy avoids regions predicted occupied or uncertain. Unity sim + real robots. · [project](https://coopuq.github.io/)
 
-**[All 78 entries →](lists/navigation.md)**
+**[All 83 entries →](lists/navigation.md)**
 
 <a id="perception"></a>
 ### Perception, SLAM & 3D Mapping
@@ -243,7 +243,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._ [Browse
 - ⭐ **[ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI](https://arxiv.org/abs/2410.00425)** (2024) — GPU-parallel simulation and rendering with many manipulation tasks; fast visual RL and data generation. · [code](https://github.com/haosulab/ManiSkill)
 - ⭐ **[RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots](https://arxiv.org/abs/2406.02523)** (2024) — 120 kitchen scenes, 2,500+ objects and 100 tasks with generated demonstrations for training generalist policies. · [code](https://github.com/robocasa/robocasa)
 
-**[All 59 entries →](lists/sim.md)**
+**[All 62 entries →](lists/sim.md)**
 
 <a id="datasets"></a>
 ### Datasets & Benchmarks
@@ -279,11 +279,11 @@ _Low-cost arms, hands, grippers and data-collection rigs you can build._ [Browse
 - ⭐ **[SO-ARM100 / SO-101](https://github.com/TheRobotStudio/SO-ARM100)** (2024) — An open 3D-printed 6-DoF arm (leader + follower) costing roughly $100–200 per arm; the default LeRobot starter kit.
 - ⭐ **[An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](https://arxiv.org/abs/1910.00093)** (2019) — The open-source Solo quadruped and its modular torque-controlled actuators, built from off-the-shelf and 3D-printed parts so labs can reproduce a dynamic legged robot. · [code](https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware)
 - **[PanoVine: Whole-Body Visuomotor Control for Soft Growing Vine Robot](https://arxiv.org/abs/2606.22923)** (2026) — First autonomous vine (soft growing) robot: 19 cameras along its body feed an end-to-end visuomotor policy learned from demos, which steers through branches, up slopes and into confined spaces. · [project](https://panovine-bot.github.io)
+- **[SPOT: Spatial Perception-Oriented Long-Horizon Humanoid Teleoperation](https://arxiv.org/abs/2609.07933)** (2026) — VR humanoid teleoperation for long tasks: a robot-mounted binocular fisheye, wide stereo display, head-decoupled free-looking and stabilization keep the operator aware of the surroundings.
 - **[SuperSuit: An Isomorphic Bimodal Interface for Scalable Mobile Manipulation](https://arxiv.org/abs/2603.06280)** (2026) — One wearable both teleoperates a wheeled bimanual robot and records robot-free demos; arms are mechanically aligned, so no IK or retargeting. With a 10-episode robot-grounded seed, 100 robot-free episodes suffice.
 - **[Transformer Transformer: A Unified Model for Motion-Conditioned Robot Co-design](https://arxiv.org/abs/2607.25798)** (2026) — Diffusion transformer over a shared tokenization of robot bodies, states and actions that generates robot designs to track target motions. A fabricated optimised ALOHA design cut tracking error by over 70%. · [project](https://transformer-transformer.github.io)
-- **[Universal Manipulation Exoskeleton: Learning Compliant Whole-body Policies with Real-time Torque Feedback](https://arxiv.org/abs/2606.14218)** (2026) — Low-cost upper-limb exoskeleton that records whole-arm poses and joint torques with real-time haptic torque feedback; retargets to OpenArm, Franka and xArm for learning compliant whole-body policies. · [project](https://ume-exo.github.io)
 
-**[All 45 entries →](lists/hardware.md)**
+**[All 46 entries →](lists/hardware.md)**
 
 <!-- radar:end -->
 

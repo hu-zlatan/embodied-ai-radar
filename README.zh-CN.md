@@ -54,7 +54,7 @@ _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与�
 - ⭐ **[EagleVLA: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference](https://arxiv.org/abs/2607.12659)** (2026) — EagleVLA：面向 Jetson Orin 等低功耗机载设备的 VLA 异步推理方法，针对异步执行带来的感知-执行错位与反应慢两个问题；CoRL 2026 Spotlight，曾用名 Jetson-PI。 · [代码](https://github.com/PKU-SEC-Lab/EagleVLA)
 - ⭐ **[GigaBrain-0.5M\*: a VLA That Learns From World Model-Based Reinforcement Learning](https://arxiv.org/abs/2602.12099)** (2026) — 在 GigaBrain-0.5（预训练于 1 万多小时机器人操作数据）基础上，用以视频世界模型预测为条件的强化学习（RAMP）做后训练；论文报告在叠衣服、装箱和制作浓缩咖啡等难任务上比 RECAP 基线提升约 30%。 · [代码](https://github.com/open-gigaai/giga-brain-0) · [项目页](https://gigabrain05m.github.io)
 
-**[查看全部 243 条 →](lists/vla.zh-CN.md)**
+**[查看全部 246 条 →](lists/vla.zh-CN.md)**
 
 <a id="manipulation"></a>
 ### 操作与灵巧手
@@ -83,6 +83,7 @@ _触觉传感器、触觉表征与接触丰富的控制。_ [在网站上查看�
 
 - ⭐⭐⭐ **[DIGIT: A Novel Design for a Low-Cost Compact High-Resolution Tactile Sensor with Application to In-Hand Manipulation](https://arxiv.org/abs/2005.14679)** (2020) — 低成本、紧凑的 GelSight 式指尖传感器，让视触觉传感器得以普及。 · [代码](https://github.com/facebookresearch/digit-interface)
 - ⭐ **[Visible Touch: Rendering Contact for Visuomotor Policies](https://arxiv.org/abs/2609.14156)** (2026) — CoRL 2026 Spotlight。通过渲染接触信息把触觉带入基于图像的视觉运动策略，针对现有方法需要专用触觉硬件、独立触觉编码器或非图像主干，难以与预训练 2D 视觉表征策略兼容的问题。 · [代码](https://github.com/qaz1678249/visibletouch) · [项目页](https://visibletouch.github.io/)
+- **[Blind Dexterous Grasping via Real2Sim2Real Tactile Policy Learning](https://arxiv.org/abs/2606.11767)** (2026) — 在 LEAP 手上实现只凭触觉的盲抓：先构建能复现真实触觉信号的校准数字孪生，再自监督预训练感知传感器布局的触觉编码器，最后把各物体的强化学习专家蒸馏为扩散策略。
 - **[Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2610.03333)** (2026) — VISTA：等变视触觉扩散策略，把触觉融合进球面视觉 token 并随末端姿态旋转，提升富接触模仿学习的数据效率。 · [代码](https://github.com/Kenn3o3/Vista) · [项目页](https://vista-paper.github.io/)
 - **[FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation](https://arxiv.org/abs/2607.18231)** (2026) — 用预训练 VAE 把力信号历史压缩成记忆 token 输入 VLA，解决按指定次数按按钮、擦盘子等依赖记忆的接触任务。报告三个记忆型任务成功率超过 80%。 · [项目页](https://qft-333.github.io/FM-VLA-Page/)
 - **[FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation](https://arxiv.org/abs/2606.13102)** (2026) — 触觉基础策略：在 26 个数据源、21 种传感器约 3000 小时数据上预训练，把图像型、阵列型与状态型触觉信号映射到统一 token。报告已见配置提升 17.2%，两种未见传感器提升 31%。 · [项目页](https://ftp1-policy.github.io)
@@ -92,9 +93,8 @@ _触觉传感器、触觉表征与接触丰富的控制。_ [在网站上查看�
 - **[Learning with Object-centric Representations of Tactile Interactive Perception for Robot Manipulation](https://arxiv.org/abs/2609.33235)** (2026) — 通过触觉探索学习物体表征，并与物理属性的文本描述对比对齐，再作为语境指导操作策略。报告任务成功率在已见物体上从 41% 升到 92%，未见物体从 19% 升到 67%。 · [项目页](https://xinyiyxyx.github.io/tactile-object-centric/)
 - **[Modular Sensory Stream for Integrating Physical Feedback in Vision-Language-Action Models](https://arxiv.org/abs/2604.23272)** (2026) — 为预训练 VLA 增加独立的触觉、力和力矩信号流，通过跨模态联合注意力融合，配合分阶段训练和预测未来物理信号的辅助任务。真机实验验证。 · [项目页](https://jiminlx.github.io/MoSS)
 - **[Multi-Resolution Tactile Imitation Learning for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2606.06281)** (2026) — 融合 RGB 相机、GelSight Mini 与高频事件型触觉传感器的多分辨率表示，驱动流匹配策略。报告五个富接触任务平均成功率 80%，纯视觉仅 35.5%。 · [项目页](https://mitas-touch.github.io)
-- **[Multisensory Continual Learning: Adapting Pretrained Visuomotor Policies to Force](https://arxiv.org/abs/2606.30988)** (2026) — 通过分阶段融合、多感官未来预测和预训练数据回放，把力/力矩传感加入预训练的纯视觉世界动作模型；在富接触任务上表现好，同时保住甚至提升原有任务性能。 · [项目页](https://jadenvc.github.io/multisensory-continual-learning/)
 
-**[查看全部 72 条 →](lists/tactile.zh-CN.md)**
+**[查看全部 73 条 →](lists/tactile.zh-CN.md)**
 
 <a id="locomotion"></a>
 ### 运动控制与人形机器人
@@ -114,7 +114,7 @@ _足式运动、人形全身控制与跑酷。_ [在网站上查看与最新论�
 - ⭐ **[OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction](https://arxiv.org/abs/2509.26633)** (2025) — 不仅保持身体姿态，还保留人与物体、人与场景交互的重定向方法，为人形移动操作生成物理上合理的数据。 · [代码](https://github.com/amazon-far/holosoma) · [项目页](https://omniretarget.github.io)
 - ⭐ **[Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking](https://arxiv.org/abs/2510.02252)** (2025) — 说明脚滑等重定向瑕疵会损害跟踪策略，并提出通用重定向方法 GMR；其开源仓库在人形数据处理中使用广泛。 · [代码](https://github.com/YanjieZe/GMR) · [项目页](https://jaraujo98.github.io/retargeting_matters)
 
-**[查看全部 138 条 →](lists/locomotion.zh-CN.md)**
+**[查看全部 151 条 →](lists/locomotion.zh-CN.md)**
 
 <a id="world-models"></a>
 ### 世界模型
@@ -134,7 +134,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - ⭐ **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — 以动作为中心的世界动作模型：由观测预测动作，视频生成变为可选，动作精度不再依赖视频预测质量，推理开销也更低。 · [代码](https://github.com/open-gigaai/giga-world-policy) · [项目页](https://gigaai-research.github.io/GigaWorld-Policy/)
 - ⭐ **[GreenWAM: A World Foundation Model for Robotics](https://arxiv.org/abs/2610.18774)** (2026) — 同一个世界模型兼作策略，用共享的关节坐标动作空间覆盖 20 类机器人；论文报告其在 WorldArena、RoboTwin 2.0、LIBERO-plus 上表现突出，并蒸馏出可实时运行的单步人形机器人策略。 · [代码](https://github.com/greenvla/GreenWAM) · [项目页](https://greenvla.github.io/GreenWAM)
 
-**[查看全部 119 条 →](lists/world-models.zh-CN.md)**
+**[查看全部 123 条 →](lists/world-models.zh-CN.md)**
 
 <a id="navigation"></a>
 ### 导航与具身智能体
@@ -146,15 +146,15 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网�
 - ⭐ **[ViNT: A Foundation Model for Visual Navigation](https://arxiv.org/abs/2306.14846)** (2023) — 在多种机器人的导航数据上训练的 Transformer 导航策略，经少量微调即可适配新的目标形式和新机器人。 · [代码](https://github.com/robodhruv/visualnav-transformer)
 - ⭐ **[GNM: A General Navigation Model to Drive Any Robot](https://arxiv.org/abs/2210.03370)** (2022) — ViNT 的前作：在多种不同机器人汇集的数据上训练一个目标条件导航策略，可迁移到包括训练中未见过的新机器人。 · [代码](https://github.com/robodhruv/visualnav-transformer)
 - ⭐ **[The Marathon 2: A Navigation System](https://arxiv.org/abs/2003.00368)** (2020) — ROS 2 标准导航栈 Nav2 的论文：用行为树编排规划器、控制器和恢复行为，并在真实机器人上长距离“马拉松”测试验证。 · [代码](https://github.com/ros-navigation/navigation2)
+- **[AcroRL: Learning Aggressive Quadrotor Inversion using Bidirectional Thrust](https://arxiv.org/abs/2605.24301)** (2026) — 强化学习策略调制参考轨迹，实现可反向推力四旋翼的紧凑翻转，正翻与回翻各训一个策略。JAX 仿真中位置 RMSE 降低 32%，稳定时间缩短 57%。
 - **[Adaptive Risk-Certified Event-Triggered Replanning for Dynamic Navigation](https://arxiv.org/abs/2610.09302)** (2026) — 以校准后的障碍函数风险（MPC 预测轨迹上的 CVaR）作为预警信号，及时切换到更安全的规划模式。报告碰撞比仅用安全滤波器的基线减少 83.3%。 · [项目页](https://nail-uh.github.io/corl2026.github.io/)
 - **[An Agentic Framework for Proactive Robots with Procedural Assistance Memory](https://arxiv.org/abs/2610.21211)** (2026) — 主动协助机器人：VLM 读取以有限状态机表示的用户日常流程记忆，决定何时提供何种帮助，再由 VLA 执行；记忆每天通过反思更新，无需重新训练。 · [项目页](https://davian-robotics.github.io/PAM/)
+- **[Approximate Imitation Learning for Event-based Quadrotor Flight in Cluttered Environments](https://arxiv.org/abs/2603.07578)** (2026) — 事件相机无人机飞行：先在大规模离线数据上学习表示，再只用轻量状态信息在线微调策略，无需在训练中渲染事件。训练时间从 52.44 小时降到 1.86 小时。
 - **[AsyncVLA: An Asynchronous VLA for Fast and Robust Navigation on the Edge](https://arxiv.org/abs/2602.13476)** (2026) — 大模型在远端工作站提供高层指引，机载轻量 Edge Adapter 高频修正动作，两路异步运行并端到端微调。在通信延迟最高 6 秒的真实导航中，成功率比基线高 40%。
 - **[COOL: Curiosity-Driven Object Ownership Learning for Personalized Robotic Assistance](https://arxiv.org/abs/2610.09358)** (2026) — 从日常观察中学习“哪个物品属于谁”，并通过好奇心驱动的探索刷新长期空间记忆，从而执行“找我的水杯”这类个性化指令。
 - **[CoFL-S: Spatially Queryable Sector Flow Fields for Local Language-Conditioned Navigation](https://arxiv.org/abs/2607.02222)** (2026) — 低层视觉语言导航动作头：在可见扇区上预测语言条件的流场并展开为连续轨迹；并提供连续时间的 Habitat 评测基准。 · [代码](https://github.com/ut-dragon-lab/CoFL)
-- **[CoSMO: Conformal Semantic Mapping for Open-World Safe Robot Navigation](https://arxiv.org/abs/2610.18321)** (2026) — 用在线共形预测校准 VLM 语义地图，使不同类别物体获得有覆盖率保证的安全距离，且支持词表扩展。报告在 MP3D 上语义碰撞减少 61.6%，四足真机覆盖率 90.73%。 · [项目页](https://yangming911.github.io/cosmo-page/)
-- **[CoopUQ: Robust Multi-Robot Social Navigation via Uncertainty-Aware Cooperative Forecasting](https://arxiv.org/abs/2610.26852)** (2026) — 多机器人社交导航：多机融合特征预测未来占据栅格及其不确定性，约束多智能体强化学习策略据此避开被预测占据或高度不确定的区域。Unity 仿真与真机验证。 · [项目页](https://coopuq.github.io/)
 
-**[查看全部 78 条 →](lists/navigation.zh-CN.md)**
+**[查看全部 83 条 →](lists/navigation.zh-CN.md)**
 
 <a id="perception"></a>
 ### 感知、SLAM 与三维建图
@@ -234,7 +234,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_ [在网站上
 - ⭐ **[ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI](https://arxiv.org/abs/2410.00425)** (2024) — GPU 并行仿真与渲染，内置大量操作任务，适合快速视觉强化学习与数据生成。 · [代码](https://github.com/haosulab/ManiSkill)
 - ⭐ **[RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots](https://arxiv.org/abs/2406.02523)** (2024) — 120 个厨房场景、2500 多个物体与 100 个任务，并附生成演示，用于训练通用策略。 · [代码](https://github.com/robocasa/robocasa)
 
-**[查看全部 59 条 →](lists/sim.zh-CN.md)**
+**[查看全部 62 条 →](lists/sim.zh-CN.md)**
 
 <a id="datasets"></a>
 ### 数据集与基准
@@ -270,11 +270,11 @@ _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备�
 - ⭐ **[SO-ARM100 / SO-101](https://github.com/TheRobotStudio/SO-ARM100)** (2024) — 开源 3D 打印 6 自由度机械臂（主从臂），每只约 100–200 美元，是 LeRobot 的默认入门套件。
 - ⭐ **[An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](https://arxiv.org/abs/1910.00093)** (2019) — 开源四足机器人 Solo 及其模块化力矩控制关节，采用现成件和 3D 打印件，便于各实验室复现动态腿式机器人。 · [代码](https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware)
 - **[PanoVine: Whole-Body Visuomotor Control for Soft Growing Vine Robot](https://arxiv.org/abs/2606.22923)** (2026) — 首个自主藤蔓（软体生长）机器人系统：沿机身分布的 19 个摄像头为从演示学到的端到端视觉运动策略提供反馈，能穿过分叉结构、爬坡并进入狭窄空间。 · [项目页](https://panovine-bot.github.io)
+- **[SPOT: Spatial Perception-Oriented Long-Horizon Humanoid Teleoperation](https://arxiv.org/abs/2609.07933)** (2026) — 面向长时任务的人形机器人 VR 遥操作：机载双目鱼眼相机、宽视场立体显示、与机器人运动解耦的自由环视及画面稳定，让操作者持续掌握周围空间信息。
 - **[SuperSuit: An Isomorphic Bimodal Interface for Scalable Mobile Manipulation](https://arxiv.org/abs/2603.06280)** (2026) — 同一套穿戴设备既能遥操作轮式双臂机器人，也能在机器人不在场时录制示教；手臂与机器人机械同构，无需逆运动学或重定向。只需 10 条有机器人参与的种子数据，其余 100 条可脱离机器人录制。
 - **[Transformer Transformer: A Unified Model for Motion-Conditioned Robot Co-design](https://arxiv.org/abs/2607.25798)** (2026) — 基于统一的机器人本体/状态/动作 token 表示的扩散 Transformer，按目标末端轨迹生成机器人设计。实际制作的优化版 ALOHA 跟踪误差降低 70% 以上。 · [项目页](https://transformer-transformer.github.io)
-- **[Universal Manipulation Exoskeleton: Learning Compliant Whole-body Policies with Real-time Torque Feedback](https://arxiv.org/abs/2606.14218)** (2026) — 低成本上肢外骨骼：记录整臂构型与关节力矩，并提供实时力矩触觉反馈；可重定向遥操作 OpenArm、Franka 和 xArm，用于学习主动柔顺的全身策略。 · [项目页](https://ume-exo.github.io)
 
-**[查看全部 45 条 →](lists/hardware.zh-CN.md)**
+**[查看全部 46 条 →](lists/hardware.zh-CN.md)**
 
 <!-- radar:end -->
 

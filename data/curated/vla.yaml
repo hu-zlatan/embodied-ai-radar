@@ -2468,3 +2468,30 @@
   tags: [vla, failure-boundary, digital-twin, flow-matching, real]
   takeaway_en: "DLS finds where VLA success breaks via on-policy digital-twin rollouts, locates the crossing with privileged progress signals, and shapes the flow toward success-producing denoising directions."
   takeaway_zh: "DLS 通过数字孪生中的在策略推演大规模发现 VLA 成功与失败的边界，用特权进度信号定位越界位置，并据此强化导向成功的去噪方向、抑制导向失败的方向。"
+- title: "Intercepting the Future: Latent-Space Predictive World Model for Dynamic VLA Manipulation"
+  type: paper
+  arxiv: "2606.02486"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [dynamic-manipulation, latent-world-model, openvla, latency]
+  takeaway_en: "AHEAD wraps a frozen VLA with a small latent world model that forecasts future patch tokens from optical-flow velocity and feeds them to the action decoder. +4.9M params on a 7B OpenVLA; 79-97% on 20 dynamic sim scenes."
+  takeaway_zh: "AHEAD 为冻结的 VLA 加上一个小型潜空间世界模型，依据光流速度预测未来图像块 token 并交给动作解码器，以应对运动物体。在 7B OpenVLA 上只增加 490 万参数，20 个动态仿真场景成功率 79–97%。"
+- title: "PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies"
+  type: paper
+  arxiv: "2610.12285"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [vla, latent-world-model, mixture-of-transformers, robotwin]
+  takeaway_en: "Predicts task-relevant future states in a pretrained prediction-oriented feature space (no pixel reconstruction) and conditions actions on them via causal attention. +11.8 pts over reactive policies on RoboTwin."
+  takeaway_zh: "在预训练的面向预测的特征空间中预测与任务相关的未来状态（不做像素重建），并通过结构化因果注意力让动作生成以其为条件。在 RoboTwin 困难长时任务上比反应式策略高 11.8 个百分点。"
+- title: "FR-VLA: Implicit Force Reasoning VLA for Contact-Rich Manipulation"
+  type: paper
+  arxiv: "2610.25981"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [vla, force, contact-rich, real]
+  takeaway_en: "FR-VLA uses learnable force query tokens to let vision-language context decide how much measured force should enter the action pathway, rather than feeding force in through a fixed path. Five real tasks, two robots."
+  takeaway_zh: "FR-VLA 通过可学习的力查询 token，由视觉语言上下文判断测得的力应在多大程度上进入动作生成通路，而不是走固定的注入路径。在两种机器人的五个接触密集任务上验证。"

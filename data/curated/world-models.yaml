@@ -1248,3 +1248,39 @@
   tags: [world-action-model, force-torque, contact-rich, real]
   takeaway_en: "FAWAM uses 6-axis force/torque in perception, jointly predicts future actions and wrenches, and corrects actions online against the predicted wrench. Reports +36.25 pts over vision-only baselines on real tasks."
   takeaway_zh: "FAWAM 在感知、预测与闭环执行三层使用六维力/力矩：联合预测未来动作与末端力旋量，并以预测的力轨迹为参考在线修正动作。真机任务上比纯视觉基线成功率高 36.25 个百分点。"
+- title: "MaskWAM: Unifying Mask Prompting and Prediction for World-Action Models"
+  type: paper
+  arxiv: "2606.13515"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [world-action-model, masks, object-centric, mixture-of-transformers]
+  takeaway_en: "Object-centric world-action model that both takes object masks as prompts and predicts future masks, reducing language ambiguity in clutter and background bias in RGB prediction."
+  takeaway_zh: "以物体为中心的世界动作模型：既把目标物体掩码作为提示输入，又预测未来掩码，从而减少杂乱场景中的语言歧义和 RGB 预测中的背景偏差。"
+- title: "ORD-WM: Learning Object-Centric Rigid Dynamics for 3D World Modeling in Robotic Manipulation"
+  type: paper
+  arxiv: "2610.23156"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [3d-world-model, rigid-dynamics, point-cloud, se3]
+  takeaway_en: "3D world model that encodes each object's point cloud with an SDF-supervised vector-neuron VAE and predicts per-object SE(3) increments applied analytically, so shapes do not drift over long rollouts."
+  takeaway_zh: "3D 世界模型：用 SDF 监督的向量神经元 VAE 编码每个物体的点云，并预测逐物体的 SE(3) 运动增量后解析地施加，长时推演中物体形状不会漂移。"
+- title: "Understanding and Mitigating the Video-Action Generalization Gap via Temporal Ratio"
+  type: paper
+  arxiv: "2607.08127"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [world-action-model, video-action-model, generalization, analysis]
+  takeaway_en: "Defines Temporal Ratio, how much an action head attends to future latents vs the current frame; it predicts compositional generalization of video-action models and drives an inference-time adaptive guidance method."
+  takeaway_zh: "提出 Temporal Ratio：动作头对未来潜变量相对当前帧的注意力依赖程度；它能预测视频动作模型的组合泛化能力，并据此设计推理时的自适应引导方法。"
+- title: "WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time"
+  type: paper
+  arxiv: "2607.06988"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [world-action-model, test-time-training, human-video, steering]
+  takeaway_en: "Steers a frozen world-action model with unlabeled human videos at test time: a small memory inside the model adapts via self-supervised video prediction, after meta-training on paired human-robot data."
+  takeaway_zh: "测试时用无标注的人类视频引导冻结的世界动作模型：模型内部的小型记忆通过自监督视频预测进行适配；此前用成对人-机数据做元训练使其对控制有用。"

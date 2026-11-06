@@ -2,7 +2,7 @@
 
 _视觉-语言-动作模型与通用机器人策略。_
 
-共 243 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
+共 246 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [English](vla.md)
 
@@ -89,6 +89,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[Embodied at Sea: Imitation Learning for Multi-Task Underwater Manipulation](https://arxiv.org/abs/2610.38199)** (2026) — 用 1616 条水下数据训练 VLA，并在水池评估 1260 次，最佳模型成功率 93.3%（含部分成功）。在二战沉船实地案例中，单任务 ACT 以 47.9% 对 7.9% 明显胜过通用的 SmolVLA。 · [项目页](https://lair-research-nyu.github.io/Embodied-at-Sea/)
 - **[EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies](https://arxiv.org/abs/2606.20092)** (2026) — 为 VLA 加入稀疏记忆：由策略自己预测哪些关键帧之后会有用并只保存这些帧。同时提出 RoboTwin-MeM 基准；报告在 17 个仿真和 4 个真机任务上平均成功率比带记忆的 VLA 高 40%。 · [代码](https://github.com/InternRobotics/EventVLA)
 - **[FASTER: Rethinking Real-Time Flow VLAs](https://arxiv.org/abs/2603.19199)** (2026) — 指出反应速度取决于首动作耗时，并让去噪优先照顾近期动作：即时反应只需一步，π0.5 和 X-VLA 上约快 10 倍；真机演示包括乒乓球。 · [代码](https://github.com/hku-sail/FASTER)
+- **[FR-VLA: Implicit Force Reasoning VLA for Contact-Rich Manipulation](https://arxiv.org/abs/2610.25981)** (2026) — FR-VLA 通过可学习的力查询 token，由视觉语言上下文判断测得的力应在多大程度上进入动作生成通路，而不是走固定的注入路径。在两种机器人的五个接触密集任务上验证。
 - **[Failure Prediction and Classification in Vision-Language-Action Models Via Calibrated Latent Probing](https://arxiv.org/abs/2611.08425)** (2026) — 在 VLA 隐层上加轻量探针，提前预警失败并给出校准的漏报与误报上界，还能判断失败类型。并发布 3180 条带标注的操作轨迹。 · [项目页](https://vla-tug.github.io)
 - **[FastHarness: Experience-Driven Review Scheduling for Vision-Language-Action Policies](https://arxiv.org/abs/2610.31427)** (2026) — 让前沿大模型监督冻结的 π0.5 策略的执行框架：随着经验积累逐步减少审查频率，并把监督集中在出错后的恢复上；报告在四个仿真任务上审查 token 平均减少约 57%，成功率也更高。 · [代码](https://github.com/FastHarness/fast-harness)
 - **[FastVLA: Task-Conditioned and Temporally Adaptive Visual Token Compression for Efficient Vision-Language-Action Models](https://arxiv.org/abs/2610.22146)** (2026) — 只保留当前任务所需的视觉 token、并让 token 预算随时间步变化，以加快 VLA 推理。 · [代码](https://github.com/jiuyixu25/FastVLA)
@@ -112,6 +113,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[HuGe: Scaling Humanoid Generalist Vision-Language-Action Models with Egocentric Experience](https://arxiv.org/abs/2610.34186)** (2026) — 人形机器人通用 VLA 系列：在 2,000 多小时第一视角人类与机器人数据上预训练，输出潜在动作 token 驱动预训练的全身控制器并附手部信号；通过仿真回放构造伪本体感知、重渲染手臂外观缩小人-机差异，报告 HumanoidArena 最优，并在 Unitree G1 上验证人类数据增益。 · [代码](https://github.com/yliu-cs/HuGe) · [项目页](https://yliu-cs.github.io/HuGe)
 - **[HuRo: Robotizing Human Videos for Scalable VLA Pretraining](https://arxiv.org/abs/2609.10706)** (2026) — 把五个来源的人类视频转换成与机器人对齐的观测和动作（约 63 万条轨迹）。报告用更多此类数据预训练 VLA，真机任务完成率从 51.5% 升到 80.3%，分布外从 34.9% 升到 72.2%。 · [代码](https://github.com/3587jjh/HuRo) · [项目页](https://3587jjh.github.io/HuRo)
 - **[Information-Theoretic Constraints for Continual Vision-Language-Action Alignment](https://arxiv.org/abs/2603.13335)** (2026) — Info-VLA 通过保持跨模态信息结构来缓解 VLA 持续学习中的遗忘：以冻结教师模型构造回放锚点做对比对齐，并加入视觉-语言互信息约束。
+- **[Intercepting the Future: Latent-Space Predictive World Model for Dynamic VLA Manipulation](https://arxiv.org/abs/2606.02486)** (2026) — AHEAD 为冻结的 VLA 加上一个小型潜空间世界模型，依据光流速度预测未来图像块 token 并交给动作解码器，以应对运动物体。在 7B OpenVLA 上只增加 490 万参数，20 个动态仿真场景成功率 79–97%。
 - **[LAPT-Scale: Scaling Embodied Policies with Latent Action Pre-Training on Human Videos](https://arxiv.org/abs/2610.13732)** (2026) — 从 2.33 万小时第一人称人类视频中学习连续（非向量量化）的潜动作，结合感知、语义与光流对齐信号，作为 VLA 预训练的动作监督；报告随规模持续提升。
 - **[LTM: Latent Transition Based In-Context Memory for Vision-Language-Action Models](https://arxiv.org/abs/2610.21362)** (2026) — 通过缓存相邻观测之间的紧凑潜在转移，为 π0.5 加入记忆，面向关键物体移出视野的任务。 · [代码](https://github.com/buaa-colalab/LTM-pi)
 - **[Learning What to Say to Your VLA: Mostly Harmless Vision Language Action Model Steering](https://arxiv.org/abs/2606.12299)** (2026) — CoRL 2026 Spotlight。语义相近的指令可能让 VLA 行为迥异，该框架通过交互搜索语言序列来提升闭环任务表现。
@@ -132,6 +134,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement](https://arxiv.org/abs/2606.18953)** (2026) — 在冻结的 VLA 之上做只依赖物体位姿的残差强化学习，从而可直接从仿真迁移到真机；通过回放同一批遥操作数据训练 VLA 的仿真副本。报告真实 FR3 上成功率从 42% 提升到 76%。 · [项目页](https://www.microsoft.com/en-us/research/articles/object-centric-residual-rl/)
 - **[OmniBrain-0: A Unified Agentic Model for Embodied Intelligence](https://arxiv.org/abs/2610.36013)** (2026) — 小米具身智能团队的轻量统一具身智能体：在操作与导航中负责任务理解、规划、进度跟踪和失败恢复，由更强的教师模型多教师在线蒸馏而来，并配有基于评分细则的自我改进数据飞轮。 · [项目页](https://public-bots.github.io/OmniBrain-0/)
 - **[OmniGuide: Universal Spatial Guidance Fields for Enhancing Generalist Robot Policies](https://arxiv.org/abs/2603.10052)** (2026) — 把 3D 基础模型、VLM、人体姿态等指导信号统一表示为 3D 空间中可微的吸引/排斥能量函数，引导 VLA 动作采样。报告提升 π0.5 和 GR00T N1.6 在仿真与真机上的表现。 · [项目页](https://omniguide.github.io/)
+- **[PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies](https://arxiv.org/abs/2610.12285)** (2026) — 在预训练的面向预测的特征空间中预测与任务相关的未来状态（不做像素重建），并通过结构化因果注意力让动作生成以其为条件。在 RoboTwin 困难长时任务上比反应式策略高 11.8 个百分点。
 - **[PRTS: A Primitive Reasoning and Tasking System via Contrastive Representations](https://arxiv.org/abs/2604.27472)** (2026) — 将 VLA 预训练重构为目标条件强化学习：用对比学习让模型判断语言目标是否可达。基于 1670 亿 token 预训练，在长时序任务上优势最明显。
 - **[PaceVLA: Adaptive Temporal Action Quantization in Vision-Language-Action Models](https://arxiv.org/abs/2610.25961)** (2026) — 让 VLA 在每一步自行选择细粒度或时间上更粗的动作解码器：冗余动作阶段加速执行，精细接触阶段保持细粒度控制；在 3 个仿真基准和 6 个真实任务上验证效率提升且成功率不降。 · [项目页](https://pacevla.github.io/)
 - **[Plan First, Act Later: Streaming Reasoning for Executable Memory in Robot Control](https://arxiv.org/abs/2610.29329)** (2026) — PAL 让高层 VLM 在观察过程中把未来需要的子任务提前写入可执行记忆（subtask_list），执行时再挑出当前子任务交给底层 VLA；报告在 RoboMME 上成功率 56.05%（最强基线 44.51%），4 个真实任务总体 60.83%。 · [项目页](https://qinghangliu.github.io/pal-webpage/)

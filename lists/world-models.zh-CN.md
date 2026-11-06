@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 119 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 123 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html) · [English](world-models.md)
 
@@ -62,9 +62,11 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Large Video Planner Enables Generalizable Robot Control](https://arxiv.org/abs/2512.15840)** (2026) — 以视频而非语言为主干构建机器人基础模型：在互联网规模人类视频上训练开源视频规划器，零样本生成视频计划再转为机器人动作；模型与数据集均已开源。 · [代码](https://github.com/buoyancy99/large-video-planner) · [项目页](https://www.boyuan.space/large-video-planner/)
 - **[Learning Robotic World Models with Semantic and Visual Feedback](https://arxiv.org/abs/2611.07850)** (2026) — RoboImagine 通过比较多条候选未来来后训练自回归机器人世界模型：冻结的多模态评估器给出语义偏好，像素与感知层面的一致性项约束视觉误差。在 RT-1 上报告 PSNR 比继续监督微调高 1.26 dB。 · [代码](https://github.com/Alexander-wu/RoboImagine) · [项目页](https://huggingface.co/easylearning/RoboImagine)
 - **[Light-WAM: Efficient World Action Models with State-Fusion Action Decoding](https://arxiv.org/abs/2606.08242)** (2026) — 轻量世界动作模型：紧凑视频主干在降采样潜空间中做未来监督，动作专家融合多层特征一次前向预测动作块；报告可训练参数仅 0.44B，推理延迟 72 毫秒。 · [代码](https://github.com/L1ziang/Light-WAM)
+- **[MaskWAM: Unifying Mask Prompting and Prediction for World-Action Models](https://arxiv.org/abs/2606.13515)** (2026) — 以物体为中心的世界动作模型：既把目标物体掩码作为提示输入，又预测未来掩码，从而减少杂乱场景中的语言歧义和 RGB 预测中的背景偏差。
 - **[MemoryVAM: Integrating Memory into Video Action Model for Robot Manipulation](https://arxiv.org/abs/2606.20679)** (2026) — 为视频世界模型策略加入情景记忆 token，使动作能依赖已不在视野中的事件。报告 LIBERO-Mem 成功率从 5% 提升到 42.5%，真机记忆类任务约 75–80%。 · [项目页](https://MemoryVAM.github.io/)
 - **[Motubrain: An Advanced World Action Model for Robot Control](https://arxiv.org/abs/2604.27792)** (2026) — 基于 UniDiffuser 的三流世界动作模型，一个模型同时覆盖策略、世界建模、视频生成和逆动力学，并可利用纯视频和跨形态数据。 · [项目页](https://www.shengshu.com/en/motubrain)
 - **[NovaPlan: Zero-Shot Long-Horizon Manipulation via Closed-Loop Video Language Planning](https://arxiv.org/abs/2602.20119)** (2026) — 零样本长程操作：VLM 提出并验证多条生成的视频计划，动作由物体流或手部流转换而来，执行中持续监控并做戳推等局部纠正。 · [项目页](https://nova-plan.github.io/)
+- **[ORD-WM: Learning Object-Centric Rigid Dynamics for 3D World Modeling in Robotic Manipulation](https://arxiv.org/abs/2610.23156)** (2026) — 3D 世界模型：用 SDF 监督的向量神经元 VAE 编码每个物体的点云，并预测逐物体的 SE(3) 运动增量后解析地施加，长时推演中物体形状不会漂移。
 - **[OSWAM: An Effective World Action Model with One-Step Action Generation](https://arxiv.org/abs/2610.35850)** (2026) — 单步扩散即可生成动作的世界动作模型：用“想象 token”代替随机噪声初始化，为动作提供先验。报告比直接策略式 WAM 快约 3 倍，编译后在 RTX 5090 上延迟低至 40 毫秒，覆盖自动驾驶与具身控制。 · [代码](https://github.com/PolyU-VCLab/OSWAM) · [项目页](https://gwenzhang.github.io/OSWAM/)
 - **[OpenNWM: A Generalist Navigation World Model with Latent Action Pretraining](https://arxiv.org/abs/2611.01844)** (2026) — 先从无动作标注的视频中学习潜在动作，再在后训练阶段对齐真实运动。配套数据集 NavAnywhere 含 17.5M 条视觉观测，来自 15 个来源，覆盖地面机器人、人和无人机。 · [代码](https://github.com/OpenSpace-Lab/OpenNWM)
 - **[PICA-WAM: Visual Perturbation Invariance via Cross-Appearance Self-Alignment in World Action Models](https://arxiv.org/abs/2610.26813)** (2026) — 为世界-动作模型加一个自监督辅助任务：EMA 教师看原始画面，在线模型看外观扰动后的画面并对齐其动作表征；报告在 RoboTwin 2.0、LIBERO-Plus 等基准上提升四种 WAM 对视觉扰动的鲁棒性，且不损失原有性能。 · [代码](https://github.com/YudeZou/PICA-WAM-release)
@@ -91,10 +93,12 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Trace-WAM: Learning to Act via 3D Motion Prediction for World Action Models](https://arxiv.org/abs/2610.36840)** (2026) — 在世界动作模型中加入未来三维点运动预测作为辅助目标（视频/运动/动作三专家 MoT），推理仍只需一次视觉前向；报告在少量示范和分布偏移下明显优于 Fast-WAM（RoboCasa-GR1、LIBERO、LIBERO-Plus）。 · [项目页](https://trace-wam.github.io/)
 - **[Training Controllable World Models via Action Influence Maximization](https://arxiv.org/abs/2610.27387)** (2026) — 解释动作条件视频世界模型为何忽略动作：专家示教的“动作影响力”太低，模型容量再大也无法弥补。AIM 主动采集数据提高这一指标；报告 500 条主动采集数据加 3000 条示教即可在末端可控性上追平 30 万条专家数据。
 - **[TrajWAM: An Efficient Trajectory-Guided World Action Model for Dynamic Robotic Manipulation](https://arxiv.org/abs/2610.25763)** (2026) — 面向动态目标的世界动作模型：先预测目标物体的未来掩码轨迹，用 Trajectory ControlNet 引导视频模型生成与轨迹一致的未来，再通过解耦蒸馏实现一步视频-动作推理以降低延迟。 · [项目页](https://kevingeng3.github.io/TrajWAM/)
+- **[Understanding and Mitigating the Video-Action Generalization Gap via Temporal Ratio](https://arxiv.org/abs/2607.08127)** (2026) — 提出 Temporal Ratio：动作头对未来潜变量相对当前帧的注意力依赖程度；它能预测视频动作模型的组合泛化能力，并据此设计推理时的自适应引导方法。
 - **[UniFlowWAM: A Unified World-Action Model with Visual Semantics and 4D Geometry](https://arxiv.org/abs/2610.30991)** (2026) — 世界动作模型：把场景级三维流（跟踪的三维点）纳入策略内部，而不是作为独立模块或额外输出头，让 4D 几何、视觉语义与动作一起建模。 · [项目页](https://kksham111.github.io/UniFlowWAM_ProjectPage/)
 - **[Video Prediction Policy 2: Predict Better, Act Better](https://arxiv.org/abs/2610.10270)** (2026) — 认为世界动作模型的运动错误来自未针对操作优化的视频底座和粗糙的动作模块，因此在带事件级描述的操作视频上继续预训练视频模型。 · [代码](https://github.com/roboterax/video-prediction-policy-2) · [项目页](https://robert-gyj.github.io/video-prediction-policy-2)
 - **[Video World Models Need Predictable Latents](https://arxiv.org/abs/2610.34663)** (2026) — 视频世界模型的潜空间不应只为重建而训练：加入时间可预测性目标并配合以历史为条件的解码器。报告推理成本最多降低 5 倍、训练快 7 倍以上，长时域与分布外误差降低 15–24%，与真实策略评测更一致。 · [代码](https://github.com/mattia-scardecchia/predictable-latents)
 - **[W2A: Distilling World Priors into Action Models for Real-Time Robotic Control](https://arxiv.org/abs/2611.02600)** (2026) — 训练时把视频扩散模型的中间去噪表示蒸馏进动作模型，测试时完全丢弃视频模型。在 LIBERO 上报告 95.9% 平均成功率，推理比代表性世界动作模型快约 21 倍。
+- **[WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time](https://arxiv.org/abs/2607.06988)** (2026) — 测试时用无标注的人类视频引导冻结的世界动作模型：模型内部的小型记忆通过自监督视频预测进行适配；此前用成对人-机数据做元训练使其对控制有用。
 - **[What Makes Video World Model Latents Action-Relevant: Prediction over Reconstruction](https://arxiv.org/abs/2606.07687)** (2026) — 探测哪些视频世界模型的潜变量含有动作信息：关键在于时序视频预训练，而非像素重建质量；V-JEPA 类编码器取得最佳权衡。 · [代码](https://github.com/k1seul/corl2026-action-relevant-latents)
 - **[WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL](https://arxiv.org/abs/2602.13977)** (2026) — 在视频世界模型中对 VLA 做强化学习后训练，通过关键帧初始化的短推演和世界模型-策略协同演化来抑制幻觉。报告 LIBERO 表现优异并在多个真机平台上提升。 · [项目页](https://wovr-corl.github.io)
 - **[World-Action Models for Robot Learning and Control: A Survey](https://arxiv.org/abs/2609.16074)** (2026) — 面向机器人的世界动作模型综述，厘清其与世界模型、基于模型的强化学习和反应式 VLA 的区别，并按表示、架构、训练和数据分类。 · [项目页](https://rcl-robotics.github.io/Awesome-World-Action-Models)

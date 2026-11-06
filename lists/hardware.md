@@ -2,7 +2,7 @@
 
 _Low-cost arms, hands, grippers and data-collection rigs you can build._
 
-45 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/hardware.yaml`](../data/curated/hardware.yaml); edit the YAML, not this file.
+46 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/hardware.yaml`](../data/curated/hardware.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/hardware.html) · [中文](hardware.zh-CN.md)
 
@@ -25,6 +25,7 @@ _Low-cost arms, hands, grippers and data-collection rigs you can build._
 - **[PHD-Hand: A Printable Humanoid Dexterous Hand with Linkage-Driven 3-DOA Digits](https://arxiv.org/abs/2610.29030)** (2026) — Fully linkage-driven humanoid hand with 3 actuated DoF per finger; a flexure hinge and spring-steel drive rods replace many tiny parts, so it prints on a budget 3D printer at near human-hand size.
 - **[PanoVine: Whole-Body Visuomotor Control for Soft Growing Vine Robot](https://arxiv.org/abs/2606.22923)** (2026) — First autonomous vine (soft growing) robot: 19 cameras along its body feed an end-to-end visuomotor policy learned from demos, which steers through branches, up slopes and into confined spaces. · [project](https://panovine-bot.github.io)
 - **[RAIPAL: A Powerful and Agile Humanoid Arm for Human Tasks](https://arxiv.org/abs/2611.04334)** (2026) — A humanoid arm whose force, speed and endurance targets come from human upper-limb measurements; reports a 20 kg peak payload (2.25x its own mass) and 20.6 m/s endpoint speed.
+- **[SPOT: Spatial Perception-Oriented Long-Horizon Humanoid Teleoperation](https://arxiv.org/abs/2609.07933)** (2026) — VR humanoid teleoperation for long tasks: a robot-mounted binocular fisheye, wide stereo display, head-decoupled free-looking and stabilization keep the operator aware of the surroundings.
 - **[Shape Your Body: Value Gradients for Multi-Embodiment Robot Design](https://arxiv.org/abs/2606.00702)** (2026) — Reuses a frozen multi-robot value function as a differentiable surrogate for robot design, avoiding a new co-design RL loop per robot; handles over 1100 design parameters.
 - **[SuperSuit: An Isomorphic Bimodal Interface for Scalable Mobile Manipulation](https://arxiv.org/abs/2603.06280)** (2026) — One wearable both teleoperates a wheeled bimanual robot and records robot-free demos; arms are mechanically aligned, so no IK or retargeting. With a 10-episode robot-grounded seed, 100 robot-free episodes suffice.
 - **[SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing](https://arxiv.org/abs/2610.40646)** (2026) — Instead of one universal gripper: a fixed robot-side coupling plus cheap tool-side adapters with tactile sensors turn household tools into swappable end effectors; imitation policies cook tofu and flip meat. · [project](https://personalrobotics.github.io/SwapBot)

@@ -2,7 +2,7 @@
 
 _视觉语言导航、具身问答、移动操作与大模型规划。_
 
-共 78 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
+共 83 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/navigation.html) · [English](navigation.md)
 
@@ -13,9 +13,11 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - ⭐ **[ViNT: A Foundation Model for Visual Navigation](https://arxiv.org/abs/2306.14846)** (2023) — 在多种机器人的导航数据上训练的 Transformer 导航策略，经少量微调即可适配新的目标形式和新机器人。 · [代码](https://github.com/robodhruv/visualnav-transformer)
 - ⭐ **[GNM: A General Navigation Model to Drive Any Robot](https://arxiv.org/abs/2210.03370)** (2022) — ViNT 的前作：在多种不同机器人汇集的数据上训练一个目标条件导航策略，可迁移到包括训练中未见过的新机器人。 · [代码](https://github.com/robodhruv/visualnav-transformer)
 - ⭐ **[The Marathon 2: A Navigation System](https://arxiv.org/abs/2003.00368)** (2020) — ROS 2 标准导航栈 Nav2 的论文：用行为树编排规划器、控制器和恢复行为，并在真实机器人上长距离“马拉松”测试验证。 · [代码](https://github.com/ros-navigation/navigation2)
+- **[AcroRL: Learning Aggressive Quadrotor Inversion using Bidirectional Thrust](https://arxiv.org/abs/2605.24301)** (2026) — 强化学习策略调制参考轨迹，实现可反向推力四旋翼的紧凑翻转，正翻与回翻各训一个策略。JAX 仿真中位置 RMSE 降低 32%，稳定时间缩短 57%。
 - **[Adaptive Risk-Certified Event-Triggered Replanning for Dynamic Navigation](https://arxiv.org/abs/2610.09302)** (2026) — 以校准后的障碍函数风险（MPC 预测轨迹上的 CVaR）作为预警信号，及时切换到更安全的规划模式。报告碰撞比仅用安全滤波器的基线减少 83.3%。 · [项目页](https://nail-uh.github.io/corl2026.github.io/)
 - **[Aero-VPA: Few-Step Flow-Matching Control over Non-Reconstructive JEPA Latents for Agile Flight on Edge Hardware](https://arxiv.org/abs/2611.04392)** (2026) — 紧凑的 JEPA 加流匹配四旋翼策略，报告异常坦率：行为克隆 60 次任务全败，DAgger 进入瓶颈，运行时安全层将仿真森林任务成功率从 21.1% 提至 52.2%。 · [代码](https://github.com/ylee-sling/Aero-VPA) · [项目页](https://huggingface.co/ylee-sling/aero-vpa)
 - **[An Agentic Framework for Proactive Robots with Procedural Assistance Memory](https://arxiv.org/abs/2610.21211)** (2026) — 主动协助机器人：VLM 读取以有限状态机表示的用户日常流程记忆，决定何时提供何种帮助，再由 VLA 执行；记忆每天通过反思更新，无需重新训练。 · [项目页](https://davian-robotics.github.io/PAM/)
+- **[Approximate Imitation Learning for Event-based Quadrotor Flight in Cluttered Environments](https://arxiv.org/abs/2603.07578)** (2026) — 事件相机无人机飞行：先在大规模离线数据上学习表示，再只用轻量状态信息在线微调策略，无需在训练中渲染事件。训练时间从 52.44 小时降到 1.86 小时。
 - **[AsyncVLA: An Asynchronous VLA for Fast and Robust Navigation on the Edge](https://arxiv.org/abs/2602.13476)** (2026) — 大模型在远端工作站提供高层指引，机载轻量 Edge Adapter 高频修正动作，两路异步运行并端到端微调。在通信延迟最高 6 秒的真实导航中，成功率比基线高 40%。
 - **[Benchmarking Obstacle-Conditioned Safety in Household Robot Navigation](https://arxiv.org/abs/2610.34674)** (2026) — OSMA-Bench 用仅障碍物类型不同的配对场景，检验导航策略能否按障碍物危险程度调整间距与速度，并提出语义敏感度指数 SSI。结果显示 VLM 与 VLA 策略能识别哪些障碍更危险，却很少把这种判断体现在实际运动中；在 VLM 方案中加入显式参数推断步骤有所改善。 · [代码](https://github.com/OSMA-Bench/OSMA-Bench) · [项目页](https://osma-bench.github.io/)
 - **[COOL: Curiosity-Driven Object Ownership Learning for Personalized Robotic Assistance](https://arxiv.org/abs/2610.09358)** (2026) — 从日常观察中学习“哪个物品属于谁”，并通过好奇心驱动的探索刷新长期空间记忆，从而执行“找我的水杯”这类个性化指令。
@@ -29,6 +31,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - **[EvoPlan: Evolutionary Neuro-Symbolic Robot Planning with Spatio-Temporal Guarantees](https://arxiv.org/abs/2607.06724)** (2026) — 通过进化搜索从示教数据中挖掘信号时序逻辑约束（如社交导航舒适度）来为策略加安全护盾，并用进化式 PDDL 规划器让本地部署的大模型提出和修复计划。
 - **[From Imitation to Alignment: Human-Preference Flow Policies for Long-Horizon Sidewalk Navigation](https://arxiv.org/abs/2606.12603)** (2026) — FlowPilot：仅用单目 RGB、无需地图的人行道导航策略，先用锚定流匹配在大规模机器人车队数据上预训练，再用少量人工接管数据做偏好学习微调。
 - **[From Region Arrival to Instance-Level Grounding in Vision-and-Language Navigation](https://arxiv.org/abs/2607.03792)** (2026) — 指出 VLN 成功率掩盖了“最后 3 米定位缺口”：智能体停在附近却未对准目标。提出实例级指标和可接入任意主干的修正模块 REALM。
+- **[Future-Aware Flow Planning for Safe UAV Target Following](https://arxiv.org/abs/2609.10166)** (2026) — 无人机目标跟随：用预测的目标未来轨迹作为条件引导流式轨迹生成，并在采样循环中修复高风险的可执行前段。安全与跟踪的权衡最好，但 Future-MPC 更平滑。
 - **[G2-Nav: Grounded and Guarded Vision-Language Costmaps for Robot Social Navigation](https://arxiv.org/abs/2607.16956)** (2026) — 社交导航：让 VLM 生成代价地图而非直接决策，并校验上游跟踪，另加高频安全检查应对延迟；真机验证。 · [代码](https://github.com/centiLinda/G2-Nav)
 - **[GLST: Global-Local Spatio-Temporal Memory Decomposition Framework for Online Chained-Goal Navigation](https://arxiv.org/abs/2610.17927)** (2026) — 研究回合中目标会无提示地改变的导航：把记忆分解为全局/局部空间与长/短时序信念，并配合目标条件奖励。在 Spot 四足机器人上实机验证。
 - **[Gaussian Episodic Memory for Long-Term Spatiotemporal Reasoning](https://arxiv.org/abs/2610.33158)** (2026) — GEMS 维护一张只在场景变化处增量更新的 3DGS 地图，智能体按需渲染新视角来回答时空问题和定位物体；同时发布 GEMS-Bench（3 个真实 + 12 个合成环境，473 个问答对），报告在物体定位和时空问答上优于近期基线。 · [项目页](https://abwerby.github.io/GEMS/)
@@ -38,6 +41,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - **[InJePA: Intention-First Latent Planning with Coupled JEPA World Models for Visual Navigation](https://arxiv.org/abs/2610.23896)** (2026) — 两个耦合的 JEPA 共享隐空间：一个按目标提出隐式“意图”，另一个预测动作后果，形成意图-动作-后果闭环，让世界模型直接参与构造规划；在 Habitat MP3D 图像目标导航上评测。 · [代码](https://github.com/zhuxun132/InJepa)
 - **[IntentNav: Learning Spatial-Visual Object Navigation from Human Demonstrations](https://arxiv.org/abs/2606.08029)** (2026) — 通过前瞻人类示教，标注最能解释其后续搜索方向的前沿，再训练 VLM 在 BEV 记忆中的候选点之间做选择。这种候选级接口零样本迁移到轮式、四足和人形机器人。
 - **[LCLA: Language-Conditioned Latent Alignment for Vision-Language Navigation](https://arxiv.org/abs/2602.07629)** (2026) — 先用特权状态训练专家策略并冻结其潜空间接口与动作头，再训练轻量适配器把冻结 VLM 提取的图像与指令特征映射到该潜空间：用监督式对齐代替端到端策略优化。
+- **[Learning Visuomotor Quadrotor Flight Through Dynamic Narrow Gaps via Differentiable Simulation](https://arxiv.org/abs/2610.37557)** (2026) — 视觉运动四旋翼策略穿越移动的狭窄缝隙，借助可微仿真从零单阶段训练；以到时变缝隙平面的有符号距离门控各项损失，把稀疏的穿越事件变成稠密目标。
 - **[Look Before You Move: Agent-Interface-Aligned Supervision for Open-World Mobile Manipulation](https://arxiv.org/abs/2610.15572)** (2026) — 让示教者直接通过智能体自身的技能接口（包括“往哪看”）执行动作来采集 VLM 智能体训练数据。报告在 170 个开放世界移动操作测试集上成功率 71.76%，零样本真机 38%。 · [项目页](https://connerqiu.github.io/look-before-you-move/)
 - **[MOON: Learning When to Forget and How to Move On in Vision-and-Language Navigation](https://arxiv.org/abs/2610.33546)** (2026) — 发现 VLN 智能体偏离路线后会被历史记忆“惯性”拖住。MOON 给冻结的导航策略加上偏航判断器（判断何时清空历史）和 GRPO 训练的恢复策略，参数增加不到 1%；报告在 R2R-CE / RxR-CE 上分别提升 5.2 / 6.0 个百分点。 · [代码](https://github.com/AutoLab-SAI-SJTU/MOON)
 - **[MessyMem: Learning-from-Doing Memory for Mobile Manipulation](https://arxiv.org/abs/2609.15976)** (2026) — 移动操作机器人的持久记忆：在三维场景图中记录通过交互学到的知识（如柜子上锁、物体位置）。报告在连续 25 个任务、3 小时的仿真中任务进度达 80%。 · [项目页](https://messymem.github.io)
@@ -60,6 +64,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - **[SidewalkBench: Benchmarking Visual Navigation on Urban Sidewalks](https://arxiv.org/abs/2606.16953)** (2026) — CoRL 2026 Spotlight。城市人行道视觉导航基准，基于 Isaac Sim，包含程序生成与真实世界环境。 · [代码](https://github.com/VAIL-UCLA/SidewalkBench) · [项目页](https://vail-ucla.github.io/SidewalkBench/)
 - **[TARSphere: A Robot-Oriented Full-Stack Framework for Long-Horizon Embodied Agents in Evolving Physical and Social Environments](https://arxiv.org/abs/2610.30043)** (2026) — 带具身 NPC、受限对话和事件驱动任务状态机的物理仿真框架，并提供让冻结多模态大模型调用多级技能的执行框架；基于 30 个室内场景构建 360 回合基准，评测 8 个模型，报告通用模型可胜过具身专用模型，任务变更和人机协作仍是难点。 · [代码](https://github.com/xuyicheng-zju/TARSphere) · [项目页](https://xuyicheng-zju.github.io/TARSphere/)
 - **[Task-Aware Environment Augmentation for Reliable Navigation via Shielded Conditional Diffusion](https://arxiv.org/abs/2606.15154)** (2026) — 反过来思考：不改机器人，而是决定在环境中哪里放少量视觉标记，使规划好的轨迹能可靠执行；方法为带安全约束采样的条件扩散模型。仿真与真机验证。 · [项目页](https://scoda-diffusion.github.io/)
+- **[Training Generalist Navigation Policies via Action Self-Distillation](https://arxiv.org/abs/2610.17593)** (2026) — 同一个 VLM 既当教师（看到完整轨迹，推断导航目标与推理过程）又当学生（只看机载观测），无需人工标注即可学会以语言为条件的导航推理。在 13 个真实任务上验证。
 - **[WAM-Nav: Asymmetric Latent World-Action Modeling for Unified Visual Navigation](https://arxiv.org/abs/2606.04907)** (2026) — 用同一个扩散 Transformer 同时生成长时域动作和短时域潜空间视觉预测，避免多步自回归推演；一个模型支持图像目标、点目标等多种目标类型。
 - **[WayTrace: A Map-to-Language-to-Trace Hierarchy for Embodied Urban Navigation](https://arxiv.org/abs/2611.05129)** (2026) — 视觉语言模型把网络地图导航拆成一条条原子指令，预测器在图像上画出路径，强化学习负责跟踪；轮腿机器人完成最长 1.37 公里的真实任务。 · [项目页](https://way-trace.github.io)
 - **[X-NavDP: Generalizing Navigation Diffusion Policy to Novel Behavior and Embodiments with Group Q-score Reweighted Matching](https://arxiv.org/abs/2607.28560)** (2026) — 面向导航扩散策略的强化学习后训练：保留预训练先验的扰动探索 + 组归一化 Q 分重加权匹配，跨多种本体训练。报告仿真成功率从 61.20% 升到 84.28%，真机困难场景从 10% 升到 65%。 · [项目页](https://yty-sky.github.io/x-navdp-project-page)

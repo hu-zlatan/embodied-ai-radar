@@ -779,3 +779,48 @@
   tags: [neuro-symbolic, stl, pddl, llm, safety]
   takeaway_en: "Mines a Signal Temporal Logic constraint from demos (e.g. social-navigation comfort) by evolutionary search to shield policies, and runs an evolutionary PDDL planner where a local LLM proposes and repairs plans."
   takeaway_zh: "通过进化搜索从示教数据中挖掘信号时序逻辑约束（如社交导航舒适度）来为策略加安全护盾，并用进化式 PDDL 规划器让本地部署的大模型提出和修复计划。"
+- title: "Future-Aware Flow Planning for Safe UAV Target Following"
+  type: paper
+  arxiv: "2609.10166"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [drone, target-following, flow-matching, safety]
+  takeaway_en: "UAV target following that conditions a flow-based trajectory generator on predicted target futures and repairs risky trajectory prefixes inside the sampling loop. Best safety-tracking trade-off; Future-MPC is smoother."
+  takeaway_zh: "无人机目标跟随：用预测的目标未来轨迹作为条件引导流式轨迹生成，并在采样循环中修复高风险的可执行前段。安全与跟踪的权衡最好，但 Future-MPC 更平滑。"
+- title: "Training Generalist Navigation Policies via Action Self-Distillation"
+  type: paper
+  arxiv: "2610.17593"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [navigation, vlm, self-distillation, language-reasoning, real]
+  takeaway_en: "One VLM acts as teacher (sees the whole trajectory, infers the goal and reasoning) and student (onboard view only), so language-conditioned navigation reasoning is learned with no human labels. 13 real tasks."
+  takeaway_zh: "同一个 VLM 既当教师（看到完整轨迹，推断导航目标与推理过程）又当学生（只看机载观测），无需人工标注即可学会以语言为条件的导航推理。在 13 个真实任务上验证。"
+- title: "Learning Visuomotor Quadrotor Flight Through Dynamic Narrow Gaps via Differentiable Simulation"
+  type: paper
+  arxiv: "2610.37557"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [quadrotor, agile-flight, differentiable-simulation, visuomotor]
+  takeaway_en: "Visuomotor quadrotor policy flies through moving narrow gaps, trained in one stage from scratch by differentiable simulation; a signed-distance-gated objective turns the sparse pass-through event into a dense loss."
+  takeaway_zh: "视觉运动四旋翼策略穿越移动的狭窄缝隙，借助可微仿真从零单阶段训练；以到时变缝隙平面的有符号距离门控各项损失，把稀疏的穿越事件变成稠密目标。"
+- title: "AcroRL: Learning Aggressive Quadrotor Inversion using Bidirectional Thrust"
+  type: paper
+  arxiv: "2605.24301"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [quadrotor, aggressive-flight, bidirectional-thrust, rl]
+  takeaway_en: "RL policies modulate a reference trajectory for compact quadrotor flips with reversible thrust, one policy per direction. In JAX simulation: 32% lower position RMSE and 57% shorter settling than baselines."
+  takeaway_zh: "强化学习策略调制参考轨迹，实现可反向推力四旋翼的紧凑翻转，正翻与回翻各训一个策略。JAX 仿真中位置 RMSE 降低 32%，稳定时间缩短 57%。"
+- title: "Approximate Imitation Learning for Event-based Quadrotor Flight in Cluttered Environments"
+  type: paper
+  arxiv: "2603.07578"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [event-camera, quadrotor, imitation-learning, agile-flight]
+  takeaway_en: "Event-camera drone flight: learn the representation offline from a large dataset, then fine-tune the policy online on cheap state only, with no event rendering. Training drops from 52.44 h to 1.86 h."
+  takeaway_zh: "事件相机无人机飞行：先在大规模离线数据上学习表示，再只用轻量状态信息在线微调策略，无需在训练中渲染事件。训练时间从 52.44 小时降到 1.86 小时。"

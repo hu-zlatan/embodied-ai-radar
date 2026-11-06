@@ -1424,3 +1424,120 @@
   tags: [humanoid, gaze, transformer-vae, hri, real]
   takeaway_en: "Humanoid gaze system: a VLM picks where to look and a Transformer-VAE trained on retargeted human recordings generates coordinated eye, neck and eyelid motion. Lowest joint error on a 2-second benchmark."
   takeaway_zh: "人形机器人注视系统：VLM 选择注视目标，基于重定向人类录像训练的 Transformer-VAE 生成协调的眼、颈与眼睑运动。在 2 秒基准上关节误差最低。"
+- title: "MotionDisco: Motion Discovery for Extreme Humanoid Loco-Manipulation"
+  type: paper
+  arxiv: "2606.06139"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, loco-manipulation, llm, evolutionary-search, trajectory-optimization, real]
+  takeaway_en: "Discovers long-horizon, contact-rich humanoid loco-manipulation from scratch: LLM-guided evolutionary search over interaction sequences plus kinodynamic trajectory optimization, then RL tracking on a real humanoid."
+  takeaway_zh: "从零发现长时域、多接触的人形机器人移动操作动作：由大模型引导的进化搜索交互序列，配合运动动力学轨迹优化，再训练强化学习跟踪策略部署到真实人形机器人。"
+- title: "ZeroWBC: Learning Natural Whole-Body Humanoid Interaction from Human Egocentric Data"
+  type: paper
+  arxiv: "2603.09170"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, whole-body, egocentric-video, vlm, motion-tracking, real]
+  takeaway_en: "Teleop-free humanoid interaction: a fine-tuned VLM generates human whole-body motion from an egocentric image and instruction, retargeted and run by an interaction-aware tracker on a Unitree G1."
+  takeaway_zh: "无需遥操作的人形交互：微调后的 VLM 根据第一人称图像和语言指令生成人体全身运动 token，重定向到机器人后由注重交互的跟踪策略在 Unitree G1 上执行。"
+- title: "TAC-LOCO: Unified Whole-Body Control for Quadrupedal TACtile-Informed LOCO-Manipulation"
+  type: paper
+  arxiv: "2607.10132"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [quadruped, loco-manipulation, tactile, rl, real]
+  takeaway_en: "One RL policy for legs, arm and gripper that adds a tactile latent from compliant grippers to proprioception, regulating grasp force and preventing slip. Zero-shot on a Unitree Go2 with a WidowX 250 arm."
+  takeaway_zh: "单一强化学习策略同时控制腿、机械臂与夹爪，把柔顺夹爪的触觉潜表示与本体感觉结合，调节握力并防止物体滑落。零样本部署在装有 WidowX 250 机械臂的 Unitree Go2 上。"
+- title: "Pro-HOI: Perceptive Root-guided Humanoid-Object Interaction"
+  type: paper
+  arxiv: "2603.01126"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, loco-manipulation, box-carrying, digital-twin, real]
+  takeaway_en: "Box-carrying humanoid policy conditioned on a desired root trajectory, with reference motion used only in the reward; a persistent object estimator fuses detection with a digital twin to spot slips and re-grasp."
+  takeaway_zh: "人形机器人搬箱策略以期望的根轨迹为条件，参考动作只用于奖励；持续物体估计模块融合实时检测与数字孪生，发现滑落后自动重新抓取。"
+- title: "OmniContact: Chaining Meta-Skills via Contact Flow for Generalizable Humanoid Loco-Manipulation"
+  type: paper
+  arxiv: "2606.26201"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, loco-manipulation, skill-chaining, dataset]
+  takeaway_en: "Uses 'contact flow' (key body trajectories plus binary contact signals) as the interface between a skill-tracking policy and a planner that generates future contact flows; releases a MoCap humanoid-object dataset."
+  takeaway_zh: "以“接触流”（关键身体轨迹 + 二值接触信号）作为接口：底层策略跟踪统一的移动操作技能库，高层模块生成未来接触流来串联技能；并发布基于动捕的人-物交互数据集。"
+- title: "Humanoid Badminton: Learning Dynamic Racket Skills from Limited Human Motion Data"
+  type: paper
+  arxiv: "2609.31840"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, badminton, hierarchical-rl, motion-prior]
+  takeaway_en: "Three-stage hierarchical RL for humanoid badminton: sparse human strokes are augmented into a latent skill space, and a high-level planner composes skills online from the observed shuttle."
+  takeaway_zh: "三阶段分层强化学习实现人形机器人打羽毛球：把少量人类击球动作扩充为连续的潜技能空间，高层规划器再根据观测到的羽毛球在线组合技能。"
+- title: "X-WBC: A Cross-Embodiment Foundation Model for Humanoid Whole-Body Control"
+  type: paper
+  arxiv: "2609.15213"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, whole-body-control, cross-embodiment, foundation-model, real]
+  takeaway_en: "Cross-embodiment humanoid whole-body controller: shared human-motion command tokens and a causal transformer trained on mixed multi-robot rollouts, with small robot-specific modules. Nine sim bodies, four real robots."
+  takeaway_zh: "跨本体的人形全身控制基础模型：共享的人体运动指令 token 与在多机器人混合数据上训练的因果 Transformer，加上轻量的机器人专属模块。覆盖 9 种仿真本体与 4 台真机。"
+- title: "Closing the Loop in Humanoid VLA: Persistent 3D Object Tokens for Verifiable Loco-Manipulation"
+  type: paper
+  arxiv: "2607.18016"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, vla, object-tokens, loco-manipulation, real]
+  takeaway_en: "POT-VLA keeps role-indexed 3D object records from RGB-D as tokens for the whole-body action expert and for checking whether actions succeeded. On a Unitree G1: 71/80 successes vs 39/80 for GR00T-N1.7."
+  takeaway_zh: "POT-VLA 从 RGB-D 维护按角色索引的 3D 物体记录，既作为全身动作专家的输入 token，也用于检验动作是否达成。在 Unitree G1 上成功 71/80 次，GR00T-N1.7 基线为 39/80。"
+- title: "SwingBot: Learning Whole-Body Brachiation for Humanoid Robots"
+  type: paper
+  arxiv: "2609.10283"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, brachiation, rl, real]
+  takeaway_en: "Humanoid brachiation with passive wrist hooks: biomimetic keyframes make release-swing-capture reachable early in training, and a recurrent estimator gives position/contact latents. Continuous bar traversal on hardware."
+  takeaway_zh: "带被动腕钩的人形机器人臂荡移动：仿生关键帧让“松手-摆荡-抓杆”在训练早期就能被探索到，循环网络估计位置与接触潜变量。真机实现连续过杆。"
+- title: "S2M-Trek: From Single to Multi-Sphere Transport via Per-Frame Deep Sets on a Wheel-Legged Robot"
+  type: paper
+  arxiv: "2606.01332"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [wheel-legged, loco-manipulation, deep-sets, curriculum-rl]
+  takeaway_en: "Carries several free-rolling balls on a wheel-legged robot's back with no fences: per-frame Deep Sets respect that ball order can change every frame, which standard history encoders miss and exploit as a shortcut."
+  takeaway_zh: "在轮腿机器人背上无围栏地同时运送多个自由滚动的球：逐帧 Deep Sets 编码器考虑到球的顺序每帧都可能变化，而常规历史拼接编码器忽略这一点并把槽位当作捷径。"
+- title: "FT-WBC: Learning Fault-Tolerant Whole-Body Control for Legged Loco-Manipulation"
+  type: paper
+  arxiv: "2606.24466"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [legged-manipulator, fault-tolerance, whole-body-control, rl]
+  takeaway_en: "Fault-tolerant whole-body control for legged manipulators: a fault estimator finds failed leg joints from proprioception, and a posture module turns arm-driven base requests into safe ones."
+  takeaway_zh: "面向腿足机械臂的容错全身控制：故障估计器从下肢本体感觉历史中识别失效关节，姿态适配模块把机械臂策略提出的底盘姿态请求转为安全可执行的指令。"
+- title: "General Humanoid Whole-Body Control via Pretraining and Fast Adaptation"
+  type: paper
+  arxiv: "2602.11929"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, whole-body-control, motion-tracking, adaptation]
+  takeaway_en: "FAST: a general humanoid motion tracker with a small residual adaptation policy under orthogonality and KL constraints for new motions without forgetting, plus center-of-mass-aware terms for balance."
+  takeaway_zh: "FAST：通用人形运动跟踪控制器，在正交与 KL 约束下学习轻量残差策略来快速适配新动作且不遗忘，并加入质心相关观测与目标提升平衡。"
+- title: "Playing Soccer Like Humans Do: Learning Versatile and Agile Humanoid Soccer via Latent Motion Priors"
+  type: paper
+  arxiv: "2611.06564"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, soccer, motion-prior, hierarchical-rl, real]
+  takeaway_en: "A latent motion prior distilled from human soccer MoCap lets one skill-conditioned policy move, dribble, trap and kick with human-like motion; transfers zero-shot to a Unitree G1."
+  takeaway_zh: "从人类足球动捕数据蒸馏出潜在运动先验，使单一技能条件策略能完成移动、带球、停球和射门，动作自然流畅；零样本迁移到 Unitree G1。"
