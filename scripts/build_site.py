@@ -1038,6 +1038,45 @@ def build() -> int:
         ordered = [p for p in ps if p.get("code")] + [p for p in ps if not p.get("code")]
         return '<div class="cards">' + "".join(feed_card(p, tby, root) for p in ordered) + "</div>"
 
+    topic_en = {t["id"]: t["en"].replace(", ", " / ").replace("&", "\\&") for t in topics}  # commas separate keywords
+
+    def day_bib(ps: list[dict]) -> str:
+        """One day's papers as a BibTeX file for Zotero/EndNote/Mendeley: topics become keywords (Zotero tags),
+        the code link becomes a note. Keys are made unique within the file."""
+        out, seen = [], set()
+        for p in ps:
+            b = bibtex(p["id"], p["title"], p.get("authors", []), p.get("published", ""), p.get("primary", ""))
+            if not b:
+                continue
+            key = b.split("{", 1)[1].split(",", 1)[0]
+            k2, n = key, 1
+            while k2 in seen:
+                n += 1
+                k2 = f"{key}{chr(96 + n)}"
+            seen.add(k2)
+            b = b.replace(key, k2, 1)
+            kw = [topic_en[t] for t in p.get("topics") or [] if t in topic_en] + ["Embodied AI Radar"]
+            extra = [f"  keywords = {{{', '.join(kw)}}},"]
+            if p.get("code"):
+                extra.append(f"  note = {{Code: {p['code'][0]}}},")
+            out.append(b[:-1] + "\n".join(extra) + "\n}")
+        head = f"% Embodied AI Radar, arXiv papers of {ps[0].get('published', '')} ({len(out)} entries). {SITE_URL}feed.html\n\n" if ps else ""
+        return head + "\n\n".join(out) + "\n"
+
+    def bib_links(d: str, root: str) -> str:
+        ps = day_papers[d]
+        n_code = sum(1 for p in ps if p.get("code"))
+        (OUT / "feed" / f"{d}.bib").write_text(day_bib(ps), encoding="utf-8")
+        code_btn = ""
+        if n_code:
+            (OUT / "feed" / f"{d}-code.bib").write_text(day_bib([p for p in ps if p.get("code")]), encoding="utf-8")
+            code_btn = f'<a class="qbtn" href="{root}feed/{d}-code.bib" download>{bi(f"Only with code ({n_code})", f"仅附代码（{n_code} 篇）")}</a>'
+        return (f'<div class="bibpack"><a class="qbtn" href="{root}feed/{d}.bib" download>⬇ {bi(f"BibTeX for this day ({len(ps)} papers)", f"下载本日论文包 BibTeX（{len(ps)} 篇）")}</a>{code_btn}'
+                f'<details class="howto"><summary>{bi("Import into Zotero", "如何导入 Zotero")}</summary>'
+                f'<p>{bi("Zotero: File → Import… → pick the .bib file (works in EndNote and Mendeley too). Topics become tags, code links become notes.", "Zotero：文件 → 导入… → 选择下载的 .bib 文件（EndNote、Mendeley 同样可导入）。主题会变成标签，代码链接会变成笔记。")}</p>'
+                f'<p>{bi("Want it every day without downloading? In Zotero, add a new feed from URL:", "想每天自动收到、不用下载？在 Zotero 中新建订阅源（从 URL）：")} '
+                f'<code>{SITE_URL}feed.xml</code> {bi("or a topic feed such as", "或某个主题的订阅，例如")} <code>{SITE_URL}topics/vla.xml</code></p></details></div>')
+
     def archive(root: str, current: str | None) -> str:
         items = "".join(
             f'<li>{"<b>" if d == current else ""}<a href="{root}feed/{d}.html">{esc(d)}</a>{"</b>" if d == current else ""} '
@@ -1051,7 +1090,7 @@ def build() -> int:
               + (f'<a href="{older}.html">← {esc(older)}</a>' if older else "")
               + (f' <a href="{newer}.html">{esc(newer)} →</a>' if newer else "") + "</p>")
         body = f"""<h1>{bi("arXiv papers", "arXiv 论文")} · {esc(d)}</h1>
-{day_summary(day_papers[d])}{pn}
+{day_summary(day_papers[d])}{bib_links(d, "../")}{pn}
 {day_cards(day_papers[d], "../")}
 {pn}{archive("../", d)}"""
         (OUT / "feed" / f"{d}.html").write_text(
@@ -1061,7 +1100,7 @@ def build() -> int:
 
     if all_days:
         d0 = all_days[0]
-        latest = (f'<h2 id="d{d0}">{bi("Latest", "最新")}: {esc(d0)}</h2>{day_summary(day_papers[d0])}'
+        latest = (f'<h2 id="d{d0}">{bi("Latest", "最新")}: {esc(d0)}</h2>{day_summary(day_papers[d0])}{bib_links(d0, "")}'
                   f'{day_cards(day_papers[d0], "")}'
                   f'<p><a class="more" href="feed/{d0}.html">{bi("Permalink for this day →", "本日固定链接 →")}</a></p>')
     else:
