@@ -2,7 +2,7 @@
 
 _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 
-共 162 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
+共 166 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/manipulation.html) · [English](manipulation.md)
 
@@ -46,6 +46,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[Combining Constrained Sampling and Reinforcement Learning for Manipulation](https://arxiv.org/abs/2602.08557)** (2026) — 用感知接触的约束状态采样器重置回合，覆盖多样接触模式，帮助 RL 探索接触丰富任务；可训练通用的手内和全身操作策略。 · [代码](https://github.com/LIS-TU-Berlin/csrl) · [项目页](https://www.user.tu-berlin.de/mtoussai/26-CSRL/)
 - **[Contact Imitation Interface: Transferring Dexterous Skills by Showing How Contact Unfolds](https://arxiv.org/abs/2610.41028)** (2026) — 免机器人灵巧演示框架：共享接触几何、指尖 RGB 视角、接触对齐优先的重定向，加上预测接触面轨迹的层次策略。报告在 LEAP 和 Wuji 手的六组手-任务上，最终阶段成功率比基线至少高 50 个百分点；硬件与软件公开。 · [代码](https://github.com/ariszxxu/CIMI) · [项目页](https://nus-lins-lab.github.io/CIMIWeb/)
 - **[ContactBench 1.0: A Benchmark for Everyday Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2610.24512)** (2026) — 围绕八种日常接触技能设计的 36 个接触密集型任务，40 多个物体可用消费级 3D 打印机复现，且每个都有对应仿真模型。报告称所测的视触觉策略并未明显优于纯视觉策略。 · [项目页](https://jingyi-xiang.github.io/contactbench)
+- **[ContactGuard: Pre-Contact Execution Monitoring with Action-Conditioned Latent World Models](https://arxiv.org/abs/2608.13438)** (2026) — 在接触发生前，用潜空间世界模型在多视角嵌入空间中推演策略计划的动作块，若预测的接触后状态呈现失败迹象，轻量探针即中止执行。
 - **[Continual Learning for 6-DoF Grasp Synthesis via Experience and Demonstrations](https://arxiv.org/abs/2610.01301)** (2026) — 通过嵌入空间中的记忆在部署中持续学习的 6-DoF 抓取：抓取结果更新后续评分，用户示范可在新场景中被召回。报告在困难类别上仅 50 次尝试后成功率超过 90%。 · [项目页](https://giuschio.github.io/cl_grasping/)
 - **[Correct Robots Before They Make Mistakes: Proactive Human-in-the-Loop Intervention via Preference Learning](https://arxiv.org/abs/2611.05667)** (2026) — PHIL 在 XR 中预览策略预测的动作，让操作者在出错前介入，再用被否决与修正后的动作片段做偏好训练；报告相比 HG-DAgger，扩散策略成功率从 44.0% 升至 70.3%。 · [项目页](https://intuitive-robots.github.io/PHIL-page/)
 - **[Current as Touch: Proprioceptive Contact Feedback for Compliant Dexterous Manipulation](https://arxiv.org/abs/2607.03529)** (2026) — 把电机电流当作触觉：在低成本灵巧手上预测一个“柔顺参考位置”，让 PD 控制器的位置误差产生合适的抓握力，无需触觉或力传感器。 · [项目页](https://cat.chenyangma.com)
@@ -53,6 +54,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[DeCAL: Towards Physically-Grounded Dexterous Vision-Language-Action Models via Contact-Aware Latent Co-Imagination](https://arxiv.org/abs/2609.09119)** (2026) — 基于混合 Transformer 的灵巧视触觉 VLA：接触感知门控决定何时引入触觉，并联合想象未来的视觉与触觉潜变量。报告在富接触任务上平均成功率 71%。 · [代码](https://github.com/AureleoPKU/DeCAL) · [项目页](https://aureleopku.github.io/DeCAL)
 - **[Dex4D: Task-Agnostic Point Track Policy for Zero-Shot Dexterous Manipulation](https://arxiv.org/abs/2602.15828)** (2026) — 在仿真中用数千种物体训练与任务无关的“任意位姿到任意位姿”灵巧策略，以 3D 点轨迹为条件；用生成视频提取的点轨迹作提示，即可零样本完成真实任务。 · [项目页](https://dex4d.github.io/)
 - **[DexHOT: Learning Hand-Object Configuration Transfer for Dexterous Manipulation](https://arxiv.org/abs/2611.05119)** (2026) — 把灵巧操作目标定义为手与物体的联合构型，从合成构型对学习统一的转移基元，无需人类动作；报告仿真未见物体成功率 69.4%，200 次真机转移成功率 61.5%。 · [项目页](https://dex-hot.github.io/)
+- **[DexNinja: Learning Robust Dexterous Cutting Policy with a Real-to-Sim-to-Real Data Engine](https://arxiv.org/abs/2610.17208)** (2026) — 只用少量真实示教学习灵巧切割食物：重建物体实例，在类别约束下随机化物理参数，在仿真中生成扩增的灵巧示教，再迁移回真实灵巧手。
 - **[Dexterous In-Hand Object Pose Reaching with Learned Safety Filters](https://arxiv.org/abs/2610.37652)** (2026) — 在仿真中无需人类数据训练 LEAP 灵巧手的手内物体位姿到达策略，零样本迁移到真机；报告在 4800 个未见目标上 95.2% 到达，可调节的残差安全滤波器使掉落减少 75%。 · [项目页](https://ian-chuang.github.io/dexsafe/)
 - **[DiffMorphGrasp: A Diffusion Framework Conditioned on Hand Morphology for Cross-Embodiment Grasp Generation](https://arxiv.org/abs/2602.00915)** (2026) — 以手部运动学结构图为条件的扩散抓取生成模型，可零样本迁移到未见过的机器人手型；同时提出跨手型抓取评测基准。 · [项目页](https://georgewuzy.github.io/DiffMorphGrasp-website)
 - **[ESCAPE: Egocentric Sensing for Collision Avoidance and Policy Execution](https://arxiv.org/abs/2610.23943)** (2026) — 机器人身上的分布式深度传感器汇成障碍感知点云；在 10 万多条仿真安全关键轨迹上训练的流匹配策略据此生成无碰撞运动，零样本迁移到真机。
@@ -86,6 +88,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[Latent RL Priors for Data-Efficient Dexterous Manipulation](https://arxiv.org/abs/2611.08458)** (2026) — 把仿真中强化学习的经验蒸馏进冻结的流匹配动作解码器，之后只需用少量示教学习从图像到其潜变量的视觉接口。报告用少 5–10 倍的示教超过微调后的 π0.5 与 GR00T N1.7。 · [项目页](https://yixiaowang7.github.io/latent-rl-prior-page/)
 - **[Learn the Task, Not the Schedule: Reducing Spurious Cross-Arm Coupling in Bimanual Imitation Learning](https://arxiv.org/abs/2610.26507)** (2026) — CTR 在训练时对双臂示教中两只手臂的动作时序重新组合，同时保留任务必需的约束，避免策略把另一只手臂的进度当作捷径线索。 · [代码](https://github.com/MINT-SJTU/CTR)
 - **[Learning Beyond What Humans Can Demonstrate](https://arxiv.org/abs/2609.24996)** (2026) — 针对人难以遥操作完成的任务，由 LLM 编写基于状态的护栏来过滤遥操作与策略指令。报告数据采集成功率从 0–10% 提升到 70–90%。 · [项目页](https://guardrail-policy.github.io/)
+- **[Learning Dexterous Manipulation Using Contact Wrench Guidance From Human Demonstration](https://arxiv.org/abs/2607.00033)** (2026) — CHORD 在以物体为中心的接触力旋量空间中比较人与机器人的动作来引导灵巧操作强化学习，并构建来自动捕与视频的 4739 个双手任务基准；在其中 1831 个任务上平均成功率 82.12%。
 - **[LiMA: Bridging Long-term Imagination to Real-time Dexterous Manipulation via Asynchronous Diffusion](https://arxiv.org/abs/2609.28431)** (2026) — 慢系统生成稀疏的长时程意图，快系统细化高频动作，二者以潜空间薛定谔桥耦合。报告延迟比 Cosmos-Policy 低 45.8%，六个双臂灵巧任务成功率 70.8%。 · [项目页](https://ccdcs.github.io/LiMA_repo/)
 - **[MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation](https://arxiv.org/abs/2611.08372)** (2026) — 用高斯泼溅与动作重定向为移动操作示教合成新的底盘位姿视角，连被操作的运动物体也一起重渲染。报告在未见底盘位姿下成功率是最强基线的两倍以上。 · [项目页](https://robin-lab.cs.utexas.edu/momasplat)
 - **[Mixture of Frames Policy: Multi-Frame Action Denoising for Bimanual Mobile Manipulation](https://arxiv.org/abs/2607.11884)** (2026) — 扩散策略在多个坐标系中同步去噪同一动作：各坐标系有专门的去噪器，再把噪声预测融合回规范坐标系。在九个双臂任务上优于“最优单坐标系”选择，并在两个真实移动操作任务上验证。
@@ -127,6 +130,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[TAMPAgent: Agentic Belief-Space Planning for Mobile Manipulation](https://arxiv.org/abs/2611.03584)** (2026) — 大模型智能体基于感知、规划、控制工具生成部分任务规划，再由经典搜索补全，并通过工具满足几何约束；在 Rainbow Y1 与 Unitree G1 上闭环运行，交替观察与操作。 · [项目页](https://umishra.me/TAMPAgent/)
 - **[Towards Human-level Dexterous Teleoperation](https://arxiv.org/abs/2607.11481)** (2026) — 遥操作控制器把操作者意图转化为学习到的手-物接触执行，基于人类动作用单阶段强化学习训练，零样本迁移真机。报告七个手内操作与工具使用任务平均成功率 75%。 · [项目页](https://bigai-dex.github.io/blog/teledexter/)
 - **[VLS: Steering Pretrained Robot Policies via Vision-Language Models](https://arxiv.org/abs/2602.03973)** (2026) — 在测试时适配冻结的扩散或流匹配策略：当障碍或杂物改变场景时，由 VLM 生成可微奖励来引导去噪。报告 CALVIN 提升 31%、LIBERO-PRO 提升 13%，无需重新训练。 · [代码](https://github.com/Vision-Language-Steering/code) · [项目页](https://vision-language-steering.github.io/webpage/)
+- **[WARPED: Wrist-Aligned Rendering for Robot Policy Learning from Egocentric Human Demonstrations](https://arxiv.org/abs/2604.10809)** (2026) — 把单目第一人称人类视频转为机器人训练数据：跟踪手与物体，重定向到机械夹爪，并用高斯泼溅渲染逼真的腕部相机视角。
 - **[Wiggle and Go! System Identification for Zero-Shot Dynamic Rope Manipulation](https://arxiv.org/abs/2604.22102)** (2026) — 先做一次短暂安全的“抖绳”动作来辨识绳子参数，再以此驱动轨迹优化，零样本完成动态甩绳。报告真机 3D 目标击打平均误差 3.55 cm，无辨识基线为 15.29 cm。 · [项目页](https://wiggleandgo.github.io/)
 - **[cuArms: GPU-Accelerated Conflict-Based Planning for Multi-Arm Manipulation](https://arxiv.org/abs/2610.36250)** (2026) — 为 GPU 并行而设计的多臂冲突搜索规划器：每台机器人使用可复用的多模态路线图，惰性解决冲突与死锁，并由高层调度器提出任务骨架；报告可实时给出初始解并持续改进运动质量与调度。 · [项目页](https://cuarms.github.io/)
 - **[DexGraspVLA: A Vision-Language-Action Framework Towards General Dexterous Grasping](https://arxiv.org/abs/2502.20900)** (2025) — 由预训练 VLM 做高层规划、扩散控制器驱动灵巧手抓取，底层输入为基础模型提取的域不变特征；报告在数千个未见过的杂乱场景中抓取成功率超过 90%。 · [代码](https://github.com/Psi-Robot/DexGraspVLA) · [项目页](https://dexgraspvla.github.io)

@@ -958,3 +958,39 @@
   tags: [dexterous-grasping, data-collection, automation, real]
   takeaway_en: "AutoDex runs real dexterous-grasp trials, labels outcomes and resets objects with little human help: 3,500+ trials on 100 objects (Allegro, Inspire); about 0.2 human-hours per 500 trajectories vs 9.3 by teleop."
   takeaway_zh: "AutoDex 自动执行真机灵巧抓取、标注结果并复位物体，几乎无需人工：在 100 个物体上用 Allegro 与 Inspire 手采集 3500 多次试验；每 500 条轨迹约需 0.2 人时，遥操作需 9.3 人时。"
+- title: "IM-ENGINE: Image Editing for Embodied Data Generation"
+  type: paper
+  arxiv: "2609.06279"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [data-generation, image-editing, dexterous-grasping, sim]
+  takeaway_en: "Uses image editing of simulator renders as a middle step: edit in task semantics, recover 3D state from simulator priors, refine in physics, and turn it into robot supervision, e.g. dexterous grasps and goal states."
+  takeaway_zh: "以对仿真渲染图的图像编辑为中间表示：先编辑注入任务语义，再借助仿真先验恢复 3D 状态并在物理中细化，最后转为机器人可执行的监督，如灵巧抓取与目标状态。"
+- title: "ATHENA: Accelerated Multi-Task Heterogeneous Influence Functions for Robot Data Curation"
+  type: paper
+  arxiv: "2606.16208"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [data-curation, influence-functions, vla, robotwin]
+  takeaway_en: "Influence functions at billion-parameter VLA scale (about 313x faster via Kronecker structure and a rank-r Hessian approximation) for multi-task data curation; matches full-data fine-tuning with 50% of demos in sim."
+  takeaway_zh: "将影响函数扩展到十亿参数级 VLA（借助 Kronecker 结构与秩 r 的 Hessian 近似提速约 313 倍）用于多任务数据筛选；在仿真中只用 50% 示教即可达到全量数据微调的效果。"
+- title: "H2RBench: A Real-to-Sim Benchmark for Evaluating Human-to-Robot Transfer"
+  type: paper
+  arxiv: "2609.24778"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [benchmark, human-to-robot, real2sim, human-video]
+  takeaway_en: "Real-to-sim benchmark for human-to-robot transfer: real human video demos plus simulated robot demos on four tasks, with a fixed protocol to compare how H2R methods scale with more human data."
+  takeaway_zh: "评估“人到机器人”迁移的 Real2Sim 基准：四个任务配有真实人类视频示教和仿真机器人示教，以统一协议比较各方法随人类数据增加的扩展能力。"
+- title: "SPARC: Reliable Spatial Annotations from Robot Demonstrations at Scale"
+  type: paper
+  arxiv: "2606.13497"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [annotation, spatial-labels, reliability, benchmark]
+  takeaway_en: "Auto-labels robot demos with boxes, object trajectories and phase labels, plus a reliability score from the task's spatio-temporal structure, so fewer noisy labels are kept and fewer good ones are thrown out."
+  takeaway_zh: "为机器人示教自动标注边界框、物体轨迹与操作阶段，并利用任务的时空结构为每个标注给出可靠性分数，从而少留噪声标签、少丢有用样本。"

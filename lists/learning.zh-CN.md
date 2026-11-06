@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 126 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 131 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [English](learning.md)
 
@@ -42,8 +42,10 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[ELA: End-to-End Latent Action Policy Learning from Video Demonstrations](https://arxiv.org/abs/2611.05571)** (2026) — 联合训练潜在动作模型、潜在策略和动作解码器，用大量无动作标注的视频加少量带标注示教即可训练策略。报告在仿真和真实任务上优于已有潜在动作方法。 · [项目页](https://end2end-latent-action.github.io/)
 - **[ENPIRE: Agentic Robot Policy Self-Improvement in the Real World](https://arxiv.org/abs/2606.19980)** (2026) — 让编程智能体自主改进真实机器人策略的框架：自动复位与结果验证、多机并行评测，并由智能体分析日志、修改训练代码。报告在扎扎带等灵巧任务上成功率 99%。 · [项目页](https://research.nvidia.com/labs/gear/enpire/)
 - **[Efficient Diffusion Policy Fine Tuning with Latent Noise Representation Bridging](https://arxiv.org/abs/2611.07275)** (2026) — LARBRID 通过调整初始噪声来强化学习微调预训练的扩散/流策略，并学习噪声空间与动作空间共享的表示来消除“噪声混叠”问题。在运动与操作任务上报告最高 2–3 倍的提升。
+- **[Efficient On-policy Visual-RL via Stochastic Decoupled Policy Gradient](https://arxiv.org/abs/2605.26478)** (2026) — SDPG 通过对推演轨迹随机扰动来估计策略梯度，视觉强化学习所需的批量渲染环境大幅减少，单张 RTX 4080 几小时即可训练；并提供视觉机器人基准与仿真到真实演示。
 - **[EgoEngine: From Egocentric Human Videos to High-Fidelity Dexterous Robot Demonstrations](https://arxiv.org/abs/2606.12604)** (2026) — 把第一人称人类视频转为机器人数据：生成把人替换成机器人的视频，以及满足可行性约束的机器人动作轨迹。声称首次在无真机演示下零样本训练出灵巧视觉运动策略。 · [项目页](https://egoengine.github.io)
 - **[EgoForesight: Effectively Scaling Policy Learning with Noisy Egocentric Actions](https://arxiv.org/abs/2610.31845)** (2026) — 将机器人示教与动作标签噪声较大的第一视角视频联合训练 VLA：按数据源可靠性分配监督权重，并从干净的未来画面蒸馏表征；报告在最多 3 万小时预训练数据范围内扩展斜率高于基线。 · [代码](https://github.com/LinShan-Bin/EgoForesight) · [项目页](https://lin-shan.com/EgoForesight)
+- **[ExpertGen: Scalable Sim-to-Real Expert Policy Learning from Imperfect Behavior Priors](https://arxiv.org/abs/2603.15956)** (2026) — ExpertGen 先在不完美示教（甚至由大模型合成）上训练扩散先验，再冻结策略、用强化学习只优化初始噪声，在稀疏奖励下保持类人行为；得到的专家策略用于仿真到真实的行为克隆。
 - **[FAR: Failure-Aware Retry for Test-Time Recovery and Continual Policy Improvement](https://arxiv.org/abs/2607.01111)** (2026) — 会从失败中学习的重试机制：用失败尝试构造偏好数据，引导策略避开失败行为，并加入小幅动作扰动做局部探索，成功恢复的轨迹再回流训练。报告仿真提升 17.6%，真机提升 11.7%。 · [项目页](https://hoar012.github.io/FAR-Project)
 - **[Flexible Language-Guided Representation Editing for Adaptive Robot Behavior](https://arxiv.org/abs/2610.28893)** (2026) — FLEX 用自然语言纠正来迭代修改机器人的任务特征集合，支持添加、泛化、屏蔽三种操作（而非只能添加）；在二维导航、Franka 桌面操作和真实用户研究中报告比其他特征编辑方法获得更高的归一化奖励。 · [项目页](https://mit-clear-lab.github.io/FLEX/)
 - **[Flow Policy Gradients for Robot Control](https://arxiv.org/abs/2602.02481)** (2026) — CoRL 2026 Oral。让流匹配策略梯度可用于机器人控制：绕过动作似然计算，策略不再限于高斯分布。应用于足式运动、人形动作跟踪与操作。 · [代码](https://github.com/amazon-far/fpo-control) · [项目页](https://hongsukchoi.github.io/fpo-control)
@@ -51,6 +53,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[FlowDPG: Deterministic Policy Gradient on Flow Matching Policies for Real-World Manipulation](https://arxiv.org/abs/2606.22303)** (2026) — 无需沿 ODE 反向传播的流匹配策略 DDPG 式强化学习：在一步估计的动作上计算 critic 梯度，并蒸馏进速度场。报告双臂 AirPods 装配成功率 92%，炒蛋任务评分 86%。 · [项目页](https://flowdpg.github.io)
 - **[Freeform Preference Learning for Robotic Manipulation](https://arxiv.org/abs/2606.32027)** (2026) — 让标注者用自然语言自定义偏好维度（速度、安全、细致等）并逐维比较轨迹，训练语言条件奖励模型和可引导的策略。报告比稀疏奖励与二元偏好方法高 38 个百分点。 · [项目页](https://freeform-pl.github.io/fpl.website/)
 - **[GSBR: Geometric Support Behavior Regularization for Online RL](https://arxiv.org/abs/2611.05295)** (2026) — 在预训练策略之上做在线强化学习，按动作到其支撑集的距离施加惩罚：集内不罚，集外平滑增长；报告 19 个基准任务的平均成功率从 33% 升至 95%。 · [代码](https://github.com/charlesxu0124/gsbr) · [项目页](https://charlesxu0124.github.io/gsbr/)
+- **[GUILD: Guided Iterative Data Collection for Imitation Learning](https://arxiv.org/abs/2611.05368)** (2026) — GUILD 主动决定下一步采集什么数据：由 VLM 提出环境、物体布置与目标，采集后评估数据对策略的价值，再进入下一轮，而非事后筛选数据集。
 - **[Generative Flow on Symbolic Abstractions for Embodiment Capability Discovery](https://arxiv.org/abs/2610.17174)** (2026) — 自动发现某台机器人“学得会”的任务：用 GFlowNet 生成符号化任务骨架，以仿真中底层策略的学习效果作为奖励，再把发现的任务蒸馏进一个语言条件策略。 · [项目页](https://www.youwei-yu.com/fosa)
 - **[Guided Discovery of New Behaviors using Diffusion Policies](https://arxiv.org/abs/2606.08743)** (2026) — 用 Feynman-Kac 校正器配合新的引导势能，把扩散策略的采样推向少见但有前景的模态；再以基于采样的轨迹优化修复这些轨迹，并加回训练集重训策略。
 - **[HARBOR: A Harness Framework for Agentic Robot Reinforcement Learning](https://arxiv.org/abs/2606.08610)** (2026) — 自动化仿真强化学习全流程的智能体框架：从环境搭建、奖励设计到调参训练，由分阶段的专职智能体、可执行检查点、并行试验与经验复用完成。覆盖 6 个基准 16 个任务，部分迁移到真机。
@@ -74,6 +77,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Memory Anchors for Continual Robot Learning](https://arxiv.org/abs/2608.26545)** (2026) — 发现回放缓冲中少数“观测相似但所需动作冲突”的样本（记忆锚点）承担了防遗忘的主要作用：仅剔除其中 10% 就会让 LIBERO 上的遗忘增加 4.5 倍以上。 · [项目页](https://robot-adaptation.github.io/MemoryAnchors)
 - **[Object-Centric Conditioning for Visuomotor Flow Matching](https://arxiv.org/abs/2609.24155)** (2026) — 以物体为中心的动作到动作流匹配策略：把观测拆成语义“是什么”特征与图像平面“在哪里”线索作为条件，在保持少步推理的同时提升对干扰物和位置偏移的鲁棒性。
 - **[Online World Modeling Enables Real-World Inverse Reinforcement Learning from Observation](https://arxiv.org/abs/2602.24121)** (2026) — 仅从观测（视频，无动作和奖励）做逆强化学习，借助在线世界模型在真机上实现。报告不到 40 分钟从零学会抓放，成功率 82%。 · [代码](https://github.com/UWRobotLearning/mpail2) · [项目页](https://uwrobotlearning.github.io/mpail2/)
+- **[Optimal Transport Q-Learning for Flow Policy Steering and Acceleration](https://arxiv.org/abs/2607.06262)** (2026) — OTQL 用优势加权的条件最优传输流匹配，从机器人自身经验对次优流策略做强化学习后训练并加速推理，只需 50–60 个交互回合，无需蒸馏。
 - **[Preference-Calibrated Human-in-the-Loop Reinforcement Learning for Robotic Manipulation](https://arxiv.org/abs/2606.03949)** (2026) — 人在回路强化学习：把每次人工干预视为偏好（人类动作优于策略动作），对次优片段做信用重新分配。报告五个真机任务平均成功率提升 24.5%，收敛快 1.3 倍。
 - **[Progress-Guided Preference Generation for Aligning Generative Control Policies](https://arxiv.org/abs/2610.25692)** (2026) — 用自动生成的偏好标签微调扩散与流匹配策略：以少量专家示教为参照衡量自主回放的顺序进度并据此排序，无需人工标注或手工奖励；报告在长时程操作任务上优于监督微调基线。 · [项目页](https://pgpg2026.github.io/)
 - **[Proxy Policy Steering](https://arxiv.org/abs/2609.09148)** (2026) — 推理时适配冻结的通用策略：训练两个小代理策略（一个模仿基座行为，一个在目标任务上微调），以二者的速度场差值引导每一步去噪。无需访问基座参数。
@@ -90,6 +94,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[SCAPE: Scenario-Conditioned Simulation-Augmented Policy Evaluation](https://arxiv.org/abs/2608.19425)** (2026) — SCAPE 利用少量成对的仿真/真机数据和大量仿真推演，按场景预测策略在真实世界的表现：先校正仿真标签偏差，再用共形预测校准不确定性。在自动驾驶与四足速度跟踪上验证。
 - **[SCoCaT: Success Conditioned Constrained Reinforcement Learning for Spacecraft Docking](https://arxiv.org/abs/2609.06061)** (2026) — 发现基于终止的约束强化学习在目标附近约束收紧时会学会回避目标，并用稠密成功信号的辅助价值网络解决；在航天器对接任务上验证。
 - **[Simultaneous Forward and Inverse Human-in-the-Loop Optimization](https://arxiv.org/abs/2609.22630)** (2026) — 面向用户试验代价高的辅助设备：先训练前向模型从控制策略预测用户结果，用它主动选择查询来学习个体奖励，再在不增加试验的情况下选出最终策略。
+- **[SkillWeaver: Agentic Exploration over Neural Interaction Skills for Scalable Robot Data Generation](https://arxiv.org/abs/2609.36171)** (2026) — VLM 智能体在仿真中调用可复用的强化学习交互技能来探索任务，借助验证、反思与记忆进行验证器引导的树搜索，无需脚本即可生成机器人数据。
 - **[SynthICL: Scalable In-context Imitation Learning with Synthetic Data](https://arxiv.org/abs/2606.08154)** (2026) — 完全用 RGB 合成数据训练的上下文模仿学习策略，并预测下一个子目标图像。报告仅给一条演示时，在 16 个未见真机任务上平均成功率 79%。 · [项目页](https://synth-icl.github.io)
 - **[TARC: Time-Adaptive Robotic Control](https://arxiv.org/abs/2510.23176)** (2026) — 策略同时预测动作及其保持时长。报告在遥控车、Unitree Go1 和仿真 VLA 上以不到一半的控制频率达到高频控制的性能。 · [项目页](https://arnavsukhija.github.io/projects/tarc)
 - **[TILDE: Teacher-in-the-Loop Distillation from Embodied Foundation Models](https://arxiv.org/abs/2610.25376)** (2026) — 把预训练具身基础模型（教师）蒸馏到未做动作预训练的策略：在学生访问的状态上做在线监督，并由奖励模型监控进度、自动触发教师接管采集纠错轨迹（AutoDAgger，无需人工看护）；报告在 3 个真机任务上比行为克隆最高提升 4.1 倍。 · [代码](https://github.com/hku-sail/TILDE) · [项目页](https://hku-sail.github.io/TILDE/)

@@ -2495,3 +2495,66 @@
   tags: [vla, force, contact-rich, real]
   takeaway_en: "FR-VLA uses learnable force query tokens to let vision-language context decide how much measured force should enter the action pathway, rather than feeding force in through a fixed path. Five real tasks, two robots."
   takeaway_zh: "FR-VLA 通过可学习的力查询 token，由视觉语言上下文判断测得的力应在多大程度上进入动作生成通路，而不是走固定的注入路径。在两种机器人的五个接触密集任务上验证。"
+- title: "VISTA: Vision-Grounded and Physics-Validated Adaptation of UMI data for VLA Training"
+  type: paper
+  arxiv: "2606.04708"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [umi, vla, fisheye, data-filtering, vqa]
+  takeaway_en: "Makes UMI data usable for VLAs: a fisheye wrist-view VQA dataset aligns the VLM to distorted views, and a physics validation pipeline scores trajectories for kinematic limits, collisions and controller bandwidth."
+  takeaway_zh: "让 UMI 数据可用于训练 VLA：构建腕部鱼眼视角的 VQA 数据集使 VLM 适应畸变画面，并用物理校验流程对轨迹的运动学极限、碰撞与控制带宽进行评分筛选。"
+- title: "Gaze Prompts: Temporally Dense Human Attention for Vision-Language-Action Fine-Tuning"
+  type: paper
+  arxiv: "2609.34550"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [gaze, vla, teleoperation, bimanual, dataset]
+  takeaway_en: "Gaze recorded in VR teleop is drawn as crosshairs on training images; at test time a small predictor supplies the gaze. With π0: 26.3% → 56.0% on six real bimanual tasks. Releases GazeMani (1,200 trajectories)."
+  takeaway_zh: "把 VR 遥操作中记录的注视点画成十字准星叠加在训练图像上，部署时由轻量预测器估计注视点。基于 π0，六个真实双臂任务平均成功率从 26.3% 升至 56.0%；发布 GazeMani 数据集（1200 条轨迹）。"
+- title: "SafeDojo: Safe Reinforcement Learning for VLA via Interactive World Model"
+  type: paper
+  arxiv: "2606.20698"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [safe-rl, world-model, vla, grpo]
+  takeaway_en: "Online safe RL for VLAs inside an interactive video world model: a success classifier and a contact-probability safety head are balanced with Lagrangian-constrained GRPO. +8.25 pts safe success on SafeLIBERO Level I."
+  takeaway_zh: "在可交互视频世界模型中对 VLA 做在线安全强化学习：成功分类器与预测接触概率的安全头，经拉格朗日约束的 GRPO 平衡。在 SafeLIBERO Level I 上安全成功率提升 8.25 个百分点。"
+- title: "Beyond Imitation: Reinforcement Learning-Based Sim-Real Co-Training for VLA Models"
+  type: paper
+  arxiv: "2602.12628"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [sim-real-co-training, rl, vla, openvla, pi0.5]
+  takeaway_en: "RL-Co: SFT on mixed real and sim demos, then RL in simulation with an auxiliary supervised loss on real data to avoid forgetting. Tested on four real tabletop tasks with OpenVLA and π0.5."
+  takeaway_zh: "RL-Co：先在真实与仿真混合示教上做监督微调，再在仿真中强化学习，同时加入真实数据的辅助监督损失以防遗忘。用 OpenVLA 和 π0.5 在四个真实桌面任务上验证。"
+- title: "Supervise What Survives: Geometry-Guided VLA Adaptation from Synthetic Robot Videos"
+  type: paper
+  arxiv: "2606.24448"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [synthetic-video, vla, representation-alignment, human-to-robot]
+  takeaway_en: "Generated robot videos keep geometry but not control, so GRA uses them only to supervise visual perception (aligned to extracted geometry) and leaves action learning to real demos."
+  takeaway_zh: "生成的机器人视频保留了几何轨迹却丢失了控制信号，因此 GRA 只用它们监督视觉感知（与提取的几何对齐），动作学习仍交给真实示教。"
+- title: "EMMA: Enhancing Robotic Control Robustness through a Generative Visual Model"
+  type: paper
+  arxiv: "2509.22407"
+  year: 2025
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [data-augmentation, video-editing, vla, generalization]
+  takeaway_en: "EMMA: a diffusion-transformer video editor (DreamTransfer) changes foreground, background and lighting with multi-view consistency, and AdaMix weights real and generated samples by policy performance."
+  takeaway_zh: "EMMA：扩散 Transformer 视频编辑器 DreamTransfer 在保持多视角一致的前提下修改前景、背景与光照，AdaMix 再按策略表现为真实与生成样本自适应加权。"
+- title: "AdvDex: Learning Dexterous Manipulation from Human Demonstrations via Joint-Aligned Actions and Adversarial Learning"
+  type: paper
+  arxiv: "2608.14028"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [dexterous, vla, human-demos, cross-embodiment, tactile, dataset]
+  takeaway_en: "AdvDex trains a dexterous VLA on human and robot demos: OmniShare human data with touch, a joint-aligned action space (wrist pose + 15 finger joints) shared by hands and grippers, and adversarial removal of body cues."
+  takeaway_zh: "AdvDex 用人类与机器人示教训练灵巧操作 VLA：含触觉的人类示教数据集 OmniShare、人手/灵巧手/夹爪共用的关节对齐动作空间（腕部位姿 + 15 个手指关节），并以对抗学习去除本体相关特征。"

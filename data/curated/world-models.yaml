@@ -1284,3 +1284,48 @@
   tags: [world-action-model, test-time-training, human-video, steering]
   takeaway_en: "Steers a frozen world-action model with unlabeled human videos at test time: a small memory inside the model adapts via self-supervised video prediction, after meta-training on paired human-robot data."
   takeaway_zh: "测试时用无标注的人类视频引导冻结的世界动作模型：模型内部的小型记忆通过自监督视频预测进行适配；此前用成对人-机数据做元训练使其对控制有用。"
+- title: "SKIP: Sparse Keyframe Interpolation Paradigm for Efficient Embodied World Models"
+  type: paper
+  arxiv: "2606.00664"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [world-model, video-generation, keyframes, efficiency, libero]
+  takeaway_en: "SKIP generates only task-relevant keyframes (approach, contact, grasp, release) with a sparse video diffusion model, then fills the gaps with an action-conditioned interpolator. 4.16x faster dense rollouts on LIBERO."
+  takeaway_zh: "SKIP 只用稀疏视频扩散模型生成与任务相关的关键帧（接近、接触、抓取、释放），再用动作条件插值器补全中间帧。在 LIBERO 上生成稠密推演快 4.16 倍。"
+- title: "Sensitivity Shaping for Latent Modeling"
+  type: paper
+  arxiv: "2606.14585"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [world-model, ood-detection, safety, regularization]
+  takeaway_en: "Learned dynamics that ignore control changes can hide out-of-distribution actions. A support-conditioned control-sensitivity regularizer keeps predictions responsive, improving OOD detection and safer planning."
+  takeaway_zh: "对控制变化不敏感的学习动力学会掩盖分布外动作。基于数据支撑的控制敏感性正则保持模型对控制的响应，从而提升分布外检测并使闭环规划更安全。"
+- title: "Adaptive World-Models for Anomaly Recognition (AWARE): A Framework for Robot Dynamics Prediction and Introspection"
+  type: paper
+  arxiv: "2610.32742"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [anomaly-detection, world-model, camera-only, system-identification]
+  takeaway_en: "Detects robot anomalies from external cameras only by estimating dynamics and predicting states. On 240 real crane trajectories: +26% anomaly classification, and 88% accuracy locating the degrading motor."
+  takeaway_zh: "仅凭外部相机，通过估计动力学参数与预测状态来检测机器人异常。在 240 条真实起重机轨迹上异常分类提升 26%，定位退化电机的准确率 88%。"
+- title: "How Well Do Latent World Models Understand Partially Observable Safety Constraints?"
+  type: paper
+  arxiv: "2510.06492"
+  year: 2025
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [latent-world-model, safety, partial-observability, analysis]
+  takeaway_en: "Names two failure modes of latent safe control, estimation gaps (safety facts not visible) and prediction gaps (failures not foreseeable), gives a diagnostic for each and mitigations."
+  takeaway_zh: "指出潜空间安全控制的两种失效：估计缺口（当前观测看不到安全关键量）与预测缺口（失败无法提前预见），并分别给出诊断指标和缓解方法。"
+- title: "C$^3$ache: Accelerating World Action Models with Cross Inference Chunk Cache"
+  type: paper
+  arxiv: "2606.08962"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [world-action-model, inference-acceleration, caching, training-free]
+  takeaway_en: "Training-free speedup for world-action models: reuses denoising residuals across consecutive inference chunks at the same step, since they correlate during smooth motion. Up to 2.5x with a Fast-WAM backbone."
+  takeaway_zh: "无需训练的世界动作模型加速方法：平滑运动时相邻推理块在同一去噪步的残差高度相关，因此跨块缓存复用。以 Fast-WAM 为骨干最高提速 2.5 倍。"

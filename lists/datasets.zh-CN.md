@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 92 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 96 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/datasets.html) · [English](datasets.md)
 
@@ -20,6 +20,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - ⭐ **[Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning](https://arxiv.org/abs/1910.10897)** (2019) — 50 个 Sawyer 操作任务，用于多任务与元强化学习评测。 · [代码](https://github.com/Farama-Foundation/Metaworld)
 - ⭐ **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 个手工设计的操作任务并附演示，是 PerAct 等 3D 策略方法的常用基准。 · [代码](https://github.com/stepjam/RLBench)
 - ⭐ **[ScanNet: Richly-annotated 3D Reconstructions of Indoor Scenes](https://arxiv.org/abs/1702.04405)** (2017) — 1500+ 个室内场景的 RGB-D 扫描，含三维重建、相机位姿与语义标注；具身感知所依赖的三维场景理解标准基准。 · [代码](https://github.com/ScanNet/ScanNet)
+- **[ATHENA: Accelerated Multi-Task Heterogeneous Influence Functions for Robot Data Curation](https://arxiv.org/abs/2606.16208)** (2026) — 将影响函数扩展到十亿参数级 VLA（借助 Kronecker 结构与秩 r 的 Hessian 近似提速约 313 倍）用于多任务数据筛选；在仿真中只用 50% 示教即可达到全量数据微调的效果。
 - **[ATOM-Bench: A Real-World Benchmark for Atomic Skills and Compositional Generalization in Manipulation Policies](https://arxiv.org/abs/2606.16826)** (2026) — CoRL 2026 Spotlight。真实世界基准：把桌面操作分解为动作原子与指令原子，测试策略的原子技能及其重新组合能力。 · [项目页](https://flageval-baai.github.io/AtomBenchPage)
 - **[AstroBench: Benchmarking Free-Floating Capture and Space Robotic Manipulation](https://arxiv.org/abs/2610.31064)** (2026) — 太空机器人操作基准：用固定基座机械臂抓取舱内漂浮、旋转的物体，另含样本存储与在轨维护任务。报告称所测的冻结通用策略在 200 个静止目标中只抓住 2 个。 · [代码](https://github.com/AstroUpLab/AstroBench) · [项目页](https://astroup.com/astrobench/)
 - **[AutoDex: An Automated Real-World System for Dexterous Grasping Data Collection](https://arxiv.org/abs/2606.23689)** (2026) — AutoDex 自动执行真机灵巧抓取、标注结果并复位物体，几乎无需人工：在 100 个物体上用 Allegro 与 Inspire 手采集 3500 多次试验；每 500 条轨迹约需 0.2 人时，遥操作需 9.3 人时。
@@ -42,9 +43,11 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[EmbodiedLab: Benchmarking Embodied Agents That Act to Know](https://arxiv.org/abs/2610.35385)** (2026) — “为求知而行动”的基准：机器人在物理仿真实验室中自行操作仪器、读数，测出每次随机重采样的未知参数。共 30 个实验、5 个学科；报告最强的前沿模型智能体在原生控制下成功率也不到一半，失败多源于与仪器交互。 · [代码](https://github.com/HexaFuture/EmbodiedLab) · [项目页](https://hexafuture.ai/benchmarks/embodiedlab/)
 - **[FLORA: An Open Model Suite for Scaling Robotics Data Engines](https://arxiv.org/abs/2610.31779)** (2026) — GR00T 训练所用的开放数据引擎：一组模型为人类与机器人视频生成带时间戳的动作描述、稠密过程奖励和整段结果奖励；报告在 WGO-Bench、RoboReward 与 Robometer 上达到最优。 · [代码](https://github.com/NVIDIA/Flora) · [项目页](https://research.nvidia.com/labs/gear/flora)
 - **[FoldNet++: a Large-Scale Synthetic Dataset for Robotic T-Shirt Folding and Unfolding](https://arxiv.org/abs/2609.12433)** (2026) — 合成 T 恤折叠与展开数据：6 种机器人、1000 件 T 恤、12 万条轨迹。报告仅用其训练的策略在未见过的真实 T 恤上成功率超过 90%。 · [项目页](https://pku-epic.github.io/FoldNetXX/)
+- **[H2RBench: A Real-to-Sim Benchmark for Evaluating Human-to-Robot Transfer](https://arxiv.org/abs/2609.24778)** (2026) — 评估“人到机器人”迁移的 Real2Sim 基准：四个任务配有真实人类视频示教和仿真机器人示教，以统一协议比较各方法随人类数据增加的扩展能力。
 - **[HandsOn: A Large-Scale Simulation Benchmark for Generalizable Dexterous Manipulation](https://arxiv.org/abs/2610.26765)** (2026) — 基于 Isaac Sim 的灵巧操作基准：5 种机械臂、6 种灵巧手、约 200 个资产、1.8 万条人类演示、66 个任务；报告最好的训练策略（一种世界动作模型）在 Core-50 上仅 29.1%，精密装配和柔性物体任务接近 0%。 · [代码](https://github.com/TsinghuaC3I/HandsOn) · [项目页](https://llltttwww.github.io/HandsOn-website/)
 - **[HelpMeOut: A Neuropsychology-Grounded Benchmark for Error-Aware Monitoring of Household Task Execution](https://arxiv.org/abs/2610.17694)** (2026) — HelpMeOut：2 万对家务活动片段，涵盖九类基于神经心理学的执行错误，要求智能体尽早发现人做事出错。学习型、符号型与大模型监控方法表现都较差。 · [项目页](https://whrcn.github.io/HelpMeOut-Official/)
 - **[HiPHI: A Large-Scale Benchmark for High-Precision Human Motion and Object-Interaction](https://arxiv.org/abs/2608.16222)** (2026) — 600 余小时的高精度全身人体运动与物体交互数据，由光学动捕采集（亚毫米级标记精度），按 FrameNet 动作基元组织，并配套面向人形机器人学习的评测套件。 · [项目页](https://noitom-robotics.github.io/hiphi/)
+- **[IM-ENGINE: Image Editing for Embodied Data Generation](https://arxiv.org/abs/2609.06279)** (2026) — 以对仿真渲染图的图像编辑为中间表示：先编辑注入任务语义，再借助仿真先验恢复 3D 状态并在物理中细化，最后转为机器人可执行的监督，如灵巧抓取与目标状态。
 - **[IMBench: A Benchmark for Intuitive Robotic Manipulation](https://arxiv.org/abs/2607.15641)** (2026) — IMBench：35 个任务、1.4 万条轨迹，在显式约束下同时考察物理推理与动作执行。VLM 有部分推理能力但给不出可执行计划，VLA 难以满足任务约束。 · [项目页](https://imbench.org/)
 - **[Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](https://arxiv.org/abs/2610.40364)** (2026) — 在 MuJoCo MJX 中用统一协议在五款四足上比较 14 种课程方法：没有方法在所有机器人和地形集上都领先，而训练关卡偏简单的方法在分布内随机地形上表现靠前。 · [代码](https://github.com/Solvro/ml-wojtek-ued)
 - **[LIBERO-Industry: Benchmarking Robotic Manipulation under Industrial Process Constraints](https://arxiv.org/abs/2610.16782)** (2026) — 基于 LIBERO 的 216 个工业约束任务：传送带上料、下料与转运，可调节物体形状、带速、交互时间窗与公差；报告 VLA 和世界动作模型在多重约束叠加时性能逐步下降。 · [代码](https://github.com/IAIE-PhysicalAI/LIBERO-Industry) · [项目页](https://iaie-physicalai.github.io/LIBERO-Industry/)
@@ -69,6 +72,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[RobotAgentBench: Towards Open-world Robot Autonomy](https://arxiv.org/abs/2610.34649)** (2026) — 面向开放世界机器人智能体的基准：通过真实到仿真流水线构建 50 个家居布局，任务从 90 个原子任务到 4 个开放场景，评测任务发现、上下文推理、操作、失败恢复与鲁棒性，可统一比较 VLA、WAM 与智能体架构。 · [代码](https://github.com/AetherLabsAI/RobotAgentBench) · [项目页](https://aetherlabsai.github.io/RobotAgentBench/)
 - **[Rollout then Recycle: 3,718 Labelled Real-Robot Episodes from Benchmarking 7 Policies on 12 Tasks](https://arxiv.org/abs/2611.03168)** (2026) — 公开 ArmnetBench v0.1 在 SO-101 机械臂上的全部回合：600 条遥操作示范和 3118 条带标注的策略执行，其中 73% 是失败，可以在同一任务上比较多种策略的错误。
 - **[SO-101 Bench: Accessible Spatial Manipulation](https://arxiv.org/abs/2610.36420)** (2026) — 基于 Isaac Lab 数字孪生的低成本 SO-101 机械臂语言条件空间操作基准（138 个物体、916 个评测回合）；仿真中的策略排名与真机完全一致。最好的 VLA 约 61%，由 LLM 写代码调用抓取策略的方案达 83.2%。 · [代码](https://github.com/5hadytru/so101_bench) · [项目页](https://so101-bench.github.io/)
+- **[SPARC: Reliable Spatial Annotations from Robot Demonstrations at Scale](https://arxiv.org/abs/2606.13497)** (2026) — 为机器人示教自动标注边界框、物体轨迹与操作阶段，并利用任务的时空结构为每个标注给出可靠性分数，从而少留噪声标签、少丢有用样本。
 - **[Scalable Behavior Cloning with Open Data, Training, and Evaluation](https://arxiv.org/abs/2606.27375)** (2026) — 完全开源的行为克隆全栈：ABC-130K 遥操作数据集（3500 小时、13 万条、195 个任务），外加硬件、训练代码和仿真协同训练方案，其仿真评测结果与真机表现相关。 · [项目页](https://abc.bot)
 - **[The Imitator Game: Benchmarking Robot Imitative Ability Beyond Action Prediction](https://arxiv.org/abs/2608.22301)** (2026) — 四级基准逐步拉大人类演示与机器人场景的差异，并发布 IG-10K（2 万余条人-机配对片段）。九个模型在最高级别全面失效，未见任务零样本成功率均低于 13%。 · [项目页](https://imitator-game.github.io)
 - **[Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines](https://arxiv.org/abs/2604.23001)** (2026) — 认为 VLA 的进展更取决于数据引擎和评测，而不是模型架构；指出数据集存在保真度与成本的权衡，评测基准在组合任务和长时程任务上仍有缺口。 · [项目页](https://github.com/ziyaow1010/vla-datasets-benchmarks)
