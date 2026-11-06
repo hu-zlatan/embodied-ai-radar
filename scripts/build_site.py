@@ -33,6 +33,18 @@ DIGEST = ROOT / "digest"
 SITE_URL = "https://hu-zlatan.github.io/embodied-ai-radar/"
 REPO_URL = "https://github.com/hu-zlatan/embodied-ai-radar"
 OWN_REPO = "hu-zlatan/embodied-ai-radar"  # key in data/repo_stats.json for the header star button
+
+
+def _asset_version() -> str:
+    """Short hash of the site's CSS and JS, appended as ?v= so browsers fetch new styles after a deploy."""
+    import hashlib
+    h = hashlib.sha1()
+    for n in ("style.css", "app.js"):
+        h.update((ROOT / "site_src" / "assets" / n).read_bytes())
+    return h.hexdigest()[:8]
+
+
+ASSET_V = _asset_version()
 FEED_DAYS_ON_SITE = 60   # feed papers kept in the search index
 TOPIC_FEED_MAX = 40      # recent feed papers per topic page
 FEED_ABSTRACT_DAYS = 14  # abstracts (for search) kept in the index only for this many days
@@ -384,7 +396,7 @@ def code_page(by_repo: dict[str, dict], gains: dict[str, int], span: int, topics
         title = title_html(e["title"]) if len(e["title"]) < 90 else title_html(e["title"][:87]) + "…"
         rows.append(f'<li data-t="{esc(" ".join(e["topics"]))}" data-s="{st["stars"]}" data-g="{g}" data-p="{esc(pushed)}" data-l="{lc}">'
                     f'<a class="cr-n" href="{esc(e.get("code") or f"https://github.com/{k}")}" rel="noopener">{esc(k)}</a>'
-                    f' <span class="gh">★ {fmt_stars(st["stars"])}</span>{rise}{arch}'
+                    f' <span class="gh">★&nbsp;{fmt_stars(st["stars"])}</span>{rise}{arch}'
                     f'<br><span class="muted"><a href="e/{esc(e["id"])}.html">{title}</a>{org}'
                     f'{" · " + lab if lab else ""}{" · " + bi("updated ", "更新于 ") + esc(pushed) if pushed else ""}</span></li>')
     def opt(v: str, en: str, zh: str, n: int | None = None) -> str:
@@ -490,7 +502,7 @@ def curated_card(e: dict, topics_by_id: dict, root: str, detail: bool = False) -
         linkrow += f' · <a class="perma" href="{root}e/{esc(e["id"])}.html">{bi("Details", "详情")}</a>'
     st = repo_stat(e)
     if st:
-        linkrow += f' <span class="gh" title="GitHub stars">★ {fmt_stars(st["stars"])}</span>'
+        linkrow += f' <span class="gh" title="GitHub stars">★&nbsp;{fmt_stars(st["stars"])}</span>'
         if st.get("archived"):
             linkrow += f' <span class="badge">{bi("archived", "已归档")}</span>'
     linkrow += hf_link(e.get("arxiv"), e.get("hf"))
@@ -522,7 +534,7 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
         code = (' · <span class="muted" title="' + esc(p["code_pending"][0]) + '">'
                 + bi("Code: not public yet", "代码：尚未公开") + "</span>")
     elif code and p.get("stars") is not None:
-        code += f' <span class="gh" title="GitHub stars">★ {fmt_stars(p["stars"])}</span>'
+        code += f' <span class="gh" title="GitHub stars">★&nbsp;{fmt_stars(p["stars"])}</span>'
     proj = "".join(f' · <a href="{esc(u)}" rel="noopener">{bi("Project", "项目页")}</a>' for u in p.get("project", [])[:1])
     has_code = '<span class="badge code">code</span>' if p.get("code") else ""
     v = paper_venue(p)
@@ -574,7 +586,7 @@ def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") 
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📡%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="{root}assets/style.css">
+<link rel="stylesheet" href="{root}assets/style.css?v={ASSET_V}">
 <script>try{{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang')||((navigator.language||'').startsWith('zh')?'zh':'en');if(l==='zh')document.documentElement.classList.add('zh');document.documentElement.lang=l==='zh'?'zh-CN':'en'}}catch(e){{}}</script>
 </head>
 <body>
@@ -593,7 +605,7 @@ def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") 
 {bi("Code MIT · curated data CC BY 4.0 · arXiv metadata CC0.", "代码 MIT · 精选数据 CC BY 4.0 · arXiv 元数据 CC0。")}
 <a href="{REPO_URL}/issues/new">{bi("Suggest a paper or report a problem", "推荐论文或反馈问题")}</a></p>
 </footer>
-<script src="{root}assets/app.js" defer></script>
+<script src="{root}assets/app.js?v={ASSET_V}" defer></script>
 </body>
 </html>
 """
@@ -833,7 +845,7 @@ def build() -> int:
     if popular:
         rows = "".join(
             f'<li><a href="{esc(e["code"])}" rel="noopener">{esc(e["code"].split("github.com/")[1].rstrip("/"))}</a>'
-            f' <span class="gh">★ {fmt_stars(st["stars"])}</span>{gain_badge(repo_key(e["code"]) or "")}'
+            f' <span class="nw"><span class="gh">★&nbsp;{fmt_stars(st["stars"])}</span>{gain_badge(repo_key(e["code"]) or "")}</span>'
             f' <span class="muted">· <a href="e/{esc(e["id"])}.html">{short(e["title"])}</a></span></li>'
             for st, e in popular)
         popular_html = (f'<h2>{bi("Most-starred open-source code", "最受关注的开源代码")}</h2>'
@@ -873,7 +885,7 @@ def build() -> int:
     hf_top = sorted(hf_rows.items(), key=lambda x: (-x[1][0], x[0]))[:10]
     if hf_top:
         rows = "".join(
-            f'<li><a href="{esc(link)}">{short(t)}</a> <a class="badge rise" href="https://huggingface.co/papers/{esc(a)}" rel="noopener" title="Upvotes on Hugging Face Daily Papers">▲ {n}</a></li>'
+            f'<li><a href="{esc(link)}">{short(t)}</a> <a class="badge rise" href="https://huggingface.co/papers/{esc(a)}" rel="noopener" title="Upvotes on Hugging Face Daily Papers">▲&nbsp;{n}</a></li>'
             for a, (n, t, link) in hf_top)
         hf_html = (f'<h2>{bi("Upvoted on Hugging Face", "Hugging Face 热议")}</h2>'
                    f'<p class="muted">{bi("Robotics papers from our feed that made Hugging Face Daily Papers in the last 14 days, by community upvotes.", "最近 14 天登上 Hugging Face Daily Papers 的本站收录论文，按社区点赞数排序。")}</p>'
