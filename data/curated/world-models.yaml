@@ -952,3 +952,73 @@
   added: 2026-11-05
   takeaway_en: "Compares how a pretrained LeWorldModel and the simulator respond to small action changes; their most sensitive directions differ by a median of about 36–42° at the smallest scale, so evaluation should be scale-specific."
   takeaway_zh: "比较预训练 LeWorldModel 与仿真器对微小动作变化的响应；最小尺度下最敏感方向的中位夹角相差约 36–42°，说明评估应按尺度进行。"
+- title: "Large Video Planner Enables Generalizable Robot Control"
+  type: paper
+  arxiv: "2512.15840"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/buoyancy99/large-video-planner
+  project: https://www.boyuan.space/large-video-planner/
+  added: 2026-11-06
+  topics: [vla]
+  tags: [video-generation, video-planning, foundation-model, zero-shot, real, open-data]
+  takeaway_en: "Builds a robot foundation model on video instead of language: an open video planner trained on internet-scale human video makes zero-shot plans that are turned into robot actions. Model and dataset are released."
+  takeaway_zh: "以视频而非语言为主干构建机器人基础模型：在互联网规模人类视频上训练开源视频规划器，零样本生成视频计划再转为机器人动作；模型与数据集均已开源。"
+- title: "ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?"
+  type: paper
+  arxiv: "2606.19531"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/yuyangalin/ImageWAM
+  project: https://zhangwenyao1.github.io/ImageWAM/
+  added: 2026-11-06
+  topics: [manipulation]
+  tags: [wam, image-editing, flow-matching, efficiency, real, sim]
+  takeaway_en: "Do world action models need video generation? ImageWAM conditions a flow-matching action expert on image-editing KV caches instead. Reports beating VLA baselines at 1/6 the FLOPs and 1/4 the latency of video WAMs."
+  takeaway_zh: "追问世界动作模型是否真需要视频生成：ImageWAM 改用图像编辑模型去噪时的 KV 缓存来条件化流匹配动作专家；报告优于 VLA 基线，计算量为视频 WAM 的 1/6、延迟为 1/4。"
+- title: "Light-WAM: Efficient World Action Models with State-Fusion Action Decoding"
+  type: paper
+  arxiv: "2606.08242"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/L1ziang/Light-WAM
+  added: 2026-11-06
+  topics: [manipulation]
+  tags: [wam, efficiency, action-chunking, sim]
+  takeaway_en: "Lightweight world action model: compact video backbone with future supervision in a downsampled latent, and an action expert that pools several layers to predict chunks in one pass. Reports 0.44B trainable params, 72 ms."
+  takeaway_zh: "轻量世界动作模型：紧凑视频主干在降采样潜空间中做未来监督，动作专家融合多层特征一次前向预测动作块；报告可训练参数仅 0.44B，推理延迟 72 毫秒。"
+- title: "$μ_0$: A Scalable 3D Interaction-Trace World Model"
+  type: paper
+  arxiv: "2606.13769"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/Yoonkyo/mu0
+  project: https://mu0-wm.github.io/
+  added: 2026-11-06
+  topics: [manipulation]
+  tags: [3d-traces, cross-embodiment, action-free, pretraining, vlm]
+  takeaway_en: "World model that predicts 3D traces of key points (objects, tools, hands) instead of pixels or actions, pretrained from video without action labels. Trace-conditioned policies are reported competitive with π0-style VLAs."
+  takeaway_zh: "不预测像素也不预测动作，而是预测物体、工具、手等关键点的 3D 轨迹，可用无动作标签的视频预训练。报告以轨迹为条件的策略可与 π0 类 VLA 相当。"
+- title: "StressDream: Steering Video World Models for Robust Policy Evaluation and Improvement"
+  type: paper
+  arxiv: "2606.00267"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/CMU-IntentLab/StressDream
+  project: https://stressdream.github.io/
+  added: 2026-11-06
+  topics: [learning]
+  tags: [policy-evaluation, stress-testing, video-generation, vlm, noise-optimization]
+  takeaway_en: "Steers a video world model toward rare but plausible bad outcomes (e.g. task failures) by optimizing its initial noise with a VLM objective, to evaluate and improve policies. Driving and manipulation."
+  takeaway_zh: "通过优化视频世界模型的初始噪声（以 VLM 为目标），把想象引向罕见但合理的不利结果（如任务失败），用于评估和改进策略；覆盖自动驾驶与操作。"
+- title: "What Makes Video World Model Latents Action-Relevant: Prediction over Reconstruction"
+  type: paper
+  arxiv: "2606.07687"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/k1seul/corl2026-action-relevant-latents
+  added: 2026-11-06
+  topics: [learning]
+  tags: [representation, probing, v-jepa, inverse-dynamics]
+  takeaway_en: "Probe study of which video world model latents carry action information: temporal video pretraining matters, pixel reconstruction quality does not. V-JEPA-style encoders give the best trade-off."
+  takeaway_zh: "探测哪些视频世界模型的潜变量含有动作信息：关键在于时序视频预训练，而非像素重建质量；V-JEPA 类编码器取得最佳权衡。"

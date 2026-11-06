@@ -1185,3 +1185,40 @@
   tags: [llm, gait, humanoid]
   takeaway_en: "Directly prompts an LLM to output a robot's walking actions, an early test of grounding LLMs in low-level control."
   takeaway_zh: "直接让大模型输出机器人的行走动作，是把大模型用于底层控制的早期尝试。"
+- title: "Counterfactual Video Generation Enables Scalable Humanoid Loco-Manipulation"
+  type: paper
+  arxiv: "2609.38172"
+  year: 2026
+  org: Amazon FAR
+  venue: CoRL 2026
+  code: https://github.com/amazon-far/PRISM
+  project: https://prism-real2sim2real.github.io/
+  added: 2026-11-06
+  topics: [manipulation, sim]
+  tags: [humanoid, loco-manipulation, video-generation, real2sim2real, sim2real]
+  takeaway_en: "PRISM turns a few real videos into hundreds of counterfactual human-object clips via video generation, rebuilds them in sim, and trains one humanoid carrying policy that handles unseen objects with no real fine-tuning."
+  takeaway_zh: "PRISM 用视频生成把少量真实视频扩增为数百段反事实人-物交互视频，在仿真中重建并训练单一人形搬运策略，无需真机微调即可泛化到未见物体。"
+- title: "HERO: Learning Humanoid End-Effector Control for Visual Whole-Body Open-Vocabulary Object Grasping"
+  type: paper
+  arxiv: "2602.16705"
+  year: 2026
+  org: UIUC
+  venue: CoRL 2026
+  code: https://github.com/RunpeiDong/HERO
+  project: https://hero-humanoid.github.io/
+  added: 2026-11-06
+  topics: [manipulation]
+  tags: [humanoid, loco-manipulation, end-effector-tracking, grasping, sim2real, real]
+  takeaway_en: "Modular humanoid grasping: large vision models handle the scene, a sim-trained end-effector tracker with IK and a learned forward model handles the arm. Reports 2.44 cm tracking error, 5.5x better than prior work."
+  takeaway_zh: "模块化人形抓取：大视觉模型负责场景理解，仿真训练的末端跟踪策略结合 IK 与学习的正运动学模型负责执行。报告末端跟踪误差 2.44 厘米，比先前最好方法低 5.5 倍。"
+- title: "Learning Contact Representation for Leg Odometry"
+  type: paper
+  arxiv: "2606.05501"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/egirgin/leg-odometry-contact-representation
+  added: 2026-11-06
+  topics: [perception]
+  tags: [legged, state-estimation, contact-detection, self-supervised, kalman-filter]
+  takeaway_en: "Self-supervised foot-contact estimation from joint encoders and IMU only, fed as a stance belief into a Kalman filter. Reports the lowest leg-odometry error among the compared baselines."
+  takeaway_zh: "仅用关节编码器与 IMU 自监督估计足端接触，并作为支撑置信度输入卡尔曼滤波器。报告腿式里程计误差在对比方法中最低。"

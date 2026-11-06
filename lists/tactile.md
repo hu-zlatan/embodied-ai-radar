@@ -2,7 +2,7 @@
 
 _Tactile sensors, touch representations and contact-rich control._
 
-50 entries, ⭐ = highlight. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
+51 entries, ⭐ = highlight. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/tactile.html) · [中文](tactile.zh-CN.md)
 
@@ -12,6 +12,7 @@ _Tactile sensors, touch representations and contact-rich control._
 - **[$TF^2$-Steering: Action Refinement with Tactile Forecasts and Feedback via Velocity-Field Steering](https://arxiv.org/abs/2611.01483)** (2026) — Keeps a vision-based flow-matching policy and learns to steer its velocity field from tactile forecasts and live feedback, so touch can correct actions. Reports gains over baselines in six sim and six real tasks. · [project](https://yiming-cc.github.io/tf2-steering/)
 - **[ACTS: Learning Visuo-Tactile World Models from Human Physical Interaction](https://arxiv.org/abs/2610.24285)** (2026) — Visuo-tactile world model trained only on humans handling GelSight sensors (4.9 h React dataset). Reports that contact dynamics transfer to robot rollouts more reliably than visual appearance does. · [project](https://acts-anon.github.io/)
 - **[DeTac: Dual-branch Decoupling of Texture and Force Signals in Vision-Based Tactile Sensors](https://arxiv.org/abs/2610.16463)** (2026) — CoRL 2026 Spotlight. Dual-branch generative framework that extracts clean shading and marker images at once from one marker-based tactile frame, avoiding serial mask-based inpainting.
+- **[Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2610.03333)** (2026) — VISTA: equivariant visuotactile diffusion policy that fuses touch into spherical visual tokens and rotates them with the gripper pose, for more data-efficient contact-rich imitation. · [code](https://github.com/Kenn3o3/Vista) · [project](https://vista-paper.github.io/)
 - **[Evaluating Tactile Foundation Models for End-to-End Imitation Learning in Contact-Rich Manipulation](https://arxiv.org/abs/2611.00957)** (2026) — Plugs several pretrained tactile foundation models into Diffusion Policy and compares them in one setup, including fine-tuning and mid-training strategies, with over 5,000 real-world rollouts. · [code](https://github.com/isri-aist/TacLatentIL) · [project](https://mmurooka.github.io/tfm4il-project-page/)
 - **[FACTR 2: Learning External Force Sensing for Commodity Robot Arms Improves Policy Learning](https://arxiv.org/abs/2606.12406)** (2026) — CoRL 2026 Oral. NEXT estimates external joint torques without force sensors, training in 1 minute from 10 minutes of free-motion data, enabling force-feedback teleoperation and better policy learning on low-cost arms. · [code](https://github.com/philiphan0109/factr2_next) · [project](https://jasonjzliu.com/factr2)
 - **[FingerEye: Learning Dexterous Manipulation with Continuous Vision-Tactile Sensing](https://arxiv.org/abs/2604.20689)** (2026) — CoRL 2026 Spotlight. Fingertip sensing that combines binocular RGB cameras with a compliant contact surface, giving feedback from pre-contact approach through post-contact control. · [code](https://github.com/ariszxxu/FingerEye) · [project](https://nus-lins-lab.github.io/FingerEyeWeb/)
@@ -61,4 +62,4 @@ _Tactile sensors, touch representations and contact-rich control._
 
 **See also**
 
-[Never Too Late for Force](vla.md), [FORCA](manipulation.md), [ContactBench 1.0](manipulation.md), [CARD](manipulation.md), [ForceLDM](manipulation.md), [Physical Canvas](world-models.md), [DIFFTACTILE](sim.md), [Taccel](sim.md), [TacEx](sim.md), [EgoExplorer](datasets.md), [ORCA](hardware.md), [Learning Visuotactile Skills with Two Multifingered Hands](hardware.md), [DOGlove](hardware.md), [SwapBot](hardware.md)
+[Never Too Late for Force](vla.md), [FORCA](manipulation.md), [ContactBench 1.0](manipulation.md), [CARD](manipulation.md), [ForceLDM](manipulation.md), [DeCAL](manipulation.md), [Physical Canvas](world-models.md), [DIFFTACTILE](sim.md), [Taccel](sim.md), [TacEx](sim.md), [EgoExplorer](datasets.md), [ORCA](hardware.md), [Learning Visuotactile Skills with Two Multifingered Hands](hardware.md), [DOGlove](hardware.md), [SwapBot](hardware.md)

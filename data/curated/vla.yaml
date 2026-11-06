@@ -1648,7 +1648,7 @@
   tags: [vla, flow-matching, encoder-free, architecture]
   takeaway_en: "NEO-VLA drops the visual encoder: images and language evolve in one backbone and a flow-matching action expert reads several depths. Layer probing shows action signals often peak before the final visual layer."
   takeaway_zh: NEO-VLA 去掉独立视觉编码器：图像与语言在同一主干中共同演化，流匹配动作专家从多个深度读取特征。逐层探测显示，对动作关键的信号往往在最终视觉层之前达到峰值。
-- title: "Open-HumanScale: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models"
+- title: "Open-HumanWAM: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models"
   type: paper
   arxiv: "2611.06817"
   year: 2026
@@ -1754,3 +1754,85 @@
   added: 2026-11-05
   takeaway_en: "Coding agents keep real-robot experience as memory and reusable code skills, refining them through physical trials; reports 91.1% success on eight real tasks and 84.4% on 42 RoboDojo tasks."
   takeaway_zh: "让编码智能体把真机交互经验存为记忆和可复用的代码技能，并在实物试验中持续改进；报告八个真实任务成功率 91.1%，RoboDojo 的 42 个任务成功率 84.4%。"
+- title: "World-Language-Action Model for Unified World Modeling, Language Reasoning, and Action Synthesis"
+  type: paper
+  arxiv: "2606.05979"
+  year: 2026
+  org: SJTU
+  venue: CoRL 2026
+  code: https://github.com/SJTU-DENG-Lab/WLA
+  added: 2026-11-06
+  topics: [world-models]
+  tags: [wam, autoregressive, subgoal-images, test-time-scaling, real, sim]
+  takeaway_en: "World-language-action model: one autoregressive backbone predicts text subtasks, subgoal images and actions; world prediction can be off at inference or on for test-time scaling. Reports 92.94% on RoboTwin 2.0 Clean."
+  takeaway_zh: "世界-语言-动作模型：单一自回归主干同时预测文本子任务、子目标图像与动作；推理时可关闭世界预测，也可开启做测试时扩展。报告在 RoboTwin 2.0 Clean 上成功率 92.94%。"
+- title: "EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies"
+  type: paper
+  arxiv: "2606.20092"
+  year: 2026
+  org: InternRobotics
+  venue: CoRL 2026
+  code: https://github.com/InternRobotics/EventVLA
+  added: 2026-11-06
+  topics: [manipulation, datasets]
+  tags: [memory, long-horizon, keyframes, bimanual, benchmark, real, sim]
+  takeaway_en: "Memory for VLAs that keeps only sparse keyframes the policy itself predicts will matter later. Adds the RoboTwin-MeM benchmark; reports +40% average success over memory-augmented VLAs across 17 sim and 4 real tasks."
+  takeaway_zh: "为 VLA 加入稀疏记忆：由策略自己预测哪些关键帧之后会有用并只保存这些帧。同时提出 RoboTwin-MeM 基准；报告在 17 个仿真和 4 个真机任务上平均成功率比带记忆的 VLA 高 40%。"
+- title: "HuRo: Robotizing Human Videos for Scalable VLA Pretraining"
+  type: paper
+  arxiv: "2609.10706"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/3587jjh/HuRo
+  project: https://3587jjh.github.io/HuRo
+  added: 2026-11-06
+  topics: [datasets]
+  tags: [human-video, robotization, pretraining, open-data, real]
+  takeaway_en: "Converts human videos from five sources into robot-aligned observations and actions (about 630K episodes). Pretraining a VLA on more of it raises real-task completion from 51.5% to 80.3% and OOD from 34.9% to 72.2%."
+  takeaway_zh: "把五个来源的人类视频转换成与机器人对齐的观测和动作（约 63 万条轨迹）。报告用更多此类数据预训练 VLA，真机任务完成率从 51.5% 升到 80.3%，分布外从 34.9% 升到 72.2%。"
+- title: "ACE-Ego-0: Unifying Egocentric Human and Robotic Data for VLA Pretraining"
+  type: paper
+  arxiv: "2606.17200"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/ACERobotics-VLA/ACE-Ego-0
+  added: 2026-11-06
+  topics: [datasets]
+  tags: [human-video, egocentric, pretraining, bimanual, real, sim]
+  takeaway_en: "Joint VLA pretraining on 4.53K h of robot/sim data plus 1.48K h of egocentric human video with pseudo-actions, camera-space actions and a reliability-weighted loss. Reports SOTA on RoboCasa GR1 TableTop and RoboTwin 2.0."
+  takeaway_zh: "用 4530 小时机器人/仿真数据加 1480 小时带伪动作的第一视角人类视频联合预训练 VLA，采用相机空间动作与按可靠性加权的损失。报告在 RoboCasa GR1 TableTop 和 RoboTwin 2.0 上达到最优。"
+- title: "APT: Action Expert Pretraining Improves Instruction Generalization of Vision-Language-Action Policies"
+  type: paper
+  arxiv: "2606.12366"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/xukechun/APT
+  project: https://xukechun.github.io/papers/APT/
+  added: 2026-11-06
+  tags: [action-expert, pretraining, language-generalization, training-recipe]
+  takeaway_en: "Pretrain the action expert first as a language-free vision-action prior, then inject language through gated fusion. Targets VLAs that ignore unseen instructions; works with π-style and GR00T-style designs."
+  takeaway_zh: "先把动作专家预训练为不含语言的视觉-动作先验，再通过门控融合注入语言。针对 VLA 对未见指令泛化差的问题，适用于 π 系和 GR00T 系架构。"
+- title: "Start Right, Arrive Right: Asynchronous Execution via Initial Noise Selection"
+  type: paper
+  arxiv: "2606.19774"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/htrbao/paint-action-chunking
+  project: https://paint-action-chunking.github.io
+  added: 2026-11-06
+  topics: [manipulation]
+  tags: [action-chunking, asynchronous-execution, flow-matching, training-free, real]
+  takeaway_en: "PAINT keeps action chunks consistent under async execution by picking the initial noise (backward Euler inversion), not by guiding the flow. No training; reports RTC-level task success with better prefix consistency."
+  takeaway_zh: "PAINT 通过选择初始噪声（后向欧拉反演）而非引导流场，让异步执行时的动作块首尾一致；无需训练，报告任务成功率与 RTC 相当、前缀一致性更好。"
+- title: "PoLAR: Factorizing Extent and Mode in Latent Actions for Robot Policy Learning"
+  type: paper
+  arxiv: "2606.21139"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/joon-stack/PoLAR
+  project: https://joon-stack.github.io/PoLAR
+  added: 2026-11-06
+  topics: [learning]
+  tags: [latent-actions, hyperbolic, pretraining, real]
+  takeaway_en: "Latent actions with polar structure in hyperbolic space: radius encodes how much changes, direction encodes what kind. Reports gains over latent-action baselines and pretrained VLAs."
+  takeaway_zh: "在双曲空间中构造极坐标结构的潜动作：半径表示变化多大，方向表示变化类型。报告优于其他潜动作方法和预训练 VLA。"

@@ -357,3 +357,35 @@
   tags: [vlm, spatial-reasoning, metric-3d]
   takeaway_en: "RoboTracer is a 3D-aware VLM for spatial tracing, which needs multi-step metric reasoning about real-world measurements."
   takeaway_zh: "RoboTracer 是三维感知 VLM，用于空间轨迹推理，需要结合真实度量做多步推理。"
+- title: "Functional-SLAM: Interaction-Aware Mapping with Online Functional Scene Graphs"
+  type: paper
+  arxiv: "2609.07497"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/Hbelief1998/Functional-SLAM-CoRL_2026
+  added: 2026-11-06
+  tags: [slam, scene-graph, functional-relations, online, mapping]
+  takeaway_en: "SLAM that keeps a functional scene graph (which handle opens which drawer) as online state, and uses that topology to help loop closure in repetitive scenes. Reported faster than offline methods at similar accuracy."
+  takeaway_zh: "把功能场景图（如哪个把手开哪个抽屉）作为 SLAM 的在线状态持续维护，并利用其拓扑辅助重复场景的回环检测。报告比离线方法更快且精度相当。"
+- title: "Cyclops: LiDAR as a Camera That Dreams in Color"
+  type: paper
+  arxiv: "2608.16264"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/IMRL/Cyclops
+  added: 2026-11-06
+  tags: [lidar, image-translation, low-light, bridge-matching]
+  takeaway_en: "Turns sparse LiDAR intensity into RGB-like video so camera models work in the dark. Reports better segmentation and lane detection than LiDAR baselines and real cameras across lighting."
+  takeaway_zh: "把稀疏 LiDAR 强度转换为类 RGB 视频，让相机模型在黑暗中也能用。报告在不同光照下，分割与车道线检测优于 LiDAR 基线和真实相机。"
+- title: "ReSiReg: Towards Spatially Consistent Semantics in Language-Conditioned Robotic Tasks"
+  type: paper
+  arxiv: "2606.19088"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/SimonSchwaiger/resireg
+  project: https://resireg.github.io
+  added: 2026-11-06
+  topics: [manipulation]
+  tags: [vlm-features, open-vocabulary, dense-features, 3d-mapping]
+  takeaway_en: "Makes dense VLM features spatially consistent by rebuilding each patch from language-labelled visual prototypes; improves open-vocabulary retrieval and 3D mapping. Also ships a compact 25M dense VLM for robots."
+  takeaway_zh: "通过由带语言描述的视觉原型重建每个图像块，让稠密 VLM 特征在空间上更一致，提升开放词汇检索与三维建图；并提供 25M 参数的小型稠密 VLM。"

@@ -678,7 +678,7 @@
   added: 2026-11-04
   takeaway_en: "Learned from 16,151 hours of handheld gripper demos with no robot data; reports 78% average success over ten tasks versus 27% for the best other VLA, and releases the dataset, weights and post-training recipe."
   takeaway_zh: "从 16,151 小时手持夹爪演示中学习，全程不采机器人数据；报告十项任务平均成功率 78%，其他 VLA 最好为 27%，并开放数据集、权重和后训练方案。"
-- title: "RoboTryOn: Synthesizing Dexterous Robot Demonstrations from Human Videos via Virtual Try-On"
+- title: "Synthesizing Dexterous Robot Demonstrations from Human Videos via Virtual Try-On"
   type: paper
   arxiv: "2611.05163"
   year: 2026
@@ -1037,3 +1037,49 @@
   added: 2026-11-05
   takeaway_en: "Updates a latent estimate of hidden object properties during execution to condition an imitation policy; helps with center-of-mass changes, though it reports only about 30% success on unseen locations in sim."
   takeaway_zh: "执行中在线更新物体隐藏物性的潜变量，并以此调节模仿策略；对质心变化有帮助，但报告仿真中未见过的质心位置成功率仅约 30%。"
+- title: "VLS: Steering Pretrained Robot Policies via Vision-Language Models"
+  type: paper
+  arxiv: "2602.03973"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/Vision-Language-Steering/code
+  project: https://vision-language-steering.github.io/webpage/
+  added: 2026-11-06
+  topics: [vla]
+  tags: [steering, inference-time, diffusion-policy, vlm, reward, real]
+  takeaway_en: "Adapts a frozen diffusion or flow policy at test time: a VLM writes differentiable rewards that steer denoising when obstacles or clutter shift the scene. Reports +31% on CALVIN and +13% on LIBERO-PRO; no retraining."
+  takeaway_zh: "在测试时适配冻结的扩散或流匹配策略：当障碍或杂物改变场景时，由 VLM 生成可微奖励来引导去噪。报告 CALVIN 提升 31%、LIBERO-PRO 提升 13%，无需重新训练。"
+- title: "DeCAL: Towards Physically-Grounded Dexterous Vision-Language-Action Models via Contact-Aware Latent Co-Imagination"
+  type: paper
+  arxiv: "2609.09119"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/AureleoPKU/DeCAL
+  project: https://aureleopku.github.io/DeCAL
+  added: 2026-11-06
+  topics: [vla, tactile]
+  tags: [dexterous, visuotactile, mixture-of-transformers, latent-imagination, real]
+  takeaway_en: "Dexterous visuotactile VLA on a mixture-of-transformers: contact-aware gating decides when touch matters; the model jointly imagines future visual and tactile latents. Reports 71% average success on contact-rich tasks."
+  takeaway_zh: "基于混合 Transformer 的灵巧视触觉 VLA：接触感知门控决定何时引入触觉，并联合想象未来的视觉与触觉潜变量。报告在富接触任务上平均成功率 71%。"
+- title: "MobiAgent: Dual-Loop Recursive Policy Self-Improvement for Long-Horizon Mobile Manipulation"
+  type: paper
+  arxiv: "2610.03476"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/kaiknower/MobiAgent
+  project: https://kaiknower.github.io/mobiagent
+  added: 2026-11-06
+  topics: [vla]
+  tags: [mobile-manipulation, long-horizon, agent, skill-library, self-improvement, real]
+  takeaway_en: "Mobile-manipulation agent with two loops: a VLM plans and composes flow-matching skills at run time, and an outer loop mines rollouts to find and fine-tune skills. Reports +22.5 pts over π0.5 on BEHAVIOR-1K."
+  takeaway_zh: "双循环移动操作智能体：内循环由 VLM 规划并组合流匹配技能，外循环从部署数据中自动发现并微调技能。报告在 BEHAVIOR-1K 上比 π0.5 高 22.5 个百分点。"
+- title: "Attention from Action, for Action: Emergent Visual Bottlenecks for Policy Learning"
+  type: paper
+  arxiv: "2608.13422"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/zheyu-zhuang/seeker
+  added: 2026-11-06
+  tags: [attention, region-of-interest, dinov3, data-efficiency, real]
+  takeaway_en: "Seeker learns where to look from action supervision alone, giving progress-aware crops on frozen DINOv3 features. Reports real-robot success 48.3% to 76.7%, and 20% to 60% under lighting and background shifts."
+  takeaway_zh: "Seeker 仅凭动作监督学习“看哪里”，在冻结的 DINOv3 特征上给出随任务进展变化的裁剪区域。报告真机成功率从 48.3% 升到 76.7%，光照与背景变化下从 20% 升到 60%。"

@@ -2,7 +2,7 @@
 
 _触觉传感器、触觉表征与接触丰富的控制。_
 
-共 50 条，⭐ 为重点推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
+共 51 条，⭐ 为重点推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/tactile.html) · [English](tactile.md)
 
@@ -12,6 +12,7 @@ _触觉传感器、触觉表征与接触丰富的控制。_
 - **[$TF^2$-Steering: Action Refinement with Tactile Forecasts and Feedback via Velocity-Field Steering](https://arxiv.org/abs/2611.01483)** (2026) — 保留视觉流匹配策略，用触觉预测与实时反馈学习对其速度场的残差引导，让触觉能修正动作。报告在六个仿真和六个真实任务上优于基线。 · [项目页](https://yiming-cc.github.io/tf2-steering/)
 - **[ACTS: Learning Visuo-Tactile World Models from Human Physical Interaction](https://arxiv.org/abs/2610.24285)** (2026) — 只用人手持 GelSight 传感器的交互数据（4.9 小时 React 数据集）训练视触觉世界模型。报告在机器人回放中接触动态比视觉外观更容易迁移，部分任务的相机视角预测甚至不如直接复制帧。 · [项目页](https://acts-anon.github.io/)
 - **[DeTac: Dual-branch Decoupling of Texture and Force Signals in Vision-Based Tactile Sensors](https://arxiv.org/abs/2610.16463)** (2026) — CoRL 2026 Spotlight。双分支生成框架，可从单帧带标记点的触觉图像同时分离出干净的明暗图与标记图，避免串行掩码修复。
+- **[Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2610.03333)** (2026) — VISTA：等变视触觉扩散策略，把触觉融合进球面视觉 token 并随末端姿态旋转，提升富接触模仿学习的数据效率。 · [代码](https://github.com/Kenn3o3/Vista) · [项目页](https://vista-paper.github.io/)
 - **[Evaluating Tactile Foundation Models for End-to-End Imitation Learning in Contact-Rich Manipulation](https://arxiv.org/abs/2611.00957)** (2026) — 把多种预训练触觉基础模型接入 Diffusion Policy，在统一设置下比较，并考察编码器微调与任务专用中训练策略，含 5000 多次真实机器人回合。 · [代码](https://github.com/isri-aist/TacLatentIL) · [项目页](https://mmurooka.github.io/tfm4il-project-page/)
 - **[FACTR 2: Learning External Force Sensing for Commodity Robot Arms Improves Policy Learning](https://arxiv.org/abs/2606.12406)** (2026) — CoRL 2026 Oral。NEXT 无需力传感器即可估计外部关节力矩，用 10 分钟自由运动数据训练 1 分钟，为低成本机械臂带来力反馈遥操作与更好的策略学习。 · [代码](https://github.com/philiphan0109/factr2_next) · [项目页](https://jasonjzliu.com/factr2)
 - **[FingerEye: Learning Dexterous Manipulation with Continuous Vision-Tactile Sensing](https://arxiv.org/abs/2604.20689)** (2026) — CoRL 2026 Spotlight。指尖传感将双目 RGB 相机与柔顺接触面结合，从接触前接近到接触后控制全程提供反馈。 · [代码](https://github.com/ariszxxu/FingerEye) · [项目页](https://nus-lins-lab.github.io/FingerEyeWeb/)
@@ -61,4 +62,4 @@ _触觉传感器、触觉表征与接触丰富的控制。_
 
 **另见**
 
-[Never Too Late for Force](vla.zh-CN.md), [FORCA](manipulation.zh-CN.md), [ContactBench 1.0](manipulation.zh-CN.md), [CARD](manipulation.zh-CN.md), [ForceLDM](manipulation.zh-CN.md), [Physical Canvas](world-models.zh-CN.md), [DIFFTACTILE](sim.zh-CN.md), [Taccel](sim.zh-CN.md), [TacEx](sim.zh-CN.md), [EgoExplorer](datasets.zh-CN.md), [ORCA](hardware.zh-CN.md), [Learning Visuotactile Skills with Two Multifingered Hands](hardware.zh-CN.md), [DOGlove](hardware.zh-CN.md), [SwapBot](hardware.zh-CN.md)
+[Never Too Late for Force](vla.zh-CN.md), [FORCA](manipulation.zh-CN.md), [ContactBench 1.0](manipulation.zh-CN.md), [CARD](manipulation.zh-CN.md), [ForceLDM](manipulation.zh-CN.md), [DeCAL](manipulation.zh-CN.md), [Physical Canvas](world-models.zh-CN.md), [DIFFTACTILE](sim.zh-CN.md), [Taccel](sim.zh-CN.md), [TacEx](sim.zh-CN.md), [EgoExplorer](datasets.zh-CN.md), [ORCA](hardware.zh-CN.md), [Learning Visuotactile Skills with Two Multifingered Hands](hardware.zh-CN.md), [DOGlove](hardware.zh-CN.md), [SwapBot](hardware.zh-CN.md)

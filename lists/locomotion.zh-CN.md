@@ -2,7 +2,7 @@
 
 _足式运动、人形全身控制与跑酷。_
 
-共 116 条，⭐ 为重点推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
+共 119 条，⭐ 为重点推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/locomotion.html) · [English](locomotion.md)
 
@@ -18,6 +18,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[Action-Aligned Latent Planning for Versatile Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.24675)** (2026) — FIBER 以冻结的行为基础模型（BFM）潜在空间作为统一规划表示，把各任务专用策略投影进该空间，再离线训练单一感知流匹配规划器；仿真中搬箱、开门、抓取平均成功率 42.0%（潜在回放基线 11.6%），并在真实 Unitree G1 上验证。 · [项目页](https://fiberaa.github.io/)
 - **[CMP: Robust Whole-Body Tracking for Loco-Manipulation via Competence Manifold Projection](https://arxiv.org/abs/2604.07457)** (2026) — CoRL 2026 Spotlight。提升足式移动操作臂全身末端跟踪对分布外输入（传感器噪声、不可行指令）的鲁棒性：用逐帧安全方案把无限时域安全约束转化为计算高效的单步流形约束。 · [项目页](https://shepherd1226.github.io/CMP)
 - **[Coordinating Humanoid Loco-Manipulation through Action-Conditioned Latent Foresight](https://arxiv.org/abs/2611.04839)** (2026) — 用潜空间世界动作模型在执行前为人形指令序列打分，并逐步重规划；报告七项真机任务成功率 85.7%，GR00T N1.7 为 70.0%。 · [项目页](https://ju6276.github.io/Action-Grounded-Foresight/)
+- **[Counterfactual Video Generation Enables Scalable Humanoid Loco-Manipulation](https://arxiv.org/abs/2609.38172)** (2026) — PRISM 用视频生成把少量真实视频扩增为数百段反事实人-物交互视频，在仿真中重建并训练单一人形搬运策略，无需真机微调即可泛化到未见物体。 · [代码](https://github.com/amazon-far/PRISM) · [项目页](https://prism-real2sim2real.github.io/)
 - **[Ctrl-F: Force as an Interface for Humanoid Loco-Manipulation](https://arxiv.org/abs/2611.05507)** (2026) — 在动作跟踪中为每个接触部位加入显式三维力指令，由高层规划器在线给出。实机可推、踢最重 20 kg 的箱子（不感知力的基线会失败），并能适应任务中途增加的负载。 · [项目页](https://forcectrl.github.io/)
 - **[Deep Whole-body Parkour](https://arxiv.org/abs/2601.07701)** (2026) — 将外部感知融入全身动作跟踪，让人形机器人在不平整地形上完成高动态的非行走类技能。 · [代码](https://github.com/project-instinct/InstinctLab) · [项目页](https://project-instinct.github.io/deep-whole-body-parkour)
 - **[DiffContact: Differentiable Contact Dynamics for Policy Learning and Contact-Implicit Trajectory Optimization](https://arxiv.org/abs/2610.35852)** (2026) — 只在反向传播中换用平滑的解析摩擦接触梯度，前向仍是硬接触仿真：四足小跑策略在台式机上不到 2 分钟训练完成，无需微调即可迁移到真机；在接触隐式轨迹优化中也能找到更丰富的接触解。 · [项目页](https://diffcontact.github.io)
@@ -27,6 +28,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[FORGE: Feasible Online Reduced-Order Reference Generation and Whole-Body Execution for Agile Humanoid Locomotion](https://arxiv.org/abs/2610.37974)** (2026) — 先学习降阶模型参考生成器，再用其在线输出训练全身跟踪策略，一对策略即可覆盖多种步态。Unitree G1 实机实现 -2.0 到 2.8 m/s 行走、单腿跳与连续切换。
 - **[GRAFT: Geometry-Aware Residual Adaptation for Foundation Trackers](https://arxiv.org/abs/2610.36507)** (2026) — 冻结人形行为基础模型，仅训练一个作用于下肢目标的轻量残差适配器来应对台阶、沟壑和平台，并从特权地形信息蒸馏到机载深度；在四种跟踪器上验证，并在 Unitree G1（SONIC）上真机部署。 · [项目页](https://graft-humanoid.github.io/)
 - **[GRAIL: Generating Humanoid Loco-Manipulation from World Models](https://arxiv.org/abs/2606.05160)** (2026) — CoRL 2026 Oral。全虚拟的人形移动操作数据管线：把视频世界模型落到 3D 资产与可仿真场景中，无需遥操作或搭建实体环境。 · [代码](https://github.com/NVlabs/GRAIL) · [项目页](https://research.nvidia.com/labs/dair/grail/)
+- **[HERO: Learning Humanoid End-Effector Control for Visual Whole-Body Open-Vocabulary Object Grasping](https://arxiv.org/abs/2602.16705)** (2026) — 模块化人形抓取：大视觉模型负责场景理解，仿真训练的末端跟踪策略结合 IK 与学习的正运动学模型负责执行。报告末端跟踪误差 2.44 厘米，比先前最好方法低 5.5 倍。 · [代码](https://github.com/RunpeiDong/HERO) · [项目页](https://hero-humanoid.github.io/)
 - **[HIPC: Humanoid Iterative Planning and Control via Goal-Conditioned Motion Closure](https://arxiv.org/abs/2610.41334)** (2026) — 把通常开环运行、会累积漂移的生成式运动模型与人形跟踪器闭环耦合。真实状态反馈易致抖动甚至摔倒，因此加入偏差衰减恢复、历史重锚定与延迟补偿。 · [项目页](https://hipc-humanoid.github.io/)
 - **[HLO-AMP: Hierarchical Loco-Manipulation from Object-Aware Motion Priors](https://arxiv.org/abs/2611.05113)** (2026) — 让人形底层控制器在场景中真实带着物体做动作模仿训练，再在其上训练高层策略；在宇树 G1 上可搬运不同箱子，并能从掉落中恢复。
 - **[Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids](https://arxiv.org/abs/2601.07718)** (2026) — 端到端感知框架，将深度输入映射到控制，实现人形机器人在多样非结构化地形上徒步。 · [代码](https://github.com/project-instinct/InstinctLab) · [项目页](https://project-instinct.github.io/hiking-in-the-wild)
@@ -37,6 +39,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking](https://arxiv.org/abs/2606.03985)** (2026) — 在 20 亿帧重定向动作语料上预训练的 GPT 式因果 Transformer，跟踪高动态全身动作，并零次微调泛化到未见动作。 · [代码](https://github.com/GalaxyGeneralRobotics/Humanoid-GPT) · [项目页](https://qizekun.github.io/Humanoid-GPT/)
 - **[HumanoidNDM: Closing the Training-Deployment Gap of Motion Tracking via Humanoid Neural Dynamics Model](https://arxiv.org/abs/2610.34126)** (2026) — 在真机上在线微调人形机器人动作跟踪策略：用真实数据训练的本体感知神经动力学模型提供可反传梯度，无需动捕系统。在 Unitree G1 上验证对多种扰动的快速适应。
 - **[LadderMan: Learning Humanoid Perceptive Ladder Climbing](https://arxiv.org/abs/2606.05873)** (2026) — CoRL 2026 Spotlight。让人形机器人攀爬多种梯子并在梯上操作；两阶段流程用混合动作跟踪学习多个攀爬专家策略。 · [项目页](https://ladderman-robot.github.io)
+- **[Learning Contact Representation for Leg Odometry](https://arxiv.org/abs/2606.05501)** (2026) — 仅用关节编码器与 IMU 自监督估计足端接触，并作为支撑置信度输入卡尔曼滤波器。报告腿式里程计误差在对比方法中最低。 · [代码](https://github.com/egirgin/leg-odometry-contact-representation)
 - **[Learning Force-Reactive Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.35862)** (2026) — FLoRe：用带力传感的 UMI 式手持夹爪与人体追踪器采集无机器人示教，训练扩散策略输出每只手的力指令，由柔顺全身控制器执行；报告在三个接触密集任务上成功率 80%，仅位置控制为 26.7%。
 - **[Learning Loco-Manipulation From SMPC Demonstrations With Sparse Offline-to-Online RL](https://arxiv.org/abs/2608.12063)** (2026) — 在仿真中用采样 MPC 自动生成专家数据，再以稀疏奖励训练离策略 RL，免去奖励塑形；已部署到带臂 Spot 和 G1 人形机器人。
 - **[MAPO: Mixture of Experts with Alternating Policy Optimization for Universal Humanoid Motion Tracking](https://arxiv.org/abs/2611.02613)** (2026) — 动态路由会让混合专家策略的更新散度估计失准，MAPO 因此交替优化路由与专家。报告可跟踪 182 个 PPO+MoE 失败的动作，反过来只有 1 个。 · [项目页](https://mapo-corl2026.github.io/MAPO/)

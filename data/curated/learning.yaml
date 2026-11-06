@@ -614,3 +614,27 @@
   tags: [llm, planning, few-shot]
   takeaway_en: "Early use of LLMs as few-shot planners for embodied agents following natural-language instructions in visual environments."
   takeaway_zh: "较早把大模型用作具身智能体的少样本规划器，在视觉环境中执行自然语言指令。"
+- title: "TOPReward: Token Probabilities as Hidden Zero-Shot Rewards for Robotics"
+  type: paper
+  arxiv: "2602.19313"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/TOPReward/TOPReward
+  added: 2026-11-06
+  topics: [datasets]
+  tags: [reward-model, vlm, zero-shot, progress-estimation, benchmark]
+  takeaway_en: "Training-free progress reward: reads a video-language model's token probability that the instructed task is done, rather than asking it for a number. Introduces ManiRewardBench (130 tasks, four robots)."
+  takeaway_zh: "免训练的进度奖励：不让视频语言模型输出数值，而是读取其判断“任务已完成”的 token 概率作为稠密奖励。并提出 ManiRewardBench（130 个任务、4 种机器人）。"
+- title: "Online World Modeling Enables Real-World Inverse Reinforcement Learning from Observation"
+  type: paper
+  arxiv: "2602.24121"
+  year: 2026
+  org: University of Washington
+  venue: CoRL 2026
+  code: https://github.com/UWRobotLearning/mpail2
+  project: https://uwrobotlearning.github.io/mpail2/
+  added: 2026-11-06
+  topics: [manipulation]
+  tags: [inverse-rl, learning-from-observation, world-model, real]
+  takeaway_en: "Inverse RL from observation only (videos, no actions or rewards) made practical on a real robot via online world modeling. Reports pick-and-place learned from scratch to 82% in under 40 minutes."
+  takeaway_zh: "仅从观测（视频，无动作和奖励）做逆强化学习，借助在线世界模型在真机上实现。报告不到 40 分钟从零学会抓放，成功率 82%。"
