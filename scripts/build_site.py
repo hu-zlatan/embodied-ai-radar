@@ -824,7 +824,6 @@ def build() -> int:
     picks_html = ""
     if recent_picks:
         picks_html = (f'<h2>{bi("Newly added picks", "最新精选")} <span class="muted">(<a href="picks.xml">{bi("Atom feed", "Atom 订阅")}</a>)</span></h2>'
-                      f'<p class="muted">{bi("Notable new papers reviewed from the daily feed.", "从每日论文中审阅挑选的值得关注的新工作。")}</p>'
                       f'<div class="cards">{"".join(curated_card(e, tby, "") for e in recent_picks)}</div>')
     by_repo: dict[str, dict] = {}  # one row per repo; prefer the non-paper entry (e.g. "LeRobot" over a paper using it)
     for e in entries:

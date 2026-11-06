@@ -563,3 +563,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Owner follow-up 2 (chat): owner's screenshot still showed the old CSS (browser cache: style.css had no version), so assets now load as `style.css?v=<hash>` / `app.js?v=<hash>` (hash of their content, changes on every CSS/JS edit). Trending boxes shorter (list 170 px, about 1/3 of before, scroll for all 10), description clamped to one line, ▲/★ badges use a non-breaking space and the star count + weekly gain stay together.
 - Owner follow-up 3 (chat): smaller secondary text in the trending boxes (descriptions 11.5 px, sub-lines 12 px, star/gain badges 11 px, 'all repos' link 12.5 px); entries stay 13.5 px.
 - Owner follow-up 4 (chat): removed the 'All N repos' link under the most-starred box; the code tracker stays reachable from the 'Code / 代码' nav tab.
+- Owner follow-up 5 (chat): removed the description line under 'Newly added picks / 最新精选' on the home page.
