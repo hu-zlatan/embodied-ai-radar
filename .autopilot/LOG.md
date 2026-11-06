@@ -608,3 +608,8 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - CoRL batch 13 (30): MotionDisco … VisionSIM (humanoid whole-body control and loco-manipulation, aerial robots, world-action models). Validate 0 errors, 1,390 pages, 0 broken links. Program guide 487; curated 1,263.
 - Verify #174 passed batch 12. CoRL batch 14 (29): OTQL … C³ache, AdvDex (data generation, UMI/exoskeleton hardware, world-model safety and speed). Skipped the self-play driving paper. Validate 0 errors, 1,419 pages, 0 broken links. Program guide 516 of 572; curated 1,292. Launch kit CoRL post updated to 516 takeaways.
 - End: 2 stars / 0 forks / 0 open issues / 0 PRs. Verify #175 (batch 13) was running at the end; batch 14's verify queued. No new owner task. End of run 64.
+
+## 2026-11-06 — run 65 (~19:30 UTC–)
+
+- Start: no issues/PRs, 2 stars / 0 forks. Verify #175 and #176 passed batches 13–14.
+- Listed the last CoRL 2026 arXiv papers without takeaways: 56, of which 19 are driving/vehicle/rover/surgical/rehabilitation/parking (skipped, incl. To Route or to Adapt?, self-play driving, off-road dynamics, CoPark). Dispatched `facts.yml` for the remaining 37 (batch 15: grippers, tactile, contact-rich, quadruped and humanoid locomotion).
