@@ -102,3 +102,15 @@ ul.days{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.4rem 1rem}
 .starbox p{margin:0;font-size:15px}
 @media (max-width:600px){.top{position:static}.hsearch{order:4;flex:1 1 100%;padding-bottom:8px}.ghstar{margin-left:auto}}
 .tcol .more{font-size:14px}
+/* run 62b: compact header (about 0.6x), scrollable trending boxes, badges never split */
+.top .wrap{min-height:34px;gap:12px;padding-top:3px;padding-bottom:3px}
+.top .brand{font-size:15px}.top nav{font-size:14px}
+.hsearch input{padding:3px 9px;font-size:13px}
+.ghstar{padding:2px 8px;font-size:13px}.ghstar.big{padding:7px 14px;font-size:15px}
+.top .lang{padding:2px 8px;font-size:13px}
+.badge,.gh{white-space:nowrap;display:inline-block}
+.tcol h2{font-size:17px;margin:10px 0 2px}.tcol>p.muted{font-size:12.5px;margin:0 0 4px;line-height:1.4}
+.tcol .poplist{max-height:250px;overflow-y:auto;overscroll-behavior:contain;padding-right:6px;scrollbar-width:thin}
+.tcol .poplist li{font-size:13.5px;margin:0 0 7px}
+.tcol .more{font-size:13px}.tcol>p:last-child{margin:6px 0 4px}
+@media (max-width:600px){.top .wrap{min-height:0;padding-top:6px;gap:4px 12px}}

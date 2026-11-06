@@ -819,7 +819,7 @@ def build() -> int:
         k = repo_key(e.get("code"))
         if k and k in STATS and (k not in by_repo or (by_repo[k]["type"] == "paper" and e["type"] != "paper")):
             by_repo[k] = e
-    popular = sorted(((STATS[k], e) for k, e in by_repo.items()), key=lambda x: -x[0]["stars"])[:8]
+    popular = sorted(((STATS[k], e) for k, e in by_repo.items()), key=lambda x: -x[0]["stars"])[:10]
     gains, span = star_gains(load_history())
 
     def gain_badge(k: str) -> str:
@@ -851,7 +851,7 @@ def build() -> int:
                     owner_of[k] = (u, p["title"], f'https://arxiv.org/abs/{p["id"]}')
         for k, e in by_repo.items():
             owner_of[k] = (e["code"], e["title"], f'e/{e["id"]}.html')
-        top = sorted(((g, k) for k, g in gains.items() if g > 0 and k in owner_of), reverse=True)[:8]
+        top = sorted(((g, k) for k, g in gains.items() if g > 0 and k in owner_of), reverse=True)[:10]
         if top:
             rows = "".join(
                 f'<li><a href="{esc(owner_of[k][0])}" rel="noopener">{esc(k)}</a> <span class="badge rise">+{fmt_stars(g)}</span>'
@@ -870,7 +870,7 @@ def build() -> int:
     for a, e in cur_by_arxiv.items():
         if e.get("hf") and str(e["hf"].get("date", "")) >= hf_cut:
             hf_rows[a] = (e["hf"]["upvotes"], e["title"], f'e/{e["id"]}.html')
-    hf_top = sorted(hf_rows.items(), key=lambda x: (-x[1][0], x[0]))[:8]
+    hf_top = sorted(hf_rows.items(), key=lambda x: (-x[1][0], x[0]))[:10]
     if hf_top:
         rows = "".join(
             f'<li><a href="{esc(link)}">{short(t)}</a> <a class="badge rise" href="https://huggingface.co/papers/{esc(a)}" rel="noopener" title="Upvotes on Hugging Face Daily Papers">▲ {n}</a></li>'
