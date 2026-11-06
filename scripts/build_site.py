@@ -827,9 +827,11 @@ def build() -> int:
 </section>"""
     hi = [e for e in entries if e.get("highlight")]
     recent_picks = sorted((e for e in entries if e.get("added")), key=lambda e: str(e["added"]), reverse=True)[:6]
-    picks_html = ""
+    quick = (f'<div class="quick"><a class="qbtn" href="start.html">{bi("New to embodied AI? Start with the reading path →", "刚入门具身智能？从入门路线开始 →")}</a>'
+             f'<a class="qbtn" href="search.html">{bi("Search and filter everything →", "搜索与筛选全部内容 →")}</a></div>')
+    picks_html = f'<div class="sec-head">{quick}</div>'
     if recent_picks:
-        picks_html = (f'<h2>{bi("Newly added picks", "最新精选")} <span class="muted">(<a href="picks.xml">{bi("Atom feed", "Atom 订阅")}</a>)</span></h2>'
+        picks_html = (f'<div class="sec-head"><h2>{bi("Newly added picks", "最新精选")} <span class="muted">(<a href="picks.xml">{bi("Atom feed", "Atom 订阅")}</a>)</span></h2>{quick}</div>'
                       f'<div class="cards">{"".join(curated_card(e, tby, "") for e in recent_picks)}</div>')
     by_repo: dict[str, dict] = {}  # one row per repo; prefer the non-paper entry (e.g. "LeRobot" over a paper using it)
     for e in entries:
@@ -916,7 +918,6 @@ def build() -> int:
 {prog_row}
 {trend}
 {stats}
-<p class="start-link"><a class="more" href="start.html">{bi("New to embodied AI? Start with the reading path →", "刚入门具身智能？从入门路线开始 →")}</a> · <a class="more" href="search.html">{bi("Search and filter everything →", "搜索与筛选全部内容 →")}</a></p>
 <div id="home-static">
 {picks_html}
 <h2>{bi("Topics", "主题")}</h2>
