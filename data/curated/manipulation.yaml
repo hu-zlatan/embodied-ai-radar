@@ -1564,3 +1564,66 @@
   tags: [collision-avoidance, on-body-sensing, flow-matching, sim2real]
   takeaway_en: "Distributed depth sensors on the robot form an obstacle-aware point cloud; a flow-matching policy trained on 100K+ simulated safety-critical trajectories plans collision-free motion and transfers zero-shot to hardware."
   takeaway_zh: "机器人身上的分布式深度传感器汇成障碍感知点云；在 10 万多条仿真安全关键轨迹上训练的流匹配策略据此生成无碰撞运动，零样本迁移到真机。"
+- title: "GoalDex: Learning Image-Goal-Conditioned Policies for Dexterous In-Hand Manipulation"
+  type: paper
+  arxiv: "2611.02171"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [dexterous, in-hand-reorientation, image-goal, sim2real]
+  takeaway_en: "End-to-end in-hand reorientation from RGB and proprioception, with no object pose estimation: distilled from privileged-state teachers, and the target is given as an image. One policy transfers to five real objects."
+  takeaway_zh: "仅凭 RGB 与本体感觉、无需物体位姿估计的端到端手内重定向：由特权状态教师蒸馏而来，目标姿态直接用图像给出。单一策略直接迁移到五个真实物体。"
+- title: "ArtManip: Category-Level Articulated In-Hand Manipulation"
+  type: paper
+  arxiv: "2609.12498"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [dexterous, articulated-objects, in-hand, procedural, rl]
+  takeaway_en: "Category-level in-hand manipulation of articulated objects: procedural objects and functional grasps, then two-stage training with articulation physics randomization, reward curriculum and latent distillation."
+  takeaway_zh: "类别级的铰接物体手内操作：程序化生成物体与功能性抓取，再用两阶段训练（铰接物理随机化、奖励课程、潜表示蒸馏）学习策略，可泛化到未见实例。"
+- title: "PartialBiGrasp: Inferring Hidden Local Geometry for Bimanual Grasping from Partial Views"
+  type: paper
+  arxiv: "2608.19188"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [bimanual, grasping, partial-point-cloud, occupancy]
+  takeaway_en: "Dual-arm grasps for large objects from partial point clouds: a convolutional occupancy network reasons about local thickness and clearance, producing force-closure grasp pairs refined by sampling-based optimization."
+  takeaway_zh: "从局部点云为大型物体生成双臂抓取：卷积占据网络推断局部厚度与夹爪间隙等几何，生成满足力封闭的抓取对，再用基于采样的优化修正几何不完整带来的歧义。"
+- title: "T(R,O) Grasp++: Cross-Embodiment Dexterous Grasping in Cluttered Environments at Scale"
+  type: paper
+  arxiv: "2610.25410"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [dexterous-grasping, cross-embodiment, clutter, diffusion, benchmark]
+  takeaway_en: "A simulation benchmark of about 0.5B grasp labels over eight dexterous hands and ~50K objects, plus a diffusion model for cross-embodiment grasps in clutter: 88% average success, 0.3 s inference."
+  takeaway_zh: "构建约 5 亿条抓取标注、覆盖 8 种灵巧手和约 5 万个物体的仿真基准，并提出跨本体的杂乱场景灵巧抓取扩散模型：平均成功率 88%，推理 0.3 秒。"
+- title: "Flow as Flow: Modeling Robot Velocity Fields as Probability Velocity Fields for Flow-Based Object Manipulation"
+  type: paper
+  arxiv: "2606.23090"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [object-flow, flow-matching, cross-embodiment, real]
+  takeaway_en: "Models robot flow as dense velocity fields in a flow-matching formulation rather than sparse keypoint displacements, about 24x faster than standard flow matching; tested in 13 real tasks with 260 trials per method."
+  takeaway_zh: "在流匹配框架中把机器人流建模为稠密速度场，而非稀疏关键点位移，生成速度比标准流匹配快约 24 倍；在 13 个真实任务上每种方法测试 260 次。"
+- title: "ObstaDiff: Generalizable Diffusion Policy Learning via Obstacle-aware Representations"
+  type: paper
+  arxiv: "2609.10918"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [diffusion-policy, clutter, obstacle-avoidance, agriculture, real]
+  takeaway_en: "Diffusion policy with an obstacle-aware encoder that splits the scene into target, obstacle and background. 61 real greenhouse trials per method: 75.41% success and 8.20% collision rate."
+  takeaway_zh: "带障碍感知编码器的扩散策略，把场景分解为目标、障碍和背景。每种方法在温室真机测试 61 次：成功率 75.41%，碰撞率 8.20%。"
+- title: "Spatially Conditioned Diffusion Policy: Learning Precise and Robust Manipulation with a Single RGB Camera"
+  type: paper
+  arxiv: "2606.14535"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [diffusion-policy, single-camera, visual-attention, real]
+  takeaway_en: "Single-camera diffusion policy: points along intermediate end-effector trajectories in the denoising loop sample multi-scale image features, acting as attention anchors. Comparable to multi-camera baselines in sim."
+  takeaway_zh: "单相机扩散策略：在去噪循环中沿中间末端轨迹的点采样多尺度图像特征，作为视觉注意力锚点。仿真中表现与多相机基线相当。"

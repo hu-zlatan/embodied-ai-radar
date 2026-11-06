@@ -1152,3 +1152,111 @@
   tags: [human-in-the-loop, preference-learning, assistive, reward-learning]
   takeaway_en: "For assistive devices with costly user trials: a forward model predicts user outcomes from control policies and drives active queries to learn each user's reward, then picks the final policy without more trials."
   takeaway_zh: "面向用户试验代价高的辅助设备：先训练前向模型从控制策略预测用户结果，用它主动选择查询来学习个体奖励，再在不增加试验的情况下选出最终策略。"
+- title: "Beyond Monotonic Progress: Retry-Supervised Value Learning for Robot Imitation"
+  type: paper
+  arxiv: "2606.24633"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [value-learning, imitation-learning, mixed-quality-data, retries]
+  takeaway_en: "ReTVL learns a mistake-sensitive value function from imperfect demos, using sparse retry keypoints as pairwise preferences on top of global progress, then reweights demo chunks for behavior cloning."
+  takeaway_zh: "ReTVL 从不完美示教中学习对失误敏感的价值函数：在全局进度校准之上，以稀疏标注的“重试”关键点构造局部成对偏好，再用该价值为行为克隆的示教片段加权。"
+- title: "SCAPE: Scenario-Conditioned Simulation-Augmented Policy Evaluation"
+  type: paper
+  arxiv: "2608.19425"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [policy-evaluation, sim2real, conformal-prediction, quadruped]
+  takeaway_en: "SCAPE predicts per-scenario real-world policy performance from a few paired sim/real runs plus many sim runs, correcting sim bias and calibrating with conformal prediction. Tested on driving and quadrupeds."
+  takeaway_zh: "SCAPE 利用少量成对的仿真/真机数据和大量仿真推演，按场景预测策略在真实世界的表现：先校正仿真标签偏差，再用共形预测校准不确定性。在自动驾驶与四足速度跟踪上验证。"
+- title: "Implicit Neural Representations of Individual Behavior"
+  type: paper
+  arxiv: "2606.12200"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [policy-representation, implicit-neural-representation, self-supervised]
+  takeaway_en: "Behavioral INR represents a policy as a state-to-action function modulated by an episode latent (FiLM), so policy identity in unlabeled multi-policy data can be inferred without labels."
+  takeaway_zh: "Behavioral INR 把策略表示为由回合级潜变量（FiLM）调制的“状态→动作”函数，从而在无标签的多策略行为数据中无监督地推断策略身份。"
+- title: "Why Does Action Chunking Improve Behavioral Cloning Performance in Robotic Control?"
+  type: paper
+  arxiv: "2608.02547"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [action-chunking, behavior-cloning, analysis]
+  takeaway_en: "Tests why action chunking helps BC: not temporal consistency or horizon reduction, but non-Markovian expressivity and less compounding error (also matched by delayed policies), plus an 'implicit ensembling' effect."
+  takeaway_zh: "检验动作分块为何有助于行为克隆：并非时间一致性或缩短时域，而是非马尔可夫表达力与更少的误差累积（延迟策略也能做到），另外还有一种“隐式集成”效应。"
+- title: "Coverage Aware Active Evaluation for Failure Discovery with Paired Systems"
+  type: paper
+  arxiv: "2608.13719"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [failure-discovery, active-testing, proxy, sim2real]
+  takeaway_en: "Finds real-system failures on a small budget by correcting cheap proxy (e.g. simulator) failure signals with residual modeling and choosing diverse, well-supported scenarios. Up to 2x the failures of random sampling."
+  takeaway_zh: "在有限测试预算下寻找真实系统的失败：用残差建模校正廉价代理（如仿真器）的失败信号，并挑选多样且有数据支撑的场景。发现的失败数最多为随机采样的 2 倍。"
+- title: "RoboFQE: Rollout-Free Evaluation of Visual Robot Policies from Offline Trajectories"
+  type: paper
+  arxiv: "2610.18699"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [policy-evaluation, off-policy-evaluation, fqe, offline]
+  takeaway_en: "RoboFQE scores visual manipulation policies from offline trajectories, no rollouts: fitted Q-evaluation on a pretrained vision encoder plus learned success labels. Keeps rankings where video world models drift."
+  takeaway_zh: "RoboFQE 无需推演、直接用离线轨迹评估视觉操作策略：在预训练视觉编码器上做拟合 Q 评估并学习终止成功标注。在视频世界模型会累积误差的长时任务上仍能保持策略排序。"
+- title: "AnyRank: Reliable Anytime Policy Ranking via Sequential Testing"
+  type: paper
+  arxiv: "2610.14603"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [policy-evaluation, sequential-testing, statistics, hardware-trials]
+  takeaway_en: "AnyRank ranks robot policies with sequential tests: trials go to hard-to-separate pairs, a (partial) ranking holds at any stopping time, and imperfect priors (sim, world model) save trials safely."
+  takeaway_zh: "AnyRank 用序贯检验为多个机器人策略排序：把试验分给难以区分的策略，任何时刻停止都能给出有误差保证的（部分）排序，可借助不完美的先验（仿真、世界模型）节省试验而不破坏保证。"
+- title: "When Robots Sleep: Offline Skill Consolidation for Shared-Policy Robot Learning"
+  type: paper
+  arxiv: "2606.17493"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [continual-learning, skill-consolidation, multi-task, meta-world]
+  takeaway_en: "Sleeping Robots: learn a new skill while 'awake', then consolidate one shared policy offline during 'sleep' from frozen critics or actor snapshots, combining gradients by Nash bargaining. +64% success on Meta-World MT5."
+  takeaway_zh: "Sleeping Robots：“清醒”时学习新技能，“睡眠”时利用冻结的评估器或策略快照离线巩固单一共享策略，并以纳什议价合并梯度。在 Meta-World MT5 上平均成功率提升 64%。"
+- title: "Where Should Action Generation Begin? A Learnable Source Prior for Generative Robot Policies"
+  type: paper
+  arxiv: "2606.17408"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [generative-policy, source-distribution, flow-matching, robotwin]
+  takeaway_en: "LeaP replaces the standard Gaussian source of a flow/diffusion-bridge policy with a proprioception-conditioned Gaussian over action chunks from a small MLP. 81.6% average on 15 RoboTwin tasks."
+  takeaway_zh: "LeaP 用一个小型 MLP 预测、以本体感觉为条件的动作块高斯分布，替换流匹配/扩散桥策略的标准高斯起点。在 15 个 RoboTwin 任务上平均成功率 81.6%。"
+- title: "Guided Discovery of New Behaviors using Diffusion Policies"
+  type: paper
+  arxiv: "2606.08743"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [diffusion-policy, exploration, trajectory-optimization, rare-modes]
+  takeaway_en: "Feynman-Kac correctors with a new guiding potential push diffusion-policy samples toward rare but promising modes; trajectory optimization repairs them and they are added back to training."
+  takeaway_zh: "用 Feynman-Kac 校正器配合新的引导势能，把扩散策略的采样推向少见但有前景的模态；再以基于采样的轨迹优化修复这些轨迹，并加回训练集重训策略。"
+- title: "MAGMA-GEN: Validated Recovery Supervision from Ambiguous Failures via Counterfactual Re-Execution"
+  type: paper
+  arxiv: "2609.20056"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [failure-recovery, data-generation, long-horizon, hierarchical]
+  takeaway_en: "Turns ambiguous failed rollouts into recovery training data: a privileged coach proposes a corrected high-level decision, kept only if re-executing from the same state improves progress."
+  takeaway_zh: "把含义不明的失败推演转化为恢复训练数据：由特权教练推测早期的高层决策错误并提出修正，只有从同一状态重新执行确实提升进度时才保留。"
+- title: "Behavior Uncloning: Distilling Mode Redirection into Policy Weights without Inference-Time Steering"
+  type: paper
+  arxiv: "2606.29201"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [behavior-cloning, mode-suppression, safety, real]
+  takeaway_en: "MoRE 'unclones' unwanted behavior modes (e.g. handing a knife blade-first) by distilling a temporary mode classifier into the policy weights, with a retain loss. +44 pts success across eight tasks, no inference cost."
+  takeaway_zh: "MoRE 通过把临时模式分类器的重定向信号蒸馏进策略权重，并配合保持损失，“去克隆”不想要的行为模式（如刀刃朝前递刀）。八个任务平均成功率提升 44 个百分点，推理零开销。"

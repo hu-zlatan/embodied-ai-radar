@@ -1239,3 +1239,12 @@
   tags: [world-action-model, distillation, video-diffusion, libero]
   takeaway_en: "Distills intermediate denoising features of a video diffusion model into an action model during training and drops the video model at test time. Reports 95.9% on LIBERO and about 21x faster inference than a WAM baseline."
   takeaway_zh: "训练时把视频扩散模型的中间去噪表示蒸馏进动作模型，测试时完全丢弃视频模型。在 LIBERO 上报告 95.9% 平均成功率，推理比代表性世界动作模型快约 21 倍。"
+- title: "FAWAM: Force-Aware World Action Models for Closed-Loop Contact-Rich Manipulation"
+  type: paper
+  arxiv: "2606.08555"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [world-action-model, force-torque, contact-rich, real]
+  takeaway_en: "FAWAM uses 6-axis force/torque in perception, jointly predicts future actions and wrenches, and corrects actions online against the predicted wrench. Reports +36.25 pts over vision-only baselines on real tasks."
+  takeaway_zh: "FAWAM 在感知、预测与闭环执行三层使用六维力/力矩：联合预测未来动作与末端力旋量，并以预测的力轨迹为参考在线修正动作。真机任务上比纯视觉基线成功率高 36.25 个百分点。"

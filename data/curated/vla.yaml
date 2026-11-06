@@ -2414,3 +2414,57 @@
   tags: [vla, 3d, representation-alignment, spatial-reasoning]
   takeaway_en: "Aligning VLA features point-wise with 3D foundation models causes rank collapse; aligning pairwise relations instead adds 3D awareness without losing expressivity. Adds a new spatial reasoning benchmark."
   takeaway_zh: "将 VLA 特征逐点对齐到 3D 基础模型会导致秩坍塌；改为对齐成对关系，可在不损失表达力的前提下注入 3D 空间感知。并提出新的空间推理基准。"
+- title: "Back to the Familiar Future: Failure Recovery for VLA Policies via Pre-Imagined Milestone Selection"
+  type: paper
+  arxiv: "2606.09258"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [failure-recovery, vla, foresight, libero]
+  takeaway_en: "B2FF: before execution the VLA imagines a bank of future milestone images; after a deviation a selector picks a reachable one as a fixed visual goal. Failure-injected LIBERO: 56.3% → 74.0%, no fine-tuning."
+  takeaway_zh: "B2FF：执行前让 VLA 想象一组未来里程碑图像；偏离轨迹后，由选择器挑出可恢复的那个作为固定视觉目标。在注入失败的 LIBERO 上成功率从 56.3% 升至 74.0%，无需微调。"
+- title: "LAPT-Scale: Scaling Embodied Policies with Latent Action Pre-Training on Human Videos"
+  type: paper
+  arxiv: "2610.13732"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [latent-actions, human-video, pretraining, scaling, real]
+  takeaway_en: "Continuous (not vector-quantized) latent actions learned from 23.3K hours of egocentric human video serve as pre-training labels for a VLA; reports consistent scaling gains."
+  takeaway_zh: "从 2.33 万小时第一人称人类视频中学习连续（非向量量化）的潜动作，结合感知、语义与光流对齐信号，作为 VLA 预训练的动作监督；报告随规模持续提升。"
+- title: "ALIGN: Aligning Condition Estimation and Expression in Advantage-Conditioned Behavior Cloning"
+  type: paper
+  arxiv: "2610.26455"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [advantage-conditioning, behavior-cloning, mixed-quality-data, real]
+  takeaway_en: "Advantage-conditioned BC for VLAs: predicts pairwise conditions directly and injects them into the DiT action expert via AdaRMS. On real retry-heavy data: 90.0% vs 56.7% (bowl stacking), 56.7% vs 33.3% (key hanging)."
+  takeaway_zh: "面向 VLA 的优势条件行为克隆：直接预测成对条件，并通过 AdaRMS 注入 DiT 动作专家。在含大量重试的真机数据上，叠碗成功率 90.0%（基线 56.7%），挂钥匙 56.7%（基线 33.3%）。"
+- title: "Scale Up Strategically: Learning Compositional Generalization via Bias-Aware Evaluation and Data Collection for Robotic Manipulation"
+  type: paper
+  arxiv: "2607.21582"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [compositional-generalization, shortcut-bias, data-collection, evaluation]
+  takeaway_en: "Measures which instruction factors policies over-rely on: across six foundation policies, color ≥ object ≥ spatial ≥ verb ≥ size. Collecting more data for under-grounded factors wins with half the demos."
+  takeaway_zh: "量化策略过度依赖哪些指令要素：六个基础策略普遍呈现颜色 ≥ 物体 ≥ 空间 ≥ 动词 ≥ 尺寸的顺序。把采集预算倾斜给欠落地的要素，只用一半示教即可胜出。"
+- title: "Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blind to Color"
+  type: paper
+  arxiv: "2607.14698"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [adversarial, robustness, vla, lighting, real]
+  takeaway_en: "FLARE, a physical spotlight attack, drops VLA success to zero. Naive augmentation defenses make models ignore color (≤47.5% on color tasks); ChromaGuard keeps color and reaches 97.5% and 92.5% on a real arm."
+  takeaway_zh: "FLARE 物理聚光灯攻击可让 VLA 成功率降为零。朴素的增强防御会让模型忽略颜色（颜色相关任务至多 47.5%）；ChromaGuard 保留色彩信息，在真机上达到 97.5% 与 92.5%。"
+- title: "Where Success Breaks: Failure-Boundary Learning for Robust Vision-Language-Action Models"
+  type: paper
+  arxiv: "2609.06114"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [vla, failure-boundary, digital-twin, flow-matching, real]
+  takeaway_en: "DLS finds where VLA success breaks via on-policy digital-twin rollouts, locates the crossing with privileged progress signals, and shapes the flow toward success-producing denoising directions."
+  takeaway_zh: "DLS 通过数字孪生中的在策略推演大规模发现 VLA 成功与失败的边界，用特权进度信号定位越界位置，并据此强化导向成功的去噪方向、抑制导向失败的方向。"

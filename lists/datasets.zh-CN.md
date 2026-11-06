@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 91 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 92 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/datasets.html) · [English](datasets.md)
 
@@ -22,6 +22,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - ⭐ **[ScanNet: Richly-annotated 3D Reconstructions of Indoor Scenes](https://arxiv.org/abs/1702.04405)** (2017) — 1500+ 个室内场景的 RGB-D 扫描，含三维重建、相机位姿与语义标注；具身感知所依赖的三维场景理解标准基准。 · [代码](https://github.com/ScanNet/ScanNet)
 - **[ATOM-Bench: A Real-World Benchmark for Atomic Skills and Compositional Generalization in Manipulation Policies](https://arxiv.org/abs/2606.16826)** (2026) — CoRL 2026 Spotlight。真实世界基准：把桌面操作分解为动作原子与指令原子，测试策略的原子技能及其重新组合能力。 · [项目页](https://flageval-baai.github.io/AtomBenchPage)
 - **[AstroBench: Benchmarking Free-Floating Capture and Space Robotic Manipulation](https://arxiv.org/abs/2610.31064)** (2026) — 太空机器人操作基准：用固定基座机械臂抓取舱内漂浮、旋转的物体，另含样本存储与在轨维护任务。报告称所测的冻结通用策略在 200 个静止目标中只抓住 2 个。 · [代码](https://github.com/AstroUpLab/AstroBench) · [项目页](https://astroup.com/astrobench/)
+- **[AutoDex: An Automated Real-World System for Dexterous Grasping Data Collection](https://arxiv.org/abs/2606.23689)** (2026) — AutoDex 自动执行真机灵巧抓取、标注结果并复位物体，几乎无需人工：在 100 个物体上用 Allegro 与 Inspire 手采集 3500 多次试验；每 500 条轨迹约需 0.2 人时，遥操作需 9.3 人时。
 - **[BURGER: Benchmarking and Understanding Robotic Generalization via Embodied Drawing](https://arxiv.org/abs/2610.40532)** (2026) — 语言条件绘画基准：同一指令有无数种合法画法。含 282 个任务的 28,200 条仿真示范，用于比较五种 VLA 模型在数据规模、语言落地和多模态行为上的差异。 · [代码](https://github.com/Qxjyqzw/BURGER) · [项目页](https://siyingzhao.github.io/BURGER/)
 - **[Behavior Spatial Benchmark: Evaluating Spatial Understanding for Robotics](https://arxiv.org/abs/2610.34051)** (2026) — 基于 BEHAVIOR-1K 的 BEHAVIOR-Spatial 基准：包含空间问答、指点定位与机器人动作评测。基线策略在未见布局上成功率 41.6%，但在同一布局中更换目标物体指令时降至 16.1%；提供真值目标提示带来的提升最大。 · [项目页](https://arielchen07.github.io/behavior-spatial/)
 - **[Beyond Infraction Scores: Failure-Boundary Profiles for Closed-Loop Evaluation of Driving and Robot Navigation Agents](https://arxiv.org/abs/2611.06453)** (2026) — 每类场景只改变一个可测因素，并认证智能体此时该通过还是该停下；CARLA 中得分最高的学习型智能体决策准确率为 0.60，规则专家为 0.74。 · [代码](https://github.com/speedym/failure-boundary-profiles)

@@ -2,7 +2,7 @@
 
 _触觉传感器、触觉表征与接触丰富的控制。_
 
-共 69 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
+共 72 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/tactile.html) · [English](tactile.md)
 
@@ -36,6 +36,8 @@ _触觉传感器、触觉表征与接触丰富的控制。_
 - **[T-Rex: Tactile-Reactive Dexterous Manipulation](https://arxiv.org/abs/2606.17055)** (2026) — 触觉反应式 VLA：围绕基本动作采集的 100 小时触觉数据集、可变频率的 Mixture-of-Transformers 架构与时序触觉 VQ-VAE 编码器。报告在 12 个任务上平均成功率比最强基线高 30% 以上。 · [项目页](https://tactile-rex.github.io/)
 - **[TacCoRL: Integrating Tactile Feedback into VLA via Simulation](https://arxiv.org/abs/2606.11743)** (2026) — 通过仿真-真机协同训练和在对齐真实的模拟器中做强化学习，为 VLA 加入触觉，学习接近失败时触觉应如何调整动作。报告四个双臂任务成功率 72.5%，基线 50.0%。 · [项目页](https://tac-corl.github.io/)
 - **[TacMind: Benchmarking and Modeling Tactile Interaction States for Robotic Manipulation](https://arxiv.org/abs/2611.00455)** (2026) — 128 个仿真触觉任务，分精确、识别、动态三类，含 12 种扰动；并提出动作条件的触觉世界模型，把触觉当作随时间演化的状态，用预测的触觉信息修正动作。 · [代码](https://github.com/Tacmind-Bench/TacMind) · [项目页](https://tacmind-bench.github.io/)
+- **[TacStyle: Personalizing Tactile Robot Policies using Structured Behavior Representations](https://arxiv.org/abs/2606.14862)** (2026) — 学习按行为风格（如施力大小）组织的结构化潜空间，让语言在其中推理用户偏好而非直接生成动作，从而实现个性化的触觉策略，如擦拭、叠衣。
+- **[TactX: Learning Shared Tactile Representations Across Diverse Sensors](https://arxiv.org/abs/2606.31236)** (2026) — 为电阻式、磁式和视觉触觉传感器分别训练编码器，利用成对接触数据映射到同一潜空间；在四个操作任务中，用一种传感器训练的策略可零样本迁移到另一种。
 - **[Tactile Curiosity Drives Robot Interaction](https://arxiv.org/abs/2609.40134)** (2026) — TacEx 让好奇心聚焦触觉：按感知模态分解模型不确定性，使探索去寻找接触而非空中乱动。采集的数据可离线训练抓放策略，也可用于 VLA 后训练。 · [项目页](https://go.klem.nz/tacex)
 - **[Tactile-Based Robotic Manipulation: From Mechanics-Driven to Data-Driven Perspectives](https://arxiv.org/abs/2610.30438)** (2026) — 综述（Annual Review of Control, Robotics, and Autonomous Systems 录用稿）：从接触力学建模到数据驱动学习，梳理触觉操作的发展，涵盖传感基础、状态表征、模仿学习、强化学习、VLA 与预测模型。
 - **[TactileStep: Sole Tactile Learning for Regulating Foot-Terrain Interaction in Humanoid Locomotion](https://arxiv.org/abs/2609.28959)** (2026) — CoRL 2026 Spotlight。把足底压力感知引入人形运动控制，目标是比“能完成但落地粗暴”的跑酷策略更柔和的足地接触。
@@ -46,6 +48,7 @@ _触觉传感器、触觉表征与接触丰富的控制。_
 - **[AnyTouch: Learning Unified Static-Dynamic Representation across Multiple Visuo-tactile Sensors](https://arxiv.org/abs/2502.12191)** (2025) — 跨多种视触觉传感器学习统一的静态-动态表征，并贡献对齐的多传感器触觉数据集 TacQuad。 · [代码](https://github.com/GeWu-Lab/AnyTouch)
 - **[ControlTac: Scaling Tactile Data with Physically Controlled Tactile Image Generation](https://arxiv.org/abs/2505.20498)** (2025) — 以一张参考触觉图像加接触力与接触位姿为条件，生成逼真的触觉图像来扩充跨传感器的触觉数据。在插装、模仿学习与称重等真实任务中，增强数据均带来提升。 · [项目页](https://dongyuluo.github.io/controltac)
 - **[FACTR: Force-Attending Curriculum Training for Contact-Rich Policy Learning](https://arxiv.org/abs/2502.17432)** (2025) — 低成本双边遥操作把机械臂受力反馈给操作者；训练时对视觉的破坏逐渐减弱，让策略学会关注力信息。
+- **[Learning to Feel the Future: DreamTacVLA for Contact-Rich Manipulation](https://arxiv.org/abs/2512.23864)** (2025) — DreamTacVLA 把高分辨率触觉图像与腕部、第三人称视角一起输入并做空间对齐，再用预测未来触觉信号的触觉世界模型微调。
 - **[LocoTouch: Learning Dynamic Quadrupedal Transport with Tactile Sensing](https://arxiv.org/abs/2505.23175)** (2025) — 在四足机器人背部铺设高密度触觉传感器，无需固定装置即可长距离运输未固定的圆柱物体。 · [代码](https://github.com/linchangyi1/LocoTouch)
 - **[PP-Tac: Paper Picking Using Tactile Feedback in Dexterous Robotic Hands](https://arxiv.org/abs/2504.16649)** (2025) — 用带高分辨率全向触觉传感器的多指手抓取纸张类薄物体，同时解决状态估计与抓取规划。
 - **[Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation](https://arxiv.org/abs/2503.02881)** (2025) — 慢速扩散策略在隐空间规划动作块，快速策略根据触觉/力反馈高频调整；论文报告在三个接触丰富任务上比纯视觉模仿学习基线总分高 35% 以上。 · [代码](https://github.com/xiaoxiaoxh/reactive_diffusion_policy) · [项目页](https://reactive-diffusion-policy.github.io/)

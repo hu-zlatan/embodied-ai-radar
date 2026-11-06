@@ -2,7 +2,7 @@
 
 _视觉-语言-动作模型与通用机器人策略。_
 
-共 237 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
+共 243 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [English](vla.md)
 
@@ -46,6 +46,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[ABot-M0: VLA Foundation Model for Robotic Manipulation with Action Manifold Learning](https://arxiv.org/abs/2602.11236)** (2026) — ABot-M0 结合数据整理流程与动作流形学习，让一个模型跨不同硬件工作，即“一脑多形”。 · [代码](https://github.com/amap-cvlab/ABot-Manipulation) · [项目页](https://amap-cvlab.github.io/ABot-Manipulation/)
 - **[ACE-Ego-0: Unifying Egocentric Human and Robotic Data for VLA Pretraining](https://arxiv.org/abs/2606.17200)** (2026) — 用 4530 小时机器人/仿真数据加 1480 小时带伪动作的第一视角人类视频联合预训练 VLA，采用相机空间动作与按可靠性加权的损失。报告在 RoboCasa GR1 TableTop 和 RoboTwin 2.0 上达到最优。 · [代码](https://github.com/ACERobotics-VLA/ACE-Ego-0)
 - **[AGQ: Action-Guided Ultra-Low-Bit Quantization for Vision-Language-Action Models](https://arxiv.org/abs/2610.33074)** (2026) — 面向 VLA 的混合精度量化：根据每个权重矩阵对输出动作的影响分配比特数；报告在 3 比特下 LIBERO 成功率 92.7%（高于 AWQ 与 GPTQ），2.5 比特下仍有 70.5%。 · [代码](https://github.com/Qiuxu00/AGQ)
+- **[ALIGN: Aligning Condition Estimation and Expression in Advantage-Conditioned Behavior Cloning](https://arxiv.org/abs/2610.26455)** (2026) — 面向 VLA 的优势条件行为克隆：直接预测成对条件，并通过 AdaRMS 注入 DiT 动作专家。在含大量重试的真机数据上，叠碗成功率 90.0%（基线 56.7%），挂钥匙 56.7%（基线 33.3%）。
 - **[APT: Action Expert Pretraining Improves Instruction Generalization of Vision-Language-Action Policies](https://arxiv.org/abs/2606.12366)** (2026) — 先把动作专家预训练为不含语言的视觉-动作先验，再通过门控融合注入语言。针对 VLA 对未见指令泛化差的问题，适用于 π 系和 GR00T 系架构。 · [代码](https://github.com/xukechun/APT) · [项目页](https://xukechun.github.io/papers/APT/)
 - **[Action Chunk Scheduling for Batched Robot Policy Serving](https://arxiv.org/abs/2608.00337)** (2026) — 把从远程 GPU 为多台机器人提供策略推理建模为调度问题。当各机器人消耗动作块的速度不同时，简单批处理失效；所提调度算法在真机上报告吞吐量最高提升 18%。 · [项目页](https://gatech-rl2.github.io/actionchunkscheduling)
 - **[ActionCodec: What Makes for Good Action Tokenizers](https://arxiv.org/abs/2602.15397)** (2026) — 从 VLA 优化角度总结动作 tokenizer 的设计原则（时间重叠、低冗余、模态互信息、独立性）并据此构建 ActionCodec：2.2B 的 SmolVLM2 在无机器人预训练下 LIBERO 达 95.5%。
@@ -53,6 +54,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[Asynchronous Robot Policies](https://arxiv.org/abs/2611.05155)** (2026) — 把低频更新语义记忆的大型 VLM 与高频出动作的轻量专家解耦，并针对陈旧和延迟训练；报告 VLM 降到标称频率十分之一时性能无明显损失。 · [项目页](https://arp.insait.ai)
 - **[Auriga Technical Report: A Task-Agnostic Agent Harness for Zero-Shot Embodied Manipulation](https://arxiv.org/abs/2611.01112)** (2026) — 任务决策交给大模型，框架提供标定后的三维测量、轨迹预览和偏差即停的执行检查。作者报告在 RoboDojo 榜单排名第一，成功率 57.7%，是同模型参考框架的两倍多。 · [代码](https://github.com/lose4578/Auriga) · [项目页](https://auriga.stelledge.com/)
 - **[Automating the Design of Embodied Agent Architectures](https://arxiv.org/abs/2606.30111)** (2026) — 研究原用于文本智能体的智能体架构搜索（AAS）能否迁移到有感知的具身智能体；提出 AgentCanvas，把感知、记忆、规划与动作模块的组合方式变成可搜索的设计空间。 · [代码](https://github.com/jianzhou0420/AgentCanvas) · [项目页](https://jianzhou0420.github.io/agentcanvas)
+- **[Back to the Familiar Future: Failure Recovery for VLA Policies via Pre-Imagined Milestone Selection](https://arxiv.org/abs/2606.09258)** (2026) — B2FF：执行前让 VLA 想象一组未来里程碑图像；偏离轨迹后，由选择器挑出可恢复的那个作为固定视觉目标。在注入失败的 LIBERO 上成功率从 56.3% 升至 74.0%，无需微调。
 - **[Barrier-Constrained Guidance For Real-time Asynchronous VLA Execution](https://arxiv.org/abs/2610.14997)** (2026) — FreeBar：无需训练的推理插件，用闭式求解的类 CBF 一致性约束让流式 VLA 的相邻动作块与已执行动作衔接，额外推理开销很小。
 - **[Bayesian Active Learning for Intent Disambiguation in Interactive Robot Planning](https://arxiv.org/abs/2609.34270)** (2026) — 把澄清提问视为信号时序逻辑规约上的贝叶斯主动学习，机器人提问更少，并向形式化规划器交付可验证的任务。
 - **[CHORUS: Decentralized Multi-Embodiment Collaboration with One VLA Policy](https://arxiv.org/abs/2606.12352)** (2026) — 同一个 VLA 主干在每台机器人上独立运行，只依赖本机观测和机器人身份提示，实现去中心化多机协作。报告比从零训练的去中心化模型提升 64 个百分点。 · [项目页](https://chorus-model.github.io)
@@ -110,9 +112,11 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[HuGe: Scaling Humanoid Generalist Vision-Language-Action Models with Egocentric Experience](https://arxiv.org/abs/2610.34186)** (2026) — 人形机器人通用 VLA 系列：在 2,000 多小时第一视角人类与机器人数据上预训练，输出潜在动作 token 驱动预训练的全身控制器并附手部信号；通过仿真回放构造伪本体感知、重渲染手臂外观缩小人-机差异，报告 HumanoidArena 最优，并在 Unitree G1 上验证人类数据增益。 · [代码](https://github.com/yliu-cs/HuGe) · [项目页](https://yliu-cs.github.io/HuGe)
 - **[HuRo: Robotizing Human Videos for Scalable VLA Pretraining](https://arxiv.org/abs/2609.10706)** (2026) — 把五个来源的人类视频转换成与机器人对齐的观测和动作（约 63 万条轨迹）。报告用更多此类数据预训练 VLA，真机任务完成率从 51.5% 升到 80.3%，分布外从 34.9% 升到 72.2%。 · [代码](https://github.com/3587jjh/HuRo) · [项目页](https://3587jjh.github.io/HuRo)
 - **[Information-Theoretic Constraints for Continual Vision-Language-Action Alignment](https://arxiv.org/abs/2603.13335)** (2026) — Info-VLA 通过保持跨模态信息结构来缓解 VLA 持续学习中的遗忘：以冻结教师模型构造回放锚点做对比对齐，并加入视觉-语言互信息约束。
+- **[LAPT-Scale: Scaling Embodied Policies with Latent Action Pre-Training on Human Videos](https://arxiv.org/abs/2610.13732)** (2026) — 从 2.33 万小时第一人称人类视频中学习连续（非向量量化）的潜动作，结合感知、语义与光流对齐信号，作为 VLA 预训练的动作监督；报告随规模持续提升。
 - **[LTM: Latent Transition Based In-Context Memory for Vision-Language-Action Models](https://arxiv.org/abs/2610.21362)** (2026) — 通过缓存相邻观测之间的紧凑潜在转移，为 π0.5 加入记忆，面向关键物体移出视野的任务。 · [代码](https://github.com/buaa-colalab/LTM-pi)
 - **[Learning What to Say to Your VLA: Mostly Harmless Vision Language Action Model Steering](https://arxiv.org/abs/2606.12299)** (2026) — CoRL 2026 Spotlight。语义相近的指令可能让 VLA 行为迥异，该框架通过交互搜索语言序列来提升闭环任务表现。
 - **[Learning to Assist: Collaborative VLAs for Implicit Human-Robot Collaboration](https://arxiv.org/abs/2606.12475)** (2026) — 表明 VLA 可用于隐式人机协作，但跨越任务切换点的动作块会让机器人过早提供帮助；提出推理时引导方法缓解，并在 16 人装配用户研究中验证。 · [项目页](https://learning-to-assist.github.io/)
+- **[Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blind to Color](https://arxiv.org/abs/2607.14698)** (2026) — FLARE 物理聚光灯攻击可让 VLA 成功率降为零。朴素的增强防御会让模型忽略颜色（颜色相关任务至多 47.5%）；ChromaGuard 保留色彩信息，在真机上达到 97.5% 与 92.5%。
 - **[Long-Horizon Manipulation via Trace-Conditioned VLA Planning](https://arxiv.org/abs/2604.21924)** (2026) — 由任务管理 VLM 每一步重新预测剩余子任务和一条 2D 关键点轨迹，VLA 执行器只需沿轨迹执行。失败的步骤会留在计划里，因此无需额外逻辑即可自动重规划。仿真与真实 Franka 实验。 · [项目页](https://www.liuisabella.com/LoHoManip)
 - **[MAST-VLA: Skill-Conditioned Adaptation with Trajectory-Affordance Priors for Multi-Skill Robot Manipulation](https://arxiv.org/abs/2610.32312)** (2026) — 在大模型主干中加入以技能为条件的 LoRA 混合专家适配器，并把预测的可供性热图转为动作头的空间先验。在 CALVIN ABC→D 上报告平均完成长度 4.65。
 - **[MEM: Multi-Scale Embodied Memory for Vision Language Action Models](https://arxiv.org/abs/2603.03596)** (2026) — CoRL 2026 Spotlight。为 VLA 提供多时间尺度记忆：长期记住抽象状态（如菜谱进行到哪一步），短期记住近期事件与被遮挡物体。 · [项目页](https://pi.website/research/memory)
@@ -156,6 +160,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[SLA: Scaling Spatial-Language-Action Model via Continual Pre-training](https://arxiv.org/abs/2611.08373)** (2026) — 在多个机器人数据集上对 π0.5 做持续预训练，把中间视觉特征与冻结的 3D 感知模型对齐。附加组件只在训练时使用，推理结构和权重与 π0.5 保持兼容。 · [代码](https://github.com/OpenHelix-Team/Spatial-Forcing/tree/master/SLA)
 - **[STAR: Steering Action Representations during Inference](https://arxiv.org/abs/2610.41009)** (2026) — 面向预训练 VLA 的免训练方法：对后层残差更新做 EMA，让靠近动作输出的表征保留物体感知方向；报告平均任务成功率提升约 4 个百分点。 · [代码](https://github.com/PKU-VaLuE-Lab/STAR)
 - **[Say the Same, Act Differently: Diagnosing and Steering Text-Action Divergence in Reasoning VLAs](https://arxiv.org/abs/2611.04166)** (2026) — 展示视觉扰动可以改变推理型 VLA 的动作，而解释文本一字不变（在 Alpamayo 和 InstructVLA 上测试），因此监控必须直接检查动作通道，不能只看文本。 · [项目页](https://say-the-same.github.io/)
+- **[Scale Up Strategically: Learning Compositional Generalization via Bias-Aware Evaluation and Data Collection for Robotic Manipulation](https://arxiv.org/abs/2607.21582)** (2026) — 量化策略过度依赖哪些指令要素：六个基础策略普遍呈现颜色 ≥ 物体 ≥ 空间 ≥ 动词 ≥ 尺寸的顺序。把采集预算倾斜给欠落地的要素，只用一半示教即可胜出。
 - **[See Less, Specify More: Visual Evidence Budgets for Generalizable VLAs](https://arxiv.org/abs/2606.02735)** (2026) — 用更细的子任务语言重标注轨迹，并对执行器可使用的视觉证据施加显式预算来训练 VLA。报告在八个真机任务上平均子任务成功率比 π0.5 从 54.2% 提升到 79.0%。 · [项目页](https://s2.airoa.io)
 - **[SeeTraceAct: Visibility-Aware Latent Planning from Cross-Embodiment Demonstration Videos](https://arxiv.org/abs/2606.02745)** (2026) — 以未见任务的一段示教视频为条件的 VLA，通过预测考虑可见性的未来末端轨迹实现精确定位。发布 RoboCasa-DC 基准；在以人类示教为条件的真机实验中成功率提升 9.5 个百分点。
 - **[Semantic Anchoring for Robotic Action Representations](https://arxiv.org/abs/2607.13597)** (2026) — 发现微调会破坏 VLA 继承的语义结构，且这与任务失败同步。提出仅在训练时使用的语义锚定方法，报告分布外任务提升最高 21.5%。 · [项目页](https://xy02-05.github.io/SemanticMN)
@@ -189,6 +194,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[What Actually Matters? A Paired Evaluation of Inference Settings for π0.5 on BEHAVIOR-1K](https://arxiv.org/abs/2610.37917)** (2026) — 在 BEHAVIOR-1K 全部 100 个任务上，以基于 2025 BEHAVIOR 挑战赛冠军方案微调的 π0.5（公开测试集 Q 分 0.39）为对象，对已有推理与数据采集技巧做配对评测；结论是这些技巧在新环境与任务上的效果并不一致，提醒小规模结论不宜直接外推。 · [项目页](https://rubenhammele.github.io/behavior2026)
 - **[When One Step Is Enough: An Empirical Study of Euler Integration in Flow-Matching Policies](https://arxiv.org/abs/2610.30735)** (2026) — 在六个基于流匹配的 VLA 上实验，报告单步 Euler 生成动作在规模足够时与多步采样效果基本相当——在为提速引入专门的单步生成目标之前值得先看（CoRL 2026）。
 - **[When Vision Overrides Language: Evaluating and Mitigating Counterfactual Failures in VLAs](https://arxiv.org/abs/2602.17659)** (2026) — CoRL 2026 Spotlight。VLA 可能忽略语言、沿用数据偏差形成的视觉捷径。论文提出反事实基准 LIBERO-CF，用于评测语言遵循能力。 · [代码](https://github.com/yuffish/VLA-CF) · [项目页](https://vla-cf.github.io/)
+- **[Where Success Breaks: Failure-Boundary Learning for Robust Vision-Language-Action Models](https://arxiv.org/abs/2609.06114)** (2026) — DLS 通过数字孪生中的在策略推演大规模发现 VLA 成功与失败的边界，用特权进度信号定位越界位置，并据此强化导向成功的去噪方向、抑制导向失败的方向。
 - **[World-Language-Action Model for Unified World Modeling, Language Reasoning, and Action Synthesis](https://arxiv.org/abs/2606.05979)** (2026) — 世界-语言-动作模型：单一自回归主干同时预测文本子任务、子目标图像与动作；推理时可关闭世界预测，也可开启做测试时扩展。报告在 RoboTwin 2.0 Clean 上成功率 92.94%。 · [代码](https://github.com/SJTU-DENG-Lab/WLA)
 - **[X-Tokenizer: A Multimodal Action Tokenizer for Vision-Language-Action Pretraining](https://arxiv.org/abs/2606.14752)** (2026) — 动作 tokenizer：残差量化的第一层被训练成表达粗粒度运动意图的语义“动作语言”，更深层保留细节；在 240 万条轨迹上预训练。报告在多模态对齐和长程任务上优于 FAST。 · [项目页](https://x-square-robot.github.io/X-Tokenizer_projectPage/)
 - **[ZETA: A Controlled Study of Zero-Shot Cross-Embodiment VLA Transfer for Tabletop Manipulation](https://arxiv.org/abs/2609.02546)** (2026) — CoRL 2026 Spotlight。对 VLA 零样本跨形态迁移的对照研究：将本体变化与任务、场景、流程隔离，并把严格零样本与宽松定义区分开。

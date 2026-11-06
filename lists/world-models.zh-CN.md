@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 118 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 119 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html) · [English](world-models.md)
 
@@ -47,6 +47,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Does LeWorldModel Preserve Local Action Geometry?](https://arxiv.org/abs/2610.31716)** (2026) — 比较预训练 LeWorldModel 与仿真器对微小动作变化的响应；最小尺度下最敏感方向的中位夹角相差约 36–42°，说明评估应按尺度进行。 · [项目页](https://geometry.vasi.boo/)
 - **[EgoWAM: World Action Models Beyond Pixels with In-the-Wild Egocentric Human Data](https://arxiv.org/abs/2607.08436)** (2026) — 对照研究哪种世界预测目标最能把第一人称人类数据迁移到机器人：像素迁移较弱，DINO 特征带来最高 4 倍的分布外泛化，3D 运动流在域内提升 20–30%。 · [项目页](https://gatech-rl2.github.io/egowam.github.io)
 - **[FACT: Failure-Aware Causal Training for World-Action Models](https://arxiv.org/abs/2608.10232)** (2026) — 以实际执行动作为条件的世界动作模型，把失败轨迹也作为监督，预测未来视频与任务进度；进度分可在推理时为候选动作排序。 · [项目页](https://fact-wam.github.io/)
+- **[FAWAM: Force-Aware World Action Models for Closed-Loop Contact-Rich Manipulation](https://arxiv.org/abs/2606.08555)** (2026) — FAWAM 在感知、预测与闭环执行三层使用六维力/力矩：联合预测未来动作与末端力旋量，并以预测的力轨迹为参考在线修正动作。真机任务上比纯视觉基线成功率高 36.25 个百分点。
 - **[From World Models to World Action Models: A Concise Tutorial for Robotics](https://arxiv.org/abs/2607.00836)** (2026) — 简明教程而非综述：界定机器人领域的世界模型和世界动作模型，并在统一视角下比较空间智能模型、JEPA 和 Cosmos。 · [代码](https://github.com/clearlab-sustech/WorldModelSurvey)
 - **[GAWM: A Compact Latent World-Action Model for Multi-Task Robot Manipulation](https://arxiv.org/abs/2610.37091)** (2026) — 参数不到 1 亿的紧凑世界动作模型：在冻结 DINOv3 特征空间中预测两个未来时刻的 token 并直接回归动作块，无需机器人或视频预训练；报告在 RoboTwin 2.0 上超过十亿参数级 WAM。 · [代码](https://github.com/gaoxiang12/ga-wm)
 - **[GE-Sim 2.0: A Roadmap Towards Comprehensive Closed-loop Video World Simulators for Robotic Manipulation](https://arxiv.org/abs/2605.27491)** (2026) — 闭环视频世界模拟器，用数千小时真机数据重新训练，加入状态专家和为推演打分的世界评判器，在单张 H100 上 2.3 秒生成 25 帧推演。 · [代码](https://github.com/AgibotTech/GE-Sim-V2) · [项目页](https://ge-sim-v2.github.io/)
