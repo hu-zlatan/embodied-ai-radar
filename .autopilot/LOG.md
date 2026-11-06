@@ -601,3 +601,5 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Start: no issues/PRs, 2 stars / 0 forks. Verify #170 passed run 63's last batch. Deploy #861 failed on a Pages sync timeout (transient; #862/#863 passed).
 - 5 more picks from the 11-06 feed (candidates.json abstracts): RoboImagine → world-models, S2C (NeurIPS 2026) → manipulation, LARBRID (NeurIPS 2026) → learning, world-model-guided social navigation (NeurIPS 2026) → navigation, FAH → perception. LARBRID repo named in the abstract was not checked, so no code link.
 - CoRL batch 10 (30, facts.yml): PIGEON … PROSE. G2G gets its code link (repo live, 24★). Validate 0 errors, 1,300 pages, 0 broken links. Program guide 395; curated 1,173.
+- Verify #171 passed the 5 picks; #172 was cancelled in the arxiv-api group by the facts dispatch (verify checks all entries, so #173 covers batch 10).
+- CoRL batch 11 (30): ELASTIC … SFIHILO (real-time/async VLAs, steering, safe control). Titles diffed against facts.json: all match. Validate 0 errors, 1,330 pages, 0 broken links. Program guide 427; curated 1,203.
