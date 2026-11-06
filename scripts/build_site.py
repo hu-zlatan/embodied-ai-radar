@@ -412,17 +412,14 @@ def code_page(by_repo: dict[str, dict], gains: dict[str, int], span: int, topics
     lopt = opt("", "Any license", "任意许可证") + "".join(opt(c, en, zh, counts[c]) for c, en, zh in lic_names if counts.get(c))
     known = sum(n for c, n in counts.items() if c)
     lsel = f'<select id="cf-l" aria-label="License">{lopt}</select>' if known else ""
-    perm = f', {counts.get("perm", 0)} {bi("under a permissive license", "使用宽松许可证")}' if known else ""
     sort = (opt("s", "Most stars", "星标最多") + opt("g", f"Most stars gained ({span} days)", f"近 {span} 天新增星标最多") + opt("p", "Recently updated", "最近更新"))
-    lead = (f'<p class="lead">{bi(f"Every open-source repo linked from the curated index: {len(rows)} repos", f"精选索引收录的全部开源代码：{len(rows)} 个仓库")}{perm}, '
-            f'{bi(f"{n_recent} updated in the last 90 days, {n_arch} archived.", f"{n_recent} 个在最近 90 天有更新，{n_arch} 个已归档。")}</p>')
     updated = stats_updated()
     note = (f'<p class="muted">{bi(f"Stars, last push and license come from the GitHub API (data of {updated}). The license is what GitHub detects for the code; model weights and datasets often have their own terms, so read the repo before you ship anything.", f"星标、最后推送与许可证来自 GitHub API（数据日期 {updated}）。许可证是 GitHub 对代码的检测结果；模型权重和数据集往往另有条款，实际使用前请查看仓库原文。")}</p>')
     box = (f'<div class="filters" id="cf"><input type="search" id="cf-q" aria-label="Filter" data-en="Repo, paper or lab" data-zh="仓库、论文或机构" placeholder="Repo, paper or lab">'
            f'<select id="cf-t" aria-label="Topic">{topt}</select>{lsel}<select id="cf-s" aria-label="Sort">{sort}</select>'
            f'<label><input type="checkbox" id="cf-a">{bi("Updated in the last 6 months", "最近 6 个月有更新")}</label>'
            f'<span class="muted" id="cf-n"></span></div>')
-    return f'<h1>{bi("Open-source code tracker", "开源代码追踪")}</h1>{lead}{note}{box}<ol class="repolist" id="cf-list">{"".join(rows)}</ol>'
+    return f'<h1 class="sr-only">{bi("Open-source code tracker", "开源代码追踪")}</h1>{box}{note}<ol class="repolist" id="cf-list">{"".join(rows)}</ol>'
 
 
 SIMILAR_STOP = set("the and for with from that this into than then its their over under via using use used uses based new one two can are was were has have not but more most our we which while when where how what also both each only such".split())
@@ -818,8 +815,7 @@ def build() -> int:
                   + "".join(f'<option value="{esc(v)}">{esc(v)} ({n})</option>'
                             for v, n in sorted(venue_n.items(), key=lambda x: (-x[1], x[0])) if n >= 2))
     search = f"""<section class="search" id="search">
-<h1>{bi("Search", "搜索")}</h1>
-<p class="muted">{bi("Every curated entry and every arXiv paper in the daily feed. Chinese keywords work too (e.g. 人形 强化学习). Filters and sort go into the address bar, so you can share a search.", "全部精选条目与每日 arXiv 论文。支持中文关键词（如“人形 强化学习”）。筛选与排序会写进网址，可直接分享。")}</p>
+<h1 class="sr-only">{bi("Search", "搜索")}</h1>
 <input id="q" type="search" placeholder="Search papers, code, datasets… / 搜索论文、代码（支持中文关键词）…" aria-label="Search" autocomplete="off">
 <div class="filters">
 <select id="f-topic" aria-label="Topic"><option value="" data-en="All topics" data-zh="全部主题">All topics</option>{topic_opts}</select>
@@ -964,7 +960,7 @@ def build() -> int:
     bibnote += f'<p><a href="../venues/index.html">{bi("Browse papers by venue (CoRL, RSS, ICRA, NeurIPS…) →", "按会议/期刊浏览论文（CoRL、RSS、ICRA、NeurIPS…）→")}</a></p>'
     bibnote += f'<p><a href="../labs/index.html">{bi("Browse by lab or company (NVIDIA, Stanford, Shanghai AI Lab…) →", "按机构浏览（英伟达、斯坦福、上海人工智能实验室…）→")}</a></p>'
     bibnote += f'<p><a href="../robots/index.html">{bi("Browse papers by robot type (humanoid, quadruped, dexterous hand…) →", "按机器人形态浏览（人形、四足、灵巧手…）→")}</a></p>'
-    (OUT / "topics" / "index.html").write_text(page("Topics · Embodied AI Radar", f'<h1>{bi("Topics", "主题")}</h1><ul class="tlist">{tlist}</ul>' + bibnote, "../", desc, "topics/index.html"), encoding="utf-8")
+    (OUT / "topics" / "index.html").write_text(page("Topics · Embodied AI Radar", f'<h1 class="sr-only">{bi("Topics", "主题")}</h1><ul class="tlist">{tlist}</ul>' + bibnote, "../", desc, "topics/index.html"), encoding="utf-8")
     for t in topics:
         cur = sorted(by_topic[t["id"]], key=lambda e: (not e.get("highlight"), -int(e["year"])))
         recent = feed_by_topic[t["id"]][:TOPIC_FEED_MAX]
@@ -1006,7 +1002,6 @@ def build() -> int:
     all_days = sorted({p["published"] for p in feed if p.get("published")}, reverse=True)
     day_papers = {d: [p for p in feed if p.get("published") == d] for d in all_days}
     (OUT / "feed").mkdir(exist_ok=True)
-    lead = f"""<p class="lead">{bi("New papers from cs.RO, plus robotics and embodied-AI papers from cs.CV / cs.LG / cs.AI / cs.CL, fetched automatically every day and tagged by keyword rules (tags can be wrong — curated entries are the verified ones).", "每天自动抓取 cs.RO 新论文，以及 cs.CV / cs.LG / cs.AI / cs.CL 中与机器人和具身智能相关的论文，并按关键词规则标注主题（自动标注可能有误，精选条目才是经过核验的）。")}</p>"""
 
     def day_summary(ps: list[dict]) -> str:
         n_code = sum(1 for p in ps if p.get("code"))
@@ -1032,7 +1027,7 @@ def build() -> int:
               + (f'<a href="{older}.html">← {esc(older)}</a>' if older else "")
               + (f' <a href="{newer}.html">{esc(newer)} →</a>' if newer else "") + "</p>")
         body = f"""<h1>{bi("arXiv papers", "arXiv 论文")} · {esc(d)}</h1>
-{lead}{day_summary(day_papers[d])}{pn}
+{day_summary(day_papers[d])}{pn}
 {day_cards(day_papers[d], "../")}
 {pn}{archive("../", d)}"""
         (OUT / "feed" / f"{d}.html").write_text(
@@ -1047,8 +1042,7 @@ def build() -> int:
                   f'<p><a class="more" href="feed/{d0}.html">{bi("Permalink for this day →", "本日固定链接 →")}</a></p>')
     else:
         latest = '<p class="muted">' + bi("The first intake has not run yet.", "首次收录尚未运行。") + "</p>"
-    body = f"""<h1>{bi("Daily arXiv feed", "每日 arXiv 论文")}</h1>
-{lead}
+    body = f"""<h1 class="sr-only">{bi("Daily arXiv feed", "每日 arXiv 论文")}</h1>
 <p><a href="search.html">{bi("Search and filter all of it →", "搜索与筛选 →")}</a> · <a href="#archive">{bi("Earlier days", "往日论文")}</a> · <a href="venues/index.html">{bi("By venue", "按会议/期刊")}</a> · <a href="robots/index.html">{bi("By robot type", "按机器人形态")}</a></p>
 {latest}
 {archive("", None)}"""
@@ -1065,7 +1059,7 @@ def build() -> int:
         dl.append(f'<li><a href="{d.stem}.html">{esc(d.stem)}</a></li>')
     (OUT / "digest" / "index.html").write_text(
         page("Weekly digests · Embodied AI Radar",
-             f'<h1>{bi("Weekly digests", "每周精选")}</h1><ul class="tlist">{"".join(dl) or "<li class=muted>—</li>"}</ul>',
+             f'<h1 class="sr-only">{bi("Weekly digests", "每周精选")}</h1><ul class="tlist">{"".join(dl) or "<li class=muted>—</li>"}</ul>',
              "../", "Weekly bilingual digests of embodied AI research.", "digest/index.html"), encoding="utf-8")
 
     # ---- related lists & learning resources
@@ -1080,8 +1074,7 @@ def build() -> int:
                 f'<li><a href="{esc(r["url"])}" rel="noopener">{esc(r["name"])}</a>'
                 + (' <span class="badge">中文</span>' if r["lang"] == "zh" else "")
                 + f' — {bi(r["note_en"], r["note_zh"])}</li>' for r in items) + "</ul>")
-    body = (f'<h1>{bi("Related lists & learning resources", "相关列表与学习资源")}</h1>'
-            f'<p class="lead">{bi("Other good maps of the field, plus courses and docs we point newcomers to. Suggest more by opening an issue.", "领域内其他优秀的资源整理，以及推荐给新手的课程和文档。欢迎提 issue 补充。")}</p>'
+    body = (f'<h1 class="sr-only">{bi("Related lists & learning resources", "相关列表与学习资源")}</h1>'
             f'<p><a class="more" href="start.html">{bi("New here? Follow the reading path through the curated index →", "刚入门？按入门路线阅读精选条目 →")}</a></p>'
             + "".join(rs))
     (OUT / "resources.html").write_text(page("Learning resources · Embodied AI Radar", body, "",
