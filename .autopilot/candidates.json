@@ -2,141 +2,6 @@
  "updated": "2026-11-06",
  "papers": [
   {
-   "id": "2611.08458",
-   "title": "Latent RL Priors for Data-Efficient Dexterous Manipulation",
-   "published": "2026-11-06",
-   "topics": [
-    "manipulation",
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://yixiaowang7.github.io/latent-rl-prior-page/"
-   ],
-   "comment": null,
-   "authors": [
-    "Yixiao Wang",
-    "Peiyi Chen",
-    "Mustafa Mukadam",
-    "Shreekant Gayaka",
-    "Masayoshi Tomizuka",
-    "Son Tran"
-   ],
-   "abstract": "Learning dexterous manipulation from limited visual demonstrations is challenging because policies must acquire both perceptual grounding and precise control, while reinforcement learning (RL) in simulation can acquire rich control behaviors from large-scale interaction with privileged information. We introduce \\textbf{Latent RL Prior}, a two-stage framework that reuses this control knowledge for data-efficient visual policy learning. During privileged pretraining, we distill large-scale RL rollouts into a flow-matching action decoder conditioned on proprioception and latent task context. During visual adaptation, we freeze the decoder and learn a visual interface that maps images to its latent context using action supervision alone, without privileged labels or latent targets. The same decoder can further be shared across arms by learning coordinated visual contexts for bimanual manipulation. Across three simulated tasks, our method outperforms full-parameter fine-tuning of $π_{0.5}$ and GR00T N1.7 in the low-data regime; on door lifting and bimanual assembly, it surpasses full-data baselines using $10\\times$ and $5\\times$ fewer demonstrations, respectively. Further analysis shows that direct visual-to-latent conditioning improves adaptation performance and training stability over routing visual predictions through the pretrained state encoder. Robustness to unseen mass variation and greater linear accessibility of contact-force information in decoder representations further provide evidence of retained RL-acquired control knowledge. Project website: https://yixiaowang7.github.io/latent-rl-prior-page/.",
-   "fetched": "2026-11-06"
-  },
-  {
-   "id": "2611.08425",
-   "title": "Failure Prediction and Classification in Vision-Language-Action Models Via Calibrated Latent Probing",
-   "published": "2026-11-06",
-   "topics": [
-    "vla"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://vla-tug.github.io"
-   ],
-   "comment": "Code, videos, and dataset available at https://vla-tug.github.io",
-   "authors": [
-    "Michal P. Podolinsky",
-    "Yunhao Yang",
-    "Daniel Little",
-    "Hong Lu",
-    "Rohan Siva",
-    "Olin Goudey",
-    "Neel P. Bhatt",
-    "Matthias Scheutz",
-    "Ufuk Topcu"
-   ],
-   "abstract": "Vision-Language-Action models (VLAs) enable general-purpose embodied intelligence, but their performance is brittle under distribution shift, where unanticipated failures can damage equipment or endanger people. Deploying VLAs in real-world systems therefore requires a runtime monitor that is timely, calibrated, and informative while being efficient enough to run on the edge. Existing methods fail to fulfill these requirements. We present VLA-Tug, a lightweight probe over the latent layers of a VLA backbone that improves early failure detection and bounds the missed-detection and false-alarm rates, with minimal inference overhead. We show that supervising on the pre-failure segment of a trajectory increases early failure detection at matched false-positive rates by up to 30% over the strongest learned baseline. Under shift to unseen tasks, the bounds on missed-detection and false-alarm rates remain valid in up to 86% of runs, versus at most 21% for baselines. Unlike existing methods, VLA-Tug predicts the failure mode to enable corrective actions, raising top-3 accuracy on unseen tasks by up to 44% over a majority baseline. VLA-Tug enables real-time monitoring where the well-timed and informative probe supports lightweight steering that improves task success. We release a dataset of 3,180 annotated manipulation episodes to support future work on latent failure detection in VLAs at https://vla-tug.github.io.",
-   "fetched": "2026-11-06"
-  },
-  {
-   "id": "2611.08407",
-   "title": "Social Humanoid: Socially Responsive Human-Humanoid Interaction",
-   "published": "2026-11-06",
-   "topics": [
-    "locomotion"
-   ],
-   "venue": "CoRL 2026",
-   "code": [],
-   "project": [
-    "https://von31.github.io/social-humanoid/"
-   ],
-   "comment": "CoRL 2026, Project page: https://von31.github.io/social-humanoid/",
-   "authors": [
-    "Vongani H. Maluleke",
-    "James Ni",
-    "Kie Horiuchi",
-    "Lea Wilken",
-    "Jiahui Lei",
-    "Evonne Ng",
-    "Roei Herzig",
-    "Jitendra Malik",
-    "Trevor Darrell",
-    "Angjoo Kanazawa"
-   ],
-   "abstract": "Humanoid robots are typically trained as solitary agents, leaving them unable to coordinate physically with human partners who naturally anticipate and adjust to one another. To bridge this gap, we present Social Humanoid, a hierarchical system that generates and executes socially responsive whole-body motion on a 29-DoF Unitree G1 conditioned on a human partner's motion. Its high-level policy performs flexible sequence modeling of human and humanoid motion through a shared tokenized representation, generating reactive humanoid motion and anticipating the partner's motion when they are occluded, while a low-level whole-body tracking controller executes the generated motion on the robot. To train the system, we introduce a two-phase adaptive retargeting procedure that retargets one interaction partner to the robot while morphing the other partner to preserve contact dynamics, reachability, and relative body scale. We apply this procedure across five motion-capture datasets to produce a new Human-Humanoid Interaction (HHI) benchmark of 260 hours of human-humanoid interactions. Our results demonstrate that Social Humanoid produces coordinated, human-aligned behavior across diverse interaction types in simulation and the real world. Project page: https://von31.github.io/social-humanoid/",
-   "fetched": "2026-11-06"
-  },
-  {
-   "id": "2611.08373",
-   "title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
-   "published": "2026-11-06",
-   "topics": [
-    "vla"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/OpenHelix-Team/Spatial-Forcing"
-   ],
-   "project": [
-    "https://SLA.github.io/"
-   ],
-   "comment": "Project page: https://SLA.github.io/ ; Github: https://github.com/OpenHelix-Team/Spatial-Forcing/tree/master/SLA",
-   "authors": [
-    "Fuhao Li",
-    "Wenxuan Song",
-    "Qizhou Huang",
-    "Ziyang Zhou",
-    "Jingbo Wang",
-    "Junwu E",
-    "Pengwei Wang",
-    "Yan Wang",
-    "Shunbo Zhou",
-    "Haoang Li"
-   ],
-   "abstract": "Reliable robotic manipulation requires both semantic understanding and precise control in three-dimensional space. However, vision-language-action (VLA) foundations largely inherit visual representations from 2D vision-language pre-training, while spatial supervision is often introduced only during task-specific adaptation. Developing spatial understanding as a transferable foundation-model capability therefore calls for learning from broader robot experience. We present SLA, a Spatial-Language-Action Model that scales implicit spatial alignment to continual pre-training and maintains it during downstream post-training. Initialized from a pretrained pi05 policy, SLA jointly optimizes action prediction and alignment between intermediate visual embeddings and spatial representations from a frozen 3D perception model. We curate and unify heterogeneous robot datasets to support spatial learning across diverse embodiments, tasks, and scenes. To accommodate this diversity, we introduce feature-dependent gates that adaptively aggregate visual embeddings from multiple VLA layers for spatial supervision. The teacher further exploits partially available depth and camera calibration alongside RGB observations, enabling effective use of heterogeneous geometric annotations. Probabilistic state dropout encourages reliance on visual cues and mitigates overfitting to demonstration trajectories. All auxiliary components are used only during training, allowing direct reuse of pretrained VLA weights and preserving the original inference architecture.",
-   "fetched": "2026-11-06"
-  },
-  {
-   "id": "2611.08372",
-   "title": "MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation",
-   "published": "2026-11-06",
-   "topics": [
-    "manipulation",
-    "navigation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://robin-lab.cs.utexas.edu/momasplat"
-   ],
-   "comment": "Project page: https://robin-lab.cs.utexas.edu/momasplat",
-   "authors": [
-    "Sateesh Kumar",
-    "Arnav Balaji",
-    "Arpit Bahety",
-    "Skand Peri",
-    "Georgios Pavlakos",
-    "Roberto Martín-Martín"
-   ],
-   "abstract": "Visuomotor policies trained through imitation learning are highly sensitive to changes in camera viewpoint. This is particularly problematic for mobile manipulation (MoMa), where robots rarely execute manipulation from the exact same base pose used during demonstration collection due to navigation uncertainty, localization drift, and environmental constraints. Recent approaches use novel-view synthesis (NVS) to augment demonstrations with unseen viewpoints, but they assume static scenes and therefore fail to re-render the manipulated object during the post-contact interaction phase, leaving the most critical parts of the demonstration unaugmented. We present MOMASPLAT, a novel-view demonstration augmentation framework for mobile manipulation that synthesizes full manipulation trajectories from unseen robot base poses, including dynamic object interactions. Our key insight is that standard MoMa data collection naturally provides the multiview observations needed to reconstruct both the static scene and the manipulated object in 3D. MOMASPLAT combines 3D Gaussian Splatting, feed-forward 3D foundation models, and kinematics-based action retargeting to separately reconstruct the scene and manipulated object, render them from novel viewpoints, and generate geometrically consistent synthetic demonstrations paired with transformed actions. We evaluate MOMASPLAT on five real-world mobile manipulation tasks involving both rigid and articulated objects across three scenes, and validate the fidelity of its synthesized demonstrations against ground truth in simulation. MOMASPLAT substantially improves robustness to unseen base poses, more than doubling the average success rate of the strongest baseline and maintaining non-trivial success at large base displacements where all baselines fail, while reducing the need for largescale real-world data collection.",
-   "fetched": "2026-11-06"
-  },
-  {
    "id": "2611.08352",
    "title": "USB Gym: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching",
    "published": "2026-11-06",
@@ -154,32 +19,6 @@
     "Hao Dong"
    ],
    "abstract": "Background and Objective: Our main goal is ultrasound guidance: moving a probe until its image matches a target view. Published methods for each part of a guide are evaluated in separate simulators. We asked whether these methods, combined into one guide, are good enough. Methods: We built USB Gym, a testbed whose standard engine simulates ultrasound from public patient CT, with a network drawing organ textures from CT labels. Its guide has three replaceable parts (slots), an organ segmenter, a controller and a reward, which received 20 published methods, each run on the same 60 episodes of six held-out patients. In each slot, a published method replaced ours only if detectably better on these patients. The better of this combination and our original guide on 20 new CTs is the benchmark baseline. A pose oracle, reading the exact probe pose available only in simulation, set the reference. The results below are exploratory. Results: On these CTs, the probe started on average 16.0 mm from the target view; the pose oracle brought it to 1.5 mm. Of the results known when the combination was fixed, only an image-similarity reward (SSIM) was slightly but detectably better, so the combination was our guide with that reward. This combination was the benchmark baseline, ending at 13.7 mm (16% of the oracle's progress). Conclusions: Combining untuned published methods with ours did not guide the probe near the target view; the task remains under-explored. The testbed accepts new methods; no guide was tested on hardware.",
-   "fetched": "2026-11-06"
-  },
-  {
-   "id": "2611.08338",
-   "title": "GPWM: Modeling the World as 3D Particle Motion",
-   "published": "2026-11-06",
-   "topics": [
-    "world-models"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://robertren1122.github.io/gpwm/"
-   ],
-   "comment": "39 pages, 27 figures, 7 tables. Robert Ren and Matthew Bronars contributed equally (ordered by coin flip). Project page: https://robertren1122.github.io/gpwm/",
-   "authors": [
-    "Robert Ren",
-    "Matthew Bronars",
-    "He Zhu",
-    "Yikai Tang",
-    "Jianing Zhang",
-    "Sergey Zakharov",
-    "Pavel Tokmakov",
-    "Katerina Fragkiadaki"
-   ],
-   "abstract": "We introduce GPWM, a Generative Particle World Model that predicts how 3D scenes evolve by generating the motion of particles and rigid bodies over time. Unlike video world models that generate scene appearance, GPWM operates directly in 3D physical space. A single representation and architecture cover rigid, deformable, cloth, and granular materials, in both passive physics and robotic interaction. GPWM is an object-aware multi-resolution transformer that combines flow matching with diffusion forcing to generate coherent physical trajectories far beyond its training horizon. We train and evaluate GPWM on ParticleWorlds, a 25.5-million-frame corpus spanning diverse geometries, materials, interactions, and robot embodiments. GPWM outperforms the best prior learned-dynamics baseline in each of six physical domains, reducing prediction error by 31% on average. Breaking from the domain-specific setting of prior methods, a single Unified GPWM models these heterogeneous regimes with one set of weights, largely outperforming per-domain baselines and even surpassing our own specialist models in two domains. GPWM further generalizes to unseen geometries, physical properties, object counts, and rollout horizons. Beyond prediction, GPWM enables contact-rich planning by learning a generative prior over joint actuator-object motion. Instead of searching over unconstrained actions, planning searches the model's latent noise for interactions that achieve a desired object-space goal. With the same world model, noise-space planning substantially outperforms action-space search on pushing and picking, where complex contact sequences are hard to discover. Executed open-loop in simulation, the resulting plans achieve goal-directed manipulation without reference action trajectories or goal-specific policies.",
    "fetched": "2026-11-06"
   },
   {
@@ -232,33 +71,6 @@
    "fetched": "2026-11-06"
   },
   {
-   "id": "2611.08156",
-   "title": "La-JEPA: Compact Robot Policies with Latent World Modeling",
-   "published": "2026-11-06",
-   "topics": [
-    "world-models",
-    "learning"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/mt-clemente/lajepa"
-   ],
-   "project": [],
-   "comment": "30 pages, 6 figures. Code: https://github.com/mt-clemente/lajepa",
-   "authors": [
-    "Mateo Clémente",
-    "George Z. Xue",
-    "Amin Abyaneh",
-    "Liheng Ma",
-    "Rui Heng Yang",
-    "Tongtong Cao",
-    "Zhanguang Zhang",
-    "Yingxue Zhang"
-   ],
-   "abstract": "World-action models adapt pretrained video generators, and vision-language-action models build on pretrained vision-language backbones; both tie policy architecture and inference cost to large transformers designed for generation rather than control. It remains unclear how much these generation-oriented choices affect control. In this work, we introduce Latent Action JEPA (La-JEPA), a compact world-action model whose policy transformer is trained from scratch in the feature space of a pretrained V-JEPA 2.1 encoder. Following Fast-WAM, La-JEPA learns to predict future features jointly with actions during training and generates only actions at inference. Among policies without embodied pretraining, La-JEPA achieves state-of-the-art performance in clean and randomized RoboTwin 2.0 scenes and on LIBERO-Plus with correct instructions, while using far fewer parameters than the strongest competing policies. It runs substantially faster than Fast-WAM at comparable performance and outperforms the closest JEPA-based methods, LeapBot-WA and JEPA-WAM, on LIBERO-Plus and RoboTwin 2.0 without their pretrained policy backbones. On four real-robot tasks, its average success is comparable to pi0.5 and above non-embodied-pretrained baselines. Through a design study of the choices behind La-JEPA, we show that JEPA features outperform video VAE latents, most clearly out of distribution, and that training-time future prediction choices significantly impact the policy even when future prediction is skipped at inference. We correct the LIBERO-Plus instructions, as the officially released evaluator corrupts them for most variants, and re-evaluate several strong open baselines. Without a generative pretrained policy backbone, La-JEPA is better and faster than far larger policies, suggesting that robot foundation models may benefit from architectures designed for control rather than inherited from generation.",
-   "fetched": "2026-11-06"
-  },
-  {
    "id": "2611.08111",
    "title": "Reinforcing End-to-End Autonomous Driving Safety via Negative-Aware Planning in a Unified World-Action Model",
    "published": "2026-11-06",
@@ -303,31 +115,6 @@
     "Amanda Prorok"
    ],
    "abstract": "We consider the problem of sequential task continuation, where one robot acts in a workspace that has been affected by a previous robot. Current approaches in multi-robot cooperation rely heavily on co-training or co-optimization, assumingthat the robots have access to collective interaction data during the policy training or planning process. However, as increasingly varied robotic embodiments and policies are deployed and operate in the same real-world environment, learning policies for cooperation becomes infeasible due to the combinatorial explosion of possible robot combinations that need to be accounted for. To address this challenge, this paper considers the problem of ad hoc sequential cooperation between robots that have never before operated together in a shared environment. We demonstrate that robots can explicitly communicate their environmental preferences through sharing their value functions, enabling coordination without the need for prior joint training. To ground this exchange and prevent overconfidence in out-of-distribution states, we further introduce a k-nearest neighbors (KNN)- based uncertainty filter. Our method yields an increase of up to 48.5 pp compared with naive or even selfish agents, in task success rates across simulated and real-world experiments, demonstrating that value function transmission between agents is useful not merely as an internal learning tool, but as an effective basis for ad hoc coordination. Website: https://proroklab.github.io/PAVE/",
-   "fetched": "2026-11-06"
-  },
-  {
-   "id": "2611.08039",
-   "title": "HITCH: Teaching a Vision-Language Model to Operate a Humanoid through a Whole-Body Harness",
-   "published": "2026-11-06",
-   "topics": [
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://hitch.axell.top/"
-   ],
-   "comment": "Project Page: https://hitch.axell.top/",
-   "authors": [
-    "Qingzhou Lu",
-    "Chenxin Liu",
-    "Xinming Wang",
-    "Liu Cao",
-    "Yanjiang Guo",
-    "Mengdi Xu",
-    "Jianyu Chen"
-   ],
-   "abstract": "Enabling vision-language models (VLMs) to control humanoid robots requires both reliable whole-body interfaces and knowledge of how to use the body that carries over across tasks. We present HITCH (Harness Interfaces To Command Humanoids), a harness in which perception returns the 3D position of any point the VLM selects in its image, and execution turns commands for the pelvis, torso, hands, walking, and gaze into whole-body motion with a learned tracker. We find that both measuring the scene and executing commands accurately raise task success. We then fine-tune a VLM on trajectories in which teacher policies solve five base tasks through HITCH, so that it learns how to operate the humanoid. Without task-specific trajectories, the fine-tuned model completes 51% of SIMPLE episodes and 42.5% of HumanoidArena episodes, and adding five trajectories per SIMPLE task raises its SIMPLE success to 95%. On a real G1, it carries a box and walks to a goal without real training data.",
    "fetched": "2026-11-06"
   },
   {
@@ -444,56 +231,6 @@
    "fetched": "2026-11-06"
   },
   {
-   "id": "2611.07513",
-   "title": "Concertina: Embodying Manipulation and Cognition in One Diffusion Vision-Language Model",
-   "published": "2026-11-06",
-   "topics": [
-    "vla",
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/lose4578/Concertina"
-   ],
-   "project": [],
-   "comment": null,
-   "authors": [
-    "Chengcheng Wang",
-    "Wei He",
-    "Wenhao Li",
-    "Hongguang Li",
-    "Kai Han",
-    "Jianyuan Guo",
-    "Chang Xu"
-   ],
-   "abstract": "Most vision-language-action (VLA) policies decouple manipulation from cognition by bolting an external action mechanism onto a vision-language model (VLM)--either quantizing actions into discrete tokens whose errors bear no stable correspondence to physical displacements, or delegating continuous trajectory generation to a separate action expert whose gradients compete with or are blocked from updating the VLM backbone. We argue that manipulation and cognition should instead be embodied in the same model, shifting from a decoupled VLA to an Embodied Vision-Language Model (eVLM). We introduce Concertina, an eVLM that places continuous trajectory representation, blockwise generation, and physical-coordinate supervision directly on the computation and parameter path of a shared diffusion VLM backbone. Each control timestep is encoded as one continuous latent action token in the backbone hidden space, and the shared Transformer reconstructs temporally ordered action blocks via the same corrupt-and-reconstruct operator used for multimodal pretraining. Active action projections account for only 0.21% of parameters in the 4.46B model with zero separate action-generator layers, compared with 16.5%-35.1% dedicated action-expert capacity in representative continuous VLAs. Using our proposed Action Interface Audit, we confirm that cross-time trajectory coupling emerges in the middle and late layers of the shared backbone rather than at the action interfaces. On standard benchmarks, Concertina achieves 98.15% average success on regular LIBERO, 85.9% on the 10,030-task LIBERO-Plus benchmark, and 4.142 average completed chain length on CALVIN ABC-D. Code: https://github.com/lose4578/Concertina Hugging Face: https://huggingface.co/collections/Traly/concertina",
-   "fetched": "2026-11-06"
-  },
-  {
-   "id": "2611.07417",
-   "title": "MessyNav: Zero-Shot Navigation via Manipulation in Messy Environments",
-   "published": "2026-11-06",
-   "topics": [
-    "manipulation",
-    "navigation"
-   ],
-   "venue": "CoRL 2026",
-   "code": [],
-   "project": [],
-   "comment": "CoRL 2026",
-   "authors": [
-    "Kenneth Llontop",
-    "Cherie Ho",
-    "Dylan Zhou",
-    "Anuva Banwasi",
-    "Priya Sundaresan",
-    "Carlota Parés-Morlans",
-    "Jeannette Bohg"
-   ],
-   "abstract": "Real-world environments are messy, with paths often blocked by everyday objects like chairs and toys, requiring robots to perform interactive navigation by manipulating obstacles to clear a path. Existing methods rely on extensive simulation-based learning or per-scene instructions specifying which objects to avoid or manipulate. They struggle to generalize across novel objects, diverse environments, and varied contexts such as a cart of fragile glassware that should be avoided while an empty one can be pushed. We formalize this problem as open-world interactive navigation and present MessyNav, a zero-shot framework based on vision-language models (VLMs). At its core, MessyNav performs explicit VLM-based affordance reasoning before task planning to decide whether to swipe, pick up, or avoid an object and produce a high-level plan. Evaluated on a mobile manipulator across real-world indoor and outdoor environments, MessyNav improves success rate by 27 percentage points (pp) over the strongest baseline in real-robot trials and achieves statistically significant gains in a larger-scale offline evaluation, without task-specific training.",
-   "fetched": "2026-11-06"
-  },
-  {
    "id": "2611.07275",
    "title": "Efficient Diffusion Policy Fine Tuning with Latent Noise Representation Bridging",
    "published": "2026-11-06",
@@ -512,32 +249,6 @@
     "Hanna Kurniawati"
    ],
    "abstract": "Pre-trained diffusion and flow policies have emerged as powerful backbones for robotics, yet adapting them to novel data via reinforcement learning (RL) remains computationally expensive, sample inefficient and lacks theoretical guarantees. Prior approaches that fine-tune the initial noise bypass costly backpropagation through time but struggle with the \"noise aliasing\" problem: there does not exista natural link between the noise space value and the action space value. This paper resolves these challenges by introducing the Latent Noise Linear Markov Decision Process (LNL-MDP). We derive the Bridge Equation for LNL-MDPs which eliminates the noise aliasing problem by aligning values with a shared representation between the noise and the action space. Furthermore, our LNL-MDP fine tuning framework falls under the FineTuneRL theory with near-optimal guarantee. Leveraging these insights, we propose Latent Representation Bridging for Diffusion (LARBRID), an algorithm that efficiently learns the representation to optimize the initial distribution that steers the pre-trained model to act optimally in the environment. It yields up to 2-3$\\times$ performance increases on challenging control problems across a diverse suite of robotic locomotion and manipulation tasks. Code can be found at: github.com/Maincode-Research/LARBRID.git.",
-   "fetched": "2026-11-06"
-  },
-  {
-   "id": "2611.07229",
-   "title": "Spatial-UMI-Dream: Scaling World Action Models with Metric Geometry for UMI Manipulation",
-   "published": "2026-11-06",
-   "topics": [
-    "manipulation",
-    "world-models"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://weiduoyuan.com/spatial-umi-dream/"
-   ],
-   "comment": "Project page: https://weiduoyuan.com/spatial-umi-dream/",
-   "authors": [
-    "Weiduo Yuan",
-    "Ze Yuan",
-    "Sihan Liu",
-    "Jionghao Wang",
-    "Liang Heng",
-    "Zhenyu Zhao",
-    "Yue Wang"
-   ],
-   "abstract": "The Universal Manipulation Interface (UMI) enables scalable demonstration collection independently of a specific robot. However, its moving, close-range gripper cameras entangle camera and object motion without a stable external view, leaving the metric geometry needed for precise manipulation implicit in RGB. We introduce Spatial-UMI-Dream, a 5B spatial World Action Model (WAM) pretrained on 605 hours of RGB-D UMI data through two-stage training -- world-only adaptation followed by joint world-action learning -- to jointly predict future RGB, fisheye-aligned metric depth, and actions. Stereo-derived depth makes scene scale and spatial relationships explicit within a unified dual-gripper RGB-D representation. Furthermore, evaluating UMI policies requires testing whether UMI's robot-independent demonstration collection translates into policy generalization across robot embodiments, alongside robustness to environmental changes. We introduce RoboTwin-UMI, a twenty-task simulation benchmark built on RoboTwin with UMI wrist-mounted fisheye observations, enabling controlled, repeatable evaluation of UMI policies under environment and embodiment changes separately and jointly without additional fine-tuning. On RoboTwin-UMI, Spatial-UMI-Dream achieves 79.10% in-domain success and 72.15% under combined embodiment and environment shifts, exceeding the strongest evaluated baseline in each setting by 4.65 and 10.30 percentage points, respectively. It also exhibits the smallest success-rate drop under embodiment transfer among the evaluated policies. In a matched pretraining ablation, RGB-only pretraining leads to a 5.75-percentage-point decrease in in-domain success compared with RGB-D pretraining. Across six real-world tasks, Spatial-UMI-Dream achieves 85.0% average success, exceeding the strongest baseline by 24.2 percentage points. Project page: https://weiduoyuan.com/spatial-umi-dream/",
    "fetched": "2026-11-06"
   },
   {
