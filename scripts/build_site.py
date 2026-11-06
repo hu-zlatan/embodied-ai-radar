@@ -796,9 +796,8 @@ def build() -> int:
                    separators=(",", ":")), encoding="utf-8")
 
     # ---- index
-    stats = (f'<div class="stats"><div><b>{len(entries)}</b>{bi("curated", "精选条目")}</div>'
+    stats = (f'<div class="stats mini"><div><b>{len(entries)}</b>{bi("curated", "精选条目")}</div>'
              f'<div><b>{len(feed_week)}</b>{bi("new arXiv papers this week", "本周新 arXiv 论文")}</div>'
-             f'<div><b>{len(topics)}</b>{bi("topics", "主题")}</div>'
              f'<div><b>{esc(latest_date or "—")}</b>{bi("latest intake", "最近收录")}</div></div>')
     topic_opts = "".join(f'<option value="{t["id"]}" data-en="{esc(t["en"])}" data-zh="{esc(t["zh"])}">{esc(t["en"])}</option>' for t in topics)
     emb_opts = "".join(f'<option value="{m["id"]}" data-en="{esc(m["en"])}" data-zh="{esc(m["zh"])}">{esc(m["en"])}</option>' for m in embs)
@@ -915,9 +914,8 @@ def build() -> int:
     trend_cols = "".join(f'<div class="tcol">{h}</div>' for h in (hf_html, rising_html, popular_html) if h)
     trend = f'<div class="trend">{trend_cols}</div>' if trend_cols else ""
     body = f"""<h1 class="sr-only">{bi("Embodied AI Radar: the map of embodied AI & robot learning", "具身智能雷达：具身智能与机器人学习全景图")}</h1>
-{prog_row}
+<div class="toprow">{prog_row}{stats}</div>
 {trend}
-{stats}
 <div id="home-static">
 {picks_html}
 <h2>{bi("Topics", "主题")}</h2>
