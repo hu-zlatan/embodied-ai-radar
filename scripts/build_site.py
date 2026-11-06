@@ -706,17 +706,34 @@ def week_id(d: dt.date) -> str:
 
 
 def md_to_html(md: str) -> str:
-    """Tiny Markdown subset for digests: headings, lists, links, bold, paragraphs."""
-    out, in_list = [], False
+    """Tiny Markdown subset for digests: headings, lists, blockquotes, links, bold, italics, paragraphs."""
+    out, in_list, in_quote = [], False, False
+
+    def inline(t: str) -> str:
+        t = esc(t)
+        if len(t) > 2 and t.startswith("_") and t.endswith("_"):  # whole-line italics
+            t = f"<em>{t[1:-1]}</em>"
+        t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
+        t = re.sub(r"(?<![*A-Za-z0-9])\*(?!\s)([^*]+?)(?<!\s)\*(?![*A-Za-z0-9])", r"<em>\1</em>", t)  # CJK-friendly
+        t = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", r'<a href="\2" rel="noopener">\1</a>', t)
+        return t
+
     for line in md.splitlines():
         s = line.rstrip()
-        def inline(t: str) -> str:
-            t = esc(t)
-            if len(t) > 2 and t.startswith("_") and t.endswith("_"):  # whole-line italics
-                t = f"<em>{t[1:-1]}</em>"
-            t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
-            t = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", r'<a href="\2" rel="noopener">\1</a>', t)
-            return t
+        if s.startswith(">"):  # blockquote; a bare ">" separates paragraphs inside it
+            if in_list:
+                out.append("</ul>")
+                in_list = False
+            if not in_quote:
+                out.append('<blockquote class="intro">')
+                in_quote = True
+            body = s[1:].strip()
+            if body:
+                out.append(f"<p>{inline(body)}</p>")
+            continue
+        if in_quote:
+            out.append("</blockquote>")
+            in_quote = False
         if s.startswith("- "):
             if not in_list:
                 out.append("<ul>")
@@ -734,6 +751,8 @@ def md_to_html(md: str) -> str:
             out.append(f"<p>{inline(s)}</p>")
     if in_list:
         out.append("</ul>")
+    if in_quote:
+        out.append("</blockquote>")
     return "\n".join(out)
 
 
@@ -1100,7 +1119,7 @@ def build() -> int:
     else:
         latest = '<p class="muted">' + bi("The first intake has not run yet.", "首次收录尚未运行。") + "</p>"
     body = f"""<h1 class="sr-only">{bi("Daily arXiv feed", "每日 arXiv 论文")}</h1>
-<p><a href="search.html">{bi("Search and filter all of it →", "搜索与筛选 →")}</a> · <a href="#archive">{bi("Earlier days", "往日论文")}</a> · <a href="venues/index.html">{bi("By venue", "按会议/期刊")}</a> · <a href="robots/index.html">{bi("By robot type", "按机器人形态")}</a></p>
+<div class="quick start"><a class="qbtn" href="search.html">{bi("Search and filter all of it →", "搜索与筛选 →")}</a><a class="qbtn" href="#archive">{bi("Earlier days", "往日论文")}</a><a class="qbtn" href="venues/index.html">{bi("By venue", "按会议/期刊")}</a><a class="qbtn" href="robots/index.html">{bi("By robot type", "按机器人形态")}</a></div>
 {latest}
 {archive("", None)}"""
     (OUT / "feed.html").write_text(page("Daily arXiv feed · Embodied AI Radar", body, "", "New embodied AI and robotics papers from arXiv, every day, tagged by topic.", "feed.html"), encoding="utf-8")
