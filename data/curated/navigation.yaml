@@ -662,3 +662,111 @@
   tags: [social-navigation, world-model, preference-distillation, crowds]
   takeaway_en: "Uses two world models (social dynamics, scene semantics) only at training time to score candidate actions, distilling that foresight into a single-pass policy. Observers rated the motion more human-like than baselines."
   takeaway_zh: "仅在训练时用两个世界模型（社交动态、场景语义）为候选动作打分，再把这种前瞻能力蒸馏进单次前向的策略。观察者认为其运动比基线更像人。"
+- title: "PIGEON: VLM-Driven Object Navigation via Points of Interest Selection"
+  type: paper
+  arxiv: "2511.13207"
+  year: 2025
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [object-navigation, vlm, rlvr, habitat]
+  takeaway_en: "Has a VLM pick among sparse 'points of interest' (frontiers, likely targets, stairs) tied to waypoints and raw views; planners do the motion. The checkable choices allow RLVR on local VLMs without CoT labels."
+  takeaway_zh: "让视觉语言模型在稀疏的“兴趣点”（探索前沿、疑似目标、楼梯等，每个绑定航点与原始视角）中做选择，底层规划器负责运动。这种可验证的决策使其能用 RLVR 训练本地 VLM，无需人工思维链标注。"
+- title: "Navigating the Clutter: Waypoint-Based Bi-Level Planning for Multi-Robot Systems"
+  type: paper
+  arxiv: "2604.21138"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [multi-robot, task-and-motion-planning, rlvr, llm]
+  takeaway_en: "Joint task and motion planning for up to nine robots among dense obstacles: waypoints parameterize motion, and a curriculum with modified RLVR passes motion-planner feasibility back to the task planner (BoxNet3D-OBS)."
+  takeaway_zh: "面向密集障碍中多达九台机器人的任务与运动联合规划：用航点参数化运动轨迹，并以课程式训练和改进的 RLVR 将运动规划器的可行性反馈传回任务规划器（BoxNet3D-OBS 基准）。"
+- title: "LCLA: Language-Conditioned Latent Alignment for Vision-Language Navigation"
+  type: paper
+  arxiv: "2602.07629"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [vln, privileged-learning, latent-alignment, vlm]
+  takeaway_en: "Trains a privileged-state expert, freezes its latent interface and action head, then fits a light adapter mapping frozen-VLM features of image + instruction into it: supervised alignment, not end-to-end RL."
+  takeaway_zh: "先用特权状态训练专家策略并冻结其潜空间接口与动作头，再训练轻量适配器把冻结 VLM 提取的图像与指令特征映射到该潜空间：用监督式对齐代替端到端策略优化。"
+- title: "One Agent to Guide Them All: Empowering MLLMs for Vision-and-Language Navigation via Explicit World Representation"
+  type: paper
+  arxiv: "2602.15400"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [vln, mllm, zero-shot, metric-map, drone, real]
+  takeaway_en: "Decouples spatial estimation from MLLM planning via an interactive metric world map plus counterfactual reasoning. Reports zero-shot 48.8% SR on R2R-CE and 42.2% on RxR-CE; runs on a TurtleBot 4 and a drone."
+  takeaway_zh: "通过可交互的度量世界表示把空间状态估计与多模态大模型的语义规划解耦，并引入反事实推理。报告零样本 R2R-CE 成功率 48.8%、RxR-CE 42.2%，并在 TurtleBot 4 与自制无人机上实机部署。"
+- title: "PathPainter: Transferring the Generalization Ability of Image Generation Models to Embodied Navigation"
+  type: paper
+  arxiv: "2605.07496"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [bev, image-generation, language-navigation, quadruped, drone, real]
+  takeaway_en: "An image generation model reads a language command and paints the goal and traversability masks onto a bird's-eye-view image; cross-view localization curbs drift. A quadruped finishes a 285 m outdoor route."
+  takeaway_zh: "用图像生成模型理解语言指令，在鸟瞰图上标出目标与可通行区域，并以跨视角定位抑制里程计漂移。四足机器人借此完成 285 米的户外长距离导航。"
+- title: "AsyncVLA: An Asynchronous VLA for Fast and Robust Navigation on the Edge"
+  type: paper
+  arxiv: "2602.13476"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [vla, latency, edge, real]
+  takeaway_en: "A large foundation model on a remote workstation gives high-level guidance while a light onboard Edge Adapter refines actions at high rate. Reports 40% higher success than baselines with delays up to 6 s."
+  takeaway_zh: "大模型在远端工作站提供高层指引，机载轻量 Edge Adapter 高频修正动作，两路异步运行并端到端微调。在通信延迟最高 6 秒的真实导航中，成功率比基线高 40%。"
+- title: "From Imitation to Alignment: Human-Preference Flow Policies for Long-Horizon Sidewalk Navigation"
+  type: paper
+  arxiv: "2606.12603"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [sidewalk, flow-matching, preference-learning, monocular, real]
+  takeaway_en: "FlowPilot: a mapless, monocular-RGB sidewalk navigation policy pre-trained with anchored flow matching on fleet data, then tuned on a small set of human interventions by preference learning."
+  takeaway_zh: "FlowPilot：仅用单目 RGB、无需地图的人行道导航策略，先用锚定流匹配在大规模机器人车队数据上预训练，再用少量人工接管数据做偏好学习微调。"
+- title: "PathLift: Depth-Conditioned Metric Lifting for Visual-Navigation Priors"
+  type: paper
+  arxiv: "2610.16103"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [visual-navigation, depth, adapter, real]
+  takeaway_en: "Visual-navigation policies say where to go but not how far. PathLift reads sensor depth (RGB-D, stereo or LiDAR) and fits per-waypoint magnitude and lateral residuals, turning unitless paths metric in one pass."
+  takeaway_zh: "视觉导航策略只给方向、不给距离。PathLift 读取传感器深度（RGB-D、双目或激光雷达），为每个航点拟合长度与横向残差，一次前向就把无单位轨迹变为度量路径。"
+- title: "IntentNav: Learning Spatial-Visual Object Navigation from Human Demonstrations"
+  type: paper
+  arxiv: "2606.08029"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [object-navigation, imitation-learning, vlm, humanoid, quadruped]
+  takeaway_en: "Labels which frontier explains a human demonstrator's next moves, then trains a VLM to choose among BEV-memory candidates. Candidate-level interface transfers zero-shot to wheeled, quadruped and humanoid robots."
+  takeaway_zh: "通过前瞻人类示教，标注最能解释其后续搜索方向的前沿，再训练 VLM 在 BEV 记忆中的候选点之间做选择。这种候选级接口零样本迁移到轮式、四足和人形机器人。"
+- title: "WAM-Nav: Asymmetric Latent World-Action Modeling for Unified Visual Navigation"
+  type: paper
+  arxiv: "2606.04907"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [world-action-model, visual-navigation, diffusion-transformer]
+  takeaway_en: "One diffusion transformer jointly generates long-horizon actions and short-horizon latent visual foresight, avoiding multi-step rollouts. Supports image-goal, point-goal and other goal types in one model."
+  takeaway_zh: "用同一个扩散 Transformer 同时生成长时域动作和短时域潜空间视觉预测，避免多步自回归推演；一个模型支持图像目标、点目标等多种目标类型。"
+- title: "GLST: Global-Local Spatio-Temporal Memory Decomposition Framework for Online Chained-Goal Navigation"
+  type: paper
+  arxiv: "2610.17927"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [memory, changing-goals, rl, quadruped, real]
+  takeaway_en: "Navigation where goals change mid-episode without notice: memory is split into global/local spatial and long/short temporal beliefs, with goal-conditioned rewards. Tested on a Spot quadruped."
+  takeaway_zh: "研究回合中目标会无提示地改变的导航：把记忆分解为全局/局部空间与长/短时序信念，并配合目标条件奖励。在 Spot 四足机器人上实机验证。"
+- title: "Schrödinger's Navigator: Imagining an Ensemble of Futures for Zero-Shot Object Navigation"
+  type: paper
+  arxiv: "2512.21201"
+  year: 2025
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [object-navigation, world-model, zero-shot, quadruped, real]
+  takeaway_en: "For each candidate path, a 3D world model imagines several possible scene layouts behind occlusions; a future-aware value map combines them to pick waypoints. Tested on a Go2 quadruped."
+  takeaway_zh: "对每条候选路径，用 3D 世界模型想象遮挡后面多种可能的场景，再用面向未来的价值地图汇总这些想象来选择航点。在 Go2 四足机器人上测试。"

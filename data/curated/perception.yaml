@@ -467,3 +467,76 @@
   tags: [hand-pose, mano, contact, egocentric, real-time]
   takeaway_en: "FAH builds on SAM 3D Body's hand branch: predict 2D/3D joints and surface points, then fit MANO or MHR-Hand, with optional contact and world-space tracking. The default ViT-L runs at 65 fps on an RTX 4070 Ti SUPER."
   takeaway_zh: "FAH 基于 SAM 3D Body 的手部分支：先预测 2D/3D 关节与表面点，再拟合 MANO 或 MHR-Hand，可选估计接触并在世界坐标系中跟踪。默认 ViT-L 模型在 RTX 4070 Ti SUPER 上达 65 fps。"
+- title: "G2G: Exploiting Intra-Group Geometry for Inter-Group Pose Estimation"
+  type: paper
+  arxiv: "2606.08284"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/WeiYuFei0217/G2G
+  added: 2026-11-06
+  tags: [pose-estimation, relocalization, multi-camera, foundation-model]
+  takeaway_en: "Relative 6-DoF pose between two image groups (relocalization, multi-camera rigs): keeps a multi-view foundation model frozen and adds ~32M trainable parameters (resampler, cross-group bridge, pose head)."
+  takeaway_zh: "估计两组图像之间的相对 6 自由度位姿（跨序列重定位、多相机里程计）：保持多视图基础模型冻结，只增加约 3200 万可训练参数（重采样器、跨组桥接模块、多帧位姿头）。"
+- title: "Learning Adaptive Solvers for Distributed Factor Graph Optimization on Matrix Lie Groups"
+  type: paper
+  arxiv: "2607.08735"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [slam, distributed-optimization, multi-robot, lie-groups]
+  takeaway_en: "DeepCORD unrolls a parallel accelerated Riemannian optimizer and learns a self-supervised policy that tunes solver parameters by phase and communication status. Tested on SE(3) pose graphs and SL(4)."
+  takeaway_zh: "DeepCORD 把并行加速的黎曼优化器展开为可微迭代，并自监督学习一个依据优化阶段与通信状态调节求解参数的策略。在真实 SE(3) 位姿图与 SL(4) 子图对齐上测试。"
+- title: "GINIO: A Geometric SO(3)-Equivariant Interface for Neural Inertial Odometry"
+  type: paper
+  arxiv: "2609.25338"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [inertial-odometry, imu, equivariance, drone]
+  takeaway_en: "Neural inertial odometry whose mean and covariance transform correctly under any IMU mounting rotation; Last-Frame Alignment makes sensor-frame training match world-frame. TLIO ATE: 2.018 m vs 76.389 m for EqNIO."
+  takeaway_zh: "神经惯性里程计：输出的均值与协方差在任意 IMU 安装旋转下都按张量规律变换；Last-Frame Alignment 使传感器坐标系训练等价于世界坐标系训练。在 TLIO 上 ATE 为 2.018 米，EqNIO 为 76.389 米。"
+- title: "LIME: Learning Intent-aware Camera Motion from Egocentric Video"
+  type: paper
+  arxiv: "2607.02417"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [active-perception, camera-motion, egocentric-video, flow-matching]
+  takeaway_en: "Treats camera motion as an action: given an image and a language intent ('look behind the box'), predict the next relative camera pose. Supervision is mined from egocentric video by hindsight labeling."
+  takeaway_zh: "把相机运动当作一种动作：给定当前图像和语言意图（如“看看箱子后面”），预测下一视角的相对相机位姿。监督信号通过事后标注从第一人称视频中挖掘。"
+- title: "LateMatch: Breaking the Interaction Bottleneck via Cacheable Matching for Efficient Visual Localization"
+  type: paper
+  arxiv: "2610.25358"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [feature-matching, localization, edge, efficiency]
+  takeaway_en: "Restructures deep feature matchers so cross-image interaction happens only in the last layers; per-image context blocks are cached offline. Reports over 2x lower compute, plus 10-14% from entropy-guided token reduction."
+  takeaway_zh: "重构深度特征匹配器，把跨图像交互推迟到最后几层，单图上下文模块可离线缓存。报告计算量降低一半以上，熵引导的 token 裁剪再省 10–14%。"
+- title: "RoMo-GS: Efficient Online 3D Gaussian Splatting for Robot Mapping via Exposure-Integrated Motion Blur"
+  type: paper
+  arxiv: "2610.24605"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [3dgs, mapping, motion-blur, online]
+  takeaway_en: "Online 3DGS mapping that integrates each Gaussian over the exposure time analytically to handle motion blur, and prunes by a Hessian score. Matches offline deblurring 3DGS at 15-150x the speed."
+  takeaway_zh: "在线 3DGS 建图：对每个高斯在曝光时间内解析积分以处理运动模糊，并用 Hessian 得分剪枝控制数量。渲染质量与离线去模糊 3DGS 相当，速度快 15–150 倍。"
+- title: "VoxAfford: Multi-Scale Voxel-Token Fusion for Open-Vocabulary 3D Affordance Detection"
+  type: paper
+  arxiv: "2605.01365"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [affordance, point-cloud, mllm, open-vocabulary]
+  takeaway_en: "Open-vocabulary 3D affordance detection: MLLM output tokens pull multi-scale geometry from a frozen 3D VQ-VAE through gated cross-attention before mask decoding. Reports about +8% mIoU."
+  takeaway_zh: "开放词汇 3D 可供性检测：多模态大模型的输出 token 在解码掩码前，通过门控交叉注意力从冻结的 3D VQ-VAE 中检索多尺度几何特征。报告 mIoU 提升约 8%。"
+- title: "PROSE: Training-Free Egocentric Scene Registration with Vision-Language Models"
+  type: paper
+  arxiv: "2606.16569"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [scene-graph, registration, egocentric, vlm, training-free]
+  takeaway_en: "Aligns two RGB-only egocentric captures of a room taken at different times: builds object-level 3D scene graphs with foundation models and lets a VLM match objects across them. No training or depth sensor."
+  takeaway_zh: "对齐同一房间在不同时间的两段纯 RGB 第一人称录像：用基础模型构建物体级 3D 场景图，再让 VLM 跨两段录像匹配物体实例。无需训练或深度传感器。"

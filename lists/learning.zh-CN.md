@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 108 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 109 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [English](learning.md)
 
@@ -57,6 +57,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[LUCID: Learning Embodiment-Agnostic Intent Models from Unstructured Human Videos for Scalable Dexterous Robot Skill Acquisition](https://arxiv.org/abs/2606.11628)** (2026) — 从互联网人类视频学习预测“场景接下来该发生什么”的短时意图模型，再与在大规模并行仿真中训练的本体专用策略结合；同一意图模型可驱动灵巧手和平行夹爪。 · [项目页](https://lucid-robot.github.io/)
 - **[Learning Additively Compositional Latent Actions for Embodied AI](https://arxiv.org/abs/2604.03340)** (2026) — 对潜在动作空间施加短时可加组合约束（恒等、逆、循环一致），使潜在动作只编码运动而非场景细节，并为下游策略学习提供更好的监督。
 - **[Learning Coordinated Visuomotor Box-Pushing from Solo Demonstrations](https://arxiv.org/abs/2610.05677)** (2026) — 研究能否只用单机遥操作数据训练去中心化的多机协同推箱；多达 40 台机器人的实验表明，仅靠被动观察其他机器人很难学会协调。
+- **[Learning Object Manipulation from Scratch via Contrastive Interaction](https://arxiv.org/abs/2606.11525)** (2026) — 接触会改变动力学模式，使对比式强化学习难以处理操作任务。交互加权重采样在接触前、中、后阶段重点采样，仿真中平均提升 19.8%，任务包括机器人空气曲棍球。
 - **[Learning While Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies](https://arxiv.org/abs/2605.00416)** (2026) — 车队规模的离线到在线强化学习：利用自主执行与人工干预数据持续后训练通用 VLA。在 16 台双臂机器人、八个任务上报告平均成功率 95%。 · [项目页](https://learning-while-deploying.github.io/)
 - **[Learning to Be Different: Component Specialization for Compositional Diffusion Policies](https://arxiv.org/abs/2610.27194)** (2026) — 组合式扩散策略的各个分量常常学成相同的副本。即插即用的得分去相关损失让各分量各自专门化，且不损失多任务性能。 · [项目页](https://al3cl1.github.io/robotics-score-decorrelation)
 - **[Localized Visual Feature Aggregation via Focus Pooling for Visuomotor Policies](https://arxiv.org/abs/2609.08408)** (2026) — 以机器人当前本体状态为查询，对 CNN 中间特征做注意力池化，保留与控制相关的局部信息。报告比常规池化与显式裁剪方法分别高 36.2% 和 41.2%，仅需训练 5.8% 的编码器参数。

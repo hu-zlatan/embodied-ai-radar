@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 90 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 91 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/datasets.html) · [English](datasets.md)
 
@@ -50,6 +50,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[MESA: An Evaluation Framework for Compositional, Semantic, and Spatial Generalization in Robotics](https://arxiv.org/abs/2611.05567)** (2026) — 五组评测分别隔离空间布局、物体实例、物体类别和子任务组合上的泛化能力，并提供双臂版 BiMESA。七种基线中最好的也只有 52% 和 49%，仍有很大提升空间。 · [代码](https://github.com/pairlab/mesa-env) · [项目页](https://pairlab.github.io/MESA)
 - **[MolmoSpaces-CommonSense: Evaluating Commonsense in Robotic Manipulation Policies](https://arxiv.org/abs/2610.41377)** (2026) — 基于常识推理分类法（遮挡、容纳、支撑、可供性、隐藏物体）构建的操作基准。报告零样本通用策略在干扰物增多时成功率下降超过 50%，在杂乱场景中约 30% 的时间作用于错误物体，抓取正确部位的比例仅约一半。 · [代码](https://github.com/allenai/molmospaces)
 - **[Monkey See, Can Monkey Do? A Benchmark for Evaluating Robot Skill Learning by Observation](https://arxiv.org/abs/2609.08209)** (2026) — RoboReel：从人类视频学习策略的统一基准，打包真实人类演示视频、仿真机器人轨迹与十个任务及四套测试；在真机复现中仿真结论保持一致。 · [项目页](https://roboreel.github.io)
+- **[NavVerse: Benchmarking Indoor-to-Outdoor Embodied Navigation in Continuous Robot Simulation](https://arxiv.org/abs/2607.19695)** (2026) — 物理仿真基准，考察在一个连续回合中从室内走到街道：200 个场景、1 万个 ObjectNav / VLN / 地点导航回合。零样本测试中端到端 VLA 成功率最高，模块化方法最安全。
 - **[OmniPiano: Diverse Dexterous Piano-Playing Challenges for Standard, Robust, Safe, and Multi-Agent RL](https://arxiv.org/abs/2611.00243)** (2026) — 把机器人弹钢琴扩展到 1 至 5 只 Shadow 手，并支持鲁棒、安全和多智能体强化学习：至少 912 种任务设置、36 个基线算法。作者报告前沿算法与大模型智能体在高难任务上仍很吃力。 · [代码](https://github.com/SAIL-Research-Lab/omnipiano) · [项目页](https://sail-research-lab.github.io/omnipiano/)
 - **[Probing Collision Grounding in Vision-Language Models for Safe Human-Robot Collaboration](https://arxiv.org/abs/2605.31196)** (2026) — TouchSafeBench：基于 Habitat 3.0 的 2940 个场景，测试 VLM 能否判断机器人正在或即将与人或环境碰撞。最佳平均 Macro-F1 仍低于 50%。 · [项目页](https://jun25336-bit.github.io/TouchSafeBench/)
 - **[PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data](https://arxiv.org/abs/2611.05320)** (2026) — 编程智能体凭一条标定轨迹在仿真中重建任务，再由视频模型渲染成写实数据；报告真机 100 次成功 93 次，遥操作数据为 84 次，每小时数据约 107 美元。 · [代码](https://github.com/DAGroup-PKU/PyRUA-Lean) · [项目页](https://dagroup-pku.github.io/PyRUA-Lean/DataFarm)

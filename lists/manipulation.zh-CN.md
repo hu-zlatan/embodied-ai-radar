@@ -2,7 +2,7 @@
 
 _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 
-共 146 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
+共 150 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/manipulation.html) · [English](manipulation.md)
 
@@ -34,6 +34,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[Beyond the End-Effector: Learning Whole-Arm Contact Manipulation from Human Demonstrations](https://arxiv.org/abs/2610.17802)** (2026) — WACL 从人类示范中学习用整条手臂推、抵物体，自主选择手臂上的接触位置，同时满足末端执行器的约束。 · [项目页](https://wacl-robot.github.io)
 - **[BeyondContact: A Reinforcement Learning Framework for Airflow-Based Non-Contact Manipulation](https://arxiv.org/abs/2611.03059)** (2026) — 为 Isaac Lab 增加基于实测模型的气流扩展，并在夹爪旁加装轻型鼓风机。报告零调试真机部署：推吹混合策略 20 次成功率 80%，纯气流转向平均误差 2.6°。 · [代码](https://github.com/iit-DLSLab/BeyondContact)
 - **[BiDexGrasp: Coordinated Bimanual Dexterous Grasps across Object Geometries and Sizes](https://arxiv.org/abs/2604.06589)** (2026) — CoRL 2026 Spotlight。大规模双手灵巧抓取数据集（由两阶段合成流程生成），并配套基于学习的抓取生成框架。 · [项目页](https://frenkielm.github.io/BiDexGrasp.github.io/)
+- **[BiRoAD: Learning Shared and Role-Adaptive Representations for Bimanual Manipulation](https://arxiv.org/abs/2609.23445)** (2026) — 把双臂策略特征分解为交换对称分量（两臂互换角色时不变的协调结构）与交换反对称分量（随角色变化的行为差异），再以残差形式加回各臂的表示。
 - **[Bimanual Robot Manipulation via Multi-Agent In-Context Learning](https://arxiv.org/abs/2604.20348)** (2026) — 把双臂视为“主-从”两个智能体，让纯文本 LLM 无需微调即可通过上下文学习完成少样本双臂操作。报告在 TWIN 的 13 个任务上平均成功率 70.5%。 · [项目页](https://alesspalma.github.io/bicicle)
 - **[Blind Precise Assembly: Proprioceptive Sim-to-Real Peg-in-Hole for Diverse Parts](https://arxiv.org/abs/2610.23849)** (2026) — 探究仅靠关节读数能否完成毫米级精密插装：训练不用相机、力或触觉输入的 sim-to-real 策略。
 - **[CARD: Contact-Anchored Retargeting for Dexterous Manipulation](https://arxiv.org/abs/2610.36539)** (2026) — 把人手示教（视频、动捕、触觉手套）重定向到灵巧手时显式保留接触力目标而不只是运动学，并用触觉跟踪控制器回放；报告 43–78% 的接触帧保持接触，纯运动学方法不到 10%。 · [项目页](https://card-retargeting.github.io/)
@@ -64,6 +65,8 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation](https://arxiv.org/abs/2606.30749)** (2026) — 用抓取数据集构造的 35.5 万条轨迹预训练灵巧手底层控制器，再微调到需要操作工具活动部件的任务；提出 DexCraft 基准。报告真机完整任务成功率比 DP3 高 33.3 个百分点。 · [项目页](https://yingyuan0414.github.io/grasp2dexterity/)
 - **[From VLM Planners to Robotic Agents: Self-Evolving Harnesses for History-Dependent Manipulation](https://arxiv.org/abs/2610.29560)** (2026) — SERA 把高层 VLM 规划器做成带可编辑执行框架的智能体，为固定的底层 VLA 记录任务进度与执行反馈，并利用环境回放自动改进框架；报告在 RoboMME 上总体成功率 51.4%，未自我演化时为 44.4%。 · [代码](https://github.com/StevenKKXS/SERA) · [项目页](https://stevenkkxs.github.io/sera-webpage/)
 - **[GRASP: Gradient-Guided Sampling for Contact-Rich Physics-Based Motion Retargeting](https://arxiv.org/abs/2611.05754)** (2026) — 无需可微仿真器即可在接触动力学下重定向人类示教：从存档的采样轨迹中恢复梯度。报告在 1352 条双手 OakInk2 示教上成功率 92.8%，且不用任务专属接触奖励。 · [代码](https://github.com/ComputationalRobotics/GRASP_code) · [项目页](https://computationalrobotics.seas.harvard.edu/GRASP/)
+- **[GROW$^2$: Grounding Which and Where for Robot Tool Use](https://arxiv.org/abs/2606.30632)** (2026) — 创造性用工具（没有刀就用盘子切蛋糕）：VLM 选出可充当工具的物体及其相关部位，再由视觉基础模型从单张 RGB-D 图像把这些部位定位为 3D 区域。无需端到端训练。
+- **[GeoHAT: Geometry-Adaptive Hybrid Action Transformer for Mobile Manipulation](https://arxiv.org/abs/2606.13394)** (2026) — 面向全身移动操作的扩散策略：傅里叶编码器把逐像素 3D 坐标变成几何 token，并按深度可靠性门控注入视觉基础模型特征；混合解码器为机械臂与底盘分配独立的动作子空间。
 - **[GeoProp: Grounding Robot State in Vision for Generalist Manipulation](https://arxiv.org/abs/2607.07101)** (2026) — 即插即用适配器：把机器人状态投影到图像平面，采样局部视觉特征构成“落地”的状态 token，并用 FiLM 调制对应特征。报告仿真中 Diffusion Policy 提升 8.7%，真机平均提升 10.6%。 · [项目页](https://alibaba-damo-academy.github.io/GeoProp/)
 - **[Going with the Flow: Koopman Behavioral Models as Pseudo Planners for Visuo-Motor Dexterity](https://arxiv.org/abs/2602.07413)** (2026) — 把灵巧技能建模为潜在线性（Koopman）系统，视觉特征流与机器人动作流共同演化；当观测与预测的视觉流偏离时自动重规划。性能与强基线相当，推理快得多。 · [项目页](https://k-ubm.github.io/)
 - **[HUGS: Guiding Unified Dexterous Grasp Synthesis Across Modes and Scales via Learned Human Priors](https://arxiv.org/abs/2607.04554)** (2026) — 从 1800 次人类抓取中学习物体条件的人类先验，用来选择接触模式和手腕初值以指导力封闭优化；合成 320 万个抓取，覆盖两指捏取到双手抓取、2–30 cm 物体。 · [项目页](https://hugs-dex.github.io/)
@@ -87,6 +90,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[Pixel-UMI: Learning Environment-Aware Whole-Body Manipulation from Sensorized Human Demonstrations](https://arxiv.org/abs/2611.03647)** (2026) — 把传感化的人类示范变成全身策略：结合重建的场景几何做重定向，训练时用重定向误差遮蔽不匹配的视角，再用 DAgger 人工纠正补足接触。作者报告五个任务平均进度 87.0%。 · [项目页](https://pixel-robot.com/pixel-umi)
 - **[Play2Perfect: What Matters in Dexterous Play Pretraining for Precise Assembly?](https://arxiv.org/abs/2606.26428)** (2026) — CoRL 2026 Oral。探究灵巧“玩耍”预训练究竟需要什么，才能胜任精密装配这类富接触、稀疏奖励、模仿与直接 RL 都难以解决的任务。 · [代码](https://github.com/kushal2000/play2perfect) · [项目页](https://play2perfect.github.io)
 - **[ProxiDex: Learning Dynamics-Guided Proximity Policy for Dexterous Manipulation](https://arxiv.org/abs/2609.16586)** (2026) — 以重建点云得到的手-物距离作为与硬件无关的接触信号，用于 VR 遥操作反馈，并训练带接近度动力学的策略；在遮挡下更稳健。 · [项目页](https://proxidex.github.io/)
+- **[REAP: Learning General Rearrangement Heuristics from Motion-Planner Feedback](https://arxiv.org/abs/2610.23973)** (2026) — 在简单符号模型上学习关系图神经网络启发式，训练时由运动规划器揭示隐藏的几何前提。其排名第一的动作在 94% 的状态下几何可行（随机选择为 22%）。
 - **[RTPolicy: Real-Time (32.9 Hz) Multi-View Visuomotor Policy for Robotic Manipulation on Edge Devices](https://arxiv.org/abs/2610.41625)** (2026) — 把多视角视觉融合压缩为紧凑 token，再条件化流匹配动作生成的轻量策略。报告 RoboTwin 2.0 五十任务平均 52.26%（π0 为 46.4%），真实双臂平台 72.0%，在 RDK S600 边缘设备上以 INT16 推理达 32.9 Hz。 · [代码](https://github.com/D-Robotics-AI-Lab/RTPolicy) · [项目页](https://d-robotics-ai-lab.github.io/RTPolicy.project)
 - **[Reactive Task-Oriented Robot-Human Handovers via Generative Hypothesis Selection](https://arxiv.org/abs/2610.08003)** (2026) — 面向任务的机器人递物：用 VLM 生成人在该任务下如何握持物体的图像假设，并与实时观测的人手姿态匹配。12 名参与者中 83.3% 认为它比已有方法更懂任务。
 - **[Real2Sem2Real: 3D Semantic Augmentations for Robot Learning from a Single Human RGB Demonstration](https://arxiv.org/abs/2610.28880)** (2026) — 把一段单目 RGB 人类演示扩展为同类别不同物体上的数千条机器人演示：用 DINOv3 蒸馏的高斯溅射跟踪物体位姿，对齐由照片生成的“数字表亲”，在 IsaacSim 或 MuJoCo 中生成数据（约 2 小时 2000+ 条）；报告所训练的 VLA 在真机上达到或超过遥操作数据训练的策略。 · [项目页](https://real2sem2real.github.io/)

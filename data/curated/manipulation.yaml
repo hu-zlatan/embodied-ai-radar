@@ -1483,3 +1483,39 @@
   tags: [contact-rich, residual-rl, human-in-the-loop, vlm, force, real]
   takeaway_en: "A VLM first localizes the task region, then real-world human-in-the-loop residual RL with force feedback learns the contact part. Object-centric background augmentation adds robustness; six real tasks."
   takeaway_zh: "分两阶段：先由视觉语言模型定位任务相关区域，再在真实世界用带力反馈、人在回路的残差强化学习学习接触细节。以物体为中心的背景增强使其在六个真机任务上保持稳健。"
+- title: "BiRoAD: Learning Shared and Role-Adaptive Representations for Bimanual Manipulation"
+  type: paper
+  arxiv: "2609.23445"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [bimanual, representation, symmetry]
+  takeaway_en: "Splits bimanual policy features into a swap-symmetric part (coordination that holds when arms trade roles) and a swap-antisymmetric part (role-specific behaviour), recomposed as residuals on each arm's features."
+  takeaway_zh: "把双臂策略特征分解为交换对称分量（两臂互换角色时不变的协调结构）与交换反对称分量（随角色变化的行为差异），再以残差形式加回各臂的表示。"
+- title: "GROW$^2$: Grounding Which and Where for Robot Tool Use"
+  type: paper
+  arxiv: "2606.30632"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [tool-use, affordance, vlm, zero-shot, real]
+  takeaway_en: "Creative tool use (cut a cake with a plate): a VLM picks the object to use as a tool and the relevant parts, then vision foundation models ground those parts as 3D regions from one RGB-D image. No end-to-end training."
+  takeaway_zh: "创造性用工具（没有刀就用盘子切蛋糕）：VLM 选出可充当工具的物体及其相关部位，再由视觉基础模型从单张 RGB-D 图像把这些部位定位为 3D 区域。无需端到端训练。"
+- title: "GeoHAT: Geometry-Adaptive Hybrid Action Transformer for Mobile Manipulation"
+  type: paper
+  arxiv: "2606.13394"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [mobile-manipulation, whole-body, diffusion-policy, 3d]
+  takeaway_en: "Diffusion policy for whole-body mobile manipulation: a Fourier encoder turns per-pixel 3D points into tokens gated in by depth validity, and a hybrid decoder gives arm and base separate action subspaces."
+  takeaway_zh: "面向全身移动操作的扩散策略：傅里叶编码器把逐像素 3D 坐标变成几何 token，并按深度可靠性门控注入视觉基础模型特征；混合解码器为机械臂与底盘分配独立的动作子空间。"
+- title: "REAP: Learning General Rearrangement Heuristics from Motion-Planner Feedback"
+  type: paper
+  arxiv: "2610.23973"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [rearrangement, task-planning, gnn, motion-planning]
+  takeaway_en: "Learns a relational GNN heuristic over a simple symbolic model, with a motion planner revealing hidden geometric preconditions during training. Its top-ranked action is feasible in 94% of states (22% random)."
+  takeaway_zh: "在简单符号模型上学习关系图神经网络启发式，训练时由运动规划器揭示隐藏的几何前提。其排名第一的动作在 94% 的状态下几何可行（随机选择为 22%）。"

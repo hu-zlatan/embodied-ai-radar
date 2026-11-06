@@ -2,7 +2,7 @@
 
 _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 
-共 58 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
+共 59 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/sim.html) · [English](sim.md)
 
@@ -52,6 +52,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 - **[Worlds in One Demo: A Synthetic Data Engine for Learning Open-World Mobile Manipulation](https://arxiv.org/abs/2607.13154)** (2026) — 合成数据引擎：把一条真实移动操作演示扩展成大量数据——高斯泼溅重建场景、重排接触片段并用全身运动规划串联、再在由照片生成的 3D 世界中合成。也支持跨本体。 · [项目页](https://wanda.lecar-lab.org/)
 - **[GaussGym: An open-source real-to-sim framework for learning locomotion from pixels](https://arxiv.org/abs/2510.15352)** (2025) — 把 3D 高斯溅射作为渲染器接入矢量化物理仿真，报告在消费级 GPU 上超过每秒 10 万步，用于从像素学习。
 - **[GenManip: LLM-driven Simulation for Generalizable Instruction-Following Manipulation](https://arxiv.org/abs/2506.10966)** (2025) — 基于 Isaac Sim 的平台：LLM 依据任务导向场景图，从约 1 万个物体中生成任务与布局；其 200 个场景的基准发现，结合基础模型的模块化系统比端到端策略泛化更好。 · [代码](https://github.com/InternRobotics/GenManip)
+- **[Procedural Generation of Articulated Simulation-Ready Assets](https://arxiv.org/abs/2505.10755)** (2025) — Infinigen-Articulated：涵盖 18 类常见铰接物体的程序化生成器，附带 Blender 工具，并可连同物理属性导出到常用机器人仿真器。
 - **[Taccel: Scaling Up Vision-based Tactile Robotics via High-performance GPU Simulation](https://arxiv.org/abs/2504.12908)** (2025) — 结合 IPC 与 ABD 的 GPU 触觉仿真；作者报告在数千并行环境下达到实时速度的 18 倍。
 - **[BiGym: A Demo-Driven Mobile Bi-Manual Manipulation Benchmark](https://arxiv.org/abs/2407.07788)** (2024) — 面向移动双臂机器人的基准，含 40 个家庭任务（从抓取到厨房清洁），均配人类采集的演示。 · [项目页](https://chernyadev.github.io/bigym/)
 - **[DIFFTACTILE: A Physics-based Differentiable Tactile Simulator for Contact-rich Robotic Manipulation](https://arxiv.org/abs/2403.08716)** (2024) — 可微触觉仿真器，用 FEM 软体模型模拟弹性体，面向多种材料的接触，而非主要针对刚体。 · [代码](https://github.com/Genesis-Embodied-AI/DiffTactile)

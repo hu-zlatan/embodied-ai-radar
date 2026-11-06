@@ -2,7 +2,7 @@
 
 _Reinforcement learning, imitation learning and policy post-training methods for robots, on any embodiment._
 
-108 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/learning.yaml`](../data/curated/learning.yaml); edit the YAML, not this file.
+109 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/learning.yaml`](../data/curated/learning.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [中文](learning.zh-CN.md)
 
@@ -57,6 +57,7 @@ _Reinforcement learning, imitation learning and policy post-training methods for
 - **[LUCID: Learning Embodiment-Agnostic Intent Models from Unstructured Human Videos for Scalable Dexterous Robot Skill Acquisition](https://arxiv.org/abs/2606.11628)** (2026) — Learns a short-horizon 'what should happen next' intent model from internet human videos and pairs it with embodiment-specific policies trained in parallel sim; the same intent model drives a hand and a gripper. · [project](https://lucid-robot.github.io/)
 - **[Learning Additively Compositional Latent Actions for Embodied AI](https://arxiv.org/abs/2604.03340)** (2026) — Latent action model constrained to compose additively over short horizons (identity, inverse, cycle), so latents capture motion rather than scene detail and give better supervision for policies.
 - **[Learning Coordinated Visuomotor Box-Pushing from Solo Demonstrations](https://arxiv.org/abs/2610.05677)** (2026) — Studies whether single-robot teleop data can train decentralised coordinated box-pushing; tests with up to 40 robots show coordination is hard to learn just by watching other robots.
+- **[Learning Object Manipulation from Scratch via Contrastive Interaction](https://arxiv.org/abs/2606.11525)** (2026) — Contrastive RL struggles when contact changes the dynamics mode. Interaction-weighted Resampling samples around before/during/after contact, reporting a 19.8% average gain in sim, including robot air hockey.
 - **[Learning While Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies](https://arxiv.org/abs/2605.00416)** (2026) — Fleet-scale offline-to-online RL that keeps post-training a generalist VLA from autonomous rollouts and human interventions. On 16 dual-arm robots and eight tasks it reports 95% average success. · [project](https://learning-while-deploying.github.io/)
 - **[Learning to Be Different: Component Specialization for Compositional Diffusion Policies](https://arxiv.org/abs/2610.27194)** (2026) — Composed diffusion policies often learn identical components. A drop-in score-decorrelation loss makes each factor specialize, with no loss in multitask performance. · [project](https://al3cl1.github.io/robotics-score-decorrelation)
 - **[Localized Visual Feature Aggregation via Focus Pooling for Visuomotor Policies](https://arxiv.org/abs/2609.08408)** (2026) — Attention pooling over intermediate CNN features, weighted by the robot's current proprioception, to keep control-relevant local detail. Reports +36.2% and +41.2% over pooling and explicit-crop methods.

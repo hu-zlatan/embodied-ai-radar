@@ -2,7 +2,7 @@
 
 _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的学习型控制。_
 
-共 39 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/control.yaml`](../data/curated/control.yaml) 生成，请勿直接编辑。
+共 41 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/control.yaml`](../data/curated/control.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/control.html) · [English](control.md)
 
@@ -27,6 +27,7 @@ _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的�
 - **[A generalist policy for muscle-driven control across individual musculoskeletal models](https://arxiv.org/abs/2610.36535)** (2026) — MyoAcross 结合个体化肌骨模型构建、形态条件策略学习与虚拟模型增广，用一个策略驱动不同个体的肌骨模型跟踪参考动作而无需逐个微调；报告在 31 个未见个体模型上完成率 99.24%，跟踪误差比无条件 MLP 降低 22.6%，并与 120 人的地面反力和肌电数据做了对比。 · [项目页](https://woodater-thu.github.io/MyoAcross/)
 - **[CusADi2: Latency-Optimized Batch Computation of Robot Kinematics, Jacobians, and Hessians on the GPU](https://arxiv.org/abs/2610.25476)** (2026) — 在 GPU 上以低延迟批量计算运动学、雅可比与海森矩阵，面向在线运行的采样式与梯度式轨迹优化。 · [代码](https://github.com/johnviljoen/cusadi2)
 - **[Exploring the Intrinsic Geometry of Diffusion Models with Constrained Inverse Kinematics](https://arxiv.org/abs/2606.26408)** (2026) — 以解流形可精确知道的约束逆运动学为试验场，检验扩散模型学到的几何结构。在 UR5 和 Franka 上，从得分函数估计的内在维度与解析自由度一致。 · [项目页](https://papers.starslab.ca/diffusion-ik-geometry/)
+- **[Gradient-Free Neural Hamilton-Jacobi Reachability for Scalable Safety-Critical Control](https://arxiv.org/abs/2609.14087)** (2026) — 无需 PDE 梯度的离散时间神经 HJ 可达性：利用最优安全干预的 bang-bang 结构和免梯度的价值探测构造教师动作，把对抗式策略学习变成监督学习；分窗口的时间课程稳定训练。
 - **[Keeping Contact: Task-Adaptive Friction Margins for Bimanual Non-Prehensile Manipulation](https://arxiv.org/abs/2610.36961)** (2026) — 以带符号摩擦距离度量防滑裕度，并在双臂绕支点倾转物体时按任务需求自适应调整；一系列二阶锥规划给出全局最优接触力。真机实验显示自适应裕度优于固定裕度和无裕度。 · [项目页](https://keeping-contact.github.io/)
 - **[LEMCA: LLM-Guided Synthesis of Efficient Mode-Switching Control Architectures](https://arxiv.org/abs/2609.21319)** (2026) — 用 LLM 驱动的进化搜索，把多模式切换控制器写成可解释程序并迭代优化，使简单阶段使用低开销模式。报告找到的设计超越单一结构控制器的帕累托前沿。 · [项目页](https://lemca-robotics.github.io/)
 - **[M$^3$P-R1: Reinforcement Learning for Large Language Model Guided Multi-Modal Motion Planning via MIP Code Generation](https://arxiv.org/abs/2609.18669)** (2026) — 用求解器结果作为奖励对 LLM 做强化学习微调，让它为多模态运动规划（如先走再抓）编写可执行的混合整数规划代码，而不是直接给出答案。
@@ -40,6 +41,7 @@ _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的�
 - **[Sub-Millisecond Reflexes for Continuous Physical Human-Robot Interaction](https://arxiv.org/abs/2610.21913)** (2026) — 开源的 ROS 2 多模式控制器，可在亚毫秒内切换控制模式并触发安全反射而无需中断任务；在 Franka 机械臂上验证。 · [代码](https://github.com/RoboRef/franka_reflex_engine)
 - **[TAM: Torque Adaptation Module for Robust Motion Transfer in Manipulation](https://arxiv.org/abs/2606.06218)** (2026) — CoRL 2026 Spotlight。面向富接触动作迁移的模块，应对仿真到现实、负载与个体差异，用于替代域随机化或系统辨识。 · [代码](https://github.com/Dongwon-Son/TAM) · [项目页](https://dongwon-son.github.io/tam-project-page/)
 - **[TDC: Sim-to-Real Transferable Directional Compliance for Contact-Rich Manipulation](https://arxiv.org/abs/2602.14174)** (2026) — 把力调节拆成两部分：方向分量（任务坐标系与控制模式，由基于 VLA 的策略在仿真数据上学习）和幅值分量（在导纳控制器中人工设定）。只用仿真数据，在四个真机任务上验证。 · [项目页](https://yifei-y.github.io/project-pages/TDC/)
+- **[VertexCBF: Improving Neural Control Barrier Functions via Vertex-Restricted Control Search](https://arxiv.org/abs/2609.12831)** (2026) — 通过近似 HJ 价值函数学习神经控制障碍函数；在控制仿射动力学和多面体输入集下最优解位于顶点，于是用 GPU 并行顶点树搜索生成监督点。在 15 个系统和行人避让真机实验中验证。
 - **[Motions in Microseconds via Vectorized Sampling-Based Planning](https://arxiv.org/abs/2309.14545)** (2023) — VAMP：用 CPU SIMD 指令把碰撞检测向量化，使 RRT-Connect 等基于采样的规划器在微秒到毫秒级求解机械臂运动规划，无需 GPU。 · [代码](https://github.com/KavrakiLab/vamp)
 - **[Motion Policy Networks](https://arxiv.org/abs/2210.12209)** (2022) — 在数百万条规划器生成的轨迹上训练的神经策略，可直接根据点云把机械臂移动到目标位置。 · [代码](https://github.com/NVlabs/motion-policy-networks)
 - **[Safe Learning in Robotics: From Learning-Based Control to Safe Reinforcement Learning](https://arxiv.org/abs/2108.06266)** (2021) — 综述，连接控制理论与强化学习两种安全视角：从带保证的学习动力学到约束强化学习与安全滤波器。

@@ -394,3 +394,21 @@
   tags: [motion-planning, mixed-integer-programming, llm, code-generation, rl]
   takeaway_en: "Fine-tunes an LLM with solver-based RL rewards to write executable mixed-integer programs for multi-modal motion planning (e.g. walk, then grasp), instead of answering directly."
   takeaway_zh: "用求解器结果作为奖励对 LLM 做强化学习微调，让它为多模态运动规划（如先走再抓）编写可执行的混合整数规划代码，而不是直接给出答案。"
+- title: "Gradient-Free Neural Hamilton-Jacobi Reachability for Scalable Safety-Critical Control"
+  type: paper
+  arxiv: "2609.14087"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [hj-reachability, safety, neural-solver]
+  takeaway_en: "Discrete-time neural HJ reachability without PDE gradients: bang-bang structure and gradient-free value probes give teacher actions, turning adversarial actor learning supervised; a windowed curriculum adds stability."
+  takeaway_zh: "无需 PDE 梯度的离散时间神经 HJ 可达性：利用最优安全干预的 bang-bang 结构和免梯度的价值探测构造教师动作，把对抗式策略学习变成监督学习；分窗口的时间课程稳定训练。"
+- title: "VertexCBF: Improving Neural Control Barrier Functions via Vertex-Restricted Control Search"
+  type: paper
+  arxiv: "2609.12831"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [cbf, safety, hj-reachability, real]
+  takeaway_en: "Learns neural CBFs from an HJ value approximation; with control-affine dynamics and polytope inputs the optimum is at a vertex, so GPU vertex tree search makes labels. 15 systems + a robot among pedestrians."
+  takeaway_zh: "通过近似 HJ 价值函数学习神经控制障碍函数；在控制仿射动力学和多面体输入集下最优解位于顶点，于是用 GPU 并行顶点树搜索生成监督点。在 15 个系统和行人避让真机实验中验证。"

@@ -2,7 +2,7 @@
 
 _Physics simulators, GPU-parallel training and transfer to real robots._
 
-58 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
+59 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/sim.html) · [中文](sim.zh-CN.md)
 
@@ -52,6 +52,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._
 - **[Worlds in One Demo: A Synthetic Data Engine for Learning Open-World Mobile Manipulation](https://arxiv.org/abs/2607.13154)** (2026) — Synthetic data engine that turns one real mobile-manipulation demo into many: Gaussian-splat scenes, rearranged contact segments chained by whole-body planning, and generated worlds from photos. Also cross-embodiment. · [project](https://wanda.lecar-lab.org/)
 - **[GaussGym: An open-source real-to-sim framework for learning locomotion from pixels](https://arxiv.org/abs/2510.15352)** (2025) — Drops 3D Gaussian Splatting into vectorized physics simulators as a renderer, reporting over 100,000 steps per second on consumer GPUs for learning from pixels.
 - **[GenManip: LLM-driven Simulation for Generalizable Instruction-Following Manipulation](https://arxiv.org/abs/2506.10966)** (2025) — Isaac Sim platform where an LLM builds tasks and layouts from a task-oriented scene graph over ~10K objects; its 200-scenario benchmark finds modular foundation-model systems generalize better than end-to-end policies. · [code](https://github.com/InternRobotics/GenManip)
+- **[Procedural Generation of Articulated Simulation-Ready Assets](https://arxiv.org/abs/2505.10755)** (2025) — Infinigen-Articulated: procedural generators for 18 articulated object categories plus Blender tools and an export pipeline into common robot simulators, with physical properties.
 - **[Taccel: Scaling Up Vision-based Tactile Robotics via High-performance GPU Simulation](https://arxiv.org/abs/2504.12908)** (2025) — GPU tactile simulation combining IPC and ABD; the authors report running 18 times faster than real time across thousands of parallel environments.
 - **[BiGym: A Demo-Driven Mobile Bi-Manual Manipulation Benchmark](https://arxiv.org/abs/2407.07788)** (2024) — Benchmark of 40 home tasks for mobile bimanual robots, from reaching to kitchen cleaning, each with human-collected demonstrations. · [project](https://chernyadev.github.io/bigym/)
 - **[DIFFTACTILE: A Physics-based Differentiable Tactile Simulator for Contact-rich Robotic Manipulation](https://arxiv.org/abs/2403.08716)** (2024) — Differentiable tactile simulator with an FEM soft-body elastomer model, built for contact with many material types rather than mostly rigid objects. · [code](https://github.com/Genesis-Embodied-AI/DiffTactile)

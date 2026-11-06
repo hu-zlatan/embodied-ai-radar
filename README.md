@@ -83,7 +83,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - ⭐ **[3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://arxiv.org/abs/2403.03954)** (2024) — Conditions a diffusion policy on a compact point-cloud encoding; more data-efficient and robust to viewpoint than images. · [code](https://github.com/YanjieZe/3D-Diffusion-Policy)
 - ⭐ **[Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation](https://arxiv.org/abs/2401.02117)** (2024) — Puts ALOHA on a mobile base; co-training with static ALOHA data boosts mobile tasks like cooking and opening cabinets. · [code](https://github.com/MarkFzp/mobile-aloha)
 
-**[All 146 entries →](lists/manipulation.md)**
+**[All 150 entries →](lists/manipulation.md)**
 
 <a id="tactile"></a>
 ### Tactile & Visuotactile Sensing
@@ -157,13 +157,13 @@ _Vision-language navigation, embodied question answering, mobile manipulation an
 - ⭐ **[The Marathon 2: A Navigation System](https://arxiv.org/abs/2003.00368)** (2020) — The paper behind Nav2, the standard ROS 2 navigation stack - behavior-tree orchestration of planners, controllers and recovery behaviors, validated by long marathon runs on real robots. · [code](https://github.com/ros-navigation/navigation2)
 - **[Adaptive Risk-Certified Event-Triggered Replanning for Dynamic Navigation](https://arxiv.org/abs/2610.09302)** (2026) — Uses calibrated barrier risk (CVaR along the MPC rollout) as an early warning to switch to a safer planning mode. Reports 83.3% fewer collisions than a safety-filter-only baseline. · [project](https://nail-uh.github.io/corl2026.github.io/)
 - **[An Agentic Framework for Proactive Robots with Procedural Assistance Memory](https://arxiv.org/abs/2610.21211)** (2026) — Proactive assistant robot: a VLM reads a state-machine memory of the user's routine to decide when to help, and a VLA executes. The memory is revised daily by reflection, without retraining. · [project](https://davian-robotics.github.io/PAM/)
+- **[AsyncVLA: An Asynchronous VLA for Fast and Robust Navigation on the Edge](https://arxiv.org/abs/2602.13476)** (2026) — A large foundation model on a remote workstation gives high-level guidance while a light onboard Edge Adapter refines actions at high rate. Reports 40% higher success than baselines with delays up to 6 s.
 - **[COOL: Curiosity-Driven Object Ownership Learning for Personalized Robotic Assistance](https://arxiv.org/abs/2610.09358)** (2026) — Learns who owns which objects from everyday observation and keeps a long-term spatial memory refreshed by curiosity-driven exploration, so commands like 'find my bottle' work.
 - **[CoFL-S: Spatially Queryable Sector Flow Fields for Local Language-Conditioned Navigation](https://arxiv.org/abs/2607.02222)** (2026) — Low-level VLN action head that predicts a language-conditioned flow field over the visible sector and rolls it out into trajectories. Adds a continuous-time Habitat benchmark. · [code](https://github.com/ut-dragon-lab/CoFL)
 - **[CoSMO: Conformal Semantic Mapping for Open-World Safe Robot Navigation](https://arxiv.org/abs/2610.18321)** (2026) — Calibrates VLM semantic maps with online conformal prediction so each object class gets a safety margin with coverage guarantees as the vocabulary grows. Reports 61.6% fewer semantic collisions on MP3D. · [project](https://yangming911.github.io/cosmo-page/)
 - **[CoopUQ: Robust Multi-Robot Social Navigation via Uncertainty-Aware Cooperative Forecasting](https://arxiv.org/abs/2610.26852)** (2026) — Multi-robot social navigation: robots fuse features to forecast occupancy maps with uncertainty, and a constrained multi-agent RL policy avoids regions predicted occupied or uncertain. Unity sim + real robots. · [project](https://coopuq.github.io/)
-- **[CostNav: A Navigation Benchmark for Real-World Economic-Cost Evaluation of Physical AI Agents](https://arxiv.org/abs/2511.20216)** (2026) — Scores delivery-robot navigation by money: cost, revenue and break-even, using Isaac Sim plus public filings and injury data. Reports that none of seven baselines is economically viable yet. · [code](https://github.com/worv-ai/CostNav)
 
-**[All 65 entries →](lists/navigation.md)**
+**[All 77 entries →](lists/navigation.md)**
 
 <a id="perception"></a>
 ### Perception, SLAM & 3D Mapping
@@ -183,7 +183,7 @@ _Visual / LiDAR SLAM and odometry, 3D reconstruction, object pose, depth and ope
 - ⭐ **[BundleSDF: Neural 6-DoF Tracking and 3D Reconstruction of Unknown Objects](https://arxiv.org/abs/2303.14158)** (2023) — Tracks the 6-DoF pose of a never-seen object in RGB-D video while building its neural 3D model online, with no CAD model needed; useful for manipulating novel objects. · [code](https://github.com/NVlabs/BundleSDF)
 - ⭐ **[CoTracker: It is Better to Track Together](https://arxiv.org/abs/2307.07635)** (2023) — Transformer that tracks many video points jointly rather than one at a time, staying robust through occlusions; widely used to extract motion tracks from human or robot videos for policy learning. · [code](https://github.com/facebookresearch/co-tracker)
 
-**[All 45 entries →](lists/perception.md)**
+**[All 53 entries →](lists/perception.md)**
 
 <a id="control"></a>
 ### Planning, Control & Safety
@@ -203,7 +203,7 @@ _Motion planning, trajectory optimization, MPC, safety filters and safe learning
 - ⭐ **[MoveIt 2](https://moveit.ai/)** (2019) — The ROS 2 manipulation framework - motion planning, inverse kinematics, collision checking and real-time servoing for robot arms. · [code](https://github.com/moveit/moveit2)
 - ⭐ **[Pinocchio](https://github.com/stack-of-tasks/pinocchio)** (2019) — Fast C++/Python rigid-body dynamics library with analytical derivatives; a common backbone for kinematics, optimal control (e.g. Crocoddyl) and legged/humanoid control stacks.
 
-**[All 39 entries →](lists/control.md)**
+**[All 41 entries →](lists/control.md)**
 
 <a id="learning"></a>
 ### Robot Learning: RL & Imitation
@@ -223,7 +223,7 @@ _Reinforcement learning, imitation learning and policy post-training methods for
 - ⭐ **[What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](https://arxiv.org/abs/2108.03298)** (2021) — robomimic — a controlled study of imitation and offline RL on human-collected manipulation demos (demo quality, observation choices, history-aware BC), released with the framework and datasets. · [code](https://github.com/ARISE-Initiative/robomimic)
 - ⭐ **[Addressing Function Approximation Error in Actor-Critic Methods](https://arxiv.org/abs/1802.09477)** (2018) — TD3 — fixes DDPG's value overestimation with twin critics, delayed policy updates and target smoothing; still a standard continuous-control baseline. · [code](https://github.com/sfujim/TD3)
 
-**[All 108 entries →](lists/learning.md)**
+**[All 109 entries →](lists/learning.md)**
 
 <a id="sim"></a>
 ### Sim-to-Real & Simulators
@@ -243,7 +243,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._ [Browse
 - ⭐ **[ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI](https://arxiv.org/abs/2410.00425)** (2024) — GPU-parallel simulation and rendering with many manipulation tasks; fast visual RL and data generation. · [code](https://github.com/haosulab/ManiSkill)
 - ⭐ **[RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots](https://arxiv.org/abs/2406.02523)** (2024) — 120 kitchen scenes, 2,500+ objects and 100 tasks with generated demonstrations for training generalist policies. · [code](https://github.com/robocasa/robocasa)
 
-**[All 58 entries →](lists/sim.md)**
+**[All 59 entries →](lists/sim.md)**
 
 <a id="datasets"></a>
 ### Datasets & Benchmarks
@@ -263,7 +263,7 @@ _Large robot datasets, egocentric data and evaluation suites._ [Browse with the 
 - ⭐ **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 hand-designed manipulation tasks with demos; a staple for 3D policy methods like PerAct. · [code](https://github.com/stepjam/RLBench)
 - ⭐ **[ScanNet: Richly-annotated 3D Reconstructions of Indoor Scenes](https://arxiv.org/abs/1702.04405)** (2017) — RGB-D scans of 1,500+ indoor scenes with 3D reconstructions, camera poses and semantic labels; the standard benchmark for 3D scene understanding that embodied perception builds on. · [code](https://github.com/ScanNet/ScanNet)
 
-**[All 90 entries →](lists/datasets.md)**
+**[All 91 entries →](lists/datasets.md)**
 
 <a id="hardware"></a>
 ### Hardware & Open-Source Robots
@@ -279,11 +279,11 @@ _Low-cost arms, hands, grippers and data-collection rigs you can build._ [Browse
 - ⭐ **[SO-ARM100 / SO-101](https://github.com/TheRobotStudio/SO-ARM100)** (2024) — An open 3D-printed 6-DoF arm (leader + follower) costing roughly $100–200 per arm; the default LeRobot starter kit.
 - ⭐ **[An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](https://arxiv.org/abs/1910.00093)** (2019) — The open-source Solo quadruped and its modular torque-controlled actuators, built from off-the-shelf and 3D-printed parts so labs can reproduce a dynamic legged robot. · [code](https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware)
 - **[PanoVine: Whole-Body Visuomotor Control for Soft Growing Vine Robot](https://arxiv.org/abs/2606.22923)** (2026) — First autonomous vine (soft growing) robot: 19 cameras along its body feed an end-to-end visuomotor policy learned from demos, which steers through branches, up slopes and into confined spaces. · [project](https://panovine-bot.github.io)
+- **[SuperSuit: An Isomorphic Bimodal Interface for Scalable Mobile Manipulation](https://arxiv.org/abs/2603.06280)** (2026) — One wearable both teleoperates a wheeled bimanual robot and records robot-free demos; arms are mechanically aligned, so no IK or retargeting. With a 10-episode robot-grounded seed, 100 robot-free episodes suffice.
 - **[Transformer Transformer: A Unified Model for Motion-Conditioned Robot Co-design](https://arxiv.org/abs/2607.25798)** (2026) — Diffusion transformer over a shared tokenization of robot bodies, states and actions that generates robot designs to track target motions. A fabricated optimised ALOHA design cut tracking error by over 70%. · [project](https://transformer-transformer.github.io)
 - **[Universal Manipulation Exoskeleton: Learning Compliant Whole-body Policies with Real-time Torque Feedback](https://arxiv.org/abs/2606.14218)** (2026) — Low-cost upper-limb exoskeleton that records whole-arm poses and joint torques with real-time haptic torque feedback; retargets to OpenArm, Franka and xArm for learning compliant whole-body policies. · [project](https://ume-exo.github.io)
-- **[MABEL: An Open Anthropomorphic Mobile Bimanual Platform for Teleoperation and Learning](https://arxiv.org/abs/2611.04083)** (2026) — An open-source 56-DOF mobile bimanual robot with 7-DOF arms and 17-DOF hands for about US$8.1k in parts, with Apple Vision Pro teleoperation and a demonstrated imitation learning pipeline. · [project](https://robotmabel.github.io/website/)
 
-**[All 44 entries →](lists/hardware.md)**
+**[All 45 entries →](lists/hardware.md)**
 
 <!-- radar:end -->
 
