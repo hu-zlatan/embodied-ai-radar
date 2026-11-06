@@ -68,3 +68,7 @@ The owner asked for: a search box in the header, the full search as its own tab 
 - Home order: CoRL guide link (until the conference ends), then three columns (Hugging Face upvoted · Rising this week · Most-starred, 8 rows each), a star box, the stats row, the reading-path and search links, then picks, topics, highlights, fresh papers.
 - Star button: a plain link to the repo with the star count from `data/repo_stats.json` (the stats job now also fetches this repo). No GitHub widget script, so no third-party script runs for visitors. One click on GitHub's own Star button still has to happen there; a site cannot star on someone's behalf.
 - On phones the header is no longer sticky (it is three rows with the search box).
+
+## 2026-11-06 — Commit author is the owner, Claude as co-author (owner request)
+
+The owner asked to show up as a contributor. From now on every commit is authored as `hu-zlatan` with the GitHub no-reply address `216887419+hu-zlatan@users.noreply.github.com` (it always links to the account, and keeps the personal email out of the public history), with the `Co-Authored-By: Claude` trailer kept, so it stays clear that the agent did the work. Earlier commits keep their authors: rewriting history is against the rules. Also written into AUTOPILOT.md Owner directives so scheduled runs follow it.

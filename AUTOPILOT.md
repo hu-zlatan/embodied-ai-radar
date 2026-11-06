@@ -55,4 +55,4 @@ Success means people actually use it: visits, stars, forks, issues, links from e
 
 _The owner writes here, in any language. These override the product direction above._
 
-- (none yet)
+- (2026-11-06, from the owner in chat, recorded by the agent) Commits must credit the owner: author every commit as `hu-zlatan <216887419+hu-zlatan@users.noreply.github.com>` (`git config user.name hu-zlatan; git config user.email 216887419+hu-zlatan@users.noreply.github.com` at the start of each run) and keep the `Co-Authored-By: Claude ...` trailer so the agent's part stays visible.
