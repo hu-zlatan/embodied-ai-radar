@@ -604,3 +604,5 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Verify #171 passed the 5 picks; #172 was cancelled in the arxiv-api group by the facts dispatch (verify checks all entries, so #173 covers batch 10).
 - CoRL batch 11 (30): ELASTIC … SFIHILO (real-time/async VLAs, steering, safe control). Titles diffed against facts.json: all match. Validate 0 errors, 1,330 pages, 0 broken links. Program guide 427; curated 1,203.
 - Verify #173 passed batches 10–11. CoRL batch 12 (30): ReTVL … AutoDex (policy evaluation, mixed-quality data, dexterity, touch); titles now taken straight from facts.json. Validate 0 errors, 1,360 pages, 0 broken links. Program guide 457; curated 1,233.
+- facts run #19 was cancelled by a scheduled intake joining the arxiv-api group (pending → cancelled); re-dispatched. Deploys #875/#876 failed with 'Deployment failed, try again later' (GitHub side; the live site keeps the last good deploy).
+- CoRL batch 13 (30): MotionDisco … VisionSIM (humanoid whole-body control and loco-manipulation, aerial robots, world-action models). Validate 0 errors, 1,390 pages, 0 broken links. Program guide 487; curated 1,263.
