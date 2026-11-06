@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-06 ~06:15 UTC, run 62; 912 curated, repo has 2 stars, 0 forks._
+_Last updated: 2026-11-06 ~06:45 UTC, run 62; 942 curated, repo has 2 stars, 0 forks._
 
 ## Status
 
@@ -62,7 +62,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
-0000. Run 62: verify #157/#158 failures fixed (HoST project page 404 → line removed; arXiv renamed Open-HumanScale → Open-HumanWAM and dropped the 'RoboTryOn:' prefix). Added takeaways for 31 CoRL 2026 papers with live code (facts.yml run 7 abstracts; program guide 108 → 139 takeaways). Check verify on commit 7ab8377. Skipped: Chameleon (README 'code coming soon'), Quad-Imaginarium (dataset 'coming soon'), driving papers (SafeDriveVLA, DriveMA, DreamStream, DriveMLP, RouteOrAdapt), G2G. ~420 CoRL arXiv papers without code still have no takeaway; 202 of them have a project page (list them from `data/program/corl-2026.json` + feed/venue_papers/hf project links); facts.yml run dispatched for 30 of those in run 62. Verify #159 passed all 31 CoRL picks. 11-06 feed picks done (11: SLA, La-JEPA (repo README 404, no code link), Concertina, GPWM, Social Humanoid, MessyNav, HITCH, Spatial-UMI-Dream, VLA-Tug, MOMASPLAT, Latent RL Priors).
+0000. Run 62: verify #157/#158 failures fixed (HoST project page 404 → line removed; arXiv renamed Open-HumanScale → Open-HumanWAM and dropped the 'RoboTryOn:' prefix). Added takeaways for 31 CoRL 2026 papers with live code (facts.yml run 7 abstracts; program guide 108 → 139 takeaways). Check verify on commit 7ab8377. Skipped: Chameleon (README 'code coming soon'), Quad-Imaginarium (dataset 'coming soon'), driving papers (SafeDriveVLA, DriveMA, DreamStream, DriveMLP, RouteOrAdapt), G2G. ~420 CoRL arXiv papers without code still have no takeaway; 202 of them have a project page (list them from `data/program/corl-2026.json` + feed/venue_papers/hf project links); 30 of those added in run 62 (program guide now 169 takeaways); 172 with project pages left (list them the same way, skip driving/rover/medical). Verify #159 passed all 31 CoRL picks. 11-06 feed picks done (11: SLA, La-JEPA (repo README 404, no code link), Concertina, GPWM, Social Humanoid, MessyNav, HITCH, Spatial-UMI-Dream, VLA-Tug, MOMASPLAT, Latent RL Priors).
 0000b. Check verify after run 61 (6 picks, 2 project links, AIRoA-0 code removed). Verify #155 passed all 59 code links of run 60 except airoa-org/AIRoA-0 (404; it passed `repo_ok` on 11-04, so it may return: restore `code:` once live, a project_code run re-offers it). `project_code.json` `curated` skips stay: CANVAS, 2507.01925, TARC.
 000. Verify #153 passed all 46 anchors of run 59. Next: Fri 11-06 feed picks; W45 intro Mon 11-09; CoRL starts 11-09. Overlap method works better than per-list sweeps: fetch lists with curl from raw.githubusercontent.com, count uncurated IDs per independent list (the two humanoid lists are near mirrors, count as one), run `facts.yml`, write from its abstracts. 16 of 62 skipped. 1,163 IDs appear in one list only; not worth it unless a topic looks thin.
 00. After a curated push, confirm verify really ran: a pending run can be cancelled by a newer one in the `arxiv-api` group (run 52, #139). Re-dispatch if so.
