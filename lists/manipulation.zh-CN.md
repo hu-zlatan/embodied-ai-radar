@@ -2,7 +2,7 @@
 
 _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 
-共 119 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
+共 122 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/manipulation.html) · [English](manipulation.md)
 
@@ -31,6 +31,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[Beyond the End-Effector: Learning Whole-Arm Contact Manipulation from Human Demonstrations](https://arxiv.org/abs/2610.17802)** (2026) — WACL 从人类示范中学习用整条手臂推、抵物体，自主选择手臂上的接触位置，同时满足末端执行器的约束。 · [项目页](https://wacl-robot.github.io)
 - **[BeyondContact: A Reinforcement Learning Framework for Airflow-Based Non-Contact Manipulation](https://arxiv.org/abs/2611.03059)** (2026) — 为 Isaac Lab 增加基于实测模型的气流扩展，并在夹爪旁加装轻型鼓风机。报告零调试真机部署：推吹混合策略 20 次成功率 80%，纯气流转向平均误差 2.6°。 · [代码](https://github.com/iit-DLSLab/BeyondContact)
 - **[BiDexGrasp: Coordinated Bimanual Dexterous Grasps across Object Geometries and Sizes](https://arxiv.org/abs/2604.06589)** (2026) — CoRL 2026 Spotlight。大规模双手灵巧抓取数据集（由两阶段合成流程生成），并配套基于学习的抓取生成框架。 · [项目页](https://frenkielm.github.io/BiDexGrasp.github.io/)
+- **[Bimanual Robot Manipulation via Multi-Agent In-Context Learning](https://arxiv.org/abs/2604.20348)** (2026) — 把双臂视为“主-从”两个智能体，让纯文本 LLM 无需微调即可通过上下文学习完成少样本双臂操作。报告在 TWIN 的 13 个任务上平均成功率 70.5%。 · [项目页](https://alesspalma.github.io/bicicle)
 - **[Blind Precise Assembly: Proprioceptive Sim-to-Real Peg-in-Hole for Diverse Parts](https://arxiv.org/abs/2610.23849)** (2026) — 探究仅靠关节读数能否完成毫米级精密插装：训练不用相机、力或触觉输入的 sim-to-real 策略。
 - **[CARD: Contact-Anchored Retargeting for Dexterous Manipulation](https://arxiv.org/abs/2610.36539)** (2026) — 把人手示教（视频、动捕、触觉手套）重定向到灵巧手时显式保留接触力目标而不只是运动学，并用触觉跟踪控制器回放；报告 43–78% 的接触帧保持接触，纯运动学方法不到 10%。 · [项目页](https://card-retargeting.github.io/)
 - **[COWBOY: A Scalable Sim-to-Real Framework for Learning Contextual Whole-Body Manipulation](https://arxiv.org/abs/2610.28948)** (2026) — 在仿真中学习移动灵巧抓取：全身控制器负责底盘-手臂协同到达与主动视觉，局部强化学习专家负责物体交互，二者蒸馏成一个基于点云的视觉策略；报告可零样本迁移到真实世界的数百个物体与场景。 · [项目页](https://cowboy-manip.com)
@@ -53,7 +54,9 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[ForceLDM: A Force-aware Latent Dynamics Model for Contact-Rich Manipulation](https://arxiv.org/abs/2611.03294)** (2026) — 教师网络看到未来的力/力矩与光流，再把动力学特征蒸馏给只用当前观测的学生网络，使策略在部署时能预判接触。在五个真实接触丰富任务上测试。 · [代码](https://github.com/tpy001/ForceLDM-code) · [项目页](https://tpy001.github.io/ForceLDM/)
 - **[From VLM Planners to Robotic Agents: Self-Evolving Harnesses for History-Dependent Manipulation](https://arxiv.org/abs/2610.29560)** (2026) — SERA 把高层 VLM 规划器做成带可编辑执行框架的智能体，为固定的底层 VLA 记录任务进度与执行反馈，并利用环境回放自动改进框架；报告在 RoboMME 上总体成功率 51.4%，未自我演化时为 44.4%。 · [代码](https://github.com/StevenKKXS/SERA) · [项目页](https://stevenkkxs.github.io/sera-webpage/)
 - **[GRASP: Gradient-Guided Sampling for Contact-Rich Physics-Based Motion Retargeting](https://arxiv.org/abs/2611.05754)** (2026) — 无需可微仿真器即可在接触动力学下重定向人类示教：从存档的采样轨迹中恢复梯度。报告在 1352 条双手 OakInk2 示教上成功率 92.8%，且不用任务专属接触奖励。 · [代码](https://github.com/ComputationalRobotics/GRASP_code) · [项目页](https://computationalrobotics.seas.harvard.edu/GRASP/)
+- **[GeoProp: Grounding Robot State in Vision for Generalist Manipulation](https://arxiv.org/abs/2607.07101)** (2026) — 即插即用适配器：把机器人状态投影到图像平面，采样局部视觉特征构成“落地”的状态 token，并用 FiLM 调制对应特征。报告仿真中 Diffusion Policy 提升 8.7%，真机平均提升 10.6%。 · [项目页](https://alibaba-damo-academy.github.io/GeoProp/)
 - **[HiFun: a Hierarchical Framework for Efficient Functional Dexterous Manipulation Learning](https://arxiv.org/abs/2610.19518)** (2026) — 面向功能性灵巧操作的分层真机强化学习：手部技能负责精确接触，臂-手协调策略负责手臂运动与技能触发。报告在六个任务上一小时在线训练即达 98.3% 平均成功率。 · [项目页](https://hly-123.github.io/HiFun/)
+- **[How to Peel with a Knife: Aligning Fine-Grained Manipulation with Human Preference](https://arxiv.org/abs/2603.03280)** (2026) — 以用刀削皮为例研究“质量难以量化”的精细操作：先做力感知模仿学习，再用学习到的奖励模型按人类偏好微调。报告在黄瓜、苹果、土豆上成功率 100%。 · [项目页](https://toruowo.github.io/peel)
 - **[KPGrasp: Scalable Keypoint Flow Matching for Dexterous Grasp Generation](https://arxiv.org/abs/2606.09314)** (2026) — 以 3D 手部关键点表示灵巧抓取，用普通 Transformer 流模型生成，无需接触损失或后处理优化；报告 Dexonomy 成功率 76.3%，每次抓取 0.032 秒。 · [代码](https://github.com/Yuansen-Huang/KPGrasp) · [项目页](https://yuansen-huang.github.io/KPGrasp-page/)
 - **[Knowing Where to Look: Interactive Object Search via Spatial-Semantic Fusion](https://arxiv.org/abs/2611.00499)** (2026) — 把逐物体的 VLM 合理性评分与几何占据证据融合为统一的三维体素信念，决定下一步看哪、去哪、开哪个柜子；在双臂移动人形上优于纯几何搜索和 LLM 规划。 · [项目页](https://skymanaditya1.github.io/objsearch-website/)
 - **[Latent RL Priors for Data-Efficient Dexterous Manipulation](https://arxiv.org/abs/2611.08458)** (2026) — 把仿真中强化学习的经验蒸馏进冻结的流匹配动作解码器，之后只需用少量示教学习从图像到其潜变量的视觉接口。报告用少 5–10 倍的示教超过微调后的 π0.5 与 GR00T N1.7。 · [项目页](https://yixiaowang7.github.io/latent-rl-prior-page/)

@@ -1929,3 +1929,93 @@
   tags: [3d, scene-flow, geometry, calvin, real]
   takeaway_en: "VLA that lifts VLM features into 3D scene tokens, predicts how scene points will move, and conditions a 3D flow action denoiser on that motion. Reports SOTA on CALVIN without robot-action pretraining."
   takeaway_zh: "把 VLM 特征提升为 3D 场景 token，预测场景点将如何运动，并以此为条件驱动 3D 流匹配动作去噪器。报告在无机器人动作预训练下 CALVIN 达到最优。"
+- title: "Long-Horizon Manipulation via Trace-Conditioned VLA Planning"
+  type: paper
+  arxiv: "2604.21924"
+  year: 2026
+  venue: CoRL 2026
+  project: https://www.liuisabella.com/LoHoManip
+  added: 2026-11-06
+  tags: [long-horizon, planning, visual-trace, franka, real]
+  takeaway_en: "A task-manager VLM re-predicts the remaining subtasks and a 2D keypoint trace at every step; the VLA executor just follows the trace. Failed steps stay in the plan, so replanning comes for free. Sim + real Franka."
+  takeaway_zh: "由任务管理 VLM 每一步重新预测剩余子任务和一条 2D 关键点轨迹，VLA 执行器只需沿轨迹执行。失败的步骤会留在计划里，因此无需额外逻辑即可自动重规划。仿真与真实 Franka 实验。"
+- title: "Artificial Foveated Perception for Mitigating Shortcut Learning in Robotic Foundation Models"
+  type: paper
+  arxiv: "2607.10655"
+  year: 2026
+  venue: CoRL 2026
+  project: https://apollo-lab-yale.github.io/26-CoRL-AFP-website/
+  added: 2026-11-06
+  tags: [shortcut-learning, attention, masks, fine-tuning, real]
+  takeaway_en: "Fights shortcut learning when fine-tuning VLAs: predicted masks of task-relevant objects and the robot serve as an auxiliary grounding loss; nothing changes at inference. Tested on four foundation models and π0.5."
+  takeaway_zh: "针对 VLA 微调中的捷径学习：预测任务相关物体与机器人的掩码，作为辅助对齐损失引导策略关注正确区域，推理时不增加任何开销。在四个基础模型和真机 π0.5 上验证。"
+- title: "Learning to Assist: Collaborative VLAs for Implicit Human-Robot Collaboration"
+  type: paper
+  arxiv: "2606.12475"
+  year: 2026
+  venue: CoRL 2026
+  project: https://learning-to-assist.github.io/
+  added: 2026-11-06
+  tags: [human-robot-collaboration, action-chunking, steering, user-study, real]
+  takeaway_en: "Shows VLAs can do implicit human-robot collaboration, but action chunks that cross task transitions make the robot help too early; an inference-time steering fix is tested in a 16-person assembly study."
+  takeaway_zh: "表明 VLA 可用于隐式人机协作，但跨越任务切换点的动作块会让机器人过早提供帮助；提出推理时引导方法缓解，并在 16 人装配用户研究中验证。"
+- title: "X-Tokenizer: A Multimodal Action Tokenizer for Vision-Language-Action Pretraining"
+  type: paper
+  arxiv: "2606.14752"
+  year: 2026
+  venue: CoRL 2026
+  project: https://x-square-robot.github.io/X-Tokenizer_projectPage/
+  added: 2026-11-06
+  tags: [action-tokenizer, pretraining, quantization, robotwin, real]
+  takeaway_en: "Action tokenizer whose first quantization level is trained as a semantic 'action language' while deeper levels keep detail; pretrained on 2.4M trajectories. Reports gains over FAST on grounding and long-horizon tasks."
+  takeaway_zh: "动作 tokenizer：残差量化的第一层被训练成表达粗粒度运动意图的语义“动作语言”，更深层保留细节；在 240 万条轨迹上预训练。报告在多模态对齐和长程任务上优于 FAST。"
+- title: "See Less, Specify More: Visual Evidence Budgets for Generalizable VLAs"
+  type: paper
+  arxiv: "2606.02735"
+  year: 2026
+  venue: CoRL 2026
+  project: https://s2.airoa.io
+  added: 2026-11-06
+  tags: [generalization, language-relabeling, visual-budget, hsr, real]
+  takeaway_en: "Trains the VLA executor with refined subtask language plus an explicit budget on how much visual evidence it may use. Reports mean subtask success up from 54.2% to 79.0% over π0.5 on eight real tasks."
+  takeaway_zh: "用更细的子任务语言重标注轨迹，并对执行器可使用的视觉证据施加显式预算来训练 VLA。报告在八个真机任务上平均子任务成功率比 π0.5 从 54.2% 提升到 79.0%。"
+- title: "HARP-VLA: Human-Robot Aligned Representation Learning for Vision-Language-Action Model"
+  type: paper
+  arxiv: "2605.31234"
+  year: 2026
+  venue: CoRL 2026
+  project: https://puzhenyuan.github.io/HARP-VLA-website/
+  added: 2026-11-06
+  tags: [human-video, latent-actions, representation-alignment, calvin, real]
+  takeaway_en: "Aligns robot visual features with human ones using paired human-robot demos, then pretrains a latent-action VLA on human and robot videos. Reports 4.481 average length on CALVIN ABC→D."
+  takeaway_zh: "利用成对的人-机演示把机器人视觉表征与人类表征对齐，再用人类和机器人视频预训练潜在动作 VLA。报告 CALVIN ABC→D 平均长度 4.481。"
+- title: "CHORUS: Decentralized Multi-Embodiment Collaboration with One VLA Policy"
+  type: paper
+  arxiv: "2606.12352"
+  year: 2026
+  venue: CoRL 2026
+  project: https://chorus-model.github.io
+  added: 2026-11-06
+  tags: [multi-robot, decentralized, collaboration, mobile, real]
+  takeaway_en: "One VLA backbone runs as an independent copy on each robot, conditioned on its own view and a robot ID prompt, for decentralized team tasks. Reports a 64-point gain over from-scratch decentralized models."
+  takeaway_zh: "同一个 VLA 主干在每台机器人上独立运行，只依赖本机观测和机器人身份提示，实现去中心化多机协作。报告比从零训练的去中心化模型提升 64 个百分点。"
+- title: "TBD-VLA: Temporal Block Diffusion Vision Language Action Model"
+  type: paper
+  arxiv: "2606.07895"
+  year: 2026
+  venue: CoRL 2026
+  project: https://tbd-vla.github.io/
+  added: 2026-11-06
+  tags: [discrete-diffusion, action-tokens, fast-inference, real-time-chunking, real]
+  takeaway_en: "Discrete VLA that generates actions autoregressively across temporal blocks and with masked diffusion inside each block, gaining speed and supporting real-time chunking via temporal in-painting."
+  takeaway_zh: "离散 token VLA：块与块之间自回归、块内做掩码离散扩散，兼顾时间连贯性与推理速度，并可通过时间补全支持实时分块执行。"
+- title: "OmniGuide: Universal Spatial Guidance Fields for Enhancing Generalist Robot Policies"
+  type: paper
+  arxiv: "2603.10052"
+  year: 2026
+  venue: CoRL 2026
+  project: https://omniguide.github.io/
+  added: 2026-11-06
+  tags: [guidance, energy-functions, 3d, pi0.5, real]
+  takeaway_en: "Turns guidance from 3D foundation models, VLMs or human pose into differentiable 3D attractor/repeller energies that steer VLA action sampling. Reports gains for π0.5 and GR00T N1.6 in sim and real."
+  takeaway_zh: "把 3D 基础模型、VLM、人体姿态等指导信号统一表示为 3D 空间中可微的吸引/排斥能量函数，引导 VLA 动作采样。报告提升 π0.5 和 GR00T N1.6 在仿真与真机上的表现。"

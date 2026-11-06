@@ -712,3 +712,73 @@
   tags: [reward-shaping, rl-finetuning, foundation-models, hindsight]
   takeaway_en: "Training-free reward editing: compares successful and failed rollouts in hindsight to penalize trap states that foundation-model rewards rate highly. Reports at least 3x the base policy's performance."
   takeaway_zh: "免训练的奖励修正：事后对比成功与失败轨迹，惩罚被基础模型奖励高估、最终却导致失败的“陷阱状态”。报告性能至少是基础策略的 3 倍。"
+- title: "$R^3$: Training Robots to Reason in Natural Language via Reinforcement Learning"
+  type: paper
+  arxiv: "2608.26053"
+  year: 2026
+  venue: CoRL 2026
+  project: https://robotic-reasoner.github.io/
+  added: 2026-11-06
+  tags: [reasoning, vlm, rl-finetuning, language-table, sim]
+  takeaway_en: "Post-training recipe that turns an off-the-shelf VLM into a free-form language reasoner guiding a low-level policy: mid-train on expert reasoning traces, then rubric-based RL from offline action data."
+  takeaway_zh: "把现成 VLM 训练成用自由语言推理来指导底层策略的“机器人推理器”：先用专家推理轨迹做中训练，再用离线动作数据做基于评分规则的单步强化学习。"
+- title: "TRACE: Trajectory-Routed Causal Memory for Delayed-Evidence Visuomotor Imitation"
+  type: paper
+  arxiv: "2606.14551"
+  year: 2026
+  venue: CoRL 2026
+  project: https://jeong-zju.github.io/trace
+  added: 2026-11-06
+  tags: [memory, imitation-learning, path-signatures, long-horizon, real]
+  takeaway_en: "Bounded latent memory for imitation policies on tasks where a cue disappears before the decision; it is keyed by path signatures of the robot's own trajectory and attaches via adapters. Real-robot branching tasks."
+  takeaway_zh: "为“线索在决策前已消失”的任务设计的模仿策略记忆：固定大小的潜在记忆以机器人自身轨迹的路径签名为键读写，通过适配器接入现有策略。在真机分支任务上验证。"
+- title: "Unified Motion-Action Modeling for Heterogeneous Robot Learning"
+  type: paper
+  arxiv: "2606.16917"
+  year: 2026
+  venue: CoRL 2026
+  project: https://uma-manipulation.github.io/
+  added: 2026-11-06
+  tags: [object-motion, masked-generative, human-video, cross-embodiment, real]
+  takeaway_en: "Uses 3D object motion as a shared interface: object motion and robot actions are modelled jointly with masking, so one pretrained model serves as policy, dynamics model and few-shot adapter. Robot, human and sim data."
+  takeaway_zh: "以 3D 物体运动轨迹作为统一接口，用掩码生成目标联合建模物体运动与机器人动作，同一套预训练参数可作为策略、动力学模型或少样本适配器。混合机器人、人类视频与仿真数据预训练。"
+- title: "Learning While Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies"
+  type: paper
+  arxiv: "2605.00416"
+  year: 2026
+  venue: CoRL 2026
+  project: https://learning-while-deploying.github.io/
+  added: 2026-11-06
+  tags: [fleet-learning, offline-to-online, vla, bimanual, real]
+  takeaway_en: "Fleet-scale offline-to-online RL that keeps post-training a generalist VLA from autonomous rollouts and human interventions. On 16 dual-arm robots and eight tasks it reports 95% average success."
+  takeaway_zh: "车队规模的离线到在线强化学习：利用自主执行与人工干预数据持续后训练通用 VLA。在 16 台双臂机器人、八个任务上报告平均成功率 95%。"
+- title: "Memory Anchors for Continual Robot Learning"
+  type: paper
+  arxiv: "2608.26545"
+  year: 2026
+  venue: CoRL 2026
+  project: https://robot-adaptation.github.io/MemoryAnchors
+  added: 2026-11-06
+  tags: [continual-learning, replay, forgetting, libero, real]
+  takeaway_en: "Finds that a few replay samples, where new and old observations look alike but need different actions, prevent most forgetting. Dropping just 10% of them raises forgetting more than 4.5x on LIBERO."
+  takeaway_zh: "发现回放缓冲中少数“观测相似但所需动作冲突”的样本（记忆锚点）承担了防遗忘的主要作用：仅剔除其中 10% 就会让 LIBERO 上的遗忘增加 4.5 倍以上。"
+- title: "UniIntervene: Agentic Intervention for Efficient Real-World Reinforcement Learning"
+  type: paper
+  arxiv: "2606.12372"
+  year: 2026
+  venue: CoRL 2026
+  project: https://denghaoyuan123.github.io/UniIntervene-project/
+  added: 2026-11-06
+  tags: [human-in-the-loop, real-world-rl, value-estimation, recovery, real]
+  takeaway_en: "Agentic intervention model for human-in-the-loop RL: detects stalled exploration from value trends and steers the policy back to high-value states. Reports 57% fewer human interventions."
+  takeaway_zh: "用于人在回路强化学习的智能干预模型：根据价值变化趋势发现无效探索，并自动把策略拉回高价值状态。报告人工干预减少 57%，成功率提升 8.6%。"
+- title: "Robo-ValueRL: Reliable Value Estimation for Offline-to-Online Reinforcement Learning"
+  type: paper
+  arxiv: "2607.09866"
+  year: 2026
+  venue: CoRL 2026
+  project: https://gewu-lab.github.io/Robo-ValueRL/
+  added: 2026-11-06
+  tags: [offline-to-online, value-function, precision, insertion, real]
+  takeaway_en: "Studies how value-function reliability drives offline-to-online RL for manipulation, with a history-conditioned value estimator. Reports 86% on millimeter-level chip insertion."
+  takeaway_zh: "系统研究价值函数可靠性如何影响操作任务的离线到在线强化学习，提出历史条件价值估计器。报告毫米级芯片插装成功率 86%。"

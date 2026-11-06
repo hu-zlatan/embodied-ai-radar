@@ -1215,3 +1215,33 @@
   tags: [object-centric, relational, se3, data-efficiency, rlbench]
   takeaway_en: "Represents skills as short interaction segments of relative SE(3) motion between task objects, independent of scene layout and robot. Needs much less data than prior policies on RLBench and COLOSSEUM."
   takeaway_zh: "把技能表示为任务物体之间相对 SE(3) 运动的短交互片段，与场景布局和机器人无关。在 RLBench 与 COLOSSEUM 上所需数据明显少于以往方法。"
+- title: "GeoProp: Grounding Robot State in Vision for Generalist Manipulation"
+  type: paper
+  arxiv: "2607.07101"
+  year: 2026
+  venue: CoRL 2026
+  project: https://alibaba-damo-academy.github.io/GeoProp/
+  added: 2026-11-06
+  tags: [proprioception, adapter, diffusion-policy, robotwin, real]
+  takeaway_en: "Plug-in adapter that projects the robot state onto the image to build a grounded state token and FiLM-modulate nearby features. Reports +8.7% for Diffusion Policy in sim and 10.6% average real-world gain."
+  takeaway_zh: "即插即用适配器：把机器人状态投影到图像平面，采样局部视觉特征构成“落地”的状态 token，并用 FiLM 调制对应特征。报告仿真中 Diffusion Policy 提升 8.7%，真机平均提升 10.6%。"
+- title: "How to Peel with a Knife: Aligning Fine-Grained Manipulation with Human Preference"
+  type: paper
+  arxiv: "2603.03280"
+  year: 2026
+  venue: CoRL 2026
+  project: https://toruowo.github.io/peel
+  added: 2026-11-06
+  tags: [tool-use, force, preference-learning, food, real]
+  takeaway_en: "Knife peeling as a test case for tasks with subjective quality: force-aware imitation first, then preference-based fine-tuning with a learned reward. Reports 100% success on cucumbers, apples and potatoes."
+  takeaway_zh: "以用刀削皮为例研究“质量难以量化”的精细操作：先做力感知模仿学习，再用学习到的奖励模型按人类偏好微调。报告在黄瓜、苹果、土豆上成功率 100%。"
+- title: "Bimanual Robot Manipulation via Multi-Agent In-Context Learning"
+  type: paper
+  arxiv: "2604.20348"
+  year: 2026
+  venue: CoRL 2026
+  project: https://alesspalma.github.io/bicicle
+  added: 2026-11-06
+  tags: [bimanual, in-context-learning, llm, training-free, real]
+  takeaway_en: "Lets text-only LLMs do few-shot bimanual manipulation without fine-tuning by treating the arms as leader and follower agents. Reports 70.5% average success on 13 TWIN tasks."
+  takeaway_zh: "把双臂视为“主-从”两个智能体，让纯文本 LLM 无需微调即可通过上下文学习完成少样本双臂操作。报告在 TWIN 的 13 个任务上平均成功率 70.5%。"

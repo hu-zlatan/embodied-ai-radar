@@ -2,7 +2,7 @@
 
 _触觉传感器、触觉表征与接触丰富的控制。_
 
-共 52 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
+共 53 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/tactile.html) · [English](tactile.md)
 
@@ -18,6 +18,7 @@ _触觉传感器、触觉表征与接触丰富的控制。_
 - **[FACTR 2: Learning External Force Sensing for Commodity Robot Arms Improves Policy Learning](https://arxiv.org/abs/2606.12406)** (2026) — CoRL 2026 Oral。NEXT 无需力传感器即可估计外部关节力矩，用 10 分钟自由运动数据训练 1 分钟，为低成本机械臂带来力反馈遥操作与更好的策略学习。 · [代码](https://github.com/philiphan0109/factr2_next) · [项目页](https://jasonjzliu.com/factr2)
 - **[FingerEye: Learning Dexterous Manipulation with Continuous Vision-Tactile Sensing](https://arxiv.org/abs/2604.20689)** (2026) — CoRL 2026 Spotlight。指尖传感将双目 RGB 相机与柔顺接触面结合，从接触前接近到接触后控制全程提供反馈。 · [代码](https://github.com/ariszxxu/FingerEye) · [项目页](https://nus-lins-lab.github.io/FingerEyeWeb/)
 - **[GelSlim 5.0: Unifying Vision and Touch with a Single Fingertip Camera](https://arxiv.org/abs/2610.31334)** (2026) — 指尖传感器只用一个摄像头，通过切换照明交替获取“透过膜的视觉图像”和触觉图像，视觉与触觉共享同一视角、无需相机外参标定；再用 Transformer（VisTacFusion）融合两者。
+- **[Modular Sensory Stream for Integrating Physical Feedback in Vision-Language-Action Models](https://arxiv.org/abs/2604.23272)** (2026) — 为预训练 VLA 增加独立的触觉、力和力矩信号流，通过跨模态联合注意力融合，配合分阶段训练和预测未来物理信号的辅助任务。真机实验验证。 · [项目页](https://jiminlx.github.io/MoSS)
 - **[OpenTac: An Open Ecosystem for Customizable, Scalable, and Transferable 3D Tactile Sensing](https://arxiv.org/abs/2610.31661)** (2026) — 开源电阻式触觉皮肤：结构化覆层把切向力转成空间压力差异，相邻触点即可解码剪切与法向力；附带可定制皮肤的设计工具，硬件和软件均开源。 · [代码](https://github.com/opentac/opentac) · [项目页](https://opentac.github.io)
 - **[PACE: Temporal-Role Tactile Conditioning for Chunk-Based Insertion Policies](https://arxiv.org/abs/2610.16308)** (2026) — CoRL 2026 Oral。不再用单一融合路径，而是把同一触觉流拆成三种时序角色：持续接触状态、突发接触事件与未来接触后果，用于分块式插接策略。 · [项目页](https://pace-insertion.github.io/)
 - **[PanoTac: A Dense Three-Axis Tactile Sensor for Robust Touch-Centric Manipulation](https://arxiv.org/abs/2611.03520)** (2026) — 每个成本低于 50 美元的柔顺指尖，以 60 Hz 输出 12×32 的法向与剪切稠密响应。在舀取、倾倒和试管任务上，视触觉策略平均比纯视觉基线高 46.7 个百分点。 · [项目页](https://panotac.github.io)
