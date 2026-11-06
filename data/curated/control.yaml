@@ -375,3 +375,13 @@
   tags: [policy-architecture, polynomial-features, humanoid, contact-rich, real]
   takeaway_en: "Replaces a policy MLP's first layer with learned multiplicative (bilinear) features, plug-and-play for RL and imitation. Reports humanoid survival up from 51.0% to 92.5%, holding under friction and payload shifts."
   takeaway_zh: "把策略 MLP 的第一层替换为可学习的乘性（双线性）特征，即插即用于强化学习与模仿学习。报告人形机器人存活率从 51.0% 提升到 92.5%，在摩擦、负载变化下依然有效。"
+- title: "TDC: Sim-to-Real Transferable Directional Compliance for Contact-Rich Manipulation"
+  type: paper
+  arxiv: "2602.14174"
+  year: 2026
+  venue: CoRL 2026
+  project: https://yifei-y.github.io/project-pages/TDC/
+  added: 2026-11-06
+  tags: [compliance, admittance-control, sim-to-real, vla, real]
+  takeaway_en: "Splits force regulation into a direction part learned in sim (task frame and control-mode outputs of a VLA-based policy) and a magnitude part set by hand in an admittance controller. Sim data only; four real tasks."
+  takeaway_zh: "把力调节拆成两部分：方向分量（任务坐标系与控制模式，由基于 VLA 的策略在仿真数据上学习）和幅值分量（在导纳控制器中人工设定）。只用仿真数据，在四个真机任务上验证。"

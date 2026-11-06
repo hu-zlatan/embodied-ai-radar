@@ -2,7 +2,7 @@
 
 _触觉传感器、触觉表征与接触丰富的控制。_
 
-共 63 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
+共 69 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/tactile.html) · [English](tactile.md)
 
@@ -19,17 +19,21 @@ _触觉传感器、触觉表征与接触丰富的控制。_
 - **[FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation](https://arxiv.org/abs/2607.18231)** (2026) — 用预训练 VAE 把力信号历史压缩成记忆 token 输入 VLA，解决按指定次数按按钮、擦盘子等依赖记忆的接触任务。报告三个记忆型任务成功率超过 80%。 · [项目页](https://qft-333.github.io/FM-VLA-Page/)
 - **[FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation](https://arxiv.org/abs/2606.13102)** (2026) — 触觉基础策略：在 26 个数据源、21 种传感器约 3000 小时数据上预训练，把图像型、阵列型与状态型触觉信号映射到统一 token。报告已见配置提升 17.2%，两种未见传感器提升 31%。 · [项目页](https://ftp1-policy.github.io)
 - **[FingerEye: Learning Dexterous Manipulation with Continuous Vision-Tactile Sensing](https://arxiv.org/abs/2604.20689)** (2026) — CoRL 2026 Spotlight。指尖传感将双目 RGB 相机与柔顺接触面结合，从接触前接近到接触后控制全程提供反馈。 · [代码](https://github.com/ariszxxu/FingerEye) · [项目页](https://nus-lins-lab.github.io/FingerEyeWeb/)
+- **[ForceBand: Learning Forceful Manipulation with sEMG](https://arxiv.org/abs/2606.26093)** (2026) — 低成本腕戴式肌电（sEMG）设备，经短暂校准即可预测每根手指的力，把视频演示变成带力标注的演示。报告力预测误差比视觉方法低 50% 以上，力敏感任务成功率 87%。 · [项目页](https://forceband-emg.github.io)
 - **[GelSlim 5.0: Unifying Vision and Touch with a Single Fingertip Camera](https://arxiv.org/abs/2610.31334)** (2026) — 指尖传感器只用一个摄像头，通过切换照明交替获取“透过膜的视觉图像”和触觉图像，视觉与触觉共享同一视角、无需相机外参标定；再用 Transformer（VisTacFusion）融合两者。
 - **[Heterogeneous Tactile Transformer](https://arxiv.org/abs/2606.29948)** (2026) — 跨传感器的统一触觉表征：各传感器独立编码器加共享 Transformer 主干，在新的 160 万帧四传感器配对数据集上预训练，可迁移到新任务和未见传感器。 · [项目页](https://jxbi1010.github.io/htt-gh-page/)
 - **[Inference-time Policy Steering via Vision and Touch](https://arxiv.org/abs/2606.14981)** (2026) — 视觉+触觉的推理时策略引导：视觉采样验证决定执行何种行为，触觉引导的扩散编辑修正局部接触，并由视触觉潜在世界模型打分。报告比基础策略提升 51%。 · [项目页](https://yilin-wu98.github.io/vital_website)
+- **[Learning with Object-centric Representations of Tactile Interactive Perception for Robot Manipulation](https://arxiv.org/abs/2609.33235)** (2026) — 通过触觉探索学习物体表征，并与物理属性的文本描述对比对齐，再作为语境指导操作策略。报告任务成功率在已见物体上从 41% 升到 92%，未见物体从 19% 升到 67%。 · [项目页](https://xinyiyxyx.github.io/tactile-object-centric/)
 - **[Modular Sensory Stream for Integrating Physical Feedback in Vision-Language-Action Models](https://arxiv.org/abs/2604.23272)** (2026) — 为预训练 VLA 增加独立的触觉、力和力矩信号流，通过跨模态联合注意力融合，配合分阶段训练和预测未来物理信号的辅助任务。真机实验验证。 · [项目页](https://jiminlx.github.io/MoSS)
 - **[Multi-Resolution Tactile Imitation Learning for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2606.06281)** (2026) — 融合 RGB 相机、GelSight Mini 与高频事件型触觉传感器的多分辨率表示，驱动流匹配策略。报告五个富接触任务平均成功率 80%，纯视觉仅 35.5%。 · [项目页](https://mitas-touch.github.io)
+- **[Multisensory Continual Learning: Adapting Pretrained Visuomotor Policies to Force](https://arxiv.org/abs/2606.30988)** (2026) — 通过分阶段融合、多感官未来预测和预训练数据回放，把力/力矩传感加入预训练的纯视觉世界动作模型；在富接触任务上表现好，同时保住甚至提升原有任务性能。 · [项目页](https://jadenvc.github.io/multisensory-continual-learning/)
 - **[OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies](https://arxiv.org/abs/2607.03723)** (2026) — 真实世界强化学习：在任意预训练视觉策略之上学习轻量的触觉残差修正，先用基础策略自主执行的数据冷启动。报告四个任务成功率在 40–80 分钟内从 5–40% 提升到 85–100%。 · [项目页](https://colinyu1.github.io/omnitactune-site/)
 - **[OpenTac: An Open Ecosystem for Customizable, Scalable, and Transferable 3D Tactile Sensing](https://arxiv.org/abs/2610.31661)** (2026) — 开源电阻式触觉皮肤：结构化覆层把切向力转成空间压力差异，相邻触点即可解码剪切与法向力；附带可定制皮肤的设计工具，硬件和软件均开源。 · [代码](https://github.com/opentac/opentac) · [项目页](https://opentac.github.io)
 - **[PACE: Temporal-Role Tactile Conditioning for Chunk-Based Insertion Policies](https://arxiv.org/abs/2610.16308)** (2026) — CoRL 2026 Oral。不再用单一融合路径，而是把同一触觉流拆成三种时序角色：持续接触状态、突发接触事件与未来接触后果，用于分块式插接策略。 · [项目页](https://pace-insertion.github.io/)
 - **[PTLD: Sim-to-real Privileged Tactile Latent Distillation for Dexterous Manipulation](https://arxiv.org/abs/2603.04531)** (2026) — 无需触觉仿真即可学习触觉灵巧操作：在真实环境中借助特权传感器采集数据，蒸馏出基于触觉的状态估计器，用于仿真训练的策略。报告手内旋转任务提升 182%。 · [项目页](https://akashsharma02.github.io/ptld-website/)
 - **[PanoTac: A Dense Three-Axis Tactile Sensor for Robust Touch-Centric Manipulation](https://arxiv.org/abs/2611.03520)** (2026) — 每个成本低于 50 美元的柔顺指尖，以 60 Hz 输出 12×32 的法向与剪切稠密响应。在舀取、倾倒和试管任务上，视触觉策略平均比纯视觉基线高 46.7 个百分点。 · [项目页](https://panotac.github.io)
 - **[ReflexArc: Bottom-Up Integration of Instantaneous Tactile Reflexes into Whole-Body Humanoid Control](https://arxiv.org/abs/2611.04424)** (2026) — 在学习型全身策略之下加入全身触觉反射，10 毫秒内直达电机；在 G1 上，与延迟 20 毫秒的相同反射相比，首次力峰值降低 34.1%。 · [项目页](https://minusmodulo.github.io/reflexarc-website/)
+- **[T-Rex: Tactile-Reactive Dexterous Manipulation](https://arxiv.org/abs/2606.17055)** (2026) — 触觉反应式 VLA：围绕基本动作采集的 100 小时触觉数据集、可变频率的 Mixture-of-Transformers 架构与时序触觉 VQ-VAE 编码器。报告在 12 个任务上平均成功率比最强基线高 30% 以上。 · [项目页](https://tactile-rex.github.io/)
 - **[TacCoRL: Integrating Tactile Feedback into VLA via Simulation](https://arxiv.org/abs/2606.11743)** (2026) — 通过仿真-真机协同训练和在对齐真实的模拟器中做强化学习，为 VLA 加入触觉，学习接近失败时触觉应如何调整动作。报告四个双臂任务成功率 72.5%，基线 50.0%。 · [项目页](https://tac-corl.github.io/)
 - **[TacMind: Benchmarking and Modeling Tactile Interaction States for Robotic Manipulation](https://arxiv.org/abs/2611.00455)** (2026) — 128 个仿真触觉任务，分精确、识别、动态三类，含 12 种扰动；并提出动作条件的触觉世界模型，把触觉当作随时间演化的状态，用预测的触觉信息修正动作。 · [代码](https://github.com/Tacmind-Bench/TacMind) · [项目页](https://tacmind-bench.github.io/)
 - **[Tactile Curiosity Drives Robot Interaction](https://arxiv.org/abs/2609.40134)** (2026) — TacEx 让好奇心聚焦触觉：按感知模态分解模型不确定性，使探索去寻找接触而非空中乱动。采集的数据可离线训练抓放策略，也可用于 VLA 后训练。 · [项目页](https://go.klem.nz/tacex)
@@ -38,7 +42,9 @@ _触觉传感器、触觉表征与接触丰富的控制。_
 - **[UniVTAC: A Unified Simulation Platform for Visuo-Tactile Manipulation Data Generation, Learning, and Benchmarking](https://arxiv.org/abs/2602.10093)** (2026) — 视触觉仿真数据合成平台，支持三种常用传感器，并基于合成数据训练视触觉编码器、发布 8 个任务的基准。报告基准成功率提升 17.1%，真机提升 25%。 · [项目页](https://univtac.github.io/)
 - **[VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing](https://arxiv.org/abs/2610.31472)** (2026) — 6 毫米厚的柔性触觉阵列：压阻层上的硅胶凸点把切向力转成可区分的压力分布，实现每个触点的三轴力测量；4x4 阵列成本不到 35 美元。报告称其提升了扩散策略插插头任务的表现。 · [项目页](https://jiannnh.github.io/VecTile/)
 - **[WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware Planning](https://arxiv.org/abs/2606.13232)** (2026) — 可穿戴的全身触觉接口，可用于人类演示和人形遥操作；规划器同时预测末端位姿与接触力，作为触觉导纳控制器的参考。在五个富接触任务上验证。 · [项目页](https://wt-umi.github.io/WTUMI/)
+- **[What is the Better Curriculum: Controller-Shaped Grasping Behavior for Contact Force-Sensitive Manipulation](https://arxiv.org/abs/2609.25887)** (2026) — 数据采集时用 25 Hz 触觉反射控制器当“老师”，让演示自带良好的抓握力；之后不用触觉的 ACT 策略在易碎杯子上达到 95% 稳定抓取。但抵抗外部扰动仍需保留反射控制器。 · [项目页](https://shayfeng.github.io/better-curriculum/)
 - **[AnyTouch: Learning Unified Static-Dynamic Representation across Multiple Visuo-tactile Sensors](https://arxiv.org/abs/2502.12191)** (2025) — 跨多种视触觉传感器学习统一的静态-动态表征，并贡献对齐的多传感器触觉数据集 TacQuad。 · [代码](https://github.com/GeWu-Lab/AnyTouch)
+- **[ControlTac: Scaling Tactile Data with Physically Controlled Tactile Image Generation](https://arxiv.org/abs/2505.20498)** (2025) — 以一张参考触觉图像加接触力与接触位姿为条件，生成逼真的触觉图像来扩充跨传感器的触觉数据。在插装、模仿学习与称重等真实任务中，增强数据均带来提升。 · [项目页](https://dongyuluo.github.io/controltac)
 - **[FACTR: Force-Attending Curriculum Training for Contact-Rich Policy Learning](https://arxiv.org/abs/2502.17432)** (2025) — 低成本双边遥操作把机械臂受力反馈给操作者；训练时对视觉的破坏逐渐减弱，让策略学会关注力信息。
 - **[LocoTouch: Learning Dynamic Quadrupedal Transport with Tactile Sensing](https://arxiv.org/abs/2505.23175)** (2025) — 在四足机器人背部铺设高密度触觉传感器，无需固定装置即可长距离运输未固定的圆柱物体。 · [代码](https://github.com/linchangyi1/LocoTouch)
 - **[PP-Tac: Paper Picking Using Tactile Feedback in Dexterous Robotic Hands](https://arxiv.org/abs/2504.16649)** (2025) — 用带高分辨率全向触觉传感器的多指手抓取纸张类薄物体，同时解决状态估计与抓取规划。

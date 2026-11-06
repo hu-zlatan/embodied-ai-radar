@@ -83,7 +83,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - ⭐ **[3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://arxiv.org/abs/2403.03954)** (2024) — Conditions a diffusion policy on a compact point-cloud encoding; more data-efficient and robust to viewpoint than images. · [code](https://github.com/YanjieZe/3D-Diffusion-Policy)
 - ⭐ **[Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation](https://arxiv.org/abs/2401.02117)** (2024) — Puts ALOHA on a mobile base; co-training with static ALOHA data boosts mobile tasks like cooking and opening cabinets. · [code](https://github.com/MarkFzp/mobile-aloha)
 
-**[All 142 entries →](lists/manipulation.md)**
+**[All 143 entries →](lists/manipulation.md)**
 
 <a id="tactile"></a>
 ### Tactile & Visuotactile Sensing
@@ -95,15 +95,15 @@ _Tactile sensors, touch representations and contact-rich control._ [Browse with 
 - **[Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2610.03333)** (2026) — VISTA: equivariant visuotactile diffusion policy that fuses touch into spherical visual tokens and rotates them with the gripper pose, for more data-efficient contact-rich imitation. · [code](https://github.com/Kenn3o3/Vista) · [project](https://vista-paper.github.io/)
 - **[FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation](https://arxiv.org/abs/2607.18231)** (2026) — Gives a VLA memory through compact force-history tokens from a pretrained VAE, for tasks like pressing a button a set number of times. Reports over 80% success on three memory-dependent tasks. · [project](https://qft-333.github.io/FM-VLA-Page/)
 - **[FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation](https://arxiv.org/abs/2606.13102)** (2026) — Tactile policy pretrained on ~3,000 hours from 26 sources and 21 sensors, mapping image, array and state signals into shared tokens. Reports +17.2% on seen setups and +31% on two unseen sensor setups. · [project](https://ftp1-policy.github.io)
+- **[ForceBand: Learning Forceful Manipulation with sEMG](https://arxiv.org/abs/2606.26093)** (2026) — Low-cost wrist sEMG band whose model predicts per-finger forces, turning video demos into force-labelled ones after a short calibration. Reports >50% lower force error than vision and 87% on force-sensitive tasks. · [project](https://forceband-emg.github.io)
 - **[Heterogeneous Tactile Transformer](https://arxiv.org/abs/2606.29948)** (2026) — Shared tactile representation across sensors: sensor-specific encoders plus a common transformer, pretrained on a new 1.6M-frame paired dataset from four sensors; adapts to new tasks and unseen sensors. · [project](https://jxbi1010.github.io/htt-gh-page/)
 - **[Inference-time Policy Steering via Vision and Touch](https://arxiv.org/abs/2606.14981)** (2026) — Inference-time steering with vision and touch: visual sampling picks the behaviour, tactile-guided diffusion editing fixes local contact, scored by a visuo-tactile latent world model. Reports +51% over the base policy. · [project](https://yilin-wu98.github.io/vital_website)
+- **[Learning with Object-centric Representations of Tactile Interactive Perception for Robot Manipulation](https://arxiv.org/abs/2609.33235)** (2026) — Learns object representations from tactile exploration, aligned with text descriptions of properties, and uses them as context for manipulation. Reports task success from 41% to 92% (seen) and 19% to 67% (unseen). · [project](https://xinyiyxyx.github.io/tactile-object-centric/)
 - **[Modular Sensory Stream for Integrating Physical Feedback in Vision-Language-Action Models](https://arxiv.org/abs/2604.23272)** (2026) — Adds separate tactile, force and torque streams to a pretrained VLA through joint cross-modal attention, with staged training and an auxiliary task that predicts future physical signals. Real-robot tests. · [project](https://jiminlx.github.io/MoSS)
 - **[Multi-Resolution Tactile Imitation Learning for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2606.06281)** (2026) — Fuses an RGB camera, a GelSight Mini and a high-rate event-based tactile sensor for a flow-matching policy. Reports 80% average success on five contact-rich tasks vs 35.5% vision-only. · [project](https://mitas-touch.github.io)
-- **[OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies](https://arxiv.org/abs/2607.03723)** (2026) — Real-world RL that adds a lightweight tactile residual on top of any pretrained visual policy, bootstrapped from the base policy's own rollouts. Reports 5–40% success raised to 85–100% within 40–80 minutes. · [project](https://colinyu1.github.io/omnitactune-site/)
-- **[PTLD: Sim-to-real Privileged Tactile Latent Distillation for Dexterous Manipulation](https://arxiv.org/abs/2603.04531)** (2026) — Learns tactile dexterous skills without tactile simulation: privileged sensors in the real world collect data to distil a tactile state estimator for a sim-trained policy. Reports 182% gain on in-hand rotation. · [project](https://akashsharma02.github.io/ptld-website/)
-- **[TacCoRL: Integrating Tactile Feedback into VLA via Simulation](https://arxiv.org/abs/2606.11743)** (2026) — Adds touch to a VLA via sim-real co-training and simulated RL in a real-aligned simulator, learning how contact should change actions near failure. Reports 72.5% vs 50.0% on four bimanual tasks. · [project](https://tac-corl.github.io/)
+- **[Multisensory Continual Learning: Adapting Pretrained Visuomotor Policies to Force](https://arxiv.org/abs/2606.30988)** (2026) — Adds force-torque sensing to a pretrained vision-only world-action model with staged fusion, multisensory future prediction and replay of pretraining data; strong on contact tasks without losing original skills. · [project](https://jadenvc.github.io/multisensory-continual-learning/)
 
-**[All 63 entries →](lists/tactile.md)**
+**[All 69 entries →](lists/tactile.md)**
 
 <a id="locomotion"></a>
 ### Locomotion & Humanoids
@@ -123,7 +123,7 @@ _Legged locomotion, humanoid whole-body control and parkour._ [Browse with the l
 - ⭐ **[OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction](https://arxiv.org/abs/2509.26633)** (2025) — Retargeting that preserves human-object and human-scene interaction rather than only body pose, generating physically plausible data for humanoid loco-manipulation. · [code](https://github.com/amazon-far/holosoma) · [project](https://omniretarget.github.io)
 - ⭐ **[Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking](https://arxiv.org/abs/2510.02252)** (2025) — Shows retargeting artifacts such as foot sliding hurt tracking policies, and offers GMR, a general retargeter. Its open-source repo is widely used for humanoid data. · [code](https://github.com/YanjieZe/GMR) · [project](https://jaraujo98.github.io/retargeting_matters)
 
-**[All 133 entries →](lists/locomotion.md)**
+**[All 137 entries →](lists/locomotion.md)**
 
 <a id="world-models"></a>
 ### World Models
@@ -183,7 +183,7 @@ _Visual / LiDAR SLAM and odometry, 3D reconstruction, object pose, depth and ope
 - ⭐ **[BundleSDF: Neural 6-DoF Tracking and 3D Reconstruction of Unknown Objects](https://arxiv.org/abs/2303.14158)** (2023) — Tracks the 6-DoF pose of a never-seen object in RGB-D video while building its neural 3D model online, with no CAD model needed; useful for manipulating novel objects. · [code](https://github.com/NVlabs/BundleSDF)
 - ⭐ **[CoTracker: It is Better to Track Together](https://arxiv.org/abs/2307.07635)** (2023) — Transformer that tracks many video points jointly rather than one at a time, staying robust through occlusions; widely used to extract motion tracks from human or robot videos for policy learning. · [code](https://github.com/facebookresearch/co-tracker)
 
-**[All 43 entries →](lists/perception.md)**
+**[All 44 entries →](lists/perception.md)**
 
 <a id="control"></a>
 ### Planning, Control & Safety
@@ -203,7 +203,7 @@ _Motion planning, trajectory optimization, MPC, safety filters and safe learning
 - ⭐ **[MoveIt 2](https://moveit.ai/)** (2019) — The ROS 2 manipulation framework - motion planning, inverse kinematics, collision checking and real-time servoing for robot arms. · [code](https://github.com/moveit/moveit2)
 - ⭐ **[Pinocchio](https://github.com/stack-of-tasks/pinocchio)** (2019) — Fast C++/Python rigid-body dynamics library with analytical derivatives; a common backbone for kinematics, optimal control (e.g. Crocoddyl) and legged/humanoid control stacks.
 
-**[All 37 entries →](lists/control.md)**
+**[All 38 entries →](lists/control.md)**
 
 <a id="learning"></a>
 ### Robot Learning: RL & Imitation
@@ -223,7 +223,7 @@ _Reinforcement learning, imitation learning and policy post-training methods for
 - ⭐ **[What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](https://arxiv.org/abs/2108.03298)** (2021) — robomimic — a controlled study of imitation and offline RL on human-collected manipulation demos (demo quality, observation choices, history-aware BC), released with the framework and datasets. · [code](https://github.com/ARISE-Initiative/robomimic)
 - ⭐ **[Addressing Function Approximation Error in Actor-Critic Methods](https://arxiv.org/abs/1802.09477)** (2018) — TD3 — fixes DDPG's value overestimation with twin critics, delayed policy updates and target smoothing; still a standard continuous-control baseline. · [code](https://github.com/sfujim/TD3)
 
-**[All 93 entries →](lists/learning.md)**
+**[All 94 entries →](lists/learning.md)**
 
 <a id="sim"></a>
 ### Sim-to-Real & Simulators
@@ -243,7 +243,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._ [Browse
 - ⭐ **[ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI](https://arxiv.org/abs/2410.00425)** (2024) — GPU-parallel simulation and rendering with many manipulation tasks; fast visual RL and data generation. · [code](https://github.com/haosulab/ManiSkill)
 - ⭐ **[RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots](https://arxiv.org/abs/2406.02523)** (2024) — 120 kitchen scenes, 2,500+ objects and 100 tasks with generated demonstrations for training generalist policies. · [code](https://github.com/robocasa/robocasa)
 
-**[All 57 entries →](lists/sim.md)**
+**[All 58 entries →](lists/sim.md)**
 
 <a id="datasets"></a>
 ### Datasets & Benchmarks
@@ -263,7 +263,7 @@ _Large robot datasets, egocentric data and evaluation suites._ [Browse with the 
 - ⭐ **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 hand-designed manipulation tasks with demos; a staple for 3D policy methods like PerAct. · [code](https://github.com/stepjam/RLBench)
 - ⭐ **[ScanNet: Richly-annotated 3D Reconstructions of Indoor Scenes](https://arxiv.org/abs/1702.04405)** (2017) — RGB-D scans of 1,500+ indoor scenes with 3D reconstructions, camera poses and semantic labels; the standard benchmark for 3D scene understanding that embodied perception builds on. · [code](https://github.com/ScanNet/ScanNet)
 
-**[All 88 entries →](lists/datasets.md)**
+**[All 90 entries →](lists/datasets.md)**
 
 <a id="hardware"></a>
 ### Hardware & Open-Source Robots

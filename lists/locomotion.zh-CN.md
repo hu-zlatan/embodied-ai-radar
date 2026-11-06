@@ -2,7 +2,7 @@
 
 _足式运动、人形全身控制与跑酷。_
 
-共 133 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
+共 137 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/locomotion.html) · [English](locomotion.md)
 
@@ -27,6 +27,7 @@ _足式运动、人形全身控制与跑酷。_
 - ⭐ **[ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters](https://arxiv.org/abs/2205.01906)** (2022) — 结合对抗模仿与无监督强化学习，为仿真角色学习可复用的技能嵌入，新任务不必从零训练。 · [代码](https://github.com/nv-tlabs/ASE)
 - ⭐ **[Walk These Ways: Tuning Robot Control for Generalization with Multiplicity of Behavior](https://arxiv.org/abs/2212.03238)** (2022) — 训练一个把步态参数（频率、抬脚高度、姿态等）作为指令开放的四足策略，部署时可由人调节行为以适应新任务；附带面向 Unitree Go1 的开源仿真到真实工具链。 · [代码](https://github.com/Improbable-AI/walk-these-ways)
 - **[$λ_0$: Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.18950)** (2026) — 构建 500 小时的第一视角人类数据集 HumanVerse（含同步的身体与手部动作），对齐到 Unitree G1 后用于人形基础模型 λ0 的中期训练；论文报告 SIMPLE 上成功率 90%、真实移动操作任务 62.5%，人类数据越多下游表现越好。 · [代码](https://github.com/LambdaHumanoid/openlambda) · [项目页](https://lambdahumanoid.github.io/)
+- **[ADAPT: Agile Diffusion Action Priors for Robust and Steerable Online Text-Driven Humanoid Control](https://arxiv.org/abs/2609.00677)** (2026) — 端到端的文本条件人形全身控制：从带文本标签的状态-动作轨迹学习扩散动作先验，再叠加轻量残差强化学习策略提升长时鲁棒性和指令切换的平滑度。 · [项目页](https://wuyan01.github.io/ADAPT-project/)
 - **[Action-Aligned Latent Planning for Versatile Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.24675)** (2026) — FIBER 以冻结的行为基础模型（BFM）潜在空间作为统一规划表示，把各任务专用策略投影进该空间，再离线训练单一感知流匹配规划器；仿真中搬箱、开门、抓取平均成功率 42.0%（潜在回放基线 11.6%），并在真实 Unitree G1 上验证。 · [项目页](https://fiberaa.github.io/)
 - **[Constrained Whole-Body Tracking for Humanoid Robots](https://arxiv.org/abs/2606.00374)** (2026) — 借助操作空间控制与控制障碍函数，以 1 kHz 以上频率为强化学习人形跟踪策略施加运行时约束（碰撞、关节限位、质心稳定），训练后新增的约束也能满足。 · [项目页](https://stanfordasl.github.io/constrainedmimic)
 - **[ContactMimic: Humanoid Object Interaction via Contact Control](https://arxiv.org/abs/2607.08742)** (2026) — 人形动作跟踪在关键点之外还跟踪部位级接触指令，让机器人真正坐下、擦拭或推动物体，并可按需产生或抑制接触。仿真 10 种动作，真机 5 种。 · [项目页](https://lixinyao11.github.io/contactmimic-page)
@@ -39,6 +40,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[ELEVATE: Agentic Controller Acquisition from Task Failure for Quadrupedal Manipulation](https://arxiv.org/abs/2610.38388)** (2026) — 四足机械臂反复失败时，由编码智能体判断缺少哪种全身控制能力，自动编写强化学习问题（奖励、课程、终止条件）训练新控制器并加入技能库再重试；习得扶墙抬升等技能，仿真五项超出初始能力的任务成功率 98.4–100%，无需真机训练即迁移到实体机器人（货架取物 18/20）。 · [项目页](https://agentic-quad-elevate.github.io/public/)
 - **[Energy-Based Policy Orchestration](https://arxiv.org/abs/2611.02546)** (2026) — 运行时为每个底层策略学习能量函数，据此选择执行哪个策略、给它什么目标。新增策略只需训练自己的能量模型，无需重训其他策略或中央调度器；已部署到真实人形的移动操作任务。 · [项目页](https://yewr.github.io/epo)
 - **[ExtremControl: Low-Latency Humanoid Teleoperation with Scaled Velocity Feedforward](https://arxiv.org/abs/2602.11321)** (2026) — 低延迟人形遥操作：缩放速度前馈让跟踪延迟减少约 70 ms，直接控制末端连杆位姿省去关节重定向。端到端延迟低至 50 ms，可完成抛接与乒乓球平衡等反应型动作。 · [项目页](https://extremcontrol.github.io/)
+- **[FADA: Few-Shot Domain Adaptation via Dynamics Alignment for Humanoid Control](https://arxiv.org/abs/2606.28476)** (2026) — 从特权策略蒸馏出“规划器+逆动力学模型”学生策略；部署时冻结规划器，只用约 2 分钟目标域数据微调逆动力学模型。优于上下文自适应与端到端适应基线。 · [项目页](https://lecar-lab.github.io/FADA-humanoid/)
 - **[FORGE: Feasible Online Reduced-Order Reference Generation and Whole-Body Execution for Agile Humanoid Locomotion](https://arxiv.org/abs/2610.37974)** (2026) — 先学习降阶模型参考生成器，再用其在线输出训练全身跟踪策略，一对策略即可覆盖多种步态。Unitree G1 实机实现 -2.0 到 2.8 m/s 行走、单腿跳与连续切换。
 - **[GRAFT: Geometry-Aware Residual Adaptation for Foundation Trackers](https://arxiv.org/abs/2610.36507)** (2026) — 冻结人形行为基础模型，仅训练一个作用于下肢目标的轻量残差适配器来应对台阶、沟壑和平台，并从特权地形信息蒸馏到机载深度；在四种跟踪器上验证，并在 Unitree G1（SONIC）上真机部署。 · [项目页](https://graft-humanoid.github.io/)
 - **[GRAIL: Generating Humanoid Loco-Manipulation from World Models](https://arxiv.org/abs/2606.05160)** (2026) — CoRL 2026 Oral。全虚拟的人形移动操作数据管线：把视频世界模型落到 3D 资产与可仿真场景中，无需遥操作或搭建实体环境。 · [代码](https://github.com/NVlabs/GRAIL) · [项目页](https://research.nvidia.com/labs/dair/grail/)
@@ -81,7 +83,9 @@ _足式运动、人形全身控制与跑酷。_
 - **[Solving a Giant Rubik's Cube with a Quadruped Robot](https://arxiv.org/abs/2610.24610)** (2026) — 四足机器人只用脚完成巨型魔方：机载 RGB-D 估计魔方位姿与颜色状态，规划器把解法转成技能序列，强化学习训练的全身技能负责翻转魔方、一脚固定一脚推动转层。报告完成三次完全自主求解。 · [项目页](https://leggedrobotics.github.io/rubik-skills/)
 - **[TACOS: Terrain-Aware COntact Supervision for Visual Footstep Planning](https://arxiv.org/abs/2610.37806)** (2026) — 用足式状态估计因子图的残差给落足不稳定性打分，并投影到之前的图像上，监督稠密视觉预测器。 · [代码](https://github.com/norlab-ulaval/TACOS)
 - **[TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model](https://arxiv.org/abs/2609.09158)** (2026) — CoRL 2026 Spotlight。语言条件下的人形机器人杂乱环境穿行：不把导航当二维路径规划，而是手臂、躯干与步态的全身协同调整。 · [项目页](https://tango-vla.github.io/)
+- **[TEXEDO : Test Time Scaling for Controller-aware Language-conditioned Humanoid Motion Generation](https://arxiv.org/abs/2606.22998)** (2026) — 从文本生成运动模型采样多个候选，用学习到的动态可行性验证器与语义对齐验证器挑选人形机器人既能跟踪又符合文字的动作。仿真与真实 G1 上跟踪精度与文本一致性均提升。 · [项目页](https://jianuocao.github.io/TEXEDO/)
 - **[Test-Time Motion Steering for Perceptive Humanoid Fall Recovery](https://arxiv.org/abs/2610.30061)** (2026) — RISE 学习一组可组合的起身动作词表，并用视觉扩散规划器预测未来身体状态作为动作意图；推理时用任务代价（朝向、起身速度、路径）引导该意图，无需重新训练即可选择不同起身方式；仿真实验并在 Unitree G1 真机演示。 · [项目页](https://osheraz.github.io/RISE/)
+- **[TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control](https://arxiv.org/abs/2602.07439)** (2026) — 实时文本驱动的人形机器人控制：自回归运动扩散模型根据当前（可随时修改的）文字指令持续生成短时轨迹，再由运动跟踪策略在真机上执行，可流畅切换舞蹈、跳跃等动作。 · [项目页](https://text-op.github.io/)
 - **[Towards Professional Tennis Styles for Humanoid Robots with Adaptive Motion Planning and Tracking](https://arxiv.org/abs/2608.20087)** (2026) — 从比赛转播视频学习职业网球发球与对打风格，采用“规划器+跟踪器”分层结构并加入速度自适应缩小仿真-真机差距。部署在 G1 和 1.7 m 的 Dobot Atom 上，无需动捕即可发球。 · [项目页](https://humanoidtennis.github.io/AdaPT/)
 - **[VLK: Learning Humanoid Loco-Manipulation from Synthetic Interactions in Reconstructed Scenes](https://arxiv.org/abs/2606.30645)** (2026) — 在 3D 高斯泼溅重建的室内场景中无人工合成 4.8 万条“视觉-语言-运动学”轨迹，训练输出全身运动学轨迹的策略，并通过全身跟踪器在真实 G1 上运行。 · [项目页](https://vision-language-kinematics.github.io/)
 - **[VLM-Guided Contact Retargeting and Generative Partner Modeling for Humanoid-Human Interaction](https://arxiv.org/abs/2610.28523)** (2026) — REACT 从人-人动捕中学习人形与人的接触交互：VLM 引导接触重定向，再蒸馏为只用机载深度的策略，并预测被遮挡伙伴的状态。真实 G1 完成全部五种交互。 · [项目页](https://yutoshibata07.github.io/REACT/)

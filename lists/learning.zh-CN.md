@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 93 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 94 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [English](learning.md)
 
@@ -46,6 +46,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Generative Flow on Symbolic Abstractions for Embodiment Capability Discovery](https://arxiv.org/abs/2610.17174)** (2026) — 自动发现某台机器人“学得会”的任务：用 GFlowNet 生成符号化任务骨架，以仿真中底层策略的学习效果作为奖励，再把发现的任务蒸馏进一个语言条件策略。 · [项目页](https://www.youwei-yu.com/fosa)
 - **[HIDRA: Hierarchical Dual-Routing Attention for Replay-Free Lifelong Imitation Learning](https://arxiv.org/abs/2610.36374)** (2026) — 无回放的终身模仿学习：分层双路由注意力先按指令检索专家、再按上下文细化，并用键级几何正则抑制表征漂移带来的路由干扰；报告在多个 LIBERO 任务序列上优于无回放和有回放基线。 · [代码](https://github.com/yfqi/HIDRA)
 - **[HiRE: Hindsight Reward Editing for Policy Finetuning](https://arxiv.org/abs/2609.27068)** (2026) — 免训练的奖励修正：事后对比成功与失败轨迹，惩罚被基础模型奖励高估、最终却导致失败的“陷阱状态”。报告性能至少是基础策略的 3 倍。 · [项目页](https://hire-project.github.io)
+- **[How to Learn from What a Human Would Avoid? Intervention-Aware World Models with Real-World RL for Dexterous Manipulation](https://arxiv.org/abs/2609.06009)** (2026) — 人在回路强化学习：潜在世界模型额外预测操作者何时会接管，并据此让策略远离高风险状态。在 16 自由度 LEAP 手上抓取成功率 96.7%，人工干预最多减少 84%。 · [项目页](https://whirl-dexterous.github.io/)
 - **[Imitation from Heterogeneous Demonstrations using Grounded Latent-Action World Models](https://arxiv.org/abs/2606.21672)** (2026) — 通过让不同数据源对未来观测的预测保持一致来“落地”一个共享潜在动作空间，使无动作标签和动作空间不同的数据都能训练同一个行为克隆策略。报告五个任务平均成功率提升 48%。 · [项目页](https://viccccciv.github.io/glam/)
 - **[LLMs as MDP Designers: A Dependency-Aware Agentic Framework for Automated Robot Policy Generation](https://arxiv.org/abs/2611.04974)** (2026) — ARPG 让大模型在部署前设计强化学习流程：先定 MDP，再写仿真代码，并校验状态、动作与奖励是否一致；报告在 Isaac Sim 中成功率高于单体式大模型基线。
 - **[LUCID: Learning Embodiment-Agnostic Intent Models from Unstructured Human Videos for Scalable Dexterous Robot Skill Acquisition](https://arxiv.org/abs/2606.11628)** (2026) — 从互联网人类视频学习预测“场景接下来该发生什么”的短时意图模型，再与在大规模并行仿真中训练的本体专用策略结合；同一意图模型可驱动灵巧手和平行夹爪。 · [项目页](https://lucid-robot.github.io/)

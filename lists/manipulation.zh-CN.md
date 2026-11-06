@@ -2,7 +2,7 @@
 
 _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 
-共 142 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
+共 143 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/manipulation.html) · [English](manipulation.md)
 
@@ -28,6 +28,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[AWLS: Advantage-Weighted Latent Steering for One-Step Generative Robotic Manipulation Policies](https://arxiv.org/abs/2610.27736)** (2026) — 离线改进冻结的一步生成策略：学习对输入噪声的残差修正，用优势加权的动作重建来训练而不是用评论家梯度，从而避免偏离原有行为。 · [项目页](https://awls-corl2026.github.io/)
 - **[AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking](https://arxiv.org/abs/2610.33852)** (2026) — 把语言条件灵巧操作变成“可调制的跟踪”：蒸馏得到的通用跟踪器加 RL 训练的调制器，在执行中持续修正参考轨迹、物体隐表征与位置目标，抑制误差累积；零样本迁移到真机。 · [代码](https://github.com/Janebek/AdaDexTrack) · [项目页](https://janebek.github.io/AdaDexTrack/)
 - **[AdaPolicy: Action-Driven Anticipatory Robot Policies via Next-Chunk Prediction](https://arxiv.org/abs/2610.34280)** (2026) — 不预测未来图像也能获得“预见性”：仅在训练时用级联头预测下一个动作块，并把损失回传到在线策略的隐状态，推理零额外开销；报告在耳机装配、穿鞋带等毫米级真机任务上最高提升 14 个百分点。 · [代码](https://github.com/teee000/AdaPolicy) · [项目页](https://teee111.github.io/AdaPolicy/)
+- **[AssemLM: A Spatial Reasoning Multimodal Large Language Model for Robotic Assembly](https://arxiv.org/abs/2604.08983)** (2026) — 读取装配说明书、点云与文字指令来预测 6D 装配位姿的多模态大模型，并发布含 90 万余样本的 AssemBench。报告 6D 位姿推理达到最优，并完成真实多步装配。 · [项目页](https://assemlmhome.github.io/)
 - **[Assembling Two Parts in One Hand](https://arxiv.org/abs/2609.10137)** (2026) — 用强化学习在单只灵巧手中完成两个零件的装配（如给马克笔盖帽、注射器、瓶子），不用第二只手臂；仿真训练，单相机零样本迁移到真机。 · [项目页](https://ltbgbird.github.io/in-hand-assembly-page/)
 - **[Attention from Action, for Action: Emergent Visual Bottlenecks for Policy Learning](https://arxiv.org/abs/2608.13422)** (2026) — Seeker 仅凭动作监督学习“看哪里”，在冻结的 DINOv3 特征上给出随任务进展变化的裁剪区域。报告真机成功率从 48.3% 升到 76.7%，光照与背景变化下从 20% 升到 60%。 · [代码](https://github.com/zheyu-zhuang/seeker)
 - **[Beyond the End-Effector: Learning Whole-Arm Contact Manipulation from Human Demonstrations](https://arxiv.org/abs/2610.17802)** (2026) — WACL 从人类示范中学习用整条手臂推、抵物体，自主选择手臂上的接触位置，同时满足末端执行器的约束。 · [项目页](https://wacl-robot.github.io)

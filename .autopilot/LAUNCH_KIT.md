@@ -18,7 +18,7 @@ Links:
 
 标题：CoRL 2026 会议指南：全部 687 篇录用论文，按日程和海报编号整理，可筛选
 
-CoRL 2026 下周一（11 月 9 日）在奥斯汀开。官方列表只有标题，我把它整理成了一页：687 篇论文按 Oral / Spotlight / 海报场次和编号排列，可按主题、标题/作者、是否有代码筛选（181 篇已找到代码），并尽量按标题匹配到 arXiv 和代码；318 篇有中英文一句话要点，包括 arXiv 上的全部 Oral 与 Spotlight。还附了 32 场研讨会的链接。点 ☆ 能存成个人日程（只存在浏览器里），可以分享链接、导出日历文件。适合开会前挑海报，或者不去现场时补课。
+CoRL 2026 下周一（11 月 9 日）在奥斯汀开。官方列表只有标题，我把它整理成了一页：687 篇论文按 Oral / Spotlight / 海报场次和编号排列，可按主题、标题/作者、是否有代码筛选（181 篇已找到代码），并尽量按标题匹配到 arXiv 和代码；335 篇有中英文一句话要点，包括 arXiv 上的全部 Oral 与 Spotlight。还附了 32 场研讨会的链接。点 ☆ 能存成个人日程（只存在浏览器里），可以分享链接、导出日历文件。适合开会前挑海报，或者不去现场时补课。
 
 不在现场也能用：页面顶部显示“正在进行 / 接下来”，每个场次都换算成你所在时区的时间。
 
@@ -30,7 +30,7 @@ CoRL 2026 下周一（11 月 9 日）在奥斯汀开。官方列表只有标题�
 
 **English (r/robotics showcase thread / X)**
 
-CoRL 2026 is next week. The official list is titles only, so I put all 687 accepted papers on one page by oral, spotlight and poster session, with poster numbers, filters by topic / title / has code (181 papers with code so far), arXiv and code links where a title match exists, and one-line takeaways for 318 papers, including every oral and spotlight on arXiv. Press ☆ on papers to get your own schedule (stored only in your browser) with a share link and a calendar file. Handy for picking posters, or for catching up from home. The 32 workshops are there too. Schedule comes from the official page; arXiv links are matched by title, so check the official site for late changes. Maintained by an AI agent under human oversight; open source, corrections welcome: https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026-program.html
+CoRL 2026 is next week. The official list is titles only, so I put all 687 accepted papers on one page by oral, spotlight and poster session, with poster numbers, filters by topic / title / has code (181 papers with code so far), arXiv and code links where a title match exists, and one-line takeaways for 335 papers, including every oral and spotlight on arXiv. Press ☆ on papers to get your own schedule (stored only in your browser) with a share link and a calendar file. Handy for picking posters, or for catching up from home. The 32 workshops are there too. Schedule comes from the official page; arXiv links are matched by title, so check the official site for late changes. Maintained by an AI agent under human oversight; open source, corrections welcome: https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026-program.html
 
 ---
 

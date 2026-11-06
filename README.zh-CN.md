@@ -74,7 +74,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_ [在网站上�
 - ⭐ **[3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://arxiv.org/abs/2403.03954)** (2024) — 用紧凑点云编码作为扩散策略条件，比图像输入更省数据、对视角更鲁棒。 · [代码](https://github.com/YanjieZe/3D-Diffusion-Policy)
 - ⭐ **[Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation](https://arxiv.org/abs/2401.02117)** (2024) — 将 ALOHA 装上移动底盘；与静态 ALOHA 数据联合训练显著提升做饭、开柜等移动任务表现。 · [代码](https://github.com/MarkFzp/mobile-aloha)
 
-**[查看全部 142 条 →](lists/manipulation.zh-CN.md)**
+**[查看全部 143 条 →](lists/manipulation.zh-CN.md)**
 
 <a id="tactile"></a>
 ### 触觉与视触觉感知
@@ -86,15 +86,15 @@ _触觉传感器、触觉表征与接触丰富的控制。_ [在网站上查看�
 - **[Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2610.03333)** (2026) — VISTA：等变视触觉扩散策略，把触觉融合进球面视觉 token 并随末端姿态旋转，提升富接触模仿学习的数据效率。 · [代码](https://github.com/Kenn3o3/Vista) · [项目页](https://vista-paper.github.io/)
 - **[FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation](https://arxiv.org/abs/2607.18231)** (2026) — 用预训练 VAE 把力信号历史压缩成记忆 token 输入 VLA，解决按指定次数按按钮、擦盘子等依赖记忆的接触任务。报告三个记忆型任务成功率超过 80%。 · [项目页](https://qft-333.github.io/FM-VLA-Page/)
 - **[FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation](https://arxiv.org/abs/2606.13102)** (2026) — 触觉基础策略：在 26 个数据源、21 种传感器约 3000 小时数据上预训练，把图像型、阵列型与状态型触觉信号映射到统一 token。报告已见配置提升 17.2%，两种未见传感器提升 31%。 · [项目页](https://ftp1-policy.github.io)
+- **[ForceBand: Learning Forceful Manipulation with sEMG](https://arxiv.org/abs/2606.26093)** (2026) — 低成本腕戴式肌电（sEMG）设备，经短暂校准即可预测每根手指的力，把视频演示变成带力标注的演示。报告力预测误差比视觉方法低 50% 以上，力敏感任务成功率 87%。 · [项目页](https://forceband-emg.github.io)
 - **[Heterogeneous Tactile Transformer](https://arxiv.org/abs/2606.29948)** (2026) — 跨传感器的统一触觉表征：各传感器独立编码器加共享 Transformer 主干，在新的 160 万帧四传感器配对数据集上预训练，可迁移到新任务和未见传感器。 · [项目页](https://jxbi1010.github.io/htt-gh-page/)
 - **[Inference-time Policy Steering via Vision and Touch](https://arxiv.org/abs/2606.14981)** (2026) — 视觉+触觉的推理时策略引导：视觉采样验证决定执行何种行为，触觉引导的扩散编辑修正局部接触，并由视触觉潜在世界模型打分。报告比基础策略提升 51%。 · [项目页](https://yilin-wu98.github.io/vital_website)
+- **[Learning with Object-centric Representations of Tactile Interactive Perception for Robot Manipulation](https://arxiv.org/abs/2609.33235)** (2026) — 通过触觉探索学习物体表征，并与物理属性的文本描述对比对齐，再作为语境指导操作策略。报告任务成功率在已见物体上从 41% 升到 92%，未见物体从 19% 升到 67%。 · [项目页](https://xinyiyxyx.github.io/tactile-object-centric/)
 - **[Modular Sensory Stream for Integrating Physical Feedback in Vision-Language-Action Models](https://arxiv.org/abs/2604.23272)** (2026) — 为预训练 VLA 增加独立的触觉、力和力矩信号流，通过跨模态联合注意力融合，配合分阶段训练和预测未来物理信号的辅助任务。真机实验验证。 · [项目页](https://jiminlx.github.io/MoSS)
 - **[Multi-Resolution Tactile Imitation Learning for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2606.06281)** (2026) — 融合 RGB 相机、GelSight Mini 与高频事件型触觉传感器的多分辨率表示，驱动流匹配策略。报告五个富接触任务平均成功率 80%，纯视觉仅 35.5%。 · [项目页](https://mitas-touch.github.io)
-- **[OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies](https://arxiv.org/abs/2607.03723)** (2026) — 真实世界强化学习：在任意预训练视觉策略之上学习轻量的触觉残差修正，先用基础策略自主执行的数据冷启动。报告四个任务成功率在 40–80 分钟内从 5–40% 提升到 85–100%。 · [项目页](https://colinyu1.github.io/omnitactune-site/)
-- **[PTLD: Sim-to-real Privileged Tactile Latent Distillation for Dexterous Manipulation](https://arxiv.org/abs/2603.04531)** (2026) — 无需触觉仿真即可学习触觉灵巧操作：在真实环境中借助特权传感器采集数据，蒸馏出基于触觉的状态估计器，用于仿真训练的策略。报告手内旋转任务提升 182%。 · [项目页](https://akashsharma02.github.io/ptld-website/)
-- **[TacCoRL: Integrating Tactile Feedback into VLA via Simulation](https://arxiv.org/abs/2606.11743)** (2026) — 通过仿真-真机协同训练和在对齐真实的模拟器中做强化学习，为 VLA 加入触觉，学习接近失败时触觉应如何调整动作。报告四个双臂任务成功率 72.5%，基线 50.0%。 · [项目页](https://tac-corl.github.io/)
+- **[Multisensory Continual Learning: Adapting Pretrained Visuomotor Policies to Force](https://arxiv.org/abs/2606.30988)** (2026) — 通过分阶段融合、多感官未来预测和预训练数据回放，把力/力矩传感加入预训练的纯视觉世界动作模型；在富接触任务上表现好，同时保住甚至提升原有任务性能。 · [项目页](https://jadenvc.github.io/multisensory-continual-learning/)
 
-**[查看全部 63 条 →](lists/tactile.zh-CN.md)**
+**[查看全部 69 条 →](lists/tactile.zh-CN.md)**
 
 <a id="locomotion"></a>
 ### 运动控制与人形机器人
@@ -114,7 +114,7 @@ _足式运动、人形全身控制与跑酷。_ [在网站上查看与最新论�
 - ⭐ **[OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction](https://arxiv.org/abs/2509.26633)** (2025) — 不仅保持身体姿态，还保留人与物体、人与场景交互的重定向方法，为人形移动操作生成物理上合理的数据。 · [代码](https://github.com/amazon-far/holosoma) · [项目页](https://omniretarget.github.io)
 - ⭐ **[Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking](https://arxiv.org/abs/2510.02252)** (2025) — 说明脚滑等重定向瑕疵会损害跟踪策略，并提出通用重定向方法 GMR；其开源仓库在人形数据处理中使用广泛。 · [代码](https://github.com/YanjieZe/GMR) · [项目页](https://jaraujo98.github.io/retargeting_matters)
 
-**[查看全部 133 条 →](lists/locomotion.zh-CN.md)**
+**[查看全部 137 条 →](lists/locomotion.zh-CN.md)**
 
 <a id="world-models"></a>
 ### 世界模型
@@ -174,7 +174,7 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - ⭐ **[BundleSDF: Neural 6-DoF Tracking and 3D Reconstruction of Unknown Objects](https://arxiv.org/abs/2303.14158)** (2023) — 在 RGB-D 视频中跟踪从未见过物体的六自由度位姿，同时在线构建其神经三维模型，无需 CAD 模型；适用于操作新物体。 · [代码](https://github.com/NVlabs/BundleSDF)
 - ⭐ **[CoTracker: It is Better to Track Together](https://arxiv.org/abs/2307.07635)** (2023) — 联合跟踪视频中大量点（而非逐点独立跟踪）的 Transformer，遮挡下依然稳健；常用于从人类或机器人视频中提取运动轨迹来学习策略。 · [代码](https://github.com/facebookresearch/co-tracker)
 
-**[查看全部 43 条 →](lists/perception.zh-CN.md)**
+**[查看全部 44 条 →](lists/perception.zh-CN.md)**
 
 <a id="control"></a>
 ### 规划、控制与安全
@@ -194,7 +194,7 @@ _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的�
 - ⭐ **[MoveIt 2](https://moveit.ai/)** (2019) — ROS 2 的机械臂操作框架：提供运动规划、逆运动学、碰撞检测与实时伺服控制。 · [代码](https://github.com/moveit/moveit2)
 - ⭐ **[Pinocchio](https://github.com/stack-of-tasks/pinocchio)** (2019) — 高性能 C++/Python 刚体动力学库，提供解析导数；是运动学、最优控制（如 Crocoddyl）以及足式/人形机器人控制栈的常用底座。
 
-**[查看全部 37 条 →](lists/control.zh-CN.md)**
+**[查看全部 38 条 →](lists/control.zh-CN.md)**
 
 <a id="learning"></a>
 ### 机器人学习：强化学习与模仿学习
@@ -214,7 +214,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - ⭐ **[What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](https://arxiv.org/abs/2108.03298)** (2021) — robomimic：在人类采集的操作示教数据上系统比较模仿学习与离线强化学习（示教质量、观测选择、带历史的行为克隆），并开源框架与数据集。 · [代码](https://github.com/ARISE-Initiative/robomimic)
 - ⭐ **[Addressing Function Approximation Error in Actor-Critic Methods](https://arxiv.org/abs/1802.09477)** (2018) — TD3：通过双 Critic、延迟策略更新和目标策略平滑解决 DDPG 的价值高估问题，至今仍是连续控制的常用基线。 · [代码](https://github.com/sfujim/TD3)
 
-**[查看全部 93 条 →](lists/learning.zh-CN.md)**
+**[查看全部 94 条 →](lists/learning.zh-CN.md)**
 
 <a id="sim"></a>
 ### 仿真与 Sim-to-Real
@@ -234,7 +234,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_ [在网站上
 - ⭐ **[ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI](https://arxiv.org/abs/2410.00425)** (2024) — GPU 并行仿真与渲染，内置大量操作任务，适合快速视觉强化学习与数据生成。 · [代码](https://github.com/haosulab/ManiSkill)
 - ⭐ **[RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots](https://arxiv.org/abs/2406.02523)** (2024) — 120 个厨房场景、2500 多个物体与 100 个任务，并附生成演示，用于训练通用策略。 · [代码](https://github.com/robocasa/robocasa)
 
-**[查看全部 57 条 →](lists/sim.zh-CN.md)**
+**[查看全部 58 条 →](lists/sim.zh-CN.md)**
 
 <a id="datasets"></a>
 ### 数据集与基准
@@ -254,7 +254,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_ [在网站�
 - ⭐ **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 个手工设计的操作任务并附演示，是 PerAct 等 3D 策略方法的常用基准。 · [代码](https://github.com/stepjam/RLBench)
 - ⭐ **[ScanNet: Richly-annotated 3D Reconstructions of Indoor Scenes](https://arxiv.org/abs/1702.04405)** (2017) — 1500+ 个室内场景的 RGB-D 扫描，含三维重建、相机位姿与语义标注；具身感知所依赖的三维场景理解标准基准。 · [代码](https://github.com/ScanNet/ScanNet)
 
-**[查看全部 88 条 →](lists/datasets.zh-CN.md)**
+**[查看全部 90 条 →](lists/datasets.zh-CN.md)**
 
 <a id="hardware"></a>
 ### 硬件与开源机器人

@@ -2,7 +2,7 @@
 
 _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与开放词汇场景地图。_
 
-共 43 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
+共 44 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/perception.html) · [English](perception.md)
 
@@ -30,6 +30,7 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - ⭐ **[LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping](https://arxiv.org/abs/2007.00258)** (2020) — 基于因子图的激光-惯性里程计，GPS 与回环可以作为额外因子直接加入。 · [代码](https://github.com/TixiaoShan/LIO-SAM)
 - ⭐ **[Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping](https://arxiv.org/abs/1910.02490)** (2019) — 开源 C++ 实时度量-语义视觉惯性 SLAM 库，模块化包含 VIO、鲁棒位姿图、快速三维网格与稠密语义重建。 · [代码](https://github.com/MIT-SPARK/Kimera)
 - **[ACE-Brain-0.6: Scaling Spatial Grounding for Physical Foundation Models](https://arxiv.org/abs/2610.27040)** (2026) — 用自动标注的机器人操作录像加多来源视觉数据构建约 150 万条可验证的定位监督，微调 Qwen3.5-9B；报告在七个公开视觉定位基准上平均 75.41 分，GPT-6 Astra 为 73.68。 · [代码](https://github.com/DAXIAORobotics/ACE-Brain-0.6) · [项目页](https://daxiaorobotics.github.io/ACE-Brain-0.6/)
+- **[AURORA: Active Uncertainty-Driven Re-Orientation for In-Hand Reconstruction](https://arxiv.org/abs/2609.08493)** (2026) — 主动式手内三维重建：沿候选视线估计各方向的重建不确定性来选择下一最佳视角，再由手内旋转策略把物体转到该视角。重建质量与效率均优于非主动旋转。 · [项目页](https://aurorahand.github.io/)
 - **[Anchor3R: Streaming 3D Reconstruction with Transient Anchors for Long-Horizon Visual Mapping](https://arxiv.org/abs/2606.05035)** (2026) — CoRL 2026 Spotlight。以当前帧为中心的流式三维重建：在当前帧坐标系预测窗口相对位姿与局部几何，以抑制长时漂移。 · [代码](https://github.com/polar-explorer/Anchor3R)
 - **[AnchorHEC: Targetless Hand-Eye Calibration of Wrist and Fixed Cameras](https://arxiv.org/abs/2611.02884)** (2026) — 无需标定板，用 RGB、正运动学和三维基础模型同时标定腕部与固定相机；仿真中平移和旋转误差比基于重建的基线分别降低 86.4% 和 71.6%，并在真机上验证。 · [代码](https://github.com/HwangGB/AnchorHEC) · [项目页](https://hwanggb.github.io/AnchorHEC/)
 - **[Articulated 3D Scene Graphs for Open-World Mobile Manipulation](https://arxiv.org/abs/2602.16356)** (2026) — MoMa-SG 从 RGB-D 序列构建包含物体铰接方式的 3D 场景图，并发布 Arti4D-Semantic 数据集；在四足和移动操作机器人上演示。 · [代码](https://github.com/robot-learning-freiburg/MoMa-SG) · [项目页](https://momasg.cs.uni-freiburg.de)

@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 88 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 90 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/datasets.html) · [English](datasets.md)
 
@@ -34,6 +34,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[Ego2Robot: Scalable Robot Data Synthesis from Egocentric Human Data](https://arxiv.org/abs/2608.02580)** (2026) — CoRL 2026 Spotlight。把第一视角人类操作视频转换为机器人训练数据的流程，并检验其能否大规模助力 VLA 预训练。 · [项目页](https://www-ye.github.io/ego2robot_blog/)
 - **[EgoContact: Evaluating Physical Intelligence with Egocentric Video](https://arxiv.org/abs/2610.39167)** (2026) — 第一视角接触点预测基准：2.25 万个人工核验的交互事件，每个含接触前画面、语义意图与像素级接触位置。现有方法常常定位不准甚至找不到目标物体；把 EgoContact 用作已有可供性迁移策略的记忆库，真机抓取成功率从 16% 提升到 58%。 · [项目页](https://egocontact.github.io)
 - **[EgoExplorer: A Vision-Motion-Touch Observatory for Human Loco-Manipulation In Situ](https://arxiv.org/abs/2610.18872)** (2026) — 用可穿戴设备采集的 100 小时人类移动操作数据，侧重职业场景，对齐第一视角视频、全身与手指动作、触觉和步骤级文字描述；其补全全身动作的方法报告身体关键点误差比最强基线低 71.9%。 · [代码](https://github.com/InternRobotics/EgoExplorer) · [项目页](https://internrobotics.github.io/egoexplorer.github.io/)
+- **[EgoHTR: Egocentric 4D Demonstrations of Human Terrain Traversal](https://arxiv.org/abs/2607.13472)** (2026) — 利用第一人称可穿戴设备与便携式扫描仪采集 55 段与场景对齐的复杂地形 4D 人体运动（超过 15 万帧），并开源重建流程；用于训练感知式运动策略，部署到 Unitree G1。 · [项目页](https://egohtr.github.io)
 - **[EgoVerse: An Egocentric Human Dataset for Robot Learning from Around the World](https://arxiv.org/abs/2604.07607)** (2026) — 面向人类数据机器人学习的共享平台和数据集：1,362 小时、8 万条片段，覆盖 1,965 项任务和 2,087 名演示者，接受学界和业界贡献。
 - **[Embodied Playground: A Long-Horizon Agentic Robotics Benchmark for Physical, Strategic, and Spatial Reasoning](https://arxiv.org/abs/2610.27039)** (2026) — 面向基础模型机器人智能体的长程任务基准：410 个任务环境（基础操作、序列谜题、多阶段家务），精选 EP-100 子集，统一协议同时检查目标完成、任务规则与物理有效性。 · [代码](https://github.com/Winniechen2002/Embodied-Playground) · [项目页](https://winniechen2002.github.io/Agent-bench-website/)
 - **[Embodied Skill Bench: Benchmarking How Well Agents with Embodied Skills Perform on Physical Tasks](https://arxiv.org/abs/2610.16238)** (2026) — 将 VLA 策略、感知模型与经验知识封装成 250 个可复用的“具身技能”，评测它们对大模型智能体完成物理任务的帮助。 · [代码](https://github.com/HanZhi306/EmbodiedSkill-Bench)
@@ -55,6 +56,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[RMMBench: A Comprehensive Benchmark for Robotic Mobile Manipulation](https://arxiv.org/abs/2610.05414)** (2026) — 移动操作评测基准：70 个在连续空间中结合导航与操作的任务场景。发现主流 VLM 在空间定位上仍有明显困难。 · [项目页](https://mxxq-stack.github.io/rmmbench-project/)
 - **[RoboCasa-Shift: Stage-Aware Robustness Evaluation of Vision-Language-Action Policies in Long-Horizon Household Manipulation](https://arxiv.org/abs/2610.27861)** (2026) — 基于 RoboCasa365 的 VLA 鲁棒性诊断基准：成对比较只差一个分布偏移因素的干净/扰动执行，并定位长时序任务中失败从哪个阶段开始，而不只看总成功率；在 GR00T N1.5 上评测。 · [代码](https://github.com/HaochengWang23/RoboCasa-Shift)
 - **[RoboFollow: Unveiling the Instruction Following Mirage in Embodied Agents](https://arxiv.org/abs/2609.25636)** (2026) — 揭示 VLA 的高成功率常掩盖薄弱的指令遵循：场景支持多种合法任务，必须依赖语言。九个 VLA 与 WAM 策略在基础级以外的测试中明显下降。 · [代码](https://github.com/AutoLab-SAI-SJTU/RoboFollow)
+- **[RoboGene: Diversity-Driven Agentic Task Generation Framework for VLA Pre-training](https://arxiv.org/abs/2602.16444)** (2026) — 为数据采集自动生成多样且可执行的操作任务的智能体框架，结合自我反思与人工验证记忆；据此采集 1.8 万条真机轨迹，用其训练的 VLA 成功率与泛化更好。 · [项目页](https://robogene-boost-vla.github.io/)
 - **[RoboJev: An Open Vision-Language Judge for Robot Success Detection](https://arxiv.org/abs/2610.33718)** (2026) — 开放权重模型，根据视频帧判断操作是否成功，可用于标注数据；在未见过的实验室与机器人上报告 AUROC 0.89。 · [项目页](https://robo-jev.com)
 - **[RoboJudge: Multimodal Language Models as Judges for Embodied Video Generation](https://arxiv.org/abs/2610.27782)** (2026) — 评测多模态大模型能否评判具身视频生成：800 条人工标注视频（10 个生成模型，夹爪/人手/灵巧手），考察物理合理性与指令一致性；另提供 1.2 万条训练视频及 RoboJudge-9B（与人类评分 Pearson 0.719）。 · [代码](https://github.com/Sphere-AI-Lab/RoboJudge) · [项目页](https://spherelab.ai/RoboJudge/)
 - **[RoboLineage: Agent-Native Data Lifecycle Governance Across Robot Policy Iterations](https://arxiv.org/abs/2606.22142)** (2026) — 开源的机器人策略迭代数据生命周期管理层：把执行记录、审核、数据集决策、训练与评测都表示为带类型的溯源工件，由智能体维护，让迭代更快、更可追溯。 · [项目页](https://robolineage.github.io/)

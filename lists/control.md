@@ -2,7 +2,7 @@
 
 _Motion planning, trajectory optimization, MPC, safety filters and safe learning-based control._
 
-37 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/control.yaml`](../data/curated/control.yaml); edit the YAML, not this file.
+38 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/control.yaml`](../data/curated/control.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/control.html) · [中文](control.zh-CN.md)
 
@@ -38,6 +38,7 @@ _Motion planning, trajectory optimization, MPC, safety filters and safe learning
 - **[Scalable Deep Unfolding of Conic Optimizers](https://arxiv.org/abs/2606.13825)** (2026) — Makes deep unfolding work for large conic solvers via matrix-free implicit differentiation and a stable PSD-projection gradient; reports up to 50× speedups on SDP-based planning.
 - **[Sub-Millisecond Reflexes for Continuous Physical Human-Robot Interaction](https://arxiv.org/abs/2610.21913)** (2026) — An open-source ROS 2 multimode controller that switches control modes and triggers safety reflexes in under a millisecond, without stopping the task; shown on a Franka arm. · [code](https://github.com/RoboRef/franka_reflex_engine)
 - **[TAM: Torque Adaptation Module for Robust Motion Transfer in Manipulation](https://arxiv.org/abs/2606.06218)** (2026) — CoRL 2026 Spotlight. A module for contact-rich motion transfer across sim-to-real gaps, payloads and robot instances, as an alternative to domain randomization or system ID. · [code](https://github.com/Dongwon-Son/TAM) · [project](https://dongwon-son.github.io/tam-project-page/)
+- **[TDC: Sim-to-Real Transferable Directional Compliance for Contact-Rich Manipulation](https://arxiv.org/abs/2602.14174)** (2026) — Splits force regulation into a direction part learned in sim (task frame and control-mode outputs of a VLA-based policy) and a magnitude part set by hand in an admittance controller. Sim data only; four real tasks. · [project](https://yifei-y.github.io/project-pages/TDC/)
 - **[Motions in Microseconds via Vectorized Sampling-Based Planning](https://arxiv.org/abs/2309.14545)** (2023) — VAMP — vectorizes collision checking with CPU SIMD so sampling-based planners like RRT-Connect solve arm motion-planning queries in microseconds to milliseconds, no GPU needed. · [code](https://github.com/KavrakiLab/vamp)
 - **[Motion Policy Networks](https://arxiv.org/abs/2210.12209)** (2022) — A neural policy trained on millions of planner-generated trajectories that moves an arm to goals straight from point clouds. · [code](https://github.com/NVlabs/motion-policy-networks)
 - **[Safe Learning in Robotics: From Learning-Based Control to Safe Reinforcement Learning](https://arxiv.org/abs/2108.06266)** (2021) — Survey connecting control-theory and RL views of safety, from learned dynamics with guarantees to constrained RL and safety filters.

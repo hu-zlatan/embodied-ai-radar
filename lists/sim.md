@@ -2,7 +2,7 @@
 
 _Physics simulators, GPU-parallel training and transfer to real robots._
 
-57 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
+58 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/sim.html) · [中文](sim.zh-CN.md)
 
@@ -35,6 +35,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._
 - **[CoDA: Co-Evolution of Data Engines and Action Policies](https://arxiv.org/abs/2610.22362)** (2026) — Turns diagnosed policy failures into new simulated scenes and shaped training signals, so generator and policy improve together; on LIBERO-Pro, reports success rising from 25% to 84% under position perturbations. · [project](https://plan-lab.github.io/projects/coda/)
 - **[ComSim: Building Scalable Real-World Robot Data Generation via Compositional Simulation](https://arxiv.org/abs/2604.11386)** (2026) — Compositional simulation: classical sim produces accurate action-video pairs and a neural simulator restyles them as real-looking video, in a real-sim-real loop seeded by a little real data. · [project](https://faceong.github.io/ComSim/)
 - **[DexSuite: An All-in-One Framework for Dexterous Manipulation Across Arms, Hands, and Tasks](https://arxiv.org/abs/2610.37799)** (2026) — Open dexterous-manipulation framework on Genesis: 30 tasks, 10 arms × 12 end effectors (100+ single-arm robots), teleoperation, simulated touch, a 16-pair benchmark and 4,700 demo episodes. · [project](https://dexsuiteorg.github.io)
+- **[Do Rigid-Body Simulators Dream of Soft Robots? Learning Contact-Rich Manipulation for Tendon-Driven Continuum Robots](https://arxiv.org/abs/2606.22397)** (2026) — Puts tendon-driven continuum robots natively into MuJoCo with a continuum-mechanics-based discretization, validated against Cosserat rods and hardware; sim-trained imitation policies transfer zero-shot to a real robot. · [project](https://continuumroboticslab.github.io/opencr-mujoco/)
 - **[Gym-Anything for Robotics: Scaling physical simulations with digital agents](https://arxiv.org/abs/2610.40565)** (2026) — Coding agents build robotics simulations, checked by an adversarial create-and-audit loop; result RoboWorld: 25 sims chosen by U.S. GDP share, 200 RL envs. Best frontier models average just 0.06 reward on test tasks. · [code](https://github.com/gym-anything/robotics) · [project](https://gym-anything.github.io/robotics)
 - **[HyperDrone: Simulation-to-Reality Transfer at Millions of Frames per Second](https://arxiv.org/abs/2610.28950)** (2026) — GPU batch-rendering quadrotor simulator; reports 20×+ the speed of existing batch quadrotor sims, with a new ray tracer rendering RGB, depth, segmentation, normals and optical flow (CoRL 2026).
 - **[Kamino: GPU-based Simulation of Rigid Multi-Body Physics with Kinematic Loops](https://arxiv.org/abs/2603.16536)** (2026) — CoRL 2026 Spotlight. GPU physics solver in Python on NVIDIA Warp, integrated into Newton, for parallel simulation of robots with true kinematic loops rather than tree approximations.

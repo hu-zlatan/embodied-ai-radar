@@ -642,3 +642,63 @@
   tags: [inference-time-steering, visuotactile, world-model, diffusion, real]
   takeaway_en: "Inference-time steering with vision and touch: visual sampling picks the behaviour, tactile-guided diffusion editing fixes local contact, scored by a visuo-tactile latent world model. Reports +51% over the base policy."
   takeaway_zh: "视觉+触觉的推理时策略引导：视觉采样验证决定执行何种行为，触觉引导的扩散编辑修正局部接触，并由视触觉潜在世界模型打分。报告比基础策略提升 51%。"
+- title: "Multisensory Continual Learning: Adapting Pretrained Visuomotor Policies to Force"
+  type: paper
+  arxiv: "2606.30988"
+  year: 2026
+  venue: CoRL 2026
+  project: https://jadenvc.github.io/multisensory-continual-learning/
+  added: 2026-11-06
+  tags: [continual-learning, force-torque, world-action-model, fine-tuning, real]
+  takeaway_en: "Adds force-torque sensing to a pretrained vision-only world-action model with staged fusion, multisensory future prediction and replay of pretraining data; strong on contact tasks without losing original skills."
+  takeaway_zh: "通过分阶段融合、多感官未来预测和预训练数据回放，把力/力矩传感加入预训练的纯视觉世界动作模型；在富接触任务上表现好，同时保住甚至提升原有任务性能。"
+- title: "ForceBand: Learning Forceful Manipulation with sEMG"
+  type: paper
+  arxiv: "2606.26093"
+  year: 2026
+  venue: CoRL 2026
+  project: https://forceband-emg.github.io
+  added: 2026-11-06
+  tags: [semg, force, human-demos, wearable, real]
+  takeaway_en: "Low-cost wrist sEMG band whose model predicts per-finger forces, turning video demos into force-labelled ones after a short calibration. Reports >50% lower force error than vision and 87% on force-sensitive tasks."
+  takeaway_zh: "低成本腕戴式肌电（sEMG）设备，经短暂校准即可预测每根手指的力，把视频演示变成带力标注的演示。报告力预测误差比视觉方法低 50% 以上，力敏感任务成功率 87%。"
+- title: "T-Rex: Tactile-Reactive Dexterous Manipulation"
+  type: paper
+  arxiv: "2606.17055"
+  year: 2026
+  venue: CoRL 2026
+  project: https://tactile-rex.github.io/
+  added: 2026-11-06
+  tags: [vla, dataset, mixture-of-transformers, high-frequency, real]
+  takeaway_en: "Tactile-reactive VLA: 100-hour tactile dataset built around motor primitives, a variable-rate mixture-of-transformers and a temporal tactile VQ-VAE. Reports 30%+ higher average success than the best baseline on 12 tasks."
+  takeaway_zh: "触觉反应式 VLA：围绕基本动作采集的 100 小时触觉数据集、可变频率的 Mixture-of-Transformers 架构与时序触觉 VQ-VAE 编码器。报告在 12 个任务上平均成功率比最强基线高 30% 以上。"
+- title: "What is the Better Curriculum: Controller-Shaped Grasping Behavior for Contact Force-Sensitive Manipulation"
+  type: paper
+  arxiv: "2609.25887"
+  year: 2026
+  venue: CoRL 2026
+  project: https://shayfeng.github.io/better-curriculum/
+  added: 2026-11-06
+  tags: [fragile-objects, data-collection, reflex-controller, act, real]
+  takeaway_en: "Uses a 25 Hz tactile reflex controller as a teacher during data collection so demos carry well-regulated grasp forces; tactile-free ACT then reaches 95% stable grasps on fragile cups. Disturbances still need the reflex."
+  takeaway_zh: "数据采集时用 25 Hz 触觉反射控制器当“老师”，让演示自带良好的抓握力；之后不用触觉的 ACT 策略在易碎杯子上达到 95% 稳定抓取。但抵抗外部扰动仍需保留反射控制器。"
+- title: "Learning with Object-centric Representations of Tactile Interactive Perception for Robot Manipulation"
+  type: paper
+  arxiv: "2609.33235"
+  year: 2026
+  venue: CoRL 2026
+  project: https://xinyiyxyx.github.io/tactile-object-centric/
+  added: 2026-11-06
+  tags: [interactive-perception, object-properties, contrastive, context, real]
+  takeaway_en: "Learns object representations from tactile exploration, aligned with text descriptions of properties, and uses them as context for manipulation. Reports task success from 41% to 92% (seen) and 19% to 67% (unseen)."
+  takeaway_zh: "通过触觉探索学习物体表征，并与物理属性的文本描述对比对齐，再作为语境指导操作策略。报告任务成功率在已见物体上从 41% 升到 92%，未见物体从 19% 升到 67%。"
+- title: "ControlTac: Scaling Tactile Data with Physically Controlled Tactile Image Generation"
+  type: paper
+  arxiv: "2505.20498"
+  year: 2025
+  venue: CoRL 2026
+  project: https://dongyuluo.github.io/controltac
+  added: 2026-11-06
+  tags: [tactile-generation, data-augmentation, vision-based-tactile, insertion, real]
+  takeaway_en: "Generates realistic tactile images from one reference image plus contact force and pose, to scale tactile datasets across sensors. Augmented data improves insertion, imitation learning and weighing in real tests."
+  takeaway_zh: "以一张参考触觉图像加接触力与接触位姿为条件，生成逼真的触觉图像来扩充跨传感器的触觉数据。在插装、模仿学习与称重等真实任务中，增强数据均带来提升。"

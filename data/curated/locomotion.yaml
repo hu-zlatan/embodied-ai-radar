@@ -1375,3 +1375,43 @@
   tags: [humanoid, sports, motion-planning, sim-to-real, unitree-g1]
   takeaway_en: "Learns professional tennis serve and rally styles from broadcast video with a planner-plus-tracker design and speed adaptation for sim-to-real. Deployed on a G1 and a 1.7 m Dobot Atom serving without mocap."
   takeaway_zh: "从比赛转播视频学习职业网球发球与对打风格，采用“规划器+跟踪器”分层结构并加入速度自适应缩小仿真-真机差距。部署在 G1 和 1.7 m 的 Dobot Atom 上，无需动捕即可发球。"
+- title: "TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control"
+  type: paper
+  arxiv: "2602.07439"
+  year: 2026
+  venue: CoRL 2026
+  project: https://text-op.github.io/
+  added: 2026-11-06
+  tags: [humanoid, text-to-motion, diffusion, motion-tracking, real]
+  takeaway_en: "Real-time text-driven humanoid control: an autoregressive motion diffusion model streams short trajectories from the current command, which can change mid-motion, and a tracking policy executes them on hardware."
+  takeaway_zh: "实时文本驱动的人形机器人控制：自回归运动扩散模型根据当前（可随时修改的）文字指令持续生成短时轨迹，再由运动跟踪策略在真机上执行，可流畅切换舞蹈、跳跃等动作。"
+- title: "TEXEDO : Test Time Scaling for Controller-aware Language-conditioned Humanoid Motion Generation"
+  type: paper
+  arxiv: "2606.22998"
+  year: 2026
+  venue: CoRL 2026
+  project: https://jianuocao.github.io/TEXEDO/
+  added: 2026-11-06
+  tags: [humanoid, text-to-motion, test-time-scaling, feasibility, unitree-g1]
+  takeaway_en: "Samples many motions from a text-to-motion generator and picks one that a learned verifier says the humanoid can track and that matches the text. Improves tracking and text alignment, incl. on a real G1."
+  takeaway_zh: "从文本生成运动模型采样多个候选，用学习到的动态可行性验证器与语义对齐验证器挑选人形机器人既能跟踪又符合文字的动作。仿真与真实 G1 上跟踪精度与文本一致性均提升。"
+- title: "ADAPT: Agile Diffusion Action Priors for Robust and Steerable Online Text-Driven Humanoid Control"
+  type: paper
+  arxiv: "2609.00677"
+  year: 2026
+  venue: CoRL 2026
+  project: https://wuyan01.github.io/ADAPT-project/
+  added: 2026-11-06
+  tags: [humanoid, diffusion-policy, text-conditioned, residual-rl, real]
+  takeaway_en: "End-to-end text-conditioned humanoid control: a diffusion action prior learned from text-labelled state-action data, plus a light residual RL policy for robustness and smooth switching between commands."
+  takeaway_zh: "端到端的文本条件人形全身控制：从带文本标签的状态-动作轨迹学习扩散动作先验，再叠加轻量残差强化学习策略提升长时鲁棒性和指令切换的平滑度。"
+- title: "FADA: Few-Shot Domain Adaptation via Dynamics Alignment for Humanoid Control"
+  type: paper
+  arxiv: "2606.28476"
+  year: 2026
+  venue: CoRL 2026
+  project: https://lecar-lab.github.io/FADA-humanoid/
+  added: 2026-11-06
+  tags: [humanoid, domain-adaptation, inverse-dynamics, few-shot, real]
+  takeaway_en: "Planner plus inverse-dynamics student distilled from a privileged policy; at deployment only the IDM is fine-tuned on about 2 minutes of target-domain rollouts. Beats in-context and end-to-end adaptation baselines."
+  takeaway_zh: "从特权策略蒸馏出“规划器+逆动力学模型”学生策略；部署时冻结规划器，只用约 2 分钟目标域数据微调逆动力学模型。优于上下文自适应与端到端适应基线。"
