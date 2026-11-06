@@ -1220,3 +1220,13 @@
   tags: [symbolic-planning, strips, predicates, visual-planning, sim]
   takeaway_en: "Learns STRIPS-style operators (preconditions, add/delete effects) over latent predicates from image transitions, then plans classically from start and goal images. Beats visual-rollout and latent-search methods."
   takeaway_zh: "直接从图像转移数据学习 STRIPS 式符号算子（前提条件、增删效果）和潜在二值谓词，再从起始图与目标图用经典规划求解。优于视觉推演和潜在图搜索等基线。"
+- title: "Learning Robotic World Models with Semantic and Visual Feedback"
+  type: paper
+  arxiv: "2611.07850"
+  year: 2026
+  code: https://github.com/Alexander-wu/RoboImagine
+  project: https://huggingface.co/easylearning/RoboImagine
+  added: 2026-11-06
+  tags: [world-model, post-training, video-prediction, vlm-judge, grpo]
+  takeaway_en: "RoboImagine post-trains autoregressive robot world models by comparing candidate futures, scored by a frozen multimodal judge plus pixel/perceptual terms. Reports +1.26 dB PSNR on RT-1 over continued SFT."
+  takeaway_zh: "RoboImagine 通过比较多条候选未来来后训练自回归机器人世界模型：冻结的多模态评估器给出语义偏好，像素与感知层面的一致性项约束视觉误差。在 RT-1 上报告 PSNR 比继续监督微调高 1.26 dB。"

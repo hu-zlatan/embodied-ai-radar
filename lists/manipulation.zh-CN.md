@@ -2,7 +2,7 @@
 
 _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 
-共 145 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
+共 146 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/manipulation.html) · [English](manipulation.md)
 
@@ -102,6 +102,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[Scaling Dexterous Manipulation via Action Representation Pretraining](https://arxiv.org/abs/2610.34453)** (2026) — ARPG 把动作表征学习与动作生成解耦：先在大规模人类操作数据上预训练动作编码器，再在其表征空间训练 1.3 亿参数的生成策略。报告在 DexJoCo 双手灵巧任务上平均成功率从 π0.5 的 10.1% 提升到 44.7%。 · [项目页](https://arpg-project.github.io/)
 - **[ScheduleGen: Demonstration Generation via Skill Scheduling for Multi-Arm Imitation Learning](https://arxiv.org/abs/2610.39429)** (2026) — 面向双臂/多臂机器人的示范自动生成：在少量源示范基础上联合做规划与技能调度，显式处理多臂间约束，避免现有生成方法产生的碰撞与失败。28 个仿真任务变体上数据生成成功率 79.6%，训练出的策略经零样本 sim-to-real 在 8 个真实变体上成功率 50–80%。 · [项目页](https://schedulegen.github.io/)
 - **[Scouting the Dynamics Gap: Test-Time Policy Adaptation via Action-Outcome Feedback](https://arxiv.org/abs/2609.36107)** (2026) — 元学习的策略与前向动力学模型共享信念潜变量；部署时根据动作结果的偏差更新该潜变量，使策略能即时适应未知动力学。 · [项目页](https://liy1shu.github.io/SCOUT/)
+- **[Semantics-to-Contact: A Stagewise Framework for Robust Contact-Rich Manipulation](https://arxiv.org/abs/2611.07532)** (2026) — 分两阶段：先由视觉语言模型定位任务相关区域，再在真实世界用带力反馈、人在回路的残差强化学习学习接触细节。以物体为中心的背景增强使其在六个真机任务上保持稳健。 · [项目页](https://edem-ai.github.io/S2C/)
 - **[Sim-and-Human Co-training for Data-Efficient and Scene-Generalizable Bimanual Manipulation](https://arxiv.org/abs/2601.19406)** (2026) — 用仿真数据（提供机器人可执行动作）和人类视频（提供真实视觉）联合预训练双臂策略，再在每任务 80 条真机数据上微调。报告在未见场景上成功率 62.5%，比纯真机数据高 53.7 个百分点。 · [项目页](https://kaipengfang.github.io/sim-and-human/)
 - **[Spatial-UMI-Dream: Scaling World Action Models with Metric Geometry for UMI Manipulation](https://arxiv.org/abs/2611.07229)** (2026) — 在 605 小时 RGB-D UMI 数据上预训练的 5B 世界动作模型，同时预测 RGB、度量深度和动作。并提出 RoboTwin-UMI 基准；报告真机平均成功率 85%，比最强基线高 24.2 个百分点。 · [项目页](https://weiduoyuan.com/spatial-umi-dream/)
 - **[Spectrally Routed Diffusion Policy for Multi-Task Robotic Manipulation](https://arxiv.org/abs/2611.04477)** (2026) — SR-DP 用 SVD 把训练好的扩散去噪器拆成秩一专家并按任务路由，缓解多任务联合训练的相互干扰；报告在六个 RoboTwin 任务上超过逐任务基线。

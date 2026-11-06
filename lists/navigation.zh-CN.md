@@ -2,7 +2,7 @@
 
 _视觉语言导航、具身问答、移动操作与大模型规划。_
 
-共 64 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
+共 65 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/navigation.html) · [English](navigation.md)
 
@@ -46,6 +46,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - **[Safe Task Planning with Long-Term Graph Memory for Embodied Agents](https://arxiv.org/abs/2609.08444)** (2026) — 具身智能体的安全任务规划：持续维护场景的长期语义图记忆，让 LLM 风险预测器发现视野外的隐患并触发重规划。在 IS-Bench 与真机上验证。 · [项目页](https://sites.google.com/view/safemem)
 - **[ScaleNav: Scalable Internet Video Pretraining for Language-Conditioned Local Navigation](https://arxiv.org/abs/2610.25690)** (2026) — 先在互联网第一视角视频上预训练，学习"朝描述的目标走近时画面如何变化"，再用仿真数据对齐到动作；论文报告在自建 HabitatGS-LN 基准上成功率 94.9%，并在真实四足机器人上部署。 · [代码](https://github.com/MachEmbodied/ScaleNav) · [项目页](https://zju3dv.github.io/ScaleNav/)
 - **[See What I Need, Dream What I Want: A Navigation Foundation Model on a Self-Constructed Representation Space](https://arxiv.org/abs/2610.31762)** (2026) — RepresentNav 用一个小型 Transformer 融合多个视觉基础模型各层特征，构建由导航目标自行塑造的表示空间，并在每步动作前预测下一时刻的潜在表示（JEPA 式）；报告 VLNVerse 细粒度成功率 83.8%（领先 20.05 个百分点），并在真机上验证。 · [项目页](https://wang-yinxi.github.io/representnav/)
+- **[Seeing Beyond the Next Step: World-Model-Guided Human-Like Navigation in Multi-Agent Scenes](https://arxiv.org/abs/2611.07730)** (2026) — 仅在训练时用两个世界模型（社交动态、场景语义）为候选动作打分，再把这种前瞻能力蒸馏进单次前向的策略。观察者认为其运动比基线更像人。 · [项目页](https://seoneun.github.io/-NeurIPS-2026-Seeing-Beyond-the-Next-Step/)
 - **[SidewalkBench: Benchmarking Visual Navigation on Urban Sidewalks](https://arxiv.org/abs/2606.16953)** (2026) — CoRL 2026 Spotlight。城市人行道视觉导航基准，基于 Isaac Sim，包含程序生成与真实世界环境。 · [代码](https://github.com/VAIL-UCLA/SidewalkBench) · [项目页](https://vail-ucla.github.io/SidewalkBench/)
 - **[TARSphere: A Robot-Oriented Full-Stack Framework for Long-Horizon Embodied Agents in Evolving Physical and Social Environments](https://arxiv.org/abs/2610.30043)** (2026) — 带具身 NPC、受限对话和事件驱动任务状态机的物理仿真框架，并提供让冻结多模态大模型调用多级技能的执行框架；基于 30 个室内场景构建 360 回合基准，评测 8 个模型，报告通用模型可胜过具身专用模型，任务变更和人机协作仍是难点。 · [代码](https://github.com/xuyicheng-zju/TARSphere) · [项目页](https://xuyicheng-zju.github.io/TARSphere/)
 - **[Task-Aware Environment Augmentation for Reliable Navigation via Shielded Conditional Diffusion](https://arxiv.org/abs/2606.15154)** (2026) — 反过来思考：不改机器人，而是决定在环境中哪里放少量视觉标记，使规划好的轨迹能可靠执行；方法为带安全约束采样的条件扩散模型。仿真与真机验证。 · [项目页](https://scoda-diffusion.github.io/)

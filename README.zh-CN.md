@@ -74,7 +74,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_ [在网站上�
 - ⭐ **[3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://arxiv.org/abs/2403.03954)** (2024) — 用紧凑点云编码作为扩散策略条件，比图像输入更省数据、对视角更鲁棒。 · [代码](https://github.com/YanjieZe/3D-Diffusion-Policy)
 - ⭐ **[Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation](https://arxiv.org/abs/2401.02117)** (2024) — 将 ALOHA 装上移动底盘；与静态 ALOHA 数据联合训练显著提升做饭、开柜等移动任务表现。 · [代码](https://github.com/MarkFzp/mobile-aloha)
 
-**[查看全部 145 条 →](lists/manipulation.zh-CN.md)**
+**[查看全部 146 条 →](lists/manipulation.zh-CN.md)**
 
 <a id="tactile"></a>
 ### 触觉与视触觉感知
@@ -134,7 +134,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - ⭐ **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — 以动作为中心的世界动作模型：由观测预测动作，视频生成变为可选，动作精度不再依赖视频预测质量，推理开销也更低。 · [代码](https://github.com/open-gigaai/giga-world-policy) · [项目页](https://gigaai-research.github.io/GigaWorld-Policy/)
 - ⭐ **[GreenWAM: A World Foundation Model for Robotics](https://arxiv.org/abs/2610.18774)** (2026) — 同一个世界模型兼作策略，用共享的关节坐标动作空间覆盖 20 类机器人；论文报告其在 WorldArena、RoboTwin 2.0、LIBERO-plus 上表现突出，并蒸馏出可实时运行的单步人形机器人策略。 · [代码](https://github.com/greenvla/GreenWAM) · [项目页](https://greenvla.github.io/GreenWAM)
 
-**[查看全部 116 条 →](lists/world-models.zh-CN.md)**
+**[查看全部 117 条 →](lists/world-models.zh-CN.md)**
 
 <a id="navigation"></a>
 ### 导航与具身智能体
@@ -154,7 +154,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网�
 - **[CoopUQ: Robust Multi-Robot Social Navigation via Uncertainty-Aware Cooperative Forecasting](https://arxiv.org/abs/2610.26852)** (2026) — 多机器人社交导航：多机融合特征预测未来占据栅格及其不确定性，约束多智能体强化学习策略据此避开被预测占据或高度不确定的区域。Unity 仿真与真机验证。 · [项目页](https://coopuq.github.io/)
 - **[CostNav: A Navigation Benchmark for Real-World Economic-Cost Evaluation of Physical AI Agents](https://arxiv.org/abs/2511.20216)** (2026) — 以经济账评估配送机器人导航：在 Isaac Sim 中结合公开财报与伤害数据计算成本、收入与盈亏平衡。报告七种基线方法目前都无法盈利。 · [代码](https://github.com/worv-ai/CostNav)
 
-**[查看全部 64 条 →](lists/navigation.zh-CN.md)**
+**[查看全部 65 条 →](lists/navigation.zh-CN.md)**
 
 <a id="perception"></a>
 ### 感知、SLAM 与三维建图
@@ -174,7 +174,7 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - ⭐ **[BundleSDF: Neural 6-DoF Tracking and 3D Reconstruction of Unknown Objects](https://arxiv.org/abs/2303.14158)** (2023) — 在 RGB-D 视频中跟踪从未见过物体的六自由度位姿，同时在线构建其神经三维模型，无需 CAD 模型；适用于操作新物体。 · [代码](https://github.com/NVlabs/BundleSDF)
 - ⭐ **[CoTracker: It is Better to Track Together](https://arxiv.org/abs/2307.07635)** (2023) — 联合跟踪视频中大量点（而非逐点独立跟踪）的 Transformer，遮挡下依然稳健；常用于从人类或机器人视频中提取运动轨迹来学习策略。 · [代码](https://github.com/facebookresearch/co-tracker)
 
-**[查看全部 44 条 →](lists/perception.zh-CN.md)**
+**[查看全部 45 条 →](lists/perception.zh-CN.md)**
 
 <a id="control"></a>
 ### 规划、控制与安全
@@ -214,7 +214,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - ⭐ **[What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](https://arxiv.org/abs/2108.03298)** (2021) — robomimic：在人类采集的操作示教数据上系统比较模仿学习与离线强化学习（示教质量、观测选择、带历史的行为克隆），并开源框架与数据集。 · [代码](https://github.com/ARISE-Initiative/robomimic)
 - ⭐ **[Addressing Function Approximation Error in Actor-Critic Methods](https://arxiv.org/abs/1802.09477)** (2018) — TD3：通过双 Critic、延迟策略更新和目标策略平滑解决 DDPG 的价值高估问题，至今仍是连续控制的常用基线。 · [代码](https://github.com/sfujim/TD3)
 
-**[查看全部 107 条 →](lists/learning.zh-CN.md)**
+**[查看全部 108 条 →](lists/learning.zh-CN.md)**
 
 <a id="sim"></a>
 ### 仿真与 Sim-to-Real

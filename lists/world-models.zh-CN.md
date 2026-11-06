@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 116 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 117 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html) · [English](world-models.md)
 
@@ -59,6 +59,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[La-JEPA: Compact Robot Policies with Latent World Modeling](https://arxiv.org/abs/2611.08156)** (2026) — 在冻结的 V-JEPA 2.1 特征上从零训练的紧凑世界动作模型，仅在训练时预测未来特征。报告在无具身预训练的策略中 RoboTwin 2.0 最优，并修正了 LIBERO-Plus 的指令。
 - **[LaWAM: Latent World Action Models for Efficient Dynamics-Aware Robot Policies](https://arxiv.org/abs/2606.15768)** (2026) — 不生成视频的世界动作模型：在视觉基础模型的特征空间中训练潜动作模型，预测未来观测特征作为“潜在视觉子目标”来条件化动作生成。报告 LIBERO 98.6%、RoboTwin 91.22%，每个动作块推理 187 ms，比像素级 WAM 延迟低最多 24 倍。 · [代码](https://github.com/RLinf/LaWAM) · [项目页](https://rlinf.github.io/LaWAM/)
 - **[Large Video Planner Enables Generalizable Robot Control](https://arxiv.org/abs/2512.15840)** (2026) — 以视频而非语言为主干构建机器人基础模型：在互联网规模人类视频上训练开源视频规划器，零样本生成视频计划再转为机器人动作；模型与数据集均已开源。 · [代码](https://github.com/buoyancy99/large-video-planner) · [项目页](https://www.boyuan.space/large-video-planner/)
+- **[Learning Robotic World Models with Semantic and Visual Feedback](https://arxiv.org/abs/2611.07850)** (2026) — RoboImagine 通过比较多条候选未来来后训练自回归机器人世界模型：冻结的多模态评估器给出语义偏好，像素与感知层面的一致性项约束视觉误差。在 RT-1 上报告 PSNR 比继续监督微调高 1.26 dB。 · [代码](https://github.com/Alexander-wu/RoboImagine) · [项目页](https://huggingface.co/easylearning/RoboImagine)
 - **[Light-WAM: Efficient World Action Models with State-Fusion Action Decoding](https://arxiv.org/abs/2606.08242)** (2026) — 轻量世界动作模型：紧凑视频主干在降采样潜空间中做未来监督，动作专家融合多层特征一次前向预测动作块；报告可训练参数仅 0.44B，推理延迟 72 毫秒。 · [代码](https://github.com/L1ziang/Light-WAM)
 - **[MemoryVAM: Integrating Memory into Video Action Model for Robot Manipulation](https://arxiv.org/abs/2606.20679)** (2026) — 为视频世界模型策略加入情景记忆 token，使动作能依赖已不在视野中的事件。报告 LIBERO-Mem 成功率从 5% 提升到 42.5%，真机记忆类任务约 75–80%。 · [项目页](https://MemoryVAM.github.io/)
 - **[Motubrain: An Advanced World Action Model for Robot Control](https://arxiv.org/abs/2604.27792)** (2026) — 基于 UniDiffuser 的三流世界动作模型，一个模型同时覆盖策略、世界建模、视频生成和逆动力学，并可利用纯视频和跨形态数据。 · [项目页](https://www.shengshu.com/en/motubrain)

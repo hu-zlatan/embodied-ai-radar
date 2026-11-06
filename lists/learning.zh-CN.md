@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 107 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 108 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [English](learning.md)
 
@@ -37,6 +37,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[DiscreteRTC: Discrete Diffusion Policies are Natural Asynchronous Executors](https://arxiv.org/abs/2604.25050)** (2026) — 指出离散扩散策略天然支持实时分块异步执行（补全即解掩码），无需微调、计算量约为 0.7 倍。报告在真机冰球防守任务上成功率比流匹配 RTC 高 65%。 · [项目页](https://outsider86.github.io/DiscreteRTCSite/)
 - **[ELA: End-to-End Latent Action Policy Learning from Video Demonstrations](https://arxiv.org/abs/2611.05571)** (2026) — 联合训练潜在动作模型、潜在策略和动作解码器，用大量无动作标注的视频加少量带标注示教即可训练策略。报告在仿真和真实任务上优于已有潜在动作方法。 · [项目页](https://end2end-latent-action.github.io/)
 - **[ENPIRE: Agentic Robot Policy Self-Improvement in the Real World](https://arxiv.org/abs/2606.19980)** (2026) — 让编程智能体自主改进真实机器人策略的框架：自动复位与结果验证、多机并行评测，并由智能体分析日志、修改训练代码。报告在扎扎带等灵巧任务上成功率 99%。 · [项目页](https://research.nvidia.com/labs/gear/enpire/)
+- **[Efficient Diffusion Policy Fine Tuning with Latent Noise Representation Bridging](https://arxiv.org/abs/2611.07275)** (2026) — LARBRID 通过调整初始噪声来强化学习微调预训练的扩散/流策略，并学习噪声空间与动作空间共享的表示来消除“噪声混叠”问题。在运动与操作任务上报告最高 2–3 倍的提升。
 - **[EgoEngine: From Egocentric Human Videos to High-Fidelity Dexterous Robot Demonstrations](https://arxiv.org/abs/2606.12604)** (2026) — 把第一人称人类视频转为机器人数据：生成把人替换成机器人的视频，以及满足可行性约束的机器人动作轨迹。声称首次在无真机演示下零样本训练出灵巧视觉运动策略。 · [项目页](https://egoengine.github.io)
 - **[EgoForesight: Effectively Scaling Policy Learning with Noisy Egocentric Actions](https://arxiv.org/abs/2610.31845)** (2026) — 将机器人示教与动作标签噪声较大的第一视角视频联合训练 VLA：按数据源可靠性分配监督权重，并从干净的未来画面蒸馏表征；报告在最多 3 万小时预训练数据范围内扩展斜率高于基线。 · [代码](https://github.com/LinShan-Bin/EgoForesight) · [项目页](https://lin-shan.com/EgoForesight)
 - **[FAR: Failure-Aware Retry for Test-Time Recovery and Continual Policy Improvement](https://arxiv.org/abs/2607.01111)** (2026) — 会从失败中学习的重试机制：用失败尝试构造偏好数据，引导策略避开失败行为，并加入小幅动作扰动做局部探索，成功恢复的轨迹再回流训练。报告仿真提升 17.6%，真机提升 11.7%。 · [项目页](https://hoar012.github.io/FAR-Project)

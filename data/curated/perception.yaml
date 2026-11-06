@@ -458,3 +458,12 @@
   tags: [active-perception, 3d-reconstruction, in-hand, next-best-view, real]
   takeaway_en: "Active in-hand 3D reconstruction: estimates per-ray reconstruction uncertainty to pick the next view, then an in-hand rotation policy turns the object to expose it. Better quality and efficiency than non-active rotation."
   takeaway_zh: "主动式手内三维重建：沿候选视线估计各方向的重建不确定性来选择下一最佳视角，再由手内旋转策略把物体转到该视角。重建质量与效率均优于非主动旋转。"
+- title: "Fast and Accurate Hand Estimation in Pixels, Interaction and World Space"
+  type: paper
+  arxiv: "2611.07711"
+  year: 2026
+  code: https://github.com/noahcao/FAH
+  added: 2026-11-06
+  tags: [hand-pose, mano, contact, egocentric, real-time]
+  takeaway_en: "FAH builds on SAM 3D Body's hand branch: predict 2D/3D joints and surface points, then fit MANO or MHR-Hand, with optional contact and world-space tracking. The default ViT-L runs at 65 fps on an RTX 4070 Ti SUPER."
+  takeaway_zh: "FAH 基于 SAM 3D Body 的手部分支：先预测 2D/3D 关节与表面点，再拟合 MANO 或 MHR-Hand，可选估计接触并在世界坐标系中跟踪。默认 ViT-L 模型在 RTX 4070 Ti SUPER 上达 65 fps。"

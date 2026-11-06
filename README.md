@@ -83,7 +83,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - ⭐ **[3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://arxiv.org/abs/2403.03954)** (2024) — Conditions a diffusion policy on a compact point-cloud encoding; more data-efficient and robust to viewpoint than images. · [code](https://github.com/YanjieZe/3D-Diffusion-Policy)
 - ⭐ **[Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation](https://arxiv.org/abs/2401.02117)** (2024) — Puts ALOHA on a mobile base; co-training with static ALOHA data boosts mobile tasks like cooking and opening cabinets. · [code](https://github.com/MarkFzp/mobile-aloha)
 
-**[All 145 entries →](lists/manipulation.md)**
+**[All 146 entries →](lists/manipulation.md)**
 
 <a id="tactile"></a>
 ### Tactile & Visuotactile Sensing
@@ -143,7 +143,7 @@ _Learned dynamics, video world models, world action models (WAM) and model-based
 - ⭐ **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — An action-centered WAM that predicts actions from the observation and makes video generation optional, so motion accuracy depends less on forecast quality and inference is cheaper. · [code](https://github.com/open-gigaai/giga-world-policy) · [project](https://gigaai-research.github.io/GigaWorld-Policy/)
 - ⭐ **[GreenWAM: A World Foundation Model for Robotics](https://arxiv.org/abs/2610.18774)** (2026) — One world model that is also the policy, across 20 robot families mapped to a shared joint-space action format; reports strong WorldArena, RoboTwin 2.0 and LIBERO-plus results and a one-step distilled humanoid policy. · [code](https://github.com/greenvla/GreenWAM) · [project](https://greenvla.github.io/GreenWAM)
 
-**[All 116 entries →](lists/world-models.md)**
+**[All 117 entries →](lists/world-models.md)**
 
 <a id="navigation"></a>
 ### Navigation & Embodied Agents
@@ -163,7 +163,7 @@ _Vision-language navigation, embodied question answering, mobile manipulation an
 - **[CoopUQ: Robust Multi-Robot Social Navigation via Uncertainty-Aware Cooperative Forecasting](https://arxiv.org/abs/2610.26852)** (2026) — Multi-robot social navigation: robots fuse features to forecast occupancy maps with uncertainty, and a constrained multi-agent RL policy avoids regions predicted occupied or uncertain. Unity sim + real robots. · [project](https://coopuq.github.io/)
 - **[CostNav: A Navigation Benchmark for Real-World Economic-Cost Evaluation of Physical AI Agents](https://arxiv.org/abs/2511.20216)** (2026) — Scores delivery-robot navigation by money: cost, revenue and break-even, using Isaac Sim plus public filings and injury data. Reports that none of seven baselines is economically viable yet. · [code](https://github.com/worv-ai/CostNav)
 
-**[All 64 entries →](lists/navigation.md)**
+**[All 65 entries →](lists/navigation.md)**
 
 <a id="perception"></a>
 ### Perception, SLAM & 3D Mapping
@@ -183,7 +183,7 @@ _Visual / LiDAR SLAM and odometry, 3D reconstruction, object pose, depth and ope
 - ⭐ **[BundleSDF: Neural 6-DoF Tracking and 3D Reconstruction of Unknown Objects](https://arxiv.org/abs/2303.14158)** (2023) — Tracks the 6-DoF pose of a never-seen object in RGB-D video while building its neural 3D model online, with no CAD model needed; useful for manipulating novel objects. · [code](https://github.com/NVlabs/BundleSDF)
 - ⭐ **[CoTracker: It is Better to Track Together](https://arxiv.org/abs/2307.07635)** (2023) — Transformer that tracks many video points jointly rather than one at a time, staying robust through occlusions; widely used to extract motion tracks from human or robot videos for policy learning. · [code](https://github.com/facebookresearch/co-tracker)
 
-**[All 44 entries →](lists/perception.md)**
+**[All 45 entries →](lists/perception.md)**
 
 <a id="control"></a>
 ### Planning, Control & Safety
@@ -223,7 +223,7 @@ _Reinforcement learning, imitation learning and policy post-training methods for
 - ⭐ **[What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](https://arxiv.org/abs/2108.03298)** (2021) — robomimic — a controlled study of imitation and offline RL on human-collected manipulation demos (demo quality, observation choices, history-aware BC), released with the framework and datasets. · [code](https://github.com/ARISE-Initiative/robomimic)
 - ⭐ **[Addressing Function Approximation Error in Actor-Critic Methods](https://arxiv.org/abs/1802.09477)** (2018) — TD3 — fixes DDPG's value overestimation with twin critics, delayed policy updates and target smoothing; still a standard continuous-control baseline. · [code](https://github.com/sfujim/TD3)
 
-**[All 107 entries →](lists/learning.md)**
+**[All 108 entries →](lists/learning.md)**
 
 <a id="sim"></a>
 ### Sim-to-Real & Simulators

@@ -2,7 +2,7 @@
 
 _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipulation._
 
-145 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml); edit the YAML, not this file.
+146 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/manipulation.html) · [中文](manipulation.zh-CN.md)
 
@@ -102,6 +102,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - **[Scaling Dexterous Manipulation via Action Representation Pretraining](https://arxiv.org/abs/2610.34453)** (2026) — ARPG pretrains an action encoder on human manipulation data, then trains a 130M generative policy in its space. Reports bimanual dexterous success up from 10.1% (π0.5) to 44.7% on DexJoCo. · [project](https://arpg-project.github.io/)
 - **[ScheduleGen: Demonstration Generation via Skill Scheduling for Multi-Arm Imitation Learning](https://arxiv.org/abs/2610.39429)** (2026) — MimicGen-style demo synthesis that respects multi-arm constraints: plans and schedules skills across arms. Reports 79.6% generation success on 28 sim variants and 50-80% real success via zero-shot sim-to-real. · [project](https://schedulegen.github.io/)
 - **[Scouting the Dynamics Gap: Test-Time Policy Adaptation via Action-Outcome Feedback](https://arxiv.org/abs/2609.36107)** (2026) — Meta-learned policy and forward model share a belief latent; at deployment the latent is updated from action-outcome mismatches, so the policy adapts to unknown dynamics on the fly. · [project](https://liy1shu.github.io/SCOUT/)
+- **[Semantics-to-Contact: A Stagewise Framework for Robust Contact-Rich Manipulation](https://arxiv.org/abs/2611.07532)** (2026) — A VLM first localizes the task region, then real-world human-in-the-loop residual RL with force feedback learns the contact part. Object-centric background augmentation adds robustness; six real tasks. · [project](https://edem-ai.github.io/S2C/)
 - **[Sim-and-Human Co-training for Data-Efficient and Scene-Generalizable Bimanual Manipulation](https://arxiv.org/abs/2601.19406)** (2026) — Co-trains a bimanual policy on sim data (for robot-valid actions) and human videos (for real visuals), then fine-tunes on 80 real episodes per task. Reports 62.5% on held-out scenes, 53.7 points above real-only. · [project](https://kaipengfang.github.io/sim-and-human/)
 - **[Spatial-UMI-Dream: Scaling World Action Models with Metric Geometry for UMI Manipulation](https://arxiv.org/abs/2611.07229)** (2026) — 5B world action model pretrained on 605 h of RGB-D UMI data that predicts RGB, metric depth and actions. Adds RoboTwin-UMI; reports 85% average real success, +24.2 points over the best baseline. · [project](https://weiduoyuan.com/spatial-umi-dream/)
 - **[Spectrally Routed Diffusion Policy for Multi-Task Robotic Manipulation](https://arxiv.org/abs/2611.04477)** (2026) — SR-DP splits a trained diffusion denoiser by SVD into rank-one experts with task routing, so joint training stops hurting single tasks; reports beating per-task baselines on six RoboTwin tasks.
