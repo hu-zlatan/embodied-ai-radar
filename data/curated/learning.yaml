@@ -638,3 +638,67 @@
   tags: [inverse-rl, learning-from-observation, world-model, real]
   takeaway_en: "Inverse RL from observation only (videos, no actions or rewards) made practical on a real robot via online world modeling. Reports pick-and-place learned from scratch to 82% in under 40 minutes."
   takeaway_zh: "仅从观测（视频，无动作和奖励）做逆强化学习，借助在线世界模型在真机上实现。报告不到 40 分钟从零学会抓放，成功率 82%。"
+- title: "Learning to Be Different: Component Specialization for Compositional Diffusion Policies"
+  type: paper
+  arxiv: "2610.27194"
+  year: 2026
+  venue: CoRL 2026
+  project: https://al3cl1.github.io/robotics-score-decorrelation
+  added: 2026-11-06
+  topics: [manipulation]
+  tags: [diffusion-policy, compositional, multitask, auxiliary-loss]
+  takeaway_en: "Composed diffusion policies often learn identical components. A drop-in score-decorrelation loss makes each factor specialize, with no loss in multitask performance."
+  takeaway_zh: "组合式扩散策略的各个分量常常学成相同的副本。即插即用的得分去相关损失让各分量各自专门化，且不损失多任务性能。"
+- title: "Where Small Mistakes Matter: Quantifying State Criticality for Imitation Learning"
+  type: paper
+  arxiv: "2610.17709"
+  year: 2026
+  venue: CoRL 2026
+  project: https://sia-lab-git.github.io/SCRIM/
+  added: 2026-11-06
+  topics: [manipulation, datasets]
+  tags: [imitation-learning, state-criticality, data-curation, adversarial]
+  takeaway_en: "Scores how much a small action error at each demo state would hurt the outcome, using an adversarial disturbance policy. The scores reweight behavior cloning and select smaller, higher-value demo subsets."
+  takeaway_zh: "用对抗扰动策略衡量每个示教状态上的小动作误差会对结果造成多大损害。该分数可用于给行为克隆加权，并挑选更小但价值更高的示教子集。"
+- title: "MIRROR: Reflecting Hidden Symmetries from Offline Robot Interaction Data"
+  type: paper
+  arxiv: "2610.17422"
+  year: 2026
+  venue: CoRL 2026
+  project: https://pomdp-mirror.github.io
+  added: 2026-11-06
+  topics: [manipulation]
+  tags: [symmetry, equivariance, offline-data, behavior-cloning, real]
+  takeaway_en: "Learns how a known symmetry acts on pixel observations and actions from offline data, then uses it for frame-averaged behavior cloning. Reports average success 80.5% to 85.1% on four Robosuite tasks."
+  takeaway_zh: "从离线交互数据中学习已知对称群如何同时作用于像素观测和动作，再用于帧平均行为克隆。报告在四个 Robosuite 任务上平均成功率从 80.5% 升到 85.1%。"
+- title: "A Balanced Data Diet: Addressing the Exploration Bottleneck in Mega-Scale RL for Robot Control"
+  type: paper
+  arxiv: "2610.12465"
+  year: 2026
+  venue: CoRL 2026
+  project: https://sgs-rl.github.io/
+  added: 2026-11-06
+  topics: [locomotion, sim]
+  tags: [massively-parallel-rl, curriculum, assembly, quadruped, sim2real]
+  takeaway_en: "Success Guided Sampling focuses massively parallel RL on task configurations at the edge of the policy's ability. With up to a million envs it solves quadruped terrain and assembly tasks; assembly transfers zero-shot."
+  takeaway_zh: "成功引导采样把大规模并行强化学习集中在策略能力边界附近的任务配置上。用最多约一百万个并行环境解决四足多地形与装配任务，装配策略零样本迁移到真机。"
+- title: "RoboFFT: Finetuning generative robot policy via online reinforcement learning with forward process"
+  type: paper
+  arxiv: "2609.32236"
+  year: 2026
+  venue: CoRL 2026
+  project: https://student-of-holmes.github.io/RoboFFT/
+  added: 2026-11-06
+  tags: [rl-finetuning, diffusion-policy, flow-matching, ppo, real]
+  takeaway_en: "PPO-style fine-tuning for diffusion and flow policies that builds a surrogate policy ratio from forward noising and the score/flow loss, avoiding likelihoods. Tested in sim and real."
+  takeaway_zh: "为扩散与流匹配策略做 PPO 式微调：用前向加噪与得分/流匹配损失构造替代的策略比率，绕开似然计算；在仿真与真机上验证。"
+- title: "HiRE: Hindsight Reward Editing for Policy Finetuning"
+  type: paper
+  arxiv: "2609.27068"
+  year: 2026
+  venue: CoRL 2026
+  project: https://hire-project.github.io
+  added: 2026-11-06
+  tags: [reward-shaping, rl-finetuning, foundation-models, hindsight]
+  takeaway_en: "Training-free reward editing: compares successful and failed rollouts in hindsight to penalize trap states that foundation-model rewards rate highly. Reports at least 3x the base policy's performance."
+  takeaway_zh: "免训练的奖励修正：事后对比成功与失败轨迹，惩罚被基础模型奖励高估、最终却导致失败的“陷阱状态”。报告性能至少是基础策略的 3 倍。"

@@ -2,7 +2,7 @@
 
 _Tactile sensors, touch representations and contact-rich control._
 
-51 entries, ⭐ = highlight. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
+52 entries, ⭐ = highlight. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/tactile.html) · [中文](tactile.zh-CN.md)
 
@@ -22,6 +22,7 @@ _Tactile sensors, touch representations and contact-rich control._
 - **[PanoTac: A Dense Three-Axis Tactile Sensor for Robust Touch-Centric Manipulation](https://arxiv.org/abs/2611.03520)** (2026) — A compliant fingertip under $50 gives a dense 12×32 normal and shear map at 60 Hz. Visuo-tactile policies beat vision-only baselines by 46.7 points on average across scooping, pouring and test-tube tasks. · [project](https://panotac.github.io)
 - **[ReflexArc: Bottom-Up Integration of Instantaneous Tactile Reflexes into Whole-Body Humanoid Control](https://arxiv.org/abs/2611.04424)** (2026) — Adds a full-body tactile reflex that reaches the motors within 10 ms beneath a learned whole-body policy; on a G1 it cuts first force peak 34.1% versus the same reflex delayed by 20 ms. · [project](https://minusmodulo.github.io/reflexarc-website/)
 - **[TacMind: Benchmarking and Modeling Tactile Interaction States for Robotic Manipulation](https://arxiv.org/abs/2611.00455)** (2026) — 128 simulated tactile tasks in three regimes (Precise, Recognition, Dynamic) with 12 perturbations, plus a tactile world model that treats touch as an evolving state and refines actions with predicted contact. · [code](https://github.com/Tacmind-Bench/TacMind) · [project](https://tacmind-bench.github.io/)
+- **[Tactile Curiosity Drives Robot Interaction](https://arxiv.org/abs/2609.40134)** (2026) — TacEx points curiosity at touch: it splits model uncertainty by sense so exploration seeks contact, not free-space motion. The collected data trains pick-and-place offline and post-trains VLAs. · [project](https://go.klem.nz/tacex)
 - **[Tactile-Based Robotic Manipulation: From Mechanics-Driven to Data-Driven Perspectives](https://arxiv.org/abs/2610.30438)** (2026) — Review (Annual Review of Control, Robotics, and Autonomous Systems) tracing tactile manipulation from contact-mechanics models to learned policies: sensing basics, state estimation, IL, RL, VLAs, predictive models.
 - **[TactileStep: Sole Tactile Learning for Regulating Foot-Terrain Interaction in Humanoid Locomotion](https://arxiv.org/abs/2609.28959)** (2026) — CoRL 2026 Spotlight. Brings sole pressure sensing into humanoid locomotion control, aiming for softer foot-terrain contact than parkour policies that succeed despite harsh landings.
 - **[VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing](https://arxiv.org/abs/2610.31472)** (2026) — 6 mm flexible array: silicone nubs over a piezoresistive layer turn shear into readable pressure patterns, giving 3-axis force per taxel; under 35 USD for 4x4. Reports it helps a Diffusion Policy insert a plug. · [project](https://jiannnh.github.io/VecTile/)

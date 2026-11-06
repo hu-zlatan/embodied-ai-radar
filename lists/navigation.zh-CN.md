@@ -2,7 +2,7 @@
 
 _视觉语言导航、具身问答、移动操作与大模型规划。_
 
-共 51 条，⭐ 为重点推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
+共 52 条，⭐ 为重点推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/navigation.html) · [English](navigation.md)
 
@@ -24,6 +24,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - **[Hierarchical Residual Policy Learning for Real-World Mobile Manipulation with Sparse Human Guidance](https://arxiv.org/abs/2610.20607)** (2026) — HiRe-MoMa 在真实环境中通过学习残差修正来微调冻结的移动操作策略，只需偶尔的人类引导。 · [代码](https://github.com/tasl-lab/HiRe-MoMa) · [项目页](https://hire-moma.github.io/)
 - **[InJePA: Intention-First Latent Planning with Coupled JEPA World Models for Visual Navigation](https://arxiv.org/abs/2610.23896)** (2026) — 两个耦合的 JEPA 共享隐空间：一个按目标提出隐式“意图”，另一个预测动作后果，形成意图-动作-后果闭环，让世界模型直接参与构造规划；在 Habitat MP3D 图像目标导航上评测。 · [代码](https://github.com/zhuxun132/InJepa)
 - **[MOON: Learning When to Forget and How to Move On in Vision-and-Language Navigation](https://arxiv.org/abs/2610.33546)** (2026) — 发现 VLN 智能体偏离路线后会被历史记忆“惯性”拖住。MOON 给冻结的导航策略加上偏航判断器（判断何时清空历史）和 GRPO 训练的恢复策略，参数增加不到 1%；报告在 R2R-CE / RxR-CE 上分别提升 5.2 / 6.0 个百分点。 · [代码](https://github.com/AutoLab-SAI-SJTU/MOON)
+- **[MessyMem: Learning-from-Doing Memory for Mobile Manipulation](https://arxiv.org/abs/2609.15976)** (2026) — 移动操作机器人的持久记忆：在三维场景图中记录通过交互学到的知识（如柜子上锁、物体位置）。报告在连续 25 个任务、3 小时的仿真中任务进度达 80%。 · [项目页](https://messymem.github.io)
 - **[MessyNav: Zero-Shot Navigation via Manipulation in Messy Environments](https://arxiv.org/abs/2611.07417)** (2026) — 在杂乱环境中导航：用 VLM 推理每个挡路物体该推开、拿起还是绕开。零样本，报告在真实移动操作机器人上比最强基线高 27 个百分点。
 - **[OSCAR: Obstacle Survival Curves for Adaptive Robot Navigation](https://arxiv.org/abs/2606.00990)** (2026) — CoRL 2026 Spotlight。通过建模各类障碍物通常停留多久，决定在路线受阻时等待还是改道。
 - **[OdorSpaces: Visual-Olfactory Embodied Navigation in 3D Environments](https://arxiv.org/abs/2611.05738)** (2026) — 用 Fire Dynamics Simulator 为 Habitat-Sim 加入气味传输仿真，构成视觉加嗅觉的导航基准，任务是定位不可见的气体泄漏和早期火源，并提供多模态强化学习基线。
@@ -62,4 +63,4 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 
 **另见**
 
-[Has GPT-6-Astra Achieved Embodied Intelligence?](vla.zh-CN.md), [Aligning Cyber Space with Physical World](vla.zh-CN.md), [RynnBrain](vla.zh-CN.md), [OmniBrain-0](vla.zh-CN.md), [Automating the Design of Embodied Agent Architectures](vla.zh-CN.md), [TAMPAgent](manipulation.zh-CN.md), [Knowing Where to Look](manipulation.zh-CN.md), [Agile But Safe](locomotion.zh-CN.md), [OpenNWM](world-models.zh-CN.md), [Jev with Foresight](world-models.zh-CN.md), [ConceptGraphs](perception.zh-CN.md), [Kimera](perception.zh-CN.md), [MosaicIMU](perception.zh-CN.md), [Habitat 3.0](sim.zh-CN.md), [Habitat 2.0](sim.zh-CN.md), [SceneBloom](sim.zh-CN.md), [MARE](sim.zh-CN.md), [Habitat](datasets.zh-CN.md), [Embodied Skill Bench](datasets.zh-CN.md), [Habitat-Matterport 3D Dataset (HM3D)](datasets.zh-CN.md), [Beyond Infraction Scores](datasets.zh-CN.md), [The Design of Stretch](hardware.zh-CN.md)
+[Has GPT-6-Astra Achieved Embodied Intelligence?](vla.zh-CN.md), [Aligning Cyber Space with Physical World](vla.zh-CN.md), [RynnBrain](vla.zh-CN.md), [OmniBrain-0](vla.zh-CN.md), [Automating the Design of Embodied Agent Architectures](vla.zh-CN.md), [TAMPAgent](manipulation.zh-CN.md), [Knowing Where to Look](manipulation.zh-CN.md), [Agile But Safe](locomotion.zh-CN.md), [OpenNWM](world-models.zh-CN.md), [Jev with Foresight](world-models.zh-CN.md), [ConceptGraphs](perception.zh-CN.md), [Kimera](perception.zh-CN.md), [MosaicIMU](perception.zh-CN.md), [Habitat 3.0](sim.zh-CN.md), [Habitat 2.0](sim.zh-CN.md), [SceneBloom](sim.zh-CN.md), [MARE](sim.zh-CN.md), [Habitat](datasets.zh-CN.md), [Embodied Skill Bench](datasets.zh-CN.md), [Habitat-Matterport 3D Dataset (HM3D)](datasets.zh-CN.md), [Beyond Infraction Scores](datasets.zh-CN.md), [RMMBench](datasets.zh-CN.md), [The Design of Stretch](hardware.zh-CN.md)

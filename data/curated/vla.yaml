@@ -1841,7 +1841,6 @@
   arxiv: "2611.08373"
   year: 2026
   code: https://github.com/OpenHelix-Team/Spatial-Forcing/tree/master/SLA
-  project: https://SLA.github.io/
   added: 2026-11-06
   tags: [spatial-alignment, 3d, continual-pretraining, pi0.5]
   takeaway_en: "Continual pre-training of π0.5 that aligns intermediate visual features with a frozen 3D perception model across many robot datasets. The extra parts are training-only, so inference and weights stay π0.5-compatible."
@@ -1865,3 +1864,44 @@
   tags: [failure-prediction, monitoring, calibration, probing, safety]
   takeaway_en: "Lightweight probe on a VLA's latent layers that flags failures early with calibrated miss and false-alarm bounds and names the failure mode. Releases 3,180 annotated manipulation episodes."
   takeaway_zh: "在 VLA 隐层上加轻量探针，提前预警失败并给出校准的漏报与误报上界，还能判断失败类型。并发布 3180 条带标注的操作轨迹。"
+- title: "Graph-Reweighted Behavior Cloning with Human Interventions for Precise Robotic Manipulation"
+  type: paper
+  arxiv: "2610.20504"
+  year: 2026
+  venue: CoRL 2026
+  project: https://gr-bc.github.io
+  added: 2026-11-06
+  topics: [learning]
+  tags: [post-training, behavior-cloning, human-intervention, graph-search, precise-manipulation]
+  takeaway_en: "Weights each action chunk by how much it shortens the path to success on a reachability graph built over demos, rollouts and interventions. Reports 91% on precise tasks after a few offline rounds; no reward model."
+  takeaway_zh: "在示教、rollout 与人工干预构成的可达图上，按每个动作块缩短到成功的步数来加权行为克隆。报告经几轮离线迭代在精细任务上达到 91%，无需奖励模型。"
+- title: "Disentangling Spurious Correlations in Vision-Language-Action Models via Predicting Domain-Invariant Latent Lookahead"
+  type: paper
+  arxiv: "2609.37165"
+  year: 2026
+  venue: CoRL 2026
+  project: https://dill-vla.github.io/
+  added: 2026-11-06
+  tags: [robustness, spurious-correlations, representation, libero-plus, real]
+  takeaway_en: "Supervises VLAs with domain-invariant future latents to cut reliance on visual shortcuts. Reports 69.1% on LIBERO-Plus, 11.4 points above the strongest baseline."
+  takeaway_zh: "用与域无关的未来潜变量监督 VLA，减少对视觉捷径的依赖。报告 LIBERO-Plus 平均成功率 69.1%，比最强基线高 11.4 个百分点。"
+- title: "Catch Me If You Can: Real-Time Feedback Denoising for Responsive VLAs"
+  type: paper
+  arxiv: "2609.21022"
+  year: 2026
+  venue: CoRL 2026
+  project: https://vla-feedback.github.io
+  added: 2026-11-06
+  tags: [closed-loop, diffusion, dynamic-tasks, real]
+  takeaway_en: "Keeps the last denoising step of a diffusion VLA as a fast feedback layer, so each action is corrected with the newest image. Reports dynamic sim tasks 27.5% to 85.0% and real tasks 51% to 73%."
+  takeaway_zh: "把扩散 VLA 的最后一步去噪保留为快速反馈层，用最新图像修正每个动作。报告动态仿真任务从 27.5% 升到 85.0%，真机任务从 51% 升到 73%。"
+- title: "GeomVLA: Unifying Scene, Motion, and Action in 3D"
+  type: paper
+  arxiv: "2609.13812"
+  year: 2026
+  venue: CoRL 2026
+  project: https://ziyin-xiong.github.io/geomvla.io/
+  added: 2026-11-06
+  tags: [3d, scene-flow, geometry, calvin, real]
+  takeaway_en: "VLA that lifts VLM features into 3D scene tokens, predicts how scene points will move, and conditions a 3D flow action denoiser on that motion. Reports SOTA on CALVIN without robot-action pretraining."
+  takeaway_zh: "把 VLM 特征提升为 3D 场景 token，预测场景点将如何运动，并以此为条件驱动 3D 流匹配动作去噪器。报告在无机器人动作预训练下 CALVIN 达到最优。"

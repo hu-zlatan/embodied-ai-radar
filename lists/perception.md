@@ -2,7 +2,7 @@
 
 _Visual / LiDAR SLAM and odometry, 3D reconstruction, object pose, depth and open-vocabulary scene maps for robots._
 
-39 entries, ⭐ = highlight. Generated from [`data/curated/perception.yaml`](../data/curated/perception.yaml); edit the YAML, not this file.
+40 entries, ⭐ = highlight. Generated from [`data/curated/perception.yaml`](../data/curated/perception.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/perception.html) · [中文](perception.zh-CN.md)
 
@@ -16,6 +16,7 @@ _Visual / LiDAR SLAM and odometry, 3D reconstruction, object pose, depth and ope
 - **[Articulated 3D Scene Graphs for Open-World Mobile Manipulation](https://arxiv.org/abs/2602.16356)** (2026) — MoMa-SG builds 3D scene graphs that encode how objects articulate, from RGB-D sequences, and adds the Arti4D-Semantic dataset; demonstrated on a quadruped and a mobile manipulator. · [code](https://github.com/robot-learning-freiburg/MoMa-SG) · [project](https://momasg.cs.uni-freiburg.de)
 - **[CoReMatch: Recurrent Continuous Coordinate Refinement for Real-Time Robotic Feature Matching](https://arxiv.org/abs/2611.03932)** (2026) — Feature matcher that refines correspondences recurrently in continuous coordinates instead of on fixed grids; reports higher accuracy than Efficient LoFTR at over 10x its speed on embedded hardware.
 - **[Cyclops: LiDAR as a Camera That Dreams in Color](https://arxiv.org/abs/2608.16264)** (2026) — Turns sparse LiDAR intensity into RGB-like video so camera models work in the dark. Reports better segmentation and lane detection than LiDAR baselines and real cameras across lighting. · [code](https://github.com/IMRL/Cyclops)
+- **[FreeLoc: Online Floorplan Localization via Diffusion-Aided Pose Refinement](https://arxiv.org/abs/2610.05011)** (2026) — Localizes an RGB camera on a floorplan online, querying the map directly and refining poses with diffusion instead of building an offline database. Reports SOTA single-frame and sequential results in real time. · [project](https://zju3dv.github.io/freeloc/)
 - **[Functional-SLAM: Interaction-Aware Mapping with Online Functional Scene Graphs](https://arxiv.org/abs/2609.07497)** (2026) — SLAM that keeps a functional scene graph (which handle opens which drawer) as online state, and uses that topology to help loop closure in repetitive scenes. Reported faster than offline methods at similar accuracy. · [code](https://github.com/Hbelief1998/Functional-SLAM-CoRL_2026)
 - **[MosaicIMU: Composing Carrier Experts for Generalizable Neural Inertial Odometry](https://arxiv.org/abs/2606.09355)** (2026) — Neural inertial odometry across carriers: a router composes carrier-specific experts, and a light residual branch adapts to new ones. Reports 40% lower ATE than learned baselines.
 - **[OpenVIO: A Versatile Open-Source Visual-Inertial Odometry System](https://arxiv.org/abs/2610.41671)** (2026) — MIT-licensed visual-inertial odometry for research and products. Supports pinhole and fisheye cameras plus stitched 360° images, with benchmarks against other open-source VIO systems on public datasets. · [code](https://github.com/93won/openvio)

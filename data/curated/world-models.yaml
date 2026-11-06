@@ -1041,3 +1041,36 @@
   tags: [particles, 3d-dynamics, deformable, planning, diffusion-forcing]
   takeaway_en: "Generative world model of 3D particle and rigid-body motion covering rigid, deformable, cloth and granular materials. Reports 31% lower error than prior learned dynamics; planning searches its latent noise."
   takeaway_zh: "生成式 3D 粒子与刚体运动世界模型，统一覆盖刚体、可变形体、布料与颗粒材料。报告预测误差比此前最好的学习动力学低 31%，并通过在潜噪声空间搜索来做规划。"
+- title: "Box-WAM: Box Trajectories as Compact State Representations for World Action Models"
+  type: paper
+  arxiv: "2610.17526"
+  year: 2026
+  venue: CoRL 2026
+  project: https://box-wam.github.io
+  added: 2026-11-06
+  topics: [manipulation]
+  tags: [wam, object-centric, bounding-boxes, efficiency]
+  takeaway_en: "World action model that predicts oriented bounding-box trajectories of task objects instead of future video frames: much cheaper, and reported to predict actions better."
+  takeaway_zh: "世界动作模型不再预测未来视频帧，而是预测任务相关物体的有向包围盒轨迹：计算量大幅下降，并报告动作预测更好。"
+- title: "DepthWorld: 3D World Model for Robot Manipulation"
+  type: paper
+  arxiv: "2610.08780"
+  year: 2026
+  venue: CoRL 2026
+  project: https://www.jaibardhan.com/depthworld
+  added: 2026-11-06
+  topics: [datasets]
+  tags: [3d, depth, video-diffusion, droid, calibration]
+  takeaway_en: "Recalibrates DROID into DROID-3D with metric depth and multi-view extrinsics, then trains a video world model that predicts RGB and depth. Depth supervision reportedly also improves RGB by 1.48 dB PSNR."
+  takeaway_zh: "把 DROID 重新标定为带度量深度与多视角外参的 DROID-3D，并训练同时预测 RGB 与深度的视频世界模型。报告深度监督还让 RGB 预测提升 1.48 dB PSNR。"
+- title: "AnyWorld: Factorized Egocentric World Models for Cross-Embodiment Generalization"
+  type: paper
+  arxiv: "2608.29242"
+  year: 2026
+  venue: CoRL 2026
+  project: https://xpeng-robotics.github.io/anyworld/
+  added: 2026-11-06
+  topics: [datasets]
+  tags: [egocentric, human-video, cross-embodiment, data-generation, humanoid]
+  takeaway_en: "Factorizes an interaction into action, camera and embodiment so one human video can be re-rendered as many robot rollouts. Generated data helps on RoboCasa GR1 and a real IRON humanoid."
+  takeaway_zh: "把一次交互分解为动作、相机与本体三个因素，使一段人类视频可重新生成为多种机器人视角的数据。生成数据在 RoboCasa GR1 与真实 IRON 人形上带来提升。"

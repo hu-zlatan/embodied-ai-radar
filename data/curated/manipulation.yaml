@@ -1113,3 +1113,97 @@
   tags: [dexterous, rl, sim2real, flow-matching, data-efficiency, bimanual]
   takeaway_en: "Distills sim RL rollouts into a frozen flow-matching action decoder, then learns only a visual interface to its latent from a few demos. Reports beating fine-tuned π0.5 and GR00T N1.7 with 5-10x fewer demos."
   takeaway_zh: "把仿真中强化学习的经验蒸馏进冻结的流匹配动作解码器，之后只需用少量示教学习从图像到其潜变量的视觉接口。报告用少 5–10 倍的示教超过微调后的 π0.5 与 GR00T N1.7。"
+- title: "AWLS: Advantage-Weighted Latent Steering for One-Step Generative Robotic Manipulation Policies"
+  type: paper
+  arxiv: "2610.27736"
+  year: 2026
+  venue: CoRL 2026
+  project: https://awls-corl2026.github.io/
+  added: 2026-11-06
+  topics: [learning]
+  tags: [offline-rl, one-step-policy, noise-steering, mixed-quality-data, real]
+  takeaway_en: "Improves a frozen one-step generative policy offline by learning a residual on its input noise, trained with advantage-weighted reconstruction instead of critic gradients, so the base behavior does not drift."
+  takeaway_zh: "离线改进冻结的一步生成策略：学习对输入噪声的残差修正，用优势加权的动作重建来训练而不是用评论家梯度，从而避免偏离原有行为。"
+- title: "HiFun: a Hierarchical Framework for Efficient Functional Dexterous Manipulation Learning"
+  type: paper
+  arxiv: "2610.19518"
+  year: 2026
+  venue: CoRL 2026
+  project: https://hly-123.github.io/HiFun/
+  added: 2026-11-06
+  topics: [learning]
+  tags: [dexterous, real-world-rl, hierarchical, human-intervention, real]
+  takeaway_en: "Hierarchical real-world RL for functional dexterous tasks: a hand skill handles contact, an arm-hand policy coordinates and triggers it. Reports 98.3% average success on six tasks within one hour of online training."
+  takeaway_zh: "面向功能性灵巧操作的分层真机强化学习：手部技能负责精确接触，臂-手协调策略负责手臂运动与技能触发。报告在六个任务上一小时在线训练即达 98.3% 平均成功率。"
+- title: "Phase-Conditioned Affordance Fields for SE(3)-Equivariant Visuomotor Policies"
+  type: paper
+  arxiv: "2610.17281"
+  year: 2026
+  venue: CoRL 2026
+  project: https://paf-policy.github.io/
+  added: 2026-11-06
+  tags: [equivariance, se3, affordance, point-cloud, real]
+  takeaway_en: "Adds a learned, phase-conditioned affordance field to SE(3)-equivariant policies, anchoring observations and actions on the active region instead of the gripper frame. Improves MimicGen and multi-object real tasks."
+  takeaway_zh: "为 SE(3) 等变策略加入随阶段变化的可学习可供性场，以当前作用区域而非夹爪坐标系作为观测与动作的锚点。在 MimicGen 与多物体真机任务上都有提升。"
+- title: "Scouting the Dynamics Gap: Test-Time Policy Adaptation via Action-Outcome Feedback"
+  type: paper
+  arxiv: "2609.36107"
+  year: 2026
+  venue: CoRL 2026
+  project: https://liy1shu.github.io/SCOUT/
+  added: 2026-11-06
+  topics: [learning]
+  tags: [test-time-adaptation, meta-learning, dynamics, sim2real]
+  takeaway_en: "Meta-learned policy and forward model share a belief latent; at deployment the latent is updated from action-outcome mismatches, so the policy adapts to unknown dynamics on the fly."
+  takeaway_zh: "元学习的策略与前向动力学模型共享信念潜变量；部署时根据动作结果的偏差更新该潜变量，使策略能即时适应未知动力学。"
+- title: "LiMA: Bridging Long-term Imagination to Real-time Dexterous Manipulation via Asynchronous Diffusion"
+  type: paper
+  arxiv: "2609.28431"
+  year: 2026
+  venue: CoRL 2026
+  project: https://ccdcs.github.io/LiMA_repo/
+  added: 2026-11-06
+  topics: [world-models]
+  tags: [dexterous, bimanual, dual-system, asynchronous, schrodinger-bridge]
+  takeaway_en: "Slow system plans sparse long-horizon intent, fast system refines dense motion, linked by a latent Schrödinger bridge. Reports 45.8% lower latency than Cosmos-Policy and 70.8% success on six bimanual tasks."
+  takeaway_zh: "慢系统生成稀疏的长时程意图，快系统细化高频动作，二者以潜空间薛定谔桥耦合。报告延迟比 Cosmos-Policy 低 45.8%，六个双臂灵巧任务成功率 70.8%。"
+- title: "Learning Beyond What Humans Can Demonstrate"
+  type: paper
+  arxiv: "2609.24996"
+  year: 2026
+  venue: CoRL 2026
+  project: http://guardrail-policy.github.io/
+  added: 2026-11-06
+  tags: [teleoperation, guardrails, llm-code, data-collection, real]
+  takeaway_en: "For tasks people cannot teleoperate well, an LLM writes state-based guardrails that filter teleop and policy commands. Reports data-collection success rising from 0-10% to 70-90%."
+  takeaway_zh: "针对人难以遥操作完成的任务，由 LLM 编写基于状态的护栏来过滤遥操作与策略指令。报告数据采集成功率从 0–10% 提升到 70–90%。"
+- title: "ProxiDex: Learning Dynamics-Guided Proximity Policy for Dexterous Manipulation"
+  type: paper
+  arxiv: "2609.16586"
+  year: 2026
+  venue: CoRL 2026
+  project: https://proxidex.github.io/
+  added: 2026-11-06
+  tags: [dexterous, proximity, point-cloud, teleoperation, dynamics]
+  takeaway_en: "Uses hand-object proximity from reconstructed point clouds as a hardware-agnostic contact signal, for VR teleop feedback and a policy with learned proximity dynamics. More robust under occlusion."
+  takeaway_zh: "以重建点云得到的手-物距离作为与硬件无关的接触信号，用于 VR 遥操作反馈，并训练带接近度动力学的策略；在遮挡下更稳健。"
+- title: "Assembling Two Parts in One Hand"
+  type: paper
+  arxiv: "2609.10137"
+  year: 2026
+  venue: CoRL 2026
+  project: https://ltbgbird.github.io/in-hand-assembly-page/
+  added: 2026-11-06
+  tags: [dexterous, in-hand, assembly, rl, sim2real]
+  takeaway_en: "RL for mating two parts within one dexterous hand (capping a marker, a syringe, a bottle) with no second arm. Trained in sim, transfers zero-shot with a single camera."
+  takeaway_zh: "用强化学习在单只灵巧手中完成两个零件的装配（如给马克笔盖帽、注射器、瓶子），不用第二只手臂；仿真训练，单相机零样本迁移到真机。"
+- title: "FOCI Policy: Focus on Object-Centric Interactions for Relational Manipulation Policies"
+  type: paper
+  arxiv: "2609.08743"
+  year: 2026
+  venue: CoRL 2026
+  project: https://fitz0401.github.io/foci-page/
+  added: 2026-11-06
+  tags: [object-centric, relational, se3, data-efficiency, rlbench]
+  takeaway_en: "Represents skills as short interaction segments of relative SE(3) motion between task objects, independent of scene layout and robot. Needs much less data than prior policies on RLBench and COLOSSEUM."
+  takeaway_zh: "把技能表示为任务物体之间相对 SE(3) 运动的短交互片段，与场景布局和机器人无关。在 RLBench 与 COLOSSEUM 上所需数据明显少于以往方法。"
