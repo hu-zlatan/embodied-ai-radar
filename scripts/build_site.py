@@ -937,7 +937,17 @@ def build() -> int:
     desc = "Bilingual (EN/中文), daily-updated map of embodied AI and robot learning: VLA, manipulation, tactile, humanoids, world models, sim-to-real, datasets and hardware."
     (OUT / "index.html").write_text(page("Embodied AI Radar · 具身智能雷达", body, "", desc, "",
                                          alt='\n<link rel="alternate" type="application/atom+xml" title="Agent picks · Embodied AI Radar" href="picks.xml">'), encoding="utf-8")
-    (OUT / "search.html").write_text(page("Search · Embodied AI Radar", search, "",
+    # topic tiles under the search box: shown until the visitor searches or filters (app.js hides #home-static)
+    search_grid = "".join(
+        f'<a class="tile" href="search.html?topic={t["id"]}"><h3>{bi(t["en"], t["zh"])}</h3>'
+        f'<p>{bi(t["desc_en"], t["desc_zh"])}</p><span class="muted">{len(by_topic[t["id"]])} {bi("curated", "精选")} · '
+        f'{len([p for p in feed_by_topic[t["id"]] if p.get("published", "") >= week_cut])} {bi("new this week", "本周新增")}</span></a>'
+        for t in topics)
+    search_page = (search + f'<div id="home-static"><h2>{bi("Browse by topic", "按主题浏览")}</h2>'
+                   f'<div class="grid">{search_grid}</div>'
+                   f'<p class="muted">{bi("Each tile filters the search to that topic. Topic pages with all curated entries:", "点击主题即可筛选搜索结果。各主题的完整页面：")} '
+                   f'<a href="topics/index.html">{bi("all topics →", "全部主题 →")}</a></p></div>')
+    (OUT / "search.html").write_text(page("Search · Embodied AI Radar", search_page, "",
                                           "Search every curated embodied AI entry and every new arXiv robotics paper, in English or Chinese, with filters by topic, robot type, venue and code.",
                                           "search.html"), encoding="utf-8")
 
