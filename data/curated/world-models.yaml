@@ -1130,3 +1130,83 @@
   tags: [human-video, egocentric, world-action-model, dino, real]
   takeaway_en: "Controlled study of which world-prediction target best transfers egocentric human data to robots: pixels transfer weakly, DINO features give up to 4x OOD generalization, 3D flow gives +20–30% in domain."
   takeaway_zh: "对照研究哪种世界预测目标最能把第一人称人类数据迁移到机器人：像素迁移较弱，DINO 特征带来最高 4 倍的分布外泛化，3D 运动流在域内提升 20–30%。"
+- title: "PlayWorld: Learning Robot World Models from Autonomous Play"
+  type: paper
+  arxiv: "2603.09030"
+  year: 2026
+  venue: CoRL 2026
+  project: https://robot-playworld.github.io/
+  added: 2026-11-06
+  tags: [video-world-model, self-play, policy-evaluation, rl, real]
+  takeaway_en: "Trains an action-conditioned video world model purely from autonomous robot play instead of human demos, capturing failure-rich contact. Reports up to 40% better policy evaluation and +65% real success after RL in it."
+  takeaway_zh: "完全用机器人自主“玩耍”数据（而非人类演示）训练动作条件视频世界模型，覆盖更多接触与失败情形。报告策略评估提升最高 40%，在其中做强化学习后真机成功率提升 65%。"
+- title: "$τ_0$-WM: A Unified Video-Action World Model for Robotic Manipulation"
+  type: paper
+  arxiv: "2606.01027"
+  year: 2026
+  venue: CoRL 2026
+  project: https://tau0-wm.github.io
+  added: 2026-11-06
+  tags: [video-action-model, simulator, test-time-compute, large-scale, real]
+  takeaway_en: "One video-diffusion backbone serves as both a video-action policy and an action-conditioned simulator that scores progress, trained on ~27,300 hours of robot, UMI and human data; samples and ranks actions at test time."
+  takeaway_zh: "同一个视频扩散主干既是视频-动作策略，也是可预测任务进度的动作条件模拟器；训练数据约 2.73 万小时（真机、UMI、人类视频等），推理时采样并排序候选动作。"
+- title: "WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL"
+  type: paper
+  arxiv: "2602.13977"
+  year: 2026
+  venue: CoRL 2026
+  project: https://wovr-corl.github.io
+  added: 2026-11-06
+  tags: [rl, vla, video-world-model, hallucination, libero]
+  takeaway_en: "RL post-training of VLAs inside a video world model, with keyframe-initialised rollouts and world-model–policy co-evolution to keep hallucination in check. Reports strong LIBERO results and real-robot gains."
+  takeaway_zh: "在视频世界模型中对 VLA 做强化学习后训练，通过关键帧初始化的短推演和世界模型-策略协同演化来抑制幻觉。报告 LIBERO 表现优异并在多个真机平台上提升。"
+- title: "Scaling World Model for Hierarchical Manipulation Policies"
+  type: paper
+  arxiv: "2602.10983"
+  year: 2026
+  venue: CoRL 2026
+  project: https://vista-wm.github.io/
+  added: 2026-11-06
+  tags: [hierarchical, goal-images, subgoals, vla, real]
+  takeaway_en: "A large pretrained world model plans subtasks and generates goal images; a VLA follows them. Reports the same VLA rising from 14% to 69% in novel scenes with these generated goals."
+  takeaway_zh: "用大规模预训练世界模型做高层规划，把任务拆成子任务并生成目标图像，由底层 VLA 跟随执行。报告同结构 VLA 在新场景中的成功率借此从 14% 提升到 69%。"
+- title: "FACT: Failure-Aware Causal Training for World-Action Models"
+  type: paper
+  arxiv: "2608.10232"
+  year: 2026
+  venue: CoRL 2026
+  project: https://fact-wam.github.io/
+  added: 2026-11-06
+  tags: [world-action-model, failure-data, progress-estimation, bimanual, real]
+  takeaway_en: "Action-conditioned world-action model that also learns from failed rollouts, predicting future video and task progress for the action actually taken; progress scores can rank sampled actions."
+  takeaway_zh: "以实际执行动作为条件的世界动作模型，把失败轨迹也作为监督，预测未来视频与任务进度；进度分可在推理时为候选动作排序。"
+- title: "Coupled Local and Global World Models for Efficient First Order RL"
+  type: paper
+  arxiv: "2602.06219"
+  year: 2026
+  venue: CoRL 2026
+  project: https://coupled-global-local-wm-rl.pages.dev/
+  added: 2026-11-06
+  tags: [rl, diffusion-world-model, first-order-gradients, push-t, quadruped]
+  takeaway_en: "RL inside a learned diffusion world model without a simulator: the big model rolls out trajectories while a light latent surrogate supplies gradients. Beats PPO on sample efficiency on Push-T; quadruped task too."
+  takeaway_zh: "不用物理仿真器，直接在学习到的扩散世界模型中训练策略：大模型负责生成轨迹，轻量潜在代理模型提供一阶梯度。在 Push-T 上样本效率明显优于 PPO，并在四足任务上验证。"
+- title: "Hierarchical Planning with Latent World Models"
+  type: paper
+  arxiv: "2604.03208"
+  year: 2026
+  venue: CoRL 2026
+  project: https://kevinghst.github.io/HWM/
+  added: 2026-11-06
+  tags: [planning, latent-world-model, hierarchical-mpc, macro-actions, real]
+  takeaway_en: "Hierarchical MPC on latent visual world models at two time scales, linked by latent subgoals and learned macro-actions. Reports 70% vs 0% on real Franka pick-and-place from one goal image, with up to 3x less compute."
+  takeaway_zh: "在两个时间尺度的潜在视觉世界模型上做分层 MPC，以潜在子目标和学习到的宏动作衔接。报告真实 Franka 单目标图抓放成功率 70%（单层规划为 0%），计算量最多少 3 倍。"
+- title: "Robot-Factored World Models via Robot Rendering"
+  type: paper
+  arxiv: "2607.22535"
+  year: 2026
+  venue: CoRL 2026
+  project: https://bjkim95.github.io/rofacto/
+  added: 2026-11-06
+  tags: [video-world-model, robot-rendering, urdf, cross-embodiment, human-video]
+  takeaway_en: "Video world model that renders the robot's own motion from its URDF and controller, so the network only predicts how the scene responds. Transfers to unseen robots and can animate retargeted human demos."
+  takeaway_zh: "视频世界模型把机器人自身运动交给控制器和 URDF 渲染，网络只需预测场景的响应。可迁移到未见过的机器人本体，并能由重定向的人类演示生成机器人操作视频。"

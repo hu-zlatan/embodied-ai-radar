@@ -2,7 +2,7 @@
 
 _视觉-语言-动作模型与通用机器人策略。_
 
-共 207 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
+共 209 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [English](vla.md)
 
@@ -41,6 +41,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - ⭐ **[RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation](https://arxiv.org/abs/2410.07864)** (2024) — 12 亿参数扩散 Transformer，采用跨机器人统一动作空间，面向双臂操作。 · [代码](https://github.com/thu-ml/RoboticsDiffusionTransformer)
 - ⭐ **[RT-1: Robotics Transformer for Real-World Control at Scale](https://arxiv.org/abs/2212.06817)** (2022) — 将动作离散化为 token，用 13 万条真实演示训练 Transformer，证明机器人策略会随数据多样性扩展。 · [代码](https://github.com/google-research/robotics_transformer)
 - **[Ψ0: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation](https://arxiv.org/abs/2603.12263)** (2026) — 面向人形移动操作的开放基础模型，主张因运动学差异，不宜直接混合人类与人形数据共同训练。
+- **[$π$, But Make It Fly: Physics-Guided Transfer of VLA Models to Aerial Manipulation](https://arxiv.org/abs/2603.25038)** (2026) — 把预训练 π0 迁移到空中抓放：在流采样中注入载荷约束以应对飞行动力学，并用高斯泼溅合成导航数据。在 460 次真机实验中报告抓放成功率从 23% 提升到 50%。 · [项目页](https://airvla.github.io)
 - **[π0.7: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities](https://arxiv.org/abs/2604.15483)** (2026) — CoRL 2026 Oral。可引导的通用基础模型：在未见环境中执行多样指令，跨形态零样本完成叠衣等任务，无需任务专用微调。 · [项目页](https://www.pi.website/blog/pi07)
 - **[ABot-M0: VLA Foundation Model for Robotic Manipulation with Action Manifold Learning](https://arxiv.org/abs/2602.11236)** (2026) — ABot-M0 结合数据整理流程与动作流形学习，让一个模型跨不同硬件工作，即“一脑多形”。 · [代码](https://github.com/amap-cvlab/ABot-Manipulation) · [项目页](https://amap-cvlab.github.io/ABot-Manipulation/)
 - **[ACE-Ego-0: Unifying Egocentric Human and Robotic Data for VLA Pretraining](https://arxiv.org/abs/2606.17200)** (2026) — 用 4530 小时机器人/仿真数据加 1480 小时带伪动作的第一视角人类视频联合预训练 VLA，采用相机空间动作与按可靠性加权的损失。报告在 RoboCasa GR1 TableTop 和 RoboTwin 2.0 上达到最优。 · [代码](https://github.com/ACERobotics-VLA/ACE-Ego-0)
@@ -113,6 +114,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[Playful Agentic Robot Learning](https://arxiv.org/abs/2606.19419)** (2026) — CoRL 2026 Spotlight。具身编程智能体团队 RATs 在下游任务到来之前，自行提出探索任务，并通过自主玩耍学习技能。 · [代码](https://github.com/Playful-RATs/rats) · [项目页](https://playful-rats.github.io/)
 - **[PoLAR: Factorizing Extent and Mode in Latent Actions for Robot Policy Learning](https://arxiv.org/abs/2606.21139)** (2026) — 在双曲空间中构造极坐标结构的潜动作：半径表示变化多大，方向表示变化类型。报告优于其他潜动作方法和预训练 VLA。 · [代码](https://github.com/joon-stack/PoLAR) · [项目页](https://joon-stack.github.io/PoLAR)
 - **[Post-hoc Epistemic Uncertainty for Vision-Language-Action Policies](https://arxiv.org/abs/2610.29730)** (2026) — 在训练完成后为单个 VLA 策略加上轻量的核方差头（基于训练示教嵌入的高斯过程方差）来估计认知不确定性，无需训练和运行策略集成，让机器人知道何时该求助或补充示教。 · [代码](https://github.com/post-hoc-vla-uncertainty/post-hoc-vla-uncertainty)
+- **[Pri4R: Learning World Dynamics for Vision-Language-Action Models with Privileged 4D Representation](https://arxiv.org/abs/2603.01549)** (2026) — 训练时为 VLA 加一个预测 3D 点轨迹的轻量头，让模型学到场景动力学，推理时去掉、零额外开销。报告 LIBERO-Long 提升 10%，RoboCasa 提升 40%。 · [项目页](https://jiiiisoo.github.io/Pri4R/)
 - **[Profiling a Frontier Agent with EBench: From Direct Control to Harness with Policy](https://arxiv.org/abs/2610.35832)** (2026) — 评测报告：在 EBench 上让 GPT-6-Astra 直接输出路径点控制机器人，或通过执行框架调用 VLA/WAM 策略。直接控制在短时任务上领先，但在长时程与接触密集任务上落后；调用策略可显著减少 token 开销。 · [项目页](https://internrobotics.github.io/EBench-Astra-Tech-Report/)
 - **[PyRUA-REAL: Robot Exploration and Adaptive Learning through RSI in the Real World](https://arxiv.org/abs/2611.06768)** (2026) — 让编码智能体把真机交互经验存为记忆和可复用的代码技能，并在实物试验中持续改进；报告八个真实任务成功率 91.1%，RoboDojo 的 42 个任务成功率 84.4%。 · [项目页](https://dagroup-pku.github.io/PyRUA-Lean/real/)
 - **[Quantize by Doing: Task-Guided Mixed-Precision Quantization of Vision-Language-Action Models](https://arxiv.org/abs/2610.38661)** (2026) — 用短时闭环任务成功率（而非校准数据敏感度）为 VLA 各组件分配权重/激活位宽，并考虑组件间相互影响；在四个 VLA 与 LIBERO 全部套件上约 4 比特权重仍保持较强表现。作者如实指出：仿真选出的方案在真机上对 X-VLA 无损，对 π0.5 却失败。 · [代码](https://github.com/jiuyixu25/QbD-VLA)

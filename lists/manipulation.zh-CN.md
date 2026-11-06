@@ -2,7 +2,7 @@
 
 _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 
-共 134 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
+共 135 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/manipulation.html) · [English](manipulation.md)
 
@@ -43,6 +43,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[ContactBench 1.0: A Benchmark for Everyday Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2610.24512)** (2026) — 围绕八种日常接触技能设计的 36 个接触密集型任务，40 多个物体可用消费级 3D 打印机复现，且每个都有对应仿真模型。报告称所测的视触觉策略并未明显优于纯视觉策略。 · [项目页](https://jingyi-xiang.github.io/contactbench)
 - **[Continual Learning for 6-DoF Grasp Synthesis via Experience and Demonstrations](https://arxiv.org/abs/2610.01301)** (2026) — 通过嵌入空间中的记忆在部署中持续学习的 6-DoF 抓取：抓取结果更新后续评分，用户示范可在新场景中被召回。报告在困难类别上仅 50 次尝试后成功率超过 90%。 · [项目页](https://giuschio.github.io/cl_grasping/)
 - **[Correct Robots Before They Make Mistakes: Proactive Human-in-the-Loop Intervention via Preference Learning](https://arxiv.org/abs/2611.05667)** (2026) — PHIL 在 XR 中预览策略预测的动作，让操作者在出错前介入，再用被否决与修正后的动作片段做偏好训练；报告相比 HG-DAgger，扩散策略成功率从 44.0% 升至 70.3%。 · [项目页](https://intuitive-robots.github.io/PHIL-page/)
+- **[Current as Touch: Proprioceptive Contact Feedback for Compliant Dexterous Manipulation](https://arxiv.org/abs/2607.03529)** (2026) — 把电机电流当作触觉：在低成本灵巧手上预测一个“柔顺参考位置”，让 PD 控制器的位置误差产生合适的抓握力，无需触觉或力传感器。 · [项目页](https://cat.chenyangma.com)
 - **[DONIC: Generalist Dexterous Bimanual Tracking Control from Human Demonstrations](https://arxiv.org/abs/2610.29997)** (2026) — 用一个双手跟踪策略（PPO 结合对自身成功执行的行为克隆）复现重定向后的人手-物体交互动作，并发布 BiHOI 数据集（1575 段双手序列、229 个物体）。论文报告在未见轨迹上成功率 86.8%、新物体上 57.3%。 · [代码](https://github.com/Ropedia/DONIC) · [项目页](https://ropedia.github.io/DONIC/)
 - **[DeCAL: Towards Physically-Grounded Dexterous Vision-Language-Action Models via Contact-Aware Latent Co-Imagination](https://arxiv.org/abs/2609.09119)** (2026) — 基于混合 Transformer 的灵巧视触觉 VLA：接触感知门控决定何时引入触觉，并联合想象未来的视觉与触觉潜变量。报告在富接触任务上平均成功率 71%。 · [代码](https://github.com/AureleoPKU/DeCAL) · [项目页](https://aureleopku.github.io/DeCAL)
 - **[DexHOT: Learning Hand-Object Configuration Transfer for Dexterous Manipulation](https://arxiv.org/abs/2611.05119)** (2026) — 把灵巧操作目标定义为手与物体的联合构型，从合成构型对学习统一的转移基元，无需人类动作；报告仿真未见物体成功率 69.4%，200 次真机转移成功率 61.5%。 · [项目页](https://dex-hot.github.io/)

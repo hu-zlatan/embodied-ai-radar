@@ -1285,3 +1285,93 @@
   tags: [humanoid, perceptive-locomotion, terrain, distillation, depth, real]
   takeaway_en: "Perceptive humanoid locomotion that keeps sharp terrain edges and assigns credit over time during distillation. Reports 96% stepping-stone success and a 1.5 km outdoor walk with one depth camera."
   takeaway_zh: "感知式人形行走：保留地形的清晰边缘，并在蒸馏时做跨时间的信用分配。报告踏石通过率 96%，仅用一个深度相机完成 1.5 公里户外路线。"
+- title: "Humanoid Hanoi: Investigating Shared Whole-Body Control for Skill-Based Box Rearrangement"
+  type: paper
+  arxiv: "2602.13850"
+  year: 2026
+  venue: CoRL 2026
+  project: https://osudrl.github.io/Humanoid_Hanoi/
+  added: 2026-11-06
+  tags: [humanoid, whole-body-control, skill-composition, long-horizon, real]
+  takeaway_en: "Humanoid box-rearranging challenge that chains pickup, walking and placing skills. A shared whole-body controller hardened with closed-loop skill data composes best; controller handoffs cause much of the loss."
+  takeaway_zh: "人形机器人“汉诺塔”式搬箱挑战，需要反复串联拾取、行走与放置技能。发现用技能闭环数据加固的共享全身控制器组合最稳健，控制器切换是性能损失的重要来源。"
+- title: "ContactMimic: Humanoid Object Interaction via Contact Control"
+  type: paper
+  arxiv: "2607.08742"
+  year: 2026
+  venue: CoRL 2026
+  project: https://lixinyao11.github.io/contactmimic-page
+  added: 2026-11-06
+  tags: [humanoid, motion-tracking, contact, object-interaction, real]
+  takeaway_en: "Humanoid motion tracking that follows explicit part-level contact commands as well as keypoints, so the robot really sits, wipes or pushes, and contact can be switched on or off. 10 sim motions, 5 on hardware."
+  takeaway_zh: "人形动作跟踪在关键点之外还跟踪部位级接触指令，让机器人真正坐下、擦拭或推动物体，并可按需产生或抑制接触。仿真 10 种动作，真机 5 种。"
+- title: "LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World"
+  type: paper
+  arxiv: "2606.01458"
+  year: 2026
+  venue: CoRL 2026
+  project: https://hojjunekim.github.io/legs/
+  added: 2026-11-06
+  tags: [humanoid, gaussian-splatting, synthetic-data, vla, unitree-g1]
+  takeaway_en: "Hybrid simulator (mesh foreground over a calibrated 3DGS background) that generates humanoid loco-manipulation demos without teleop. On a G1, VLAs trained only on it match or beat teleop-trained ones."
+  takeaway_zh: "混合模拟器：网格前景叠加校准过的 3D 高斯泼溅背景，无需遥操作即可生成人形移动操作演示。在 G1 上，仅用其数据训练的 VLA 达到或超过遥操作数据训练的效果。"
+- title: "ExtremControl: Low-Latency Humanoid Teleoperation with Scaled Velocity Feedforward"
+  type: paper
+  arxiv: "2602.11321"
+  year: 2026
+  venue: CoRL 2026
+  project: https://extremcontrol.github.io/
+  added: 2026-11-06
+  tags: [humanoid, teleoperation, low-latency, whole-body-control, real]
+  takeaway_en: "Low-latency humanoid teleoperation: scaled velocity feedforward cuts tracking delay by ~70 ms and link-pose control skips retargeting. End-to-end latency down to 50 ms, enough for juggling and ping-pong ball balancing."
+  takeaway_zh: "低延迟人形遥操作：缩放速度前馈让跟踪延迟减少约 70 ms，直接控制末端连杆位姿省去关节重定向。端到端延迟低至 50 ms，可完成抛接与乒乓球平衡等反应型动作。"
+- title: "VLK: Learning Humanoid Loco-Manipulation from Synthetic Interactions in Reconstructed Scenes"
+  type: paper
+  arxiv: "2606.30645"
+  year: 2026
+  venue: CoRL 2026
+  project: https://vision-language-kinematics.github.io/
+  added: 2026-11-06
+  tags: [humanoid, gaussian-splatting, synthetic-data, navigation, unitree-g1]
+  takeaway_en: "Generates 48,000 vision-language-kinematics trajectories in 3DGS-reconstructed rooms with no human input, trains a policy that outputs whole-body kinematics, and runs it on a real G1 via a tracker."
+  takeaway_zh: "在 3D 高斯泼溅重建的室内场景中无人工合成 4.8 万条“视觉-语言-运动学”轨迹，训练输出全身运动学轨迹的策略，并通过全身跟踪器在真实 G1 上运行。"
+- title: "HumanoidMimicGen: Data Generation for Loco-Manipulation via Whole-Body Planning"
+  type: paper
+  arxiv: "2605.27724"
+  year: 2026
+  venue: CoRL 2026
+  project: https://humanoidmimicgen.github.io/
+  added: 2026-11-06
+  tags: [humanoid, data-generation, loco-manipulation, benchmark, sim]
+  takeaway_en: "MimicGen-style data generation for humanoids: adapts a few whole-body demos to new object poses and links them with locomotion planning, plus a 9-task benchmark. Co-training reports +20% over real data only."
+  takeaway_zh: "面向人形机器人的 MimicGen 式数据生成：把少量全身演示适配到新物体位姿，并用移动与操作规划串联，另提出 9 任务基准。协同训练比仅用真机数据提升 20%。"
+- title: "HEFT: Heavy-Payload Full-size Humanoid Teleoperation with Privileged Motion Guidance and Windowed Payload Curriculum"
+  type: paper
+  arxiv: "2607.02332"
+  year: 2026
+  venue: CoRL 2026
+  project: https://heft.axell.top/
+  added: 2026-11-06
+  tags: [humanoid, teleoperation, payload, full-size, real]
+  takeaway_en: "Teleoperation for a full-size humanoid carrying heavy loads: privileged motion guidance cleans noisy VR references and a payload curriculum builds robustness. A 175 cm, 65 kg robot tracks motions with up to 24 kg."
+  takeaway_zh: "面向全尺寸人形机器人的重载遥操作：特权运动引导修正带噪 VR 参考，窗口化载荷课程提升鲁棒性。175 cm、65 kg 的机器人可携带最多 24 kg 负载跟踪动作。"
+- title: "Constrained Whole-Body Tracking for Humanoid Robots"
+  type: paper
+  arxiv: "2606.00374"
+  year: 2026
+  venue: CoRL 2026
+  project: https://stanfordasl.github.io/constrainedmimic
+  added: 2026-11-06
+  tags: [humanoid, safety, control-barrier-functions, motion-tracking, real]
+  takeaway_en: "Adds runtime constraints (collisions, joint limits, CoM stability) to RL humanoid tracking policies via operational-space control and CBFs at over 1 kHz, even for constraints set after training."
+  takeaway_zh: "借助操作空间控制与控制障碍函数，以 1 kHz 以上频率为强化学习人形跟踪策略施加运行时约束（碰撞、关节限位、质心稳定），训练后新增的约束也能满足。"
+- title: "Towards Professional Tennis Styles for Humanoid Robots with Adaptive Motion Planning and Tracking"
+  type: paper
+  arxiv: "2608.20087"
+  year: 2026
+  venue: CoRL 2026
+  project: https://humanoidtennis.github.io/AdaPT/
+  added: 2026-11-06
+  tags: [humanoid, sports, motion-planning, sim-to-real, unitree-g1]
+  takeaway_en: "Learns professional tennis serve and rally styles from broadcast video with a planner-plus-tracker design and speed adaptation for sim-to-real. Deployed on a G1 and a 1.7 m Dobot Atom serving without mocap."
+  takeaway_zh: "从比赛转播视频学习职业网球发球与对打风格，采用“规划器+跟踪器”分层结构并加入速度自适应缩小仿真-真机差距。部署在 G1 和 1.7 m 的 Dobot Atom 上，无需动捕即可发球。"

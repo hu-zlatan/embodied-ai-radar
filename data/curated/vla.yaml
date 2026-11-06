@@ -2139,3 +2139,23 @@
   tags: [failure-detection, ood, action-chunks, monitoring, real]
   takeaway_en: "Two cheap failure detectors for fine-tuned VLAs that need no failure data: last-layer Mahalanobis distance and consistency between overlapping action chunks, plus a metric that also scores detection time."
   takeaway_zh: "为微调后的 VLA 提出两种无需失败数据的轻量失败检测器：末层特征马氏距离与相邻动作块一致性，并提出同时衡量检测时间的指标。"
+- title: "Pri4R: Learning World Dynamics for Vision-Language-Action Models with Privileged 4D Representation"
+  type: paper
+  arxiv: "2603.01549"
+  year: 2026
+  venue: CoRL 2026
+  project: https://jiiiisoo.github.io/Pri4R/
+  added: 2026-11-06
+  tags: [4d, point-tracks, auxiliary-loss, libero, robocasa]
+  takeaway_en: "Adds a training-only head that predicts 3D point tracks from VLA features, teaching world dynamics with no inference cost. Reports +10% on LIBERO-Long and +40% on RoboCasa."
+  takeaway_zh: "训练时为 VLA 加一个预测 3D 点轨迹的轻量头，让模型学到场景动力学，推理时去掉、零额外开销。报告 LIBERO-Long 提升 10%，RoboCasa 提升 40%。"
+- title: "$π$, But Make It Fly: Physics-Guided Transfer of VLA Models to Aerial Manipulation"
+  type: paper
+  arxiv: "2603.25038"
+  year: 2026
+  venue: CoRL 2026
+  project: https://airvla.github.io
+  added: 2026-11-06
+  tags: [aerial-manipulation, drone, guidance, gaussian-splatting, real]
+  takeaway_en: "Transfers a pretrained π0 to aerial pick-and-place: payload-aware guidance in flow sampling handles flight dynamics and 3DGS data covers navigation. Reports pick-and-place success up from 23% to 50% in 460 real trials."
+  takeaway_zh: "把预训练 π0 迁移到空中抓放：在流采样中注入载荷约束以应对飞行动力学，并用高斯泼溅合成导航数据。在 460 次真机实验中报告抓放成功率从 23% 提升到 50%。"

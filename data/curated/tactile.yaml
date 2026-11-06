@@ -552,3 +552,93 @@
   tags: [simulation, visuotactile, data-generation, benchmark, real]
   takeaway_en: "Simulation platform for visuo-tactile data supporting three common sensors, plus an encoder trained on its synthetic data and an 8-task benchmark. Reports +17.1% on the benchmark and +25% in real tasks."
   takeaway_zh: "视触觉仿真数据合成平台，支持三种常用传感器，并基于合成数据训练视触觉编码器、发布 8 个任务的基准。报告基准成功率提升 17.1%，真机提升 25%。"
+- title: "OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies"
+  type: paper
+  arxiv: "2607.03723"
+  year: 2026
+  venue: CoRL 2026
+  project: https://colinyu1.github.io/omnitactune-site/
+  added: 2026-11-06
+  tags: [real-world-rl, residual-policy, visuotactile, contact-rich, real]
+  takeaway_en: "Real-world RL that adds a lightweight tactile residual on top of any pretrained visual policy, bootstrapped from the base policy's own rollouts. Reports 5–40% success raised to 85–100% within 40–80 minutes."
+  takeaway_zh: "真实世界强化学习：在任意预训练视觉策略之上学习轻量的触觉残差修正，先用基础策略自主执行的数据冷启动。报告四个任务成功率在 40–80 分钟内从 5–40% 提升到 85–100%。"
+- title: "PTLD: Sim-to-real Privileged Tactile Latent Distillation for Dexterous Manipulation"
+  type: paper
+  arxiv: "2603.04531"
+  year: 2026
+  venue: CoRL 2026
+  project: https://akashsharma02.github.io/ptld-website/
+  added: 2026-11-06
+  tags: [sim-to-real, privileged-learning, in-hand-rotation, dexterous, real]
+  takeaway_en: "Learns tactile dexterous skills without tactile simulation: privileged sensors in the real world collect data to distil a tactile state estimator for a sim-trained policy. Reports 182% gain on in-hand rotation."
+  takeaway_zh: "无需触觉仿真即可学习触觉灵巧操作：在真实环境中借助特权传感器采集数据，蒸馏出基于触觉的状态估计器，用于仿真训练的策略。报告手内旋转任务提升 182%。"
+- title: "FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation"
+  type: paper
+  arxiv: "2607.18231"
+  year: 2026
+  venue: CoRL 2026
+  project: https://qft-333.github.io/FM-VLA-Page/
+  added: 2026-11-06
+  tags: [force, memory, vla, non-markovian, real]
+  takeaway_en: "Gives a VLA memory through compact force-history tokens from a pretrained VAE, for tasks like pressing a button a set number of times. Reports over 80% success on three memory-dependent tasks."
+  takeaway_zh: "用预训练 VAE 把力信号历史压缩成记忆 token 输入 VLA，解决按指定次数按按钮、擦盘子等依赖记忆的接触任务。报告三个记忆型任务成功率超过 80%。"
+- title: "Multi-Resolution Tactile Imitation Learning for Contact-Rich Robotic Manipulation"
+  type: paper
+  arxiv: "2606.06281"
+  year: 2026
+  venue: CoRL 2026
+  project: https://mitas-touch.github.io
+  added: 2026-11-06
+  tags: [multi-sensor, event-based, gelsight, flow-matching, real]
+  takeaway_en: "Fuses an RGB camera, a GelSight Mini and a high-rate event-based tactile sensor for a flow-matching policy. Reports 80% average success on five contact-rich tasks vs 35.5% vision-only."
+  takeaway_zh: "融合 RGB 相机、GelSight Mini 与高频事件型触觉传感器的多分辨率表示，驱动流匹配策略。报告五个富接触任务平均成功率 80%，纯视觉仅 35.5%。"
+- title: "TacCoRL: Integrating Tactile Feedback into VLA via Simulation"
+  type: paper
+  arxiv: "2606.11743"
+  year: 2026
+  venue: CoRL 2026
+  project: https://tac-corl.github.io/
+  added: 2026-11-06
+  tags: [vla, sim-real-cotraining, rl, bimanual, real]
+  takeaway_en: "Adds touch to a VLA via sim-real co-training and simulated RL in a real-aligned simulator, learning how contact should change actions near failure. Reports 72.5% vs 50.0% on four bimanual tasks."
+  takeaway_zh: "通过仿真-真机协同训练和在对齐真实的模拟器中做强化学习，为 VLA 加入触觉，学习接近失败时触觉应如何调整动作。报告四个双臂任务成功率 72.5%，基线 50.0%。"
+- title: "FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation"
+  type: paper
+  arxiv: "2606.13102"
+  year: 2026
+  venue: CoRL 2026
+  project: https://ftp1-policy.github.io
+  added: 2026-11-06
+  tags: [foundation-model, cross-sensor, pretraining, transformer, real]
+  takeaway_en: "Tactile policy pretrained on ~3,000 hours from 26 sources and 21 sensors, mapping image, array and state signals into shared tokens. Reports +17.2% on seen setups and +31% on two unseen sensor setups."
+  takeaway_zh: "触觉基础策略：在 26 个数据源、21 种传感器约 3000 小时数据上预训练，把图像型、阵列型与状态型触觉信号映射到统一 token。报告已见配置提升 17.2%，两种未见传感器提升 31%。"
+- title: "WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware Planning"
+  type: paper
+  arxiv: "2606.13232"
+  year: 2026
+  venue: CoRL 2026
+  project: https://wt-umi.github.io/WTUMI/
+  added: 2026-11-06
+  tags: [wearable, whole-body, humanoid, admittance-control, real]
+  takeaway_en: "Wearable whole-body tactile interface for both human demos and humanoid teleop, with a planner that predicts poses plus contact forces for a tactile admittance controller. Five contact-rich tasks."
+  takeaway_zh: "可穿戴的全身触觉接口，可用于人类演示和人形遥操作；规划器同时预测末端位姿与接触力，作为触觉导纳控制器的参考。在五个富接触任务上验证。"
+- title: "Heterogeneous Tactile Transformer"
+  type: paper
+  arxiv: "2606.29948"
+  year: 2026
+  venue: CoRL 2026
+  project: https://jxbi1010.github.io/htt-gh-page/
+  added: 2026-11-06
+  tags: [representation-learning, cross-sensor, pretraining, dataset, real]
+  takeaway_en: "Shared tactile representation across sensors: sensor-specific encoders plus a common transformer, pretrained on a new 1.6M-frame paired dataset from four sensors; adapts to new tasks and unseen sensors."
+  takeaway_zh: "跨传感器的统一触觉表征：各传感器独立编码器加共享 Transformer 主干，在新的 160 万帧四传感器配对数据集上预训练，可迁移到新任务和未见传感器。"
+- title: "Inference-time Policy Steering via Vision and Touch"
+  type: paper
+  arxiv: "2606.14981"
+  year: 2026
+  venue: CoRL 2026
+  project: https://yilin-wu98.github.io/vital_website
+  added: 2026-11-06
+  tags: [inference-time-steering, visuotactile, world-model, diffusion, real]
+  takeaway_en: "Inference-time steering with vision and touch: visual sampling picks the behaviour, tactile-guided diffusion editing fixes local contact, scored by a visuo-tactile latent world model. Reports +51% over the base policy."
+  takeaway_zh: "视觉+触觉的推理时策略引导：视觉采样验证决定执行何种行为，触觉引导的扩散编辑修正局部接触，并由视触觉潜在世界模型打分。报告比基础策略提升 51%。"
