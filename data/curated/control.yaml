@@ -457,3 +457,39 @@
   tags: [mpc, ilqr, model-based-rl, gpu]
   takeaway_en: "Adds a residual dynamics network and a learned Q critic to iLQR MPC, with a GPU batched iLQR that solves thousands of problems in parallel, for model-based RL when contacts are poorly modeled."
   takeaway_zh: "在 iLQR 模型预测控制中加入残差动力学网络和学习得到的动作价值评估器，并实现 GPU 批量 iLQR 并行求解数千个问题，用于接触难以建模时的基于模型强化学习。"
+- title: "Koopman DCM: Unstable Eigenfunctions as Data-driven Representations for Legged Balancing"
+  type: paper
+  arxiv: "2607.18760"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [legged, balance, koopman, mpc]
+  takeaway_en: "Recasts divergent components of motion as unstable Koopman eigenfunctions learned from about an hour of real biped data; they improve walking tracking and give viability constraints for MPC."
+  takeaway_zh: "把发散运动分量（DCM）重新表述为不稳定的 Koopman 特征函数，仅用约一小时真实双足数据学习得到；可改善行走跟踪，并为 MPC 提供可行性约束。"
+- title: "$λ$-Reachability: Geometric-Horizon Safety Bellman Equations for Humanoid Safety"
+  type: paper
+  arxiv: "2606.16022"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [safety, reachability, humanoid, rl]
+  takeaway_en: "λ-Reachability learns Hamilton-Jacobi safety values with a TD(λ)-like multi-step estimator with a random horizon, proven to be a contraction; better safe-set estimates on simulated and real humanoids."
+  takeaway_zh: "λ-Reachability 用类似 TD(λ)、随机视野的多步估计器学习 Hamilton-Jacobi 安全值函数，并证明其为压缩映射；在仿真与真实人形上安全集估计更准确。"
+- title: "MPC-Injection: Biasing Off-Policy Locomotion RL Toward Controller-Induced Behavior Basins"
+  type: paper
+  arxiv: "2606.26392"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [rl, mpc, locomotion, off-policy]
+  takeaway_en: "MPC-Injection steers off-policy RL toward a usable gait by inserting MPC-generated transitions into training, with no reward shaping or discriminator; Go2 sim-to-real, and a barrel roll pure RL misses."
+  takeaway_zh: "MPC-Injection 把 MPC 生成的状态转移注入离策略强化学习训练，在不改奖励、不加判别器的情况下把策略引向可用步态；在 Go2 上实现仿真到真实，并完成纯 RL 学不会的侧滚翻。"
+- title: "VIGOR-MPC: Vision-Guided Objective Regulation MPC"
+  type: paper
+  arxiv: "2610.20333"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [mpc, vision, distillation, racing]
+  takeaway_en: "VIGOR-MPC distills a privileged long-horizon MPC into a short-horizon MPC whose cost weights are inferred online from noisy vision; in vision-based racing it nears the teacher's lap times with 90%+ less compute per step."
+  takeaway_zh: "VIGOR-MPC 将具有特权信息的长视野 MPC 蒸馏为短视野 MPC，其代价参数由含噪视觉在线推断；在视觉自主竞速中接近教师圈速，每步计算量减少 90% 以上。"

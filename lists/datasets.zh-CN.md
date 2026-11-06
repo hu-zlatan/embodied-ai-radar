@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 96 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 97 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/datasets.html) · [English](datasets.md)
 
@@ -50,6 +50,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[IM-ENGINE: Image Editing for Embodied Data Generation](https://arxiv.org/abs/2609.06279)** (2026) — 以对仿真渲染图的图像编辑为中间表示：先编辑注入任务语义，再借助仿真先验恢复 3D 状态并在物理中细化，最后转为机器人可执行的监督，如灵巧抓取与目标状态。
 - **[IMBench: A Benchmark for Intuitive Robotic Manipulation](https://arxiv.org/abs/2607.15641)** (2026) — IMBench：35 个任务、1.4 万条轨迹，在显式约束下同时考察物理推理与动作执行。VLM 有部分推理能力但给不出可执行计划，VLA 难以满足任务约束。 · [项目页](https://imbench.org/)
 - **[Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](https://arxiv.org/abs/2610.40364)** (2026) — 在 MuJoCo MJX 中用统一协议在五款四足上比较 14 种课程方法：没有方法在所有机器人和地形集上都领先，而训练关卡偏简单的方法在分布内随机地形上表现靠前。 · [代码](https://github.com/Solvro/ml-wojtek-ued)
+- **[KlaskTron-IL: A Contact-Rich Adversarial Imitation Learning Benchmark with a Validated Sim-to-Real Bridge](https://arxiv.org/abs/2611.03091)** (2026) — 基于开源 KlaskTron 桌面对抗游戏机器人的模仿学习基准：8 万步真实人类示教、对称增强与合成数据，以及揭示 BC 和 GAIL 失效模式的基线；训练出的策略可直接上真机运行。
 - **[LIBERO-Industry: Benchmarking Robotic Manipulation under Industrial Process Constraints](https://arxiv.org/abs/2610.16782)** (2026) — 基于 LIBERO 的 216 个工业约束任务：传送带上料、下料与转运，可调节物体形状、带速、交互时间窗与公差；报告 VLA 和世界动作模型在多重约束叠加时性能逐步下降。 · [代码](https://github.com/IAIE-PhysicalAI/LIBERO-Industry) · [项目页](https://iaie-physicalai.github.io/LIBERO-Industry/)
 - **[MESA: An Evaluation Framework for Compositional, Semantic, and Spatial Generalization in Robotics](https://arxiv.org/abs/2611.05567)** (2026) — 五组评测分别隔离空间布局、物体实例、物体类别和子任务组合上的泛化能力，并提供双臂版 BiMESA。七种基线中最好的也只有 52% 和 49%，仍有很大提升空间。 · [代码](https://github.com/pairlab/mesa-env) · [项目页](https://pairlab.github.io/MESA)
 - **[MolmoSpaces-CommonSense: Evaluating Commonsense in Robotic Manipulation Policies](https://arxiv.org/abs/2610.41377)** (2026) — 基于常识推理分类法（遮挡、容纳、支撑、可供性、隐藏物体）构建的操作基准。报告零样本通用策略在干扰物增多时成功率下降超过 50%，在杂乱场景中约 30% 的时间作用于错误物体，抓取正确部位的比例仅约一半。 · [代码](https://github.com/allenai/molmospaces)

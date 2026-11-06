@@ -2,7 +2,7 @@
 
 _Reinforcement learning, imitation learning and policy post-training methods for robots, on any embodiment._
 
-131 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/learning.yaml`](../data/curated/learning.yaml); edit the YAML, not this file.
+132 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/learning.yaml`](../data/curated/learning.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [中文](learning.zh-CN.md)
 
@@ -75,6 +75,7 @@ _Reinforcement learning, imitation learning and policy post-training methods for
 - **[MAGMA-GEN: Validated Recovery Supervision from Ambiguous Failures via Counterfactual Re-Execution](https://arxiv.org/abs/2609.20056)** (2026) — Turns ambiguous failed rollouts into recovery training data: a privileged coach proposes a corrected high-level decision, kept only if re-executing from the same state improves progress.
 - **[MIRROR: Reflecting Hidden Symmetries from Offline Robot Interaction Data](https://arxiv.org/abs/2610.17422)** (2026) — Learns how a known symmetry acts on pixel observations and actions from offline data, then uses it for frame-averaged behavior cloning. Reports average success 80.5% to 85.1% on four Robosuite tasks. · [project](https://pomdp-mirror.github.io)
 - **[Memory Anchors for Continual Robot Learning](https://arxiv.org/abs/2608.26545)** (2026) — Finds that a few replay samples, where new and old observations look alike but need different actions, prevent most forgetting. Dropping just 10% of them raises forgetting more than 4.5x on LIBERO. · [project](https://robot-adaptation.github.io/MemoryAnchors)
+- **[Mind the Gap: Rethinking I/O Design for Contact-Rich Visuomotor Policy Learning](https://arxiv.org/abs/2602.08776)** (2026) — Argues policies should condition on both the executed robot state and the leader command while predicting future commands, since their mismatch signals contact; beats either alone with no force sensing.
 - **[Object-Centric Conditioning for Visuomotor Flow Matching](https://arxiv.org/abs/2609.24155)** (2026) — Action-to-action flow-matching policy conditioned on object-centric 'what' features and image-plane 'where' cues, improving robustness to distractors and object shifts while keeping few-step inference.
 - **[Online World Modeling Enables Real-World Inverse Reinforcement Learning from Observation](https://arxiv.org/abs/2602.24121)** (2026) — Inverse RL from observation only (videos, no actions or rewards) made practical on a real robot via online world modeling. Reports pick-and-place learned from scratch to 82% in under 40 minutes. · [code](https://github.com/UWRobotLearning/mpail2) · [project](https://uwrobotlearning.github.io/mpail2/)
 - **[Optimal Transport Q-Learning for Flow Policy Steering and Acceleration](https://arxiv.org/abs/2607.06262)** (2026) — OTQL post-trains and speeds up a suboptimal flow policy from the robot's own experience with advantage-weighted conditional optimal-transport flow matching, in 50-60 episodes and without distillation.

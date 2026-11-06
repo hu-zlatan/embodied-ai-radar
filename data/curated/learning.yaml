@@ -1305,3 +1305,12 @@
   tags: [visual-rl, policy-gradient, efficiency, sim2real]
   takeaway_en: "SDPG estimates policy gradients from random perturbations of rollouts, so visual RL needs far fewer batch-rendered envs and trains in hours on one RTX 4080; adds visual benchmarks and sim-to-real demos."
   takeaway_zh: "SDPG 通过对推演轨迹随机扰动来估计策略梯度，视觉强化学习所需的批量渲染环境大幅减少，单张 RTX 4080 几小时即可训练；并提供视觉机器人基准与仿真到真实演示。"
+- title: "Mind the Gap: Rethinking I/O Design for Contact-Rich Visuomotor Policy Learning"
+  type: paper
+  arxiv: "2602.08776"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [imitation-learning, action-space, teleoperation, contact-rich]
+  takeaway_en: "Argues policies should condition on both the executed robot state and the leader command while predicting future commands, since their mismatch signals contact; beats either alone with no force sensing."
+  takeaway_zh: "认为策略应同时以机器人实际执行状态和主端指令为输入并预测未来指令，因为两者的偏差蕴含接触信息；在没有力觉输入的低成本平台上优于单独使用任一信号。"

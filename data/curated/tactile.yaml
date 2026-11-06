@@ -738,3 +738,30 @@
   tags: [tactile, dexterous-grasping, real2sim2real, diffusion-policy, leap-hand]
   takeaway_en: "Tactile-only blind grasping on a LEAP Hand: calibrate a digital twin to reproduce real touch signals, pretrain a layout-aware tactile encoder, and distill object-specific RL experts into a diffusion policy."
   takeaway_zh: "在 LEAP 手上实现只凭触觉的盲抓：先构建能复现真实触觉信号的校准数字孪生，再自监督预训练感知传感器布局的触觉编码器，最后把各物体的强化学习专家蒸馏为扩散策略。"
+- title: "How Firm Should a Grasp Be?"
+  type: paper
+  arxiv: "2610.11221"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [visuotactile, grasp-force, material-properties, dataset]
+  takeaway_en: "Estimates mass, elasticity and friction visuotactilely during the grasp and applies the minimum safe grip force; adds a dataset of fruits and vegetables with measured physical properties."
+  takeaway_zh: "在抓取过程中用视触觉实时估计物体的质量、弹性和摩擦，从而施加刚好足够的最小夹持力；并提供一个测量了物理属性的水果蔬菜数据集。"
+- title: "Touch2Trace: Tactile-Driven Imitation Learning for Dexterous Cable Tracing"
+  type: paper
+  arxiv: "2609.15921"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [tactile, dexterous, cable, imitation-learning]
+  takeaway_en: "Touch2Trace feeds a cable through a dexterous hand from touch alone: a self-supervised encoder for a 32x32 piezoresistive sensor plus a small transformer BC policy at 60 Hz; 93% success vs 0% without touch."
+  takeaway_zh: "Touch2Trace 仅凭触觉让灵巧手完成线缆穿引：为 32x32 压阻触觉传感器自监督预训练编码器，配合 60 Hz 的轻量 Transformer 行为克隆策略；成功率 93%，无触觉时为 0%。"
+- title: "SlipSense: Multimodal Tactile Learning for Low-Latency and Generalized Slip Detection"
+  type: paper
+  arxiv: "2609.15910"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [tactile, slip-detection, accelerometer, multimodal]
+  takeaway_en: "SlipSense fuses a 240 Hz pressure array with an 8 kHz accelerometer for slip detection: 96.7% macro F1, 76% of slips caught within 23.1 ms; trained on UMI data, it transfers to a dexterous hand."
+  takeaway_zh: "SlipSense 融合 240 Hz 压力阵列与 8 kHz 加速度计进行滑移检测：宏 F1 达 96.7%，76% 的滑移在 23.1 毫秒内被检测到；仅用 UMI 数据训练即可零样本迁移到灵巧手。"

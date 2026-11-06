@@ -1541,3 +1541,174 @@
   tags: [humanoid, soccer, motion-prior, hierarchical-rl, real]
   takeaway_en: "A latent motion prior distilled from human soccer MoCap lets one skill-conditioned policy move, dribble, trap and kick with human-like motion; transfers zero-shot to a Unitree G1."
   takeaway_zh: "从人类足球动捕数据蒸馏出潜在运动先验，使单一技能条件策略能完成移动、带球、停球和射门，动作自然流畅；零样本迁移到 Unitree G1。"
+- title: "Unleashing Infinite Motion: Scaling Expressive Quadrupedal Motion via Generative Video Priors"
+  type: paper
+  arxiv: "2606.28237"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [quadruped, video-generation, motion-dataset, motion-tracking]
+  takeaway_en: "Uni-Mo generates quadruped motions with an LLM plus a video diffusion model and lifts them to 3D references for tracking policies; the Quad-Imaginarium dataset has 7,488 motions, 96.7% of 392 sampled ran on a Go2."
+  takeaway_zh: "Uni-Mo 用大语言模型和视频扩散模型生成四足动作，并提升为 3D 参考轨迹训练跟踪策略；Quad-Imaginarium 数据集含 7488 个动作，抽样的 392 个在 Go2 真机上 96.7% 成功执行。"
+- title: "MorFiC: Fixing Value Miscalibration for Zero-Shot Quadruped Transfer"
+  type: paper
+  arxiv: "2603.14554"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [quadruped, cross-embodiment, critic, zero-shot]
+  takeaway_en: "MorFiC finds that a shared critic averages incompatible values across robot bodies and fixes it with multiplicative morphology conditioning; trained on one robot, it transfers zero-shot to seven quadrupeds."
+  takeaway_zh: "MorFiC 指出共享价值网络会把不同机身的价值目标混为一谈，并用乘性形态条件化修正该问题；只在一台机器人上训练即可零样本迁移到七种四足机器人。"
+- title: "Morphology-Conditioned World Model for Cross-Embodiment Quadrupedal Locomotion"
+  type: paper
+  arxiv: "2604.08780"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [quadruped, world-model, cross-embodiment, zero-shot]
+  takeaway_en: "QWM conditions one latent world model on scale-invariant morphology features and trains policies in imagination; unlike a model-free policy, it transfers zero-shot to unseen quadruped morphologies."
+  takeaway_zh: "QWM 以尺度无关的形态特征作为条件训练单一潜空间世界模型，并在想象中训练策略；与无模型策略不同，它能零样本迁移到未见过的四足形态。"
+- title: "LoComposition: Terrain-Adaptive Energy-Efficient Quadruped Locomotion without Gait Priors"
+  type: paper
+  arxiv: "2606.15896"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [quadruped, energy-efficiency, constraints, perceptive]
+  takeaway_en: "Splits quadruped training into rewards for the task, constraints for limits and energy minimization for gait, with no gait priors; reports 56% lower cost of transport and 96% fewer limit violations, on a Go2."
+  takeaway_zh: "将四足训练拆分为：奖励定义任务、约束保证运行限制、能耗最小化决定步态，且不使用任何步态先验；报告运输代价降低 56%、越限减少 96%，并在 Go2 上部署。"
+- title: "Physics-Guided Biomechanical Gait Adaptation for Humanoid Locomotion on Extreme Sloped Terrains"
+  type: paper
+  arxiv: "2607.07830"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, slopes, zmp, blind]
+  takeaway_en: "HumoSlope trains humanoid walking on steep slopes with a slope-aware ZMP balance prior and a gait adapter that avoids crouching; the blind policy walks outdoor grass slopes up to 32.1 degrees."
+  takeaway_zh: "HumoSlope 用基于斜坡支撑面的 ZMP 平衡先验和避免蹲伏步态的适配器训练人形机器人陡坡行走；纯本体感知策略可在户外草坡上行走，坡度最高 32.1 度。"
+- title: "RPL: Learning Robust Humanoid Perceptive Locomotion on Challenging Terrains"
+  type: paper
+  arxiv: "2602.03002"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, perceptive, depth, distillation]
+  takeaway_en: "RPL distills terrain-specific experts into one multi-depth-camera transformer for multi-directional humanoid walking with payloads, with a ray-casting depth renderer about 5x faster than existing pipelines."
+  takeaway_zh: "RPL 将各地形专家策略蒸馏为一个多深度相机 Transformer 策略，实现可负重的人形多方向行走，并配套比现有管线快约 5 倍的光线投射深度渲染器。"
+- title: "Echo in the Steps: Learning Perceptive Humanoid Parkour with Gated Memory"
+  type: paper
+  arxiv: "2609.28960"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, parkour, depth, memory]
+  takeaway_en: "Humanoid parkour over sparse footholds from onboard depth: a saliency-guided gated memory keeps useful depth features across frames, and an alternation loss enforces left-right foot placement."
+  takeaway_zh: "基于机载深度相机的人形跑酷，跨越稀疏落脚点：显著性引导的门控记忆跨帧保留有用的深度特征，交替损失约束左右脚交替落步。"
+- title: "MeshMimic: Geometry-Aware Humanoid Motion Learning through 3D Scene Reconstruction"
+  type: paper
+  arxiv: "2602.15733"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, motion-imitation, scene-reconstruction, video]
+  takeaway_en: "MeshMimic reconstructs both human motion and terrain geometry from monocular video, then retargets with contact constraints, so humanoids learn motion-terrain interactions without MoCap."
+  takeaway_zh: "MeshMimic 从单目视频中同时重建人体运动与地形几何，再以接触约束进行重定向，使人形机器人无需动捕即可学习动作与地形的交互。"
+- title: "Perceptive Behavior Foundation Model: Adapting Human Motion Priors to Robot-Centric Terrain"
+  type: paper
+  arxiv: "2606.08059"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, behavior-foundation-model, terrain, motion-tracking]
+  takeaway_en: "Perceptive BFM grounds human motion references in the robot's local terrain: synthesized terrain-conformal references train a teacher, and a student tracker adds terrain corrections only when needed."
+  takeaway_zh: "Perceptive BFM 让人类动作参考适配机器人所处的局部地形：用合成的贴合地形参考训练教师策略，学生跟踪器仅在必要时加入地形修正。"
+- title: "MARCH: Model-Assisted Reinforcement Learning for the Perceptive Control of Humanoids over Sparse Footholds"
+  type: paper
+  arxiv: "2606.10288"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, stepping-stones, clf, model-assisted-rl]
+  takeaway_en: "MARCH guides RL with a safe reference from simplified models and a control-Lyapunov reward, then distills to a vision policy; a Unitree G1 crosses sparse footholds with lateral constraints."
+  takeaway_zh: "MARCH 用简化模型生成的安全参考轨迹和控制李雅普诺夫奖励引导强化学习，再蒸馏为视觉策略；Unitree G1 可通过带侧向约束的稀疏落脚点。"
+- title: "CAP: Continuously Adaptive Perception-Blind Humanoid Locomotion via Learned Denoising"
+  type: paper
+  arxiv: "2609.11553"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, perception-robustness, depth, denoising]
+  takeaway_en: "CAP keeps one humanoid policy working as depth degrades: a world-model encoder learns to denoise corrupted depth, alongside a proprioceptive encoder; tested on a G1 indoors and outdoors."
+  takeaway_zh: "CAP 让单一人形策略在深度感知退化时仍能工作：世界模型编码器学习对受损深度去噪，并配合本体感知编码器；在 G1 上进行了室内外测试。"
+- title: "RoboDreamer: Anticipatory Humanoid Locomotion with Predictive State-Space Models"
+  type: paper
+  arxiv: "2609.07096"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, motion-tracking, mamba, distillation]
+  takeaway_en: "RoboDreamer distills a humanoid teacher into a Mamba student that sees randomly masked recent observations, so it infers missing state from history; tested in IsaacLab, MuJoCo and on a G1."
+  takeaway_zh: "RoboDreamer 将人形教师策略蒸馏为 Mamba 学生策略，训练时随机遮蔽最近观测，使其从历史推断缺失状态；在 IsaacLab、MuJoCo 和 G1 上验证。"
+- title: "ADAPT: Analytical Disturbance-Aware Policy Training for Humanoid Locomotion"
+  type: paper
+  arxiv: "2606.16542"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, disturbance-observer, force-interaction]
+  takeaway_en: "ADAPT feeds a humanoid policy an analytical whole-body disturbance observer that estimates external force/torque from robot dynamics without F/T sensors; more robust to pushes and payloads on a G1."
+  takeaway_zh: "ADAPT 为人形策略提供解析式全身扰动观测器，无需力/力矩传感器即可由机器人动力学在线估计外力与力矩；在 G1 上对推搡和负载更鲁棒。"
+- title: "Walk Like This: Stylized Locomotion for Physics-Based Characters through Example-Driven Diffusion"
+  type: paper
+  arxiv: "2610.18147"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [stylized-locomotion, diffusion, character-animation, motion-tracking]
+  takeaway_en: "Walk Like This: give a style clip and a joystick velocity; a style-conditioned autoregressive diffusion model generates the reference and an RL controller tracks it, in simulation and on a robot."
+  takeaway_zh: "Walk Like This：给定风格参考片段和摇杆速度指令，风格条件自回归扩散模型生成运动参考，再由强化学习控制器跟踪，在仿真角色和真实机器人上均可运行。"
+- title: "Actuator Dynamics Curricula for Narrow-Viability Tasks in Legged Robot Learning"
+  type: paper
+  arxiv: "2609.09492"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [legged, curriculum, actuator, spot]
+  takeaway_en: "Starts RL with stiff joints and anneals stiffness to the identified value as episodes lengthen, which enlarges the viable set; enables a quadruped-to-handstand transition on Spot that otherwise never succeeds."
+  takeaway_zh: "强化学习训练初期使用较高的关节刚度，随回合变长逐步退火到辨识值，从而扩大可行状态集；使原本无法学会的 Spot 由四足站立转为倒立的动作得以完成并上真机。"
+- title: "Trajectory-Level Automatic Curriculum Learning for Legged Locomotion on Unstructured Terrain"
+  type: paper
+  arxiv: "2608.16164"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [legged, curriculum, unstructured-terrain]
+  takeaway_en: "TACL builds curricula from trajectory tasks on unstructured terrain maps: an evaluator learns difficulty for the current policy and a sampler proposes the next tasks; +18.5% on the hardest terrain vs handcrafted."
+  takeaway_zh: "TACL 直接在非结构化地形图上以轨迹任务构建课程：评估器学习当前策略的任务难度，采样器据此提出下一批任务；在最难地形上比人工课程成功率高 18.5%。"
+- title: "SHOES: Sim-to-real Hardware-adaptation via On-policy Expansion of Skills for Legged Robots"
+  type: paper
+  arxiv: "2610.16457"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [quadruped, adaptation, sim-to-real, morphology]
+  takeaway_en: "SHOES adapts a frozen sim-trained quadruped policy to footwear by fine-tuning only small identity-initialized modulation modules on the robot, with a workspace-bounded sampler; Go2 tested with shoes."
+  takeaway_zh: "SHOES 冻结仿真训练的四足策略，仅在真机上微调以恒等初始化的轻量调制模块来适应穿鞋带来的形态变化，并用限定工作空间的采样器保证安全；在穿鞋的 Go2 上测试。"
+- title: "Mind the Phase: Effective Rank and Representation Health in Legged Locomotion"
+  type: paper
+  arxiv: "2609.06958"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [legged, representation, analysis, rl]
+  takeaway_en: "Studies locomotion policies via effective rank of the network Jacobian conditioned on gait phase; normalization and residual connections help, giving up to 2x lower joint jitter on a real Spot."
+  takeaway_zh: "以步态相位为条件分析运动策略网络雅可比的有效秩；发现归一化与残差连接更健康，在真实 Spot 上关节抖动最多降低 2 倍。"
+- title: "Push the Limit: Learning High-Speed Sprinting and Aggressive Cornering on a Full-Scale Humanoid"
+  type: paper
+  arxiv: "2610.14840"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [humanoid, sprinting, agility, amp]
+  takeaway_en: "A full-scale humanoid sprints above 7 m/s and corners with up to 25 degrees of trunk lean, using causal attention over feedback, a heading-direction reward and skill-conditioned motion-prior discriminators."
+  takeaway_zh: "全尺寸人形机器人以超过 7 m/s 冲刺，并以最高 25 度躯干侧倾高速过弯；方法包括对反馈的因果注意力、航向奖励以及按技能条件化的运动先验判别器。"

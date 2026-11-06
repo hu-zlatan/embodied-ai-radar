@@ -1663,3 +1663,30 @@
   tags: [failure-prediction, latent-world-model, contact-rich, monitoring]
   takeaway_en: "Before contact, a latent world model rolls the policy's planned action chunk forward in multi-view embedding space, and a small probe aborts if the predicted post-contact state looks like failure."
   takeaway_zh: "在接触发生前，用潜空间世界模型在多视角嵌入空间中推演策略计划的动作块，若预测的接触后状态呈现失败迹象，轻量探针即中止执行。"
+- title: "Physics-Aware Object-Centric SE(3) Forecasting for Real-Time Proactive Dynamic Grasping"
+  type: paper
+  arxiv: "2610.17843"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [dynamic-grasping, forecasting, se3, catching]
+  takeaway_en: "For catching and intercepting moving objects, forecasts the object's future SE(3) trajectory from short pose histories (15 ms) and picks a reachable contact state; reports real success rising from 15.3% to 67.3%."
+  takeaway_zh: "面向抓取运动物体的主动式动态抓取：由短时位姿历史预测物体未来 SE(3) 轨迹（15 毫秒），再选择可达的接触状态；报告真实环境成功率从 15.3% 提升到 67.3%。"
+- title: "Robot-DIFT: Correspondence-Sensitive Diffusion Features for Contact-Rich Robot Manipulation"
+  type: paper
+  arxiv: "2602.11934"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [visual-representation, diffusion-features, contact-rich, distillation]
+  takeaway_en: "Robot-DIFT distills a noisy diffusion feature extractor into a deterministic single-pass backbone with a feature pyramid, so policies see fine correspondence cues for the last millimeters of contact-rich tasks."
+  takeaway_zh: "Robot-DIFT 将依赖噪声的扩散特征提取器蒸馏为确定性的单次前向骨干网络并配合特征金字塔，使策略获得精细的对应关系线索，改善接触密集任务最后几毫米的精度。"
+- title: "DexFLEX: Contact-Aware Foundation Controller for Command-Guided Dexterity"
+  type: paper
+  arxiv: "2610.14372"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-06
+  tags: [dexterous, tactile, shared-control, teleoperation]
+  takeaway_en: "DexFLEX treats fingertip motion commands from teleop or a policy as intent: it proposes short motion chunks, predicts their contact outcome and picks the best; real teleop success rises from 29.2% to 78.3%."
+  takeaway_zh: "DexFLEX 把来自遥操作或策略的指尖运动指令视为意图：生成若干短时动作块、预测其接触结果并择优执行；真实遥操作成功率从 29.2% 提升到 78.3%。"

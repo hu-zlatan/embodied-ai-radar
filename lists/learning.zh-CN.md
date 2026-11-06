@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 131 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 132 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [English](learning.md)
 
@@ -75,6 +75,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[MAGMA-GEN: Validated Recovery Supervision from Ambiguous Failures via Counterfactual Re-Execution](https://arxiv.org/abs/2609.20056)** (2026) — 把含义不明的失败推演转化为恢复训练数据：由特权教练推测早期的高层决策错误并提出修正，只有从同一状态重新执行确实提升进度时才保留。
 - **[MIRROR: Reflecting Hidden Symmetries from Offline Robot Interaction Data](https://arxiv.org/abs/2610.17422)** (2026) — 从离线交互数据中学习已知对称群如何同时作用于像素观测和动作，再用于帧平均行为克隆。报告在四个 Robosuite 任务上平均成功率从 80.5% 升到 85.1%。 · [项目页](https://pomdp-mirror.github.io)
 - **[Memory Anchors for Continual Robot Learning](https://arxiv.org/abs/2608.26545)** (2026) — 发现回放缓冲中少数“观测相似但所需动作冲突”的样本（记忆锚点）承担了防遗忘的主要作用：仅剔除其中 10% 就会让 LIBERO 上的遗忘增加 4.5 倍以上。 · [项目页](https://robot-adaptation.github.io/MemoryAnchors)
+- **[Mind the Gap: Rethinking I/O Design for Contact-Rich Visuomotor Policy Learning](https://arxiv.org/abs/2602.08776)** (2026) — 认为策略应同时以机器人实际执行状态和主端指令为输入并预测未来指令，因为两者的偏差蕴含接触信息；在没有力觉输入的低成本平台上优于单独使用任一信号。
 - **[Object-Centric Conditioning for Visuomotor Flow Matching](https://arxiv.org/abs/2609.24155)** (2026) — 以物体为中心的动作到动作流匹配策略：把观测拆成语义“是什么”特征与图像平面“在哪里”线索作为条件，在保持少步推理的同时提升对干扰物和位置偏移的鲁棒性。
 - **[Online World Modeling Enables Real-World Inverse Reinforcement Learning from Observation](https://arxiv.org/abs/2602.24121)** (2026) — 仅从观测（视频，无动作和奖励）做逆强化学习，借助在线世界模型在真机上实现。报告不到 40 分钟从零学会抓放，成功率 82%。 · [代码](https://github.com/UWRobotLearning/mpail2) · [项目页](https://uwrobotlearning.github.io/mpail2/)
 - **[Optimal Transport Q-Learning for Flow Policy Steering and Acceleration](https://arxiv.org/abs/2607.06262)** (2026) — OTQL 用优势加权的条件最优传输流匹配，从机器人自身经验对次优流策略做强化学习后训练并加速推理，只需 50–60 个交互回合，无需蒸馏。
