@@ -81,13 +81,13 @@ def hf_section(entries: list[dict], start: dt.date, end: dt.date) -> list[str]:
 
 
 def rank_picks(picks: list[dict]) -> list[dict]:
-    """Order picks by public signals: highlight flag, Hugging Face upvotes, GitHub stars of the code, has code."""
+    """Order picks by public signals: editor rating (⭐ 1-3), Hugging Face upvotes, GitHub stars of the code, has code."""
     hf, stats = load_hf(), load_stats()
 
     def key(e: dict) -> tuple:
         up = (hf.get(str(e.get("arxiv") or "")) or {}).get("upvotes", 0)
         st = (stats.get(repo_key(e.get("code")) or "") or {}).get("stars", 0)
-        return (-bool(e.get("highlight")), -up, -st, -bool(e.get("code")), str(e["title"]).lower())
+        return (-int(e.get("rating") or 0), -up, -st, -bool(e.get("code")), str(e["title"]).lower())
     return sorted(picks, key=key)
 
 

@@ -15,10 +15,16 @@ Add one item to `data/curated/<topic>.yaml` (topics are listed in `data/topics.y
   code: https://github.com/openvla/openvla   # optional: url, code, project (https only)
   topics: [manipulation] # optional: extra topics besides the file's own
   tags: [real, arm, open-weights]      # optional, free-form lowercase
-  highlight: true        # optional, maintainers use this sparingly
+  rating: 2              # optional editor's rating, set by maintainers: 3 / 2 / 1 (see below)
   takeaway_en: One sentence, your own words, ≤ 220 characters.
   takeaway_zh: 一句话，用自己的话写，不超过 220 字符。
 ```
+
+Ratings (`rating:`), shown as ★★★ / ★★ / ★ on the site and ⭐ in the README:
+- **3, must-read**: the one entry of a topic to read first. At most one per topic file (validation fails otherwise).
+- **2, highly recommended**: widely used or field-shaping work, chosen by hand.
+- **1, recommended**: strong public signal, such as 1k+ GitHub stars, 50+ Hugging Face upvotes, or an oral/spotlight/best-paper at a top venue, or an editor's call.
+- no `rating`: worth knowing; most entries.
 
 Rules: entries must be real and links must work (CI checks arXiv titles and URLs); write takeaways in your own words — don't paste abstracts.
 

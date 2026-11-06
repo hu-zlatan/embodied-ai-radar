@@ -20,7 +20,7 @@ ARXIV_RE = re.compile(r"^\d{4}\.\d{4,5}$")
 URL_RE = re.compile(r"^https://[^\s]+$")
 REQUIRED = ("title", "type", "year", "takeaway_en", "takeaway_zh")
 ALLOWED = set(REQUIRED) | {
-    "arxiv", "url", "code", "project", "org", "venue", "tags", "topics", "highlight", "added",
+    "arxiv", "url", "code", "project", "org", "venue", "tags", "topics", "rating", "added",
 }
 
 
@@ -94,6 +94,8 @@ def validate_entry(e: dict, where: str, topic_ids: set[str]) -> list[str]:
     for t in e.get("topics", []) or []:
         if t not in topic_ids:
             errs.append(f"{where}: unknown topic '{t}'")
+    if "rating" in e and e["rating"] not in (1, 2, 3):
+        errs.append(f"{where}: rating must be 1, 2 or 3 (leave it out for no stars)")
     for k in ("takeaway_en", "takeaway_zh"):
         if e.get(k) and len(str(e[k])) > 220:
             errs.append(f"{where}: {k} longer than 220 chars")
@@ -114,6 +116,9 @@ def load_curated(strict: bool = True) -> tuple[list[dict], list[str]]:
         except yaml.YAMLError as ex:
             errs.append(f"{path.name}: YAML error: {ex}")
             continue
+        threes = [i + 1 for i, e in enumerate(items) if isinstance(e, dict) and e.get("rating") == 3]
+        if len(threes) > 1:  # ★★★ is the single must-read of a topic
+            errs.append(f"{path.name}: rating 3 is allowed once per topic, found {len(threes)} (entries {threes})")
         for i, e in enumerate(items):
             where = f"{path.name}#{i + 1}"
             problems = validate_entry(e, where, topic_ids)
@@ -126,6 +131,8 @@ def load_curated(strict: bool = True) -> tuple[list[dict], list[str]]:
             e["id"] = entry_id(e)
             extra = [x for x in (e.get("topics") or []) if x != t["id"]]
             e["topics"] = [t["id"]] + extra
+            e["rating"] = e.get("rating") if e.get("rating") in (1, 2, 3) else 0
+            e["highlight"] = e["rating"] >= 2  # derived: ★★ and ★★★ are the old 'highlights'
             if e["id"] in seen:
                 errs.append(f"{where}: duplicate of {seen[e['id']]} ({e['id']})")
                 continue

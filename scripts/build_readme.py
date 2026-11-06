@@ -1,6 +1,6 @@
 """Regenerate the curated lists from data/curated.
 
-README.md and README.zh-CN.md show a short list per topic (highlights, then the
+README.md and README.zh-CN.md show a short list per topic (rated entries ⭐⭐⭐/⭐⭐/⭐, then the
 newest picks) between <!-- radar:start --> and <!-- radar:end -->. The complete
 lists go to lists/<topic>.md and lists/<topic>.zh-CN.md, because GitHub stops
 rendering a README at 512 KB and everything after the lists was buried anyway.
@@ -29,12 +29,12 @@ def md_title(t: str) -> str:
 
 def in_topic(entries: list[dict], tid: str) -> list[dict]:
     return sorted((e for e in entries if e["topics"][0] == tid),
-                  key=lambda e: (not e.get("highlight"), -int(e["year"]), e["title"]))
+                  key=lambda e: (-e["rating"], -int(e["year"]), e["title"]))
 
 
 def entry_line(e: dict, lang: str) -> str:
     link = f"https://arxiv.org/abs/{e['arxiv']}" if e.get("arxiv") else (e.get("url") or e.get("code") or e.get("project"))
-    star = "⭐ " if e.get("highlight") else ""
+    star = "⭐" * e["rating"] + " " if e["rating"] else ""
     extra = []
     if e.get("code") and e.get("code") != link:
         extra.append(f"[{'代码' if lang == 'zh' else 'code'}]({e['code']})")
@@ -46,10 +46,11 @@ def entry_line(e: dict, lang: str) -> str:
 
 
 def top_entries(items: list[dict]) -> list[dict]:
-    """Highlights first, then the most recently added picks, then the newest papers."""
-    rest = sorted((e for e in items if not e.get("highlight")),
+    """Rated entries first (⭐⭐⭐, ⭐⭐, ⭐), then the most recently added picks, then the newest papers."""
+    rated = [e for e in items if e["rating"]]  # in_topic() already orders them by rating
+    rest = sorted((e for e in items if not e["rating"]),
                   key=lambda e: (str(e.get("added") or ""), int(e["year"])), reverse=True)
-    return ([e for e in items if e.get("highlight")] + rest)[:README_TOP]
+    return (rated + rest)[:README_TOP]
 
 
 def list_path(tid: str, lang: str) -> str:
@@ -91,9 +92,9 @@ def render_list(t: dict, lang: str, topics: list[dict], entries: list[dict]) -> 
     other = f"{t['id']}.md" if zh else f"{t['id']}.zh-CN.md"
     lines = [f"# {t['zh' if zh else 'en']}", "",
              f"_{t['desc_zh'] if zh else t['desc_en']}_", "",
-             (f"共 {len(items)} 条，⭐ 为重点推荐。由 [`data/curated/{t['id']}.yaml`](../data/curated/{t['id']}.yaml) 生成，请勿直接编辑。"
+             (f"共 {len(items)} 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/{t['id']}.yaml`](../data/curated/{t['id']}.yaml) 生成，请勿直接编辑。"
               if zh else
-              f"{len(items)} entries, ⭐ = highlight. Generated from [`data/curated/{t['id']}.yaml`](../data/curated/{t['id']}.yaml); edit the YAML, not this file."),
+              f"{len(items)} entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/{t['id']}.yaml`](../data/curated/{t['id']}.yaml); edit the YAML, not this file."),
              "",
              (f"[返回 README](../{readme}) · [在网站上查看]({SITE}topics/{t['id']}.html) · [English]({other})"
               if zh else

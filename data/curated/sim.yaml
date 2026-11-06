@@ -1,10 +1,10 @@
 - title: "MuJoCo"
   type: simulator
   year: 2012
+  rating: 3
   org: Google DeepMind
   url: https://mujoco.org/
   code: https://github.com/google-deepmind/mujoco
-  highlight: true
   tags: [physics, open-source]
   takeaway_en: Fast, accurate contact physics; the default simulator for robot learning research, open-sourced by DeepMind.
   takeaway_zh: 快速准确的接触物理仿真，机器人学习研究的默认仿真器，由 DeepMind 开源。
@@ -12,6 +12,7 @@
   type: paper
   arxiv: "2502.08844"
   year: 2025
+  rating: 1
   org: Google DeepMind, UC Berkeley
   code: https://github.com/google-deepmind/mujoco_playground
   tags: [gpu-parallel, sim2real, open-source]
@@ -29,6 +30,7 @@
   type: paper
   arxiv: "2301.04195"
   year: 2023
+  rating: 1
   org: ETH Zurich, NVIDIA, Toronto
   code: https://github.com/isaac-sim/IsaacLab
   tags: [gpu-parallel, framework, open-source]
@@ -38,6 +40,7 @@
   type: paper
   arxiv: "2410.00425"
   year: 2024
+  rating: 1
   org: UC San Diego
   code: https://github.com/haosulab/ManiSkill
   tags: [gpu-parallel, rendering, benchmark, open-source]
@@ -46,6 +49,7 @@
 - title: "Genesis"
   type: simulator
   year: 2024
+  rating: 1
   org: Genesis Embodied AI
   code: https://github.com/Genesis-Embodied-AI/Genesis
   tags: [physics, gpu-parallel, open-source]
@@ -55,6 +59,7 @@
   type: paper
   arxiv: "2009.12293"
   year: 2020
+  rating: 1
   org: Stanford, UT Austin
   code: https://github.com/ARISE-Initiative/robosuite
   topics: [datasets]
@@ -65,6 +70,7 @@
   type: paper
   arxiv: "2406.02523"
   year: 2024
+  rating: 1
   org: UT Austin, NVIDIA
   code: https://github.com/robocasa/robocasa
   topics: [datasets]
@@ -110,6 +116,7 @@
   type: paper
   arxiv: "2506.18088"
   year: 2025
+  rating: 1
   code: https://github.com/RoboTwin-Platform/RoboTwin
   topics: [manipulation, datasets]
   tags: [sim, dual-arm, data-generation, domain-randomization, benchmark]
@@ -130,6 +137,7 @@
   type: paper
   arxiv: "2403.09227"
   year: 2022
+  rating: 1
   venue: CoRL 2022
   org: Stanford
   code: https://github.com/StanfordVL/BEHAVIOR-1K
@@ -141,6 +149,7 @@
   type: paper
   arxiv: "2511.04831"
   year: 2025
+  rating: 1
   org: NVIDIA
   code: https://github.com/isaac-sim/IsaacLab
   tags: [gpu-parallel, framework, sensors, open-source]
@@ -150,6 +159,7 @@
   type: paper
   arxiv: "1712.05474"
   year: 2017
+  rating: 1
   org: Allen Institute for AI
   code: https://github.com/allenai/ai2thor
   tags: [household, interactive, embodied-agents, open-source]
@@ -159,6 +169,7 @@
   type: paper
   arxiv: "2310.13724"
   year: 2023
+  rating: 1
   org: Meta AI
   venue: ICLR 2024
   code: https://github.com/facebookresearch/habitat-lab
@@ -179,6 +190,7 @@
   type: paper
   arxiv: "2106.13281"
   year: 2021
+  rating: 1
   org: Google
   venue: NeurIPS 2021 Datasets and Benchmarks
   code: https://github.com/google/brax
@@ -200,6 +212,7 @@
   type: paper
   arxiv: "2404.05695"
   year: 2024
+  rating: 1
   org: RobotEra
   code: https://github.com/roboterax/humanoid-gym
   topics: [locomotion]
@@ -209,6 +222,7 @@
 - title: "Gazebo"
   type: simulator
   year: 2004
+  rating: 1
   org: Open Robotics
   url: https://gazebosim.org/
   code: https://github.com/gazebosim/gz-sim
@@ -219,6 +233,7 @@
   type: paper
   arxiv: "2006.12983"
   year: 2020
+  rating: 1
   org: DeepMind
   code: https://github.com/google-deepmind/dm_control
   topics: [sim, learning]
@@ -240,6 +255,7 @@
 - title: "Newton"
   type: simulator
   year: 2025
+  rating: 1
   org: Disney Research, Google DeepMind, NVIDIA (Linux Foundation project)
   code: https://github.com/newton-physics/newton
   tags: [physics, gpu-parallel, open-source, warp, openusd]
@@ -317,8 +333,8 @@
   arxiv: "2610.41857"
   year: 2026
   code: https://github.com/ALEXander22568/simuguard
-  highlight: true
   added: 2026-11-02
+  rating: 2
   tags: [benchmark-audit, physx, robotwin, libero, contact]
   takeaway_en: "Many benchmark 'policy failures' are physics-engine ejections. SimuGuard traced RoboTwin artifacts to one collision constant; changing it cut artifact episodes from 12/100 to none and lifted five tasks 89% → 98%."
   takeaway_zh: "审计仿真基准：不少“策略失败”其实是物理引擎把物体弹飞。SimuGuard 为 LIBERO、RoboTwin、RoboCasa、RoboDojo 提供审计插件，把 RoboTwin 上的问题追溯到碰撞检测的一个常量；仅改动它，异常回合由 100 回合 12 次降到 0，五个容器任务成功率由 89% 升到 98%。"
@@ -413,6 +429,7 @@
   org: OpenRobotLab
   code: https://github.com/OpenRobotLab/GRUtopia
   added: 2026-11-04
+  rating: 1
   topics: [datasets]
   tags: [city-scale, scenes, humanoid]
   takeaway_en: "Simulated interactive 3D society for many robot types; its GRScenes set has 100k annotated scenes across 89 categories that combine into city-scale worlds."
@@ -455,6 +472,7 @@
   year: 2026
   code: https://github.com/AgibotTech/genie_sim
   added: 2026-11-04
+  rating: 1
   topics: [sim]
   tags: [simulator, humanoid, benchmark]
   takeaway_en: "Genie Sim 3.0: a manipulation simulation platform whose LLM tool builds scenes from natural language, with an LLM- and VLM-based automated benchmark."
@@ -463,6 +481,7 @@
   type: paper
   arxiv: "2302.04659"
   year: 2023
+  rating: 1
   code: https://github.com/mani-skill/ManiSkill
   venue: ICLR 2023
   project: https://maniskill2.github.io/

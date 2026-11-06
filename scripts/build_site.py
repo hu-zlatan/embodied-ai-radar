@@ -495,7 +495,7 @@ def curated_card(e: dict, topics_by_id: dict, root: str, detail: bool = False) -
         f'<a class="chip topic" href="{root}topics/{t}.html">{bi(topics_by_id[t]["en"], topics_by_id[t]["zh"])}</a>'
         for t in e["topics"])
     tags = emb_chips(e.get("emb", [])) + "".join(f'<span class="chip">{esc(t)}</span>' for t in (e.get("tags") or []))
-    star = '<span class="star" title="Highlight">★</span>' if e.get("highlight") else ""
+    star = rating_badge(e.get("rating", 0))
     if e.get("added"):
         star += f' <span class="badge new">{bi("new", "新")} {esc(str(e["added"]))}</span>'
     linkrow = " · ".join(f'<a href="{esc(u)}" rel="noopener">{bi(a, b)}</a>' for a, b, u in links)
@@ -553,6 +553,30 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
 {bib_block(bibtex(p["id"], p["title"], p.get("authors", []), p.get("published", ""), p.get("primary", "")))}
 <div class="chips">{chips}</div>
 </article>"""
+
+
+RATING_LABEL = {3: ("Must-read (one per topic)", "必读（每个主题仅一篇）"), 2: ("Highly recommended", "强烈推荐"), 1: ("Recommended", "推荐")}
+
+
+def rating_badge(r: int) -> str:
+    """Editor's rating ★★★ / ★★ / ★ (no badge for unrated entries)."""
+    if not r:
+        return ""
+    en, zh = RATING_LABEL[r]
+    return f' <span class="rate r{r}" title="{esc(en)} · {esc(zh)}">{"★" * r}</span>'
+
+
+def rated_groups(cur: list[dict], tby: dict, root: str, tid: str) -> str:
+    """Topic page: curated cards grouped ★★★ / ★★ / ★ / the rest, so the best entries come first.
+    ★★★ belongs to the entry's primary topic; on other topic pages it is shown as ★★, so each page has one must-read."""
+    cur = [e if e["rating"] < 3 or e["topics"][0] == tid else {**e, "rating": 2} for e in cur]
+    out = []
+    for r, en, zh in ((3, "★★★ Must-read", "★★★ 必读"), (2, "★★ Highly recommended", "★★ 强烈推荐"), (1, "★ Recommended", "★ 推荐"), (0, "More", "更多")):
+        g = [e for e in cur if e["rating"] == r]
+        if g:
+            out.append(f'<h3 class="rate-h r{r}">{bi(en, zh)} <span class="muted">({len(g)})</span></h3>'
+                       f'<div class="cards">{"".join(curated_card(e, tby, root) for e in g)}</div>')
+    return "".join(out)
 
 
 def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") -> str:
@@ -701,7 +725,7 @@ def build() -> int:
     for e in entries:
         e["labs"] = labs_of(e.get("org"), labs)
     by_lab = {lab["id"]: sorted((e for e in entries if lab["id"] in e["labs"]),
-                                key=lambda e: (not e.get("highlight"), -int(e["year"]), e["title"])) for lab in labs}
+                                key=lambda e: (-e["rating"], -int(e["year"]), e["title"])) for lab in labs}
     lab_list = sorted((lab for lab in labs if len(by_lab[lab["id"]]) >= LAB_MIN), key=lambda lab: (-len(by_lab[lab["id"]]), lab["en"]))
     LAB_PAGES.clear()
     LAB_PAGES.update({lab["id"]: lab for lab in lab_list})
@@ -780,7 +804,7 @@ def build() -> int:
     for e in entries:
         idx.append({"k": "c", "id": e["id"], "t": re.sub(r"\$([πΨ])_\{?([^}$]+)\}?\$", r"\1\2", e["title"]), "y": e["year"], "ty": e["type"],
                     "o": e.get("org", ""), "en": e["takeaway_en"], "zh": e["takeaway_zh"],
-                    "tp": e["topics"], "em": e["emb"], "tg": e.get("tags") or [], "h": 1 if e.get("highlight") else 0,
+                    "tp": e["topics"], "em": e["emb"], "tg": e.get("tags") or [], "h": e["rating"],
                     "l": links_of(e)[0][2], "a": e.get("arxiv"), "c": e.get("code"), "p": e.get("project"),
                     "v": str(e["venue"]) if e.get("venue") else None,
                     "s": (repo_stat(e) or {}).get("stars"), "u": (e.get("hf") or {}).get("upvotes")})
@@ -828,7 +852,7 @@ def build() -> int:
 <p id="count" class="muted"></p>
 <div id="results"></div>
 </section>"""
-    hi = [e for e in entries if e.get("highlight")]
+    hi = sorted((e for e in entries if e["rating"] >= 2), key=lambda e: (-e["rating"], e["topics"][0], -int(e["year"])))
     recent_picks = sorted((e for e in entries if e.get("added")), key=lambda e: str(e["added"]), reverse=True)[:6]
     quick = (f'<div class="quick"><a class="qbtn" href="start.html">{bi("New to embodied AI? Start with the reading path →", "刚入门具身智能？从入门路线开始 →")}</a>'
              f'<a class="qbtn" href="search.html">{bi("Search and filter everything →", "搜索与筛选全部内容 →")}</a></div>')
@@ -927,7 +951,7 @@ def build() -> int:
 <p class="muted">{bi("By robot type:", "按机器人形态：")} {" · ".join(f'<a href="robots/{m["id"]}.html">{bi(m["en"], m["zh"])}</a>' for m in embs)}</p>
 {venue_row}
 <p class="muted">{bi("By lab:", "按机构：")} {" · ".join(f'<a href="labs/{lab["id"]}.html">{bi(lab["en"], lab["zh"])}</a>' for lab in lab_list[:10])} · <a href="labs/index.html">{bi("All labs →", "全部机构 →")}</a></p>
-<h2>{bi("Highlights", "重点推荐")}</h2>
+<h2>{bi("Editor's picks: ★★★ must-read and ★★ highly recommended", "编辑推荐：★★★ 必读 · ★★ 强烈推荐")}</h2>
 <div class="cards">{''.join(curated_card(e, tby, '') for e in hi)}</div>
 <h2>{bi("Fresh from arXiv", "arXiv 最新")}</h2>
 <div class="cards">{fresh or '<p class="muted">' + bi("The daily feed starts with the first scheduled intake.", "每日论文将在首次定时收录后出现。") + '</p>'}</div>
@@ -962,7 +986,7 @@ def build() -> int:
     bibnote += f'<p><a href="../robots/index.html">{bi("Browse papers by robot type (humanoid, quadruped, dexterous hand…) →", "按机器人形态浏览（人形、四足、灵巧手…）→")}</a></p>'
     (OUT / "topics" / "index.html").write_text(page("Topics · Embodied AI Radar", f'<h1 class="sr-only">{bi("Topics", "主题")}</h1><ul class="tlist">{tlist}</ul>' + bibnote, "../", desc, "topics/index.html"), encoding="utf-8")
     for t in topics:
-        cur = sorted(by_topic[t["id"]], key=lambda e: (not e.get("highlight"), -int(e["year"])))
+        cur = sorted(by_topic[t["id"]], key=lambda e: (-e["rating"], -int(e["year"])))
         recent = feed_by_topic[t["id"]][:TOPIC_FEED_MAX]
         in_topic = by_topic[t["id"]] + feed_by_topic[t["id"]]
         robot_links = " · ".join(
@@ -973,7 +997,7 @@ def build() -> int:
 <p class="lead">{bi(t["desc_en"], t["desc_zh"])}</p>
 {robot_row}
 <h2>{bi("Curated", "精选")} <span class="muted">({len(cur)})</span></h2>
-<div class="cards">{''.join(curated_card(e, tby, '../') for e in cur)}</div>
+{rated_groups(cur, tby, '../', t['id'])}
 <h2>{bi("Recent arXiv papers", "近期 arXiv 论文")} <span class="muted">({bi("auto-tagged", "自动标注")} · <a href="{t['id']}.xml">{bi("Atom feed", "Atom 订阅")}</a>)</span></h2>
 <div class="cards">{''.join(feed_card(p, tby, '../') for p in recent) or '<p class="muted">—</p>'}</div>"""
         (OUT / "topics" / f"{t['id']}.html").write_text(
@@ -991,7 +1015,7 @@ def build() -> int:
         if len(related) < 6:  # thin text: fill up with the best of the same topic
             seen = {r["id"] for r in related} | {e["id"]}
             related = related + sorted((r for r in by_topic[t0] if r["id"] not in seen),
-                                       key=lambda r: (not r.get("highlight"), -int(r["year"]), r["title"]))[:6 - len(related)]
+                                       key=lambda r: (-r.get("rating", 0), -int(r["year"]), r["title"]))[:6 - len(related)]
         authors = (meta.get(e.get("arxiv") or "") or {}).get("authors") or []
         desc_e = f"{e['takeaway_en']} {e['takeaway_zh']}"
         (OUT / "e" / f"{e['id']}.html").write_text(
@@ -1111,7 +1135,7 @@ def build() -> int:
 
     # ---- machine-readable export of the curated index (CC BY 4.0), JSON + CSV
     FIELDS = ["id", "title", "type", "arxiv", "year", "venue", "org", "url", "code", "project", "topics", "tags",
-              "robot_types", "highlight", "added", "takeaway_en", "takeaway_zh", "github_stars", "page", "labs", "code_license"]
+              "robot_types", "highlight", "added", "takeaway_en", "takeaway_zh", "github_stars", "page", "labs", "code_license", "rating"]
     rows = []
     for e in entries:
         st = repo_stat(e) or {}
@@ -1119,7 +1143,7 @@ def build() -> int:
             "id": e["id"], "title": e["title"], "type": e.get("type"), "arxiv": e.get("arxiv"),
             "year": e.get("year"), "venue": e.get("venue"), "org": e.get("org"), "url": e.get("url"),
             "code": e.get("code"), "project": e.get("project"), "topics": e["topics"], "tags": e.get("tags") or [],
-            "robot_types": e.get("emb") or [], "highlight": bool(e.get("highlight")),
+            "robot_types": e.get("emb") or [], "highlight": bool(e.get("highlight")), "rating": e["rating"],
             "added": str(e["added"]) if e.get("added") else None,
             "takeaway_en": e["takeaway_en"], "takeaway_zh": e["takeaway_zh"],
             "github_stars": st.get("stars"), "page": f"{SITE_URL}e/{e['id']}.html",
@@ -1144,7 +1168,7 @@ def build() -> int:
                "arXiv 论文仅在其 arXiv 备注写明已被接收（如 “Accepted to CoRL 2026”）时列入；未注明的论文不会出现，列表会随作者上传终稿而增加。精选条目的会议/期刊信息经过人工核对。CoRL 2026 另依据官方日程。")
     for k in vkeys:
         g = venues[k]
-        cur = sorted(g["c"], key=lambda e: (not e.get("honor"), not e.get("highlight"), e["title"]))
+        cur = sorted(g["c"], key=lambda e: (not e.get("honor"), -e["rating"], e["title"]))
         fp = sorted(g["f"], key=lambda p: p.get("published", ""), reverse=True)
         fp.sort(key=lambda p: (not paper_honor(p), not p.get("code")))  # stable: newest first within each group
         n_code = sum(1 for p in fp if p.get("code")) + sum(1 for e in cur if e.get("code"))
@@ -1190,7 +1214,7 @@ def build() -> int:
     # ---- robot-type pages: robots/<id>.html + robots/<id>.xml per embodiment, robots/index.html
     (OUT / "robots").mkdir()
     by_emb = {m["id"]: sorted((e for e in entries if m["id"] in e["emb"]),
-                              key=lambda e: (not e.get("highlight"), -int(e["year"]), e["title"])) for m in embs}
+                              key=lambda e: (-e["rating"], -int(e["year"]), e["title"])) for m in embs}
     feed_by_emb = {m["id"]: [p for p in feed if m["id"] in p["emb"]] for m in embs}
     rnote = bi("Robot types are detected by keyword rules from titles, abstracts and tags, so a few papers may be misfiled.",
                "机器人形态由标题、摘要和标签中的关键词自动识别，个别论文可能归类有误。")

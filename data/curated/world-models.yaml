@@ -11,9 +11,9 @@
   type: paper
   arxiv: "2301.04104"
   year: 2023
+  rating: 3
   org: Google DeepMind
   code: https://github.com/danijar/dreamerv3
-  highlight: true
   tags: [sim, model-based-rl]
   takeaway_en: DreamerV3 — one set of hyperparameters works across 150+ tasks, including collecting diamonds in Minecraft from scratch.
   takeaway_zh: DreamerV3：一套超参数适用于 150 多个任务，包括从零开始在《我的世界》中挖到钻石。
@@ -92,6 +92,7 @@
   url: https://ropedia.github.io/ropedia-w0/
   project: https://ropedia.github.io/ropedia-w0/
   added: 2026-10-20
+  rating: 1
   tags: [egocentric, human-data, cross-embodiment, loco-manipulation]
   takeaway_en: An egocentric world model covering both walking and manipulating, trained on ~10k hours of human video plus ~3k hours of robot data under one shared kinematic action representation.
   takeaway_zh: 同时覆盖移动与操作的第一人称世界模型，在约 1 万小时人类视频和约 3 千小时机器人数据上训练，用统一的运动学表示描述不同本体的动作。
@@ -108,6 +109,7 @@
   type: paper
   arxiv: "1811.04551"
   year: 2019
+  rating: 1
   org: Google Brain, DeepMind
   venue: ICML 2019
   code: https://github.com/google-research/planet
@@ -118,6 +120,7 @@
   type: paper
   arxiv: "2010.02193"
   year: 2021
+  rating: 1
   org: Google Research, DeepMind
   venue: ICLR 2021
   code: https://github.com/danijar/dreamerv2
@@ -200,6 +203,7 @@
   type: paper
   arxiv: "2506.21539"
   year: 2025
+  rating: 1
   org: Alibaba DAMO Academy, Zhejiang University
   code: https://github.com/alibaba-damo-academy/WorldVLA
   topics: [vla]
@@ -235,6 +239,7 @@
   code: https://github.com/greenvla/GreenWAM
   project: https://greenvla.github.io/GreenWAM
   added: 2026-10-23
+  rating: 1
   topics: [vla]
   tags: [world-action-model, cross-embodiment, humanoid, technical-report]
   takeaway_en: One world model that is also the policy, across 20 robot families mapped to a shared joint-space action format; reports strong WorldArena, RoboTwin 2.0 and LIBERO-plus results and a one-step distilled humanoid policy.
@@ -408,6 +413,7 @@
   org: AgiBot
   project: https://rollback-wm.github.io/
   added: 2026-10-28
+  rating: 1
   topics: [learning]
   tags: [world-model, counterfactual, policy-improvement, real-world-rl, lora, real]
   takeaway_en: "Rewinds an action-conditioned world model to key decision points to try alternative actions, turning outcomes into action-level supervision; real data keeps correcting the model. Reports +10.7–11.9 pts on 3 real tasks."
@@ -505,6 +511,7 @@
   code: https://github.com/dreamzero0/dreamzero
   project: https://dreamzero0.github.io/
   added: 2026-11-02
+  rating: 1
   tags: [world-action-model, video-diffusion, zero-shot]
   takeaway_en: "CoRL 2026 Oral. DreamZero: a World Action Model on a pretrained video diffusion backbone, jointly predicting video and actions, so it learns skills from heterogeneous robot data without repetitive demonstrations."
   takeaway_zh: "CoRL 2026 Oral。DreamZero：基于预训练视频扩散骨干的世界动作模型，联合预测视频与动作，可从异构机器人数据学习技能，无需重复示范。"
@@ -517,6 +524,7 @@
   venue: CoRL 2026
   project: https://song-wx.github.io/cmpo.github.io/
   added: 2026-11-02
+  rating: 1
   tags: [chunk-world-model, model-based-rl]
   takeaway_en: "CoRL 2026 Spotlight. Model-based RL that uses a chunk world model as a differentiable training-time evaluator, targeting compounding error, inference latency and BPTT instability."
   takeaway_zh: "CoRL 2026 Spotlight。将分块世界模型用作训练期可微评估器的模型式强化学习，针对累积误差、推理延迟与 BPTT 不稳定问题。"
@@ -527,6 +535,7 @@
   year: 2026
   venue: CoRL 2026
   added: 2026-11-02
+  rating: 1
   tags: [security, data-poisoning]
   takeaway_en: "CoRL 2026 Spotlight. Shows world models are a stealthy data-poisoning entry point: compromised policies can be deployed even when the ground-truth training data looks safe."
   takeaway_zh: "CoRL 2026 Spotlight。展示世界模型可成为隐蔽的数据投毒入口：即使真实训练数据看似安全，部署的策略仍可能被破坏。"
@@ -573,9 +582,9 @@
   type: paper
   arxiv: "2606.20781"
   year: 2026
+  rating: 2
   org: NUS
   project: https://world-action-models.github.io/
-  highlight: true
   tags: [survey, world-action-model]
   takeaway_en: "Separates WAMs from world models, video generators and VLAs, then sorts work by what is generated (rendered, latent or none) and how it is built; concludes the field is moving toward generating less of the future."
   takeaway_zh: "厘清 WAM 与世界模型、视频生成模型、VLA 的区别，并按生成内容（渲染、潜空间或不生成）和架构分类；结论是领域正走向少生成未来，只保留控制所需。"
@@ -588,6 +597,7 @@
   project: https://cvlab-kaist.github.io/DreamX/
   tags: [video-diffusion, latent-action, cross-embodiment]
   added: 2026-11-04
+  rating: 1
   takeaway_en: "Reuses a pretrained video diffusion model to extract compact latent actions (1,200 to 4 tokens per frame) that act as a shared interface across humans, robots and environments, including zero-shot action transfer."
   takeaway_zh: "复用预训练视频扩散模型提取紧凑潜动作（每帧 1,200 压到 4 个 token），作为人、机器人和不同环境之间的共享接口，并支持零示教动作迁移。"
 - title: "PrimeSim: A Generalist World Model Simulator from Large-Scale Cross-Embodiment Demonstrations"
@@ -607,9 +617,9 @@
   org: NVIDIA
   code: https://github.com/nvidia/cosmos
   project: https://research.nvidia.com/labs/cosmos-lab/cosmos3/
-  highlight: true
   tags: [world-foundation-model, open-weights]
   added: 2026-11-04
+  rating: 2
   takeaway_en: "A family of omnimodal models that handles language, image, video, audio and action in one mixture-of-transformers, folding VLMs, video generators, world simulators and world-action models into a single framework."
   takeaway_zh: "全模态世界模型家族，用一个 Mixture-of-Transformers 同时处理语言、图像、视频、音频和动作，把 VLM、视频生成、世界模拟器和世界动作模型并入同一框架。"
 - title: "World Simulation with Video Foundation Models for Physical AI"
@@ -621,6 +631,7 @@
   topics: [sim]
   tags: [world-foundation-model, open-weights]
   added: 2026-11-04
+  rating: 1
   takeaway_en: "A flow-based world foundation model unifying Text2World, Image2World and Video2World, released at 2B and 14B, with Cosmos-Transfer2.5 for Sim2Real translation."
   takeaway_zh: "基于流的世界基础模型，统一 Text2World、Image2World 和 Video2World，发布 2B 和 14B 两种规模，并配有用于 Sim2Real 转换的 Cosmos-Transfer2.5。"
 - title: "DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos"
@@ -630,9 +641,9 @@
   code: https://github.com/NVIDIA/DreamDojo
   org: NVIDIA
   project: https://dreamdojo-world.github.io/
-  highlight: true
   tags: [human-video, dexterous, latent-action]
   added: 2026-11-04
+  rating: 2
   takeaway_en: "A foundation world model pretrained on 44k hours of egocentric human video, using continuous latent actions as proxies for missing labels, then post-trained on small robot datasets."
   takeaway_zh: "在 4.4 万小时第一视角人类视频上预训练的基础世界模型，用连续潜动作代替缺失的动作标签，再用小规模机器人数据后训练。"
 - title: "Causal World Modeling for Robot Control"
@@ -645,6 +656,7 @@
   topics: [vla]
   tags: [wam, autoregressive, real]
   added: 2026-11-04
+  rating: 1
   takeaway_en: "LingBot-VA: an autoregressive diffusion framework that learns frame prediction and policy together, with shared video-action latents, closed-loop rollout and asynchronous inference."
   takeaway_zh: "LingBot-VA：同时学习帧预测和策略的自回归扩散框架，具有视频动作共享潜空间、闭环推演和异步推理。"
 - title: "OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining"
@@ -654,9 +666,9 @@
   code: https://github.com/OpenWAM-Official/OpenWAM
   project: https://openwam-official.github.io/
   topics: [vla]
-  highlight: true
   tags: [wam, open-weights, framework]
   added: 2026-11-04
+  rating: 2
   takeaway_en: "An open research stack that splits world-action models into composable modules, then runs controlled studies on what to inherit from video priors and how world and action learning interact."
   takeaway_zh: "开放研究栈，把世界动作模型拆成可组合模块，并通过对照实验研究该从视频先验继承什么、世界学习与动作学习如何相互作用。"
 - title: "Fast-WAM: Do World Action Models Need Test-time Future Imagination?"
@@ -668,6 +680,7 @@
   topics: [vla]
   tags: [wam, latency]
   added: 2026-11-04
+  rating: 1
   takeaway_en: "Asks whether WAMs need future imagination at test time: keeps video co-training during training but skips video generation at inference, separating the two effects in a controlled comparison."
   takeaway_zh: "追问世界动作模型在测试时是否需要想象未来：训练时保留视频联合训练，推理时跳过视频生成，以对照实验区分两者的作用。"
 - title: "GigaWorld-Policy: An Efficient Action-Centered World--Action Model"
@@ -680,6 +693,7 @@
   topics: [vla]
   tags: [wam, action-centered]
   added: 2026-11-04
+  rating: 1
   takeaway_en: "An action-centered WAM that predicts actions from the observation and makes video generation optional, so motion accuracy depends less on forecast quality and inference is cheaper."
   takeaway_zh: "以动作为中心的世界动作模型：由观测预测动作，视频生成变为可选，动作精度不再依赖视频预测质量，推理开销也更低。"
 - title: "ABot-PhysWorld: Interactive World Foundation Model for Robotic Manipulation with Physics Alignment"
@@ -732,6 +746,7 @@
   topics: [vla]
   tags: [wam, event-based]
   added: 2026-11-04
+  rating: 1
   takeaway_en: "Uses semantically coherent action events rather than fixed-length chunks as the unit of learning, to resolve the timescale mismatch between language, vision and control."
   takeaway_zh: "用语义完整的动作事件代替固定长度动作块作为学习单元，以解决语言、视觉和控制之间的时间尺度不匹配。"
 - title: "InternW0-$Δ$: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data"
@@ -763,9 +778,9 @@
   org: Meta
   code: https://github.com/facebookresearch/robo_jepa
   project: https://robojepa.github.io/
-  highlight: true
   tags: [jepa, scaling-laws]
   added: 2026-11-04
+  rating: 2
   takeaway_en: "A JEPA world model trained across 12 robot embodiments; its imagination error follows a power law in compute, so model quality can be predicted beyond the fitted scale."
   takeaway_zh: "跨 12 种机器人形态训练的 JEPA 世界模型；其想象误差随算力服从幂律，因此可以预测超出拟合规模时的模型质量。"
 - title: "FLARE: Robot Learning with Implicit World Modeling"
@@ -919,6 +934,7 @@
   code: https://github.com/nvidia/cosmos
   project: https://research.nvidia.com/labs/cosmos-lab/cosmos-simulation
   added: 2026-11-05
+  rating: 1
   topics: [world-models, sim]
   tags: [world-foundation-model, real-time, video, simulation]
   takeaway_en: "Adapts Cosmos models for real-time interactive simulation: streams observations in response to actions, or renders them from an external simulator's state. Shown on manipulation, video transfer and multi-view AV."

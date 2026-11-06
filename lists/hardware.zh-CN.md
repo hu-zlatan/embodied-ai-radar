@@ -2,14 +2,20 @@
 
 _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备。_
 
-共 41 条，⭐ 为重点推荐。由 [`data/curated/hardware.yaml`](../data/curated/hardware.yaml) 生成，请勿直接编辑。
+共 41 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/hardware.yaml`](../data/curated/hardware.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/hardware.html) · [English](hardware.md)
 
 [VLA 与机器人基础模型](vla.zh-CN.md) · [操作与灵巧手](manipulation.zh-CN.md) · [触觉与视触觉感知](tactile.zh-CN.md) · [运动控制与人形机器人](locomotion.zh-CN.md) · [世界模型](world-models.zh-CN.md) · [导航与具身智能体](navigation.zh-CN.md) · [感知、SLAM 与三维建图](perception.zh-CN.md) · [规划、控制与安全](control.zh-CN.md) · [机器人学习：强化学习与模仿学习](learning.zh-CN.md) · [仿真与 Sim-to-Real](sim.zh-CN.md) · [数据集与基准](datasets.zh-CN.md) · **硬件与开源机器人**
 
-- ⭐ **[Pixel: A Co-Designed Full-Stack Robot System for Learning General-Purpose Mobile Manipulation](https://arxiv.org/abs/2611.03648)** (2026) — 把硬件、数据和学习放在一起设计：低成本轮式人形、柔顺夹爪，遥操作与免机器人的人类数据采集，统一的全身控制器，以及人类与机器人示范共用的策略学习流程。 · [项目页](https://pixel-robot.com/pixel)
-- ⭐ **[LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning](https://arxiv.org/abs/2309.06440)** (2023) — 16 自由度灵巧手，用现成零件约 2000 美元即可搭建。 · [代码](https://github.com/leap-hand/LEAP_Hand_API) · [项目页](https://leaphand.com/)
+- ⭐⭐⭐ **[LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning](https://arxiv.org/abs/2309.06440)** (2023) — 16 自由度灵巧手，用现成零件约 2000 美元即可搭建。 · [代码](https://github.com/leap-hand/LEAP_Hand_API) · [项目页](https://leaphand.com/)
+- ⭐⭐ **[Pixel: A Co-Designed Full-Stack Robot System for Learning General-Purpose Mobile Manipulation](https://arxiv.org/abs/2611.03648)** (2026) — 把硬件、数据和学习放在一起设计：低成本轮式人形、柔顺夹爪，遥操作与免机器人的人类数据采集，统一的全身控制器，以及人类与机器人示范共用的策略学习流程。 · [项目页](https://pixel-robot.com/pixel)
+- ⭐ **[Demonstrating Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed Humanoid Robot](https://arxiv.org/abs/2504.17249)** (2025) — 开源人形机器人，采用 3D 打印的模块化减速器，在美国可用不到 5000 美元搭建；硬件设计、嵌入式代码与训练框架均已开源。 · [代码](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite) · [项目页](https://lite.berkeley-humanoid.org)
+- ⭐ **[OpenArm](https://github.com/enactic/openarm)** (2025) — 完全开源的 7 自由度人形机械臂，面向接触丰富的研究：CAD、电路、固件、ROS 2/MoveIt 2 以及 MuJoCo/Genesis 模型全部公开，支持主从力反馈遥操作与重力补偿（软件 Apache-2.0，硬件 CERN-OHL-S）。 · [项目页](https://openarm.dev)
+- ⭐ **[ALOHA 2: An Enhanced Low-Cost Hardware for Bimanual Teleoperation](https://arxiv.org/abs/2405.02292)** (2024) — ALOHA 双臂平台的升级版（更强夹爪、重力补偿、更稳固的框架），开源硬件设计并提供 MuJoCo 仿真模型。 · [代码](https://github.com/tonyzhaozh/aloha) · [项目页](https://aloha-2.github.io/)
+- ⭐ **[Open-TeleVision: Teleoperation with Immersive Active Visual Feedback](https://arxiv.org/abs/2407.01512)** (2024) — 带主动转向立体相机的 VR 遥操作系统，用于采集人形机器人操作数据。 · [代码](https://github.com/OpenTeleVision/TeleVision)
+- ⭐ **[SO-ARM100 / SO-101](https://github.com/TheRobotStudio/SO-ARM100)** (2024) — 开源 3D 打印 6 自由度机械臂（主从臂），每只约 100–200 美元，是 LeRobot 的默认入门套件。
+- ⭐ **[An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](https://arxiv.org/abs/1910.00093)** (2019) — 开源四足机器人 Solo 及其模块化力矩控制关节，采用现成件和 3D 打印件，便于各实验室复现动态腿式机器人。 · [代码](https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware)
 - **[DexPort: A Hand-Held Skill Interface for Dexterous Hand Data Collection](https://arxiv.org/abs/2610.32969)** (2026) — 便携手持式数据采集装置，面向高自由度机器人灵巧手；采集与部署使用同一只机械手，无需从人手动作重定向，也无需搭建完整机器人系统。 · [代码](https://github.com/amazon-far/dexport) · [项目页](https://amberxie88.github.io/dexport/)
 - **[EgoThumb: A Vision-Driven Supernumerary Robotic Thumb for Autonomous Grasp and Holding Assistance](https://arxiv.org/abs/2610.37582)** (2026) — 开源的可穿戴“第六指”：紧凑的双腱驱动手指，电机移到前臂以减轻末端重量；模仿学习策略直接把掌心相机图像映射为关节位置，从视觉中推断使用者意图，无需显式手势触发，软硬件全部开源。 · [代码](https://github.com/JayeFu/ego_thumb_firmware) · [项目页](https://ego-thumb.github.io)
 - **[KlaskTron: An Open-Source Platform for Physical Adversarial Multi-Agent RL](https://arxiv.org/abs/2611.03138)** (2026) — 基于桌游 KLASK 的桌面级对抗多智能体强化学习平台，成本低于 2500 美元：开放 CAD 与物料清单，提供 Isaac Lab 数字孪生，以及采用学习型执行器模型的 sim-to-real 基线。 · [代码](https://github.com/IDSCETHZurich/klask_rl) · [项目页](https://idscethzurich.github.io/klask_hardware)
@@ -24,22 +30,17 @@ _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备�
 - **[AirExo-2: Scaling up Generalizable Robotic Imitation Learning with Low-Cost Exoskeletons](https://arxiv.org/abs/2503.03081)** (2025) — 将外骨骼示教转换为“伪机器人”示教；论文报告仅用这些数据（无任何机器人数据）训练的 RISE-2 策略，效果与用遥操作机器人数据训练的策略相当。 · [代码](https://github.com/AirExo/AirExo-2)
 - **[BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities](https://arxiv.org/abs/2503.05652)** (2025) — 面向轮式双臂机器人的全身遥操作接口与学习方法，用于需要伸展、平衡与导航的长程家务任务。 · [项目页](https://behavior-robot-suite.github.io/)
 - **[DOGlove: Dexterous Manipulation with a Low-Cost Open-Source Haptic Force Feedback Glove](https://arxiv.org/abs/2502.07730)** (2025) — 开源遥操作手套，几小时即可组装、成本低于 600 美元：21 自由度手部动捕、5 自由度绳驱力反馈和指尖振动触觉；报告在无视觉输入时力/触觉反馈对接触密集任务至关重要，采集数据可训练模仿学习策略。 · [代码](https://github.com/TEA-Lab/DOGlove) · [项目页](https://do-glove.github.io/)
-- **[Demonstrating Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed Humanoid Robot](https://arxiv.org/abs/2504.17249)** (2025) — 开源人形机器人，采用 3D 打印的模块化减速器，在美国可用不到 5000 美元搭建；硬件设计、嵌入式代码与训练框架均已开源。 · [代码](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite) · [项目页](https://lite.berkeley-humanoid.org)
 - **[DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://arxiv.org/abs/2505.21864)** (2025) — DexUMI：按目标机器人手的指尖工作空间设计的可穿戴手部外骨骼，再用视频修补把画面中的人手换成机器人手；论文报告在 Inspire 与 XHand 上平均成功率 86%，采集效率约为遥操作的 3.2 倍。 · [代码](https://github.com/real-stanford/DexUMI) · [项目页](https://dex-umi.github.io/)
 - **[HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit](https://arxiv.org/abs/2502.13013)** (2025) — 开源的人形机器人全身遥操作系统：手臂外骨骼加动作捕捉手套，脚踏板驱动强化学习行走控制器；整套座舱硬件约 500 美元。 · [代码](https://github.com/InternRobotics/OpenHomie) · [项目页](https://homietele.github.io/)
 - **[MEVITA: Open-Source Bipedal Robot Assembled from E-Commerce Components via Sheet Metal Welding](https://arxiv.org/abs/2508.17684)** (2025) — 用电商零件和钣金焊接搭建的开源双足机器人，避开 3D 打印方案在尺寸和强度上的限制。 · [代码](https://github.com/haraduka/mevita) · [项目页](https://haraduka.github.io/mevita-hardware)
 - **[ORCA: An Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for Uninterrupted Dexterous Task Learning](https://arxiv.org/abs/2504.04259)** (2025) — 可 3D 打印的 17 自由度腱驱动灵巧手，指尖带触觉传感，材料成本低于 2000 瑞士法郎；设计文件与代码开源，论文报告了可长时间连续运行用于遥操作与学习。 · [项目页](https://www.orcahand.com)
-- **[OpenArm](https://github.com/enactic/openarm)** (2025) — 完全开源的 7 自由度人形机械臂，面向接触丰富的研究：CAD、电路、固件、ROS 2/MoveIt 2 以及 MuJoCo/Genesis 模型全部公开，支持主从力反馈遥操作与重力补偿（软件 Apache-2.0，硬件 CERN-OHL-S）。 · [项目页](https://openarm.dev)
 - **[RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)** (2025) — 人手大小的腱驱动灵巧手（5 指、15 个欠驱动自由度），由 3D 打印件和现成零件制成；关节到电机的控制映射用 MANUS 数据手套的动捕数据学习得到，而非手工建模。 · [代码](https://github.com/ruka-hand/RUKA) · [项目页](https://ruka-hand.github.io/)
 - **[ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation](https://arxiv.org/abs/2502.00893)** (2025) — 3D 打印的小型开源人形机器人，配套仿真模型，便于机器学习策略与遥操作数据迁移到真机。 · [代码](https://github.com/hshi74/toddlerbot) · [项目页](https://toddlerbot.github.io/)
 - **[ACE: A Cross-Platform Visual-Exoskeletons System for Low-Cost Dexterous Teleoperation](https://arxiv.org/abs/2408.11805)** (2024) — ACE：3D 打印的双臂外骨骼获取手腕位姿、朝向手部的摄像头估计手指姿态（约 600 美元）；同一套设备可遥操作机械臂+灵巧手、人形机器人以及四足搭载的机械臂。 · [代码](https://github.com/ACETeleop/ACETeleop) · [项目页](https://ace-teleop.github.io/)
-- **[ALOHA 2: An Enhanced Low-Cost Hardware for Bimanual Teleoperation](https://arxiv.org/abs/2405.02292)** (2024) — ALOHA 双臂平台的升级版（更强夹爪、重力补偿、更稳固的框架），开源硬件设计并提供 MuJoCo 仿真模型。 · [代码](https://github.com/tonyzhaozh/aloha) · [项目页](https://aloha-2.github.io/)
 - **[Berkeley Humanoid: A Research Platform for Learning-based Control](https://arxiv.org/abs/2407.21781)** (2024) — 中等尺寸、低成本的人形机器人，专为强化学习运动策略的 sim-to-real 迁移设计。
 - **[Bimanual Dexterity for Complex Tasks](https://arxiv.org/abs/2411.13677)** (2024) — Bidex：便携、低延迟的双臂灵巧手遥操作系统（动捕手套 + 示教臂），可控制 50+ 自由度的机器人；论文报告其采集的数据质量和速度均优于 Vision Pro 与 SteamVR 遥操作。 · [项目页](https://bidex-teleop.github.io/)
 - **[Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning](https://arxiv.org/abs/2407.03162)** (2024) — 用 Apple Vision Pro 实时遥操作双灵巧手，带实时重定向、碰撞与奇异点规避，并为操作者提供低成本振动触觉反馈。 · [代码](https://github.com/Dingry/BunnyVisionPro)
 - **[Learning Visuotactile Skills with Two Multifingered Hands](https://arxiv.org/abs/2404.16823)** (2024) — HATO：用两台 UR5e 机械臂和改装的假肢手（指尖带触觉传感器）搭建双臂系统，用 VR 遥操作采集数据，并训练视觉-触觉策略完成倒酒、交接等任务。 · [代码](https://github.com/ToruOwO/hato) · [项目页](https://toruowo.github.io/hato/)
-- **[Open-TeleVision: Teleoperation with Immersive Active Visual Feedback](https://arxiv.org/abs/2407.01512)** (2024) — 带主动转向立体相机的 VR 遥操作系统，用于采集人形机器人操作数据。 · [代码](https://github.com/OpenTeleVision/TeleVision)
-- **[SO-ARM100 / SO-101](https://github.com/TheRobotStudio/SO-ARM100)** (2024) — 开源 3D 打印 6 自由度机械臂（主从臂），每只约 100–200 美元，是 LeRobot 的默认入门套件。
 - **[TeleMoMa: A Modular and Versatile Teleoperation System for Mobile Manipulation](https://arxiv.org/abs/2403.07869)** (2024) — 模块化遥操作接口，可组合 RGB-D 人体追踪、VR 手柄、键盘与摇杆，控制 Tiago++、HSR、Fetch 等移动操作机器人做全身动作，仿真和真机都支持。 · [代码](https://github.com/UT-Austin-RobIn/telemoma) · [项目页](https://robin-lab.cs.utexas.edu/telemoma-web/)
 - **[The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics](https://arxiv.org/abs/2409.19795)** (2024) — 面向运动研究的开源 10 自由度人形；利用被动动力学的强化学习策略将运输成本在仿真中最多降低 50%，实机降低 31%。 · [代码](https://github.com/generalroboticslab/dukeHumanoidHardwareControl)
 - **[TidyBot++: An Open-Source Holonomic Mobile Manipulator for Robot Learning](https://arxiv.org/abs/2412.10447)** (2024) — 低成本开源移动底盘，采用主动脚轮实现全向（完整约束）运动，可搭载任意机械臂，并配有手机遥操作界面，方便为模仿学习采集移动操作示教数据。 · [代码](https://github.com/jimmyyhwu/tidybot2)
@@ -48,7 +49,6 @@ _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备�
 - **[AnyTeleop: A General Vision-Based Dexterous Robot Arm-Hand Teleoperation System](https://arxiv.org/abs/2307.04577)** (2023) — 仅用相机即可遥操作"机械臂 + 灵巧手"：跟踪操作者手部并重定向到多种不同的机器人手，可用于仿真或真机。
 - **[GELLO: A General, Low-Cost, and Intuitive Teleoperation Framework for Robot Manipulators](https://arxiv.org/abs/2309.13037)** (2023) — 3D 打印的机械臂运动学复刻件，实现低成本、直观的关节空间遥操作。 · [代码](https://github.com/wuphilipp/gello_software)
 - **[The Design of Stretch: A Compact, Lightweight Mobile Manipulator for Indoor Human Environments](https://arxiv.org/abs/2109.10892)** (2021) — Hello Robot 的 Stretch 设计：在升降柱上装伸缩臂的轻巧移动操作机器人，面向家庭环境，被大量家庭机器人研究采用。
-- **[An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](https://arxiv.org/abs/1910.00093)** (2019) — 开源四足机器人 Solo 及其模块化力矩控制关节，采用现成件和 3D 打印件，便于各实验室复现动态腿式机器人。 · [代码](https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware)
 
 **另见**
 

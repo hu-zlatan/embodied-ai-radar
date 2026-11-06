@@ -2,9 +2,9 @@
   type: paper
   arxiv: "2303.04137"
   year: 2023
+  rating: 3
   org: Columbia, TRI, MIT
   code: https://github.com/real-stanford/diffusion_policy
-  highlight: true
   tags: [real, sim, arm, diffusion, imitation]
   takeaway_en: Generating action sequences by denoising handles multimodal demos far better than regression; now a standard IL baseline.
   takeaway_zh: 以去噪方式生成动作序列，比回归更能处理多模态演示，已成为模仿学习标准基线。
@@ -12,9 +12,9 @@
   type: paper
   arxiv: "2304.13705"
   year: 2023
+  rating: 2
   org: Stanford
   code: https://github.com/tonyzhaozh/act
-  highlight: true
   topics: [hardware]
   tags: [real, bimanual, imitation, low-cost]
   takeaway_en: ALOHA + ACT — a ~$20k bimanual teleop rig and an action-chunking Transformer that learns precise tasks from ~50 demos.
@@ -23,6 +23,7 @@
   type: paper
   arxiv: "2401.02117"
   year: 2024
+  rating: 1
   org: Stanford
   code: https://github.com/MarkFzp/mobile-aloha
   topics: [hardware]
@@ -33,6 +34,7 @@
   type: paper
   arxiv: "2403.03954"
   year: 2024
+  rating: 1
   org: Shanghai Qi Zhi, Tsinghua
   code: https://github.com/YanjieZe/3D-Diffusion-Policy
   tags: [real, sim, point-cloud, diffusion]
@@ -42,9 +44,9 @@
   type: paper
   arxiv: "2402.10329"
   year: 2024
+  rating: 2
   org: Stanford, Columbia, TRI
   code: https://github.com/real-stanford/universal_manipulation_interface
-  highlight: true
   topics: [hardware, datasets]
   tags: [real, arm, handheld, data-collection]
   takeaway_en: A handheld gripper with a GoPro collects demos anywhere; policies transfer directly to robot arms.
@@ -135,6 +137,7 @@
   year: 2026
   code: https://github.com/HexaFuture/HexaShell
   added: 2026-10-19
+  rating: 1
   topics: [vla]
   tags: [real, bimanual, vlm-agent, code-as-policy]
   takeaway_en: A coding agent drives a bimanual robot through one command line; after each failure it reads the logs and writes or fixes small reusable tool programs.
@@ -247,6 +250,7 @@
   type: paper
   arxiv: "2212.08333"
   year: 2022
+  rating: 1
   org: SJTU
   code: https://github.com/graspnet/anygrasp_sdk
   topics: [perception]
@@ -381,6 +385,7 @@
   venue: CoRL 2026
   project: https://distilled-search.github.io
   added: 2026-10-27
+  rating: 1
   topics: [manipulation, learning]
   tags: [rearrangement, mcts, long-horizon, distillation, sim, real]
   takeaway_en: "DISCO runs progressive-widening MCTS in GPU-parallel simulation, with a learned policy proposing continuous actions, then distills plans into a policy-value model used without search. Reports wins over BC, RL and search."
@@ -565,6 +570,7 @@
   venue: CoRL 2026
   project: https://erickun0125.github.io/constraint-decomposed-impedance/
   added: 2026-11-02
+  rating: 1
   tags: [impedance-control, articulated-objects, generative-policy]
   takeaway_en: "CoRL 2026 Spotlight. Addresses impedance gain selection for articulated tasks such as doors, bolts and drawers, where neural policies may violate kinematic constraints."
   takeaway_zh: "CoRL 2026 Spotlight。针对开门、拧螺栓、拉抽屉等铰接任务解决阻抗增益选择问题，这类任务中神经策略可能违反运动学约束。"
@@ -649,8 +655,8 @@
   org: Stanford
   code: https://github.com/YanjieZe/Improved-3D-Diffusion-Policy
   project: https://humanoid-manipulation.github.io/
-  highlight: true
   added: 2026-11-04
+  rating: 2
   topics: [locomotion]
   tags: [humanoid, diffusion-policy, teleoperation, 3d, real]
   takeaway_en: "iDP3: whole-upper-body teleop, a 25-DoF humanoid with 3D LiDAR, and an improved 3D Diffusion Policy for noisy human data, aiming at skills beyond a single scene."
@@ -673,9 +679,9 @@
   org: AIRoA
   project: https://a-0.airoa.io
   topics: [vla, datasets]
-  highlight: true
   tags: [real, bimanual, handheld, open-weights]
   added: 2026-11-04
+  rating: 2
   takeaway_en: "Learned from 16,151 hours of handheld gripper demos with no robot data; reports 78% average success over ten tasks versus 27% for the best other VLA, and releases the dataset, weights and post-training recipe."
   takeaway_zh: "从 16,151 小时手持夹爪演示中学习，全程不采机器人数据；报告十项任务平均成功率 78%，其他 VLA 最好为 27%，并开放数据集、权重和后训练方案。"
 - title: "Synthesizing Dexterous Robot Demonstrations from Human Videos via Virtual Try-On"
@@ -754,6 +760,7 @@
   year: 2026
   venue: CoRL 2026
   added: 2026-11-04
+  rating: 1
   topics: [manipulation, perception]
   tags: [3d-policy, depth-noise, robustness]
   takeaway_en: "NISE targets the sharp failure of 3D policies under realistic depth noise, carrying position uncertainty into attention; tested on transparent and reflective objects with commodity RGB-D."
@@ -1024,6 +1031,7 @@
   year: 2026
   venue: AAAI 2026
   added: 2026-11-05
+  rating: 1
   tags: [real, sim, dexterous, human-data, rl]
   takeaway_en: "Learns to predict future hand-object states from human interaction datasets and uses the predicted object states as a general RL reward, reducing reward engineering; deployed on different hands (AAAI oral)."
   takeaway_zh: "从人手交互数据学习预测未来手物状态，并把预测的物体状态作为通用强化学习奖励，减少逐任务奖励设计；已部署到不同灵巧手（AAAI 口头报告）。"

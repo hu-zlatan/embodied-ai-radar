@@ -2,9 +2,9 @@
   type: paper
   arxiv: "2109.11978"
   year: 2021
+  rating: 3
   org: ETH Zurich, NVIDIA
   code: https://github.com/leggedrobotics/legged_gym
-  highlight: true
   topics: [sim]
   tags: [sim2real, quadruped, rl, gpu-parallel]
   takeaway_en: Thousands of parallel GPU environments train a quadruped walking policy in minutes; legged_gym became a standard starter.
@@ -37,6 +37,7 @@
   type: paper
   arxiv: "2309.05665"
   year: 2023
+  rating: 1
   org: Shanghai Qi Zhi, Stanford
   code: https://github.com/ZiwenZhuang/parkour
   tags: [sim2real, quadruped, rl, vision]
@@ -46,6 +47,7 @@
   type: paper
   arxiv: "2309.14341"
   year: 2023
+  rating: 1
   org: CMU
   code: https://github.com/chengxuxin/extreme-parkour
   tags: [sim2real, quadruped, rl, vision]
@@ -55,8 +57,8 @@
   type: paper
   arxiv: "2303.03381"
   year: 2023
+  rating: 2
   org: UC Berkeley
-  highlight: true
   tags: [sim2real, humanoid, rl, transformer]
   takeaway_en: A causal Transformer policy trained in simulation walks a full-size humanoid outdoors, zero-shot.
   takeaway_zh: 在仿真中训练的因果 Transformer 策略零样本驱动全尺寸人形机器人在户外行走。
@@ -89,6 +91,7 @@
   type: paper
   arxiv: "2502.01143"
   year: 2025
+  rating: 1
   org: CMU, NVIDIA
   code: https://github.com/LeCAR-Lab/ASAP
   tags: [sim2real, humanoid, rl, delta-action]
@@ -97,6 +100,7 @@
 - title: "Unitree RL Gym"
   type: code
   year: 2024
+  rating: 1
   org: Unitree
   code: https://github.com/unitreerobotics/unitree_rl_gym
   topics: [hardware, learning]
@@ -110,6 +114,7 @@
   venue: CoRL 2026
   project: https://supermimic.github.io
   added: 2026-10-21
+  rating: 1
   topics: [world-models, learning]
   tags: [humanoid, motion-tracking, whole-body-control, differentiable-model]
   takeaway_en: Rather than distilling per-motion experts or brute-forcing one RL policy, trains a humanoid tracking policy jointly with one differentiable world model of shared dynamics, fit from simulator logs (CoRL 2026 oral).
@@ -145,6 +150,7 @@
   type: paper
   arxiv: "2212.03238"
   year: 2022
+  rating: 1
   venue: CoRL 2022
   org: MIT
   code: https://github.com/Improbable-AI/walk-these-ways
@@ -225,9 +231,9 @@
   type: paper
   arxiv: "2508.08241"
   year: 2025
+  rating: 2
   org: UC Berkeley, Stanford
   code: https://github.com/HybridRobotics/whole_body_tracking
-  highlight: true
   tags: [sim2real, humanoid, motion-tracking, diffusion, whole-body]
   takeaway_en: One motion-tracking recipe with shared hyperparameters learns agile skills (cartwheels, flip-kicks); a guided latent diffusion model composes them for new goals like joystick control, zero-shot on hardware.
   takeaway_zh: 用同一套超参数的运动跟踪方案学会侧手翻、飞踢、冲刺等敏捷技能，再用带引导的潜空间扩散模型组合这些技能以完成摇杆遥控、避障等新目标，零样本迁移到真机。
@@ -446,6 +452,7 @@
   venue: CoRL 2026
   project: https://shepherd1226.github.io/CMP
   added: 2026-11-02
+  rating: 1
   tags: [loco-manipulation, whole-body-control, safety, ood]
   takeaway_en: "CoRL 2026 Spotlight. Hardens whole-body end-effector tracking for legged manipulators against out-of-distribution inputs such as sensor noise or infeasible commands, using a frame-wise single-step safety manifold."
   takeaway_zh: "CoRL 2026 Spotlight。提升足式移动操作臂全身末端跟踪对分布外输入（传感器噪声、不可行指令）的鲁棒性：用逐帧安全方案把无限时域安全约束转化为计算高效的单步流形约束。"
@@ -603,8 +610,8 @@
   venue: SIGGRAPH 2018
   org: UC Berkeley
   code: https://github.com/xbpeng/DeepMimic
-  highlight: true
   added: 2026-11-04
+  rating: 2
   topics: [control]
   tags: [character, motion-imitation, rl]
   takeaway_en: "Showed RL can imitate a wide range of motion clips, flips and spins included, while staying robust. The motion-imitation template much humanoid work builds on."
@@ -617,6 +624,7 @@
   org: NVIDIA
   code: https://github.com/nv-tlabs/ASE
   added: 2026-11-04
+  rating: 1
   topics: [control]
   tags: [character, skill-embedding, adversarial]
   takeaway_en: "Learns reusable skill embeddings for simulated characters by combining adversarial imitation and unsupervised RL, so new tasks need not start from scratch."
@@ -629,6 +637,7 @@
   code: https://github.com/ZhengyiLuo/PHC
   project: https://zhengyiluo.github.io/PHC/
   added: 2026-11-04
+  rating: 1
   topics: [control]
   tags: [character, motion-tracking, humanoid]
   takeaway_en: "Humanoid controller that scales to ten thousand motion clips with no external stabilising forces and recovers from falls by itself, so resets are not needed."
@@ -649,8 +658,8 @@
   arxiv: "2511.07820"
   year: 2025
   org: NVIDIA
-  highlight: true
   added: 2026-11-04
+  rating: 2
   topics: [control]
   tags: [humanoid, motion-tracking, whole-body, scaling]
   takeaway_en: "Tests scaling on humanoid control: more network, data and compute yield a generalist motion-tracking foundation model, with no manual reward engineering."
@@ -790,6 +799,7 @@
   code: https://github.com/YanjieZe/GMR
   project: https://jaraujo98.github.io/retargeting_matters
   added: 2026-11-04
+  rating: 1
   topics: [locomotion]
   tags: [humanoid, retargeting]
   takeaway_en: "Shows retargeting artifacts such as foot sliding hurt tracking policies, and offers GMR, a general retargeter. Its open-source repo is widely used for humanoid data."
@@ -801,6 +811,7 @@
   code: https://github.com/amazon-far/holosoma
   project: https://omniretarget.github.io
   added: 2026-11-04
+  rating: 1
   topics: [locomotion]
   tags: [humanoid, retargeting, interaction]
   takeaway_en: "Retargeting that preserves human-object and human-scene interaction rather than only body pose, generating physically plausible data for humanoid loco-manipulation."
@@ -855,6 +866,7 @@
   code: https://github.com/TeleHuman/PBHC
   project: https://kungfubot.github.io
   added: 2026-11-04
+  rating: 1
   topics: [locomotion]
   tags: [humanoid, motion-tracking, agile]
   takeaway_en: "Learns highly dynamic skills such as kung fu and dancing, through multi-step motion processing and adaptive motion tracking."
@@ -1137,7 +1149,7 @@
   org: Apple
   project: https://apple-aiml-research.github.io/ml-halo/
   added: 2026-11-05
-  highlight: true
+  rating: 2
   topics: [locomotion, sim]
   tags: [humanoid, sim2real, synthetic-data, vision, language, real]
   takeaway_en: "HALO trains humanoid skills on vision-language-motion data synthesised in a thousand procedural homes, so data scales with compute. Reports zero-shot transfer: 91% over 360 trials in six real environments."

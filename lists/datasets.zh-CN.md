@@ -2,18 +2,26 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 76 条，⭐ 为重点推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 76 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/datasets.html) · [English](datasets.md)
 
 [VLA 与机器人基础模型](vla.zh-CN.md) · [操作与灵巧手](manipulation.zh-CN.md) · [触觉与视触觉感知](tactile.zh-CN.md) · [运动控制与人形机器人](locomotion.zh-CN.md) · [世界模型](world-models.zh-CN.md) · [导航与具身智能体](navigation.zh-CN.md) · [感知、SLAM 与三维建图](perception.zh-CN.md) · [规划、控制与安全](control.zh-CN.md) · [机器人学习：强化学习与模仿学习](learning.zh-CN.md) · [仿真与 Sim-to-Real](sim.zh-CN.md) · **数据集与基准** · [硬件与开源机器人](hardware.zh-CN.md)
 
-- ⭐ **[LeRobot](https://github.com/huggingface/lerobot)** (2024) — PyTorch 机器人学习库，提供数据集、预训练策略（ACT、Diffusion、SmolVLA）与低成本机械臂驱动。
-- ⭐ **[LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning](https://arxiv.org/abs/2306.03310)** (2023) — 四个套件共 130 个语言条件任务，现已成为 VLA 论文最常用的仿真基准。 · [代码](https://github.com/Lifelong-Robot-Learning/LIBERO)
-- ⭐ **[Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://arxiv.org/abs/2310.08864)** (2023) — 30 多个实验室汇集 22 种机器人的 100 多万条轨迹；在其上训练的 RT-X 优于单机器人基线。 · [代码](https://github.com/google-deepmind/open_x_embodiment)
+- ⭐⭐⭐ **[Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://arxiv.org/abs/2310.08864)** (2023) — 30 多个实验室汇集 22 种机器人的 100 多万条轨迹；在其上训练的 RT-X 优于单机器人基线。 · [代码](https://github.com/google-deepmind/open_x_embodiment)
+- ⭐⭐ **[LeRobot](https://github.com/huggingface/lerobot)** (2024) — PyTorch 机器人学习库，提供数据集、预训练策略（ACT、Diffusion、SmolVLA）与低成本机械臂驱动。
+- ⭐⭐ **[LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning](https://arxiv.org/abs/2306.03310)** (2023) — 四个套件共 130 个语言条件任务，现已成为 VLA 论文最常用的仿真基准。 · [代码](https://github.com/Lifelong-Robot-Learning/LIBERO)
+- ⭐ **[BEAKER: An Expert-Curated Benchmark for Embodied Brains in Self-Driving Chemical Laboratories](https://arxiv.org/abs/2611.06911)** (2026) — 1000 道专家整理的题目、11 种图像和视频任务，检验多模态大模型能否担任自动化化学实验室的“大脑”：可供性、轨迹、仪器搭建、安全与步骤推理。
+- ⭐ **[WireCraft: A Simulation Benchmark for Industrial DLO Manipulation](https://arxiv.org/abs/2606.18097)** (2026) — CoRL 2026 Spotlight。面向工业装配中线缆等可变形线状物体（DLO）的仿真基准，针对现有基准绑定特定硬件、缺少模块化可定制任务资产等问题。
+- ⭐ **[RoboVerse: Towards a Unified Platform, Dataset and Benchmark for Scalable and Generalizable Robot Learning](https://arxiv.org/abs/2504.18904)** (2025) — MetaSim 用统一接口封装多种仿真器（Isaac Sim/Gym、MuJoCo、Genesis、SAPIEN、PyBullet 等）；提供由公开基准迁移而来的大规模合成数据集，以及按泛化层级划分的统一模仿学习/强化学习基准。 · [代码](https://github.com/RoboVerseOrg/RoboVerse) · [项目页](https://roboverseorg.github.io/)
+- ⭐ **[Evaluating Real-World Robot Manipulation Policies in Simulation](https://arxiv.org/abs/2405.05941)** (2024) — SimplerEnv：真实到仿真的评测环境，其得分与 RT-1/Octo 类策略的真机表现相关。 · [代码](https://github.com/simpler-env/SimplerEnv)
+- ⭐ **[CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks](https://arxiv.org/abs/2112.03227)** (2021) — 连续执行五条语言指令，测试长时程、语言条件下的控制能力。 · [代码](https://github.com/mees/calvin)
+- ⭐ **[Habitat: A Platform for Embodied AI Research](https://arxiv.org/abs/1904.01201)** (2019) — 极速的逼真 3D 仿真器与任务集，统一了具身导航研究的标准。 · [代码](https://github.com/facebookresearch/habitat-sim)
+- ⭐ **[Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning](https://arxiv.org/abs/1910.10897)** (2019) — 50 个 Sawyer 操作任务，用于多任务与元强化学习评测。 · [代码](https://github.com/Farama-Foundation/Metaworld)
+- ⭐ **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 个手工设计的操作任务并附演示，是 PerAct 等 3D 策略方法的常用基准。 · [代码](https://github.com/stepjam/RLBench)
+- ⭐ **[ScanNet: Richly-annotated 3D Reconstructions of Indoor Scenes](https://arxiv.org/abs/1702.04405)** (2017) — 1500+ 个室内场景的 RGB-D 扫描，含三维重建、相机位姿与语义标注；具身感知所依赖的三维场景理解标准基准。 · [代码](https://github.com/ScanNet/ScanNet)
 - **[ATOM-Bench: A Real-World Benchmark for Atomic Skills and Compositional Generalization in Manipulation Policies](https://arxiv.org/abs/2606.16826)** (2026) — CoRL 2026 Spotlight。真实世界基准：把桌面操作分解为动作原子与指令原子，测试策略的原子技能及其重新组合能力。 · [项目页](https://flageval-baai.github.io/AtomBenchPage)
 - **[AstroBench: Benchmarking Free-Floating Capture and Space Robotic Manipulation](https://arxiv.org/abs/2610.31064)** (2026) — 太空机器人操作基准：用固定基座机械臂抓取舱内漂浮、旋转的物体，另含样本存储与在轨维护任务。报告称所测的冻结通用策略在 200 个静止目标中只抓住 2 个。 · [代码](https://github.com/AstroUpLab/AstroBench) · [项目页](https://astroup.com/astrobench/)
-- **[BEAKER: An Expert-Curated Benchmark for Embodied Brains in Self-Driving Chemical Laboratories](https://arxiv.org/abs/2611.06911)** (2026) — 1000 道专家整理的题目、11 种图像和视频任务，检验多模态大模型能否担任自动化化学实验室的“大脑”：可供性、轨迹、仪器搭建、安全与步骤推理。
 - **[BURGER: Benchmarking and Understanding Robotic Generalization via Embodied Drawing](https://arxiv.org/abs/2610.40532)** (2026) — 语言条件绘画基准：同一指令有无数种合法画法。含 282 个任务的 28,200 条仿真示范，用于比较五种 VLA 模型在数据规模、语言落地和多模态行为上的差异。 · [代码](https://github.com/Qxjyqzw/BURGER) · [项目页](https://siyingzhao.github.io/BURGER/)
 - **[Behavior Spatial Benchmark: Evaluating Spatial Understanding for Robotics](https://arxiv.org/abs/2610.34051)** (2026) — 基于 BEHAVIOR-1K 的 BEHAVIOR-Spatial 基准：包含空间问答、指点定位与机器人动作评测。基线策略在未见布局上成功率 41.6%，但在同一布局中更换目标物体指令时降至 16.1%；提供真值目标提示带来的提升最大。 · [项目页](https://arielchen07.github.io/behavior-spatial/)
 - **[Beyond Infraction Scores: Failure-Boundary Profiles for Closed-Loop Evaluation of Driving and Robot Navigation Agents](https://arxiv.org/abs/2611.06453)** (2026) — 每类场景只改变一个可测因素，并认证智能体此时该通过还是该停下；CARLA 中得分最高的学习型智能体决策准确率为 0.60，规则专家为 0.74。 · [代码](https://github.com/speedym/failure-boundary-profiles)
@@ -51,15 +59,12 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[SO-101 Bench: Accessible Spatial Manipulation](https://arxiv.org/abs/2610.36420)** (2026) — 基于 Isaac Lab 数字孪生的低成本 SO-101 机械臂语言条件空间操作基准（138 个物体、916 个评测回合）；仿真中的策略排名与真机完全一致。最好的 VLA 约 61%，由 LLM 写代码调用抓取策略的方案达 83.2%。 · [代码](https://github.com/5hadytru/so101_bench) · [项目页](https://so101-bench.github.io/)
 - **[Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines](https://arxiv.org/abs/2604.23001)** (2026) — 认为 VLA 的进展更取决于数据引擎和评测，而不是模型架构；指出数据集存在保真度与成本的权衡，评测基准在组合任务和长时程任务上仍有缺口。 · [项目页](https://github.com/ziyaow1010/vla-datasets-benchmarks)
 - **[What Are We Actually Benchmarking in Robot Manipulation?](https://arxiv.org/abs/2606.04233)** (2026) — CoRL 2026 Oral。用捷径可解、统计不显著、渐进过拟合、数据来源依赖四种失效模式审计 LIBERO、CALVIN、SimplerEnv、RoboCasa 和 RoboTwin 2.0；其中 LIBERO 与 CALVIN 未通过多项诊断。 · [代码](https://github.com/ripl/ManipulationBenchmarkAudit) · [项目页](https://ripl.github.io/manipulation_benchmark_audit/)
-- **[WireCraft: A Simulation Benchmark for Industrial DLO Manipulation](https://arxiv.org/abs/2606.18097)** (2026) — CoRL 2026 Spotlight。面向工业装配中线缆等可变形线状物体（DLO）的仿真基准，针对现有基准绑定特定硬件、缺少模块化可定制任务资产等问题。
 - **[AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems](https://arxiv.org/abs/2503.06669)** (2025) — 在专门搭建的场景中采集的百万级真实机器人数据集，并基于其训练通用策略 GO-1。
 - **[EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video](https://arxiv.org/abs/2505.11709)** (2025) — 用 Apple Vision Pro 采集的 829 小时第一视角视频，配有每个手部关节的三维姿态，覆盖从系鞋带到叠衣服的 194 种桌面任务，并提供手部轨迹预测基准。 · [代码](https://github.com/apple-aiml-research/ml-egodex)
 - **[PHUMA: Physically Reliable Humanoid Locomotion Dataset](https://arxiv.org/abs/2510.26236)** (2025) — CoRL 2026 Spotlight。源自网络视频的人形运动数据集，针对此前视频数据常见的悬空、穿透与脚滑问题。 · [代码](https://github.com/davian-robotics/PHUMA) · [项目页](https://davian-robotics.github.io/PHUMA)
 - **[RoboChallenge: Large-scale Real-robot Evaluation of Embodied Policies](https://arxiv.org/abs/2510.17950)** (2025) — 介绍一套在线系统，用于在真机上大规模评测多种机器人策略，并报告近期 VLA 在首个基准 Table30 上的表现。
-- **[RoboVerse: Towards a Unified Platform, Dataset and Benchmark for Scalable and Generalizable Robot Learning](https://arxiv.org/abs/2504.18904)** (2025) — MetaSim 用统一接口封装多种仿真器（Isaac Sim/Gym、MuJoCo、Genesis、SAPIEN、PyBullet 等）；提供由公开基准迁移而来的大规模合成数据集，以及按泛化层级划分的统一模仿学习/强化学习基准。 · [代码](https://github.com/RoboVerseOrg/RoboVerse) · [项目页](https://roboverseorg.github.io/)
 - **[TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System](https://arxiv.org/abs/2511.02832)** (2025) — 基于 VR 头显的便携式免动捕人形遥操作与数据采集系统，目标是让全身示教数据能够规模化采集。 · [代码](https://github.com/amazon-far/TWIST2) · [项目页](https://twist-data.github.io)
 - **[DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset](https://arxiv.org/abs/2403.12945)** (2024) — 由多家机构在数百个真实场景中采集的 7.6 万条 Franka 遥操作轨迹。 · [代码](https://github.com/droid-dataset/droid)
-- **[Evaluating Real-World Robot Manipulation Policies in Simulation](https://arxiv.org/abs/2405.05941)** (2024) — SimplerEnv：真实到仿真的评测环境，其得分与 RT-1/Octo 类策略的真机表现相关。 · [代码](https://github.com/simpler-env/SimplerEnv)
 - **[HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation](https://arxiv.org/abs/2403.10506)** (2024) — 27 个仿真任务（12 个运动、15 个全身操作），机器人为带两只灵巧手的 Unitree H1；报告 DreamerV3、TD-MPC2、SAC、PPO 在大多数任务上未达标，长时程全身协调任务尤甚。 · [代码](https://github.com/carlosferrazza/humanoid-bench) · [项目页](https://humanoid-bench.github.io)
 - **[Point Cloud Matters: Rethinking the Impact of Different Observation Spaces on Robot Learning](https://arxiv.org/abs/2402.02500)** (2024) — OBSBench 在统一设置下比较 RGB、RGB-D 和点云观测对机器人学习的影响。 · [代码](https://github.com/HaoyiZhu/PointCloudMatters)
 - **[RoboMIND: Benchmark on Multi-embodiment Intelligence Normative Data for Robot Manipulation](https://arxiv.org/abs/2412.13877)** (2024) — 在统一规范下采集的大规模真机遥操作数据集，覆盖单臂、双臂与人形等多种本体，并保留了标注失败原因的失败演示。 · [项目页](https://x-humanoid-robomind.github.io/)
@@ -73,16 +78,11 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[HOI4D: A 4D Egocentric Dataset for Category-Level Human-Object Interaction](https://arxiv.org/abs/2203.01577)** (2022) — 240 万帧第一视角 RGB-D（4000 多段序列、16 类 800 个物体实例、610 个房间），记录人操作刚体与铰接物体，带分割、手部与物体位姿标注。 · [代码](https://github.com/leolyliu/HOI4D-Instructions)
 - **[OakInk: A Large-scale Knowledge Repository for Understanding Hand-Object Interaction](https://arxiv.org/abs/2203.15709)** (2022) — 为约 1800 个日常物体标注可供性，并在其中 100 个物体上记录 5 万次带意图的手-物交互；常用于灵巧抓取生成。后续 OakInk2 扩展到双手任务。 · [代码](https://github.com/oakink/OakInk)
 - **[Objaverse: A Universe of Annotated 3D Objects](https://arxiv.org/abs/2212.08051)** (2022) — 80 万+ 带标注的 3D 物体模型，常用于为仿真器填充多样物体，用于抓取、重排和程序化场景生成（Objaverse-XL 扩展到 1000 万+）。
-- **[CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks](https://arxiv.org/abs/2112.03227)** (2021) — 连续执行五条语言指令，测试长时程、语言条件下的控制能力。 · [代码](https://github.com/mees/calvin)
 - **[DexYCB: A Benchmark for Capturing Hand Grasping of Objects](https://arxiv.org/abs/2104.04631)** (2021) — 约 58.2 万帧 RGB-D（1000 段序列、10 人、20 个 YCB 物体、8 台相机）的人手抓取数据，带手部与物体位姿标注；评测检测、物体 6D 位姿、三维手部姿态及人到机器人的物体交接。 · [代码](https://github.com/NVlabs/dex-ycb-toolkit)
 - **[Ego4D: Around the World in 3,000 Hours of Egocentric Video](https://arxiv.org/abs/2110.07058)** (2021) — 3670 小时第一视角日常生活视频，广泛用于为机器人预训练视觉表征。
 - **[Habitat-Matterport 3D Dataset (HM3D): 1000 Large-scale 3D Environments for Embodied AI](https://arxiv.org/abs/2109.08238)** (2021) — 1000 个真实室内空间的 3D 扫描，供 Habitat 使用；ObjectNav 等众多具身导航基准的主要场景集。 · [代码](https://github.com/facebookresearch/habitat-matterport3d-dataset)
 - **[Rescaling Egocentric Vision](https://arxiv.org/abs/2006.13256)** (2020) — EPIC-KITCHENS-100：来自 45 个厨房环境、100 小时（2000 万帧、约 9 万个动作片段）的非脚本第一视角视频，动作标注密集，并设有动作预测等挑战任务。 · [代码](https://github.com/epic-kitchens/epic-kitchens-100-annotations)
-- **[Habitat: A Platform for Embodied AI Research](https://arxiv.org/abs/1904.01201)** (2019) — 极速的逼真 3D 仿真器与任务集，统一了具身导航研究的标准。 · [代码](https://github.com/facebookresearch/habitat-sim)
-- **[Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning](https://arxiv.org/abs/1910.10897)** (2019) — 50 个 Sawyer 操作任务，用于多任务与元强化学习评测。 · [代码](https://github.com/Farama-Foundation/Metaworld)
-- **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 个手工设计的操作任务并附演示，是 PerAct 等 3D 策略方法的常用基准。 · [代码](https://github.com/stepjam/RLBench)
 - **[RoboNet: Large-Scale Multi-Robot Learning](https://arxiv.org/abs/1910.11215)** (2019) — 早期的共享机器人交互视频数据集，涵盖七种机器人平台，用于预训练可迁移到新机器人的视觉动力学模型，是 Open X-Embodiment 的先驱。 · [代码](https://github.com/SudeepDasari/RoboNet)
-- **[ScanNet: Richly-annotated 3D Reconstructions of Indoor Scenes](https://arxiv.org/abs/1702.04405)** (2017) — 1500+ 个室内场景的 RGB-D 扫描，含三维重建、相机位姿与语义标注；具身感知所依赖的三维场景理解标准基准。 · [代码](https://github.com/ScanNet/ScanNet)
 - **[Benchmarking in Manipulation Research: The YCB Object and Model Set and Benchmarking Protocols](https://arxiv.org/abs/1502.03143)** (2015) — YCB 物体集：73 个日常物体，附扫描数据、带纹理网格与仿真模型，以及基准测试规程；被抓取与位姿估计研究广泛使用。
 
 **另见**
