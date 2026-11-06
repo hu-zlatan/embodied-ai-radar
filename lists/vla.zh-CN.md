@@ -2,7 +2,7 @@
 
 _视觉-语言-动作模型与通用机器人策略。_
 
-共 209 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
+共 212 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [English](vla.md)
 
@@ -64,8 +64,10 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[CounterAlign: Counterfactual Supervision for Vision-Language-Action Models](https://arxiv.org/abs/2608.21740)** (2026) — 把专家动作与不匹配的指令配对生成反事实样本，训练与指令对齐的奖励模型，用于 VLA 离线强化学习，无需额外采集。在 LIBERO-PRO 和真机上提升鲁棒性。 · [项目页](https://counteralign.airoa.io)
 - **[Coupling Execution Horizon and Sampling Depth in Flow-Matching VLA Policies](https://arxiv.org/abs/2610.32102)** (2026) — 流匹配 VLA 的部署调参发现：求解步数少在频繁重规划时会降低精度，但在长时开环执行动作块时反而有利。报告在 π0、π0.5、GR00T 上联合调整两者，无需训练即可提高成功率并降低推理延迟。 · [项目页](https://jiabingyang01.github.io/Horizon-Depth-VLA/)
 - **[Cross-Controller Transfer via In-Context Behavior Adaptation](https://arxiv.org/abs/2610.39280)** (2026) — 跨六类控制器共享机器人数据：把“指令动作与实际运动”的交互样例编码为上下文，让同一策略在线适应。真实实验报告平均成功率比直接混合数据高 33 个百分点。 · [项目页](https://controller-transfer.github.io)
+- **[Cue the Flow: Steering Flow-Matching Policies for Open-World Delivery Manipulation](https://arxiv.org/abs/2609.38989)** (2026) — 用视觉定位模型给出的空间提示引导预训练流匹配 VLA：轻量适配器预测作用在动作块上的仿射变换，使动作对准目标。开放世界配送任务成功率最高提升近 2 倍。 · [项目页](https://hatchetproject.github.io/delivery_steer/)
 - **[DAM-VLA: Decoupled Asynchronous Multimodal Vision Language Action model](https://arxiv.org/abs/2606.12105)** (2026) — 各模态按各自传感器频率刷新潜在缓存，供动作头持续读取，高频信号通过门控交叉注意力接入。报告在七个富接触真机任务上成功率 95.2%，对比基线 40.95%，控制频率 100 Hz。 · [项目页](https://intuitive-robots.github.io/DAM-VLA/)
 - **[Democratizing Robot-Use Agents: A Unified Harness with Open Models](https://arxiv.org/abs/2611.01560)** (2026) — uni-robot-agent：面向开放权重模型的机器人操作智能体（Robot-use Agent）框架，便于继续训练。作者报告现成的 Qwen3.8 模型在 RoboDojo 上得 31.39 分，高于已发表的 GPT-6 Astra-RoboProbe 的 28.97 分。 · [代码](https://github.com/Open-RUA/uni-robot-agent) · [项目页](https://openrua.ai/uni-robot-agent)
+- **[Dexterity-BEV: Aligning 3D World and Actions for Generalizable Robot Policies Learning](https://arxiv.org/abs/2606.02274)** (2026) — 用逐像素顶点图把 2D 输入提升到 3D，并把各相机视角与机器人动作统一表示在同一鸟瞰（BEV）坐标系中，对齐不同机器人、相机与数据集的数据。 · [项目页](https://hnuzhy.github.io/projects/Dex-BEV)
 - **[Diagnosing Compositional Generalization in Sequential Robot Tasks](https://arxiv.org/abs/2607.29687)** (2026) — CoRL 2026 Spotlight。从指令空间覆盖出发，把序列任务策略的泛化差距分解为边际偏移、组合偏移与上下文-动作偏移。 · [代码](https://github.com/YixiaoWang7/Diagnosing_Compositional_Generalization_Robot) · [项目页](https://yixiaowang7.github.io/Diagnosing_Compositional_Generalization_Robot_Page/)
 - **[Disentangling Spurious Correlations in Vision-Language-Action Models via Predicting Domain-Invariant Latent Lookahead](https://arxiv.org/abs/2609.37165)** (2026) — 用与域无关的未来潜变量监督 VLA，减少对视觉捷径的依赖。报告 LIBERO-Plus 平均成功率 69.1%，比最强基线高 11.4 个百分点。 · [项目页](https://dill-vla.github.io/)
 - **[Do Agentic Policies Need to Look at Every Step? Geometric Abstraction for Reasoning and Action](https://arxiv.org/abs/2611.05058)** (2026) — 把常规空间推理从图像转到文本：语言模型直接读取局部刷新的三维符号场景，仅在需要时看图；报告多步任务完成度提高，图像查询大幅减少。 · [代码](https://github.com/Spectraorder/geometric-abstraction) · [项目页](https://geometric-abstraction.github.io)
@@ -106,6 +108,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[Multi-View Latent Action Pretraining for Cross-Embodiment Robot Learning from Videos](https://arxiv.org/abs/2610.27794)** (2026) — 融合多路同步相机视角的潜在动作模型（LAM），用交叉注意力解决深度与遮挡问题；报告 6D 动作可解码性比单视角高 17%，下游策略成功率提升 13.5%（单视角为 6.2%），真机上用人手演示也比纯动作策略高 20%。 · [项目页](https://learnsyslab.github.io/multiview_latent_action_pretraining/)
 - **[Multimodal Embodied Agents: A Unified Capability-centric Perspective from Computer-Use to Robot-Use](https://arxiv.org/abs/2610.30108)** (2026) — 用"感知、预判、规划、执行、验证"五种能力统一看待电脑操作智能体和机器人智能体的综述；统计 64 个基准后发现只有 5 个评测预判、3 个评测验证。附配套论文列表。 · [项目页](https://github.com/showlab/Awesome-Multimodal-Embodied-Agent)
 - **[NestedVLA: Learning to Consolidate and Generate Skills for Vision-Language-Action Models](https://arxiv.org/abs/2610.23271)** (2026) — 先独立学习各项技能，再用嵌套超网络“生成”VLA 参数来事后整合技能，而不是直接合并权重。 · [代码](https://github.com/WanyuGroup/NeurIPS2026-NestedVLA)
+- **[Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement](https://arxiv.org/abs/2606.18953)** (2026) — 在冻结的 VLA 之上做只依赖物体位姿的残差强化学习，从而可直接从仿真迁移到真机；通过回放同一批遥操作数据训练 VLA 的仿真副本。报告真实 FR3 上成功率从 42% 提升到 76%。 · [项目页](https://www.microsoft.com/en-us/research/articles/object-centric-residual-rl/)
 - **[OmniBrain-0: A Unified Agentic Model for Embodied Intelligence](https://arxiv.org/abs/2610.36013)** (2026) — 小米具身智能团队的轻量统一具身智能体：在操作与导航中负责任务理解、规划、进度跟踪和失败恢复，由更强的教师模型多教师在线蒸馏而来，并配有基于评分细则的自我改进数据飞轮。 · [项目页](https://public-bots.github.io/OmniBrain-0/)
 - **[OmniGuide: Universal Spatial Guidance Fields for Enhancing Generalist Robot Policies](https://arxiv.org/abs/2603.10052)** (2026) — 把 3D 基础模型、VLM、人体姿态等指导信号统一表示为 3D 空间中可微的吸引/排斥能量函数，引导 VLA 动作采样。报告提升 π0.5 和 GR00T N1.6 在仿真与真机上的表现。 · [项目页](https://omniguide.github.io/)
 - **[PRTS: A Primitive Reasoning and Tasking System via Contrastive Representations](https://arxiv.org/abs/2604.27472)** (2026) — 将 VLA 预训练重构为目标条件强化学习：用对比学习让模型判断语言目标是否可达。基于 1670 亿 token 预训练，在长时序任务上优势最明显。

@@ -1210,3 +1210,13 @@
   tags: [video-world-model, robot-rendering, urdf, cross-embodiment, human-video]
   takeaway_en: "Video world model that renders the robot's own motion from its URDF and controller, so the network only predicts how the scene responds. Transfers to unseen robots and can animate retargeted human demos."
   takeaway_zh: "视频世界模型把机器人自身运动交给控制器和 URDF 渲染，网络只需预测场景的响应。可迁移到未见过的机器人本体，并能由重定向的人类演示生成机器人操作视频。"
+- title: "STRIPS-WM: Learning Grounded Propositional STRIPS-style World Models from Images"
+  type: paper
+  arxiv: "2606.06832"
+  year: 2026
+  venue: CoRL 2026
+  project: https://elpislab.org/projects/strips-wm/
+  added: 2026-11-06
+  tags: [symbolic-planning, strips, predicates, visual-planning, sim]
+  takeaway_en: "Learns STRIPS-style operators (preconditions, add/delete effects) over latent predicates from image transitions, then plans classically from start and goal images. Beats visual-rollout and latent-search methods."
+  takeaway_zh: "直接从图像转移数据学习 STRIPS 式符号算子（前提条件、增删效果）和潜在二值谓词，再从起始图与目标图用经典规划求解。优于视觉推演和潜在图搜索等基线。"

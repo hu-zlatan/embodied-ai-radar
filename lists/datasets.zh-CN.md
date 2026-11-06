@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 85 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 88 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/datasets.html) · [English](datasets.md)
 
@@ -30,6 +30,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[ClothDojo: Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding](https://arxiv.org/abs/2611.01190)** (2026) — 仿真平台：用微调后的 VLA 生成近 8000 条成功的衣物操作轨迹，并重新渲染供 RGB 策略训练，效果优于直接用人类数据训练，但泛化到未见衣物仍是难题。 · [项目页](https://clothdojo.github.io/)
 - **[DexArena: A Unified Benchmark for Long-Horizon Dexterous Manipulation](https://arxiv.org/abs/2611.02629)** (2026) — 10 个长时序和 30 个阶段级双手灵巧任务，每个阶段都有物理判定的成功条件，可衡量中间进度；提供经过验证的遥操作示范和统一接口。 · [项目页](https://sipair-elastic.github.io/DexArena-website/)
 - **[Diversity You Can Actually Measure: A Fast, Model-Free Diversity Metric for Robotics Datasets](https://arxiv.org/abs/2603.11634)** (2026) — CoRL 2026 Oral。直接从示范数据度量模仿学习数据集的多样性：基于签名核定义熵，无需先训练模型。
+- **[Do as I Do: Dexterous Manipulation Data from Everyday Human Videos](https://arxiv.org/abs/2606.19333)** (2026) — 从普通单目人类视频重建手-物交互，并重定向为多指机器人手可执行的动作序列；手-物估计优于已有方法，并给出采集人类数据的实践建议。 · [项目页](https://do-as-i-do.com/)
 - **[Ego2Robot: Scalable Robot Data Synthesis from Egocentric Human Data](https://arxiv.org/abs/2608.02580)** (2026) — CoRL 2026 Spotlight。把第一视角人类操作视频转换为机器人训练数据的流程，并检验其能否大规模助力 VLA 预训练。 · [项目页](https://www-ye.github.io/ego2robot_blog/)
 - **[EgoContact: Evaluating Physical Intelligence with Egocentric Video](https://arxiv.org/abs/2610.39167)** (2026) — 第一视角接触点预测基准：2.25 万个人工核验的交互事件，每个含接触前画面、语义意图与像素级接触位置。现有方法常常定位不准甚至找不到目标物体；把 EgoContact 用作已有可供性迁移策略的记忆库，真机抓取成功率从 16% 提升到 58%。 · [项目页](https://egocontact.github.io)
 - **[EgoExplorer: A Vision-Motion-Touch Observatory for Human Loco-Manipulation In Situ](https://arxiv.org/abs/2610.18872)** (2026) — 用可穿戴设备采集的 100 小时人类移动操作数据，侧重职业场景，对齐第一视角视频、全身与手指动作、触觉和步骤级文字描述；其补全全身动作的方法报告身体关键点误差比最强基线低 71.9%。 · [代码](https://github.com/InternRobotics/EgoExplorer) · [项目页](https://internrobotics.github.io/egoexplorer.github.io/)
@@ -56,6 +57,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[RoboFollow: Unveiling the Instruction Following Mirage in Embodied Agents](https://arxiv.org/abs/2609.25636)** (2026) — 揭示 VLA 的高成功率常掩盖薄弱的指令遵循：场景支持多种合法任务，必须依赖语言。九个 VLA 与 WAM 策略在基础级以外的测试中明显下降。 · [代码](https://github.com/AutoLab-SAI-SJTU/RoboFollow)
 - **[RoboJev: An Open Vision-Language Judge for Robot Success Detection](https://arxiv.org/abs/2610.33718)** (2026) — 开放权重模型，根据视频帧判断操作是否成功，可用于标注数据；在未见过的实验室与机器人上报告 AUROC 0.89。 · [项目页](https://robo-jev.com)
 - **[RoboJudge: Multimodal Language Models as Judges for Embodied Video Generation](https://arxiv.org/abs/2610.27782)** (2026) — 评测多模态大模型能否评判具身视频生成：800 条人工标注视频（10 个生成模型，夹爪/人手/灵巧手），考察物理合理性与指令一致性；另提供 1.2 万条训练视频及 RoboJudge-9B（与人类评分 Pearson 0.719）。 · [代码](https://github.com/Sphere-AI-Lab/RoboJudge) · [项目页](https://spherelab.ai/RoboJudge/)
+- **[RoboLineage: Agent-Native Data Lifecycle Governance Across Robot Policy Iterations](https://arxiv.org/abs/2606.22142)** (2026) — 开源的机器人策略迭代数据生命周期管理层：把执行记录、审核、数据集决策、训练与评测都表示为带类型的溯源工件，由智能体维护，让迭代更快、更可追溯。 · [项目页](https://robolineage.github.io/)
 - **[RoboPocket: Improve Robot Policies Instantly with Your Phone](https://arxiv.org/abs/2603.05504)** (2026) — 基于手机的免机器人策略迭代系统：用 AR 显示当前策略的预测轨迹，用户可在策略薄弱处采集纠正数据。报告样本效率最高为纯离线演示的 2 倍。 · [项目页](https://robo-pocket.github.io)
 - **[RoboScope Kit: Unified Interfaces for Fast and Scalable Embodied-AI Evaluation](https://arxiv.org/abs/2611.03850)** (2026) — 模型和基准各封装一次，把仿真 worker 与策略副本分成两个池调度；报告单卡评测比官方 StarVLA 评测器快 4.45 到 6.16 倍。 · [代码](https://github.com/MINT-SJTU/RoboScope-Kit) · [项目页](https://roboscope.pages.dev/)
 - **[RoboValue: A Fine-Grained Sim-and-Real Benchmark for Unified Evaluation of Robotic Value Models](https://arxiv.org/abs/2610.26663)** (2026) — 在 15 个仿真和 20 个真实任务上评测机器人价值（进度）模型，覆盖任务状态、进度监测、失败与恢复、一致性四个维度；报告称前向进度得分高的模型在依赖历史和恢复判断上仍然薄弱。 · [代码](https://github.com/RoboValue-Benchmark/RoboValue) · [项目页](https://robovalue-benchmark.github.io/)
@@ -67,6 +69,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[The Imitator Game: Benchmarking Robot Imitative Ability Beyond Action Prediction](https://arxiv.org/abs/2608.22301)** (2026) — 四级基准逐步拉大人类演示与机器人场景的差异，并发布 IG-10K（2 万余条人-机配对片段）。九个模型在最高级别全面失效，未见任务零样本成功率均低于 13%。 · [项目页](https://imitator-game.github.io)
 - **[Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines](https://arxiv.org/abs/2604.23001)** (2026) — 认为 VLA 的进展更取决于数据引擎和评测，而不是模型架构；指出数据集存在保真度与成本的权衡，评测基准在组合任务和长时程任务上仍有缺口。 · [项目页](https://github.com/ziyaow1010/vla-datasets-benchmarks)
 - **[What Are We Actually Benchmarking in Robot Manipulation?](https://arxiv.org/abs/2606.04233)** (2026) — CoRL 2026 Oral。用捷径可解、统计不显著、渐进过拟合、数据来源依赖四种失效模式审计 LIBERO、CALVIN、SimplerEnv、RoboCasa 和 RoboTwin 2.0；其中 LIBERO 与 CALVIN 未通过多项诊断。 · [代码](https://github.com/ripl/ManipulationBenchmarkAudit) · [项目页](https://ripl.github.io/manipulation_benchmark_audit/)
+- **[YUBI: Yielding Universal Bidigital Interface for Bimanual Dexterous Manipulation at Scale](https://arxiv.org/abs/2606.10244)** (2026) — 手指驱动的手持夹爪，用于 UMI 式数据采集，并发布 8434 小时、120 万条、119 个任务的数据集；只需装上同款夹爪，同一策略即可迁移到 UR、Franka 与 ELEY。开源硬件与数据。 · [项目页](https://yubi.airoa.io/)
 - **[AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems](https://arxiv.org/abs/2503.06669)** (2025) — 在专门搭建的场景中采集的百万级真实机器人数据集，并基于其训练通用策略 GO-1。
 - **[Can AI Perceive Physical Danger and Intervene?](https://arxiv.org/abs/2509.21651)** (2025) — ASIMOV v2：把真实伤害事故描述转成生成的图像与视频，构建可持续扩展的物理安全基准，测试基础模型能否察觉危险并干预；并提出安全推理后训练方法。 · [项目页](https://asimov-benchmark.github.io/v2)
 - **[EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video](https://arxiv.org/abs/2505.11709)** (2025) — 用 Apple Vision Pro 采集的 829 小时第一视角视频，配有每个手部关节的三维姿态，覆盖从系鞋带到叠衣服的 194 种桌面任务，并提供手部轨迹预测基准。 · [代码](https://github.com/apple-aiml-research/ml-egodex)

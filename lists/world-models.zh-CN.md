@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 115 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 116 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html) · [English](world-models.md)
 
@@ -79,6 +79,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[RynnUnify: Towards Unified Embodied Brain](https://arxiv.org/abs/2610.32965)** (2026) — 16B 统一具身模型，交替进行视频预测与语言推理，兼顾具身理解与长程视觉规划，并扩展出用于机器人控制的世界-动作版本；另提出 Rynn-VP、Rynn-GEU 评测，报告在 20 个 RoboCasa365 组合任务上成功率 51.5%。 · [代码](https://github.com/alibaba-damo-academy/RynnUnify) · [项目页](https://alibaba-damo-academy.github.io/RynnUnify.github.io/)
 - **[RynnWorld-Latent: A Cross-Embodiment World Model Conditioned on Universal Latent Actions](https://arxiv.org/abs/2610.36791)** (2026) — 以 RynnLAM 的三维潜在动作为统一条件接口的跨本体视频世界模型，在 23 个数据集（约 5.5 亿帧）的人类、机器人和仿真视频上预训练；生成的数据提升了 LIBERO 与真机策略成功率。 · [代码](https://github.com/alibaba-damo-academy/RynnWorld-Latent) · [项目页](https://alibaba-damo-academy.github.io/RynnWorld-Latent.github.io)
 - **[ST-WAM: Semantic-Temporal World Action Model for Robust Manipulation under Visual Distribution Shifts](https://arxiv.org/abs/2607.28993)** (2026) — 发现视觉偏移下世界动作模型预测的未来会幻想出训练域内容，于是用 DINOv3 作为未来预测和历史检索的共享表示，以保持动作鲁棒。 · [代码](https://github.com/Thu-WangMX/ST-WAM-Semantic-Temporal-World-Action-Model) · [项目页](https://thu-wangmx.github.io/st-wam/)
+- **[STRIPS-WM: Learning Grounded Propositional STRIPS-style World Models from Images](https://arxiv.org/abs/2606.06832)** (2026) — 直接从图像转移数据学习 STRIPS 式符号算子（前提条件、增删效果）和潜在二值谓词，再从起始图与目标图用经典规划求解。优于视觉推演和潜在图搜索等基线。 · [项目页](https://elpislab.org/projects/strips-wm/)
 - **[Scaling World Model for Hierarchical Manipulation Policies](https://arxiv.org/abs/2602.10983)** (2026) — 用大规模预训练世界模型做高层规划，把任务拆成子任务并生成目标图像，由底层 VLA 跟随执行。报告同结构 VLA 在新场景中的成功率借此从 14% 提升到 69%。 · [项目页](https://vista-wm.github.io/)
 - **[Seeing and Imagining as One: Unified Video Generation and 4D Perception for Embodied World Modeling](https://arxiv.org/abs/2610.39232)** (2026) — GenSight 把未来视频生成与稠密感知（深度、本体分割、二维光流）放进同一个视频扩散 Transformer，共用一个预测空间。 · [项目页](https://gensight-rbs.github.io/)
 - **[Self-Distilling Future Video Representations for World Action Models](https://arxiv.org/abs/2610.30320)** (2026) — FRED 通过自蒸馏并引入历史观测，让世界动作模型在单步去噪中预测出更好的未来视频表征；报告在长时程、域外环境以及只有人类视频示范的任务上提升明显。 · [代码](https://github.com/suhyeok-jang/FRED) · [项目页](https://huiwon-jang.github.io/FRED/)

@@ -862,3 +862,103 @@
   tags: [failure-recovery, abstraction, task-planning, predicates, real]
   takeaway_en: "Learns recovery skills with RL and, from them, discovers new relational predicates for an abstract planner, turning local recoveries into failure avoidance. Reports >50% gains over baselines in four sim domains."
   takeaway_zh: "用强化学习学习失败恢复技能，并据此发现新的关系谓词、完善抽象规划模型，把局部恢复转化为全局避免失败。报告在四个仿真领域比基线高 50% 以上，并迁移到真机。"
+- title: "Ambient Diffusion Policy: Imitation Learning from Suboptimal Data in Robotics"
+  type: paper
+  arxiv: "2606.12365"
+  year: 2026
+  venue: CoRL 2026
+  project: https://ambient-diffusion-policy.github.io/
+  added: 2026-11-06
+  tags: [diffusion-policy, suboptimal-data, co-training, open-x-embodiment, real]
+  takeaway_en: "Uses suboptimal demos only at high and low diffusion noise levels, where their coarse or local structure still helps. Covers noisy, sim, mismatched and mixed data; reports up to 33% over co-training on Open X-Embodiment."
+  takeaway_zh: "只在扩散过程的高噪声与低噪声阶段使用次优演示，此时其粗粒度或局部结构仍然有用。覆盖带噪、仿真、任务不匹配和混合数据；报告在 Open X-Embodiment 上比协同训练基线高最多 33%。"
+- title: "WARP-RM: A Warp-Augmented Relative Progress Reward Model for Data Curation"
+  type: paper
+  arxiv: "2606.28320"
+  year: 2026
+  venue: CoRL 2026
+  project: https://uynitsuj.github.io/warp-rm/
+  added: 2026-11-06
+  tags: [data-curation, progress-reward, self-supervised, cloth-folding, real]
+  takeaway_en: "Self-supervised progress reward learned from time-warped demos (speed changes, reversals), used to filter and reweight behaviour-cloning data. Reports up to ~18x T-shirt folding throughput over vanilla BC."
+  takeaway_zh: "用时间扭曲（变速、倒放）增强的演示自监督学习帧级进度奖励，再用它过滤和加权行为克隆数据。报告 T 恤折叠吞吐量最高为普通 BC 的约 18 倍。"
+- title: "Learning Robust Visuomotor Policies via Dynamics Alignment"
+  type: paper
+  arxiv: "2510.27114"
+  year: 2025
+  venue: CoRL 2026
+  project: https://dynamics-aligned-policy.github.io
+  added: 2026-11-06
+  tags: [flow-matching, dynamics-model, imitation-learning, robustness, real]
+  takeaway_en: "A flow-matching policy and an action-conditioned dynamics model co-sample an action and its predicted future until they agree. Reports 56.5% (sim) and 33.3% (real) relative gains over the strongest baselines."
+  takeaway_zh: "流匹配策略与动作条件动力学模型联合采样动作及其未来观测，相互修正直到二者自洽。报告相对最强基线在仿真提升 56.5%、真机提升 33.3%。"
+- title: "WARP: Whole-Body Retargeting for Learning from Offline Human Demonstrations"
+  type: paper
+  arxiv: "2606.29940"
+  year: 2026
+  venue: CoRL 2026
+  project: https://warp-retargeting.github.io/
+  added: 2026-11-06
+  tags: [retargeting, human-demos, mobile-manipulation, whole-body, real]
+  takeaway_en: "Retargets human whole-body demos to a mobile manipulator offline with a closed-form shoulder-elbow-wrist solver and lazy base control; claims the first zero-shot whole-body mobile manipulation from them."
+  takeaway_zh: "离线把人类全身演示重定向到移动操作机器人：闭式肩-肘-腕几何求解器加“惰性”底盘控制，得到一致的动作；声称首次仅凭离线人类演示实现零样本全身移动操作。"
+- title: "Imitation from Heterogeneous Demonstrations using Grounded Latent-Action World Models"
+  type: paper
+  arxiv: "2606.21672"
+  year: 2026
+  venue: CoRL 2026
+  project: https://viccccciv.github.io/glam/
+  added: 2026-11-06
+  tags: [latent-actions, world-model, heterogeneous-data, behavior-cloning, real]
+  takeaway_en: "Shared latent action space grounded by predicting the same future across data sources, so action-free and differently-labelled data can train one BC policy. Reports +48% average success on five tasks."
+  takeaway_zh: "通过让不同数据源对未来观测的预测保持一致来“落地”一个共享潜在动作空间，使无动作标签和动作空间不同的数据都能训练同一个行为克隆策略。报告五个任务平均成功率提升 48%。"
+- title: "LUCID: Learning Embodiment-Agnostic Intent Models from Unstructured Human Videos for Scalable Dexterous Robot Skill Acquisition"
+  type: paper
+  arxiv: "2606.11628"
+  year: 2026
+  venue: CoRL 2026
+  project: https://lucid-robot.github.io/
+  added: 2026-11-06
+  tags: [human-video, intent-model, sim-training, cross-embodiment, real]
+  takeaway_en: "Learns a short-horizon 'what should happen next' intent model from internet human videos and pairs it with embodiment-specific policies trained in parallel sim; the same intent model drives a hand and a gripper."
+  takeaway_zh: "从互联网人类视频学习预测“场景接下来该发生什么”的短时意图模型，再与在大规模并行仿真中训练的本体专用策略结合；同一意图模型可驱动灵巧手和平行夹爪。"
+- title: "ActiveMimic: Egocentric Video Pretraining with Active Perception"
+  type: paper
+  arxiv: "2606.06194"
+  year: 2026
+  venue: CoRL 2026
+  project: https://activemimic.github.io/
+  added: 2026-11-06
+  tags: [egocentric-video, active-perception, pretraining, camera-motion, real]
+  takeaway_en: "Treats head-camera motion in egocentric human video as a viewpoint action and pretrains active perception plus manipulation from it. Reports matching state-of-the-art models pretrained on robot data."
+  takeaway_zh: "把第一人称人类视频中的头部相机运动视为“视角动作”，同时预训练主动感知与操作能力。报告效果与使用机器人数据预训练的最先进模型相当。"
+- title: "SynthICL: Scalable In-context Imitation Learning with Synthetic Data"
+  type: paper
+  arxiv: "2606.08154"
+  year: 2026
+  venue: CoRL 2026
+  project: https://synth-icl.github.io
+  added: 2026-11-06
+  tags: [in-context-learning, synthetic-data, flow-matching, one-shot, real]
+  takeaway_en: "In-context imitation policy trained only on RGB synthetic data, with next-subgoal image prediction. Reports 79% average success on 16 unseen real tasks from a single test-time demo."
+  takeaway_zh: "完全用 RGB 合成数据训练的上下文模仿学习策略，并预测下一个子目标图像。报告仅给一条演示时，在 16 个未见真机任务上平均成功率 79%。"
+- title: "Freeform Preference Learning for Robotic Manipulation"
+  type: paper
+  arxiv: "2606.32027"
+  year: 2026
+  venue: CoRL 2026
+  project: https://freeform-pl.github.io/fpl.website/
+  added: 2026-11-06
+  tags: [preference-learning, reward-model, language, long-horizon, real]
+  takeaway_en: "Annotators define their own preference axes in language (speed, safety, care) and compare trajectories per axis; a language-conditioned reward trains a steerable policy. Reports +38 points over sparse and binary rewards."
+  takeaway_zh: "让标注者用自然语言自定义偏好维度（速度、安全、细致等）并逐维比较轨迹，训练语言条件奖励模型和可引导的策略。报告比稀疏奖励与二元偏好方法高 38 个百分点。"
+- title: "FlowDPG: Deterministic Policy Gradient on Flow Matching Policies for Real-World Manipulation"
+  type: paper
+  arxiv: "2606.22303"
+  year: 2026
+  venue: CoRL 2026
+  project: https://flowdpg.github.io
+  added: 2026-11-06
+  tags: [real-world-rl, flow-matching, ddpg, assembly, real]
+  takeaway_en: "DDPG-style RL for flow-matching policies without backprop through the ODE: the critic gradient at a one-step action estimate is distilled into the velocity field. Reports 92% on dual-arm AirPods assembly."
+  takeaway_zh: "无需沿 ODE 反向传播的流匹配策略 DDPG 式强化学习：在一步估计的动作上计算 critic 梯度，并蒸馏进速度场。报告双臂 AirPods 装配成功率 92%，炒蛋任务评分 86%。"

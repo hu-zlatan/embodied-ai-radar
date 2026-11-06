@@ -63,7 +63,7 @@ _Vision-language-action models and generalist robot policies._ [Browse with the 
 - ⭐ **[EagleVLA: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference](https://arxiv.org/abs/2607.12659)** (2026) — EagleVLA: asynchronous VLA inference for low-power onboard chips such as Jetson Orin, tackling perception-execution misalignment and slow reaction; a CoRL 2026 Spotlight, formerly titled Jetson-PI. · [code](https://github.com/PKU-SEC-Lab/EagleVLA)
 - ⭐ **[GigaBrain-0.5M\*: a VLA That Learns From World Model-Based Reinforcement Learning](https://arxiv.org/abs/2602.12099)** (2026) — Post-trains a VLA (GigaBrain-0.5, 10k+ h of robot data) with RL conditioned on a video world model's predictions (RAMP); reports ~30% over the RECAP baseline on laundry folding, box packing and espresso making. · [code](https://github.com/open-gigaai/giga-brain-0) · [project](https://gigabrain05m.github.io)
 
-**[All 209 entries →](lists/vla.md)**
+**[All 212 entries →](lists/vla.md)**
 
 <a id="manipulation"></a>
 ### Manipulation & Dexterous Hands
@@ -83,7 +83,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - ⭐ **[3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://arxiv.org/abs/2403.03954)** (2024) — Conditions a diffusion policy on a compact point-cloud encoding; more data-efficient and robust to viewpoint than images. · [code](https://github.com/YanjieZe/3D-Diffusion-Policy)
 - ⭐ **[Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation](https://arxiv.org/abs/2401.02117)** (2024) — Puts ALOHA on a mobile base; co-training with static ALOHA data boosts mobile tasks like cooking and opening cabinets. · [code](https://github.com/MarkFzp/mobile-aloha)
 
-**[All 135 entries →](lists/manipulation.md)**
+**[All 142 entries →](lists/manipulation.md)**
 
 <a id="tactile"></a>
 ### Tactile & Visuotactile Sensing
@@ -143,7 +143,7 @@ _Learned dynamics, video world models, world action models (WAM) and model-based
 - ⭐ **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — An action-centered WAM that predicts actions from the observation and makes video generation optional, so motion accuracy depends less on forecast quality and inference is cheaper. · [code](https://github.com/open-gigaai/giga-world-policy) · [project](https://gigaai-research.github.io/GigaWorld-Policy/)
 - ⭐ **[GreenWAM: A World Foundation Model for Robotics](https://arxiv.org/abs/2610.18774)** (2026) — One world model that is also the policy, across 20 robot families mapped to a shared joint-space action format; reports strong WorldArena, RoboTwin 2.0 and LIBERO-plus results and a one-step distilled humanoid policy. · [code](https://github.com/greenvla/GreenWAM) · [project](https://greenvla.github.io/GreenWAM)
 
-**[All 115 entries →](lists/world-models.md)**
+**[All 116 entries →](lists/world-models.md)**
 
 <a id="navigation"></a>
 ### Navigation & Embodied Agents
@@ -223,7 +223,7 @@ _Reinforcement learning, imitation learning and policy post-training methods for
 - ⭐ **[What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](https://arxiv.org/abs/2108.03298)** (2021) — robomimic — a controlled study of imitation and offline RL on human-collected manipulation demos (demo quality, observation choices, history-aware BC), released with the framework and datasets. · [code](https://github.com/ARISE-Initiative/robomimic)
 - ⭐ **[Addressing Function Approximation Error in Actor-Critic Methods](https://arxiv.org/abs/1802.09477)** (2018) — TD3 — fixes DDPG's value overestimation with twin critics, delayed policy updates and target smoothing; still a standard continuous-control baseline. · [code](https://github.com/sfujim/TD3)
 
-**[All 83 entries →](lists/learning.md)**
+**[All 93 entries →](lists/learning.md)**
 
 <a id="sim"></a>
 ### Sim-to-Real & Simulators
@@ -243,7 +243,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._ [Browse
 - ⭐ **[ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI](https://arxiv.org/abs/2410.00425)** (2024) — GPU-parallel simulation and rendering with many manipulation tasks; fast visual RL and data generation. · [code](https://github.com/haosulab/ManiSkill)
 - ⭐ **[RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots](https://arxiv.org/abs/2406.02523)** (2024) — 120 kitchen scenes, 2,500+ objects and 100 tasks with generated demonstrations for training generalist policies. · [code](https://github.com/robocasa/robocasa)
 
-**[All 52 entries →](lists/sim.md)**
+**[All 57 entries →](lists/sim.md)**
 
 <a id="datasets"></a>
 ### Datasets & Benchmarks
@@ -263,7 +263,7 @@ _Large robot datasets, egocentric data and evaluation suites._ [Browse with the 
 - ⭐ **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 hand-designed manipulation tasks with demos; a staple for 3D policy methods like PerAct. · [code](https://github.com/stepjam/RLBench)
 - ⭐ **[ScanNet: Richly-annotated 3D Reconstructions of Indoor Scenes](https://arxiv.org/abs/1702.04405)** (2017) — RGB-D scans of 1,500+ indoor scenes with 3D reconstructions, camera poses and semantic labels; the standard benchmark for 3D scene understanding that embodied perception builds on. · [code](https://github.com/ScanNet/ScanNet)
 
-**[All 85 entries →](lists/datasets.md)**
+**[All 88 entries →](lists/datasets.md)**
 
 <a id="hardware"></a>
 ### Hardware & Open-Source Robots
@@ -280,10 +280,10 @@ _Low-cost arms, hands, grippers and data-collection rigs you can build._ [Browse
 - ⭐ **[An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](https://arxiv.org/abs/1910.00093)** (2019) — The open-source Solo quadruped and its modular torque-controlled actuators, built from off-the-shelf and 3D-printed parts so labs can reproduce a dynamic legged robot. · [code](https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware)
 - **[PanoVine: Whole-Body Visuomotor Control for Soft Growing Vine Robot](https://arxiv.org/abs/2606.22923)** (2026) — First autonomous vine (soft growing) robot: 19 cameras along its body feed an end-to-end visuomotor policy learned from demos, which steers through branches, up slopes and into confined spaces. · [project](https://panovine-bot.github.io)
 - **[Transformer Transformer: A Unified Model for Motion-Conditioned Robot Co-design](https://arxiv.org/abs/2607.25798)** (2026) — Diffusion transformer over a shared tokenization of robot bodies, states and actions that generates robot designs to track target motions. A fabricated optimised ALOHA design cut tracking error by over 70%. · [project](https://transformer-transformer.github.io)
+- **[Universal Manipulation Exoskeleton: Learning Compliant Whole-body Policies with Real-time Torque Feedback](https://arxiv.org/abs/2606.14218)** (2026) — Low-cost upper-limb exoskeleton that records whole-arm poses and joint torques with real-time haptic torque feedback; retargets to OpenArm, Franka and xArm for learning compliant whole-body policies. · [project](https://ume-exo.github.io)
 - **[MABEL: An Open Anthropomorphic Mobile Bimanual Platform for Teleoperation and Learning](https://arxiv.org/abs/2611.04083)** (2026) — An open-source 56-DOF mobile bimanual robot with 7-DOF arms and 17-DOF hands for about US$8.1k in parts, with Apple Vision Pro teleoperation and a demonstrated imitation learning pipeline. · [project](https://robotmabel.github.io/website/)
-- **[RAIPAL: A Powerful and Agile Humanoid Arm for Human Tasks](https://arxiv.org/abs/2611.04334)** (2026) — A humanoid arm whose force, speed and endurance targets come from human upper-limb measurements; reports a 20 kg peak payload (2.25x its own mass) and 20.6 m/s endpoint speed.
 
-**[All 43 entries →](lists/hardware.md)**
+**[All 44 entries →](lists/hardware.md)**
 
 <!-- radar:end -->
 

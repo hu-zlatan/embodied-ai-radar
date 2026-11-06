@@ -538,3 +538,53 @@
   tags: [deformable, cable-routing, sim-to-real, gpu-simulation, real]
   takeaway_en: "Sim-to-real RL for multi-stage cable routing: GPU-parallel cable simulation, localized policies and a simulation-in-the-loop executor. Reports higher success and 2x shorter cycle times than prior learning methods."
   takeaway_zh: "多阶段线缆布线的仿真到真机强化学习：GPU 并行线缆仿真、局部化策略，加上执行时“仿真在环”的部署框架。报告成功率更高、节拍时间缩短一半。"
+- title: "Sim-to-Real Transfer for Muscle-Actuated Robots via Generalized Actuator Networks"
+  type: paper
+  arxiv: "2604.09487"
+  year: 2026
+  venue: CoRL 2026
+  project: https://webdav.tuebingen.mpg.de/genan/
+  added: 2026-11-06
+  tags: [sim-to-real, actuator-network, pneumatic-muscles, table-tennis, real]
+  takeaway_en: "Learns a neural actuator model from joint trajectories alone, combined with rigid-body sim, to transfer RL policies to a pneumatic-muscle arm. Claims the first sim-to-real transfer for a 4-DoF muscle-actuated arm."
+  takeaway_zh: "仅用关节位置轨迹学习神经执行器模型，结合刚体仿真，把强化学习策略迁移到气动人工肌肉机械臂上。声称首次实现 4 自由度肌肉驱动机械臂的仿真到真机迁移。"
+- title: "RoboSnap: One-Shot Real-to-Sim Scene Generation for Generalizable Robot Learning and Evaluation"
+  type: paper
+  arxiv: "2607.06699"
+  year: 2026
+  venue: CoRL 2026
+  project: https://robosnap.github.io
+  added: 2026-11-06
+  tags: [real-to-sim, gaussian-splatting, scene-generation, policy-evaluation, droid]
+  takeaway_en: "Turns one RGB image into a sim-ready scene: collision-aware foreground assets plus a 3DGS background. Supports synthetic data and sim-real-correlated evaluation; releases DROID-Sim from 564 DROID scenes."
+  takeaway_zh: "把单张 RGB 图像变成可用于仿真的场景：前景为碰撞可靠的资产，背景用 3D 高斯泼溅保持外观。可用于合成训练数据和与真机相关的策略评测；发布由 564 个 DROID 场景构建的 DROID-Sim。"
+- title: "ComSim: Building Scalable Real-World Robot Data Generation via Compositional Simulation"
+  type: paper
+  arxiv: "2604.11386"
+  year: 2026
+  venue: CoRL 2026
+  project: https://faceong.github.io/ComSim/
+  added: 2026-11-06
+  tags: [neural-simulation, data-generation, sim-to-real, video, real]
+  takeaway_en: "Compositional simulation: classical sim produces accurate action-video pairs and a neural simulator restyles them as real-looking video, in a real-sim-real loop seeded by a little real data."
+  takeaway_zh: "组合式仿真：经典仿真生成准确的动作-视频对，再由神经模拟器转换成接近真实的画面，形成以少量真机数据为起点的“真-仿-真”数据扩增闭环。"
+- title: "UniLab: A Heterogeneous Architecture for Robot RL Beyond GPU-Dominant Paradigms"
+  type: paper
+  arxiv: "2605.30313"
+  year: 2026
+  venue: CoRL 2026
+  project: https://unilabsim.github.io
+  added: 2026-11-06
+  tags: [rl-infrastructure, cpu-simulation, training-efficiency, mujoco, cross-platform]
+  takeaway_en: "CPU-parallel simulation with GPU learning, joined by one runtime for data movement and sync. Reports 3–10x end-to-end training speedups on the same hardware and runs on macOS, ROCm and Intel XPU."
+  takeaway_zh: "CPU 并行仿真 + GPU 策略学习的异构训练架构，用统一运行时处理数据搬运与同步。报告同等硬件下端到端训练效率提升 3–10 倍，并支持 macOS、ROCm 与 Intel XPU。"
+- title: "SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation"
+  type: paper
+  arxiv: "2606.28276"
+  year: 2026
+  venue: CoRL 2026
+  project: https://research.nvidia.com/labs/gear/simfoundry/
+  added: 2026-11-06
+  tags: [real-to-sim, digital-twins, scene-generation, policy-evaluation, nvidia]
+  takeaway_en: "Builds sim-ready digital twins from a video and edits them into 'digital cousins'. Sim scores predict real results (mean Pearson 0.911); task cousins add 40% real success for sim-trained policies."
+  takeaway_zh: "从一段视频自动构建可仿真的数字孪生，并编辑出保持可供性的“数字表亲”场景。仿真评测与真机结果高度相关（平均 Pearson 0.911）；任务表亲让仿真训练策略的真机成功率提升 40%。"

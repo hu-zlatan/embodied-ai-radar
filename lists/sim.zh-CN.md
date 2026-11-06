@@ -2,7 +2,7 @@
 
 _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 
-共 52 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
+共 57 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/sim.html) · [English](sim.md)
 
@@ -33,6 +33,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 - **[AuRA: From Atoms to Bits through Autonomous Robot Interaction](https://arxiv.org/abs/2610.34452)** (2026) — 自动完成物理数字孪生所需的机器人交互与数据准备；在 13 种柔性物体上报告每个资产的人工投入减少 88.5%。 · [代码](https://github.com/Yoonkyo/AuRA) · [项目页](https://aura-robot.github.io/)
 - **[Closing the Dynamics Gap through Self-Directed Robotic Interaction](https://arxiv.org/abs/2611.02691)** (2026) — CUE（CoRL 2026 Late Breaking Results）：智能体主动选择仿真最不准的交互来辨识摩擦和恢复系数；在台球任务上报告留出位置误差比最强基线低 72%，并部署到真实球桌。 · [项目页](https://cue-dynamics.github.io/)
 - **[CoDA: Co-Evolution of Data Engines and Action Policies](https://arxiv.org/abs/2610.22362)** (2026) — 把诊断出的策略失败转成新的仿真场景和塑形训练信号，让生成器与策略共同进化；在 LIBERO-Pro 上报告位置扰动下成功率从 25% 升至 84%。 · [项目页](https://plan-lab.github.io/projects/coda/)
+- **[ComSim: Building Scalable Real-World Robot Data Generation via Compositional Simulation](https://arxiv.org/abs/2604.11386)** (2026) — 组合式仿真：经典仿真生成准确的动作-视频对，再由神经模拟器转换成接近真实的画面，形成以少量真机数据为起点的“真-仿-真”数据扩增闭环。 · [项目页](https://faceong.github.io/ComSim/)
 - **[DexSuite: An All-in-One Framework for Dexterous Manipulation Across Arms, Hands, and Tasks](https://arxiv.org/abs/2610.37799)** (2026) — 基于 Genesis 仿真器的开源灵巧操作一体化框架：30 个任务，10 种机械臂与 12 种末端（从平行夹爪到灵巧手）组合出 100 多种单臂机器人和大量双臂组合；自带统一环境 API、遥操作、仿真触觉，定义 16 组任务-本体基准，并发布 4,700 条成功示范。 · [项目页](https://dexsuiteorg.github.io)
 - **[Gym-Anything for Robotics: Scaling physical simulations with digital agents](https://arxiv.org/abs/2610.40565)** (2026) — 把“写仿真”当作编码智能体任务：智能体生成机器人仿真与任务，再由对抗式的创建-审核循环把关；据此构建 RoboWorld（按美国 GDP 构成挑选的 25 个仿真、200 个强化学习环境），最强前沿模型在测试任务上平均奖励仅 0.06。 · [代码](https://github.com/gym-anything/robotics) · [项目页](https://gym-anything.github.io/robotics)
 - **[HyperDrone: Simulation-to-Reality Transfer at Millions of Frames per Second](https://arxiv.org/abs/2610.28950)** (2026) — 以 GPU 批量渲染为核心的四旋翼仿真器；报告比现有批量四旋翼仿真器快 20 倍以上，新的光线追踪引擎（支持 OptiX、Vulkan、Metal、WebGPU）可渲染 RGB、深度、分割、法向和光流（CoRL 2026）。
@@ -40,9 +41,13 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 - **[Learning Physics-Guided Residual Dynamics for Deformable Object Simulation](https://arxiv.org/abs/2607.13451)** (2026) — PGRD 以可优化的弹簧质点模型为骨架，加上学习得到的残差来仿真可变形物体，报告精度优于单用任一方法；可用于 MPC 和动作条件视频预测。 · [代码](https://github.com/shivanshpatel35/pgrd) · [项目页](https://pgrd-robot.github.io/)
 - **[MARE: An Open-Source Lunar Rover Simulator with Shadow Ground Truth for Perception and Autonomy](https://arxiv.org/abs/2610.28465)** (2026) — 基于 Unreal Engine 5 与 ROS 2 的开源月球车仿真：可生成带陨石坑的地形，两台月球车配备双目、激光雷达、事件相机与 SPAD 相机，提供极区低太阳角下像素级的阴影真值，并附 GNC 导航控制栈。 · [代码](https://github.com/raulcastar/MARE-Lunar-Simulator)
 - **[MolmoB0T: Large-Scale Simulation Enables Zero-Shot Manipulation](https://arxiv.org/abs/2603.16861)** (2026) — CoRL 2026 Oral。挑战“仅靠仿真不够”的观点：足够大规模、多样的合成数据即可零样本迁移到真实静态与移动操作。MolmoBot-Engine 是开源的程序化数据管线。 · [代码](https://github.com/allenai/MolmoBot) · [项目页](https://allenai.github.io/MolmoBot)
+- **[RoboSnap: One-Shot Real-to-Sim Scene Generation for Generalizable Robot Learning and Evaluation](https://arxiv.org/abs/2607.06699)** (2026) — 把单张 RGB 图像变成可用于仿真的场景：前景为碰撞可靠的资产，背景用 3D 高斯泼溅保持外观。可用于合成训练数据和与真机相关的策略评测；发布由 564 个 DROID 场景构建的 DROID-Sim。 · [项目页](https://robosnap.github.io)
 - **[SILO: Simulation-in-the-Loop Sim-to-Real Transfer for Multi-Stage Cable Routing](https://arxiv.org/abs/2607.04616)** (2026) — 多阶段线缆布线的仿真到真机强化学习：GPU 并行线缆仿真、局部化策略，加上执行时“仿真在环”的部署框架。报告成功率更高、节拍时间缩短一半。 · [项目页](https://silo-cable-routing.github.io/)
 - **[Scaling Sim-to-Real VLA Reinforcement Learning with Generative 3D Worlds](https://arxiv.org/abs/2603.18532)** (2026) — 用 3D 世界生成模型构建 100 个多样的可交互场景，对 VLA 做强化学习微调。报告仿真成功率从 9.7% 提升到 79.8%，真机从 21.7% 提升到 75%。 · [项目页](https://horizonrobotics.github.io/gail/scale-vla-rl)
 - **[SceneBloom: Agentic Indoor Environment Generation with Realistic and Diverse Layouts for Embodied Learning](https://arxiv.org/abs/2610.32978)** (2026) — 先用扩散先验在功能分区内采样家具布局，再“编译”为无碰撞、可直接仿真的 3D 场景；论文报告在其场景中训练的物体导航策略，在留出的真实扫描场景上优于用等量真实扫描训练的策略。 · [代码](https://github.com/Tinaliu0123/scenebloom)
+- **[Sim-to-Real Transfer for Muscle-Actuated Robots via Generalized Actuator Networks](https://arxiv.org/abs/2604.09487)** (2026) — 仅用关节位置轨迹学习神经执行器模型，结合刚体仿真，把强化学习策略迁移到气动人工肌肉机械臂上。声称首次实现 4 自由度肌肉驱动机械臂的仿真到真机迁移。 · [项目页](https://webdav.tuebingen.mpg.de/genan/)
+- **[SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation](https://arxiv.org/abs/2606.28276)** (2026) — 从一段视频自动构建可仿真的数字孪生，并编辑出保持可供性的“数字表亲”场景。仿真评测与真机结果高度相关（平均 Pearson 0.911）；任务表亲让仿真训练策略的真机成功率提升 40%。 · [项目页](https://research.nvidia.com/labs/gear/simfoundry/)
+- **[UniLab: A Heterogeneous Architecture for Robot RL Beyond GPU-Dominant Paradigms](https://arxiv.org/abs/2605.30313)** (2026) — CPU 并行仿真 + GPU 策略学习的异构训练架构，用统一运行时处理数据搬运与同步。报告同等硬件下端到端训练效率提升 3–10 倍，并支持 macOS、ROCm 与 Intel XPU。 · [项目页](https://unilabsim.github.io)
 - **[Worlds in One Demo: A Synthetic Data Engine for Learning Open-World Mobile Manipulation](https://arxiv.org/abs/2607.13154)** (2026) — 合成数据引擎：把一条真实移动操作演示扩展成大量数据——高斯泼溅重建场景、重排接触片段并用全身运动规划串联、再在由照片生成的 3D 世界中合成。也支持跨本体。 · [项目页](https://wanda.lecar-lab.org/)
 - **[GaussGym: An open-source real-to-sim framework for learning locomotion from pixels](https://arxiv.org/abs/2510.15352)** (2025) — 把 3D 高斯溅射作为渲染器接入矢量化物理仿真，报告在消费级 GPU 上超过每秒 10 万步，用于从像素学习。
 - **[GenManip: LLM-driven Simulation for Generalizable Instruction-Following Manipulation](https://arxiv.org/abs/2506.10966)** (2025) — 基于 Isaac Sim 的平台：LLM 依据任务导向场景图，从约 1 万个物体中生成任务与布局；其 200 个场景的基准发现，结合基础模型的模块化系统比端到端策略泛化更好。 · [代码](https://github.com/InternRobotics/GenManip)

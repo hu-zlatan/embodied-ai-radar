@@ -2159,3 +2159,33 @@
   tags: [aerial-manipulation, drone, guidance, gaussian-splatting, real]
   takeaway_en: "Transfers a pretrained π0 to aerial pick-and-place: payload-aware guidance in flow sampling handles flight dynamics and 3DGS data covers navigation. Reports pick-and-place success up from 23% to 50% in 460 real trials."
   takeaway_zh: "把预训练 π0 迁移到空中抓放：在流采样中注入载荷约束以应对飞行动力学，并用高斯泼溅合成导航数据。在 460 次真机实验中报告抓放成功率从 23% 提升到 50%。"
+- title: "Cue the Flow: Steering Flow-Matching Policies for Open-World Delivery Manipulation"
+  type: paper
+  arxiv: "2609.38989"
+  year: 2026
+  venue: CoRL 2026
+  project: https://hatchetproject.github.io/delivery_steer/
+  added: 2026-11-06
+  tags: [steering, mobile-manipulation, grounding, adapter, real]
+  takeaway_en: "Steers a pretrained flow-matching VLA with a spatial cue from a grounding model: a small adapter predicts an affine transform of the action chunk toward the cued target. Up to ~2x task success for open-world delivery."
+  takeaway_zh: "用视觉定位模型给出的空间提示引导预训练流匹配 VLA：轻量适配器预测作用在动作块上的仿射变换，使动作对准目标。开放世界配送任务成功率最高提升近 2 倍。"
+- title: "Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement"
+  type: paper
+  arxiv: "2606.18953"
+  year: 2026
+  venue: CoRL 2026
+  project: https://www.microsoft.com/en-us/research/articles/object-centric-residual-rl/
+  added: 2026-11-06
+  tags: [residual-rl, sim-to-real, object-poses, franka, real]
+  takeaway_en: "Residual RL on top of a frozen VLA using only object poses, so it transfers from sim to real; a sim twin of the VLA is trained by replaying the same teleop demos. Reports real FR3 success from 42% to 76% zero-shot."
+  takeaway_zh: "在冻结的 VLA 之上做只依赖物体位姿的残差强化学习，从而可直接从仿真迁移到真机；通过回放同一批遥操作数据训练 VLA 的仿真副本。报告真实 FR3 上成功率从 42% 提升到 76%。"
+- title: "Dexterity-BEV: Aligning 3D World and Actions for Generalizable Robot Policies Learning"
+  type: paper
+  arxiv: "2606.02274"
+  year: 2026
+  venue: CoRL 2026
+  project: https://hnuzhy.github.io/projects/Dex-BEV
+  added: 2026-11-06
+  tags: [3d, bev, cross-embodiment, alignment, real]
+  takeaway_en: "Lifts 2D inputs to 3D with per-pixel vertex maps and expresses camera views and actions in one shared bird's-eye-view frame, aligning data across robots, cameras and datasets."
+  takeaway_zh: "用逐像素顶点图把 2D 输入提升到 3D，并把各相机视角与机器人动作统一表示在同一鸟瞰（BEV）坐标系中，对齐不同机器人、相机与数据集的数据。"

@@ -2,7 +2,7 @@
 
 _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备。_
 
-共 43 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/hardware.yaml`](../data/curated/hardware.yaml) 生成，请勿直接编辑。
+共 44 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/hardware.yaml`](../data/curated/hardware.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/hardware.html) · [English](hardware.md)
 
@@ -29,6 +29,7 @@ _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备�
 - **[SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing](https://arxiv.org/abs/2610.40646)** (2026) — 不追求万能夹爪，而是用固定的机器人侧接口加低成本、带触觉传感器的工具侧适配器，把日常厨具变成可自动更换的末端执行器，兼容多种机器人平台；配套遥操作采集示范，模仿学习策略完成煎豆腐、拌沙拉、翻肉等工具任务。 · [项目页](https://personalrobotics.github.io/SwapBot)
 - **[Transformer Transformer: A Unified Model for Motion-Conditioned Robot Co-design](https://arxiv.org/abs/2607.25798)** (2026) — 基于统一的机器人本体/状态/动作 token 表示的扩散 Transformer，按目标末端轨迹生成机器人设计。实际制作的优化版 ALOHA 跟踪误差降低 70% 以上。 · [项目页](https://transformer-transformer.github.io)
 - **[UMI-Live for In-The-Wild Bimanual Robotics Data Collection](https://arxiv.org/abs/2610.39385)** (2026) — 全栈开源的双手 UMI 野外数据采集系统：手持设备集成相机、激光雷达-惯性传感、板载算力与电源，无需外部追踪或现场标定；异步 SLAM 流水线直接产出可训练数据集，并发布 40 小时数据、硬件设计与复现指南，用 π0.5 和 MolmoAct2 微调验证数据质量。 · [代码](https://github.com/AfterQuery-Research/umi-live) · [项目页](https://umi-live.github.io/)
+- **[Universal Manipulation Exoskeleton: Learning Compliant Whole-body Policies with Real-time Torque Feedback](https://arxiv.org/abs/2606.14218)** (2026) — 低成本上肢外骨骼：记录整臂构型与关节力矩，并提供实时力矩触觉反馈；可重定向遥操作 OpenArm、Franka 和 xArm，用于学习主动柔顺的全身策略。 · [项目页](https://ume-exo.github.io)
 - **[AirExo-2: Scaling up Generalizable Robotic Imitation Learning with Low-Cost Exoskeletons](https://arxiv.org/abs/2503.03081)** (2025) — 将外骨骼示教转换为“伪机器人”示教；论文报告仅用这些数据（无任何机器人数据）训练的 RISE-2 策略，效果与用遥操作机器人数据训练的策略相当。 · [代码](https://github.com/AirExo/AirExo-2)
 - **[BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities](https://arxiv.org/abs/2503.05652)** (2025) — 面向轮式双臂机器人的全身遥操作接口与学习方法，用于需要伸展、平衡与导航的长程家务任务。 · [项目页](https://behavior-robot-suite.github.io/)
 - **[DOGlove: Dexterous Manipulation with a Low-Cost Open-Source Haptic Force Feedback Glove](https://arxiv.org/abs/2502.07730)** (2025) — 开源遥操作手套，几小时即可组装、成本低于 600 美元：21 自由度手部动捕、5 自由度绳驱力反馈和指尖振动触觉；报告在无视觉输入时力/触觉反馈对接触密集任务至关重要，采集数据可训练模仿学习策略。 · [代码](https://github.com/TEA-Lab/DOGlove) · [项目页](https://do-glove.github.io/)

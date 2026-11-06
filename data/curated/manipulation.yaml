@@ -1375,3 +1375,73 @@
   tags: [dexterous, motor-current, compliance, proprioception, real]
   takeaway_en: "Uses motor current as a touch signal on low-cost dexterous hands: a model predicts a compliant PD target position whose error yields the right grasp force, with no tactile or force sensors."
   takeaway_zh: "把电机电流当作触觉：在低成本灵巧手上预测一个“柔顺参考位置”，让 PD 控制器的位置误差产生合适的抓握力，无需触觉或力传感器。"
+- title: "Going with the Flow: Koopman Behavioral Models as Pseudo Planners for Visuo-Motor Dexterity"
+  type: paper
+  arxiv: "2602.07413"
+  year: 2026
+  venue: CoRL 2026
+  project: https://k-ubm.github.io/
+  added: 2026-11-06
+  tags: [dexterous, koopman, dynamical-systems, replanning, real]
+  takeaway_en: "Models a dexterous skill as a latent linear (Koopman) system in which visual flow and robot motion co-evolve; it replans when observed and predicted flow diverge. Matches strong baselines with much faster inference."
+  takeaway_zh: "把灵巧技能建模为潜在线性（Koopman）系统，视觉特征流与机器人动作流共同演化；当观测与预测的视觉流偏离时自动重规划。性能与强基线相当，推理快得多。"
+- title: "RoboAug: One Annotation to Hundreds of Scenes via Region-Contrastive Data Augmentation for Robotic Manipulation"
+  type: paper
+  arxiv: "2602.14032"
+  year: 2026
+  venue: CoRL 2026
+  project: https://x-roboaug.github.io/
+  added: 2026-11-06
+  tags: [data-augmentation, generative-models, generalization, attention, real]
+  takeaway_en: "Generative augmentation from a single box-annotated image, plus a region-contrastive loss that steers attention to task regions. Beats augmentation baselines on UR5e, AgileX and Tian Gong 2.0 under scene shifts."
+  takeaway_zh: "只需一张带框标注的图片即可做生成式语义增强，并用区域对比损失把注意力引向任务相关区域。在 UR5e、AgileX 与天工 2.0 上，面对背景、干扰物和光照变化时优于其他增强方法。"
+- title: "A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Manipulation"
+  type: paper
+  arxiv: "2607.11874"
+  year: 2026
+  venue: CoRL 2026
+  project: https://yunhaifeng.com/REGRIND
+  added: 2026-11-06
+  tags: [dexterous, retargeting, residual-rl, tool-use, real]
+  takeaway_en: "From one human demo: retarget hand-object motion to a robot reference, train residual RL in sim to track object keypoints, transfer zero-shot with careful system ID. Scissors and screwdriver use on two hands."
+  takeaway_zh: "从一条人类演示出发：把手-物运动重定向为机器人参考，在仿真中用残差强化学习跟踪物体关键点，并通过细致的系统辨识零样本迁移。在两种多指手上完成用剪刀、拧螺丝刀等任务。"
+- title: "Towards Human-level Dexterous Teleoperation"
+  type: paper
+  arxiv: "2607.11481"
+  year: 2026
+  venue: CoRL 2026
+  project: https://bigai-dex.github.io/blog/teledexter/
+  added: 2026-11-06
+  tags: [dexterous, teleoperation, in-hand, rl, real]
+  takeaway_en: "Teleoperation controller that turns operator intent into learned hand-object contact execution, trained with single-stage RL on human motions. Reports 75% average success on seven in-hand and tool-use tasks."
+  takeaway_zh: "遥操作控制器把操作者意图转化为学习到的手-物接触执行，基于人类动作用单阶段强化学习训练，零样本迁移真机。报告七个手内操作与工具使用任务平均成功率 75%。"
+- title: "ADEPT: Accelerating Dexterity via Pre-Training and Post-Training using Reinforcement Learning"
+  type: paper
+  arxiv: "2608.19182"
+  year: 2026
+  venue: CoRL 2026
+  project: https://adept-dexterity.github.io/
+  added: 2026-11-06
+  tags: [dexterous, rl-pretraining, sim-to-real, visuotactile, real]
+  takeaway_en: "Pretrains a dexterous RL policy on generic object reposing, then post-trains downstream tasks with BC distillation, critic warm-up and conservative updates. Zero-shot sim-to-real on 23-DoF and 29-DoF hand-arm systems."
+  takeaway_zh: "先在通用物体重定位任务上用强化学习预训练灵巧策略，再用行为克隆蒸馏、critic 预热和保守更新后训练下游任务。在 23 与 29 自由度手-臂系统上零样本仿真到真机。"
+- title: "Human2Any: Human-to-Robot Transfer via Constraint-Aware Compositional Planning"
+  type: paper
+  arxiv: "2606.28813"
+  year: 2026
+  venue: CoRL 2026
+  project: https://human2any.github.io/
+  added: 2026-11-06
+  tags: [human-video, object-centric, motion-planning, cross-embodiment, real]
+  takeaway_en: "Learns object-object interaction priors from human videos and composes them with robot feasibility reasoning and motion planning, so one prior serves a Franka and an RBY-1 mobile humanoid without robot data."
+  takeaway_zh: "从人类视频学习以物体间交互运动表示的先验，再与机器人可行性推理和运动规划组合，同一先验无需机器人数据即可用于 Franka 与 RBY-1 移动人形机器人。"
+- title: "Dex4D: Task-Agnostic Point Track Policy for Zero-Shot Dexterous Manipulation"
+  type: paper
+  arxiv: "2602.15828"
+  year: 2026
+  venue: CoRL 2026
+  project: https://dex4d.github.io/
+  added: 2026-11-06
+  tags: [dexterous, point-tracks, sim-to-real, zero-shot, real]
+  takeaway_en: "Task-agnostic 'any pose to any pose' dexterous policy trained in sim on thousands of objects and conditioned on 3D point tracks; prompted with tracks from generated videos, it runs real tasks zero-shot."
+  takeaway_zh: "在仿真中用数千种物体训练与任务无关的“任意位姿到任意位姿”灵巧策略，以 3D 点轨迹为条件；用生成视频提取的点轨迹作提示，即可零样本完成真实任务。"
