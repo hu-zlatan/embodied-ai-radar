@@ -570,3 +570,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Owner follow-up 9 (chat): header star button restyled as a GitHub-style button (GitHub mark from Primer Octicons, MIT; 'Star' + count linking to stargazers), light and dark variants; pure HTML/CSS, no GitHub widget script.
 - Owner follow-up 10 (chat): gold star icon (Octicons star-fill, MIT) added next to 'Star' in the header GitHub button.
 - Owner follow-up 11 (chat): search page shows the 12 topic tiles under the search box ('按主题浏览'); a tile opens search.html?topic=<id> (filtered results), tiles hide once a search or filter is active. Topic pages stay linked ('全部主题 →').
+- Owner follow-up 12 (chat): the nav tab of the current section gets a highlighted box (accent border + background, aria-current=page): Home, Search, Daily arXiv (incl. day pages), Topics (topic pages), Code, Weekly (digests), Learn (resources + reading path). Entry, venue, lab and robot pages highlight nothing.

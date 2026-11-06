@@ -559,13 +559,16 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
 
 
 def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") -> str:
-    nav = (f'<a href="{root}index.html">{bi("Home", "首页")}</a>'
-           f'<a href="{root}search.html">{bi("Search", "搜索")}</a>'
-           f'<a href="{root}feed.html">{bi("Daily arXiv", "每日 arXiv")}</a>'
-           f'<a href="{root}topics/index.html">{bi("Topics", "主题")}</a>'
-           f'<a href="{root}code.html">{bi("Code", "代码")}</a>'
-           f'<a href="{root}digest/index.html">{bi("Weekly", "周报")}</a>'
-           f'<a href="{root}resources.html">{bi("Learn", "资源")}</a>')
+    # nav tab of the section this page belongs to gets a highlighted box
+    sections = [("index.html", "Home", "首页", lambda p: p in ("", "index.html")),
+                ("search.html", "Search", "搜索", lambda p: p == "search.html"),
+                ("feed.html", "Daily arXiv", "每日 arXiv", lambda p: p == "feed.html" or p.startswith("feed/")),
+                ("topics/index.html", "Topics", "主题", lambda p: p.startswith("topics/")),
+                ("code.html", "Code", "代码", lambda p: p == "code.html"),
+                ("digest/index.html", "Weekly", "周报", lambda p: p.startswith("digest/")),
+                ("resources.html", "Learn", "资源", lambda p: p in ("resources.html", "start.html"))]
+    on = ' class="on" aria-current="page"'
+    nav = "".join(f'<a href="{root}{href}"{on if hit(path) else ""}>{bi(en, zh)}</a>' for href, en, zh, hit in sections)
     own = STATS.get(OWN_REPO, {}).get("stars")
     star_n = (f'<a class="ghb-n" href="{REPO_URL}/stargazers" rel="noopener" aria-label="{own} stargazers on GitHub">{fmt_stars(own)}</a>'
               if isinstance(own, int) and own > 0 else "")
