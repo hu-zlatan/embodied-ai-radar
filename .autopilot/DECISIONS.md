@@ -59,3 +59,12 @@ Why the project is the way it is. Newest at the bottom. Format: date — decisio
 - People who pick a model or tool ask three things: is it alive, is it popular, may I use it. Stars were only on cards and in a top-12 list, last push nowhere, license nowhere. `code.html` puts all of it on one sortable page, filled by data we already fetch; GitHub's repo call returns the license at no extra request.
 - Curated repos only: feed repos would add thousands of unreviewed rows and more API calls.
 - A license is shown as GitHub detects it, grouped loosely, with a note that weights and datasets often differ. No legal judgement from us.
+
+## 2026-11-06 — Home page: trending first, search on its own page (owner request)
+
+The owner asked for: a search box in the header, the full search as its own tab between Home and Daily arXiv, no big hero headline, the trending lists first, and a GitHub star button. All five are reasonable: first-time visitors see what is moving right now instead of a slogan, and search is one click (header box on every page) instead of being buried below the hero.
+- `search.html` holds the full search and filters (same `app.js` code). Old links `index.html?q=…&topic=…` are forwarded to `search.html` by `app.js`, so shared URLs keep working. Internal `index.html?…#search` links now point to `search.html`.
+- The hero `<h1>` stays as a visually hidden heading (`.sr-only`) so screen readers and search engines still get a page title; nothing visible.
+- Home order: CoRL guide link (until the conference ends), then three columns (Hugging Face upvoted · Rising this week · Most-starred, 8 rows each), a star box, the stats row, the reading-path and search links, then picks, topics, highlights, fresh papers.
+- Star button: a plain link to the repo with the star count from `data/repo_stats.json` (the stats job now also fetches this repo). No GitHub widget script, so no third-party script runs for visitors. One click on GitHub's own Star button still has to happen there; a site cannot star on someone's behalf.
+- On phones the header is no longer sticky (it is three rows with the search box).

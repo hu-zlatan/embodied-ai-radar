@@ -117,6 +117,7 @@ def wanted() -> set[str]:
     urls = [e.get(k) for e in entries for k in ("code", "url", "project")]
     resources, _ = load_resources()
     urls += [r.get("url") for r in resources]
+    urls.append("https://github.com/hu-zlatan/embodied-ai-radar")  # this project, for the site's star button
     return {k for k in map(repo_key, urls) if k}
 
 

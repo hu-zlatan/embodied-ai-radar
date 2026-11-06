@@ -253,7 +253,17 @@
   });
 
   var q = document.getElementById('q');
+  // Search moved from the home page to search.html: forward old shared links (index.html?q=…&topic=…).
+  if (!q && document.getElementById('home-static')) {
+    var lp = new URLSearchParams(location.search);
+    if (['q', 'topic', 'robot', 'venue', 'src', 'code', 'sort'].some(function (k) { return lp.get(k); })) {
+      location.replace('search.html' + location.search);
+      return;
+    }
+  }
+  if (q) document.querySelectorAll('.hsearch').forEach(function (f) { f.hidden = true; });  // the page has its own box
   if (!q) return;
+  q.focus();
   var fTopic = document.getElementById('f-topic'), fKind = document.getElementById('f-kind'),
       fCode = document.getElementById('f-code'), fSort = document.getElementById('f-sort'), fEmb = document.getElementById('f-emb'), fVen = document.getElementById('f-venue'), out = document.getElementById('results'),
       count = document.getElementById('count'), home = document.getElementById('home-static');

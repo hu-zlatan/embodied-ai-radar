@@ -32,6 +32,7 @@ INDEXNOW_KEY = "a585a6743cfcfea081943fb8fcf4bd9e"  # public by design: it must b
 DIGEST = ROOT / "digest"
 SITE_URL = "https://hu-zlatan.github.io/embodied-ai-radar/"
 REPO_URL = "https://github.com/hu-zlatan/embodied-ai-radar"
+OWN_REPO = "hu-zlatan/embodied-ai-radar"  # key in data/repo_stats.json for the header star button
 FEED_DAYS_ON_SITE = 60   # feed papers kept in the search index
 TOPIC_FEED_MAX = 40      # recent feed papers per topic page
 FEED_ABSTRACT_DAYS = 14  # abstracts (for search) kept in the index only for this many days
@@ -543,12 +544,18 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
 
 def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") -> str:
     nav = (f'<a href="{root}index.html">{bi("Home", "首页")}</a>'
+           f'<a href="{root}search.html">{bi("Search", "搜索")}</a>'
            f'<a href="{root}feed.html">{bi("Daily arXiv", "每日 arXiv")}</a>'
            f'<a href="{root}topics/index.html">{bi("Topics", "主题")}</a>'
            f'<a href="{root}code.html">{bi("Code", "代码")}</a>'
            f'<a href="{root}digest/index.html">{bi("Weekly", "周报")}</a>'
-           f'<a href="{root}resources.html">{bi("Learn", "资源")}</a>'
-           f'<a href="{REPO_URL}" rel="noopener">GitHub</a>')
+           f'<a href="{root}resources.html">{bi("Learn", "资源")}</a>')
+    own = STATS.get(OWN_REPO, {}).get("stars")
+    star_n = f'<span class="n">{fmt_stars(own)}</span>' if isinstance(own, int) and own > 0 else ""
+    star_btn = (f'<a class="ghstar" href="{REPO_URL}" rel="noopener" title="Star the project on GitHub">'
+                f'<span class="s">★</span> Star{star_n}</a>')
+    hsearch = (f'<form class="hsearch" action="{root}search.html" role="search">'
+               f'<input name="q" type="search" placeholder="Search / 搜索…" aria-label="Search papers, code, datasets" autocomplete="off"></form>')
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -574,6 +581,8 @@ def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") 
 <header class="top"><div class="wrap">
 <a class="brand" href="{root}index.html">📡 {bi("Embodied AI Radar", "具身智能雷达")}</a>
 <nav>{nav}</nav>
+{hsearch}
+{star_btn}
 <button id="lang" class="lang" type="button" aria-label="Switch language"><span lang="en">中文</span><span lang="zh">EN</span></button>
 </div></header>
 <main class="wrap">
@@ -784,6 +793,8 @@ def build() -> int:
                   + "".join(f'<option value="{esc(v)}">{esc(v)} ({n})</option>'
                             for v, n in sorted(venue_n.items(), key=lambda x: (-x[1], x[0])) if n >= 2))
     search = f"""<section class="search" id="search">
+<h1>{bi("Search", "搜索")}</h1>
+<p class="muted">{bi("Every curated entry and every arXiv paper in the daily feed. Chinese keywords work too (e.g. 人形 强化学习). Filters and sort go into the address bar, so you can share a search.", "全部精选条目与每日 arXiv 论文。支持中文关键词（如“人形 强化学习”）。筛选与排序会写进网址，可直接分享。")}</p>
 <input id="q" type="search" placeholder="Search papers, code, datasets… / 搜索论文、代码（支持中文关键词）…" aria-label="Search" autocomplete="off">
 <div class="filters">
 <select id="f-topic" aria-label="Topic"><option value="" data-en="All topics" data-zh="全部主题">All topics</option>{topic_opts}</select>
@@ -808,7 +819,7 @@ def build() -> int:
         k = repo_key(e.get("code"))
         if k and k in STATS and (k not in by_repo or (by_repo[k]["type"] == "paper" and e["type"] != "paper")):
             by_repo[k] = e
-    popular = sorted(((STATS[k], e) for k, e in by_repo.items()), key=lambda x: -x[0]["stars"])[:12]
+    popular = sorted(((STATS[k], e) for k, e in by_repo.items()), key=lambda x: -x[0]["stars"])[:8]
     gains, span = star_gains(load_history())
 
     def gain_badge(k: str) -> str:
@@ -840,7 +851,7 @@ def build() -> int:
                     owner_of[k] = (u, p["title"], f'https://arxiv.org/abs/{p["id"]}')
         for k, e in by_repo.items():
             owner_of[k] = (e["code"], e["title"], f'e/{e["id"]}.html')
-        top = sorted(((g, k) for k, g in gains.items() if g > 0 and k in owner_of), reverse=True)[:10]
+        top = sorted(((g, k) for k, g in gains.items() if g > 0 and k in owner_of), reverse=True)[:8]
         if top:
             rows = "".join(
                 f'<li><a href="{esc(owner_of[k][0])}" rel="noopener">{esc(k)}</a> <span class="badge rise">+{fmt_stars(g)}</span>'
@@ -883,24 +894,23 @@ def build() -> int:
     venue_row = (f'<p class="muted">{bi("Accepted at:", "会议/期刊录用：")} '
                  + " · ".join(f'<a href="venues/{venue_slug(k)}.html">{esc(k)}</a> ({len(venues[k]["c"]) + len(venues[k]["f"])})' for k in cur_v)
                  + f' · <a href="venues/index.html">{bi("All venues →", "全部 →")}</a></p>') if cur_v else ""
-    body = f"""<section class="hero">
-<h1>{bi("The map of embodied AI & robot learning", "具身智能与机器人学习全景图")}</h1>
-<p class="lead">{bi("Hand-verified papers, code, datasets, simulators and hardware with one-line takeaways in English and Chinese — plus every new robotics paper on arXiv, tagged by topic, every day.", "人工核验的论文、代码、数据集、仿真器与硬件，配中英文一句话要点；外加每天自动收录并按主题标注的 arXiv 机器人新论文。")}</p>
-{stats}
+    star_box = (f'<div class="starbox"><p>{bi("Useful? A GitHub star helps others find it and tells us to keep going.", "觉得有用？在 GitHub 点个 Star，帮更多人找到它，也是对项目的鼓励。")}</p>'
+                f'<a class="ghstar big" href="{REPO_URL}" rel="noopener"><span class="s">★</span> {bi("Star on GitHub", "去 GitHub 点 Star")}</a></div>')
+    trend_cols = "".join(f'<div class="tcol">{h}</div>' for h in (hf_html, rising_html, popular_html) if h)
+    trend = f'<div class="trend">{trend_cols}</div>' if trend_cols else ""
+    body = f"""<h1 class="sr-only">{bi("Embodied AI Radar: the map of embodied AI & robot learning", "具身智能雷达：具身智能与机器人学习全景图")}</h1>
 {prog_row}
-<p class="start-link"><a class="more" href="start.html">{bi("New to embodied AI? Start with the reading path →", "刚入门具身智能？从入门路线开始 →")}</a></p>
-</section>
-{search}
+{trend}
+{star_box}
+{stats}
+<p class="start-link"><a class="more" href="start.html">{bi("New to embodied AI? Start with the reading path →", "刚入门具身智能？从入门路线开始 →")}</a> · <a class="more" href="search.html">{bi("Search and filter everything →", "搜索与筛选全部内容 →")}</a></p>
 <div id="home-static">
+{picks_html}
 <h2>{bi("Topics", "主题")}</h2>
 <div class="grid">{topic_grid}</div>
 <p class="muted">{bi("By robot type:", "按机器人形态：")} {" · ".join(f'<a href="robots/{m["id"]}.html">{bi(m["en"], m["zh"])}</a>' for m in embs)}</p>
 {venue_row}
 <p class="muted">{bi("By lab:", "按机构：")} {" · ".join(f'<a href="labs/{lab["id"]}.html">{bi(lab["en"], lab["zh"])}</a>' for lab in lab_list[:10])} · <a href="labs/index.html">{bi("All labs →", "全部机构 →")}</a></p>
-{picks_html}
-{hf_html}
-{rising_html}
-{popular_html}
 <h2>{bi("Highlights", "重点推荐")}</h2>
 <div class="cards">{''.join(curated_card(e, tby, '') for e in hi)}</div>
 <h2>{bi("Fresh from arXiv", "arXiv 最新")}</h2>
@@ -910,6 +920,9 @@ def build() -> int:
     desc = "Bilingual (EN/中文), daily-updated map of embodied AI and robot learning: VLA, manipulation, tactile, humanoids, world models, sim-to-real, datasets and hardware."
     (OUT / "index.html").write_text(page("Embodied AI Radar · 具身智能雷达", body, "", desc, "",
                                          alt='\n<link rel="alternate" type="application/atom+xml" title="Agent picks · Embodied AI Radar" href="picks.xml">'), encoding="utf-8")
+    (OUT / "search.html").write_text(page("Search · Embodied AI Radar", search, "",
+                                          "Search every curated embodied AI entry and every new arXiv robotics paper, in English or Chinese, with filters by topic, robot type, venue and code.",
+                                          "search.html"), encoding="utf-8")
 
     # ---- topics
     tlist = "".join(f'<li><a href="{t["id"]}.html">{bi(t["en"], t["zh"])}</a> <span class="muted">({len(by_topic[t["id"]])})</span></li>' for t in topics)
@@ -927,7 +940,7 @@ def build() -> int:
         recent = feed_by_topic[t["id"]][:TOPIC_FEED_MAX]
         in_topic = by_topic[t["id"]] + feed_by_topic[t["id"]]
         robot_links = " · ".join(
-            f'<a href="../index.html?topic={t["id"]}&amp;robot={m["id"]}#search">{bi(m["en"], m["zh"])}</a> <span class="muted">({n})</span>'
+            f'<a href="../search.html?topic={t["id"]}&amp;robot={m["id"]}">{bi(m["en"], m["zh"])}</a> <span class="muted">({n})</span>'
             for m in embs if (n := sum(1 for x in in_topic if m["id"] in x.get("emb", []))))
         robot_row = f'<p class="muted">{bi("Search this topic by robot type:", "按机器人形态搜索本主题：")} {robot_links}</p>' if robot_links else ""
         body = f"""<h1>{bi(t["en"], t["zh"])}</h1>
@@ -1006,7 +1019,7 @@ def build() -> int:
         latest = '<p class="muted">' + bi("The first intake has not run yet.", "首次收录尚未运行。") + "</p>"
     body = f"""<h1>{bi("Daily arXiv feed", "每日 arXiv 论文")}</h1>
 {lead}
-<p><a href="index.html#search">{bi("Search and filter all of it →", "搜索与筛选 →")}</a> · <a href="#archive">{bi("Earlier days", "往日论文")}</a> · <a href="venues/index.html">{bi("By venue", "按会议/期刊")}</a> · <a href="robots/index.html">{bi("By robot type", "按机器人形态")}</a></p>
+<p><a href="search.html">{bi("Search and filter all of it →", "搜索与筛选 →")}</a> · <a href="#archive">{bi("Earlier days", "往日论文")}</a> · <a href="venues/index.html">{bi("By venue", "按会议/期刊")}</a> · <a href="robots/index.html">{bi("By robot type", "按机器人形态")}</a></p>
 {latest}
 {archive("", None)}"""
     (OUT / "feed.html").write_text(page("Daily arXiv feed · Embodied AI Radar", body, "", "New embodied AI and robotics papers from arXiv, every day, tagged by topic.", "feed.html"), encoding="utf-8")
@@ -1120,7 +1133,7 @@ def build() -> int:
                  f'<p class="lead">{bi(f"{len(cur) + len(fp)} embodied-AI and robotics papers accepted at {k}, {n_code} with code.", f"{len(cur) + len(fp)} 篇被 {k} 接收的具身智能与机器人论文，其中 {n_code} 篇附代码。")}{honor_link}</p>',
                  f'<p class="muted">{vnote}</p>',
                  (f'<p><a class="more" href="{PROGRAM}-program.html">{bi("Program guide: sessions, rooms and all accepted papers →", "会议指南：日程、会场与全部录用论文 →")}</a></p>' if prog and k == prog["venue"] else ""),
-                 f'<p><a href="../index.html?venue={esc(k.rsplit(" ", 1)[0])}#search">{bi("Search within this venue series →", "在该会议/期刊系列中搜索 →")}</a></p>']
+                 f'<p><a href="../search.html?venue={esc(k.rsplit(" ", 1)[0])}">{bi("Search within this venue series →", "在该会议/期刊系列中搜索 →")}</a></p>']
         if len(cur) + len(fp) >= VENUE_FILTER_MIN:
             tn: dict[str, int] = {}
             for t in [t for e in cur for t in e["topics"]] + [t for p in fp for t in p.get("topics", [])]:
@@ -1163,7 +1176,7 @@ def build() -> int:
         recent = fp[:TOPIC_FEED_MAX]
         n_code = sum(1 for e in cur if e.get("code"))
         tcount = " · ".join(
-            f'<a href="../index.html?topic={t["id"]}&amp;robot={m["id"]}#search">{bi(t["en"], t["zh"])}</a> <span class="muted">({n})</span>'
+            f'<a href="../search.html?topic={t["id"]}&amp;robot={m["id"]}">{bi(t["en"], t["zh"])}</a> <span class="muted">({n})</span>'
             for t in topics if (n := sum(1 for x in cur + fp if t["id"] in (x.get("topics") or []))))
         body = (f'<p class="muted"><a href="index.html">{bi("Robot types", "机器人形态")}</a> › {bi(m["en"], m["zh"])}</p>'
                 f'<h1>{bi(m["en"], m["zh"])}</h1>'
@@ -1174,7 +1187,7 @@ def build() -> int:
                 f'<div class="cards">{"".join(curated_card(e, tby, "../") for e in cur) or "<p class=muted>—</p>"}</div>'
                 f'<h2>{bi("Recent arXiv papers", "近期 arXiv 论文")} <span class="muted">(<a href="{m["id"]}.xml">{bi("Atom feed", "Atom 订阅")}</a>)</span></h2>'
                 f'<div class="cards">{"".join(feed_card(p, tby, "../") for p in recent) or "<p class=muted>—</p>"}</div>'
-                + (f'<p><a href="../index.html?robot={m["id"]}&amp;src=f#search">{bi(f"All {len(fp)} feed papers in search →", f"在搜索中查看全部 {len(fp)} 篇 →")}</a></p>' if len(fp) > len(recent) else ""))
+                + (f'<p><a href="../search.html?robot={m["id"]}&amp;src=f">{bi(f"All {len(fp)} feed papers in search →", f"在搜索中查看全部 {len(fp)} 篇 →")}</a></p>' if len(fp) > len(recent) else ""))
         (OUT / "robots" / f"{m['id']}.html").write_text(
             page(f"{m['en']} papers · {m['zh']} · Embodied AI Radar", body, "../",
                  f"{m['en']}: curated robot-learning papers, code and datasets plus new arXiv papers every day, with EN/中文 takeaways.",
@@ -1235,7 +1248,7 @@ def build() -> int:
         for f in verify_dir.iterdir():
             if f.is_file():
                 shutil.copy(f, OUT / f.name)
-    urls = ["", "feed.html", "topics/index.html", "digest/index.html", "resources.html", "start.html", "code.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries] + ["venues/index.html"] + [f"venues/{venue_slug(k)}.html" for k in vkeys] + ([f"venues/{PROGRAM}-program.html"] if prog else []) + ["robots/index.html"] + [f"robots/{m['id']}.html" for m in embs] + ["labs/index.html"] + [f"labs/{i}.html" for i in LAB_PAGES]
+    urls = ["", "search.html", "feed.html", "topics/index.html", "digest/index.html", "resources.html", "start.html", "code.html"] + [f"topics/{t['id']}.html" for t in topics] + [f"digest/{d.stem}.html" for d in digests] + [f"feed/{d}.html" for d in all_days] + [f"e/{e['id']}.html" for e in entries] + ["venues/index.html"] + [f"venues/{venue_slug(k)}.html" for k in vkeys] + ([f"venues/{PROGRAM}-program.html"] if prog else []) + ["robots/index.html"] + [f"robots/{m['id']}.html" for m in embs] + ["labs/index.html"] + [f"labs/{i}.html" for i in LAB_PAGES]
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"<url><loc>{SITE_URL}{u}</loc><lastmod>{today.isoformat()}</lastmod></url>\n" for u in urls)
