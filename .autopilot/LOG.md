@@ -603,3 +603,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - CoRL batch 10 (30, facts.yml): PIGEON … PROSE. G2G gets its code link (repo live, 24★). Validate 0 errors, 1,300 pages, 0 broken links. Program guide 395; curated 1,173.
 - Verify #171 passed the 5 picks; #172 was cancelled in the arxiv-api group by the facts dispatch (verify checks all entries, so #173 covers batch 10).
 - CoRL batch 11 (30): ELASTIC … SFIHILO (real-time/async VLAs, steering, safe control). Titles diffed against facts.json: all match. Validate 0 errors, 1,330 pages, 0 broken links. Program guide 427; curated 1,203.
+- Verify #173 passed batches 10–11. CoRL batch 12 (30): ReTVL … AutoDex (policy evaluation, mixed-quality data, dexterity, touch); titles now taken straight from facts.json. Validate 0 errors, 1,360 pages, 0 broken links. Program guide 457; curated 1,233.
