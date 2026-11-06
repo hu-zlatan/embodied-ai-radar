@@ -2,7 +2,7 @@
 
 _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 
-共 51 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
+共 52 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/sim.html) · [English](sim.md)
 
@@ -40,6 +40,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 - **[Learning Physics-Guided Residual Dynamics for Deformable Object Simulation](https://arxiv.org/abs/2607.13451)** (2026) — PGRD 以可优化的弹簧质点模型为骨架，加上学习得到的残差来仿真可变形物体，报告精度优于单用任一方法；可用于 MPC 和动作条件视频预测。 · [代码](https://github.com/shivanshpatel35/pgrd) · [项目页](https://pgrd-robot.github.io/)
 - **[MARE: An Open-Source Lunar Rover Simulator with Shadow Ground Truth for Perception and Autonomy](https://arxiv.org/abs/2610.28465)** (2026) — 基于 Unreal Engine 5 与 ROS 2 的开源月球车仿真：可生成带陨石坑的地形，两台月球车配备双目、激光雷达、事件相机与 SPAD 相机，提供极区低太阳角下像素级的阴影真值，并附 GNC 导航控制栈。 · [代码](https://github.com/raulcastar/MARE-Lunar-Simulator)
 - **[MolmoB0T: Large-Scale Simulation Enables Zero-Shot Manipulation](https://arxiv.org/abs/2603.16861)** (2026) — CoRL 2026 Oral。挑战“仅靠仿真不够”的观点：足够大规模、多样的合成数据即可零样本迁移到真实静态与移动操作。MolmoBot-Engine 是开源的程序化数据管线。 · [代码](https://github.com/allenai/MolmoBot) · [项目页](https://allenai.github.io/MolmoBot)
+- **[SILO: Simulation-in-the-Loop Sim-to-Real Transfer for Multi-Stage Cable Routing](https://arxiv.org/abs/2607.04616)** (2026) — 多阶段线缆布线的仿真到真机强化学习：GPU 并行线缆仿真、局部化策略，加上执行时“仿真在环”的部署框架。报告成功率更高、节拍时间缩短一半。 · [项目页](https://silo-cable-routing.github.io/)
 - **[Scaling Sim-to-Real VLA Reinforcement Learning with Generative 3D Worlds](https://arxiv.org/abs/2603.18532)** (2026) — 用 3D 世界生成模型构建 100 个多样的可交互场景，对 VLA 做强化学习微调。报告仿真成功率从 9.7% 提升到 79.8%，真机从 21.7% 提升到 75%。 · [项目页](https://horizonrobotics.github.io/gail/scale-vla-rl)
 - **[SceneBloom: Agentic Indoor Environment Generation with Realistic and Diverse Layouts for Embodied Learning](https://arxiv.org/abs/2610.32978)** (2026) — 先用扩散先验在功能分区内采样家具布局，再“编译”为无碰撞、可直接仿真的 3D 场景；论文报告在其场景中训练的物体导航策略，在留出的真实扫描场景上优于用等量真实扫描训练的策略。 · [代码](https://github.com/Tinaliu0123/scenebloom)
 - **[Worlds in One Demo: A Synthetic Data Engine for Learning Open-World Mobile Manipulation](https://arxiv.org/abs/2607.13154)** (2026) — 合成数据引擎：把一条真实移动操作演示扩展成大量数据——高斯泼溅重建场景、重排接触片段并用全身运动规划串联、再在由照片生成的 3D 世界中合成。也支持跨本体。 · [项目页](https://wanda.lecar-lab.org/)

@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 78 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 83 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [English](learning.md)
 
@@ -32,7 +32,9 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[DiscreteRTC: Discrete Diffusion Policies are Natural Asynchronous Executors](https://arxiv.org/abs/2604.25050)** (2026) — 指出离散扩散策略天然支持实时分块异步执行（补全即解掩码），无需微调、计算量约为 0.7 倍。报告在真机冰球防守任务上成功率比流匹配 RTC 高 65%。 · [项目页](https://outsider86.github.io/DiscreteRTCSite/)
 - **[ELA: End-to-End Latent Action Policy Learning from Video Demonstrations](https://arxiv.org/abs/2611.05571)** (2026) — 联合训练潜在动作模型、潜在策略和动作解码器，用大量无动作标注的视频加少量带标注示教即可训练策略。报告在仿真和真实任务上优于已有潜在动作方法。 · [项目页](https://end2end-latent-action.github.io/)
 - **[ENPIRE: Agentic Robot Policy Self-Improvement in the Real World](https://arxiv.org/abs/2606.19980)** (2026) — 让编程智能体自主改进真实机器人策略的框架：自动复位与结果验证、多机并行评测，并由智能体分析日志、修改训练代码。报告在扎扎带等灵巧任务上成功率 99%。 · [项目页](https://research.nvidia.com/labs/gear/enpire/)
+- **[EgoEngine: From Egocentric Human Videos to High-Fidelity Dexterous Robot Demonstrations](https://arxiv.org/abs/2606.12604)** (2026) — 把第一人称人类视频转为机器人数据：生成把人替换成机器人的视频，以及满足可行性约束的机器人动作轨迹。声称首次在无真机演示下零样本训练出灵巧视觉运动策略。 · [项目页](https://egoengine.github.io)
 - **[EgoForesight: Effectively Scaling Policy Learning with Noisy Egocentric Actions](https://arxiv.org/abs/2610.31845)** (2026) — 将机器人示教与动作标签噪声较大的第一视角视频联合训练 VLA：按数据源可靠性分配监督权重，并从干净的未来画面蒸馏表征；报告在最多 3 万小时预训练数据范围内扩展斜率高于基线。 · [代码](https://github.com/LinShan-Bin/EgoForesight) · [项目页](https://lin-shan.com/EgoForesight)
+- **[FAR: Failure-Aware Retry for Test-Time Recovery and Continual Policy Improvement](https://arxiv.org/abs/2607.01111)** (2026) — 会从失败中学习的重试机制：用失败尝试构造偏好数据，引导策略避开失败行为，并加入小幅动作扰动做局部探索，成功恢复的轨迹再回流训练。报告仿真提升 17.6%，真机提升 11.7%。 · [项目页](https://hoar012.github.io/FAR-Project)
 - **[Flexible Language-Guided Representation Editing for Adaptive Robot Behavior](https://arxiv.org/abs/2610.28893)** (2026) — FLEX 用自然语言纠正来迭代修改机器人的任务特征集合，支持添加、泛化、屏蔽三种操作（而非只能添加）；在二维导航、Franka 桌面操作和真实用户研究中报告比其他特征编辑方法获得更高的归一化奖励。 · [项目页](https://mit-clear-lab.github.io/FLEX/)
 - **[Flow Policy Gradients for Robot Control](https://arxiv.org/abs/2602.02481)** (2026) — CoRL 2026 Oral。让流匹配策略梯度可用于机器人控制：绕过动作似然计算，策略不再限于高斯分布。应用于足式运动、人形动作跟踪与操作。 · [代码](https://github.com/amazon-far/fpo-control) · [项目页](https://hongsukchoi.github.io/fpo-control)
 - **[FlowDAgger: Human-in-the-Loop Adaptation of Generative Robot Policies in Latent Space](https://arxiv.org/abs/2607.08877)** (2026) — CoRL 2026 Spotlight。在隐空间中根据人类干预适配冻结的生成式策略，替代大规模采集或实机在线强化学习。 · [代码](https://github.com/microsoft/FlowDAgger) · [项目页](https://microsoft.github.io/FlowDAgger)
@@ -49,9 +51,11 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Progress-Guided Preference Generation for Aligning Generative Control Policies](https://arxiv.org/abs/2610.25692)** (2026) — 用自动生成的偏好标签微调扩散与流匹配策略：以少量专家示教为参照衡量自主回放的顺序进度并据此排序，无需人工标注或手工奖励；报告在长时程操作任务上优于监督微调基线。 · [项目页](https://pgpg2026.github.io/)
 - **[RACE: Calibrated Cumulative Scoring for Rollout-Free Robot Policy Checkpoint Selection](https://arxiv.org/abs/2611.05838)** (2026) — 无需实机回放即可排序检查点：用保留示教得到的状态相关阈值校准动作偏差，再按累乘聚合。论文报告其排序与真实机器人部署成功率一致。 · [项目页](https://changyeon.site/race)
 - **[RL Token: Bootstrapping Online RL with Vision-Language-Action Models](https://arxiv.org/abs/2604.23073)** (2026) — CoRL 2026 Oral。让 VLA 输出紧凑的 RL token 作为在线强化学习接口，预训练策略只需几小时真实练习即可提升精度与速度。
+- **[Recover, Discover, Plan: Learning Skills and Concepts from Robot Failures](https://arxiv.org/abs/2606.18328)** (2026) — 用强化学习学习失败恢复技能，并据此发现新的关系谓词、完善抽象规划模型，把局部恢复转化为全局避免失败。报告在四个仿真领域比基线高 50% 以上，并迁移到真机。 · [项目页](https://jaraxxus-me.github.io/ReSYNC/)
 - **[Recursive Self-Improvement in Physical AI: Mechanisms, Evidence, and Evaluation](https://arxiv.org/abs/2610.38266)** (2026) — 综述：区分普通的学习器更新与会修改学习过程本身的“改进器”，给出从任务内适应到已验证改进增益的 L0–L3 分级，并提出从相同起点比较的评测方法。 · [项目页](https://github.com/nkd-lkz/physical-ai-rsi-survey)
 - **[Robo-ValueRL: Reliable Value Estimation for Offline-to-Online Reinforcement Learning](https://arxiv.org/abs/2607.09866)** (2026) — 系统研究价值函数可靠性如何影响操作任务的离线到在线强化学习，提出历史条件价值估计器。报告毫米级芯片插装成功率 86%。 · [项目页](https://gewu-lab.github.io/Robo-ValueRL/)
 - **[RoboFFT: Finetuning generative robot policy via online reinforcement learning with forward process](https://arxiv.org/abs/2609.32236)** (2026) — 为扩散与流匹配策略做 PPO 式微调：用前向加噪与得分/流匹配损失构造替代的策略比率，绕开似然计算；在仿真与真机上验证。 · [项目页](https://student-of-holmes.github.io/RoboFFT/)
+- **[Robot-WATCHDOG : failure detection through object-centric graph representation](https://arxiv.org/abs/2610.13403)** (2026) — 仅用正常演示做自监督失败检测：把操作场景建模为以物体为中心的时空图，所提两种失败评分都优于基于图像的检测器，尤其擅长语义和交互层面的失败。 · [项目页](https://cea-list.github.io/Robot-WATCHDOG/)
 - **[SCoCaT: Success Conditioned Constrained Reinforcement Learning for Spacecraft Docking](https://arxiv.org/abs/2609.06061)** (2026) — 发现基于终止的约束强化学习在目标附近约束收紧时会学会回避目标，并用稠密成功信号的辅助价值网络解决；在航天器对接任务上验证。
 - **[TARC: Time-Adaptive Robotic Control](https://arxiv.org/abs/2510.23176)** (2026) — 策略同时预测动作及其保持时长。报告在遥控车、Unitree Go1 和仿真 VLA 上以不到一半的控制频率达到高频控制的性能。 · [项目页](https://arnavsukhija.github.io/projects/tarc)
 - **[TILDE: Teacher-in-the-Loop Distillation from Embodied Foundation Models](https://arxiv.org/abs/2610.25376)** (2026) — 把预训练具身基础模型（教师）蒸馏到未做动作预训练的策略：在学生访问的状态上做在线监督，并由奖励模型监控进度、自动触发教师接管采集纠错轨迹（AutoDAgger，无需人工看护）；报告在 3 个真机任务上比行为克隆最高提升 4.1 倍。 · [代码](https://github.com/hku-sail/TILDE) · [项目页](https://hku-sail.github.io/TILDE/)
@@ -60,6 +64,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Toward Recursive Self-Improvement in Physical AI](https://arxiv.org/abs/2610.29677)** (2026) — 把"递归自我改进"放到机器人学习语境下的综述：从提升技能到改进产生技能的过程，并总结增益能持续累积的条件；指出现有真机研究尚未单独验证"递归"本身带来的收益。附论文列表。 · [项目页](https://github.com/Physical2RSI/Awesome-Physical2RSI)
 - **[Training in Deployment: Human-in-the-loop Online Post-Training for Robot Manipulation](https://arxiv.org/abs/2610.29264)** (2026) — TIDE 在部署过程中利用人类干预和策略自身的执行数据在线更新预训练策略，无需价值函数或奖励模型；报告在四个真实双臂任务上优于初始策略，每次在线后训练不到一小时完成。 · [项目页](https://logosroboticsgroup.github.io/TIDE/)
 - **[UniIntervene: Agentic Intervention for Efficient Real-World Reinforcement Learning](https://arxiv.org/abs/2606.12372)** (2026) — 用于人在回路强化学习的智能干预模型：根据价值变化趋势发现无效探索，并自动把策略拉回高价值状态。报告人工干预减少 57%，成功率提升 8.6%。 · [项目页](https://denghaoyuan123.github.io/UniIntervene-project/)
+- **[Unified Condition-Action Modeling for Accurate One-Step Action Generation](https://arxiv.org/abs/2608.16153)** (2026) — 一步生成的流策略：把观测、时间步与动作 token 拼成一个序列，由同一 Transformer 联合建模。报告平均成功率 86.4%（提升 7.5 个百分点），推理延迟 3.0 ms，比 DP3 快 43.9 倍。 · [项目页](https://uca-policy.github.io/UCA.github.io/)
 - **[Unified Motion-Action Modeling for Heterogeneous Robot Learning](https://arxiv.org/abs/2606.16917)** (2026) — 以 3D 物体运动轨迹作为统一接口，用掩码生成目标联合建模物体运动与机器人动作，同一套预训练参数可作为策略、动力学模型或少样本适配器。混合机器人、人类视频与仿真数据预训练。 · [项目页](https://uma-manipulation.github.io/)
 - **[When Robots Outweigh Objects: How Inertia Mismatch Shapes Robot Policy Learning](https://arxiv.org/abs/2611.03501)** (2026) — 在仿真中改变机器人与物体质量：强化学习影响不大，行为克隆则在机器人比物体轻时更可靠，增加数据只能缩小而无法消除差距。采集低惯量示教可部分缓解。 · [项目页](https://younghyopark.me/inertia-mismatch/)
 - **[Where Small Mistakes Matter: Quantifying State Criticality for Imitation Learning](https://arxiv.org/abs/2610.17709)** (2026) — 用对抗扰动策略衡量每个示教状态上的小动作误差会对结果造成多大损害。该分数可用于给行为克隆加权，并挑选更小但价值更高的示教子集。 · [项目页](https://sia-lab-git.github.io/SCRIM/)

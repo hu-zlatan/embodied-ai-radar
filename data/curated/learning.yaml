@@ -812,3 +812,53 @@
   tags: [discrete-diffusion, real-time-chunking, asynchronous, dynamic-tasks, real]
   takeaway_en: "Shows discrete diffusion policies do real-time chunking natively, since inpainting is just unmasking: no fine-tuning, ~0.7x compute. Reports 65% higher success than flow-matching RTC on a real hockey task."
   takeaway_zh: "指出离散扩散策略天然支持实时分块异步执行（补全即解掩码），无需微调、计算量约为 0.7 倍。报告在真机冰球防守任务上成功率比流匹配 RTC 高 65%。"
+- title: "FAR: Failure-Aware Retry for Test-Time Recovery and Continual Policy Improvement"
+  type: paper
+  arxiv: "2607.01111"
+  year: 2026
+  venue: CoRL 2026
+  project: https://hoar012.github.io/FAR-Project
+  added: 2026-11-06
+  tags: [failure-recovery, preference-learning, diffusion-policy, continual-learning, real]
+  takeaway_en: "Retries that learn from failure: preference pairs from failed attempts steer the policy away from them, plus small action perturbations, and feeds recoveries back into training. Reports +17.6% sim, +11.7% real."
+  takeaway_zh: "会从失败中学习的重试机制：用失败尝试构造偏好数据，引导策略避开失败行为，并加入小幅动作扰动做局部探索，成功恢复的轨迹再回流训练。报告仿真提升 17.6%，真机提升 11.7%。"
+- title: "EgoEngine: From Egocentric Human Videos to High-Fidelity Dexterous Robot Demonstrations"
+  type: paper
+  arxiv: "2606.12604"
+  year: 2026
+  venue: CoRL 2026
+  project: https://egoengine.github.io
+  added: 2026-11-06
+  tags: [human-video, egocentric, data-generation, dexterous, real]
+  takeaway_en: "Converts egocentric human videos into robot data: a video with the human replaced by a robot plus a feasible robot action trajectory. Claims the first zero-shot dexterous visuomotor policy with no real-robot demos."
+  takeaway_zh: "把第一人称人类视频转为机器人数据：生成把人替换成机器人的视频，以及满足可行性约束的机器人动作轨迹。声称首次在无真机演示下零样本训练出灵巧视觉运动策略。"
+- title: "Robot-WATCHDOG : failure detection through object-centric graph representation"
+  type: paper
+  arxiv: "2610.13403"
+  year: 2026
+  venue: CoRL 2026
+  project: https://cea-list.github.io/Robot-WATCHDOG/
+  added: 2026-11-06
+  tags: [failure-detection, scene-graphs, self-supervised, monitoring, real]
+  takeaway_en: "Self-supervised failure detection from nominal demos only, using object-centric spatio-temporal scene graphs; both of its scores beat image-based detectors, especially on semantic and interaction failures."
+  takeaway_zh: "仅用正常演示做自监督失败检测：把操作场景建模为以物体为中心的时空图，所提两种失败评分都优于基于图像的检测器，尤其擅长语义和交互层面的失败。"
+- title: "Unified Condition-Action Modeling for Accurate One-Step Action Generation"
+  type: paper
+  arxiv: "2608.16153"
+  year: 2026
+  venue: CoRL 2026
+  project: https://uca-policy.github.io/UCA.github.io/
+  added: 2026-11-06
+  tags: [one-step, flow-policy, 3d, fast-inference, sim]
+  takeaway_en: "One-step flow policy that puts observation, timestep and action tokens in one sequence for a single transformer. Reports 86.4% average success (+7.5 points) at 3.0 ms latency, 43.9x faster than DP3."
+  takeaway_zh: "一步生成的流策略：把观测、时间步与动作 token 拼成一个序列，由同一 Transformer 联合建模。报告平均成功率 86.4%（提升 7.5 个百分点），推理延迟 3.0 ms，比 DP3 快 43.9 倍。"
+- title: "Recover, Discover, Plan: Learning Skills and Concepts from Robot Failures"
+  type: paper
+  arxiv: "2606.18328"
+  year: 2026
+  venue: CoRL 2026
+  project: https://jaraxxus-me.github.io/ReSYNC/
+  added: 2026-11-06
+  tags: [failure-recovery, abstraction, task-planning, predicates, real]
+  takeaway_en: "Learns recovery skills with RL and, from them, discovers new relational predicates for an abstract planner, turning local recoveries into failure avoidance. Reports >50% gains over baselines in four sim domains."
+  takeaway_zh: "用强化学习学习失败恢复技能，并据此发现新的关系谓词、完善抽象规划模型，把局部恢复转化为全局避免失败。报告在四个仿真领域比基线高 50% 以上，并迁移到真机。"

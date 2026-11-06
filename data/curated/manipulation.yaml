@@ -1275,3 +1275,93 @@
   tags: [composition, assembly, foundation-models, force, real]
   takeaway_en: "Composes simple behaviours (semantic constraints from foundation models, keypoints from imagined video, tactile/force corrections) into one SE(3) pose command per step. 8 real tasks, incl. seating a GPU."
   takeaway_zh: "把语义约束（基础模型）、想象视频中的关键点预测、触觉/力实时修正等简单行为在 SE(3) 上组合成每一步的位姿指令。8 个真机任务，包括把显卡插入 PCIe 槽。"
+- title: "S2A2: Audio-Visual Imitation Learning for Manipulation Tasks Using Acoustic Spatial Information"
+  type: paper
+  arxiv: "2607.26047"
+  year: 2026
+  venue: CoRL 2026
+  project: https://azuma413.github.io/projects/s2a2
+  added: 2026-11-06
+  tags: [audio, multimodal, imitation-learning, sound-localization, real]
+  takeaway_en: "New manipulation tasks where the target must be found by sound, plus an imitation framework that adds acoustic spatial and spectral features to ACT, Diffusion Policy, VQ-BeT and π0. Sim + real."
+  takeaway_zh: "提出需要靠声音确定操作目标的新任务，以及把声源空间信息与频谱特征接入 ACT、Diffusion Policy、VQ-BeT 和 π0 的多模态模仿学习框架。仿真与真机验证。"
+- title: "Multi-GraspLLM: A Multimodal LLM for Multi-Hand Semantic Guided Grasp Generation"
+  type: paper
+  arxiv: "2412.08468"
+  year: 2024
+  venue: CoRL 2026
+  project: https://multi-graspllm.github.io
+  added: 2026-11-06
+  tags: [grasp-generation, dexterous-hands, llm, dataset, real]
+  takeaway_en: "Multi-GraspSet, a large multi-hand grasp dataset with automatic contact annotations, and an LLM that generates language-guided grasps for different robot hands in one model."
+  takeaway_zh: "发布带自动接触标注的大规模多手型抓取数据集 Multi-GraspSet，并用一个基于大模型的统一框架，根据语言指令为不同机器人手生成抓取。"
+- title: "HUGS: Guiding Unified Dexterous Grasp Synthesis Across Modes and Scales via Learned Human Priors"
+  type: paper
+  arxiv: "2607.04554"
+  year: 2026
+  venue: CoRL 2026
+  project: https://hugs-dex.github.io/
+  added: 2026-11-06
+  tags: [dexterous-grasping, human-prior, grasp-synthesis, bimanual, real]
+  takeaway_en: "Learns an object-conditioned human grasp prior from 1.8K human grasps to pick contact modes and wrist starts for force-closure optimisation; synthesises 3.2M grasps from pinches to bimanual, 2–30 cm objects."
+  takeaway_zh: "从 1800 次人类抓取中学习物体条件的人类先验，用来选择接触模式和手腕初值以指导力封闭优化；合成 320 万个抓取，覆盖两指捏取到双手抓取、2–30 cm 物体。"
+- title: "FingerViP: Learning Real-World Dexterous Manipulation with Fingertip Visual Perception"
+  type: paper
+  arxiv: "2604.21331"
+  year: 2026
+  venue: CoRL 2026
+  project: https://fingervip.github.io/
+  added: 2026-11-06
+  tags: [dexterous, fingertip-cameras, diffusion-policy, multi-view, real]
+  takeaway_en: "Puts miniature cameras in each fingertip of a multi-fingered hand and trains a whole-body diffusion policy on third-view plus fingertip views. Reports 56.6% relative gain over external and wrist cameras."
+  takeaway_zh: "在多指手的每个指尖装入微型摄像头，用第三视角加多指尖视角训练全身扩散策略。报告比外部+腕部相机方案平均成功率相对提升 56.6%。"
+- title: "From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation"
+  type: paper
+  arxiv: "2606.30749"
+  year: 2026
+  venue: CoRL 2026
+  project: https://yingyuan0414.github.io/grasp2dexterity/
+  added: 2026-11-06
+  tags: [dexterous, grasp-pretraining, tool-use, hierarchical, real]
+  takeaway_en: "Pretrains a low-level dexterous controller on 355K trajectories built from grasp datasets, then fine-tunes for articulated tool use. Introduces the DexCraft benchmark; reports +33.3 points over DP3 on a real robot."
+  takeaway_zh: "用抓取数据集构造的 35.5 万条轨迹预训练灵巧手底层控制器，再微调到需要操作工具活动部件的任务；提出 DexCraft 基准。报告真机完整任务成功率比 DP3 高 33.3 个百分点。"
+- title: "Instant-Fold: In-Context Imitation Learning for Deformable Object Manipulation"
+  type: paper
+  arxiv: "2606.04269"
+  year: 2026
+  venue: CoRL 2026
+  project: https://instant-fold.github.io
+  added: 2026-11-06
+  tags: [deformable, cloth-folding, in-context-learning, sim-to-real, real]
+  takeaway_en: "In-context imitation for folding: from a single human demo, a flow-matching transformer infers and executes the shown folding mode without gradient updates. Trained only in sim, transfers zero-shot to real."
+  takeaway_zh: "面向折叠的上下文模仿学习：只看一条人类演示，流匹配 Transformer 即可推断并执行其中的折叠方式，无需梯度更新。完全在仿真训练，零样本迁移到真机。"
+- title: "Continual Learning for 6-DoF Grasp Synthesis via Experience and Demonstrations"
+  type: paper
+  arxiv: "2610.01301"
+  year: 2026
+  venue: CoRL 2026
+  project: https://giuschio.github.io/cl_grasping/
+  added: 2026-11-06
+  tags: [grasping, continual-learning, memory, 6-dof, real]
+  takeaway_en: "6-DoF grasping that keeps learning on the job through memory in an embedding space: outcomes rescore future grasps and user demos are recalled in new scenes. Reports over 90% on hard categories after 50 tries."
+  takeaway_zh: "通过嵌入空间中的记忆在部署中持续学习的 6-DoF 抓取：抓取结果更新后续评分，用户示范可在新场景中被召回。报告在困难类别上仅 50 次尝试后成功率超过 90%。"
+- title: "DiffMorphGrasp: A Diffusion Framework Conditioned on Hand Morphology for Cross-Embodiment Grasp Generation"
+  type: paper
+  arxiv: "2602.00915"
+  year: 2026
+  venue: CoRL 2026
+  project: https://georgewuzy.github.io/DiffMorphGrasp-website
+  added: 2026-11-06
+  tags: [dexterous-grasping, cross-embodiment, diffusion, hand-morphology, benchmark]
+  takeaway_en: "Diffusion grasp generator conditioned on a graph of the hand's kinematics, so grasps transfer zero-shot to unseen hand designs; comes with a cross-morphology grasp benchmark."
+  takeaway_zh: "以手部运动学结构图为条件的扩散抓取生成模型，可零样本迁移到未见过的机器人手型；同时提出跨手型抓取评测基准。"
+- title: "Wiggle and Go! System Identification for Zero-Shot Dynamic Rope Manipulation"
+  type: paper
+  arxiv: "2604.22102"
+  year: 2026
+  venue: CoRL 2026
+  project: https://wiggleandgo.github.io/
+  added: 2026-11-06
+  tags: [deformable, rope, system-identification, dynamic, real]
+  takeaway_en: "A short safe wiggle reveals rope parameters that condition a trajectory optimiser for zero-shot dynamic throws. Reports 3.55 cm average error on real 3D target striking vs 15.29 cm for uninformed baselines."
+  takeaway_zh: "先做一次短暂安全的“抖绳”动作来辨识绳子参数，再以此驱动轨迹优化，零样本完成动态甩绳。报告真机 3D 目标击打平均误差 3.55 cm，无辨识基线为 15.29 cm。"

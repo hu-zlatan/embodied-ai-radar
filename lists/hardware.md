@@ -2,7 +2,7 @@
 
 _Low-cost arms, hands, grippers and data-collection rigs you can build._
 
-42 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/hardware.yaml`](../data/curated/hardware.yaml); edit the YAML, not this file.
+43 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/hardware.yaml`](../data/curated/hardware.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/hardware.html) · [中文](hardware.zh-CN.md)
 
@@ -27,6 +27,7 @@ _Low-cost arms, hands, grippers and data-collection rigs you can build._
 - **[RAIPAL: A Powerful and Agile Humanoid Arm for Human Tasks](https://arxiv.org/abs/2611.04334)** (2026) — A humanoid arm whose force, speed and endurance targets come from human upper-limb measurements; reports a 20 kg peak payload (2.25x its own mass) and 20.6 m/s endpoint speed.
 - **[Shape Your Body: Value Gradients for Multi-Embodiment Robot Design](https://arxiv.org/abs/2606.00702)** (2026) — Reuses a frozen multi-robot value function as a differentiable surrogate for robot design, avoiding a new co-design RL loop per robot; handles over 1100 design parameters.
 - **[SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing](https://arxiv.org/abs/2610.40646)** (2026) — Instead of one universal gripper: a fixed robot-side coupling plus cheap tool-side adapters with tactile sensors turn household tools into swappable end effectors; imitation policies cook tofu and flip meat. · [project](https://personalrobotics.github.io/SwapBot)
+- **[Transformer Transformer: A Unified Model for Motion-Conditioned Robot Co-design](https://arxiv.org/abs/2607.25798)** (2026) — Diffusion transformer over a shared tokenization of robot bodies, states and actions that generates robot designs to track target motions. A fabricated optimised ALOHA design cut tracking error by over 70%. · [project](https://transformer-transformer.github.io)
 - **[UMI-Live for In-The-Wild Bimanual Robotics Data Collection](https://arxiv.org/abs/2610.39385)** (2026) — Open-source bimanual UMI with camera, LiDAR-inertial sensing, compute and power on board: no external tracking or calibration; parallel SLAM outputs training-ready data. Releases 40 h of data and hardware files. · [code](https://github.com/AfterQuery-Research/umi-live) · [project](https://umi-live.github.io/)
 - **[AirExo-2: Scaling up Generalizable Robotic Imitation Learning with Low-Cost Exoskeletons](https://arxiv.org/abs/2503.03081)** (2025) — Exoskeleton demos are converted into pseudo-robot demonstrations; the paper reports its RISE-2 policy trained on them alone, with no robot data, performs comparably to one trained on teleoperated robot data. · [code](https://github.com/AirExo/AirExo-2)
 - **[BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities](https://arxiv.org/abs/2503.05652)** (2025) — A whole-body teleoperation interface plus a learning method for a wheeled bimanual robot doing long household tasks that need reach, balance and navigation. · [project](https://behavior-robot-suite.github.io/)

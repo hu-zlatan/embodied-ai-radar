@@ -2089,3 +2089,53 @@
   tags: [serving, scheduling, fleet, inference, real]
   takeaway_en: "Serving one robot policy to a fleet from a remote GPU, posed as scheduling. Naive batching fails when robots consume action chunks at different rates; their scheduler reports up to 18% higher real-world throughput."
   takeaway_zh: "把从远程 GPU 为多台机器人提供策略推理建模为调度问题。当各机器人消耗动作块的速度不同时，简单批处理失效；所提调度算法在真机上报告吞吐量最高提升 18%。"
+- title: "Sparse Autoencoders Reveal Interpretable and Steerable Features in VLA Models"
+  type: paper
+  arxiv: "2603.19183"
+  year: 2026
+  venue: CoRL 2026
+  project: https://drvla.github.io
+  added: 2026-11-06
+  tags: [interpretability, sparse-autoencoders, steering, libero, droid]
+  takeaway_en: "Trains sparse autoencoders on VLA activations and finds features for motion primitives and concepts that transfer across episodes and can be amplified to steer behaviour. LIBERO + real DROID tests."
+  takeaway_zh: "在 VLA 隐层激活上训练稀疏自编码器，发现对应运动基元和语义概念、可跨回合迁移的特征，放大这些特征即可引导行为。在 LIBERO 和真实 DROID 平台验证。"
+- title: "Trajectory-Level Redirection Attacks on Vision-Language-Action Models"
+  type: paper
+  arxiv: "2606.12978"
+  year: 2026
+  venue: CoRL 2026
+  project: https://vla-redirection-attack.github.io/
+  added: 2026-11-06
+  tags: [security, adversarial-prompts, robustness, attack, real]
+  takeaway_en: "Shows a prompt that still reads like the intended task can redirect a VLA's rollout to an attacker's target; an on-policy prompt search finds such near-benign prompts. Sim + hardware."
+  takeaway_zh: "揭示 VLA 的轨迹级漏洞：看起来仍在描述原任务的指令，可以把机器人执行结果引向攻击者指定的目标；作者用在线提示搜索找到这类近乎无害的提示。仿真与真机验证。"
+- title: "CounterAlign: Counterfactual Supervision for Vision-Language-Action Models"
+  type: paper
+  arxiv: "2608.21740"
+  year: 2026
+  venue: CoRL 2026
+  project: https://counteralign.airoa.io
+  added: 2026-11-06
+  tags: [offline-rl, counterfactual, reward-model, libero-pro, real]
+  takeaway_en: "Turns expert demos into negative supervision by pairing actions with mismatched instructions, training an instruction-grounded reward for offline RL of VLAs. More robust on LIBERO-PRO and a real AgiBot-G2-type robot."
+  takeaway_zh: "把专家动作与不匹配的指令配对生成反事实样本，训练与指令对齐的奖励模型，用于 VLA 离线强化学习，无需额外采集。在 LIBERO-PRO 和真机上提升鲁棒性。"
+- title: "GeoAlign: Beyond Semantics with State-Guided Spatial Alignment in VLA Models"
+  type: paper
+  arxiv: "2606.03240"
+  year: 2026
+  venue: CoRL 2026
+  project: https://chenyizhi123.github.io/geoalign-project/
+  added: 2026-11-06
+  tags: [geometry, rgb-d, spatial-alignment, gr00t, real]
+  takeaway_en: "Post-trains an RGB geometry branch with RGB-D supervision, then lets state-generated queries pull eight geometry tokens for action prediction. Reports 99.0% on LIBERO and 78.8% on eight real ALOHA tasks."
+  takeaway_zh: "先用 RGB-D 监督后训练 RGB 几何分支，再由机器人状态生成查询，提取 8 个几何 token 用于动作预测。报告 LIBERO 99.0%，八个真实 ALOHA 任务 78.8%。"
+- title: "VLA-FAIL: Efficient Task Failure Detection for Finetuned Vision-Language-Action Models"
+  type: paper
+  arxiv: "2606.21386"
+  year: 2026
+  venue: CoRL 2026
+  project: https://vla-fail.github.io/vla-fail-2026
+  added: 2026-11-06
+  tags: [failure-detection, ood, action-chunks, monitoring, real]
+  takeaway_en: "Two cheap failure detectors for fine-tuned VLAs that need no failure data: last-layer Mahalanobis distance and consistency between overlapping action chunks, plus a metric that also scores detection time."
+  takeaway_zh: "为微调后的 VLA 提出两种无需失败数据的轻量失败检测器：末层特征马氏距离与相邻动作块一致性，并提出同时衡量检测时间的指标。"

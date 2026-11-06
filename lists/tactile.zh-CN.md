@@ -2,7 +2,7 @@
 
 _触觉传感器、触觉表征与接触丰富的控制。_
 
-共 53 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
+共 54 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/tactile.html) · [English](tactile.md)
 
@@ -27,6 +27,7 @@ _触觉传感器、触觉表征与接触丰富的控制。_
 - **[Tactile Curiosity Drives Robot Interaction](https://arxiv.org/abs/2609.40134)** (2026) — TacEx 让好奇心聚焦触觉：按感知模态分解模型不确定性，使探索去寻找接触而非空中乱动。采集的数据可离线训练抓放策略，也可用于 VLA 后训练。 · [项目页](https://go.klem.nz/tacex)
 - **[Tactile-Based Robotic Manipulation: From Mechanics-Driven to Data-Driven Perspectives](https://arxiv.org/abs/2610.30438)** (2026) — 综述（Annual Review of Control, Robotics, and Autonomous Systems 录用稿）：从接触力学建模到数据驱动学习，梳理触觉操作的发展，涵盖传感基础、状态表征、模仿学习、强化学习、VLA 与预测模型。
 - **[TactileStep: Sole Tactile Learning for Regulating Foot-Terrain Interaction in Humanoid Locomotion](https://arxiv.org/abs/2609.28959)** (2026) — CoRL 2026 Spotlight。把足底压力感知引入人形运动控制，目标是比“能完成但落地粗暴”的跑酷策略更柔和的足地接触。
+- **[UniVTAC: A Unified Simulation Platform for Visuo-Tactile Manipulation Data Generation, Learning, and Benchmarking](https://arxiv.org/abs/2602.10093)** (2026) — 视触觉仿真数据合成平台，支持三种常用传感器，并基于合成数据训练视触觉编码器、发布 8 个任务的基准。报告基准成功率提升 17.1%，真机提升 25%。 · [项目页](https://univtac.github.io/)
 - **[VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing](https://arxiv.org/abs/2610.31472)** (2026) — 6 毫米厚的柔性触觉阵列：压阻层上的硅胶凸点把切向力转成可区分的压力分布，实现每个触点的三轴力测量；4x4 阵列成本不到 35 美元。报告称其提升了扩散策略插插头任务的表现。 · [项目页](https://jiannnh.github.io/VecTile/)
 - **[AnyTouch: Learning Unified Static-Dynamic Representation across Multiple Visuo-tactile Sensors](https://arxiv.org/abs/2502.12191)** (2025) — 跨多种视触觉传感器学习统一的静态-动态表征，并贡献对齐的多传感器触觉数据集 TacQuad。 · [代码](https://github.com/GeWu-Lab/AnyTouch)
 - **[FACTR: Force-Attending Curriculum Training for Contact-Rich Policy Learning](https://arxiv.org/abs/2502.17432)** (2025) — 低成本双边遥操作把机械臂受力反馈给操作者；训练时对视觉的破坏逐渐减弱，让策略学会关注力信息。

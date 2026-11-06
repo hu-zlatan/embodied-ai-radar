@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 105 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 107 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html) · [English](world-models.md)
 
@@ -43,6 +43,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[DepthWorld: 3D World Model for Robot Manipulation](https://arxiv.org/abs/2610.08780)** (2026) — 把 DROID 重新标定为带度量深度与多视角外参的 DROID-3D，并训练同时预测 RGB 与深度的视频世界模型。报告深度监督还让 RGB 预测提升 1.48 dB PSNR。 · [项目页](https://www.jaibardhan.com/depthworld)
 - **[Do World Action Models Generalize Better than VLAs? A Robustness Study](https://arxiv.org/abs/2603.22078)** (2026) — 在扰动下对比世界动作模型与 VLA 的鲁棒性研究，用于检验显式未来预测能带来更好泛化这一说法。 · [代码](https://github.com/Robot-Robustness/RoboTwin2.0-Plus) · [项目页](https://robot-robustness.github.io/RoboTwin2.0-Plus/)
 - **[Does LeWorldModel Preserve Local Action Geometry?](https://arxiv.org/abs/2610.31716)** (2026) — 比较预训练 LeWorldModel 与仿真器对微小动作变化的响应；最小尺度下最敏感方向的中位夹角相差约 36–42°，说明评估应按尺度进行。 · [项目页](https://geometry.vasi.boo/)
+- **[EgoWAM: World Action Models Beyond Pixels with In-the-Wild Egocentric Human Data](https://arxiv.org/abs/2607.08436)** (2026) — 对照研究哪种世界预测目标最能把第一人称人类数据迁移到机器人：像素迁移较弱，DINO 特征带来最高 4 倍的分布外泛化，3D 运动流在域内提升 20–30%。 · [项目页](https://gatech-rl2.github.io/egowam.github.io)
 - **[From World Models to World Action Models: A Concise Tutorial for Robotics](https://arxiv.org/abs/2607.00836)** (2026) — 简明教程而非综述：界定机器人领域的世界模型和世界动作模型，并在统一视角下比较空间智能模型、JEPA 和 Cosmos。 · [代码](https://github.com/clearlab-sustech/WorldModelSurvey)
 - **[GAWM: A Compact Latent World-Action Model for Multi-Task Robot Manipulation](https://arxiv.org/abs/2610.37091)** (2026) — 参数不到 1 亿的紧凑世界动作模型：在冻结 DINOv3 特征空间中预测两个未来时刻的 token 并直接回归动作块，无需机器人或视频预训练；报告在 RoboTwin 2.0 上超过十亿参数级 WAM。 · [代码](https://github.com/gaoxiang12/ga-wm)
 - **[GE-Sim 2.0: A Roadmap Towards Comprehensive Closed-loop Video World Simulators for Robotic Manipulation](https://arxiv.org/abs/2605.27491)** (2026) — 闭环视频世界模拟器，用数千小时真机数据重新训练，加入状态专家和为推演打分的世界评判器，在单张 H100 上 2.3 秒生成 25 帧推演。 · [代码](https://github.com/AgibotTech/GE-Sim-V2) · [项目页](https://ge-sim-v2.github.io/)
@@ -61,6 +62,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[OSWAM: An Effective World Action Model with One-Step Action Generation](https://arxiv.org/abs/2610.35850)** (2026) — 单步扩散即可生成动作的世界动作模型：用“想象 token”代替随机噪声初始化，为动作提供先验。报告比直接策略式 WAM 快约 3 倍，编译后在 RTX 5090 上延迟低至 40 毫秒，覆盖自动驾驶与具身控制。 · [代码](https://github.com/PolyU-VCLab/OSWAM) · [项目页](https://gwenzhang.github.io/OSWAM/)
 - **[OpenNWM: A Generalist Navigation World Model with Latent Action Pretraining](https://arxiv.org/abs/2611.01844)** (2026) — 先从无动作标注的视频中学习潜在动作，再在后训练阶段对齐真实运动。配套数据集 NavAnywhere 含 17.5M 条视觉观测，来自 15 个来源，覆盖地面机器人、人和无人机。 · [代码](https://github.com/OpenSpace-Lab/OpenNWM)
 - **[PICA-WAM: Visual Perturbation Invariance via Cross-Appearance Self-Alignment in World Action Models](https://arxiv.org/abs/2610.26813)** (2026) — 为世界-动作模型加一个自监督辅助任务：EMA 教师看原始画面，在线模型看外观扰动后的画面并对齐其动作表征；报告在 RoboTwin 2.0、LIBERO-Plus 等基准上提升四种 WAM 对视觉扰动的鲁棒性，且不损失原有性能。 · [代码](https://github.com/YudeZou/PICA-WAM-release)
+- **[PhysCoRe: Physics-Corrected Residual World Models for Material-Aware Deformable Dynamics](https://arxiv.org/abs/2607.20653)** (2026) — 可变形物体世界模型：可微 MPM 仿真器配合两个网络，一个从视觉推断逐粒子弹性，一个学习修正仿真器的残差误差。在真实操作序列上验证。 · [项目页](https://lunarlab-gatech.github.io/PhysCoRe-website/)
 - **[PhysTrace: Interpretable Temporal Evaluation of Physical Consistency in Video Generative Models](https://arxiv.org/abs/2610.31429)** (2026) — 无需训练的视频模型物理一致性评测：由多模态大模型根据历史帧给出物理预期，再定位视频中违背预期的时间段并给出可解释描述；新增带违规区间标注的 IntPhys2-Timing（报告命中率最高 70.7%），面向依赖视频模型的世界动作模型。 · [代码](https://github.com/PhysTrace/PhysTrace)
 - **[Physical Canvas: A Vision Tactile World Model For Robot Policy Evaluation And Learning](https://arxiv.org/abs/2610.28613)** (2026) — 动作条件的视触觉世界模型：在统一的视频空间中同时预测多视角 RGB 与触觉图像，并经一致性后训练保证与真实任务状态吻合；可用于闭环策略评估和 GRPO 策略更新。 · [项目页](https://zebinx.github.io/PhysCanvas_HomePage/)
 - **[PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation](https://arxiv.org/abs/2606.28128)** (2026) — 训练框架，把监督集中在具有物理信息的区域，在像素和语义两个层面提升视频世界模拟器的物理一致性。 · [代码](https://github.com/DAGroup-PKU/PhysisForcing) · [项目页](https://dagroup-pku.github.io/PhysisForcing.github.io/)
