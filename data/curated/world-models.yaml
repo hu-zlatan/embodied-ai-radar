@@ -1022,3 +1022,22 @@
   tags: [representation, probing, v-jepa, inverse-dynamics]
   takeaway_en: "Probe study of which video world model latents carry action information: temporal video pretraining matters, pixel reconstruction quality does not. V-JEPA-style encoders give the best trade-off."
   takeaway_zh: "探测哪些视频世界模型的潜变量含有动作信息：关键在于时序视频预训练，而非像素重建质量；V-JEPA 类编码器取得最佳权衡。"
+- title: "La-JEPA: Compact Robot Policies with Latent World Modeling"
+  type: paper
+  arxiv: "2611.08156"
+  year: 2026
+  added: 2026-11-06
+  topics: [vla]
+  tags: [wam, jepa, v-jepa, compact-policy, real, sim]
+  takeaway_en: "Small world action model trained from scratch on frozen V-JEPA 2.1 features, predicting future features only in training. Reports SOTA on RoboTwin 2.0 among policies without embodied pretraining."
+  takeaway_zh: "在冻结的 V-JEPA 2.1 特征上从零训练的紧凑世界动作模型，仅在训练时预测未来特征。报告在无具身预训练的策略中 RoboTwin 2.0 最优，并修正了 LIBERO-Plus 的指令。"
+- title: "GPWM: Modeling the World as 3D Particle Motion"
+  type: paper
+  arxiv: "2611.08338"
+  year: 2026
+  project: https://robertren1122.github.io/gpwm/
+  added: 2026-11-06
+  topics: [manipulation, datasets]
+  tags: [particles, 3d-dynamics, deformable, planning, diffusion-forcing]
+  takeaway_en: "Generative world model of 3D particle and rigid-body motion covering rigid, deformable, cloth and granular materials. Reports 31% lower error than prior learned dynamics; planning searches its latent noise."
+  takeaway_zh: "生成式 3D 粒子与刚体运动世界模型，统一覆盖刚体、可变形体、布料与颗粒材料。报告预测误差比此前最好的学习动力学低 31%，并通过在潜噪声空间搜索来做规划。"

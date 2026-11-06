@@ -1083,3 +1083,33 @@
   tags: [attention, region-of-interest, dinov3, data-efficiency, real]
   takeaway_en: "Seeker learns where to look from action supervision alone, giving progress-aware crops on frozen DINOv3 features. Reports real-robot success 48.3% to 76.7%, and 20% to 60% under lighting and background shifts."
   takeaway_zh: "Seeker 仅凭动作监督学习“看哪里”，在冻结的 DINOv3 特征上给出随任务进展变化的裁剪区域。报告真机成功率从 48.3% 升到 76.7%，光照与背景变化下从 20% 升到 60%。"
+- title: "Spatial-UMI-Dream: Scaling World Action Models with Metric Geometry for UMI Manipulation"
+  type: paper
+  arxiv: "2611.07229"
+  year: 2026
+  project: https://weiduoyuan.com/spatial-umi-dream/
+  added: 2026-11-06
+  topics: [world-models, datasets]
+  tags: [umi, wam, rgb-d, metric-depth, benchmark, real, sim]
+  takeaway_en: "5B world action model pretrained on 605 h of RGB-D UMI data that predicts RGB, metric depth and actions. Adds RoboTwin-UMI; reports 85% average real success, +24.2 points over the best baseline."
+  takeaway_zh: "在 605 小时 RGB-D UMI 数据上预训练的 5B 世界动作模型，同时预测 RGB、度量深度和动作。并提出 RoboTwin-UMI 基准；报告真机平均成功率 85%，比最强基线高 24.2 个百分点。"
+- title: "MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation"
+  type: paper
+  arxiv: "2611.08372"
+  year: 2026
+  org: UT Austin
+  project: https://robin-lab.cs.utexas.edu/momasplat
+  added: 2026-11-06
+  tags: [mobile-manipulation, data-augmentation, gaussian-splatting, novel-view, real]
+  takeaway_en: "Augments mobile-manipulation demos with new base poses, re-rendering the moving object too, via Gaussian splatting and action retargeting. Reports more than doubling the best baseline's success on unseen base poses."
+  takeaway_zh: "用高斯泼溅与动作重定向为移动操作示教合成新的底盘位姿视角，连被操作的运动物体也一起重渲染。报告在未见底盘位姿下成功率是最强基线的两倍以上。"
+- title: "Latent RL Priors for Data-Efficient Dexterous Manipulation"
+  type: paper
+  arxiv: "2611.08458"
+  year: 2026
+  project: https://yixiaowang7.github.io/latent-rl-prior-page/
+  added: 2026-11-06
+  topics: [learning]
+  tags: [dexterous, rl, sim2real, flow-matching, data-efficiency, bimanual]
+  takeaway_en: "Distills sim RL rollouts into a frozen flow-matching action decoder, then learns only a visual interface to its latent from a few demos. Reports beating fine-tuned π0.5 and GR00T N1.7 with 5-10x fewer demos."
+  takeaway_zh: "把仿真中强化学习的经验蒸馏进冻结的流匹配动作解码器，之后只需用少量示教学习从图像到其潜变量的视觉接口。报告用少 5–10 倍的示教超过微调后的 π0.5 与 GR00T N1.7。"

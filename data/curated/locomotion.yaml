@@ -1222,3 +1222,24 @@
   tags: [legged, state-estimation, contact-detection, self-supervised, kalman-filter]
   takeaway_en: "Self-supervised foot-contact estimation from joint encoders and IMU only, fed as a stance belief into a Kalman filter. Reports the lowest leg-odometry error among the compared baselines."
   takeaway_zh: "仅用关节编码器与 IMU 自监督估计足端接触，并作为支撑置信度输入卡尔曼滤波器。报告腿式里程计误差在对比方法中最低。"
+- title: "Social Humanoid: Socially Responsive Human-Humanoid Interaction"
+  type: paper
+  arxiv: "2611.08407"
+  year: 2026
+  venue: CoRL 2026
+  project: https://von31.github.io/social-humanoid/
+  added: 2026-11-06
+  topics: [datasets]
+  tags: [humanoid, human-robot-interaction, motion-generation, retargeting, g1, real]
+  takeaway_en: "Humanoid that reacts to a human partner: a token model generates G1 whole-body motion conditioned on the partner, and a tracker executes it. Adds a 260-hour human-humanoid interaction benchmark."
+  takeaway_zh: "让人形机器人对人类伙伴做出回应：token 化序列模型以伙伴动作为条件生成 G1 全身动作，再由跟踪控制器执行。并提供 260 小时的人-人形交互基准。"
+- title: "HITCH: Teaching a Vision-Language Model to Operate a Humanoid through a Whole-Body Harness"
+  type: paper
+  arxiv: "2611.08039"
+  year: 2026
+  project: https://hitch.axell.top/
+  added: 2026-11-06
+  topics: [vla]
+  tags: [humanoid, vlm, whole-body, harness, g1, real]
+  takeaway_en: "Harness that lets a VLM drive a humanoid: it points at image locations for 3D positions and issues pelvis, torso, hand, walk and gaze commands. After fine-tuning, a real G1 carries a box with no real data."
+  takeaway_zh: "为 VLM 控制人形机器人提供“挽具”接口：在图像上点选即得 3D 位置，并下达骨盆、躯干、手、行走和视线指令。用教师轨迹微调后，真实 G1 无需真机数据即可搬箱子。"

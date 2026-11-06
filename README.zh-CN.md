@@ -51,10 +51,10 @@ _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与�
 - ⭐ **[RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control](https://arxiv.org/abs/2307.15818)** (2023) — 提出 "VLA" 概念：把网络规模的视觉语言模型联合微调为输出动作 token，把语义知识迁移到机器人控制。 · [项目页](https://robotics-transformer2.github.io/)
 - **[ACE-Ego-0: Unifying Egocentric Human and Robotic Data for VLA Pretraining](https://arxiv.org/abs/2606.17200)** (2026) — 用 4530 小时机器人/仿真数据加 1480 小时带伪动作的第一视角人类视频联合预训练 VLA，采用相机空间动作与按可靠性加权的损失。报告在 RoboCasa GR1 TableTop 和 RoboTwin 2.0 上达到最优。 · [代码](https://github.com/ACERobotics-VLA/ACE-Ego-0)
 - **[APT: Action Expert Pretraining Improves Instruction Generalization of Vision-Language-Action Policies](https://arxiv.org/abs/2606.12366)** (2026) — 先把动作专家预训练为不含语言的视觉-动作先验，再通过门控融合注入语言。针对 VLA 对未见指令泛化差的问题，适用于 π 系和 GR00T 系架构。 · [代码](https://github.com/xukechun/APT) · [项目页](https://xukechun.github.io/papers/APT/)
+- **[Concertina: Embodying Manipulation and Cognition in One Diffusion Vision-Language Model](https://arxiv.org/abs/2611.07513)** (2026) — 把连续动作直接放进同一个扩散 VLM：每个控制时间步是一个潜动作 token，没有独立动作专家（动作接口仅占 0.21% 参数）。报告 LIBERO 98.15%、LIBERO-Plus 85.9%。 · [代码](https://github.com/lose4578/Concertina)
 - **[EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies](https://arxiv.org/abs/2606.20092)** (2026) — 为 VLA 加入稀疏记忆：由策略自己预测哪些关键帧之后会有用并只保存这些帧。同时提出 RoboTwin-MeM 基准；报告在 17 个仿真和 4 个真机任务上平均成功率比带记忆的 VLA 高 40%。 · [代码](https://github.com/InternRobotics/EventVLA)
-- **[HuRo: Robotizing Human Videos for Scalable VLA Pretraining](https://arxiv.org/abs/2609.10706)** (2026) — 把五个来源的人类视频转换成与机器人对齐的观测和动作（约 63 万条轨迹）。报告用更多此类数据预训练 VLA，真机任务完成率从 51.5% 升到 80.3%，分布外从 34.9% 升到 72.2%。 · [代码](https://github.com/3587jjh/HuRo) · [项目页](https://3587jjh.github.io/HuRo)
 
-**[查看全部 179 条 →](lists/vla.zh-CN.md)**
+**[查看全部 182 条 →](lists/vla.zh-CN.md)**
 
 <a id="manipulation"></a>
 ### 操作与灵巧手
@@ -68,13 +68,13 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_ [在网站上�
 - ⭐ **[Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](https://arxiv.org/abs/2304.13705)** (2023) — ALOHA + ACT：约 2 万美元的双臂遥操作平台，加上动作分块 Transformer，约 50 条演示即可学会精细任务。 · [代码](https://github.com/tonyzhaozh/act)
 - **[Attention from Action, for Action: Emergent Visual Bottlenecks for Policy Learning](https://arxiv.org/abs/2608.13422)** (2026) — Seeker 仅凭动作监督学习“看哪里”，在冻结的 DINOv3 特征上给出随任务进展变化的裁剪区域。报告真机成功率从 48.3% 升到 76.7%，光照与背景变化下从 20% 升到 60%。 · [代码](https://github.com/zheyu-zhuang/seeker)
 - **[DeCAL: Towards Physically-Grounded Dexterous Vision-Language-Action Models via Contact-Aware Latent Co-Imagination](https://arxiv.org/abs/2609.09119)** (2026) — 基于混合 Transformer 的灵巧视触觉 VLA：接触感知门控决定何时引入触觉，并联合想象未来的视觉与触觉潜变量。报告在富接触任务上平均成功率 71%。 · [代码](https://github.com/AureleoPKU/DeCAL) · [项目页](https://aureleopku.github.io/DeCAL)
+- **[Latent RL Priors for Data-Efficient Dexterous Manipulation](https://arxiv.org/abs/2611.08458)** (2026) — 把仿真中强化学习的经验蒸馏进冻结的流匹配动作解码器，之后只需用少量示教学习从图像到其潜变量的视觉接口。报告用少 5–10 倍的示教超过微调后的 π0.5 与 GR00T N1.7。 · [项目页](https://yixiaowang7.github.io/latent-rl-prior-page/)
+- **[MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation](https://arxiv.org/abs/2611.08372)** (2026) — 用高斯泼溅与动作重定向为移动操作示教合成新的底盘位姿视角，连被操作的运动物体也一起重渲染。报告在未见底盘位姿下成功率是最强基线的两倍以上。 · [项目页](https://robin-lab.cs.utexas.edu/momasplat)
 - **[MobiAgent: Dual-Loop Recursive Policy Self-Improvement for Long-Horizon Mobile Manipulation](https://arxiv.org/abs/2610.03476)** (2026) — 双循环移动操作智能体：内循环由 VLM 规划并组合流匹配技能，外循环从部署数据中自动发现并微调技能。报告在 BEHAVIOR-1K 上比 π0.5 高 22.5 个百分点。 · [代码](https://github.com/kaiknower/MobiAgent) · [项目页](https://kaiknower.github.io/mobiagent)
+- **[Spatial-UMI-Dream: Scaling World Action Models with Metric Geometry for UMI Manipulation](https://arxiv.org/abs/2611.07229)** (2026) — 在 605 小时 RGB-D UMI 数据上预训练的 5B 世界动作模型，同时预测 RGB、度量深度和动作。并提出 RoboTwin-UMI 基准；报告真机平均成功率 85%，比最强基线高 24.2 个百分点。 · [项目页](https://weiduoyuan.com/spatial-umi-dream/)
 - **[VLS: Steering Pretrained Robot Policies via Vision-Language Models](https://arxiv.org/abs/2602.03973)** (2026) — 在测试时适配冻结的扩散或流匹配策略：当障碍或杂物改变场景时，由 VLM 生成可微奖励来引导去噪。报告 CALVIN 提升 31%、LIBERO-PRO 提升 13%，无需重新训练。 · [代码](https://github.com/Vision-Language-Steering/code) · [项目页](https://vision-language-steering.github.io/webpage/)
-- **[CSO: Refining Robotic Policies via Skill Distribution Alignment and Skill-Grained Optimization](https://arxiv.org/abs/2610.38357)** (2026) — 面向 VQ 类技能策略的两阶段后训练：先让技能先验对齐线上成功轨迹，再冻结编码器按技能优化；报告 LIBERO 成功率从 80.1% 升至 97.5%。
-- **[Correct Robots Before They Make Mistakes: Proactive Human-in-the-Loop Intervention via Preference Learning](https://arxiv.org/abs/2611.05667)** (2026) — PHIL 在 XR 中预览策略预测的动作，让操作者在出错前介入，再用被否决与修正后的动作片段做偏好训练；报告相比 HG-DAgger，扩散策略成功率从 44.0% 升至 70.3%。 · [项目页](https://intuitive-robots.github.io/PHIL-page/)
-- **[GRASP: Gradient-Guided Sampling for Contact-Rich Physics-Based Motion Retargeting](https://arxiv.org/abs/2611.05754)** (2026) — 无需可微仿真器即可在接触动力学下重定向人类示教：从存档的采样轨迹中恢复梯度。报告在 1352 条双手 OakInk2 示教上成功率 92.8%，且不用任务专属接触奖励。 · [代码](https://github.com/ComputationalRobotics/GRASP_code) · [项目页](https://computationalrobotics.seas.harvard.edu/GRASP/)
 
-**[查看全部 107 条 →](lists/manipulation.zh-CN.md)**
+**[查看全部 110 条 →](lists/manipulation.zh-CN.md)**
 
 <a id="tactile"></a>
 ### 触觉与视触觉感知
@@ -109,12 +109,12 @@ _足式运动、人形全身控制与跑酷。_ [在网站上查看与最新论�
 - ⭐ **[DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills](https://arxiv.org/abs/1804.02717)** (2018) — 证明强化学习能模仿包括空翻在内的大量动作片段并保持鲁棒，是后续人形动作模仿工作的基本范式。 · [代码](https://github.com/xbpeng/DeepMimic)
 - **[Counterfactual Video Generation Enables Scalable Humanoid Loco-Manipulation](https://arxiv.org/abs/2609.38172)** (2026) — PRISM 用视频生成把少量真实视频扩增为数百段反事实人-物交互视频，在仿真中重建并训练单一人形搬运策略，无需真机微调即可泛化到未见物体。 · [代码](https://github.com/amazon-far/PRISM) · [项目页](https://prism-real2sim2real.github.io/)
 - **[HERO: Learning Humanoid End-Effector Control for Visual Whole-Body Open-Vocabulary Object Grasping](https://arxiv.org/abs/2602.16705)** (2026) — 模块化人形抓取：大视觉模型负责场景理解，仿真训练的末端跟踪策略结合 IK 与学习的正运动学模型负责执行。报告末端跟踪误差 2.44 厘米，比先前最好方法低 5.5 倍。 · [代码](https://github.com/RunpeiDong/HERO) · [项目页](https://hero-humanoid.github.io/)
+- **[HITCH: Teaching a Vision-Language Model to Operate a Humanoid through a Whole-Body Harness](https://arxiv.org/abs/2611.08039)** (2026) — 为 VLM 控制人形机器人提供“挽具”接口：在图像上点选即得 3D 位置，并下达骨盆、躯干、手、行走和视线指令。用教师轨迹微调后，真实 G1 无需真机数据即可搬箱子。 · [项目页](https://hitch.axell.top/)
 - **[Learning Contact Representation for Leg Odometry](https://arxiv.org/abs/2606.05501)** (2026) — 仅用关节编码器与 IMU 自监督估计足端接触，并作为支撑置信度输入卡尔曼滤波器。报告腿式里程计误差在对比方法中最低。 · [代码](https://github.com/egirgin/leg-odometry-contact-representation)
+- **[Social Humanoid: Socially Responsive Human-Humanoid Interaction](https://arxiv.org/abs/2611.08407)** (2026) — 让人形机器人对人类伙伴做出回应：token 化序列模型以伙伴动作为条件生成 G1 全身动作，再由跟踪控制器执行。并提供 260 小时的人-人形交互基准。 · [项目页](https://von31.github.io/social-humanoid/)
 - **[Ctrl-F: Force as an Interface for Humanoid Loco-Manipulation](https://arxiv.org/abs/2611.05507)** (2026) — 在动作跟踪中为每个接触部位加入显式三维力指令，由高层规划器在线给出。实机可推、踢最重 20 kg 的箱子（不感知力的基线会失败），并能适应任务中途增加的负载。 · [项目页](https://forcectrl.github.io/)
-- **[Coordinating Humanoid Loco-Manipulation through Action-Conditioned Latent Foresight](https://arxiv.org/abs/2611.04839)** (2026) — 用潜空间世界动作模型在执行前为人形指令序列打分，并逐步重规划；报告七项真机任务成功率 85.7%，GR00T N1.7 为 70.0%。 · [项目页](https://ju6276.github.io/Action-Grounded-Foresight/)
-- **[Deep Whole-body Parkour](https://arxiv.org/abs/2601.07701)** (2026) — 将外部感知融入全身动作跟踪，让人形机器人在不平整地形上完成高动态的非行走类技能。 · [代码](https://github.com/project-instinct/InstinctLab) · [项目页](https://project-instinct.github.io/deep-whole-body-parkour)
 
-**[查看全部 119 条 →](lists/locomotion.zh-CN.md)**
+**[查看全部 121 条 →](lists/locomotion.zh-CN.md)**
 
 <a id="world-models"></a>
 ### 世界模型
@@ -128,13 +128,13 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - ⭐ **[World Action Models: A Survey](https://arxiv.org/abs/2606.20781)** (2026) — 厘清 WAM 与世界模型、视频生成模型、VLA 的区别，并按生成内容（渲染、潜空间或不生成）和架构分类；结论是领域正走向少生成未来，只保留控制所需。 · [项目页](https://world-action-models.github.io/)
 - ⭐ **[Mastering Diverse Domains through World Models](https://arxiv.org/abs/2301.04104)** (2023) — DreamerV3：一套超参数适用于 150 多个任务，包括从零开始在《我的世界》中挖到钻石。 · [代码](https://github.com/danijar/dreamerv3)
 - **[$μ_0$: A Scalable 3D Interaction-Trace World Model](https://arxiv.org/abs/2606.13769)** (2026) — 不预测像素也不预测动作，而是预测物体、工具、手等关键点的 3D 轨迹，可用无动作标签的视频预训练。报告以轨迹为条件的策略可与 π0 类 VLA 相当。 · [代码](https://github.com/Yoonkyo/mu0) · [项目页](https://mu0-wm.github.io/)
+- **[GPWM: Modeling the World as 3D Particle Motion](https://arxiv.org/abs/2611.08338)** (2026) — 生成式 3D 粒子与刚体运动世界模型，统一覆盖刚体、可变形体、布料与颗粒材料。报告预测误差比此前最好的学习动力学低 31%，并通过在潜噪声空间搜索来做规划。 · [项目页](https://robertren1122.github.io/gpwm/)
 - **[ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?](https://arxiv.org/abs/2606.19531)** (2026) — 追问世界动作模型是否真需要视频生成：ImageWAM 改用图像编辑模型去噪时的 KV 缓存来条件化流匹配动作专家；报告优于 VLA 基线，计算量为视频 WAM 的 1/6、延迟为 1/4。 · [代码](https://github.com/yuyangalin/ImageWAM) · [项目页](https://zhangwenyao1.github.io/ImageWAM/)
+- **[La-JEPA: Compact Robot Policies with Latent World Modeling](https://arxiv.org/abs/2611.08156)** (2026) — 在冻结的 V-JEPA 2.1 特征上从零训练的紧凑世界动作模型，仅在训练时预测未来特征。报告在无具身预训练的策略中 RoboTwin 2.0 最优，并修正了 LIBERO-Plus 的指令。
 - **[Large Video Planner Enables Generalizable Robot Control](https://arxiv.org/abs/2512.15840)** (2026) — 以视频而非语言为主干构建机器人基础模型：在互联网规模人类视频上训练开源视频规划器，零样本生成视频计划再转为机器人动作；模型与数据集均已开源。 · [代码](https://github.com/buoyancy99/large-video-planner) · [项目页](https://www.boyuan.space/large-video-planner/)
 - **[Light-WAM: Efficient World Action Models with State-Fusion Action Decoding](https://arxiv.org/abs/2606.08242)** (2026) — 轻量世界动作模型：紧凑视频主干在降采样潜空间中做未来监督，动作专家融合多层特征一次前向预测动作块；报告可训练参数仅 0.44B，推理延迟 72 毫秒。 · [代码](https://github.com/L1ziang/Light-WAM)
-- **[StressDream: Steering Video World Models for Robust Policy Evaluation and Improvement](https://arxiv.org/abs/2606.00267)** (2026) — 通过优化视频世界模型的初始噪声（以 VLM 为目标），把想象引向罕见但合理的不利结果（如任务失败），用于评估和改进策略；覆盖自动驾驶与操作。 · [代码](https://github.com/CMU-IntentLab/StressDream) · [项目页](https://stressdream.github.io/)
-- **[What Makes Video World Model Latents Action-Relevant: Prediction over Reconstruction](https://arxiv.org/abs/2606.07687)** (2026) — 探测哪些视频世界模型的潜变量含有动作信息：关键在于时序视频预训练，而非像素重建质量；V-JEPA 类编码器取得最佳权衡。 · [代码](https://github.com/k1seul/corl2026-action-relevant-latents)
 
-**[查看全部 98 条 →](lists/world-models.zh-CN.md)**
+**[查看全部 100 条 →](lists/world-models.zh-CN.md)**
 
 <a id="navigation"></a>
 ### 导航与具身智能体
@@ -145,6 +145,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网�
 - **[CoFL-S: Spatially Queryable Sector Flow Fields for Local Language-Conditioned Navigation](https://arxiv.org/abs/2607.02222)** (2026) — 低层视觉语言导航动作头：在可见扇区上预测语言条件的流场并展开为连续轨迹；并提供连续时间的 Habitat 评测基准。 · [代码](https://github.com/ut-dragon-lab/CoFL)
 - **[CostNav: A Navigation Benchmark for Real-World Economic-Cost Evaluation of Physical AI Agents](https://arxiv.org/abs/2511.20216)** (2026) — 以经济账评估配送机器人导航：在 Isaac Sim 中结合公开财报与伤害数据计算成本、收入与盈亏平衡。报告七种基线方法目前都无法盈利。 · [代码](https://github.com/worv-ai/CostNav)
 - **[G2-Nav: Grounded and Guarded Vision-Language Costmaps for Robot Social Navigation](https://arxiv.org/abs/2607.16956)** (2026) — 社交导航：让 VLM 生成代价地图而非直接决策，并校验上游跟踪，另加高频安全检查应对延迟；真机验证。 · [代码](https://github.com/centiLinda/G2-Nav)
+- **[MessyNav: Zero-Shot Navigation via Manipulation in Messy Environments](https://arxiv.org/abs/2611.07417)** (2026) — 在杂乱环境中导航：用 VLM 推理每个挡路物体该推开、拿起还是绕开。零样本，报告在真实移动操作机器人上比最强基线高 27 个百分点。
 - **[RoboMemory: A Brain-inspired Multi-memory Agentic Framework for Interactive Environmental Learning in Physical Embodied Systems](https://arxiv.org/abs/2508.01415)** (2026) — 受大脑启发的具身智能体记忆框架（时间、空间、语义、情景记忆），配合动态空间知识图谱。报告让 Qwen2.5-VL-72B 在 EmbodiedBench 上平均成功率提高 26.5 个百分点。 · [代码](https://github.com/SP4595/RoboMemory-Code)
 - **[OdorSpaces: Visual-Olfactory Embodied Navigation in 3D Environments](https://arxiv.org/abs/2611.05738)** (2026) — 用 Fire Dynamics Simulator 为 Habitat-Sim 加入气味传输仿真，构成视觉加嗅觉的导航基准，任务是定位不可见的气体泄漏和早期火源，并提供多模态强化学习基线。
 - **[Aero-VPA: Few-Step Flow-Matching Control over Non-Reconstructive JEPA Latents for Agile Flight on Edge Hardware](https://arxiv.org/abs/2611.04392)** (2026) — 紧凑的 JEPA 加流匹配四旋翼策略，报告异常坦率：行为克隆 60 次任务全败，DAgger 进入瓶颈，运行时安全层将仿真森林任务成功率从 21.1% 提至 52.2%。 · [代码](https://github.com/ylee-sling/Aero-VPA) · [项目页](https://huggingface.co/ylee-sling/aero-vpa)
@@ -152,9 +153,8 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网�
 - **[Driving, Fast or Slow? Neuro-Symbolic Guidance for Motion Prediction in Multi-Modal Ground Mobility](https://arxiv.org/abs/2606.15251)** (2026) — TraCS 将由自然语言交规生成的可解释概率逻辑加到黑盒运动预测模型上；报告在 Argoverse 2 上稳定提升。Oral 论文。
 - **[From Region Arrival to Instance-Level Grounding in Vision-and-Language Navigation](https://arxiv.org/abs/2607.03792)** (2026) — 指出 VLN 成功率掩盖了“最后 3 米定位缺口”：智能体停在附近却未对准目标。提出实例级指标和可接入任意主干的修正模块 REALM。
 - **[WayTrace: A Map-to-Language-to-Trace Hierarchy for Embodied Urban Navigation](https://arxiv.org/abs/2611.05129)** (2026) — 视觉语言模型把网络地图导航拆成一条条原子指令，预测器在图像上画出路径，强化学习负责跟踪；轮腿机器人完成最长 1.37 公里的真实任务。 · [项目页](https://way-trace.github.io)
-- **[OpenFlyV2: An onboard vision-language-action model for aerial perception and navigation](https://arxiv.org/abs/2610.39287)** (2026) — 面向无人机的机载 VLA：同一视觉-语言表征同时支撑语义理解、空间推理与闭环航点控制。 · [代码](https://github.com/Ideal-ljl/AeroBrain) · [项目页](https://ideal-ljl.github.io/AeroBrain/)
 
-**[查看全部 50 条 →](lists/navigation.zh-CN.md)**
+**[查看全部 51 条 →](lists/navigation.zh-CN.md)**
 
 <a id="perception"></a>
 ### 感知、SLAM 与三维建图

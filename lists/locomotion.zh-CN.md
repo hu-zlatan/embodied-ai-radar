@@ -2,7 +2,7 @@
 
 _足式运动、人形全身控制与跑酷。_
 
-共 119 条，⭐ 为重点推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
+共 121 条，⭐ 为重点推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/locomotion.html) · [English](locomotion.md)
 
@@ -30,6 +30,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[GRAIL: Generating Humanoid Loco-Manipulation from World Models](https://arxiv.org/abs/2606.05160)** (2026) — CoRL 2026 Oral。全虚拟的人形移动操作数据管线：把视频世界模型落到 3D 资产与可仿真场景中，无需遥操作或搭建实体环境。 · [代码](https://github.com/NVlabs/GRAIL) · [项目页](https://research.nvidia.com/labs/dair/grail/)
 - **[HERO: Learning Humanoid End-Effector Control for Visual Whole-Body Open-Vocabulary Object Grasping](https://arxiv.org/abs/2602.16705)** (2026) — 模块化人形抓取：大视觉模型负责场景理解，仿真训练的末端跟踪策略结合 IK 与学习的正运动学模型负责执行。报告末端跟踪误差 2.44 厘米，比先前最好方法低 5.5 倍。 · [代码](https://github.com/RunpeiDong/HERO) · [项目页](https://hero-humanoid.github.io/)
 - **[HIPC: Humanoid Iterative Planning and Control via Goal-Conditioned Motion Closure](https://arxiv.org/abs/2610.41334)** (2026) — 把通常开环运行、会累积漂移的生成式运动模型与人形跟踪器闭环耦合。真实状态反馈易致抖动甚至摔倒，因此加入偏差衰减恢复、历史重锚定与延迟补偿。 · [项目页](https://hipc-humanoid.github.io/)
+- **[HITCH: Teaching a Vision-Language Model to Operate a Humanoid through a Whole-Body Harness](https://arxiv.org/abs/2611.08039)** (2026) — 为 VLM 控制人形机器人提供“挽具”接口：在图像上点选即得 3D 位置，并下达骨盆、躯干、手、行走和视线指令。用教师轨迹微调后，真实 G1 无需真机数据即可搬箱子。 · [项目页](https://hitch.axell.top/)
 - **[HLO-AMP: Hierarchical Loco-Manipulation from Object-Aware Motion Priors](https://arxiv.org/abs/2611.05113)** (2026) — 让人形底层控制器在场景中真实带着物体做动作模仿训练，再在其上训练高层策略；在宇树 G1 上可搬运不同箱子，并能从掉落中恢复。
 - **[Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids](https://arxiv.org/abs/2601.07718)** (2026) — 端到端感知框架，将深度输入映射到控制，实现人形机器人在多样非结构化地形上徒步。 · [代码](https://github.com/project-instinct/InstinctLab) · [项目页](https://project-instinct.github.io/hiking-in-the-wild)
 - **[HoloBoxing: A Simple Recipe for Humanoid Boxing with 7 Minutes of Single-GPU Training](https://arxiv.org/abs/2610.32909)** (2026) — 紧凑规划器向冻结的预训练全身控制器发送身体点目标；所称七分钟不含控制器预训练。评估在仿真中进行。
@@ -56,6 +57,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[SONIC-K1: Porting a Universal Humanoid Motion Tracker to a Small Humanoid on a Single GPU](https://arxiv.org/abs/2610.39327)** (2026) — 将 SONIC 通用动作跟踪框架移植到小型人形 Booster K1，在一张共享 GPU 上从头训练并开放权重与代码。MuJoCo 中几乎能跟踪所有留出动作片段；真机上上半身和慢速动作表现良好，迈步与转身仍不稳定，作者坦诚指出对动作延迟敏感。 · [代码](https://github.com/Kyk0/sonic-k1) · [项目页](https://huggingface.co/Kyry10/sonic-k1)
 - **[SUGAR: A Scalable Human-Video-Driven Generalizable Humanoid Loco-Manipulation Learning Framework](https://arxiv.org/abs/2605.20373)** (2026) — 把多样的人类视频转化为可部署的人形移动操作技能，无需任务专用奖励，能应对先验中的遮挡与重定向误差。 · [代码](https://github.com/tianshuwu/SUGAR) · [项目页](https://tianshuwu.github.io/sugar-humanoid/)
 - **[SWAP: Test-Time Steerable Humanoid Whole-Body Collision Avoidance](https://arxiv.org/abs/2610.25711)** (2026) — 分层框架：感知条件扩散策略生成多模态、考虑碰撞的动作提议，底层全身 RL 控制器负责跟踪与平衡；训练数据靠事后标注获得（只在已执行动作未扫过的空间放置障碍物）。在真实 Unitree G1 上验证，测试时引导使目标奖励平均提升 34%。 · [项目页](https://iscoyizj.github.io/SWAP-steerable-humanoid-oa-website/)
+- **[Social Humanoid: Socially Responsive Human-Humanoid Interaction](https://arxiv.org/abs/2611.08407)** (2026) — 让人形机器人对人类伙伴做出回应：token 化序列模型以伙伴动作为条件生成 G1 全身动作，再由跟踪控制器执行。并提供 260 小时的人-人形交互基准。 · [项目页](https://von31.github.io/social-humanoid/)
 - **[Solving a Giant Rubik's Cube with a Quadruped Robot](https://arxiv.org/abs/2610.24610)** (2026) — 四足机器人只用脚完成巨型魔方：机载 RGB-D 估计魔方位姿与颜色状态，规划器把解法转成技能序列，强化学习训练的全身技能负责翻转魔方、一脚固定一脚推动转层。报告完成三次完全自主求解。 · [项目页](https://leggedrobotics.github.io/rubik-skills/)
 - **[SuperMimic: Scaling Humanoid Whole-Body Control with One Differentiable World Model](https://arxiv.org/abs/2610.28480)** (2026) — SuperMimic 不再蒸馏逐动作专家或用大算力硬训单一 RL 策略，而是把人形机器人动作跟踪策略与一个从仿真日志拟合的、共享动力学的可微世界模型联合训练（CoRL 2026 口头报告）。 · [项目页](https://supermimic.github.io)
 - **[TACOS: Terrain-Aware COntact Supervision for Visual Footstep Planning](https://arxiv.org/abs/2610.37806)** (2026) — 用足式状态估计因子图的残差给落足不稳定性打分，并投影到之前的图像上，监督稠密视觉预测器。 · [代码](https://github.com/norlab-ulaval/TACOS)

@@ -1836,3 +1836,32 @@
   tags: [latent-actions, hyperbolic, pretraining, real]
   takeaway_en: "Latent actions with polar structure in hyperbolic space: radius encodes how much changes, direction encodes what kind. Reports gains over latent-action baselines and pretrained VLAs."
   takeaway_zh: "在双曲空间中构造极坐标结构的潜动作：半径表示变化多大，方向表示变化类型。报告优于其他潜动作方法和预训练 VLA。"
+- title: "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training"
+  type: paper
+  arxiv: "2611.08373"
+  year: 2026
+  code: https://github.com/OpenHelix-Team/Spatial-Forcing/tree/master/SLA
+  project: https://SLA.github.io/
+  added: 2026-11-06
+  tags: [spatial-alignment, 3d, continual-pretraining, pi0.5]
+  takeaway_en: "Continual pre-training of π0.5 that aligns intermediate visual features with a frozen 3D perception model across many robot datasets. The extra parts are training-only, so inference and weights stay π0.5-compatible."
+  takeaway_zh: "在多个机器人数据集上对 π0.5 做持续预训练，把中间视觉特征与冻结的 3D 感知模型对齐。附加组件只在训练时使用，推理结构和权重与 π0.5 保持兼容。"
+- title: "Concertina: Embodying Manipulation and Cognition in One Diffusion Vision-Language Model"
+  type: paper
+  arxiv: "2611.07513"
+  year: 2026
+  code: https://github.com/lose4578/Concertina
+  added: 2026-11-06
+  tags: [diffusion-vlm, continuous-actions, unified-model, libero, calvin]
+  takeaway_en: "Puts continuous actions inside one diffusion VLM: each timestep is a latent token, no separate action expert (0.21% of params for action I/O). Reports 98.15% on LIBERO and 85.9% on LIBERO-Plus."
+  takeaway_zh: "把连续动作直接放进同一个扩散 VLM：每个控制时间步是一个潜动作 token，没有独立动作专家（动作接口仅占 0.21% 参数）。报告 LIBERO 98.15%、LIBERO-Plus 85.9%。"
+- title: "Failure Prediction and Classification in Vision-Language-Action Models Via Calibrated Latent Probing"
+  type: paper
+  arxiv: "2611.08425"
+  year: 2026
+  project: https://vla-tug.github.io
+  added: 2026-11-06
+  topics: [datasets]
+  tags: [failure-prediction, monitoring, calibration, probing, safety]
+  takeaway_en: "Lightweight probe on a VLA's latent layers that flags failures early with calibrated miss and false-alarm bounds and names the failure mode. Releases 3,180 annotated manipulation episodes."
+  takeaway_zh: "在 VLA 隐层上加轻量探针，提前预警失败并给出校准的漏报与误报上界，还能判断失败类型。并发布 3180 条带标注的操作轨迹。"

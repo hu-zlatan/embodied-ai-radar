@@ -2,7 +2,7 @@
 
 _Vision-language navigation, embodied question answering, mobile manipulation and LLM planners._
 
-50 entries, ⭐ = highlight. Generated from [`data/curated/navigation.yaml`](../data/curated/navigation.yaml); edit the YAML, not this file.
+51 entries, ⭐ = highlight. Generated from [`data/curated/navigation.yaml`](../data/curated/navigation.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/navigation.html) · [中文](navigation.zh-CN.md)
 
@@ -24,6 +24,7 @@ _Vision-language navigation, embodied question answering, mobile manipulation an
 - **[Hierarchical Residual Policy Learning for Real-World Mobile Manipulation with Sparse Human Guidance](https://arxiv.org/abs/2610.20607)** (2026) — HiRe-MoMa fine-tunes a frozen mobile-manipulation policy in the real world by learning residual corrections, with only occasional human guidance. · [code](https://github.com/tasl-lab/HiRe-MoMa) · [project](https://hire-moma.github.io/)
 - **[InJePA: Intention-First Latent Planning with Coupled JEPA World Models for Visual Navigation](https://arxiv.org/abs/2610.23896)** (2026) — Two coupled JEPAs share a latent space: one proposes goal-conditioned latent intentions, the other predicts consequences, closing an intention-action-consequence loop. Evaluated on image-goal navigation in Habitat MP3D. · [code](https://github.com/zhuxun132/InJepa)
 - **[MOON: Learning When to Forget and How to Move On in Vision-and-Language Navigation](https://arxiv.org/abs/2610.33546)** (2026) — Off-route VLN agents keep following their stale history ('behavioral inertia'). MOON adds a deviation judge that clears it and a GRPO-trained recovery policy (<1% params); reports +5.2 / +6.0 points on R2R-CE / RxR-CE. · [code](https://github.com/AutoLab-SAI-SJTU/MOON)
+- **[MessyNav: Zero-Shot Navigation via Manipulation in Messy Environments](https://arxiv.org/abs/2611.07417)** (2026) — Navigates cluttered spaces by deciding, with VLM affordance reasoning, whether to swipe, pick up or avoid each blocking object. Zero-shot; reports +27 points over the best baseline on a real mobile manipulator.
 - **[OSCAR: Obstacle Survival Curves for Adaptive Robot Navigation](https://arxiv.org/abs/2606.00990)** (2026) — CoRL 2026 Spotlight. Decides whether to wait or reroute at a blocked route by modeling how long each obstacle class tends to persist.
 - **[OdorSpaces: Visual-Olfactory Embodied Navigation in 3D Environments](https://arxiv.org/abs/2611.05738)** (2026) — Adds simulated odour transport to Habitat-Sim using Fire Dynamics Simulator, giving a smell-and-vision navigation benchmark for finding invisible gas leaks and early-stage fires, with a multimodal RL baseline.
 - **[One Scan is Enough: Demonstration-Free Adaptation for Language-Guided Navigation](https://arxiv.org/abs/2610.33794)** (2026) — Adapts a language-guided navigation policy to a new building from one iPhone scan, compiled into a training environment with synthetic instructed episodes. Reports 85% real success vs 49% for a demo-fine-tuned baseline.
