@@ -2019,3 +2019,73 @@
   tags: [guidance, energy-functions, 3d, pi0.5, real]
   takeaway_en: "Turns guidance from 3D foundation models, VLMs or human pose into differentiable 3D attractor/repeller energies that steer VLA action sampling. Reports gains for π0.5 and GR00T N1.6 in sim and real."
   takeaway_zh: "把 3D 基础模型、VLM、人体姿态等指导信号统一表示为 3D 空间中可微的吸引/排斥能量函数，引导 VLA 动作采样。报告提升 π0.5 和 GR00T N1.6 在仿真与真机上的表现。"
+- title: "VoLo: A Physical Orchestrator for Open-Vocabulary Long-Horizon Manipulation"
+  type: paper
+  arxiv: "2606.07723"
+  year: 2026
+  venue: CoRL 2026
+  project: https://chicychen.github.io/VoLo/
+  added: 2026-11-06
+  tags: [agent, vlm-orchestration, long-horizon, benchmark, real]
+  takeaway_en: "VLM agent that plans, monitors and recovers by treating a VLA or world-action model as an interruptible tool it can stop and steer mid-rollout. Comes with RoboVoLo, a long-horizon open-vocabulary benchmark."
+  takeaway_zh: "VLM 智能体把 VLA/世界动作模型当作可随时中断的工具，在执行中途调度和纠正，从而完成规划、监控与恢复。配套发布开放词汇长程操作基准 RoboVoLo。"
+- title: "Flow Control: Steering Vision-Language-Action Models with Simple Real-Time Inputs"
+  type: paper
+  arxiv: "2606.10180"
+  year: 2026
+  venue: CoRL 2026
+  project: https://jcykao.github.io/flowcontrol/
+  added: 2026-11-06
+  tags: [steering, teleoperation, flow-matching, human-in-the-loop, real]
+  takeaway_en: "Steers a flow-matching VLA in real time from a keyboard by writing the user input into the action expert's initial noise; no retraining. Fine-tuning on steered runs also improves the autonomous policy."
+  takeaway_zh: "把键盘等简单用户输入写入流匹配动作专家的初始噪声，即可实时引导 VLA，无需重训；用引导后的轨迹微调还能提升自主策略。"
+- title: "CLAP: Direct VLM-to-VLA Adaptation via Language-Action Grounding"
+  type: paper
+  arxiv: "2607.08974"
+  year: 2026
+  venue: CoRL 2026
+  project: https://omron-sinicx.github.io/clap/
+  added: 2026-11-06
+  tags: [vlm-to-vla, language-actions, open-weights, libero, real]
+  takeaway_en: "Turns a VLM into a VLA without architecture changes by writing a short language action description before the numeric action tokens. 2B model reports 90.8% on LIBERO after 4–5 hours of training; 0.8B–4B weights."
+  takeaway_zh: "不改结构直接把 VLM 变成 VLA：在数值动作 token 之前先生成一句自然语言动作描述。2B 模型训练 4–5 小时，报告 LIBERO 90.8%；发布 0.8B–4B 开放权重。"
+- title: "Steering Autoregressive Vision-Language-Action Policies via Action Token Intervention"
+  type: paper
+  arxiv: "2606.15021"
+  year: 2026
+  venue: CoRL 2026
+  project: https://jasontchan.github.io/token-steering/
+  added: 2026-11-06
+  tags: [steering, action-tokens, human-in-the-loop, assistive, real]
+  takeaway_en: "Steers autoregressive VLAs at inference by injecting low-dimensional user input into the action-token space. Reports success from 10.0% to 72.5% and 16.7% to 93.8% on two household tasks."
+  takeaway_zh: "推理时把低维用户输入注入自回归 VLA 的动作 token 空间来引导轨迹，无需训练。报告两个家务任务成功率分别从 10.0% 升到 72.5%、从 16.7% 升到 93.8%。"
+- title: "SentryVLA: Uncertainty-Guided Action Selection and State Monitoring for Vision-Language-Action Robotic Control"
+  type: paper
+  arxiv: "2604.16677"
+  year: 2026
+  venue: CoRL 2026
+  project: https://robotic-vision-lab.github.io/sentryvla/
+  added: 2026-11-06
+  tags: [uncertainty, conformal-prediction, failure-detection, runtime-monitoring, real]
+  takeaway_en: "Runtime wrapper for frozen VLAs: conformalized quantile regression ranks sampled actions, and a Mahalanobis anomaly score on latent states warns about abnormal execution. No retraining."
+  takeaway_zh: "冻结 VLA 的运行时外壳：用共形分位数回归为多个候选动作打分择优，并在潜在状态上计算马氏距离异常分，预警异常执行。无需重训。"
+- title: "DAM-VLA: Decoupled Asynchronous Multimodal Vision Language Action model"
+  type: paper
+  arxiv: "2606.12105"
+  year: 2026
+  venue: CoRL 2026
+  project: https://intuitive-robots.github.io/DAM-VLA/
+  added: 2026-11-06
+  tags: [asynchronous, multimodal, force, high-frequency, real]
+  takeaway_en: "Lets each modality update at its own sensor rate through latent buffers read by the action head, adding fast signals via gated cross-attention. Reports 95.2% vs 40.95% on seven contact-rich real tasks at 100 Hz."
+  takeaway_zh: "各模态按各自传感器频率刷新潜在缓存，供动作头持续读取，高频信号通过门控交叉注意力接入。报告在七个富接触真机任务上成功率 95.2%，对比基线 40.95%，控制频率 100 Hz。"
+- title: "Action Chunk Scheduling for Batched Robot Policy Serving"
+  type: paper
+  arxiv: "2608.00337"
+  year: 2026
+  venue: CoRL 2026
+  project: https://gatech-rl2.github.io/actionchunkscheduling
+  added: 2026-11-06
+  tags: [serving, scheduling, fleet, inference, real]
+  takeaway_en: "Serving one robot policy to a fleet from a remote GPU, posed as scheduling. Naive batching fails when robots consume action chunks at different rates; their scheduler reports up to 18% higher real-world throughput."
+  takeaway_zh: "把从远程 GPU 为多台机器人提供策略推理建模为调度问题。当各机器人消耗动作块的速度不同时，简单批处理失效；所提调度算法在真机上报告吞吐量最高提升 18%。"

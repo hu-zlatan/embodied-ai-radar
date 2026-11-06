@@ -2,7 +2,7 @@
 
 _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的学习型控制。_
 
-共 33 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/control.yaml`](../data/curated/control.yaml) 生成，请勿直接编辑。
+共 36 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/control.yaml`](../data/curated/control.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/control.html) · [English](control.md)
 
@@ -26,11 +26,14 @@ _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的�
 - ⭐ **[OMPL: The Open Motion Planning Library](https://ompl.kavrakilab.org/)** (2012) — 采样式运动规划器的标准库（RRT、RRT-Connect、PRM、RRT* 等众多算法），也是 MoveIt 默认的规划后端。 · [代码](https://github.com/ompl/ompl)
 - **[A generalist policy for muscle-driven control across individual musculoskeletal models](https://arxiv.org/abs/2610.36535)** (2026) — MyoAcross 结合个体化肌骨模型构建、形态条件策略学习与虚拟模型增广，用一个策略驱动不同个体的肌骨模型跟踪参考动作而无需逐个微调；报告在 31 个未见个体模型上完成率 99.24%，跟踪误差比无条件 MLP 降低 22.6%，并与 120 人的地面反力和肌电数据做了对比。 · [项目页](https://woodater-thu.github.io/MyoAcross/)
 - **[CusADi2: Latency-Optimized Batch Computation of Robot Kinematics, Jacobians, and Hessians on the GPU](https://arxiv.org/abs/2610.25476)** (2026) — 在 GPU 上以低延迟批量计算运动学、雅可比与海森矩阵，面向在线运行的采样式与梯度式轨迹优化。 · [代码](https://github.com/johnviljoen/cusadi2)
+- **[Exploring the Intrinsic Geometry of Diffusion Models with Constrained Inverse Kinematics](https://arxiv.org/abs/2606.26408)** (2026) — 以解流形可精确知道的约束逆运动学为试验场，检验扩散模型学到的几何结构。在 UR5 和 Franka 上，从得分函数估计的内在维度与解析自由度一致。 · [项目页](https://papers.starslab.ca/diffusion-ik-geometry/)
 - **[Keeping Contact: Task-Adaptive Friction Margins for Bimanual Non-Prehensile Manipulation](https://arxiv.org/abs/2610.36961)** (2026) — 以带符号摩擦距离度量防滑裕度，并在双臂绕支点倾转物体时按任务需求自适应调整；一系列二阶锥规划给出全局最优接触力。真机实验显示自适应裕度优于固定裕度和无裕度。 · [项目页](https://keeping-contact.github.io/)
+- **[LEMCA: LLM-Guided Synthesis of Efficient Mode-Switching Control Architectures](https://arxiv.org/abs/2609.21319)** (2026) — 用 LLM 驱动的进化搜索，把多模式切换控制器写成可解释程序并迭代优化，使简单阶段使用低开销模式。报告找到的设计超越单一结构控制器的帕累托前沿。 · [项目页](https://lemca-robotics.github.io/)
 - **[PAKT: Physically-Aligned Kinesthetic Teaching for Reinforcement Learning](https://arxiv.org/abs/2609.25630)** (2026) — 面向真实世界强化学习的示教框架：人手拖动示教时轨迹始终满足策略可执行的运动学限制，并配套阻抗控制栈。报告工业插装任务节拍时间比 HIL-SERL 缩短 23–48%。 · [项目页](https://pakt-website.github.io/pakt-website)
 - **[PolicyIK: High-Precision Inverse Kinematics for Robot Arms with Reinforcement Learning](https://arxiv.org/abs/2611.05372)** (2026) — 学习式目标条件逆运动学，能保持位置控制器静止时所需的偏置；报告在 93.5% 的留出仿真任务上误差低于 1 mm 和 0.2°，并可直接在真实机械臂上训练。 · [代码](https://github.com/Tinaliu0123/PolicyIK)
 - **[PrismPlan: A Shared GPU Substrate for Motion Planning Across Paradigms](https://arxiv.org/abs/2610.23884)** (2026) — 一次性实现批量 GPU 碰撞检测与正运动学，在其上运行采样、搜索和优化三类规划器，使三种范式可以公平比较。 · [代码](https://github.com/XiaoyubotMotionTeam/PrismPlan)
 - **[RAM: Reachability Across Morphologies](https://arxiv.org/abs/2606.09108)** (2026) — CoRL 2026 Spotlight。以形态为条件的隐式神经位姿可达性模型，可微、考虑自碰撞，并能泛化到未见形态。 · [代码](https://github.com/TimWalter/ram) · [项目页](https://timwalter.github.io/ram)
+- **[Safe Streaming Flow Planning by Aligning Sampling Dynamics with Execution Dynamics](https://arxiv.org/abs/2610.03132)** (2026) — 流匹配规划器让采样过程与系统执行动力学对齐，只需对实际执行的一步施加高阶控制障碍函数约束。在导航、竞速和运动任务上降低规划延迟并提升安全性。 · [项目页](https://jang-seunghwan.github.io/SafeStreamingFlowPlanning/)
 - **[Scalable Deep Unfolding of Conic Optimizers](https://arxiv.org/abs/2606.13825)** (2026) — 通过无矩阵隐式微分和稳定的半正定投影梯度，让深度展开适用于大规模锥优化求解器；报告在基于 SDP 的规划上最高提速 50 倍。
 - **[Sub-Millisecond Reflexes for Continuous Physical Human-Robot Interaction](https://arxiv.org/abs/2610.21913)** (2026) — 开源的 ROS 2 多模式控制器，可在亚毫秒内切换控制模式并触发安全反射而无需中断任务；在 Franka 机械臂上验证。 · [代码](https://github.com/RoboRef/franka_reflex_engine)
 - **[TAM: Torque Adaptation Module for Robust Motion Transfer in Manipulation](https://arxiv.org/abs/2606.06218)** (2026) — CoRL 2026 Spotlight。面向富接触动作迁移的模块，应对仿真到现实、负载与个体差异，用于替代域随机化或系统辨识。 · [代码](https://github.com/Dongwon-Son/TAM) · [项目页](https://dongwon-son.github.io/tam-project-page/)

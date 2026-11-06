@@ -2,7 +2,7 @@
 
 _Large robot datasets, egocentric data and evaluation suites._
 
-79 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/datasets.yaml`](../data/curated/datasets.yaml); edit the YAML, not this file.
+80 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/datasets.yaml`](../data/curated/datasets.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/datasets.html) · [中文](datasets.zh-CN.md)
 
@@ -63,6 +63,7 @@ _Large robot datasets, egocentric data and evaluation suites._
 - **[Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines](https://arxiv.org/abs/2604.23001)** (2026) — Argues VLA progress now depends more on data engines and evaluation than on architectures; finds a fidelity-versus-cost trade-off in datasets and gaps in compositional and long-horizon benchmarks. · [project](https://github.com/ziyaow1010/vla-datasets-benchmarks)
 - **[What Are We Actually Benchmarking in Robot Manipulation?](https://arxiv.org/abs/2606.04233)** (2026) — CoRL 2026 Oral. Audits LIBERO, CALVIN, SimplerEnv, RoboCasa and RoboTwin 2.0 against four failure modes, from shortcut solvability to creeping overfitting. LIBERO and CALVIN fail several diagnostics. · [code](https://github.com/ripl/ManipulationBenchmarkAudit) · [project](https://ripl.github.io/manipulation_benchmark_audit/)
 - **[AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems](https://arxiv.org/abs/2503.06669)** (2025) — A million-scale real-robot dataset collected in purpose-built scenes, with the GO-1 generalist policy trained on it.
+- **[Can AI Perceive Physical Danger and Intervene?](https://arxiv.org/abs/2509.21651)** (2025) — ASIMOV v2: physical-safety benchmark built from real injury narratives turned into generated images and videos, testing whether foundation models notice danger and intervene, plus safety-reasoning post-training. · [project](https://asimov-benchmark.github.io/v2)
 - **[EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video](https://arxiv.org/abs/2505.11709)** (2025) — 829 hours of egocentric Apple Vision Pro video with tracked 3D poses for every hand joint, across 194 tabletop tasks from tying shoelaces to folding laundry; includes hand-trajectory prediction benchmarks. · [code](https://github.com/apple-aiml-research/ml-egodex)
 - **[PHUMA: Physically Reliable Humanoid Locomotion Dataset](https://arxiv.org/abs/2510.26236)** (2025) — CoRL 2026 Spotlight. Humanoid locomotion dataset from internet video that targets the floating, penetration and foot skating common in earlier video-derived data. · [code](https://github.com/davian-robotics/PHUMA) · [project](https://davian-robotics.github.io/PHUMA)
 - **[RoboChallenge: Large-scale Real-robot Evaluation of Embodied Policies](https://arxiv.org/abs/2510.17950)** (2025) — Report on an online system for testing many robot policies on many real tasks, plus a study of recent VLAs on its first benchmark, Table30.

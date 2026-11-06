@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 75 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 78 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [English](learning.md)
 
@@ -29,12 +29,15 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[CuraEval: Evaluating Demonstration Curation on Mixed-Skill Robot Data](https://arxiv.org/abs/2610.38221)** (2026) — 对示范数据筛选方法做严格对照：在混合技能的 robomimic 数据上与等量随机子集和全量训练比较，发现某评分几乎等同于按轨迹长度排序；经多重比较校正后，没有任何筛选条件显著优于全量数据训练（CoRL 2026 Workshop 论文）。 · [代码](https://github.com/jiuyixu25/CuraEval)
 - **[D&A: Decoupling Description and Assessment Enables VLMs as Zero-Shot Robotic Reward Models](https://arxiv.org/abs/2611.03622)** (2026) — 只靠提示词的任务进度评估：先让 VLM 客观描述画面并定义绝对成功标准，再按明确评分表打分，减少对失败执行“幻觉式”的进度判断，其奖励可用于下游强化学习。 · [代码](https://github.com/memmelma/dna) · [项目页](https://weirdlabuw.github.io/dna)
 - **[DiscoDemo: Discovering Efficient and Diverse Robot Demonstrations for Imitation Learning](https://arxiv.org/abs/2610.32093)** (2026) — 把强化学习当作示教数据生成器而非部署控制器：以隐变量为条件的策略为同一任务找到多种不同的成功解法，导出为模仿学习数据集；报告真机下游成功率从最强基线的 39% 提升到 78%。 · [代码](https://github.com/DAVIAN-Robotics/DiscoDemo) · [项目页](https://davian-robotics.github.io/DiscoDemo)
+- **[DiscreteRTC: Discrete Diffusion Policies are Natural Asynchronous Executors](https://arxiv.org/abs/2604.25050)** (2026) — 指出离散扩散策略天然支持实时分块异步执行（补全即解掩码），无需微调、计算量约为 0.7 倍。报告在真机冰球防守任务上成功率比流匹配 RTC 高 65%。 · [项目页](https://outsider86.github.io/DiscreteRTCSite/)
 - **[ELA: End-to-End Latent Action Policy Learning from Video Demonstrations](https://arxiv.org/abs/2611.05571)** (2026) — 联合训练潜在动作模型、潜在策略和动作解码器，用大量无动作标注的视频加少量带标注示教即可训练策略。报告在仿真和真实任务上优于已有潜在动作方法。 · [项目页](https://end2end-latent-action.github.io/)
+- **[ENPIRE: Agentic Robot Policy Self-Improvement in the Real World](https://arxiv.org/abs/2606.19980)** (2026) — 让编程智能体自主改进真实机器人策略的框架：自动复位与结果验证、多机并行评测，并由智能体分析日志、修改训练代码。报告在扎扎带等灵巧任务上成功率 99%。 · [项目页](https://research.nvidia.com/labs/gear/enpire/)
 - **[EgoForesight: Effectively Scaling Policy Learning with Noisy Egocentric Actions](https://arxiv.org/abs/2610.31845)** (2026) — 将机器人示教与动作标签噪声较大的第一视角视频联合训练 VLA：按数据源可靠性分配监督权重，并从干净的未来画面蒸馏表征；报告在最多 3 万小时预训练数据范围内扩展斜率高于基线。 · [代码](https://github.com/LinShan-Bin/EgoForesight) · [项目页](https://lin-shan.com/EgoForesight)
 - **[Flexible Language-Guided Representation Editing for Adaptive Robot Behavior](https://arxiv.org/abs/2610.28893)** (2026) — FLEX 用自然语言纠正来迭代修改机器人的任务特征集合，支持添加、泛化、屏蔽三种操作（而非只能添加）；在二维导航、Franka 桌面操作和真实用户研究中报告比其他特征编辑方法获得更高的归一化奖励。 · [项目页](https://mit-clear-lab.github.io/FLEX/)
 - **[Flow Policy Gradients for Robot Control](https://arxiv.org/abs/2602.02481)** (2026) — CoRL 2026 Oral。让流匹配策略梯度可用于机器人控制：绕过动作似然计算，策略不再限于高斯分布。应用于足式运动、人形动作跟踪与操作。 · [代码](https://github.com/amazon-far/fpo-control) · [项目页](https://hongsukchoi.github.io/fpo-control)
 - **[FlowDAgger: Human-in-the-Loop Adaptation of Generative Robot Policies in Latent Space](https://arxiv.org/abs/2607.08877)** (2026) — CoRL 2026 Spotlight。在隐空间中根据人类干预适配冻结的生成式策略，替代大规模采集或实机在线强化学习。 · [代码](https://github.com/microsoft/FlowDAgger) · [项目页](https://microsoft.github.io/FlowDAgger)
 - **[GSBR: Geometric Support Behavior Regularization for Online RL](https://arxiv.org/abs/2611.05295)** (2026) — 在预训练策略之上做在线强化学习，按动作到其支撑集的距离施加惩罚：集内不罚，集外平滑增长；报告 19 个基准任务的平均成功率从 33% 升至 95%。 · [代码](https://github.com/charlesxu0124/gsbr) · [项目页](https://charlesxu0124.github.io/gsbr/)
+- **[Generative Flow on Symbolic Abstractions for Embodiment Capability Discovery](https://arxiv.org/abs/2610.17174)** (2026) — 自动发现某台机器人“学得会”的任务：用 GFlowNet 生成符号化任务骨架，以仿真中底层策略的学习效果作为奖励，再把发现的任务蒸馏进一个语言条件策略。 · [项目页](https://www.youwei-yu.com/fosa)
 - **[HIDRA: Hierarchical Dual-Routing Attention for Replay-Free Lifelong Imitation Learning](https://arxiv.org/abs/2610.36374)** (2026) — 无回放的终身模仿学习：分层双路由注意力先按指令检索专家、再按上下文细化，并用键级几何正则抑制表征漂移带来的路由干扰；报告在多个 LIBERO 任务序列上优于无回放和有回放基线。 · [代码](https://github.com/yfqi/HIDRA)
 - **[HiRE: Hindsight Reward Editing for Policy Finetuning](https://arxiv.org/abs/2609.27068)** (2026) — 免训练的奖励修正：事后对比成功与失败轨迹，惩罚被基础模型奖励高估、最终却导致失败的“陷阱状态”。报告性能至少是基础策略的 3 倍。 · [项目页](https://hire-project.github.io)
 - **[LLMs as MDP Designers: A Dependency-Aware Agentic Framework for Automated Robot Policy Generation](https://arxiv.org/abs/2611.04974)** (2026) — ARPG 让大模型在部署前设计强化学习流程：先定 MDP，再写仿真代码，并校验状态、动作与奖励是否一致；报告在 Isaac Sim 中成功率高于单体式大模型基线。

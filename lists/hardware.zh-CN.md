@@ -2,7 +2,7 @@
 
 _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备。_
 
-共 41 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/hardware.yaml`](../data/curated/hardware.yaml) 生成，请勿直接编辑。
+共 42 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/hardware.yaml`](../data/curated/hardware.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/hardware.html) · [English](hardware.md)
 
@@ -23,6 +23,7 @@ _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备�
 - **[MABEL: An Open Anthropomorphic Mobile Bimanual Platform for Teleoperation and Learning](https://arxiv.org/abs/2611.04083)** (2026) — 开源 56 自由度移动双臂机器人，含 7 自由度手臂和 17 自由度灵巧手，零件成本约 8100 美元，支持 Apple Vision Pro 遥操作，并演示了模仿学习全流程。 · [项目页](https://robotmabel.github.io/website/)
 - **[OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation](https://arxiv.org/abs/2610.36598)** (2026) — 完全开源的 UMI 式手持夹爪：3D 打印、标准 ISO 接口，用低成本双目相机获得公制尺度、低漂移的轨迹，并提出手持采集设备定位精度基准 UMI-Loc-Bench-v1；硬件、软件与数据以可商用许可证发布。 · [项目页](https://open-jaws.github.io/)
 - **[PHD-Hand: A Printable Humanoid Dexterous Hand with Linkage-Driven 3-DOA Digits](https://arxiv.org/abs/2610.29030)** (2026) — 完全连杆驱动的人形灵巧手，每根手指 3 个主动自由度；用柔性铰链和弹簧钢驱动杆取代大量微型零件，可用入门级 3D 打印机制造，尺寸接近真人手。
+- **[PanoVine: Whole-Body Visuomotor Control for Soft Growing Vine Robot](https://arxiv.org/abs/2606.22923)** (2026) — 首个自主藤蔓（软体生长）机器人系统：沿机身分布的 19 个摄像头为从演示学到的端到端视觉运动策略提供反馈，能穿过分叉结构、爬坡并进入狭窄空间。 · [项目页](https://panovine-bot.github.io)
 - **[RAIPAL: A Powerful and Agile Humanoid Arm for Human Tasks](https://arxiv.org/abs/2611.04334)** (2026) — 人形手臂，其力量、速度和耐力指标取自人类上肢测量数据；报告峰值负载 20 公斤（自重的 2.25 倍），末端速度 20.6 米每秒。
 - **[Shape Your Body: Value Gradients for Multi-Embodiment Robot Design](https://arxiv.org/abs/2606.00702)** (2026) — 把冻结的多机器人价值函数作为可微代理模型来优化机器人设计，无需为每台机器人重跑协同设计 RL；可处理 1100 多个设计参数。
 - **[SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing](https://arxiv.org/abs/2610.40646)** (2026) — 不追求万能夹爪，而是用固定的机器人侧接口加低成本、带触觉传感器的工具侧适配器，把日常厨具变成可自动更换的末端执行器，兼容多种机器人平台；配套遥操作采集示范，模仿学习策略完成煎豆腐、拌沙拉、翻肉等工具任务。 · [项目页](https://personalrobotics.github.io/SwapBot)

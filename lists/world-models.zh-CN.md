@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 104 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 105 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html) · [English](world-models.md)
 
@@ -57,6 +57,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Light-WAM: Efficient World Action Models with State-Fusion Action Decoding](https://arxiv.org/abs/2606.08242)** (2026) — 轻量世界动作模型：紧凑视频主干在降采样潜空间中做未来监督，动作专家融合多层特征一次前向预测动作块；报告可训练参数仅 0.44B，推理延迟 72 毫秒。 · [代码](https://github.com/L1ziang/Light-WAM)
 - **[MemoryVAM: Integrating Memory into Video Action Model for Robot Manipulation](https://arxiv.org/abs/2606.20679)** (2026) — 为视频世界模型策略加入情景记忆 token，使动作能依赖已不在视野中的事件。报告 LIBERO-Mem 成功率从 5% 提升到 42.5%，真机记忆类任务约 75–80%。 · [项目页](https://MemoryVAM.github.io/)
 - **[Motubrain: An Advanced World Action Model for Robot Control](https://arxiv.org/abs/2604.27792)** (2026) — 基于 UniDiffuser 的三流世界动作模型，一个模型同时覆盖策略、世界建模、视频生成和逆动力学，并可利用纯视频和跨形态数据。 · [项目页](https://www.shengshu.com/en/motubrain)
+- **[NovaPlan: Zero-Shot Long-Horizon Manipulation via Closed-Loop Video Language Planning](https://arxiv.org/abs/2602.20119)** (2026) — 零样本长程操作：VLM 提出并验证多条生成的视频计划，动作由物体流或手部流转换而来，执行中持续监控并做戳推等局部纠正。 · [项目页](https://nova-plan.github.io/)
 - **[OSWAM: An Effective World Action Model with One-Step Action Generation](https://arxiv.org/abs/2610.35850)** (2026) — 单步扩散即可生成动作的世界动作模型：用“想象 token”代替随机噪声初始化，为动作提供先验。报告比直接策略式 WAM 快约 3 倍，编译后在 RTX 5090 上延迟低至 40 毫秒，覆盖自动驾驶与具身控制。 · [代码](https://github.com/PolyU-VCLab/OSWAM) · [项目页](https://gwenzhang.github.io/OSWAM/)
 - **[OpenNWM: A Generalist Navigation World Model with Latent Action Pretraining](https://arxiv.org/abs/2611.01844)** (2026) — 先从无动作标注的视频中学习潜在动作，再在后训练阶段对齐真实运动。配套数据集 NavAnywhere 含 17.5M 条视觉观测，来自 15 个来源，覆盖地面机器人、人和无人机。 · [代码](https://github.com/OpenSpace-Lab/OpenNWM)
 - **[PICA-WAM: Visual Perturbation Invariance via Cross-Appearance Self-Alignment in World Action Models](https://arxiv.org/abs/2610.26813)** (2026) — 为世界-动作模型加一个自监督辅助任务：EMA 教师看原始画面，在线模型看外观扰动后的画面并对齐其动作表征；报告在 RoboTwin 2.0、LIBERO-Plus 等基准上提升四种 WAM 对视觉扰动的鲁棒性，且不损失原有性能。 · [代码](https://github.com/YudeZou/PICA-WAM-release)

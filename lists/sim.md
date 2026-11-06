@@ -2,7 +2,7 @@
 
 _Physics simulators, GPU-parallel training and transfer to real robots._
 
-50 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
+51 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/sim.html) · [中文](sim.zh-CN.md)
 
@@ -42,6 +42,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._
 - **[MolmoB0T: Large-Scale Simulation Enables Zero-Shot Manipulation](https://arxiv.org/abs/2603.16861)** (2026) — CoRL 2026 Oral. Argues simulation can be enough: large, diverse synthetic data gives zero-shot real transfer for static and mobile manipulation. MolmoBot-Engine is an open procedural data pipeline. · [code](https://github.com/allenai/MolmoBot) · [project](https://allenai.github.io/MolmoBot)
 - **[Scaling Sim-to-Real VLA Reinforcement Learning with Generative 3D Worlds](https://arxiv.org/abs/2603.18532)** (2026) — Uses 3D world generative models to build 100 diverse interactive scenes for RL fine-tuning of a VLA. Reports sim success from 9.7% to 79.8% and real-world success from 21.7% to 75%. · [project](https://horizonrobotics.github.io/gail/scale-vla-rl)
 - **[SceneBloom: Agentic Indoor Environment Generation with Realistic and Diverse Layouts for Embodied Learning](https://arxiv.org/abs/2610.32978)** (2026) — Generates sim-ready rooms by sampling furniture layouts with diffusion priors, then compiling them into collision-free 3D scenes; nav policies trained there beat ones trained on real scans on held-out real scans. · [code](https://github.com/Tinaliu0123/scenebloom)
+- **[Worlds in One Demo: A Synthetic Data Engine for Learning Open-World Mobile Manipulation](https://arxiv.org/abs/2607.13154)** (2026) — Synthetic data engine that turns one real mobile-manipulation demo into many: Gaussian-splat scenes, rearranged contact segments chained by whole-body planning, and generated worlds from photos. Also cross-embodiment. · [project](https://wanda.lecar-lab.org/)
 - **[GaussGym: An open-source real-to-sim framework for learning locomotion from pixels](https://arxiv.org/abs/2510.15352)** (2025) — Drops 3D Gaussian Splatting into vectorized physics simulators as a renderer, reporting over 100,000 steps per second on consumer GPUs for learning from pixels.
 - **[GenManip: LLM-driven Simulation for Generalizable Instruction-Following Manipulation](https://arxiv.org/abs/2506.10966)** (2025) — Isaac Sim platform where an LLM builds tasks and layouts from a task-oriented scene graph over ~10K objects; its 200-scenario benchmark finds modular foundation-model systems generalize better than end-to-end policies. · [code](https://github.com/InternRobotics/GenManip)
 - **[Taccel: Scaling Up Vision-based Tactile Robotics via High-performance GPU Simulation](https://arxiv.org/abs/2504.12908)** (2025) — GPU tactile simulation combining IPC and ABD; the authors report running 18 times faster than real time across thousands of parallel environments.

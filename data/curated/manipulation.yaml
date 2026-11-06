@@ -1245,3 +1245,33 @@
   tags: [bimanual, in-context-learning, llm, training-free, real]
   takeaway_en: "Lets text-only LLMs do few-shot bimanual manipulation without fine-tuning by treating the arms as leader and follower agents. Reports 70.5% average success on 13 TWIN tasks."
   takeaway_zh: "把双臂视为“主-从”两个智能体，让纯文本 LLM 无需微调即可通过上下文学习完成少样本双臂操作。报告在 TWIN 的 13 个任务上平均成功率 70.5%。"
+- title: "Sim-and-Human Co-training for Data-Efficient and Scene-Generalizable Bimanual Manipulation"
+  type: paper
+  arxiv: "2601.19406"
+  year: 2026
+  venue: CoRL 2026
+  project: https://kaipengfang.github.io/sim-and-human/
+  added: 2026-11-06
+  tags: [co-training, sim-data, human-video, bimanual, real]
+  takeaway_en: "Co-trains a bimanual policy on sim data (for robot-valid actions) and human videos (for real visuals), then fine-tunes on 80 real episodes per task. Reports 62.5% on held-out scenes, 53.7 points above real-only."
+  takeaway_zh: "用仿真数据（提供机器人可执行动作）和人类视频（提供真实视觉）联合预训练双臂策略，再在每任务 80 条真机数据上微调。报告在未见场景上成功率 62.5%，比纯真机数据高 53.7 个百分点。"
+- title: "Static In, Dynamic Out: Counterfactual Action Augmentation for Moving Object Manipulation"
+  type: paper
+  arxiv: "2607.27890"
+  year: 2026
+  venue: CoRL 2026
+  project: https://sido-staticindynamicout.github.io/
+  added: 2026-11-06
+  tags: [dynamic-objects, data-augmentation, counterfactual, conveyor, real]
+  takeaway_en: "Lets a policy trained only on static objects handle moving ones: demos are augmented by moving the object to a counterfactual future pose and warping the action chunk; a pose predictor supplies the target at test time."
+  takeaway_zh: "让只用静止物体演示训练的策略也能抓取运动物体：把物体平移到反事实的未来位姿并相应变形动作块来扩增数据，部署时由位姿预测器给出目标位置。"
+- title: "CoStream: Composing Simple Behaviors for Generalizable Complex Manipulation"
+  type: paper
+  arxiv: "2606.26423"
+  year: 2026
+  venue: CoRL 2026
+  project: https://costream-simple.github.io
+  added: 2026-11-06
+  tags: [composition, assembly, foundation-models, force, real]
+  takeaway_en: "Composes simple behaviours (semantic constraints from foundation models, keypoints from imagined video, tactile/force corrections) into one SE(3) pose command per step. 8 real tasks, incl. seating a GPU."
+  takeaway_zh: "把语义约束（基础模型）、想象视频中的关键点预测、触觉/力实时修正等简单行为在 SE(3) 上组合成每一步的位姿指令。8 个真机任务，包括把显卡插入 PCIe 槽。"

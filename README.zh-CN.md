@@ -54,7 +54,7 @@ _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与�
 - ⭐ **[EagleVLA: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference](https://arxiv.org/abs/2607.12659)** (2026) — EagleVLA：面向 Jetson Orin 等低功耗机载设备的 VLA 异步推理方法，针对异步执行带来的感知-执行错位与反应慢两个问题；CoRL 2026 Spotlight，曾用名 Jetson-PI。 · [代码](https://github.com/PKU-SEC-Lab/EagleVLA)
 - ⭐ **[GigaBrain-0.5M\*: a VLA That Learns From World Model-Based Reinforcement Learning](https://arxiv.org/abs/2602.12099)** (2026) — 在 GigaBrain-0.5（预训练于 1 万多小时机器人操作数据）基础上，用以视频世界模型预测为条件的强化学习（RAMP）做后训练；论文报告在叠衣服、装箱和制作浓缩咖啡等难任务上比 RECAP 基线提升约 30%。 · [代码](https://github.com/open-gigaai/giga-brain-0) · [项目页](https://gigabrain05m.github.io)
 
-**[查看全部 195 条 →](lists/vla.zh-CN.md)**
+**[查看全部 202 条 →](lists/vla.zh-CN.md)**
 
 <a id="manipulation"></a>
 ### 操作与灵巧手
@@ -74,7 +74,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_ [在网站上�
 - ⭐ **[3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://arxiv.org/abs/2403.03954)** (2024) — 用紧凑点云编码作为扩散策略条件，比图像输入更省数据、对视角更鲁棒。 · [代码](https://github.com/YanjieZe/3D-Diffusion-Policy)
 - ⭐ **[Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation](https://arxiv.org/abs/2401.02117)** (2024) — 将 ALOHA 装上移动底盘；与静态 ALOHA 数据联合训练显著提升做饭、开柜等移动任务表现。 · [代码](https://github.com/MarkFzp/mobile-aloha)
 
-**[查看全部 122 条 →](lists/manipulation.zh-CN.md)**
+**[查看全部 125 条 →](lists/manipulation.zh-CN.md)**
 
 <a id="tactile"></a>
 ### 触觉与视触觉感知
@@ -134,7 +134,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - ⭐ **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — 以动作为中心的世界动作模型：由观测预测动作，视频生成变为可选，动作精度不再依赖视频预测质量，推理开销也更低。 · [代码](https://github.com/open-gigaai/giga-world-policy) · [项目页](https://gigaai-research.github.io/GigaWorld-Policy/)
 - ⭐ **[GreenWAM: A World Foundation Model for Robotics](https://arxiv.org/abs/2610.18774)** (2026) — 同一个世界模型兼作策略，用共享的关节坐标动作空间覆盖 20 类机器人；论文报告其在 WorldArena、RoboTwin 2.0、LIBERO-plus 上表现突出，并蒸馏出可实时运行的单步人形机器人策略。 · [代码](https://github.com/greenvla/GreenWAM) · [项目页](https://greenvla.github.io/GreenWAM)
 
-**[查看全部 104 条 →](lists/world-models.zh-CN.md)**
+**[查看全部 105 条 →](lists/world-models.zh-CN.md)**
 
 <a id="navigation"></a>
 ### 导航与具身智能体
@@ -146,15 +146,15 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网�
 - ⭐ **[ViNT: A Foundation Model for Visual Navigation](https://arxiv.org/abs/2306.14846)** (2023) — 在多种机器人的导航数据上训练的 Transformer 导航策略，经少量微调即可适配新的目标形式和新机器人。 · [代码](https://github.com/robodhruv/visualnav-transformer)
 - ⭐ **[GNM: A General Navigation Model to Drive Any Robot](https://arxiv.org/abs/2210.03370)** (2022) — ViNT 的前作：在多种不同机器人汇集的数据上训练一个目标条件导航策略，可迁移到包括训练中未见过的新机器人。 · [代码](https://github.com/robodhruv/visualnav-transformer)
 - ⭐ **[The Marathon 2: A Navigation System](https://arxiv.org/abs/2003.00368)** (2020) — ROS 2 标准导航栈 Nav2 的论文：用行为树编排规划器、控制器和恢复行为，并在真实机器人上长距离“马拉松”测试验证。 · [代码](https://github.com/ros-navigation/navigation2)
+- **[Adaptive Risk-Certified Event-Triggered Replanning for Dynamic Navigation](https://arxiv.org/abs/2610.09302)** (2026) — 以校准后的障碍函数风险（MPC 预测轨迹上的 CVaR）作为预警信号，及时切换到更安全的规划模式。报告碰撞比仅用安全滤波器的基线减少 83.3%。 · [项目页](https://nail-uh.github.io/corl2026.github.io/)
 - **[An Agentic Framework for Proactive Robots with Procedural Assistance Memory](https://arxiv.org/abs/2610.21211)** (2026) — 主动协助机器人：VLM 读取以有限状态机表示的用户日常流程记忆，决定何时提供何种帮助，再由 VLA 执行；记忆每天通过反思更新，无需重新训练。 · [项目页](https://davian-robotics.github.io/PAM/)
 - **[CoFL-S: Spatially Queryable Sector Flow Fields for Local Language-Conditioned Navigation](https://arxiv.org/abs/2607.02222)** (2026) — 低层视觉语言导航动作头：在可见扇区上预测语言条件的流场并展开为连续轨迹；并提供连续时间的 Habitat 评测基准。 · [代码](https://github.com/ut-dragon-lab/CoFL)
+- **[CoSMO: Conformal Semantic Mapping for Open-World Safe Robot Navigation](https://arxiv.org/abs/2610.18321)** (2026) — 用在线共形预测校准 VLM 语义地图，使不同类别物体获得有覆盖率保证的安全距离，且支持词表扩展。报告在 MP3D 上语义碰撞减少 61.6%，四足真机覆盖率 90.73%。 · [项目页](https://yangming911.github.io/cosmo-page/)
+- **[CoopUQ: Robust Multi-Robot Social Navigation via Uncertainty-Aware Cooperative Forecasting](https://arxiv.org/abs/2610.26852)** (2026) — 多机器人社交导航：多机融合特征预测未来占据栅格及其不确定性，约束多智能体强化学习策略据此避开被预测占据或高度不确定的区域。Unity 仿真与真机验证。 · [项目页](https://coopuq.github.io/)
 - **[CostNav: A Navigation Benchmark for Real-World Economic-Cost Evaluation of Physical AI Agents](https://arxiv.org/abs/2511.20216)** (2026) — 以经济账评估配送机器人导航：在 Isaac Sim 中结合公开财报与伤害数据计算成本、收入与盈亏平衡。报告七种基线方法目前都无法盈利。 · [代码](https://github.com/worv-ai/CostNav)
 - **[G2-Nav: Grounded and Guarded Vision-Language Costmaps for Robot Social Navigation](https://arxiv.org/abs/2607.16956)** (2026) — 社交导航：让 VLM 生成代价地图而非直接决策，并校验上游跟踪，另加高频安全检查应对延迟；真机验证。 · [代码](https://github.com/centiLinda/G2-Nav)
-- **[InCoM: Intent-Driven Perception and Structured Coordination for Mobile Manipulation](https://arxiv.org/abs/2602.23024)** (2026) — 移动操作策略：推断运动意图以动态分配感知注意力，并用显式建模底盘-机械臂交互的流匹配解码器输出动作。报告在三个任务上比 DSPv2 高 23.6–33.0 个百分点。 · [项目页](https://liujiahao2077.github.io/InCoM.github.io)
-- **[MessyMem: Learning-from-Doing Memory for Mobile Manipulation](https://arxiv.org/abs/2609.15976)** (2026) — 移动操作机器人的持久记忆：在三维场景图中记录通过交互学到的知识（如柜子上锁、物体位置）。报告在连续 25 个任务、3 小时的仿真中任务进度达 80%。 · [项目页](https://messymem.github.io)
-- **[MessyNav: Zero-Shot Navigation via Manipulation in Messy Environments](https://arxiv.org/abs/2611.07417)** (2026) — 在杂乱环境中导航：用 VLM 推理每个挡路物体该推开、拿起还是绕开。零样本，报告在真实移动操作机器人上比最强基线高 27 个百分点。
 
-**[查看全部 56 条 →](lists/navigation.zh-CN.md)**
+**[查看全部 63 条 →](lists/navigation.zh-CN.md)**
 
 <a id="perception"></a>
 ### 感知、SLAM 与三维建图
@@ -174,7 +174,7 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - ⭐ **[BundleSDF: Neural 6-DoF Tracking and 3D Reconstruction of Unknown Objects](https://arxiv.org/abs/2303.14158)** (2023) — 在 RGB-D 视频中跟踪从未见过物体的六自由度位姿，同时在线构建其神经三维模型，无需 CAD 模型；适用于操作新物体。 · [代码](https://github.com/NVlabs/BundleSDF)
 - ⭐ **[CoTracker: It is Better to Track Together](https://arxiv.org/abs/2307.07635)** (2023) — 联合跟踪视频中大量点（而非逐点独立跟踪）的 Transformer，遮挡下依然稳健；常用于从人类或机器人视频中提取运动轨迹来学习策略。 · [代码](https://github.com/facebookresearch/co-tracker)
 
-**[查看全部 40 条 →](lists/perception.zh-CN.md)**
+**[查看全部 43 条 →](lists/perception.zh-CN.md)**
 
 <a id="control"></a>
 ### 规划、控制与安全
@@ -194,7 +194,7 @@ _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的�
 - ⭐ **[MoveIt 2](https://moveit.ai/)** (2019) — ROS 2 的机械臂操作框架：提供运动规划、逆运动学、碰撞检测与实时伺服控制。 · [代码](https://github.com/moveit/moveit2)
 - ⭐ **[Pinocchio](https://github.com/stack-of-tasks/pinocchio)** (2019) — 高性能 C++/Python 刚体动力学库，提供解析导数；是运动学、最优控制（如 Crocoddyl）以及足式/人形机器人控制栈的常用底座。
 
-**[查看全部 33 条 →](lists/control.zh-CN.md)**
+**[查看全部 36 条 →](lists/control.zh-CN.md)**
 
 <a id="learning"></a>
 ### 机器人学习：强化学习与模仿学习
@@ -214,7 +214,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - ⭐ **[What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](https://arxiv.org/abs/2108.03298)** (2021) — robomimic：在人类采集的操作示教数据上系统比较模仿学习与离线强化学习（示教质量、观测选择、带历史的行为克隆），并开源框架与数据集。 · [代码](https://github.com/ARISE-Initiative/robomimic)
 - ⭐ **[Addressing Function Approximation Error in Actor-Critic Methods](https://arxiv.org/abs/1802.09477)** (2018) — TD3：通过双 Critic、延迟策略更新和目标策略平滑解决 DDPG 的价值高估问题，至今仍是连续控制的常用基线。 · [代码](https://github.com/sfujim/TD3)
 
-**[查看全部 75 条 →](lists/learning.zh-CN.md)**
+**[查看全部 78 条 →](lists/learning.zh-CN.md)**
 
 <a id="sim"></a>
 ### 仿真与 Sim-to-Real
@@ -234,7 +234,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_ [在网站上
 - ⭐ **[ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI](https://arxiv.org/abs/2410.00425)** (2024) — GPU 并行仿真与渲染，内置大量操作任务，适合快速视觉强化学习与数据生成。 · [代码](https://github.com/haosulab/ManiSkill)
 - ⭐ **[RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots](https://arxiv.org/abs/2406.02523)** (2024) — 120 个厨房场景、2500 多个物体与 100 个任务，并附生成演示，用于训练通用策略。 · [代码](https://github.com/robocasa/robocasa)
 
-**[查看全部 50 条 →](lists/sim.zh-CN.md)**
+**[查看全部 51 条 →](lists/sim.zh-CN.md)**
 
 <a id="datasets"></a>
 ### 数据集与基准
@@ -254,7 +254,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_ [在网站�
 - ⭐ **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 个手工设计的操作任务并附演示，是 PerAct 等 3D 策略方法的常用基准。 · [代码](https://github.com/stepjam/RLBench)
 - ⭐ **[ScanNet: Richly-annotated 3D Reconstructions of Indoor Scenes](https://arxiv.org/abs/1702.04405)** (2017) — 1500+ 个室内场景的 RGB-D 扫描，含三维重建、相机位姿与语义标注；具身感知所依赖的三维场景理解标准基准。 · [代码](https://github.com/ScanNet/ScanNet)
 
-**[查看全部 79 条 →](lists/datasets.zh-CN.md)**
+**[查看全部 80 条 →](lists/datasets.zh-CN.md)**
 
 <a id="hardware"></a>
 ### 硬件与开源机器人
@@ -269,12 +269,12 @@ _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备�
 - ⭐ **[Open-TeleVision: Teleoperation with Immersive Active Visual Feedback](https://arxiv.org/abs/2407.01512)** (2024) — 带主动转向立体相机的 VR 遥操作系统，用于采集人形机器人操作数据。 · [代码](https://github.com/OpenTeleVision/TeleVision)
 - ⭐ **[SO-ARM100 / SO-101](https://github.com/TheRobotStudio/SO-ARM100)** (2024) — 开源 3D 打印 6 自由度机械臂（主从臂），每只约 100–200 美元，是 LeRobot 的默认入门套件。
 - ⭐ **[An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](https://arxiv.org/abs/1910.00093)** (2019) — 开源四足机器人 Solo 及其模块化力矩控制关节，采用现成件和 3D 打印件，便于各实验室复现动态腿式机器人。 · [代码](https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware)
+- **[PanoVine: Whole-Body Visuomotor Control for Soft Growing Vine Robot](https://arxiv.org/abs/2606.22923)** (2026) — 首个自主藤蔓（软体生长）机器人系统：沿机身分布的 19 个摄像头为从演示学到的端到端视觉运动策略提供反馈，能穿过分叉结构、爬坡并进入狭窄空间。 · [项目页](https://panovine-bot.github.io)
 - **[MABEL: An Open Anthropomorphic Mobile Bimanual Platform for Teleoperation and Learning](https://arxiv.org/abs/2611.04083)** (2026) — 开源 56 自由度移动双臂机器人，含 7 自由度手臂和 17 自由度灵巧手，零件成本约 8100 美元，支持 Apple Vision Pro 遥操作，并演示了模仿学习全流程。 · [项目页](https://robotmabel.github.io/website/)
 - **[RAIPAL: A Powerful and Agile Humanoid Arm for Human Tasks](https://arxiv.org/abs/2611.04334)** (2026) — 人形手臂，其力量、速度和耐力指标取自人类上肢测量数据；报告峰值负载 20 公斤（自重的 2.25 倍），末端速度 20.6 米每秒。
 - **[Shape Your Body: Value Gradients for Multi-Embodiment Robot Design](https://arxiv.org/abs/2606.00702)** (2026) — 把冻结的多机器人价值函数作为可微代理模型来优化机器人设计，无需为每台机器人重跑协同设计 RL；可处理 1100 多个设计参数。
-- **[MEVITA: Open-Source Bipedal Robot Assembled from E-Commerce Components via Sheet Metal Welding](https://arxiv.org/abs/2508.17684)** (2025) — 用电商零件和钣金焊接搭建的开源双足机器人，避开 3D 打印方案在尺寸和强度上的限制。 · [代码](https://github.com/haraduka/mevita) · [项目页](https://haraduka.github.io/mevita-hardware)
 
-**[查看全部 41 条 →](lists/hardware.zh-CN.md)**
+**[查看全部 42 条 →](lists/hardware.zh-CN.md)**
 
 <!-- radar:end -->
 

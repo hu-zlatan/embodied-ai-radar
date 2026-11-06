@@ -782,3 +782,33 @@
   tags: [offline-to-online, value-function, precision, insertion, real]
   takeaway_en: "Studies how value-function reliability drives offline-to-online RL for manipulation, with a history-conditioned value estimator. Reports 86% on millimeter-level chip insertion."
   takeaway_zh: "系统研究价值函数可靠性如何影响操作任务的离线到在线强化学习，提出历史条件价值估计器。报告毫米级芯片插装成功率 86%。"
+- title: "Generative Flow on Symbolic Abstractions for Embodiment Capability Discovery"
+  type: paper
+  arxiv: "2610.17174"
+  year: 2026
+  venue: CoRL 2026
+  project: https://www.youwei-yu.com/fosa
+  added: 2026-11-06
+  tags: [task-generation, gflownet, curriculum, cross-embodiment, sim]
+  takeaway_en: "Discovers what a given robot can actually learn: a GFlowNet builds symbolic task skeletons, rewarded by how well low-level policies learn them in sim, then the tasks are distilled into one language-conditioned policy."
+  takeaway_zh: "自动发现某台机器人“学得会”的任务：用 GFlowNet 生成符号化任务骨架，以仿真中底层策略的学习效果作为奖励，再把发现的任务蒸馏进一个语言条件策略。"
+- title: "ENPIRE: Agentic Robot Policy Self-Improvement in the Real World"
+  type: paper
+  arxiv: "2606.19980"
+  year: 2026
+  venue: CoRL 2026
+  project: https://research.nvidia.com/labs/gear/enpire/
+  added: 2026-11-06
+  tags: [coding-agents, autonomous-research, real-world, dexterous, nvidia]
+  takeaway_en: "Harness that lets coding agents improve real robot policies on their own: automatic reset and verification, parallel rollouts and agent-driven code changes. Reports 99% success on tasks like fastening a zip tie."
+  takeaway_zh: "让编程智能体自主改进真实机器人策略的框架：自动复位与结果验证、多机并行评测，并由智能体分析日志、修改训练代码。报告在扎扎带等灵巧任务上成功率 99%。"
+- title: "DiscreteRTC: Discrete Diffusion Policies are Natural Asynchronous Executors"
+  type: paper
+  arxiv: "2604.25050"
+  year: 2026
+  venue: CoRL 2026
+  project: https://outsider86.github.io/DiscreteRTCSite/
+  added: 2026-11-06
+  tags: [discrete-diffusion, real-time-chunking, asynchronous, dynamic-tasks, real]
+  takeaway_en: "Shows discrete diffusion policies do real-time chunking natively, since inpainting is just unmasking: no fine-tuning, ~0.7x compute. Reports 65% higher success than flow-matching RTC on a real hockey task."
+  takeaway_zh: "指出离散扩散策略天然支持实时分块异步执行（补全即解掩码），无需微调、计算量约为 0.7 倍。报告在真机冰球防守任务上成功率比流匹配 RTC 高 65%。"

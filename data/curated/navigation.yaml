@@ -573,3 +573,73 @@
   tags: [proactive-assistance, memory, vlm, hri, real]
   takeaway_en: "Proactive assistant robot: a VLM reads a state-machine memory of the user's routine to decide when to help, and a VLA executes. The memory is revised daily by reflection, without retraining."
   takeaway_zh: "主动协助机器人：VLM 读取以有限状态机表示的用户日常流程记忆，决定何时提供何种帮助，再由 VLA 执行；记忆每天通过反思更新，无需重新训练。"
+- title: "Look Before You Move: Agent-Interface-Aligned Supervision for Open-World Mobile Manipulation"
+  type: paper
+  arxiv: "2610.15572"
+  year: 2026
+  venue: CoRL 2026
+  project: https://connerqiu.github.io/look-before-you-move/
+  added: 2026-11-06
+  tags: [mobile-manipulation, active-vision, vlm-agent, data-collection, real]
+  takeaway_en: "Collects VLM-agent data by having teachers act through the agent's own skill interface, including where to look. Reports 71.76% on 170 held-out open-world mobile-manipulation episodes and 38% zero-shot on a real robot."
+  takeaway_zh: "让示教者直接通过智能体自身的技能接口（包括“往哪看”）执行动作来采集 VLM 智能体训练数据。报告在 170 个开放世界移动操作测试集上成功率 71.76%，零样本真机 38%。"
+- title: "Task-Aware Environment Augmentation for Reliable Navigation via Shielded Conditional Diffusion"
+  type: paper
+  arxiv: "2606.15154"
+  year: 2026
+  venue: CoRL 2026
+  project: https://scoda-diffusion.github.io/
+  added: 2026-11-06
+  tags: [localization, fiducial-markers, diffusion, planning, real]
+  takeaway_en: "Flips the problem: instead of adapting the robot, decides where to place a few fiducial markers so a planned trajectory can be executed reliably, using a shielded conditional diffusion model. Sim + hardware."
+  takeaway_zh: "反过来思考：不改机器人，而是决定在环境中哪里放少量视觉标记，使规划好的轨迹能可靠执行；方法为带安全约束采样的条件扩散模型。仿真与真机验证。"
+- title: "Robots as Tokens: Unified Diffusion Transformer for Coordinated Multi-Robot Trajectory Generation"
+  type: paper
+  arxiv: "2606.15550"
+  year: 2026
+  venue: CoRL 2026
+  project: https://bairuofei.github.io/roken-project-page/
+  added: 2026-11-06
+  tags: [multi-robot, diffusion-transformer, trajectory-generation, connectivity, sim]
+  takeaway_en: "Diffusion transformer that treats each robot as a token and generates coordinated multi-robot trajectories in one pass, meeting safety and connectivity constraints; trained across team sizes."
+  takeaway_zh: "扩散 Transformer 把每台机器人表示为一个 token，一次前向生成满足安全与连通约束的多机协同轨迹；可在不同团队规模的数据上混合训练。"
+- title: "CoSMO: Conformal Semantic Mapping for Open-World Safe Robot Navigation"
+  type: paper
+  arxiv: "2610.18321"
+  year: 2026
+  venue: CoRL 2026
+  project: https://yangming911.github.io/cosmo-page/
+  added: 2026-11-06
+  tags: [conformal-prediction, semantic-mapping, safety, open-vocabulary, quadruped]
+  takeaway_en: "Calibrates VLM semantic maps with online conformal prediction so each object class gets a safety margin with coverage guarantees as the vocabulary grows. Reports 61.6% fewer semantic collisions on MP3D."
+  takeaway_zh: "用在线共形预测校准 VLM 语义地图，使不同类别物体获得有覆盖率保证的安全距离，且支持词表扩展。报告在 MP3D 上语义碰撞减少 61.6%，四足真机覆盖率 90.73%。"
+- title: "X-NavDP: Generalizing Navigation Diffusion Policy to Novel Behavior and Embodiments with Group Q-score Reweighted Matching"
+  type: paper
+  arxiv: "2607.28560"
+  year: 2026
+  venue: CoRL 2026
+  project: https://yty-sky.github.io/x-navdp-project-page
+  added: 2026-11-06
+  tags: [diffusion-policy, rl-finetuning, cross-embodiment, visual-navigation, real]
+  takeaway_en: "RL post-training for navigation diffusion policies with perturbation-based exploration and group-normalized Q-scores, across embodiments. Reports sim success from 61.20% to 84.28% and real hard cases from 10% to 65%."
+  takeaway_zh: "面向导航扩散策略的强化学习后训练：保留预训练先验的扰动探索 + 组归一化 Q 分重加权匹配，跨多种本体训练。报告仿真成功率从 61.20% 升到 84.28%，真机困难场景从 10% 升到 65%。"
+- title: "CoopUQ: Robust Multi-Robot Social Navigation via Uncertainty-Aware Cooperative Forecasting"
+  type: paper
+  arxiv: "2610.26852"
+  year: 2026
+  venue: CoRL 2026
+  project: https://coopuq.github.io/
+  added: 2026-11-06
+  tags: [multi-robot, social-navigation, uncertainty, marl, real]
+  takeaway_en: "Multi-robot social navigation: robots fuse features to forecast occupancy maps with uncertainty, and a constrained multi-agent RL policy avoids regions predicted occupied or uncertain. Unity sim + real robots."
+  takeaway_zh: "多机器人社交导航：多机融合特征预测未来占据栅格及其不确定性，约束多智能体强化学习策略据此避开被预测占据或高度不确定的区域。Unity 仿真与真机验证。"
+- title: "Adaptive Risk-Certified Event-Triggered Replanning for Dynamic Navigation"
+  type: paper
+  arxiv: "2610.09302"
+  year: 2026
+  venue: CoRL 2026
+  project: https://nail-uh.github.io/corl2026.github.io/
+  added: 2026-11-06
+  tags: [safety, conformal-prediction, mpc, replanning, real]
+  takeaway_en: "Uses calibrated barrier risk (CVaR along the MPC rollout) as an early warning to switch to a safer planning mode. Reports 83.3% fewer collisions than a safety-filter-only baseline."
+  takeaway_zh: "以校准后的障碍函数风险（MPC 预测轨迹上的 CVaR）作为预警信号，及时切换到更安全的规划模式。报告碰撞比仅用安全滤波器的基线减少 83.3%。"

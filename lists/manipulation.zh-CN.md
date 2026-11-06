@@ -2,7 +2,7 @@
 
 _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 
-共 122 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
+共 125 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/manipulation.html) · [English](manipulation.md)
 
@@ -37,6 +37,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[COWBOY: A Scalable Sim-to-Real Framework for Learning Contextual Whole-Body Manipulation](https://arxiv.org/abs/2610.28948)** (2026) — 在仿真中学习移动灵巧抓取：全身控制器负责底盘-手臂协同到达与主动视觉，局部强化学习专家负责物体交互，二者蒸馏成一个基于点云的视觉策略；报告可零样本迁移到真实世界的数百个物体与场景。 · [项目页](https://cowboy-manip.com)
 - **[CSO: Refining Robotic Policies via Skill Distribution Alignment and Skill-Grained Optimization](https://arxiv.org/abs/2610.38357)** (2026) — 面向 VQ 类技能策略的两阶段后训练：先让技能先验对齐线上成功轨迹，再冻结编码器按技能优化；报告 LIBERO 成功率从 80.1% 升至 97.5%。
 - **[Can a Frontier VLM Serve as a Robot Policy for Memory-Dependent Manipulation?](https://arxiv.org/abs/2610.17350)** (2026) — 冻结的前沿 VLM 以整段回合为上下文直接输出路径点，在 RoboMME 记忆类任务上报告 92.1% 成功率，且无需任务训练。 · [代码](https://github.com/jackbjed/embodied-astra-robomme) · [项目页](https://embodied-astra.github.io)
+- **[CoStream: Composing Simple Behaviors for Generalizable Complex Manipulation](https://arxiv.org/abs/2606.26423)** (2026) — 把语义约束（基础模型）、想象视频中的关键点预测、触觉/力实时修正等简单行为在 SE(3) 上组合成每一步的位姿指令。8 个真机任务，包括把显卡插入 PCIe 槽。 · [项目页](https://costream-simple.github.io)
 - **[Combining Constrained Sampling and Reinforcement Learning for Manipulation](https://arxiv.org/abs/2602.08557)** (2026) — 用感知接触的约束状态采样器重置回合，覆盖多样接触模式，帮助 RL 探索接触丰富任务；可训练通用的手内和全身操作策略。 · [代码](https://github.com/LIS-TU-Berlin/csrl) · [项目页](https://www.user.tu-berlin.de/mtoussai/26-CSRL/)
 - **[Contact Imitation Interface: Transferring Dexterous Skills by Showing How Contact Unfolds](https://arxiv.org/abs/2610.41028)** (2026) — 免机器人灵巧演示框架：共享接触几何、指尖 RGB 视角、接触对齐优先的重定向，加上预测接触面轨迹的层次策略。报告在 LEAP 和 Wuji 手的六组手-任务上，最终阶段成功率比基线至少高 50 个百分点；硬件与软件公开。 · [代码](https://github.com/ariszxxu/CIMI) · [项目页](https://nus-lins-lab.github.io/CIMIWeb/)
 - **[ContactBench 1.0: A Benchmark for Everyday Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2610.24512)** (2026) — 围绕八种日常接触技能设计的 36 个接触密集型任务，40 多个物体可用消费级 3D 打印机复现，且每个都有对应仿真模型。报告称所测的视触觉策略并未明显优于纯视觉策略。 · [项目页](https://jingyi-xiang.github.io/contactbench)
@@ -84,8 +85,10 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[Scaling Dexterous Manipulation via Action Representation Pretraining](https://arxiv.org/abs/2610.34453)** (2026) — ARPG 把动作表征学习与动作生成解耦：先在大规模人类操作数据上预训练动作编码器，再在其表征空间训练 1.3 亿参数的生成策略。报告在 DexJoCo 双手灵巧任务上平均成功率从 π0.5 的 10.1% 提升到 44.7%。 · [项目页](https://arpg-project.github.io/)
 - **[ScheduleGen: Demonstration Generation via Skill Scheduling for Multi-Arm Imitation Learning](https://arxiv.org/abs/2610.39429)** (2026) — 面向双臂/多臂机器人的示范自动生成：在少量源示范基础上联合做规划与技能调度，显式处理多臂间约束，避免现有生成方法产生的碰撞与失败。28 个仿真任务变体上数据生成成功率 79.6%，训练出的策略经零样本 sim-to-real 在 8 个真实变体上成功率 50–80%。 · [项目页](https://schedulegen.github.io/)
 - **[Scouting the Dynamics Gap: Test-Time Policy Adaptation via Action-Outcome Feedback](https://arxiv.org/abs/2609.36107)** (2026) — 元学习的策略与前向动力学模型共享信念潜变量；部署时根据动作结果的偏差更新该潜变量，使策略能即时适应未知动力学。 · [项目页](https://liy1shu.github.io/SCOUT/)
+- **[Sim-and-Human Co-training for Data-Efficient and Scene-Generalizable Bimanual Manipulation](https://arxiv.org/abs/2601.19406)** (2026) — 用仿真数据（提供机器人可执行动作）和人类视频（提供真实视觉）联合预训练双臂策略，再在每任务 80 条真机数据上微调。报告在未见场景上成功率 62.5%，比纯真机数据高 53.7 个百分点。 · [项目页](https://kaipengfang.github.io/sim-and-human/)
 - **[Spatial-UMI-Dream: Scaling World Action Models with Metric Geometry for UMI Manipulation](https://arxiv.org/abs/2611.07229)** (2026) — 在 605 小时 RGB-D UMI 数据上预训练的 5B 世界动作模型，同时预测 RGB、度量深度和动作。并提出 RoboTwin-UMI 基准；报告真机平均成功率 85%，比最强基线高 24.2 个百分点。 · [项目页](https://weiduoyuan.com/spatial-umi-dream/)
 - **[Spectrally Routed Diffusion Policy for Multi-Task Robotic Manipulation](https://arxiv.org/abs/2611.04477)** (2026) — SR-DP 用 SVD 把训练好的扩散去噪器拆成秩一专家并按任务路由，缓解多任务联合训练的相互干扰；报告在六个 RoboTwin 任务上超过逐任务基线。
+- **[Static In, Dynamic Out: Counterfactual Action Augmentation for Moving Object Manipulation](https://arxiv.org/abs/2607.27890)** (2026) — 让只用静止物体演示训练的策略也能抓取运动物体：把物体平移到反事实的未来位姿并相应变形动作块来扩增数据，部署时由位姿预测器给出目标位置。 · [项目页](https://sido-staticindynamicout.github.io/)
 - **[Synthesizing Dexterous Robot Demonstrations from Human Videos via Virtual Try-On](https://arxiv.org/abs/2611.05163)** (2026) — 把人到机器人的迁移看作虚拟试穿：保留动作，把视频中的人换成目标机器人；报告在没有这些任务真机演示时，新任务成功率从 2% 升到 60%。 · [代码](https://github.com/ryan-seungyong-lee/RoboTryOn) · [项目页](https://ryan-seungyong-lee.github.io/RoboTryOn)
 - **[TAMPAgent: Agentic Belief-Space Planning for Mobile Manipulation](https://arxiv.org/abs/2611.03584)** (2026) — 大模型智能体基于感知、规划、控制工具生成部分任务规划，再由经典搜索补全，并通过工具满足几何约束；在 Rainbow Y1 与 Unitree G1 上闭环运行，交替观察与操作。 · [项目页](https://umishra.me/TAMPAgent/)
 - **[VLS: Steering Pretrained Robot Policies via Vision-Language Models](https://arxiv.org/abs/2602.03973)** (2026) — 在测试时适配冻结的扩散或流匹配策略：当障碍或杂物改变场景时，由 VLM 生成可微奖励来引导去噪。报告 CALVIN 提升 31%、LIBERO-PRO 提升 13%，无需重新训练。 · [代码](https://github.com/Vision-Language-Steering/code) · [项目页](https://vision-language-steering.github.io/webpage/)

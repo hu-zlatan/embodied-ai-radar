@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 79 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 80 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/datasets.html) · [English](datasets.md)
 
@@ -63,6 +63,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines](https://arxiv.org/abs/2604.23001)** (2026) — 认为 VLA 的进展更取决于数据引擎和评测，而不是模型架构；指出数据集存在保真度与成本的权衡，评测基准在组合任务和长时程任务上仍有缺口。 · [项目页](https://github.com/ziyaow1010/vla-datasets-benchmarks)
 - **[What Are We Actually Benchmarking in Robot Manipulation?](https://arxiv.org/abs/2606.04233)** (2026) — CoRL 2026 Oral。用捷径可解、统计不显著、渐进过拟合、数据来源依赖四种失效模式审计 LIBERO、CALVIN、SimplerEnv、RoboCasa 和 RoboTwin 2.0；其中 LIBERO 与 CALVIN 未通过多项诊断。 · [代码](https://github.com/ripl/ManipulationBenchmarkAudit) · [项目页](https://ripl.github.io/manipulation_benchmark_audit/)
 - **[AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems](https://arxiv.org/abs/2503.06669)** (2025) — 在专门搭建的场景中采集的百万级真实机器人数据集，并基于其训练通用策略 GO-1。
+- **[Can AI Perceive Physical Danger and Intervene?](https://arxiv.org/abs/2509.21651)** (2025) — ASIMOV v2：把真实伤害事故描述转成生成的图像与视频，构建可持续扩展的物理安全基准，测试基础模型能否察觉危险并干预；并提出安全推理后训练方法。 · [项目页](https://asimov-benchmark.github.io/v2)
 - **[EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video](https://arxiv.org/abs/2505.11709)** (2025) — 用 Apple Vision Pro 采集的 829 小时第一视角视频，配有每个手部关节的三维姿态，覆盖从系鞋带到叠衣服的 194 种桌面任务，并提供手部轨迹预测基准。 · [代码](https://github.com/apple-aiml-research/ml-egodex)
 - **[PHUMA: Physically Reliable Humanoid Locomotion Dataset](https://arxiv.org/abs/2510.26236)** (2025) — CoRL 2026 Spotlight。源自网络视频的人形运动数据集，针对此前视频数据常见的悬空、穿透与脚滑问题。 · [代码](https://github.com/davian-robotics/PHUMA) · [项目页](https://davian-robotics.github.io/PHUMA)
 - **[RoboChallenge: Large-scale Real-robot Evaluation of Embodied Policies](https://arxiv.org/abs/2510.17950)** (2025) — 介绍一套在线系统，用于在真机上大规模评测多种机器人策略，并报告近期 VLA 在首个基准 Table30 上的表现。

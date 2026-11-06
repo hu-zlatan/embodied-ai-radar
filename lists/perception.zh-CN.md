@@ -2,7 +2,7 @@
 
 _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与开放词汇场景地图。_
 
-共 40 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
+共 43 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/perception.html) · [English](perception.md)
 
@@ -37,11 +37,14 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - **[Cyclops: LiDAR as a Camera That Dreams in Color](https://arxiv.org/abs/2608.16264)** (2026) — 把稀疏 LiDAR 强度转换为类 RGB 视频，让相机模型在黑暗中也能用。报告在不同光照下，分割与车道线检测优于 LiDAR 基线和真实相机。 · [代码](https://github.com/IMRL/Cyclops)
 - **[FreeLoc: Online Floorplan Localization via Diffusion-Aided Pose Refinement](https://arxiv.org/abs/2610.05011)** (2026) — 直接在平面图上在线定位 RGB 相机：实时查询地图并用扩散模型精化位姿，无需离线数据库。报告单帧与序列定位均达最优且实时运行。 · [项目页](https://zju3dv.github.io/freeloc/)
 - **[Functional-SLAM: Interaction-Aware Mapping with Online Functional Scene Graphs](https://arxiv.org/abs/2609.07497)** (2026) — 把功能场景图（如哪个把手开哪个抽屉）作为 SLAM 的在线状态持续维护，并利用其拓扑辅助重复场景的回环检测。报告比离线方法更快且精度相当。 · [代码](https://github.com/Hbelief1998/Functional-SLAM-CoRL_2026)
+- **[Language as a Sensor: Calibrated Spatial Belief Estimation in 3D Scenes from Natural Language](https://arxiv.org/abs/2606.08666)** (2026) — 把自然语言描述（如“包在桌上”）当作传感器观测：模型输出校准过的空间概率分布，并与机载感知融合到统一的信念地图中。在 VLA-3D 基准和真机上验证。 · [项目页](https://aryan-naveen.github.io/language-as-a-sensor/)
 - **[MosaicIMU: Composing Carrier Experts for Generalizable Neural Inertial Odometry](https://arxiv.org/abs/2606.09355)** (2026) — 面向多种载体的神经惯性里程计：路由器组合各载体专家，新载体通过轻量残差分支适配。报告 ATE 比学习型基线降低 40%。
 - **[OpenVIO: A Versatile Open-Source Visual-Inertial Odometry System](https://arxiv.org/abs/2610.41671)** (2026) — MIT 许可的开源视觉惯性里程计，面向科研与实际应用。支持针孔、鱼眼相机及拼接 360° 图像，并在公开数据集上与其他开源 VIO 系统做了对比。 · [代码](https://github.com/93won/openvio)
+- **[OptiGeo: Efficient Monocular Geometry for Embodied Perception in Optically Challenging Scenes](https://arxiv.org/abs/2608.29881)** (2026) — 面向透明与反光场景的 3000 万参数单目深度模型，用少量渲染数据纠正真实深度传感器带来的监督偏差。报告在透明场景基准上超过 3 亿参数级和多视图模型。 · [项目页](https://mx-liu6.github.io/OptiGeo-web/)
 - **[ReSiReg: Towards Spatially Consistent Semantics in Language-Conditioned Robotic Tasks](https://arxiv.org/abs/2606.19088)** (2026) — 通过由带语言描述的视觉原型重建每个图像块，让稠密 VLM 特征在空间上更一致，提升开放词汇检索与三维建图；并提供 25M 参数的小型稠密 VLM。 · [代码](https://github.com/SimonSchwaiger/resireg) · [项目页](https://resireg.github.io)
 - **[SpaRV: Sparse Radiance Voxels for Scalable Geometrically Consistent LiDAR-Visual Mapping and Rendering](https://arxiv.org/abs/2610.25665)** (2026) — 用激光雷达与相机数据构建稀疏体素辐射场地图，针对机器人数据视角少、位姿有误差、场景大的问题，在保证几何精度的同时控制显存占用。 · [代码](https://github.com/hku-mars/SpaRV)
 - **[Vision as Proprioception: Estimating Humanoid Robot Pose from Video](https://arxiv.org/abs/2610.25288)** (2026) — HumanoidPose 仅凭视频恢复人形机器人的全身关节构型：适用于拿不到机载状态的场景，也能把网上的机器人视频变成训练数据。 · [代码](https://github.com/eth-siplab/HumanoidPose)
+- **[What Objects Enable, Not What They Are: Functional Latent Spaces for Affordance Reasoning](https://arxiv.org/abs/2606.05533)** (2026) — 把视觉观测映射到按功能（如“可移动”）而非外观组织的潜在空间，并在不确定时自动发现新的可供性。报告推断准确率 94%，比已有方法高 15 个百分点以上。 · [项目页](https://A4Dance-reasoning.github.io)
 - **[Which Depth Estimator for Jetson AGX Orin? A 2026 Benchmark of Monocular and Stereo Methods](https://arxiv.org/abs/2610.27199)** (2026) — 给机器人开发者的实测数据：在 Jetson AGX Orin 上用 TensorRT 运行九类单目与双目深度估计模型（Depth Anything V2/3、Depth Pro、MoGe-2、Fast-FoundationStereo 等），并评测度量精度与速度。 · [代码](https://github.com/nodarhub/orin-depth-benchmark)
 - **[RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics](https://arxiv.org/abs/2506.04308)** (2025) — RoboRefer 训练 VLM 做空间指代：推理指令所指的三维位置。 · [代码](https://github.com/Zhoues/RoboRefer) · [项目页](https://zhoues.github.io/RoboRefer/)
 - **[Towards Spatial Trace with Reasoning in Vision-Language Models for Robotics](https://arxiv.org/abs/2512.13660)** (2025) — RoboTracer 是三维感知 VLM，用于空间轨迹推理，需要结合真实度量做多步推理。 · [代码](https://github.com/Zhoues/RoboTracer) · [项目页](https://zhoues.github.io/RoboTracer)
