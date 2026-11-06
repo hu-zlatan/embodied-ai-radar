@@ -850,8 +850,7 @@ def build() -> int:
             for st, e in popular)
         popular_html = (f'<h2>{bi("Most-starred open-source code", "最受关注的开源代码")}</h2>'
                         f'<p class="muted">{bi("GitHub stars of curated entries, refreshed weekly.", "精选条目的 GitHub 星标数，每周更新。")}</p>'
-                        f'<ol class="poplist">{rows}</ol>'
-                        f'<p><a class="more" href="code.html">{bi(f"All {len(by_repo)} repos: sort by stars or activity, filter by license →", f"全部 {len(by_repo)} 个代码仓库：可按星标、活跃度排序，按许可证筛选 →")}</a></p>')
+                        f'<ol class="poplist">{rows}</ol>')
     # repos that gained the most GitHub stars over the last week (curated code + code of recent feed papers)
     rising_html = ""
     if gains:
