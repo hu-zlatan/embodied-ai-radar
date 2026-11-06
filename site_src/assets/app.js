@@ -348,7 +348,7 @@
   }
   window.__radarQueryGroups = queryGroups;
   function topicChips(tp) {
-    return (tp || []).map(function (t) { var n = data.topics[t]; return n ? '<a class="chip topic" href="topics/' + t + '.html">' + esc(n[lang() === 'zh' ? 1 : 0]) + '</a>' : ''; }).join('');
+    return (tp || []).map(function (t) { var n = data.topics[t]; return n ? '<a class="chip topic t-' + t + '" href="topics/' + t + '.html">' + esc(n[lang() === 'zh' ? 1 : 0]) + '</a>' : ''; }).join('');
   }
   function embChips(em) {
     return (em || []).map(function (m) { var n = (data.emb || {})[m]; return n ? '<span class="chip emb">' + esc(n[lang() === 'zh' ? 1 : 0]) + '</span>' : ''; }).join('');

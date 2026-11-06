@@ -279,7 +279,7 @@ def program_card(x: dict, s: dict | None, cur: dict | None, rec: dict | None, tb
         links.append(f'<a href="../e/{esc(cur["id"])}.html">{bi("Details", "详情")}</a>')
     authors = (rec or {}).get("authors", [])
     au = ", ".join(authors[:4]) + (" et al." if len(authors) > 4 else "")
-    chips = "".join(f'<a class="chip topic" href="../topics/{t}.html">{bi(tby[t]["en"], tby[t]["zh"])}</a>' for t in topics if t in tby)
+    chips = "".join(f'<a class="chip topic t-{t}" href="../topics/{t}.html">{bi(tby[t]["en"], tby[t]["zh"])}</a>' for t in topics if t in tby)
     take = f'<p class="take">{bi(cur["takeaway_en"], cur["takeaway_zh"])}</p>' if cur else ""
     return (f'<article class="card" data-id="{esc(x["or"])}" data-t="{esc(" ".join(topics))}" data-k="{" ".join(program_themes_of(x["title"]))}"{" data-c=1" if code else ""}{" data-h=1" if x["sessions"] else ""}>'
             f'<div class="meta">{" ".join(tags)}</div><h3><a href="{esc(url)}" rel="noopener">{esc(x["title"])}</a></h3>'
@@ -492,7 +492,7 @@ def curated_card(e: dict, topics_by_id: dict, root: str, detail: bool = False) -
     main = links[0][2]
     en, zh = TYPE_LABEL[e["type"]]
     chips = "".join(
-        f'<a class="chip topic" href="{root}topics/{t}.html">{bi(topics_by_id[t]["en"], topics_by_id[t]["zh"])}</a>'
+        f'<a class="chip topic t-{t}" href="{root}topics/{t}.html">{bi(topics_by_id[t]["en"], topics_by_id[t]["zh"])}</a>'
         for t in e["topics"])
     tags = emb_chips(e.get("emb", [])) + "".join(f'<span class="chip">{esc(t)}</span>' for t in (e.get("tags") or []))
     star = rating_badge(e.get("rating", 0))
@@ -528,7 +528,7 @@ def feed_card(p: dict, topics_by_id: dict, root: str) -> str:
     if len(p.get("authors", [])) > 4:
         authors += " et al."
     chips = "".join(
-        f'<a class="chip topic" href="{root}topics/{t}.html">{bi(topics_by_id[t]["en"], topics_by_id[t]["zh"])}</a>'
+        f'<a class="chip topic t-{t}" href="{root}topics/{t}.html">{bi(topics_by_id[t]["en"], topics_by_id[t]["zh"])}</a>'
         for t in p.get("topics", []) if t in topics_by_id) + emb_chips(p.get("emb", []))
     code = "".join(f' · <a href="{esc(u)}" rel="noopener">{bi("Code", "代码")}</a>' for u in p.get("code", [])[:1])
     if not code and p.get("code_pending"):
@@ -957,7 +957,7 @@ def build() -> int:
                    f'<p class="muted">{bi("Robotics papers from our feed that made Hugging Face Daily Papers in the last 14 days, by community upvotes.", "最近 14 天登上 Hugging Face Daily Papers 的本站收录论文，按社区点赞数排序。")}</p>'
                    f'<ol class="poplist">{rows}</ol>')
     topic_grid = "".join(
-        f'<a class="tile" href="topics/{t["id"]}.html"><h3>{bi(t["en"], t["zh"])}</h3>'
+        f'<a class="tile t-{t["id"]}" href="topics/{t["id"]}.html"><h3>{bi(t["en"], t["zh"])}</h3>'
         f'<p>{bi(t["desc_en"], t["desc_zh"])}</p><span class="muted">{len(by_topic[t["id"]])} {bi("curated", "精选")} · '
         f'{len([p for p in feed_by_topic[t["id"]] if p.get("published", "") >= week_cut])} {bi("new this week", "本周新增")}</span></a>'
         for t in topics)
@@ -972,7 +972,7 @@ def build() -> int:
     venue_row = (f'<p class="muted">{bi("Accepted at:", "会议/期刊录用：")} '
                  + " · ".join(f'<a href="venues/{venue_slug(k)}.html">{esc(k)}</a> ({len(venues[k]["c"]) + len(venues[k]["f"])})' for k in cur_v)
                  + f' · <a href="venues/index.html">{bi("All venues →", "全部 →")}</a></p>') if cur_v else ""
-    trend_cols = "".join(f'<div class="tcol">{h}</div>' for h in (hf_html, rising_html, popular_html) if h)
+    trend_cols = "".join(f'<div class="tcol k-{k}">{h}</div>' for k, h in (("hf", hf_html), ("rise", rising_html), ("pop", popular_html)) if h)
     trend = f'<div class="trend">{trend_cols}</div>' if trend_cols else ""
     body = f"""<h1 class="sr-only">{bi("Embodied AI Radar: the map of embodied AI & robot learning", "具身智能雷达：具身智能与机器人学习全景图")}</h1>
 <div class="toprow">{prog_row}{stats}</div>
@@ -995,7 +995,7 @@ def build() -> int:
                                          alt='\n<link rel="alternate" type="application/atom+xml" title="Agent picks · Embodied AI Radar" href="picks.xml">'), encoding="utf-8")
     # topic tiles under the search box: shown until the visitor searches or filters (app.js hides #home-static)
     search_grid = "".join(
-        f'<a class="tile" href="search.html?topic={t["id"]}"><h3>{bi(t["en"], t["zh"])}</h3>'
+        f'<a class="tile t-{t["id"]}" href="search.html?topic={t["id"]}"><h3>{bi(t["en"], t["zh"])}</h3>'
         f'<p>{bi(t["desc_en"], t["desc_zh"])}</p><span class="muted">{len(by_topic[t["id"]])} {bi("curated", "精选")} · '
         f'{len([p for p in feed_by_topic[t["id"]] if p.get("published", "") >= week_cut])} {bi("new this week", "本周新增")}</span></a>'
         for t in topics)
