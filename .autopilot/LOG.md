@@ -544,3 +544,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Search index reviewed (known issue): capped and lazy, left as is.
 - A search for the project name still finds nothing from this site; Search Console remains the owner's task.
 - End: 2 stars / 0 forks. CI and Pages green on 68d99dd. Verify #157 still pending at the end of this run, so the 6 picks and 2 project links are not CI-checked yet; next run checks them. Live site not opened from here. No new owner task; CoRL post still fits until Sun 11-08, Search Console still open. End of run 61.
+
+## 2026-11-06 — run 62 (~04:50 UTC–)
+
+- Start: no issues/PRs, 2 stars / 0 forks. Repo already cloned (detached HEAD); switched to `main` and pulled. No add_repo tool needed.
+- Verify #157 failed on one link: HoST project page (taohuang13.github.io/humanoid-standingup.github.io) is 404 although the repo README still links it; line removed (code + arXiv stay). Verify #158 then flagged two arXiv title changes: Open-HumanScale is now Open-HumanWAM, and RoboTryOn lost its prefix. Titles updated.
+- CoRL week prep: listed CoRL 2026 program papers on arXiv with live code but no takeaway (39). Ran `facts.yml` for 33, read READMEs from the shell, and added 31 entries with `venue: CoRL 2026` (Large Video Planner, PRISM, ImageWAM, WLA, TOPReward, Light-WAM, EventVLA, VLS, μ0, HuRo, ACE-Ego-0, Functional-SLAM, APT, DeCAL, CostNav, StressDream, PAINT, HERO, MPAIL2, MobiAgent, RoboMemory, Cyclops, ReSiReg, RoboFollow, Seeker, VISTA, PoLAR, leg-odometry contacts, CoFL-S, G2-Nav, action-relevant latents). Program guide: 139 takeaways (was 108). Curated 901. Local: validate 0 errors, 1,026 pages, 0 broken links.
+- Launch kit CoRL post numbers refreshed (181 with code, 83% on arXiv, 41% of orals/spotlights with code, 139 takeaways).
