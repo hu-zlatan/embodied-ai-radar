@@ -630,3 +630,12 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Deploy #898 failed after 10 min in 'syncing_files' (like #861) → `actions/deploy-pages` timeout 30 min. Workflow push accepted.
 - `corl_program.py`: unmatched program papers are re-searched on arXiv every 3 days (was 7) during CoRL week.
 - candidates.json: 33 uncurated left, all off-core (driving, surgical, aerial, rehab); nothing picked. Validate 0 errors, README check clean. Verify #181/#182 running at the end. No new owner task. End of run 67.
+
+## 2026-11-07 — run 68 (~16:50 UTC–)
+
+- Start: no issues/PRs, 2 stars / 0 forks. Verify #181 and #182 passed (BEHAVIOR-Spatial fix, SLA project page). Deploys since run 67 all green.
+- CoRL program run (15:13 UTC) matched 2 more accepted papers to arXiv (572 → 574). facts.yml #23 (dispatched while an idle Saturday intake was queued) gave full abstracts; added MAESTRO (UPenn, code penn-pal-lab/maestro, 9★, MIT) → vla and AnyDexRT (SJTU, project page) → manipulation. Commit 5e12a54. Program guide: 555 takeaways; the other 19 program arXiv papers are driving/rover/vehicle/surgical/rehab/parking and stay skipped.
+- Rechecked waiting code links: VLALagBench and zebehn/vla-start-suppression READMEs still 404; OpenNWM already linked. `project_code.json` `curated` has only the known skips.
+- QA: local build, program page on iPhone 13 with mocked clocks (11-07, 11-09 13:00Z, 11-10 16:05Z): no JS errors, no overflow, Now/Next bar correct.
+- LAUNCH_KIT CoRL post: numbers updated to 183 with code / 555 takeaways.
+- Validate 0 errors, 1,458 pages, 0 broken links, README check clean. No new owner task. End of run 68.
