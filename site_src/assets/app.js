@@ -365,7 +365,7 @@
       links.push('<a class="perma" href="e/' + esc(it.id) + '.html">' + (lang() === 'zh' ? '详情' : 'Details') + '</a>');
       if (it.u && it.a) links.push(hfLink(it.a, it.u).slice(3));
       return '<article class="card"><div class="meta"><span class="badge">' + esc(it.ty) + '</span> ' + esc(it.y) + ' · ' + esc(it.o) + venueBadge(it.v) + (it.h ? ' <span class="rate r' + it.h + '" title="' + (lang() === 'zh' ? ['', '推荐', '强烈推荐', '必读'][it.h] : ['', 'Recommended', 'Highly recommended', 'Must-read'][it.h]) + '">' + '★★★'.slice(0, it.h) + '</span>' : '') +
-        '</div><h3><a href="' + esc(it.l) + '">' + esc(it.t) + '</a></h3><p class="take">' + esc(lang() === 'zh' ? it.zh : it.en) +
+        '</div><h3><a href="' + esc(it.l || 'https://arxiv.org/abs/' + it.a) + '">' + esc(it.t) + '</a></h3><p class="take">' + esc(lang() === 'zh' ? it.zh : it.en) +
         '</p><div class="links">' + links.join(' · ') + (it.s != null ? ' <span class="gh" title="GitHub stars">★ ' + (it.s >= 1000 ? (it.s / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : it.s) + '</span>' : '') + '</div><div class="chips">' + topicChips(it.tp) + embChips(it.em) + '</div></article>';
     }
     return '<article class="card feed"><div class="meta"><span class="badge">arXiv ' + esc(it.pc) + '</span> ' + esc(it.d) + (it.c ? ' <span class="badge code">code</span>' : '') + venueBadge(it.v) +

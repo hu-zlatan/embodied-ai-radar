@@ -852,6 +852,10 @@ def build() -> int:
                     "l": links_of(e)[0][2], "a": e.get("arxiv"), "c": e.get("code"), "p": e.get("project"),
                     "v": str(e["venue"]) if e.get("venue") else None,
                     "s": (repo_stat(e) or {}).get("stars"), "u": (e.get("hf") or {}).get("upvotes")})
+        it = idx[-1]  # keep the index small: drop empty fields and a link that app.js rebuilds from the arXiv id
+        if it["a"] and it["l"] == f"https://arxiv.org/abs/{it['a']}":
+            del it["l"]
+        idx[-1] = {k: v for k, v in it.items() if v not in (None, [], "")} | {"k": "c", "id": e["id"], "t": it["t"]}
     ab_cut = (today - dt.timedelta(days=FEED_ABSTRACT_DAYS)).isoformat()
     for p in [p for p in feed if p.get("published", "") >= site_cut] + backfill:
         it = {"k": "f", "id": p["id"], "t": p["title"], "d": p.get("published", ""),
