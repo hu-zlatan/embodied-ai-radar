@@ -2,7 +2,7 @@
 
 _视觉-语言-动作模型与通用机器人策略。_
 
-共 257 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
+共 258 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [English](vla.md)
 
@@ -232,6 +232,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[Hume: Introducing System-2 Thinking in Visual-Language-Action Model](https://arxiv.org/abs/2505.21432)** (2025) — 双系统 VLA：价值查询头对多组候选动作块打分并择优（System 2，约 4 Hz），轻量级级联去噪策略再将其细化为流畅动作（System 1，约 90 Hz）；论文报告在 LIBERO、SIMPLER 和真机上均优于 π0。 · [代码](https://github.com/hume-vla/hume) · [项目页](https://hume-vla.github.io)
 - **[InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy](https://arxiv.org/abs/2510.13778)** (2025) — 先在 230 万条空间推理样本上做空间定位预训练（"在哪里做"），再用空间提示做动作后训练（"怎么做"）；论文报告在 SimplerEnv Google Robot 上比无空间引导的同一模型高 14.6%。 · [代码](https://github.com/InternRobotics/InternVLA-M1)
 - **[LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction](https://arxiv.org/abs/2506.13751)** (2025) — 用视觉语言隐空间指令驱动人形全身控制，让 VLA 摆脱手工定义的底层动作词表和准静态任务的限制。 · [项目页](https://ember-center-berkeley.github.io/LeVERB-Website/)
+- **[MAESTRO: Orchestrating Robotics Modules with Coding Agents for Zero-Shot Generalist Robots](https://arxiv.org/abs/2511.00917)** (2025) — 不训练端到端策略，而让 VLM 作为编程智能体，调用感知、规划与控制工具库编写机器人程序，按“规划-执行-重规划”循环运行；在桌面任务上零样本达到或超过 VLA 模型，并可完成移动操作。 · [代码](https://github.com/penn-pal-lab/maestro) · [项目页](https://maestro-robot.github.io)
 - **[MolmoAct: Action Reasoning Models that can Reason in Space](https://arxiv.org/abs/2508.07917)** (2025) — 开源 7B VLA，先输出深度感知 token，再生成可编辑的二维轨迹，最后输出动作；论文报告 SimplerEnv 零样本 70.5%、LIBERO 86.6%，并开放权重、代码和数据。 · [代码](https://github.com/allenai/molmoact) · [项目页](https://allenai.org/blog/molmoact)
 - **[OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](https://arxiv.org/abs/2505.11917)** (2025) — 单一模型自主决定何时“想”、何时“做”：在子任务完成、出错或人类插话等关键时刻进行推理，其余时间依据最新推理结果生成动作；并与合成的推理型视觉-语言数据共同训练。 · [代码](https://github.com/Fanqi-Lin/OneTwoVLA) · [项目页](https://one-two-vla.github.io)
 - **[PointVLA: Injecting the 3D World into Vision-Language-Action Models](https://arxiv.org/abs/2503.07511)** (2025) — 无需重训即可为预训练 VLA 加入点云输入：冻结动作专家，只向跳块分析认定作用较小的模块注入 3D 特征。
