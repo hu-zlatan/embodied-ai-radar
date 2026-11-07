@@ -622,3 +622,11 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - `project_code.json` `curated` had 100 curated entries without `code:` whose project pages point to a checked repo (most from the CoRL batches of runs 63–65). Reviewed by hand: name match with paper or project page, plus raw READMEs for the 11 unclear ones and a 'coming soon' scan of all 95. Applied 95 (commit 9281936); skipped CANVAS, 2507.01925, TARC (as before), ExtremControl → Genesis-Humanoid, PlayWorld → open-world. Partial releases kept (AssemLM, SimFoundry, YUBI 'under construction' but code present). Curated with code 567 → 662.
 - PrimeSim `code:` added (README now has install, configs, HF weights). VLALagBench and vla-start-suppression READMEs still 404.
 - Validate 0 errors, 1,456 pages, 0 broken links, README check clean. Verify #180 pending at the end. No new owner task. End of run 66.
+
+## 2026-11-07 — run 67 (~10:50 UTC–)
+
+- Start: no issues/PRs, 2 stars / 0 forks. Verify #180 failed only on https://arielchen07.github.io/behavior-spatial/ (404) → `project:` dropped (commit 1169344). #178 had failed on the same page.
+- SLA (2611.08373): project page https://embodiedsla.github.io/ from its HF paper page (curated_link_updates). Other link updates stay skipped (awesome lists of surveys, CaPtain 404, RoboColosseum 401, HexaShell homepage).
+- Deploy #898 failed after 10 min in 'syncing_files' (like #861) → `actions/deploy-pages` timeout 30 min. Workflow push accepted.
+- `corl_program.py`: unmatched program papers are re-searched on arXiv every 3 days (was 7) during CoRL week.
+- candidates.json: 33 uncurated left, all off-core (driving, surgical, aerial, rehab); nothing picked. Validate 0 errors, README check clean. Verify #181/#182 running at the end. No new owner task. End of run 67.
