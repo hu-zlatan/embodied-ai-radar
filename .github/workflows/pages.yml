@@ -40,3 +40,6 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # Pages sometimes sits in 'syncing_files' for >10 min (the default); give it 30.
+          timeout: 1800000
