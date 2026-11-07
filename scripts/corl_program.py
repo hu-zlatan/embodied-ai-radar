@@ -24,7 +24,7 @@ from venue_backfill import hf_links, save
 
 URL = "https://www.corl.org/program/accepted-papers"
 OUT = PROGRAM_DIR / "corl-2026.json"
-RECHECK_DAYS = 7
+RECHECK_DAYS = 3  # authors post preprints around the conference (Nov 9-12), so look again more often
 BROWSER = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"}
 MIN_PAPERS = 600  # below this the page changed shape: keep the stored program
 TITLE_RATIO = 0.95  # arXiv titles differ in small ways from the submitted one (hyphens, a changed word)
