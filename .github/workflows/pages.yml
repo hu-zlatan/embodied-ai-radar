@@ -27,6 +27,19 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - run: python scripts/build_site.py
+      # Mirror for readers in China (EdgeOne Makers). Off until the owner adds the
+      # EDGEONE_API_TOKEN secret. Area: repo variable EDGEONE_AREA, 'overseas' (no ICP
+      # filing needed, default) or 'global' (includes mainland nodes; needs ICP filing).
+      # Never blocks the GitHub Pages deploy.
+      - name: Mirror to EdgeOne
+        if: github.ref == 'refs/heads/main'
+        continue-on-error: true
+        env:
+          EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
+          EDGEONE_AREA: ${{ vars.EDGEONE_AREA || 'overseas' }}
+        run: |
+          if [ -z "$EDGEONE_API_TOKEN" ]; then echo "EDGEONE_API_TOKEN not set; skipping mirror"; exit 0; fi
+          npx -y edgeone@1.6.46 makers deploy _site -n embodied-ai-radar -a "$EDGEONE_AREA" -t "$EDGEONE_API_TOKEN" --skip-ai-gateway-sync
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
