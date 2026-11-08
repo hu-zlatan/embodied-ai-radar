@@ -2617,3 +2617,14 @@
   tags: [code-as-policy, coding-agent, tool-library, mobile-manipulation, zero-shot]
   takeaway_en: "No end-to-end training: a VLM coding agent writes robot programs from a library of perception, planning and control tools in a plan-act-replan loop; reports matching or beating VLAs zero-shot on tabletop tasks."
   takeaway_zh: "不训练端到端策略，而让 VLM 作为编程智能体，调用感知、规划与控制工具库编写机器人程序，按“规划-执行-重规划”循环运行；在桌面任务上零样本达到或超过 VLA 模型，并可完成移动操作。"
+- title: "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding"
+  type: paper
+  arxiv: "2611.08449"
+  year: 2026
+  rating: 1
+  org: NVIDIA
+  project: https://research.nvidia.com/labs/lpr/vflash/
+  added: 2026-11-08
+  tags: [visual-planning, trajectory, decoding, inference-acceleration]
+  takeaway_en: "VLMs plan with points, boxes and trajectories one coordinate token at a time; VFlash drafts a whole primitive in one pass. Reports lower trajectory error, ~25x faster 3D point forecasting, a WAM gain (62.6% → 70.2%)."
+  takeaway_zh: "用点、框、轨迹做视觉规划的视觉语言模型需要逐个坐标 token 解码；VFlash 用轻量草稿器一次前向生成整个图元。报告轨迹误差更低、三维点运动预测约快 25 倍，接入世界动作模型后成功率 62.6% → 70.2%。"

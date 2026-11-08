@@ -1340,3 +1340,13 @@
   tags: [world-action-model, inference-acceleration, caching, training-free]
   takeaway_en: "Training-free speedup for world-action models: reuses denoising residuals across consecutive inference chunks at the same step, since they correlate during smooth motion. Up to 2.5x with a Fast-WAM backbone."
   takeaway_zh: "无需训练的世界动作模型加速方法：平滑运动时相邻推理块在同一去噪步的残差高度相关，因此跨块缓存复用。以 Fast-WAM 为骨干最高提速 2.5 倍。"
+- title: "Future Representation Distillation for Imagination-free World Action Models"
+  type: paper
+  arxiv: "2611.04527"
+  year: 2026
+  org: KAIST AI
+  project: https://harryjo97.github.io/dreamfree/
+  added: 2026-11-08
+  tags: [world-action-model, video-diffusion, distillation, real-time]
+  takeaway_en: "DreamFree: a WAM that skips future-video generation. An encoder learns to predict a frozen video diffusion model's features from the current frame; actions come from those. Reports 11 Hz control with a 14B backbone."
+  takeaway_zh: "DreamFree：无需生成未来视频的世界动作模型。编码器从当前观测预测冻结视频扩散模型的表征，动作模块据此出动作；报告以 14B 视频扩散骨干实现 11Hz 实时闭环控制。"

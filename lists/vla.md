@@ -2,7 +2,7 @@
 
 _Vision-language-action models and generalist robot policies._
 
-258 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/vla.yaml`](../data/curated/vla.yaml); edit the YAML, not this file.
+259 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/vla.yaml`](../data/curated/vla.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [中文](vla.zh-CN.md)
 
@@ -27,6 +27,7 @@ _Vision-language-action models and generalist robot policies._
 - ⭐ **[PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations](https://arxiv.org/abs/2610.37381)** (2026) — Light module turns VLM features into 'physical tokens' trained to predict future RGB, depth and flow features (with world-model supervision); no online video generation. Reports 99.3% LIBERO, 93.6% RoboTwin 2.0.
 - ⭐ **[REACT: Rolling Denoising and Dual Decoupling for Reactive Robot Control with VLA Models](https://arxiv.org/abs/2610.12007)** (2026) — CoRL 2026 Spotlight. Instead of regenerating action chunks from scratch, keeps a persistent action buffer with staggered flow timesteps, so flow-based VLAs get more reactive while preserving long-horizon context. · [code](https://github.com/houlong-xiong/REACT) · [project](https://react-vla.github.io)
 - ⭐ **[ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning](https://arxiv.org/abs/2610.37666)** (2026) — VLA that reasons in discrete motion tokens (a chain of dynamics) shared across embodiments; predicted futures are scored against what actually happened, so action-free human videos give RL signal. Sim and real tests. · [project](https://thinkworld-project.github.io/)
+- ⭐ **[VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding](https://arxiv.org/abs/2611.08449)** (2026) — VLMs plan with points, boxes and trajectories one coordinate token at a time; VFlash drafts a whole primitive in one pass. Reports lower trajectory error, ~25x faster 3D point forecasting, a WAM gain (62.6% → 70.2%). · [project](https://research.nvidia.com/labs/lpr/vflash/)
 - ⭐ **[Wall-OSS-0.5 Technical Report](https://arxiv.org/abs/2605.30877)** (2026) — Wall-OSS-0.5: open 4B VLA on a Qwen2.5-VL-3B backbone, pretrained across 20+ embodiments; reports 60.5% task progress after fine-tuning on 15 real tasks, against 43.0% for π0.5. · [code](https://github.com/X-Square-Robot/wall-x) · [project](https://x2robot.com/en/oss)
 - ⭐ **[π0.5: a Vision-Language-Action Model with Open-World Generalization](https://arxiv.org/abs/2504.16054)** (2025) — Co-training on heterogeneous data lets a mobile manipulator clean kitchens and bedrooms in homes it has never seen. · [code](https://github.com/Physical-Intelligence/openpi)
 - ⭐ **[Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success](https://arxiv.org/abs/2502.19645)** (2025) — OpenVLA-OFT — parallel decoding, action chunking and continuous actions make VLA fine-tuning much faster and more accurate. · [code](https://github.com/moojink/openvla-oft)

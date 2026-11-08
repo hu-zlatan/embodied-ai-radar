@@ -2,7 +2,7 @@
 
 _视觉-语言-动作模型与通用机器人策略。_
 
-共 258 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
+共 259 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [English](vla.md)
 
@@ -27,6 +27,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - ⭐ **[PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations](https://arxiv.org/abs/2610.37381)** (2026) — 轻量物理动力学模块从视觉-语言特征中提取“物理 token”，通过预测未来 RGB、深度和光流特征（并辅以冻结视频世界模型监督）来学习，推理时无需在线生成视频；仅用公开数据训练，报告 LIBERO 99.3%、RoboTwin 2.0 93.6%。
 - ⭐ **[REACT: Rolling Denoising and Dual Decoupling for Reactive Robot Control with VLA Models](https://arxiv.org/abs/2610.12007)** (2026) — CoRL 2026 Spotlight。不再每次从头生成动作块，而是维护一个流时间步错开的持久动作缓冲区，让基于流的 VLA 更具反应性，同时保留长时域上下文。 · [代码](https://github.com/houlong-xiong/REACT) · [项目页](https://react-vla.github.io)
 - ⭐ **[ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning](https://arxiv.org/abs/2610.37666)** (2026) — VLA 用跨本体共享的离散运动 token 链（Chain-of-Dynamics）表达动作思考；预测每条链导致的未来并与真实结果比对来强化，使没有动作标注的人类视频也能提供监督。在仿真与真机上验证人到机器人的迁移。 · [项目页](https://thinkworld-project.github.io/)
+- ⭐ **[VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding](https://arxiv.org/abs/2611.08449)** (2026) — 用点、框、轨迹做视觉规划的视觉语言模型需要逐个坐标 token 解码；VFlash 用轻量草稿器一次前向生成整个图元。报告轨迹误差更低、三维点运动预测约快 25 倍，接入世界动作模型后成功率 62.6% → 70.2%。 · [项目页](https://research.nvidia.com/labs/lpr/vflash/)
 - ⭐ **[Wall-OSS-0.5 Technical Report](https://arxiv.org/abs/2605.30877)** (2026) — Wall-OSS-0.5：自变量机器人（X Square Robot）开源的 40 亿参数 VLA 模型，基于 Qwen2.5-VL-3B 视觉语言主干，在 20 余种机器人形态上预训练；报告在 15 个真机任务上微调后平均任务进度 60.5%，π0.5 为 43.0%。 · [代码](https://github.com/X-Square-Robot/wall-x) · [项目页](https://x2robot.com/en/oss)
 - ⭐ **[π0.5: a Vision-Language-Action Model with Open-World Generalization](https://arxiv.org/abs/2504.16054)** (2025) — 通过异构数据联合训练，让移动操作机器人在从未见过的家庭中整理厨房和卧室。 · [代码](https://github.com/Physical-Intelligence/openpi)
 - ⭐ **[Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success](https://arxiv.org/abs/2502.19645)** (2025) — OpenVLA-OFT：并行解码、动作分块与连续动作让 VLA 微调更快、成功率更高。 · [代码](https://github.com/moojink/openvla-oft)
