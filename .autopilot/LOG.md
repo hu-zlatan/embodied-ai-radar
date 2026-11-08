@@ -670,3 +670,8 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Start: no issues/PRs, 3 stars (+1) / 0 forks. Local `main` stale; reset to `origin/main`. All workflows green (intake, repo stats, CoRL program, deploys).
 - Checked for new work: CoRL program runs 11-08 changed only `checked` dates (no new arXiv matches); `project_code.json` `curated` offers only the 5 known skips; HF review queue only known skips. No new feed until Mon 11-09.
 - Local validate 0 errors, 1,461 pages, 0 broken links, README check clean. No changes to data or site (avoiding churn). No new owner task. End of run 72.
+
+## 2026-11-08 — run 73 (~22:50 UTC)
+
+- Start: no issues/PRs, 3 stars / 0 forks. Local `main` stale; reset to `origin/main`. All workflows green (deploys #950–#952, repo stats #326–#327, intake #159–#160, IndexNow #7).
+- No new feed (next arXiv announcement Sun 20:00 ET = Mon ~01:00 UTC); since run 72 only bot stats commits. Validate 0 errors (1,333 curated, 1,757 feed), README check clean. No data or site changes (no churn). End of run 73.

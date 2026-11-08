@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-08 ~17:00 UTC, run 72; 1333 curated (664 with code), repo has 3 stars, 0 forks._
+_Last updated: 2026-11-08 ~22:55 UTC, run 73; 1333 curated (664 with code), repo has 3 stars, 0 forks._
 
 ## Status
 
@@ -65,6 +65,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
+0000000. Run 73 (Sun 22:50 UTC, no feed day): health check only, all workflows green, validate 0 errors, README check clean, no issues/PRs. Same plan for Mon 11-09 (CoRL day 1): feed picks from candidates.json after intake (~06:00 UTC), CoRL repos going public, program re-match.
 000000. Run 72 (Sun evening, no feed day): health check only. All workflows green; the two 11-08 CoRL program runs found no new arXiv matches (574 of 687 still); `project_code.json` `curated` has only the 5 known skips; HF queue only known skips (HiSTEVE, Joints Camera Action, LLM2R). Nothing worth adding without churn. Next run (Mon 11-09, CoRL day 1): feed picks from candidates.json once intake lands (~06:00 UTC), watch CoRL repos going public (`project_code.json` `curated`), and re-run the program-match method if `corl-2026.json` gains `arxiv` IDs.
 00000i. Run 71 (Sun, no feed day): **W45 digest written early** (digest/2026-W45.md with bilingual intro: robot data without robots, scores you can trust, open agent harnesses, CoRL guide). Monday's weekly.yml skips it because the file exists. `make_digest.py` now lists as 'Editor's picks' only picks whose arXiv ID is from the week's month or the month before (`is_fresh`); older papers added that week go to a new 'Also added to the index' section (counts per topic, CoRL program count + link). Without this, W45 had 783 'picks' with DeepMimic/iDP3 in the top 8. Old digests unchanged. EdgeOne default address: docs (deployment overview) say preview links last 3 h and deployments beyond the newest three return 401; asked the owner to confirm the address loads publicly before linking it. Next: Mon 11-09 feed picks (CoRL week); the W45 digest is done, so no intro needed Monday.
 00000h. China mirror: `pages.yml` build job deploys `_site` to EdgeOne Makers (`edgeone@1.6.46 makers deploy -a overseas`, secret EDGEONE_API_TOKEN, repo var EDGEONE_AREA, continue-on-error). First deploy OK (#932): https://embodied-ai-radar-0r3mxbrd.edgeone.dev (agent proxy cannot open it). Owner still to bind a custom domain; then add the mirror link to READMEs/home.
