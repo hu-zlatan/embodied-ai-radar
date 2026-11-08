@@ -655,3 +655,12 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - LAUNCH_KIT CoRL post: wording changed from 'next week' to 'this week (Nov 9–12)' so it still fits during the conference.
 - No new owner task. End of run 70.
 - Owner asked (chat) for hosting reachable from mainland China. Added an optional EdgeOne Makers mirror step to pages.yml (commit 780d440); owner created the token; dispatched Deploy site #932: 'Deploy Success', https://embodied-ai-radar-0r3mxbrd.edgeone.dev, overseas area. Custom domain pending (owner).
+
+## 2026-11-08 — run 71 (~10:50 UTC–)
+
+- Start: no issues/PRs, 2 stars / 0 forks. Local `main` stale again; reset to `origin/main`. All workflows green; verify #185/#186 (AnyDexRT code, VFlash/DreamFree) passed.
+- No new feed day (Sunday) and the HF queue holds only known skips, so worked on the W45 digest ahead of CoRL (opens Mon 11-09).
+- `make_digest.py`: picks whose arXiv ID is older than the previous month (index anchors, CoRL program takeaways) are no longer ranked as 'Editor's picks'; a new 'Also added to the index' section counts them per topic and links the CoRL program guide. W45: 218 picks + 565 earlier papers (445 from the CoRL guide). Digest 108 KB → 53 KB.
+- digest/2026-W45.md generated and given a bilingual intro (AIRoA-0, Open-HumanWAM, HALO; RoboColosseum, SimuGuard; uni-robot-agent, CaPtain, PyRUA; CoRL guide 687 papers / 555 takeaways). Commit 70e8d7f. Validate 0 errors, 1,461 pages, 0 broken links, README check clean.
+- EdgeOne mirror: docs say preview links expire after 3 h and only the newest three deployments stay live (older ones 401). Added a one-minute check to OWNER_TODO before the mirror gets linked publicly.
+- End of run 71.

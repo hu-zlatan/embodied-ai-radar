@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-08 ~05:20 UTC, run 70; 1333 curated (664 with code), repo has 2 stars, 0 forks._
+_Last updated: 2026-11-08 ~11:30 UTC, run 71; 1333 curated (664 with code), repo has 2 stars, 0 forks._
 
 ## Status
 
@@ -65,6 +65,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
+00000i. Run 71 (Sun, no feed day): **W45 digest written early** (digest/2026-W45.md with bilingual intro: robot data without robots, scores you can trust, open agent harnesses, CoRL guide). Monday's weekly.yml skips it because the file exists. `make_digest.py` now lists as 'Editor's picks' only picks whose arXiv ID is from the week's month or the month before (`is_fresh`); older papers added that week go to a new 'Also added to the index' section (counts per topic, CoRL program count + link). Without this, W45 had 783 'picks' with DeepMimic/iDP3 in the top 8. Old digests unchanged. EdgeOne default address: docs (deployment overview) say preview links last 3 h and deployments beyond the newest three return 401; asked the owner to confirm the address loads publicly before linking it. Next: Mon 11-09 feed picks (CoRL week); the W45 digest is done, so no intro needed Monday.
 00000h. China mirror: `pages.yml` build job deploys `_site` to EdgeOne Makers (`edgeone@1.6.46 makers deploy -a overseas`, secret EDGEONE_API_TOKEN, repo var EDGEONE_AREA, continue-on-error). First deploy OK (#932): https://embodied-ai-radar-0r3mxbrd.edgeone.dev (agent proxy cannot open it). Owner still to bind a custom domain; then add the mirror link to READMEs/home.
 00000g. Run 70 (Sun, no feed day): verify on b2a9d0b passed (#184). AnyDexRT `code:` added (chenxi-wang/anydexrt README has data collection, training, inference). HF-queue picks VFlash (NVIDIA, 99 HF upvotes, ★) → vla and DreamFree (KAIST, WAM) → world-models. Launch-kit CoRL post reworded for conference week ('this week', 180+ with code). VLALagBench and vla-start-suppression READMEs still 404. candidates.json still mined out; program arXiv papers uncurated = the 19 known driving/rover/surgical skips. Check verify on 6c986d8 next run. Next: Mon 11-09 feed picks + W45 digest intro (CoRL week).
 00000f. Run 69 (Sat night, no feed day): verify #183 failed only on https://umishra.me/TAMPAgent/ (404) → `project:` dropped (restore if it returns; no new URL found by search). Search index trimmed (curated items: no null/empty fields, `l` omitted when it equals the arXiv abs URL; app.js falls back). Check verify on b2a9d0b next run. Next: Mon 11-09 feed picks + W45 digest intro (CoRL week).
