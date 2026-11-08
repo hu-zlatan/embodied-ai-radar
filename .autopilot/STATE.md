@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-07 ~23:00 UTC, run 69; 1331 curated (663 with code), repo has 2 stars, 0 forks._
+_Last updated: 2026-11-08 ~05:20 UTC, run 70; 1333 curated (664 with code), repo has 2 stars, 0 forks._
 
 ## Status
 
@@ -65,6 +65,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
+00000g. Run 70 (Sun, no feed day): verify on b2a9d0b passed (#184). AnyDexRT `code:` added (chenxi-wang/anydexrt README has data collection, training, inference). HF-queue picks VFlash (NVIDIA, 99 HF upvotes, ★) → vla and DreamFree (KAIST, WAM) → world-models. Launch-kit CoRL post reworded for conference week ('this week', 180+ with code). VLALagBench and vla-start-suppression READMEs still 404. candidates.json still mined out; program arXiv papers uncurated = the 19 known driving/rover/surgical skips. Check verify on 6c986d8 next run. Next: Mon 11-09 feed picks + W45 digest intro (CoRL week).
 00000f. Run 69 (Sat night, no feed day): verify #183 failed only on https://umishra.me/TAMPAgent/ (404) → `project:` dropped (restore if it returns; no new URL found by search). Search index trimmed (curated items: no null/empty fields, `l` omitted when it equals the arXiv abs URL; app.js falls back). Check verify on b2a9d0b next run. Next: Mon 11-09 feed picks + W45 digest intro (CoRL week).
 00000e. Run 68 (Sat evening): verify #181/#182 passed. The 11-07 CoRL program run matched 2 more papers to arXiv (574 of 687): MAESTRO → vla, AnyDexRT → manipulation (facts.yml #23). Program guide now 555 takeaways; the 19 uncurated program arXiv papers are all driving/vehicle/rover/surgical/rehab/parking (skip). Launch-kit CoRL post numbers updated (183 code, 555 takeaways). Mobile QA of the program page with a mocked clock (Nov 9/10): Now/Next bar works, no JS errors, no overflow. Each new CoRL program run may match more papers: list program `arxiv` not in curated (minus driving etc.), run facts.yml, write takeaways. Next: Mon 11-09 feed picks + W45 digest intro.
 00000d. Run 67 (Sat, no feed day): verify #180 failed only on the BEHAVIOR-Spatial project page (404) → removed, restore if it returns; SLA got its project page (HF). `pages.yml` deploy timeout 10 → 30 min (#861/#898 were 'syncing_files' timeouts, GitHub side). `corl_program.py` RECHECK_DAYS 7 → 3 for CoRL week (115 of 687 unmatched; set back to 7 or disable the daily cron after Nov 30). candidates.json is mined out (33 left, all off-core). Check verify #181/#182 first next run. Next: Mon 11-09 feed picks + W45 digest intro (CoRL week numbers: 687 accepted, 553 takeaways, 181+ with code).

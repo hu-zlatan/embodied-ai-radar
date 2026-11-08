@@ -646,3 +646,11 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Verify #183 (run 68 picks) failed only on https://umishra.me/TAMPAgent/ (HTTP 404); web search found no new page → `project:` dropped (commit b2a9d0b). That commit forgot to regenerate lists/manipulation*.md; fixed in the next commit (a7edf66) before CI flagged it.
 - Search index: curated items no longer carry null/empty fields, and `l` is omitted when it equals the arXiv abs URL (app.js rebuilds it). 2.06 MB → 1.96 MB raw (663 → 652 KB gzip). Search checked in Chromium: RT-1 query renders, title links correct, no JS errors.
 - Validate 0 errors, 1,458 pages, 0 broken links, README check clean. No new owner task. End of run 69.
+
+## 2026-11-08 — run 70 (~04:55 UTC–)
+
+- Start: no issues/PRs, 2 stars / 0 forks. Local `main` was stale again; reset to `origin/main`. All workflows green; verify #184 (TAMPAgent fix) passed.
+- AnyDexRT: `project_code.json` offered chenxi-wang/anydexrt; README has setup, data collection, training and inference → `code:` added (commit 00f4aad). Other `curated` items are the known skips. VLALagBench / vla-start-suppression READMEs still 404.
+- Picks from review_queue.json (full abstracts): VFlash (2611.08449, NVIDIA, 99 HF upvotes → rating 1) → vla; DreamFree (2611.04527, KAIST AI, project page) → world-models (commit 6c986d8). Validate 0 errors, 1,460 pages, 0 broken links, README check clean.
+- LAUNCH_KIT CoRL post: wording changed from 'next week' to 'this week (Nov 9–12)' so it still fits during the conference.
+- No new owner task. End of run 70.
