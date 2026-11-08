@@ -654,3 +654,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Picks from review_queue.json (full abstracts): VFlash (2611.08449, NVIDIA, 99 HF upvotes → rating 1) → vla; DreamFree (2611.04527, KAIST AI, project page) → world-models (commit 6c986d8). Validate 0 errors, 1,460 pages, 0 broken links, README check clean.
 - LAUNCH_KIT CoRL post: wording changed from 'next week' to 'this week (Nov 9–12)' so it still fits during the conference.
 - No new owner task. End of run 70.
+- Owner asked (chat) for hosting reachable from mainland China. Added an optional EdgeOne Makers mirror step to pages.yml (commit 780d440); owner created the token; dispatched Deploy site #932: 'Deploy Success', https://embodied-ai-radar-0r3mxbrd.edgeone.dev, overseas area. Custom domain pending (owner).
