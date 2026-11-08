@@ -2,42 +2,6 @@
  "updated": "2026-11-08",
  "papers": [
   {
-   "id": "2611.08449",
-   "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
-   "upvotes": 100,
-   "hf_date": "2026-11-06",
-   "published": "2026-11-06",
-   "topics": [],
-   "authors": [
-    "Yu-Cheng Chou",
-    "Shihao Wang",
-    "Jin Huang",
-    "Chi-Pin Huang",
-    "Chiao-An Yang",
-    "Xianzhe Fan",
-    "Jing Wang",
-    "Zhiqi Li",
-    "Yuanguo Kuang",
-    "Ruijie Zheng",
-    "Johan Bjorck",
-    "Sifei Liu",
-    "Hang Su",
-    "Abhishek Badki",
-    "Lei Zhang",
-    "Alan Yuille",
-    "Linxi &#34;Jim&#39;&#39; Fan",
-    "Jan Kautz",
-    "Zhiding Yu"
-   ],
-   "organization": "NVIDIA",
-   "github": null,
-   "project": "https://research.nvidia.com/labs/lpr/vflash/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Models for physical AI tasks, such as robotics and autonomous driving, need not reason solely in language. They can use visual plans--points, bounding boxes, and trajectories--to represent spatial goals and anticipate motion. However, autoregressive vision-language models generate these plans one coordinate token at a time, making richer predictions increasingly costly. We introduce VFlash, a method for fast, accurate visual planning through Flash Primitive Decoding. VFlash exploits the known structure of visual primitives to predict their coordinates jointly, using a lightweight drafter that generates an entire primitive in one forward pass. The layout adapts to the primitive's type, dimensionality, and length, supporting compact boxes and long, variable-length trajectories. Crucially, spatial accuracy need not require reproducing an autoregressive model's exact token sequence. VFlash therefore trains on annotated primitives and directly accepts structurally valid predictions without target-token agreement. Across the evaluated 2D and 3D robot trajectory tasks, VFlash consistently reduces prediction errors relative to autoregressive decoding. Preliminary single-rollout measurements indicate approximately 25x faster generation for 3D point motion forecasting. A world action model conditioned on VFlash plans achieves 70.2% average success across four MolmoSpaces task suites, compared with 62.6% for the baseline.",
-   "ai_summary": null
-  },
-  {
    "id": "2610.31162",
    "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
    "upvotes": 38,
@@ -108,33 +72,6 @@
    "comment": "20 pages, 5 figures, 7 tables",
    "abstract": "3D part assembly aims to reconstruct a complete shape from a set of unassembled parts by predicting a rigid SE(3) transformation for each part. Because the placement of a part is rarely determined by its own geometry, the task demands reasoning over the entire part set, and existing methods, which rely on pairwise relations or iterative generation and verification, scale poorly to objects with many parts. We present LLM2R, which casts part assembly as sequence modeling with a pretrained decoder-only large language model (LLM): a Point-BERT encoder and a Q-Former compress each part into a block of geometric tokens, the blocks of all parts are concatenated, and a causal LLM adapted with Low-Rank Adaptation (LoRA) processes the sequence in one forward pass. Causal attention, however, lets the hidden states of a part observe only the parts that precede it. LLM2R therefore appends a block of learnable summary tokens after the last part: these tokens follow every part, so their states aggregate the whole assembly at a constant token cost, and a part-aware pose head fuses each part's states with them before predicting its rotation and translation. One architecture thus handles semantic and geometric assembly and predicts all poses in a single non-autoregressive pass. LLM2R achieves the highest part accuracy and success rate on all three PartNet categories, the best rotation error, translation error, and part accuracy on PartNeXt, and the lowest translation error and fastest inference on Breaking Bad, where only a fracture-specialized method is more accurate. Its advantage grows with the number of parts: at 100 parts it exceeds GARF by 33.5 points in part accuracy on Breaking Bad and Assembler by 29.1 points on PartNet, and it transfers zero-shot to unseen categories with more than 16 points higher part accuracy than the strongest of three baselines.",
    "ai_summary": "LLM2R treats 3D part assembly as sequence modeling with a pretrained decoder-only LLM, using geometric tokens and learnable summary tokens to predict all part poses in a single pass with improved scalability and accuracy."
-  },
-  {
-   "id": "2611.04527",
-   "title": "Future Representation Distillation for Imagination-free World Action Models",
-   "upvotes": 9,
-   "hf_date": "2026-11-06",
-   "published": "2026-11-04",
-   "topics": [
-    "world-models"
-   ],
-   "authors": [
-    "Jaehyeong Jo",
-    "Sangwon Jang",
-    "Sihyun Yu",
-    "Seonghyeon Ye",
-    "Yekyung Nah",
-    "Hojung Jung",
-    "Kimin Lee",
-    "Sung Ju Hwang"
-   ],
-   "organization": "KAIST AI",
-   "github": null,
-   "project": "https://harryjo97.github.io/dreamfree/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "World Action Models (WAMs) use the predictive knowledge of pretrained video diffusion models for robot control through future video prediction. However, iterative video denoising is costly, and inaccurate visual predictions can compromise action prediction. Our key idea is to make this predictive knowledge available through visual representations computed from the current observation, enabling action prediction without generating future videos. We introduce DreamFree, a WAM that repurposes a pretrained video diffusion model as a predictive visual encoder through representation distillation. The visual encoder learns to predict a frozen video diffusion model's representation using only the current observation. An action module is then trained to predict actions by extracting action-relevant information from the visual encoder. Across real-world and simulated tasks, DreamFree achieves higher success rates than state-of-the-art VLAs and WAMs, while performing real-time closed-loop control at 11Hz with a 14B video diffusion backbone. Experiments show that DreamFree can translate stronger video priors and additional video data into better robot control and enable learning new robot tasks from video demonstrations, including videos from a different embodiment, without action annotation for the new tasks.",
-   "ai_summary": "DreamFree repurposes a pretrained video diffusion model as a predictive visual encoder through representation distillation, enabling real-time robot action prediction without generating future videos and improving control and learning from video demonstrations."
   }
  ],
  "curated_link_updates": [
