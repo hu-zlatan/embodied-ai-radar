@@ -1,6 +1,7 @@
 """Draft a bilingual weekly digest: digest/YYYY-Www.md.
 
-Sections: editor's picks (curated entries whose `added` date falls in the week),
+Sections: editor's picks (curated entries whose `added` date falls in the week and whose arXiv ID is recent;
+older papers added that week are only counted per topic),
 papers upvoted on Hugging Face Daily Papers,
 repos rising on GitHub (star gains over the 7 days up to the week's end, once the history is long enough),
 numbers per topic and per robot type, and new papers with code by topic (from the daily feed).
@@ -91,6 +92,38 @@ def rank_picks(picks: list[dict]) -> list[dict]:
     return sorted(picks, key=key)
 
 
+def is_fresh(e: dict, start: dt.date) -> bool:
+    """A pick is 'new research' when its arXiv ID is from the week's month or the month before.
+    Older papers added the same week (index anchors, conference program entries) go to catalog_section."""
+    m = re.match(r"(\d{2})(\d{2})\.", str(e.get("arxiv") or ""))
+    if not m:
+        return int(e.get("year") or 0) >= start.year
+    first = (start.replace(day=1) - dt.timedelta(days=1)).replace(day=1)  # first day of previous month
+    return dt.date(2000 + int(m.group(1)), int(m.group(2)), 1) >= first
+
+
+def catalog_section(older: list[dict], topics: list[dict]) -> list[str]:
+    """Older papers added to the index this week: counts per topic with links, not a list of hundreds of links."""
+    if not older:
+        return []
+    names = {t["id"]: (t["en"], t["zh"]) for t in topics}
+    counts: dict[str, int] = {}
+    for e in older:
+        tid = next((t for t in (e.get("topics") or []) if t in names), None)
+        if tid:
+            counts[tid] = counts.get(tid, 0) + 1
+    corl = sum(1 for e in older if str(e.get("venue") or "").startswith("CoRL 2026"))
+    site = "https://hu-zlatan.github.io/embodied-ai-radar"
+    L = ["", "## Also added to the index · 本周补充收录", "",
+         f"_{len(older)} earlier papers got a reviewed takeaway this week"
+         + (f", {corl} of them from the [CoRL 2026 program guide]({site}/venues/corl-2026-program.html)" if corl else "")
+         + f". 本周还为 {len(older)} 篇较早的论文补充了审阅过的要点"
+         + (f"，其中 {corl} 篇来自 [CoRL 2026 会议指南]({site}/venues/corl-2026-program.html?lang=zh)" if corl else "")
+         + "。_", ""]
+    L += [f"- [{names[t][0]} · {names[t][1]}]({site}/topics/{t}.html): **{counts[t]}**" for t in names if t in counts]
+    return L
+
+
 def picks_section(picks: list[dict], topics: list[dict]) -> list[str]:
     L = ["## Editor's picks · 本周精选", ""]
     if not picks:
@@ -148,7 +181,9 @@ def main() -> int:
     L = [f"# Embodied AI Radar · Weekly {week} · 具身智能雷达周报", "",
          f"{start.isoformat()} → {end.isoformat()} · {len(feed)} new arXiv papers · {len([p for p in feed if p.get('code')])} with code",
          f"本周共收录 {len(feed)} 篇 arXiv 新论文，其中 {len([p for p in feed if p.get('code')])} 篇附代码。", ""]
-    L += picks_section(picks, topics)
+    fresh = [e for e in picks if is_fresh(e, start)]
+    L += picks_section(fresh, topics)
+    L += catalog_section([e for e in picks if not is_fresh(e, start)], topics)
     accepted = sorted(((venue_of(p.get("comment")), p) for p in feed if venue_of(p.get("comment"))),
                       key=lambda vp: (vp[0], vp[1]["id"]))
     if accepted:
