@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 132 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 133 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [English](learning.md)
 
@@ -82,6 +82,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Preference-Calibrated Human-in-the-Loop Reinforcement Learning for Robotic Manipulation](https://arxiv.org/abs/2606.03949)** (2026) — 人在回路强化学习：把每次人工干预视为偏好（人类动作优于策略动作），对次优片段做信用重新分配。报告五个真机任务平均成功率提升 24.5%，收敛快 1.3 倍。
 - **[Progress-Guided Preference Generation for Aligning Generative Control Policies](https://arxiv.org/abs/2610.25692)** (2026) — 用自动生成的偏好标签微调扩散与流匹配策略：以少量专家示教为参照衡量自主回放的顺序进度并据此排序，无需人工标注或手工奖励；报告在长时程操作任务上优于监督微调基线。 · [项目页](https://pgpg2026.github.io/)
 - **[Proxy Policy Steering](https://arxiv.org/abs/2609.09148)** (2026) — 推理时适配冻结的通用策略：训练两个小代理策略（一个模仿基座行为，一个在目标任务上微调），以二者的速度场差值引导每一步去噪。无需访问基座参数。
+- **[Q-OIL: Optimistic Exploration in Learning from Human Interventions](https://arxiv.org/abs/2611.08576)** (2026) — 真实用户往往在进展停滞时介入，且纠正动作并不完美；据此建立的基于进展的人类模型让仿真评测更贴近真人。Q-OIL 对介入转移加乐观奖励并用解耦评论家稳定训练，报告成功率提升 10-50%。 · [项目页](https://weirdlabuw.github.io/qoil)
 - **[RACE: Calibrated Cumulative Scoring for Rollout-Free Robot Policy Checkpoint Selection](https://arxiv.org/abs/2611.05838)** (2026) — 无需实机回放即可排序检查点：用保留示教得到的状态相关阈值校准动作偏差，再按累乘聚合。论文报告其排序与真实机器人部署成功率一致。 · [项目页](https://changyeon.site/race)
 - **[RARM: Confidence-Gated Progress Reward Modeling for RL in Manipulation](https://arxiv.org/abs/2606.22027)** (2026) — 只在通用视频上训练一次的视觉比较器，可把一条成功演示变成稠密的进度奖励，并只奖励置信度高的前进。在 9 个仿真和 4 个真机任务的强化学习中成功率最高。
 - **[RL Token: Bootstrapping Online RL with Vision-Language-Action Models](https://arxiv.org/abs/2604.23073)** (2026) — CoRL 2026 Oral。让 VLA 输出紧凑的 RL token 作为在线强化学习接口，预训练策略只需几小时真实练习即可提升精度与速度。

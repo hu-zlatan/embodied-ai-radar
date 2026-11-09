@@ -2,7 +2,7 @@
 
 _Reinforcement learning, imitation learning and policy post-training methods for robots, on any embodiment._
 
-132 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/learning.yaml`](../data/curated/learning.yaml); edit the YAML, not this file.
+133 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/learning.yaml`](../data/curated/learning.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/learning.html) · [中文](learning.zh-CN.md)
 
@@ -82,6 +82,7 @@ _Reinforcement learning, imitation learning and policy post-training methods for
 - **[Preference-Calibrated Human-in-the-Loop Reinforcement Learning for Robotic Manipulation](https://arxiv.org/abs/2606.03949)** (2026) — Human-in-the-loop RL that treats each intervention as a preference (human action over policy action) and corrects credit on suboptimal segments. Reports +24.5% average success and 1.3x faster convergence.
 - **[Progress-Guided Preference Generation for Aligning Generative Control Policies](https://arxiv.org/abs/2610.25692)** (2026) — Fine-tunes diffusion and flow policies with automatic preference labels: rollouts are ranked by progress measured against a few expert demos, no human labels or reward design. Reports beating SFT on long-horizon tasks. · [project](https://pgpg2026.github.io/)
 - **[Proxy Policy Steering](https://arxiv.org/abs/2609.09148)** (2026) — Adapts a frozen generalist policy at inference: two small proxies (one copies base behaviour, one is fine-tuned on the task) and their velocity difference steers each denoising step. Base weights are not needed.
+- **[Q-OIL: Optimistic Exploration in Learning from Human Interventions](https://arxiv.org/abs/2611.08576)** (2026) — Real users intervene when progress stalls, often with imperfect fixes; a progress-based human model makes sim benchmarking match them. Q-OIL adds optimistic bonuses on intervention steps; reports 10-50% higher success. · [project](https://weirdlabuw.github.io/qoil)
 - **[RACE: Calibrated Cumulative Scoring for Rollout-Free Robot Policy Checkpoint Selection](https://arxiv.org/abs/2611.05838)** (2026) — Ranks checkpoints without rollouts: action deviations are calibrated against state-dependent thresholds from held-out demos, then combined in a running product. Reports rankings that align with real deployment. · [project](https://changyeon.site/race)
 - **[RARM: Confidence-Gated Progress Reward Modeling for RL in Manipulation](https://arxiv.org/abs/2606.22027)** (2026) — Video comparator trained once on general videos that turns one successful demo into a dense progress reward, paying only for confident forward progress. Best RL success on 9 sim and 4 real tasks.
 - **[RL Token: Bootstrapping Online RL with Vision-Language-Action Models](https://arxiv.org/abs/2604.23073)** (2026) — CoRL 2026 Oral. Adapts a VLA to expose a compact RL token, an interface for sample-efficient online RL, so a pretrained policy gains precision and speed from a few hours of real-world practice.

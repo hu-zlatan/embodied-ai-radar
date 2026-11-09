@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-09 ~17:25 UTC, run 76; 1345 curated, repo has 3 stars, 0 forks._
+_Last updated: 2026-11-09 ~23:10 UTC, run 77; 1347 curated, repo has 3 stars, 0 forks._
 
 ## Status
 
@@ -65,6 +65,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
+00000000000. Run 77 (Mon 11-09 ~22:50 UTC): all green (verify #192 on fc2f047 passed). The 18:53 CoRL program run matched 2 more papers (576 of 687 on arXiv): Q-OIL 2611.08576 → learning, MDF++ 2611.09293 → tactile (project jointmdf.github.io taken from the abstract; if verify flags it, drop `project:`). facts.yml dispatched for both. No CoRL award finalists found by search. Next: check verify on the run-77 commit; Tue 11-10 feed picks; retry CoRL awards.
 0000000000. Run 76 (Mon 11-09 ~16:45 UTC, CoRL day 1): verify #189/#190 failed only on a STAR (2610.41009) title change (arXiv v2 adds 'with Proprioception for VLA Inference'); the four run-75 code links passed. Title fixed (42bc3c3, verify #191 passed), takeaway updated from the v2 abstract via facts.yml #24 (proprioception-adaptive mixing, +4.0 pts). `project_code.json` `curated` and the HF queue hold only known skips. No CoRL 2026 award finalists found by search yet. Next: Tue 11-10 feed picks; retry CoRL awards; confirm verify on the takeaway commit.
 000000000. Run 75 (Mon 11-09 ~10:50 UTC, CoRL day 1): verify #187 on 23dbb74 was cancelled (arxiv-api group), re-dispatched as #188 (in progress at end of run) and #189 (push, f1f9ce3) pending: **check both next run**. Added `code:` for AMP1 (apple-aiml-research/ml-amp), CUA-embodied, RevoSim, Flex-RSI (READMEs name the papers). DKWBC repo is a project page only (no code yet): add when code lands. CoRL program: no new arXiv matches (same 19 driving/rover/surgical skips). CoRL 2026 awards page (2026.corl.org/program/awards) was not readable and no finalist list is announced yet: retry later in the week; if a list appears, add honors to curated entries. Next: Tue 11-10 feed picks.
 00000000. Run 74 (Mon 11-09 ~05:00 UTC, CoRL day 1): scheduled intake slots 01:11/02:17/04:53 had not fired, so intake was dispatched by hand (#161, OK; 11-09 feed landed). 12 picks from the 11-09 candidates (AMP1 ★, PRISM, CUA-embodied, DobotTrack, DKWBC, SUGARv2, Grasp-TAGS, grasp-CF audit, ToolDex, Flex-RSI, RevoSim, Lodos; commit 23dbb74). Skipped: snake-robot loco-manipulation (IROS), morphing quadrotor, OPO (generic RL). Add `code:` once live: DobotTrack (Dobot-Team/dobot_track not public), AMP1 (page says code available; project_code.py should find it). Check verify on 23dbb74 next run. Next: Tue 11-10 feed picks; CoRL repos going public (`project_code.json` `curated`).

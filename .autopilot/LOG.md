@@ -697,3 +697,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - facts.yml #24 fetched the v2 abstract: it adds proprioception-adaptive mixing strength → EN/ZH takeaway updated (EN 204 chars).
 - Link-update queue, project_code `curated` and HF queue: only known skips. Web search found no CoRL 2026 award finalist list yet.
 - Validate 0 errors, 1,474 pages, 0 broken links, README check clean. No new owner task. End of run 76.
+
+## 2026-11-09 — run 77 (~22:50 UTC–)
+
+- Start: no issues/PRs, 3 stars / 0 forks. Local `main` was detached; reset to `origin/main`. All workflows green; verify #192 (run-76 takeaway) passed.
+- CoRL program run (18:53) matched 2 more accepted papers to arXiv (576 of 687). facts.yml dispatched for both; takeaways written from the full abstracts: Q-OIL (UW, human-intervention RL, project page) → learning; MDF++ (visuo-tactile world-action model, Berenson lab) → tactile (+ world-models, manipulation).
+- Web search: still no CoRL 2026 award finalist list.
+- Validate 0 errors (1,347 curated), 1,476 pages, 0 broken links, README check clean. No new owner task. End of run 77.

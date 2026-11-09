@@ -1329,3 +1329,14 @@
   tags: [imitation-learning, action-space, teleoperation, contact-rich]
   takeaway_en: "Argues policies should condition on both the executed robot state and the leader command while predicting future commands, since their mismatch signals contact; beats either alone with no force sensing."
   takeaway_zh: "认为策略应同时以机器人实际执行状态和主端指令为输入并预测未来指令，因为两者的偏差蕴含接触信息；在没有力觉输入的低成本平台上优于单独使用任一信号。"
+- title: "Q-OIL: Optimistic Exploration in Learning from Human Interventions"
+  type: paper
+  arxiv: "2611.08576"
+  year: 2026
+  venue: CoRL 2026
+  org: University of Washington
+  project: https://weirdlabuw.github.io/qoil
+  added: 2026-11-09
+  tags: [human-in-the-loop, interventions, rl, real, sim]
+  takeaway_en: "Real users intervene when progress stalls, often with imperfect fixes; a progress-based human model makes sim benchmarking match them. Q-OIL adds optimistic bonuses on intervention steps; reports 10-50% higher success."
+  takeaway_zh: "真实用户往往在进展停滞时介入，且纠正动作并不完美；据此建立的基于进展的人类模型让仿真评测更贴近真人。Q-OIL 对介入转移加乐观奖励并用解耦评论家稳定训练，报告成功率提升 10-50%。"
