@@ -2,7 +2,7 @@
 
 _足式运动、人形全身控制与跑酷。_
 
-共 170 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
+共 172 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/locomotion.html) · [English](locomotion.md)
 
@@ -38,6 +38,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[Coordinating Humanoid Loco-Manipulation through Action-Conditioned Latent Foresight](https://arxiv.org/abs/2611.04839)** (2026) — 用潜空间世界动作模型在执行前为人形指令序列打分，并逐步重规划；报告七项真机任务成功率 85.7%，GR00T N1.7 为 70.0%。 · [项目页](https://ju6276.github.io/Action-Grounded-Foresight/)
 - **[Counterfactual Video Generation Enables Scalable Humanoid Loco-Manipulation](https://arxiv.org/abs/2609.38172)** (2026) — PRISM 用视频生成把少量真实视频扩增为数百段反事实人-物交互视频，在仿真中重建并训练单一人形搬运策略，无需真机微调即可泛化到未见物体。 · [代码](https://github.com/amazon-far/PRISM) · [项目页](https://prism-real2sim2real.github.io/)
 - **[Ctrl-F: Force as an Interface for Humanoid Loco-Manipulation](https://arxiv.org/abs/2611.05507)** (2026) — 在动作跟踪中为每个接触部位加入显式三维力指令，由高层规划器在线给出。实机可推、踢最重 20 kg 的箱子（不感知力的基线会失败），并能适应任务中途增加的负载。 · [项目页](https://forcectrl.github.io/)
+- **[DKWBC: Decoupling Motion Tracking and Balancing for Humanoid Whole-Body Control](https://arxiv.org/abs/2611.09605)** (2026) — 拆分人形全身控制：逆动力学前馈加 PD 反馈提供跟踪力矩，强化学习残差只负责平衡修正；同一平衡策略可跨动作数据集、负载与物理交互泛化，仿真与真机均有验证。 · [项目页](https://robbyant-research.github.io/DKWBC/)
 - **[Deep Whole-body Parkour](https://arxiv.org/abs/2601.07701)** (2026) — 将外部感知融入全身动作跟踪，让人形机器人在不平整地形上完成高动态的非行走类技能。 · [代码](https://github.com/project-instinct/InstinctLab) · [项目页](https://project-instinct.github.io/deep-whole-body-parkour)
 - **[DiffContact: Differentiable Contact Dynamics for Policy Learning and Contact-Implicit Trajectory Optimization](https://arxiv.org/abs/2610.35852)** (2026) — 只在反向传播中换用平滑的解析摩擦接触梯度，前向仍是硬接触仿真：四足小跑策略在台式机上不到 2 分钟训练完成，无需微调即可迁移到真机；在接触隐式轨迹优化中也能找到更丰富的接触解。 · [项目页](https://diffcontact.github.io)
 - **[DiffWBC: Unlocking Steerable General Humanoid Motion Tracking via One-Step Diffusion Whole-Body Control](https://arxiv.org/abs/2610.41354)** (2026) — 用一步扩散模型做人形全身跟踪：每个 50 Hz 控制步只需一次前向；用可微代价梯度在测试时操控冻结的控制器，无需重训；用规划分散度在不做物理仿真的情况下发现跟踪失败。已部署到 Unitree G1。 · [项目页](https://diffwbc.github.io/)
@@ -103,6 +104,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[SOLO: Stable Omni-terrain Long-Horizon Perceptive Humanoid Locomotion](https://arxiv.org/abs/2608.26583)** (2026) — 感知式人形行走：保留地形的清晰边缘，并在蒸馏时做跨时间的信用分配。报告踏石通过率 96%，仅用一个深度相机完成 1.5 公里户外路线。 · [项目页](https://sunpihai-up.github.io/solo/)
 - **[SONIC-K1: Porting a Universal Humanoid Motion Tracker to a Small Humanoid on a Single GPU](https://arxiv.org/abs/2610.39327)** (2026) — 将 SONIC 通用动作跟踪框架移植到小型人形 Booster K1，在一张共享 GPU 上从头训练并开放权重与代码。MuJoCo 中几乎能跟踪所有留出动作片段；真机上上半身和慢速动作表现良好，迈步与转身仍不稳定，作者坦诚指出对动作延迟敏感。 · [代码](https://github.com/Kyk0/sonic-k1) · [项目页](https://huggingface.co/Kyry10/sonic-k1)
 - **[SUGAR: A Scalable Human-Video-Driven Generalizable Humanoid Loco-Manipulation Learning Framework](https://arxiv.org/abs/2605.20373)** (2026) — 把多样的人类视频转化为可部署的人形移动操作技能，无需任务专用奖励，能应对先验中的遮挡与重定向误差。 · [代码](https://github.com/tianshuwu/SUGAR) · [项目页](https://tianshuwu.github.io/sugar-humanoid/)
+- **[SUGARv2: Learning Diverse Visual Humanoid Loco-Manipulation Skills from Synthesized Interaction References](https://arxiv.org/abs/2611.09266)** (2026) — SUGAR 的后续：用可复用的任务模板合成机器人与物体参考动作，再以统一的模仿奖励和教师蒸馏训练视觉策略；五项任务仿真平均成功率 91.0%，并完成真机迁移。 · [项目页](https://tianshuwu.github.io/sugarv2-humanoid/)
 - **[SWAP: Test-Time Steerable Humanoid Whole-Body Collision Avoidance](https://arxiv.org/abs/2610.25711)** (2026) — 分层框架：感知条件扩散策略生成多模态、考虑碰撞的动作提议，底层全身 RL 控制器负责跟踪与平衡；训练数据靠事后标注获得（只在已执行动作未扫过的空间放置障碍物）。在真实 Unitree G1 上验证，测试时引导使目标奖励平均提升 34%。 · [项目页](https://iscoyizj.github.io/SWAP-steerable-humanoid-oa-website/)
 - **[SkillX: Unified Multi-Skill Policy Learning for Humanoid Soccer](https://arxiv.org/abs/2609.06718)** (2026) — 单一指令条件策略实现人形足球多种技能（带球、停球、射门），每个技能有独立的运动先验与评论家；部署在真实 Noetix E1 上。 · [项目页](https://yzc0731.github.io/SkillX/)
 - **[Social Humanoid: Socially Responsive Human-Humanoid Interaction](https://arxiv.org/abs/2611.08407)** (2026) — 让人形机器人对人类伙伴做出回应：token 化序列模型以伙伴动作为条件生成 G1 全身动作，再由跟踪控制器执行。并提供 260 小时的人-人形交互基准。 · [项目页](https://von31.github.io/social-humanoid/)

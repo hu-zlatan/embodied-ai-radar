@@ -2628,3 +2628,44 @@
   tags: [visual-planning, trajectory, decoding, inference-acceleration]
   takeaway_en: "VLMs plan with points, boxes and trajectories one coordinate token at a time; VFlash drafts a whole primitive in one pass. Reports lower trajectory error, ~25x faster 3D point forecasting, a WAM gain (62.6% → 70.2%)."
   takeaway_zh: "用点、框、轨迹做视觉规划的视觉语言模型需要逐个坐标 token 解码；VFlash 用轻量草稿器一次前向生成整个图元。报告轨迹误差更低、三维点运动预测约快 25 倍，接入世界动作模型后成功率 62.6% → 70.2%。"
+- title: "On Agentic Manipulation Policies"
+  type: paper
+  arxiv: "2611.09892"
+  year: 2026
+  rating: 1
+  org: Apple
+  project: https://apple-aiml-research.github.io/ml-amp/
+  added: 2026-11-09
+  topics: [manipulation]
+  tags: [agentic, harness, generalist-model, zero-shot, memory]
+  takeaway_en: "A generalist AI model commands the arm directly through a reference harness (AMP1), with no demos or built-in grasp skills; reports 85.6% zero-shot on RoboLab-120 vs 49.2% for the best VLA, and 104 of 108 real trials."
+  takeaway_zh: "让通用 AI 模型通过参考框架 AMP1 直接指挥机械臂，无需示教，也不预置抓取技能；在 RoboLab-120 上零样本成功率 85.6%（最佳 VLA 为 49.2%），真机 108 次试验成功 104 次。"
+- title: "PRISM: Primitive Routing via In-context Skill Mixing for Retentive VLA Adaptation"
+  type: paper
+  arxiv: "2611.08917"
+  year: 2026
+  venue: NeurIPS 2026
+  added: 2026-11-09
+  tags: [lora, skill-retention, continual-learning, routing, long-horizon]
+  takeaway_en: "Stores each skill as a frozen low-rank action-expert adapter and routes per action chunk via a VLM-conditioned router, so a VLA keeps old skills while learning composite tasks; tested on RoboCasa365 and a PIPER arm."
+  takeaway_zh: "把每类技能存为冻结的低秩动作专家适配器，由 VLM 条件路由器按动作块选择组合，使 VLA 学习组合任务时不遗忘旧技能；在 RoboCasa365 和 PIPER 真机上验证。"
+- title: "Computer-Use Agents Are Embodied Generalists"
+  type: paper
+  arxiv: "2611.09847"
+  year: 2026
+  org: Carnegie Mellon University
+  project: https://pranjal2041.github.io/cua-embodied
+  added: 2026-11-09
+  tags: [computer-use-agent, generalist, position-paper, competition]
+  takeaway_en: "Renders embodied tasks as on-screen software so an unmodified computer-use agent acts through screenshots, mouse and keys; one design placed 1st, 2nd, 3rd and 6th across four ECCV workshop competitions."
+  takeaway_zh: "把具身任务渲染成屏幕上的软件，让未经改动的计算机使用智能体通过截图和键鼠完成；同一设计在四项 ECCV 研讨会竞赛中分获第一、二、三和第六名。"
+- title: "DobotTrack: Target-Grounded Vision-Language-Action Learning for Embodied Person Tracking"
+  type: paper
+  arxiv: "2611.09041"
+  year: 2026
+  org: Dobot
+  added: 2026-11-09
+  topics: [navigation]
+  tags: [person-tracking, quadruped, grounding, dataset]
+  takeaway_en: "VLA for language-guided person following with mask and box grounding supervision and target-conditioned history compression; the 0.8B model reports 77.9% on EVT-Bench, plus a 126-episode quadruped tracking dataset."
+  takeaway_zh: "面向语言引导行人跟随的 VLA：加入掩码与检测框定位监督，并按目标压缩历史视觉信息；0.8B 模型在 EVT-Bench 上平均成功率 77.9%，另发布 126 段四足机器人跟踪数据。"

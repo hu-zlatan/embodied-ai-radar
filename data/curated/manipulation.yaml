@@ -1716,3 +1716,24 @@
   tags: [dexterous, retargeting, teleoperation, few-shot]
   takeaway_en: "Low-calibration hand retargeting for teleop: self-supervised fingertip correspondence plus a few human-guided anchors, and a contact classifier to refine pinch poses; tested on several dexterous hands."
   takeaway_zh: "面向遥操作的灵巧手动作重定向，几乎无需标定：自监督学习指尖对应关系，再用少量人工引导的锚点约束映射，并以接触分类器细化捏取姿态；在多种灵巧手上验证。"
+- title: "Grasp-TAGS: Task-Aware Grasp Selection via Critic Distillation for Prehensile Loco-Manipulation"
+  type: paper
+  arxiv: "2611.09864"
+  year: 2026
+  org: University of Minnesota
+  project: https://rpm-lab-umn.github.io/Grasp-TAGS-web-page/
+  added: 2026-11-09
+  tags: [grasp-selection, loco-manipulation, critic-distillation, rl]
+  takeaway_en: "Chooses the initial grasp for large-object rearrangement by distilling a multi-grasp PPO critic into a small utility network that ranks grasps before contact; reports 89.8% vs 79.9% for the best fixed-grasp policy."
+  takeaway_zh: "为大物体重排选择初始抓取：把多抓取 PPO 策略的价值函数蒸馏成轻量效用网络，在接触前为候选抓取排序；成功率 89.8%，最佳固定抓取策略为 79.9%。"
+- title: "Auditing Grasp Feasibility Predictors with Planner-Verified Counterfactuals"
+  type: paper
+  arxiv: "2611.09130"
+  year: 2026
+  venue: WACV 2027
+  code: https://github.com/codewithsajid/graspfc-cf
+  added: 2026-11-09
+  topics: [datasets]
+  tags: [grasp-feasibility, counterfactual, evaluation, tamp]
+  takeaway_en: "Drops an obstacle into a fixed grasp's approach path and lets a planner relabel it: eight feasibility predictors fall from 0.92–0.996 AUROC to chance, so they ignore collision geometry. Labels and pipeline released."
+  takeaway_zh: "固定抓取位姿、在接近路径中插入障碍物并由规划器重新标注：八种可行性预测器的 AUROC 从 0.92–0.996 跌至随机水平，说明它们并未利用碰撞几何。发布标签与流程。"

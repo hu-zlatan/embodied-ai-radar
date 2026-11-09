@@ -2,7 +2,7 @@
 
 _视觉-语言-动作模型与通用机器人策略。_
 
-共 259 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
+共 263 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://hu-zlatan.github.io/embodied-ai-radar/topics/vla.html) · [English](vla.md)
 
@@ -24,6 +24,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - ⭐ **[Human-to-Robot Transfer via Bridging Representation and Action Space in VLAs](https://arxiv.org/abs/2611.04391)** (2026) — H2RB 用非配对的人类与机器人示教微调预训练 VLA：按几何对齐观测，并共享动作潜变量；报告真机任务的物体迁移得分从 8.0 升至 51.8。 · [代码](https://github.com/jun-brro/h2rb-code) · [项目页](https://junhyeong-park.me/h2rb/)
 - ⭐ **[Isaac GR00T N1.7](https://github.com/NVIDIA/Isaac-GR00T)** (2026) — 可商用的 30 亿参数人形 VLA：Cosmos-Reason2 主干负责推理规划，扩散 Transformer 输出电机指令。NVIDIA 称用约 20,854 小时人类第一视角视频训练。 · [项目页](https://huggingface.co/blog/nvidia/gr00t-n1-7)
 - ⭐ **[Never Too Late for Force: Accelerating VLA Post-Training with Reactive Force Injection](https://arxiv.org/abs/2607.14236)** (2026) — LIFT：在以视觉为主的预训练 VLA 旁接入由力觉驱动的反应式动作专家，初始化时保持原策略输出不变，使后训练获得接触反应能力，应对遮挡、深度歧义等接触阶段难题；CoRL 2026 Spotlight。 · [代码](https://github.com/y-wng/lift) · [项目页](https://lift-policy.github.io/)
+- ⭐ **[On Agentic Manipulation Policies](https://arxiv.org/abs/2611.09892)** (2026) — 让通用 AI 模型通过参考框架 AMP1 直接指挥机械臂，无需示教，也不预置抓取技能；在 RoboLab-120 上零样本成功率 85.6%（最佳 VLA 为 49.2%），真机 108 次试验成功 104 次。 · [项目页](https://apple-aiml-research.github.io/ml-amp/)
 - ⭐ **[PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations](https://arxiv.org/abs/2610.37381)** (2026) — 轻量物理动力学模块从视觉-语言特征中提取“物理 token”，通过预测未来 RGB、深度和光流特征（并辅以冻结视频世界模型监督）来学习，推理时无需在线生成视频；仅用公开数据训练，报告 LIBERO 99.3%、RoboTwin 2.0 93.6%。
 - ⭐ **[REACT: Rolling Denoising and Dual Decoupling for Reactive Robot Control with VLA Models](https://arxiv.org/abs/2610.12007)** (2026) — CoRL 2026 Spotlight。不再每次从头生成动作块，而是维护一个流时间步错开的持久动作缓冲区，让基于流的 VLA 更具反应性，同时保留长时域上下文。 · [代码](https://github.com/houlong-xiong/REACT) · [项目页](https://react-vla.github.io)
 - ⭐ **[ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning](https://arxiv.org/abs/2610.37666)** (2026) — VLA 用跨本体共享的离散运动 token 链（Chain-of-Dynamics）表达动作思考；预测每条链导致的未来并与真实结果比对来强化，使没有动作标注的人类视频也能提供监督。在仿真与真机上验证人到机器人的迁移。 · [项目页](https://thinkworld-project.github.io/)
@@ -71,6 +72,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[CoRE-VLA: Towards Scalable and Robust Vision-Language-Action Modeling via Conditional Routing of Experts](https://arxiv.org/abs/2607.03693)** (2026) — 稀疏专家 VLA：传感器是否可用决定模态专家的开关，缺少深度时也能平稳退化；任务意图再路由到动作专家。在 LIBERO、RoboCasa GR1 和真实双臂任务上表现强。
 - **[Coarse-to-Control: Action-Token Planning for Vision-Language-Action Models](https://arxiv.org/abs/2606.07107)** (2026) — 先规划后执行的 VLA：先预测概括未来轨迹的少量粗粒度动作 token，再以此为条件生成可执行动作 token；规划与执行共享同一离散动作词表。长程多阶段任务提升最大。
 - **[CompVLA: A Variable Compliance Vision-Language-Action Model for Contact-rich Manipulation](https://arxiv.org/abs/2609.23614)** (2026) — CompVLA 为 VLA 增加柔顺专家模块，在预测运动的同时输出时变刚度与虚拟位移，并通过几何阻抗控制执行，用于接触密集任务。
+- **[Computer-Use Agents Are Embodied Generalists](https://arxiv.org/abs/2611.09847)** (2026) — 把具身任务渲染成屏幕上的软件，让未经改动的计算机使用智能体通过截图和键鼠完成；同一设计在四项 ECCV 研讨会竞赛中分获第一、二、三和第六名。 · [项目页](https://pranjal2041.github.io/cua-embodied)
 - **[Concertina: Embodying Manipulation and Cognition in One Diffusion Vision-Language Model](https://arxiv.org/abs/2611.07513)** (2026) — 把连续动作直接放进同一个扩散 VLM：每个控制时间步是一个潜动作 token，没有独立动作专家（动作接口仅占 0.21% 参数）。报告 LIBERO 98.15%、LIBERO-Plus 85.9%。 · [代码](https://github.com/lose4578/Concertina)
 - **[CondenseVLA: Learnable History Condensation for Efficient Multi-Frame VLA](https://arxiv.org/abs/2610.25927)** (2026) — 不靠简单加长历史帧窗口，而是学习把过去的帧压缩成少量 token，保留短暂接触、遮挡等转瞬即逝的线索。 · [代码](https://github.com/FeiyangHong/CondenseVLA)
 - **[CounterAlign: Counterfactual Supervision for Vision-Language-Action Models](https://arxiv.org/abs/2608.21740)** (2026) — 把专家动作与不匹配的指令配对生成反事实样本，训练与指令对齐的奖励模型，用于 VLA 离线强化学习，无需额外采集。在 LIBERO-PRO 和真机上提升鲁棒性。 · [项目页](https://counteralign.airoa.io)
@@ -85,6 +87,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[Direct Action-Head Injection of A Grounded 3D Point Unlocks Spatial and Task Generalization](https://arxiv.org/abs/2606.27663)** (2026) — 把一个已定位的 3D 目标点经两层 MLP 直接注入 VLA 的动作头。在 LIBERO-PRO 任务扰动下，GR00T-N1.6 成功率从 31.2 提升到 77.5，π0.5 也有类似提升。
 - **[Disentangling Spurious Correlations in Vision-Language-Action Models via Predicting Domain-Invariant Latent Lookahead](https://arxiv.org/abs/2609.37165)** (2026) — 用与域无关的未来潜变量监督 VLA，减少对视觉捷径的依赖。报告 LIBERO-Plus 平均成功率 69.1%，比最强基线高 11.4 个百分点。 · [项目页](https://dill-vla.github.io/)
 - **[Do Agentic Policies Need to Look at Every Step? Geometric Abstraction for Reasoning and Action](https://arxiv.org/abs/2611.05058)** (2026) — 把常规空间推理从图像转到文本：语言模型直接读取局部刷新的三维符号场景，仅在需要时看图；报告多步任务完成度提高，图像查询大幅减少。 · [代码](https://github.com/Spectraorder/geometric-abstraction) · [项目页](https://geometric-abstraction.github.io)
+- **[DobotTrack: Target-Grounded Vision-Language-Action Learning for Embodied Person Tracking](https://arxiv.org/abs/2611.09041)** (2026) — 面向语言引导行人跟随的 VLA：加入掩码与检测框定位监督，并按目标压缩历史视觉信息；0.8B 模型在 EVT-Bench 上平均成功率 77.9%，另发布 126 段四足机器人跟踪数据。
 - **[ELAN4D: Embodiment-Centric 4D Supervision for Vision-Language-Action Models via Plug-and-Play Adaptation](https://arxiv.org/abs/2605.30484)** (2026) — 增加一个辅助分支，预测机器人关键点未来的 3D 轨迹（由正运动学免费得到），并与视觉语言主干做梯度隔离。推理时丢弃该分支，策略接口不变。
 - **[ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies](https://arxiv.org/abs/2606.31132)** (2026) — 用强化学习训练一个元策略，按状态决定冻结的扩散/流策略在每步分配多少去噪步数（串行）和多少候选采样（并行），在成功率与计算量之间权衡。
 - **[EXPO-FT: Sample-Efficient Reinforcement Learning Finetuning for Vision-Language-Action Models](https://arxiv.org/abs/2605.25477)** (2026) — 稳定且样本高效的 VLA 强化学习微调系统；报告在插灯串插头、台球击球入袋等所有任务上均 30/30 成功，平均只需约 19 分钟在线机器人数据。
@@ -143,6 +146,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[OmniGuide: Universal Spatial Guidance Fields for Enhancing Generalist Robot Policies](https://arxiv.org/abs/2603.10052)** (2026) — 把 3D 基础模型、VLM、人体姿态等指导信号统一表示为 3D 空间中可微的吸引/排斥能量函数，引导 VLA 动作采样。报告提升 π0.5 和 GR00T N1.6 在仿真与真机上的表现。 · [项目页](https://omniguide.github.io/)
 - **[PACER: Process-Aware VLA Policy Learning from Human Corrections for Robotic Disassembly](https://arxiv.org/abs/2610.19248)** (2026) — PACER 用策略自身的执行轨迹和人工纠正数据微调用于电子产品拆解的 VLA，按进度、来源和结果为动作块加权；在主板部件拆解上成功 87/100，普通 SFT 为 54/100。
 - **[PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies](https://arxiv.org/abs/2610.12285)** (2026) — 在预训练的面向预测的特征空间中预测与任务相关的未来状态（不做像素重建），并通过结构化因果注意力让动作生成以其为条件。在 RoboTwin 困难长时任务上比反应式策略高 11.8 个百分点。
+- **[PRISM: Primitive Routing via In-context Skill Mixing for Retentive VLA Adaptation](https://arxiv.org/abs/2611.08917)** (2026) — 把每类技能存为冻结的低秩动作专家适配器，由 VLM 条件路由器按动作块选择组合，使 VLA 学习组合任务时不遗忘旧技能；在 RoboCasa365 和 PIPER 真机上验证。
 - **[PRTS: A Primitive Reasoning and Tasking System via Contrastive Representations](https://arxiv.org/abs/2604.27472)** (2026) — 将 VLA 预训练重构为目标条件强化学习：用对比学习让模型判断语言目标是否可达。基于 1670 亿 token 预训练，在长时序任务上优势最明显。
 - **[PaceVLA: Adaptive Temporal Action Quantization in Vision-Language-Action Models](https://arxiv.org/abs/2610.25961)** (2026) — 让 VLA 在每一步自行选择细粒度或时间上更粗的动作解码器：冗余动作阶段加速执行，精细接触阶段保持细粒度控制；在 3 个仿真基准和 6 个真实任务上验证效率提升且成功率不降。 · [项目页](https://pacevla.github.io/)
 - **[Plan First, Act Later: Streaming Reasoning for Executable Memory in Robot Control](https://arxiv.org/abs/2610.29329)** (2026) — PAL 让高层 VLM 在观察过程中把未来需要的子任务提前写入可执行记忆（subtask_list），执行时再挑出当前子任务交给底层 VLA；报告在 RoboMME 上成功率 56.05%（最强基线 44.51%），4 个真实任务总体 60.83%。 · [项目页](https://qinghangliu.github.io/pal-webpage/)

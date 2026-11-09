@@ -2,7 +2,7 @@
 
 _Tactile sensors, touch representations and contact-rich control._
 
-76 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
+77 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/tactile.html) · [中文](tactile.zh-CN.md)
 
@@ -35,6 +35,7 @@ _Tactile sensors, touch representations and contact-rich control._
 - **[PTLD: Sim-to-real Privileged Tactile Latent Distillation for Dexterous Manipulation](https://arxiv.org/abs/2603.04531)** (2026) — Learns tactile dexterous skills without tactile simulation: privileged sensors in the real world collect data to distil a tactile state estimator for a sim-trained policy. Reports 182% gain on in-hand rotation. · [project](https://akashsharma02.github.io/ptld-website/)
 - **[PanoTac: A Dense Three-Axis Tactile Sensor for Robust Touch-Centric Manipulation](https://arxiv.org/abs/2611.03520)** (2026) — A compliant fingertip under $50 gives a dense 12×32 normal and shear map at 60 Hz. Visuo-tactile policies beat vision-only baselines by 46.7 points on average across scooping, pouring and test-tube tasks. · [project](https://panotac.github.io)
 - **[ReflexArc: Bottom-Up Integration of Instantaneous Tactile Reflexes into Whole-Body Humanoid Control](https://arxiv.org/abs/2611.04424)** (2026) — Adds a full-body tactile reflex that reaches the motors within 10 ms beneath a learned whole-body policy; on a G1 it cuts first force peak 34.1% versus the same reflex delayed by 20 ms. · [project](https://minusmodulo.github.io/reflexarc-website/)
+- **[RevoSim: Scalable Multimodal Tactile Simulation for Dexterous Manipulation](https://arxiv.org/abs/2611.08939)** (2026) — Tactile simulator for the BrainCo Revo3 hand modelling 285 piezoresistive taxels and five visuotactile fingertips (pressure, depth, RGB, marker motion); up to 4,096 parallel envs on one RTX 5090. · [project](https://braincotech.github.io/RevoSim-web/)
 - **[SlipSense: Multimodal Tactile Learning for Low-Latency and Generalized Slip Detection](https://arxiv.org/abs/2609.15910)** (2026) — SlipSense fuses a 240 Hz pressure array with an 8 kHz accelerometer for slip detection: 96.7% macro F1, 76% of slips caught within 23.1 ms; trained on UMI data, it transfers to a dexterous hand.
 - **[T-Rex: Tactile-Reactive Dexterous Manipulation](https://arxiv.org/abs/2606.17055)** (2026) — Tactile-reactive VLA: 100-hour tactile dataset built around motor primitives, a variable-rate mixture-of-transformers and a temporal tactile VQ-VAE. Reports 30%+ higher average success than the best baseline on 12 tasks. · [code](https://github.com/ZhuoyangLiu2005/T-Rex) · [project](https://tactile-rex.github.io/)
 - **[TacCoRL: Integrating Tactile Feedback into VLA via Simulation](https://arxiv.org/abs/2606.11743)** (2026) — Adds touch to a VLA via sim-real co-training and simulated RL in a real-aligned simulator, learning how contact should change actions near failure. Reports 72.5% vs 50.0% on four bimanual tasks. · [project](https://tac-corl.github.io/)
