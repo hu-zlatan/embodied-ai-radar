@@ -1,0 +1,1253 @@
+{
+ "date": "2026-11-09",
+ "source": "arXiv RSS/API (metadata CC0)",
+ "papers": [
+  {
+   "id": "2611.09892",
+   "title": "On Agentic Manipulation Policies",
+   "authors": [
+    "Chen Chen",
+    "Omid Bagherieh",
+    "Naveen Nikamanth Appiah Balaji",
+    "Jesse T. Gonzalez",
+    "Negin Heravi",
+    "Fahad Islam",
+    "Xueting Li",
+    "Jean-Baptiste Regli",
+    "+5"
+   ],
+   "abstract": "Recent work on robot manipulation has focused on specialist policies trained on demonstrations. We show that generalist AI models can control manipulators more reliably than specialist policies such as vision-language-action models (VLAs) and world-action models (WAMs). We systematically analyze agentic manipulation policies (AMPs), in which a generalist AI model commands the manipulator directly, adapting its actions as the task unfolds. We present AMP1, a reference harness that runs unchanged across single-arm, bimanual, and mobile manipulation. AMP1 achieves state-of-the-art results on the …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI",
+    "cs.CV",
+    "cs.LG"
+   ],
+   "comment": "Videos and code available at: https://apple-aiml-research.github.io/ml-amp/",
+   "project": [
+    "https://apple-aiml-research.github.io/ml-amp/"
+   ],
+   "topics": [
+    "vla",
+    "manipulation",
+    "world-models"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09888",
+   "title": "Scenario Orchestration for Closed-loop Policy Evaluation of Autonomous Driving",
+   "authors": [
+    "Frieda Rong",
+    "Zhaoyue Wang",
+    "Veer Kapadia",
+    "Vishaka Rajani",
+    "Aren A. Babikian",
+    "Xujie Si",
+    "Mahsa Golchoubian",
+    "Raquel Urtasun",
+    "+1"
+   ],
+   "abstract": "Scenario-based simulation is central to evaluating autonomous-driving policies, but a scenario scripted before execution (i.e., with predetermined, fixed actor routes and speeds) may not preserve its intended interaction once the tested ego policy responds in closed loop. Scripted scenarios cannot adapt to unanticipated ego behavior, while learned traffic actors may remain reactive without reliably realizing a particular scenario intent. We introduce a scenario orchestrator that continuously monitors the joint traffic state and adapts non-ego actors through re-timing, re-routing, and role …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "8 pages, 5 figures",
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.09877",
+   "title": "Locating Contact on Tendon-Driven Continuum Robots From Tendon Measurements Alone via Constrained Moving Horizon Estimation",
+   "authors": [
+    "Haitham El-Hussieny"
+   ],
+   "abstract": "Tendon-driven continuum robots can reach through constrained spaces, but contact along their bodies is invisible to the sensors at their motors. We show that this is a structural limitation rather than a tuning problem: the map from contact forces to tendon measurements has a null space of dimension at least seven, so no estimator that leaves the contact support free can locate contact. When the obstacle geometry is known, however, non-penetration and complementarity make the contact force locally identifiable, and we prove that the resulting system with unknown contact inputs is locally …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [
+    "hardware"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09864",
+   "title": "Grasp-TAGS: Task-Aware Grasp Selection via Critic Distillation for Prehensile Loco-Manipulation",
+   "authors": [
+    "Xun Tu",
+    "Minghao Zou",
+    "Karthik Desingh"
+   ],
+   "abstract": "Loco-manipulation, which requires mobile manipulators to coordinate locomotion and manipulation over long horizons, is a key capability for large-object rearrangement in applications such as service robotics and warehouse automation. Despite recent progress, reliably executing these tasks remains challenging because performance depends on complex robot-object and object-environment interaction dynamics. Existing approaches address this challenge either through model-based methods, which often require accurate dynamics models, or through learning-based methods, which reduce this requirement …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "comment": "10 pages, 6 figures",
+   "project": [
+    "https://rpm-lab-umn.github.io/Grasp-TAGS-web-page/"
+   ],
+   "topics": [
+    "manipulation"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09847",
+   "title": "Computer-Use Agents Are Embodied Generalists",
+   "authors": [
+    "Pranjal Aggarwal",
+    "Sean Welleck"
+   ],
+   "abstract": "In many areas of AI, general-purpose models have increasingly replaced handcrafted methods and specialized architectures. We argue that embodied AI is poised for a similar shift. Our key claim is that embodied tasks can be formulated as interaction with digital software. Specifically, we build software that renders an agent's view of a physical environment on a screen and provides controls for acting in it. A computer-use agent (CUA) can then perform embodied tasks through the same screenshots and keyboard and mouse actions that it uses to operate ordinary software. Using a single CUA design …",
+   "published": "2026-11-09",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG",
+    "cs.RO"
+   ],
+   "comment": "14 pages, 3 figures, 2 tables",
+   "project": [
+    "https://pranjal2041.github.io/cua-embodied"
+   ],
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.09794",
+   "title": "Seeing What Matters: Benchmarking Task-Conditioned Actionable Spatial Belief for Manipulation",
+   "authors": [
+    "Yina Jian",
+    "Mingkun Xu"
+   ],
+   "abstract": "When should a robot look at the cup, and when at the portafilter? Spatial-reasoning benchmarks evaluate whether a model can describe a scene, but manipulation needs something more specific: the ability to acquire the particular evidence that makes the current command executable. A view that is informative for one task can be useless for another, even at the same workstation. We introduce Seeing What Matters, a benchmark for task-conditioned actionable spatial belief in simulated tabletop manipulation. Across three domains--coffee workstation, drawer/cabinet, and microwave/appliance--the …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "comment": "22 pages (8 main + 14 supplement). Extended cross-domain evaluation and physical robot validation in progress",
+   "topics": [
+    "manipulation",
+    "datasets"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09777",
+   "title": "Autonomous Whole-body Loco-manipulation Using a Snake Robot",
+   "authors": [
+    "Adarsh Salagame",
+    "Henry Noyes",
+    "Haroon Hublikar",
+    "Alireza Ramezani"
+   ],
+   "abstract": "Snake robots can leverage their hyper-redundant morphology for both locomotion and manipulation through distributed body contact but whole-body loco-manipulation is particularly challenging since the entire body serves simultaneously as propulsive mechanism and manipulation tool Prior work on wheeled legged and snake robot platforms has decoupled these functions through dedicated appendages body segmentation or grippers We present closed-loop loco-manipulation with our snake robot COBRA without this distinction such that any part of the body may make contact We develop a contact-implicit …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "eess.SY"
+   ],
+   "comment": "Presented in IROS 2026",
+   "topics": [
+    "manipulation",
+    "locomotion"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09708",
+   "title": "A wearable input/output interface learns personalized models of haptic perception",
+   "authors": [
+    "Wen Li",
+    "E. Magnus Adams",
+    "Zijie Xu",
+    "Jiawen Yao",
+    "Aybala Esmer",
+    "Xiaoyue Ni",
+    "Bozhi Tian",
+    "Pedro Lopes"
+   ],
+   "abstract": "Wearable haptic interfaces deliver physical stimuli to the skin, yet perceived locations vary widely across users and diverge from actuator locations, particularly for emergent tactile-feedback techniques. We developed a wearable haptic input/output (I/O) device integrating a 36-channel electrotactile array with capacitive touch sensing, enabling stimulation and user-reported percept locations to be registered within the same body-referenced coordinate frame. In 24 participants, the device revealed electrotactile and referred-thermal perceptual maps with notable interparticipant variability. …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [
+    "tactile"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09684",
+   "title": "SURE:Spatiotemporal Uncertainty Representation for Efficient Vision-Language-Action Learning",
+   "authors": [
+    "Jingye Zhang",
+    "Choo Sin Wai",
+    "Dake Zhong",
+    "Zhifang Liu",
+    "Yuhong Zhang",
+    "Siyao Xiao",
+    "Guorui Song",
+    "Guocun Wang",
+    "+3"
+   ],
+   "abstract": "Vision-language-action (VLA) policies have become a promising paradigm for end-to-end robot control, but their effectiveness still depends heavily on large volumes of demonstration data. In manipulation tasks, this dependence is compounded by structured spatiotemporal uncertainty in the action space: multiple nearby actions or trajectories may successfully solve the same task, while semantically equivalent demonstrations often unfold at different speeds. Standard pointwise supervision treats each demonstrated action as an exact target, imposing an unnecessary learning burden under such …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI"
+   ],
+   "topics": [
+    "vla"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09679",
+   "title": "Autonomous Particle Image Velocimetry Using Zero-Shot Sim-to-Real Reinforcement Learning",
+   "authors": [
+    "Chang Rajani",
+    "Luke Sebastien Marsden",
+    "Stephan Kunz",
+    "Claudio Mucignat",
+    "Ivan Lunati"
+   ],
+   "abstract": "Particle image velocimetry (PIV) reconstructs a flow field from the motion of tracer particles but the reconstruction quality is bounded by how well the flow structure of interest is resolved in the images. The acquisition position is typically fixed by the operator before the measurement. We cast camera placement as a sequential decision-making problem and train a reinforcement learning agent to control a 6-DoF manipulator equipped with a camera, enabling it to locate, frame and resolve a hydrofoil wake in a water tunnel. The agent commands the camera pose and observes the scene only through …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.LG"
+   ],
+   "comment": "9 pages",
+   "topics": [
+    "learning",
+    "sim"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09672",
+   "title": "ODEAction: From Predicting Chunks to Evolving Actions",
+   "authors": [
+    "Qishen Wang",
+    "Pengxiang Ding",
+    "Shifeng Bao",
+    "Mingyang Sun",
+    "Hengtao Li",
+    "Yi Gao",
+    "Baohua Yin",
+    "Yang Liu",
+    "+9"
+   ],
+   "abstract": "Vision-language-action (VLA) models typically generate actions in chunks, organizing continuous robot execution into separately predicted segments and thus introducing potential discontinuities at action-chunk transitions. We propose ODEAction, a chunk-free action generation paradigm that replaces action-chunk prediction with Continuous Action Evolution. Given visual observations, language instructions, and robot proprioceptive information, ODEAction learns an action transition field defined over action space, where a transition vector characterizes the evolution rate of the current action …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "23 pages, 5 figures, including appendix. Technical report",
+   "topics": [
+    "vla"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09670",
+   "title": "Goodhart in the Planner: Sampling-Based Control Exploits Rewards Learned from Human Preferences",
+   "authors": [
+    "Soovadeep Bakshi",
+    "Apurba Bose"
+   ],
+   "abstract": "Robots increasingly choose actions by searching against a reward model learned from human preferences, in model-predictive control or best-of-$N$ selection; we measure what this does to the true objective. On HalfCheetah and Hopper with crowd-sourced labels, and on Meta-World drawer-open and plate-slide with synthetic labels and blind labels from the two authors, harder MPPI search cuts true return by up to 76%: with human labels the drawer opens in 0 of 20 runs against 10 of 10 for the cloned policy the planner starts from, while held-out label accuracy stays at 0.75-0.97. On plate-slide …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "comment": "19 pages, 4 figures. Equal contribution. Code and results will be released",
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.09640",
+   "title": "LACART: Lookahead-Augmented Collision Avoidance and Reference Tracking Strategies for Safety-Critical Robots",
+   "authors": [
+    "Pedro Lopes",
+    "Amit Shivam",
+    "Luis Tiago Paiva"
+   ],
+   "abstract": "Autonomous racing provides a demanding testbed for collision avoidance under tight geometric and computational constraints. Building on a recent conference contribution and a master's dissertation, LACART combines lookahead-based control barrier functions (CBFs), a relaxed control Lyapunov function (CLF), and quadratic programming (QP) to modify nominal vehicle commands for obstacle avoidance and reference tracking. The method handles circular obstacles and track boundaries in a common optimisation layer. Comparative simulation results against Huang \\emph{et al.} \\cite{r9} show similar …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "eess.SY"
+   ],
+   "topics": [
+    "control"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09605",
+   "title": "DKWBC: Decoupling Motion Tracking and Balancing for Humanoid Whole-Body Control",
+   "authors": [
+    "Dingkun Wei",
+    "Zehong Shen",
+    "Huaijin Pi",
+    "Xueyang Wang",
+    "Xing Zhu",
+    "Hujun Bao",
+    "Yujun Shen",
+    "Xiaowei Zhou"
+   ],
+   "abstract": "Humanoid whole-body control requires a robot to track diverse reference motions while maintaining balance under gravity, torque limits, contact switching, and external disturbances. Existing reinforcement-learning-based trackers typically learn control outputs that jointly address motion tracking and balance. However, similar reference poses can correspond to substantially different dynamic demands, requiring a unified policy to learn motion-dependent control requirements alongside balance corrections. This can complicate learning and lead to high-frequency fluctuations in control outputs. We …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "9 pages, 6 figures, 4 tables",
+   "project": [
+    "https://robbyant-research.github.io/DKWBC/"
+   ],
+   "topics": [
+    "locomotion"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09584",
+   "title": "Extended Model-Based Learned Inertial Odometry",
+   "authors": [
+    "Sasanka Kuruppu Arachchige",
+    "Joni-Kristian Kämäräinen"
+   ],
+   "abstract": "Inertial odometry is a compelling approach to state estimation for agile quadrotor flight due to its affordability, low weight, and robustness to perceptual degradation. However, relying only on integrated inertial measurements is impractical, as sensor errors and time-varying biases lead to significant pose drift. Although recent advances have enabled inertial odometry for drone racing, existing approaches show limited generalization to trajectories not seen during training. This work improves generalization by adopting a body-frame representation and incorporating body-frame torque dynamics …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "8 pages, Published at ICUAS 2026",
+   "topics": [
+    "perception"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09561",
+   "title": "Lightweight Path-Aware Frontier Re-ranking for LiDAR-Based UAV Exploration",
+   "authors": [
+    "Duc Manh Do",
+    "Thanh Nguyen Canh",
+    "Ngoc Minh Do",
+    "Mai Thanh Thai",
+    "Xiem HoangVan"
+   ],
+   "abstract": "Autonomous 3D exploration with UAVs requires efficient target selection under limited flight time and onboard computation. In conventional Euclidean-distance-based frontier pipelines, geometric distance may poorly represent the actual collision-free travel cost in cluttered environments, leading to inefficient frontier choices. This paper presents a lightweight path-aware frontier re-ranking method for LiDAR-based UAV exploration. The method first retains a small top-N set of promising frontier candidates using a lightweight utility function and then applies time-bounded RRT* planning to …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "Accepted for presentation at RIVF 2026 (20th International Conference on Computing and Communication Technologies)",
+   "topics": [
+    "perception"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09490",
+   "title": "CucumberVision at the Edge: Accuracy, Throughput, and Energy of RGB-D Cucumber Sizing on Jetson Orin Nano and Raspberry Pi 4",
+   "authors": [
+    "Manveen Kaur",
+    "Rajmeet Singh",
+    "Saeed Mozaffari",
+    "Majid Ahmadi",
+    "Shahpour Alirezaee"
+   ],
+   "abstract": "Non-contact fruit sizing from RGB-D imagery reaches sub-centimetre accuracy on workstation hardware, but in-field grading requires the same pipeline to run on a low-power single-board computer, and the cost of that transition is rarely reported. We deploy a curvature-aware cucumber length-measurement pipeline (YOLO26n detection, prompt-based segmentation and a medial arc spline estimator) on an NVIDIA Jetson Orin Nano and a Raspberry Pi 4, and characterize both against an RTX 3050 Ti workstation by replaying 50 identical greenhouse captures of 7 specimens, with specimen-level …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.09468",
+   "title": "Mechanical Interaction Sensing for Robotic Kiwifruit Handling with an Optoelectronic Soft Suction Cup",
+   "authors": [
+    "Romina Adhami",
+    "Ebrahim Shahabi",
+    "Alessio Mondini",
+    "Samuel M. Youssef",
+    "Cosimo Della Santina",
+    "Gualtiero Volpe",
+    "Barbara Mazzolai"
+   ],
+   "abstract": "Robotic handling of delicate fruit benefits from compliant contact and quantitative sensing of the mechanical interaction at the end-effector. This study investigates an optoelectronic soft suction cup with a kiwifruit-specific bicomponent design for estimating interaction forces during contact with real fruit. During known-contact intervals, the optical signals accurately estimate interaction force on fruits excluded from model training: the best shallow network achieves grouped out-of-fold pooled R-squared = 0.968 +/- 0.005 (MAE = 0.138 N), with a median per-fruit held-out R-squared = 0.973 …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.09376",
+   "title": "Can LLMs Debug Robots by Editing Their Weights?",
+   "authors": [
+    "Jusheng Zhang",
+    "Keze Wang",
+    "Liang Lin"
+   ],
+   "abstract": "A language model can repair a robot policy's lexical instruction grounding by editing just 65 token-embedding rows. We bring weight-space programming to robot foundation policies: GPT-6 Astra reads weights and uses a CPU workspace and budgeted simulator feedback, without gradient updates or new demonstrations. Three independent sessions on $π_{0.5}$ all improve success on 765 held-out paraphrases; the best raises success from 86.3\\% to 92.0\\% (48 repairs, four regressions; exact paired $p=1.31\\times10^{-10}$). Among the 335 instructions containing edited tokens, success rises from 74.3\\% to …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI"
+   ],
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.09355",
+   "title": "HiMEM: Hippocampus-Inspired Memory Consolidation, Pruning, and Composition for Vision-Language-Action Models in 3D Scenes",
+   "authors": [
+    "Boran Zhao",
+    "Yanbin Hu",
+    "Jun Ye",
+    "Zhenxian Hu",
+    "Yuxin Zhai",
+    "Jin Cui",
+    "Pengju Ren"
+   ],
+   "abstract": "Memory plays a crucial role in long-horizon task execution and cross-task generalization for Vision-Language-Action (VLA) models operating in complex 3D scenes. However, existing VLA memory mechanisms suffer from memory noise, particularly in complex 3D scenes, as stored episodic memories contain extensive redundant details about scene layouts, object configurations, and robot-specific states, which obscure generalizable manipulation principles and hinder cross-task transfer. To address this challenge, we first introduce a hippocampus-inspired memory consolidation mechanism that synthesizes …",
+   "published": "2026-11-09",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV",
+    "cs.AI"
+   ],
+   "topics": [
+    "vla"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09344",
+   "title": "Probably Safe Sim-to-Real Transfer with Lifetime Validity",
+   "authors": [
+    "Rohan Tangri",
+    "Jan-Peter Calliess"
+   ],
+   "abstract": "We present Dejavu, a method that makes sim-to-real transfer of reinforcement learning policies in constrained Markov decision processes probably safe over an unbounded sequence of policy updates. An anytime valid test using per-decision importance sampling and a betting confidence sequence certifies each candidate trained in simulation before deployment using only trajectories collected by a safe baseline policy operating in production. Simulation quality does not affect the safety guarantee, only the production sample efficiency of the method. Finally, a summable per-test failure probability …",
+   "published": "2026-11-09",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG"
+   ],
+   "topics": [
+    "sim"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09340",
+   "title": "Horizon-Coupled Obstacle Guidance for Relative-Action Diffusion Policies",
+   "authors": [
+    "Guangyuan Wang",
+    "Haishan Xia",
+    "Zitao Zhang",
+    "Kejia Chen",
+    "Yuanchen Sun",
+    "Zhenguo Sun",
+    "Donghao Zhang",
+    "Yu Zhang",
+    "+1"
+   ],
+   "abstract": "Real-world robot deployment requires adapting learned policies to unseen obstacles without collecting new demonstrations or retraining. Existing policy-level guidance often applies obstacle corrections independently at individual horizon steps, which may address local obstacle violations but fail to coordinate the action sequence into a complete, task-directed detour. How obstacle responses should be propagated across the action horizon to coordinate complete, task-directed avoidance motion remains underexplored. We introduce an inferencetime obstacle-guidance framework for pretrained …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [
+    "learning"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09293",
+   "title": "MDF++: Visuo-Tactile World Action Model with End-to-end Representation Learning",
+   "authors": [
+    "Zixuan Huang",
+    "Jinhao Yu",
+    "Zachary Charlick",
+    "Dmitry Berenson"
+   ],
+   "abstract": "Recently, world-action models (WAMs) have emerged as a powerful framework for robot manipulation. By jointly modeling action generation and future observation prediction, WAMs can act and anticipate the outcomes of the actions. However, existing WAMs typically rely on frozen pretrained encoders trained with reconstruction, which may not produce representations well suited for robot control. In this paper, we tackle the problem of learning physicallygrounded, control-relevant representations for WAMs. We propose MDF++, a visuo-tactile world-action model that learns latent representations of …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "Corl 2026",
+   "topics": [
+    "tactile",
+    "world-models"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09272",
+   "title": "Task-Driven Closed-Loop Design Optimization of Passively Morphing Quadrotors for Contact-Mediated Narrow Gap Traversal",
+   "authors": [
+    "Etor Arza",
+    "Luca Girardi",
+    "Gabriel Maquignaz",
+    "Javier Paez",
+    "Stefan Leutenegger",
+    "Stefano Mintchev",
+    "Kostas Alexis"
+   ],
+   "abstract": "Aerial robots operating in cluttered environments may encounter openings narrower than their nominal width. Existing passively morphing drones reduce their width upon traversal, but they typically involve human-made designs, which can struggle to find the right balance among folding ratio, flight efficiency, and control tracking performance. We introduce a closed-loop design method that jointly optimizes quadrotor geometry and the torque-deflection response of two passively folding arms driven by the success rate in simulation for contact-mediated gap traversal. An optimization algorithm …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "Video: https://youtu.be/xGkEtl6-vCA. Code: https://github.com/ntnu-arl/soft-quadrotor-optimization",
+   "code": [
+    "https://github.com/ntnu-arl/soft-quadrotor-optimization"
+   ],
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.09270",
+   "title": "EGT: Execution-Grounded Traversability through Learned Closed-Loop Trajectory Distributions",
+   "authors": [
+    "Chinmay Mundane",
+    "Amith Manoharan",
+    "Arun Kumar Singh"
+   ],
+   "abstract": "Rough terrain traversability is often estimated through point-wise roll, pitch, or force-angle margins along a planned path. However, these metrics are often inaccurate and overly conservative because they ignore how terrain disturbances and low-level controller corrections can affect the vehicle's motions. To overcome these limitations, we introduce Execution-Grounded Traversability (EGT), defined as the probability that a vehicle-controller pair can execute a candidate path while meeting trajectory-level tracking and progress requirements. We estimate EGT by predicting the distribution of …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.09266",
+   "title": "SUGARv2: Learning Diverse Visual Humanoid Loco-Manipulation Skills from Synthesized Interaction References",
+   "authors": [
+    "Tianshu Wu",
+    "Tianxiang Gui",
+    "Yue Chen",
+    "Tingxu Liu",
+    "Ziye Peng",
+    "Guangjie Yang",
+    "Xiangqi Kong",
+    "Ye Shi",
+    "+2"
+   ],
+   "abstract": "Scaling up visual humanoid loco-manipulation skill acquisition requires reducing the human effort needed as tasks and spatial configurations expand, particularly in demonstration collection and task-specific training design. We present SUGARv2, a unified framework for learning diverse visual humanoid loco-manipulation skills through interaction reference synthesis and a shared training pipeline. To obtain diverse references at low cost, we adapt reusable task templates to different spatial configurations, synthesizing coordinated robot and object motions. To reduce task-specific reward design …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "11 pages, 6 figures. Project page: https://tianshuwu.github.io/sugarv2-humanoid/",
+   "project": [
+    "https://tianshuwu.github.io/sugarv2-humanoid/"
+   ],
+   "topics": [
+    "manipulation",
+    "locomotion"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09210",
+   "title": "TPS-A*: Path Planning for Any-Shape Vehicles with Certified Collision Checking in Trajectory Parameter Space",
+   "authors": [
+    "Jose Luis Blanco-Claraco",
+    "Shravan S. Rai",
+    "Fernando Cañadas-Aránega",
+    "José Luis Torres-Moreno",
+    "José Carlos Moreno-Úbeda"
+   ],
+   "abstract": "Global planners for ground vehicles usually approximate the vehicle by a disk, trading safety against conservativeness, while exact-footprint checking pays for every candidate motion, pose, and footprint edge. We present TPS-A*, a lattice planner whose edges are kinematically feasible trajectories from parameterized trajectory generators, built on certified collision checking in trajectory parameter space. A grid precomputed per footprint returns, in one pass over the local obstacles, a certified free distance along every candidate trajectory, so the per-node collision cost is independent of …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "12 pages, 6 figures",
+   "topics": [
+    "control"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09145",
+   "title": "Augmentron: Scalable Multi-View Visual Augmentation for Robot Learning",
+   "authors": [
+    "Tanay Tandon",
+    "Aseem Doriwala",
+    "Jade Choghari",
+    "Catherine Weaver",
+    "Pragna Mannam"
+   ],
+   "abstract": "Robot policies trained on visually narrow demonstrations can become sensitive to environmental features that are unrelated to the task. Existing generative augmentation methods can introduce visual diversity, but processing every frame and camera view independently is computationally expensive and may produce inconsistent observations across cameras and timestamps. We introduce Augmentron, a geometry-aware pipeline that generates reusable scene representations and renders them through recorded camera poses. This produces temporally and multi-view consistent environ- ment and workspace …",
+   "published": "2026-11-09",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG",
+    "cs.RO"
+   ],
+   "comment": "Accepted to the 8th Robot Learning Workshop (WRL), NeurIPS 2026",
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.09130",
+   "title": "Auditing Grasp Feasibility Predictors with Planner-Verified Counterfactuals",
+   "authors": [
+    "Sajid Ansari",
+    "Antony Thomas",
+    "Girish Varma"
+   ],
+   "abstract": "Grasp-feasibility predictors report near-perfect accuracy on Task and Motion Planning benchmarks, but high accuracy on these benchmarks does not verify that a predictor uses the collision geometry that the motion planner checks. We propose a planner-verified counterfactual (CF) test: holding the grasp pose fixed, we insert a solid obstacle into the approach corridor, add its points to the model input, and let a planner re-derive the label, which flips from feasible to infeasible. Across eight predictors spanning point clouds, voxels, depth, and object tokens, CF-pair AUROC falls from high …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "Accepted to WACV 2027. 10 pages main paper + 8 pages supplementary",
+   "code": [
+    "https://github.com/codewithsajid/graspfc-cf"
+   ],
+   "topics": [
+    "manipulation",
+    "datasets"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09129",
+   "title": "TouchAnnotator: Multi-Source Tactile Supervision with Privileged-View Distillation",
+   "authors": [
+    "Ao Li",
+    "Zhihao Yuan",
+    "Chubin Zhang",
+    "Kunrui Huang",
+    "Sheng Xu",
+    "Zengjue Chen",
+    "Junjie Wang",
+    "Jiawei Li",
+    "+1"
+   ],
+   "abstract": "Egocentric video captures human-object interaction at scale but rarely includes tactile labels for hidden contact and pressure. We introduce TouchAnnotator, an ego-only bimanual tactile annotator trained with multi-source tactile supervision and privileged-view distillation. A canonical hand field unifies glove pressure, geometry-derived human contact, and robot fingertip deformation from six datasets and three embodiments, while source-aware masks preserve valid targets. During training, an EMA teacher observes synchronized ego and wrist views and distills hand-local representations and …",
+   "published": "2026-11-09",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV"
+   ],
+   "topics": [
+    "tactile"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09124",
+   "title": "Toward the Era of Agentic Embodied Intelligence",
+   "authors": [
+    "Chao Liang",
+    "Ke Chen",
+    "Fengxiaoxiao Li",
+    "Shibo Huang",
+    "Yufeng Sun",
+    "Zhaokai Yin",
+    "Jianhuan Lai",
+    "Haozhe Feng",
+    "+2"
+   ],
+   "abstract": "Foundation models increasingly guide robot actions, yet sustained autonomy requires efficient control and failure recovery. We introduce A2-MEAS, an embodied multi-agent framework built around code as a scaling interface. Learned correction codes combine corrective language, spatial evidence, execution history, and action proposals. MetaBrain provides training supervision and runtime guidance. A correction encoder and adapter absorb this knowledge into policy weights during training, while fresh codes adapt behavior with frozen weights at deployment. The action model, A2-WLA, adds …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.09112",
+   "title": "Safe Circumnavigation on Heterogeneous Orbits: A Range-Only HOCBF-QP Framework for Nonholonomic Multi-Agent Systems",
+   "authors": [
+    "Shubham Singh",
+    "Anand Singh",
+    "Anjali Tiwari",
+    "Lara Briñón-Arranz",
+    "Katsuki Fujisawa"
+   ],
+   "abstract": "Circumnavigating a stationary target with a team of robots requires each robot to hold its own standoff distance, to stay evenly spaced from its neighbours, and to avoid collisions with the target and with each other at every instant. The task becomes arduous when the robots are assigned different orbital radii, as their sensors or roles may demand. This paper presents a safety-critical control framework for this problem. Each robot commands both its acceleration and its turn-rate, measures only its distance to the target, and exchanges information only with its two ring neighbours. The …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "eess.SY"
+   ],
+   "topics": [
+    "navigation"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09059",
+   "title": "Robust Readout of Cross-Point Resistive Arrays via Time-Domain Optimization",
+   "authors": [
+    "Taro Tako",
+    "Hiroshi Kaminaga",
+    "Taisuke Kobayashi"
+   ],
+   "abstract": "Cross-point resistive arrays are attractive for high-density tactile sensing because they reduce wiring complexity. However, conventional frequency-based readout methods can become inaccurate in robotic sensing environments, where long interconnects and measurement and environmental noise degrade the observed signals. We propose a time-domain optimization method for robust readout of cross-point resistive arrays. The method determines resistance values by fitting a time-domain observation model to the measured waveform over the interval, rather than relying solely on spectral amplitudes. By …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "4 pages, 1 figure, IEEE Sensors 2026 accepted",
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.09045",
+   "title": "When to Trust the BIM: Identifiability-Aware LiDAR-Inertial--BIM Fusion under As-Built Deviations",
+   "authors": [
+    "Yujie Zhang",
+    "Yuxuan Guo",
+    "Xinbao Sun",
+    "Chunlei Zhao",
+    "Langqi Miao",
+    "Xiaohui Jia",
+    "Jinyue Liu"
+   ],
+   "abstract": "Building information models (BIM) can provide a global geometric reference for robot localization with LiDAR-inertial odometry (LIO). However, as-built deviations from the as-designed model mean that a disagreement between a scan and the BIM may arise from a pose error, an offset wall surface (an as-built deviation or an unmodeled object in front of the wall), or a shifted room, and in some geometries these explanations produce identical observations. In this paper, we formalize this attribution problem as fault identification over three fault classes and derive a geometric criterion for when …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "24 pages, 12 figures, 11 tables (including appendices)",
+   "topics": [
+    "perception"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09041",
+   "title": "DobotTrack: Target-Grounded Vision-Language-Action Learning for Embodied Person Tracking",
+   "authors": [
+    "Shengjun Deng",
+    "Yinghan Zhang",
+    "Chengrui Wei",
+    "Liu Liang",
+    "Songyuan Liu",
+    "Pengkun Zheng",
+    "Yajun Zheng",
+    "Ying Zhang",
+    "+3"
+   ],
+   "abstract": "Language-guided embodied person tracking requires a mobile agent to identify a target from a referring description and consistently follow the target under egocentric observations. We present DobotTrack, a target-grounded vision-language-action (VLA) framework that integrates auxiliary grounding supervision with efficient temporal modeling. We systematically investigate five auxiliary tasks---person segmentation, bounding-box grounding, visual-spatial classification (VSC), future DINO feature prediction, and future-frame prediction---and adopt complementary mask and bounding-box supervision …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "code": [
+    "https://github.com/Dobot-Team/dobot_track"
+   ],
+   "topics": [
+    "vla"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09036",
+   "title": "ToolDex: An Ego-Exo Human Demonstration Dataset for Creative Physical Tool Use",
+   "authors": [
+    "Mohamed Elmoghany",
+    "Kehan Li",
+    "Ruoqu Chen",
+    "Tarun Chiruvolu",
+    "Shutong Zhang",
+    "Ryan Wang",
+    "Stephen Tian",
+    "Yaru Niu",
+    "+6"
+   ],
+   "abstract": "Creative tool use is a fundamental human capability and an important step toward general-purpose embodied intelligence. It requires agents to reason about object affordances, physical constraints, and manipulation strategies, especially when standard tools are unavailable. However, progress in this area is limited by the lack of real-world datasets that capture human tool-use behavior with sufficient scale, fidelity, and diversity. Existing benchmarks are often simulation-based, focus on simplified interactions, or lack detailed observations and annotations. We introduce ToolDex, a …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI"
+   ],
+   "project": [
+    "https://tooluse-dataset.github.io/"
+   ],
+   "topics": [
+    "datasets"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09030",
+   "title": "A Controlled Study of Models, Skills, Feedback, and Curriculum in Agentic Robotics",
+   "authors": [
+    "Kaiyuan Chen",
+    "Xinyue Zhu",
+    "Shuangyu Xie",
+    "Uksang Yoo",
+    "Thi Thu Phuong Luong",
+    "Marcus Gualtieri",
+    "Christian Juette",
+    "Liu Ren",
+    "+2"
+   ],
+   "abstract": "Agentic robotics asks coding agents to implement and iteratively improve robot policies from simulated and real-world physical interactions. We study the self-learning loop of agentic robotics through a controlled simulation study spanning nine manipulation tasks, 631 different experiment configurations, and 28K coding agent rollouts, systematically varying model capability, skill priors, feedback structure, and curriculum. The experiment data suggests that the bottleneck is often not the access to sufficient information, but interpreting it into the right policy update. Across these factors, …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.09005",
+   "title": "FASTFUNNELS: Agile Multi Robot Navigation in Narrow Spaces via Adaptive Dynamic Funnels",
+   "authors": [
+    "Vignesh Rajagopal",
+    "Rohan Chandra"
+   ],
+   "abstract": "We focus on the problem of high-speed multi-robot navigation in cluttered spaces with tight spatial constraints. A key challenge is balancing safety with agility, as existing methods often trade one for the other (slowing down near a bottleneck to avoid collisions versus failing to swerve in time at high speeds), especially for car-like systems. Our approach belongs to the family of formation control methods, in which Ackermann-steering agents coordinate while navigating tight spaces. However, current formation control techniques rely on rigid, pre-defined shapes and transitions that depend …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "8 pages, 4 figures, 1 table",
+   "topics": [
+    "navigation"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.08987",
+   "title": "VLA Handover: Failure-Prediction-Based Switching from On-Robot to Server VLA Models",
+   "authors": [
+    "Takayuki Nishio"
+   ],
+   "abstract": "Large vision-language-action (VLA) models generalize well but are difficult to run in real time on a robot, and small VLAs that run there fail more often. Remote inference over beyond-5G and 6G networks lets a robot use a large VLA on a server, but querying the server for every action chunk limits the number of robots per server. We propose VLA handover: the robot runs a small VLA (S-VLA) and switches to a large VLA (L-VLA) on a server only when the S-VLA is likely to fail. We formulate the switching as minimizing the request cost under a required success probability and, since this problem …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.LG",
+    "cs.NI"
+   ],
+   "comment": "6 pages, 4 figures, 3 tables. Submitted to IEEE ICC 2027",
+   "topics": [
+    "vla"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.08946",
+   "title": "Flex-RSI: Benchmarking Recursive Self-Improvement of Frontier Agents",
+   "authors": [
+    "Jingdong Zhang",
+    "Jionghao Wang",
+    "Zhengming Yu",
+    "Yancheng Cai",
+    "Wei Chow",
+    "Chris Choy",
+    "Zhiyang Dou",
+    "Hang Hua",
+    "+14"
+   ],
+   "abstract": "Frontier language models are increasingly deployed as agents, and how well an agent performs depends not only on its model but also on its harness: the prompts, tools, memory, and control loop through which the model acts. When an agent is applied to a new problem, a natural question is whether it can use the feedback of the task to improve the way it works, and not merely its answer. Most existing benchmarks keep the agent's harness fixed and score the solution it produces, or target large-scale model training. We introduce Flex-RSI, a benchmark for the recursive self-improvement of agents …",
+   "published": "2026-11-09",
+   "primary": "cs.AI",
+   "categories": [
+    "cs.AI",
+    "cs.CV",
+    "cs.RO"
+   ],
+   "comment": "Project page: https://flex-rsi.github.io. Jingdong Zhang and Jionghao Wang contributed equally",
+   "project": [
+    "https://flex-rsi.github.io"
+   ],
+   "topics": [
+    "datasets"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.08939",
+   "title": "RevoSim: Scalable Multimodal Tactile Simulation for Dexterous Manipulation",
+   "authors": [
+    "Ke Zhang",
+    "Lixin Xu",
+    "Ziyi Wang",
+    "Xiyue Dong",
+    "Jie Tan",
+    "Lianghu Shao",
+    "Xianpeng Wang",
+    "Chuanyu Li",
+    "+1"
+   ],
+   "abstract": "We present RevoSim, a scalable and high-fidelity multimodal tactile simulator for the BrainCo Revo3 hand that jointly models 285 piezoresistive taxels and five visuotactile fingertips. RevoSim efficiently generates synchronized pressure, depth, RGB, and marker-displacement observations; on a single RTX 5090, its depth-conditioned marker-displacement configuration supports up to 4,096 parallel environments. We train in-hand manipulation and grasping policies entirely in simulation, establishing a foundation for future sim-to-real transfer. Project page: …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "project": [
+    "https://braincotech.github.io/RevoSim-web/"
+   ],
+   "topics": [
+    "manipulation",
+    "tactile",
+    "sim"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.08936",
+   "title": "Ordered Policy Optimization",
+   "authors": [
+    "Dongkyu Derek Cho",
+    "Pan Xu"
+   ],
+   "abstract": "Proximal Policy Optimization (PPO) stabilizes policy updates by clipping the importance ratio between the new policy and the data-collecting policy. The standard rule uses one fixed clipping range for all samples. While this choice offers simplicity and effectiveness, it fails to distinguish statistically harmful extreme ratio values from large, yet tolerable changes. We study how to adapt the clipping radius to the reliability of the induced importance ratio distribution. Our case study demonstrates that reliable updates require controlling these extreme ratios, rather than merely verifying …",
+   "published": "2026-11-09",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG",
+    "cs.AI",
+    "cs.RO",
+    "stat.ML"
+   ],
+   "comment": "36 pages, 12 figures, 11 tables. Published in Proc. of the 40th Conference on Advances in Neural Information Processing Systems (NeurIPS 2026)",
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.08930",
+   "title": "Wellness Robots and the Path to Full Autonomy",
+   "authors": [
+    "Mohammad H. Mahoor",
+    "Matthew Hessler",
+    "Lombe Chileshe",
+    "Ola Alsaadi",
+    "Eshrat Emamian",
+    "Kerstin S. Haring",
+    "Richard M. Voyles"
+   ],
+   "abstract": "This paper introduces the autonomous wellness robot as a distinct category of socially assistive system, defined by its capacity to continuously assess and respond across the seven ICAA dimensions of wellness (see Figure 2). We propose the Care Robot Autonomy Scale (CRAS): a six-level taxonomy (L0-L5) modeled on the automotive automation standard SAE J3016 and evaluated across four wellness-aligned dimensions. We present Ryan, developed initially at the University of Denver and commercialized by DreamFace Technologies, as a case study. NIH/NIA-funded longitudinal evidence (N = 18; 887 hours) …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.08920",
+   "title": "HOC2R: Hand-Object Contact Trajectories for Human-to-Robot Motion Transfer",
+   "authors": [
+    "Hongkun Yu",
+    "Francisco M. López",
+    "Francisco Cruz"
+   ],
+   "abstract": "Human videos contain abundant object-manipulation demonstrations, but they do not directly provide motion cues that a robot can follow. We present HOC2R, a Hand-Object Contact trajectory extractor for Robot motion that combines frozen DINOv3 and SAM 2.1 features with learned heads for hand-object association and contact localization. HOC2R supports two modes: count-aware automation that detects, counts, and localizes visible contacts in untrimmed videos, and fixed-two localization for two-finger grippers when contact frames are known. On a 30-task point-annotated benchmark, count-aware …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "10 pages, 10 figures, 9 tables. Accepted for oral presentation at the Australasian Conference on Robotics and Automation (ACRA 2026)",
+   "topics": [
+    "perception"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.08917",
+   "title": "PRISM: Primitive Routing via In-context Skill Mixing for Retentive VLA Adaptation",
+   "authors": [
+    "Jiachen Tao",
+    "Gengyu Zhang",
+    "Haoxuan Wang",
+    "Bing Liu",
+    "Yan Yan"
+   ],
+   "abstract": "Vision-Language-Action (VLA) models promise a single language-conditioned policy adaptable to many manipulation behaviors, yet deployment additionally requires skill retention and long-horizon composition: a policy must retain previously acquired skills and reuse them inside composite tasks whose behavior changes across phases. The standard recipe absorbs every new task into one shared update, which provides neither a parameter-level locus for reusable skills nor a mechanism for invoking each skill along the trajectory. We observe that this missing structure is latent rather than absent: …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "19 pages, 6 figures, 4 tables. Accepted at NeurIPS 2026",
+   "topics": [
+    "vla"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.08914",
+   "title": "HomeLoop: A Simulation Framework and Benchmark for Robot-IoT Coordination in Everyday Domestic Assistance and Safety",
+   "authors": [
+    "Ramy ElMallah",
+    "Marc Bishara",
+    "Hyegang Kim",
+    "Yuxi Zhang",
+    "Chongyu Zhu",
+    "Chi-Guhn Lee"
+   ],
+   "abstract": "Recent progress in embodied robotics is bringing robots closer to deployment in homes, as vision-language models (VLMs) are demonstrating significant advances in reasoning, making VLM-driven robots promising home assistant agents. These agents will often be introduced into homes that already have cameras, Internet of Things (IoT) devices, and residents with wearables. To fulfill their potential, they need to integrate with existing smart infrastructure and reason through ambiguous scenarios: a smoke alarm may come from a pan about to ignite, a pan already on fire, a resident cooking or a …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI"
+   ],
+   "topics": [
+    "datasets"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.08911",
+   "title": "Polarization calibration of fisheye cameras using skylight in the wild",
+   "authors": [
+    "Shuo Wang",
+    "Shiqi Che",
+    "Dianze Dong",
+    "Wenxin Liu"
+   ],
+   "abstract": "Skylight polarization provides directional cues for robotic navigation, but fisheye lens effects and analyzer imperfections can degrade polarization measurements across the field of view. We present a joint lens-analyzer calibration method that explicitly models incidence-dependent lens transmission together with analyzer gains and angular offsets in a unified eight-parameter formulation. Given known geometric calibration, rotations between camera frames can be estimated using visual features and cross-frame directional polarized light consistency can be used for polarization calibration. …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "8 pages, 10 figures, submitted to ICRA 2026",
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.08898",
+   "title": "FATHOM: World-Model-Guided Diffusion Action-Trajectory Selection for Sparse-Marker AUV Tracking",
+   "authors": [
+    "Xiaorui Wang",
+    "Zeyu Sha",
+    "Mingyang Yang",
+    "David Chen Wang",
+    "Feitian Zhang"
+   ],
+   "abstract": "Reliable relative tracking is fundamental to cooperative autonomous underwater vehicles (AUVs), yet remains challenging under nonlinear vehicle dynamics and degraded underwater visual conditions. Active light markers improve robustness to appearance variation, but provide deliberately sparse observations that can become incomplete or corrupted by occlusion, reflections, and detection noise during dynamic motion. To address the resulting partial-observation control problem, this paper proposes FATHOM, a world-model-guided diffusion action-trajectory selection framework for sparse-marker AUV …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.08895",
+   "title": "Localizing and Editing the Goal Representation of a Vision-Language-Action Model",
+   "authors": [
+    "Sudhanshu Srivastava",
+    "Faisal Aqlan"
+   ],
+   "abstract": "Operators can state safety constraints for robots as prohibitions such as \"do not put the bowl on the stove\". We study whether OpenVLA follows such prohibitions and where it represents the goal it executes. The 10 tasks of LIBEROGoal share one scene, so we can label the goal that each rollout executes. We combine closed-loop rollouts with activation patching, linear probes, activation steering and runtime monitors. On LIBERO-Goal, negation had no detectable effect on which task OpenVLA executed. The model executed the forbidden task in 79% of negated rollouts and completed 78% of plain tasks. …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [
+    "vla"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.08872",
+   "title": "Lodos: A Lightweight Simulator Designed for Contact-Rich Interactions with Detailed Meshes",
+   "authors": [
+    "Onur Beker",
+    "Andreas René Geist",
+    "Georg Martius"
+   ],
+   "abstract": "In recent years, massively parallelized rigid-body simulation has played a central role in robotics research, enabling rapid progress in areas such as reinforcement learning, stochastic optimal control, and randomized smoothing-based trajectory optimization. Particularly in contact-rich settings, the scalability of such simulations in large part depends on well-optimized representations of collision geometry, often requiring a coarse approximation of the underlying surfaces using primitives such as spheres, capsules, cylinders, and boxes. Whenever the complexity of the surfaces or the …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "code": [
+    "https://github.com/martius-lab/lodos"
+   ],
+   "topics": [
+    "tactile",
+    "control",
+    "sim"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.08868",
+   "title": "Lodos-v2: An Efficient Primal Formulation of the Exact Frictional Contact Problem",
+   "authors": [
+    "Onur Beker",
+    "Andreas René Geist",
+    "Georg Martius"
+   ],
+   "abstract": "Lodos-v2 is a GPU-based simulation framework for massively parallel rigid-body dynamics with contact. It is specifically designed to achieve high throughput in scenes involving collisions among large numbers of detailed meshes. Its predecessor, Lodos-v1, had two main limitations. First, it solved the standard convex relaxation of cone-complementarity-based contact dynamics, thereby inheriting well-known physical artifacts, including lift-off and artificial compliance in the normal direction, as well as creep in the tangential direction. Second, its contact-group reparameterization scheme, …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "code": [
+    "https://github.com/martius-lab/lodos"
+   ],
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.08863",
+   "title": "What Limits mmWave Human-State Sensing for Robot Perception?",
+   "authors": [
+    "Shuntian Zheng",
+    "Guangming Wang",
+    "Hongyang He",
+    "Shuai He",
+    "Yu Guan"
+   ],
+   "abstract": "Assistive robots and search-and-rescue platforms require reliable human state sensing in smoke, darkness, and privacy-sensitive environments, where cameras and LiDAR may be unreliable Millimeter-wave radar offers an alternative that works without ambient light, penetrates smoke, and does not capture visual appearance. However, the compact arrays that fit robot size, power, and cost budgets have limited apertures, producing joint-localization errors on the order of decimeters at a few meters, large enough to compromise the safety margins and tracking accuracy a robot depends on. Existing …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.HC"
+   ],
+   "topics": [
+    "perception"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.08857",
+   "title": "STRIDE: Learning Humanoid Locomotion in Minutes with Acceleration-Based Rewards",
+   "authors": [
+    "Nico Bohlinger",
+    "Jan Peters"
+   ],
+   "abstract": "Learning locomotion directly on a humanoid robot is a promising direction to avoid the sim-to-real gap. However, locomotion rewards in Reinforcement Learning (RL) typically track the base velocity, which cannot be measured onboard without an external motion capture system or well-calibrated state estimator. This is why we introduce \\method{}, which learns humanoid locomotion from minutes of samples with a reward that only requires the onboard Inertial Measurement Unit (IMU). Instead of tracking the base velocity, STRIDE rewards the robot for following a commanded acceleration profile. To …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.LG"
+   ],
+   "topics": [
+    "locomotion",
+    "learning"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.08827",
+   "title": "ActPrune: Action-Grounded Visual Token Pruning for Efficient Vision-Language-Action Models",
+   "authors": [
+    "Sungwon Moon",
+    "Minji Kim",
+    "Hyemin Boo",
+    "Daeun Song",
+    "Jiyoung Lee"
+   ],
+   "abstract": "Vision-language-action (VLA) models perform versatile manipulation tasks from language instructions, but their inference cost limits how fast a robot can respond in closed-loop control. Visual token pruning reduces this cost; however, prior methods estimate token redundancy from encoded visual embeddings or attention, only after the visual encoder has processed the entire observation. We propose \\ours, a training-free token pruning method that moves the pruning decision ahead of the vision encoder by grounding it in a geometric prior derived from the robot's own action. The action chunk …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [
+    "vla"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.08814",
+   "title": "It Takes Two to Tangram: Multi-Agent Object Centric Reinforcement Learning for Assembly",
+   "authors": [
+    "Paul Knaußt",
+    "Kay Pompetzki",
+    "Nico Bohlinger",
+    "Niklas Funk",
+    "Cristiana de Farias",
+    "Rolf Findeisen",
+    "Jan Peters"
+   ],
+   "abstract": "Geometric assembly requires fine spatiotemporal coordination to place parts without causing collisions or deadlocks under tight clearances. To address this, we present an object-centric reinforcement learning framework that treats each part as an agent and learns a shared policy for continuous assembly control. A graph neural network represents the pieces, their target poses, and their spatial relationships, and predicts translational and angular velocities for each component. Per-agent proximal policy optimization with a centralized graph critic directly learns motion and temporal …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "This work has been submitted to the IEEE for possible publication",
+   "topics": [
+    "learning"
+   ],
+   "enriched": true
+  }
+ ]
+}
