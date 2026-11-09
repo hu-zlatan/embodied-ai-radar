@@ -1,61 +1,41 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-09",
  "missing": [],
  "papers": {
-  "2607.08341": {
-   "title": "AnyDexRT: Calibration-Efficient Dexterous Hand Retargeting with Few-Shot Human Guidance",
-   "published": "2026-07-09",
-   "comment": "Correct parameter; simplify anchor collection. See Appendix E for details",
-   "code": [],
-   "project": [
-    "https://chenxi-wang.github.io/projects/anydexrt"
-   ],
-   "abstract": "Teleoperation is a key interface for controlling dexterous robotic hands and collecting demonstrations for imitation learning. Its effectiveness largely depends on kinematic retargeting, which maps operator hand motions to feasible and intuitive robot hand motions. Existing methods often require hand-crafted objectives, precise calibration, or global shape matching between human and robot hand spaces, making them sensitive to hand-specific tuning and less reliable across different dexterous hands. We propose AnyDexRT, a calibration-efficient retargeting method for intuitive dexterous teleoperation across human-like dexterous hands. AnyDexRT combines self-supervised fingertip correspondence learning with few-shot human guidance to anchor the mapping in task-relevant regions, and further refines pinch-related poses using a contact classifier. Experiments on diverse dexterous hands and real-world teleoperation tasks show that AnyDexRT improves retargeting quality, reduces manual tuning, and provides more intuitive and efficient control than prior retargeting methods. Project website: https://chenxi-wang.github.io/projects/anydexrt",
-   "authors": [
-    "Chenxi Wang",
-    "Ying Feng",
-    "Hongjie Fang",
-    "Shangning Xia",
-    "Lixin Yang",
-    "Chuan Wen",
-    "Cewu Lu"
-   ]
-  },
-  "2511.00917": {
-   "title": "MAESTRO: Orchestrating Robotics Modules with Coding Agents for Zero-Shot Generalist Robots",
-   "published": "2025-11-02",
-   "comment": "34 pages. Accepted at CoRL 2026. Substantially revised with expanded experiments, ablations, and discussion. Project website: https://maestro-robot.github.io",
+  "2610.41009": {
+   "title": "STAR: Steering Action Representations with Proprioception for VLA Inference",
+   "published": "2026-10-29",
+   "comment": null,
    "code": [
-    "https://github.com/penn-pal-lab/maestro"
+    "https://github.com/PKU-VaLuE-Lab/STAR"
    ],
-   "project": [
-    "https://maestro-robot.github.io"
-   ],
-   "abstract": "Today's dominant route to generalist robots scales robotics data to train end-to-end policies. We instead use a vision-language model (VLM) as a coding agent that writes robot programs using a curated library of perception, planning, and control tools. MAESTRO's orchestration harness packages multi-step perception and action procedures into callable tools and guides their use through a plan-act-replan loop, using visual and execution feedback to verify outcomes and recover from failures. With this tool library and harness, MAESTRO matches or surpasses state-of-the-art vision-language-action (VLA) models zero-shot in our tabletop comparison and performs diverse mobile manipulation tasks, without collecting new teleoperation data or invoking a VLA tool. Ablations show that expanding the tool library improves average task progress with the full harness, while adding tools without it does not reliably improve progress. Case studies illustrate MAESTRO's potential for autonomous code improvement across trials, faster execution with VLA tools, and automatic robot data generation. We show that expanding robotics tool libraries together with their orchestration harnesses offers a complementary route to general-purpose robots alongside scaling end-to-end robot training data. Project site: https://maestro-robot.github.io. Code: https://github.com/penn-pal-lab/maestro.",
+   "project": [],
+   "abstract": "Vision-language-action models (VLAs) map language instructions and visual observations to robot actions, showing strong capabilities across robotic manipulation tasks. However, in our probing experiment, we find that action representations near the action output do not fully preserve task-relevant visual grounding. Motivated by this late-layer grounding gap, we introduce STAR, for STeering Action Representations, a training-free inference method for pre-trained VLAs. STAR applies an exponential moving average over late-layer residual updates, allowing later action representations to inherit object-aware update directions from earlier layers without model updates or architectural changes. It further uses recent proprioceptive states to adapt the mixing strength, using conservative mixing when execution dynamics change rapidly. Experiments on robot manipulation benchmarks show that STAR improves late-layer object awareness and increases average task success rates by 4.0 percentage points. Our code is available at https://github.com/PKU-VaLuE-Lab/STAR.",
    "authors": [
-    "Junyao Shi",
-    "Rujia Yang",
-    "Kaitian Chao",
-    "Selina Bingqing Wan",
-    "Yifei Shao",
-    "Jiahui Lei",
-    "Jianing Qian",
-    "Long Le",
-    "Pratik Chaudhari",
-    "Kostas Daniilidis",
-    "Chuan Wen",
-    "Dinesh Jayaraman"
-   ],
-   "hf_github": null,
-   "hf_project": null
+    "Guangyu Zhao",
+    "Yongchang Zhang",
+    "Haoxuan Ru",
+    "Kaichen He",
+    "Haoran Wen",
+    "Kun Zhan",
+    "Zeyu Zhang",
+    "Yin Li",
+    "Yiwu Zhong"
+   ]
   }
  },
  "repos": {
-  "penn-pal-lab/maestro": {
-   "stars": 9,
-   "pushed": "2026-10-27",
+  "PKU-VaLuE-Lab/STAR": {
+   "stars": 5,
+   "pushed": "2026-08-25",
    "archived": false,
-   "license": "MIT"
+   "license": "Apache-2.0"
+  },
+  "pku-value-lab/star": {
+   "stars": 5,
+   "pushed": "2026-08-25",
+   "archived": false,
+   "license": "Apache-2.0"
   }
  }
 }
