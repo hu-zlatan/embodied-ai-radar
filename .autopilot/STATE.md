@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-08 ~22:55 UTC, run 73; 1333 curated (664 with code), repo has 3 stars, 0 forks._
+_Last updated: 2026-11-09 ~05:20 UTC, run 74; 1345 curated, repo has 3 stars, 0 forks._
 
 ## Status
 
@@ -65,6 +65,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
+00000000. Run 74 (Mon 11-09 ~05:00 UTC, CoRL day 1): scheduled intake slots 01:11/02:17/04:53 had not fired, so intake was dispatched by hand (#161, OK; 11-09 feed landed). 12 picks from the 11-09 candidates (AMP1 ★, PRISM, CUA-embodied, DobotTrack, DKWBC, SUGARv2, Grasp-TAGS, grasp-CF audit, ToolDex, Flex-RSI, RevoSim, Lodos; commit 23dbb74). Skipped: snake-robot loco-manipulation (IROS), morphing quadrotor, OPO (generic RL). Add `code:` once live: DobotTrack (Dobot-Team/dobot_track not public), AMP1 (page says code available; project_code.py should find it). Check verify on 23dbb74 next run. Next: Tue 11-10 feed picks; CoRL repos going public (`project_code.json` `curated`).
 0000000. Run 73 (Sun 22:50 UTC, no feed day): health check only, all workflows green, validate 0 errors, README check clean, no issues/PRs. Same plan for Mon 11-09 (CoRL day 1): feed picks from candidates.json after intake (~06:00 UTC), CoRL repos going public, program re-match.
 000000. Run 72 (Sun evening, no feed day): health check only. All workflows green; the two 11-08 CoRL program runs found no new arXiv matches (574 of 687 still); `project_code.json` `curated` has only the 5 known skips; HF queue only known skips (HiSTEVE, Joints Camera Action, LLM2R). Nothing worth adding without churn. Next run (Mon 11-09, CoRL day 1): feed picks from candidates.json once intake lands (~06:00 UTC), watch CoRL repos going public (`project_code.json` `curated`), and re-run the program-match method if `corl-2026.json` gains `arxiv` IDs.
 00000i. Run 71 (Sun, no feed day): **W45 digest written early** (digest/2026-W45.md with bilingual intro: robot data without robots, scores you can trust, open agent harnesses, CoRL guide). Monday's weekly.yml skips it because the file exists. `make_digest.py` now lists as 'Editor's picks' only picks whose arXiv ID is from the week's month or the month before (`is_fresh`); older papers added that week go to a new 'Also added to the index' section (counts per topic, CoRL program count + link). Without this, W45 had 783 'picks' with DeepMimic/iDP3 in the top 8. Old digests unchanged. EdgeOne default address: docs (deployment overview) say preview links last 3 h and deployments beyond the newest three return 401; asked the owner to confirm the address loads publicly before linking it. Next: Mon 11-09 feed picks (CoRL week); the W45 digest is done, so no intro needed Monday.
