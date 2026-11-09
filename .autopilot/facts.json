@@ -2,40 +2,40 @@
  "updated": "2026-11-09",
  "missing": [],
  "papers": {
-  "2610.41009": {
-   "title": "STAR: Steering Action Representations with Proprioception for VLA Inference",
-   "published": "2026-10-29",
-   "comment": null,
-   "code": [
-    "https://github.com/PKU-VaLuE-Lab/STAR"
-   ],
+  "2611.09293": {
+   "title": "MDF++: Visuo-Tactile World Action Model with End-to-end Representation Learning",
+   "published": "2026-11-06",
+   "comment": "Corl 2026",
+   "code": [],
    "project": [],
-   "abstract": "Vision-language-action models (VLAs) map language instructions and visual observations to robot actions, showing strong capabilities across robotic manipulation tasks. However, in our probing experiment, we find that action representations near the action output do not fully preserve task-relevant visual grounding. Motivated by this late-layer grounding gap, we introduce STAR, for STeering Action Representations, a training-free inference method for pre-trained VLAs. STAR applies an exponential moving average over late-layer residual updates, allowing later action representations to inherit object-aware update directions from earlier layers without model updates or architectural changes. It further uses recent proprioceptive states to adapt the mixing strength, using conservative mixing when execution dynamics change rapidly. Experiments on robot manipulation benchmarks show that STAR improves late-layer object awareness and increases average task success rates by 4.0 percentage points. Our code is available at https://github.com/PKU-VaLuE-Lab/STAR.",
+   "abstract": "Recently, world-action models (WAMs) have emerged as a powerful framework for robot manipulation. By jointly modeling action generation and future observation prediction, WAMs can act and anticipate the outcomes of the actions. However, existing WAMs typically rely on frozen pretrained encoders trained with reconstruction, which may not produce representations well suited for robot control. In this paper, we tackle the problem of learning physicallygrounded, control-relevant representations for WAMs. We propose MDF++, a visuo-tactile world-action model that learns latent representations of multisensory observations end-to-end with a diffusion backbone. While naive joint training can lead to feature collapse, MDF++ introduces a multi-task learning strategy that leverages cross-modal correlations to learn task-relevant representations. We evaluate MDF++ on a suite of contact-rich manipulation tasks, including realworld bolt screwing and nut mating, and show that it outperforms WAMs built on frozen pretrained representations by up to 50%. Additional videos are available on our website: jointmdf.github.io.",
    "authors": [
-    "Guangyu Zhao",
-    "Yongchang Zhang",
-    "Haoxuan Ru",
-    "Kaichen He",
-    "Haoran Wen",
-    "Kun Zhan",
-    "Zeyu Zhang",
-    "Yin Li",
-    "Yiwu Zhong"
+    "Zixuan Huang",
+    "Jinhao Yu",
+    "Zachary Charlick",
+    "Dmitry Berenson"
+   ]
+  },
+  "2611.08576": {
+   "title": "Q-OIL: Optimistic Exploration in Learning from Human Interventions",
+   "published": "2026-11-05",
+   "comment": "Project website: https://weirdlabuw.github.io/qoil",
+   "code": [],
+   "project": [
+    "https://weirdlabuw.github.io/qoil"
+   ],
+   "abstract": "As robots are deployed in the real world, they will inevitably make mistakes. Human interventions provide valuable feedback for improving their behavior, enabling them to adapt online to new scenarios. However, studying human-in-the-loop robot learning is difficult: real-world experiments are slow and expensive, so most algorithm development relies on simulated human models. We show that common human modeling assumptions do not match how real people intervene in practice. Through analyzing intervention data from human participants, we find that humans tend to intervene when agent progress stalls, and that their corrective actions are often suboptimal. Motivated by these findings, we introduce a progress-based model of human intervention that achieves higher rank correlation with real-user algorithm rankings, enabling realistic algorithm benchmarking and development in simulation. Building on these insights, we propose Q-OIL, a method that adds optimistic bonuses to intervention transitions in reinforcement learning and softly guides exploration toward human corrections. We find that decoupled critics are critical for stability because they prevent the bonuses from backing up to pre-intervention states. As a result, Q-OIL learns more efficiently than competitive baselines, achieving 10-50% higher success in simulation and on real robots, and improving pretrained VLAs on two bimanual manipulation tasks. As we ground both evaluation and algorithms in realistic human behavior, this work provides a practical path toward scalable robot learning from interventions.",
+   "authors": [
+    "Pranav Teegavarapu",
+    "Sriyash Poddar",
+    "Rico Qi",
+    "Cleah Winston",
+    "Krisha Khandelwal",
+    "Aykut Onyol",
+    "Natasha Jaques",
+    "Abhishek Gupta"
    ]
   }
  },
- "repos": {
-  "PKU-VaLuE-Lab/STAR": {
-   "stars": 5,
-   "pushed": "2026-08-25",
-   "archived": false,
-   "license": "Apache-2.0"
-  },
-  "pku-value-lab/star": {
-   "stars": 5,
-   "pushed": "2026-08-25",
-   "archived": false,
-   "license": "Apache-2.0"
-  }
- }
+ "repos": {}
 }
