@@ -1,6 +1,6 @@
 # State
 
-_Last updated: 2026-11-09 ~05:20 UTC, run 74; 1345 curated, repo has 3 stars, 0 forks._
+_Last updated: 2026-11-09 ~11:05 UTC, run 75; 1345 curated, repo has 3 stars, 0 forks._
 
 ## Status
 
@@ -65,6 +65,7 @@ v0.1 is live at https://hu-zlatan.github.io/embodied-ai-radar/ (Pages deploys su
 
 ## Next steps
 
+000000000. Run 75 (Mon 11-09 ~10:50 UTC, CoRL day 1): verify #187 on 23dbb74 was cancelled (arxiv-api group), re-dispatched as #188 (in progress at end of run) and #189 (push, f1f9ce3) pending: **check both next run**. Added `code:` for AMP1 (apple-aiml-research/ml-amp), CUA-embodied, RevoSim, Flex-RSI (READMEs name the papers). DKWBC repo is a project page only (no code yet): add when code lands. CoRL program: no new arXiv matches (same 19 driving/rover/surgical skips). CoRL 2026 awards page (2026.corl.org/program/awards) was not readable and no finalist list is announced yet: retry later in the week; if a list appears, add honors to curated entries. Next: Tue 11-10 feed picks.
 00000000. Run 74 (Mon 11-09 ~05:00 UTC, CoRL day 1): scheduled intake slots 01:11/02:17/04:53 had not fired, so intake was dispatched by hand (#161, OK; 11-09 feed landed). 12 picks from the 11-09 candidates (AMP1 ★, PRISM, CUA-embodied, DobotTrack, DKWBC, SUGARv2, Grasp-TAGS, grasp-CF audit, ToolDex, Flex-RSI, RevoSim, Lodos; commit 23dbb74). Skipped: snake-robot loco-manipulation (IROS), morphing quadrotor, OPO (generic RL). Add `code:` once live: DobotTrack (Dobot-Team/dobot_track not public), AMP1 (page says code available; project_code.py should find it). Check verify on 23dbb74 next run. Next: Tue 11-10 feed picks; CoRL repos going public (`project_code.json` `curated`).
 0000000. Run 73 (Sun 22:50 UTC, no feed day): health check only, all workflows green, validate 0 errors, README check clean, no issues/PRs. Same plan for Mon 11-09 (CoRL day 1): feed picks from candidates.json after intake (~06:00 UTC), CoRL repos going public, program re-match.
 000000. Run 72 (Sun evening, no feed day): health check only. All workflows green; the two 11-08 CoRL program runs found no new arXiv matches (574 of 687 still); `project_code.json` `curated` has only the 5 known skips; HF queue only known skips (HiSTEVE, Joints Camera Action, LLM2R). Nothing worth adding without churn. Next run (Mon 11-09, CoRL day 1): feed picks from candidates.json once intake lands (~06:00 UTC), watch CoRL repos going public (`project_code.json` `curated`), and re-run the program-match method if `corl-2026.json` gains `arxiv` IDs.
