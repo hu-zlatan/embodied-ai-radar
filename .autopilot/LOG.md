@@ -689,3 +689,11 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - `project_code.json` `curated` offered repos for 6 of the run-74 picks. Checked READMEs from the shell: AMP1, CUA-embodied, RevoSim, Flex-RSI name their papers → `code:` added (commit f1f9ce3). DKWBC repo holds only the project page → skipped. Validate 0 errors, 1,474 pages built, README check clean.
 - CoRL program: still 574 of 687 on arXiv, uncurated ones are the 19 known skips. Awards page on 2026.corl.org not readable (4xx), no finalists announced on home/announcements; retry later this week.
 - No new owner task. End of run 75.
+
+## 2026-11-09 — run 76 (~16:45 UTC–)
+
+- Start: no issues/PRs, 3 stars / 0 forks. Local `main` stale; reset to `origin/main`.
+- Verify #189 (run-75 code links) and scheduled #190 failed on one item only: arXiv retitled STAR 2610.41009 to 'STAR: Steering Action Representations with Proprioception for VLA Inference'. Title fixed + READMEs rebuilt (42bc3c3); verify #191 passed. The URLError warnings (qwen blog, UMass 3DVLA) are warnings only and recur; leave them.
+- facts.yml #24 fetched the v2 abstract: it adds proprioception-adaptive mixing strength → EN/ZH takeaway updated (EN 204 chars).
+- Link-update queue, project_code `curated` and HF queue: only known skips. Web search found no CoRL 2026 award finalist list yet.
+- Validate 0 errors, 1,474 pages, 0 broken links, README check clean. No new owner task. End of run 76.
