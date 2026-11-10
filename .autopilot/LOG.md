@@ -721,3 +721,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - 11 picks from the 11-10 candidates (facts from candidates.json abstracts; code repos checked live in repo_stats and by README): HARP-Bench, RoboMoCap, ObjectWorld, SimDuoReal, DexForesight, SMC-MPC (PFMP), RoboEval challenge solution, VINE, CPNav, MOSU2, SPARK-VLA. No ratings (no clear signal yet).
 - Could not check embodied-ai-radar.com or the www redirect from here (proxy refuses the host; WebFetch prompt not answered). Web search: no CoRL 2026 award finalists yet.
 - Validate 0 errors (1,358 curated), 1,488 pages, 0 broken links, README check clean. No new owner task.
+- Owner chat (2026-11-10): Google Search Console set up for embodied-ai-radar.com; OWNER_TODO ticked. Indexing takes days to weeks; check coverage later via the owner.
