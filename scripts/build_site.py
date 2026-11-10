@@ -1345,6 +1345,11 @@ def build() -> int:
     # ---- 404, robots, sitemap, atom
     (OUT / "404.html").write_text(page("Not found · Embodied AI Radar", f'<h1>404</h1><p><a href="{SITE_URL}">{bi("Back to the radar", "返回首页")}</a></p>', SITE_URL, desc, "404.html"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("")
+    # EdgeOne Pages config (ignored by GitHub Pages): 301 www.embodied-ai-radar.com -> root
+    # domain. $wwwhost/$host is the documented www rule, used in reverse
+    # (pages.edgeone.ai/document/edgeone-json: "也支持反向重定向（仅对自定义域名生效）").
+    (OUT / "edgeone.json").write_text(json.dumps(
+        {"redirects": [{"source": "$wwwhost", "destination": "$host", "statusCode": 301}]}, indent=2) + "\n")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n")
     # IndexNow proves ownership with a public key file; see scripts/indexnow.py.
     (OUT / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY)
