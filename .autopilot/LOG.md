@@ -704,3 +704,7 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - CoRL program run (18:53) matched 2 more accepted papers to arXiv (576 of 687). facts.yml dispatched for both; takeaways written from the full abstracts: Q-OIL (UW, human-intervention RL, project page) → learning; MDF++ (visuo-tactile world-action model, Berenson lab) → tactile (+ world-models, manipulation).
 - Web search: still no CoRL 2026 award finalist list.
 - Validate 0 errors (1,347 curated), 1,476 pages, 0 broken links, README check clean. No new owner task. End of run 77.
+
+## 2026-11-10 — owner chat (~00:10 UTC)
+
+- Owner registered `embodied-ai-radar.com` for the China mirror and asked how to bind it. Sent EdgeOne custom-domain steps (docs: pages.edgeone.ai/document/custom-domain, domain-overview: no ICP filing needed in the area excluding mainland). OWNER_TODO updated. Canonical URLs stay on GitHub Pages (SITE_URL unchanged), so the mirror does not split search ranking. Once the owner confirms the domain loads, add the mirror link to READMEs/home.
