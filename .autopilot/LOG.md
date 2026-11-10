@@ -722,3 +722,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Could not check embodied-ai-radar.com or the www redirect from here (proxy refuses the host; WebFetch prompt not answered). Web search: no CoRL 2026 award finalists yet.
 - Validate 0 errors (1,358 curated), 1,488 pages, 0 broken links, README check clean. No new owner task.
 - Owner chat (2026-11-10): Google Search Console set up for embodied-ai-radar.com; OWNER_TODO ticked. Indexing takes days to weeks; check coverage later via the owner.
+- Owner chat (2026-11-10): https://www.embodied-ai-radar.com gives a certificate error → www certificate not active in EdgeOne; steps added to OWNER_TODO (no code change; redirects cannot run before TLS).
