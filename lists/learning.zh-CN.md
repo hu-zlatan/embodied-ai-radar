@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 135 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 137 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/learning.html) · [English](learning.md)
 
@@ -97,6 +97,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Robot-WATCHDOG : failure detection through object-centric graph representation](https://arxiv.org/abs/2610.13403)** (2026) — 仅用正常演示做自监督失败检测：把操作场景建模为以物体为中心的时空图，所提两种失败评分都优于基于图像的检测器，尤其擅长语义和交互层面的失败。 · [项目页](https://cea-list.github.io/Robot-WATCHDOG/)
 - **[SCAPE: Scenario-Conditioned Simulation-Augmented Policy Evaluation](https://arxiv.org/abs/2608.19425)** (2026) — SCAPE 利用少量成对的仿真/真机数据和大量仿真推演，按场景预测策略在真实世界的表现：先校正仿真标签偏差，再用共形预测校准不确定性。在自动驾驶与四足速度跟踪上验证。
 - **[SCoCaT: Success Conditioned Constrained Reinforcement Learning for Spacecraft Docking](https://arxiv.org/abs/2609.06061)** (2026) — 发现基于终止的约束强化学习在目标附近约束收紧时会学会回避目标，并用稠密成功信号的辅助价值网络解决；在航天器对接任务上验证。
+- **[SPARK: Simple Post-training for Adapting pRetrained Knowledge to Robot Control](https://arxiv.org/abs/2611.12102)** (2026) — 不从头预训练，而是对现成视觉基础模型做面向机器人控制的后训练：时间抽象目标保留与动作相关的变化，与原模型的 patch 级对齐保留其语义。在多个基准和真实机械臂上提升成功率与泛化。
 - **[Simultaneous Forward and Inverse Human-in-the-Loop Optimization](https://arxiv.org/abs/2609.22630)** (2026) — 面向用户试验代价高的辅助设备：先训练前向模型从控制策略预测用户结果，用它主动选择查询来学习个体奖励，再在不增加试验的情况下选出最终策略。
 - **[SkillWeaver: Agentic Exploration over Neural Interaction Skills for Scalable Robot Data Generation](https://arxiv.org/abs/2609.36171)** (2026) — VLM 智能体在仿真中调用可复用的强化学习交互技能来探索任务，借助验证、反思与记忆进行验证器引导的树搜索，无需脚本即可生成机器人数据。
 - **[SynthICL: Scalable In-context Imitation Learning with Synthetic Data](https://arxiv.org/abs/2606.08154)** (2026) — 完全用 RGB 合成数据训练的上下文模仿学习策略，并预测下一个子目标图像。报告仅给一条演示时，在 16 个未见真机任务上平均成功率 79%。 · [代码](https://github.com/sNiper-Qian/synthicl) · [项目页](https://synth-icl.github.io)
@@ -108,6 +109,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Toward Recursive Self-Improvement in Physical AI](https://arxiv.org/abs/2610.29677)** (2026) — 把"递归自我改进"放到机器人学习语境下的综述：从提升技能到改进产生技能的过程，并总结增益能持续累积的条件；指出现有真机研究尚未单独验证"递归"本身带来的收益。附论文列表。 · [项目页](https://github.com/Physical2RSI/Awesome-Physical2RSI)
 - **[Training in Deployment: Human-in-the-loop Online Post-Training for Robot Manipulation](https://arxiv.org/abs/2610.29264)** (2026) — TIDE 在部署过程中利用人类干预和策略自身的执行数据在线更新预训练策略，无需价值函数或奖励模型；报告在四个真实双臂任务上优于初始策略，每次在线后训练不到一小时完成。 · [项目页](https://logosroboticsgroup.github.io/TIDE/)
 - **[UniIntervene: Agentic Intervention for Efficient Real-World Reinforcement Learning](https://arxiv.org/abs/2606.12372)** (2026) — 用于人在回路强化学习的智能干预模型：根据价值变化趋势发现无效探索，并自动把策略拉回高价值状态。报告人工干预减少 57%，成功率提升 8.6%。 · [代码](https://github.com/Denghaoyuan123/UniIntervene) · [项目页](https://denghaoyuan123.github.io/UniIntervene-project/)
+- **[UniLatent: Cross-Embodiment Transfer via Latent Observation Alignment](https://arxiv.org/abs/2611.10061)** (2026) — 用仿真渲染的成对视角，把源机器人的视觉编码器对齐到冻结的目标编码器，无需像素级图像翻译即可跨机械臂复用示范。仿真零样本成功率最高 93%；真实 xArm→Franka 每任务仅用 10 条目标示范微调即 27/30 成功。 · [项目页](https://selina2023.github.io/unilatent/)
 - **[Unified Condition-Action Modeling for Accurate One-Step Action Generation](https://arxiv.org/abs/2608.16153)** (2026) — 一步生成的流策略：把观测、时间步与动作 token 拼成一个序列，由同一 Transformer 联合建模。报告平均成功率 86.4%（提升 7.5 个百分点），推理延迟 3.0 ms，比 DP3 快 43.9 倍。 · [代码](https://github.com/NTUMARS/UCA-Policy) · [项目页](https://uca-policy.github.io/UCA.github.io/)
 - **[Unified Motion-Action Modeling for Heterogeneous Robot Learning](https://arxiv.org/abs/2606.16917)** (2026) — 以 3D 物体运动轨迹作为统一接口，用掩码生成目标联合建模物体运动与机器人动作，同一套预训练参数可作为策略、动力学模型或少样本适配器。混合机器人、人类视频与仿真数据预训练。 · [项目页](https://uma-manipulation.github.io/)
 - **[WARP-RM: A Warp-Augmented Relative Progress Reward Model for Data Curation](https://arxiv.org/abs/2606.28320)** (2026) — 用时间扭曲（变速、倒放）增强的演示自监督学习帧级进度奖励，再用它过滤和加权行为克隆数据。报告 T 恤折叠吞吐量最高为普通 BC 的约 18 倍。 · [代码](https://github.com/uynitsuj/WARP-RM) · [项目页](https://uynitsuj.github.io/warp-rm/)

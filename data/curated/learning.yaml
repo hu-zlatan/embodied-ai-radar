@@ -1361,3 +1361,22 @@
   tags: [diffusion-policy, behavior-cloning, multimodality, data-collection]
   takeaway_en: "Diffusion policies trained on sliding-window demos often memorise one action per state; querying the demonstrator k times at one state (vine sampling) keeps the multimodality and aids best-of-N and expert iteration."
   takeaway_zh: "用滑窗示范训练的扩散策略往往每个状态只记住一个动作。在同一状态下向示范者查询 k 次（vine 采样）可保留其多模态分布，并提升 best-of-N 与专家迭代效果。"
+- title: "SPARK: Simple Post-training for Adapting pRetrained Knowledge to Robot Control"
+  type: paper
+  arxiv: "2611.12102"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-10
+  tags: [visual-representation, post-training, foundation-models]
+  takeaway_en: "Post-trains a vision foundation model for robot control: a temporal-abstraction loss keeps action-relevant change, patch alignment to the original keeps semantics. Gains on several benchmarks and a real arm."
+  takeaway_zh: "不从头预训练，而是对现成视觉基础模型做面向机器人控制的后训练：时间抽象目标保留与动作相关的变化，与原模型的 patch 级对齐保留其语义。在多个基准和真实机械臂上提升成功率与泛化。"
+- title: "UniLatent: Cross-Embodiment Transfer via Latent Observation Alignment"
+  type: paper
+  arxiv: "2611.10061"
+  year: 2026
+  venue: CoRL 2026
+  project: https://selina2023.github.io/unilatent/
+  added: 2026-11-10
+  tags: [cross-embodiment, representation-alignment, sim-paired-data]
+  takeaway_en: "Reuses demos across arms by aligning a source encoder to a frozen target encoder on sim-rendered paired views, no pixel translation. Up to 93% zero-shot in sim; real xArm→Franka 27/30 with 10 demos per task."
+  takeaway_zh: "用仿真渲染的成对视角，把源机器人的视觉编码器对齐到冻结的目标编码器，无需像素级图像翻译即可跨机械臂复用示范。仿真零样本成功率最高 93%；真实 xArm→Franka 每任务仅用 10 条目标示范微调即 27/30 成功。"
