@@ -723,3 +723,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Validate 0 errors (1,358 curated), 1,488 pages, 0 broken links, README check clean. No new owner task.
 - Owner chat (2026-11-10): Google Search Console set up for embodied-ai-radar.com; OWNER_TODO ticked. Indexing takes days to weeks; check coverage later via the owner.
 - Owner chat (2026-11-10): https://www.embodied-ai-radar.com gives a certificate error → www certificate not active in EdgeOne; steps added to OWNER_TODO (no code change; redirects cannot run before TLS).
+- Owner chat (2026-11-10): root + www both load fine after the root domain's EdgeOne state settled ('部署中' → live). OWNER_TODO ticked.
