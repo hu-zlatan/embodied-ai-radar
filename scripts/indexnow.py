@@ -36,6 +36,15 @@ def live_urls() -> list[str]:
     return []
 
 
+def key_file_status() -> str:
+    try:
+        with urllib.request.urlopen(f"{SITE}{INDEXNOW_KEY}.txt", timeout=30) as r:
+            body = r.read().decode("utf-8", "replace").strip()
+            return f"{r.status}, {'matches key' if body == INDEXNOW_KEY else 'WRONG CONTENT'}"
+    except (urllib.error.URLError, TimeoutError) as e:
+        return f"unreachable ({e})"
+
+
 def main() -> int:
     sent = set(json.loads(SENT.read_text())) if SENT.exists() else set()
     urls = live_urls()
@@ -49,11 +58,19 @@ def main() -> int:
                        "keyLocation": f"{SITE}{INDEXNOW_KEY}.txt", "urlList": batch}).encode()
     req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
                                  headers={"Content-Type": "application/json; charset=utf-8"})
+    print(f"key file {SITE}{INDEXNOW_KEY}.txt: {key_file_status()}")
     try:
         with urllib.request.urlopen(req, timeout=60) as r:
             print(f"IndexNow answered {r.status} for {len(batch)} URLs ({len(new)} new)")
     except urllib.error.HTTPError as e:
-        print(f"IndexNow refused: {e.code} {e.read()[:200]!r}")
+        detail = e.read()[:300]
+        print(f"IndexNow refused: {e.code} {detail!r}")
+        if e.code == 403 and b"SiteVerificationNotCompleted" in detail:
+            # New host: IndexNow checks the key file asynchronously. Nothing is
+            # marked as sent, so the next daily run submits the same URLs again.
+            print("::warning::IndexNow site verification still pending for "
+                  f"{HOST}; will retry on the next run")
+            return 0
         return 1
     SENT.write_text(json.dumps(sorted(sent | set(batch)), indent=0) + "\n")
     return 0
