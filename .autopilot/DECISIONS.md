@@ -82,3 +82,7 @@ Display: gold ★ badge after the meta line (site cards, search results; the gra
 ## 2026-11-06 — Colour system (owner request)
 
 Softer palette (cooler light background, less saturated blue) and one meaning per colour: blue = navigation and links, green = actions (the picks download button) and code, gold = editor ratings and the star banner, gray = GitHub counts, orange = Hugging Face, purple = venues. Each topic has its own hue (`.t-<topic>` sets `--tc`), used as a top stripe on topic tiles and as the colour of topic chips (site cards and search results), so a category is recognisable at a glance. The three trending boxes get their kind's colour as a top stripe and a small icon (▲ HF, ↗ rising, ★ most-starred). Tokens live at the top of style.css.
+
+## 2026-11-10 — China mirror at embodied-ai-radar.com, canonical stays on GitHub Pages
+
+The owner's domain serves the EdgeOne mirror (area 'Global excluding mainland', so no ICP filing). Canonical links, sitemap, Atom feeds and OG URLs keep pointing to hu-zlatan.github.io so search ranking is not split between two hosts; the mirror is linked from the READMEs and a footer line on every page. Revisit (make the domain canonical) only if the owner wants the .com as the main address.

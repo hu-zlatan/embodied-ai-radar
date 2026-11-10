@@ -708,3 +708,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 ## 2026-11-10 — owner chat (~00:10 UTC)
 
 - Owner registered `embodied-ai-radar.com` for the China mirror and asked how to bind it. Sent EdgeOne custom-domain steps (docs: pages.edgeone.ai/document/custom-domain, domain-overview: no ICP filing needed in the area excluding mainland). OWNER_TODO updated. Canonical URLs stay on GitHub Pages (SITE_URL unchanged), so the mirror does not split search ranking. Once the owner confirms the domain loads, add the mirror link to READMEs/home.
+- Owner bound `embodied-ai-radar.com` + www in EdgeOne (DNSPod CNAME, free certificates) and confirmed the site loads. Added the mirror link to both READMEs and a footer line on every page (`MIRROR_URL`, same path on both hosts). Canonical stays GitHub Pages. Validate 0 errors, 1,476 pages, 0 broken links, README check clean.

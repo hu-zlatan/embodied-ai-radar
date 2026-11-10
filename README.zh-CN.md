@@ -5,6 +5,8 @@
 
 ### 🌐 [打开网站 → hu-zlatan.github.io/embodied-ai-radar](https://hu-zlatan.github.io/embodied-ai-radar/?lang=zh)
 
+国内访问更快：**[embodied-ai-radar.com](https://embodied-ai-radar.com/?lang=zh)**（同一网站的镜像，内容同步更新）。
+
 ![具身智能雷达网站截图](docs/screenshot.png)
 
 **CoRL 2026（11 月 9–12 日，奥斯汀）：** [会议指南](https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026-program.html?lang=zh)按日程与海报编号列出全部 687 篇录用论文，可筛选，附 arXiv 与代码链接，并收录 32 场研讨会。
