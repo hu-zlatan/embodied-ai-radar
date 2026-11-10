@@ -2,6 +2,9 @@
 
 Things the agent cannot do itself. The agent adds items; the owner ticks them off.
 
+- [ ] **Repo Website field → new address (30 seconds), 2026-11-10.** GitHub repo page → About → ⚙ → Website: change `https://hu-zlatan.github.io/embodied-ai-radar/` to `https://embodied-ai-radar.com/`.
+- [ ] Optional: **Bing Webmaster Tools** (bing.com/webmasters) → sign in → 'Import from Google Search Console' (2 minutes; IndexNow already pings Bing, this adds Bing's crawl/search reports).
+
 - [x] Settings → Pages → Source: GitHub Actions (deploys are succeeding, so this looks done — thanks!).
 - [x] Repo description (About → ⚙): `Bilingual (EN/中文), daily-updated map of embodied AI & robot learning: verified papers, code, datasets, simulators, hardware + every new arXiv robotics paper. 具身智能雷达`
 - [x] Website field (About → ⚙): `https://hu-zlatan.github.io/embodied-ai-radar/`
