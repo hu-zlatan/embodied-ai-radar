@@ -4,7 +4,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._
 
 64 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
 
-[Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/sim.html) · [中文](sim.zh-CN.md)
+[Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/sim.html) · [中文](sim.zh-CN.md)
 
 [VLA & Robot Foundation Models](vla.md) · [Manipulation & Dexterous Hands](manipulation.md) · [Tactile & Visuotactile Sensing](tactile.md) · [Locomotion & Humanoids](locomotion.md) · [World Models](world-models.md) · [Navigation & Embodied Agents](navigation.md) · [Perception, SLAM & 3D Mapping](perception.md) · [Planning, Control & Safety](control.md) · [Robot Learning: RL & Imitation](learning.md) · **Sim-to-Real & Simulators** · [Datasets & Benchmarks](datasets.md) · [Hardware & Open-Source Robots](hardware.md)
 

@@ -4,7 +4,7 @@ _Tactile sensors, touch representations and contact-rich control._
 
 78 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
 
-[Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/tactile.html) · [中文](tactile.zh-CN.md)
+[Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/tactile.html) · [中文](tactile.zh-CN.md)
 
 [VLA & Robot Foundation Models](vla.md) · [Manipulation & Dexterous Hands](manipulation.md) · **Tactile & Visuotactile Sensing** · [Locomotion & Humanoids](locomotion.md) · [World Models](world-models.md) · [Navigation & Embodied Agents](navigation.md) · [Perception, SLAM & 3D Mapping](perception.md) · [Planning, Control & Safety](control.md) · [Robot Learning: RL & Imitation](learning.md) · [Sim-to-Real & Simulators](sim.md) · [Datasets & Benchmarks](datasets.md) · [Hardware & Open-Source Robots](hardware.md)
 

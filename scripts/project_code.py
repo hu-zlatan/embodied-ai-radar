@@ -47,7 +47,7 @@ SITE_WORDS = re.compile(r"website|homepage|blog|project-?page|\.github\.io|templ
 SITE_TEXT = re.compile(r"template|website|theme|inspired by|borrowed|adapted from|based on", re.I)
 CODE_WORD = re.compile(r"\b(code|codes|github|source|repo|repository|implementation|software|open[- ]source)\b", re.I)
 SOON = re.compile(r"coming soon|to be released|will be (?:released|available|made)|\bsoon\b|\bTBD\b", re.I)
-UA = {"User-Agent": "Mozilla/5.0 (compatible; embodied-ai-radar; +https://hu-zlatan.github.io/embodied-ai-radar/)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; embodied-ai-radar; +https://embodied-ai-radar.com/)"}
 
 
 class Links(html.parser.HTMLParser):

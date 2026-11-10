@@ -4,7 +4,7 @@ _Legged locomotion, humanoid whole-body control and parkour._
 
 172 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml); edit the YAML, not this file.
 
-[Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/locomotion.html) · [中文](locomotion.zh-CN.md)
+[Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/locomotion.html) · [中文](locomotion.zh-CN.md)
 
 [VLA & Robot Foundation Models](vla.md) · [Manipulation & Dexterous Hands](manipulation.md) · [Tactile & Visuotactile Sensing](tactile.md) · **Locomotion & Humanoids** · [World Models](world-models.md) · [Navigation & Embodied Agents](navigation.md) · [Perception, SLAM & 3D Mapping](perception.md) · [Planning, Control & Safety](control.md) · [Robot Learning: RL & Imitation](learning.md) · [Sim-to-Real & Simulators](sim.md) · [Datasets & Benchmarks](datasets.md) · [Hardware & Open-Source Robots](hardware.md)
 

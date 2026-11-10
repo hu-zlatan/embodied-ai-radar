@@ -18,9 +18,7 @@ START, END = "<!-- radar:start -->", "<!-- radar:end -->"
 RSTART, REND = "<!-- resources:start -->", "<!-- resources:end -->"
 KIND_LABEL = {"list": ("Related lists", "相关列表"), "course": ("Courses & textbooks", "课程与教材"),
               "docs": ("Tool docs", "工具文档"), "community": ("Communities", "社区")}
-SITE = "https://hu-zlatan.github.io/embodied-ai-radar/"
-# Chinese READMEs/lists link the China mirror (same site on EdgeOne, faster from the mainland).
-SITE_ZH = "https://embodied-ai-radar.com/"
+SITE = "https://embodied-ai-radar.com/"
 README_TOP = 12  # entries per topic in the README
 
 
@@ -73,7 +71,7 @@ def render(lang: str) -> str:
         lines.append(f"### {name}")
         lines.append("")
         lines.append(f"_{t['desc_zh'] if zh else t['desc_en']}_ "
-                     f"[{'在网站上查看与最新论文' if zh else 'Browse with the latest papers'} →]({SITE_ZH if zh else SITE}topics/{t['id']}.html)")
+                     f"[{'在网站上查看与最新论文' if zh else 'Browse with the latest papers'} →]({SITE}topics/{t['id']}.html)")
         lines.append("")
         lines += [entry_line(e, lang) for e in top_entries(items)]
         if len(items) > README_TOP:
@@ -98,7 +96,7 @@ def render_list(t: dict, lang: str, topics: list[dict], entries: list[dict]) -> 
               if zh else
               f"{len(items)} entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/{t['id']}.yaml`](../data/curated/{t['id']}.yaml); edit the YAML, not this file."),
              "",
-             (f"[返回 README](../{readme}) · [在网站上查看]({SITE_ZH}topics/{t['id']}.html) · [English]({other})"
+             (f"[返回 README](../{readme}) · [在网站上查看]({SITE}topics/{t['id']}.html) · [English]({other})"
               if zh else
               f"[Back to the README](../{readme}) · [Browse on the website]({SITE}topics/{t['id']}.html) · [中文]({other})"),
              ""]

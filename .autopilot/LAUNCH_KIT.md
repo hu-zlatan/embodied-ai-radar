@@ -5,14 +5,14 @@ Ready-to-post texts. **The owner decides whether, where and when to post** — t
 Status: draft v1 (2026-10-19), V2EX text updated 2026-10-21 (BibTeX, entry pages, GitHub stars); 知乎/小红书 updated 2026-10-22 with the reading path (start.html). 2026-10-23: V2EX/Reddit mention per-conference pages; CoRL 2026 (Nov 9–12, Austin) is a natural moment to post. 2026-10-24: entry counts (300+; 480+ as of 2026-11-01), HF upvotes and robot-type pages added to V2EX/Reddit/HN. Best posted after the daily feed has a few days of data and the first weekly digest exists (next Monday).
 
 Links:
-- Site: https://hu-zlatan.github.io/embodied-ai-radar/ (中文: append `?lang=zh`)
+- Site: https://embodied-ai-radar.com/ (中文: append `?lang=zh`)
 - Repo: https://github.com/hu-zlatan/embodied-ai-radar
 
 ---
 
 ## CoRL 2026 专用（2026-11-08 更新为会议期间版本；11 月 9–12 日开会）
 
-链接：https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026-program.html （中文加 `?lang=zh`）
+链接：https://embodied-ai-radar.com/venues/corl-2026-program.html （中文加 `?lang=zh`）
 
 **中文（V2EX / 知乎 / 朋友圈通用）**
 
@@ -24,13 +24,13 @@ CoRL 2026 本周（11 月 9–12 日）在奥斯汀举行。官方列表只有�
 
 页面顶部新增“数说本届会议”：83% 的论文已上 arXiv；标题中 VLA 与视觉运动策略约占 15%，人形约 9.5%，世界模型约 5%；已找到代码的比例 Oral/Spotlight 为 41%，其余为 24%（只算能找到的链接）。点主题即可列出对应论文。
 
-另外新增开源代码追踪页（https://hu-zlatan.github.io/embodied-ai-radar/code.html）：精选索引的全部仓库，可按星标、本周新增、最后更新排序，并按许可证筛选，选模型时方便看能不能用。
+另外新增开源代码追踪页（https://embodied-ai-radar.com/code.html）：精选索引的全部仓库，可按星标、本周新增、最后更新排序，并按许可证筛选，选模型时方便看能不能用。
 
 说明：日程来自官方页面，arXiv 链接按标题匹配，临时变动以官网为准。项目由 AI 智能体在人工监督下维护，开源（MIT / CC BY 4.0），有错误欢迎提 issue。
 
 **English (r/robotics showcase thread / X)**
 
-CoRL 2026 is on this week (Nov 9–12, Austin). The official list is titles only, so I put all 687 accepted papers on one page by oral, spotlight and poster session, with poster numbers, filters by topic / title / has code (180+ papers with code so far), arXiv and code links where a title match exists, and one-line takeaways for 555 papers, including every oral and spotlight on arXiv. Press ☆ on papers to get your own schedule (stored only in your browser) with a share link and a calendar file. Handy for picking posters, or for catching up from home. The 32 workshops are there too. Schedule comes from the official page; arXiv links are matched by title, so check the official site for late changes. Maintained by an AI agent under human oversight; open source, corrections welcome: https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026-program.html
+CoRL 2026 is on this week (Nov 9–12, Austin). The official list is titles only, so I put all 687 accepted papers on one page by oral, spotlight and poster session, with poster numbers, filters by topic / title / has code (180+ papers with code so far), arXiv and code links where a title match exists, and one-line takeaways for 555 papers, including every oral and spotlight on arXiv. Press ☆ on papers to get your own schedule (stored only in your browser) with a share link and a calendar file. Handy for picking posters, or for catching up from home. The 32 workshops are there too. Schedule comes from the official page; arXiv links are matched by title, so check the official site for late changes. Maintained by an AI agent under human oversight; open source, corrections welcome: https://embodied-ai-radar.com/venues/corl-2026-program.html
 
 ---
 
@@ -43,13 +43,13 @@ CoRL 2026 is on this week (Nov 9–12, Austin). The official list is titles only
 最近在跟具身智能 / 机器人学习方向，发现现有的 awesome list 要么很久不更新，要么只是每日 arXiv 列表、没有筛选。于是做了个小网站：
 
 - 精选索引：VLA、操作与灵巧手、触觉、人形与足式、世界模型、导航、感知与 SLAM、规划控制与安全、强化学习与模仿学习、仿真与 sim-to-real、数据集、开源硬件 12 个主题、850 多条，每条都有中英文一句话要点，arXiv 编号和链接由 CI 自动核验
-- 每日 arXiv：GitHub Actions 每天抓 cs.RO 以及 CV/LG/AI/CL 里的机器人论文，按主题和机器人形态（机械臂/灵巧手/人形/四足/无人机…）自动标注，可筛选"有代码"，并从作者备注中识别已接收的会议，并按会议汇总成页面（如 CoRL 2026，170+ 篇，可按主题、有代码、Oral/Spotlight 筛选：https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026.html?lang=zh）
+- 每日 arXiv：GitHub Actions 每天抓 cs.RO 以及 CV/LG/AI/CL 里的机器人论文，按主题和机器人形态（机械臂/灵巧手/人形/四足/无人机…）自动标注，可筛选"有代码"，并从作者备注中识别已接收的会议，并按会议汇总成页面（如 CoRL 2026，170+ 篇，可按主题、有代码、Oral/Spotlight 筛选：https://embodied-ai-radar.com/venues/corl-2026.html?lang=zh）
 - 纯静态站，搜索即时（可直接用中文关键词搜英文论文，如“人形 强化学习”“触觉”），手机可用，支持 EN/中文 切换，有 Atom 订阅
-- 每篇论文一键复制 BibTeX；每个精选条目有独立可分享页面（如 LEAP Hand：https://hu-zlatan.github.io/embodied-ai-radar/e/arxiv-2309.06440.html ）；显示各开源代码的 GitHub 星标和 Hugging Face 每日论文点赞数；按机器人形态（人形、四足、灵巧手…）也有单独页面和订阅
+- 每篇论文一键复制 BibTeX；每个精选条目有独立可分享页面（如 LEAP Hand：https://embodied-ai-radar.com/e/arxiv-2309.06440.html ）；显示各开源代码的 GitHub 星标和 Hugging Face 每日论文点赞数；按机器人形态（人形、四足、灵巧手…）也有单独页面和订阅
 
 一个说明：这个仓库是由 AI 智能体（Claude）按计划自动维护的，我负责方向和监督，所有数据都要通过核验，不编造。欢迎提 issue 推荐论文或指出错误。
 
-网站：https://hu-zlatan.github.io/embodied-ai-radar/?lang=zh
+网站：https://embodied-ai-radar.com/?lang=zh
 GitHub：https://github.com/hu-zlatan/embodied-ai-radar
 
 ---
@@ -64,11 +64,11 @@ GitHub：https://github.com/hu-zlatan/embodied-ai-radar
 2. **每日 arXiv**：每天自动收录 cs.RO 及相关方向新论文并按主题标注，可以只看有代码的；
 3. **每周精选**：每周一自动生成双语周报。
 
-入门建议看网站上的「入门路线」页：10 个阶段、41 个精选条目，从 PPO/SAC、DAgger 等基础，到 Diffusion Policy / ACT、Open X-Embodiment / LeRobot、RT-2 → OpenVLA → π0、MuJoCo / Isaac Lab、足式与人形运动控制、世界模型，最后是 SO-101、GELLO、LEAP Hand 这类可以自己动手搭的硬件。每条都有中英文要点和代码链接：https://hu-zlatan.github.io/embodied-ai-radar/start.html?lang=zh
+入门建议看网站上的「入门路线」页：10 个阶段、41 个精选条目，从 PPO/SAC、DAgger 等基础，到 Diffusion Policy / ACT、Open X-Embodiment / LeRobot、RT-2 → OpenVLA → π0、MuJoCo / Isaac Lab、足式与人形运动控制、世界模型，最后是 SO-101、GELLO、LEAP Hand 这类可以自己动手搭的硬件。每条都有中英文要点和代码链接：https://embodied-ai-radar.com/start.html?lang=zh
 
 项目由 AI 智能体在人工监督下维护，代码 MIT、数据 CC BY 4.0，欢迎补充和纠错。
 
-https://hu-zlatan.github.io/embodied-ai-radar/?lang=zh
+https://embodied-ai-radar.com/?lang=zh
 
 ---
 
@@ -85,7 +85,7 @@ https://hu-zlatan.github.io/embodied-ai-radar/?lang=zh
 ✅ 新手「入门路线」：10 个阶段、41 篇必读，从强化学习基础到 VLA、人形机器人和可自己搭的硬件
 适合：机器人/具身智能方向的研究生、工程师、想入门的同学
 （项目由 AI 智能体维护、人工监督）
-🔗 hu-zlatan.github.io/embodied-ai-radar
+🔗 embodied-ai-radar.com
 #具身智能 #机器人 #人工智能 #论文阅读 #研究生 #VLA
 
 ---
@@ -99,12 +99,12 @@ Body:
 Embodied AI Radar is a free, open-source site that tries to fix two things that bug me about paper lists: they go stale, and daily arXiv dumps are unfiltered.
 
 - A curated index of 850+ entries across 12 topics (VLA & foundation models, manipulation, tactile, locomotion & humanoids, world models, navigation, perception & SLAM, planning/control & safety, RL & imitation learning, sim-to-real, datasets, open hardware). Each entry has a one-line takeaway; CI checks every arXiv ID against arXiv and every link weekly.
-- A daily feed of new cs.RO papers (plus robotics papers cross-listed from CV/LG/AI/CL), auto-tagged by topic and robot type (arm, hand, humanoid, legged, drone…), with venue badges parsed from author comments and a page per conference (e.g. CoRL 2026, 170+ papers, filterable by topic, code and Oral/Spotlight: https://hu-zlatan.github.io/embodied-ai-radar/venues/corl-2026.html), filterable by "has code", with Atom feeds per topic and per robot type, plus GitHub stars and Hugging Face upvotes as quick signals.
+- A daily feed of new cs.RO papers (plus robotics papers cross-listed from CV/LG/AI/CL), auto-tagged by topic and robot type (arm, hand, humanoid, legged, drone…), with venue badges parsed from author comments and a page per conference (e.g. CoRL 2026, 170+ papers, filterable by topic, code and Oral/Spotlight: https://embodied-ai-radar.com/venues/corl-2026.html), filterable by "has code", with Atom feeds per topic and per robot type, plus GitHub stars and Hugging Face upvotes as quick signals.
 - English and Chinese throughout.
 
 Transparency: the repo is maintained by an AI agent (Claude) on a schedule, with a human owner setting direction. Feedback and suggestions very welcome — especially what's missing.
 
-Site: https://hu-zlatan.github.io/embodied-ai-radar/ · Code (MIT): https://github.com/hu-zlatan/embodied-ai-radar
+Site: https://embodied-ai-radar.com/ · Code (MIT): https://github.com/hu-zlatan/embodied-ai-radar
 
 ---
 
@@ -120,7 +120,7 @@ An unusual part: the repository is maintained by an AI agent (Claude) that runs 
 
 Stack: YAML data, a few hundred lines of Python (PyYAML is the only dependency), vanilla JS search over one JSON index, no tracking.
 
-https://hu-zlatan.github.io/embodied-ai-radar/
+https://embodied-ai-radar.com/
 
 ---
 
@@ -130,4 +130,4 @@ https://hu-zlatan.github.io/embodied-ai-radar/
 • curated VLA, manipulation, tactile, humanoid, world-model, sim2real papers w/ one-line takeaways
 • every new arXiv robotics paper, daily, tagged by topic
 • verified links, open source, maintained by an AI agent
-https://hu-zlatan.github.io/embodied-ai-radar/
+https://embodied-ai-radar.com/

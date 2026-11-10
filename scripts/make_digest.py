@@ -52,7 +52,7 @@ def rising_section(entries: list[dict], end: dt.date) -> list[str]:
     for e in entries:
         k = repo_key(e.get("code"))
         if k:
-            owner[k] = (e["code"], e["title"], f"https://hu-zlatan.github.io/embodied-ai-radar/e/{e['id']}.html")
+            owner[k] = (e["code"], e["title"], f"https://embodied-ai-radar.com/e/{e['id']}.html")
     top = sorted(((g, k) for k, g in gains.items() if g > 0 and k in owner), reverse=True)[:RISING]
     if not top:
         return []
@@ -113,7 +113,7 @@ def catalog_section(older: list[dict], topics: list[dict]) -> list[str]:
         if tid:
             counts[tid] = counts.get(tid, 0) + 1
     corl = sum(1 for e in older if str(e.get("venue") or "").startswith("CoRL 2026"))
-    site = "https://hu-zlatan.github.io/embodied-ai-radar"
+    site = "https://embodied-ai-radar.com"
     L = ["", "## Also added to the index · 本周补充收录", "",
          f"_{len(older)} earlier papers got a reviewed takeaway this week"
          + (f", {corl} of them from the [CoRL 2026 program guide]({site}/venues/corl-2026-program.html)" if corl else "")
@@ -136,7 +136,7 @@ def picks_section(picks: list[dict], topics: list[dict]) -> list[str]:
     for e in top:
         link = f"https://arxiv.org/abs/{e['arxiv']}" if e.get("arxiv") else (e.get("url") or e.get("code"))
         L.append(f"- **[{clean_title(e['title'])}]({link})** — {e['takeaway_en']} / {e['takeaway_zh']}"
-                 f" · [details · 详情](https://hu-zlatan.github.io/embodied-ai-radar/e/{e['id']}.html)")
+                 f" · [details · 详情](https://embodied-ai-radar.com/e/{e['id']}.html)")
     if rest:
         L += ["", "### All other picks by topic · 其余精选（按主题）", ""]
         names = {t["id"]: f"{t['en']} · {t['zh']}" for t in topics}
@@ -148,7 +148,7 @@ def picks_section(picks: list[dict], topics: list[dict]) -> list[str]:
         for tid in order + ["other"]:
             if tid not in groups:
                 continue
-            items = " · ".join(f"[{clean_title(e['title']).split(':')[0].strip()}](https://hu-zlatan.github.io/embodied-ai-radar/e/{e['id']}.html)"
+            items = " · ".join(f"[{clean_title(e['title']).split(':')[0].strip()}](https://embodied-ai-radar.com/e/{e['id']}.html)"
                                for e in sorted(groups[tid], key=lambda e: str(e["title"]).lower()))
             L.append(f"- **{names.get(tid, 'Other · 其他')}**: {items}")
     return L
@@ -189,7 +189,7 @@ def main() -> int:
     if accepted:
         L += ["", "## Accepted at venues · 已被会议/期刊接收", "",
               "_From the authors' arXiv comments. 根据作者在 arXiv 上的备注。"
-              " [All papers per conference · 按会议汇总](https://hu-zlatan.github.io/embodied-ai-radar/venues/index.html)_", ""]
+              " [All papers per conference · 按会议汇总](https://embodied-ai-radar.com/venues/index.html)_", ""]
         for v, p in accepted:
             extra = "".join(f" · [{k}]({p[k][0]})" for k in ("code", "project") if p.get(k))
             L.append(f"- **{v}** · [{clean_title(p['title'])}](https://arxiv.org/abs/{p['id']}){extra}")
@@ -205,7 +205,7 @@ def main() -> int:
               "_Keyword-matched on title and abstract; a paper can count for several types. 按标题与摘要关键词匹配，一篇论文可计入多个类型。_", ""]
         for m in embs:
             n = sum(1 for p in feed if m["id"] in classify(p.get("abstract", ""), embs, title=p.get("title", ""), threshold=1))
-            L.append(f"- [{m['en']} · {m['zh']}](https://hu-zlatan.github.io/embodied-ai-radar/robots/{m['id']}.html): **{n}**")
+            L.append(f"- [{m['en']} · {m['zh']}](https://embodied-ai-radar.com/robots/{m['id']}.html): **{n}**")
     L += ["", "## New papers with code · 本周附代码的新论文", ""]
     for t in topics:
         ps = [p for p in feed if t["id"] in p.get("topics", []) and p.get("code")][:PER_TOPIC]
@@ -218,10 +218,10 @@ def main() -> int:
         L.append("")
     L += ["---", "",
           "Auto-tagged by keyword rules; picks are reviewed by the maintainer agent. "
-          "[Website](https://hu-zlatan.github.io/embodied-ai-radar/) · [GitHub](https://github.com/hu-zlatan/embodied-ai-radar)"
-          " · New to the field? [Reading path](https://hu-zlatan.github.io/embodied-ai-radar/start.html)",
+          "[Website](https://embodied-ai-radar.com/) · [GitHub](https://github.com/hu-zlatan/embodied-ai-radar)"
+          " · New to the field? [Reading path](https://embodied-ai-radar.com/start.html)",
           "",
-          "主题为关键词规则自动标注；精选由维护智能体审阅。刚入门？看[入门路线](https://hu-zlatan.github.io/embodied-ai-radar/start.html?lang=zh)。"]
+          "主题为关键词规则自动标注；精选由维护智能体审阅。刚入门？看[入门路线](https://embodied-ai-radar.com/start.html?lang=zh)。"]
     out.parent.mkdir(exist_ok=True)
     out.write_text("\n".join(L) + "\n", encoding="utf-8")
     print(f"wrote {out.relative_to(ROOT)} ({len(feed)} papers, {len(picks)} picks)")

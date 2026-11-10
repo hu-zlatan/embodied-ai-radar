@@ -83,6 +83,10 @@ Display: gold ★ badge after the meta line (site cards, search results; the gra
 
 Softer palette (cooler light background, less saturated blue) and one meaning per colour: blue = navigation and links, green = actions (the picks download button) and code, gold = editor ratings and the star banner, gray = GitHub counts, orange = Hugging Face, purple = venues. Each topic has its own hue (`.t-<topic>` sets `--tc`), used as a top stripe on topic tiles and as the colour of topic chips (site cards and search results), so a category is recognisable at a glance. The three trending boxes get their kind's colour as a top stripe and a small icon (▲ HF, ↗ rising, ★ most-starred). Tokens live at the top of style.css.
 
+## 2026-11-10 — embodied-ai-radar.com becomes the canonical address
+
+Owner asked which address should be official; the agent recommended the owner domain and the owner approved. Why: the site is not indexed yet (switching costs nothing now); a project site on github.io keeps robots.txt/sitemap off the host root, while the .com has them at the root; a Domain property in Search Console verifies with one DNS TXT record; the address survives a username/repo/host change; EdgeOne serves it in China and abroad. Costs: yearly renewal (owner to turn on auto-renew), dependence on EdgeOne (GitHub Pages keeps a full backup copy, switching back = change SITE_URL), and the agent cannot fetch the .com through its proxy (link checks run on the identical GitHub Pages build). Supersedes the 'canonical stays on GitHub Pages' entry below.
+
 ## 2026-11-10 — China mirror at embodied-ai-radar.com, canonical stays on GitHub Pages
 
 The owner's domain serves the EdgeOne mirror (area 'Global excluding mainland', so no ICP filing). Canonical links, sitemap, Atom feeds and OG URLs keep pointing to hu-zlatan.github.io so search ranking is not split between two hosts; the Chinese README and zh lists link the mirror for every site link (owner's call 2026-11-10; the footer line was dropped at the owner's request), the English README stays on GitHub Pages. Revisit (make the domain canonical) only if the owner wants the .com as the main address.

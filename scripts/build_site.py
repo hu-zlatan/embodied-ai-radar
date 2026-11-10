@@ -30,7 +30,10 @@ OUT = ROOT / "_site"
 SRC = ROOT / "site_src"
 INDEXNOW_KEY = "a585a6743cfcfea081943fb8fcf4bd9e"  # public by design: it must be readable on the site
 DIGEST = ROOT / "digest"
-SITE_URL = "https://hu-zlatan.github.io/embodied-ai-radar/"
+# Canonical address (owner domain, served by EdgeOne). GitHub Pages keeps a
+# copy at GH_PAGES_URL whose pages declare SITE_URL as canonical.
+SITE_URL = "https://embodied-ai-radar.com/"
+GH_PAGES_URL = "https://hu-zlatan.github.io/embodied-ai-radar/"
 REPO_URL = "https://github.com/hu-zlatan/embodied-ai-radar"
 OWN_REPO = "hu-zlatan/embodied-ai-radar"  # key in data/repo_stats.json for the header star button
 # Star icon (star-fill-16) from Primer Octicons (MIT), shown next to "Star" in the header button

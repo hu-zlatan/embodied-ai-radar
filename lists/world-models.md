@@ -4,7 +4,7 @@ _Learned dynamics, video world models, world action models (WAM) and model-based
 
 129 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/world-models.yaml`](../data/curated/world-models.yaml); edit the YAML, not this file.
 
-[Back to the README](../README.md) · [Browse on the website](https://hu-zlatan.github.io/embodied-ai-radar/topics/world-models.html) · [中文](world-models.zh-CN.md)
+[Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/world-models.html) · [中文](world-models.zh-CN.md)
 
 [VLA & Robot Foundation Models](vla.md) · [Manipulation & Dexterous Hands](manipulation.md) · [Tactile & Visuotactile Sensing](tactile.md) · [Locomotion & Humanoids](locomotion.md) · **World Models** · [Navigation & Embodied Agents](navigation.md) · [Perception, SLAM & 3D Mapping](perception.md) · [Planning, Control & Safety](control.md) · [Robot Learning: RL & Imitation](learning.md) · [Sim-to-Real & Simulators](sim.md) · [Datasets & Benchmarks](datasets.md) · [Hardware & Open-Source Robots](hardware.md)
 
