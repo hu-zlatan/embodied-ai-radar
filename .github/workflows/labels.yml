@@ -1,0 +1,20 @@
+name: Repo labels
+# Creates or updates the issue labels the issue forms use. Idempotent; run by hand or when this file changes.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/labels.yml]
+permissions:
+  issues: write
+jobs:
+  labels:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh label create suggestion --color 0E8A16 --description "Suggest an entry / 推荐条目" --force
+          gh label list
