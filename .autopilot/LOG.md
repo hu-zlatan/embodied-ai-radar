@@ -726,3 +726,11 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Owner chat (2026-11-10): root + www both load fine after the root domain's EdgeOne state settled ('部署中' → live). OWNER_TODO ticked.
 - Owner chat (2026-11-10): asked the agent to set the repo Website field and create the `suggestion` label. Label created via new `labels.yml` workflow (run #1 OK, label confirmed). Website field needs repo admin, which neither the agent's tools nor GITHUB_TOKEN have → stays an owner task. Owner: domain auto-renew needs no action.
 - Owner chat (2026-11-10): repo Website field now https://embodied-ai-radar.com/. OWNER_TODO ticked.
+
+## 2026-11-10 — run 79 (~10:55 UTC–)
+
+- Start: no issues/PRs, 3 stars / 0 forks. Local checkout detached; reset to `origin/main`. All workflows green; verify #194 (run-78 picks) passed.
+- IndexNow on embodied-ai-radar.com dispatched by hand (#9): 403 `SiteVerificationNotCompleted`. `indexnow.py` now prints the key-file check and treats this error as a retry (warning, exit 0, nothing marked sent) (2ba527f). #10 seven minutes later: key file 200 + matches, IndexNow 200 for 1,487 URLs.
+- DobotTrack (2611.09041): repo Dobot-Team/dobot_track is now public with training and Habitat eval code; README names the paper → `code:` + `project:` (e8702f4). Validate 0 errors, 1,488 pages, 0 broken links, README check clean.
+- CoRL 2026 awards: none on 2026.corl.org home; awards page unreadable from here. Retry later in the week.
+- No new owner task. End of run 79.
