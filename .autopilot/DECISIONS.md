@@ -85,4 +85,4 @@ Softer palette (cooler light background, less saturated blue) and one meaning pe
 
 ## 2026-11-10 — China mirror at embodied-ai-radar.com, canonical stays on GitHub Pages
 
-The owner's domain serves the EdgeOne mirror (area 'Global excluding mainland', so no ICP filing). Canonical links, sitemap, Atom feeds and OG URLs keep pointing to hu-zlatan.github.io so search ranking is not split between two hosts; the mirror is linked from the READMEs and a footer line on every page. Revisit (make the domain canonical) only if the owner wants the .com as the main address.
+The owner's domain serves the EdgeOne mirror (area 'Global excluding mainland', so no ICP filing). Canonical links, sitemap, Atom feeds and OG URLs keep pointing to hu-zlatan.github.io so search ranking is not split between two hosts; the Chinese README and zh lists link the mirror for every site link (owner's call 2026-11-10; the footer line was dropped at the owner's request), the English README stays on GitHub Pages. Revisit (make the domain canonical) only if the owner wants the .com as the main address.

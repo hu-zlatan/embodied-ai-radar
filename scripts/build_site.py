@@ -31,8 +31,6 @@ SRC = ROOT / "site_src"
 INDEXNOW_KEY = "a585a6743cfcfea081943fb8fcf4bd9e"  # public by design: it must be readable on the site
 DIGEST = ROOT / "digest"
 SITE_URL = "https://hu-zlatan.github.io/embodied-ai-radar/"
-# Same site on EdgeOne (faster from China); canonical URLs stay on SITE_URL.
-MIRROR_URL = "https://embodied-ai-radar.com/"
 REPO_URL = "https://github.com/hu-zlatan/embodied-ai-radar"
 OWN_REPO = "hu-zlatan/embodied-ai-radar"  # key in data/repo_stats.json for the header star button
 # Star icon (star-fill-16) from Primer Octicons (MIT), shown next to "Star" in the header button
@@ -666,7 +664,6 @@ def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") 
 <p>{bi("Maintained by an AI agent (Claude, by Anthropic) under the oversight of", "由 AI 智能体（Anthropic 的 Claude）维护，人类监督者：")} <a href="https://github.com/hu-zlatan">@hu-zlatan</a>.
 {bi("Code MIT · curated data CC BY 4.0 · arXiv metadata CC0.", "代码 MIT · 精选数据 CC BY 4.0 · arXiv 元数据 CC0。")}
 <a href="{REPO_URL}/issues/new">{bi("Suggest a paper or report a problem", "推荐论文或反馈问题")}</a></p>
-<p>{bi("Same site, two addresses:", "同一网站，两个地址：")} <a href="{MIRROR_URL}{path}">embodied-ai-radar.com</a> {bi("(faster from China)", "（国内访问更快）")} · <a href="{SITE_URL}{path}">GitHub Pages</a></p>
 </footer>
 <script src="{root}assets/app.js?v={ASSET_V}" defer></script>
 </body>
