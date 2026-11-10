@@ -854,6 +854,140 @@
    "fetched": "2026-11-10"
   },
   {
+   "id": "2611.10169",
+   "title": "Capturability-Aware Footstep Planning in Cluttered Environments: A Recursively Feasible Sequential MPC on Axis-Aligned Safe Corridors",
+   "published": "2026-11-10",
+   "topics": [
+    "locomotion",
+    "control"
+   ],
+   "venue": "Humanoids 2026",
+   "code": [],
+   "project": [],
+   "comment": "Accepted for publication in 2026 IEEE-RAS 25th International Conference on Humanoid Robots (Humanoids)",
+   "authors": [
+    "Athanasios Kyriakopoulos",
+    "Shubham S. Kumbhar",
+    "Kunal S. Narkhede",
+    "Abhijeet M. Kulkarni",
+    "Ioannis Poulakakis"
+   ],
+   "abstract": "A fundamental aspect of humanoid footstep planning is to jointly guarantee obstacle avoidance and locomotion stability. This paper presents a capturability-aware sequential Model Predictive Control (MPC) framework for Linear Inverted Pendulum (LIP)-based humanoid footstep planning in the presence of obstacles. The proposed method combines obstacle avoidance with capturability constraints through safe corridors constructed as sequences of intersecting rectangles, yielding a sequential MPC framework with recursive feasibility guarantees for the LIP-based planning layer. The planner autonomously adapts to constrained scenarios, switching to in-place walking when obstructions---such as doors assumed to be open during planning but unexpectedly found to be closed during execution---block forward motion. Performance is largely independent of the prediction horizon, allowing high success rates while keeping the computational cost low. The approach is validated in high-fidelity simulations with the humanoid robot Digit, demonstrating a practical solution for capturable humanoid footstep planning in cluttered environments.",
+   "fetched": "2026-11-10"
+  },
+  {
+   "id": "2611.10148",
+   "title": "BATCH: Behavior Alignment for Cross-Embodiment Learning from Humans",
+   "published": "2026-11-10",
+   "topics": [
+    "vla"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://batch-embodiment.github.io/"
+   ],
+   "comment": "Project website: https://batch-embodiment.github.io/",
+   "authors": [
+    "Zeyi Liu",
+    "Shuran Song"
+   ],
+   "abstract": "Human demonstrations provide a scalable source of diverse manipulation data, but leveraging them for robot learning remains challenging due to differences in embodiment, viewpoint, action spaces, and temporal structure. We introduce BATCH, a cross-embodiment learning framework that explicitly aligns human and robot behaviors. BATCH learns self-supervised temporal representations with a cycle-consistency objective to establish cross-embodiment correspondences without manual annotation. We further introduce two complementary training objectives that leverage these correspondences within an autoregressive videoaction diffusion model: behavior-aligned co-training and human-to-robot style transfer. On real-world manipulation tasks, BATCH improves generalization to unseen task configurations compared with training on unaligned data and prior cross-embodiment baselines, with additional gains from the style-transfer objective. Our results demonstrate that explicit behavior alignment enables more effective transfer from human demonstrations to robot policies.",
+   "fetched": "2026-11-10"
+  },
+  {
+   "id": "2611.10061",
+   "title": "UniLatent: Cross-Embodiment Transfer via Latent Observation Alignment",
+   "published": "2026-11-10",
+   "topics": [
+    "vla"
+   ],
+   "venue": "CoRL 2026",
+   "code": [],
+   "project": [
+    "https://selina2023.github.io/unilatent/"
+   ],
+   "comment": "Accepted to CoRL 2026",
+   "authors": [
+    "Yufei Ding",
+    "Yi Du",
+    "Weiduo Yuan",
+    "Hao Jiang",
+    "Dylan Goetting",
+    "Lawrence Yunliang Chen",
+    "Daniel Seita",
+    "Yue Wang"
+   ],
+   "abstract": "Robot datasets are costly to collect and are usually tied to a specific embodiment, making it difficult to reuse demonstrations across robots with different geometry, appearance, and kinematics. We introduce UniLatent, a cross-embodiment transfer framework that reduces the embodiment-induced observation gap in a shared latent space. UniLatent renders paired source-target robot observations in simulation and aligns a source visual encoder to a frozen target encoder. A policy trained on encoded source demonstrations can then run directly on target observations, with no pixel-level image translation. Across three simulation tasks and two target robot arms, UniLatent reaches up to 93% zero-shot success, exceeding the strongest pixel-translation baseline by over 30 points on average. In real-world xArm-to-Franka transfer, fine-tuning with only 10 target demonstrations per task yields 27/30 successful rollouts. Code, videos and data are available at https://selina2023.github.io/unilatent/.",
+   "fetched": "2026-11-10"
+  },
+  {
+   "id": "2611.09959",
+   "title": "A four-view smartphone video dataset of a robot-held flexible strip, with camera poses and a 3D LaGSplat baseline",
+   "published": "2026-11-10",
+   "topics": [
+    "datasets"
+   ],
+   "venue": null,
+   "code": [
+    "https://github.com/LouenPottier/lagsplat-mpov"
+   ],
+   "project": [
+    "https://louenpottier.github.io/xrdays.html"
+   ],
+   "comment": "2 pages, 1 figure, 1 table. Dataset and checkpoints: doi:10.5281/zenodo.23601189. Training code: https://github.com/LouenPottier/lagsplat-mpov. Interactive demo: https://louenpottier.github.io/xrdays.",
+   "authors": [
+    "Louen Pottier"
+   ],
+   "abstract": "This note describes a multi-view video dataset of a deformable object driven by a measured input, with the measured pose of every camera, and a first 3D result obtained on it with LaGSplat. LaGSplat learns from video a low-dimensional latent state that is both the generalized coordinate of a learned dissipative Lagrangian and the conditioning variable of a Gaussian Splatting decoder; fitting the decoder in 3D calls for synchronized multi-view footage, which the original paper only had from synthetic renderings. Here a robot arm moves a flexible strip by oscillating along a one-dimensional path, and four iPhones, three fixed and one handheld, film it for ten minutes. The videos are synchronized, the cameras are posed from the scene, and the position of the gripper is given per frame as the input of the system. LaGSplat fitted on this data with the gripper acceleration as a forcing term renders held-out views at 26 to 33 dB PSNR and runs as a real-time interactive demo in a web browser. Dataset, checkpoints and training code are public.",
+   "fetched": "2026-11-10"
+  },
+  {
+   "id": "2611.09913",
+   "title": "Engagement Estimation in Human-Robot and Human-Human Interactions across Domain, Age and Culture: MultiMediate'26 Challenge",
+   "published": "2026-11-10",
+   "topics": [],
+   "venue": null,
+   "code": [
+    "https://github.com/hcmlab/MultiMediate_26"
+   ],
+   "project": [],
+   "comment": "6 pages, 1 figure, ACM MultiMedia 2026 Grand Challenge Baseline Paper",
+   "authors": [
+    "Marius Funk",
+    "Daksitha Withanage Don",
+    "Michal Balazia",
+    "Victor Oei",
+    "Shogo Okada",
+    "François Brémond",
+    "Andreas Bulling",
+    "Elisabeth André",
+    "Philipp Müller"
+   ],
+   "abstract": "Understanding engagement in human interaction is essential for modelling assistive and context-aware AI systems. Previously, the MultiMediate challenge has focused on estimating momentary continuous engagement values in adult conversation across cultures, achieving high levels of generalisability across domains. However, engagement can be measured in different metrics and manifest differently between children and adults. MultiMediate'26 therefore expands the evaluated domain set to include the PInSoRo dataset of Child-Child and Child-Robot play sessions in English. These sessions were annotated categorically with task and social engagement, diversifying engagement types, age ranges and interaction types. In this paper, we describe the MultiMediate'26 challenge and its goals, introduce the NoXi, NoXi-J, MPIIGI, and PInSoRo datasets, showcase extracted multi-modal features, present our baseline model for engagement estimation across all domains, and discuss challenge submissions and approaches. In an effort to provide a transparent and welcoming challenge environment, baseline code, leaderboard, datasets, and extracted features are publicly available at https://github.com/hcmlab/MultiMediate_26.",
+   "fetched": "2026-11-10"
+  },
+  {
+   "id": "2611.09906",
+   "title": "How to start a conversation proactively?",
+   "published": "2026-11-10",
+   "topics": [],
+   "venue": null,
+   "code": [
+    "https://github.com/mohit-nathani1/conversation-opener-dataset"
+   ],
+   "project": [],
+   "comment": "The article is accepted in IEEE RO-MAN 2026. The dataset is available at https://github.com/mohit-nathani1/conversation-opener-dataset",
+   "authors": [
+    "Mohit Nathani",
+    "Aaditya Gupta",
+    "Eshwar Dhande",
+    "Chayan Sarkar"
+   ],
+   "abstract": "Proactively initiating a conversation is a fundamental social competence and a critical capability for social robots. However, determining how and when to start a conversation in a given situation remains an open challenge, primarily due to the lack of a principled definition of conversational context. While recent large language models (LLMs) demonstrate impressive conversational fluency, they are predominantly turn-reactive and often produce generic or monotonous openers when tasked with initiating interaction, even when contextual information is available. Such limitations are particularly problematic for embodied social robots, where inappropriate or poorly timed initiations can negatively affect user engagement and rapport. In this work, we propose a schema of contextual variables that jointly characterize situations relevant for proactive conversation initiation. The schema is designed to structure perceptual, situational, and interactional cues such that they can be effectively exploited by language models. Furthermore, motivated by the absence of suitable training data, we introduce a curated dataset of contextually-aligned conversation openers (CCO) covering diverse everyday scenarios. Using this dataset, we fine-tune small language models (SLMs) to generate proactive conversation initiations. Through a comparative evaluation involving zero-shot LLMs, off-the-shelf SLMs, and our fine-tuned models, we demonstrate that explicit contextual structuring and targeted data curation substantially improve the quality and contextual appropriateness of conversation openers. Our results highlight the importance of context modeling for proactive social interaction and provide actionable building blocks for conversational robots.",
+   "fetched": "2026-11-10"
+  },
+  {
    "id": "2611.09777",
    "title": "Autonomous Whole-body Loco-manipulation Using a Snake Robot",
    "published": "2026-11-09",

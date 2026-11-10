@@ -3476,6 +3476,490 @@
     "learning"
    ],
    "enriched": true
+  },
+  {
+   "id": "2611.10316",
+   "title": "The World Model Planning Accelerator (WMPA): Hardware-Algorithm Co-Design for Embedded AI in Robotics",
+   "authors": [
+    "Prerana Ramkumar",
+    "Suhas Suresh Bharadwaj",
+    "Fazal Hameed"
+   ],
+   "abstract": "Embedded AI is moving from perception to prediction. Robots now use world models$\\unicode{x2014}$learned simulators that predict the outcome of candidate actions in a compressed latent space before any is executed. Every predicted step must be computed on board within a tight power and thermal budget, yet the energy these steps fundamentally require, and how far real hardware sits from it, have not been characterized. We derive lower bounds on the arithmetic operations and the CMOS dynamic energy of a latent state transition from information theory and Boolean circuit complexity. Profiling a …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.AR",
+    "cs.LG",
+    "cs.RO"
+   ],
+   "topics": [
+    "world-models"
+   ],
+   "comment": "7 pages, 4 figures",
+   "enriched": true
+  },
+  {
+   "id": "2611.10298",
+   "title": "Mobility Information Capacity of Multi-Robot Systems: Safety-Aware Maneuver Design",
+   "authors": [
+    "Weijie Yuan"
+   ],
+   "abstract": "Multiple robots operating in shared workspaces must adjust their speed, direction, and trajectories to coordinate with one another and respond to changing tasks and disturbances. The available maneuver freedom depends on the dynamics, uncertainty, and safety margins, even for a fixed fleet size and workspace. However, robot count, workspace occupancy, and task throughput do not quantify how much the fleet can vary its motion or how reliably these variations can be observed. We develop a mobility information capacity (MIC) framework that jointly characterizes these two aspects. Mobility …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.IT",
+    "cs.SY",
+    "eess.SY",
+    "math.IT"
+   ],
+   "topics": [],
+   "comment": "12-page main article and 4-page supplementary material",
+   "enriched": true
+  },
+  {
+   "id": "2611.10280",
+   "title": "Who Taught the Robot That? Removing One User's Corrections from a Robot Policy That Learns Online",
+   "authors": [
+    "Eshika Pathak",
+    "Leela Krishna"
+   ],
+   "abstract": "A robot that keeps learning after deployment is corrected by several people in turn, and one of them may later ask to be removed. We show that whether the robot can forget that person depends on how people correct it. The goal of removal is the robot that would exist if the person had never been there, which we compute exactly in two simulated tasks with scripted users. When users correct the robot by taking over control, an ordered log of training updates is enough: retraining on the remaining sessions in their original order gives a robot as close to the goal as training noise allows. …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.HC"
+   ],
+   "topics": [
+    "learning"
+   ],
+   "comment": "Accepted at the HumanRLI Workshop at CoRL 2026",
+   "enriched": true
+  },
+  {
+   "id": "2611.10264",
+   "title": "Look Only Where You Plan for Real-Time End-to-End Urban Driving",
+   "authors": [
+    "Haohua Que",
+    "Tianle Zhu",
+    "Qianyi Wu",
+    "Zhipeng Bao",
+    "Handong Yao"
+   ],
+   "abstract": "Dense bird's-eye-view (BEV) construction accounts for 60% of the parameters in a strong recent driving planner. This paper presents LOWP, a planner that looks only where it plans: two sets of sixteen learnable queries read the cameras through the known calibration, one by sampling image features at projected 3D anchors and one by attending to features labeled with their viewing rays, so no dense BEV is built and no object or map is supervised. Evaluations on open-loop nuScenes, pseudo-simulated NAVSIM and closed-loop Bench2Drive show competitive planning with a compact representation. On …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [],
+   "comment": "10 pages",
+   "enriched": true
+  },
+  {
+   "id": "2611.10241",
+   "title": "OfficeTwin: Realizing 3D Reconstruction of Redundant Scenes through Partial Viewpoint Perception",
+   "authors": [
+    "Quanyun Wu",
+    "Kyle Gao",
+    "Daisy Li",
+    "Kshitij Goyal",
+    "Dayou Mao",
+    "David A. Clausi",
+    "Jonathan Li",
+    "Yuhao Chen"
+   ],
+   "abstract": "Feed-forward 3D reconstruction turns an uncalibrated monocular stream into a dense point cloud in a single inference pass, orders of magnitude faster than classical structure-from-motion (e.g., COLMAP), and reliable on the weakly textured, repetitive surfaces where keypoint matching fails outright. However, raw point clouds lack the object identity, physical properties, and watertight volume required for robot learning. This gap widens under robot-native capture. A camera mounted on a robot constrained to a few degrees of freedom sees each object only partially, and the repetitive, weakly …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "topics": [
+    "perception"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.10239",
+   "title": "DASH-SLAM: Calibration-Free Metric Monocular SLAM via Depth Scale Propagation",
+   "authors": [
+    "Otavio Ribas",
+    "Jacopo Panerati",
+    "Pierre-Yves Lajoie"
+   ],
+   "abstract": "Geometric foundation models estimate dense geometry and camera parameters from monocular images, but reliable SLAM also requires consistent scale and accurate data association across successive reconstructions. We present DASH-SLAM, a monocular SLAM system that integrates metric depth predictions from pretrained Depth Anything 3 into a shared-keyframe pose graph without task-specific fine-tuning. DASH-SLAM derives scale corrections from depth ratios at shared anchor images and accumulates them across reconstructions, with a damping factor controlling their influence. These corrections rescale …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [
+    "perception"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.10235",
+   "title": "Agibot: An Open-Source Modular Swerve-Drive Robot Platform for Agricultural Robotics Research and Education",
+   "authors": [
+    "Moeen Ul Islam",
+    "Bishal Adhikari",
+    "Kori Edwards",
+    "Lorien Harvey",
+    "J. Alex Thomasson",
+    "Dong Chen"
+   ],
+   "abstract": "Agricultural production faces persistent labor shortages and increasing demand for automation, yet progress in agricultural robotics remains constrained by the limited availability of affordable, flexible, and accessible research platforms. This paper presents Agibot, an open-source, modular, low-cost agricultural robotics platform designed for autonomy research and experimentation, with potential applications in hands-on robotics education. The platform integrates four-wheel independent swerve drive, swappable computing, distributed embedded control, multimodal sensing, and configurable …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.LG",
+    "cs.SY",
+    "eess.SY"
+   ],
+   "topics": [],
+   "comment": "14 pages. Submitted to IEEE Transactions on AgriFood Electronics (TAFE)",
+   "enriched": true
+  },
+  {
+   "id": "2611.10169",
+   "title": "Capturability-Aware Footstep Planning in Cluttered Environments: A Recursively Feasible Sequential MPC on Axis-Aligned Safe Corridors",
+   "authors": [
+    "Athanasios Kyriakopoulos",
+    "Shubham S. Kumbhar",
+    "Kunal S. Narkhede",
+    "Abhijeet M. Kulkarni",
+    "Ioannis Poulakakis"
+   ],
+   "abstract": "A fundamental aspect of humanoid footstep planning is to jointly guarantee obstacle avoidance and locomotion stability. This paper presents a capturability-aware sequential Model Predictive Control (MPC) framework for Linear Inverted Pendulum (LIP)-based humanoid footstep planning in the presence of obstacles. The proposed method combines obstacle avoidance with capturability constraints through safe corridors constructed as sequences of intersecting rectangles, yielding a sequential MPC framework with recursive feasibility guarantees for the LIP-based planning layer. The planner autonomously …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [
+    "locomotion",
+    "control"
+   ],
+   "comment": "Accepted for publication in 2026 IEEE-RAS 25th International Conference on Humanoid Robots (Humanoids)",
+   "enriched": true
+  },
+  {
+   "id": "2611.10148",
+   "title": "BATCH: Behavior Alignment for Cross-Embodiment Learning from Humans",
+   "authors": [
+    "Zeyi Liu",
+    "Shuran Song"
+   ],
+   "abstract": "Human demonstrations provide a scalable source of diverse manipulation data, but leveraging them for robot learning remains challenging due to differences in embodiment, viewpoint, action spaces, and temporal structure. We introduce BATCH, a cross-embodiment learning framework that explicitly aligns human and robot behaviors. BATCH learns self-supervised temporal representations with a cycle-consistency objective to establish cross-embodiment correspondences without manual annotation. We further introduce two complementary training objectives that leverage these correspondences within an …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI",
+    "cs.CV"
+   ],
+   "topics": [
+    "vla"
+   ],
+   "comment": "Project website: https://batch-embodiment.github.io/",
+   "project": [
+    "https://batch-embodiment.github.io/"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.10137",
+   "title": "A Unified Inertial Encoder for Human and Humanoid Motion",
+   "authors": [
+    "Yutian Chen",
+    "Shibo Zhao",
+    "Rocky Duan",
+    "Karen Liu",
+    "Carmelo Sferrazza",
+    "Guanya Shi",
+    "Yuheng Qiu",
+    "Koushil Sreenath"
+   ],
+   "abstract": "Learning humanoid state estimation and language-grounded motion understanding from robot recordings ties training coverage to the robot's motion repertoire. Human motion datasets offer broader coverage, yet transferring this knowledge requires overcoming differences in body geometry, sensing, and physical disturbances. To enable this transfer, we propose a unified inertial encoder whose shared inertial interface uses kinematic IMU synthesis to represent human and humanoid motion at corresponding body sites. Within this common input space, joint training on human and kinematically retargeted …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [
+    "locomotion"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.10107",
+   "title": "Beyond Semantic Classes: Online Physical Parameter Estimation via Embedding-Conditioned Gaussian Mixtures",
+   "authors": [
+    "Alexander Borca-Tasciuc",
+    "Prayag Sharma",
+    "Franck Djeumou"
+   ],
+   "abstract": "Enabling robots to infer interaction-relevant physical properties from vision before contact would improve planning and control in unstructured environments. Vision provides useful pre-contact information, but appearance alone is often ambiguous: visually similar regions can induce different friction, stiffness, or sinkage responses upon contact. Existing approaches often collapse this ambiguity to a point estimate or aggregate experience through fixed semantic classes, limiting their ability to preserve distinct physical regimes. Instead, we propose a real-time estimator that replaces …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "topics": [],
+   "enriched": true
+  },
+  {
+   "id": "2611.10061",
+   "title": "UniLatent: Cross-Embodiment Transfer via Latent Observation Alignment",
+   "authors": [
+    "Yufei Ding",
+    "Yi Du",
+    "Weiduo Yuan",
+    "Hao Jiang",
+    "Dylan Goetting",
+    "Lawrence Yunliang Chen",
+    "Daniel Seita",
+    "Yue Wang"
+   ],
+   "abstract": "Robot datasets are costly to collect and are usually tied to a specific embodiment, making it difficult to reuse demonstrations across robots with different geometry, appearance, and kinematics. We introduce UniLatent, a cross-embodiment transfer framework that reduces the embodiment-induced observation gap in a shared latent space. UniLatent renders paired source-target robot observations in simulation and aligns a source visual encoder to a frozen target encoder. A policy trained on encoded source demonstrations can then run directly on target observations, with no pixel-level image …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "project": [
+    "https://selina2023.github.io/unilatent/"
+   ],
+   "topics": [
+    "vla"
+   ],
+   "comment": "Accepted to CoRL 2026",
+   "enriched": true
+  },
+  {
+   "id": "2611.09964",
+   "title": "How Many Demonstrations Does a VLA Need? On the Sample Efficiency of VLA Finetuning",
+   "authors": [
+    "Rahul Chand",
+    "Miguel Villa Floran"
+   ],
+   "abstract": "Pretrained vision language action (VLA) models show strong zero-shot performance, but are rarely deployed directly and are often first post-trained on demonstrations from the target setting. Yet VLAs are typically compared by zero-shot or full-data fine-tuned success, revealing little about the data and compute required for adaptation. We study adaptation efficiency for six VLAs ($\\pi_{0}$, $\\pi_{0.5}$, and GR00T N1-N1.7) on four LIBERO suites, varying both demonstrations and training steps. This reveals differences hidden by full-data fine-tuning: models within two points on the full …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.CV",
+    "cs.RO"
+   ],
+   "topics": [
+    "vla"
+   ],
+   "comment": "16 pages, 10 figures, CoRL Workshop",
+   "enriched": true
+  },
+  {
+   "id": "2611.09959",
+   "title": "A four-view smartphone video dataset of a robot-held flexible strip, with camera poses and a 3D LaGSplat baseline",
+   "authors": [
+    "Louen Pottier"
+   ],
+   "abstract": "This note describes a multi-view video dataset of a deformable object driven by a measured input, with the measured pose of every camera, and a first 3D result obtained on it with LaGSplat. LaGSplat learns from video a low-dimensional latent state that is both the generalized coordinate of a learned dissipative Lagrangian and the conditioning variable of a Gaussian Splatting decoder; fitting the decoder in 3D calls for synchronized multi-view footage, which the original paper only had from synthetic renderings. Here a robot arm moves a flexible strip by oscillating along a one-dimensional …",
+   "published": "2026-11-10",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV",
+    "cs.LG"
+   ],
+   "topics": [
+    "datasets"
+   ],
+   "comment": "2 pages, 1 figure, 1 table. Dataset and checkpoints: doi:10.5281/zenodo.23601189. Training code: https://github.com/LouenPottier/lagsplat-mpov. Interactive demo: https://louenpottier.github.io/xrdays.",
+   "code": [
+    "https://github.com/LouenPottier/lagsplat-mpov"
+   ],
+   "project": [
+    "https://louenpottier.github.io/xrdays.html"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09937",
+   "title": "Efficient Learning of Differentiable MPC Policies on the GPU via Smoothed ADMM and First-Order Reinforcement Learning",
+   "authors": [
+    "Jianghan Zhang",
+    "Roland Schwan",
+    "Gabriel Bravo-Palacios",
+    "John Zhang",
+    "Thomas Lew",
+    "Brian Plancher"
+   ],
+   "abstract": "Differentiable model predictive control (MPC) enables structured, constraint-aware policies to be optimized end-to-end. However, learning MPC policies faces two bottlenecks: (1) nonsmooth sensitivities at active-set transitions and (2) expensive policy evaluation, since each requires an optimization solve. We first introduce SmoothedTurboMPC, a GPU-parallel differentiable MPC solver combining sequential quadratic programming (SQP) with a log-barrier-smoothed alternating direction method of multipliers (ADMM) inner solver. Its design enables smooth gradients, exact sensitivities at …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "topics": [
+    "control",
+    "learning"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09932",
+   "title": "Preference-Augmented Distributional Reinforcement Learning for Risk-Sensitive Navigation",
+   "authors": [
+    "Zhaofan Zhang",
+    "Yue Chang",
+    "Rufeng Chen",
+    "Hechang Chen",
+    "Sihong Xie",
+    "Hui Xiong"
+   ],
+   "abstract": "Ensuring safe and reliable navigation under diverse sources of uncertainty remains a central challenge for autonomous systems. Within distributional reinforcement learning (DistRL), Implicit Quantile Networks (IQN) have attracted interest for navigation under uncertainty because they enable risk adaptation through flexible quantile sampling. Existing approaches, however, typically use a fixed or randomly sampled Conditional Value-at-Risk (CVaR) level during training and adjust the risk level during deployment using hand-tuned hyperparameters or external sensor signals. This scalar-CVaR …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.LG"
+   ],
+   "topics": [
+    "navigation",
+    "learning"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09914",
+   "title": "Industry case studies of adapting TTS for smooth interactions",
+   "authors": [
+    "Paige Tutt\\\"osi",
+    "El\\'eonore Ferrier-Barbut",
+    "Anais Scipioni",
+    "Olivia Yung",
+    "Ha Eun Shim",
+    "Ajla Basic",
+    "Yue Wang",
+    "H. Henny Yeung"
+   ],
+   "abstract": "Modern, neural-based ASR and TTS systems for speech communication are now very sophisticated, but they are frequently designed for average users in more idealized scenarios, which can underperform when interacting with users having specialized listening needs, or who speak in non-standard ways. Here we review recent TTS research, and note that industrial, production-level implementations of adaptive TTS systems are scarce. We describe how we implemented changes to TTS systems based on prior research, and then report qualitative results from two case studies, where adapted TTS techniques are …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.HC",
+    "cs.RO",
+    "cs.SD",
+    "eess.AS"
+   ],
+   "topics": [],
+   "comment": "Published at RO-MAN 2026",
+   "enriched": true
+  },
+  {
+   "id": "2611.09913",
+   "title": "Engagement Estimation in Human-Robot and Human-Human Interactions across Domain, Age and Culture: MultiMediate'26 Challenge",
+   "authors": [
+    "Marius Funk",
+    "Daksitha Withanage Don",
+    "Michal Balazia",
+    "Victor Oei",
+    "Shogo Okada",
+    "Fran\\c{c}ois Br\\'emond",
+    "Andreas Bulling",
+    "Elisabeth Andr\\'e",
+    "+1"
+   ],
+   "abstract": "Understanding engagement in human interaction is essential for modelling assistive and context-aware AI systems. Previously, the MultiMediate challenge has focused on estimating momentary continuous engagement values in adult conversation across cultures, achieving high levels of generalisability across domains. However, engagement can be measured in different metrics and manifest differently between children and adults. MultiMediate'26 therefore expands the evaluated domain set to include the PInSoRo dataset of Child-Child and Child-Robot play sessions in English. These sessions were …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.HC",
+    "cs.CV",
+    "cs.MM",
+    "cs.RO"
+   ],
+   "code": [
+    "https://github.com/hcmlab/MultiMediate_26"
+   ],
+   "topics": [],
+   "comment": "6 pages, 1 figure, ACM MultiMedia 2026 Grand Challenge Baseline Paper",
+   "enriched": true
+  },
+  {
+   "id": "2611.09906",
+   "title": "How to start a conversation proactively?",
+   "authors": [
+    "Mohit Nathani",
+    "Aaditya Gupta",
+    "Eshwar Dhande",
+    "Chayan Sarkar"
+   ],
+   "abstract": "Proactively initiating a conversation is a fundamental social competence and a critical capability for social robots. However, determining how and when to start a conversation in a given situation remains an open challenge, primarily due to the lack of a principled definition of conversational context. While recent large language models (LLMs) demonstrate impressive conversational fluency, they are predominantly turn-reactive and often produce generic or monotonous openers when tasked with initiating interaction, even when contextual information is available. Such limitations are particularly …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.HC",
+    "cs.LG",
+    "cs.RO"
+   ],
+   "topics": [],
+   "comment": "The article is accepted in IEEE RO-MAN 2026. The dataset is available at https://github.com/mohit-nathani1/conversation-opener-dataset",
+   "code": [
+    "https://github.com/mohit-nathani1/conversation-opener-dataset"
+   ],
+   "enriched": true
+  },
+  {
+   "id": "2611.09905",
+   "title": "Building Rapport with Self-Disclosure in Human-Robot Interaction",
+   "authors": [
+    "Haritha Anupindi",
+    "Chayan Sarkar",
+    "Tapas Nayak",
+    "Marynel Vazquez"
+   ],
+   "abstract": "As social robots become increasingly present in everyday environments, establishing rapport with users is critical for enabling sustained and meaningful human-robot interaction. In human-human communication, self-disclosure is a well-established mechanism for building rapport; however, its role and impact in human-robot interaction (HRI) are not yet well understood. Although recent advances in large language models (LLMs) have improved the linguistic competence of conversational robots, such systems are typically deployed as reactive information providers, offering limited social reciprocity …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.HC",
+    "cs.RO"
+   ],
+   "topics": [],
+   "comment": "Accepted in IEEE RO-MAN 2026",
+   "enriched": true
+  },
+  {
+   "id": "2611.09900",
+   "title": "KR A1: Design and Preliminary Evaluation of a Humanoid-Robot Interaction Prototype Integrating Personalized Voice Synthesis, Contextual Dialogue, and Emotion-Aware Response Generation",
+   "authors": [
+    "Mahek Aanthu",
+    "Om Aanthu",
+    "Aaryan AK Aanthu"
+   ],
+   "abstract": "This paper presents the design and preliminary evaluation of KR A1, a humanoid-robot interaction prototype that integrates personalized voice synthesis, contextual dialogue processing, and emotion-aware response generation for potential mental-healthcare applications. The system architecture combines a locally hosted large language model (Qwen2.5-3B-Instruct, served via Ollama) for natural-language understanding and response generation, OpenVoice v2 for zero-shot speaker-adaptive speech synthesis, and a two-tier emotion-processing pipeline comprising a keyword heuristic and LLM-based …",
+   "published": "2026-11-10",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.HC",
+    "cs.CL",
+    "cs.RO",
+    "cs.SD",
+    "eess.AS"
+   ],
+   "topics": [
+    "locomotion"
+   ],
+   "enriched": true
   }
  ]
 }
