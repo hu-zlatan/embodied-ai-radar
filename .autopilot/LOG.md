@@ -725,3 +725,4 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Owner chat (2026-11-10): https://www.embodied-ai-radar.com gives a certificate error → www certificate not active in EdgeOne; steps added to OWNER_TODO (no code change; redirects cannot run before TLS).
 - Owner chat (2026-11-10): root + www both load fine after the root domain's EdgeOne state settled ('部署中' → live). OWNER_TODO ticked.
 - Owner chat (2026-11-10): asked the agent to set the repo Website field and create the `suggestion` label. Label created via new `labels.yml` workflow (run #1 OK, label confirmed). Website field needs repo admin, which neither the agent's tools nor GITHUB_TOKEN have → stays an owner task. Owner: domain auto-renew needs no action.
+- Owner chat (2026-11-10): repo Website field now https://embodied-ai-radar.com/. OWNER_TODO ticked.

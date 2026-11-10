@@ -2,12 +2,12 @@
 
 Things the agent cannot do itself. The agent adds items; the owner ticks them off.
 
-- [ ] **Repo Website field → new address (30 seconds), 2026-11-10.** The owner asked the agent to do it, but the agent cannot: no repo-settings tool, and GITHUB_TOKEN cannot get the `administration` permission. GitHub repo page → About → ⚙ → Website: change `https://hu-zlatan.github.io/embodied-ai-radar/` to `https://embodied-ai-radar.com/`.
+- [x] **Repo Website field → https://embodied-ai-radar.com/** — done by the owner 2026-11-10, thanks!
 - [ ] Optional: **Bing Webmaster Tools** (bing.com/webmasters) → sign in → 'Import from Google Search Console' (2 minutes; IndexNow already pings Bing, this adds Bing's crawl/search reports).
 
 - [x] Settings → Pages → Source: GitHub Actions (deploys are succeeding, so this looks done — thanks!).
 - [x] Repo description (About → ⚙): `Bilingual (EN/中文), daily-updated map of embodied AI & robot learning: verified papers, code, datasets, simulators, hardware + every new arXiv robotics paper. 具身智能雷达`
-- [x] Website field (About → ⚙): `https://hu-zlatan.github.io/embodied-ai-radar/`
+- [x] Website field (About → ⚙): now `https://embodied-ai-radar.com/` (changed 2026-11-10)
 - [x] Topics (About → ⚙): `embodied-ai`, `robotics`, `robot-learning`, `vision-language-action`, `vla`, `humanoid-robots`, `manipulation`, `world-models`, `sim-to-real`, `tactile-sensing`, `awesome-list`, `arxiv`, `paper-list`, `slam`
 - [x] Topic typo `robot-learnin` → `robot-learning` (fixed by the owner, seen in run 7 — thanks!).
 - [ ] Launch kit is in `.autopilot/LAUNCH_KIT.md` (V2EX, 知乎, 小红书, r/robotics, Show HN, X), updated in run 2. A first digest (2026-W42) and link-preview image now exist, so it is ready whenever you want (2026-10-23: CoRL 2026, Nov 9–12, is a natural moment — the site now has a CoRL 2026 page); posting after the repo description/topics are set works best. You decide where and whether to share it. **Update 2026-10-26:** the first automatic weekly digest (2026-W43, with an editor's intro) is out, so the precondition is met — CoRL week (Nov 9–12) remains a good moment. **Update 2026-11-03:** the best window is this week, before CoRL opens on Nov 9: the 'CoRL 2026 program guide' post at the top of the kit says "next week", so it fits only until Sunday 11-08.
