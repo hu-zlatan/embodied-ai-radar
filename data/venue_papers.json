@@ -1,7 +1,881 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-10",
  "source": "arXiv API (metadata CC0)",
  "papers": [
+  {
+   "id": "2611.12804",
+   "title": "Benchmarking Real-World Robotic Manipulation through Stochastic Challenges",
+   "authors": [
+    "Elias Gläßer",
+    "Gülhan Şikaroğlu",
+    "Pavlo Kupyn",
+    "Marc Pollefeys",
+    "Zuria Bauer",
+    "Hermann Blum"
+   ],
+   "abstract": "A challenging bottleneck in manipulation research is reproducibility and comparability of methods in real-world environments. Since manipulation is an interactive task, it cannot be evaluated on a static dataset of observations. Benchmarking in simulation is a common remedy, but cannot cover the whole complexity of real-world tests. This paper proposes a new paradigm of stochastic challenges. Like the well-known YCB objects, it is based on reproducible real-world scenes and therefore allows system-level innovation and comparability between different platforms. Due to their stochastic nature, …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "Accepted at the 10th Conference on Robot Learning (CoRL 2026). 15 pages, 3 figures",
+   "topics": [
+    "manipulation",
+    "datasets"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.12643",
+   "title": "Simulation-aided Reinforcement Learning with Control Variates",
+   "authors": [
+    "Omer Hemo",
+    "Ido Sefi",
+    "Mirco Mutti",
+    "Aviv Tamar",
+    "Kfir Y. Levy"
+   ],
+   "abstract": "Reinforcement Learning (RL) algorithms often rely on data collected from a target environment, which can be expensive and noisy. Although simulators can generate large amounts of additional data, standard simulation mixing approaches, which directly combine simulated and real experience, can degrade performance due to simulator inaccuracies, especially when they bias the solution away from the optimal policy. We propose a conservative simulation-aided learning method based on control variates, where simulated data is used solely to reduce variance in the learning process rather than directly …",
+   "published": "2026-11-09",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG",
+    "cs.RO"
+   ],
+   "comment": "Accepted as a poster at NeurIPS 2026. 10 pages main text + appendix, 3 figures. Code: https://github.com/OmerHemo/Simulation-Aided-Reinforcement-Learning-with-Control-Variates",
+   "code": [
+    "https://github.com/OmerHemo/Simulation-Aided-Reinforcement-Learning-with-Control-Variates"
+   ],
+   "topics": [
+    "learning",
+    "sim"
+   ]
+  },
+  {
+   "id": "2611.12409",
+   "title": "Bridging Task Planning and Execution for Language-Conditioned Bimanual Manipulation",
+   "authors": [
+    "Emanuele Cuzzocrea",
+    "Giuseppina Iannotti",
+    "Luca Rossini",
+    "Arturo Laurenzi",
+    "Nikos Tsagarakis"
+   ],
+   "abstract": "Robots are increasingly expected to execute natural-language manipulation tasks in real-world environments. This is particularly relevant in household assistance and logistics, where clutter requires reasoning about both task objectives and execution feasibility. This challenge becomes even more pronounced for bimanual humanoid platforms, where coordinating two manipulators introduces additional interaction and kinematic constraints. We present a zero-shot vision-language framework for execution-aware bimanual manipulation that jointly reasons about task objectives and physical feasibility. …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI"
+   ],
+   "comment": "8 pages, 6 figures. Accepted at the 2026 IEEE-RAS International Conference on Humanoid Robots (Humanoids 2026). Equal contribution by the first two authors",
+   "project": [
+    "https://advrhumanoids.github.io/bridging-planning-execution/"
+   ],
+   "topics": [
+    "manipulation",
+    "navigation"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.12382",
+   "title": "AutoVLA-D: Learn a Trajectory-Geometric Condition from Reasoning for Autonomous Driving VLA",
+   "authors": [
+    "Yuguang Yang",
+    "Zhewen Tan",
+    "Canyu Chen",
+    "Linlin Yang",
+    "Cheng Chi",
+    "Chunyang Liu",
+    "Kehua Sheng",
+    "Jinyu Yang",
+    "+4"
+   ],
+   "abstract": "Autoregressive VLA planning usually predicts continuous trajectories as the final output, but driving instructions often describe actions rather than ego states, which weakens direct conditioning on the final continuous trajectory. We address this gap with TrajCond, which introduces a discrete trajectory-geometric condition for VLA planning. Specifically, we represent TrajCond as a 1D-Brohan differential action trajectory and learn it with a two-stage training framework before final continuous trajectory prediction. With the simultaneous autoregressive generation of discrete and numeric …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "comment": "Accepted by NeurIPS 2026",
+   "code": [
+    "https://github.com/ShivaTeam/AutoVLA-D"
+   ],
+   "topics": [
+    "vla"
+   ]
+  },
+  {
+   "id": "2611.12334",
+   "title": "Rethinking Radar 3D Perception: Representation Learning from Raw Spectra",
+   "authors": [
+    "Miao Zhang",
+    "Mohamed Abdelsamad",
+    "Bin Yang",
+    "Sherif Abdulatif",
+    "Benedikt Loesch",
+    "Marco Altmann",
+    "Abhinav Valada",
+    "Bin Yang"
+   ],
+   "abstract": "Raw radar spectra are widely viewed as too cluttered and noisy for direct representation learning, motivating handcrafted reductions, sparse point clouds, or compact Doppler descriptors in radar perception. We challenge this assumption and argue that the main limitation lies not in the raw representation itself, but in the absence of a learning objective that separates structured signal from noise. Handcrafted reductions partially address this problem but impose rigid assumptions about what constitutes signal, discarding weak yet informative structure while retaining artifacts that fit the …",
+   "published": "2026-11-09",
+   "primary": "cs.AI",
+   "categories": [
+    "cs.AI",
+    "cs.CV",
+    "cs.LG",
+    "cs.RO"
+   ],
+   "comment": "19 pages, 5 figures, 18 tables. Accepted at NeurIPS 2026. Miao Zhang and Mohamed Abdelsamad contributed equally",
+   "topics": [],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.12251",
+   "title": "RAIL: Representation-Aligned Imitation Learning for Student-Compatible Teacher Policies",
+   "authors": [
+    "Meraj Mammadov",
+    "Pedro Zuidberg Dos Martires",
+    "Johannes Andreas Stork"
+   ],
+   "abstract": "Reinforcement learning (RL) from raw sensory inputs such as images or onboard sensors can be challenging due to high-dimensional observations and sparse rewards. A common strategy is to train a teacher policy with access to privileged state information and then distill it into a student policy that acts from raw inputs alone. However, when the teacher relies on information unavailable to the student, exact imitation may be impossible, creating an irreducible imitation gap. Existing approaches typically mitigate this mismatch through careful reward shaping or additional reinforcement learning …",
+   "published": "2026-11-09",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG",
+    "cs.AI",
+    "cs.RO"
+   ],
+   "comment": "18 pages, 3 figures. Accepted at NeurIPS 2026",
+   "topics": [
+    "manipulation",
+    "learning"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.12102",
+   "title": "SPARK: Simple Post-training for Adapting pRetrained Knowledge to Robot Control",
+   "authors": [
+    "Taekyung Kim",
+    "Jeongeun Park",
+    "Byeongho Heo",
+    "Sungjoon Choi",
+    "Sangdoo Yun",
+    "Dongyoon Han"
+   ],
+   "abstract": "Large-scale representation learning has produced public foundation models that provide strong general-purpose visual features. However, their pretraining objectives are not designed for robot representation learning, so the resulting embeddings tend to emphasize global semantics rather than the temporally sensitive representations required for robot control. Training robot models from scratch is also undesirable due to the limited scale and high collection cost of robotics data, as well as the substantial computational burden of pre-training. In this paper, we propose SPARK (Simple …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "comment": "CoRL 2026. 16 pages, 3 figures, 13 tables",
+   "topics": [],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.12072",
+   "title": "Learning Contextual Motion Constraints for Object Rearrangement Exploration",
+   "authors": [
+    "Lexing Zhang",
+    "Zeyu Zhang",
+    "Gang Zeng",
+    "Hangxin Liu"
+   ],
+   "abstract": "The motion of an articulated part in cluttered surroundings is constrained not only by an object's intrinsic joint limits but also by extrinsic obstacles. However, existing approaches primarily consider object articulation properties alone. Here we present Motion Constraint Prediction Network (MoCo-Net), a two-stream neural network that jointly predicts the continuous motion ranges of articulated parts and obstacle heatmaps highlighting potential collision regions from partial-view point cloud observation. By capturing both internal and external motion constraints, MoCo-Net produces more …",
+   "published": "2026-11-09",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "IROS 2026 paper",
+   "topics": [
+    "manipulation"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.11521",
+   "title": "K-PWM: Control-Oriented Structured Bilinear World Models under Partial Observation",
+   "authors": [
+    "Santosh Mohan Rajkumar",
+    "Sriram Narayanan",
+    "Samuel E. Otto",
+    "Debdipta Goswami"
+   ],
+   "abstract": "World models learn internal simulators of environment dynamics for prediction, planning, and control, yet learning them from limited, noisy, and partial observations remains challenging. While much progress has focused on pixel-based observations, many physical systems instead provide vector-valued measurements that reveal only part of the underlying state. We introduce K-PWM, a probabilistic world model for prediction and control under partial observation. K-PWM couples Koopman-bilinear latent dynamics with a nonlinear observation decoder and performs probabilistic latent-state inference …",
+   "published": "2026-11-08",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI",
+    "cs.LG",
+    "eess.SY",
+    "math.DS"
+   ],
+   "comment": "Accepted at NeurIPS 2026",
+   "topics": [
+    "world-models"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.11123",
+   "title": "HARP-Bench: Benchmarking Robot Manipulation Around Active Humans",
+   "authors": [
+    "Qinhong Zhou",
+    "Riley Zong",
+    "Chunru Lin",
+    "Diyi Hu",
+    "Shivraj Singh Bhatti",
+    "Hongxin Zhang",
+    "Lin Qiu",
+    "Hanqing Zeng",
+    "+1"
+   ],
+   "abstract": "Recent robot manipulation benchmarks have enabled systematic evaluation of general-purpose robot policies across diverse objects, scenes, instructions, and embodiments. However, most existing benchmarks still assume that the robot is the only active agent and that task semantics are determined primarily by the instruction and object state. This assumption overlooks a common source of real-world variation: humans actively sharing the workspace. In such settings, humans may reveal an implicit goal, complete part of the task, temporarily change object availability, or constrain safe robot motion …",
+   "published": "2026-11-08",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "comment": "Accepted at CoRL 2026",
+   "code": [
+    "https://github.com/UMass-Embodied-AGI/harp"
+   ],
+   "topics": [
+    "manipulation",
+    "datasets"
+   ]
+  },
+  {
+   "id": "2611.10822",
+   "title": "Learning When to Think: Adaptive Internal Computation for Reinforcement Learning",
+   "authors": [
+    "Rohit Kumar Salla",
+    "Simon Stepputtis"
+   ],
+   "abstract": "Iterative neural policies usually spend the same computation on every decision, although the benefit of additional processing varies across states. We introduce Adaptive Internal Computation (AIC), an iterative policy that learns when to stop refining its latent representation and act. In AIC, we train action selection and stopping jointly, an expected-depth penalty values computation and intermediate value predictions provide auxiliary supervision. We show that when only some states benefit from further refinement, an ideal state-dependent allocator outperforms every state-independent …",
+   "published": "2026-11-07",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG",
+    "cs.RO"
+   ],
+   "comment": "Accepted at NeurIPS 2026",
+   "topics": [
+    "learning"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.10748",
+   "title": "REINS: A Self-Evolving Agent Harness for Real-Time Trajectory Planning",
+   "authors": [
+    "Zhihong Cui",
+    "Hengyu Liu",
+    "Haoran Tang",
+    "Shijun Liu",
+    "Amir Taherkordi",
+    "Tor Skeie"
+   ],
+   "abstract": "Agent harnesses -- runtime scaffolds that wrap an LLM's reasoning loop with tool dispatch, verification, and persistent memory -- have become the standard substrate for deploying LLMs as autonomous agents, as demonstrated by Claude Code and Codex in software engineering. In trajectory planning, however, this paradigm has not taken hold: existing LLM-based trajectory planning methods either keep the LLM in the decision loop, exceeding the millisecond-level control budget, or offload it to offline rules or training-time supervision -- leaving the runtime planner non-evolving. Intermediate …",
+   "published": "2026-11-07",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI"
+   ],
+   "comment": "Accepted at NeurIPS 2026 (Main Track). 36 pages, 7 figures, 20 tables. Code: https://github.com/ZhihongCui/REINS",
+   "code": [
+    "https://github.com/ZhihongCui/REINS"
+   ],
+   "topics": [
+    "control"
+   ]
+  },
+  {
+   "id": "2611.10720",
+   "title": "Locating and Repairing Domain Shift in VLM Trajectory Planning",
+   "authors": [
+    "Zhihong Cui",
+    "Hengyu Liu",
+    "Michael Alexander Riegler",
+    "Guandong Xu",
+    "Amir Taherkordi",
+    "Tor Skeie"
+   ],
+   "abstract": "Vision-Language Models (VLMs) are increasingly adopted as end-to-end driving planners, yet they suffer from cross-city domain shift. Existing methods treat this shift as a single quantity addressed by uniform alignment or single-site editing. We challenge this view on two counts: (i) domain shift in VLM trajectory planners is inherently structured across modality and layer, and (ii) a locate-then-repair recipe matched to this structure outperforms every uniform-objective baseline. We analyse domain shift via activation patching and uncover two regularities. (F1) Modality axis. Image and text …",
+   "published": "2026-11-07",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV",
+    "cs.RO"
+   ],
+   "comment": "Accepted at NeurIPS 2026 (Main Track). 30 pages, 7 figures, 16 tables. Code: https://github.com/ZhihongCui/MoLaRx",
+   "code": [
+    "https://github.com/ZhihongCui/MoLaRx"
+   ],
+   "topics": [
+    "control"
+   ]
+  },
+  {
+   "id": "2611.10443",
+   "title": "Spatial Representation Distillation and Knowledge Routing for Vision-Language-Action Models",
+   "authors": [
+    "Jungin Park",
+    "Chaoran Zhu",
+    "Changjae Oh",
+    "Kwanghoon Sohn"
+   ],
+   "abstract": "Understanding three-dimensional physical structure has become essential for vision-language-action models (VLAs). However, existing approaches either rely on explicit geometric inputs at inference time or adopt a single visual pathway, potentially compromising the visual-semantic knowledge inherited from pre-trained models. We present SPARK-VLA, Spatial Representation distillation and Knowledge routing for VLAs, a preserve-specialize-route framework for spatially adapting VLAs without requiring external 3D inputs or experts at inference. SPARK-VLA consists of two key components: (1) spatial …",
+   "published": "2026-11-07",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "NeurIPS 2026 Camera-ready",
+   "code": [
+    "https://github.com/park-jungin/spark-vla"
+   ],
+   "topics": [
+    "vla"
+   ]
+  },
+  {
+   "id": "2611.10169",
+   "title": "Capturability-Aware Footstep Planning in Cluttered Environments: A Recursively Feasible Sequential MPC on Axis-Aligned Safe Corridors",
+   "authors": [
+    "Athanasios Kyriakopoulos",
+    "Shubham S. Kumbhar",
+    "Kunal S. Narkhede",
+    "Abhijeet M. Kulkarni",
+    "Ioannis Poulakakis"
+   ],
+   "abstract": "A fundamental aspect of humanoid footstep planning is to jointly guarantee obstacle avoidance and locomotion stability. This paper presents a capturability-aware sequential Model Predictive Control (MPC) framework for Linear Inverted Pendulum (LIP)-based humanoid footstep planning in the presence of obstacles. The proposed method combines obstacle avoidance with capturability constraints through safe corridors constructed as sequences of intersecting rectangles, yielding a sequential MPC framework with recursive feasibility guarantees for the LIP-based planning layer. The planner autonomously …",
+   "published": "2026-11-06",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "Accepted for publication in 2026 IEEE-RAS 25th International Conference on Humanoid Robots (Humanoids)",
+   "topics": [
+    "locomotion",
+    "control"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.10061",
+   "title": "UniLatent: Cross-Embodiment Transfer via Latent Observation Alignment",
+   "authors": [
+    "Yufei Ding",
+    "Yi Du",
+    "Weiduo Yuan",
+    "Hao Jiang",
+    "Dylan Goetting",
+    "Lawrence Yunliang Chen",
+    "Daniel Seita",
+    "Yue Wang"
+   ],
+   "abstract": "Robot datasets are costly to collect and are usually tied to a specific embodiment, making it difficult to reuse demonstrations across robots with different geometry, appearance, and kinematics. We introduce UniLatent, a cross-embodiment transfer framework that reduces the embodiment-induced observation gap in a shared latent space. UniLatent renders paired source-target robot observations in simulation and aligns a source visual encoder to a frozen target encoder. A policy trained on encoded source demonstrations can then run directly on target observations, with no pixel-level image …",
+   "published": "2026-11-06",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "comment": "Accepted to CoRL 2026",
+   "project": [
+    "https://selina2023.github.io/unilatent/"
+   ],
+   "topics": [
+    "vla"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.09777",
+   "title": "Autonomous Whole-body Loco-manipulation Using a Snake Robot",
+   "authors": [
+    "Adarsh Salagame",
+    "Henry Noyes",
+    "Haroon Hublikar",
+    "Alireza Ramezani"
+   ],
+   "abstract": "Snake robots can leverage their hyper-redundant morphology for both locomotion and manipulation through distributed body contact but whole-body loco-manipulation is particularly challenging since the entire body serves simultaneously as propulsive mechanism and manipulation tool Prior work on wheeled legged and snake robot platforms has decoupled these functions through dedicated appendages body segmentation or grippers We present closed-loop loco-manipulation with our snake robot COBRA without this distinction such that any part of the body may make contact We develop a contact-implicit …",
+   "published": "2026-11-06",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "eess.SY"
+   ],
+   "comment": "Presented in IROS 2026",
+   "topics": [
+    "manipulation",
+    "locomotion"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.08936",
+   "title": "Ordered Policy Optimization",
+   "authors": [
+    "Dongkyu Derek Cho",
+    "Pan Xu"
+   ],
+   "abstract": "Proximal Policy Optimization (PPO) stabilizes policy updates by clipping the importance ratio between the new policy and the data-collecting policy. The standard rule uses one fixed clipping range for all samples. While this choice offers simplicity and effectiveness, it fails to distinguish statistically harmful extreme ratio values from large, yet tolerable changes. We study how to adapt the clipping radius to the reliability of the induced importance ratio distribution. Our case study demonstrates that reliable updates require controlling these extreme ratios, rather than merely verifying …",
+   "published": "2026-11-06",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG",
+    "cs.AI",
+    "cs.RO",
+    "stat.ML"
+   ],
+   "comment": "36 pages, 12 figures, 11 tables. Published in Proc. of the 40th Conference on Advances in Neural Information Processing Systems (NeurIPS 2026)",
+   "topics": [],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.08917",
+   "title": "PRISM: Primitive Routing via In-context Skill Mixing for Retentive VLA Adaptation",
+   "authors": [
+    "Jiachen Tao",
+    "Gengyu Zhang",
+    "Haoxuan Wang",
+    "Bing Liu",
+    "Yan Yan"
+   ],
+   "abstract": "Vision-Language-Action (VLA) models promise a single language-conditioned policy adaptable to many manipulation behaviors, yet deployment additionally requires skill retention and long-horizon composition: a policy must retain previously acquired skills and reuse them inside composite tasks whose behavior changes across phases. The standard recipe absorbs every new task into one shared update, which provides neither a parameter-level locus for reusable skills nor a mechanism for invoking each skill along the trajectory. We observe that this missing structure is latent rather than absent: …",
+   "published": "2026-11-06",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "19 pages, 6 figures, 4 tables. Accepted at NeurIPS 2026",
+   "topics": [
+    "vla"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.08654",
+   "title": "CS-Pi: Constraint-Satisfying Flow Policy Sampling",
+   "authors": [
+    "Soumojit Bhattacharya",
+    "Oliver Kroemer",
+    "Shubham Tulsiani"
+   ],
+   "abstract": "A flow-matching policy deployed in the field must often satisfy a constraint that was absent from its demonstrations, such as avoiding an obstacle it has never seen. Retraining for every new constraint is impractical, so the constraint must be enforced at inference time. Enforcing it must not discard what the policy learned: an action the policy would rarely sample may avoid the obstacle yet fail the task. We therefore want actions that are both safe, satisfying the constraint, and plausible, remaining likely under the policy. Gradient guidance, the most common approach, steers noisy states, …",
+   "published": "2026-11-05",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "Accepted to CoRL 2026. Project page: https://sumo048.github.io/CS-pi_site/",
+   "project": [
+    "https://sumo048.github.io/CS-pi_site/"
+   ],
+   "topics": [],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.08578",
+   "title": "HaNDF: Object-Conditioned Geometric Neural Hand Distance Fields",
+   "authors": [
+    "Zuhao Liu",
+    "Melih Darcan",
+    "Zhengdi Yu",
+    "Riza Alp Guler",
+    "Tolga Birdal"
+   ],
+   "abstract": "We propose, HaNDF, object-conditional neural distance fields as data-driven priors for modeling the plausible hand-object configurations, in the product manifold of hand articulations. While recent unconditional generative priors showed success in modeling human pose, hands are versatile articulated bodies often found in interaction with other objects. This makes it crucial to develop a generative prior which can model the plausible hand poses conditioned on the object under interaction. To this end, our HaNDF proposes a geometry-aware, object-conditioned neural distance field, representing …",
+   "published": "2026-11-05",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV",
+    "cs.AI",
+    "cs.LG",
+    "cs.RO"
+   ],
+   "comment": "Accepted at NeurIPS 2026",
+   "topics": [],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.08407",
+   "title": "Social Humanoid: Socially Responsive Human-Humanoid Interaction",
+   "authors": [
+    "Vongani H. Maluleke",
+    "James Ni",
+    "Kie Horiuchi",
+    "Lea Wilken",
+    "Jiahui Lei",
+    "Evonne Ng",
+    "Roei Herzig",
+    "Jitendra Malik",
+    "+2"
+   ],
+   "abstract": "Humanoid robots are typically trained as solitary agents, leaving them unable to coordinate physically with human partners who naturally anticipate and adjust to one another. To bridge this gap, we present Social Humanoid, a hierarchical system that generates and executes socially responsive whole-body motion on a 29-DoF Unitree G1 conditioned on a human partner's motion. Its high-level policy performs flexible sequence modeling of human and humanoid motion through a shared tokenized representation, generating reactive humanoid motion and anticipating the partner's motion when they are …",
+   "published": "2026-11-05",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV",
+    "cs.LG"
+   ],
+   "comment": "CoRL 2026, Project page: https://von31.github.io/social-humanoid/",
+   "project": [
+    "https://von31.github.io/social-humanoid/"
+   ],
+   "topics": [
+    "locomotion"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.08295",
+   "title": "Transformer-Based Trajectory Prescription for sEMG-Optimizing Robot-Mediated Rehabilitation",
+   "authors": [
+    "Gabriel Parra",
+    "Kimia Khoshnami",
+    "Daniel S. Brown",
+    "Laura A. Hallock"
+   ],
+   "abstract": "Robot-mediated rehabilitation has the potential to deliver high-intensity, individualized therapy, but existing systems (which have not consistently improved outcomes) typically prescribe kinematic trajectories rather than explicitly targeting the neuromotor activations thought to support recovery. To address this gap, and ultimately enable activation-optimizing rehabilitation robot behavior, we present a personalizable transformer-based model mapping individuals' muscle activations (as measured via surface electromyography) to prescribed contact force trajectories when interacting with an …",
+   "published": "2026-11-05",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.HC",
+    "cs.LG"
+   ],
+   "comment": "Accepted for presentation and publication in the 2026 Conference on Robot Learning (CoRL). PMLR, 2026",
+   "topics": [],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.07730",
+   "title": "Seeing Beyond the Next Step: World-Model-Guided Human-Like Navigation in Multi-Agent Scenes",
+   "authors": [
+    "Seong-Eun Hong",
+    "JuYeong Hwang",
+    "Jinhyun Kim",
+    "Hanyoung Jang",
+    "HyeongYeop Kang"
+   ],
+   "abstract": "Selecting a next motion in a populated scene is not just a matter of avoiding what is currently in the way: an action can be locally feasible yet drift onto the road instead of the crosswalk, cut into a stream of crossing pedestrians, or bottleneck a narrow passage. These failure modes are invisible from the current state alone, and acting on them requires reasoning about what each candidate action will cause. World models offer exactly this, namely action-conditioned predictions of the future, but rolling them out at every decision step is a cost deployable navigation systems cannot pay, and …",
+   "published": "2026-11-05",
+   "primary": "cs.GR",
+   "categories": [
+    "cs.GR",
+    "cs.AI",
+    "cs.CV",
+    "cs.RO"
+   ],
+   "comment": "Accepted to NeurIPS 2026. 37 pages, 13 figures, 12 tables",
+   "project": [
+    "https://seoneun.github.io/-NeurIPS-2026-Seeing-Beyond-the-Next-Step/"
+   ],
+   "topics": [
+    "navigation"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.07532",
+   "title": "Semantics-to-Contact: A Stagewise Framework for Robust Contact-Rich Manipulation",
+   "authors": [
+    "Guanren Qiao",
+    "Ruixiang Ouyang",
+    "Sheng Xu",
+    "Yueci Deng",
+    "Yunxin Tai",
+    "Kui Jia",
+    "Guiliang Liu"
+   ],
+   "abstract": "Contact-rich manipulation requires precise control under complex contact dynamics while remaining robust to diverse visual conditions. However, real-world reinforcement learning often overfits to the visual appearance of training scenes. We propose Semantics-to-Contact (S2C), a stagewise framework for visually robust contact-rich manipulation. The insight is to decompose the problem into two stages: semantic focusing and contact refinement. In the first stage, a vision-language model localizes task-relevant regions across visually diverse scenes, providing coarse spatial guidance and reducing …",
+   "published": "2026-11-05",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "NeurIPS 2026",
+   "project": [
+    "https://edem-ai.github.io/S2C/"
+   ],
+   "topics": [
+    "manipulation",
+    "tactile"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.07417",
+   "title": "MessyNav: Zero-Shot Navigation via Manipulation in Messy Environments",
+   "authors": [
+    "Kenneth Llontop",
+    "Cherie Ho",
+    "Dylan Zhou",
+    "Anuva Banwasi",
+    "Priya Sundaresan",
+    "Carlota Parés-Morlans",
+    "Jeannette Bohg"
+   ],
+   "abstract": "Real-world environments are messy, with paths often blocked by everyday objects like chairs and toys, requiring robots to perform interactive navigation by manipulating obstacles to clear a path. Existing methods rely on extensive simulation-based learning or per-scene instructions specifying which objects to avoid or manipulate. They struggle to generalize across novel objects, diverse environments, and varied contexts such as a cart of fragile glassware that should be avoided while an empty one can be pushed. We formalize this problem as open-world interactive navigation and present …",
+   "published": "2026-11-05",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "comment": "CoRL 2026",
+   "topics": [
+    "manipulation",
+    "navigation"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.07275",
+   "title": "Efficient Diffusion Policy Fine Tuning with Latent Noise Representation Bridging",
+   "authors": [
+    "Yuanchu Liang",
+    "Yue Yang",
+    "An-Chi He",
+    "Hanna Kurniawati"
+   ],
+   "abstract": "Pre-trained diffusion and flow policies have emerged as powerful backbones for robotics, yet adapting them to novel data via reinforcement learning (RL) remains computationally expensive, sample inefficient and lacks theoretical guarantees. Prior approaches that fine-tune the initial noise bypass costly backpropagation through time but struggle with the \"noise aliasing\" problem: there does not exista natural link between the noise space value and the action space value. This paper resolves these challenges by introducing the Latent Noise Linear Markov Decision Process (LNL-MDP). We derive the …",
+   "published": "2026-11-05",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI"
+   ],
+   "comment": "Conference on Neural Information Processing Systems (NeurIPS), 2026",
+   "topics": [
+    "manipulation",
+    "learning"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.06911",
+   "title": "BEAKER: An Expert-Curated Benchmark for Embodied Brains in Self-Driving Chemical Laboratories",
+   "authors": [
+    "Fei Lin",
+    "Tengchao Zhang",
+    "Ziyang Gong",
+    "Xiaotong Yu",
+    "Bohan Zhang",
+    "Yifan Zhou",
+    "Qihao Yang",
+    "Ji Dai",
+    "+10"
+   ],
+   "abstract": "Self-Driving Chemical Laboratories (SDCLs) are moving chemical experimentation toward embodied automation, where machines must perceive laboratory scenes, reason about experimental states, and act under physical, procedural, and safety constraints. Although Multimodal Large Language Models (MLLMs) are increasingly considered as embodied brains for such systems, existing laboratory benchmarks mainly focus on safety, anomaly detection, or general scientific understanding, leaving their execution-oriented embodied capabilities underexplored. To fill this gap, we introduce BEAKER, a Benchmark for …",
+   "published": "2026-11-04",
+   "primary": "cs.AI",
+   "categories": [
+    "cs.AI"
+   ],
+   "comment": "Accepted by NeurIPS 2026 (Track on Evaluations and Datasets, Spotlight)",
+   "topics": [
+    "datasets"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.05738",
+   "title": "OdorSpaces: Visual-Olfactory Embodied Navigation in 3D Environments",
+   "authors": [
+    "Changyeon Lee",
+    "Kelin Yu",
+    "Zheng Wei",
+    "Shuna Ni",
+    "Ruohan Gao"
+   ],
+   "abstract": "Olfaction provides critical information about airborne chemical cues, yet it remains largely underexplored in embodied AI, with limited prior machine olfaction work focusing primarily on semantic odor perception. We introduce OdorSpaces, a physics-based simulation platform and benchmark for visual-olfactory embodied navigation. OdorSpaces augments Habitat-Sim with 3D odor transport and dispersion simulated by Fire Dynamics Simulator (FDS), enabling agents to navigate photorealistic indoor environments using both visual and olfactory observations. The benchmark includes two representative …",
+   "published": "2026-11-03",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI",
+    "cs.CV",
+    "cs.LG"
+   ],
+   "comment": "Accepted at the 10th Conference on Robot Learning (CoRL 2026). 20 pages, 4 figures, 6 tables",
+   "topics": [
+    "navigation",
+    "sim",
+    "datasets"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.05567",
+   "title": "MESA: An Evaluation Framework for Compositional, Semantic, and Spatial Generalization in Robotics",
+   "authors": [
+    "Albert Wilcox",
+    "Frank Chang",
+    "Nhi Nguyen",
+    "Aishani Chakraborty",
+    "Jeremy A. Collins",
+    "Vaibhav Saxena",
+    "Benjamin Joffe",
+    "Siddharth Karamcheti",
+    "+1"
+   ],
+   "abstract": "Despite growing interest in foundation models for robotic manipulation, systematic evaluation of their capabilities remains elusive. Existing benchmarks are either narrow and saturated, offering little signal on SOTA methods, broadly scoped, providing diversity at the cost of controlled experimentation, or require training on large, messy open-source datasets. We introduce MESA, an evaluation framework designed for precise, reproducible measurement of language-conditioned policy generalization. MESA provides five evaluation suites that isolate in-distribution performance and four distinct …",
+   "published": "2026-11-03",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI"
+   ],
+   "comment": "51 pages, 12 figures, including appendices. Conference on Robot Learning (CoRL), 2026. Project website: https://pairlab.github.io/MESA",
+   "project": [
+    "https://pairlab.github.io/MESA"
+   ],
+   "topics": [
+    "datasets"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.05113",
+   "title": "HLO-AMP: Hierarchical Loco-Manipulation from Object-Aware Motion Priors",
+   "authors": [
+    "Jean-Pierre Sleiman",
+    "Bilal Hammoud",
+    "He Li",
+    "Jonathan Foster",
+    "Sylvain Bertrand",
+    "Jessica K. Hodgins",
+    "Farbod Farshidian"
+   ],
+   "abstract": "Hierarchical pipelines for humanoid loco-manipulation typically pair a task-agnostic whole-body controller (WBC) with a downstream task policy. Such WBCs are often trained through manual reward shaping, which yields visibly machine-like motions; more consequentially, they are trained without the manipulated object in the scene. Object dynamics are instead approximated through randomized end-effector force disturbances, a proxy that fails to reproduce the distributed multi-contact wrench a real payload applies across the arms and torso, with the gap becoming critical near the platform's …",
+   "published": "2026-11-03",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "Accepted at the Conference on Robot Learning (CoRL 2026). Video: https://youtu.be/viR_ULnRDQQ",
+   "topics": [
+    "manipulation",
+    "locomotion"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.04974",
+   "title": "LLMs as MDP Designers: A Dependency-Aware Agentic Framework for Automated Robot Policy Generation",
+   "authors": [
+    "Hong Je-Gal",
+    "Jinwoo Kim",
+    "Chanbin Yi",
+    "Hyun-Suk Lee"
+   ],
+   "abstract": "We investigate the automated generation of executable robot reinforcement learning (RL) policies from natural-language task descriptions. Rather than using large language models (LLMs) as execution-time decision makers, we use them as designers that construct RL pipelines before deployment, including Markov decision process (MDP) formulation and simulator implementation. We identify a phase-wise structure in this problem: MDP formulation is dependency-structured and sequential, whereas simulator implementation becomes modular once the formulation is fixed. Based on this structure, we propose …",
+   "published": "2026-11-03",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI"
+   ],
+   "comment": "Accepted to the 40th Annual Conference on Neural Information Processing Systems (NeurIPS 2026)",
+   "topics": [
+    "learning",
+    "sim"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
+   "id": "2611.04352",
+   "title": "ReSMap: Recasting Satellite Priors for Robust and Accurate Online HD Map Construction",
+   "authors": [
+    "Kyungmin Kim",
+    "Sumin Lee",
+    "Sungoh Jeong",
+    "DoHyun Lim",
+    "Seonghyun Park",
+    "Soonmin Hwang"
+   ],
+   "abstract": "Despite recent advances in camera-based online HD map construction, these systems remain susceptible to sensor failures due to their reliance on onboard cameras. In contrast, satellite images remain available independently of real-time sensing conditions as they are cached offline. Existing methods utilizing satellite images, however, primarily leverage them under nominal conditions, without explicitly addressing them as redundancy when a sensor degrades. To address this gap, we propose ReSMap, a redundancy-aware camera-satellite fusion framework for robust online HD map construction. Our …",
+   "published": "2026-11-03",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV",
+    "cs.RO"
+   ],
+   "comment": "Accepted to NeurIPS 2026. 24 pages, 9 figures, 11 tables. Project page: https://dehsurc.github.io/resmap-page/ Code: https://github.com/dehsurc/ReSMap",
+   "code": [
+    "https://github.com/dehsurc/ReSMap"
+   ],
+   "project": [
+    "https://dehsurc.github.io/resmap-page/"
+   ],
+   "topics": []
+  },
+  {
+   "id": "2611.04166",
+   "title": "Say the Same, Act Differently: Diagnosing and Steering Text-Action Divergence in Reasoning VLAs",
+   "authors": [
+    "Zihao Feng",
+    "Qingzhao Zhang",
+    "Chunyu Xia",
+    "Bo Yu",
+    "Z. Morley Mao",
+    "Ramesh Govindan"
+   ],
+   "abstract": "Reasoning vision-language-action (VLA) models pair physical control with natural-language rationales that supervisors can read to monitor embodied safety. Prior attacks on VLA reasoning corrupt the rationale itself and leave visible evidence in the text. We show that visual perturbations can instead alter the physical action while keeping the generated rationale word-for-word identical. At the shared text/action interface of Alpamayo for driving and InstructVLA for manipulation, our text-neutral action-subspace (TNAS) diagnostic shows that the locally most action-sensitive direction is nearly …",
+   "published": "2026-11-03",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG",
+    "cs.CR",
+    "cs.CV",
+    "cs.RO"
+   ],
+   "comment": "Accepted to NeurIPS 2026. 23 pages, 3 figures, 8 tables",
+   "topics": [
+    "vla"
+   ],
+   "hf_checked": "2026-11-10",
+   "project": [
+    "https://say-the-same.github.io/"
+   ]
+  },
+  {
+   "id": "2611.03932",
+   "title": "CoReMatch: Recurrent Continuous Coordinate Refinement for Real-Time Robotic Feature Matching",
+   "authors": [
+    "Robert J. Wang",
+    "Charles Ling",
+    "Boyu Wang"
+   ],
+   "abstract": "Feature matching underpins many robotic perception tasks, including visual localization, mapping, SLAM, and autonomous navigation. Existing semi-dense matchers predict confidence on fixed grids, limiting correspondences to predefined locations and requiring costly high-resolution grids for precise localization. We present CoReMatch (Coordinate Refinement Match), a recurrent framework that refines correspondences directly in continuous coordinate space rather than predicting discrete confidence maps. CoReMatch progressively improves correspondence estimates by propagating information across …",
+   "published": "2026-11-02",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "comment": "Accepted by CoRL 2026",
+   "topics": [
+    "perception"
+   ],
+   "hf_checked": "2026-11-10"
+  },
   {
    "id": "2611.03548",
    "title": "Mediating Human-Swarm Interactions Through a Robot Helper: A Shepherding-Inspired Approach",
@@ -4656,7 +5530,7 @@
     "Jianlong Fu",
     "Frank C. Park"
    ],
-   "abstract": "Contact-rich manipulation, requiring robots to regulate not only motion but also how they yield to external forces, has emerged as the next frontier for Vision-Language-Action (VLA) models. However, existing VLAs output purely kinematic commands, degrading performance on real-world contact-rich tasks. In this paper, we introduce CompVLA, a unified VLA framework that jointly predicts motion and stiffness matrix from RGB and language inputs. Our approach augments the conventional architecture with a dedicated Compliance Expert, which outputs time-varying stiffness and virtual displacement …",
+   "abstract": "Contact-rich manipulation, requiring robots to regulate not only motion but also how they yield to external forces, has emerged as the next frontier for Vision-Language-Action (VLA) models. However, existing VLAs output purely kinematic commands, degrading performance on real-world contact-rich tasks. In this paper, we introduce CompVLA, a unified VLA framework that jointly predicts motion and a stiffness matrix from RGB and language inputs. Our approach augments the conventional architecture with a dedicated Compliance Expert, which outputs time-varying stiffness and virtual displacement …",
    "published": "2026-09-20",
    "primary": "cs.RO",
    "categories": [
@@ -9156,6 +10030,29 @@
    "hf_checked": "2026-11-02"
   },
   {
+   "id": "2607.20345",
+   "title": "Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids",
+   "authors": [
+    "Roger Sala Sisó",
+    "Tiago Silvério",
+    "Jakob Sand",
+    "Tran Nguyen Le"
+   ],
+   "abstract": "Closing the gap between benchmark performance and reliable real-world operation remains a central challenge for Vision-Language-Action (VLA) humanoid robots, which must handle execution errors, distribution shifts, and environmental variability. This paper presents DEED (Data-Efficient Post-Training and Experience-Driven Learning), a systems-level approach evaluated on a supermarket chip-restocking task using a Unitree G1-Edu humanoid robot and the GR00T N1.6 foundation model. DEED comprises three key components: (1) a data-efficient post-training pipeline with control-frequency alignment, …",
+   "published": "2026-07-22",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI"
+   ],
+   "comment": "8 pages. Accepted for publication in 2026 IEEE-RAS 25th International Conference on Humanoid Robots (Humanoids)",
+   "topics": [
+    "vla",
+    "locomotion"
+   ],
+   "hf_checked": "2026-11-10"
+  },
+  {
    "id": "2607.19919",
    "title": "Diffusion ReRoll: Revisable Denoising for Robotic Sequential Prediction",
    "authors": [
@@ -11385,7 +12282,9 @@
     "Yuri Ishitoya",
     "Jeremy Siburian",
     "Masashi Hamaya",
+    "Haruto Suzuki",
     "Kuniaki Saito",
+    "Toshihiko Fukushima",
     "Cristian C. Beltran-Hernandez",
     "Mai Nishimura"
    ],
@@ -11396,9 +12295,9 @@
     "cs.RO",
     "cs.AI"
    ],
-   "comment": "Project website: https://omron-sinicx.github.io/clap/",
+   "comment": "Accepted to CoRL 2026. Project page: https://omron-sinicx.github.io/clap",
    "project": [
-    "https://omron-sinicx.github.io/clap/"
+    "https://omron-sinicx.github.io/clap"
    ],
    "topics": [
     "vla"
@@ -11793,11 +12692,15 @@
     "Varun Murali",
     "Srinivas Shakkottai"
    ],
-   "abstract": "LLM-based robot planners are fluent but cannot guarantee that their plans are executable or safe. Classical PDDL planners can guarantee these properties, but only after the problem is fully specified, and they make poor use of an LLM's ability to read context and repair plans. This paper presents a neuro-symbolic framework with three parts. All LLM calls use a locally-hosted open-weight model, so the pipeline can be deployed on-robot with no cloud dependency. First, an offline procedure that mines a single global Signal Temporal Logic (STL) constraint on mobility from demonstration data. The …",
+   "abstract": "LLM-based robot planners are fluent but cannot guarantee that their plans are executable or safe. Classical PDDL planners can guarantee symbolic validity, but only once the problem is fully specified, and they make poor use of an LLM's ability to read context and repair plans. We present EvoPlan, a neuro-symbolic framework whose guarantees are symbolic validity and satisfaction of a constraint learned from data. The planner works with locally-hosted open-weight models, so it does not require a cloud service. EvoPlan has three parts. First, an offline procedure that mines a single global …",
    "published": "2026-07-07",
    "primary": "cs.RO",
    "categories": [
     "cs.RO"
+   ],
+   "comment": "Accepted at CoRL 2026. Project page: https://nbhavyasai.github.io/evoplan/",
+   "project": [
+    "https://nbhavyasai.github.io/evoplan/"
    ],
    "topics": [],
    "hf_checked": "2026-11-02"
@@ -12012,14 +12915,15 @@
     "cs.CL",
     "cs.LG"
    ],
+   "comment": "Conference on Robot Learning (CoRL) 2026, Spotlight",
    "project": [
     "https://graph-robots.github.io/gap"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02",
    "code": [
     "https://github.com/graph-robots/graph-as-policy"
-   ]
+   ],
+   "hf_checked": "2026-11-02"
   },
   {
    "id": "2607.04879",
@@ -14330,14 +15234,17 @@
     "Jongbin Lim",
     "Hanbyul Joo"
    ],
-   "abstract": "Learning robust dexterous grasping requires real-world data that records the physical outcomes of grasp attempts. Such data is hard to obtain at scale: teleoperation yields valid physical outcomes but is slow and operator-biased, while simulation-based generation is cheap and scalable but cannot certify contact validity. A natural solution is to generate candidate grasps and verify them on real hardware, but this scales only if the entire collection loop (perception, execution, labeling, and reset) runs without human intervention. We present AutoDex, an automated real-world data-collection …",
+   "abstract": "Scaling real-world dexterous-grasp data collection is limited by the sustained human effort required to operate the robot, verify grasp outcomes, and reset objects between trials. Simulation can generate grasp candidates at scale, but their success on hardware remains uncertain. We present AutoDex, a system that collects real-world dexterous-grasp data without continuous human operation. Given generated grasp candidates, AutoDex plans and executes grasps, labels their outcomes, and resets the object to continue collection across stable poses. Multi-view object tracking supports labeling under …",
    "published": "2026-06-22",
    "primary": "cs.RO",
    "categories": [
     "cs.RO",
     "cs.LG"
    ],
-   "comment": "16 pages, 9 figures. Includes supplementary material",
+   "comment": "9 pages + references, 6 figures. Accepted to CoRL 2026",
+   "project": [
+    "https://snuvclab.github.io/AutoDex/"
+   ],
    "topics": [
     "manipulation",
     "datasets"
@@ -16790,6 +17697,7 @@
     "cs.RO",
     "cs.AI"
    ],
+   "comment": "Published as a main conference paper at CoRL 2026",
    "topics": [],
    "hf_checked": "2026-11-02"
   },
@@ -17587,6 +18495,7 @@
    "categories": [
     "cs.RO"
    ],
+   "comment": "Accepted to the Conference on Robot Learning (CoRL 2026) as a Spotlight paper",
    "topics": [
     "perception"
    ],
@@ -19758,7 +20667,7 @@
    "categories": [
     "cs.RO"
    ],
-   "comment": "17 pages, 8 figures",
+   "comment": "17 pages, 8 figures, Accepted to the 10th Annual Conference on Robot Learning (CoRL 2026)",
    "topics": [
     "learning"
    ],
@@ -25294,6 +26203,28 @@
    "comment": "Accepted ICRA 2026",
    "topics": [],
    "hf_checked": "2026-11-02"
+  },
+  {
+   "id": "2603.07618",
+   "title": "SMAT: Staged Multi-Agent Training for Co-Adaptive Exoskeleton Control",
+   "authors": [
+    "Yifei Yuan",
+    "Ghaith Androwis",
+    "Xianlian Zhou"
+   ],
+   "abstract": "Effective exoskeleton assistance requires co-adaptation: as the device alters joint dynamics, the user reorganizes neuromuscular coordination, creating a non-stationary learning problem. Most learning-based approaches do not explicitly account for the sequential nature of human motor adaptation, leading to training instability and poorly timed assistance. We propose Staged Multi-Agent Training (SMAT), a four-stage curriculum inspired by how users acclimate to a wearable device. In SMAT, a musculoskeletal human actor and a bilateral hip exoskeleton actor are trained progressively: the human …",
+   "published": "2026-03-08",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "comment": "Accepted to IROS 2026. 8 pages, 7 figures. v2: camera-ready version; added code link and funding acknowledgment; clarified method details and limitations",
+   "topics": [
+    "hardware"
+   ],
+   "hf_checked": "2026-11-10"
   },
   {
    "id": "2603.07578",
