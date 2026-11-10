@@ -496,3 +496,13 @@
   tags: [mpc, vision, distillation, racing]
   takeaway_en: "VIGOR-MPC distills a privileged long-horizon MPC into a short-horizon MPC whose cost weights are inferred online from noisy vision; in vision-based racing it nears the teacher's lap times with 90%+ less compute per step."
   takeaway_zh: "VIGOR-MPC 将具有特权信息的长视野 MPC 蒸馏为短视野 MPC，其代价参数由含噪视觉在线推断；在视觉自主竞速中接近教师圈速，每步计算量减少 90% 以上。"
+- title: "Sampling-based Model Predictive Control as Sequential Monte Carlo Inference"
+  type: paper
+  arxiv: "2611.10877"
+  year: 2026
+  org: Purdue University
+  code: https://github.com/CoMMALab/PFMP
+  added: 2026-11-10
+  tags: [mpc, mppi, sequential-monte-carlo, jax, mujoco]
+  takeaway_en: "Shows predictive sampling, MPPI, CEM and their variants are one SMC algorithm set by proposal, update rule and resampling threshold. Resampling cuts long-horizon collisions by 30%; programmable proposals lift push-T."
+  takeaway_zh: "指出预测采样、MPPI、CEM 及其变体都是同一个序贯蒙特卡洛算法，只是提议分布、更新规则与重采样阈值不同。重采样使长时域碰撞率降低 30%，可编程提议显著提升 push-T 成功率。"

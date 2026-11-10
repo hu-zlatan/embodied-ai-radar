@@ -831,3 +831,22 @@
   tags: [event-camera, quadrotor, imitation-learning, agile-flight]
   takeaway_en: "Event-camera drone flight: learn the representation offline from a large dataset, then fine-tune the policy online on cheap state only, with no event rendering. Training drops from 52.44 h to 1.86 h."
   takeaway_zh: "事件相机无人机飞行：先在大规模离线数据上学习表示，再只用轻量状态信息在线微调策略，无需在训练中渲染事件。训练时间从 52.44 小时降到 1.86 小时。"
+- title: "CPNav: Calibrated Vision-Language Navigation for Object-Goal Search in Unseen Environments"
+  type: paper
+  arxiv: "2611.10366"
+  year: 2026
+  org: UCLA
+  code: https://github.com/practice-lab-ucla/CPnav
+  added: 2026-11-10
+  tags: [object-goal-navigation, vlm, conformal-prediction, real]
+  takeaway_en: "Wraps VLM action scores for object-goal search in a conformal prediction layer with a user-set risk level, plus collision-free primitives and backtracking. Reports gains on HM3D/MP3D and on a small real robot."
+  takeaway_zh: "为目标物体搜索中的 VLM 动作打分加上共形预测校准层（风险水平可设定），结合无碰撞运动基元与回溯探索。在 HM3D/MP3D 及小型真实机器人上报告提升。"
+- title: "MOSU2: Long-range Navigation System with Multi-modal Scene Understanding"
+  type: paper
+  arxiv: "2611.11148"
+  year: 2026
+  project: https://jinggm.github.io/mosu2/
+  added: 2026-11-10
+  tags: [outdoor-navigation, vlm, social-navigation, traversability, real]
+  takeaway_en: "Outdoor long-range navigation where a VLM first reasons on context and only pulls in geometry and motion cues when an interaction stays unclear. Reports real-world success up from 61.8% to 94.2% over MOSU."
+  takeaway_zh: "户外长距离导航：VLM 先基于场景上下文推理，只有交互情形仍不明确时才调取几何与运动信息。真实实验中导航成功率相对前作 MOSU 从 61.8% 提升到 94.2%。"

@@ -1340,3 +1340,24 @@
   tags: [human-in-the-loop, interventions, rl, real, sim]
   takeaway_en: "Real users intervene when progress stalls, often with imperfect fixes; a progress-based human model makes sim benchmarking match them. Q-OIL adds optimistic bonuses on intervention steps; reports 10-50% higher success."
   takeaway_zh: "真实用户往往在进展停滞时介入，且纠正动作并不完美；据此建立的基于进展的人类模型让仿真评测更贴近真人。Q-OIL 对介入转移加乐观奖励并用解耦评论家稳定训练，报告成功率提升 10-50%。"
+- title: "Off-Policy RL with Online Inference Tuning: My Solution to the CoRL 2026 RoboEval Challenge"
+  type: paper
+  arxiv: "2611.11464"
+  year: 2026
+  code: https://github.com/IliaLarchenko/RoboEvalSolution
+  project: https://ilialarchenko.com/projects/roboeval2026/
+  added: 2026-11-10
+  topics: [vla]
+  tags: [challenge, offline-rl, awr, pi0.5, bimanual, thompson-sampling]
+  takeaway_en: "Challenge report: a π0.5 policy that is its own critic, trained off-policy on the exact score; Thompson sampling tunes ~20 inference settings; adds generated and recovery demos. Reports 0.987 RDS."
+  takeaway_zh: "比赛技术报告：基于 π0.5 的策略同时充当价值函数，直接以官方评分做离策略 RL，每次 rollout 用 Thompson 采样调约 20 个推理参数，并加入生成示范与失败恢复数据。官方种子上报告 0.987 RDS。"
+- title: "Explicitly capturing demonstrator multi-modality for distillation into diffusion policies"
+  type: paper
+  arxiv: "2611.10949"
+  year: 2026
+  org: MIT
+  project: https://shaoyuan.cc/research/vine/
+  added: 2026-11-10
+  tags: [diffusion-policy, behavior-cloning, multimodality, data-collection]
+  takeaway_en: "Diffusion policies trained on sliding-window demos often memorise one action per state; querying the demonstrator k times at one state (vine sampling) keeps the multimodality and aids best-of-N and expert iteration."
+  takeaway_zh: "用滑窗示范训练的扩散策略往往每个状态只记住一个动作。在同一状态下向示范者查询 k 次（vine 采样）可保留其多模态分布，并提升 best-of-N 与专家迭代效果。"

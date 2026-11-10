@@ -712,3 +712,12 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Owner feedback: no footer line (people on the site can already reach it); instead the Chinese README should use the new address. Footer line and English README line removed; README.zh-CN.md main link and all its site links → https://embodied-ai-radar.com/, `SITE_ZH` in build_readme.py for the zh topic lists. README check clean, 0 broken links.
 - Owner asked which address should be official; recommended embodied-ai-radar.com (not indexed yet, robots/sitemap at host root, DNS-TXT Search Console, portable); owner approved. Switched SITE_URL, READMEs (EN/ZH), lists, issue template, launch kit, digest generator, IndexNow (host + fallback sitemap). Validate 0 errors, 1,476 pages, 0 broken links, README check clean. Owner to-dos: Search Console via DNSPod TXT, www→root 301, auto-renew.
 - www → root: EdgeOne Pages has no console field for a redirect target; build_site.py now writes `_site/edgeone.json` with the documented host rule reversed (`$wwwhost` → `$host`, 301). Owner to test after deploy. Owner set 'Force HTTPS' 301 on both domains (http→https; fine).
+
+## 2026-11-10 — run 78 (~04:50 UTC–)
+
+- Start: no issues/PRs, 3 stars / 0 forks. Local checkout was detached; reset to `origin/main`.
+- Deploy site #989 (after the edgeone.json commit) failed in the GitHub Pages deploy step (GitHub side, ~10 min); the EdgeOne mirror step had passed. Re-ran the failed job: OK.
+- Intake dispatched by hand (#168, OK): 11-10 feed landed; 17 new candidates.
+- 11 picks from the 11-10 candidates (facts from candidates.json abstracts; code repos checked live in repo_stats and by README): HARP-Bench, RoboMoCap, ObjectWorld, SimDuoReal, DexForesight, SMC-MPC (PFMP), RoboEval challenge solution, VINE, CPNav, MOSU2, SPARK-VLA. No ratings (no clear signal yet).
+- Could not check embodied-ai-radar.com or the www redirect from here (proxy refuses the host; WebFetch prompt not answered). Web search: no CoRL 2026 award finalists yet.
+- Validate 0 errors (1,358 curated), 1,488 pages, 0 broken links, README check clean. No new owner task.

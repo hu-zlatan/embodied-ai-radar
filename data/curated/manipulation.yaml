@@ -1737,3 +1737,23 @@
   tags: [grasp-feasibility, counterfactual, evaluation, tamp]
   takeaway_en: "Drops an obstacle into a fixed grasp's approach path and lets a planner relabel it: eight feasibility predictors fall from 0.92–0.996 AUROC to chance, so they ignore collision geometry. Labels and pipeline released."
   takeaway_zh: "固定抓取位姿、在接近路径中插入障碍物并由规划器重新标注：八种可行性预测器的 AUROC 从 0.92–0.996 跌至随机水平，说明它们并未利用碰撞几何。发布标签与流程。"
+- title: "SimDuoReal: Object-Centric Bimanual Policy for Emergent Dexterity"
+  type: paper
+  arxiv: "2611.10410"
+  year: 2026
+  project: https://simduoreal.github.io
+  added: 2026-11-10
+  topics: [learning]
+  tags: [bimanual, dexterous, rl, sim-to-real, handover, distillation]
+  takeaway_en: "One shared object-pose reward, varied training scenes: RL experts discover regrasping, in-hand adjustment and handover on their own, then distil into one policy. Reports 61 of 80 real trials with unseen objects."
+  takeaway_zh: "只用统一的物体位姿奖励并变换训练环境，强化学习专家自行学会重抓、手内调整与双手交接，再蒸馏成单一策略。报告在未见物体上真实实验 80 次成功 61 次。"
+- title: "DexForesight: Grounding Dexterous Policies with Implicit Spatial Foresight"
+  type: paper
+  arxiv: "2611.11166"
+  year: 2026
+  project: https://dexforesight.github.io/
+  added: 2026-11-10
+  topics: [world-models]
+  tags: [dexterous, world-model, representation-alignment, real]
+  takeaway_en: "Trains a world model of 3D hand-point and scene motion, then aligns policy latents to it; at test time only the RGB policy runs, with no depth or future frames. Reports 49.4% → 60.5% on 11 DexJoCo tasks."
+  takeaway_zh: "先训练预测 3D 手部点与场景变化的世界模型，再把策略潜表示对齐到它；部署时只保留 RGB 策略，无需深度或未来预测。在 11 个 DexJoCo 任务上成功率从 49.4% 提升到 60.5%。"

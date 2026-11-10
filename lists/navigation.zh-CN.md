@@ -2,7 +2,7 @@
 
 _视觉语言导航、具身问答、移动操作与大模型规划。_
 
-共 83 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
+共 85 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/navigation.html) · [English](navigation.md)
 
@@ -21,6 +21,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - **[AsyncVLA: An Asynchronous VLA for Fast and Robust Navigation on the Edge](https://arxiv.org/abs/2602.13476)** (2026) — 大模型在远端工作站提供高层指引，机载轻量 Edge Adapter 高频修正动作，两路异步运行并端到端微调。在通信延迟最高 6 秒的真实导航中，成功率比基线高 40%。
 - **[Benchmarking Obstacle-Conditioned Safety in Household Robot Navigation](https://arxiv.org/abs/2610.34674)** (2026) — OSMA-Bench 用仅障碍物类型不同的配对场景，检验导航策略能否按障碍物危险程度调整间距与速度，并提出语义敏感度指数 SSI。结果显示 VLM 与 VLA 策略能识别哪些障碍更危险，却很少把这种判断体现在实际运动中；在 VLM 方案中加入显式参数推断步骤有所改善。 · [代码](https://github.com/OSMA-Bench/OSMA-Bench) · [项目页](https://osma-bench.github.io/)
 - **[COOL: Curiosity-Driven Object Ownership Learning for Personalized Robotic Assistance](https://arxiv.org/abs/2610.09358)** (2026) — 从日常观察中学习“哪个物品属于谁”，并通过好奇心驱动的探索刷新长期空间记忆，从而执行“找我的水杯”这类个性化指令。
+- **[CPNav: Calibrated Vision-Language Navigation for Object-Goal Search in Unseen Environments](https://arxiv.org/abs/2611.10366)** (2026) — 为目标物体搜索中的 VLM 动作打分加上共形预测校准层（风险水平可设定），结合无碰撞运动基元与回溯探索。在 HM3D/MP3D 及小型真实机器人上报告提升。 · [代码](https://github.com/practice-lab-ucla/CPnav)
 - **[CoFL-S: Spatially Queryable Sector Flow Fields for Local Language-Conditioned Navigation](https://arxiv.org/abs/2607.02222)** (2026) — 低层视觉语言导航动作头：在可见扇区上预测语言条件的流场并展开为连续轨迹；并提供连续时间的 Habitat 评测基准。 · [代码](https://github.com/ut-dragon-lab/CoFL)
 - **[CoSMO: Conformal Semantic Mapping for Open-World Safe Robot Navigation](https://arxiv.org/abs/2610.18321)** (2026) — 用在线共形预测校准 VLM 语义地图，使不同类别物体获得有覆盖率保证的安全距离，且支持词表扩展。报告在 MP3D 上语义碰撞减少 61.6%，四足真机覆盖率 90.73%。 · [代码](https://github.com/Yangming911/CoSMO) · [项目页](https://yangming911.github.io/cosmo-page/)
 - **[Collaborative Planning for UAV-UGV Teams under Operational Constraints via Masked Error-bounded Neuro-Symbolic Diffusion](https://arxiv.org/abs/2610.18850)** (2026) — MEND 用掩码扩散规划无人机与地面车协同充电任务，在执行时通过逻辑动作掩码强制满足运行约束；在真实地图和实体机器人队伍上测试。
@@ -44,6 +45,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - **[Learning Visuomotor Quadrotor Flight Through Dynamic Narrow Gaps via Differentiable Simulation](https://arxiv.org/abs/2610.37557)** (2026) — 视觉运动四旋翼策略穿越移动的狭窄缝隙，借助可微仿真从零单阶段训练；以到时变缝隙平面的有符号距离门控各项损失，把稀疏的穿越事件变成稠密目标。
 - **[Look Before You Move: Agent-Interface-Aligned Supervision for Open-World Mobile Manipulation](https://arxiv.org/abs/2610.15572)** (2026) — 让示教者直接通过智能体自身的技能接口（包括“往哪看”）执行动作来采集 VLM 智能体训练数据。报告在 170 个开放世界移动操作测试集上成功率 71.76%，零样本真机 38%。 · [项目页](https://connerqiu.github.io/look-before-you-move/)
 - **[MOON: Learning When to Forget and How to Move On in Vision-and-Language Navigation](https://arxiv.org/abs/2610.33546)** (2026) — 发现 VLN 智能体偏离路线后会被历史记忆“惯性”拖住。MOON 给冻结的导航策略加上偏航判断器（判断何时清空历史）和 GRPO 训练的恢复策略，参数增加不到 1%；报告在 R2R-CE / RxR-CE 上分别提升 5.2 / 6.0 个百分点。 · [代码](https://github.com/AutoLab-SAI-SJTU/MOON)
+- **[MOSU2: Long-range Navigation System with Multi-modal Scene Understanding](https://arxiv.org/abs/2611.11148)** (2026) — 户外长距离导航：VLM 先基于场景上下文推理，只有交互情形仍不明确时才调取几何与运动信息。真实实验中导航成功率相对前作 MOSU 从 61.8% 提升到 94.2%。 · [项目页](https://jinggm.github.io/mosu2/)
 - **[MessyMem: Learning-from-Doing Memory for Mobile Manipulation](https://arxiv.org/abs/2609.15976)** (2026) — 移动操作机器人的持久记忆：在三维场景图中记录通过交互学到的知识（如柜子上锁、物体位置）。报告在连续 25 个任务、3 小时的仿真中任务进度达 80%。 · [项目页](https://messymem.github.io)
 - **[MessyNav: Zero-Shot Navigation via Manipulation in Messy Environments](https://arxiv.org/abs/2611.07417)** (2026) — 在杂乱环境中导航：用 VLM 推理每个挡路物体该推开、拿起还是绕开。零样本，报告在真实移动操作机器人上比最强基线高 27 个百分点。
 - **[Navigating the Clutter: Waypoint-Based Bi-Level Planning for Multi-Robot Systems](https://arxiv.org/abs/2604.21138)** (2026) — 面向密集障碍中多达九台机器人的任务与运动联合规划：用航点参数化运动轨迹，并以课程式训练和改进的 RLVR 将运动规划器的可行性反馈传回任务规划器（BoxNet3D-OBS 基准）。

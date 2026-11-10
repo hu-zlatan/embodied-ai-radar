@@ -2,7 +2,7 @@
 
 _Motion planning, trajectory optimization, MPC, safety filters and safe learning-based control._
 
-50 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/control.yaml`](../data/curated/control.yaml); edit the YAML, not this file.
+51 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/control.yaml`](../data/curated/control.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/control.html) · [中文](control.zh-CN.md)
 
@@ -44,6 +44,7 @@ _Motion planning, trajectory optimization, MPC, safety filters and safe learning
 - **[PrismPlan: A Shared GPU Substrate for Motion Planning Across Paradigms](https://arxiv.org/abs/2610.23884)** (2026) — Builds batched GPU collision checking and forward kinematics once and runs sampling, search and optimization planners on top, so the three paradigms can be compared fairly. · [code](https://github.com/XiaoyubotMotionTeam/PrismPlan)
 - **[RAM: Reachability Across Morphologies](https://arxiv.org/abs/2606.09108)** (2026) — CoRL 2026 Spotlight. A morphology-conditioned implicit neural model of pose reachability, differentiable, self-collision aware and able to generalize to unseen morphologies. · [code](https://github.com/TimWalter/ram) · [project](https://timwalter.github.io/ram)
 - **[Safe Streaming Flow Planning by Aligning Sampling Dynamics with Execution Dynamics](https://arxiv.org/abs/2610.03132)** (2026) — Flow-matching planner whose sampling steps follow the execution dynamics, so safety (high-order CBFs) is enforced only on the executed step. Lower latency and better safety on navigation, racing and locomotion. · [code](https://github.com/Jang-seunghwan/SafeStreamingFlowPlanning) · [project](https://jang-seunghwan.github.io/SafeStreamingFlowPlanning/)
+- **[Sampling-based Model Predictive Control as Sequential Monte Carlo Inference](https://arxiv.org/abs/2611.10877)** (2026) — Shows predictive sampling, MPPI, CEM and their variants are one SMC algorithm set by proposal, update rule and resampling threshold. Resampling cuts long-horizon collisions by 30%; programmable proposals lift push-T. · [code](https://github.com/CoMMALab/PFMP)
 - **[Scalable Deep Unfolding of Conic Optimizers](https://arxiv.org/abs/2606.13825)** (2026) — Makes deep unfolding work for large conic solvers via matrix-free implicit differentiation and a stable PSD-projection gradient; reports up to 50× speedups on SDP-based planning.
 - **[Sub-Millisecond Reflexes for Continuous Physical Human-Robot Interaction](https://arxiv.org/abs/2610.21913)** (2026) — An open-source ROS 2 multimode controller that switches control modes and triggers safety reflexes in under a millisecond, without stopping the task; shown on a Franka arm. · [code](https://github.com/RoboRef/franka_reflex_engine)
 - **[TAM: Torque Adaptation Module for Robust Motion Transfer in Manipulation](https://arxiv.org/abs/2606.06218)** (2026) — CoRL 2026 Spotlight. A module for contact-rich motion transfer across sim-to-real gaps, payloads and robot instances, as an alternative to domain randomization or system ID. · [code](https://github.com/Dongwon-Son/TAM) · [project](https://dongwon-son.github.io/tam-project-page/)

@@ -2671,3 +2671,12 @@
   tags: [person-tracking, quadruped, grounding, dataset]
   takeaway_en: "VLA for language-guided person following with mask and box grounding supervision and target-conditioned history compression; the 0.8B model reports 77.9% on EVT-Bench, plus a 126-episode quadruped tracking dataset."
   takeaway_zh: "面向语言引导行人跟随的 VLA：加入掩码与检测框定位监督，并按目标压缩历史视觉信息；0.8B 模型在 EVT-Bench 上平均成功率 77.9%，另发布 126 段四足机器人跟踪数据。"
+- title: "Spatial Representation Distillation and Knowledge Routing for Vision-Language-Action Models"
+  type: paper
+  arxiv: "2611.10443"
+  year: 2026
+  venue: NeurIPS 2026
+  added: 2026-11-10
+  tags: [3d-aware, distillation, lora, token-routing, libero]
+  takeaway_en: "SPARK-VLA distils a frozen 3D expert into a LoRA visual branch beside the original one, and a small router passes only action-relevant tokens to a 0.5B LLM. No 3D input at inference; ~53M trainable parameters."
+  takeaway_zh: "SPARK-VLA 把冻结的 3D 专家蒸馏到与原视觉通路并行的 LoRA 分支，并用轻量路由器只把与动作相关的视觉 token 送入 0.5B 语言模型。推理时无需 3D 输入，可训练参数约 5300 万。"
