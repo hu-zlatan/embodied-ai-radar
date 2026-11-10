@@ -28,29 +28,6 @@
    "fetched": "2026-11-10"
   },
   {
-   "id": "2611.12804",
-   "title": "Benchmarking Real-World Robotic Manipulation through Stochastic Challenges",
-   "published": "2026-11-10",
-   "topics": [
-    "manipulation",
-    "datasets"
-   ],
-   "venue": "CoRL 2026",
-   "code": [],
-   "project": [],
-   "comment": "Accepted at the 10th Conference on Robot Learning (CoRL 2026). 15 pages, 3 figures",
-   "authors": [
-    "Elias Gläßer",
-    "Gülhan Şikaroğlu",
-    "Pavlo Kupyn",
-    "Marc Pollefeys",
-    "Zuria Bauer",
-    "Hermann Blum"
-   ],
-   "abstract": "A challenging bottleneck in manipulation research is reproducibility and comparability of methods in real-world environments. Since manipulation is an interactive task, it cannot be evaluated on a static dataset of observations. Benchmarking in simulation is a common remedy, but cannot cover the whole complexity of real-world tests. This paper proposes a new paradigm of stochastic challenges. Like the well-known YCB objects, it is based on reproducible real-world scenes and therefore allows system-level innovation and comparability between different platforms. Due to their stochastic nature, our challenges however, mimic the rigor and surprise of hidden test sets. To this end, we show how different robots in different labs can be compared based on their success rate over different random task samples, if these samples come from the same distribution. We propose stochastic challenges as a general paradigm for robot benchmarking and implement this paradigm in a novel benchmark for mobile manipulation, on which we compare two robots tested in two different labs.",
-   "fetched": "2026-11-10"
-  },
-  {
    "id": "2611.12643",
    "title": "Simulation-aided Reinforcement Learning with Control Variates",
    "published": "2026-11-10",
@@ -320,26 +297,6 @@
     "Hongtao Wang"
    ],
    "abstract": "Dexterous hands enable versatile manipulation, but policies trained in simulation often degrade on hardware owing to non-idealities, and the high-dimensional action space makes real-world adaptation costly. Piano playing, which requires precise and coordinated multifinger motion, offers a representative testbed. We propose GAP (Generalized Adaptation Prior for Dexterous Piano Playing), a sample-efficient adaptation framework that learns how to adapt, rather than how to act, during simulation pretraining and transfers this adaptation prior to hardware. Between repeated executions, GAP uses feedback to adjust the actions of the next one: a gradient guidance network learns from paired executions how adjusting actions affects playing performance, and its gradients guide these adjustments. In simulation, GAP yields approximately 2.4 times the F1 scores improvement of the existing fast-adaptation baseline for dexterous piano playing under the same interaction budget. The learned prior also generalizes to musical pieces held out from pretraining. On a physical dexterous hand, the same simulation-pretrained prior improves F1 scores by 3.6%-23% across three pieces of varying difficulty after approximately 7 min of adaptation each. These results suggest a practical route to reduce the real-world interaction needed to deploy dexterous hands.",
-   "fetched": "2026-11-10"
-  },
-  {
-   "id": "2611.12102",
-   "title": "SPARK: Simple Post-training for Adapting pRetrained Knowledge to Robot Control",
-   "published": "2026-11-10",
-   "topics": [],
-   "venue": "CoRL 2026",
-   "code": [],
-   "project": [],
-   "comment": "CoRL 2026. 16 pages, 3 figures, 13 tables",
-   "authors": [
-    "Taekyung Kim",
-    "Jeongeun Park",
-    "Byeongho Heo",
-    "Sungjoon Choi",
-    "Sangdoo Yun",
-    "Dongyoon Han"
-   ],
-   "abstract": "Large-scale representation learning has produced public foundation models that provide strong general-purpose visual features. However, their pretraining objectives are not designed for robot representation learning, so the resulting embeddings tend to emphasize global semantics rather than the temporally sensitive representations required for robot control. Training robot models from scratch is also undesirable due to the limited scale and high collection cost of robotics data, as well as the substantial computational burden of pre-training. In this paper, we propose SPARK (Simple Post-training for Adapting pRetrained Knowledge), a post-training method that adapts foundation models to robot control. SPARK is built on two principles: temporal abstraction, which encourages the encoder to derive compact features that preserve information essential for understanding temporal changes and action-relevant scene structure, and knowledge preservation, which aligns patch-level representations with those of the original foundation model to retain useful pretrained semantics. These objectives yield compact visual state representations that remain semantically meaningful while preserving useful prior knowledge. Experiments across multiple robotics benchmarks show that SPARK consistently improves success rates and generalization over vanilla foundation models, and further demonstrate that these gains transfer to real-world robot manipulation.",
    "fetched": "2026-11-10"
   },
   {
@@ -893,32 +850,6 @@
     "Shuran Song"
    ],
    "abstract": "Human demonstrations provide a scalable source of diverse manipulation data, but leveraging them for robot learning remains challenging due to differences in embodiment, viewpoint, action spaces, and temporal structure. We introduce BATCH, a cross-embodiment learning framework that explicitly aligns human and robot behaviors. BATCH learns self-supervised temporal representations with a cycle-consistency objective to establish cross-embodiment correspondences without manual annotation. We further introduce two complementary training objectives that leverage these correspondences within an autoregressive videoaction diffusion model: behavior-aligned co-training and human-to-robot style transfer. On real-world manipulation tasks, BATCH improves generalization to unseen task configurations compared with training on unaligned data and prior cross-embodiment baselines, with additional gains from the style-transfer objective. Our results demonstrate that explicit behavior alignment enables more effective transfer from human demonstrations to robot policies.",
-   "fetched": "2026-11-10"
-  },
-  {
-   "id": "2611.10061",
-   "title": "UniLatent: Cross-Embodiment Transfer via Latent Observation Alignment",
-   "published": "2026-11-10",
-   "topics": [
-    "vla"
-   ],
-   "venue": "CoRL 2026",
-   "code": [],
-   "project": [
-    "https://selina2023.github.io/unilatent/"
-   ],
-   "comment": "Accepted to CoRL 2026",
-   "authors": [
-    "Yufei Ding",
-    "Yi Du",
-    "Weiduo Yuan",
-    "Hao Jiang",
-    "Dylan Goetting",
-    "Lawrence Yunliang Chen",
-    "Daniel Seita",
-    "Yue Wang"
-   ],
-   "abstract": "Robot datasets are costly to collect and are usually tied to a specific embodiment, making it difficult to reuse demonstrations across robots with different geometry, appearance, and kinematics. We introduce UniLatent, a cross-embodiment transfer framework that reduces the embodiment-induced observation gap in a shared latent space. UniLatent renders paired source-target robot observations in simulation and aligns a source visual encoder to a frozen target encoder. A policy trained on encoded source demonstrations can then run directly on target observations, with no pixel-level image translation. Across three simulation tasks and two target robot arms, UniLatent reaches up to 93% zero-shot success, exceeding the strongest pixel-translation baseline by over 30 points on average. In real-world xArm-to-Franka transfer, fine-tuning with only 10 target demonstrations per task yields 27/30 successful rollouts. Code, videos and data are available at https://selina2023.github.io/unilatent/.",
    "fetched": "2026-11-10"
   },
   {
