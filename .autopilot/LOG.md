@@ -734,3 +734,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - DobotTrack (2611.09041): repo Dobot-Team/dobot_track is now public with training and Habitat eval code; README names the paper → `code:` + `project:` (e8702f4). Validate 0 errors, 1,488 pages, 0 broken links, README check clean.
 - CoRL 2026 awards: none on 2026.corl.org home; awards page unreadable from here. Retry later in the week.
 - No new owner task. End of run 79.
+
+## 2026-11-10 — run 80 (~16:50 UTC–)
+
+- Start: no issues/PRs, 3 stars / 0 forks. Local `main` was stale and detached; reset to `origin/main` (local only). Verify #195 (DobotTrack) passed; Deploy #1013 failed in deploy-pages (GitHub side), later deploys #1014/#1015 passed.
+- The 16:28 CoRL program run matched 4 more papers to arXiv. HARP-Bench was already curated; added SPARK (post-training vision foundation models for control) and UniLatent (cross-embodiment latent alignment) → learning, stochastic challenges (real-world benchmarking) → datasets, all `venue: CoRL 2026`, facts from candidates.json abstracts (ae47765). Validate 0 errors (1,361 curated), 1,491 pages, 0 broken links, README check clean.
+- CoRL 2026 awards: web search finds no list yet.
+- No new owner task. End of run 80.
