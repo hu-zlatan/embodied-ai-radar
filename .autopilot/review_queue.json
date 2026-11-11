@@ -4,7 +4,7 @@
   {
    "id": "2611.12806",
    "title": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
-   "upvotes": 96,
+   "upvotes": 97,
    "hf_date": "2026-11-10",
    "published": "2026-11-10",
    "topics": [
@@ -39,6 +39,33 @@
    "comment": null,
    "abstract": "Tactile sensing is an indispensable modality for contact-rich dexterous manipulation, a capability that hints at the ultimate frontiers of embodied intelligence. However, commercially available tactile sensors are still at a relatively early stage of development, with each type of sensor offering irreplaceable strengths alongside its own drawbacks. A key challenge is thus to free tactile understanding from sensor-specific physics, so that embodied models can effectively leverage heterogeneous tactile data. To this end, we develop LingBot-Touch, a tactile foundation model characterized by the following properties. (i) Our model yields a unified representation across different tactile sensors (i.e., piezoresistive, magnetic, and visuotactile sensors), and is easily extensible to new sensor types. (ii) The resulting tactile tokens are plug-and-play: they can be seamlessly integrated into policy models across paradigms, from diffusion policy to vision-language-action (VLA) models such as π_{0.5} and LingBot-VLA, consistently enhancing manipulation dexterity. (iii) Extensive experiments, spanning simulation and real-robot deployments across multiple hardware platforms, demonstrate that our tactile representation substantially benefits complex manipulation tasks while maintaining strong computational efficiency. We believe the findings in this work demonstrate the potential of leveraging cross-sensor data to scale tactile learning, and offer encouraging insights for the design of future hardware and embodied models.",
    "ai_summary": "LingBot-Touch is a tactile foundation model that learns a unified, extensible representation across heterogeneous tactile sensors, yielding plug-and-play tactile tokens that consistently enhance manipulation policies such as diffusion policy and VLA models."
+  },
+  {
+   "id": "2611.12885",
+   "title": "World In-Context Learning for Agentic Robot Manipulation",
+   "upvotes": 52,
+   "hf_date": "2026-11-11",
+   "published": "2026-11-10",
+   "topics": [
+    "manipulation"
+   ],
+   "authors": [
+    "Heng Fang",
+    "Zehui Guo",
+    "Yuehan Zhang",
+    "Mingyang Du",
+    "Dingkang Liang",
+    "Xiang Bai"
+   ],
+   "organization": "ArcheOne-AI",
+   "github": "https://github.com/ArcheOne-AI/RoboScript",
+   "project": "https://archeone-ai.github.io/RoboScript/",
+   "arxiv_code": [
+    "https://github.com/ArcheOne-AI/RoboScript"
+   ],
+   "comment": "Project Page: https://ArcheOne-AI.github.io/RoboScript",
+   "abstract": "Trained action policies write manipulation skill into network weights, tying what is learned to the distribution it is learned from. In-context learning (ICL) avoids this coupling but has not matched trained policies, because a demonstration recorded in another scene carries no feedback from the world the robot currently faces. We observe that what an agent learns in context is semantic, recording task steps and object roles rather than visual appearance, so experience gathered in one world transfers to another. Based on this insight, we propose World In-Context Learning (WICL), a paradigm in which a frozen model starts from a demonstration, rehearses the task in a world such as a simulator, and writes the feedback into its context rather than its weights. We build RoboScript, a modular infrastructure that implements WICL for agentic manipulation. From a single demonstration, RoboScript learns each task through rehearsal in simulation, freezes the learned knowledge as a Task Memory, and deploys the frozen memory on new scenes with data isolation that ensures every deployment input is available on a real robot. On all 50 tasks of RoboTwin 2.0, RoboScript reaches 83.4% mean success across clean and randomized settings with one demonstration per task and no gradient updates, exceeding the strongest trained action policy by over 20 points. The method generalizes across visual distributions, improves through reflection, scales with the foundation model, and transfers to a physical dual-arm robot through cross-embodiment memory adaptation. With a world in the loop, a robot can learn a manipulation task in its context as well as it learns one in its weights. All code is available at https://github.com/ArcheOne-AI/RoboScript",
+   "ai_summary": null
   },
   {
    "id": "2611.09124",
@@ -93,36 +120,9 @@
    "ai_summary": "HiSTEVE is a hierarchical vision-language-action agent that combines long-horizon planning with native keyboard-and-mouse control to perform complex open-ended tasks in Minecraft."
   },
   {
-   "id": "2611.12885",
-   "title": "World In-Context Learning for Agentic Robot Manipulation",
-   "upvotes": 30,
-   "hf_date": "2026-11-11",
-   "published": "2026-11-10",
-   "topics": [
-    "manipulation"
-   ],
-   "authors": [
-    "Heng Fang",
-    "Zehui Guo",
-    "Yuehan Zhang",
-    "Mingyang Du",
-    "Dingkang Liang",
-    "Xiang Bai"
-   ],
-   "organization": "ArcheOne-AI",
-   "github": "https://github.com/ArcheOne-AI/RoboScript",
-   "project": "https://archeone-ai.github.io/RoboScript/",
-   "arxiv_code": [
-    "https://github.com/ArcheOne-AI/RoboScript"
-   ],
-   "comment": "Project Page: https://ArcheOne-AI.github.io/RoboScript",
-   "abstract": "Trained action policies write manipulation skill into network weights, tying what is learned to the distribution it is learned from. In-context learning (ICL) avoids this coupling but has not matched trained policies, because a demonstration recorded in another scene carries no feedback from the world the robot currently faces. We observe that what an agent learns in context is semantic, recording task steps and object roles rather than visual appearance, so experience gathered in one world transfers to another. Based on this insight, we propose World In-Context Learning (WICL), a paradigm in which a frozen model starts from a demonstration, rehearses the task in a world such as a simulator, and writes the feedback into its context rather than its weights. We build RoboScript, a modular infrastructure that implements WICL for agentic manipulation. From a single demonstration, RoboScript learns each task through rehearsal in simulation, freezes the learned knowledge as a Task Memory, and deploys the frozen memory on new scenes with data isolation that ensures every deployment input is available on a real robot. On all 50 tasks of RoboTwin 2.0, RoboScript reaches 83.4% mean success across clean and randomized settings with one demonstration per task and no gradient updates, exceeding the strongest trained action policy by over 20 points. The method generalizes across visual distributions, improves through reflection, scales with the foundation model, and transfers to a physical dual-arm robot through cross-embodiment memory adaptation. With a world in the loop, a robot can learn a manipulation task in its context as well as it learns one in its weights. All code is available at https://github.com/ArcheOne-AI/RoboScript",
-   "ai_summary": null
-  },
-  {
    "id": "2611.12870",
    "title": "SWAM: Scaling World Action Models with Cross-Modal Alignment",
-   "upvotes": 19,
+   "upvotes": 20,
    "hf_date": "2026-11-10",
    "published": "2026-11-10",
    "topics": [
