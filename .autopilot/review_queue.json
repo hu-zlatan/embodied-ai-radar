@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "papers": [
   {
    "id": "2611.12806",
    "title": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
-   "upvotes": 92,
+   "upvotes": 96,
    "hf_date": "2026-11-10",
    "published": "2026-11-10",
    "topics": [
@@ -43,7 +43,7 @@
   {
    "id": "2611.09124",
    "title": "Toward the Era of Agentic Embodied Intelligence",
-   "upvotes": 49,
+   "upvotes": 50,
    "hf_date": "2026-11-09",
    "published": "2026-11-09",
    "topics": [],
@@ -93,51 +93,82 @@
    "ai_summary": "HiSTEVE is a hierarchical vision-language-action agent that combines long-horizon planning with native keyboard-and-mouse control to perform complex open-ended tasks in Minecraft."
   },
   {
-   "id": "2610.28632",
-   "title": "Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs",
-   "upvotes": 26,
-   "hf_date": "2026-10-21",
-   "published": "2026-10-21",
-   "topics": [],
-   "authors": [
-    "Noam Rotstein",
-    "Yoad Tewel",
-    "Chen Tessler",
-    "Haggai Maron",
-    "Gal Chechik",
-    "Or Litany",
-    "Yoni Kasten",
-    "Yuval Atzmon"
+   "id": "2611.12885",
+   "title": "World In-Context Learning for Agentic Robot Manipulation",
+   "upvotes": 17,
+   "hf_date": "2026-11-11",
+   "published": "2026-11-10",
+   "topics": [
+    "manipulation"
    ],
-   "organization": "NVIDIA",
-   "github": null,
-   "project": "https://research.nvidia.com/labs/par/projects/jca/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Video generation models can now depict remarkably realistic motion. Yet it is unclear how to use this motion beyond pixels: to animate a specific 3D asset and replay the animation in its 3D scene. For instance, a video model can show a monkey jumping over a crossbar, but it cannot return that jump as replayable 3D motion placed in the 3D scene. Here we present a model that directly co-generates the video and 3D motion for any supplied rig, along with a camera that registers this motion to the scene. Prior video-motion models either handle only human skeletons, often adding billions of parameters, or triangulate 3D motion from generated 2D pose maps. We instead keep 3D motion in a separate model that supports arbitrary skeletons, and connect it to a pretrained video model through a small set of cross-attention layers. This separation lets the motion model first learn how skeletons move from motion-only data, which is easier to obtain and augment than paired video. Additionally, our model learns to locate each joint in the video frames, which lets us recover the camera and place the 3D motion in the scene. To train across many skeletons, we use a generative video editor to place animated 3D assets in scenes suited to their actions, curating the edits so their known motion remains valid. Together with human and robot video, this yields nearly 200K training pairs. Our evaluations demonstrate that our model animates diverse rigs from text more faithfully than video-first pipelines, and its motion responds to the surrounding scene. It also turns video into rig motion, rig motion into video, and enables keyframe-based control of the 3D motion. Videos and additional results are available on our project page: https://research.nvidia.com/labs/par/projects/jca/.",
-   "ai_summary": "The model co-generates video and 3D motion for arbitrary skeletons via cross-attention with a pretrained video generator, enabling scene-registered animation and bidirectional video-motion conversion."
+   "authors": [
+    "Heng Fang",
+    "Zehui Guo",
+    "Yuehan Zhang",
+    "Mingyang Du",
+    "Dingkang Liang",
+    "Xiang Bai"
+   ],
+   "organization": "H-EmbodVis",
+   "github": "https://github.com/ArcheOne-AI/RoboScript",
+   "project": "https://archeone-ai.github.io/RoboScript/",
+   "arxiv_code": [
+    "https://github.com/ArcheOne-AI/RoboScript"
+   ],
+   "comment": "Project Page: https://ArcheOne-AI.github.io/RoboScript",
+   "abstract": "Trained action policies write manipulation skill into network weights, tying what is learned to the distribution it is learned from. In-context learning (ICL) avoids this coupling but has not matched trained policies, because a demonstration recorded in another scene carries no feedback from the world the robot currently faces. We observe that what an agent learns in context is semantic, recording task steps and object roles rather than visual appearance, so experience gathered in one world transfers to another. Based on this insight, we propose World In-Context Learning (WICL), a paradigm in which a frozen model starts from a demonstration, rehearses the task in a world such as a simulator, and writes the feedback into its context rather than its weights. We build RoboScript, a modular infrastructure that implements WICL for agentic manipulation. From a single demonstration, RoboScript learns each task through rehearsal in simulation, freezes the learned knowledge as a Task Memory, and deploys the frozen memory on new scenes with data isolation that ensures every deployment input is available on a real robot. On all 50 tasks of RoboTwin 2.0, RoboScript reaches 83.4% mean success across clean and randomized settings with one demonstration per task and no gradient updates, exceeding the strongest trained action policy by over 20 points. The method generalizes across visual distributions, improves through reflection, scales with the foundation model, and transfers to a physical dual-arm robot through cross-embodiment memory adaptation. With a world in the loop, a robot can learn a manipulation task in its context as well as it learns one in its weights. All code is available at https://github.com/ArcheOne-AI/RoboScript",
+   "ai_summary": null
   },
   {
-   "id": "2610.18604",
-   "title": "LLM2R: From Large Language Models to 3D Reassemblers",
-   "upvotes": 24,
-   "hf_date": "2026-10-21",
-   "published": "2026-10-13",
-   "topics": [],
-   "authors": [
-    "Zhouhan Zhong",
-    "Qiuhong Shen",
-    "Xingyi Yang",
-    "Jinyi Xu",
-    "Xinchao Wang"
+   "id": "2611.12870",
+   "title": "SWAM: Scaling World Action Models with Cross-Modal Alignment",
+   "upvotes": 17,
+   "hf_date": "2026-11-10",
+   "published": "2026-11-10",
+   "topics": [
+    "world-models"
    ],
-   "organization": "National University of Singapore",
-   "github": null,
+   "authors": [
+    "Yu Zhou",
+    "Xinyuan Xia",
+    "Xuankun Yang",
+    "Yinghao Yang",
+    "Wendi Chen",
+    "Bowen Liu",
+    "Jianhan Ma",
+    "Weicheng Duan",
+    "Jun Lv",
+    "Cewu Lu",
+    "Yanwei Li"
+   ],
+   "organization": "Shanghai Jiao Tong University",
+   "github": "https://github.com/shaaaaron/SWAM",
+   "project": "https://char-lotte-xia.github.io/swam-official/",
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "World action models jointly predict video and actions conditioned on language. Existing studies focus primarily on architectures and training mechanisms, typically treating language-video alignment acquired through video pretraining as an established foundation. However, introducing action learning may impair this alignment. Principled guidance on data and supervision design for maintaining language-video alignment during action learning remains limited. To investigate this, we curate a pool of approximately 47,000 hours of general videos, egocentric videos, UMI demonstrations, and robot demonstrations. Building on this, we systematically study how language-video supervision, language-video-action supervision, and the joint use of these two forms affect WAM performance. In particular, we examine how language annotation quality affects pretrained language-video capabilities, and how action supervision from UMI and robot demonstrations extends these capabilities to language-video-action modeling. To better scale the model, we further conduct detailed studies on joint training recipe and model architecture. Under a fixed training budget, mixing egocentric videos and UMI demonstrations improves control generalization. Model architecture affects how effectively these experiences are used, while scaling pretraining under the selected configuration brings further gains. The resulting recipe, post-trained on RoboTwin Clean demonstrations only, achieves success rates of 88.10% and 61.56% under Easy (Clean-to-Clean) and Hard (Clean-to-Random) conditions, respectively. Our model achieves 40.00% SR across three real-world tasks, compared with 23.33% for the strongest baseline, indicating better generalization under unseen conditions. We release the curated data, training code, and model weights.",
+   "ai_summary": null
+  },
+  {
+   "id": "2611.14488",
+   "title": "Is Your Robot's Memory Just a Clock? Temporal Shortcuts in Memory-Augmented VLA Policies",
+   "upvotes": 5,
+   "hf_date": "2026-11-11",
+   "published": "2026-11-11",
+   "topics": [
+    "vla"
+   ],
+   "authors": [
+    "Chubin Zhang",
+    "Bo An"
+   ],
+   "organization": "Nanyang Technological University",
+   "github": "https://github.com/bennidict23/memory-clock",
    "project": null,
    "arxiv_code": [],
-   "comment": "20 pages, 5 figures, 7 tables",
-   "abstract": "3D part assembly aims to reconstruct a complete shape from a set of unassembled parts by predicting a rigid SE(3) transformation for each part. Because the placement of a part is rarely determined by its own geometry, the task demands reasoning over the entire part set, and existing methods, which rely on pairwise relations or iterative generation and verification, scale poorly to objects with many parts. We present LLM2R, which casts part assembly as sequence modeling with a pretrained decoder-only large language model (LLM): a Point-BERT encoder and a Q-Former compress each part into a block of geometric tokens, the blocks of all parts are concatenated, and a causal LLM adapted with Low-Rank Adaptation (LoRA) processes the sequence in one forward pass. Causal attention, however, lets the hidden states of a part observe only the parts that precede it. LLM2R therefore appends a block of learnable summary tokens after the last part: these tokens follow every part, so their states aggregate the whole assembly at a constant token cost, and a part-aware pose head fuses each part's states with them before predicting its rotation and translation. One architecture thus handles semantic and geometric assembly and predicts all poses in a single non-autoregressive pass. LLM2R achieves the highest part accuracy and success rate on all three PartNet categories, the best rotation error, translation error, and part accuracy on PartNeXt, and the lowest translation error and fastest inference on Breaking Bad, where only a fracture-specialized method is more accurate. Its advantage grows with the number of parts: at 100 parts it exceeds GARF by 33.5 points in part accuracy on Breaking Bad and Assembler by 29.1 points on PartNet, and it transfers zero-shot to unseen categories with more than 16 points higher part accuracy than the strongest of three baselines.",
-   "ai_summary": "LLM2R treats 3D part assembly as sequence modeling with a pretrained decoder-only LLM, using geometric tokens and learnable summary tokens to predict all part poses in a single pass with improved scalability and accuracy."
+   "comment": "38 pages",
+   "abstract": "Memory-augmented vision-language-action (VLA) policies are meant to remember what happened. Many of them, however, fill memory by time: they sample frames uniformly across the episode and stamp each frame with its time step. Because time passes even when nothing happens, such a memory may not tell waiting from working. We show that it does not. On the counting tasks of RoboMME, we make the robot briefly pause or fidget its wrist. Such a null event changes nothing the task depends on, yet a released memory VLA counts the interval as work done and stops early. We call this failure phantom progress. It cuts success from 47 to 16 of 50 on one task and from 44 to 10 on the other. When the same frames are withheld from memory, success returns, so the cause lies in memory rather than in the interruption itself. We trace the failure to a temporal shortcut: because demonstrations proceed at a steady pace, elapsed time predicts progress. Indeed, rescaling the time stamps alone makes the policy stop early when the clock runs fast and repeat when it runs slow. Surprisingly, removing the time encoding does not cure the failure, because the frames of a null event still occupy slots of the time-sampled memory. Across RoboMME's released designs, vulnerability follows how memory is indexed. Of the fixes the diagnosis suggests, training with injected pauses does not remove the failure and impairs counting, whereas indexing memory by events recovers half or more of the loss without retraining. A memory meant to remember what happened should count events rather than clock ticks.",
+   "ai_summary": "Memory in vision-language-action policies can mistake pauses for progress because it is indexed by time, causing early stopping, while event-based indexing mitigates this without retraining."
   }
  ],
  "curated_link_updates": [
