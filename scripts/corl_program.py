@@ -27,6 +27,8 @@ OUT = PROGRAM_DIR / "corl-2026.json"
 RECHECK_DAYS = 3  # authors post preprints around the conference (Nov 9-12), so look again more often
 BROWSER = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"}
 MIN_PAPERS = 600  # below this the page changed shape: keep the stored program
+AWARDS_URLS = ("https://www.corl.org/program/awards", "https://2026.corl.org/program/awards")
+AWARDS_OUT = PROGRAM_DIR / "corl-2026-awards.txt"  # plain-text snapshot for the agent to read; not used by the site
 TITLE_RATIO = 0.95  # arXiv titles differ in small ways from the submitted one (hyphens, a changed word)
 
 
@@ -98,6 +100,26 @@ def best_match(title: str, recs: list[dict]) -> dict | None:
     return max(scored, key=lambda x: x[0])[1] if scored else None
 
 
+def awards_snapshot() -> None:
+    """Save the official awards page as plain text (best effort), so award finalists can be checked
+    against the source before any honor is added to curated entries. Never fails the run."""
+    for url in AWARDS_URLS:
+        try:
+            page = urllib.request.urlopen(urllib.request.Request(url, headers=BROWSER), timeout=60).read().decode("utf-8", "replace")
+        except Exception as e:  # noqa: BLE001 - network or HTTP error: try the next address
+            print(f"awards: {url}: {e}")
+            continue
+        parts = [page] + [html.unescape(m) for m in re.findall(r'data-code="([^"]*)"', page)]
+        text = "\n".join(strip_tags(re.sub(r"(?is)<(script|style)[^>]*>.*?</\1>", " ", x)) for x in parts)
+        text = re.sub(r"\s*(Best |Finalist|Winner|Honorable)", r"\n\1", text)[:40000]
+        if not re.search(r"(?i)best (student )?paper|finalist", text):
+            print(f"awards: {url}: no award text ({len(text)} chars)")
+            continue
+        AWARDS_OUT.write_text(f"source: {url}\nfetched: {dt.datetime.now(dt.timezone.utc):%Y-%m-%d %H:%M} UTC\n\n{text}\n", encoding="utf-8")
+        print(f"awards: saved {len(text)} chars from {url}")
+        return
+
+
 def write(prog: dict) -> None:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(prog, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
@@ -109,6 +131,7 @@ def main() -> int:
     ap.add_argument("--minutes", type=float, default=45)
     args = ap.parse_args()
     today = dt.date.today()
+    awards_snapshot()
     t = urllib.request.urlopen(urllib.request.Request(URL, headers=BROWSER), timeout=60).read().decode("utf-8", "replace")
     fresh = parse_program(embedded_html(t))
     n_rows = len(fresh["papers"])
