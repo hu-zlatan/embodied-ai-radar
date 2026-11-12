@@ -751,3 +751,6 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - facts.yml for 6 new CoRL program matches was cancelled by a newer pending verify (arxiv-api group); re-dispatch after verify starts.
 - CoRL 2026 awards: web search finds nothing yet.
 - Validate 0 errors (1,379 curated), 1,510 pages, 0 broken links, README check clean.
+- facts.yml #27 (after verify #199 started): HuMI, SSR → locomotion, SFHand (2511.18127, v2 title; ut-vision/SFHand README names CoRL 2026) → manipulation. Skipped AmodalBox (driving scenes), racing friction estimator, off-road SpatialBEV.
+- Verify #199 failed: arXiv renamed DiffWBC → OneSteer (title updated; project URL unchanged) and pi.website answered HTTP 429 for three links. `verify_curated.py`: 429 is now retried once and reported as a warning, not a failure (rate limiting says nothing about the link).
+- Validate 0 errors (1,382 curated), 1,513 pages, 0 broken links, README check clean. No new owner task. End of run 81.

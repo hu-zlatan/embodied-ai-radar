@@ -425,7 +425,7 @@
   takeaway_en: "Movens-5M: 5M execution-verified humanoid motions from web videos, aligned with text, RGB, speech and music. Movens-Zero trains one flow-matching action expert on seven tasks for real-time closed-loop control."
   takeaway_zh: "Movens-5M 从互联网视频构建 500 万条经执行验证的人形动作（超 1 万小时），对齐文本、RGB、语音和音乐。Movens-Zero 用一个流匹配动作专家联合训练七种生成任务，支持实时闭环执行；另有四赛道基准 Movens-Intent。"
 
-- title: "DiffWBC: Unlocking Steerable General Humanoid Motion Tracking via One-Step Diffusion Whole-Body Control"
+- title: "OneSteer: Unlocking Steerable General Humanoid Motion Tracking via One-Step Diffusion Whole-Body Control"
   type: paper
   arxiv: "2610.41354"
   year: 2026
@@ -1760,3 +1760,24 @@
   tags: [humanoid, unitree-g1, motion-tracking, ppo, sim]
   takeaway_en: "A motion tracker replaces selected movements (e.g. overhead arms) while still seeing the original reference; rewards use an edited one. In G1 sim, unwanted content drops to 2.7% vs 58.9% for reward zeroing."
   takeaway_zh: "让动作跟踪控制器在仍接收原始参考动作的情况下替换指定片段（如举臂过头）：训练奖励使用编辑后的参考。G1 仿真中不希望出现的动作占比降至 2.7%，奖励置零基线为 58.9%。"
+- title: "HuMI: Humanoid Whole-Body Manipulation from Humanoid-Free Demonstrations"
+  type: paper
+  arxiv: "2602.06643"
+  year: 2026
+  venue: CoRL 2026
+  project: https://humanoid-manipulation-interface.github.io
+  added: 2026-11-12
+  topics: [manipulation]
+  tags: [humanoid, whole-body-manipulation, portable-data-collection, human-motion, real]
+  takeaway_en: "HuMI records whole-body human motion with portable hardware, no humanoid needed; a hierarchical pipeline turns it into feasible humanoid skills. 3x faster data collection than teleop, 70% success in unseen places."
+  takeaway_zh: "HuMI 用便携设备采集人的全身动作，无需人形机器人在场，再通过分层学习流程转化为可行的人形技能（跪、蹲、抛、走、双臂操作）。报告数据采集效率比遥操作高 3 倍，在未见环境中成功率 70%。"
+- title: "SSR: Scaling Surefooted and Symmetric Humanoid Traversal Toward the Open World"
+  type: paper
+  arxiv: "2605.30770"
+  year: 2026
+  venue: CoRL 2026
+  project: https://ssr-humanoid.github.io/
+  added: 2026-11-12
+  tags: [humanoid, perceptive-locomotion, egocentric-vision, symmetry, motion-priors, real]
+  takeaway_en: "Egocentric-vision humanoid traversal: imagined foothold guidance steers swings to stable support, latent symmetry augmentation adds bilateral coordination. Real stairs, wide gaps, high platforms, long outdoor walks."
+  takeaway_zh: "端到端的第一人称视觉人形地形穿越：“想象落脚点”引导摆动腿落向稳定支撑区域减少踩边打滑，潜空间对称增强带来左右协调，分地形运动先验使动作更自然。真机可过多种楼梯、宽沟、高台并完成户外长距离行走。"

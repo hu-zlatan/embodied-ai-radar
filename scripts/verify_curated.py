@@ -3,7 +3,7 @@
 1. Every curated arXiv ID must exist and its arXiv title must match the curated title.
 2. Every curated URL (url, code, project) must answer with HTTP < 400.
 
-Writes a Markdown report to $GITHUB_STEP_SUMMARY (if set) and to stdout. Exit 1 on failures (bad IDs, title mismatches, HTTP 4xx links); links that stay unreachable or 5xx after one retry are reported as warnings.
+Writes a Markdown report to $GITHUB_STEP_SUMMARY (if set) and to stdout. Exit 1 on failures (bad IDs, title mismatches, HTTP 4xx links); links that stay unreachable, 5xx or 429 (rate limited) after one retry are reported as warnings.
 Usage: python scripts/verify_curated.py [--no-links]
 """
 from __future__ import annotations
@@ -108,14 +108,14 @@ def main() -> int:
                       | {r["url"] for r in load_resources()[0]})
         for u in urls:
             problem = check_url(u)
-            if problem and not problem.startswith("HTTP 4"):
-                time.sleep(10)  # network error or 5xx: retry once before judging
+            if problem and (not problem.startswith("HTTP 4") or problem == "HTTP 429"):
+                time.sleep(10)  # network error, 5xx or rate limit: retry once before judging
                 problem = check_url(u)
-            if problem and problem.startswith("HTTP 4"):
+            if problem and problem.startswith("HTTP 4") and problem != "HTTP 429":
                 failures.append(f"link {u}: {problem}")
             elif problem:
                 # the site may just be down right now; flag it without failing the run
-                warnings.append(f"link {u}: {problem} (network error or server error; re-checked once)")
+                warnings.append(f"link {u}: {problem} (network error, server error or rate limit; re-checked once)")
             time.sleep(0.3)
     lines.append(f"Checked {len(ids)} arXiv IDs and {len(entries)} entries.")
     lines.append("")
