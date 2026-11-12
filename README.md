@@ -63,7 +63,7 @@ _Vision-language-action models and generalist robot policies._ [Browse with the 
 - ⭐ **[EagleVLA: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference](https://arxiv.org/abs/2607.12659)** (2026) — EagleVLA: asynchronous VLA inference for low-power onboard chips such as Jetson Orin, tackling perception-execution misalignment and slow reaction; a CoRL 2026 Spotlight, formerly titled Jetson-PI. · [code](https://github.com/PKU-SEC-Lab/EagleVLA)
 - ⭐ **[GigaBrain-0.5M\*: a VLA That Learns From World Model-Based Reinforcement Learning](https://arxiv.org/abs/2602.12099)** (2026) — Post-trains a VLA (GigaBrain-0.5, 10k+ h of robot data) with RL conditioned on a video world model's predictions (RAMP); reports ~30% over the RECAP baseline on laundry folding, box packing and espresso making. · [code](https://github.com/open-gigaai/giga-brain-0) · [project](https://gigabrain05m.github.io)
 
-**[All 266 entries →](lists/vla.md)**
+**[All 268 entries →](lists/vla.md)**
 
 <a id="manipulation"></a>
 ### Manipulation & Dexterous Hands
@@ -80,10 +80,10 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - ⭐ **[Learning Object-Centric Motion Priors from Human for Robotic Dexterous Manipulation](https://arxiv.org/abs/2611.05979)** (2026) — Learns to predict future hand-object states from human interaction datasets and uses the predicted object states as a general RL reward, reducing reward engineering; deployed on different hands (AAAI oral).
 - ⭐ **[Long-Horizon Multi-Object Rearrangement via Distilled Tree Search over Continuous Actions](https://arxiv.org/abs/2610.25785)** (2026) — DISCO runs progressive-widening MCTS in GPU-parallel simulation, with a learned policy proposing continuous actions, then distills plans into a policy-value model used without search. Reports wins over BC, RL and search. · [code](https://github.com/kallol-saha/DISCO) · [project](https://distilled-search.github.io)
 - ⭐ **[Noise-Invariant Spatial Encoding for 3D Manipulation Policies under Depth Corruption](https://arxiv.org/abs/2610.24674)** (2026) — NISE targets the sharp failure of 3D policies under realistic depth noise, carrying position uncertainty into attention; tested on transparent and reflective objects with commodity RGB-D.
+- ⭐ **[World In-Context Learning for Agentic Robot Manipulation](https://arxiv.org/abs/2611.12885)** (2026) — RoboScript: a frozen model rehearses a task in sim from one demo and writes feedback into a task memory, not weights. 83.4% on all 50 RoboTwin 2.0 tasks, 20+ points over the best trained policy; real dual-arm too. · [code](https://github.com/ArcheOne-AI/RoboScript) · [project](https://archeone-ai.github.io/RoboScript/)
 - ⭐ **[3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://arxiv.org/abs/2403.03954)** (2024) — Conditions a diffusion policy on a compact point-cloud encoding; more data-efficient and robust to viewpoint than images. · [code](https://github.com/YanjieZe/3D-Diffusion-Policy)
-- ⭐ **[Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation](https://arxiv.org/abs/2401.02117)** (2024) — Puts ALOHA on a mobile base; co-training with static ALOHA data boosts mobile tasks like cooking and opening cabinets. · [code](https://github.com/MarkFzp/mobile-aloha)
 
-**[All 176 entries →](lists/manipulation.md)**
+**[All 177 entries →](lists/manipulation.md)**
 
 <a id="tactile"></a>
 ### Tactile & Visuotactile Sensing
@@ -91,6 +91,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 _Tactile sensors, touch representations and contact-rich control._ [Browse with the latest papers →](https://embodied-ai-radar.com/topics/tactile.html)
 
 - ⭐⭐⭐ **[DIGIT: A Novel Design for a Low-Cost Compact High-Resolution Tactile Sensor with Application to In-Hand Manipulation](https://arxiv.org/abs/2005.14679)** (2020) — An inexpensive, compact GelSight-style fingertip sensor that made vision-based touch widely accessible. · [code](https://github.com/facebookresearch/digit-interface)
+- ⭐ **[Learning Heterogeneous Tactile Representation for General Dexterous Manipulation](https://arxiv.org/abs/2611.12806)** (2026) — LingBot-Touch learns one representation across piezoresistive, magnetic and visuotactile sensors. Its tactile tokens plug into diffusion policies and VLAs (π0.5, LingBot-VLA); gains in sim and on real robots. · [code](https://github.com/Robbyant/lingbot-touch) · [project](https://technology.robbyant.com/lingbot-touch)
 - ⭐ **[Visible Touch: Rendering Contact for Visuomotor Policies](https://arxiv.org/abs/2609.14156)** (2026) — CoRL 2026 Spotlight. Brings contact into image-conditioned policies by rendering it, targeting the gap left by approaches that need tactile hardware, separate tactile encoders or non-image backbones. · [code](https://github.com/qaz1678249/visibletouch) · [project](https://visibletouch.github.io/)
 - **[MDF++: Visuo-Tactile World Action Model with End-to-end Representation Learning](https://arxiv.org/abs/2611.09293)** (2026) — Learns visuo-tactile latents end-to-end inside a diffusion world-action model not frozen encoders; multi-task cross-modal losses avoid feature collapse. Reports up to 50% gains on real bolt screwing and nut mating. · [project](https://jointmdf.github.io/)
 - **[RevoSim: Scalable Multimodal Tactile Simulation for Dexterous Manipulation](https://arxiv.org/abs/2611.08939)** (2026) — Tactile simulator for the BrainCo Revo3 hand modelling 285 piezoresistive taxels and five visuotactile fingertips (pressure, depth, RGB, marker motion); up to 4,096 parallel envs on one RTX 5090. · [code](https://github.com/BrainCoTech/RevoSim) · [project](https://braincotech.github.io/RevoSim-web/)
@@ -101,9 +102,8 @@ _Tactile sensors, touch representations and contact-rich control._ [Browse with 
 - **[ForceBand: Learning Forceful Manipulation with sEMG](https://arxiv.org/abs/2606.26093)** (2026) — Low-cost wrist sEMG band whose model predicts per-finger forces, turning video demos into force-labelled ones after a short calibration. Reports >50% lower force error than vision and 87% on force-sensitive tasks. · [code](https://github.com/Bottle101/ForceBand) · [project](https://forceband-emg.github.io)
 - **[Heterogeneous Tactile Transformer](https://arxiv.org/abs/2606.29948)** (2026) — Shared tactile representation across sensors: sensor-specific encoders plus a common transformer, pretrained on a new 1.6M-frame paired dataset from four sensors; adapts to new tasks and unseen sensors. · [code](https://github.com/jxbi1010/HTT) · [project](https://jxbi1010.github.io/htt-gh-page/)
 - **[How Firm Should a Grasp Be?](https://arxiv.org/abs/2610.11221)** (2026) — Estimates mass, elasticity and friction visuotactilely during the grasp and applies the minimum safe grip force; adds a dataset of fruits and vegetables with measured physical properties.
-- **[Inference-time Policy Steering via Vision and Touch](https://arxiv.org/abs/2606.14981)** (2026) — Inference-time steering with vision and touch: visual sampling picks the behaviour, tactile-guided diffusion editing fixes local contact, scored by a visuo-tactile latent world model. Reports +51% over the base policy. · [code](https://github.com/yilin-wu98/vital) · [project](https://yilin-wu98.github.io/vital_website)
 
-**[All 78 entries →](lists/tactile.md)**
+**[All 79 entries →](lists/tactile.md)**
 
 <a id="locomotion"></a>
 ### Locomotion & Humanoids
@@ -143,7 +143,7 @@ _Learned dynamics, video world models, world action models (WAM) and model-based
 - ⭐ **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — An action-centered WAM that predicts actions from the observation and makes video generation optional, so motion accuracy depends less on forecast quality and inference is cheaper. · [code](https://github.com/open-gigaai/giga-world-policy) · [project](https://gigaai-research.github.io/GigaWorld-Policy/)
 - ⭐ **[GreenWAM: A World Foundation Model for Robotics](https://arxiv.org/abs/2610.18774)** (2026) — One world model that is also the policy, across 20 robot families mapped to a shared joint-space action format; reports strong WorldArena, RoboTwin 2.0 and LIBERO-plus results and a one-step distilled humanoid policy. · [code](https://github.com/greenvla/GreenWAM) · [project](https://greenvla.github.io/GreenWAM)
 
-**[All 133 entries →](lists/world-models.md)**
+**[All 134 entries →](lists/world-models.md)**
 
 <a id="navigation"></a>
 ### Navigation & Embodied Agents
@@ -263,7 +263,7 @@ _Large robot datasets, egocentric data and evaluation suites._ [Browse with the 
 - ⭐ **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 hand-designed manipulation tasks with demos; a staple for 3D policy methods like PerAct. · [code](https://github.com/stepjam/RLBench)
 - ⭐ **[ScanNet: Richly-annotated 3D Reconstructions of Indoor Scenes](https://arxiv.org/abs/1702.04405)** (2017) — RGB-D scans of 1,500+ indoor scenes with 3D reconstructions, camera poses and semantic labels; the standard benchmark for 3D scene understanding that embodied perception builds on. · [code](https://github.com/ScanNet/ScanNet)
 
-**[All 102 entries →](lists/datasets.md)**
+**[All 104 entries →](lists/datasets.md)**
 
 <a id="hardware"></a>
 ### Hardware & Open-Source Robots

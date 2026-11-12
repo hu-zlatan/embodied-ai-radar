@@ -2,13 +2,14 @@
 
 _Tactile sensors, touch representations and contact-rich control._
 
-78 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
+79 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/tactile.html) · [中文](tactile.zh-CN.md)
 
 [VLA & Robot Foundation Models](vla.md) · [Manipulation & Dexterous Hands](manipulation.md) · **Tactile & Visuotactile Sensing** · [Locomotion & Humanoids](locomotion.md) · [World Models](world-models.md) · [Navigation & Embodied Agents](navigation.md) · [Perception, SLAM & 3D Mapping](perception.md) · [Planning, Control & Safety](control.md) · [Robot Learning: RL & Imitation](learning.md) · [Sim-to-Real & Simulators](sim.md) · [Datasets & Benchmarks](datasets.md) · [Hardware & Open-Source Robots](hardware.md)
 
 - ⭐⭐⭐ **[DIGIT: A Novel Design for a Low-Cost Compact High-Resolution Tactile Sensor with Application to In-Hand Manipulation](https://arxiv.org/abs/2005.14679)** (2020) — An inexpensive, compact GelSight-style fingertip sensor that made vision-based touch widely accessible. · [code](https://github.com/facebookresearch/digit-interface)
+- ⭐ **[Learning Heterogeneous Tactile Representation for General Dexterous Manipulation](https://arxiv.org/abs/2611.12806)** (2026) — LingBot-Touch learns one representation across piezoresistive, magnetic and visuotactile sensors. Its tactile tokens plug into diffusion policies and VLAs (π0.5, LingBot-VLA); gains in sim and on real robots. · [code](https://github.com/Robbyant/lingbot-touch) · [project](https://technology.robbyant.com/lingbot-touch)
 - ⭐ **[Visible Touch: Rendering Contact for Visuomotor Policies](https://arxiv.org/abs/2609.14156)** (2026) — CoRL 2026 Spotlight. Brings contact into image-conditioned policies by rendering it, targeting the gap left by approaches that need tactile hardware, separate tactile encoders or non-image backbones. · [code](https://github.com/qaz1678249/visibletouch) · [project](https://visibletouch.github.io/)
 - **[$TF^2$-Steering: Action Refinement with Tactile Forecasts and Feedback via Velocity-Field Steering](https://arxiv.org/abs/2611.01483)** (2026) — Keeps a vision-based flow-matching policy and learns to steer its velocity field from tactile forecasts and live feedback, so touch can correct actions. Reports gains over baselines in six sim and six real tasks. · [project](https://yiming-cc.github.io/tf2-steering/)
 - **[ACTS: Learning Visuo-Tactile World Models from Human Physical Interaction](https://arxiv.org/abs/2610.24285)** (2026) — Visuo-tactile world model trained only on humans handling GelSight sensors (4.9 h React dataset). Reports that contact dynamics transfer to robot rollouts more reliably than visual appearance does. · [project](https://acts-anon.github.io/)

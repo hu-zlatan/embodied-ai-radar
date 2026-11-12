@@ -54,7 +54,7 @@ _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与�
 - ⭐ **[EagleVLA: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference](https://arxiv.org/abs/2607.12659)** (2026) — EagleVLA：面向 Jetson Orin 等低功耗机载设备的 VLA 异步推理方法，针对异步执行带来的感知-执行错位与反应慢两个问题；CoRL 2026 Spotlight，曾用名 Jetson-PI。 · [代码](https://github.com/PKU-SEC-Lab/EagleVLA)
 - ⭐ **[GigaBrain-0.5M\*: a VLA That Learns From World Model-Based Reinforcement Learning](https://arxiv.org/abs/2602.12099)** (2026) — 在 GigaBrain-0.5（预训练于 1 万多小时机器人操作数据）基础上，用以视频世界模型预测为条件的强化学习（RAMP）做后训练；论文报告在叠衣服、装箱和制作浓缩咖啡等难任务上比 RECAP 基线提升约 30%。 · [代码](https://github.com/open-gigaai/giga-brain-0) · [项目页](https://gigabrain05m.github.io)
 
-**[查看全部 266 条 →](lists/vla.zh-CN.md)**
+**[查看全部 268 条 →](lists/vla.zh-CN.md)**
 
 <a id="manipulation"></a>
 ### 操作与灵巧手
@@ -71,10 +71,10 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_ [在网站上�
 - ⭐ **[Learning Object-Centric Motion Priors from Human for Robotic Dexterous Manipulation](https://arxiv.org/abs/2611.05979)** (2026) — 从人手交互数据学习预测未来手物状态，并把预测的物体状态作为通用强化学习奖励，减少逐任务奖励设计；已部署到不同灵巧手（AAAI 口头报告）。
 - ⭐ **[Long-Horizon Multi-Object Rearrangement via Distilled Tree Search over Continuous Actions](https://arxiv.org/abs/2610.25785)** (2026) — DISCO 在 GPU 并行物理仿真中用渐进展宽 MCTS 搜索长程重排计划，由学习的策略提出连续动作、价值函数打分，并周期性把搜索结果蒸馏回策略-价值模型；部署时无需仿真搜索。报告在仿真与真机重排任务上优于行为克隆、强化学习与搜索基线（CoRL 2026 Oral）。 · [代码](https://github.com/kallol-saha/DISCO) · [项目页](https://distilled-search.github.io)
 - ⭐ **[Noise-Invariant Spatial Encoding for 3D Manipulation Policies under Depth Corruption](https://arxiv.org/abs/2610.24674)** (2026) — NISE 针对 3D 策略在真实深度噪声下的急剧失效，把位置不确定性带入注意力计算；在透明和反光物体上用普通 RGB-D 相机测试。
+- ⭐ **[World In-Context Learning for Agentic Robot Manipulation](https://arxiv.org/abs/2611.12885)** (2026) — RoboScript：冻结的基础模型从一条示范出发在仿真中“排练”任务，把反馈写进任务记忆而不是权重。报告在 RoboTwin 2.0 全部 50 个任务上平均成功率 83.4%，比最强训练策略高 20 多个点，并迁移到真实双臂机器人。 · [代码](https://github.com/ArcheOne-AI/RoboScript) · [项目页](https://archeone-ai.github.io/RoboScript/)
 - ⭐ **[3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://arxiv.org/abs/2403.03954)** (2024) — 用紧凑点云编码作为扩散策略条件，比图像输入更省数据、对视角更鲁棒。 · [代码](https://github.com/YanjieZe/3D-Diffusion-Policy)
-- ⭐ **[Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation](https://arxiv.org/abs/2401.02117)** (2024) — 将 ALOHA 装上移动底盘；与静态 ALOHA 数据联合训练显著提升做饭、开柜等移动任务表现。 · [代码](https://github.com/MarkFzp/mobile-aloha)
 
-**[查看全部 176 条 →](lists/manipulation.zh-CN.md)**
+**[查看全部 177 条 →](lists/manipulation.zh-CN.md)**
 
 <a id="tactile"></a>
 ### 触觉与视触觉感知
@@ -82,6 +82,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_ [在网站上�
 _触觉传感器、触觉表征与接触丰富的控制。_ [在网站上查看与最新论文 →](https://embodied-ai-radar.com/topics/tactile.html)
 
 - ⭐⭐⭐ **[DIGIT: A Novel Design for a Low-Cost Compact High-Resolution Tactile Sensor with Application to In-Hand Manipulation](https://arxiv.org/abs/2005.14679)** (2020) — 低成本、紧凑的 GelSight 式指尖传感器，让视触觉传感器得以普及。 · [代码](https://github.com/facebookresearch/digit-interface)
+- ⭐ **[Learning Heterogeneous Tactile Representation for General Dexterous Manipulation](https://arxiv.org/abs/2611.12806)** (2026) — LingBot-Touch 为压阻式、磁式和视触觉等不同触觉传感器学习统一表征，且易于扩展到新传感器。其触觉 token 可即插即用地接入扩散策略和 VLA（π0.5、LingBot-VLA），报告在仿真和多种真实平台上提升灵巧操作。 · [代码](https://github.com/Robbyant/lingbot-touch) · [项目页](https://technology.robbyant.com/lingbot-touch)
 - ⭐ **[Visible Touch: Rendering Contact for Visuomotor Policies](https://arxiv.org/abs/2609.14156)** (2026) — CoRL 2026 Spotlight。通过渲染接触信息把触觉带入基于图像的视觉运动策略，针对现有方法需要专用触觉硬件、独立触觉编码器或非图像主干，难以与预训练 2D 视觉表征策略兼容的问题。 · [代码](https://github.com/qaz1678249/visibletouch) · [项目页](https://visibletouch.github.io/)
 - **[MDF++: Visuo-Tactile World Action Model with End-to-end Representation Learning](https://arxiv.org/abs/2611.09293)** (2026) — 在扩散式世界-动作模型中端到端学习视触觉潜表示，而非使用冻结的预训练编码器；借助跨模态多任务学习避免特征坍缩。在真实拧螺栓、螺母配合等任务上报告最高 50% 的提升。 · [项目页](https://jointmdf.github.io/)
 - **[RevoSim: Scalable Multimodal Tactile Simulation for Dexterous Manipulation](https://arxiv.org/abs/2611.08939)** (2026) — 为 BrainCo Revo3 灵巧手构建的触觉仿真器，同时模拟 285 个压阻触点和五个视触觉指尖（压力、深度、RGB、标记点位移）；单张 RTX 5090 最多 4096 个并行环境。 · [代码](https://github.com/BrainCoTech/RevoSim) · [项目页](https://braincotech.github.io/RevoSim-web/)
@@ -92,9 +93,8 @@ _触觉传感器、触觉表征与接触丰富的控制。_ [在网站上查看�
 - **[ForceBand: Learning Forceful Manipulation with sEMG](https://arxiv.org/abs/2606.26093)** (2026) — 低成本腕戴式肌电（sEMG）设备，经短暂校准即可预测每根手指的力，把视频演示变成带力标注的演示。报告力预测误差比视觉方法低 50% 以上，力敏感任务成功率 87%。 · [代码](https://github.com/Bottle101/ForceBand) · [项目页](https://forceband-emg.github.io)
 - **[Heterogeneous Tactile Transformer](https://arxiv.org/abs/2606.29948)** (2026) — 跨传感器的统一触觉表征：各传感器独立编码器加共享 Transformer 主干，在新的 160 万帧四传感器配对数据集上预训练，可迁移到新任务和未见传感器。 · [代码](https://github.com/jxbi1010/HTT) · [项目页](https://jxbi1010.github.io/htt-gh-page/)
 - **[How Firm Should a Grasp Be?](https://arxiv.org/abs/2610.11221)** (2026) — 在抓取过程中用视触觉实时估计物体的质量、弹性和摩擦，从而施加刚好足够的最小夹持力；并提供一个测量了物理属性的水果蔬菜数据集。
-- **[Inference-time Policy Steering via Vision and Touch](https://arxiv.org/abs/2606.14981)** (2026) — 视觉+触觉的推理时策略引导：视觉采样验证决定执行何种行为，触觉引导的扩散编辑修正局部接触，并由视触觉潜在世界模型打分。报告比基础策略提升 51%。 · [代码](https://github.com/yilin-wu98/vital) · [项目页](https://yilin-wu98.github.io/vital_website)
 
-**[查看全部 78 条 →](lists/tactile.zh-CN.md)**
+**[查看全部 79 条 →](lists/tactile.zh-CN.md)**
 
 <a id="locomotion"></a>
 ### 运动控制与人形机器人
@@ -134,7 +134,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - ⭐ **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — 以动作为中心的世界动作模型：由观测预测动作，视频生成变为可选，动作精度不再依赖视频预测质量，推理开销也更低。 · [代码](https://github.com/open-gigaai/giga-world-policy) · [项目页](https://gigaai-research.github.io/GigaWorld-Policy/)
 - ⭐ **[GreenWAM: A World Foundation Model for Robotics](https://arxiv.org/abs/2610.18774)** (2026) — 同一个世界模型兼作策略，用共享的关节坐标动作空间覆盖 20 类机器人；论文报告其在 WorldArena、RoboTwin 2.0、LIBERO-plus 上表现突出，并蒸馏出可实时运行的单步人形机器人策略。 · [代码](https://github.com/greenvla/GreenWAM) · [项目页](https://greenvla.github.io/GreenWAM)
 
-**[查看全部 133 条 →](lists/world-models.zh-CN.md)**
+**[查看全部 134 条 →](lists/world-models.zh-CN.md)**
 
 <a id="navigation"></a>
 ### 导航与具身智能体
@@ -254,7 +254,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_ [在网站�
 - ⭐ **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 个手工设计的操作任务并附演示，是 PerAct 等 3D 策略方法的常用基准。 · [代码](https://github.com/stepjam/RLBench)
 - ⭐ **[ScanNet: Richly-annotated 3D Reconstructions of Indoor Scenes](https://arxiv.org/abs/1702.04405)** (2017) — 1500+ 个室内场景的 RGB-D 扫描，含三维重建、相机位姿与语义标注；具身感知所依赖的三维场景理解标准基准。 · [代码](https://github.com/ScanNet/ScanNet)
 
-**[查看全部 102 条 →](lists/datasets.zh-CN.md)**
+**[查看全部 104 条 →](lists/datasets.zh-CN.md)**
 
 <a id="hardware"></a>
 ### 硬件与开源机器人

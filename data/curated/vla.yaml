@@ -2702,3 +2702,26 @@
   tags: [evaluation, retrieval, libero, generalization, analysis]
   takeaway_en: "Retrieving nearby demos and replaying their action chunks reaches 91.7% on LIBERO with no training. Across nine VLAs, fine-tuning mostly makes the backbone a better retrieval key. Proposes the LAC metric."
   takeaway_zh: "只检索最近的示范并复用其动作块、完全不训练策略，就能在 LIBERO 上达到 91.7% 成功率。对九个公开 VLA 的分析显示，微调主要让视觉语言骨干成为更好的检索键；并提出离线指标 LAC。"
+- title: "Toward the Era of Agentic Embodied Intelligence"
+  type: paper
+  arxiv: "2611.09124"
+  year: 2026
+  rating: 1
+  org: Shanghai Jiao Tong University (AutoLab), Anyverse Dynamics
+  code: https://github.com/AutoLab-SAI-SJTU/A2MEAS
+  project: https://a2-meas.github.io/
+  added: 2026-11-12
+  topics: [locomotion]
+  tags: [agentic, multi-agent, failure-recovery, behavior-challenge, robotwin, real]
+  takeaway_en: "A²-MEAS pairs a VLA with motion history and a latent world model (A²-WLA) with agents that write learned 'correction codes'. Reports 0.641 Q on all 100 BEHAVIOR 2026 public tasks and 94% on RoboTwin 2.0."
+  takeaway_zh: "A²-MEAS 把带运动历史和潜在世界模型的 VLA（A²-WLA）与生成“纠错代码”的多智能体结合，训练时吸收进权重，部署时冻结权重也能纠错。报告 BEHAVIOR 2026 全部 100 个公开任务 Q 分 0.641，RoboTwin 2.0 约 94%。"
+- title: "Is Your Robot's Memory Just a Clock? Temporal Shortcuts in Memory-Augmented VLA Policies"
+  type: paper
+  arxiv: "2611.14488"
+  year: 2026
+  org: Nanyang Technological University
+  code: https://github.com/bennidict23/memory-clock
+  added: 2026-11-12
+  tags: [memory, robustness, analysis, robomme, shortcut-learning, sim]
+  takeaway_en: "Memory VLAs that sample frames by time count a pause as progress and stop early: on RoboMME counting tasks success falls from 47 to 16 of 50. Indexing memory by events, not time, recovers half or more without retraining."
+  takeaway_zh: "按时间采样帧的记忆型 VLA 会把停顿当成进度而提前结束：在 RoboMME 计数任务上，成功率从 47/50 跌到 16/50。改为按事件索引记忆、无需重训即可挽回一半以上的损失。"
