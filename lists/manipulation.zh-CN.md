@@ -2,7 +2,7 @@
 
 _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 
-共 174 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
+共 176 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/manipulation.html) · [English](manipulation.md)
 
@@ -59,6 +59,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[DexForesight: Grounding Dexterous Policies with Implicit Spatial Foresight](https://arxiv.org/abs/2611.11166)** (2026) — 先训练预测 3D 手部点与场景变化的世界模型，再把策略潜表示对齐到它；部署时只保留 RGB 策略，无需深度或未来预测。在 11 个 DexJoCo 任务上成功率从 49.4% 提升到 60.5%。 · [项目页](https://dexforesight.github.io/)
 - **[DexHOT: Learning Hand-Object Configuration Transfer for Dexterous Manipulation](https://arxiv.org/abs/2611.05119)** (2026) — 把灵巧操作目标定义为手与物体的联合构型，从合成构型对学习统一的转移基元，无需人类动作；报告仿真未见物体成功率 69.4%，200 次真机转移成功率 61.5%。 · [项目页](https://dex-hot.github.io/)
 - **[DexNinja: Learning Robust Dexterous Cutting Policy with a Real-to-Sim-to-Real Data Engine](https://arxiv.org/abs/2610.17208)** (2026) — 只用少量真实示教学习灵巧切割食物：重建物体实例，在类别约束下随机化物理参数，在仿真中生成扩增的灵巧示教，再迁移回真实灵巧手。
+- **[DexSeed: Expanding Human Hand-Object Interactions into Robot Demonstrations for Dexterous Policy Learning](https://arxiv.org/abs/2611.14092)** (2026) — 把人手-物体交互序列扩展到新物体和新放置位置并保持抓取方式，再由强化学习手指策略在仿真中生成可执行轨迹。仅用这些生成数据微调的 VLA 即可在真实环境中执行语言指定的抓取。 · [项目页](https://robbyant-research.github.io/DexSeed/)
 - **[Dexterous In-Hand Object Pose Reaching with Learned Safety Filters](https://arxiv.org/abs/2610.37652)** (2026) — 在仿真中无需人类数据训练 LEAP 灵巧手的手内物体位姿到达策略，零样本迁移到真机；报告在 4800 个未见目标上 95.2% 到达，可调节的残差安全滤波器使掉落减少 75%。 · [项目页](https://ian-chuang.github.io/dexsafe/)
 - **[DiffMorphGrasp: A Diffusion Framework Conditioned on Hand Morphology for Cross-Embodiment Grasp Generation](https://arxiv.org/abs/2602.00915)** (2026) — 以手部运动学结构图为条件的扩散抓取生成模型，可零样本迁移到未见过的机器人手型；同时提出跨手型抓取评测基准。 · [项目页](https://georgewuzy.github.io/DiffMorphGrasp-website)
 - **[ESCAPE: Egocentric Sensing for Collision Avoidance and Policy Execution](https://arxiv.org/abs/2610.23943)** (2026) — 机器人身上的分布式深度传感器汇成障碍感知点云；在 10 万多条仿真安全关键轨迹上训练的流匹配策略据此生成无碰撞运动，零样本迁移到真机。
@@ -72,6 +73,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[FingerViP: Learning Real-World Dexterous Manipulation with Fingertip Visual Perception](https://arxiv.org/abs/2604.21331)** (2026) — 在多指手的每个指尖装入微型摄像头，用第三视角加多指尖视角训练全身扩散策略。报告比外部+腕部相机方案平均成功率相对提升 56.6%。 · [代码](https://github.com/zhzhen0626/FingerViP) · [项目页](https://fingervip.github.io/)
 - **[Flow as Flow: Modeling Robot Velocity Fields as Probability Velocity Fields for Flow-Based Object Manipulation](https://arxiv.org/abs/2606.23090)** (2026) — 在流匹配框架中把机器人流建模为稠密速度场，而非稀疏关键点位移，生成速度比标准流匹配快约 24 倍；在 13 个真实任务上每种方法测试 260 次。
 - **[ForceLDM: A Force-aware Latent Dynamics Model for Contact-Rich Manipulation](https://arxiv.org/abs/2611.03294)** (2026) — 教师网络看到未来的力/力矩与光流，再把动力学特征蒸馏给只用当前观测的学生网络，使策略在部署时能预判接触。在五个真实接触丰富任务上测试。 · [代码](https://github.com/tpy001/ForceLDM-code) · [项目页](https://tpy001.github.io/ForceLDM/)
+- **[From Egocentric Human Video to Robot Manipulation in the Era of Embodied Intelligence](https://arxiv.org/abs/2611.13610)** (2026) — 关于从第一人称人类视频学习机器人操作的综述，分四类范式：显式本体迁移、动作/任务监督、视频表征预训练、潜在动作与动力学建模，并梳理相关数据集与开放挑战。 · [项目页](https://mikewu597.github.io/Ego2Robot_Learning/)
 - **[From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation](https://arxiv.org/abs/2606.30749)** (2026) — 用抓取数据集构造的 35.5 万条轨迹预训练灵巧手底层控制器，再微调到需要操作工具活动部件的任务；提出 DexCraft 基准。报告真机完整任务成功率比 DP3 高 33.3 个百分点。 · [项目页](https://yingyuan0414.github.io/grasp2dexterity/)
 - **[From VLM Planners to Robotic Agents: Self-Evolving Harnesses for History-Dependent Manipulation](https://arxiv.org/abs/2610.29560)** (2026) — SERA 把高层 VLM 规划器做成带可编辑执行框架的智能体，为固定的底层 VLA 记录任务进度与执行反馈，并利用环境回放自动改进框架；报告在 RoboMME 上总体成功率 51.4%，未自我演化时为 44.4%。 · [代码](https://github.com/StevenKKXS/SERA) · [项目页](https://stevenkkxs.github.io/sera-webpage/)
 - **[GRASP: Gradient-Guided Sampling for Contact-Rich Physics-Based Motion Retargeting](https://arxiv.org/abs/2611.05754)** (2026) — 无需可微仿真器即可在接触动力学下重定向人类示教：从存档的采样轨迹中恢复梯度。报告在 1352 条双手 OakInk2 示教上成功率 92.8%，且不用任务专属接触奖励。 · [代码](https://github.com/ComputationalRobotics/GRASP_code) · [项目页](https://computationalrobotics.seas.harvard.edu/GRASP/)

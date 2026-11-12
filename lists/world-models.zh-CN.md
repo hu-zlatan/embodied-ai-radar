@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 130 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 133 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/world-models.html) · [English](world-models.md)
 
@@ -48,8 +48,10 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Do World Action Models Generalize Better than VLAs? A Robustness Study](https://arxiv.org/abs/2603.22078)** (2026) — 在扰动下对比世界动作模型与 VLA 的鲁棒性研究，用于检验显式未来预测能带来更好泛化这一说法。 · [代码](https://github.com/Robot-Robustness/RoboTwin2.0-Plus) · [项目页](https://robot-robustness.github.io/RoboTwin2.0-Plus/)
 - **[Does LeWorldModel Preserve Local Action Geometry?](https://arxiv.org/abs/2610.31716)** (2026) — 比较预训练 LeWorldModel 与仿真器对微小动作变化的响应；最小尺度下最敏感方向的中位夹角相差约 36–42°，说明评估应按尺度进行。 · [项目页](https://geometry.vasi.boo/)
 - **[EgoWAM: World Action Models Beyond Pixels with In-the-Wild Egocentric Human Data](https://arxiv.org/abs/2607.08436)** (2026) — 对照研究哪种世界预测目标最能把第一人称人类数据迁移到机器人：像素迁移较弱，DINO 特征带来最高 4 倍的分布外泛化，3D 运动流在域内提升 20–30%。 · [代码](https://github.com/GaTech-RL2/EgoWAM) · [项目页](https://gatech-rl2.github.io/egowam.github.io)
+- **[Elastic-WAM: Adaptive Spatiotemporal Imagination for Efficient Robot Control](https://arxiv.org/abs/2611.14257)** (2026) — 世界动作模型不再使用固定的去噪预算：学习到的时空“细化需求场”决定何时停止对未来的想象、每步推进多远以及刷新哪些区域。报告在仿真和真实长时程操作中以更低延迟取得更高成功率。 · [项目页](https://lihaitian.com/Elastic-WAM/)
 - **[FACT: Failure-Aware Causal Training for World-Action Models](https://arxiv.org/abs/2608.10232)** (2026) — 以实际执行动作为条件的世界动作模型，把失败轨迹也作为监督，预测未来视频与任务进度；进度分可在推理时为候选动作排序。 · [代码](https://github.com/Bariona/FACT) · [项目页](https://fact-wam.github.io/)
 - **[FAWAM: Force-Aware World Action Models for Closed-Loop Contact-Rich Manipulation](https://arxiv.org/abs/2606.08555)** (2026) — FAWAM 在感知、预测与闭环执行三层使用六维力/力矩：联合预测未来动作与末端力旋量，并以预测的力轨迹为参考在线修正动作。真机任务上比纯视觉基线成功率高 36.25 个百分点。
+- **[From Video Frames to Robot Meta-Frames: A Unified Latent Interface for World Action Models](https://arxiv.org/abs/2611.14365)** (2026) — MetaWAM 把本体感知、动作和价值信号按频带打包进一个与预训练视频扩散模型先验对齐的“元帧”，无需额外模块。报告 RoboCasa 成功率 68.9%、推理延迟降低 39%，三项真实 Franka 任务成功率 85%。 · [代码](https://github.com/showlab/MetaWAM)
 - **[From World Models to World Action Models: A Concise Tutorial for Robotics](https://arxiv.org/abs/2607.00836)** (2026) — 简明教程而非综述：界定机器人领域的世界模型和世界动作模型，并在统一视角下比较空间智能模型、JEPA 和 Cosmos。 · [代码](https://github.com/clearlab-sustech/WorldModelSurvey)
 - **[Future Representation Distillation for Imagination-free World Action Models](https://arxiv.org/abs/2611.04527)** (2026) — DreamFree：无需生成未来视频的世界动作模型。编码器从当前观测预测冻结视频扩散模型的表征，动作模块据此出动作；报告以 14B 视频扩散骨干实现 11Hz 实时闭环控制。 · [项目页](https://harryjo97.github.io/dreamfree/)
 - **[GAWM: A Compact Latent World-Action Model for Multi-Task Robot Manipulation](https://arxiv.org/abs/2610.37091)** (2026) — 参数不到 1 亿的紧凑世界动作模型：在冻结 DINOv3 特征空间中预测两个未来时刻的 token 并直接回归动作块，无需机器人或视频预训练；报告在 RoboTwin 2.0 上超过十亿参数级 WAM。 · [代码](https://github.com/gaoxiang12/ga-wm)
@@ -104,6 +106,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Video Prediction Policy 2: Predict Better, Act Better](https://arxiv.org/abs/2610.10270)** (2026) — 认为世界动作模型的运动错误来自未针对操作优化的视频底座和粗糙的动作模块，因此在带事件级描述的操作视频上继续预训练视频模型。 · [代码](https://github.com/roboterax/video-prediction-policy-2) · [项目页](https://robert-gyj.github.io/video-prediction-policy-2)
 - **[Video World Models Need Predictable Latents](https://arxiv.org/abs/2610.34663)** (2026) — 视频世界模型的潜空间不应只为重建而训练：加入时间可预测性目标并配合以历史为条件的解码器。报告推理成本最多降低 5 倍、训练快 7 倍以上，长时域与分布外误差降低 15–24%，与真实策略评测更一致。 · [代码](https://github.com/mattia-scardecchia/predictable-latents)
 - **[W2A: Distilling World Priors into Action Models for Real-Time Robotic Control](https://arxiv.org/abs/2611.02600)** (2026) — 训练时把视频扩散模型的中间去噪表示蒸馏进动作模型，测试时完全丢弃视频模型。在 LIBERO 上报告 95.9% 平均成功率，推理比代表性世界动作模型快约 21 倍。
+- **[WAM is capable in BEHAVIOR-1K: the 2nd-place solution to the 2026 BEHAVIOR Challenge](https://arxiv.org/abs/2611.13818)** (2026) — 2026 BEHAVIOR 挑战赛第二名方案：基于 Cosmos 3 的世界动作模型，加入更长视觉历史、任务进度条件、按任务组/技能的 LoRA 与路由，仅用开源模型。私有测试集 Q 分 0.615、完整任务成功率 41.2%。 · [项目页](https://behavior.stanford.edu/challenge/index.html)
 - **[WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time](https://arxiv.org/abs/2607.06988)** (2026) — 测试时用无标注的人类视频引导冻结的世界动作模型：模型内部的小型记忆通过自监督视频预测进行适配；此前用成对人-机数据做元训练使其对控制有用。
 - **[What Makes Video World Model Latents Action-Relevant: Prediction over Reconstruction](https://arxiv.org/abs/2606.07687)** (2026) — 探测哪些视频世界模型的潜变量含有动作信息：关键在于时序视频预训练，而非像素重建质量；V-JEPA 类编码器取得最佳权衡。 · [代码](https://github.com/k1seul/corl2026-action-relevant-latents)
 - **[WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL](https://arxiv.org/abs/2602.13977)** (2026) — 在视频世界模型中对 VLA 做强化学习后训练，通过关键帧初始化的短推演和世界模型-策略协同演化来抑制幻觉。报告 LIBERO 表现优异并在多个真机平台上提升。 · [项目页](https://wovr-corl.github.io)

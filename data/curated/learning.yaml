@@ -1379,3 +1379,13 @@
   tags: [cross-embodiment, representation-alignment, sim-paired-data]
   takeaway_en: "Reuses demos across arms by aligning a source encoder to a frozen target encoder on sim-rendered paired views, no pixel translation. Up to 93% zero-shot in sim; real xArm→Franka 27/30 with 10 demos per task."
   takeaway_zh: "用仿真渲染的成对视角，把源机器人的视觉编码器对齐到冻结的目标编码器，无需像素级图像翻译即可跨机械臂复用示范。仿真零样本成功率最高 93%；真实 xArm→Franka 每任务仅用 10 条目标示范微调即 27/30 成功。"
+- title: "Ego Guidance: Enhancing Robot Policy Learning with Action-Free Human Egocentric Videos"
+  type: paper
+  arxiv: "2611.13685"
+  year: 2026
+  project: https://llong-cs.github.io/EgoGuidance
+  added: 2026-11-11
+  topics: [vla]
+  tags: [egocentric-video, action-free, mixture-of-transformers, future-prediction]
+  takeaway_en: "SPAR adds future-visual-state prediction beside action prediction on a VLM, so action-free egocentric human video can train the policy. Reports better out-of-distribution robot performance as video data scales."
+  takeaway_zh: "SPAR 在 VLM 上让未来视觉状态预测与动作预测并行（MoT 结构），使不含动作标注的第一人称人类视频也能训练策略。报告分布外机器人任务表现提升，且随视频数据量增加继续提升。"

@@ -2,7 +2,7 @@
 
 _足式运动、人形全身控制与跑酷。_
 
-共 172 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
+共 174 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/locomotion.html) · [English](locomotion.md)
 
@@ -29,6 +29,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[$λ_0$: Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.18950)** (2026) — 构建 500 小时的第一视角人类数据集 HumanVerse（含同步的身体与手部动作），对齐到 Unitree G1 后用于人形基础模型 λ0 的中期训练；论文报告 SIMPLE 上成功率 90%、真实移动操作任务 62.5%，人类数据越多下游表现越好。 · [代码](https://github.com/LambdaHumanoid/openlambda) · [项目页](https://lambdahumanoid.github.io/)
 - **[ADAPT: Agile Diffusion Action Priors for Robust and Steerable Online Text-Driven Humanoid Control](https://arxiv.org/abs/2609.00677)** (2026) — 端到端的文本条件人形全身控制：从带文本标签的状态-动作轨迹学习扩散动作先验，再叠加轻量残差强化学习策略提升长时鲁棒性和指令切换的平滑度。 · [项目页](https://wuyan01.github.io/ADAPT-project/)
 - **[ADAPT: Analytical Disturbance-Aware Policy Training for Humanoid Locomotion](https://arxiv.org/abs/2606.16542)** (2026) — ADAPT 为人形策略提供解析式全身扰动观测器，无需力/力矩传感器即可由机器人动力学在线估计外力与力矩；在 G1 上对推搡和负载更鲁棒。
+- **[AHEADance: Anticipatory Humanoid Dance from Streaming Audio](https://arxiv.org/abs/2611.13370)** (2026) — 人形机器人跟随流式音乐跳舞：每个动作块以音乐模型对即将到来节拍的预测为条件；“Commit Forcing”让模型基于自己已执行的动作块继续生成。在真实 Unitree G1 上运行无摔倒。 · [项目页](https://ihcr.github.io/AHEADance)
 - **[Action-Aligned Latent Planning for Versatile Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.24675)** (2026) — FIBER 以冻结的行为基础模型（BFM）潜在空间作为统一规划表示，把各任务专用策略投影进该空间，再离线训练单一感知流匹配规划器；仿真中搬箱、开门、抓取平均成功率 42.0%（潜在回放基线 11.6%），并在真实 Unitree G1 上验证。 · [项目页](https://fiberaa.github.io/)
 - **[Actuator Dynamics Curricula for Narrow-Viability Tasks in Legged Robot Learning](https://arxiv.org/abs/2609.09492)** (2026) — 强化学习训练初期使用较高的关节刚度，随回合变长逐步退火到辨识值，从而扩大可行状态集；使原本无法学会的 Spot 由四足站立转为倒立的动作得以完成并上真机。
 - **[CAP: Continuously Adaptive Perception-Blind Humanoid Locomotion via Learned Denoising](https://arxiv.org/abs/2609.11553)** (2026) — CAP 让单一人形策略在深度感知退化时仍能工作：世界模型编码器学习对受损深度去噪，并配合本体感知编码器；在 G1 上进行了室内外测试。
@@ -95,6 +96,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal](https://arxiv.org/abs/2610.36546)** (2026) — 让 Unitree G1 在 1.27–0.50 米高度范围内变高步行、在 0.50–0.20 米范围内爬行，并用学习到的过渡策略在两种模式间切换；结合 LiDAR 规划器给出高度目标，在真机上穿越低矮受限空间。 · [项目页](https://aislab-sustech.github.io/REACH/)
 - **[ROOF: Learning Humanoid Fall Recovery under Overhead Constraints](https://arxiv.org/abs/2610.42097)** (2026) — 人形在头顶障碍物下跌倒后的恢复，仅用本体感知：奖励减少机器人与障碍物的重叠，而不预设逃脱路径，由单一策略学会何时清障、建立支撑并站起。报告 Unitree G1 在七个真实场景中 150 次尝试成功 95 次。 · [项目页](https://lu-yidan.github.io/ROOF/)
 - **[RPL: Learning Robust Humanoid Perceptive Locomotion on Challenging Terrains](https://arxiv.org/abs/2602.03002)** (2026) — RPL 将各地形专家策略蒸馏为一个多深度相机 Transformer 策略，实现可负重的人形多方向行走，并配套比现有管线快约 5 倍的光线投射深度渲染器。
+- **[RedirectMimic: Local Motion Content Redaction for Humanoid Whole-Body Control](https://arxiv.org/abs/2611.14049)** (2026) — 让动作跟踪控制器在仍接收原始参考动作的情况下替换指定片段（如举臂过头）：训练奖励使用编辑后的参考。G1 仿真中不希望出现的动作占比降至 2.7%，奖励置零基线为 58.9%。 · [项目页](https://xiaopeng-whu.github.io/RedirectMimic/)
 - **[ResSafe: Learning Safety Filtering with Residual Reinforcement Learning for Humanoids](https://arxiv.org/abs/2609.15988)** (2026) — 在人形机器人上分离性能与安全：名义策略负责任务，残差 RL 策略充当隐式安全过滤器，避免相互竞争的奖励项。
 - **[RoboDreamer: Anticipatory Humanoid Locomotion with Predictive State-Space Models](https://arxiv.org/abs/2609.07096)** (2026) — RoboDreamer 将人形教师策略蒸馏为 Mamba 学生策略，训练时随机遮蔽最近观测，使其从历史推断缺失状态；在 IsaacLab、MuJoCo 和 G1 上验证。
 - **[RoboNaldo: Accurate, Stable and Powerful Humanoid Soccer Shooting via Motion-Guided Curriculum Reinforcement Learning](https://arxiv.org/abs/2606.11092)** (2026) — CoRL 2026 Oral。人形足球射门的三阶段课程：以单条人类踢球参考为脚手架，兼顾动作跟踪的稳定性与任务奖励 RL 的目标适应能力。

@@ -1757,3 +1757,24 @@
   tags: [dexterous, world-model, representation-alignment, real]
   takeaway_en: "Trains a world model of 3D hand-point and scene motion, then aligns policy latents to it; at test time only the RGB policy runs, with no depth or future frames. Reports 49.4% → 60.5% on 11 DexJoCo tasks."
   takeaway_zh: "先训练预测 3D 手部点与场景变化的世界模型，再把策略潜表示对齐到它；部署时只保留 RGB 策略，无需深度或未来预测。在 11 个 DexJoCo 任务上成功率从 49.4% 提升到 60.5%。"
+- title: "DexSeed: Expanding Human Hand-Object Interactions into Robot Demonstrations for Dexterous Policy Learning"
+  type: paper
+  arxiv: "2611.14092"
+  year: 2026
+  org: Robbyant
+  project: https://robbyant-research.github.io/DexSeed/
+  added: 2026-11-11
+  topics: [vla, learning]
+  tags: [dexterous, data-generation, human-to-robot, retargeting, rl, sim]
+  takeaway_en: "Expands human hand-object sequences to new objects and placements, keeping the grasp; an RL finger policy makes them executable in sim. A VLA trained only on this data does language-specified grasps in real."
+  takeaway_zh: "把人手-物体交互序列扩展到新物体和新放置位置并保持抓取方式，再由强化学习手指策略在仿真中生成可执行轨迹。仅用这些生成数据微调的 VLA 即可在真实环境中执行语言指定的抓取。"
+- title: "From Egocentric Human Video to Robot Manipulation in the Era of Embodied Intelligence"
+  type: paper
+  arxiv: "2611.13610"
+  year: 2026
+  project: https://mikewu597.github.io/Ego2Robot_Learning/
+  added: 2026-11-11
+  topics: [learning]
+  tags: [survey, egocentric-video, human-to-robot, latent-actions]
+  takeaway_en: "Survey of learning robot manipulation from egocentric human video, in four paradigms: embodiment transfer, action/task supervision, representation pretraining, latent action and dynamics models. Also covers datasets."
+  takeaway_zh: "关于从第一人称人类视频学习机器人操作的综述，分四类范式：显式本体迁移、动作/任务监督、视频表征预训练、潜在动作与动力学建模，并梳理相关数据集与开放挑战。"

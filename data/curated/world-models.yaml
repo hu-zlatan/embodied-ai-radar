@@ -1361,3 +1361,34 @@
   tags: [object-flow, 3d, dataset, world-model, deformable]
   takeaway_en: "Represents object motion as dense 3D trajectories over the whole surface, occluded parts included, for rigid and deformable objects. Adds a 1,210-hour flow dataset and a world model predicting it from image + task."
   takeaway_zh: "把物体运动表示为覆盖整个表面（含遮挡部分）的稠密 3D 轨迹，适用于刚体与可形变物体。发布 1210 小时的全物体流数据集，并训练从图像和任务描述预测该流的世界模型。"
+- title: "From Video Frames to Robot Meta-Frames: A Unified Latent Interface for World Action Models"
+  type: paper
+  arxiv: "2611.14365"
+  year: 2026
+  venue: CoRL 2026
+  code: https://github.com/showlab/MetaWAM
+  added: 2026-11-11
+  topics: [vla]
+  tags: [world-action-model, video-diffusion, frequency-domain, latency, real]
+  takeaway_en: "MetaWAM packs proprioception, actions and values into one frequency-banded 'meta-frame' matched to the video model's prior. Reports 68.9% on RoboCasa, 39% lower latency, 85% on three real Franka tasks."
+  takeaway_zh: "MetaWAM 把本体感知、动作和价值信号按频带打包进一个与预训练视频扩散模型先验对齐的“元帧”，无需额外模块。报告 RoboCasa 成功率 68.9%、推理延迟降低 39%，三项真实 Franka 任务成功率 85%。"
+- title: "Elastic-WAM: Adaptive Spatiotemporal Imagination for Efficient Robot Control"
+  type: paper
+  arxiv: "2611.14257"
+  year: 2026
+  project: https://lihaitian.com/Elastic-WAM/
+  added: 2026-11-11
+  topics: [vla]
+  tags: [world-action-model, efficient-inference, adaptive-compute, real]
+  takeaway_en: "Instead of a fixed denoising budget, a learned spatiotemporal 'refinement demand field' decides when to stop imagining the future and which regions to refresh. Reports higher success at lower latency, sim and real."
+  takeaway_zh: "世界动作模型不再使用固定的去噪预算：学习到的时空“细化需求场”决定何时停止对未来的想象、每步推进多远以及刷新哪些区域。报告在仿真和真实长时程操作中以更低延迟取得更高成功率。"
+- title: "WAM is capable in BEHAVIOR-1K: the 2nd-place solution to the 2026 BEHAVIOR Challenge"
+  type: paper
+  arxiv: "2611.13818"
+  year: 2026
+  project: https://behavior.stanford.edu/challenge/index.html
+  added: 2026-11-11
+  topics: [vla]
+  tags: [behavior-challenge, cosmos, world-action-model, lora, mobile-manipulation, sim]
+  takeaway_en: "2nd place at the 2026 BEHAVIOR Challenge: a Cosmos 3 world action model with richer history, task-progress conditioning, skill LoRAs and routing, open models only. Private test: Q 0.615, 41.2% full success."
+  takeaway_zh: "2026 BEHAVIOR 挑战赛第二名方案：基于 Cosmos 3 的世界动作模型，加入更长视觉历史、任务进度条件、按任务组/技能的 LoRA 与路由，仅用开源模型。私有测试集 Q 分 0.615、完整任务成功率 41.2%。"

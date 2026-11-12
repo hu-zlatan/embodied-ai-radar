@@ -2,7 +2,7 @@
 
 _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与开放词汇场景地图。_
 
-共 53 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
+共 54 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/perception.html) · [English](perception.md)
 
@@ -41,6 +41,7 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - **[Functional-SLAM: Interaction-Aware Mapping with Online Functional Scene Graphs](https://arxiv.org/abs/2609.07497)** (2026) — 把功能场景图（如哪个把手开哪个抽屉）作为 SLAM 的在线状态持续维护，并利用其拓扑辅助重复场景的回环检测。报告比离线方法更快且精度相当。 · [代码](https://github.com/Hbelief1998/Functional-SLAM-CoRL_2026)
 - **[G2G: Exploiting Intra-Group Geometry for Inter-Group Pose Estimation](https://arxiv.org/abs/2606.08284)** (2026) — 估计两组图像之间的相对 6 自由度位姿（跨序列重定位、多相机里程计）：保持多视图基础模型冻结，只增加约 3200 万可训练参数（重采样器、跨组桥接模块、多帧位姿头）。 · [代码](https://github.com/WeiYuFei0217/G2G)
 - **[GINIO: A Geometric SO(3)-Equivariant Interface for Neural Inertial Odometry](https://arxiv.org/abs/2609.25338)** (2026) — 神经惯性里程计：输出的均值与协方差在任意 IMU 安装旋转下都按张量规律变换；Last-Frame Alignment 使传感器坐标系训练等价于世界坐标系训练。在 TLIO 上 ATE 为 2.018 米，EqNIO 为 76.389 米。
+- **[HiPFuse: Real-Time LiDAR Semantic Segmentation for Robotic Perception on Edge Devices](https://arxiv.org/abs/2611.14025)** (2026) — 点云与按高度分层的 BEV 特征融合做 LiDAR 语义分割：在 Jetson AGX Orin 上 SemanticKITTI 63.7% mIoU、14.2 FPS。替换进 SLAM 前端后，轨迹误差平均降低 10.6%。 · [代码](https://github.com/haiyang2022/HiPFuse)
 - **[LIME: Learning Intent-aware Camera Motion from Egocentric Video](https://arxiv.org/abs/2607.02417)** (2026) — 把相机运动当作一种动作：给定当前图像和语言意图（如“看看箱子后面”），预测下一视角的相对相机位姿。监督信号通过事后标注从第一人称视频中挖掘。
 - **[Language as a Sensor: Calibrated Spatial Belief Estimation in 3D Scenes from Natural Language](https://arxiv.org/abs/2606.08666)** (2026) — 把自然语言描述（如“包在桌上”）当作传感器观测：模型输出校准过的空间概率分布，并与机载感知融合到统一的信念地图中。在 VLA-3D 基准和真机上验证。 · [代码](https://github.com/MIT-SPARK/Language-As-A-Sensor) · [项目页](https://aryan-naveen.github.io/language-as-a-sensor/)
 - **[LateMatch: Breaking the Interaction Bottleneck via Cacheable Matching for Efficient Visual Localization](https://arxiv.org/abs/2610.25358)** (2026) — 重构深度特征匹配器，把跨图像交互推迟到最后几层，单图上下文模块可离线缓存。报告计算量降低一半以上，熵引导的 token 裁剪再省 10–14%。

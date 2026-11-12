@@ -1741,3 +1741,22 @@
   tags: [humanoid, loco-manipulation, motion-synthesis, teacher-student, sim-to-real]
   takeaway_en: "Follow-up to SUGAR: synthesizes robot and object reference motions from reusable task templates, then trains visual policies with one mimic reward and teacher distillation; 91.0% mean sim success on five tasks."
   takeaway_zh: "SUGAR 的后续：用可复用的任务模板合成机器人与物体参考动作，再以统一的模仿奖励和教师蒸馏训练视觉策略；五项任务仿真平均成功率 91.0%，并完成真机迁移。"
+- title: "AHEADance: Anticipatory Humanoid Dance from Streaming Audio"
+  type: paper
+  arxiv: "2611.13370"
+  year: 2026
+  project: https://ihcr.github.io/AHEADance
+  added: 2026-11-11
+  tags: [humanoid, unitree-g1, music-to-motion, streaming, whole-body-tracking, real]
+  takeaway_en: "A humanoid dances to streamed music by conditioning each motion chunk on a music model's forecast of upcoming beats; 'Commit Forcing' trains continuation from its own committed chunks. Runs on a real Unitree G1."
+  takeaway_zh: "人形机器人跟随流式音乐跳舞：每个动作块以音乐模型对即将到来节拍的预测为条件；“Commit Forcing”让模型基于自己已执行的动作块继续生成。在真实 Unitree G1 上运行无摔倒。"
+- title: "RedirectMimic: Local Motion Content Redaction for Humanoid Whole-Body Control"
+  type: paper
+  arxiv: "2611.14049"
+  year: 2026
+  project: https://xiaopeng-whu.github.io/RedirectMimic/
+  added: 2026-11-11
+  topics: [control]
+  tags: [humanoid, unitree-g1, motion-tracking, ppo, sim]
+  takeaway_en: "A motion tracker replaces selected movements (e.g. overhead arms) while still seeing the original reference; rewards use an edited one. In G1 sim, unwanted content drops to 2.7% vs 58.9% for reward zeroing."
+  takeaway_zh: "让动作跟踪控制器在仍接收原始参考动作的情况下替换指定片段（如举臂过头）：训练奖励使用编辑后的参考。G1 仿真中不希望出现的动作占比降至 2.7%，奖励置零基线为 58.9%。"
