@@ -1,41 +1,124 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-12",
  "missing": [],
  "papers": {
-  "2611.09293": {
-   "title": "MDF++: Visuo-Tactile World Action Model with End-to-end Representation Learning",
-   "published": "2026-11-06",
-   "comment": "Corl 2026",
-   "code": [],
-   "project": [],
-   "abstract": "Recently, world-action models (WAMs) have emerged as a powerful framework for robot manipulation. By jointly modeling action generation and future observation prediction, WAMs can act and anticipate the outcomes of the actions. However, existing WAMs typically rely on frozen pretrained encoders trained with reconstruction, which may not produce representations well suited for robot control. In this paper, we tackle the problem of learning physicallygrounded, control-relevant representations for WAMs. We propose MDF++, a visuo-tactile world-action model that learns latent representations of multisensory observations end-to-end with a diffusion backbone. While naive joint training can lead to feature collapse, MDF++ introduces a multi-task learning strategy that leverages cross-modal correlations to learn task-relevant representations. We evaluate MDF++ on a suite of contact-rich manipulation tasks, including realworld bolt screwing and nut mating, and show that it outperforms WAMs built on frozen pretrained representations by up to 50%. Additional videos are available on our website: jointmdf.github.io.",
-   "authors": [
-    "Zixuan Huang",
-    "Jinhao Yu",
-    "Zachary Charlick",
-    "Dmitry Berenson"
-   ]
-  },
-  "2611.08576": {
-   "title": "Q-OIL: Optimistic Exploration in Learning from Human Interventions",
-   "published": "2026-11-05",
-   "comment": "Project website: https://weirdlabuw.github.io/qoil",
+  "2602.06643": {
+   "title": "HuMI: Humanoid Whole-Body Manipulation from Humanoid-Free Demonstrations",
+   "published": "2026-02-06",
+   "comment": "Website: https://humanoid-manipulation-interface.github.io",
    "code": [],
    "project": [
-    "https://weirdlabuw.github.io/qoil"
+    "https://humanoid-manipulation-interface.github.io"
    ],
-   "abstract": "As robots are deployed in the real world, they will inevitably make mistakes. Human interventions provide valuable feedback for improving their behavior, enabling them to adapt online to new scenarios. However, studying human-in-the-loop robot learning is difficult: real-world experiments are slow and expensive, so most algorithm development relies on simulated human models. We show that common human modeling assumptions do not match how real people intervene in practice. Through analyzing intervention data from human participants, we find that humans tend to intervene when agent progress stalls, and that their corrective actions are often suboptimal. Motivated by these findings, we introduce a progress-based model of human intervention that achieves higher rank correlation with real-user algorithm rankings, enabling realistic algorithm benchmarking and development in simulation. Building on these insights, we propose Q-OIL, a method that adds optimistic bonuses to intervention transitions in reinforcement learning and softly guides exploration toward human corrections. We find that decoupled critics are critical for stability because they prevent the bonuses from backing up to pre-intervention states. As a result, Q-OIL learns more efficiently than competitive baselines, achieving 10-50% higher success in simulation and on real robots, and improving pretrained VLAs on two bimanual manipulation tasks. As we ground both evaluation and algorithms in realistic human behavior, this work provides a practical path toward scalable robot learning from interventions.",
+   "abstract": "Current approaches for humanoid whole-body manipulation, primarily relying on teleoperation or visual sim-to-real reinforcement learning, are hindered by hardware logistics and complex reward engineering. Consequently, demonstrated autonomous skills remain limited and are typically restricted to controlled environments. In this paper, we present the Humanoid Manipulation Interface (HuMI), a portable and efficient framework for learning diverse whole-body manipulation tasks across various environments. HuMI enables humanoid-free data collection by capturing rich whole-body motion using portable hardware. This data drives a hierarchical learning pipeline that translates human motions into dexterous and feasible humanoid skills. Extensive experiments across five whole-body tasks--including kneeling, squatting, tossing, walking, and bimanual manipulation--demonstrate that HuMI achieves a 3x increase in data collection efficiency compared to teleoperation and attains a 70% success rate in unseen environments.",
    "authors": [
-    "Pranav Teegavarapu",
-    "Sriyash Poddar",
-    "Rico Qi",
-    "Cleah Winston",
-    "Krisha Khandelwal",
-    "Aykut Onyol",
-    "Natasha Jaques",
-    "Abhishek Gupta"
+    "Ruiqian Nai",
+    "Boyuan Zheng",
+    "Junming Zhao",
+    "Haodong Zhu",
+    "Sicong Dai",
+    "Zunhao Chen",
+    "Yihang Hu",
+    "Yingdong Hu",
+    "Tong Zhang",
+    "Chuan Wen",
+    "Yang Gao"
+   ],
+   "hf_github": null,
+   "hf_project": null
+  },
+  "2511.18127": {
+   "title": "Predictive Representation Learning for Manipulation via Streaming Egocentric 3D Hand Forecasting",
+   "published": "2025-11-22",
+   "comment": "v2: title changed from \"SFHand: Learning Embodied Manipulation by Streaming Egocentric 3D Hand Forecasting\"",
+   "code": [],
+   "project": [
+    "https://ruicongliu.github.io/sfhand/"
+   ],
+   "abstract": "Learning embodied manipulation from egocentric human data offers a scalable path, reducing the cost of collecting robot-specific demonstrations. However, existing representation learning methods largely stop at perceptual understanding, such as extracting what a scene contains or what an action is. A capable embodied agent is more than understanding: it predicts the next motion. We propose that forecasting 3D human hand motion is one suitable pretraining task, as the representation jointly learns how to manipulate objects and how the motion will unfold next. Building on this hypothesis, we introduce SFHand, the first representation learning method via streaming egocentric 3D hand forecasting. SFHand learns by autoregressively predicting future 3D hand states, including hand type, 2D bounding box, 3D pose, and trajectory, from a continuous stream of video and language instructions. Its autoregressive architecture is equipped with an ROI-enhanced memory layer, capturing temporal context while focusing on salient hand-centric regions. To enable this research, we also introduce SFHand, the first open-source large-scale dataset pairing synchronized 3D hand poses with fine-grained language instructions (247K clips, 3.95M frames). Transferred to downstream embodied control, the learned representation shows state-of-the-art performance on both simulation and real-world manipulation benchmarks, improving success rate by up to 13.4%. Our method also achieves leading 3D hand forecasting accuracy, with 35.8% lower ADE than baseline methods. These results suggest that forecasting hand motion is a better pretraining task for representation learning in embodied manipulation. Projec page: https://ruicongliu.github.io/sfhand/.",
+   "authors": [
+    "Ruicong Liu",
+    "Yifei Huang",
+    "Liangyang Ouyang",
+    "Caixin Kang",
+    "Yoichi Sato"
+   ],
+   "hf_github": "https://github.com/ut-vision/SFHand",
+   "hf_project": null
+  },
+  "2610.22900": {
+   "title": "Structured Perception Representations for Off-road Dynamics Learning",
+   "published": "2026-10-16",
+   "comment": "Accepted at CoRL 2026. 24 pages, 14 figures",
+   "code": [],
+   "project": [],
+   "abstract": "Autonomously navigating off-road terrain at high speed demands accurate control, which often relies on dynamics models that capture complex interactions between the robot and terrain. In off-road regimes, terrain interaction is a major component of the vehicle's dynamics. Prior work attempts to capture this effect by training learned models of the vehicle's dynamics, conditioned on its perception of the local environment. However, said conditioning is often overly simplistic, ignoring the spatial structure of the dynamics problem. Our approach, SpatialBEV, exploits this spatial structure. At each step, we query the bird's-eye-view (BEV) features around the predicted state, conditioning the next prediction on current geometric and semantic cues. We additionally present a benchmarking approach that mines a dataset's most difficult scenarios. On datasets collected across seasons, SpatialBEV reduces prediction error by 17.1%, compared to physics-based and learned baselines. We further evaluate on hardware on high-speed ($\\geq$10 m/s) and geometrically challenging courses with a 25.3% reduction in maximum cross-track error. More details can be found at https://theairlab.org/spatial-bev-dynamics .",
+   "authors": [
+    "Micah Nye",
+    "Samuel Triest",
+    "Matthew Sivaprakasam",
+    "Isaiah Adu",
+    "Sebastian Scherer",
+    "Wenshan Wang"
+   ]
+  },
+  "2611.10107": {
+   "title": "Beyond Semantic Classes: Online Physical Parameter Estimation via Embedding-Conditioned Gaussian Mixtures",
+   "published": "2026-11-06",
+   "comment": null,
+   "code": [],
+   "project": [],
+   "abstract": "Enabling robots to infer interaction-relevant physical properties from vision before contact would improve planning and control in unstructured environments. Vision provides useful pre-contact information, but appearance alone is often ambiguous: visually similar regions can induce different friction, stiffness, or sinkage responses upon contact. Existing approaches often collapse this ambiguity to a point estimate or aggregate experience through fixed semantic classes, limiting their ability to preserve distinct physical regimes. Instead, we propose a real-time estimator that replaces semantic class indexing with an interaction-grounded Gaussian-mixture posterior over latent physical parameters, conditioned directly on continuous visual embeddings. Our approach maintains interaction-derived Gaussian parameter estimates, typically from inverse modeling, as mixture components while using embedding similarity to retrieve and weight relevant past interactions for each new query region. A support-aware fusion mechanism incorporates a conditional generative prior model when interaction history is sparse, while a learned embedding refinement improves retrieval relevance without discretizing the representation. Our experiments show that the estimator recovers multimodal physical beliefs, rejects unrelated interaction history, avoids spatial map discretization, and evaluates at controller rates. In a high-fidelity autonomous racing simulation with unknown low- and high-friction surface regions, the posterior enables the controller to adapt over repeated laps as interaction evidence accumulates, improving performance while maintaining friction-aware behavior.",
+   "authors": [
+    "Alexander Borca-Tasciuc",
+    "Prayag Sharma",
+    "Franck Djeumou"
+   ]
+  },
+  "2605.30770": {
+   "title": "SSR: Scaling Surefooted and Symmetric Humanoid Traversal Toward the Open World",
+   "published": "2026-05-29",
+   "comment": null,
+   "code": [],
+   "project": [
+    "https://ssr-humanoid.github.io/"
+   ],
+   "abstract": "Advancing humanoid traversal toward the open world is key to practical deployment in human environments, but remains challenging. The robot must use vision to ensure safe and reliable foot placement on heterogeneous terrain during highly dynamic motion, while producing coordinated, natural whole-body behaviors. We propose SSR, an efficient end-to-end framework for egocentric vision-based humanoid traversal that jointly learns these capabilities. SSR introduces imagined foothold guidance, which learns to model forthcoming swing-foot contacts and evaluates their support to guide pre-touchdown swings toward stable regions, reducing edge slips. It further employs equivariant latent-space symmetry augmentation to efficiently induce bilateral coordination under high-dimensional visual observations, and uses terrain-specific multi-discriminator motion priors to encourage human-like behavior across scenes. Extensive experiments show that SSR achieves safe, stable, and high-quality locomotion on diverse real-world terrains, including stairs with varied structures and extreme challenges such as wide gaps and high platforms, while enabling reliable long-horizon traversal in diverse outdoor environments. Project website: https://ssr-humanoid.github.io/.",
+   "authors": [
+    "Ruiqi Yu",
+    "Yiwen Wang",
+    "Yuan Hao",
+    "Jun Wu",
+    "Qiuguo Zhu"
+   ]
+  },
+  "2611.10821": {
+   "title": "AmodalBox: Automated 3D Bounding Box Annotation under Partial Visibility",
+   "published": "2026-11-07",
+   "comment": "Accepted by CoRL 2026",
+   "code": [],
+   "project": [
+    "https://oliver0922.github.io/AmodalBox/"
+   ],
+   "abstract": "Recent progress in vision foundation models (VFMs) has made automated open-vocabulary 3D bounding box annotation increasingly feasible by jointly leveraging LiDAR point clouds and images. However, partial observations remain a major challenge in sparse driving scenes, where visible LiDAR points often cover only a small fraction of the object's surface and provide insufficient cues for estimating its full spatial extent. As a result, existing methods often produce mislocalized boxes or leave objects unlabeled. To address this limitation, we propose \\textbf{\\Ours{}}, an automated annotation framework that leverages image-generated 3D assets as amodal geometric priors for partially observed objects. By establishing correspondences between input images and rendered views of 3D assets, \\Ours{} robustly aligns canonical amodal geometry with partially observed world-space LiDAR point clouds. To improve temporal consistency and reduce computational cost, \\Ours{} generates a single asset per instance, estimates its metric scale once at a single frame and propagates it across frames for dynamic instances, and aggregates multi-frame observations for static instances. 3D object detectors trained on annotations from \\Ours{} improve performance over strong baselines by 14.1 mAP on the nuScenes dataset and by 12.45 AP at IoU 0.5 for the vehicle class on the Waymo Open Dataset (WOD). Our project page is available at: \\href{https://oliver0922.github.io/AmodalBox/}{https://oliver0922.github.io/AmodalBox/}",
+   "authors": [
+    "In-Jae Lee",
+    "Namtae Kim",
+    "Robert Exley",
+    "Kwonyoung Ryu",
+    "Jaesik Park"
    ]
   }
  },
- "repos": {}
+ "repos": {
+  "sereact/lerobot_knn": {
+   "missing": true
+  },
+  "ut-vision/sfhand": {
+   "stars": 10,
+   "pushed": "2026-11-02",
+   "archived": false,
+   "license": ""
+  }
+ }
 }
