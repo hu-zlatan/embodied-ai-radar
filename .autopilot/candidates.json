@@ -25,34 +25,6 @@
    "fetched": "2026-11-11"
   },
   {
-   "id": "2611.14432",
-   "title": "One Policy for 100 Household Tasks: Our Solution for the 2026 BEHAVIOR Challenge",
-   "published": "2026-11-11",
-   "topics": [
-    "vla"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/Robot-Learning-Collective/behavior-1k-solution-2026"
-   ],
-   "project": [
-    "https://huggingface.co/IliaLarchenko/BEHAVIOR2026VLA",
-    "https://robot-learning-collective.github.io/behavior-1k-2026/"
-   ],
-   "comment": "Code: https://github.com/Robot-Learning-Collective/behavior-1k-solution-2026 ; checkpoint: https://huggingface.co/IliaLarchenko/BEHAVIOR2026VLA ; project page: https://robot-learning-collective.github",
-   "authors": [
-    "Ilia Larchenko",
-    "Gleb Zarin",
-    "Atindra Nair",
-    "Keerti Manney",
-    "Vitaly Kleban",
-    "Mirko Kiefer",
-    "Anjana Yodaiken"
-   ],
-   "abstract": "We describe our solution for the 2026 BEHAVIOR Challenge: 100 long-horizon household tasks in the OmniGibson simulator. We placed 9th on the final leaderboard, the only independent team in the top 10. The core of the solution is a single vision-language-action (VLA) model, one checkpoint for all 100 tasks, built on our 1st-place 2025 solution, which is based on $π_{0.5}$. On the 50 tasks shared with 2025, its Q rises from 0.260 to 0.371; across all 100 tasks it scores 0.392. Our main conclusion from 2025 was that the model was undertrained, so most of the 2026 work went into training the model for longer, optimizing some training parameters, making each training step slightly faster and reducing the gradient noise: a migration from 50 to 100 tasks (semantic stages built from the demonstrations' skill annotations, task and stage embeddings of new tasks warm-started from similar old ones, and a 21-dimensional action space matching the teleoperation controls); variance-reduced multi-sample flow matching with a simple noise-vs-compute model that picks the number of action-expert samples per observation without ablations; and a 200k-step training run, about one pass over the 211M frames of the demonstrations. A cloud evaluation infrastructure keeps a shared record with provenance, episode diagnostics and restorable simulator states, and runs six simulators on one GPU together faster than real time. On top of the learned policy, 14 tasks are routed to a GPT-6 Astra coding agent that controls the robot through observation and motion tools, starting every episode from a frozen copy of its own practice session on training instances. Across these 14 tasks, Astra's mean Q is 0.639, against 0.108 for the learned policy. The public submission included only part of the Astra results and scored 0.446 Q with 27.3% full-task success.",
-   "fetched": "2026-11-11"
-  },
-  {
    "id": "2611.14414",
    "title": "SIGMO: Sigmoid Gated Interaction-Aware Motion Planning",
    "published": "2026-11-11",
@@ -79,128 +51,6 @@
    "fetched": "2026-11-11"
   },
   {
-   "id": "2611.14365",
-   "title": "From Video Frames to Robot Meta-Frames: A Unified Latent Interface for World Action Models",
-   "published": "2026-11-11",
-   "topics": [
-    "world-models"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/showlab/MetaWAM"
-   ],
-   "project": [],
-   "comment": null,
-   "authors": [
-    "Guoqiang Liang",
-    "Yiqi Lin",
-    "Yanzhe Chen",
-    "Kevin Yuchen Ma",
-    "Mike Zheng Shou"
-   ],
-   "abstract": "Pretrained video diffusion models (VDMs) offer a powerful foundation for World Action Models (WAMs), which jointly predict robot actions and future observations. Building such models requires injecting low-dimensional robot signals (e.g. proprioception, actions, and values) into a latent space shaped by natural videos, and a key design choice is the interface through which these signals enter: existing schemes treat it as a formatting detail, spending a separate latent frame on each signal or bolting on dedicated encoders and decoders. We argue that signal injection is instead a distribution-alignment problem: how well a representation matches the prior of the pretrained VDMs during denoising. Using the relative reconstruction error of a frozen VDM denoiser as a probe, we find that conventional spatial encodings sit far off this prior, whereas frequency-domain packing yields latents that the denoiser corrects far less. Motivated by this diagnostic result, we propose MetaWAM, which folds all robot signals into a single unified meta-frame: each signal is assigned to a disjoint frequency-domain channel band and lifted to the spatial latent by an inverse DCT, yielding a decodable interface aligned with the pretrained VDM prior without any added module or architectural change. A fixed band layout together with slot-aware routing lets the same meta-frame support policy, world-model, and value prediction over a shared set of robot variables. On RoboCasa, MetaWAM reaches 68.9% success while collapsing the per-signal frames into one and cutting inference latency by 39%, and attains 85.0% success on three real-world Franka tasks. Code and models are available at https://github.com/showlab/MetaWAM",
-   "fetched": "2026-11-11"
-  },
-  {
-   "id": "2611.14257",
-   "title": "Elastic-WAM: Adaptive Spatiotemporal Imagination for Efficient Robot Control",
-   "published": "2026-11-11",
-   "topics": [],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://lihaitian.com/Elastic-WAM/"
-   ],
-   "comment": "14 pages. Project page: https://lihaitian.com/Elastic-WAM/",
-   "authors": [
-    "Haitian Li",
-    "Tianfu Li",
-    "Xuxi Zhao",
-    "Zizheng Liu",
-    "Yangcheng Yu",
-    "Yiwen Hou",
-    "Zeyu Xiao",
-    "Mutian Xu",
-    "Ziqian Yang",
-    "Haonan Chen",
-    "Lin Shao"
-   ],
-   "abstract": "World-Action Models improve robot control by predicting future visual dynamics, but iterative video denoising incurs substantial inference overhead. Recent approaches reduce this cost through partial future denoising, yet typically rely on fixed refinement budgets. Our empirical observations reveal that preferred refinement depths vary across tasks and states, while different future regions exhibit varying relevance to action generation. Motivated by these findings, we propose Elastic-WAM, which adaptively allocates world refinement computation across temporal denoising time and spatial future space. A unified spatiotemporal refinement demand field governs when to stop world refinement, how far to advance each denoising step, and which regions to refresh. We parameterize this field with a shared temporal basis and spatial amplitudes, and learn it through a three-stage action-grounded supervised procedure. At inference, the learned field guides recurrent sparse world refinement to improve task success while reducing inference overhead. Evaluations across diverse simulation benchmarks and real-world long-horizon manipulation demonstrate state-of-the-art control performance with reduced inference latency.",
-   "fetched": "2026-11-11"
-  },
-  {
-   "id": "2611.14092",
-   "title": "DexSeed: Expanding Human Hand-Object Interactions into Robot Demonstrations for Dexterous Policy Learning",
-   "published": "2026-11-11",
-   "topics": [
-    "vla",
-    "manipulation",
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://robbyant-research.github.io/DexSeed/"
-   ],
-   "comment": "Project page: https://robbyant-research.github.io/DexSeed/",
-   "authors": [
-    "Huaijin Pi",
-    "Zehong Shen",
-    "Yong Wang",
-    "Kechun Xu",
-    "Changpeng Wang",
-    "Dingkun Wei",
-    "Xueyang Wang",
-    "Wenjia Wang",
-    "Xing Zhu",
-    "Yujun Shen",
-    "Taku Komura"
-   ],
-   "abstract": "We study how to generate diverse, physically executable robot demonstrations for dexterous vision-language-action (VLA) learning. Existing demonstration-generation methods typically rely on costly teleoperated examples. Meanwhile, human hand--object datasets provide a reusable source, but existing transfer methods mainly reproduce given interactions. Turning these interactions into VLA training data further requires coverage of different objects and manipulation locations, together with executable arm and finger actions, and visual observations. To achieve this, we present DexSeed, a framework for low-cost generation of dexterous robot data from human hand--object interactions. Our key idea is to expand human sequences while preserving their grasps and realizing the resulting motions under arm-tracking dynamics in physics simulation. Specifically, we organize source sequences by grasp mode with shared language descriptions. InteractionMesh-based retargeting and arm trajectory augmentation adapt these sequences to the robot hand, different object geometries, and pick-and-place locations while preserving local hand--object relationships. An RL finger-control policy produces executable rollouts, while the arm tracks precomputed trajectories. Rendered observations and recorded actions from successful rollouts are paired with grasp descriptions to fine-tune a VLA. Experiments show improved contact fidelity in retargeting and more reliable whole-arm execution than the evaluated baselines. Simulation evaluation and real-world deployment further demonstrate that a VLA fine-tuned solely on the generated demonstrations can execute language-specified grasps. Project page: https://robbyant-research.github.io/DexSeed/.",
-   "fetched": "2026-11-11"
-  },
-  {
-   "id": "2611.14049",
-   "title": "RedirectMimic: Local Motion Content Redaction for Humanoid Whole-Body Control",
-   "published": "2026-11-11",
-   "topics": [
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://xiaopeng-whu.github.io/RedirectMimic/"
-   ],
-   "comment": "9 pages, 4 figures, 4 tables. Project page: https://xiaopeng-whu.github.io/RedirectMimic/",
-   "authors": [
-    "Zepeng Wang",
-    "Xiaochuan Shi"
-   ],
-   "abstract": "Humanoid motion interfaces should accommodate application-specific movement constraints while retaining useful reference behavior. Local content redaction requires a controller to replace selected movements even when it continues to receive the original reference. Removing the tracking incentive for those movements leaves their replacement unspecified. We introduce RedirectMimic, which separates the reference observed by the actor from the target used to train its execution. A rule-generated edited reference guides tracking rewards during proximal policy optimization, while the deployed observation and action interfaces remain unchanged. We evaluate pose- and speed-defined arm editing in Unitree G1 simulation using a tracker pretrained on 7,509 motion clips. On the overhead-arm task, RedirectMimic reduces core-window content occurrence to 2.7%, compared with 58.9% for reward zeroing and 32.8% for anti-tracking. It achieves 94.2% core-window joint success, combining content suppression, fall-free execution, and local retention. On the speed-defined task, fast outward arm movements occurred at similarly low rates under all three local editing methods. Across both tasks, RedirectMimic achieved the lowest replacement error among these methods and tracked unedited motions with accuracy comparable to that of the pretrained controller. Project page: https://xiaopeng-whu.github.io/RedirectMimic/.",
-   "fetched": "2026-11-11"
-  },
-  {
-   "id": "2611.14025",
-   "title": "HiPFuse: Real-Time LiDAR Semantic Segmentation for Robotic Perception on Edge Devices",
-   "published": "2026-11-11",
-   "topics": [
-    "perception"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/haiyang2022/HiPFuse"
-   ],
-   "project": [],
-   "comment": "13 pages, 6 figures",
-   "authors": [
-    "Haiyang Wu",
-    "George Vosselman",
-    "Ville Lehtola"
-   ],
-   "abstract": "Real-time robotic perception requires accurate LiDAR semantics under limited resources. Bird's-eye-view (BEV) aggregation is efficient but can mix differently labeled surfaces in columns. We present HiPFuse, a point-BEV fusion framework that exchanges point and height-partitioned BEV features across horizontal scales, combining point-wise detail with 2D spatial context from one LiDAR scan. Fixed height assignments preserve separate vertical aggregation groups, with auxiliary supervision of initial BEV features using targets from the same 3D cells. A dual-scale BEV context module adds broader context from a coarser grid. On SemanticKITTI and MCD, HiPFuse achieves 63.7% and 62.5% mIoU at 14.2 and 22.4 FPS on Jetson AGX Orin, respectively, exceeding the 10 Hz scan rate. Separate training and evaluation show indoor applicability. Replacing only the baseline semantic front end with HiPFuse in fixed robotic systems reduces odometry absolute trajectory error RMSE by 10.6% on average across two outdoor sequences and increases accepted-loop recall by 8.7 percentage points on SemanticKITTI. Qualitative semantic maps show more continuous road labeling. Our code is available at https://github.com/haiyang2022/HiPFuse.",
-   "fetched": "2026-11-11"
-  },
-  {
    "id": "2611.13903",
    "title": "Persistent Metric-Semantic Maritime Scene Memory from Open-Vocabulary 3D Scene Graphs",
    "published": "2026-11-11",
@@ -223,110 +73,6 @@
    "fetched": "2026-11-11"
   },
   {
-   "id": "2611.13818",
-   "title": "WAM is capable in BEHAVIOR-1K: the 2nd-place solution to the 2026 BEHAVIOR Challenge",
-   "published": "2026-11-11",
-   "topics": [
-    "world-models"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://behavior.stanford.edu/challenge/index.html"
-   ],
-   "comment": "27 pages, 8 figures, 11 tables. Technical report for Team IF1001's 2nd-place solution to the 2026 BEHAVIOR Challenge at CoRL 2026. Challenge website: https://behavior.stanford.edu/challenge/index.html",
-   "authors": [
-    "Yelin He",
-    "Jiaquan Ye",
-    "Xinming Wei",
-    "Wenjie Xiao",
-    "Gengming Zhang",
-    "Guoting Wei",
-    "Xianbiao Qi",
-    "Rong Xiao"
-   ],
-   "abstract": "This work presents the 2nd-place solution (Team IF1001) to the 2026 BEHAVIOR Challenge, which evaluates mobile manipulation across 100 household tasks. Our method is built on a powerful world action model (WAM), Cosmos 3. We improve Cosmos 3 by using richer visual history, task-progress conditioning, and task-group and skill-specific LoRA adapters. During inference, we apply a separate progress estimator to supply task-progress context, and use task- and progress-conditioned routing to select a task-group or skill-specific policy, complemented by action-candidate aggregation, rolling inpainting, and task-specific temporal and gripper control. To meet the minimum inference requirement of 1 FPS, we use neither recursive self-improvement (RSI) nor agentic harness methods and rely on no closed-source models; during official private-test evaluation, our system handled concurrent requests across 100 evaluation ports with limited hardware resources, sustaining an average end-to-end inference rate above 2 FPS per port. Our method achieves a mean Q-score of 0.613 and a full-task success rate of 40.9%, averaged over 3 self-evaluation rounds across all 100 tasks. On the official private test set, with 20 instances per task, our system achieves a mean Q-score of 0.615 and a full-task success rate of 41.2%.",
-   "fetched": "2026-11-11"
-  },
-  {
-   "id": "2611.13685",
-   "title": "Ego Guidance: Enhancing Robot Policy Learning with Action-Free Human Egocentric Videos",
-   "published": "2026-11-11",
-   "topics": [
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://llong-cs.github.io/EgoGuidance"
-   ],
-   "comment": "Project Page: https://llong-cs.github.io/EgoGuidance",
-   "authors": [
-    "Lin Long",
-    "Tianren Ma",
-    "Zhong Chu",
-    "Di Wu",
-    "Maosong Cao",
-    "Qixiang Ye",
-    "Junbo Zhao",
-    "Shanghang Zhang"
-   ],
-   "abstract": "In this paper, we investigate how human egocentric videos can benefit robot policy learning without action supervision. Building on a pretrained VLM, we propose Shared Prediction on Action and Representation (SPAR), an MoT architecture in which future visual state prediction can provide independent and complementary learning signals alongside action prediction. We find that representations learned from egocentric videos improve downstream performance on out-of-distribution robot tasks, with further gains as video data scales. We also study the effects of objective choices and data curation, providing insights into how to leverage action-free videos for scalable robot learning.",
-   "fetched": "2026-11-11"
-  },
-  {
-   "id": "2611.13610",
-   "title": "From Egocentric Human Video to Robot Manipulation in the Era of Embodied Intelligence",
-   "published": "2026-11-11",
-   "topics": [
-    "manipulation",
-    "learning"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://mikewu597.github.io/Ego2Robot_Learning/"
-   ],
-   "comment": "39 pages, 10 figures. Project page: https://mikewu597.github.io/Ego2Robot_Learning/",
-   "authors": [
-    "Yi Wang",
-    "Jingqiu Wu",
-    "Lei Yao",
-    "Zhaoshuo Li",
-    "Haoyu Zhu",
-    "Yirui Zhou",
-    "Huaiyuan Xu",
-    "Ying Zheng",
-    "Chuang Yang",
-    "Lap-Pui Chau"
-   ],
-   "abstract": "Egocentric human video (EHV) records close-range hand-object interaction (HOI) and the temporal structure of everyday activities, offering a potentially scalable source of experience for robot manipulation. Using this experience for robot control requires recovering useful supervision without recorded robot actions and accounting for differences in morphology, viewpoint, and action space. We define Ego2Robot learning as the process of learning or adapting robot manipulation policies from EHV, organized into four learning paradigms: explicit embodiment transfer, explicit action and task supervision, egocentric video representation pretraining, and latent action and dynamics modeling. The four paradigms differ in what they derive from human video: robot-format demonstrations, interpretable supervision, visual representations, or predictive models of actions and dynamics. For each paradigm, we trace what EHV information is extracted, how robot policies use it, and when the additional data is required. Besides, we review the benchmark datasets that cover EHV, robot demonstrations, and synthetic and simulated resources. This paper links EHV data's contribution to the task information preserved and the robot-specific grounding used during training or deployment. Finally, we identify challenges in physical feasibility, agent coordination, in-context adaptation, controlled evaluation, and predictive control.",
-   "fetched": "2026-11-11"
-  },
-  {
-   "id": "2611.13370",
-   "title": "AHEADance: Anticipatory Humanoid Dance from Streaming Audio",
-   "published": "2026-11-11",
-   "topics": [
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://ihcr.github.io/AHEADance"
-   ],
-   "comment": null,
-   "authors": [
-    "Tianhu Peng",
-    "Yukun Wang",
-    "Lingfan Bao",
-    "Yiyang Jia",
-    "Chengxu Zhou"
-   ],
-   "abstract": "A humanoid that dances to streamed music must commit each motion chunk before it has heard the music that chunk accompanies, and must continue from motion it has already committed. We present AHEADance, a robot-native streaming dance generator executed on a humanoid robot by a whole-body tracker. ListenAhead conditions each chunk on heard music and a frozen music model's forecasts of the coming music, aligned to their target times and weighted by reliability. The forecasts carry the timing of upcoming beats almost as well as the actual future; with them, the generator is better synchronized with the music and concentrates more motion energy at its song's beat frequency. Commit Forcing trains continuation from the model's own committed chunks, updating both the latent history and the decoded boundary of the next chunk; it reduces low activity from 83.5% to 10.3%, the level of real dance. Three music evaluators, each validated on real G1 dance, test synchronization, song and style. On a physical Unitree G1, it dances while the music plays and comes to rest when it stops, without a fall. Project page: https://ihcr.github.io/AHEADance",
-   "fetched": "2026-11-11"
-  },
-  {
    "id": "2611.13204",
    "title": "Ground Reaction Force-Aware Model Predictive Control for Underactuated Upright Physical Assistance",
    "published": "2026-11-11",
@@ -344,27 +90,6 @@
     "Sunil K. Agrawal"
    ],
    "abstract": "Many rehabilitation robots execute prescribed motions using reactive tracking controllers that do not explicitly incorporate the user's instantaneous human-ground interaction. This paper presents Ground Reaction Force-Aware Model Predictive Control (GRF-MPC), a framework for upright physical assistance. By integrating live GRF and center of pressure (CoP) measurements directly into a human centroidal dynamics model, GRF-MPC formulates a real-time quadratic program (QP) that optimizes assistive forces and moments over a receding horizon. We deployed GRF-MPC on the Robotic Upright Stand Trainer (RobUST) in an underactuated 4-cable configuration and evaluated it against a fully actuated 8-cable Cartesian impedance baseline in nearly 300 trials across six healthy participants. Across tasks spanning impulsive perturbations, lunge trajectories, and voluntary limits of stability, GRF-MPC reduced peak planar center-of-mass (CoM) error by 19.6% during perturbations, lowered trajectory tracking error by 24.1%, required 28.7% less net mechanical work, and permitted a 45.9% greater normalized voluntary excursion area. The underlying QP solves in under 1 ms, comfortably enabling 100 Hz replanning and demonstrating that incorporating live human-ground interaction into predictive control yields stronger, more transparent physical assistance with half the actuators.",
-   "fetched": "2026-11-11"
-  },
-  {
-   "id": "2611.13160",
-   "title": "How Much of Your VLA Is kNN",
-   "published": "2026-11-11",
-   "topics": [
-    "vla"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/sereact/lerobot_knn"
-   ],
-   "project": [],
-   "comment": "21 pages, 10 figures, accepted to the CoRL 2026 G2A/TAG workshop",
-   "authors": [
-    "Denis Grachev",
-    "Damien LaRocque",
-    "Omar Moured"
-   ],
-   "abstract": "Vision-language-action (VLA) models now exceed 95% success on the LIBERO simulation benchmark, yet it remains unclear how much of this performance requires generalization beyond the training demonstrations. In this work, we show that retrieving nearby demonstrations and reusing their action chunks achieves a success rate of 91.7 % on LIBERO without policy training. Under LIBERO-Plus perturbations, retrieval shows the smallest drop of all evaluated policies. Across nine publicly available VLAs, fine-tuning mostly makes the vision-language backbone a better retrieval key, and the actions of the VLAs remain close to the demonstrations. In addition, we introduce Local Action Consistency (LAC), an offline metric that measures whether nearby observations in representation space are also associated with similar future actions. We show that LAC tracks the success rate of retrieval and can guide the training of a retrieval key. Our evaluation and source code are available at https://github.com/sereact/lerobot_knn.",
    "fetched": "2026-11-11"
   },
   {
@@ -389,32 +114,6 @@
    ],
    "abstract": "Maze navigation requires localization from sparse, repetitive geometry, planning through narrow corridors, and control that stays safe when the estimate or the map is wrong. We present Maze Runner, an open autonomy stack in C++ and ROS 2 that addresses these needs end to end on a simulated Husarion ROSbot XL with a 2D LiDAR in Gazebo. Perception extracts wall lines from each scan with RANSAC and total least squares, with per-line uncertainty. The same line front end feeds two estimators: an Extended Kalman Filter (EKF) that localizes against a line map built from the maze mesh, and an EKF SLAM variant that builds the line map online. Planning runs online on an inflated occupancy grid with A* plus line-of-sight shortcutting, or with a forward-only Hybrid A*. A nonlinear Model Predictive Controller (NMPC) tracks the plan while discrete-time Control Barrier Functions (CBFs) on world-frame LiDAR points keep the robot clear of walls and unmapped obstacles. The algorithms live in a ROS-free, unit-tested core library, and the whole stack builds and runs from a single reproducible environment. In simulation, the robot drives a 135 m route through the maze with 1.0 cm localization RMSE against the known map and 24 cm in SLAM mode, the planner returns a path in 6 ms, and the NMPC solves in 11.7 ms on average, never exceeding its 80 ms budget.",
    "fetched": "2026-11-11"
-  },
-  {
-   "id": "2611.12885",
-   "title": "World In-Context Learning for Agentic Robot Manipulation",
-   "published": "2026-11-10",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/ArcheOne-AI/RoboScript"
-   ],
-   "project": [
-    "https://ArcheOne-AI.github.io/RoboScript"
-   ],
-   "comment": "Project Page: https://ArcheOne-AI.github.io/RoboScript",
-   "authors": [
-    "Heng Fang",
-    "Zehui Guo",
-    "Yuehan Zhang",
-    "Mingyang Du",
-    "Dingkang Liang",
-    "Xiang Bai"
-   ],
-   "abstract": "Trained action policies write manipulation skill into network weights, tying what is learned to the distribution it is learned from. In-context learning (ICL) avoids this coupling but has not matched trained policies, because a demonstration recorded in another scene carries no feedback from the world the robot currently faces. We observe that what an agent learns in context is semantic, recording task steps and object roles rather than visual appearance, so experience gathered in one world transfers to another. Based on this insight, we propose World In-Context Learning (WICL), a paradigm in which a frozen model starts from a demonstration, rehearses the task in a world such as a simulator, and writes the feedback into its context rather than its weights. We build RoboScript, a modular infrastructure that implements WICL for agentic manipulation. From a single demonstration, RoboScript learns each task through rehearsal in simulation, freezes the learned knowledge as a Task Memory, and deploys the frozen memory on new scenes with data isolation that ensures every deployment input is available on a real robot. On all 50 tasks of RoboTwin 2.0, RoboScript reaches 83.4% mean success across clean and randomized settings with one demonstration per task and no gradient updates, exceeding the strongest trained action policy by over 20 points. The method generalizes across visual distributions, improves through reflection, scales with the foundation model, and transfers to a physical dual-arm robot through cross-embodiment memory adaptation. With a world in the loop, a robot can learn a manipulation task in its context as well as it learns one in its weights. All code is available at https://github.com/ArcheOne-AI/RoboScript",
-   "fetched": "2026-11-10"
   },
   {
    "id": "2611.12643",
