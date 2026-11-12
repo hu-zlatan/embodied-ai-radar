@@ -741,3 +741,13 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - The 16:28 CoRL program run matched 4 more papers to arXiv. HARP-Bench was already curated; added SPARK (post-training vision foundation models for control) and UniLatent (cross-embodiment latent alignment) → learning, stochastic challenges (real-world benchmarking) → datasets, all `venue: CoRL 2026`, facts from candidates.json abstracts (ae47765). Validate 0 errors (1,361 curated), 1,491 pages, 0 broken links, README check clean.
 - CoRL 2026 awards: web search finds no list yet.
 - No new owner task. End of run 80.
+
+## 2026-11-12 — run 81 (~16:50 UTC–)
+
+- Start: no issues/PRs, 4 stars / 0 forks (repo_stats). Local checkout detached; reset to `origin/main`. All workflows green except verify #196 (run-80 commit): UniLatent project page 404 → `project:` removed (4dae1a9).
+- 11-12 feed: four intake runs saw arXiv RSS `items=0` (channel date Thu 12 Nov) and no API finds → arXiv side, like 10-29. Nothing to fix.
+- 11 picks from the 11-11 candidates (632628a): MetaWAM (CoRL 2026, showlab code; README confirms CoRL), Elastic-WAM, BEHAVIOR 2026 2nd-place WAM → world-models; BEHAVIOR 2026 one-policy solution (code + checkpoint), VLA-kNN analysis → vla; DexSeed (Robbyant), Ego2Robot survey → manipulation; Ego Guidance → learning; AHEADance, RedirectMimic → locomotion; HiPFuse → perception. Skipped: UGG (generic 4D vision), SIGMO (driving), maritime 3DSG, GRF-MPC (rehab), Maze Runner (teaching stack).
+- 7 picks from the HF queue (092d0b9), repos checked live with code by README / file tree: LingBot-Touch (102 upvotes, ★), RoboScript (55, ★), A²-MEAS (53, ★), Embodied First Exam, LEASH/RoboRisk, SWAM, memory-clock.
+- facts.yml for 6 new CoRL program matches was cancelled by a newer pending verify (arxiv-api group); re-dispatch after verify starts.
+- CoRL 2026 awards: web search finds nothing yet.
+- Validate 0 errors (1,379 curated), 1,510 pages, 0 broken links, README check clean.
