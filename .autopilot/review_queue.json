@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "papers": [
   {
    "id": "2611.12806",
    "title": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
-   "upvotes": 98,
+   "upvotes": 99,
    "hf_date": "2026-11-10",
    "published": "2026-11-10",
    "topics": [
@@ -43,7 +43,7 @@
   {
    "id": "2611.12885",
    "title": "World In-Context Learning for Agentic Robot Manipulation",
-   "upvotes": 63,
+   "upvotes": 66,
    "hf_date": "2026-11-11",
    "published": "2026-11-10",
    "topics": [
@@ -70,7 +70,7 @@
   {
    "id": "2611.09124",
    "title": "Toward the Era of Agentic Embodied Intelligence",
-   "upvotes": 52,
+   "upvotes": 53,
    "hf_date": "2026-11-09",
    "published": "2026-11-09",
    "topics": [],
@@ -120,39 +120,9 @@
    "ai_summary": "HiSTEVE is a hierarchical vision-language-action agent that combines long-horizon planning with native keyboard-and-mouse control to perform complex open-ended tasks in Minecraft."
   },
   {
-   "id": "2611.12870",
-   "title": "SWAM: Scaling World Action Models with Cross-Modal Alignment",
-   "upvotes": 20,
-   "hf_date": "2026-11-10",
-   "published": "2026-11-10",
-   "topics": [
-    "world-models"
-   ],
-   "authors": [
-    "Yu Zhou",
-    "Xinyuan Xia",
-    "Xuankun Yang",
-    "Yinghao Yang",
-    "Wendi Chen",
-    "Bowen Liu",
-    "Jianhan Ma",
-    "Weicheng Duan",
-    "Jun Lv",
-    "Cewu Lu",
-    "Yanwei Li"
-   ],
-   "organization": "Shanghai Jiao Tong University",
-   "github": "https://github.com/shaaaaron/SWAM",
-   "project": "https://char-lotte-xia.github.io/swam-official/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "World action models jointly predict video and actions conditioned on language. Existing studies focus primarily on architectures and training mechanisms, typically treating language-video alignment acquired through video pretraining as an established foundation. However, introducing action learning may impair this alignment. Principled guidance on data and supervision design for maintaining language-video alignment during action learning remains limited. To investigate this, we curate a pool of approximately 47,000 hours of general videos, egocentric videos, UMI demonstrations, and robot demonstrations. Building on this, we systematically study how language-video supervision, language-video-action supervision, and the joint use of these two forms affect WAM performance. In particular, we examine how language annotation quality affects pretrained language-video capabilities, and how action supervision from UMI and robot demonstrations extends these capabilities to language-video-action modeling. To better scale the model, we further conduct detailed studies on joint training recipe and model architecture. Under a fixed training budget, mixing egocentric videos and UMI demonstrations improves control generalization. Model architecture affects how effectively these experiences are used, while scaling pretraining under the selected configuration brings further gains. The resulting recipe, post-trained on RoboTwin Clean demonstrations only, achieves success rates of 88.10% and 61.56% under Easy (Clean-to-Clean) and Hard (Clean-to-Random) conditions, respectively. Our model achieves 40.00% SR across three real-world tasks, compared with 23.33% for the strongest baseline, indicating better generalization under unseen conditions. We release the curated data, training code, and model weights.",
-   "ai_summary": null
-  },
-  {
    "id": "2611.12177",
    "title": "Embodied First Exam",
-   "upvotes": 15,
+   "upvotes": 25,
    "hf_date": "2026-11-11",
    "published": "2026-11-10",
    "topics": [],
@@ -187,9 +157,39 @@
    "ai_summary": null
   },
   {
+   "id": "2611.12870",
+   "title": "SWAM: Scaling World Action Models with Cross-Modal Alignment",
+   "upvotes": 22,
+   "hf_date": "2026-11-10",
+   "published": "2026-11-10",
+   "topics": [
+    "world-models"
+   ],
+   "authors": [
+    "Yu Zhou",
+    "Xinyuan Xia",
+    "Xuankun Yang",
+    "Yinghao Yang",
+    "Wendi Chen",
+    "Bowen Liu",
+    "Jianhan Ma",
+    "Weicheng Duan",
+    "Jun Lv",
+    "Cewu Lu",
+    "Yanwei Li"
+   ],
+   "organization": "Shanghai Jiao Tong University",
+   "github": "https://github.com/shaaaaron/SWAM",
+   "project": "https://char-lotte-xia.github.io/swam-official/",
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "World action models jointly predict video and actions conditioned on language. Existing studies focus primarily on architectures and training mechanisms, typically treating language-video alignment acquired through video pretraining as an established foundation. However, introducing action learning may impair this alignment. Principled guidance on data and supervision design for maintaining language-video alignment during action learning remains limited. To investigate this, we curate a pool of approximately 47,000 hours of general videos, egocentric videos, UMI demonstrations, and robot demonstrations. Building on this, we systematically study how language-video supervision, language-video-action supervision, and the joint use of these two forms affect WAM performance. In particular, we examine how language annotation quality affects pretrained language-video capabilities, and how action supervision from UMI and robot demonstrations extends these capabilities to language-video-action modeling. To better scale the model, we further conduct detailed studies on joint training recipe and model architecture. Under a fixed training budget, mixing egocentric videos and UMI demonstrations improves control generalization. Model architecture affects how effectively these experiences are used, while scaling pretraining under the selected configuration brings further gains. The resulting recipe, post-trained on RoboTwin Clean demonstrations only, achieves success rates of 88.10% and 61.56% under Easy (Clean-to-Clean) and Hard (Clean-to-Random) conditions, respectively. Our model achieves 40.00% SR across three real-world tasks, compared with 23.33% for the strongest baseline, indicating better generalization under unseen conditions. We release the curated data, training code, and model weights.",
+   "ai_summary": null
+  },
+  {
    "id": "2611.14488",
    "title": "Is Your Robot's Memory Just a Clock? Temporal Shortcuts in Memory-Augmented VLA Policies",
-   "upvotes": 6,
+   "upvotes": 7,
    "hf_date": "2026-11-11",
    "published": "2026-11-11",
    "topics": [
@@ -206,6 +206,31 @@
    "comment": "38 pages",
    "abstract": "Memory-augmented vision-language-action (VLA) policies are meant to remember what happened. Many of them, however, fill memory by time: they sample frames uniformly across the episode and stamp each frame with its time step. Because time passes even when nothing happens, such a memory may not tell waiting from working. We show that it does not. On the counting tasks of RoboMME, we make the robot briefly pause or fidget its wrist. Such a null event changes nothing the task depends on, yet a released memory VLA counts the interval as work done and stops early. We call this failure phantom progress. It cuts success from 47 to 16 of 50 on one task and from 44 to 10 on the other. When the same frames are withheld from memory, success returns, so the cause lies in memory rather than in the interruption itself. We trace the failure to a temporal shortcut: because demonstrations proceed at a steady pace, elapsed time predicts progress. Indeed, rescaling the time stamps alone makes the policy stop early when the clock runs fast and repeat when it runs slow. Surprisingly, removing the time encoding does not cure the failure, because the frames of a null event still occupy slots of the time-sampled memory. Across RoboMME's released designs, vulnerability follows how memory is indexed. Of the fixes the diagnosis suggests, training with injected pauses does not remove the failure and impairs counting, whereas indexing memory by events recovers half or more of the loss without retraining. A memory meant to remember what happened should count events rather than clock ticks.",
    "ai_summary": "Memory in vision-language-action policies can mistake pauses for progress because it is indexed by time, causing early stopping, while event-based indexing mitigates this without retraining."
+  },
+  {
+   "id": "2611.14115",
+   "title": "LEASH: Stay Safe in Agentic Robotics",
+   "upvotes": 5,
+   "hf_date": "2026-11-11",
+   "published": "2026-11-11",
+   "topics": [],
+   "authors": [
+    "Qinfeng Zhu",
+    "Weiguang Zhao",
+    "Ke Sun",
+    "Xihao Guo",
+    "Yunxi Jiang",
+    "Rui Zhang",
+    "Lei Fan",
+    "Kaizhu Huang"
+   ],
+   "organization": "University of Liverpool",
+   "github": "https://github.com/zhuqinfeng1999/LEASH",
+   "project": "https://zhuqinfeng1999.github.io/LEASH/",
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "Foundation models such as GPT and Claude have shown strong capabilities in spatial understanding and embodied intelligence. These advances make agentic robotics a promising path toward artificial general intelligence in robotics. However, we find that using foundation models to control robots poses serious safety risks, and comprehensive safety evaluation is still lacking. We introduce RoboRisk, a comprehensive benchmark for evaluating safety in agentic robotics. Its 92 simulated tasks and 13 physical-robot tasks fall into five categories: Task-level Refusal (T), Plan Repair (P), Execution-time Hazard (E), Injection (I), and Sequential Memory (S). Prior benchmarks cover at most two of these categories, and several evaluate only text outputs. In contrast, RoboRisk covers all five and executes every task in closed loop. We evaluate six state-of-the-art foundation models on RoboRisk: GPT-6 Astra, GPT-6.1 Sol, GPT-6 Luna, Claude Opus 5.5, Gemini 4 Argon, and Grok 4.7. These models generally show high harm rates. We also evaluate two robot-specific APIs: the Dream API and PokeBot's RoboAPI. We further propose the Lease-Enforced Agentic Safety Harness (LEASH), which offers essential safety infrastructure for agentic robotics and can be integrated into nearly any agentic architecture. LEASH leverages a decision model (Jev or OpenAI's Decisions API) to implement task, action, and commit gates, which review the task, each action, and each irreversible operation in their visual context. The planner and all three gates share a common safety policy. Experiments on RoboRisk in simulation and on physical robots show that LEASH effectively reduces harm across all six foundation models. It largely preserves their task completion performance and adds little time and token overhead.",
+   "ai_summary": null
   }
  ],
  "curated_link_updates": [
