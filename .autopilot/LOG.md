@@ -754,3 +754,11 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - facts.yml #27 (after verify #199 started): HuMI, SSR → locomotion, SFHand (2511.18127, v2 title; ut-vision/SFHand README names CoRL 2026) → manipulation. Skipped AmodalBox (driving scenes), racing friction estimator, off-road SpatialBEV.
 - Verify #199 failed: arXiv renamed DiffWBC → OneSteer (title updated; project URL unchanged) and pi.website answered HTTP 429 for three links. `verify_curated.py`: 429 is now retried once and reported as a warning, not a failure (rate limiting says nothing about the link).
 - Validate 0 errors (1,382 curated), 1,513 pages, 0 broken links, README check clean. No new owner task. End of run 81.
+
+## 2026-11-12 — run 82 (~22:50 UTC–)
+
+- Start: no issues/PRs; all workflows green (verify #200 on the run-81 commit passed). 11-12 RSS still `items=0` at 21:52; API worked (452 known, 0 new) → arXiv side.
+- Review queue / candidates: only known skips.
+- CoRL 2026 awards: search found only a secondary recap naming SuperMimic as Best Paper. To check against the source, `corl_program.py` now stores the official awards page as text (f4fa675); dispatched corl-program → snapshot lists 6 award finalists, no winners yet.
+- 9c24035: finalists in `corl-2026-extra.yaml` (OpenReview ids), 'Oral · Award finalist' badges on the six curated entries, 'Award finalists' list on the program guide, ★ for the four unrated finalists. Winner not marked (no official source yet).
+- Validate 0 errors (1,382 curated), 1,513 pages, 0 broken links, README regenerated + check clean. No new owner task. End of run 82.
