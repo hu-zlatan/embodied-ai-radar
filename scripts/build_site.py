@@ -325,6 +325,24 @@ def session_utc(where: str, offset_h: int = 6) -> str:
     return f"{at(h1, m1, ap1 or ap2)}/{at(h2, m2, ap2)}"
 
 
+def program_awards(papers: list[dict], extra: dict, cur_by_id: dict) -> str:
+    """Award finalists from the hand-kept extras (checked against the official awards page). Empty → ''."""
+    aw = extra.get("awards") or {}
+    by_or = {x["or"]: x for x in papers}
+    rows = [by_or[i] for i in aw.get("finalists") or [] if i in by_or]
+    if not rows:
+        return ""
+    def link(x: dict) -> str:
+        cur = cur_by_id.get(str(x.get("arxiv")))
+        href = (f'../e/{esc(cur["id"])}.html' if cur else f'https://arxiv.org/abs/{esc(str(x["arxiv"]))}' if x.get("arxiv")
+                else f'https://openreview.net/forum?id={esc(x["or"])}')
+        return f'<li><a href="{href}">{esc(x["title"])}</a></li>'
+    note = bi(f"Award finalists ({len(rows)}), as listed on the", f"获奖提名论文（{len(rows)} 篇），见")
+    return (f'<h2 id="awards">{bi("Award finalists", "获奖提名")}</h2><p class="muted">{note} <a href="{esc(aw["source"])}" rel="noopener">'
+            f'{bi("official awards page", "官方奖项页面")}</a> ({esc(str(aw.get("updated", "")))}). '
+            f'{bi("Winners are added here once the official page names them.", "官方页面公布获奖者后会在此更新。")}</p><ul class="tlist">{"".join(map(link, rows))}</ul>')
+
+
 def program_page(prog: dict, extra: dict, cur_by_id: dict, rec_by_id: dict, tby: dict) -> str:
     name, papers = prog["venue"], prog["papers"]
     n_arxiv = sum(1 for x in papers if x.get("arxiv"))
@@ -355,6 +373,7 @@ def program_page(prog: dict, extra: dict, cur_by_id: dict, rec_by_id: dict, tby:
              f'{bi("arXiv links are matched by title, so check there for last-minute changes. Code links come from arXiv comments, Hugging Face and the authors' project pages.", "arXiv 链接按标题匹配；临时变动请以官方页面为准。代码链接来自 arXiv 备注、Hugging Face 与作者项目页。")}</p>',
              f'<ul class="tlist">{days}<li><a href="#workshops">{bi("Thursday, November 12: workshops", "11 月 12 日（周四）：研讨会")}</a></li></ul>',
              '<div id="pg-now" hidden></div>',
+             program_awards(papers, extra, cur_by_id),
              program_numbers(papers, cur_by_id, rec_by_id),
              program_signals(papers, cur_by_id, rec_by_id),
              f'''<p class="muted">{bi("Press ☆ on the papers you want to see: you get your own schedule, sorted by time, with a link to share and a calendar file. The list stays in this browser; nothing is sent anywhere.", "点论文上的 ☆ 即可生成个人日程：按时间排序，可分享链接、导出日历文件。清单只保存在你的浏览器里，不会上传。")}</p>
@@ -796,6 +815,7 @@ def build() -> int:
             e["hf"] = hf[str(e["arxiv"])]
     prog = load_program(PROGRAM)
     prog_by_id = {str(x["arxiv"]): x for x in (prog or {}).get("papers", []) if x.get("arxiv")}
+    finalists = set((load_program_extra(PROGRAM).get("awards") or {}).get("finalists") or [])  # OpenReview ids, hand-checked
     for x in prog_by_id.values():
         x["venue"] = prog["venue"]
     for p in feed + backfill:
@@ -823,6 +843,8 @@ def build() -> int:
         if x:
             e["venue"] = e.get("venue") or x["venue"]
             h = paper_honor({"prog": x})
+            if x["or"] in finalists:
+                h = f"{h} · Award finalist" if h else "Award finalist"
             if h:
                 e["honor"] = h
     for p in feed + backfill:
