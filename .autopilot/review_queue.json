@@ -27,26 +27,36 @@
    "ai_summary": "HiSTEVE is a hierarchical vision-language-action agent that combines long-horizon planning with native keyboard-and-mouse control to perform complex open-ended tasks in Minecraft."
   },
   {
-   "id": "2611.13766",
-   "title": "FAME-QP: A GPU-Accelerated Quadratic-Programming Solver for Real-Time Model Predictive Control",
-   "upvotes": 6,
-   "hf_date": "2026-11-12",
-   "published": "2026-11-11",
+   "id": "2611.08318",
+   "title": "Learning the Task or Learning the Verifier? Rethinking Criteria Exposure in Embodied Self-Improvement",
+   "upvotes": 5,
+   "hf_date": "2026-11-13",
+   "published": "2026-11-06",
    "topics": [
-    "control"
+    "datasets"
    ],
    "authors": [
-    "Santosh Mohan Rajkumar",
-    "Debdipta Goswami",
-    "Stephanie Stockar"
+    "Wenbo Huang",
+    "Jianxin Bi",
+    "Shunyu Yang",
+    "Ruiyang Si",
+    "Rui Ni",
+    "Qiang Wang",
+    "Shulong Jiang",
+    "Yintianrun Zhang",
+    "Feixiang Ruan",
+    "Kewei Zhang",
+    "Ye Huang",
+    "Shukai Gong",
+    "Daquan Zhou"
    ],
-   "organization": "The Ohio State University",
-   "github": "https://github.com/santoshrajkumar/fame-qp",
-   "project": "https://santoshrajkumar.github.io/proj/fame_qp/",
+   "organization": "DAGroup-PKU",
+   "github": null,
+   "project": "https://dagroup-pku.github.io/PyRUA-Lean/RSIJudge/",
    "arxiv_code": [],
-   "comment": null,
-   "abstract": "We present FAME-QP, a GPU-accelerated solver for dense quadratic programs arising in linear model predictive control. FAME-QP combines constraint-dependent operator representations with fused single- and two-kernel iterations replayed through CUDA graphs, automatically selecting the execution configuration through device calibration and problem-specific timing. It probes a cached operator bank to select the initial penalty and updates operators lazily when problem matrices change. Numerical benchmarks and simulated humanoid and quadrotor control experiments demonstrate reduced latency relative to competing GPU solvers while maintaining solution accuracy and control performance.",
-   "ai_summary": null
+   "comment": "22 pages, 8 figures, 10 tables. Project page: https://dagroup-pku.github.io/PyRUA-Lean/RSIJudge",
+   "abstract": "Self-improving embodied agents are increasingly being developed and compared on robot simulation benchmarks. Several recent works expose the benchmark's success criteria to the learning agent, a practice we call Criteria Exposure (CE). These criteria, originally written to verify policies trained by imitation learning, often demand more than the corresponding language instructions, so a score from such a verifier may not faithfully reflect whether the instructed task was completed, especially for robot-control programs written by an agent. As embodied coding agents report ever higher benchmark scores, a natural question arises: when a coding agent is exposed to the benchmark's criteria, does it generate code that better performs the instructed task, or code that simply overfits to the verification criteria? We conduct controlled experiments with a self-improving agent with and without CE, and find that with CE the agent quickly produces code with a higher success rate under the given criteria, but this advantage disappears when the criteria are changed slightly without departing from the original instructions. More importantly, the skills the agent develops under CE transfer poorly across tasks. We further propose instruction-faithful criteria and show that they better reflect the performance of agent-generated programs.",
+   "ai_summary": "Exposing benchmark success criteria to self-improving embodied coding agents can raise measured success under those criteria without improving instructed-task completion, and the advantage weakens under slight criteria changes and transfers poorly across tasks, while instruction-faithful criteria better reflect instructed-task performance."
   }
  ],
  "curated_link_updates": [
