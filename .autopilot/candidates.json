@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "papers": [
   {
    "id": "2611.14440",
@@ -1327,31 +1327,6 @@
    ],
    "abstract": "Knowledge of the hidden interior structure of an object, including the presence and location of cavities, is essential for predictive simulation, robotic manipulation, and nondestructive inspection. However, such cavities leave no direct signature on the static visible surface, making collision-induced deformation one of the few cues used to infer their presence. Structure from Collision (SfC) addresses this problem by recovering the hidden interior structure of an object from multiview observations of a collision event. SfC is challenging for two reasons: hidden cavities are only indirectly observable through surface motion, and voids correspond to the absence of material, making direct optimization using standard density representations difficult. The density-based SfC baseline inherits both difficulties. Surface-matching gradients do not directly indicate the cavity location, while density gradients can be weak or uninformative inside or near void regions. Therefore, we reformulate SfC as hypothesis-space reasoning, representing hidden cavities as explicit structural hypotheses whose variables encode available structural assumptions rather than relying on implicit density updates. A global stage performs gradient-free optimization over this hypothesis space using forward-only material point method (MPM) simulation. A local stage then refines the selected hypothesis as a Lagrangian particle system through gradient-based optimization using differentiable MPM simulation. On the SfC benchmark, our method improves hidden-structure reconstruction and future prediction over the density-based SfC baseline. Interior-topology stress tests and robustness analyses characterize its scope and limitations. The project page is available at https://www.kecl.ntt.co.jp/people/kaneko.takuhiro/projects/sfc-hypothesis/.",
    "fetched": "2026-11-06"
-  },
-  {
-   "id": "2611.06702",
-   "title": "When to Ask for Help: Uncertainty-Triggered Aerial Refinement for Off-Road Navigation",
-   "published": "2026-11-05",
-   "topics": [
-    "navigation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://anonymous.4open.science/w/when-to-ask-for-help/"
-   ],
-   "comment": "Project page: https://anonymous.4open.science/w/when-to-ask-for-help/",
-   "authors": [
-    "Pranay Samineni",
-    "Adam Thorpe",
-    "John Chubick",
-    "Anand Balakrishnan",
-    "Christian Ellis",
-    "Swarat Chaudhuri",
-    "Ufuk Topcu"
-   ],
-   "abstract": "Heterogeneous air-ground teams can use aerial sensing to address the limited range and viewpoint of ground-vehicle sensors, but deciding when the UGV needs assistance and what information the UAV should collect remains a challenge. This paper presents a planner-conditioned air-ground assistance method that evaluates how uncertain map information affects the UGV's current MPPI rollouts. When navigation remains degraded, we score the same rollouts under resolved map hypotheses, select the map layer with the largest useful improvement, request the corresponding aerial measurement, fuse the returned information, and replan. Unlike approaches driven by fixed support roles, task structure, or uncertainty alone, our method conditions assistance on whether resolving uncertainty improves predicted ground navigation. Across 180 simulation trials on three off-road routes, the method achieves 98.9% goal attainment while reducing mean UAV flight time by 87.7% relative to continuous greedy aerial mapping. Aggregated across the routes, each second of estimated UAV flight time saves 2.94 s of UGV navigation time. Field experiments spanning approximately 2 km of UGV operation demonstrate uncertainty resolution and successful navigation recovery.",
-   "fetched": "2026-11-05"
   }
  ]
 }
