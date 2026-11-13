@@ -2,7 +2,7 @@
 
 _Physics simulators, GPU-parallel training and transfer to real robots._
 
-67 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
+68 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/sim.html) · [中文](sim.zh-CN.md)
 
@@ -38,6 +38,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._
 - **[ComSim: Building Scalable Real-World Robot Data Generation via Compositional Simulation](https://arxiv.org/abs/2604.11386)** (2026) — Compositional simulation: classical sim produces accurate action-video pairs and a neural simulator restyles them as real-looking video, in a real-sim-real loop seeded by a little real data. · [project](https://faceong.github.io/ComSim/)
 - **[DexSuite: An All-in-One Framework for Dexterous Manipulation Across Arms, Hands, and Tasks](https://arxiv.org/abs/2610.37799)** (2026) — Open dexterous-manipulation framework on Genesis: 30 tasks, 10 arms × 12 end effectors (100+ single-arm robots), teleoperation, simulated touch, a 16-pair benchmark and 4,700 demo episodes. · [project](https://dexsuiteorg.github.io)
 - **[Do Rigid-Body Simulators Dream of Soft Robots? Learning Contact-Rich Manipulation for Tendon-Driven Continuum Robots](https://arxiv.org/abs/2606.22397)** (2026) — Puts tendon-driven continuum robots natively into MuJoCo with a continuum-mechanics-based discretization, validated against Cosserat rods and hardware; sim-trained imitation policies transfer zero-shot to a real robot. · [code](https://github.com/ContinuumRoboticsLab/opencr-mujoco) · [project](https://continuumroboticslab.github.io/opencr-mujoco/)
+- **[Effective Parameters, Real Behavior: Renormalization for Robotics -- From Infinite Electron Mass to Sim-to-Real Gap](https://arxiv.org/abs/2607.24079)** (2026) — Treats simulator parameters as effective, frequency- and resolution-dependent values and derives closed-form PD damping and inertia corrections for rigid-body PD, cables, and underwater swimming, with a 4-step workflow. · [code](https://github.com/WhymustIhaveaname/R4R)
 - **[Elastra: A Simulation Framework for Elastic Bodies](https://arxiv.org/abs/2611.15112)** (2026) — Simulates springy surfaces such as mattresses and trampolines with vertically moving elastic elements; residual RL on top of HoST lifts G1 stand-up success on mattresses from 44.1% to 72.5% (trampoline 55% → 89%).
 - **[GIF: Agentic Generation of Interactive and Functional Object Compositions for Robot Learning](https://arxiv.org/abs/2609.05927)** (2026) — Agentic generation of functional object compositions (e.g. parts that must fit): disentangled mesh reconstruction, relative pose refinement under geometric and physical guidance, and a VLM verifier.
 - **[Genie Sim Benchmark: Real-to-Sim Fidelity and Evaluation](https://arxiv.org/abs/2611.15020)** (2026) — Checks whether Genie Sim scores track the real world: on 22 paired real/sim robot-task pairs, π0.5 scores correlate at 0.97 (MAE 0.04), backed by joint-level position and torque identification studies.
