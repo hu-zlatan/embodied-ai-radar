@@ -2774,3 +2774,13 @@
   tags: [verifier, test-time-selection, hindsight, frozen-policy, real]
   takeaway_en: "HDH trains a compact verifier on a frozen VLA's own rollouts to score action chunks, then runs the best sampled candidate. Reports 82.3% on four LIBERO-10 tasks and +22.6% over the base policy on three real tasks."
   takeaway_zh: "HDH 用冻结 VLA 自身部署的轨迹训练一个轻量动作验证器，为每个动作块预测成功概率，再从多个采样候选中选最优执行。报告在四个 LIBERO-10 任务上平均成功率 82.3%，三项真实任务比基线策略提高 22.6%。"
+- title: "STVLA: Spatial-aware and Temporal-memory for Vision-Language-Action Models"
+  type: paper
+  arxiv: "2611.16589"
+  year: 2026
+  project: https://stvla.github.io/
+  added: 2026-11-13
+  topics: [vla]
+  tags: [vla, memory, 3d-geometry, long-horizon, real]
+  takeaway_en: "Stores features from a pretrained visual-geometry model in the VLA's temporal memory, so the policy recalls past scene structure. Reports +30–58 points over π0.5 on three real tasks."
+  takeaway_zh: "把预训练视觉几何基础模型的特征写入 VLA 的时序记忆，使策略能回忆过去的场景结构，并用打分规则挑选有用的历史帧。在 LIBERO、LIBERO-Mem、MIKASA-Robo、SimplerEnv 上评测；三个真机任务比 π0.5 提升 30–58 个百分点。"

@@ -1389,3 +1389,13 @@
   tags: [egocentric-video, action-free, mixture-of-transformers, future-prediction]
   takeaway_en: "SPAR adds future-visual-state prediction beside action prediction on a VLM, so action-free egocentric human video can train the policy. Reports better out-of-distribution robot performance as video data scales."
   takeaway_zh: "SPAR 在 VLM 上让未来视觉状态预测与动作预测并行（MoT 结构），使不含动作标注的第一人称人类视频也能训练策略。报告分布外机器人任务表现提升，且随视频数据量增加继续提升。"
+- title: "HeMeR: Heterogeneous Memory Reconciliation for Embodied Agents via Structured KV Reuse"
+  type: paper
+  arxiv: "2611.16487"
+  year: 2026
+  venue: NeurIPS 2026
+  added: 2026-11-13
+  topics: [learning]
+  tags: [memory, kv-cache, efficient-inference, embodied-agent, real]
+  takeaway_en: "Keeps KV-cache states for memory contents (declarative, procedural, working) that did not change between decisions and recomputes only the rest. Real robot: 83.2% success, per-step time 2.94 → 1.87 s vs MemRL."
+  takeaway_zh: "具身智能体的推理框架：在相邻决策之间保留未变化的记忆内容（陈述性、程序性、工作记忆）对应的 KV 缓存，只重算受更新影响的部分。真机任务成功率 83.2%，单步推理时间相比 MemRL 从 2.94 秒降至 1.87 秒。"

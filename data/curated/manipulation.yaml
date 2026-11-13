@@ -1815,3 +1815,23 @@
   tags: [dexterous-hand, force-sensing, benchmark, imitation-learning, real]
   takeaway_en: "A high-force three-finger hand with 3-axis fingertip force sensing and a nine-scenario real task suite for 'removal' (peeling, cleaning, occluded retrieval). Forces in a shared wrist frame improve ACT policies."
   takeaway_zh: "三指高出力灵巧手，指尖带三轴力传感，并配套九个真实场景的“移除类”操作任务集（剥离粘附物、表面清洁、遮挡取物）。把各指尖力统一到腕部坐标系后，ACT 策略的稳定性和泛化均优于局部坐标力输入和无力觉基线。"
+- title: "HALO: Human-Aligned Data Collection for WhoLe-body MObile Manipulation"
+  type: paper
+  arxiv: "2611.16439"
+  year: 2026
+  project: https://robbyant-research.github.io/Lingbot-ALOHA/
+  added: 2026-11-13
+  topics: [manipulation, datasets]
+  tags: [mobile-manipulation, bimanual, data-collection, kinesthetic-teaching, real]
+  takeaway_en: "Operators guide the arms kinesthetically while walking a low-resistance platform in place of the base; hands are inpainted out. Reports up to 2.9x faster collection than Mobile ALOHA or VR teleop."
+  takeaway_zh: "全身移动操作数据采集系统：操作者以拖动示教方式引导双臂，同时推动低阻力平台代替移动底座行走；再通过对齐底座运动、遮挡并修补画面中的人手来缩小与部署的差异。报告采集速度比 Mobile ALOHA 和 VR 遥操作快至 2.9 倍。"
+- title: "VOKE: Visual Object Kinematics Estimator for Dexterous In-Hand Manipulation"
+  type: paper
+  arxiv: "2611.16423"
+  year: 2026
+  project: https://voke-project.pages.dev/
+  added: 2026-11-13
+  topics: [manipulation, perception]
+  tags: [dexterous-hand, in-hand-manipulation, pose-estimation, object-velocity, rl]
+  takeaway_en: "Plug-in modules for existing pose estimators that also predict object velocity and acceleration, then refine pose with that motion prior. Improves pose on DexYCB/OakInk; tested as extra input to in-hand RL policies."
+  takeaway_zh: "可插在现有物体位姿估计器之后的模块：从时序视觉特征预测物体的线/角速度与加速度，再用这一运动先验细化位姿。在 DexYCB 与 OakInk 上提升位姿精度，并作为灵巧手手内操作强化学习策略的附加输入进行对比。"

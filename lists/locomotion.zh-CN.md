@@ -2,7 +2,7 @@
 
 _足式运动、人形全身控制与跑酷。_
 
-共 178 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
+共 181 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/locomotion.html) · [English](locomotion.md)
 
@@ -33,6 +33,8 @@ _足式运动、人形全身控制与跑酷。_
 - **[AHEADance: Anticipatory Humanoid Dance from Streaming Audio](https://arxiv.org/abs/2611.13370)** (2026) — 人形机器人跟随流式音乐跳舞：每个动作块以音乐模型对即将到来节拍的预测为条件；“Commit Forcing”让模型基于自己已执行的动作块继续生成。在真实 Unitree G1 上运行无摔倒。 · [项目页](https://ihcr.github.io/AHEADance)
 - **[Action-Aligned Latent Planning for Versatile Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.24675)** (2026) — FIBER 以冻结的行为基础模型（BFM）潜在空间作为统一规划表示，把各任务专用策略投影进该空间，再离线训练单一感知流匹配规划器；仿真中搬箱、开门、抓取平均成功率 42.0%（潜在回放基线 11.6%），并在真实 Unitree G1 上验证。 · [项目页](https://fiberaa.github.io/)
 - **[Actuator Dynamics Curricula for Narrow-Viability Tasks in Legged Robot Learning](https://arxiv.org/abs/2609.09492)** (2026) — 强化学习训练初期使用较高的关节刚度，随回合变长逐步退火到辨识值，从而扩大可行状态集；使原本无法学会的 Spot 由四足站立转为倒立的动作得以完成并上真机。
+- **[Autonomous Trail Racing with a Bicycle Robot](https://arxiv.org/abs/2611.15280)** (2026) — 把山地车道编码为地形的语义层：仿真中用来定义导航任务，部署时由相机与激光雷达在机载 Orin 上以 30 Hz 重建。UMV 自行车机器人自主跑完约 1 公里非结构化山地车道，速度超过 5 m/s；同一框架也能学出跑酷动作。 · [代码](https://github.com/rai-opensource/sem_map) · [项目页](https://pages.rai-inst.com/autonomous-trail-racing/)
+- **[BlinkMimic: Training a Humanoid Motion Tracker in Minutes on a Single GPU](https://arxiv.org/abs/2611.16422)** (2026) — 在 SuperMimic 与 InstantTrack（通过学习到的世界模型反传梯度训练策略）基础上进一步提速：报告在单张 RTX 4090 上 3.4 分钟训练出覆盖 LAFAN1 全部 40 段动作的 G1 跟踪策略，并用留一消融说明每个组件的作用。 · [代码](https://github.com/fuyichen0725/blinkmimic)
 - **[CAP: Continuously Adaptive Perception-Blind Humanoid Locomotion via Learned Denoising](https://arxiv.org/abs/2609.11553)** (2026) — CAP 让单一人形策略在深度感知退化时仍能工作：世界模型编码器学习对受损深度去噪，并配合本体感知编码器；在 G1 上进行了室内外测试。
 - **[Closing the Loop in Humanoid VLA: Persistent 3D Object Tokens for Verifiable Loco-Manipulation](https://arxiv.org/abs/2607.18016)** (2026) — POT-VLA 从 RGB-D 维护按角色索引的 3D 物体记录，既作为全身动作专家的输入 token，也用于检验动作是否达成。在 Unitree G1 上成功 71/80 次，GR00T-N1.7 基线为 39/80。
 - **[Constrained Whole-Body Tracking for Humanoid Robots](https://arxiv.org/abs/2606.00374)** (2026) — 借助操作空间控制与控制障碍函数，以 1 kHz 以上频率为强化学习人形跟踪策略施加运行时约束（碰撞、关节限位、质心稳定），训练后新增的约束也能满足。 · [代码](https://github.com/StanfordASL/constrainedmimic) · [项目页](https://stanfordasl.github.io/constrainedmimic)
@@ -50,6 +52,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[Eye, Robot: Learning Expressive Gaze Dynamics via a VLM-Guided Transformer-VAE](https://arxiv.org/abs/2610.19635)** (2026) — 人形机器人注视系统：VLM 选择注视目标，基于重定向人类录像训练的 Transformer-VAE 生成协调的眼、颈与眼睑运动。在 2 秒基准上关节误差最低。
 - **[FADA: Few-Shot Domain Adaptation via Dynamics Alignment for Humanoid Control](https://arxiv.org/abs/2606.28476)** (2026) — 从特权策略蒸馏出“规划器+逆动力学模型”学生策略；部署时冻结规划器，只用约 2 分钟目标域数据微调逆动力学模型。优于上下文自适应与端到端适应基线。 · [项目页](https://lecar-lab.github.io/FADA-humanoid/)
 - **[FORGE: Feasible Online Reduced-Order Reference Generation and Whole-Body Execution for Agile Humanoid Locomotion](https://arxiv.org/abs/2610.37974)** (2026) — 先学习降阶模型参考生成器，再用其在线输出训练全身跟踪策略，一对策略即可覆盖多种步态。Unitree G1 实机实现 -2.0 到 2.8 m/s 行走、单腿跳与连续切换。
+- **[FORGE: Force-Aware Multi-Granularity Control for Efficient Humanoid Loco-Manipulation](https://arxiv.org/abs/2611.17142)** (2026) — 人形全身控制器，命令空间由粗到细（速度导航、落脚点、手腕位姿、可选施力），训练不需要人体动作参考；部署时仅凭本体感知与关节 PD 力矩估计手腕接触力（无需力/力矩传感器），用于持续接触任务和下游扩散策略。 · [项目页](https://bb0928.github.io/forge/)
 - **[FT-WBC: Learning Fault-Tolerant Whole-Body Control for Legged Loco-Manipulation](https://arxiv.org/abs/2606.24466)** (2026) — 面向腿足机械臂的容错全身控制：故障估计器从下肢本体感觉历史中识别失效关节，姿态适配模块把机械臂策略提出的底盘姿态请求转为安全可执行的指令。
 - **[GRAFT: Geometry-Aware Residual Adaptation for Foundation Trackers](https://arxiv.org/abs/2610.36507)** (2026) — 冻结人形行为基础模型，仅训练一个作用于下肢目标的轻量残差适配器来应对台阶、沟壑和平台，并从特权地形信息蒸馏到机载深度；在四种跟踪器上验证，并在 Unitree G1（SONIC）上真机部署。 · [项目页](https://graft-humanoid.github.io/)
 - **[General Humanoid Whole-Body Control via Pretraining and Fast Adaptation](https://arxiv.org/abs/2602.11929)** (2026) — FAST：通用人形运动跟踪控制器，在正交与 KL 约束下学习轻量残差策略来快速适配新动作且不遗忘，并加入质心相关观测与目标提升平衡。

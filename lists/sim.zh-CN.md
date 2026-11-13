@@ -2,7 +2,7 @@
 
 _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 
-共 66 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
+共 67 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/sim.html) · [English](sim.md)
 
@@ -31,6 +31,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 - ⭐ **[Gazebo](https://gazebosim.org/)** (2004) — ROS 生态中历史悠久的开源机器人仿真器，提供传感器、插件与 ROS 2 集成；通常用于测试完整的机器人软件栈，而非训练策略。 · [代码](https://github.com/gazebosim/gz-sim)
 - **[AM-Bench: A Modular Simulation Suite and Benchmark for Aerial Manipulation Policy Learning](https://arxiv.org/abs/2609.00641)** (2026) — 多旋翼空中操作基准：包含欠驱动、全驱动与过驱动平台，12 个任务，可配置气动扰动与执行器饱和，并提供标准底层控制器和策略学习基线，便于系统级比较。
 - **[Active Generative Simulation: Meta-Learning What to Simulate for Sim-and-Real Policy Co-Training](https://arxiv.org/abs/2610.19479)** (2026) — MetaGenSim 利用来自真实世界表现的元梯度，学习应该生成哪些仿真数据，而不是对仿真器做均匀采样。 · [项目页](https://meta-gensim.github.io)
+- **[Alloy: A Multi-Material Physics Engine for Robot Learning](https://arxiv.org/abs/2611.16312)** (2026) — 基于 Newton、MuJoCo Warp 和 Warp 的开源物理引擎：刚体机器人、布料、线缆、液体、颗粒与软体共处一个场景，每个控制步内耦合各自的求解器，单 GPU 并行多个世界。面向编程智能体设计，通过 MCP 暴露为工具。 · [代码](https://github.com/argonrobotics-ai/alloy)
 - **[AuRA: From Atoms to Bits through Autonomous Robot Interaction](https://arxiv.org/abs/2610.34452)** (2026) — 自动完成物理数字孪生所需的机器人交互与数据准备；在 13 种柔性物体上报告每个资产的人工投入减少 88.5%。 · [代码](https://github.com/Yoonkyo/AuRA) · [项目页](https://aura-robot.github.io/)
 - **[Closing the Dynamics Gap through Self-Directed Robotic Interaction](https://arxiv.org/abs/2611.02691)** (2026) — CUE（CoRL 2026 Late Breaking Results）：智能体主动选择仿真最不准的交互来辨识摩擦和恢复系数；在台球任务上报告留出位置误差比最强基线低 72%，并部署到真实球桌。 · [项目页](https://cue-dynamics.github.io/)
 - **[CoDA: Co-Evolution of Data Engines and Action Policies](https://arxiv.org/abs/2610.22362)** (2026) — 把诊断出的策略失败转成新的仿真场景和塑形训练信号，让生成器与策略共同进化；在 LIBERO-Pro 上报告位置扰动下成功率从 25% 升至 84%。 · [项目页](https://plan-lab.github.io/projects/coda/)

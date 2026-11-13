@@ -2,7 +2,7 @@
 
 _Physics simulators, GPU-parallel training and transfer to real robots._
 
-66 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
+67 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/sim.html) · [中文](sim.zh-CN.md)
 
@@ -31,6 +31,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._
 - ⭐ **[Gazebo](https://gazebosim.org/)** (2004) — The long-standing open-source robot simulator of the ROS ecosystem — sensors, plugins and ROS 2 integration; the usual choice for testing full robot software stacks rather than training policies. · [code](https://github.com/gazebosim/gz-sim)
 - **[AM-Bench: A Modular Simulation Suite and Benchmark for Aerial Manipulation Policy Learning](https://arxiv.org/abs/2609.00641)** (2026) — Benchmark for multirotor aerial manipulation: under-, fully and over-actuated platforms, 12 tasks, configurable wind and saturation, standard low-level controllers and learning baselines for system-level comparison.
 - **[Active Generative Simulation: Meta-Learning What to Simulate for Sim-and-Real Policy Co-Training](https://arxiv.org/abs/2610.19479)** (2026) — MetaGenSim learns which simulated data to generate, using meta-gradients from real-world performance, instead of sampling the simulator uniformly. · [project](https://meta-gensim.github.io)
+- **[Alloy: A Multi-Material Physics Engine for Robot Learning](https://arxiv.org/abs/2611.16312)** (2026) — Open-source engine on Newton, MuJoCo Warp and Warp: rigid robots, cloth, cables, liquids, granular and soft bodies coupled in one scene, many worlds per GPU. Built for coding agents (MCP tools). · [code](https://github.com/argonrobotics-ai/alloy)
 - **[AuRA: From Atoms to Bits through Autonomous Robot Interaction](https://arxiv.org/abs/2610.34452)** (2026) — Automates the robot interaction and data preparation behind physics-informed digital twins; reports 88.5% less active human labor per asset across 13 deformable objects. · [code](https://github.com/Yoonkyo/AuRA) · [project](https://aura-robot.github.io/)
 - **[Closing the Dynamics Gap through Self-Directed Robotic Interaction](https://arxiv.org/abs/2611.02691)** (2026) — CUE (CoRL 2026 Late Breaking Results): an agent identifies friction and restitution by choosing interactions where its simulation is least accurate; on billiards it reports 72% lower held-out position error. · [project](https://cue-dynamics.github.io/)
 - **[CoDA: Co-Evolution of Data Engines and Action Policies](https://arxiv.org/abs/2610.22362)** (2026) — Turns diagnosed policy failures into new simulated scenes and shaped training signals, so generator and policy improve together; on LIBERO-Pro, reports success rising from 25% to 84% under position perturbations. · [project](https://plan-lab.github.io/projects/coda/)

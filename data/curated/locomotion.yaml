@@ -1800,3 +1800,35 @@
   tags: [whole-body-control, quadruped, mobile-manipulation, cross-morphology, real]
   takeaway_en: "From an end-effector trajectory alone, decides how a quadruped base and one of many mounted 6-DoF arms move, via URDF-derived morphology conditioning. EE position error 69–72% lower than UMI-on-Legs; Go2 + ARX5."
   takeaway_zh: "只输入末端执行器轨迹，即可决定四足底座与多种 6 自由度机械臂如何协同运动，通过从 URDF 提取的形态条件实现跨臂复用。与 UMI-on-Legs 相比末端位置误差降低 69–72%；在 Go2 + ARX5 真机上完成语言条件的超臂展抓放。"
+- title: "FORGE: Force-Aware Multi-Granularity Control for Efficient Humanoid Loco-Manipulation"
+  type: paper
+  arxiv: "2611.17142"
+  year: 2026
+  project: https://bb0928.github.io/forge/
+  added: 2026-11-13
+  topics: [locomotion, manipulation, control]
+  tags: [humanoid, loco-manipulation, force-estimation, teleoperation, real]
+  takeaway_en: "Humanoid controller with coarse-to-fine commands (velocity, foot placement, wrist pose, optional force) and no motion-capture references; estimates wrist forces from proprioception, no F/T sensor, for sustained contact."
+  takeaway_zh: "人形全身控制器，命令空间由粗到细（速度导航、落脚点、手腕位姿、可选施力），训练不需要人体动作参考；部署时仅凭本体感知与关节 PD 力矩估计手腕接触力（无需力/力矩传感器），用于持续接触任务和下游扩散策略。"
+- title: "BlinkMimic: Training a Humanoid Motion Tracker in Minutes on a Single GPU"
+  type: paper
+  arxiv: "2611.16422"
+  year: 2026
+  code: https://github.com/fuyichen0725/blinkmimic
+  added: 2026-11-13
+  topics: [locomotion, learning]
+  tags: [humanoid, motion-tracking, world-model, differentiable-training, unitree-g1, sim]
+  takeaway_en: "Builds on SuperMimic and InstantTrack (backprop through a learned world model): reports one G1 tracking policy for all 40 LAFAN1 clips in 3.4 min on one RTX 4090, with leave-one-out ablations per component."
+  takeaway_zh: "在 SuperMimic 与 InstantTrack（通过学习到的世界模型反传梯度训练策略）基础上进一步提速：报告在单张 RTX 4090 上 3.4 分钟训练出覆盖 LAFAN1 全部 40 段动作的 G1 跟踪策略，并用留一消融说明每个组件的作用。"
+- title: "Autonomous Trail Racing with a Bicycle Robot"
+  type: paper
+  arxiv: "2611.15280"
+  year: 2026
+  org: RAI Institute
+  code: https://github.com/rai-opensource/sem_map
+  project: https://pages.rai-inst.com/autonomous-trail-racing/
+  added: 2026-11-13
+  topics: [locomotion, navigation]
+  tags: [bicycle-robot, off-road, semantic-elevation-map, rl, real]
+  takeaway_en: "Encodes the trail as a semantic terrain layer, used in RL training and rebuilt onboard from camera + LiDAR at 30 Hz. The UMV bicycle robot raced a 1 km mountain-bike trail at up to 5+ m/s; same recipe also gives parkour."
+  takeaway_zh: "把山地车道编码为地形的语义层：仿真中用来定义导航任务，部署时由相机与激光雷达在机载 Orin 上以 30 Hz 重建。UMV 自行车机器人自主跑完约 1 公里非结构化山地车道，速度超过 5 m/s；同一框架也能学出跑酷动作。"

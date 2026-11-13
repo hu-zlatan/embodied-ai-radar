@@ -2,7 +2,7 @@
 
 _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备。_
 
-共 53 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/hardware.yaml`](../data/curated/hardware.yaml) 生成，请勿直接编辑。
+共 54 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/hardware.yaml`](../data/curated/hardware.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/hardware.html) · [English](hardware.md)
 
@@ -16,6 +16,7 @@ _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备�
 - ⭐ **[Open-TeleVision: Teleoperation with Immersive Active Visual Feedback](https://arxiv.org/abs/2407.01512)** (2024) — 带主动转向立体相机的 VR 遥操作系统，用于采集人形机器人操作数据。 · [代码](https://github.com/OpenTeleVision/TeleVision)
 - ⭐ **[SO-ARM100 / SO-101](https://github.com/TheRobotStudio/SO-ARM100)** (2024) — 开源 3D 打印 6 自由度机械臂（主从臂），每只约 100–200 美元，是 LeRobot 的默认入门套件。
 - ⭐ **[An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](https://arxiv.org/abs/1910.00093)** (2019) — 开源四足机器人 Solo 及其模块化力矩控制关节，采用现成件和 3D 打印件，便于各实验室复现动态腿式机器人。 · [代码](https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware)
+- **[ARTS: An Open-Source, Reproducible Three-Arm Platform for Autonomy Research in Minimally Invasive Surgery](https://arxiv.org/abs/2611.15135)** (2026) — 完全由可采购部件搭建的微创手术自主研究平台（约 13.7 万美元）：两台 UR5e 夹持达芬奇器械、一台 UR5 持立体内窥镜，配医生控制台与独立硬件急停，ROS 2 软件锁定全部依赖。重复定位精度与 dVRK Classic 臂相当。 · [代码](https://github.com/MRE-Lab-UMD/arts)
 - **[Belt-Finger: An Affordable Soft Belt-Driven Gripper for Dexterous In-Hand Manipulation](https://arxiv.org/abs/2606.20193)** (2026) — 低成本的平行夹爪升级手指模组：双软皮带结构保留常规开合，并增加手内平移、俯仰与翻滚三个自由度；配合 MPC、轻量的 10 自由度遥操作接口和学习策略使用。
 - **[DexPort: A Hand-Held Skill Interface for Dexterous Hand Data Collection](https://arxiv.org/abs/2610.32969)** (2026) — 便携手持式数据采集装置，面向高自由度机器人灵巧手；采集与部署使用同一只机械手，无需从人手动作重定向，也无需搭建完整机器人系统。 · [代码](https://github.com/amazon-far/dexport) · [项目页](https://amberxie88.github.io/dexport/)
 - **[EgoThumb: A Vision-Driven Supernumerary Robotic Thumb for Autonomous Grasp and Holding Assistance](https://arxiv.org/abs/2610.37582)** (2026) — 开源的可穿戴“第六指”：紧凑的双腱驱动手指，电机移到前臂以减轻末端重量；模仿学习策略直接把掌心相机图像映射为关节位置，从视觉中推断使用者意图，无需显式手势触发，软硬件全部开源。 · [代码](https://github.com/JayeFu/ego_thumb_firmware) · [项目页](https://ego-thumb.github.io)

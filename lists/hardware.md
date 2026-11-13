@@ -2,7 +2,7 @@
 
 _Low-cost arms, hands, grippers and data-collection rigs you can build._
 
-53 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/hardware.yaml`](../data/curated/hardware.yaml); edit the YAML, not this file.
+54 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/hardware.yaml`](../data/curated/hardware.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/hardware.html) · [中文](hardware.zh-CN.md)
 
@@ -16,6 +16,7 @@ _Low-cost arms, hands, grippers and data-collection rigs you can build._
 - ⭐ **[Open-TeleVision: Teleoperation with Immersive Active Visual Feedback](https://arxiv.org/abs/2407.01512)** (2024) — VR teleoperation with an actively steered stereo camera, used to collect humanoid manipulation data. · [code](https://github.com/OpenTeleVision/TeleVision)
 - ⭐ **[SO-ARM100 / SO-101](https://github.com/TheRobotStudio/SO-ARM100)** (2024) — An open 3D-printed 6-DoF arm (leader + follower) costing roughly $100–200 per arm; the default LeRobot starter kit.
 - ⭐ **[An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](https://arxiv.org/abs/1910.00093)** (2019) — The open-source Solo quadruped and its modular torque-controlled actuators, built from off-the-shelf and 3D-printed parts so labs can reproduce a dynamic legged robot. · [code](https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware)
+- **[ARTS: An Open-Source, Reproducible Three-Arm Platform for Autonomy Research in Minimally Invasive Surgery](https://arxiv.org/abs/2611.15135)** (2026) — Open surgical-autonomy platform from purchasable parts (~USD 137k): two UR5e with da Vinci instruments, a UR5 endoscope arm, console and hardware stop, pinned ROS 2 stack. Repeatability comparable to a dVRK Classic arm. · [code](https://github.com/MRE-Lab-UMD/arts)
 - **[Belt-Finger: An Affordable Soft Belt-Driven Gripper for Dexterous In-Hand Manipulation](https://arxiv.org/abs/2606.20193)** (2026) — A cheap drop-in finger module for parallel grippers: two soft belts keep normal open/close and add in-hand translation, pitch and roll; used with MPC, a light 10-DoF teleop interface and learned policies.
 - **[DexPort: A Hand-Held Skill Interface for Dexterous Hand Data Collection](https://arxiv.org/abs/2610.32969)** (2026) — A portable hand-held rig for collecting demonstrations with a high-DoF robot hand, using the same hand hardware for collection and deployment, so there is no retargeting from human hands and no full robot setup needed. · [code](https://github.com/amazon-far/dexport) · [project](https://amberxie88.github.io/dexport/)
 - **[EgoThumb: A Vision-Driven Supernumerary Robotic Thumb for Autonomous Grasp and Holding Assistance](https://arxiv.org/abs/2610.37582)** (2026) — Open-source wearable extra thumb: a tendon-driven finger with motors moved to the forearm; an imitation policy maps palm-camera images to joint positions, inferring intent without explicit triggers. · [code](https://github.com/JayeFu/ego_thumb_firmware) · [project](https://ego-thumb.github.io)
