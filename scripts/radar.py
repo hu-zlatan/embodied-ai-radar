@@ -268,7 +268,7 @@ def classify(text: str, topics: list[dict], title: str | None = None, threshold:
 
 
 def norm_title(s: str) -> str:
-    """Comparable form of a title: Greek letters spelled out (Δ and \\Delta both -> delta), LaTeX and punctuation dropped."""
+    """Comparable form of a title: Greek letters spelled out (Δ and \\Delta both -> delta), accents folded (ö, \\"o -> o), LaTeX and punctuation dropped."""
     import unicodedata
 
     def greek(ch: str) -> str:
@@ -277,7 +277,9 @@ def norm_title(s: str) -> str:
             return ch
         w = name.split()[-1].lower()
         return "lambda" if w == "lamda" else w  # Unicode spells it LAMDA; TeX says \lambda
-    s = "".join(greek(c) for c in s).lower()
+    s = "".join(greek(c) for c in s)
+    s = "".join(c for c in unicodedata.normalize("NFKD", s) if not unicodedata.combining(c)).lower()  # ö -> o
+    s = re.sub(r"\\[\"'`^~=.]\{?([a-z])\}?", r"\1", s)  # TeX accents: \"o, \'{e} -> o, e
     s = re.sub(r"\\([a-z]+)", r"\1", s)  # \delta -> delta
     s = re.sub(r"[\\${}_^]", "", s)
     return re.sub(r"[^a-z0-9]+", "", s)
