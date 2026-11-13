@@ -777,3 +777,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - 11-13 feed completed by the 07:50/09:36 intakes (107 papers). 11 picks from the 22 new candidates (56d63bb), facts from candidates.json abstracts; code links only for repos live in repo_stats.
 - CoRL 2026 awards: no official winners found (snapshot unchanged, web search empty).
 - Validate 0 errors (1,409 curated), 1,541 pages, 0 broken links, README regenerated + check clean. No new owner task. End of run 84.
+
+## 2026-11-13 run 85 (~16:55–17:10 UTC)
+
+- Start: no issues/PRs, 4 stars / 0 forks. Verify #204 on 56d63bb failed only on https://maniladder-benchmark.github.io/ (404) → removed from the ManiLadder entry (c80ecc3).
+- 8d9f857: FAME-QP (2611.13766, Ohio State; GPU QP solver for MPC; code santoshrajkumar/fame-qp live in repo_stats) → control. Facts from review_queue.json abstract.
+- CoRL 2026 awards: web search finds only CoRL 2025 workshop awards; nothing to add.
+- Validate 0 errors (1,410 curated), 1,542 pages, 0 broken links, README check clean. No new owner task. End of run 85.
