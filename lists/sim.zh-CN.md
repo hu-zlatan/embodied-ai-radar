@@ -2,7 +2,7 @@
 
 _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 
-共 67 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
+共 68 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/sim.html) · [English](sim.md)
 
@@ -38,6 +38,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 - **[ComSim: Building Scalable Real-World Robot Data Generation via Compositional Simulation](https://arxiv.org/abs/2604.11386)** (2026) — 组合式仿真：经典仿真生成准确的动作-视频对，再由神经模拟器转换成接近真实的画面，形成以少量真机数据为起点的“真-仿-真”数据扩增闭环。 · [项目页](https://faceong.github.io/ComSim/)
 - **[DexSuite: An All-in-One Framework for Dexterous Manipulation Across Arms, Hands, and Tasks](https://arxiv.org/abs/2610.37799)** (2026) — 基于 Genesis 仿真器的开源灵巧操作一体化框架：30 个任务，10 种机械臂与 12 种末端（从平行夹爪到灵巧手）组合出 100 多种单臂机器人和大量双臂组合；自带统一环境 API、遥操作、仿真触觉，定义 16 组任务-本体基准，并发布 4,700 条成功示范。 · [项目页](https://dexsuiteorg.github.io)
 - **[Do Rigid-Body Simulators Dream of Soft Robots? Learning Contact-Rich Manipulation for Tendon-Driven Continuum Robots](https://arxiv.org/abs/2606.22397)** (2026) — 以连续介质力学推导的离散化方法，把肌腱驱动连续体机器人原生放进 MuJoCo，并对照 Cosserat 杆模型与真机验证；仿真中训练的模仿策略可零样本迁移到真机富接触任务。 · [代码](https://github.com/ContinuumRoboticsLab/opencr-mujoco) · [项目页](https://continuumroboticslab.github.io/opencr-mujoco/)
+- **[Effective Parameters, Real Behavior: Renormalization for Robotics -- From Infinite Electron Mass to Sim-to-Real Gap](https://arxiv.org/abs/2607.24079)** (2026) — 把物理中的重整化思想用于 sim-to-real：仿真参数不必照抄实测值，而应取随仿真频率和分辨率变化的“有效值”来吸收被忽略的物理。论文对有限仿真频率下的 PD 控制闭式推导了有效阻尼与惯量修正，用同一视角解释动态绳索操作与水下游动，并给出选观测量、找缺失物理、定有效参数的实操流程。 · [代码](https://github.com/WhymustIhaveaname/R4R)
 - **[Elastra: A Simulation Framework for Elastic Bodies](https://arxiv.org/abs/2611.15112)** (2026) — 用只做竖直运动、带弹性连接和阻尼的单元模拟床垫、蹦床等弹性表面。在 HoST 起身策略上叠加残差强化学习后，Unitree G1 在床垫上起身成功率从 44.1% 提高到 72.5%，蹦床上从 55% 提高到 89%。
 - **[GIF: Agentic Generation of Interactive and Functional Object Compositions for Robot Learning](https://arxiv.org/abs/2609.05927)** (2026) — 智能体式生成具备功能关系的物体组合：先生成实例分离的网格，再在几何与物理引导下细化相对位姿，最后由 VLM 验证器挑选最符合描述的候选。
 - **[Genie Sim Benchmark: Real-to-Sim Fidelity and Evaluation](https://arxiv.org/abs/2611.15020)** (2026) — 检验 Genie Sim 仿真评测能否反映真实表现：在 22 组真实/仿真配对的机器人-任务上，π0.5 策略得分相关系数 0.97（MAE 0.04），并辅以关节位置与力矩层面的系统辨识和接触迁移实验。
