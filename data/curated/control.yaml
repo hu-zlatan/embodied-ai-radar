@@ -517,3 +517,14 @@
   tags: [inverse-kinematics, flow-matching, mobile-manipulation, bimanual, generative-model]
   takeaway_en: "GenGenIK samples IK solutions from a conditional flow model, covering mobile bases, several end-effectors, scene awareness and behavior preferences in one interface. Reports better solve rate and runtime than prior IK."
   takeaway_zh: "GenGenIK 用条件流模型生成逆运动学解的分布，在同一接口中支持移动底座、多末端执行器与多目标、场景感知以及对机器人行为的偏好（如避碰、稳定）。报告在双臂抬举等任务上求解率和速度均优于现有方法。"
+- title: "FAME-QP: A GPU-Accelerated Quadratic-Programming Solver for Real-Time Model Predictive Control"
+  type: paper
+  arxiv: "2611.13766"
+  year: 2026
+  org: The Ohio State University
+  code: https://github.com/santoshrajkumar/fame-qp
+  project: https://santoshrajkumar.github.io/proj/fame_qp/
+  added: 2026-11-13
+  tags: [mpc, quadratic-programming, gpu, cuda, solver]
+  takeaway_en: "GPU solver for dense QPs from linear MPC: fused kernels replayed via CUDA graphs, auto-calibrated launch config, cached operators. Reports lower latency than other GPU solvers in humanoid and quadrotor control."
+  takeaway_zh: "FAME-QP 是面向线性 MPC 稠密二次规划的 GPU 求解器：融合核函数经 CUDA Graph 重放、按设备自动标定执行配置并缓存算子。在人形与四旋翼仿真控制中报告延迟低于其他 GPU 求解器，且精度和控制性能不降。"

@@ -2,7 +2,7 @@
 
 _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的学习型控制。_
 
-共 52 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/control.yaml`](../data/curated/control.yaml) 生成，请勿直接编辑。
+共 53 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/control.yaml`](../data/curated/control.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/control.html) · [English](control.md)
 
@@ -29,6 +29,7 @@ _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的�
 - **[BarrierFormer: Transformer-Guided Predictive Barrier Enforcement for Safe Robot Control](https://arxiv.org/abs/2609.23896)** (2026) — 因果 Transformer 预测未来推演（代替动力学模型）并给名义控制器输出残差修正；障碍评估器沿推演检查 CBF 约束违例，从而像 MPC 一样前瞻安全，却无需在线求解优化。
 - **[CusADi2: Latency-Optimized Batch Computation of Robot Kinematics, Jacobians, and Hessians on the GPU](https://arxiv.org/abs/2610.25476)** (2026) — 在 GPU 上以低延迟批量计算运动学、雅可比与海森矩阵，面向在线运行的采样式与梯度式轨迹优化。 · [代码](https://github.com/johnviljoen/cusadi2)
 - **[Exploring the Intrinsic Geometry of Diffusion Models with Constrained Inverse Kinematics](https://arxiv.org/abs/2606.26408)** (2026) — 以解流形可精确知道的约束逆运动学为试验场，检验扩散模型学到的几何结构。在 UR5 和 Franka 上，从得分函数估计的内在维度与解析自由度一致。 · [代码](https://github.com/utiasSTARS/ConstraintIK) · [项目页](https://papers.starslab.ca/diffusion-ik-geometry/)
+- **[FAME-QP: A GPU-Accelerated Quadratic-Programming Solver for Real-Time Model Predictive Control](https://arxiv.org/abs/2611.13766)** (2026) — FAME-QP 是面向线性 MPC 稠密二次规划的 GPU 求解器：融合核函数经 CUDA Graph 重放、按设备自动标定执行配置并缓存算子。在人形与四旋翼仿真控制中报告延迟低于其他 GPU 求解器，且精度和控制性能不降。 · [代码](https://github.com/santoshrajkumar/fame-qp) · [项目页](https://santoshrajkumar.github.io/proj/fame_qp/)
 - **[Generalized Inverse Kinematics via Conditional Flow](https://arxiv.org/abs/2611.15565)** (2026) — GenGenIK 用条件流模型生成逆运动学解的分布，在同一接口中支持移动底座、多末端执行器与多目标、场景感知以及对机器人行为的偏好（如避碰、稳定）。报告在双臂抬举等任务上求解率和速度均优于现有方法。 · [项目页](https://icra-2027-gengenik.github.io/)
 - **[Gradient-Free Neural Hamilton-Jacobi Reachability for Scalable Safety-Critical Control](https://arxiv.org/abs/2609.14087)** (2026) — 无需 PDE 梯度的离散时间神经 HJ 可达性：利用最优安全干预的 bang-bang 结构和免梯度的价值探测构造教师动作，把对抗式策略学习变成监督学习；分窗口的时间课程稳定训练。
 - **[Keeping Contact: Task-Adaptive Friction Margins for Bimanual Non-Prehensile Manipulation](https://arxiv.org/abs/2610.36961)** (2026) — 以带符号摩擦距离度量防滑裕度，并在双臂绕支点倾转物体时按任务需求自适应调整；一系列二阶锥规划给出全局最优接触力。真机实验显示自适应裕度优于固定裕度和无裕度。 · [项目页](https://keeping-contact.github.io/)
