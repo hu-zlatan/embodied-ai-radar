@@ -769,3 +769,11 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - facts.yml for 20 candidates (full abstracts + ZefanW/JustRUA repo check). 16 picks added (d4b1aa5); 9 takeaways shortened to fit the 220-char limit. Code link only for JustRUA (repo live); XInfer and Elastra repos not public/indexed yet.
 - Validate 0 errors (1,398 curated), 1,530 pages, 0 broken links, README regenerated + check clean.
 - STATE.md was 69 KB, mostly finished per-run notes. Moved runs 1–79 next steps and backlog run notes verbatim to `.autopilot/STATE_ARCHIVE.md`; STATE.md now ~25 KB. No content dropped.
+
+## 2026-11-13 — run 84 (~10:50 UTC–)
+
+- Start: no issues/PRs, 4 stars / 0 forks. Local checkout detached; reset to `origin/main`. Verify #202 on d4b1aa5 failed: Schrödinger's Navigator title vs arXiv TeX `Schr\\"odinger` (abs-page fallback after API 429s); pi.website 429s and two URLErrors were warnings only.
+- 7ea297f: `norm_title()` folds Unicode accents and TeX accent commands; validate/build/links clean.
+- 11-13 feed completed by the 07:50/09:36 intakes (107 papers). 11 picks from the 22 new candidates (56d63bb), facts from candidates.json abstracts; code links only for repos live in repo_stats.
+- CoRL 2026 awards: no official winners found (snapshot unchanged, web search empty).
+- Validate 0 errors (1,409 curated), 1,541 pages, 0 broken links, README regenerated + check clean. No new owner task. End of run 84.
