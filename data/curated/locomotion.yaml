@@ -1782,3 +1782,21 @@
   tags: [humanoid, perceptive-locomotion, egocentric-vision, symmetry, motion-priors, real]
   takeaway_en: "Egocentric-vision humanoid traversal: imagined foothold guidance steers swings to stable support, latent symmetry augmentation adds bilateral coordination. Real stairs, wide gaps, high platforms, long outdoor walks."
   takeaway_zh: "端到端的第一人称视觉人形地形穿越：“想象落脚点”引导摆动腿落向稳定支撑区域减少踩边打滑，潜空间对称增强带来左右协调，分地形运动先验使动作更自然。真机可过多种楼梯、宽沟、高台并完成户外长距离行走。"
+- title: "Runtime Safety and Emergency Stops on a Full-Size Humanoid: Deployment Lessons and a Case for Graduated Force Authority"
+  type: paper
+  arxiv: "2611.15928"
+  year: 2026
+  added: 2026-11-13
+  topics: [locomotion, hardware]
+  tags: [safety, humanoid, emergency-stop, deployment, unitree-h1]
+  takeaway_en: "Deployment lessons from a Unitree H1-2 safety layer: an e-stop removes balance control, so the robot falls, and manipulation-tuned limits trip during walking. Argues for granting robots force authority in stages."
+  takeaway_zh: "总结 Unitree H1-2 开源自主栈安全层的部署经验：按下急停会切断平衡控制导致机器人摔倒，为操作设定的关节限位在正常行走时也会被触发。作者主张分阶段授予机器人施力权限，并明确由人或机构负责。"
+- title: "PolyMorphWBC: Whole-Body Control from End-Effector Trajectories for Quadrupedal Mobile Manipulation across Arm Morphologies with Extended Reach"
+  type: paper
+  arxiv: "2611.15117"
+  year: 2026
+  added: 2026-11-13
+  topics: [locomotion, manipulation, control]
+  tags: [whole-body-control, quadruped, mobile-manipulation, cross-morphology, real]
+  takeaway_en: "From an end-effector trajectory alone, decides how a quadruped base and one of many mounted 6-DoF arms move, via URDF-derived morphology conditioning. EE position error 69–72% lower than UMI-on-Legs; Go2 + ARX5."
+  takeaway_zh: "只输入末端执行器轨迹，即可决定四足底座与多种 6 自由度机械臂如何协同运动，通过从 URDF 提取的形态条件实现跨臂复用。与 UMI-on-Legs 相比末端位置误差降低 69–72%；在 Go2 + ARX5 真机上完成语言条件的超臂展抓放。"

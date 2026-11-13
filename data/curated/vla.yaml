@@ -2726,3 +2726,51 @@
   tags: [memory, robustness, analysis, robomme, shortcut-learning, sim]
   takeaway_en: "Memory VLAs that sample frames by time count a pause as progress and stop early: on RoboMME counting tasks success falls from 47 to 16 of 50. Indexing memory by events, not time, recovers half or more without retraining."
   takeaway_zh: "按时间采样帧的记忆型 VLA 会把停顿当成进度而提前结束：在 RoboMME 计数任务上，成功率从 47/50 跌到 16/50。改为按事件索引记忆、无需重训即可挽回一半以上的损失。"
+- title: "JustRUA: A Controlled Study of GPT-6 Robot-Use Agents"
+  type: paper
+  arxiv: "2611.16009"
+  year: 2026
+  project: https://zefanw.github.io/JustRUA
+  code: https://github.com/ZefanW/JustRUA
+  added: 2026-11-13
+  topics: [vla]
+  tags: [robot-use-agent, harness, ablation, frontier-model, sim]
+  takeaway_en: "Ablates robot-use agent designs (harness, action interface, experience reuse, scene geometry) in one framework. A lean harness with full history, early-stopped motions and predicted depth lifts RoboDojo 29.7 → 50.3."
+  takeaway_zh: "在同一框架中逐项拆解“机器人使用智能体”的设计：外层 harness、动作接口、经验复用和场景几何。保留完整历史、提前停止动作并加入预测深度的精简 harness，在无学习策略的情况下把 RoboDojo 分数从 29.7 提到 50.3。"
+- title: "ActionCodec2: A Streaming Action Tokenizer"
+  type: paper
+  arxiv: "2611.15490"
+  year: 2026
+  project: https://zibindong.github.io/actioncodec2-page/
+  added: 2026-11-13
+  topics: [vla]
+  tags: [action-tokenizer, autoregressive, streaming, cross-embodiment, real]
+  takeaway_en: "Non-neural tokenizer that streams actions step by step within an error bound instead of whole chunks, so a VLA can use state feedback mid-chunk. Fitted on 20k h from 24 embodiments; beats compared tokenizers."
+  takeaway_zh: "非神经网络的流式动作分词器：在给定误差界内逐步释放动作，而不必整块解码，使自回归 VLA 能在动作块内响应状态反馈。基于 24 种本体、2 万小时数据拟合通用版本；在三个仿真基准和零样本真机评测中优于对比的分词器。"
+- title: "What Makes a VLA Reactive? A Study of Execution Strategies for Dynamic Manipulation"
+  type: paper
+  arxiv: "2611.15491"
+  year: 2026
+  added: 2026-11-13
+  topics: [vla, manipulation]
+  tags: [action-chunking, asynchronous-inference, dynamic-manipulation, evaluation, real]
+  takeaway_en: "Study with π0.5 on moving-object tasks: a ~1 s prediction horizon works best, keeping chunks continuous beats latency-only fixes, and tuning the execution horizon can match policy adaptation."
+  takeaway_zh: "以 π0.5 在动态物体任务上系统比较执行策略：约 1 秒的预测时域最好；保持轨迹连续的方法优于只降低延迟的方法；在传送带任务上调整执行时域与策略适配收益相当。结论：反应性取决于执行流水线与策略本身，应一起评测。"
+- title: "Scaling VLA Serving Under Robotic Execution Constraints"
+  type: paper
+  arxiv: "2611.14969"
+  year: 2026
+  added: 2026-11-13
+  topics: [vla]
+  tags: [serving, inference-systems, fleet, gpu-efficiency, deployment]
+  takeaway_en: "XInfer, a VLA serving system deployed for hundreds of robots, schedules heterogeneous VLA compute around each robot's response deadlines. Reports 1.26–3.75× the effective robot capacity of prior systems."
+  takeaway_zh: "XInfer 是已在数百台机器人上生产部署的 VLA 推理服务系统，根据各机器人执行的响应时限调度异构 VLA 计算，在利用并行的同时保护时延敏感的反馈。报告有效机器人容量为现有系统的 1.26–3.75 倍。"
+- title: "Learning Low-Latency Action Verification for Frozen Vision-Language-Action Models"
+  type: paper
+  arxiv: "2611.14834"
+  year: 2026
+  added: 2026-11-13
+  topics: [vla]
+  tags: [verifier, test-time-selection, hindsight, frozen-policy, real]
+  takeaway_en: "HDH trains a compact verifier on a frozen VLA's own rollouts to score action chunks, then runs the best sampled candidate. Reports 82.3% on four LIBERO-10 tasks and +22.6% over the base policy on three real tasks."
+  takeaway_zh: "HDH 用冻结 VLA 自身部署的轨迹训练一个轻量动作验证器，为每个动作块预测成功概率，再从多个采样候选中选最优执行。报告在四个 LIBERO-10 任务上平均成功率 82.3%，三项真实任务比基线策略提高 22.6%。"

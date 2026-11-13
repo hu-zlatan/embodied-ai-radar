@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 134 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 136 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/world-models.html) · [English](world-models.md)
 
@@ -38,6 +38,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Agentic World Action Models](https://arxiv.org/abs/2610.30136)** (2026) — AW-0 在同一个混合 Transformer 中联合生成代码、未来视频和机器人动作三路输出：代码既组织多步预测与控制，又沉淀为可复用技能库；报告在 RoboTwin 2.0 和真机双臂任务上优于 VLA 与 WAM 基线。 · [代码](https://github.com/ZhuoyangLiu2005/agentic-wam) · [项目页](https://agentic-wam.github.io/)
 - **[AnyWorld: Factorized Egocentric World Models for Cross-Embodiment Generalization](https://arxiv.org/abs/2608.29242)** (2026) — 把一次交互分解为动作、相机与本体三个因素，使一段人类视频可重新生成为多种机器人视角的数据。生成数据在 RoboCasa GR1 与真实 IRON 人形上带来提升。 · [代码](https://github.com/xpeng-robotics/AnyWorld) · [项目页](https://xpeng-robotics.github.io/anyworld/)
 - **[Being-H0.7: A Latent World-Action Model from Egocentric Videos](https://arxiv.org/abs/2605.00078)** (2026) — 潜空间世界动作模型，在 VLA 式策略中加入面向未来的潜查询，并用利用未来信息的分支训练，全程不生成未来帧。
+- **[Bind-WAM: Binding-Uncertainty-Guided Selective Future Imagination in World Action Models](https://arxiv.org/abs/2611.15368)** (2026) — 决定世界动作模型何时需要“想象未来”：轻量路由器从当前观测和指令预测语言-物体绑定不确定性（指代不符、不可见、身份漂移），只在需要时调用未来画面与动作的联合生成。仿真与真机实验验证。
 - **[Box-WAM: Box Trajectories as Compact State Representations for World Action Models](https://arxiv.org/abs/2610.17526)** (2026) — 世界动作模型不再预测未来视频帧，而是预测任务相关物体的有向包围盒轨迹：计算量大幅下降，并报告动作预测更好。 · [代码](https://github.com/quincy-u/box-wam) · [项目页](https://box-wam.github.io)
 - **[C$^3$ache: Accelerating World Action Models with Cross Inference Chunk Cache](https://arxiv.org/abs/2606.08962)** (2026) — 无需训练的世界动作模型加速方法：平滑运动时相邻推理块在同一去噪步的残差高度相关，因此跨块缓存复用。以 Fast-WAM 为骨干最高提速 2.5 倍。
 - **[CW-WAM: A Structured Contact-Wrench World Action Model for Force-Sensitive Manipulation](https://arxiv.org/abs/2610.30117)** (2026) — 一个同时预测未来视频、运动与接触力旋量的世界动作模型，借鉴力位混合控制思路，输出时间对齐的运动-力旋量片段作为控制参考，面向仅靠视觉无法感知接触与负载的力敏感操作任务。 · [项目页](https://cw-wam-project.github.io/)
@@ -106,6 +107,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[UniFlowWAM: A Unified World-Action Model with Visual Semantics and 4D Geometry](https://arxiv.org/abs/2610.30991)** (2026) — 世界动作模型：把场景级三维流（跟踪的三维点）纳入策略内部，而不是作为独立模块或额外输出头，让 4D 几何、视觉语义与动作一起建模。 · [项目页](https://kksham111.github.io/UniFlowWAM_ProjectPage/)
 - **[Video Prediction Policy 2: Predict Better, Act Better](https://arxiv.org/abs/2610.10270)** (2026) — 认为世界动作模型的运动错误来自未针对操作优化的视频底座和粗糙的动作模块，因此在带事件级描述的操作视频上继续预训练视频模型。 · [代码](https://github.com/roboterax/video-prediction-policy-2) · [项目页](https://robert-gyj.github.io/video-prediction-policy-2)
 - **[Video World Models Need Predictable Latents](https://arxiv.org/abs/2610.34663)** (2026) — 视频世界模型的潜空间不应只为重建而训练：加入时间可预测性目标并配合以历史为条件的解码器。报告推理成本最多降低 5 倍、训练快 7 倍以上，长时域与分布外误差降低 15–24%，与真实策略评测更一致。 · [代码](https://github.com/mattia-scardecchia/predictable-latents)
+- **[Video-Action Models for Data-Efficient Industrial Manipulation](https://arxiv.org/abs/2611.15974)** (2026) — FLUX-mimic 是基于视频预训练的视频-动作模型，在两种双臂平台的四个汽车制造任务上评测：灵巧手平台优于所有基线，夹爪平台与 π0.5 平均成功率持平；可变形零件配套任务仅用约 2 小时示教即达 77.5%。 · [项目页](https://www.mimicrobotics.com/blog/video-action-models-for-data-efficient-industrial-manipulation)
 - **[W2A: Distilling World Priors into Action Models for Real-Time Robotic Control](https://arxiv.org/abs/2611.02600)** (2026) — 训练时把视频扩散模型的中间去噪表示蒸馏进动作模型，测试时完全丢弃视频模型。在 LIBERO 上报告 95.9% 平均成功率，推理比代表性世界动作模型快约 21 倍。
 - **[WAM is capable in BEHAVIOR-1K: the 2nd-place solution to the 2026 BEHAVIOR Challenge](https://arxiv.org/abs/2611.13818)** (2026) — 2026 BEHAVIOR 挑战赛第二名方案：基于 Cosmos 3 的世界动作模型，加入更长视觉历史、任务进度条件、按任务组/技能的 LoRA 与路由，仅用开源模型。私有测试集 Q 分 0.615、完整任务成功率 41.2%。 · [项目页](https://behavior.stanford.edu/challenge/index.html)
 - **[WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time](https://arxiv.org/abs/2607.06988)** (2026) — 测试时用无标注的人类视频引导冻结的世界动作模型：模型内部的小型记忆通过自监督视频预测进行适配；此前用成对人-机数据做元训练使其对控制有用。

@@ -90,4 +90,4 @@ _触觉传感器、触觉表征与接触丰富的控制。_
 
 **另见**
 
-[Never Too Late for Force](vla.zh-CN.md), [FORCA](manipulation.zh-CN.md), [ContactBench 1.0](manipulation.zh-CN.md), [CARD](manipulation.zh-CN.md), [ForceLDM](manipulation.zh-CN.md), [DeCAL](manipulation.zh-CN.md), [Physical Canvas](world-models.zh-CN.md), [DIFFTACTILE](sim.zh-CN.md), [Taccel](sim.zh-CN.md), [TacEx](sim.zh-CN.md), [EgoExplorer](datasets.zh-CN.md), [ORCA](hardware.zh-CN.md), [Learning Visuotactile Skills with Two Multifingered Hands](hardware.zh-CN.md), [DOGlove](hardware.zh-CN.md), [SwapBot](hardware.zh-CN.md)
+[Never Too Late for Force](vla.zh-CN.md), [FORCA](manipulation.zh-CN.md), [ContactBench 1.0](manipulation.zh-CN.md), [CARD](manipulation.zh-CN.md), [ForceLDM](manipulation.zh-CN.md), [DeCAL](manipulation.zh-CN.md), [DexRemo](manipulation.zh-CN.md), [Physical Canvas](world-models.zh-CN.md), [DIFFTACTILE](sim.zh-CN.md), [Taccel](sim.zh-CN.md), [TacEx](sim.zh-CN.md), [EgoExplorer](datasets.zh-CN.md), [ORCA](hardware.zh-CN.md), [Learning Visuotactile Skills with Two Multifingered Hands](hardware.zh-CN.md), [DOGlove](hardware.zh-CN.md), [SwapBot](hardware.zh-CN.md), [RUMI](hardware.zh-CN.md)

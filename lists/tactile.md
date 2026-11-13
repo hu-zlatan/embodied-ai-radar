@@ -90,4 +90,4 @@ _Tactile sensors, touch representations and contact-rich control._
 
 **See also**
 
-[Never Too Late for Force](vla.md), [FORCA](manipulation.md), [ContactBench 1.0](manipulation.md), [CARD](manipulation.md), [ForceLDM](manipulation.md), [DeCAL](manipulation.md), [Physical Canvas](world-models.md), [DIFFTACTILE](sim.md), [Taccel](sim.md), [TacEx](sim.md), [EgoExplorer](datasets.md), [ORCA](hardware.md), [Learning Visuotactile Skills with Two Multifingered Hands](hardware.md), [DOGlove](hardware.md), [SwapBot](hardware.md)
+[Never Too Late for Force](vla.md), [FORCA](manipulation.md), [ContactBench 1.0](manipulation.md), [CARD](manipulation.md), [ForceLDM](manipulation.md), [DeCAL](manipulation.md), [DexRemo](manipulation.md), [Physical Canvas](world-models.md), [DIFFTACTILE](sim.md), [Taccel](sim.md), [TacEx](sim.md), [EgoExplorer](datasets.md), [ORCA](hardware.md), [Learning Visuotactile Skills with Two Multifingered Hands](hardware.md), [DOGlove](hardware.md), [SwapBot](hardware.md), [RUMI](hardware.md)

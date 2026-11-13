@@ -1088,3 +1088,23 @@
   tags: [safety, benchmark, agentic, foundation-models, real]
   takeaway_en: "RoboRisk: 92 sim + 13 real closed-loop tasks on when a model-driven robot should refuse, replan or stop; six frontier models show high harm. LEASH adds task, action and commit gates that cut harm cheaply."
   takeaway_zh: "RoboRisk 基准：92 个仿真 + 13 个真机闭环任务，考察基础模型驱动的机器人何时应拒绝、重规划或停止；六个前沿模型普遍伤害率较高。LEASH 增加任务、动作和不可逆操作三道审查门，显著降低伤害且开销小。"
+- title: "CrowdMAPS: Crowdsourcing Multiple Actions per State for Real-World Imitation Learning"
+  type: paper
+  arxiv: "2611.15078"
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-13
+  topics: [datasets, learning, manipulation]
+  tags: [crowdsourcing, annotation, imitation-learning, data-collection, real]
+  takeaway_en: "Remote annotators label extra valid actions for already-visited robot states in a web 3D tool, widening datasets without more robot time. 1 → 10 actions per state adds ~33–36 points success on five real tasks."
+  takeaway_zh: "把真实机器人已经访问过的状态发给远程标注者，在网页 3D 界面中补充其他可行动作，无需更多机器人采集时间即可“加宽”数据集。每个状态从 1 个动作增加到 10 个，五个真实任务的平均成功率提高约 33–36 个百分点。"
+- title: "Robo-SWE: An Executable Issue-Resolution Dataset Mined from Robot Software Repositories"
+  type: dataset
+  arxiv: "2611.16116"
+  year: 2026
+  project: https://huggingface.co/datasets/vharatian/Robo-SWE
+  added: 2026-11-13
+  topics: [datasets]
+  tags: [coding-agents, ros2, software-engineering, benchmark]
+  takeaway_en: "236 executable issue-fixing tasks from merged PRs in 28 robotics repos (ROS 2, physics engines, algorithm libraries, robot-learning frameworks) with containers and fail-to-pass tests; agents resolve 44–57%."
+  takeaway_zh: "从 28 个公开机器人软件仓库（ROS 2、物理引擎、算法库、机器人学习框架）的已合并 PR 中挖掘出 236 个可执行的问题修复任务，每个附带容器配置和修复前失败、修复后通过的测试；主流编程智能体解决率约 44–57%。"

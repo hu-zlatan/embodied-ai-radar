@@ -657,3 +657,21 @@
   tags: [simulator, gpu, mesh-collision, contact, warp]
   takeaway_en: "GPU rigid-body simulator on NVIDIA Warp for detailed mesh–mesh contact; reports physics on par with established simulators at about 10x their throughput there. Lodos-v2 (2611.08868) adds exact frictional contact."
   takeaway_zh: "基于 NVIDIA Warp 的 GPU 刚体仿真器，专攻精细网格间接触；物理精度与主流仿真器相当，该场景下吞吐量约高一个数量级。Lodos-v2（2611.08868）进一步求解精确摩擦接触问题。"
+- title: "Genie Sim Benchmark: Real-to-Sim Fidelity and Evaluation"
+  type: benchmark
+  arxiv: "2611.15020"
+  year: 2026
+  added: 2026-11-13
+  topics: [sim, datasets]
+  tags: [real-to-sim, evaluation, system-identification, benchmark]
+  takeaway_en: "Checks whether Genie Sim scores track the real world: on 22 paired real/sim robot-task pairs, π0.5 scores correlate at 0.97 (MAE 0.04), backed by joint-level position and torque identification studies."
+  takeaway_zh: "检验 Genie Sim 仿真评测能否反映真实表现：在 22 组真实/仿真配对的机器人-任务上，π0.5 策略得分相关系数 0.97（MAE 0.04），并辅以关节位置与力矩层面的系统辨识和接触迁移实验。"
+- title: "Elastra: A Simulation Framework for Elastic Bodies"
+  type: simulator
+  arxiv: "2611.15112"
+  year: 2026
+  added: 2026-11-13
+  topics: [sim, locomotion]
+  tags: [deformable-surfaces, humanoid, residual-rl, unitree-g1]
+  takeaway_en: "Simulates springy surfaces such as mattresses and trampolines with vertically moving elastic elements; residual RL on top of HoST lifts G1 stand-up success on mattresses from 44.1% to 72.5% (trampoline 55% → 89%)."
+  takeaway_zh: "用只做竖直运动、带弹性连接和阻尼的单元模拟床垫、蹦床等弹性表面。在 HoST 起身策略上叠加残差强化学习后，Unitree G1 在床垫上起身成功率从 44.1% 提高到 72.5%，蹦床上从 55% 提高到 89%。"
