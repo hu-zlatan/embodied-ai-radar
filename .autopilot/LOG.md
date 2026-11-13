@@ -762,3 +762,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - CoRL 2026 awards: search found only a secondary recap naming SuperMimic as Best Paper. To check against the source, `corl_program.py` now stores the official awards page as text (f4fa675); dispatched corl-program → snapshot lists 6 award finalists, no winners yet.
 - 9c24035: finalists in `corl-2026-extra.yaml` (OpenReview ids), 'Oral · Award finalist' badges on the six curated entries, 'Award finalists' list on the program guide, ★ for the four unrated finalists. Winner not marked (no official source yet).
 - Validate 0 errors (1,382 curated), 1,513 pages, 0 broken links, README regenerated + check clean. No new owner task. End of run 82.
+
+## 2026-11-13 — run 83 (~04:50 UTC–)
+
+- Start: no issues/PRs, 4 stars / 0 forks. All workflows green (verify #201 on the award-finalist commit passed). No intake since 21:52 UTC; dispatched intake by hand (#187) → 11-13 feed with 59 papers (RSS partial, not enriched yet).
+- facts.yml for 20 candidates (full abstracts + ZefanW/JustRUA repo check). 16 picks added (d4b1aa5); 9 takeaways shortened to fit the 220-char limit. Code link only for JustRUA (repo live); XInfer and Elastra repos not public/indexed yet.
+- Validate 0 errors (1,398 curated), 1,530 pages, 0 broken links, README regenerated + check clean.
+- STATE.md was 69 KB, mostly finished per-run notes. Moved runs 1–79 next steps and backlog run notes verbatim to `.autopilot/STATE_ARCHIVE.md`; STATE.md now ~25 KB. No content dropped.
