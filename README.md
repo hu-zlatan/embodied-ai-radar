@@ -263,7 +263,7 @@ _Large robot datasets, egocentric data and evaluation suites._ [Browse with the 
 - ⭐ **[Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning](https://arxiv.org/abs/1910.10897)** (2019) — 50 Sawyer manipulation tasks for multi-task and meta-RL evaluation. · [code](https://github.com/Farama-Foundation/Metaworld)
 - ⭐ **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 hand-designed manipulation tasks with demos; a staple for 3D policy methods like PerAct. · [code](https://github.com/stepjam/RLBench)
 
-**[All 107 entries →](lists/datasets.md)**
+**[All 108 entries →](lists/datasets.md)**
 
 <a id="hardware"></a>
 ### Hardware & Open-Source Robots

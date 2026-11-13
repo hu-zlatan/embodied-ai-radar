@@ -254,7 +254,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_ [在网站�
 - ⭐ **[Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning](https://arxiv.org/abs/1910.10897)** (2019) — 50 个 Sawyer 操作任务，用于多任务与元强化学习评测。 · [代码](https://github.com/Farama-Foundation/Metaworld)
 - ⭐ **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 个手工设计的操作任务并附演示，是 PerAct 等 3D 策略方法的常用基准。 · [代码](https://github.com/stepjam/RLBench)
 
-**[查看全部 107 条 →](lists/datasets.zh-CN.md)**
+**[查看全部 108 条 →](lists/datasets.zh-CN.md)**
 
 <a id="hardware"></a>
 ### 硬件与开源机器人

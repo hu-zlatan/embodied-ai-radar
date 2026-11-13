@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 107 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 108 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/datasets.html) · [English](datasets.md)
 
@@ -59,6 +59,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[KlaskTron-IL: A Contact-Rich Adversarial Imitation Learning Benchmark with a Validated Sim-to-Real Bridge](https://arxiv.org/abs/2611.03091)** (2026) — 基于开源 KlaskTron 桌面对抗游戏机器人的模仿学习基准：8 万步真实人类示教、对称增强与合成数据，以及揭示 BC 和 GAIL 失效模式的基线；训练出的策略可直接上真机运行。
 - **[LEASH: Stay Safe in Agentic Robotics](https://arxiv.org/abs/2611.14115)** (2026) — RoboRisk 基准：92 个仿真 + 13 个真机闭环任务，考察基础模型驱动的机器人何时应拒绝、重规划或停止；六个前沿模型普遍伤害率较高。LEASH 增加任务、动作和不可逆操作三道审查门，显著降低伤害且开销小。 · [代码](https://github.com/zhuqinfeng1999/LEASH) · [项目页](https://zhuqinfeng1999.github.io/LEASH/)
 - **[LIBERO-Industry: Benchmarking Robotic Manipulation under Industrial Process Constraints](https://arxiv.org/abs/2610.16782)** (2026) — 基于 LIBERO 的 216 个工业约束任务：传送带上料、下料与转运，可调节物体形状、带速、交互时间窗与公差；报告 VLA 和世界动作模型在多重约束叠加时性能逐步下降。 · [代码](https://github.com/IAIE-PhysicalAI/LIBERO-Industry) · [项目页](https://iaie-physicalai.github.io/LIBERO-Industry/)
+- **[Learning the Task or Learning the Verifier? Rethinking Criteria Exposure in Embodied Self-Improvement](https://arxiv.org/abs/2611.08318)** (2026) — 让自我改进的编程智能体看到基准的成功判定条件后，分数很快上升，但判定条件稍作改写（不偏离指令）优势就消失，学到的技能也难跨任务迁移；作者提出更忠实于指令的判定标准。 · [项目页](https://dagroup-pku.github.io/PyRUA-Lean/RSIJudge/)
 - **[MESA: An Evaluation Framework for Compositional, Semantic, and Spatial Generalization in Robotics](https://arxiv.org/abs/2611.05567)** (2026) — 五组评测分别隔离空间布局、物体实例、物体类别和子任务组合上的泛化能力，并提供双臂版 BiMESA。七种基线中最好的也只有 52% 和 49%，仍有很大提升空间。 · [代码](https://github.com/pairlab/mesa-env) · [项目页](https://pairlab.github.io/MESA)
 - **[ManiLadder: Benchmarking Robot Manipulation Through a Categorized and Multi-Difficulty Level Task Ladder](https://arxiv.org/abs/2611.16374)** (2026) — 112 个仿真操作任务，分 4 个难度等级、每级 8 类（刚体/可变形物体、单/双臂、夹爪/灵巧手）；难度以固定数据量下统一流匹配策略的成功率校准，并在多种策略和随机种子下复核。真机实验显示难度顺序保持不变。
 - **[MolmoSpaces-CommonSense: Evaluating Commonsense in Robotic Manipulation Policies](https://arxiv.org/abs/2610.41377)** (2026) — 基于常识推理分类法（遮挡、容纳、支撑、可供性、隐藏物体）构建的操作基准。报告零样本通用策略在干扰物增多时成功率下降超过 50%，在杂乱场景中约 30% 的时间作用于错误物体，抓取正确部位的比例仅约一半。 · [代码](https://github.com/allenai/molmospaces)
