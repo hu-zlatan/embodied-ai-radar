@@ -685,3 +685,11 @@
   tags: [simulator, deformable, fluids, granular, gpu, mcp]
   takeaway_en: "Open-source engine on Newton, MuJoCo Warp and Warp: rigid robots, cloth, cables, liquids, granular and soft bodies coupled in one scene, many worlds per GPU. Built for coding agents (MCP tools)."
   takeaway_zh: "基于 Newton、MuJoCo Warp 和 Warp 的开源物理引擎：刚体机器人、布料、线缆、液体、颗粒与软体共处一个场景，每个控制步内耦合各自的求解器，单 GPU 并行多个世界。面向编程智能体设计，通过 MCP 暴露为工具。"
+- title: "Effective Parameters, Real Behavior: Renormalization for Robotics -- From Infinite Electron Mass to Sim-to-Real Gap"
+  type: paper
+  arxiv: "2607.24079"
+  year: 2026
+  code: https://github.com/WhymustIhaveaname/R4R
+  tags: [sim2real, pd-control]
+  takeaway_en: 'Treats simulator parameters as effective, frequency- and resolution-dependent values and derives closed-form PD damping and inertia corrections for rigid-body PD, cables, and underwater swimming, with a 4-step workflow.'
+  takeaway_zh: '将物理学中的重整化思想引入 sim-to-real：模拟器参数不该照抄真机数值，而应取依赖仿真频率和分辨率的"有效值"，才能让仿真与真机最接近。论文闭式推导了有限仿真频率下 PD 控制的有效阻尼与惯量修正，覆盖刚体 PD 控制、绳索和水下游动，并给出 4 步实操流程。'
