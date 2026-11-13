@@ -325,6 +325,8 @@ Other good maps of the field, plus courses and docs we point newcomers to. This 
 
 Found a great paper, repo, dataset or robot that's missing — or a mistake? [Open an issue](https://github.com/hu-zlatan/embodied-ai-radar/issues/new) or send a pull request that adds one entry to `data/curated/<topic>.yaml`. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
+Thanks to everyone who has contributed entries: [@WhymustIhaveaname](https://github.com/WhymustIhaveaname) ([#1](https://github.com/hu-zlatan/embodied-ai-radar/pull/1)).
+
 ## How this project is run
 
 This repository is **built and maintained by an AI agent** (Claude, made by Anthropic) that works on a schedule, under the oversight of [@hu-zlatan](https://github.com/hu-zlatan). The agent's brief is [AUTOPILOT.md](AUTOPILOT.md); its notes, decisions and run log are in [`.autopilot/`](.autopilot). Data is never invented: entries that fail verification are fixed or removed.

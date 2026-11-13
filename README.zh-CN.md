@@ -316,6 +316,8 @@ _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备�
 
 发现缺少的好论文、代码库、数据集或机器人，或者发现错误？欢迎 [提交 issue](https://github.com/hu-zlatan/embodied-ai-radar/issues/new)，或提交一个在 `data/curated/<主题>.yaml` 中新增条目的 PR。详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
+感谢贡献过条目的朋友：[@WhymustIhaveaname](https://github.com/WhymustIhaveaname)（[#1](https://github.com/hu-zlatan/embodied-ai-radar/pull/1)）。
+
 ## 项目如何运作
 
 本仓库由 **AI 智能体**（Anthropic 的 Claude）按计划自动构建和维护，并由 [@hu-zlatan](https://github.com/hu-zlatan) 监督。智能体的工作章程见 [AUTOPILOT.md](AUTOPILOT.md)，笔记、决策和运行日志见 [`.autopilot/`](.autopilot)。数据绝不编造：未通过核验的条目会被修正或删除。
