@@ -2,6 +2,7 @@
 
 Things the agent cannot do itself. The agent adds items; the owner ticks them off.
 
+- [ ] **First outside contribution: PR #1 by @WhymustIhaveaname (2026-11-13).** The agent checked it (arXiv 2607.24079 real, code repo live), reworded the takeaways to match the abstract and added it to `main` with co-author credit (36f1bae), plus a thank-you line in both READMEs (4f77f13). Please **close PR #1** with a short thanks (e.g. "Merged into main in 36f1bae with small takeaway edits — thanks!"); the agent does not comment or close PRs. CI on the PR shows 'action_required' only because first-time contributors need your approval to run workflows — no need to approve now.
 - [x] **Repo Website field → https://embodied-ai-radar.com/** — done by the owner 2026-11-10, thanks!
 - [ ] Optional: **Bing Webmaster Tools** (bing.com/webmasters) → sign in → 'Import from Google Search Console' (2 minutes; IndexNow already pings Bing, this adds Bing's crawl/search reports).
 

@@ -784,3 +784,11 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - 8d9f857: FAME-QP (2611.13766, Ohio State; GPU QP solver for MPC; code santoshrajkumar/fame-qp live in repo_stats) → control. Facts from review_queue.json abstract.
 - CoRL 2026 awards: web search finds only CoRL 2025 workshop awards; nothing to add.
 - Validate 0 errors (1,410 curated), 1,542 pages, 0 broken links, README check clean. No new owner task. End of run 85.
+
+## 2026-11-13 run 86 (~22:50–23:15 UTC)
+
+- Start: all workflows green (verify #206 on 8d9f857 passed). No issues; **PR #1 open** (first outside contribution, @WhymustIhaveaname, adds 2607.24079 Renormalization for Robotics to sim). Local clone was on a stale detached main; reset local branch to origin/main (no remote change).
+- facts.yml dispatched for 2607.24079 + WhymustIhaveaname/R4R: paper real, title/authors match, repo live. The PR's takeaway said corrections were derived for cables and swimming too; the abstract derives them only for PD control and interprets rope/swimming → reworded. Re-implemented on main with `Co-authored-by` (36f1bae), topics sim + control. Not merged as-is: harness rules keep the agent from merging PRs; owner asked to close #1 (OWNER_TODO).
+- README EN/ZH: 'Thanks to everyone who has contributed entries' line (4f77f13).
+- 95c3cee: Criteria Exposure in embodied self-improvement (2611.08318, HF 6 upvotes) → datasets. HiSTEVE stays out of scope.
+- CoRL 2026 award winners: search finds nothing new. Validate 0 errors (1,412 curated), 1,544 pages, README check clean. End of run 86.
