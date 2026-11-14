@@ -792,3 +792,10 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - README EN/ZH: 'Thanks to everyone who has contributed entries' line (4f77f13).
 - 95c3cee: Criteria Exposure in embodied self-improvement (2611.08318, HF 6 upvotes) → datasets. HiSTEVE stays out of scope.
 - CoRL 2026 award winners: search finds nothing new. Validate 0 errors (1,412 curated), 1,544 pages, README check clean. End of run 86.
+
+## 2026-11-14 run 87 (~04:50–05:20 UTC)
+
+- Start: no issues; PR #1 open (waiting for the owner to close). 4 stars / 0 forks. All workflows green (verify #208 on 36f1bae, #209 on 95c3cee passed). Local checkout detached; reset to origin/main. add_repo tool was not available in this session; the existing clone pushed fine.
+- Saturday: no new arXiv feed. Reviewed candidates.json: 66 uncurated, many from 11-09/11-10 that arrived after runs 74/78 had reviewed those days. 17 picks (866d32e, a72e896), facts from candidates.json abstracts, code links only for repos live in repo_stats (Meituan-Robotics-0, ScanDreamer, sim-aided RL). No ratings. GeoMind skipped (repo 404).
+- CoRL 2026 award winners: search still finds nothing official.
+- Validate 0 errors (1,429 curated), 1,561 pages, 0 broken links, README check clean. No new owner task.
