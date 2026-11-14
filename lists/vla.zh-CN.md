@@ -2,7 +2,7 @@
 
 _视觉-语言-动作模型与通用机器人策略。_
 
-共 278 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
+共 279 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/vla.yaml`](../data/curated/vla.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/vla.html) · [English](vla.md)
 
@@ -89,6 +89,7 @@ _视觉-语言-动作模型与通用机器人策略。_
 - **[Diagnosing Compositional Generalization in Sequential Robot Tasks](https://arxiv.org/abs/2607.29687)** (2026) — CoRL 2026 Spotlight。从指令空间覆盖出发，把序列任务策略的泛化差距分解为边际偏移、组合偏移与上下文-动作偏移。 · [代码](https://github.com/YixiaoWang7/Diagnosing_Compositional_Generalization_Robot) · [项目页](https://yixiaowang7.github.io/Diagnosing_Compositional_Generalization_Robot_Page/)
 - **[Direct Action-Head Injection of A Grounded 3D Point Unlocks Spatial and Task Generalization](https://arxiv.org/abs/2606.27663)** (2026) — 把一个已定位的 3D 目标点经两层 MLP 直接注入 VLA 的动作头。在 LIBERO-PRO 任务扰动下，GR00T-N1.6 成功率从 31.2 提升到 77.5，π0.5 也有类似提升。
 - **[Disentangling Spurious Correlations in Vision-Language-Action Models via Predicting Domain-Invariant Latent Lookahead](https://arxiv.org/abs/2609.37165)** (2026) — 用与域无关的未来潜变量监督 VLA，减少对视觉捷径的依赖。报告 LIBERO-Plus 平均成功率 69.1%，比最强基线高 11.4 个百分点。 · [项目页](https://dill-vla.github.io/)
+- **[Distilling Instructions into Weights: Closed-Form Edits Fix a Robot Policy's Misreading](https://arxiv.org/abs/2611.11894)** (2026) — 不用梯度和训练数据，以闭式方式直接编辑权重来修复 VLA 的单步失败：把一条更明确的改写指令在各层产生的效果复制进语言模型的 MLP 权重。报告 RoboLab 中 π0.5 在 128 个保留种子上的成功数从 27 升到 106，同等大小的随机更新无效。 · [项目页](https://ali-adeeb.com/weightsmith/)
 - **[Do Agentic Policies Need to Look at Every Step? Geometric Abstraction for Reasoning and Action](https://arxiv.org/abs/2611.05058)** (2026) — 把常规空间推理从图像转到文本：语言模型直接读取局部刷新的三维符号场景，仅在需要时看图；报告多步任务完成度提高，图像查询大幅减少。 · [代码](https://github.com/Spectraorder/geometric-abstraction) · [项目页](https://geometric-abstraction.github.io)
 - **[DobotTrack: Target-Grounded Vision-Language-Action Learning for Embodied Person Tracking](https://arxiv.org/abs/2611.09041)** (2026) — 面向语言引导行人跟随的 VLA：加入掩码与检测框定位监督，并按目标压缩历史视觉信息；0.8B 模型在 EVT-Bench 上平均成功率 77.9%，另发布 126 段四足机器人跟踪数据。 · [代码](https://github.com/Dobot-Team/dobot_track) · [项目页](https://dobot-team.github.io/dobottrack-web/)
 - **[ELAN4D: Embodiment-Centric 4D Supervision for Vision-Language-Action Models via Plug-and-Play Adaptation](https://arxiv.org/abs/2605.30484)** (2026) — 增加一个辅助分支，预测机器人关键点未来的 3D 轨迹（由正运动学免费得到），并与视觉语言主干做梯度隔离。推理时丢弃该分支，策略接口不变。

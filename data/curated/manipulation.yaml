@@ -1846,3 +1846,34 @@
   tags: [coding-agent, bimanual, flipping, self-improvement, sim-to-real]
   takeaway_en: "A coding agent writes and refines bimanual flipping programs by trial and error in simulation, adding skills like toppling, pushing and thin-object recovery. Reports 24.7% → 95.0% success; runs on real robots."
   takeaway_zh: "让编码智能体在物理仿真中反复试错，自主编写并改进双臂翻转物体的程序，逐步学会交接、推倒、推动和薄物体恢复等技能。报告成功率从 24.7% 提高到 95.0%，生成的图结构代码可在真实机器人上执行多阶段翻转。"
+- title: "BATCH: Behavior Alignment for Cross-Embodiment Learning from Humans"
+  type: paper
+  arxiv: "2611.10148"
+  year: 2026
+  project: https://batch-embodiment.github.io/
+  added: 2026-11-14
+  topics: [manipulation, learning]
+  tags: [human-video, cross-embodiment, cycle-consistency, video-diffusion, real]
+  takeaway_en: "Aligns human and robot demos with self-supervised cycle-consistent features, then uses the matches for co-training and human-to-robot style transfer in a video-action diffusion model. Better generalization on real tasks."
+  takeaway_zh: "用循环一致性的自监督时序表征，在无标注的情况下对齐人类与机器人的示范行为，再把对应关系用于视频-动作扩散模型的对齐联合训练和人到机器人的风格迁移。真实操作任务上对未见任务配置的泛化优于未对齐数据训练和以往跨本体方法。"
+- title: "Bridging Task Planning and Execution for Language-Conditioned Bimanual Manipulation"
+  type: paper
+  arxiv: "2611.12409"
+  year: 2026
+  venue: Humanoids 2026
+  project: https://advrhumanoids.github.io/bridging-planning-execution/
+  added: 2026-11-14
+  topics: [manipulation]
+  tags: [bimanual, task-planning, vlm, zero-shot, feasibility, centauro, real]
+  takeaway_en: "Zero-shot VLM planner for bimanual humanoids that weighs feasibility as well as goals: execution-aware scene graph, parallel two-arm stages with pre/post-conditions, recovery via a validator. Tested on CENTAURO."
+  takeaway_zh: "面向双臂人形机器人的零样本视觉语言规划框架，同时考虑任务目标和执行可行性：在带执行约束的场景表示上决定挪开哪些障碍，把动作组织成带前后置条件的并行双臂阶段，并由分层校验器触发局部恢复或重规划。在 CENTAURO 轮腿人形机器人上测试九个场景。"
+- title: "GAP: Generalized Adaptation Prior for Dexterous Piano Playing"
+  type: paper
+  arxiv: "2611.12111"
+  year: 2026
+  project: https://www.bilibili.com/video/BV1hbWx6QE9u
+  added: 2026-11-14
+  topics: [manipulation, learning]
+  tags: [dexterous-hand, piano, sim-to-real, fast-adaptation, real]
+  takeaway_en: "Learns in simulation how to adapt, not how to act: a network predicts how action changes affect piano-playing score and guides tweaks between runs. On a real dexterous hand, F1 rises 3.6–23% after ~7 min per piece."
+  takeaway_zh: "在仿真预训练中学习“如何适应”而不是“如何动作”：梯度引导网络从成对执行中学会动作调整如何影响弹奏表现，并在重复演奏之间指导调整。迁移到真实灵巧手后，每首曲子约 7 分钟适应即可让 F1 提高 3.6%–23%。"

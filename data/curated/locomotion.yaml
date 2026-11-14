@@ -1842,3 +1842,24 @@
   tags: [humanoid, loco-manipulation, motion-generation, controlnet, real]
   takeaway_en: "Uses a frozen text-to-motion generator (Kimodo) as a humanoid policy's action backbone, with ControlNet-style visual conditioning. Reports 72.1% on HumanoidArena and 60% on eight real tasks."
   takeaway_zh: "提出“运动学动作模型”：把冻结的文本到动作生成模型 Kimodo 当作人形机器人策略的动作主干，通过 ControlNet 式视觉条件和根-身体-手层级协调移动与操作。报告 HumanoidArena 多任务成功率 72.1%，八项真实任务平均 60%，可训练参数 9200 万。"
+- title: "LHNav: Long-Horizon Humanoid Navigation via Multirate Coordination and Physics-Grounded Action Data"
+  type: paper
+  arxiv: "2611.12136"
+  year: 2026
+  org: Robbyant
+  project: https://robbyant-research.github.io/LHNav/
+  added: 2026-11-14
+  topics: [locomotion, navigation]
+  tags: [humanoid, navigation, vla, whole-body-control, data-engine]
+  takeaway_en: "Humanoid navigation to several goals from one instruction: a reasoning Brain, a VLA motion-token Cerebellum and a whole-body-control Brainstem run asynchronously; trained on physics-checked motion data."
+  takeaway_zh: "让人形机器人按一条长指令依次前往多个目的地：系统分为负责任务推理的“大脑”、预测 VLA 动作 token 的“小脑”和执行全身控制的“脑干”，三者以不同频率异步协同；“小脑”用经过物理跟踪校验、带渲染视觉的动作数据训练。"
+- title: "ForPC: Force-Aware Whole-Body Control for Precise Humanoid Cart Pushing"
+  type: paper
+  arxiv: "2611.08664"
+  year: 2026
+  project: https://roboforpc.github.io/
+  added: 2026-11-14
+  topics: [locomotion, control]
+  tags: [humanoid, cart-pushing, whole-body-control, rl, force-estimation, sim]
+  takeaway_en: "Humanoid cart pushing via two-stage RL: a load-robust locomotion prior, then a residual policy inferring force and state latents onboard. Reports up to 68% lower cart-speed error than locomotion alone (sim-to-sim)."
+  takeaway_zh: "两阶段强化学习实现人形机器人推车：先训练能承受不同手部负载的行走先验，再用残差策略从机载观测推断力与状态隐变量（无需外部力传感器），协调手臂、腰和腿。仿真到仿真测试中，推车速度误差比仅用行走策略最多降低 68.2%。"

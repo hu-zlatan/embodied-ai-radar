@@ -2,7 +2,7 @@
 
 _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 
-共 182 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
+共 185 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/manipulation.html) · [English](manipulation.md)
 
@@ -36,12 +36,14 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[Assembling Two Parts in One Hand](https://arxiv.org/abs/2609.10137)** (2026) — 用强化学习在单只灵巧手中完成两个零件的装配（如给马克笔盖帽、注射器、瓶子），不用第二只手臂；仿真训练，单相机零样本迁移到真机。 · [项目页](https://ltbgbird.github.io/in-hand-assembly-page/)
 - **[Attention from Action, for Action: Emergent Visual Bottlenecks for Policy Learning](https://arxiv.org/abs/2608.13422)** (2026) — Seeker 仅凭动作监督学习“看哪里”，在冻结的 DINOv3 特征上给出随任务进展变化的裁剪区域。报告真机成功率从 48.3% 升到 76.7%，光照与背景变化下从 20% 升到 60%。 · [代码](https://github.com/zheyu-zhuang/seeker)
 - **[Auditing Grasp Feasibility Predictors with Planner-Verified Counterfactuals](https://arxiv.org/abs/2611.09130)** (2026) — 固定抓取位姿、在接近路径中插入障碍物并由规划器重新标注：八种可行性预测器的 AUROC 从 0.92–0.996 跌至随机水平，说明它们并未利用碰撞几何。发布标签与流程。 · [代码](https://github.com/codewithsajid/graspfc-cf)
+- **[BATCH: Behavior Alignment for Cross-Embodiment Learning from Humans](https://arxiv.org/abs/2611.10148)** (2026) — 用循环一致性的自监督时序表征，在无标注的情况下对齐人类与机器人的示范行为，再把对应关系用于视频-动作扩散模型的对齐联合训练和人到机器人的风格迁移。真实操作任务上对未见任务配置的泛化优于未对齐数据训练和以往跨本体方法。 · [项目页](https://batch-embodiment.github.io/)
 - **[Beyond the End-Effector: Learning Whole-Arm Contact Manipulation from Human Demonstrations](https://arxiv.org/abs/2610.17802)** (2026) — WACL 从人类示范中学习用整条手臂推、抵物体，自主选择手臂上的接触位置，同时满足末端执行器的约束。 · [项目页](https://wacl-robot.github.io)
 - **[BeyondContact: A Reinforcement Learning Framework for Airflow-Based Non-Contact Manipulation](https://arxiv.org/abs/2611.03059)** (2026) — 为 Isaac Lab 增加基于实测模型的气流扩展，并在夹爪旁加装轻型鼓风机。报告零调试真机部署：推吹混合策略 20 次成功率 80%，纯气流转向平均误差 2.6°。 · [代码](https://github.com/iit-DLSLab/BeyondContact)
 - **[BiDexGrasp: Coordinated Bimanual Dexterous Grasps across Object Geometries and Sizes](https://arxiv.org/abs/2604.06589)** (2026) — CoRL 2026 Spotlight。大规模双手灵巧抓取数据集（由两阶段合成流程生成），并配套基于学习的抓取生成框架。 · [项目页](https://frenkielm.github.io/BiDexGrasp.github.io/)
 - **[BiRoAD: Learning Shared and Role-Adaptive Representations for Bimanual Manipulation](https://arxiv.org/abs/2609.23445)** (2026) — 把双臂策略特征分解为交换对称分量（两臂互换角色时不变的协调结构）与交换反对称分量（随角色变化的行为差异），再以残差形式加回各臂的表示。
 - **[Bimanual Robot Manipulation via Multi-Agent In-Context Learning](https://arxiv.org/abs/2604.20348)** (2026) — 把双臂视为“主-从”两个智能体，让纯文本 LLM 无需微调即可通过上下文学习完成少样本双臂操作。报告在 TWIN 的 13 个任务上平均成功率 70.5%。 · [项目页](https://alesspalma.github.io/bicicle)
 - **[Blind Precise Assembly: Proprioceptive Sim-to-Real Peg-in-Hole for Diverse Parts](https://arxiv.org/abs/2610.23849)** (2026) — 探究仅靠关节读数能否完成毫米级精密插装：训练不用相机、力或触觉输入的 sim-to-real 策略。
+- **[Bridging Task Planning and Execution for Language-Conditioned Bimanual Manipulation](https://arxiv.org/abs/2611.12409)** (2026) — 面向双臂人形机器人的零样本视觉语言规划框架，同时考虑任务目标和执行可行性：在带执行约束的场景表示上决定挪开哪些障碍，把动作组织成带前后置条件的并行双臂阶段，并由分层校验器触发局部恢复或重规划。在 CENTAURO 轮腿人形机器人上测试九个场景。 · [项目页](https://advrhumanoids.github.io/bridging-planning-execution/)
 - **[CARD: Contact-Anchored Retargeting for Dexterous Manipulation](https://arxiv.org/abs/2610.36539)** (2026) — 把人手示教（视频、动捕、触觉手套）重定向到灵巧手时显式保留接触力目标而不只是运动学，并用触觉跟踪控制器回放；报告 43–78% 的接触帧保持接触，纯运动学方法不到 10%。 · [项目页](https://card-retargeting.github.io/)
 - **[COWBOY: A Scalable Sim-to-Real Framework for Learning Contextual Whole-Body Manipulation](https://arxiv.org/abs/2610.28948)** (2026) — 在仿真中学习移动灵巧抓取：全身控制器负责底盘-手臂协同到达与主动视觉，局部强化学习专家负责物体交互，二者蒸馏成一个基于点云的视觉策略；报告可零样本迁移到真实世界的数百个物体与场景。 · [项目页](https://cowboy-manip.com)
 - **[CSO: Refining Robotic Policies via Skill Distribution Alignment and Skill-Grained Optimization](https://arxiv.org/abs/2610.38357)** (2026) — 面向 VQ 类技能策略的两阶段后训练：先让技能先验对齐线上成功轨迹，再冻结编码器按技能优化；报告 LIBERO 成功率从 80.1% 升至 97.5%。
@@ -80,6 +82,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[From Egocentric Human Video to Robot Manipulation in the Era of Embodied Intelligence](https://arxiv.org/abs/2611.13610)** (2026) — 关于从第一人称人类视频学习机器人操作的综述，分四类范式：显式本体迁移、动作/任务监督、视频表征预训练、潜在动作与动力学建模，并梳理相关数据集与开放挑战。 · [项目页](https://mikewu597.github.io/Ego2Robot_Learning/)
 - **[From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation](https://arxiv.org/abs/2606.30749)** (2026) — 用抓取数据集构造的 35.5 万条轨迹预训练灵巧手底层控制器，再微调到需要操作工具活动部件的任务；提出 DexCraft 基准。报告真机完整任务成功率比 DP3 高 33.3 个百分点。 · [项目页](https://yingyuan0414.github.io/grasp2dexterity/)
 - **[From VLM Planners to Robotic Agents: Self-Evolving Harnesses for History-Dependent Manipulation](https://arxiv.org/abs/2610.29560)** (2026) — SERA 把高层 VLM 规划器做成带可编辑执行框架的智能体，为固定的底层 VLA 记录任务进度与执行反馈，并利用环境回放自动改进框架；报告在 RoboMME 上总体成功率 51.4%，未自我演化时为 44.4%。 · [代码](https://github.com/StevenKKXS/SERA) · [项目页](https://stevenkkxs.github.io/sera-webpage/)
+- **[GAP: Generalized Adaptation Prior for Dexterous Piano Playing](https://arxiv.org/abs/2611.12111)** (2026) — 在仿真预训练中学习“如何适应”而不是“如何动作”：梯度引导网络从成对执行中学会动作调整如何影响弹奏表现，并在重复演奏之间指导调整。迁移到真实灵巧手后，每首曲子约 7 分钟适应即可让 F1 提高 3.6%–23%。 · [项目页](https://www.bilibili.com/video/BV1hbWx6QE9u)
 - **[GRASP: Gradient-Guided Sampling for Contact-Rich Physics-Based Motion Retargeting](https://arxiv.org/abs/2611.05754)** (2026) — 无需可微仿真器即可在接触动力学下重定向人类示教：从存档的采样轨迹中恢复梯度。报告在 1352 条双手 OakInk2 示教上成功率 92.8%，且不用任务专属接触奖励。 · [代码](https://github.com/ComputationalRobotics/GRASP_code) · [项目页](https://computationalrobotics.seas.harvard.edu/GRASP/)
 - **[GROW$^2$: Grounding Which and Where for Robot Tool Use](https://arxiv.org/abs/2606.30632)** (2026) — 创造性用工具（没有刀就用盘子切蛋糕）：VLM 选出可充当工具的物体及其相关部位，再由视觉基础模型从单张 RGB-D 图像把这些部位定位为 3D 区域。无需端到端训练。
 - **[GeoHAT: Geometry-Adaptive Hybrid Action Transformer for Mobile Manipulation](https://arxiv.org/abs/2606.13394)** (2026) — 面向全身移动操作的扩散策略：傅里叶编码器把逐像素 3D 坐标变成几何 token，并按深度可靠性门控注入视觉基础模型特征；混合解码器为机械臂与底盘分配独立的动作子空间。

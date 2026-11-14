@@ -2,7 +2,7 @@
 
 _足式运动、人形全身控制与跑酷。_
 
-共 182 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
+共 184 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/locomotion.html) · [English](locomotion.md)
 
@@ -54,6 +54,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[FORGE: Feasible Online Reduced-Order Reference Generation and Whole-Body Execution for Agile Humanoid Locomotion](https://arxiv.org/abs/2610.37974)** (2026) — 先学习降阶模型参考生成器，再用其在线输出训练全身跟踪策略，一对策略即可覆盖多种步态。Unitree G1 实机实现 -2.0 到 2.8 m/s 行走、单腿跳与连续切换。
 - **[FORGE: Force-Aware Multi-Granularity Control for Efficient Humanoid Loco-Manipulation](https://arxiv.org/abs/2611.17142)** (2026) — 人形全身控制器，命令空间由粗到细（速度导航、落脚点、手腕位姿、可选施力），训练不需要人体动作参考；部署时仅凭本体感知与关节 PD 力矩估计手腕接触力（无需力/力矩传感器），用于持续接触任务和下游扩散策略。 · [项目页](https://bb0928.github.io/forge/)
 - **[FT-WBC: Learning Fault-Tolerant Whole-Body Control for Legged Loco-Manipulation](https://arxiv.org/abs/2606.24466)** (2026) — 面向腿足机械臂的容错全身控制：故障估计器从下肢本体感觉历史中识别失效关节，姿态适配模块把机械臂策略提出的底盘姿态请求转为安全可执行的指令。
+- **[ForPC: Force-Aware Whole-Body Control for Precise Humanoid Cart Pushing](https://arxiv.org/abs/2611.08664)** (2026) — 两阶段强化学习实现人形机器人推车：先训练能承受不同手部负载的行走先验，再用残差策略从机载观测推断力与状态隐变量（无需外部力传感器），协调手臂、腰和腿。仿真到仿真测试中，推车速度误差比仅用行走策略最多降低 68.2%。 · [项目页](https://roboforpc.github.io/)
 - **[GRAFT: Geometry-Aware Residual Adaptation for Foundation Trackers](https://arxiv.org/abs/2610.36507)** (2026) — 冻结人形行为基础模型，仅训练一个作用于下肢目标的轻量残差适配器来应对台阶、沟壑和平台，并从特权地形信息蒸馏到机载深度；在四种跟踪器上验证，并在 Unitree G1（SONIC）上真机部署。 · [项目页](https://graft-humanoid.github.io/)
 - **[General Humanoid Whole-Body Control via Pretraining and Fast Adaptation](https://arxiv.org/abs/2602.11929)** (2026) — FAST：通用人形运动跟踪控制器，在正交与 KL 约束下学习轻量残差策略来快速适配新动作且不遗忘，并加入质心相关观测与目标提升平衡。
 - **[HEFT: Heavy-Payload Full-size Humanoid Teleoperation with Privileged Motion Guidance and Windowed Payload Curriculum](https://arxiv.org/abs/2607.02332)** (2026) — 面向全尺寸人形机器人的重载遥操作：特权运动引导修正带噪 VR 参考，窗口化载荷课程提升鲁棒性。175 cm、65 kg 的机器人可携带最多 24 kg 负载跟踪动作。 · [项目页](https://heft.axell.top/)
@@ -74,6 +75,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[HumanoidNDM: Closing the Training-Deployment Gap of Motion Tracking via Humanoid Neural Dynamics Model](https://arxiv.org/abs/2610.34126)** (2026) — 在真机上在线微调人形机器人动作跟踪策略：用真实数据训练的本体感知神经动力学模型提供可反传梯度，无需动捕系统。在 Unitree G1 上验证对多种扰动的快速适应。
 - **[Kimodo-Policy: Learning Kinematic Action Models for Humanoid Loco-Manipulation](https://arxiv.org/abs/2611.11554)** (2026) — 提出“运动学动作模型”：把冻结的文本到动作生成模型 Kimodo 当作人形机器人策略的动作主干，通过 ControlNet 式视觉条件和根-身体-手层级协调移动与操作。报告 HumanoidArena 多任务成功率 72.1%，八项真实任务平均 60%，可训练参数 9200 万。 · [项目页](https://kimodo-policy.github.io/)
 - **[LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World](https://arxiv.org/abs/2606.01458)** (2026) — 混合模拟器：网格前景叠加校准过的 3D 高斯泼溅背景，无需遥操作即可生成人形移动操作演示。在 G1 上，仅用其数据训练的 VLA 达到或超过遥操作数据训练的效果。 · [代码](https://github.com/hojjunekim/LEGS) · [项目页](https://hojjunekim.github.io/legs/)
+- **[LHNav: Long-Horizon Humanoid Navigation via Multirate Coordination and Physics-Grounded Action Data](https://arxiv.org/abs/2611.12136)** (2026) — 让人形机器人按一条长指令依次前往多个目的地：系统分为负责任务推理的“大脑”、预测 VLA 动作 token 的“小脑”和执行全身控制的“脑干”，三者以不同频率异步协同；“小脑”用经过物理跟踪校验、带渲染视觉的动作数据训练。 · [项目页](https://robbyant-research.github.io/LHNav/)
 - **[LadderMan: Learning Humanoid Perceptive Ladder Climbing](https://arxiv.org/abs/2606.05873)** (2026) — CoRL 2026 Spotlight。让人形机器人攀爬多种梯子并在梯上操作；两阶段流程用混合动作跟踪学习多个攀爬专家策略。 · [项目页](https://ladderman-robot.github.io)
 - **[Learning Contact Representation for Leg Odometry](https://arxiv.org/abs/2606.05501)** (2026) — 仅用关节编码器与 IMU 自监督估计足端接触，并作为支撑置信度输入卡尔曼滤波器。报告腿式里程计误差在对比方法中最低。 · [代码](https://github.com/egirgin/leg-odometry-contact-representation)
 - **[Learning Force-Reactive Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.35862)** (2026) — FLoRe：用带力传感的 UMI 式手持夹爪与人体追踪器采集无机器人示教，训练扩散策略输出每只手的力指令，由柔顺全身控制器执行；报告在三个接触密集任务上成功率 80%，仅位置控制为 26.7%。
