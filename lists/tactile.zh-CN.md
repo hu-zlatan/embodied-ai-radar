@@ -2,7 +2,7 @@
 
 _触觉传感器、触觉表征与接触丰富的控制。_
 
-共 79 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
+共 80 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/tactile.html) · [English](tactile.md)
 
@@ -34,6 +34,7 @@ _触觉传感器、触觉表征与接触丰富的控制。_
 - **[OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies](https://arxiv.org/abs/2607.03723)** (2026) — 真实世界强化学习：在任意预训练视觉策略之上学习轻量的触觉残差修正，先用基础策略自主执行的数据冷启动。报告四个任务成功率在 40–80 分钟内从 5–40% 提升到 85–100%。 · [项目页](https://colinyu1.github.io/omnitactune-site/)
 - **[OpenTac: An Open Ecosystem for Customizable, Scalable, and Transferable 3D Tactile Sensing](https://arxiv.org/abs/2610.31661)** (2026) — 开源电阻式触觉皮肤：结构化覆层把切向力转成空间压力差异，相邻触点即可解码剪切与法向力；附带可定制皮肤的设计工具，硬件和软件均开源。 · [代码](https://github.com/opentac/opentac) · [项目页](https://opentac.github.io)
 - **[PACE: Temporal-Role Tactile Conditioning for Chunk-Based Insertion Policies](https://arxiv.org/abs/2610.16308)** (2026) — CoRL 2026 Oral。不再用单一融合路径，而是把同一触觉流拆成三种时序角色：持续接触状态、突发接触事件与未来接触后果，用于分块式插接策略。 · [项目页](https://pace-insertion.github.io/)
+- **[PCTac: Mechanochromic Photonic-Crystal Tactile Sensor for Dexterous Manipulation](https://arxiv.org/abs/2611.12383)** (2026) — 开源的机械致变色光子晶体指尖：受力时微结构改变，颜色（色相）直接反映局部应力，不必再从形变间接推算力。作为 Diffusion Policy 的触觉输入，90 次真机测试报告成功率 75.6%，Wedge RGB 触觉为 63.3%，纯视觉为 32.2%。 · [项目页](https://bey0ndt1me.github.io/PCTac-page/)
 - **[PTLD: Sim-to-real Privileged Tactile Latent Distillation for Dexterous Manipulation](https://arxiv.org/abs/2603.04531)** (2026) — 无需触觉仿真即可学习触觉灵巧操作：在真实环境中借助特权传感器采集数据，蒸馏出基于触觉的状态估计器，用于仿真训练的策略。报告手内旋转任务提升 182%。 · [项目页](https://akashsharma02.github.io/ptld-website/)
 - **[PanoTac: A Dense Three-Axis Tactile Sensor for Robust Touch-Centric Manipulation](https://arxiv.org/abs/2611.03520)** (2026) — 每个成本低于 50 美元的柔顺指尖，以 60 Hz 输出 12×32 的法向与剪切稠密响应。在舀取、倾倒和试管任务上，视触觉策略平均比纯视觉基线高 46.7 个百分点。 · [项目页](https://panotac.github.io)
 - **[ReflexArc: Bottom-Up Integration of Instantaneous Tactile Reflexes into Whole-Body Humanoid Control](https://arxiv.org/abs/2611.04424)** (2026) — 在学习型全身策略之下加入全身触觉反射，10 毫秒内直达电机；在 G1 上，与延迟 20 毫秒的相同反射相比，首次力峰值降低 34.1%。 · [项目页](https://minusmodulo.github.io/reflexarc-website/)

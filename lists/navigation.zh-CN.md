@@ -2,7 +2,7 @@
 
 _视觉语言导航、具身问答、移动操作与大模型规划。_
 
-共 85 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
+共 86 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/navigation.html) · [English](navigation.md)
 
@@ -25,6 +25,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - **[CoFL-S: Spatially Queryable Sector Flow Fields for Local Language-Conditioned Navigation](https://arxiv.org/abs/2607.02222)** (2026) — 低层视觉语言导航动作头：在可见扇区上预测语言条件的流场并展开为连续轨迹；并提供连续时间的 Habitat 评测基准。 · [代码](https://github.com/ut-dragon-lab/CoFL)
 - **[CoSMO: Conformal Semantic Mapping for Open-World Safe Robot Navigation](https://arxiv.org/abs/2610.18321)** (2026) — 用在线共形预测校准 VLM 语义地图，使不同类别物体获得有覆盖率保证的安全距离，且支持词表扩展。报告在 MP3D 上语义碰撞减少 61.6%，四足真机覆盖率 90.73%。 · [代码](https://github.com/Yangming911/CoSMO) · [项目页](https://yangming911.github.io/cosmo-page/)
 - **[Collaborative Planning for UAV-UGV Teams under Operational Constraints via Masked Error-bounded Neuro-Symbolic Diffusion](https://arxiv.org/abs/2610.18850)** (2026) — MEND 用掩码扩散规划无人机与地面车协同充电任务，在执行时通过逻辑动作掩码强制满足运行约束；在真实地图和实体机器人队伍上测试。
+- **[Compass 1: Towards Open-World and Persistent Embodied Navigation from Monocular RGB Videos](https://arxiv.org/abs/2611.12087)** (2026) — 具身导航基础模型：用稀疏关键帧和显式历史地图保留约 2 分钟的视觉历史，并用结构化 VQA 监督学会利用历史。开源 500 小时真实交互和 2000 小时标注网络视频；可用于轮式、四足、人形和无人机，报告开放世界成功率 79.4%（最强基线 17.8%）。 · [项目页](https://www.archon.tech/research/compass1)
 - **[CoopUQ: Robust Multi-Robot Social Navigation via Uncertainty-Aware Cooperative Forecasting](https://arxiv.org/abs/2610.26852)** (2026) — 多机器人社交导航：多机融合特征预测未来占据栅格及其不确定性，约束多智能体强化学习策略据此避开被预测占据或高度不确定的区域。Unity 仿真与真机验证。 · [代码](https://github.com/tasl-lab/CoopUQ) · [项目页](https://coopuq.github.io/)
 - **[CostNav: A Navigation Benchmark for Real-World Economic-Cost Evaluation of Physical AI Agents](https://arxiv.org/abs/2511.20216)** (2026) — 以经济账评估配送机器人导航：在 Isaac Sim 中结合公开财报与伤害数据计算成本、收入与盈亏平衡。报告七种基线方法目前都无法盈利。 · [代码](https://github.com/worv-ai/CostNav)
 - **[Cracking Mobile Manipulation: From Failure Diagnosis to Agentic Robot System](https://arxiv.org/abs/2610.19600)** (2026) — 发现 VLA 在原子技能上 80% 成功率、组合成移动操作后仅 19%，分析失败原因并据此构建智能体式系统。 · [代码](https://github.com/PKU-VaLuE-Lab/Cracking-Mobile-Manipulation)
@@ -96,4 +97,4 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 
 **另见**
 
-[Has GPT-6-Astra Achieved Embodied Intelligence?](vla.zh-CN.md), [Aligning Cyber Space with Physical World](vla.zh-CN.md), [RynnBrain](vla.zh-CN.md), [OmniBrain-0](vla.zh-CN.md), [Automating the Design of Embodied Agent Architectures](vla.zh-CN.md), [DobotTrack](vla.zh-CN.md), [TAMPAgent](manipulation.zh-CN.md), [Knowing Where to Look](manipulation.zh-CN.md), [Agile But Safe](locomotion.zh-CN.md), [Autonomous Trail Racing with a Bicycle Robot](locomotion.zh-CN.md), [OpenNWM](world-models.zh-CN.md), [Jev with Foresight](world-models.zh-CN.md), [ConceptGraphs](perception.zh-CN.md), [Kimera](perception.zh-CN.md), [MosaicIMU](perception.zh-CN.md), [Habitat 3.0](sim.zh-CN.md), [Habitat 2.0](sim.zh-CN.md), [SceneBloom](sim.zh-CN.md), [MARE](sim.zh-CN.md), [Habitat](datasets.zh-CN.md), [Embodied Skill Bench](datasets.zh-CN.md), [Habitat-Matterport 3D Dataset (HM3D)](datasets.zh-CN.md), [Beyond Infraction Scores](datasets.zh-CN.md), [RMMBench](datasets.zh-CN.md), [The Design of Stretch](hardware.zh-CN.md)
+[Has GPT-6-Astra Achieved Embodied Intelligence?](vla.zh-CN.md), [Aligning Cyber Space with Physical World](vla.zh-CN.md), [RynnBrain](vla.zh-CN.md), [OmniBrain-0](vla.zh-CN.md), [Automating the Design of Embodied Agent Architectures](vla.zh-CN.md), [DobotTrack](vla.zh-CN.md), [TAMPAgent](manipulation.zh-CN.md), [Knowing Where to Look](manipulation.zh-CN.md), [Agile But Safe](locomotion.zh-CN.md), [Autonomous Trail Racing with a Bicycle Robot](locomotion.zh-CN.md), [OpenNWM](world-models.zh-CN.md), [Jev with Foresight](world-models.zh-CN.md), [ScanDreamer](world-models.zh-CN.md), [ConceptGraphs](perception.zh-CN.md), [Kimera](perception.zh-CN.md), [MosaicIMU](perception.zh-CN.md), [Habitat 3.0](sim.zh-CN.md), [Habitat 2.0](sim.zh-CN.md), [SceneBloom](sim.zh-CN.md), [MARE](sim.zh-CN.md), [Habitat](datasets.zh-CN.md), [Embodied Skill Bench](datasets.zh-CN.md), [Habitat-Matterport 3D Dataset (HM3D)](datasets.zh-CN.md), [Beyond Infraction Scores](datasets.zh-CN.md), [RMMBench](datasets.zh-CN.md), [The Design of Stretch](hardware.zh-CN.md)

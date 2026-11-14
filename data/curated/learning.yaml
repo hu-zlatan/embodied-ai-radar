@@ -1399,3 +1399,25 @@
   tags: [memory, kv-cache, efficient-inference, embodied-agent, real]
   takeaway_en: "Keeps KV-cache states for memory contents (declarative, procedural, working) that did not change between decisions and recomputes only the rest. Real robot: 83.2% success, per-step time 2.94 → 1.87 s vs MemRL."
   takeaway_zh: "具身智能体的推理框架：在相邻决策之间保留未变化的记忆内容（陈述性、程序性、工作记忆）对应的 KV 缓存，只重算受更新影响的部分。真机任务成功率 83.2%，单步推理时间相比 MemRL 从 2.94 秒降至 1.87 秒。"
+- title: "CS-Pi: Constraint-Satisfying Flow Policy Sampling"
+  type: paper
+  arxiv: "2611.08654"
+  year: 2026
+  venue: CoRL 2026
+  project: https://sumo048.github.io/CS-pi_site/
+  added: 2026-11-14
+  topics: [learning, manipulation]
+  tags: [flow-matching, inference-time-constraints, safety, sampling, franka, real]
+  takeaway_en: "Enforces unseen constraints on a flow policy at inference: project each draw to the nearest safe action, re-add noise scaled to the move, re-run the policy. Reports 81% safe success on a shelf task vs 55% for projection."
+  takeaway_zh: "在推理时为流匹配策略施加训练中没有的约束（如避开新障碍）：把每次采样投影到最近的安全动作，按移动距离加回噪声，再用原策略重新生成，直到得到安全且合理的动作。货架取放任务报告安全成功率 81%（纯投影为 55%），Franka 真机 55%。"
+- title: "Simulation-aided Reinforcement Learning with Control Variates"
+  type: paper
+  arxiv: "2611.12643"
+  year: 2026
+  venue: NeurIPS 2026
+  code: https://github.com/OmerHemo/Simulation-Aided-Reinforcement-Learning-with-Control-Variates
+  added: 2026-11-14
+  topics: [learning, sim]
+  tags: [reinforcement-learning, control-variates, sim-data, offline-rl, mujoco]
+  takeaway_en: "Uses simulator data only as a control variate to cut variance, not to set the learning target, so an inaccurate simulator cannot bias the policy. Policy evaluation, actor-critic and offline RL variants; tested on MuJoCo."
+  takeaway_zh: "仿真数据只作为控制变量用来降低方差，而不直接决定学习目标，因此不准确的仿真器不会把策略带偏。给出策略评估、Actor-Critic 和离线强化学习三种形式，在 MuJoCo 基准上优于直接混合仿真与真实数据的做法。"

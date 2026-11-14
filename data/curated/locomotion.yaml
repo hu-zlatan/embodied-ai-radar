@@ -1832,3 +1832,13 @@
   tags: [bicycle-robot, off-road, semantic-elevation-map, rl, real]
   takeaway_en: "Encodes the trail as a semantic terrain layer, used in RL training and rebuilt onboard from camera + LiDAR at 30 Hz. The UMV bicycle robot raced a 1 km mountain-bike trail at up to 5+ m/s; same recipe also gives parkour."
   takeaway_zh: "把山地车道编码为地形的语义层：仿真中用来定义导航任务，部署时由相机与激光雷达在机载 Orin 上以 30 Hz 重建。UMV 自行车机器人自主跑完约 1 公里非结构化山地车道，速度超过 5 m/s；同一框架也能学出跑酷动作。"
+- title: "Kimodo-Policy: Learning Kinematic Action Models for Humanoid Loco-Manipulation"
+  type: paper
+  arxiv: "2611.11554"
+  year: 2026
+  project: https://kimodo-policy.github.io/
+  added: 2026-11-14
+  topics: [locomotion, vla]
+  tags: [humanoid, loco-manipulation, motion-generation, controlnet, real]
+  takeaway_en: "Uses a frozen text-to-motion generator (Kimodo) as a humanoid policy's action backbone, with ControlNet-style visual conditioning. Reports 72.1% on HumanoidArena and 60% on eight real tasks."
+  takeaway_zh: "提出“运动学动作模型”：把冻结的文本到动作生成模型 Kimodo 当作人形机器人策略的动作主干，通过 ControlNet 式视觉条件和根-身体-手层级协调移动与操作。报告 HumanoidArena 多任务成功率 72.1%，八项真实任务平均 60%，可训练参数 9200 万。"

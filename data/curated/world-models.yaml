@@ -1424,3 +1424,13 @@
   tags: [world-action-model, adaptive-compute, uncertainty, language-grounding, real]
   takeaway_en: "Decides when a world action model should imagine the future: a light router predicts language-object binding uncertainty (mismatch, invisibility, identity drift) and generates video only then. Sim and real."
   takeaway_zh: "决定世界动作模型何时需要“想象未来”：轻量路由器从当前观测和指令预测语言-物体绑定不确定性（指代不符、不可见、身份漂移），只在需要时调用未来画面与动作的联合生成。仿真与真机实验验证。"
+- title: "ScanDreamer: A Map-Grounded World Model for Quadrotor Navigation"
+  type: paper
+  arxiv: "2611.11605"
+  year: 2026
+  code: https://github.com/WANGSHUAIzzzz/ScanDreamer
+  added: 2026-11-14
+  topics: [world-models, navigation]
+  tags: [dreamer, quadrotor, depth, mapping, isaac-sim, sim]
+  takeaway_en: "Dreamer-style quadrotor world model conditioned on an online 2D scan-memory map built from depth, which also gives a geodesic progress reward. Reports 96.3% success in Isaac Sim vs 59.6% for AirDreamer."
+  takeaway_zh: "面向四旋翼的 Dreamer 式世界模型：用深度图和位姿在线构建二维扫描记忆地图，世界模型、策略和评价器都以它为条件，并由它给出测地线进度奖励。在 Isaac Sim 中报告成功率 96.3%，同等交互量下 AirDreamer 为 59.6%。"

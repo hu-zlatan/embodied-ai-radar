@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 139 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 141 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/learning.html) · [English](learning.md)
 
@@ -33,6 +33,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Behavior Uncloning: Distilling Mode Redirection into Policy Weights without Inference-Time Steering](https://arxiv.org/abs/2606.29201)** (2026) — MoRE 通过把临时模式分类器的重定向信号蒸馏进策略权重，并配合保持损失，“去克隆”不想要的行为模式（如刀刃朝前递刀）。八个任务平均成功率提升 44 个百分点，推理零开销。
 - **[Beyond Monotonic Progress: Retry-Supervised Value Learning for Robot Imitation](https://arxiv.org/abs/2606.24633)** (2026) — ReTVL 从不完美示教中学习对失误敏感的价值函数：在全局进度校准之上，以稀疏标注的“重试”关键点构造局部成对偏好，再用该价值为行为克隆的示教片段加权。
 - **[Beyond Validation Loss: Coverage and Reliability Dynamics in Robot Policy Pretraining](https://arxiv.org/abs/2611.01565)** (2026) — 提出跟踪闭环 pass@k（k 次尝试至少成功一次的概率）。pass@1 相同的检查点在后训练中可能表现不同，因此给出兼顾覆盖度与可靠性的离线检查点选择方法。 · [项目页](https://zhanyisun.github.io/robot-policy-learning-dynamics/)
+- **[CS-Pi: Constraint-Satisfying Flow Policy Sampling](https://arxiv.org/abs/2611.08654)** (2026) — 在推理时为流匹配策略施加训练中没有的约束（如避开新障碍）：把每次采样投影到最近的安全动作，按移动距离加回噪声，再用原策略重新生成，直到得到安全且合理的动作。货架取放任务报告安全成功率 81%（纯投影为 55%），Franka 真机 55%。 · [项目页](https://sumo048.github.io/CS-pi_site/)
 - **[Chameleon: Control-Indexed Prospective Memory for Visuomotor Manipulation](https://arxiv.org/abs/2603.24576)** (2026) — 约 6000 万参数的视觉运动策略，带事件记忆，面向“决定性线索早于动作很久出现”的任务，并发布真机基准 Camo-Dataset。报告决策成功率从 22.5% 提升到 80.8%，LIBERO-10 达 87.1%。
 - **[Coverage Aware Active Evaluation for Failure Discovery with Paired Systems](https://arxiv.org/abs/2608.13719)** (2026) — 在有限测试预算下寻找真实系统的失败：用残差建模校正廉价代理（如仿真器）的失败信号，并挑选多样且有数据支撑的场景。发现的失败数最多为随机采样的 2 倍。
 - **[CuraEval: Evaluating Demonstration Curation on Mixed-Skill Robot Data](https://arxiv.org/abs/2610.38221)** (2026) — 对示范数据筛选方法做严格对照：在混合技能的 robomimic 数据上与等量随机子集和全量训练比较，发现某评分几乎等同于按轨迹长度排序；经多重比较校正后，没有任何筛选条件显著优于全量数据训练（CoRL 2026 Workshop 论文）。 · [代码](https://github.com/jiuyixu25/CuraEval)
@@ -100,6 +101,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[SCAPE: Scenario-Conditioned Simulation-Augmented Policy Evaluation](https://arxiv.org/abs/2608.19425)** (2026) — SCAPE 利用少量成对的仿真/真机数据和大量仿真推演，按场景预测策略在真实世界的表现：先校正仿真标签偏差，再用共形预测校准不确定性。在自动驾驶与四足速度跟踪上验证。
 - **[SCoCaT: Success Conditioned Constrained Reinforcement Learning for Spacecraft Docking](https://arxiv.org/abs/2609.06061)** (2026) — 发现基于终止的约束强化学习在目标附近约束收紧时会学会回避目标，并用稠密成功信号的辅助价值网络解决；在航天器对接任务上验证。
 - **[SPARK: Simple Post-training for Adapting pRetrained Knowledge to Robot Control](https://arxiv.org/abs/2611.12102)** (2026) — 不从头预训练，而是对现成视觉基础模型做面向机器人控制的后训练：时间抽象目标保留与动作相关的变化，与原模型的 patch 级对齐保留其语义。在多个基准和真实机械臂上提升成功率与泛化。
+- **[Simulation-aided Reinforcement Learning with Control Variates](https://arxiv.org/abs/2611.12643)** (2026) — 仿真数据只作为控制变量用来降低方差，而不直接决定学习目标，因此不准确的仿真器不会把策略带偏。给出策略评估、Actor-Critic 和离线强化学习三种形式，在 MuJoCo 基准上优于直接混合仿真与真实数据的做法。 · [代码](https://github.com/OmerHemo/Simulation-Aided-Reinforcement-Learning-with-Control-Variates)
 - **[Simultaneous Forward and Inverse Human-in-the-Loop Optimization](https://arxiv.org/abs/2609.22630)** (2026) — 面向用户试验代价高的辅助设备：先训练前向模型从控制策略预测用户结果，用它主动选择查询来学习个体奖励，再在不增加试验的情况下选出最终策略。
 - **[SkillWeaver: Agentic Exploration over Neural Interaction Skills for Scalable Robot Data Generation](https://arxiv.org/abs/2609.36171)** (2026) — VLM 智能体在仿真中调用可复用的强化学习交互技能来探索任务，借助验证、反思与记忆进行验证器引导的树搜索，无需脚本即可生成机器人数据。
 - **[SynthICL: Scalable In-context Imitation Learning with Synthetic Data](https://arxiv.org/abs/2606.08154)** (2026) — 完全用 RGB 合成数据训练的上下文模仿学习策略，并预测下一个子目标图像。报告仅给一条演示时，在 16 个未见真机任务上平均成功率 79%。 · [代码](https://github.com/sNiper-Qian/synthicl) · [项目页](https://synth-icl.github.io)

@@ -2,7 +2,7 @@
 
 _足式运动、人形全身控制与跑酷。_
 
-共 181 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
+共 182 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/locomotion.html) · [English](locomotion.md)
 
@@ -72,6 +72,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking](https://arxiv.org/abs/2606.03985)** (2026) — 在 20 亿帧重定向动作语料上预训练的 GPT 式因果 Transformer，跟踪高动态全身动作，并零次微调泛化到未见动作。 · [代码](https://github.com/GalaxyGeneralRobotics/Humanoid-GPT) · [项目页](https://qizekun.github.io/Humanoid-GPT/)
 - **[HumanoidMimicGen: Data Generation for Loco-Manipulation via Whole-Body Planning](https://arxiv.org/abs/2605.27724)** (2026) — 面向人形机器人的 MimicGen 式数据生成：把少量全身演示适配到新物体位姿，并用移动与操作规划串联，另提出 9 任务基准。协同训练比仅用真机数据提升 20%。 · [代码](https://github.com/NVlabs/humanoidmimicgen) · [项目页](https://humanoidmimicgen.github.io/)
 - **[HumanoidNDM: Closing the Training-Deployment Gap of Motion Tracking via Humanoid Neural Dynamics Model](https://arxiv.org/abs/2610.34126)** (2026) — 在真机上在线微调人形机器人动作跟踪策略：用真实数据训练的本体感知神经动力学模型提供可反传梯度，无需动捕系统。在 Unitree G1 上验证对多种扰动的快速适应。
+- **[Kimodo-Policy: Learning Kinematic Action Models for Humanoid Loco-Manipulation](https://arxiv.org/abs/2611.11554)** (2026) — 提出“运动学动作模型”：把冻结的文本到动作生成模型 Kimodo 当作人形机器人策略的动作主干，通过 ControlNet 式视觉条件和根-身体-手层级协调移动与操作。报告 HumanoidArena 多任务成功率 72.1%，八项真实任务平均 60%，可训练参数 9200 万。 · [项目页](https://kimodo-policy.github.io/)
 - **[LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World](https://arxiv.org/abs/2606.01458)** (2026) — 混合模拟器：网格前景叠加校准过的 3D 高斯泼溅背景，无需遥操作即可生成人形移动操作演示。在 G1 上，仅用其数据训练的 VLA 达到或超过遥操作数据训练的效果。 · [代码](https://github.com/hojjunekim/LEGS) · [项目页](https://hojjunekim.github.io/legs/)
 - **[LadderMan: Learning Humanoid Perceptive Ladder Climbing](https://arxiv.org/abs/2606.05873)** (2026) — CoRL 2026 Spotlight。让人形机器人攀爬多种梯子并在梯上操作；两阶段流程用混合动作跟踪学习多个攀爬专家策略。 · [项目页](https://ladderman-robot.github.io)
 - **[Learning Contact Representation for Leg Odometry](https://arxiv.org/abs/2606.05501)** (2026) — 仅用关节编码器与 IMU 自监督估计足端接触，并作为支撑置信度输入卡尔曼滤波器。报告腿式里程计误差在对比方法中最低。 · [代码](https://github.com/egirgin/leg-odometry-contact-representation)

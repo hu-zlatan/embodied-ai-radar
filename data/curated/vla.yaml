@@ -2784,3 +2784,45 @@
   tags: [vla, memory, 3d-geometry, long-horizon, real]
   takeaway_en: "Stores features from a pretrained visual-geometry model in the VLA's temporal memory, so the policy recalls past scene structure. Reports +30–58 points over π0.5 on three real tasks."
   takeaway_zh: "把预训练视觉几何基础模型的特征写入 VLA 的时序记忆，使策略能回忆过去的场景结构，并用打分规则挑选有用的历史帧。在 LIBERO、LIBERO-Mem、MIKASA-Robo、SimplerEnv 上评测；三个真机任务比 π0.5 提升 30–58 个百分点。"
+- title: "Meituan-Robotics-0: A Vision-Language-Action Foundation Model for Desktop Manipulation"
+  type: paper
+  arxiv: "2611.08577"
+  year: 2026
+  org: Meituan
+  code: https://github.com/Meituan-Robotics/Meituan-Robotics-0
+  project: https://meituan-robotics.github.io/Meituan-Robotics-0/
+  added: 2026-11-14
+  topics: [vla]
+  tags: [vla, foundation-model, cross-embodiment, dagger, flow-matching, real]
+  takeaway_en: "Meituan's tabletop VLA: 15k hours of robot data from 12 embodiments, three-stage training, and Rollback corrections for DAgger without a value model. Reports 93.6% on RoboTwin 2.0; code released."
+  takeaway_zh: "美团的桌面操作 VLA：使用 12 种本体共 1.5 万小时机器人数据，三阶段训练（离散动作预训练、流匹配中训练、真机后训练），并用 Rollback 人工纠正数据做无需价值模型的 DAgger。报告 RoboTwin 2.0 成功率 93.6%，代码已开源。"
+- title: "VICTR: Value-Informed In-Context Learning for Vision-Language-Action Models"
+  type: paper
+  arxiv: "2611.08698"
+  year: 2026
+  project: https://ai4ce.github.io/VICTR/
+  added: 2026-11-14
+  topics: [vla]
+  tags: [in-context-learning, retrieval, progress-estimation, pi0.5, real]
+  takeaway_en: "Retrieves demo chunks by estimated task progress instead of visual similarity, using a value model conditioned on a reference video, and feeds them to π0.5. Reports 6.2% → 23.8% success on unseen real tasks."
+  takeaway_zh: "按估计的任务进度而非视觉相似度检索示范片段：一个以参考示范视频为条件的价值函数估计当前进度，再把对应阶段的片段交给做过上下文学习后训练的 π0.5。报告在未见过的真实任务上成功率从 6.2% 提高到 23.8%。"
+- title: "Thermo-VLA: A Thermal-Aware Vision-Language-Action Model with Gated Residual Modulation for Robotic Manipulation"
+  type: paper
+  arxiv: "2611.11981"
+  year: 2026
+  project: https://j-x-chen.github.io/Thermo-VLA-web/
+  added: 2026-11-14
+  topics: [vla]
+  tags: [thermal, multimodal, humanoid, unitree-g1, real]
+  takeaway_en: "Splits thermal images into hot/cold features injected into RGB tokens via language-conditioned residuals, so a VLA can pick objects by temperature. Reports 0.86 success on a dual-arm Unitree G1, +18 pts over π0.5."
+  takeaway_zh: "把热成像分解为冷、热两类属性特征，通过语言条件残差调制注入 RGB token，让 VLA 能按温度选择目标并连续操作。在双臂 Unitree G1 的四个热相关任务上报告平均成功率 0.86，比直接输入 RGB-热成像的 π0.5 高 18 个百分点。"
+- title: "Streaming Failure Forecasting: VLA Failure Monitors That Keep Learning After Deployment"
+  type: paper
+  arxiv: "2611.11688"
+  year: 2026
+  project: https://sff-research.org
+  added: 2026-11-14
+  topics: [vla]
+  tags: [failure-detection, online-learning, deployment, so-101, real]
+  takeaway_en: "A VLA failure monitor that keeps learning after deployment by refitting only its last linear layer from each episode's success label. Beats a frozen monitor after task or policy switches on 434 real SO-101 runs."
+  takeaway_zh: "让 VLA 失败监测器在部署后持续学习：网络主体固定，每个回合结束后只用成功/失败标签重新拟合最后一层线性层（Jetson CPU 单核每次约 2 毫秒）。在四个 VLA 的 434 条 SO-101 真机记录上，任务或策略版本切换后排序失败的效果优于冻结的监测器。"

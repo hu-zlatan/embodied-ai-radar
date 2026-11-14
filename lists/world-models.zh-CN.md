@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 136 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 137 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/world-models.html) · [English](world-models.md)
 
@@ -94,6 +94,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[STRIPS-WM: Learning Grounded Propositional STRIPS-style World Models from Images](https://arxiv.org/abs/2606.06832)** (2026) — 直接从图像转移数据学习 STRIPS 式符号算子（前提条件、增删效果）和潜在二值谓词，再从起始图与目标图用经典规划求解。优于视觉推演和潜在图搜索等基线。 · [项目页](https://elpislab.org/projects/strips-wm/)
 - **[SWAM: Scaling World Action Models with Cross-Modal Alignment](https://arxiv.org/abs/2611.12870)** (2026) — 在约 4.7 万小时的通用视频、第一人称视频、UMI 与机器人示范上，系统研究世界动作模型学习动作时如何保持语言-视频对齐。混合第一人称视频与 UMI 数据提升控制泛化；开放数据、代码与权重。 · [代码](https://github.com/shaaaaron/SWAM) · [项目页](https://char-lotte-xia.github.io/swam-official/)
 - **[Scaling World Model for Hierarchical Manipulation Policies](https://arxiv.org/abs/2602.10983)** (2026) — 用大规模预训练世界模型做高层规划，把任务拆成子任务并生成目标图像，由底层 VLA 跟随执行。报告同结构 VLA 在新场景中的成功率借此从 14% 提升到 69%。 · [代码](https://github.com/vista-wm/Vista-WM) · [项目页](https://vista-wm.github.io/)
+- **[ScanDreamer: A Map-Grounded World Model for Quadrotor Navigation](https://arxiv.org/abs/2611.11605)** (2026) — 面向四旋翼的 Dreamer 式世界模型：用深度图和位姿在线构建二维扫描记忆地图，世界模型、策略和评价器都以它为条件，并由它给出测地线进度奖励。在 Isaac Sim 中报告成功率 96.3%，同等交互量下 AirDreamer 为 59.6%。 · [代码](https://github.com/WANGSHUAIzzzz/ScanDreamer)
 - **[Seeing and Imagining as One: Unified Video Generation and 4D Perception for Embodied World Modeling](https://arxiv.org/abs/2610.39232)** (2026) — GenSight 把未来视频生成与稠密感知（深度、本体分割、二维光流）放进同一个视频扩散 Transformer，共用一个预测空间。 · [项目页](https://gensight-rbs.github.io/)
 - **[Self-Distilling Future Video Representations for World Action Models](https://arxiv.org/abs/2610.30320)** (2026) — FRED 通过自蒸馏并引入历史观测，让世界动作模型在单步去噪中预测出更好的未来视频表征；报告在长时程、域外环境以及只有人类视频示范的任务上提升明显。 · [代码](https://github.com/suhyeok-jang/FRED) · [项目页](https://huiwon-jang.github.io/FRED/)
 - **[Sensitivity Shaping for Latent Modeling](https://arxiv.org/abs/2606.14585)** (2026) — 对控制变化不敏感的学习动力学会掩盖分布外动作。基于数据支撑的控制敏感性正则保持模型对控制的响应，从而提升分布外检测并使闭环规划更安全。
