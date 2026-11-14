@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "papers": [
   {
    "id": "2611.17213",
@@ -363,30 +363,6 @@
    "fetched": "2026-11-11"
   },
   {
-   "id": "2611.12643",
-   "title": "Simulation-aided Reinforcement Learning with Control Variates",
-   "published": "2026-11-10",
-   "topics": [
-    "learning",
-    "sim"
-   ],
-   "venue": "NeurIPS 2026",
-   "code": [
-    "https://github.com/OmerHemo/Simulation-Aided-Reinforcement-Learning-with-Control-Variates"
-   ],
-   "project": [],
-   "comment": "Accepted as a poster at NeurIPS 2026. 10 pages main text + appendix, 3 figures. Code: https://github.com/OmerHemo/Simulation-Aided-Reinforcement-Learning-with-Control-Variates",
-   "authors": [
-    "Omer Hemo",
-    "Ido Sefi",
-    "Mirco Mutti",
-    "Aviv Tamar",
-    "Kfir Y. Levy"
-   ],
-   "abstract": "Reinforcement Learning (RL) algorithms often rely on data collected from a target environment, which can be expensive and noisy. Although simulators can generate large amounts of additional data, standard simulation mixing approaches, which directly combine simulated and real experience, can degrade performance due to simulator inaccuracies, especially when they bias the solution away from the optimal policy. We propose a conservative simulation-aided learning method based on control variates, where simulated data is used solely to reduce variance in the learning process rather than directly shaping the learning target. We develop our approach for Policy-Evaluation, which is a fundamental building block of RL algorithms. Then we combine it within the actor-critic framework towards policy improvement, as well as extend it towards offline RL scenarios. Experiments on multiple MuJoCo benchmark tasks demonstrate improvements over standard simulation mixing approaches, highlighting control variates as an effective tool for simulation-aided reinforcement learning.",
-   "fetched": "2026-11-10"
-  },
-  {
    "id": "2611.12567",
    "title": "LawKAN: Group-Law Layers for Composition -- When Imposing a Known Law Pays Off",
    "published": "2026-11-10",
@@ -402,58 +378,6 @@
     "Nikolai Gavrilin"
    ],
    "abstract": "Many tasks compose transformations by a known rule: chained rotations in robotics and navigation. Learned models relearn it, compounding error; classical estimators hardcode it and miss hardware deviations. We impose the known structure and learn only the remainder: an exact non-commutative group law sits in the node of a self-contained layer, its edges learn local increments, and a zero-initialized correction psi learns unknown deviations of the law. A pre-training criterion predicts exact representability. On fixed-angle SU(2) composition, a 54-parameter dense edge is the most accurate dense model, at 27x fewer parameters than the strongest fixed-matrix baseline, and lies 0.05 deg above the Bayes floor. On real robot arms, an isolated 306-parameter psi reaches 1.12-1.14 mm versus 1.29-1.33 mm for Gauss-Newton at N >= 60, and the recipe transfers across three vendors and two protocols. The recipe matches classical fits where the data obey the law and loses where the imposed law is not the task's.",
-   "fetched": "2026-11-10"
-  },
-  {
-   "id": "2611.12409",
-   "title": "Bridging Task Planning and Execution for Language-Conditioned Bimanual Manipulation",
-   "published": "2026-11-10",
-   "topics": [
-    "manipulation",
-    "navigation"
-   ],
-   "venue": "Humanoids 2026",
-   "code": [],
-   "project": [
-    "https://advrhumanoids.github.io/bridging-planning-execution/"
-   ],
-   "comment": "8 pages, 6 figures. Accepted at the 2026 IEEE-RAS International Conference on Humanoid Robots (Humanoids 2026). Equal contribution by the first two authors",
-   "authors": [
-    "Emanuele Cuzzocrea",
-    "Giuseppina Iannotti",
-    "Luca Rossini",
-    "Arturo Laurenzi",
-    "Nikos Tsagarakis"
-   ],
-   "abstract": "Robots are increasingly expected to execute natural-language manipulation tasks in real-world environments. This is particularly relevant in household assistance and logistics, where clutter requires reasoning about both task objectives and execution feasibility. This challenge becomes even more pronounced for bimanual humanoid platforms, where coordinating two manipulators introduces additional interaction and kinematic constraints. We present a zero-shot vision-language framework for execution-aware bimanual manipulation that jointly reasons about task objectives and physical feasibility. Planning is grounded in a structured scene representation that combines semantic object relations with execution constraints, enabling the selection of obstacle relocations and execution choices while preserving task semantics. Compatible actions are organised into parallel bimanual stages with explicit pre- and post-conditions. A hierarchical validator evaluates these conditions under perceptual uncertainty and uses stage-level execution history to support local recovery or targeted replanning. Experiments on the CENTAURO hybrid wheeled-legged humanoid robot across nine language-conditioned manipulation scenarios show higher task success than a non-execution-aware baseline. In dedicated failure scenarios, hierarchical validation recovers from execution failures with fewer model queries than always replanning. These results demonstrate the benefits of combining execution reasoning directly into task planning. Videos and additional material are available on the Project Webpage: https://advrhumanoids.github.io/bridging-planning-execution/.",
-   "fetched": "2026-11-10"
-  },
-  {
-   "id": "2611.12383",
-   "title": "PCTac: Mechanochromic Photonic-Crystal Tactile Sensor for Dexterous Manipulation",
-   "published": "2026-11-10",
-   "topics": [
-    "manipulation",
-    "tactile"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://bey0ndt1me.github.io/PCTac-page/"
-   ],
-   "comment": "9 pages, 7 figures",
-   "authors": [
-    "Ruilin Zhang",
-    "Xuanshuo Liu",
-    "Junzhe Dai",
-    "Kefei Wu",
-    "Xuhao Qin",
-    "Ziyuan Jiao",
-    "Wanlin Li",
-    "Yurui Qu",
-    "Chenxi Xiao"
-   ],
-   "abstract": "Modern visuotactile sensors primarily sense contact by imaging the deformation of a compliant interface. Using techniques such as photometric stereo, they can recover detailed contact geometry, often represented as surface normals or depth. However, force-related information typically still needs to be inferred indirectly through calibration, geometric reconstruction, or learned mappings. Mechanochromic photonic-crystal (PC) materials offer an alternative physical encoding mechanism: contact loading changes their periodic microstructure and spectral response, directly transforming local stress into a spatially resolved structural-color field. Despite this potential, PC materials have rarely been explored as visuotactile sensors for closed-loop robot learning. We present PCTac, an open-source mechanochromic PC fingertip that uses a dense hue field as its tactile observation. Loading characterization demonstrates a repeatable relationship between the applied normal load and the observed hue response. We further integrate this representation directly into a Diffusion Policy and evaluate it on three real-robot manipulation tasks. Across 90 physical rollouts, PCTac Hue achieves 68 successes (75.6\\%), compared with 60 (66.7\\%) for PCTac RGB, 57 (63.3\\%) for Wedge RGB, and 29 (32.2\\%) for vision-only. PCTac Hue also achieves the highest observed success rate on each evaluated task, including Perturbed Test-Tube Insertion, where it achieves 16/30 successes versus 13/30 for tactile RGB baselines and 1/30 for vision-only. These results demonstrate the potential of mechanochromic structural color as a compact, load-sensitive tactile representation for robot learning and closed-loop manipulation. Project page: https://bey0ndt1me.github.io/PCTac-page/.",
    "fetched": "2026-11-10"
   },
   {
@@ -580,99 +504,6 @@
    "fetched": "2026-11-10"
   },
   {
-   "id": "2611.12136",
-   "title": "LHNav: Long-Horizon Humanoid Navigation via Multirate Coordination and Physics-Grounded Action Data",
-   "published": "2026-11-10",
-   "topics": [
-    "locomotion",
-    "navigation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://robbyant-research.github.io/LHNav/"
-   ],
-   "comment": null,
-   "authors": [
-    "Xueyang Wang",
-    "Zehong Shen",
-    "Dingkun Wei",
-    "Huaijin Pi",
-    "Changpeng Wang",
-    "Xing Zhu",
-    "Hujun Bao",
-    "Yujun Shen",
-    "Xiaowei Zhou"
-   ],
-   "abstract": "We study humanoid navigation across multiple destinations under long-horizon language instructions. This task is challenging because robots must maintain progress across successive goals while continuously producing natural, stable whole-body motion through confined spaces. However, task decomposition in existing methods does not by itself ensure progress throughout execution, while waypoint-based navigation does not guarantee natural, route-faithful whole-body motion. Our key idea is to organize navigation into three complementary roles operating at different time scales: a Brain for task reasoning, a Cerebellum for local motion generation, and a Brainstem for whole-body execution. We realize this idea in LHNav, an asynchronous system that uses progress and arrival feedback to coordinate navigation goals, VLA motion-token prediction, and whole-body control. To train the Cerebellum for natural, route-faithful motion, we develop a physics-grounded data engine that improves physical tracking of motion references along collision-aware routes and pairs the resulting demonstrations with rendered visual observations. Together, these designs allow task planning to proceed alongside continuous movement and extend single-goal navigation to successive destinations with natural, route-faithful whole-body motion. In simulation, our navigation VLA outperforms OmniNav and DualVLN in single-goal success and motion smoothness, with fewer collisions and falls. Using a VLA trained only on single-goal demonstrations, LHNav achieves a 75.56% success rate on long-horizon navigation tasks. Deployment on the Unitree G1 further demonstrates single-goal navigation and zero-shot long-horizon task execution in real-world environments, including layouts with repositioned objects. Project website: https://robbyant-research.github.io/LHNav/.",
-   "fetched": "2026-11-10"
-  },
-  {
-   "id": "2611.12111",
-   "title": "GAP: Generalized Adaptation Prior for Dexterous Piano Playing",
-   "published": "2026-11-10",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://www.bilibili.com/video/BV1hbWx6QE9u"
-   ],
-   "comment": "See video at https://www.bilibili.com/video/BV1hbWx6QE9u",
-   "authors": [
-    "Jinyi Chen",
-    "Hongyi Li",
-    "Lei Jiang",
-    "Xianwei Liu",
-    "Yanhong Liang",
-    "Yulin Chen",
-    "Yucheng Tao",
-    "Yongbin Jin",
-    "Hongtao Wang"
-   ],
-   "abstract": "Dexterous hands enable versatile manipulation, but policies trained in simulation often degrade on hardware owing to non-idealities, and the high-dimensional action space makes real-world adaptation costly. Piano playing, which requires precise and coordinated multifinger motion, offers a representative testbed. We propose GAP (Generalized Adaptation Prior for Dexterous Piano Playing), a sample-efficient adaptation framework that learns how to adapt, rather than how to act, during simulation pretraining and transfers this adaptation prior to hardware. Between repeated executions, GAP uses feedback to adjust the actions of the next one: a gradient guidance network learns from paired executions how adjusting actions affects playing performance, and its gradients guide these adjustments. In simulation, GAP yields approximately 2.4 times the F1 scores improvement of the existing fast-adaptation baseline for dexterous piano playing under the same interaction budget. The learned prior also generalizes to musical pieces held out from pretraining. On a physical dexterous hand, the same simulation-pretrained prior improves F1 scores by 3.6%-23% across three pieces of varying difficulty after approximately 7 min of adaptation each. These results suggest a practical route to reduce the real-world interaction needed to deploy dexterous hands.",
-   "fetched": "2026-11-10"
-  },
-  {
-   "id": "2611.12087",
-   "title": "Compass 1: Towards Open-World and Persistent Embodied Navigation from Monocular RGB Videos",
-   "published": "2026-11-10",
-   "topics": [
-    "navigation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://www.archon.tech/research/compass1"
-   ],
-   "comment": "Technical Report. Project Page: https://www.archon.tech/research/compass1",
-   "authors": [
-    "Hai Zhang",
-    "Siqi Liang",
-    "Yanjun Guo",
-    "Shoufeng Zhang",
-    "Yunhao Wang",
-    "Hangyu Du",
-    "Haoguang Mai",
-    "Hongchen Li",
-    "Jiazhi Yang",
-    "Jialong Zeng",
-    "Yu Hu",
-    "Chen Chen",
-    "Gangcheng Jiang",
-    "Zishun Zhuo",
-    "Lirui Zhao",
-    "Zhigang Li",
-    "Yu Qiao",
-    "Zhenjie Yang",
-    "Fu Zhang",
-    "Hongyang Li"
-   ],
-   "abstract": "Embodied navigation requires agents to achieve persistent spatial awareness and long-horizon execution stability in open-world environments. However, existing navigation architectures struggle to sustain both capabilities, remaining effective only over a handful of recent frames. We present Compass 1, the first embodied navigation foundation model to unify language understanding and video generation while enabling memory backtracking through nearly 2mins of visual history. Without altering the underlying architecture, we introduce History Representation, which integrates sparse visual keyframes with an explicit History Representation Map to preserve long-term spatiotemporal context. To effectively leverage this history, we further introduce History Utilization, a structured VQA supervision protocol comprising three categories: task-stage grounding, exploration consistency, and spatiotemporal target retrieval, enabling map-grounded reasoning and stable persistent long-horizon navigation. To fuel this system, we establish a complete annotation pipeline for monocular RGB videos and open-source a massive dataset featuring over 500 hours of high-quality real-world interactions and over 2,000 hours of annotated web videos. Trained mainly on the distribution of 1m height camera, Compass 1 generalizes seamlessly across diverse embodiments and scenarios, ranging from indoor environments to pedestrian-dense streets, spanning wheeled robot at 0.35m, quadruped dog at 0.5m, humanoid at 0.85m, and aerial drone at 1.5m. Compass 1achieves a dominant overall success rate of 79.4% across open-world evaluations, compared to 17.8% for the strongest baseline. It demonstrates exceptional zero-shot execution exceeding 90% on foundational tasks, a 250% boost in exploration, and an unparalleled leap from 0% to 58% in challenging persistent history backtracking.",
-   "fetched": "2026-11-10"
-  },
-  {
    "id": "2611.12072",
    "title": "Learning Contextual Motion Constraints for Object Rearrangement Exploration",
    "published": "2026-11-10",
@@ -690,31 +521,6 @@
     "Hangxin Liu"
    ],
    "abstract": "The motion of an articulated part in cluttered surroundings is constrained not only by an object's intrinsic joint limits but also by extrinsic obstacles. However, existing approaches primarily consider object articulation properties alone. Here we present Motion Constraint Prediction Network (MoCo-Net), a two-stream neural network that jointly predicts the continuous motion ranges of articulated parts and obstacle heatmaps highlighting potential collision regions from partial-view point cloud observation. By capturing both internal and external motion constraints, MoCo-Net produces more accurate feasible motion range prediction and obstacles recognition, improves generalization for novel objects in new scenes, and enables robots to construct a scene configuration space for efficient exploration of rearrangement actions. Our experiments show that MoCo-Net's two-stream design enhances each other to deliver more accurate predictions, which subsequently form a compact configuration space for a customized planner to efficiently rearrange the scene.",
-   "fetched": "2026-11-10"
-  },
-  {
-   "id": "2611.11981",
-   "title": "Thermo-VLA: A Thermal-Aware Vision-Language-Action Model with Gated Residual Modulation for Robotic Manipulation",
-   "published": "2026-11-10",
-   "topics": [
-    "vla",
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://j-x-chen.github.io/Thermo-VLA-web/"
-   ],
-   "comment": null,
-   "authors": [
-    "Jingxuan Chen",
-    "Junshi Luo",
-    "Chencheng Dong",
-    "Xiaojian Nie",
-    "Tongge Huang",
-    "Qiang Huang"
-   ],
-   "abstract": "Recent Vision-Language-Action (VLA) models have begun incorporating thermal sensing, but existing approaches typically treat thermal images as ordinary visual inputs, providing limited support for temperature-aware relational reasoning in manipulation. To address this limitation, we propose Thermo-VLA with a ThermoRes Encoder, which decomposes thermal images into cold and hot attribute representations and injects them into the RGB token through language-conditioned residual modulation, enabling temperature-driven target selection and continuous manipulation. We further construct six real-world robotic tasks on a dual-arm Unitree G1 platform, spanning basic grounding to relational reasoning. Experiments show that Thermo-VLA achieves an average success rate of 0.86 across four thermal-dependent tasks, outperforming a pi_0.5 baseline that directly incorporates RGB-thermal observations by 18 percentage points. Under unseen-object and scene variations, Thermo-VLA maintains an average success rate of 0.78, achieving the best generalisation performance among the compared methods. Beyond thermal sensing, we transfer the same residual modulation mechanism to colour attributes and observe consistent improvements in both simulation and real-robot experiments, indicating its potential to generalise beyond thermal attributes. Project website: https://j-x-chen.github.io/Thermo-VLA-web/",
    "fetched": "2026-11-10"
   },
   {
@@ -740,50 +546,6 @@
     "Qingquan Li"
    ],
    "abstract": "Zero-shot object-goal navigation requires autonomous agents to explore unseen environments and locate target objects without task-specific training, posing challenges in perceptual reliability under observation uncertainty and physically grounded goal termination. Although foundation-model-based approaches improve generalization, they remain vulnerable to unreliable long-range perception, hallucination-induced directional bias, and semantically plausible but geometrically incorrect stopping decisions. To address these limitations, we propose CSG-Nav, a zero-shot navigation framework centered on confidence-aware multimodal information fusion. CSG-Nav integrates three complementary fusion mechanisms. First, semantic-source fusion integrates open-vocabulary detection results, detection confidence, scene observations, and relational reasoning to produce more reliable direction-level semantic scores and suppress hallucination-induced directional bias. Second, spatial-confidence fusion weights multi-view semantic evidence using a Gaussian decay function, suppressing unreliable distant observations while accumulating spatially consistent exploration preferences. Third, semantic-geometric decision fusion combines semantic target detection with depth-based 3D localization to support physically grounded stopping decisions. Experiments on HM3Dv1, HM3Dv2, and MP3D demonstrate competitive zero-shot performance, achieving success rates of 58.9%, 71.6%, and 44.3%. Fusion-level ablations and real-world deployments in indoor and outdoor environments further verify the effectiveness and practicality of CSG-Nav for robust navigation under uncertain perception. Code is available at https://xr-ui.github.io/CSGNav.github.io/",
-   "fetched": "2026-11-10"
-  },
-  {
-   "id": "2611.11941",
-   "title": "Flip Anything with Agentic Robotics Self-Learning",
-   "published": "2026-11-10",
-   "topics": [
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://berkeleyautomation.github.io/flipanything/"
-   ],
-   "comment": "CoRL 2026 late breaking. Project webpage https://berkeleyautomation.github.io/flipanything/",
-   "authors": [
-    "Shuangyu Xie",
-    "Kaiyuan Chen",
-    "Ken Goldberg"
-   ],
-   "abstract": "Flipping is a fundamental robotic manipulation skill that requires reorienting a target object in a stable pose on a planar support surface by rotating it 180$^\\circ$ about an axis parallel to the support surface -- think of flipping a coin from heads to tails. Although flipping is a common objective in industrial tasks such as parts inspection, mechanical assembly, and tool use, coding a bimanual robot with grippers to flip diverse objects is a significant challenge. In this paper, we show that a coding agent can autonomously develop and refine object-flipping strategies through iterative learning in physics simulations across diverse object geometries. Progressive skill acquisition, from basic handover to toppling and pushing, robust grasping and sensing, and thin-object manipulation with recovery, improves task success from 24.7% to 95.0%. The resulting graph-based code integrates high-level strategy selection with reactive control, enabling multi-stage flipping on physical robots.",
-   "fetched": "2026-11-10"
-  },
-  {
-   "id": "2611.11894",
-   "title": "Distilling Instructions into Weights: Closed-Form Edits Fix a Robot Policy's Misreading",
-   "published": "2026-11-10",
-   "topics": [
-    "vla",
-    "learning"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/adeeb10abbas/weightsmith"
-   ],
-   "project": [
-    "https://ali-adeeb.com/weightsmith/"
-   ],
-   "comment": "23 pages, 7 figures. Project page with videos: https://ali-adeeb.com/weightsmith/ ; code and benchmark: https://github.com/adeeb10abbas/weightsmith",
-   "authors": [
-    "Ali-Adeeb Abbas",
-    "Esmaeil Seraj"
-   ],
-   "abstract": "Generalist robot policies often fail at one step of a task they can otherwise perform. We ask whether such a failure can be repaired by editing the policy's weights directly, without gradients, training data, or a change to the instruction. Told to put the cube then the banana in the bowl, a zero-shot $π_{0.5}$ vision-language-action policy in RoboLab releases the cube before it reaches the bowl. Replaying 21 of these decisions under rewordings shows that it binds \"in the bowl\" to the wrong object. Closed-form instruction distillation copies the per-layer effect of an explicit rewording into the language model's MLP weights. On 128 held-out seeds, success rises from 27 to 106 episodes, with 81 fixed and 2 broken ($p=7\\times10^{-22}$), while an update of the same size in random directions leaves success unchanged. The edit also lifts two other tasks without detectable harm on the remaining 13, and a variant that stores 0.16% of the parameter count keeps most of its effect. Placed in the action expert or action head instead, the same distillation helps less or not at all. Our released tool reproduced the fix end to end on new held-out seeds, from 8/64 to 36/64. Edits aimed at perception, a missing grasp, contact physics, or the gripper threshold did not help, and of seven blind Claude Opus editors, only the one given the misread instruction produced an edit that passed held-out scoring. These results suggest that weight edits work best when a known-good input already exists to distil. Because reruns with unchanged weights flip about a third of paired outcomes, evaluations should pair seeds, rerun the unedited policy, and confirm gains on held-out seeds.",
    "fetched": "2026-11-10"
   },
   {
@@ -858,58 +620,6 @@
    "fetched": "2026-11-10"
   },
   {
-   "id": "2611.11688",
-   "title": "Streaming Failure Forecasting: VLA Failure Monitors That Keep Learning After Deployment",
-   "published": "2026-11-10",
-   "topics": [
-    "vla"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://sff-research.org"
-   ],
-   "comment": "25 pages, 13 figures, 9 tables. A short version was accepted at the Sim2Real2Field and EEAI workshops at CoRL 2026. Project page: https://sff-research.org",
-   "authors": [
-    "Amit Jadhav",
-    "Shaurya Beriwala",
-    "David Q. Liu",
-    "Yanfei Liu"
-   ],
-   "abstract": "Failure monitors for vision-language-action (VLA) policies are trained offline and then frozen. After deployment, lighting, objects and cameras drift, and the policy itself is updated or moved to new tasks. On recorded real-robot runs, after a switch of task or policy version, a frozen monitor fit on the old task ranks failures little better than chance. We present Streaming Failure Forecasting (SFF), a monitor that keeps learning from the one label every episode provides: whether it succeeded. SFF keeps the offline monitor's network fixed and refits only its last linear layer after each episode, at 2.18 ms per policy call on a Jetson CPU core. Its alarm threshold moves only after successes, which in simulation kept false alarms near target except when two drifts came at once. With every setting locked before testing, SFF ranks failures better than the same monitor kept frozen on 4 of 5 simulated test suites under unannounced drift, and above resetting on detected drift on every suite. Carried with its locked learner settings to 434 recorded runs of four VLAs on real SO-101 arms, replayed across unannounced switches of task or policy version, it ranks failures better than the frozen monitor for every VLA and, in an exploratory comparison, above a full reset at the true switch. A deployed failure monitor need not stay frozen: refitting its readout from outcomes is cheap and helps after the changes we tested.",
-   "fetched": "2026-11-10"
-  },
-  {
-   "id": "2611.11605",
-   "title": "ScanDreamer: A Map-Grounded World Model for Quadrotor Navigation",
-   "published": "2026-11-10",
-   "topics": [
-    "world-models",
-    "navigation"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/WANGSHUAIzzzz/ScanDreamer"
-   ],
-   "project": [],
-   "comment": "8 pages, 6 figures, 3 tables. Submitted to AICAP 2027; decision pending",
-   "authors": [
-    "Yunyi Gao",
-    "Yixing Shi",
-    "Yize Liu",
-    "Hai-Duong Tran",
-    "Nhat-Hoang P. Nguyen",
-    "Shuai Wang",
-    "Yi Deng",
-    "Shengming Liu",
-    "Sim Kuan Goh",
-    "Duc-Thinh Pham",
-    "Sameer Alam"
-   ],
-   "abstract": "Quadrotors inspecting buildings and tunnels must navigate unknown clutter with a forward-facing depth camera whose limited field of view constrains scene understanding and collision-avoiding navigation. Recent world-model agents learn navigation through imagined experience (e.g., AirDreamer), but remain data-intensive and often lack explicit geometric memory and awareness of what the camera can observe. We propose ScanDreamer, a map-grounded world model that constructs an online 2D scan-memory map from depth images and vehicle pose. Our world model, actor, and critic are conditioned on this map, which also defines a geodesic progress reward. Moreover, a forward-cone penalty discourages horizontal motion outside the camera's viewing direction. During imagination, ScanDreamer propagates the quadrotor pose over a frozen map and derives progress and wall-contact signals from the mapped geometry. We train ScanDreamer for 0.8 million environment steps (5.5 h on one GPU) and evaluate it in NVIDIA Isaac Sim over 1560 episodes spanning unseen layouts and parameter ranges. Across three seeds (mean $\\pm$ SD), ScanDreamer achieves 96.3 $\\pm$ 0.3% success with 3.6 $\\pm$ 0.3% collision, compared with 59.6 $\\pm$ 3.0% success and 28.8 $\\pm$ 2.8% collision for AirDreamer at the same online-interaction budget. Removing the forward-cone penalty increases collisions to 9.9 $\\pm$ 3.1%. These results show that combining explicit map memory, map-grounded imagination, and perception-aware motion substantially improves navigation performance and data efficiency. The source code is available at https://github.com/WANGSHUAIzzzz/ScanDreamer.",
-   "fetched": "2026-11-10"
-  },
-  {
    "id": "2611.11601",
    "title": "Kinora: A Versioned Workflow for Text-to-Motion Generation, Robot Retargeting, and Interactive Validation",
    "published": "2026-11-10",
@@ -926,40 +636,6 @@
     "Fangcheng Jin"
    ],
    "abstract": "Motion generation tools produce candidate trajectories, but interactive robot authoring also requires recoverable execution, traceable edits, explicit geometry, and model-specific validation. We present Kinora, a system that connects text-to-motion generation, a motion library, local agent tools, robot retargeting, and trajectory refinement through versioned artifacts. The current release uses an independently specified 52-joint authoring rig and procedural skeleton previews, separating the distributed human geometry from externally installed generation models and robot assets. Human-motion edits preserve frames outside a selected interval, while robot edits create immutable candidates whose reports govern acceptance and export. We evaluate server 0.5.1 and Gadget 0.15.2 with 156 core regression test executions, 49 Gadget executions, four CUDA generation/editing cases, a 30-frame G1 retargeting check, and a 3,600-frame synthetic G1 fixture paired with a suspended negative control. All four CUDA cases passed their numerical gates; the turning splice nevertheless retained a 14.3 cm support-foot drift proxy warning. The G1 positive fixture completed bounded simulation replay, whereas the suspended control was quarantined before replay. These results support selected integration and preservation contracts. They do not establish semantic-quality improvements, population-level feasibility, or hardware safety.",
-   "fetched": "2026-11-10"
-  },
-  {
-   "id": "2611.11554",
-   "title": "Kimodo-Policy: Learning Kinematic Action Models for Humanoid Loco-Manipulation",
-   "published": "2026-11-10",
-   "topics": [
-    "manipulation",
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://kimodo-policy.github.io/"
-   ],
-   "comment": "23 pages, 14 figures, 4 tables. Project page: https://kimodo-policy.github.io/",
-   "authors": [
-    "Yunheng Wang",
-    "Jiaxi Zhang",
-    "Wei Lu",
-    "Yuetong Fang",
-    "Taowen Wang",
-    "Yixiao Feng",
-    "Shuning Zhang",
-    "Junzhe Xu",
-    "Yichi Wang",
-    "Zizhao Yuan",
-    "Kailun Huang",
-    "Lusong Li",
-    "Mingqian Zhou",
-    "Zecui Zeng",
-    "Renjing Xu"
-   ],
-   "abstract": "Humanoid loco-manipulation requires continuous coordination of high-dimensional whole-body motion to realize task objectives. While vision-language-action models and world action models transfer semantic and visual-dynamics priors to robot control, these priors do not necessarily capture the structure of robot motion. We introduce Kinematic Action Models (KAMs), a paradigm that treats whole-body motion as a direct pretraining target and uses a pretrained motion generator as the primary action-generation backbone. KAMs ground learned temporal and cross-body coordination priors through task conditioning, visual observations, and execution feedback. We present Kimodo-Policy as an initial instantiation, combining a frozen Kimodo text-to-motion backbone with lightweight ControlNet-based visual conditioning. A root-body-hand hierarchy coordinates locomotion and manipulation, while motion-history conditioning and repeated action-chunk prediction bridge motion synthesis and closed-loop control. Following large-scale loco-manipulation pretraining, the policy achieves the highest overall success among compared policies on multi-task HumanoidArena (72.14%), competitive performance on SIMPLE, and 60% mean success across eight real-world tasks, with 678M parameters (92M trainable). Ablations support the contribution of the pretrained motion backbone. Together, these results provide initial evidence for motion generation as a complementary foundation for humanoid action learning.",
    "fetched": "2026-11-10"
   },
   {
@@ -1168,26 +844,6 @@
    "fetched": "2026-11-10"
   },
   {
-   "id": "2611.10148",
-   "title": "BATCH: Behavior Alignment for Cross-Embodiment Learning from Humans",
-   "published": "2026-11-10",
-   "topics": [
-    "vla"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://batch-embodiment.github.io/"
-   ],
-   "comment": "Project website: https://batch-embodiment.github.io/",
-   "authors": [
-    "Zeyi Liu",
-    "Shuran Song"
-   ],
-   "abstract": "Human demonstrations provide a scalable source of diverse manipulation data, but leveraging them for robot learning remains challenging due to differences in embodiment, viewpoint, action spaces, and temporal structure. We introduce BATCH, a cross-embodiment learning framework that explicitly aligns human and robot behaviors. BATCH learns self-supervised temporal representations with a cycle-consistency objective to establish cross-embodiment correspondences without manual annotation. We further introduce two complementary training objectives that leverage these correspondences within an autoregressive videoaction diffusion model: behavior-aligned co-training and human-to-robot style transfer. On real-world manipulation tasks, BATCH improves generalization to unseen task configurations compared with training on unaligned data and prior cross-embodiment baselines, with additional gains from the style-transfer objective. Our results demonstrate that explicit behavior alignment enables more effective transfer from human demonstrations to robot policies.",
-   "fetched": "2026-11-10"
-  },
-  {
    "id": "2611.09959",
    "title": "A four-view smartphone video dataset of a robot-held flexible strip, with camera poses and a 3D LaGSplat baseline",
    "published": "2026-11-10",
@@ -1333,78 +989,6 @@
    "fetched": "2026-11-09"
   },
   {
-   "id": "2611.08698",
-   "title": "VICTR: Value-Informed In-Context Learning for Vision-Language-Action Models",
-   "published": "2026-11-09",
-   "topics": [
-    "vla"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://ai4ce.github.io/VICTR/"
-   ],
-   "comment": "11 pages, 8 figures, 4 tables. Project page: https://ai4ce.github.io/VICTR/",
-   "authors": [
-    "Luca Macesanu",
-    "Tianluo Zhang",
-    "Aditya Patil",
-    "Archit Sharma",
-    "Kevin Angers",
-    "Christopher M. Clark",
-    "Chen Feng",
-    "Juexiao Zhang"
-   ],
-   "abstract": "Recent advances in robot foundation models have highlighted the potential of in-context learning (ICL) for adapting robot behavior from demonstrations without further fine-tuning. Previous work has used retrieval-based post-training to equip pretrained vision-language-action (VLA) models with the capability for ICL by teaching them to condition action predictions on retrieved visually-relevant demonstration chunks. However, the effectiveness of retrieval hinges on selecting context relevant to the current execution stage, which visual similarity alone may not capture. We introduce VICTR, a framework enabling in-context learning in VLAs via progress-informed context retrieval built around an In-Context Value Function Estimator (IC-VFE). IC-VFE conditions on a reference demonstration video, a language instruction and the current observation to estimate task-relative progress. By conditioning progress estimation on a reference demonstration, IC-VFE can align the current state with a demonstrated execution even for tasks unseen during training. VICTR uses the estimated progress to select demonstration chunks at corresponding stages of execution and supplies them to a $π_{0.5}$ policy post-trained for in-context action generation. On unseen out-of-domain real-world manipulation tasks, VICTR raises the success rate from 6.2% for a fine-tuned $π_{0.5}$ baseline to 23.8% and more than doubles the task progress rate, from 28.9% to 55.5%. Project page with code, data and videos: https://ai4ce.github.io/VICTR/",
-   "fetched": "2026-11-09"
-  },
-  {
-   "id": "2611.08664",
-   "title": "ForPC: Force-Aware Whole-Body Control for Precise Humanoid Cart Pushing",
-   "published": "2026-11-09",
-   "topics": [
-    "manipulation",
-    "locomotion"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://roboforpc.github.io/"
-   ],
-   "comment": "14 pages, 7 figures, 4 tables. Project website: https://roboforpc.github.io/. Corresponding author: Cheng Cheng",
-   "authors": [
-    "ZhenYu Zou",
-    "Xing Liu",
-    "ShiChuang Wang",
-    "YunLong Dong",
-    "LiNan Deng",
-    "Feng Hua",
-    "Jun Wan",
-    "Cheng Cheng"
-   ],
-   "abstract": "Humanoid robots are expected to take over strenuous material handling in manufacturing, logistics, and healthcare, where operating existing wheeled carts would let them move heavy loads without modifying the workplace. However, humanoid cart pushing remains challenging because the bimanual grasp closes a force-coupled loop in which the contact wrenches that drive the cart also disturb the robot's balance, and payload changes alter the coupled dynamics. We propose ForPC, a force-aware whole-body control framework that regulates cart velocity through two-stage reinforcement learning. A locomotion prior is first trained under varied hand loads and upper-body postures to provide balance support. A force latent and a state latent are then inferred from onboard observations, without external force sensors, and fed to a residual policy that coordinates bounded arm, waist, and leg adjustments with base-velocity commands. Multi-objective rewards penalize bimanual internal opposition, grasp slip, and actuator saturation, encouraging the policy to apply contact force on demand without human demonstrations. Sim-to-sim experiments show that ForPC reduces cart-velocity RMSE by up to 68.2% relative to a locomotion-only baseline (Loco-only) and cross-track RMSE by up to 74.2% on the multi-bend route. Trained solely in simulation, the policy also transfers to a physical Unitree G1 without real-world training or fine-tuning and, with no payload-specific adjustment, pushes a cart carrying up to 30 kg at 0.5 m/s. These results suggest that humanoid robots could eventually replace humans for efficient material handling in daily life.",
-   "fetched": "2026-11-09"
-  },
-  {
-   "id": "2611.08654",
-   "title": "CS-Pi: Constraint-Satisfying Flow Policy Sampling",
-   "published": "2026-11-09",
-   "topics": [],
-   "venue": "CoRL 2026",
-   "code": [],
-   "project": [
-    "https://sumo048.github.io/CS-pi_site/"
-   ],
-   "comment": "Accepted to CoRL 2026. Project page: https://sumo048.github.io/CS-pi_site/",
-   "authors": [
-    "Soumojit Bhattacharya",
-    "Oliver Kroemer",
-    "Shubham Tulsiani"
-   ],
-   "abstract": "A flow-matching policy deployed in the field must often satisfy a constraint that was absent from its demonstrations, such as avoiding an obstacle it has never seen. Retraining for every new constraint is impractical, so the constraint must be enforced at inference time. Enforcing it must not discard what the policy learned: an action the policy would rarely sample may avoid the obstacle yet fail the task. We therefore want actions that are both safe, satisfying the constraint, and plausible, remaining likely under the policy. Gradient guidance, the most common approach, steers noisy states, so it must evaluate its cost on the policy's running estimate of the clean action; when the policy is uncertain between passing left or right of an obstacle, this estimate is their average and can pass straight through it. We instead build on rejection and projection. Rejection redraws actions until one is safe: every output is plausible, but the wait is intractable when safe actions are rare. Projection moves an action to the nearest safe one: it is efficient, but the result need not be plausible. Our key insight is that flow-matching sampling lets us combine the two, keeping projection's efficiency and rejection's plausibility. CS-Pi, our draw-project-renoise sampler, projects each draw to the nearest safe action, adds noise back scaled to how far the projection moved it, and re-runs the unmodified policy until a draw is safe. Replacing only the projection step extends CS-Pi to continuous costs. Across a 2D diagnostic, a 7-DoF shelf pick-and-place, an orientation preference, and a zero-shot Franka deployment, CS-Pi reaches 81% safe success on the shelf and 55% on hardware, against 55% and 40% for projection, while staying plausible.",
-   "fetched": "2026-11-09"
-  },
-  {
    "id": "2611.08578",
    "title": "HaNDF: Object-Conditioned Geometric Neural Hand Distance Fields",
    "published": "2026-11-09",
@@ -1422,158 +1006,6 @@
    ],
    "abstract": "We propose, HaNDF, object-conditional neural distance fields as data-driven priors for modeling the plausible hand-object configurations, in the product manifold of hand articulations. While recent unconditional generative priors showed success in modeling human pose, hands are versatile articulated bodies often found in interaction with other objects. This makes it crucial to develop a generative prior which can model the plausible hand poses conditioned on the object under interaction. To this end, our HaNDF proposes a geometry-aware, object-conditioned neural distance field, representing the plausible articulations in the zero-level set of a conditional field. We leverage tools from Riemannian geometry to (i) represent plausible hands in the zero level-set of an object-induced neural field, and (ii) project a given pose onto this field. Using HaNDF, we can also optimize for a plausible condition, determining the object under interaction. Our extensive evaluations demonstrate that our HaNDF provides a flexible and powerful prior for hand-object interaction, suitable for applications such as pose refinement, reconstruction under occlusion, and physically plausible manipulation synthesis.",
    "fetched": "2026-11-09"
-  },
-  {
-   "id": "2611.08577",
-   "title": "Meituan-Robotics-0: A Vision-Language-Action Foundation Model for Desktop Manipulation",
-   "published": "2026-11-09",
-   "topics": [
-    "vla",
-    "manipulation"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/Meituan-Robotics/Meituan-Robotics-0"
-   ],
-   "project": [
-    "https://meituan-robotics.github.io/Meituan-Robotics-0/"
-   ],
-   "comment": "25 pages. Project page: https://meituan-robotics.github.io/Meituan-Robotics-0/ ; Code: https://github.com/Meituan-Robotics/Meituan-Robotics-0",
-   "authors": [
-    "Meituan Robotics Team",
-    "Caicheng Wang",
-    "Chen Zhao",
-    "Chengpeng Jin",
-    "Duo Xu",
-    "Fengjiao Chen",
-    "Guanglu Wan",
-    "Heqing Yang",
-    "Jia Wang",
-    "Jiacong Zhou",
-    "Jie Hu",
-    "Jiyuan Ru",
-    "Lingfeng Zhang",
-    "Linjiang Huang",
-    "Manyuan Zhang",
-    "Ningchu Liu",
-    "Shijie Zhou",
-    "Si Liu",
-    "Shuo Li",
-    "Tianyi Zhang"
-   ],
-   "abstract": "We present Meituan-Robotics-0 (MR0), a vision-language-action foundation model and embodied-agent system for stationary-base desktop manipulation. MR0 combines 147 million vision-language samples with 15,060 hours of curated robot trajectories spanning 12 embodiments. A three-stage training recipe aligns multimodal representations with robot behavior through discrete action-token pre-training, transfers these priors to continuous cross-embodiment control through flow-matching mid-training, and adapts the policy through real-world post-training. We introduce Rollback, which pairs replaced policy segments with human corrections to provide positive and negative supervision for CFG-DAgger without value learning or advantage labeling. A unified end-effector interface supports heterogeneous embodiments, while asynchronous action-chunk merging maintains smooth execution under variable inference latency. An event-driven agent maintains persistent task events and reassesses plans when progress or feasibility changes, enabling cross-task retrieval and conditional task resumption. MR0 achieves 93.6% success on RoboTwin 2.0 and ranks fifth in the RoboDojo VLA track. Under matched HG-DAgger post-training, MR0 achieves higher average success rate and progress score than $π_{0.5}$ across three real-robot tasks. On Ethernet insertion, CFG-DAgger trained with Rollback data reaches 70% success and a progress score of 0.90. Qualitative agent deployments demonstrate cross-task event retrieval and recovery from temporarily unsatisfied task conditions.",
-   "fetched": "2026-11-09"
-  },
-  {
-   "id": "2611.08352",
-   "title": "USB Gym: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching",
-   "published": "2026-11-06",
-   "topics": [],
-   "venue": null,
-   "code": [
-    "https://github.com/tohnperfect/USBGym"
-   ],
-   "project": [],
-   "comment": "75 pages; supplementary material (62 pages) as an ancillary file. Submitted to Computer Methods and Programs in Biomedicine. Code: https://github.com/tohnperfect/USBGym",
-   "authors": [
-    "Thanapong Intharah",
-    "Zhichao Gao",
-    "Yiliang Liu",
-    "Hao Dong"
-   ],
-   "abstract": "Background and Objective: Our main goal is ultrasound guidance: moving a probe until its image matches a target view. Published methods for each part of a guide are evaluated in separate simulators. We asked whether these methods, combined into one guide, are good enough. Methods: We built USB Gym, a testbed whose standard engine simulates ultrasound from public patient CT, with a network drawing organ textures from CT labels. Its guide has three replaceable parts (slots), an organ segmenter, a controller and a reward, which received 20 published methods, each run on the same 60 episodes of six held-out patients. In each slot, a published method replaced ours only if detectably better on these patients. The better of this combination and our original guide on 20 new CTs is the benchmark baseline. A pose oracle, reading the exact probe pose available only in simulation, set the reference. The results below are exploratory. Results: On these CTs, the probe started on average 16.0 mm from the target view; the pose oracle brought it to 1.5 mm. Of the results known when the combination was fixed, only an image-similarity reward (SSIM) was slightly but detectably better, so the combination was our guide with that reward. This combination was the benchmark baseline, ending at 13.7 mm (16% of the oracle's progress). Conclusions: Combining untuned published methods with ours did not guide the probe near the target view; the task remains under-explored. The testbed accepts new methods; no guide was tested on hardware.",
-   "fetched": "2026-11-06"
-  },
-  {
-   "id": "2611.08318",
-   "title": "Learning the Task or Learning the Verifier? Rethinking Criteria Exposure in Embodied Self-Improvement",
-   "published": "2026-11-06",
-   "topics": [
-    "datasets"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://dagroup-pku.github.io/PyRUA-Lean/RSIJudge"
-   ],
-   "comment": "22 pages, 8 figures, 10 tables. Project page: https://dagroup-pku.github.io/PyRUA-Lean/RSIJudge",
-   "authors": [
-    "Wenbo Huang",
-    "Jianxin Bi",
-    "Shunyu Yang",
-    "Ruiyang Si",
-    "Rui Ni",
-    "Qiang Wang",
-    "Shulong Jiang",
-    "Yintianrun Zhang",
-    "Feixiang Ruan",
-    "Kewei Zhang",
-    "Ye Huang",
-    "Shukai Gong",
-    "Daquan Zhou"
-   ],
-   "abstract": "Self-improving embodied agents are increasingly being developed and compared on robot simulation benchmarks. Several recent works expose the benchmark's success criteria to the learning agent, a practice we call Criteria Exposure (CE). These criteria, originally written to verify policies trained by imitation learning, often demand more than the corresponding language instructions, so a score from such a verifier may not faithfully reflect whether the instructed task was completed, especially for robot-control programs written by an agent. As embodied coding agents report ever higher benchmark scores, a natural question arises: when a coding agent is exposed to the benchmark's criteria, does it generate code that better performs the instructed task, or code that simply overfits to the verification criteria? We conduct controlled experiments with a self-improving agent with and without CE, and find that with CE the agent quickly produces code with a higher success rate under the given criteria, but this advantage disappears when the criteria are changed slightly without departing from the original instructions. More importantly, the skills the agent develops under CE transfer poorly across tasks. We further propose instruction-faithful criteria and show that they better reflect the performance of agent-generated programs.",
-   "fetched": "2026-11-06"
-  },
-  {
-   "id": "2611.08295",
-   "title": "Transformer-Based Trajectory Prescription for sEMG-Optimizing Robot-Mediated Rehabilitation",
-   "published": "2026-11-06",
-   "topics": [],
-   "venue": "CoRL 2026",
-   "code": [],
-   "project": [],
-   "comment": "Accepted for presentation and publication in the 2026 Conference on Robot Learning (CoRL). PMLR, 2026",
-   "authors": [
-    "Gabriel Parra",
-    "Kimia Khoshnami",
-    "Daniel S. Brown",
-    "Laura A. Hallock"
-   ],
-   "abstract": "Robot-mediated rehabilitation has the potential to deliver high-intensity, individualized therapy, but existing systems (which have not consistently improved outcomes) typically prescribe kinematic trajectories rather than explicitly targeting the neuromotor activations thought to support recovery. To address this gap, and ultimately enable activation-optimizing rehabilitation robot behavior, we present a personalizable transformer-based model mapping individuals' muscle activations (as measured via surface electromyography) to prescribed contact force trajectories when interacting with an end-effector rehabilitation robot. The model uses a transformer encoder-decoder leveraging rotary positional embeddings (RoPE) to generate a latent representation of trajectory-relevant and user-specific neuromotor factors, and augments trajectory prediction with flow matching to produce a distribution over plausible prescriptions biased toward the training distribution. Using data from 16 healthy participants completing 15 isometric trajectory tracking tasks, we evaluate generalization across held-out tasks and users, as well as the feasibility of user-specific fine-tuning within a therapy-session timescale. The model achieves mean trajectory prediction errors of <8% on held out tasks and users, with effectively instantaneous deterministic inference and sub-second sampling of trajectory distributions. An initial test using the model during live rehabilitation tasks demonstrates that, on average, participants reach the target neuromotor activations with just 15% error accumulated throughout the task. These results provide a proof of concept for data-driven, activation-targeted trajectory prescription in robot-mediated rehabilitation and establish a foundation for future validation in clinical populations. Data and code have been open-sourced as part of the OpenRobotRehab project on SimTK.",
-   "fetched": "2026-11-06"
-  },
-  {
-   "id": "2611.08111",
-   "title": "Reinforcing End-to-End Autonomous Driving Safety via Negative-Aware Planning in a Unified World-Action Model",
-   "published": "2026-11-06",
-   "topics": [
-    "world-models"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/Zizizi-hao/NegWAM"
-   ],
-   "project": [],
-   "comment": null,
-   "authors": [
-    "Zihao Zhang",
-    "Xinyu Zhang",
-    "Bing Zeng",
-    "Xingyu Chen",
-    "Zhenning Li",
-    "Bin Yu",
-    "Ziyuan Pu"
-   ],
-   "abstract": "World-action models (WAMs) jointly model future traffic states and driving actions for end-to-end autonomous driving in intelligent transportation systems. However, their action learning remains dominated by expert-trajectory imitation, leaving unsafe alternatives close to expert trajectories insufficiently constrained. To improve WAM robustness in safety-critical scenarios, we propose NegWAM, a safety post-training framework for unified WAMs that learns explicit safety boundaries from near-expert failure trajectories. NegWAM constructs negative trajectories that are geometrically close to the expert trajectory yet carry safety risks, uses them as repulsive anchors to steer predictions away from dangerous behavior, and encodes them as scene-conditioned rider tokens to learn scene--trajectory compatibility. During training, NegWAM jointly optimizes the flow-matching and near-expert negative objectives, while the auxiliary rider branch is discarded at inference, incurring no additional overhead. On NAVSIM v2, NegWAM achieves 40.4 EPDMS on navhard, a 4.1% relative improvement over the strongest compared scorer-free WAM baseline, and achieves 93.3 EPDMS on navtest. These results demonstrate that NegWAM achieves strong performance in safety-critical scenarios while preserving routine-driving performance. Zero-shot closed-loop evaluation on HUGSIM further demonstrates cross-benchmark generalization. The code is available at https://github.com/Zizizi-hao/NegWAM.",
-   "fetched": "2026-11-06"
-  },
-  {
-   "id": "2611.07900",
-   "title": "Structure from Collision via Hypothesis-Space Reasoning",
-   "published": "2026-11-06",
-   "topics": [],
-   "venue": "WACV 2027",
-   "code": [],
-   "project": [
-    "https://www.kecl.ntt.co.jp/people/kaneko.takuhiro/projects/sfc-hypothesis/"
-   ],
-   "comment": "Accepted to WACV 2027. Project page: https://www.kecl.ntt.co.jp/people/kaneko.takuhiro/projects/sfc-hypothesis/",
-   "authors": [
-    "Takuhiro Kaneko"
-   ],
-   "abstract": "Knowledge of the hidden interior structure of an object, including the presence and location of cavities, is essential for predictive simulation, robotic manipulation, and nondestructive inspection. However, such cavities leave no direct signature on the static visible surface, making collision-induced deformation one of the few cues used to infer their presence. Structure from Collision (SfC) addresses this problem by recovering the hidden interior structure of an object from multiview observations of a collision event. SfC is challenging for two reasons: hidden cavities are only indirectly observable through surface motion, and voids correspond to the absence of material, making direct optimization using standard density representations difficult. The density-based SfC baseline inherits both difficulties. Surface-matching gradients do not directly indicate the cavity location, while density gradients can be weak or uninformative inside or near void regions. Therefore, we reformulate SfC as hypothesis-space reasoning, representing hidden cavities as explicit structural hypotheses whose variables encode available structural assumptions rather than relying on implicit density updates. A global stage performs gradient-free optimization over this hypothesis space using forward-only material point method (MPM) simulation. A local stage then refines the selected hypothesis as a Lagrangian particle system through gradient-based optimization using differentiable MPM simulation. On the SfC benchmark, our method improves hidden-structure reconstruction and future prediction over the density-based SfC baseline. Interior-topology stress tests and robustness analyses characterize its scope and limitations. The project page is available at https://www.kecl.ntt.co.jp/people/kaneko.takuhiro/projects/sfc-hypothesis/.",
-   "fetched": "2026-11-06"
   }
  ]
 }
