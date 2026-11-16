@@ -1,30 +1,74 @@
 {
- "updated": "2026-11-15",
+ "updated": "2026-11-16",
  "papers": [
   {
-   "id": "2610.31162",
-   "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
-   "upvotes": 39,
-   "hf_date": "2026-10-26",
-   "published": "2026-10-23",
+   "id": "2611.18397",
+   "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
+   "upvotes": 55,
+   "hf_date": "2026-11-16",
+   "published": "2026-11-16",
    "topics": [
     "vla"
    ],
    "authors": [
-    "Zecong Tang",
-    "Zian Guan",
-    "Yuncheng Guo",
-    "Zhanqiu Zhang",
-    "Yiwen Guo",
-    "Bo Dai"
+    "Run Luo",
+    "Kuan Zhang",
+    "Qi Deng",
+    "Yukun Chen",
+    "Zhihao Yang",
+    "Yufei Zhang",
+    "Renrong Hu",
+    "Yi Zhang",
+    "Guiyu Ma",
+    "Tianyu Fan",
+    "Longze Chen",
+    "Hao Sun",
+    "Jiaming Li",
+    "Jiaming Yang",
+    "Xiaohao Liu",
+    "Tao Tan",
+    "Minzheng Wang",
+    "Hangtian Jia",
+    "Shuai Yuan",
+    "Lvdi Wang"
    ],
-   "organization": "Tencent",
-   "github": "https://github.com/Andytonglove/HiSTEVE-1.0",
-   "project": null,
+   "organization": null,
+   "github": "https://github.com/RainBowLuoCS/Gamer",
+   "project": "https://mihoyo-gamer.github.io/",
    "arxiv_code": [],
    "comment": null,
-   "abstract": "Building virtual embodied agents that operate in open-ended games like human players is a long-standing goal requiring both long-horizon autonomy and reliable native-interface control. As a procedurally generated open world, Minecraft provides a natural testbed for studying the integration of these capabilities. Existing agents typically provide either native visuomotor control without long-horizon autonomy or high-level planning executed through environment APIs or predefined skills. To bridge this gap, we propose HiSTEVE, a hierarchical VLA agent with a capability-aware agent harness. At the orchestration level, we equip the harness with structured memory for tracking progress and a VLM planner for selecting subtasks within the VLA's capabilities. To reliably determine subtask completion, we further introduce a policy-coupled task completion state detector that conditions on VLA policy context to signal candidate completion. At the control level, a single VLA executes all subtasks with vision-only perception and native keyboard-and-mouse actions. To mitigate interference between heterogeneous GUI and non-GUI interactions, we introduce regime-specific RMSNorm branches and separate mouse-movement token embeddings. We also train the VLA through world knowledge injection, imitation learning, and reinforcement learning with environment feedback to improve reliability and recovery. HiSTEVE achieves state-of-the-art atomic-task performance, scoring 85.0% on MineStudio Bench and a 37.4% average success rate on OpenHA, while also completing long-horizon tasks such as crafting an iron pickaxe from scratch like human players.",
-   "ai_summary": "HiSTEVE is a hierarchical vision-language-action agent that combines long-horizon planning with native keyboard-and-mouse control to perform complex open-ended tasks in Minecraft."
+   "abstract": "We introduce Gamer, a generalist agent framework built for long-horizon tasks in complex interactive environments. Its end-to-end architecture combines perception, memory management, and multi-step reasoning. A shared training and deployment pipeline supports interaction with both conventional 2D graphical interfaces and complex 3D simulated worlds. We first continue pre-training on a dataset constructed from tens of thousands of hours of device-level keyboard and mouse interaction. These trajectories span simulated games and embodied environments, allowing the model to learn environmental dynamics across both physical and virtual domains. Sparse-thinking instruction tuning then substantially reduces redundant computation while preserving the reasoning needed for complex decisions. We train the policy for long-horizon interaction with a stable multi-turn reinforcement learning method that addresses finite context windows, accumulated rollout errors, and sparse rewards. For real-time interaction, a cloud-edge inference engine serves numerous simulated game environments concurrently, supports unbounded-context execution, and keeps online inference latency low. Across multiple challenging 3D open-world games, Gamer demonstrates solid generalization and operational efficiency comparable to skilled players. It also achieves competitive results on a range of conventional 2D game benchmarks. These results suggest that even repetitive keyboard and mouse trajectories can support substantial gains from scaling data and learning algorithms. Training on these trajectories helps Gamer learn complex skills more steadily in environments with both physical and digital properties. This approach offers a path toward generalist agents that can interact across digital and physical worlds.",
+   "ai_summary": "Gamer is a generalist agent framework that integrates perception, memory, and multi-step reasoning, trained through continued pre-training, sparse-thinking instruction tuning, and multi-turn reinforcement learning to interact efficiently in 2D and 3D environments."
+  },
+  {
+   "id": "2611.18359",
+   "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
+   "upvotes": 46,
+   "hf_date": "2026-11-16",
+   "published": "2026-11-16",
+   "topics": [],
+   "authors": [
+    "Grid Robotics",
+    "Qingfeng Lan",
+    "Duo Li",
+    "Siyao Li",
+    "Yiheng Lyu",
+    "Shijian Lu",
+    "Zhenghao Qi",
+    "Shizun Wang",
+    "Xinchao Wang",
+    "Ming Yang",
+    "Zhiqin Yang",
+    "Zuhao Yang",
+    "Tao Yu"
+   ],
+   "organization": null,
+   "github": null,
+   "project": "https://grid-robotics-official.github.io/agentic-robotics-roadmap",
+   "arxiv_code": [],
+   "comment": "Project website: https://grid-robotics-official.github.io/agentic-robotics-roadmap",
+   "abstract": "The release of GPT-6 Astra marks the emergence of a new paradigm in robotics: agentic robotics. Within weeks, frontier models with agentic harnesses matched or exceeded task-specific policies on many embodied benchmarks. Instead of training a dedicated policy for each family of tasks, an agentic robotic system applies a foundation model to open-world embodied tasks. It operates in a closed loop: observing the environment, interpreting user intent, reasoning about the task, invoking skills and tools, verifying outcomes, and adapting its strategy. Despite these advances, the community has yet to converge on a shared definition, a reliable evaluation framework, or a research roadmap. We argue that Embodied System 2, realized by a foundation model together with an embodied harness, forms the decision-making core of agentic robotics. Its central challenge is to translate general-purpose reasoning into effective and verifiable actions under physical constraints such as limited reaction time, mechanical limits, unpredictable environment changes, and irreversible consequences. Motivated by this perspective, we propose an evaluation framework that measures both model capabilities and closed-loop system performance. Furthermore, we identify the principles that carry over from digital to physical agents and the challenges that must be addressed to achieve reliable physical autonomy. On top of the Embodied System 2 and the evaluation framework, we envision a research roadmap toward sustained autonomy: the ability to perform work safely and reliably with progressively broader responsibility, from executing individual primitives to fulfilling standing roles.",
+   "ai_summary": "Agentic robotics, centered on an Embodied System 2 formed by a foundation model and embodied harness, requires a shared evaluation framework and research roadmap to achieve reliable physical autonomy."
   },
   {
    "id": "2610.42096",
@@ -76,6 +120,11 @@
    "id": "2610.23479",
    "title": "HexaShell: A Universal Harness for Robot Coding Agents in Simulation and the Real World",
    "project": "https://hexafuture.ai/home/"
+  },
+  {
+   "id": "2611.16439",
+   "title": "HALO: Human-Aligned Data Collection for WhoLe-body MObile Manipulation",
+   "code": "https://github.com/robbyant-research/Lingbot-ALOHA"
   },
   {
    "id": "2610.29677",
