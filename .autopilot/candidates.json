@@ -1,6 +1,325 @@
 {
- "updated": "2026-11-15",
+ "updated": "2026-11-16",
  "papers": [
+  {
+   "id": "2611.18546",
+   "title": "Modeling the Frictional Contact of Continuum Robots with Environments through Linear Complementarity Problem",
+   "published": "2026-11-16",
+   "topics": [
+    "hardware"
+   ],
+   "venue": "IJRR",
+   "code": [],
+   "project": [],
+   "comment": "Accepted for publication in International Journal of Robotics Research (IJRR). 21 pages, 18 figures",
+   "authors": [
+    "Jia Shen",
+    "Junhyoung Ha",
+    "Yue Chen"
+   ],
+   "abstract": "Accurate friction modeling in continuum robots is essential for precise motion control and path planning. However, current approaches make predictions only for the mechanism's internal friction that is limited by the boundary forces of the Coulomb friction cone, which fail to characterize the static friction and motion hysteresis. In this paper, we propose a novel friction model based on complementarity constraints under the Coulomb friction assumption. This model predicts various friction effects caused by environmental interactions, including both static and sliding frictions and hysteresis behavior, as well as the corresponding robot deformation induced by these interactions, which are crucial for the practical motion planning and control of continuum robots. Additionally, real-time implementation of this model can be achieved, meeting the demand for computational efficiency in robotic applications. Experimental validations demonstrated that this model is able to reduce the maximum tip position error from 45.4 mm in the frictionless model to 5.85 mm in our friction-included model with a 287.9 mm-long tendon-driven continuum robot.",
+   "fetched": "2026-11-16"
+  },
+  {
+   "id": "2611.18505",
+   "title": "Disturbance-Aware Informative Planning in Spatiotemporal Environments",
+   "published": "2026-11-16",
+   "topics": [],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://kalebbennaveed.github.io/dist-aware-ipp/"
+   ],
+   "comment": "Submitted to Learning for Dynamics and Control Conference 2027. Project website: https://kalebbennaveed.github.io/dist-aware-ipp/",
+   "authors": [
+    "Kaleb Ben Naveed",
+    "Haejoon Lee",
+    "Anouck Girard",
+    "Dimitra Panagou"
+   ],
+   "abstract": "Autonomous robots are widely used for persistent monitoring of spatiotemporal environments, where quantities of interest (QoI) change across space and time and require repeated measurements. In practice, robot motion can be affected by external disturbances that vary across the environment. When such external disturbances are not considered in trajectory optimization, it can lead to inaccurate predictions of robot motion and, consequently, the information acquired about the QoI during execution. However, estimating disturbances throughout the environment can be inefficient, as disturbances in regions with little overlap with monitoring trajectories have limited impact on monitoring performance. We therefore propose a two-stage informative planning framework for unknown, spatially varying but time-invariant disturbances, combining informed disturbance sampling with disturbance-aware trajectory optimization. First, we identify where QoI measurements are needed and generate alternative paths to these locations using the environment geometry. We then prioritize disturbance measurements based on their expected reduction of disturbance uncertainty along these paths. Second, rather than optimizing information acquisition based on nominal robot motion, we incorporate the learned disturbance belief into trajectory optimization to account for its effects on robot motion and information acquisition. Across four simulation scenarios, the proposed method reduces disturbance-learning time by 25.0--52.3 percent compared with environment-wide estimation and identifies paths that appear costly under nominal dynamics but become preferable when disturbances are considered.",
+   "fetched": "2026-11-16"
+  },
+  {
+   "id": "2611.18491",
+   "title": "When Will You Hand It Over? A Hidden Start Delay Makes Self-Play Handover Robust to Unfamiliar Partners",
+   "published": "2026-11-16",
+   "topics": [],
+   "venue": null,
+   "code": [
+    "https://github.com/mkhoshnam/Selfplay-PPO-handover"
+   ],
+   "project": [],
+   "comment": "CoRL 2026, Human-Centered Robot Learning and Interaction (HumanRLI) Workshop. Code: https://github.com/mkhoshnam/Selfplay-PPO-handover",
+   "authors": [
+    "Mohammad Khoshnazar",
+    "Mike Degany",
+    "Deyuan Qu",
+    "Qing Yang",
+    "Matyas Szanto"
+   ],
+   "abstract": "Cooperative self-play can teach a humanoid to receive an object without any human data, but the partner it meets after training is never the one it trained with; we show that a fluent self-play handover policy breaks with unfamiliar partners, identify the main cause, and repair it. In a physics-based parcel handover between a Unitree G1 and a learned giver, both trained by alternating PPO self-play, the receiver completes 95% and 90% of handovers with its own partner (two training seeds) but only 31% with scripted partners it has never met. Paired interventions isolate the cause: under a shared reward the learned giver always starts its offer at once, so the receiver learns a single rendezvous, and delaying its own partner by one second cuts success from 95% to 6% (87% to 34% in the second seed). We introduce hidden start-delay randomisation (HSD), a one-line rule on the learned partner that the receiver never observes. After 300 further updates, success with unseen scripted partners rises from 31% to 80% in both seeds, against 35--41% for a budget-matched control. The gain holds on a fresh scenario seed, on eleven held-out partner conditions and on partners that start later than any training delay; it cuts high-force contact three- to five-fold and needs no retraining of the partner.",
+   "fetched": "2026-11-16"
+  },
+  {
+   "id": "2611.18365",
+   "title": "Heavy Metal Acrobatics: Learning Dynamic Control for Skid-Steer Loaders",
+   "published": "2026-11-16",
+   "topics": [],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://sites.google.com/leggedrobotics.com/heavy-metal-acrobatics"
+   ],
+   "comment": null,
+   "authors": [
+    "Pierre-Jean Lorentz",
+    "Pascal Egli",
+    "Edo Jelavic",
+    "Cliff Li",
+    "Ramitha Sundar",
+    "Harikrishnan Suresh",
+    "Paul Montgomery",
+    "Lee Redden",
+    "Matthias Müller",
+    "Ozan Sener",
+    "Vladlen Koltun",
+    "Marco Hutter"
+   ],
+   "abstract": "Automation of heavy machinery offers the opportunity to improve productivity in mechanized industries such as construction, mining, and material handling. Yet, automation of such machines is challenged by their complex dynamics, in part because of hydraulic actuation that involves fluids, flexible elements, and nonlinear delays. A concomitant challenge is the size and weight of these machines, which can make experiments on the physical systems exceedingly dangerous. Here, we show that \\ac{RL} in simulation, followed by transfer of the learned policies from simulation to reality, can successfully automate acrobatic maneuvers that push a heavy construction machine to the limits of its actuation and have only previously been accomplished by a small number of elite human operators in official world-record performances. We trained policies that perform autonomous acrobatic maneuvers on a John Deere 332G, an operational 5-tonne skid-steer loader. The policies can autonomously swing the machine up onto two wheels and, while balancing on two wheels, drive over rough terrain, trace out specified trajectories, spin around, and swing the bucket back and forth before landing it safely back onto four wheels. This work demonstrates that \\ac{RL} and sim-to-real transfer enable dynamic autonomous control of heavy machinery, directly contributing to greater automation in heavy equipment sectors. Videos: https://sites.google.com/leggedrobotics.com/heavy-metal-acrobatics This is the author's version of the work. It is posted here by permission of the AAAS for personal use, not for redistribution. The definitive version was published in Science Robotics on 11 November 2026, DOI: https://doi.org/10.1126/scirobotics.aef0894",
+   "fetched": "2026-11-16"
+  },
+  {
+   "id": "2611.18359",
+   "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
+   "published": "2026-11-16",
+   "topics": [],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://grid-robotics-official.github.io/agentic-robotics-roadmap"
+   ],
+   "comment": "Project website: https://grid-robotics-official.github.io/agentic-robotics-roadmap",
+   "authors": [
+    "Grid Robotics",
+    ":",
+    "Qingfeng Lan",
+    "Duo Li",
+    "Siyao Li",
+    "Yiheng Lyu",
+    "Shijian Lu",
+    "Zhenghao Qi",
+    "Shizun Wang",
+    "Xinchao Wang",
+    "Ming Yang",
+    "Zhiqin Yang",
+    "Zuhao Yang",
+    "Tao Yu"
+   ],
+   "abstract": "The release of GPT-6 Astra marks the emergence of a new paradigm in robotics: agentic robotics. Within weeks, frontier models with agentic harnesses matched or exceeded task-specific policies on many embodied benchmarks. Instead of training a dedicated policy for each family of tasks, an agentic robotic system applies a foundation model to open-world embodied tasks. It operates in a closed loop: observing the environment, interpreting user intent, reasoning about the task, invoking skills and tools, verifying outcomes, and adapting its strategy. Despite these advances, the community has yet to converge on a shared definition, a reliable evaluation framework, or a research roadmap. We argue that Embodied System 2, realized by a foundation model together with an embodied harness, forms the decision-making core of agentic robotics. Its central challenge is to translate general-purpose reasoning into effective and verifiable actions under physical constraints such as limited reaction time, mechanical limits, unpredictable environment changes, and irreversible consequences. Motivated by this perspective, we propose an evaluation framework that measures both model capabilities and closed-loop system performance. Furthermore, we identify the principles that carry over from digital to physical agents and the challenges that must be addressed to achieve reliable physical autonomy. On top of the Embodied System 2 and the evaluation framework, we envision a research roadmap toward sustained autonomy: the ability to perform work safely and reliably with progressively broader responsibility, from executing individual primitives to fulfilling standing roles.",
+   "fetched": "2026-11-16"
+  },
+  {
+   "id": "2611.18305",
+   "title": "PROOF: Perceptive Robustness via Out-of-Distribution Fallback for Legged Locomotion",
+   "published": "2026-11-16",
+   "topics": [
+    "locomotion"
+   ],
+   "venue": "CoRL 2026",
+   "code": [],
+   "project": [],
+   "comment": "CoRL 2026",
+   "authors": [
+    "Siyuan Wang",
+    "Dongjie Zhu",
+    "Jinxuan Lu",
+    "Wenjun Xu",
+    "Jiankun Wang"
+   ],
+   "abstract": "Vision-based perceptive locomotion has enabled legged robots to achieve agile and terrain-aware locomotion across complex environments. However, the reliability of such systems heavily depends on visual observations, which are inherently susceptible to occlusion, reflective surfaces, and illumination variations, often resulting in catastrophic locomotion failures under degraded perception conditions. In this paper, we present PROOF (Perceptive Robustness via Out-of-Distribution Fallback for Legged Locomotion), a perceptive locomotion framework that enables robust locomotion under severe visual disturbances. Our method adopts a two-stage teacher-student learning paradigm that explicitly models perception reliability: the teacher learns both perception-driven and proprioceptive fallback behaviors, while the student predicts exteroceptive features with uncertainty and suppresses them under out-of-distribution inputs. We evaluate our method on a Unitree Go2 quadruped equipped with a RealSense D435 depth camera in real-world settings. Under normal visual conditions, our method enables the robot to successfully perform high-dynamic parkour maneuvers, including traversing large gaps, elevated platforms, and narrow beam terrains. Under severe visual degradation, such as heavy occlusion and strong illumination changes, the robot continues to maintain stable and robust locomotion performance.",
+   "fetched": "2026-11-16"
+  },
+  {
+   "id": "2611.18298",
+   "title": "Objectives as Policies: Vision-Language Model Cost Programs for Contact-Rich Manipulation",
+   "published": "2026-11-16",
+   "topics": [
+    "manipulation",
+    "tactile",
+    "control"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://zihaolu001.github.io/oap-project/"
+   ],
+   "comment": "8 pages, 3 figures. Project website: https://zihaolu001.github.io/oap-project/",
+   "authors": [
+    "Zihao Lu",
+    "Trong Gia Hung Nguyen",
+    "Fuquan Wang",
+    "Yifan Zhu"
+   ],
+   "abstract": "Vision-language models (VLMs) have shown strong semantic and spatial reasoning capabilities in 3D environments. Recently, connecting VLMs with model-predictive controllers (MPC) has emerged as a paradigm for combining strong semantic reasoning with physics-based planning. However, connecting these two for contact-rich robotic manipulation requires a task representation that bridges the two and captures how physical interactions can be reasoned by VLMs. In this work, we introduce Objectives as Policies (OaP), a framework that connects a pretrained VLM to a shared sampling-based MPC through an editable objective program. Each program specifies a sequence of stages for completing a task, combining running and terminal costs from a cost library with stage completion conditions. Given a natural-language task instruction and scene observation, we build a simulation-based digital twin through real-to-sim, and the VLM generates an objective program that is executed by the MPC in the simulation. The program is iteratively updated by the VLM based on MPC rollouts, before being deployed in the real world. We evaluate our framework in both simulation and the real world on four tabletop manipulation tasks, and show that it outperforms strong baselines. Additional videos and examples are available on the project website: https://zihaolu001.github.io/oap-project/",
+   "fetched": "2026-11-16"
+  },
+  {
+   "id": "2611.18176",
+   "title": "ESI: An Embodied Self-Improvement Flywheel for LLM-VLA Agents",
+   "published": "2026-11-16",
+   "topics": [
+    "vla"
+   ],
+   "venue": null,
+   "code": [
+    "https://github.com/Embodied-Self-Improvement/ESI"
+   ],
+   "project": [],
+   "comment": "Technical report. 25 pages, 7 figures. Code: https://github.com/Embodied-Self-Improvement/ESI",
+   "authors": [
+    "Yundi Cai",
+    "Zihan Wang",
+    "Chenxi Han",
+    "Yi Cheng",
+    "Houde Liu",
+    "Zilei Wang"
+   ],
+   "abstract": "Independently pretrained language models and vision-language-action (VLA) policies provide complementary building blocks for embodied agents, but connecting them does not automatically produce coordinated behavior. The VLA may generate actions that diverge from the LLM's intended subtask and, upon regaining control after a correction, undo the promising state restored by the LLM. We introduce ESI (Embodied Self-Improvement), an automated flywheel that uses environmental interaction to align reasoning and action. ESI treats the modular agent as the unit of post-training, repeatedly refining the prompts that guide the LLM, the shared skill interface that expresses its intent, and the VLA parameters that realize that intent, then redeploying these components together. Our key insight is that collaboration itself can supply supervision for improving this interface. The LLM's subtask decisions provide semantic supervision for what the policy should execute, while its effective corrections and subsequent student continuations provide action-level supervision for recovery and handoff. The student also learns from its own effective execution, allowing locally useful experience to contribute even when the overall episode fails. On ten selected RoboDojo tasks, ESI achieves a mean Score of 62.03 and a mean success rate of 49.41% using an LLM-VLA agent without generating task-specific control code. On both metrics, it outperforms the published reference results of all hybrid embodied agents, including the Agent+WAM system GO-3 Nano Preview (47.27 Score and 36.60% success), as well as all compared code-based methods.",
+   "fetched": "2026-11-16"
+  },
+  {
+   "id": "2611.18110",
+   "title": "PoliMop: Policy-in-the-Loop Motion Planning in 3D Spaces for Mobile Robots",
+   "published": "2026-11-16",
+   "topics": [
+    "control"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://ariael21.github.io/polimop.html"
+   ],
+   "comment": "8 pages, 5 figures. Videos and code: https://ariael21.github.io/polimop.html",
+   "authors": [
+    "Yael Fassbind",
+    "Valentin N. Hartmann",
+    "Huang Su",
+    "Yijiang Huang",
+    "Stelian Coros"
+   ],
+   "abstract": "Reaching a goal state in a complex environment often requires a robot to overcome challenging terrain and obstacles. Which routes are accessible depends on the robot's physical design, the control policy it uses, and how it modifies its surroundings. We present a kinodynamic rapidly-exploring random tree (RRT) planner that uses physics simulation to exploit skills encoded in the control policy, which allows it to find a path in the scene with respect to the robot's capabilities. The planner samples states from a reduced state space in 3D around the scene and expands the RRT toward each sample using policy rollouts. We guide sampling with a preplanned path for a simple mass-point model to focus exploration on promising regions leading toward the goal state, reducing planning time by up to 63%. Simulation experiments with quadrupeds, humanoids, and wheeled robots demonstrate that our approach supports drop-in integration of various robots and control policies, exploiting their physical and policy capabilities without modifying the underlying planning algorithm. Predefined environmental modifications, such as placing a plank across a gap to build a bridge, will automatically be picked up by the planner as the robot's reachable space expands.",
+   "fetched": "2026-11-16"
+  },
+  {
+   "id": "2611.17802",
+   "title": "Multimodal Person Concept Model for Person Identification under Varying Observation Conditions",
+   "published": "2026-11-16",
+   "topics": [],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://okitamisan01.github.io/person_concept/"
+   ],
+   "comment": "12 pages, 4 figures, 11 tables. Submitted to Artificial Life and Robotics (AROB Journal Track). Project page: https://okitamisan01.github.io/person_concept/",
+   "authors": [
+    "Mizuho Okitani",
+    "Yoshinobu Hagiwara"
+   ],
+   "abstract": "Service robots in domestic and office environments must identify users to provide personalized services based on their preferences and previous interactions. This is challenging because only a few observations may be available for learning, while observation conditions change owing to appearance, environmental noise, and utterance content. To address this challenge, this study proposes a multimodal person concept model that learns person concepts from a small number of observations, without person labels, and enables robust identification under changing conditions. The model employs a nonparametric Bayesian generative model based on the Chinese restaurant process and integrates visual, acoustic, and linguistic features extracted using Contrastive Language-Image Pre-training (CLIP) and Contrastive Language-Audio Pretraining (CLAP), followed by principal component analysis (PCA). We evaluated six participants under eight conditions in which appearance changes, additive noise, and transcription errors were introduced individually and in combination. Averaged over the eight conditions, the proposed model achieved an identification accuracy of 0.89 while inferring the number of person concepts from the observations, which is comparable to k-means clustering that was supplied with the true number of participants (0.88). We also examined PCA dimensionality, modality availability, and variation strength, and demonstrated the model on a Toyota Human Support Robot. These results show that multimodal person concept learning supports robust person identification under changing conditions, and that identification can succeed even when the number of concepts is not correctly recovered. The project page and demonstration video are available at https://okitamisan01.github.io/person_concept/.",
+   "fetched": "2026-11-16"
+  },
+  {
+   "id": "2611.17751",
+   "title": "When Does Cross-View Consistency Matter in Multi-View Appearance Augmentation? A Controlled Study for Visuomotor Policies",
+   "published": "2026-11-16",
+   "topics": [
+    "manipulation"
+   ],
+   "venue": null,
+   "code": [
+    "https://github.com/PKUJZX/xview-consistency-augmentation"
+   ],
+   "project": [],
+   "comment": "30 pages, 10 figures. Code: https://github.com/PKUJZX/xview-consistency-augmentation",
+   "authors": [
+    "Zixuan Jiang"
+   ],
+   "abstract": "Multi-view visual augmentation often seeks consistency across cameras, but it is unclear which forms of consistency matter for downstream control. We use simulation-state replay to manipulate cross-view coupling while preserving the per-camera perturbation distributions, physical trajectories, and action labels. Across seven LIBERO manipulation tasks, marginal-matched changes in global appearance, ghost injection, and target color have small average costs for a late-fusion Diffusion Policy: point estimates are near zero or negative, and the largest upper endpoint of the 90% posterior credible intervals is 2.55 percentage points. In contrast, geometrically anti-coupled observations reduce success by 3.30 percentage points relative to coupled observations (90% CrI [0.64, 6.28]), with displacement magnitude, direction marginals, and the number of affected views matched. Camera interventions reveal substantial dependence on wrist-view geometry, while feature analysis shows appearance sensitivity patterns associated with the factors randomized during training. ACT shows a higher target-color cost estimate than DP, with uncertainty that includes zero and sensitivity to task composition. Within the tested tasks and policy configurations, these findings motivate selective consistency constraints: appearance coupling can sometimes be relaxed, whereas task-relevant geometry and cross-view spatial correspondence warrant protection.",
+   "fetched": "2026-11-16"
+  },
+  {
+   "id": "2611.17720",
+   "title": "Ego2Flow: Benchmarking the Traffic-System Impact of Autonomous Driving on Maps Distilled from Real-World Roads",
+   "published": "2026-11-16",
+   "topics": [
+    "datasets"
+   ],
+   "venue": null,
+   "code": [
+    "https://github.com/Fisher-007/Ego2Flow"
+   ],
+   "project": [],
+   "comment": null,
+   "authors": [
+    "Yu Dong",
+    "Weiying Shen",
+    "Hangyu Li",
+    "Shu Han",
+    "Hong Li",
+    "Xiangbo Gao",
+    "Keshu Wu",
+    "Zhengzhong Tu",
+    "Soyoung Ahn",
+    "Zhiyuan Liu",
+    "Xiaopeng Li"
+   ],
+   "abstract": "End-to-end autonomous driving is predominantly evaluated through ego-vehicle safety and task completion. Its deployment in urban traffic, however, creates sustained interactions among vehicles whose collective effects remain insufficiently evaluated. We introduce Ego2Flow, a closed-loop benchmark for assessing the traffic-system impact of autonomous driving on maps distilled from real-world cities. To construct realistic 3D urban environments for sustained closed-loop traffic simulation, we develop an agent-guided map distillation framework that integrates real-world maps and observations with complementary geographic information. Through an iterative feedback mechanism and a traffic information graph that jointly guide scene generation, the framework preserves lane topology, critical road geometry and decision-relevant visual conditions while simplifying nonessential details and completing unobserved regions. Using our proposed framework, we generate and publicly release six CARLA maps from the Argoverse 2 dataset, covering the corresponding real-world regions and enabling paired comparisons of driving behavior under real and simulated observations. On these maps, Ego2Flow evaluates how autonomous driving policies affect traffic efficiency, safety, stability and energy consumption across diverse road structures. Compared with existing construction methods, our framework achieves the lowest average displacement error between planning outputs from paired real and simulated observations. We further benchmark representative driving policies to characterize their system-level impact on urban traffic. Project Page: https://github.com/Fisher-007/Ego2Flow.",
+   "fetched": "2026-11-16"
+  },
+  {
+   "id": "2611.17566",
+   "title": "Grounding Object-to-Object Hazard Reasoning into 3D Risk Fields for Task-Conditioned Safety",
+   "published": "2026-11-16",
+   "topics": [],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://vlm-hazard-riskfield.github.io"
+   ],
+   "comment": null,
+   "authors": [
+    "Mariana Sosa Guzmán",
+    "Yide Song",
+    "Amin Abyaneh",
+    "Gregory Dudek",
+    "Hsiu-Chin Lin"
+   ],
+   "abstract": "Safety in robotics does not solely depend on geometric constraints, but also on semantics: the given task, environment properties, and interactions between objects in the scene. We present a framework based on vision-language models (VLMs) to infer task- and scene-dependent safety constraints for robot manipulation. We provide the VLM a structured safety tool based on an RGB-D observation and a natural-language task instruction that first decides whether the task should be rejected since its execution may result in a non-recoverable hazardous outcome. Otherwise, it identifies preventable object-pair hazards and specifies the spatial relations that must be avoided. Open-vocabulary segmentation and depth information are then used to ground the detected objects in 3D and construct continuous risk fields that represent the corresponding hazardous regions. These fields are integrated with an obstacle avoidance module that corrects nominal robot motions during execution while accounting for the risk field. We evaluate the framework on preventable hazards, tasks requiring rejection, and safe variants in simulation and the real-world. Project website: https://vlm-hazard-riskfield.github.io",
+   "fetched": "2026-11-16"
+  },
+  {
+   "id": "2611.17438",
+   "title": "Real-Time Diffusion Relighting as a Neural Sensor: Closing the Low-Light Domain Gap for Robotic Perception",
+   "published": "2026-11-16",
+   "topics": [],
+   "venue": "IROS 2026",
+   "code": [],
+   "project": [
+    "https://shengjie-xu.com/conferences/2026_IROS_neural-sensor/"
+   ],
+   "comment": "8 pages, 5 figures. Accepted to IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2026. Project page: https://shengjie-xu.com/conferences/2026_IROS_neural-sensor/",
+   "authors": [
+    "Shengjie Xu",
+    "Alexander Gao",
+    "Anshul Rai",
+    "Dae Yeol Lee",
+    "Guan-Ming Su",
+    "Ming C. Lin"
+   ],
+   "abstract": "Low-light conditions severely degrade robotic perception: object detectors trained on daylight imagery are prone to failure under dark and adverse weather conditions that fall outside of their training distribution. Furthermore, from an efficiency standpoint, existing Low-Light Image Enhancement (LLIE) methods are designed for offline processing and are therefore impractical to integrate into live control loops. To address these issues, we propose to embed a Generative Neural Sensor within the control loop that treats illumination as a generative prior rather than a signal processing problem, enabling task-relevant semantic recovery. We further propose an Real-Time Perceptual Architecture that decouples high-latency semantic recovery from low-latency robotic control. Rather than blocking the control loop, our system runs a large-scale image-to-image diffusion model in a background thread, and is activated only when a drop in detection confidence signals a perceptual uncertainty event, significantly reducing computational overhead. Our method sets a new state-of-the-art performance on the ExDark low-light benchmark with 87.1% mAP, and under adverse weather conditions, significantly boosts detection rates over competing methods. On a navigation task in a closed-loop autonomous driving simulator (CARLA), we achieve a 100% lap completion rate, establishing a simulation-based proof-of-concept for integrating high-latency generative models with standard robotic control autonomy stacks.",
+   "fetched": "2026-11-16"
+  },
   {
    "id": "2611.17213",
    "title": "Collaborative Task Allocation for Heterogeneous Multi-Robot Systems Through Iterative Clustering",
