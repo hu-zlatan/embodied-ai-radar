@@ -34,7 +34,7 @@
   {
    "id": "2611.18397",
    "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
-   "upvotes": 116,
+   "upvotes": 117,
    "hf_date": "2026-11-16",
    "published": "2026-11-16",
    "topics": [
@@ -125,6 +125,30 @@
    "comment": null,
    "abstract": "Embodied foundation models hinge on diverse robot interaction data, which are costly to collect. Egocentric human videos offer a complementary source of experience, and latent action models (LAMs) provide a popular means of leveraging these videos for policy supervision. Compared with world-action models (WAMs), LAMs can offer greater training efficiency and potentially lower inference costs by avoiding explicit pixel prediction during policy learning and execution. However, most existing LAMs learn latent actions solely through video reconstruction, which can cause their representations to cluster by visual appearance rather than by the underlying actions. As a result, they struggle to align human actions with their robot counterparts. To bridge the gap, we introduce SALA, which emphasizes establishing the semantic correspondence for latent actions. Without requiring paired data, we use the language descriptions of unpaired human and robot clips to estimate semantic similarities and supervise cross-embodiment correspondence. Specifically, we translate these similarities into soft neighborhood structures that guide human latent actions toward semantically related robot latents, while robot action reconstruction grounds the latent space in control. The resulting shared latent action space provides a unified supervision signal for training an embodied foundation model on both human and robot videos. Notably, latent action supervision enables scaling along two axes: (1) pre-training on increasing amounts of general human video consistently reduces robot action prediction error on downstream tasks, and (2) post-training on increasing amounts of task-specific human video substantially improves real-world robot task success rates.",
    "ai_summary": "SALA aligns latent actions across human and robot videos by using language-based semantic similarities to form a shared latent action space that supervises embodied foundation model training and improves robot task performance."
+  },
+  {
+   "id": "2611.18919",
+   "title": "Correcting Persistent Failures in Point-Cloud Grasping Policies using Human Demonstrations in Virtual Reality",
+   "upvotes": 5,
+   "hf_date": "2026-11-17",
+   "published": "2026-11-17",
+   "topics": [
+    "manipulation",
+    "learning"
+   ],
+   "authors": [
+    "Achyuthan Unni Krishnan",
+    "Karthik Rengarajan",
+    "Bharath Narasimhan",
+    "Chris von Csefalvay"
+   ],
+   "organization": " HCLTech Robotics",
+   "github": null,
+   "project": null,
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "Robots in homes, warehouses and farms must pick up objects they have never seen, usually without a 3D model or a category label. A grasping policy that works directly on the point cloud from a depth sensor needs only the geometry the robot observes, so it applies to any new object. Offline grasp generators such as Contact-GraspNet work this way, but they rank grasps by learned plausibility rather than by whether the grasp actually lifts the object. Reinforcement learning (RL) can optimize for that directly and make a point-cloud grasping policy much better on average, yet it leaves specific grasps persistently unsolved. We present a human-in-the-loop failure loop that targets those grasps: situations an RL policy keeps failing are mined automatically, sent to a virtual-reality application where a person picks the object up with their own hands, and returned to training as two grasp points. The person contributes only where to grasp; the robot chooses its own approach. In simulation, RL raises success on unseen objects from 55% with Contact-GraspNet to 83%. Adding 58 human demonstrations nearly doubles success on the hard cases RL kept failing, from 24% to 45%, and recovers performance that RL alone loses on similar cases that were never demonstrated, without reducing success on unseen objects.",
+   "ai_summary": "A human-in-the-loop failure-mining pipeline turns persistently unsolved grasps of a reinforcement-learning point-cloud policy into virtual-reality human demonstrations, improving hard-case success without reducing generalization to unseen objects."
   },
   {
    "id": "2610.42096",
