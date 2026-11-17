@@ -4,7 +4,7 @@
   {
    "id": "2611.18359",
    "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
-   "upvotes": 120,
+   "upvotes": 122,
    "hf_date": "2026-11-16",
    "published": "2026-11-16",
    "topics": [],
@@ -34,7 +34,7 @@
   {
    "id": "2611.18397",
    "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
-   "upvotes": 103,
+   "upvotes": 111,
    "hf_date": "2026-11-16",
    "published": "2026-11-16",
    "topics": [
@@ -73,7 +73,7 @@
   {
    "id": "2611.21607",
    "title": "ScaleVLA: Scaling Vision-Language-Action Models to 552 Billion Parameters",
-   "upvotes": 17,
+   "upvotes": 38,
    "hf_date": "2026-11-17",
    "published": "2026-11-17",
    "topics": [
@@ -104,7 +104,7 @@
   {
    "id": "2611.17110",
    "title": "SALA: Semantically Aligned Latent Actions Enable Dual-Axis Scaling of Embodied Foundation Models",
-   "upvotes": 9,
+   "upvotes": 12,
    "hf_date": "2026-11-17",
    "published": "2026-11-13",
    "topics": [
@@ -120,7 +120,7 @@
    ],
    "organization": null,
    "github": null,
-   "project": null,
+   "project": "https://sala-vla.github.io/",
    "arxiv_code": [],
    "comment": null,
    "abstract": "Embodied foundation models hinge on diverse robot interaction data, which are costly to collect. Egocentric human videos offer a complementary source of experience, and latent action models (LAMs) provide a popular means of leveraging these videos for policy supervision. Compared with world-action models (WAMs), LAMs can offer greater training efficiency and potentially lower inference costs by avoiding explicit pixel prediction during policy learning and execution. However, most existing LAMs learn latent actions solely through video reconstruction, which can cause their representations to cluster by visual appearance rather than by the underlying actions. As a result, they struggle to align human actions with their robot counterparts. To bridge the gap, we introduce SALA, which emphasizes establishing the semantic correspondence for latent actions. Without requiring paired data, we use the language descriptions of unpaired human and robot clips to estimate semantic similarities and supervise cross-embodiment correspondence. Specifically, we translate these similarities into soft neighborhood structures that guide human latent actions toward semantically related robot latents, while robot action reconstruction grounds the latent space in control. The resulting shared latent action space provides a unified supervision signal for training an embodied foundation model on both human and robot videos. Notably, latent action supervision enables scaling along two axes: (1) pre-training on increasing amounts of general human video consistently reduces robot action prediction error on downstream tasks, and (2) post-training on increasing amounts of task-specific human video substantially improves real-world robot task success rates.",
