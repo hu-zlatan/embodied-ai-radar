@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-16",
+ "updated": "2026-11-17",
  "papers": [
   {
    "id": "2611.18359",
    "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
-   "upvotes": 107,
+   "upvotes": 120,
    "hf_date": "2026-11-16",
    "published": "2026-11-16",
    "topics": [],
@@ -34,7 +34,7 @@
   {
    "id": "2611.18397",
    "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
-   "upvotes": 87,
+   "upvotes": 103,
    "hf_date": "2026-11-16",
    "published": "2026-11-16",
    "topics": [
@@ -69,6 +69,37 @@
    "comment": null,
    "abstract": "We introduce Gamer, a generalist agent framework built for long-horizon tasks in complex interactive environments. Its end-to-end architecture combines perception, memory management, and multi-step reasoning. A shared training and deployment pipeline supports interaction with both conventional 2D graphical interfaces and complex 3D simulated worlds. We first continue pre-training on a dataset constructed from tens of thousands of hours of device-level keyboard and mouse interaction. These trajectories span simulated games and embodied environments, allowing the model to learn environmental dynamics across both physical and virtual domains. Sparse-thinking instruction tuning then substantially reduces redundant computation while preserving the reasoning needed for complex decisions. We train the policy for long-horizon interaction with a stable multi-turn reinforcement learning method that addresses finite context windows, accumulated rollout errors, and sparse rewards. For real-time interaction, a cloud-edge inference engine serves numerous simulated game environments concurrently, supports unbounded-context execution, and keeps online inference latency low. Across multiple challenging 3D open-world games, Gamer demonstrates solid generalization and operational efficiency comparable to skilled players. It also achieves competitive results on a range of conventional 2D game benchmarks. These results suggest that even repetitive keyboard and mouse trajectories can support substantial gains from scaling data and learning algorithms. Training on these trajectories helps Gamer learn complex skills more steadily in environments with both physical and digital properties. This approach offers a path toward generalist agents that can interact across digital and physical worlds.",
    "ai_summary": "Gamer is a generalist agent framework that integrates perception, memory, and multi-step reasoning, trained through continued pre-training, sparse-thinking instruction tuning, and multi-turn reinforcement learning to interact efficiently in 2D and 3D environments."
+  },
+  {
+   "id": "2611.21607",
+   "title": "ScaleVLA: Scaling Vision-Language-Action Models to 552 Billion Parameters",
+   "upvotes": 6,
+   "hf_date": "2026-11-17",
+   "published": "2026-11-17",
+   "topics": [
+    "vla"
+   ],
+   "authors": [
+    "Ruixi Yu",
+    "Dairu Liu",
+    "Xuchuan Chen",
+    "Zekun Qi",
+    "Zekai Li",
+    "Zhuo Cao",
+    "Luyang Niu",
+    "Yingsheng Zhang",
+    "Sikai Liang",
+    "Ke Fan",
+    "He Wang",
+    "Li Yi"
+   ],
+   "organization": "galbot",
+   "github": null,
+   "project": "https://galaxygeneralrobotics.github.io/scalevla/",
+   "arxiv_code": [],
+   "comment": "Tech Report",
+   "abstract": "Frontier Vision-Language Models (VLMs) such as GPT-6 Astra have demonstrated remarkable capabilities in robot control, suggesting that broad pretraining provides knowledge valuable for physical action. Yet most Vision-Language-Action (VLA) policies still rely on much smaller VLM backbones, leaving this potential largely untapped. We ask whether frontier-scale representations can provide a stronger foundation for robot learning. We introduce ScaleVLA, which connects a 552B DeepSeek-V4.1-Flash backbone to a trainable action DiT, and systematically compare VLMs from 2B to 552B under a shared training setup. We evaluate three fundamental capabilities of robot foundation models. In sample efficiency, just 10 demonstrations outperform a 2B backbone trained with 50 (87.8% vs. 85.6%). In generalization, LIBERO-PRO success reaches 45.1%, compared with at most 31.3% for smaller backbones. In precise manipulation, real-world charger insertion improves from 4/10 to 9/10 successes, with gains concentrated in contact-sensitive alignment. Despite its scale, ScaleVLA achieves 216 ms median latency per action chunk. Our findings suggest that frontier VLMs can serve not only as reasoning agents, but also as powerful representational foundations for efficient and generalizable robot policies.",
+   "ai_summary": null
   },
   {
    "id": "2610.42096",
@@ -130,6 +161,11 @@
    "id": "2610.29677",
    "title": "Toward Recursive Self-Improvement in Physical AI",
    "code": "https://github.com/Physical2RSI/Awesome-Physical2RSI"
+  },
+  {
+   "id": "2611.13685",
+   "title": "Ego Guidance: Enhancing Robot Policy Learning with Action-Free Human Egocentric Videos",
+   "code": "https://github.com/llong-cs/EgoGuidance"
   }
  ]
 }
