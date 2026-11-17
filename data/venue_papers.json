@@ -1,7 +1,125 @@
 {
- "updated": "2026-11-15",
+ "updated": "2026-11-17",
  "source": "arXiv API (metadata CC0)",
  "papers": [
+  {
+   "id": "2611.20587",
+   "title": "Stability Principle Inherent in Wheel Gait of Planar X-shaped Walker Generated Using Constant Torque Drive and Mechanical Stoppers",
+   "authors": [
+    "Fumihiko Asano",
+    "Cong Yan"
+   ],
+   "abstract": "Since the late 19th century when the first walking toys were developed, it has been known that mechanical stoppers at the hip joint are crucial for generating stable passive dynamic walking. Recent research on passive-dynamic and limit-cycle walkers has also confirmed that mechanical stoppers at the hip and knee joints are effective for generating stable walking motion, but theoretical research on how this mechanical constraint enhances the overall gait stability remains insufficient. This paper introduces a planar X-shaped walker equipped with mechanical stoppers at the hip joint, and …",
+   "published": "2026-11-16",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "8 pages, 6 figures. Published in the Proceedings of IEEE ICRA 2026. This author version corrects the author names in one reference; the scientific content remains unchanged",
+   "topics": [
+    "locomotion"
+   ],
+   "hf_checked": "2026-11-17"
+  },
+  {
+   "id": "2611.20481",
+   "title": "Lift, See, Act: Hierarchical Robot Policy Pretraining with 3D Foundation Models",
+   "authors": [
+    "Yiyuan Ge",
+    "Changxing Ding",
+    "Ziyu Hao",
+    "Zijie Zheng",
+    "Xiangmin Xu"
+   ],
+   "abstract": "Robot policy pretraining based on human videos is crucial for improving the policy's generalization ability. One main challenge for this task is the lack of explicit action-relevant representations in such unlabeled data. Recent works tend to estimate 3D hand motion trajectories from videos using 3D foundation models (3D FMs). However, they keep solely the sparse trajectories as supervision, ignoring the rich, fine-grained information produced during the trajectory extraction process. To address this issue, we propose LSA, a hierarchical robot policy pretraining framework that includes three …",
+   "published": "2026-11-16",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "Accepted at NeurIPS 2026",
+   "project": [
+    "https://yiyuan00.github.io/Lift-See-Act"
+   ],
+   "topics": [
+    "learning"
+   ],
+   "hf_checked": "2026-11-17"
+  },
+  {
+   "id": "2611.20185",
+   "title": "RoboKit: Accelerating Parallel Differentiable Optimization for Robot Learning",
+   "authors": [
+    "Jianglong Ye",
+    "Xuanbin Peng",
+    "Conor Mc Gartoll",
+    "Changwei Jing",
+    "Lai Wei",
+    "Jiali Chen",
+    "Xueyan Zou",
+    "Xiaolong Wang"
+   ],
+   "abstract": "We present RoboKit, a high-performance, general-purpose toolkit for parallel differentiable optimization in robotics, built on three principles: (i) Performance and flexibility: GPU-parallel multi-seed solvers pair sampling with versatile optimizers, running 2-60$\\times$ faster than task-specific baselines across seven tasks; (ii) Geometry, rendering and physics: hybrid and coarse-to-fine representations accelerate collision, differentiable rendering and simulation, optimizing 4096 grasps in 2.97 s; (iii) Integration with learning: costs are differentiable and simulation is parallel, so …",
+   "published": "2026-11-15",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "comment": "Accepted to CoRL 2026. Project page: https://openrobokit.com/robokit",
+   "project": [
+    "https://openrobokit.com/robokit"
+   ],
+   "topics": [],
+   "hf_checked": "2026-11-17"
+  },
+  {
+   "id": "2611.18305",
+   "title": "PROOF: Perceptive Robustness via Out-of-Distribution Fallback for Legged Locomotion",
+   "authors": [
+    "Siyuan Wang",
+    "Dongjie Zhu",
+    "Jinxuan Lu",
+    "Wenjun Xu",
+    "Jiankun Wang"
+   ],
+   "abstract": "Vision-based perceptive locomotion has enabled legged robots to achieve agile and terrain-aware locomotion across complex environments. However, the reliability of such systems heavily depends on visual observations, which are inherently susceptible to occlusion, reflective surfaces, and illumination variations, often resulting in catastrophic locomotion failures under degraded perception conditions. In this paper, we present PROOF (Perceptive Robustness via Out-of-Distribution Fallback for Legged Locomotion), a perceptive locomotion framework that enables robust locomotion under severe …",
+   "published": "2026-11-13",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "CoRL 2026",
+   "topics": [
+    "locomotion"
+   ],
+   "hf_checked": "2026-11-17"
+  },
+  {
+   "id": "2611.17438",
+   "title": "Real-Time Diffusion Relighting as a Neural Sensor: Closing the Low-Light Domain Gap for Robotic Perception",
+   "authors": [
+    "Shengjie Xu",
+    "Alexander Gao",
+    "Anshul Rai",
+    "Dae Yeol Lee",
+    "Guan-Ming Su",
+    "Ming C. Lin"
+   ],
+   "abstract": "Low-light conditions severely degrade robotic perception: object detectors trained on daylight imagery are prone to failure under dark and adverse weather conditions that fall outside of their training distribution. Furthermore, from an efficiency standpoint, existing Low-Light Image Enhancement (LLIE) methods are designed for offline processing and are therefore impractical to integrate into live control loops. To address these issues, we propose to embed a Generative Neural Sensor within the control loop that treats illumination as a generative prior rather than a signal processing problem, …",
+   "published": "2026-11-12",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV"
+   ],
+   "comment": "8 pages, 5 figures. Accepted to IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2026. Project page: https://shengjie-xu.com/conferences/2026_IROS_neural-sensor/",
+   "project": [
+    "https://shengjie-xu.com/conferences/2026_IROS_neural-sensor/"
+   ],
+   "topics": [],
+   "hf_checked": "2026-11-17"
+  },
   {
    "id": "2611.16727",
    "title": "From Foundation VLM to Versatile Driving VLM: A Triplet Incremental Training Approach",
@@ -24,6 +142,78 @@
    "comment": "13 pages, 3 figures, 7 tables. Accepted at the 10th Conference on Robot Learning (CoRL 2026)",
    "topics": [],
    "hf_checked": "2026-11-15"
+  },
+  {
+   "id": "2611.16487",
+   "title": "HeMeR: Heterogeneous Memory Reconciliation for Embodied Agents via Structured KV Reuse",
+   "authors": [
+    "Saehun Chun",
+    "Wonje Choi",
+    "Jinwoo Jang",
+    "Taeyoon Kwack",
+    "Honguk Woo"
+   ],
+   "abstract": "Embodied agents make decisions by combining information from heterogeneous memory modules, including declarative memory for explicit knowledge, procedural memory for learned routines, and working memory for current observations. During interaction, the memory contents required for decision making change with the agent's state, goal, and task progress, while many contents remain shared across consecutive decisions. However, existing memory modules are typically accessed through separate interfaces, so each updated memory context is often processed as a new input to the foundation model. This …",
+   "published": "2026-11-12",
+   "primary": "cs.AI",
+   "categories": [
+    "cs.AI"
+   ],
+   "comment": "Accepted at NeurIPS 2026 (Oral)",
+   "topics": [
+    "navigation"
+   ],
+   "hf_checked": "2026-11-17"
+  },
+  {
+   "id": "2611.15078",
+   "title": "CrowdMAPS: Crowdsourcing Multiple Actions per State for Real-World Imitation Learning",
+   "authors": [
+    "Yilong Song",
+    "Harshvardhan Chandirasekar",
+    "Karthik Desingh",
+    "Chen Zhu-Tian"
+   ],
+   "abstract": "Real-world robot imitation learning is often limited by the cost of collecting physical demonstrations, which typically yield only one action label per visited state. We present CrowdMAPS, a web-based crowdsourcing paradigm for augmenting real-robot datasets with Multiple Actions per State (MAPS). After or during standard robot data collection, CrowdMAPS distributes visited robot states to remote annotators through a web-based 3D interface, where they specify alternative valid actions without requiring access to physical robot hardware. This expands robot datasets along a complementary …",
+   "published": "2026-11-11",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "comment": "Conference on Robot Learning (CoRL) 2026",
+   "topics": [
+    "manipulation",
+    "learning",
+    "datasets"
+   ],
+   "hf_checked": "2026-11-17"
+  },
+  {
+   "id": "2611.14440",
+   "title": "UGG: Unified Generative Geometry Model",
+   "authors": [
+    "Amani Kiruga",
+    "Zhiyi Li",
+    "Ruojin Cai",
+    "Hansen Lillemark",
+    "Xiaoshan Wu",
+    "Ayush Tewari",
+    "Yilun Du"
+   ],
+   "abstract": "Understanding 4D scenes is a core challenge in visual intelligence, requiring models to jointly capture scene geometry, appearance, and dynamics from partial observations. However, existing approaches are subdivided into feedforward models for direct geometric prediction, and generative models for visual synthesis. We introduce UGG, a unified framework for 4D scene understanding that jointly models RGB video and geometric representations such as depth and camera pose. By assigning different noise levels across modalities and time, UGG formulates visual generation and geometric prediction as …",
+   "published": "2026-11-10",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV",
+    "cs.LG",
+    "cs.RO"
+   ],
+   "comment": "Accepted at NeurIPS 2026. 31 pages, 7 figures, 6 tables. Project page: https://ugg-model.github.io/",
+   "project": [
+    "https://ugg-model.github.io/"
+   ],
+   "topics": [],
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2611.12804",
@@ -898,10 +1088,10 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-10",
    "project": [
     "https://say-the-same.github.io/"
-   ]
+   ],
+   "hf_checked": "2026-11-10"
   },
   {
    "id": "2611.03932",
@@ -1113,7 +1303,7 @@
    ],
    "comment": "The Evolving Landscape of Surgical Robotics: Surgical Autonomy for Today and Tomorrow @ IROS 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.41833",
@@ -1168,7 +1358,7 @@
     "https://mgagvani.github.io/mechanistic-interpretability-for-e2e-driving/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.41127",
@@ -1199,7 +1389,7 @@
     "manipulation",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.40109",
@@ -1219,7 +1409,7 @@
    ],
    "comment": "Accepted at NeurIPS 2026. 25 pages",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.39798",
@@ -1239,7 +1429,7 @@
    ],
    "comment": "A preprint rejected by RSS 2026 AND CoRL 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.39005",
@@ -1261,7 +1451,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.38744",
@@ -1284,7 +1474,7 @@
     "https://zhaihaotian.github.io/atomtree-website/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.38569",
@@ -1310,7 +1500,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.38357",
@@ -1332,7 +1522,7 @@
    ],
    "comment": "Accepted at NeurIPS 2026. 31 pages, including appendices and checklist",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.37974",
@@ -1354,7 +1544,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.36823",
@@ -1382,7 +1572,7 @@
     "https://tapestry-wam.github.io"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.36546",
@@ -1409,7 +1599,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.36454",
@@ -1435,7 +1625,7 @@
     "https://dartmouthrobotics.github.io/svin-plus"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.36452",
@@ -1457,7 +1647,7 @@
     "locomotion",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.36374",
@@ -1507,7 +1697,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.35686",
@@ -1533,7 +1723,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.35630",
@@ -1552,7 +1742,7 @@
    ],
    "comment": "Accepted at 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.34126",
@@ -1579,7 +1769,7 @@
     "locomotion",
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.33794",
@@ -1607,7 +1797,7 @@
     "vla",
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.32312",
@@ -1632,7 +1822,7 @@
     "vla",
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.31518",
@@ -1656,7 +1846,7 @@
    "topics": [
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.31423",
@@ -1678,7 +1868,7 @@
     "vla",
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.31095",
@@ -1725,7 +1915,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.30606",
@@ -1746,7 +1936,7 @@
    ],
    "comment": "Published in ICRA 2026. 8 pages, 5 figures",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.29676",
@@ -1795,7 +1985,7 @@
    ],
    "comment": "9 pages, 6 figures, 4 tables. Accepted at the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.29452",
@@ -1821,7 +2011,7 @@
     "control",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.28950",
@@ -1843,7 +2033,7 @@
    "topics": [
     "sim"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.28893",
@@ -1865,7 +2055,7 @@
     "https://mit-clear-lab.github.io/FLEX/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.28480",
@@ -1893,7 +2083,7 @@
     "locomotion",
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.27736",
@@ -1919,7 +2109,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.27387",
@@ -1945,7 +2135,7 @@
    "topics": [
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.26852",
@@ -1976,7 +2166,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.26810",
@@ -1997,7 +2187,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.25981",
@@ -2022,7 +2212,7 @@
     "manipulation",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.25959",
@@ -2051,7 +2241,7 @@
     "navigation",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.25927",
@@ -2103,7 +2293,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.25734",
@@ -2129,7 +2319,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.25692",
@@ -2158,7 +2348,7 @@
     "https://pgpg2026.github.io/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.25401",
@@ -2177,7 +2367,7 @@
    ],
    "comment": "8 pages, 6 figures, 1 table. Accepted to IROS 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.25006",
@@ -2198,7 +2388,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.24674",
@@ -2221,7 +2411,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.24590",
@@ -2248,7 +2438,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.23271",
@@ -2291,7 +2481,7 @@
    ],
    "comment": "Accepted at CoRL 2026. 24 pages, 14 figures",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.22372",
@@ -2323,7 +2513,7 @@
     "manipulation",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.22285",
@@ -2344,7 +2534,7 @@
    ],
    "comment": "Accepted to the 10th Conference on Robot Learning (CoRL 2026), Austin, TX. 18 pages, 8 figures, 1 table",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.21621",
@@ -2369,7 +2559,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.21292",
@@ -2391,7 +2581,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.21211",
@@ -2417,7 +2607,7 @@
     "https://davian-robotics.github.io/PAM/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.20609",
@@ -2479,7 +2669,7 @@
     "navigation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.20504",
@@ -2511,7 +2701,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.20318",
@@ -2534,7 +2724,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.19479",
@@ -2560,7 +2750,7 @@
    "topics": [
     "sim"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.19141",
@@ -2581,7 +2771,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.18670",
@@ -2601,7 +2791,7 @@
     "https://openreview.net/forum?id=wP5JjTHXnQ"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.18321",
@@ -2627,7 +2817,7 @@
     "navigation",
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.18147",
@@ -2651,7 +2841,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.17927",
@@ -2678,7 +2868,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.17802",
@@ -2703,7 +2893,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.17709",
@@ -2730,7 +2920,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.17694",
@@ -2757,7 +2947,7 @@
    "topics": [
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.17593",
@@ -2782,7 +2972,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.17298",
@@ -2803,7 +2993,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.17281",
@@ -2832,7 +3022,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.16463",
@@ -2859,7 +3049,7 @@
     "manipulation",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.16457",
@@ -2880,7 +3070,7 @@
     "locomotion",
     "sim"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.16316",
@@ -2906,7 +3096,7 @@
     "manipulation",
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.16308",
@@ -2930,7 +3120,7 @@
    "topics": [
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.16199",
@@ -2951,7 +3141,7 @@
    ],
    "comment": "8 pages, 6 figures, IROS 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.16160",
@@ -2972,7 +3162,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.16143",
@@ -2996,7 +3186,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.16103",
@@ -3017,7 +3207,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.15572",
@@ -3045,7 +3235,7 @@
     "manipulation",
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.14997",
@@ -3070,7 +3260,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.14840",
@@ -3092,7 +3282,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.14603",
@@ -3117,7 +3307,7 @@
    ],
    "comment": "CoRL 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.14564",
@@ -3142,7 +3332,7 @@
     "world-models",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.14372",
@@ -3167,7 +3357,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.13891",
@@ -3187,7 +3377,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.13872",
@@ -3205,7 +3395,7 @@
    ],
    "comment": "IROS 2026, 8 pages, 6 figures",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.13732",
@@ -3231,7 +3421,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.13403",
@@ -3252,7 +3442,7 @@
     "https://cea-list.github.io/Robot-WATCHDOG/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.12999",
@@ -3275,7 +3465,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.12914",
@@ -3298,7 +3488,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.12465",
@@ -3328,7 +3518,7 @@
     "learning",
     "sim"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.12451",
@@ -3355,7 +3545,7 @@
     "vla",
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.12431",
@@ -3381,7 +3571,7 @@
     "https://zackaxue.github.io/SCOPE-project-page/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.12285",
@@ -3408,7 +3598,7 @@
     "vla",
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.12007",
@@ -3439,7 +3629,7 @@
     "vla",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.11657",
@@ -3461,7 +3651,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.11221",
@@ -3482,7 +3672,7 @@
     "manipulation",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.11175",
@@ -3506,7 +3696,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.10857",
@@ -3530,7 +3720,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.10087",
@@ -3554,7 +3744,7 @@
     "https://alex6095.github.io/mosdot/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.09358",
@@ -3572,7 +3762,7 @@
    ],
    "comment": "Accepted to CoRL 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.09327",
@@ -3590,7 +3780,7 @@
    ],
    "comment": "8 pages, 7 figures, 1 table. Accepted for presentation at the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026). Finalist for the IROS Best Paper Award for Industria",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.09302",
@@ -3614,7 +3804,7 @@
     "navigation",
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.09224",
@@ -3637,7 +3827,7 @@
     "https://liuyangdh.github.io/momt-video"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.08989",
@@ -3667,7 +3857,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.08780",
@@ -3693,7 +3883,7 @@
     "manipulation",
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.08003",
@@ -3701,7 +3891,7 @@
    "authors": [
     "Carmen Scheidemann",
     "Andreea Tulbure",
-    "Pascal Burkhardt",
+    "Pascal Burkhard",
     "Marco Hutter"
    ],
    "abstract": "When humans hand each other objects, they incorporate both geometric and semantic information into this process. For example, passing a knife with the handle towards the recipient, rather than the blade, is both more ergonomic and safer. Recent state-of-the-art methods for task-oriented robot-human handovers have progressed from modeling object geometry to incorporating object affordances. However, they often forgo predicting the explicit, task-specific hand poses a human selects to utilize an object. Since many objects support multiple interaction modalities, e.g., a claw hammer used to …",
@@ -3712,7 +3902,7 @@
    ],
    "comment": "Accepted to the Conference on Robot Learning (CoRL) 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.07649",
@@ -3784,7 +3974,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.07456",
@@ -3803,7 +3993,7 @@
    "topics": [
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.05996",
@@ -3827,7 +4017,7 @@
    "topics": [
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.05733",
@@ -3852,7 +4042,7 @@
     "navigation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.05677",
@@ -3873,7 +4063,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.05414",
@@ -3903,7 +4093,7 @@
     "navigation",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.05359",
@@ -3923,7 +4113,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.05273",
@@ -3946,7 +4136,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.05025",
@@ -3967,7 +4157,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.05011",
@@ -3997,7 +4187,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.04565",
@@ -4022,7 +4212,7 @@
    ],
    "comment": "Accepted to ICRA 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.14041",
@@ -4044,7 +4234,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.03717",
@@ -4072,7 +4262,7 @@
     "https://snap-nvs.github.io"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.03476",
@@ -4161,7 +4351,7 @@
     "https://jang-seunghwan.github.io/SafeStreamingFlowPlanning/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.02554",
@@ -4180,7 +4370,7 @@
    ],
    "comment": "NeurIPS 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.01758",
@@ -4207,7 +4397,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.01742",
@@ -4230,7 +4420,7 @@
     "https://jiahuilei.com/projects/wmm/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.01741",
@@ -4259,7 +4449,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2610.01301",
@@ -4285,7 +4475,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.40245",
@@ -4315,7 +4505,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.40134",
@@ -4345,7 +4535,7 @@
     "tactile",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.39611",
@@ -4366,7 +4556,7 @@
    ],
    "comment": "This work has been accepted to the IEEE for possible publication (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.39178",
@@ -4393,7 +4583,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.39098",
@@ -4443,7 +4633,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.38172",
@@ -4498,7 +4688,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.37681",
@@ -4550,7 +4740,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.36878",
@@ -4575,7 +4765,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.36844",
@@ -4642,7 +4832,7 @@
    ],
    "comment": "Conference on Robot Learning (CoRL), 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.36107",
@@ -4665,7 +4855,7 @@
     "https://liy1shu.github.io/SCOUT/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.35758",
@@ -4688,7 +4878,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.35476",
@@ -4708,7 +4898,7 @@
    ],
    "comment": "Accepted to the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.34730",
@@ -4728,7 +4918,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.34550",
@@ -4751,7 +4941,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.34486",
@@ -4772,7 +4962,7 @@
     "control",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.34270",
@@ -4795,7 +4985,7 @@
    ],
    "comment": "Accepted by CoRL 2026, also presented at IROS 2026 Human-Robot Dialogue workshop",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.33982",
@@ -4823,7 +5013,7 @@
     "manipulation",
     "sim"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.33235",
@@ -4848,7 +5038,7 @@
     "manipulation",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.32236",
@@ -4875,7 +5065,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.31840",
@@ -4901,7 +5091,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.30889",
@@ -4928,7 +5118,7 @@
     "manipulation",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.29419",
@@ -4951,7 +5141,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.29261",
@@ -4974,7 +5164,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.29103",
@@ -5001,7 +5191,7 @@
     "https://trace-paper.github.io/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.29092",
@@ -5030,7 +5220,7 @@
     "locomotion",
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.28960",
@@ -5052,7 +5242,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.28959",
@@ -5075,7 +5265,7 @@
     "tactile",
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.28431",
@@ -5104,7 +5294,7 @@
     "manipulation",
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.28429",
@@ -5126,7 +5316,7 @@
    ],
    "comment": "11 pages, 3 figures. Accepted to the 10th Conference on Robot Learning (CoRL 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.28296",
@@ -5151,7 +5341,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.28258",
@@ -5180,7 +5370,7 @@
     "manipulation",
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.28225",
@@ -5199,7 +5389,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.27160",
@@ -5222,7 +5412,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.27068",
@@ -5247,7 +5437,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.27003",
@@ -5267,7 +5457,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.26792",
@@ -5352,7 +5542,7 @@
     "manipulation",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.25724",
@@ -5371,7 +5561,7 @@
    ],
    "comment": "Accepted and presentaed at the 2026 IEEE International Conference on Robotics and Automation (ICRA 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.25636",
@@ -5421,7 +5611,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.25527",
@@ -5447,7 +5637,7 @@
     "manipulation",
     "sim"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.25338",
@@ -5470,7 +5660,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.24996",
@@ -5493,7 +5683,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.24778",
@@ -5519,7 +5709,7 @@
     "sim",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.24155",
@@ -5543,7 +5733,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.23896",
@@ -5563,7 +5753,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.23614",
@@ -5590,7 +5780,7 @@
     "manipulation",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.23565",
@@ -5618,7 +5808,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.23445",
@@ -5643,7 +5833,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.22895",
@@ -5669,7 +5859,7 @@
     "vla",
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.22630",
@@ -5686,7 +5876,7 @@
    ],
    "comment": "Accepted at the 10th Conference on Robot Learning (CoRL 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.21729",
@@ -5705,7 +5895,7 @@
    ],
    "comment": "Accepted for publication at the 2026 IEEE International Conference on Robotics and Automation (ICRA)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.21584",
@@ -5723,7 +5913,7 @@
    ],
    "comment": "2026 IEEE International Conference on Robotics & Automation (ICRA)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.21319",
@@ -5744,7 +5934,7 @@
     "https://lemca-robotics.github.io/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.21226",
@@ -5765,7 +5955,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.21186",
@@ -5806,7 +5996,7 @@
    ],
    "comment": "8 pages. Accepted to IROS 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.21059",
@@ -5827,7 +6017,7 @@
    ],
    "comment": "This paper has been accepted by the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.21022",
@@ -5851,7 +6041,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.20820",
@@ -5873,7 +6063,7 @@
    ],
    "comment": "26 pages; CoRL 2026; 11 figures",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.20056",
@@ -5891,7 +6081,7 @@
     "cs.AI"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.19328",
@@ -5913,7 +6103,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.18900",
@@ -5936,7 +6126,7 @@
    ],
    "comment": "8 pages, 2 figures, 1 table, IROS 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.18669",
@@ -5960,7 +6150,7 @@
     "control",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.18117",
@@ -5987,7 +6177,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.17021",
@@ -6009,7 +6199,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.16864",
@@ -6036,7 +6226,7 @@
     "vla",
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.16786",
@@ -6053,7 +6243,7 @@
    ],
    "comment": "Accepted for publication at the 2026 IEEE International Conference on Robotics and Automation (ICRA 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.16586",
@@ -6081,7 +6271,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.16443",
@@ -6113,7 +6303,7 @@
     "locomotion",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.15988",
@@ -6138,7 +6328,7 @@
     "control",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.15976",
@@ -6165,7 +6355,7 @@
     "manipulation",
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.15921",
@@ -6192,7 +6382,7 @@
     "tactile",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.15910",
@@ -6221,7 +6411,7 @@
     "manipulation",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.15213",
@@ -6242,7 +6432,7 @@
     "vla",
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.14783",
@@ -6269,7 +6459,7 @@
    "topics": [
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.14765",
@@ -6291,7 +6481,7 @@
    "topics": [
     "hardware"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.14539",
@@ -6308,7 +6498,7 @@
    ],
    "comment": "Accepted for publication at the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.14268",
@@ -6327,7 +6517,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.14261",
@@ -6347,7 +6537,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.14156",
@@ -6376,7 +6566,7 @@
     "manipulation",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.14087",
@@ -6397,7 +6587,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.13982",
@@ -6420,7 +6610,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.13812",
@@ -6444,7 +6634,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.12831",
@@ -6465,7 +6655,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.12737",
@@ -6486,7 +6676,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.12660",
@@ -6508,7 +6698,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.12498",
@@ -6533,7 +6723,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.12433",
@@ -6558,7 +6748,7 @@
    "topics": [
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.12221",
@@ -6583,7 +6773,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.12206",
@@ -6601,7 +6791,7 @@
    ],
    "comment": "This paper has been accepted for publication at the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.12159",
@@ -6624,7 +6814,7 @@
    ],
    "comment": "This paper has been accepted for publication and presentation in 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.11753",
@@ -6649,7 +6839,7 @@
     "learning",
     "hardware"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.11553",
@@ -6675,7 +6865,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.10918",
@@ -6697,7 +6887,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.10915",
@@ -6789,7 +6979,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.10166",
@@ -6809,7 +6999,7 @@
    ],
    "comment": "The Conference on Robot Learning (CoRL) 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.10137",
@@ -6834,7 +7024,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.09492",
@@ -6855,7 +7045,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.09158",
@@ -6882,7 +7072,7 @@
     "navigation",
     "control"
    ],
-   "hf_checked": "2026-11-02",
+   "hf_checked": "2026-11-17",
    "project": [
     "https://tango-vla.github.io/"
    ]
@@ -6903,7 +7093,7 @@
     "cs.RO"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.09119",
@@ -6956,7 +7146,7 @@
    "topics": [
     "hardware"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.08743",
@@ -6980,7 +7170,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.08669",
@@ -6999,7 +7189,7 @@
    ],
    "comment": "Accepted in IROS 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.08493",
@@ -7023,7 +7213,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.08444",
@@ -7052,7 +7242,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.08409",
@@ -7071,7 +7261,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.08408",
@@ -7092,7 +7282,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.08209",
@@ -7120,7 +7310,7 @@
    "topics": [
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.08130",
@@ -7139,7 +7329,7 @@
    ],
    "comment": "23 pages, 8 figures. Accepted at the Conference on Robot Learning (CoRL) 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.07933",
@@ -7161,7 +7351,7 @@
     "manipulation",
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.07497",
@@ -7211,7 +7401,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.07231",
@@ -7237,7 +7427,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.07096",
@@ -7260,7 +7450,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.06958",
@@ -7283,7 +7473,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.06718",
@@ -7313,7 +7503,7 @@
     "locomotion",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.06279",
@@ -7333,7 +7523,7 @@
    ],
    "comment": "26 pages, 19 figures, 3 tables",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.06114",
@@ -7353,7 +7543,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.06061",
@@ -7377,7 +7567,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.06009",
@@ -7407,7 +7597,7 @@
     "world-models",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.05927",
@@ -7431,7 +7621,7 @@
    ],
    "comment": "50 pages, including supplementary material",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.05596",
@@ -7455,7 +7645,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.05325",
@@ -7483,7 +7673,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.03984",
@@ -7511,7 +7701,7 @@
     "navigation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.03680",
@@ -7530,7 +7720,7 @@
    ],
    "comment": "Accepted to ICRA 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.02546",
@@ -7556,7 +7746,7 @@
     "vla",
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.02020",
@@ -7579,7 +7769,7 @@
     "manipulation",
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.00771",
@@ -7604,7 +7794,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.00677",
@@ -7630,7 +7820,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.00641",
@@ -7658,7 +7848,7 @@
     "learning",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.29881",
@@ -7685,7 +7875,7 @@
     "https://mx-liu6.github.io/OptiGeo-web/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.29242",
@@ -7715,7 +7905,7 @@
     "vla",
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.29208",
@@ -7736,7 +7926,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.28175",
@@ -7758,7 +7948,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.27384",
@@ -7778,7 +7968,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.26622",
@@ -7799,7 +7989,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.26583",
@@ -7827,7 +8017,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.26545",
@@ -7851,7 +8041,7 @@
     "https://robot-adaptation.github.io/MemoryAnchors"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.26053",
@@ -7882,7 +8072,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.26002",
@@ -7903,7 +8093,7 @@
     "https://a-pru.github.io/descent"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.24162",
@@ -7926,7 +8116,7 @@
     "tactile",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.23304",
@@ -7951,7 +8141,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.22301",
@@ -7981,7 +8171,7 @@
     "learning",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.22149",
@@ -8007,7 +8197,7 @@
     "https://metactrlg.github.io"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.21740",
@@ -8032,7 +8222,7 @@
     "vla",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.21735",
@@ -8056,7 +8246,7 @@
     "tactile",
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.20087",
@@ -8087,7 +8277,7 @@
     "locomotion",
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.19684",
@@ -8110,7 +8300,7 @@
     "learning",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.19425",
@@ -8133,7 +8323,7 @@
    ],
    "comment": "22 pages",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.19188",
@@ -8154,7 +8344,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.19182",
@@ -8185,7 +8375,7 @@
     "tactile",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.19059",
@@ -8204,7 +8394,7 @@
    ],
    "comment": "8 pages, 8 figures, 6 tables. Accepted to the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.17320",
@@ -8226,7 +8416,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.16572",
@@ -8249,7 +8439,7 @@
     "tactile",
     "hardware"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.16264",
@@ -8306,7 +8496,7 @@
     "locomotion",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.16164",
@@ -8330,7 +8520,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.16153",
@@ -8357,7 +8547,7 @@
     "https://uca-policy.github.io/UCA.github.io/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.16058",
@@ -8381,7 +8571,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.14986",
@@ -8403,7 +8593,7 @@
     "manipulation",
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.14028",
@@ -8429,7 +8619,7 @@
     "vla",
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.13719",
@@ -8456,7 +8646,7 @@
    "topics": [
     "sim"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.13448",
@@ -8505,7 +8695,7 @@
     "manipulation",
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.13422",
@@ -8558,7 +8748,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.11876",
@@ -8582,7 +8772,7 @@
    ],
    "comment": "8 pages, 5 figures, and 5 tables. Accepted at the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.11564",
@@ -8604,7 +8794,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.14713",
@@ -8627,7 +8817,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.10824",
@@ -8651,7 +8841,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.10383",
@@ -8676,7 +8866,7 @@
     "manipulation",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.10232",
@@ -8702,7 +8892,7 @@
    "topics": [
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.10056",
@@ -8730,7 +8920,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.09658",
@@ -8757,7 +8947,7 @@
    ],
    "comment": "Accepted at the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). A supplementary video demonstrating the workcell is available at https://youtu.be/zobin6oytGk",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.09520",
@@ -8783,7 +8973,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.09198",
@@ -8801,7 +8991,7 @@
    ],
    "comment": "ICRA 2026 (Late Breaking Result Poster)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.09127",
@@ -8831,7 +9021,7 @@
    "topics": [
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.07328",
@@ -8854,7 +9044,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.06919",
@@ -8900,7 +9090,7 @@
     "https://sites.google.com/view/sync-sbc/home"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.05365",
@@ -8920,7 +9110,7 @@
     "navigation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.05313",
@@ -8944,7 +9134,7 @@
    ],
    "comment": "Accepted to IEEE International Conference on Robotics and Automation (ICRA 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.05215",
@@ -8970,7 +9160,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.03563",
@@ -8993,7 +9183,7 @@
     "vla",
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.03296",
@@ -9019,7 +9209,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.03231",
@@ -9043,7 +9233,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.03155",
@@ -9062,7 +9252,7 @@
    ],
    "comment": "8 pages, 3 figures, 2 tables. Accepted to the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.02580",
@@ -9090,7 +9280,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.02547",
@@ -9112,7 +9302,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.02320",
@@ -9132,7 +9322,7 @@
    ],
    "comment": "This paper has been accepted for publication at the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.01402",
@@ -9156,7 +9346,7 @@
     "vla",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.01083",
@@ -9181,7 +9371,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.01015",
@@ -9208,7 +9398,7 @@
     "locomotion",
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.00730",
@@ -9234,7 +9424,7 @@
     "https://push-wiper.github.io/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.00715",
@@ -9256,7 +9446,7 @@
    "topics": [
     "hardware"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.00337",
@@ -9283,7 +9473,7 @@
     "vla",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.00272",
@@ -9307,7 +9497,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2608.00237",
@@ -9356,7 +9546,7 @@
     "https://yixiaowang7.github.io/Diagnosing_Compositional_Generalization_Robot_Page/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.29482",
@@ -9404,7 +9594,7 @@
     "vla",
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.28995",
@@ -9422,7 +9612,7 @@
    ],
    "comment": "Accepted at IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.28560",
@@ -9452,7 +9642,7 @@
     "navigation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.27890",
@@ -9479,7 +9669,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.27881",
@@ -9502,7 +9692,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.26337",
@@ -9525,7 +9715,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.26283",
@@ -9569,7 +9759,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.25798",
@@ -9593,7 +9783,7 @@
     "manipulation",
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.25448",
@@ -9613,7 +9803,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.25195",
@@ -9631,7 +9821,7 @@
    ],
    "comment": "Accepted for publication in the Proceedings of the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026). 6 pages, 8 figures",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.24249",
@@ -9654,7 +9844,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.24036",
@@ -9678,7 +9868,7 @@
     "locomotion",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.23565",
@@ -9701,7 +9891,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.23515",
@@ -9725,7 +9915,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.23473",
@@ -9744,7 +9934,7 @@
     "https://lsh3163.github.io/prism/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.23268",
@@ -9767,7 +9957,7 @@
     "learning",
     "sim"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.23108",
@@ -9792,7 +9982,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.22535",
@@ -9817,7 +10007,7 @@
    "topics": [
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.21986",
@@ -9838,7 +10028,7 @@
     "perception",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.21802",
@@ -9887,7 +10077,7 @@
     "manipulation",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.21571",
@@ -9913,7 +10103,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.21416",
@@ -9964,7 +10154,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.20973",
@@ -9984,7 +10174,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2609.18964",
@@ -10004,7 +10194,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.20710",
@@ -10023,7 +10213,7 @@
    ],
    "comment": "Accepted for publication at the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.20679",
@@ -10048,7 +10238,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.20653",
@@ -10075,7 +10265,7 @@
     "manipulation",
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.20345",
@@ -10120,7 +10310,7 @@
     "https://seonsoo-p1.github.io/DiffusionReRoll/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.19804",
@@ -10141,7 +10331,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.19695",
@@ -10166,7 +10356,7 @@
     "navigation",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.19174",
@@ -10186,7 +10376,7 @@
    ],
    "comment": "IEEE IROS 2026 preprint",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.18936",
@@ -10225,7 +10415,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.18660",
@@ -10254,7 +10444,7 @@
    "topics": [
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.18606",
@@ -10274,7 +10464,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.18578",
@@ -10297,7 +10487,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.18540",
@@ -10317,7 +10507,7 @@
    ],
    "comment": "Accepted at the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.18527",
@@ -10340,7 +10530,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.18517",
@@ -10363,7 +10553,7 @@
     "https://tic-planning.github.io/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.18231",
@@ -10393,7 +10583,7 @@
     "manipulation",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.18016",
@@ -10418,7 +10608,7 @@
     "manipulation",
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.17914",
@@ -10442,7 +10632,7 @@
    ],
    "comment": "Accepted to 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.17876",
@@ -10461,7 +10651,7 @@
    ],
    "comment": "Appeared in the 2026 IEEE International Conference on Robotics and Automation (ICRA)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.17852",
@@ -10481,7 +10671,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.17818",
@@ -10503,7 +10693,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.17724",
@@ -10526,7 +10716,7 @@
    ],
    "comment": "IROS 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.17521",
@@ -10552,7 +10742,7 @@
     "world-models",
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.17351",
@@ -10573,7 +10763,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.17332",
@@ -10596,7 +10786,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.16956",
@@ -10642,7 +10832,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.16508",
@@ -10664,7 +10854,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.16501",
@@ -10686,7 +10876,7 @@
     "world-models",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.16015",
@@ -10709,7 +10899,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.16012",
@@ -10758,7 +10948,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.15828",
@@ -10780,7 +10970,7 @@
     "https://beyondfrontiers.github.io/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.15674",
@@ -10800,7 +10990,7 @@
    ],
    "comment": "Accepted for publication in the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). 9 pages, 10 figures, 1 table",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.15641",
@@ -10831,7 +11021,7 @@
     "manipulation",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.15633",
@@ -10875,7 +11065,7 @@
    ],
    "comment": "Accepted for publication in the proceedings of the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.15579",
@@ -10902,7 +11092,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.15448",
@@ -10930,7 +11120,7 @@
     "manipulation",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.15395",
@@ -10957,7 +11147,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.15275",
@@ -10989,7 +11179,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.15129",
@@ -11012,7 +11202,7 @@
    ],
    "comment": "Accepted at the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.14852",
@@ -11034,7 +11224,7 @@
     "vla",
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.14842",
@@ -11060,7 +11250,7 @@
     "tactile",
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.14781",
@@ -11080,7 +11270,7 @@
    ],
    "comment": "Accepted to 2026 IEEE International Conference on Robotics and Automation (ICRA)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.14730",
@@ -11102,7 +11292,7 @@
    "topics": [
     "hardware"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.14725",
@@ -11123,7 +11313,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.14708",
@@ -11143,7 +11333,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.14698",
@@ -11162,7 +11352,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.14643",
@@ -11188,7 +11378,7 @@
     "navigation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.14586",
@@ -11214,7 +11404,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.14578",
@@ -11235,7 +11425,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.14488",
@@ -11260,7 +11450,7 @@
     "control",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.14468",
@@ -11282,7 +11472,7 @@
    ],
    "comment": "Accepted on IROS 2026, 8 pages",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.14387",
@@ -11362,7 +11552,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.13597",
@@ -11389,7 +11579,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.13524",
@@ -11410,7 +11600,7 @@
     "perception",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.13478",
@@ -11433,7 +11623,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.13472",
@@ -11464,7 +11654,7 @@
     "locomotion",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.13461",
@@ -11489,7 +11679,7 @@
     "navigation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.13451",
@@ -11516,7 +11706,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.13319",
@@ -11544,7 +11734,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.13154",
@@ -11569,7 +11759,7 @@
     "navigation",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.12965",
@@ -11589,7 +11779,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.12861",
@@ -11610,7 +11800,7 @@
    ],
    "comment": "Accepted by IROS 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.12811",
@@ -11665,7 +11855,7 @@
     "control",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.12659",
@@ -11715,7 +11905,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.12370",
@@ -11741,7 +11931,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.12275",
@@ -11761,7 +11951,7 @@
    ],
    "comment": "Accepted at IROS 26'",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.11884",
@@ -11784,7 +11974,7 @@
     "manipulation",
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.11874",
@@ -11814,7 +12004,7 @@
     "locomotion",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.11734",
@@ -11872,7 +12062,7 @@
    "topics": [
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.11688",
@@ -11899,7 +12089,7 @@
     "https://zzongzheng0918.github.io/automated-facial-mechanisms-synthesis/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.11624",
@@ -11929,7 +12119,7 @@
     "locomotion",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.11481",
@@ -11958,7 +12148,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.11340",
@@ -11981,7 +12171,7 @@
     "control",
     "hardware"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.10925",
@@ -12007,7 +12197,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.10879",
@@ -12029,7 +12219,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.10762",
@@ -12055,7 +12245,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.10655",
@@ -12082,7 +12272,7 @@
     "https://apollo-lab-yale.github.io/26-CoRL-AFP-website/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.10504",
@@ -12132,7 +12322,7 @@
     "navigation",
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.10132",
@@ -12157,7 +12347,7 @@
     "tactile",
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.10037",
@@ -12178,7 +12368,7 @@
    ],
    "comment": "8 pages, 4 figures, 2 tables. Accepted to the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.09911",
@@ -12198,7 +12388,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.09866",
@@ -12228,7 +12418,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.09818",
@@ -12255,7 +12445,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.09548",
@@ -12272,7 +12462,7 @@
    ],
    "comment": "Accepted to the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.09515",
@@ -12293,7 +12483,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.09218",
@@ -12321,7 +12511,7 @@
     "manipulation",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.08974",
@@ -12350,7 +12540,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.08948",
@@ -12370,7 +12560,7 @@
    "topics": [
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.08877",
@@ -12399,7 +12589,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.08742",
@@ -12424,7 +12614,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.08735",
@@ -12441,7 +12631,7 @@
     "cs.RO"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.08341",
@@ -12492,7 +12682,7 @@
    "topics": [
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.08436",
@@ -12517,7 +12707,7 @@
    "topics": [
     "world-models"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.07873",
@@ -12542,7 +12732,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.07844",
@@ -12570,7 +12760,7 @@
     "control",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.07830",
@@ -12596,7 +12786,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.07374",
@@ -12617,7 +12807,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.07357",
@@ -12644,7 +12834,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.07101",
@@ -12673,7 +12863,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.06990",
@@ -12699,7 +12889,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.06988",
@@ -12726,7 +12916,7 @@
     "world-models",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.06724",
@@ -12751,7 +12941,7 @@
     "https://nbhavyasai.github.io/evoplan/"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.06699",
@@ -12780,7 +12970,7 @@
    "topics": [
     "sim"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.06678",
@@ -12809,7 +12999,7 @@
     "vla",
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.06501",
@@ -12828,7 +13018,7 @@
    ],
    "comment": "Accepted to Robotics: Science and Systems (RSS) 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.06388",
@@ -12848,7 +13038,7 @@
    ],
    "comment": "This paper has been presented at the IEEE International Conference on Robotics & Automation (ICRA), 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.06262",
@@ -12870,7 +13060,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.05957",
@@ -12891,7 +13081,7 @@
     "perception",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.13059",
@@ -12915,7 +13105,7 @@
    "topics": [
     "sim"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.05663",
@@ -12938,7 +13128,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.05369",
@@ -12993,7 +13183,7 @@
    "topics": [
     "perception"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.04616",
@@ -13022,7 +13212,7 @@
     "learning",
     "sim"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.04610",
@@ -13051,7 +13241,7 @@
    "topics": [
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.04554",
@@ -13078,7 +13268,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.04378",
@@ -13099,7 +13289,7 @@
    ],
    "comment": "ICRA 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.03987",
@@ -13117,7 +13307,7 @@
    ],
    "comment": "8 pages, 5 figures, 4 tables. Accepted to IROS 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.03792",
@@ -13140,7 +13330,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.03758",
@@ -13166,7 +13356,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.03723",
@@ -13194,7 +13384,7 @@
     "tactile",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.03693",
@@ -13219,7 +13409,7 @@
    "topics": [
     "vla"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.03553",
@@ -13246,7 +13436,7 @@
    "topics": [
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.03529",
@@ -13272,7 +13462,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.03387",
@@ -13302,7 +13492,7 @@
     "manipulation",
     "tactile"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.03204",
@@ -13320,7 +13510,7 @@
    ],
    "comment": "Accepted by 2026 International Conference on Intelligent Robots and Systems (IROS)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.02417",
@@ -13345,7 +13535,7 @@
     "cs.LG"
    ],
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.02332",
@@ -13373,7 +13563,7 @@
     "manipulation",
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.02322",
@@ -13397,7 +13587,7 @@
     "vla",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.02277",
@@ -13420,7 +13610,7 @@
    ],
    "comment": "Accepted to the IROS 2026",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.02222",
@@ -13470,7 +13660,7 @@
     "locomotion",
     "control"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.01287",
@@ -13489,7 +13679,7 @@
    ],
    "comment": "Accepted to the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.01111",
@@ -13515,7 +13705,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.01044",
@@ -13536,7 +13726,7 @@
    "topics": [
     "navigation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.00424",
@@ -13557,7 +13747,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.00283",
@@ -13581,7 +13771,7 @@
    ],
    "comment": "Accepted to the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026). 9 pages, 5 figures, 5 tables",
    "topics": [],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2607.00191",
@@ -13633,7 +13823,7 @@
    "topics": [
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2606.32027",
@@ -13659,7 +13849,7 @@
     "manipulation",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2606.31993",
@@ -13686,7 +13876,7 @@
     "manipulation",
     "datasets"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2606.31912",
@@ -13713,7 +13903,7 @@
    "topics": [
     "locomotion"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2606.31909",
@@ -13736,7 +13926,7 @@
    "topics": [
     "manipulation"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2606.31807",
@@ -13760,7 +13950,7 @@
     "locomotion",
     "learning"
    ],
-   "hf_checked": "2026-11-02"
+   "hf_checked": "2026-11-17"
   },
   {
    "id": "2606.31357",
@@ -22925,7 +23115,7 @@
    "categories": [
     "cs.RO"
    ],
-   "comment": "Accepted for presentation at the IEEE International Conference on Robotics and Automation (ICRA), 2026. This version includes a correction to a typographical error in one equation",
+   "comment": "Accepted for presentation at the IEEE International Conference on Robotics and Automation (ICRA), 2026. The previous version corrected a typographical error in one equation. This version corrects the ",
    "topics": [
     "locomotion"
    ],
@@ -30586,7 +30776,7 @@
   },
   {
    "id": "2602.07837",
-   "title": "USER: A Unified and Extensible System for Real-World Online Policy Learning in Embodied AI",
+   "title": "USER: A Unified and Extensible System for Online Real-World Policy Learning in Embodied AI",
    "authors": [
     "Hongzhi Zang",
     "Shu'ang Yu",
@@ -30595,10 +30785,10 @@
     "Zefang Huang",
     "Zhen Guo",
     "Xin Xu",
-    "Jiakai Zhou",
+    "Yuze Sheng",
     "+9"
    ],
-   "abstract": "Online policy learning directly in the physical world is a promising yet challenging direction for embodied intelligence. Unlike simulation, real-world systems cannot be arbitrarily accelerated, cheaply reset, or massively replicated, suggesting that real-world policy learning is not merely an algorithmic problem, but inherently a systems problem. We present USER, a \\underline{U}nified and extensible \\underline{S}yst\\underline{E}m for real-world online policy lea\\underline{R}ning. On the systems side, USER introduces a hardware abstraction layer for unified robot management and an adaptive …",
+   "abstract": "Online policy learning directly in the physical world is a promising yet challenging direction for embodied intelligence. Unlike simulation, real-world systems cannot be arbitrarily accelerated, cheaply reset, or massively replicated, suggesting that real-world policy learning is not merely an algorithmic problem, but inherently a systems problem. We present \\user, a \\underline{U}nified and extensible \\underline{S}yst\\underline{E}m for online real-world policy lea\\underline{R}ning. On the systems side, \\user introduces a hardware abstraction layer for unified robot management and an adaptive …",
    "published": "2026-02-08",
    "primary": "cs.RO",
    "categories": [
@@ -33623,29 +33813,30 @@
   },
   {
    "id": "2510.06199",
-   "title": "DYMO-Hair: Generalizable Volumetric Dynamics Modeling for Robot Hair Manipulation",
+   "title": "Learning Latent Volumetric Dynamics for Multimodal Goal-Conditioned Robot Manipulation of Hair",
    "authors": [
     "Chengyang Zhao",
     "Uksang Yoo",
     "Arkadeep Narayan Chaudhury",
     "Giljoo Nam",
+    "Nathan Dennler",
+    "Andreea Bobu",
     "Jonathan Francis",
     "Jeffrey Ichnowski",
-    "Jean Oh"
+    "+1"
    ],
-   "abstract": "Hair care is an essential daily activity, yet it remains inaccessible to individuals with limited mobility and challenging for autonomous robot systems due to the fine-grained physical structure and complex dynamics of hair. In this work, we present DYMO-Hair, a model-based robot hair care system. We introduce a novel dynamics learning paradigm that is suited for volumetric quantities such as hair, relying on an action-conditioned latent state editing mechanism, coupled with a compact 3D latent space of diverse hairstyles to improve generalizability. This latent space is pre-trained at scale …",
+   "abstract": "Hair care is an essential daily activity for many, yet it remains inaccessible to individuals with limited mobility and challenging for robot systems due to the fine-grained physical structure and complex dynamics of hair. In this work, we present DYMO-Hair, a model-based robot hair care system for generalizable multimodal goal-conditioned hair styling. We introduce a volumetric dynamics learning method that models combing-induced hair deformations through action-conditioned editing in a pre-trained hierarchical 3D latent space. This latent space captures diverse hair states through …",
    "published": "2025-10-07",
    "primary": "cs.RO",
    "categories": [
     "cs.RO"
    ],
-   "comment": "To appear in ICRA 2026. Project page: https://dymohair.github.io/",
+   "comment": "Extended version of the previous work in ICRA 2026. Project page: https://dymohair.github.io/",
    "project": [
     "https://dymohair.github.io/"
    ],
    "topics": [
-    "manipulation",
-    "world-models"
+    "manipulation"
    ],
    "hf_checked": "2026-11-02"
   },
