@@ -551,3 +551,37 @@
   tags: [lidar, semantic-segmentation, edge, jetson, bev]
   takeaway_en: "Point-BEV fusion with height-partitioned BEV features for LiDAR semantics: 63.7% mIoU on SemanticKITTI at 14.2 FPS on a Jetson AGX Orin. Swapping it into a SLAM front end lowers trajectory error by 10.6% on average."
   takeaway_zh: "点云与按高度分层的 BEV 特征融合做 LiDAR 语义分割：在 Jetson AGX Orin 上 SemanticKITTI 63.7% mIoU、14.2 FPS。替换进 SLAM 前端后，轨迹误差平均降低 10.6%。"
+
+- title: 'DGV-DLIVO: Degeneracy-Guided Visual Fusion for Direct LiDAR-Inertial-Visual Odometry in Degenerate Tunnel Environments'
+  type: paper
+  arxiv: '2611.22385'
+  year: 2026
+  code: https://github.com/0RayZhang0/DGV-DLIVO
+  added: 2026-11-18
+  topics: [perception]
+  tags: [slam, lidar, odometry, degenerate, tunnel]
+  takeaway_en: For tunnels where LiDAR degenerates, uses the degenerate direction to pick informative visual regions and fuses vision only into the deficient motion subspace. Reports 91.4% progress over a 40 m tunnel.
+  takeaway_zh: 面向隧道等 LiDAR 退化场景：以退化方向为引导选择有信息的视觉区域，只在缺失的运动子空间注入视觉约束。报告在 40 m 水电站隧洞内进度比 91.4%，而代表性 LIO/LIVO/VIO 方法出现停滞、振荡或发散。
+
+- title: 'SE(3)-LIVOM: Adaptive Multi-LiDAR-Inertial-Visual Odometry and Mapping'
+  type: paper
+  arxiv: '2611.22047'
+  year: 2026
+  code: https://github.com/url-kaist/se3-livom-comfort
+  added: 2026-11-18
+  topics: [perception]
+  tags: [slam, lidar, odometry, multi-lidar, real-time]
+  takeaway_en: 'Overall winner of the IROS 2026 COMFORT Challenge: real-time multi-LiDAR-inertial-visual odometry with about 35 ms per scan, plane bundle adjustment and an incremental pose graph. Reports 1.40 cm ATE.'
+  takeaway_zh: 多激光雷达-惯性-视觉里程计，IROS 2026 COMFORT 挑战赛总冠军：两台 LiDAR、相机与 IMU 实时运行，每帧约 35 ms，用子图平面集束调整与增量位姿图修正漂移。报告六个 GrandTour 测试场景平均 ATE 1.40 cm。
+
+- title: 'Real-Time Diffusion Relighting as a Neural Sensor: Closing the Low-Light Domain Gap for Robotic Perception'
+  type: paper
+  arxiv: '2611.17438'
+  year: 2026
+  venue: IROS 2026
+  project: https://shengjie-xu.com/conferences/2026_IROS_neural-sensor/
+  added: 2026-11-18
+  topics: [perception]
+  tags: [low-light, diffusion, perception, real-time, control-loop]
+  takeaway_en: 'Embeds diffusion relighting as a generative neural sensor: a background diffusion model activates only when detection confidence drops. Reports 87.1% mAP on ExDark and 100% completion in CARLA.'
+  takeaway_zh: 把扩散重光照嵌入控制回路作为生成式神经传感器：高延迟扩散模型在后台线程运行，仅当检测置信度下降（感知不确定事件）时激活。报告 ExDark 87.1% mAP，CARLA 闭环导航 100% 完成。

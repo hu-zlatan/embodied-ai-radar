@@ -1129,3 +1129,37 @@
   added: 2026-11-13
   takeaway_en: "Self-improving coding agents that see a benchmark's success checks score higher, but the gain vanishes when checks are slightly reworded and skills transfer poorly; proposes instruction-faithful criteria."
   takeaway_zh: "让自我改进的编程智能体看到基准的成功判定条件后，分数很快上升，但判定条件稍作改写（不偏离指令）优势就消失，学到的技能也难跨任务迁移；作者提出更忠实于指令的判定标准。"
+
+- title: 'GOOSELoc: A Multimodal Benchmark for Ground-to-Aerial Localization in Unstructured Off-Road Terrain'
+  type: paper
+  arxiv: '2611.16162'
+  year: 2026
+  project: https://gooseloc.github.io
+  added: 2026-11-18
+  topics: [datasets, perception]
+  tags: [benchmark, localization, cross-view, lidar, off-road]
+  takeaway_en: 'Ground-to-aerial localization benchmark for unstructured terrain: 9,356 four-season scenes near Munich pairing aerial orthophotos with surround RGB and LiDAR. Fine-tuned baselines degrade substantially off-road.'
+  takeaway_zh: 面向无结构野外地面的地-空定位基准：慕尼黑周边四个季节的 9,356 个场景，配对航拍正射影像与环视 RGB、3D LiDAR。任务专用微调后的现有跨视角方法在野外大幅退化；多模态环视+LiDAR 基线提升定位性能。数据与基线已发布。
+
+- title: 'Hidden Variables Behind Real-Robot Data Quality: Lessons from Hundreds of Thousands of Hours'
+  type: paper
+  arxiv: '2611.22388'
+  year: 2026
+  org: AgiBot
+  project: https://teleop.agibot.com/
+  added: 2026-11-18
+  topics: [datasets, manipulation]
+  tags: [data-collection, teleoperation, real-robot, data-quality, calibration]
+  takeaway_en: 'AgiBot''s study of what shapes data quality: kinematics of 25 dual-arm robots, teleop experiments, π0.5 policies. Parallel body-part control cuts task time 43-53%; inference-time miscalibration fails all 30 trials.'
+  takeaway_zh: AgiBot 对真机数据质量背后隐藏变量的系统研究：25 台双臂机器人的运动学分析、受控遥操作实验与微调 π0.5 评测。并行身体部位控制使任务时间减少 43–53%，主动搜索式示范让手臂选择准确率从 50% 提到 100%；推理时标定失配导致全部 30 次试验失败。
+
+- title: 'RFW-S: Everyday Deformable Objects with Independent Simulation Verification'
+  type: paper
+  arxiv: '2611.23056'
+  year: 2026
+  project: https://sjijs.github.io/RFW-S_website/
+  added: 2026-11-18
+  topics: [datasets, sim]
+  tags: [dataset, deformable, simulation, asset, grasping]
+  takeaway_en: 83,365 simulation-verified deformable assets in 485 categories, built by reference-guided 3D generation and LLM-assisted physical parameter estimation with independent verification. Also evaluates robotic grasping.
+  takeaway_zh: 83,365 个经仿真独立验证的可变形物体资产，覆盖 485 个日常类别（软固体、布料、壳体、衣物、包袋），由参考引导生成与 LLM 辅助物理参数估计构建。还评测机器人抓取的成功率与物体完整性，并回放易碎物体操作的 sim-to-real 过程。

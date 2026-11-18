@@ -1863,3 +1863,84 @@
   tags: [humanoid, cart-pushing, whole-body-control, rl, force-estimation, sim]
   takeaway_en: "Humanoid cart pushing via two-stage RL: a load-robust locomotion prior, then a residual policy inferring force and state latents onboard. Reports up to 68% lower cart-speed error than locomotion alone (sim-to-sim)."
   takeaway_zh: "两阶段强化学习实现人形机器人推车：先训练能承受不同手部负载的行走先验，再用残差策略从机载观测推断力与状态隐变量（无需外部力传感器），协调手臂、腰和腿。仿真到仿真测试中，推车速度误差比仅用行走策略最多降低 68.2%。"
+
+- title: 'PROOF: Perceptive Robustness via Out-of-Distribution Fallback for Legged Locomotion'
+  type: paper
+  arxiv: '2611.18305'
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-18
+  topics: [locomotion]
+  tags: [legged, quadruped, perception, uncertainty, fallback, real]
+  takeaway_en: 'Student-teacher perceptive locomotion: the student suppresses out-of-distribution visual features and falls back to proprioception. On a Unitree Go2, reports parkour and stability under heavy occlusion.'
+  takeaway_zh: 让四足机器人在视觉严重退化时仍能运动：教师学习视觉驱动与本体感知兜底两种行为，学生预测外部感知特征及其不确定性，分布外时主动抑制。在 Unitree Go2 上报告正常条件下完成跨沟、高台、窄梁等跑酷动作，遮挡与光照剧变下仍稳定行走。
+
+- title: 'Heavy Metal Acrobatics: Learning Dynamic Control for Skid-Steer Loaders'
+  type: paper
+  arxiv: '2611.18365'
+  year: 2026
+  org: ETH Zurich
+  venue: Science Robotics
+  project: https://sites.google.com/leggedrobotics.com/heavy-metal-acrobatics
+  added: 2026-11-18
+  topics: [locomotion, sim]
+  tags: [sim2real, rl, heavy-machinery, wheelie, real]
+  takeaway_en: 'RL in simulation plus sim-to-real teaches a 5-tonne John Deere 332G loader acrobatics: swinging up onto two wheels, balancing over rough terrain, spinning and landing back on four.'
+  takeaway_zh: 仿真强化学习加 sim-to-real 让 5 吨重的 John Deere 332G 滑移装载机完成此前只有少数顶尖操作手能做的特技：单轮摆起、两轮平衡行驶过崎岖地形、原地旋转并安全落回四轮。
+
+- title: 'SG-ODOM: Event-Driven Proprioceptive State Estimation with Stability-Gated Contact Updates for Legged Robots'
+  type: paper
+  arxiv: '2611.20710'
+  year: 2026
+  code: https://github.com/ori-drs/SG-ODOM
+  added: 2026-11-18
+  topics: [locomotion, perception]
+  tags: [legged, odometry, proprioceptive, contact, estimation]
+  takeaway_en: Proprioceptive odometry that accepts a kinematic contact correction only after the foot stably supports load, with timeouts bounding IMU-only propagation. Reports up to 25% lower RPE on GrandTour sequences.
+  takeaway_zh: 腿足机器人的本体感知里程计：脚接触地面后需通过稳定性门控才被接受为运动学修正，并设超时更新限制纯 IMU 推算时长。在四足与人形平台及 GrandTour 室外序列上报告相对位姿误差比基线最多降低 25%。
+
+- title: Recovery-Guided Model-Based Diffusion for Safety-Critical Legged Locomotion
+  type: paper
+  arxiv: '2611.19775'
+  year: 2026
+  project: https://zack4417.github.io/rg-mbd/
+  added: 2026-11-18
+  topics: [locomotion, control]
+  tags: [legged, safety, model-based, diffusion, recovery, real]
+  takeaway_en: A learned terminal recovery critic (worst-case future clearance of a recovery policy) steers short-horizon diffusion for legged locomotion. Reports zero collisions and 98% strict-clearance success across 50 Go2 trials.
+  takeaway_zh: 给短时域模型基扩散运动规划加上学习到的末端恢复评论家：估计恢复策略未来最差情况下的净空裕度，并在采样各阶段做可行性引导精修。在 50 组随机化 Go2 避障试验中零碰撞、严格净空成功率 98%，计算量远小于长时域基线。
+
+- title: 'MoViC: Real-Time Humanoid Whole-Body Control from Monocular Video Streams'
+  type: paper
+  arxiv: '2611.19998'
+  year: 2026
+  project: https://movicproject.github.io/
+  added: 2026-11-18
+  topics: [locomotion]
+  tags: [humanoid, teleoperation, monocular-video, retargeting, real-time, real]
+  takeaway_en: 'Monocular RGB as the humanoid control signal: reconstruction, retargeting and a transformer model with compact frequency-domain motion context; extrapolation bridges 10 Hz vision to 50 Hz control.'
+  takeaway_zh: 以实时单目 RGB 视频作为人形机器人的控制信号：人体动作重建、重定向加 Transformer 行为基础模型，输入本体感受历史、单步下一步参考与紧凑的频域动作表征；外推桥接 10 Hz 视觉与 50 Hz 控制器。报告双臂与单臂任务的免穿戴遥操作。
+
+- title: 'Heave-Ho: Decentralized Long-Horizon Multi-Humanoid Collaboration'
+  type: paper
+  arxiv: '2611.22275'
+  year: 2026
+  org: University of Southern California
+  code: https://github.com/heaveho-humanoid/Heave-Ho
+  project: https://heaveho-humanoid.github.io/
+  added: 2026-11-18
+  topics: [locomotion, manipulation]
+  tags: [humanoid, multi-robot, collaboration, decentralized, post-training, real]
+  takeaway_en: Post-trains a humanoid foundation tracking model for physically coupled multi-robot interaction; a vision-language planner coordinates decentralized execution. Trained on two, scales to 2-10 humanoids.
+  takeaway_zh: 去中心化的多个人形协作：多智能体后训练把基础跟踪模型适配到物理耦合交互，视觉语言规划器配合基于语音的领航-跟随同步实现无网络通信的协同执行。用两台人形训练，可扩展到 2–10 台，含 12 任务的 HH-Bench 与真机演示。
+
+- title: 'ImpedanceMimic: Learned Impedance as Action Space for Force-Accurate Motion Imitation'
+  type: paper
+  arxiv: '2611.19153'
+  year: 2026
+  project: https://impedancemimic.github.io/ImpedanceMimic/
+  added: 2026-11-18
+  topics: [locomotion, learning]
+  tags: [imitation, impedance, force, biomechanics, humanoid, zero-shot]
+  takeaway_en: Modulates per-joint stiffness, damping and setpoints from motion and force, needing only motion at inference; beats matched fixed-gain PD across 129 participants and six activities.
+  takeaway_zh: 强化学习策略根据运动与力测量调节各关节刚度、阻尼和位置设定点，推理时只需运动输入，避免固定增益 PD 在运动跟踪与力跟踪之间的折中。在 129 名受试者、六种活动上优于匹配的固定增益与现有模仿控制器，并可零样本迁移到新受试者和人形机器人。

@@ -2,7 +2,7 @@
 
 _触觉传感器、触觉表征与接触丰富的控制。_
 
-共 80 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
+共 82 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/tactile.html) · [English](tactile.md)
 
@@ -41,6 +41,7 @@ _触觉传感器、触觉表征与接触丰富的控制。_
 - **[RevoSim: Scalable Multimodal Tactile Simulation for Dexterous Manipulation](https://arxiv.org/abs/2611.08939)** (2026) — 为 BrainCo Revo3 灵巧手构建的触觉仿真器，同时模拟 285 个压阻触点和五个视触觉指尖（压力、深度、RGB、标记点位移）；单张 RTX 5090 最多 4096 个并行环境。 · [代码](https://github.com/BrainCoTech/RevoSim) · [项目页](https://braincotech.github.io/RevoSim-web/)
 - **[SlipSense: Multimodal Tactile Learning for Low-Latency and Generalized Slip Detection](https://arxiv.org/abs/2609.15910)** (2026) — SlipSense 融合 240 Hz 压力阵列与 8 kHz 加速度计进行滑移检测：宏 F1 达 96.7%，76% 的滑移在 23.1 毫秒内被检测到；仅用 UMI 数据训练即可零样本迁移到灵巧手。
 - **[T-Rex: Tactile-Reactive Dexterous Manipulation](https://arxiv.org/abs/2606.17055)** (2026) — 触觉反应式 VLA：围绕基本动作采集的 100 小时触觉数据集、可变频率的 Mixture-of-Transformers 架构与时序触觉 VQ-VAE 编码器。报告在 12 个任务上平均成功率比最强基线高 30% 以上。 · [代码](https://github.com/ZhuoyangLiu2005/T-Rex) · [项目页](https://tactile-rex.github.io/)
+- **[TaF-Foundation: Wrench-Grounded Cross-Sensor Tactile Representations](https://arxiv.org/abs/2611.20718)** (2026) — 以六维力/力矩为共同物理参照，把四种原理、24 种传感器的触觉观测对齐到共享连续空间，用 1 亿多对“触觉-力”数据训练共享编码器。报告单帧力 RMSE 降低 17.1%，跨传感器检索 R@1 提高 13.11 个百分点，真机操作成功率 46.25%（最强基线 23.75%）。 · [项目页](https://mrjiangjm.github.io/TaF-Foundation/)
 - **[TacCoRL: Integrating Tactile Feedback into VLA via Simulation](https://arxiv.org/abs/2606.11743)** (2026) — 通过仿真-真机协同训练和在对齐真实的模拟器中做强化学习，为 VLA 加入触觉，学习接近失败时触觉应如何调整动作。报告四个双臂任务成功率 72.5%，基线 50.0%。 · [项目页](https://tac-corl.github.io/)
 - **[TacMind: Benchmarking and Modeling Tactile Interaction States for Robotic Manipulation](https://arxiv.org/abs/2611.00455)** (2026) — 128 个仿真触觉任务，分精确、识别、动态三类，含 12 种扰动；并提出动作条件的触觉世界模型，把触觉当作随时间演化的状态，用预测的触觉信息修正动作。 · [代码](https://github.com/Tacmind-Bench/TacMind) · [项目页](https://tacmind-bench.github.io/)
 - **[TacStyle: Personalizing Tactile Robot Policies using Structured Behavior Representations](https://arxiv.org/abs/2606.14862)** (2026) — 学习按行为风格（如施力大小）组织的结构化潜空间，让语言在其中推理用户偏好而非直接生成动作，从而实现个性化的触觉策略，如擦拭、叠衣。
@@ -53,6 +54,7 @@ _触觉传感器、触觉表征与接触丰富的控制。_
 - **[VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing](https://arxiv.org/abs/2610.31472)** (2026) — 6 毫米厚的柔性触觉阵列：压阻层上的硅胶凸点把切向力转成可区分的压力分布，实现每个触点的三轴力测量；4x4 阵列成本不到 35 美元。报告称其提升了扩散策略插插头任务的表现。 · [项目页](https://jiannnh.github.io/VecTile/)
 - **[WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware Planning](https://arxiv.org/abs/2606.13232)** (2026) — 可穿戴的全身触觉接口，可用于人类演示和人形遥操作；规划器同时预测末端位姿与接触力，作为触觉导纳控制器的参考。在五个富接触任务上验证。 · [项目页](https://wt-umi.github.io/WTUMI/)
 - **[What is the Better Curriculum: Controller-Shaped Grasping Behavior for Contact Force-Sensitive Manipulation](https://arxiv.org/abs/2609.25887)** (2026) — 数据采集时用 25 Hz 触觉反射控制器当“老师”，让演示自带良好的抓握力；之后不用触觉的 ACT 策略在易碎杯子上达到 95% 稳定抓取。但抵抗外部扰动仍需保留反射控制器。 · [项目页](https://shayfeng.github.io/better-curriculum/)
+- **[WiTac: Wrist-Informed Tactile Representations for Contact-Rich Manipulation](https://arxiv.org/abs/2611.21057)** (2026) — 在注入策略前就把触觉信号与手部运动、腕部视角深度融合：用约 300 小时 SharpaDex 数据预训练接触表征。条件化 GR00T N1.7 与 π0.5 后，四个接触丰富任务成功率比纯视觉策略平均高 28.8%/15.0%，并比无腕部视角的触觉编码器高 18.8%/7.5%。 · [项目页](https://wrist-informed-tactile-representations.github.io/)
 - **[AnyTouch: Learning Unified Static-Dynamic Representation across Multiple Visuo-tactile Sensors](https://arxiv.org/abs/2502.12191)** (2025) — 跨多种视触觉传感器学习统一的静态-动态表征，并贡献对齐的多传感器触觉数据集 TacQuad。 · [代码](https://github.com/GeWu-Lab/AnyTouch)
 - **[ControlTac: Scaling Tactile Data with Physically Controlled Tactile Image Generation](https://arxiv.org/abs/2505.20498)** (2025) — 以一张参考触觉图像加接触力与接触位姿为条件，生成逼真的触觉图像来扩充跨传感器的触觉数据。在插装、模仿学习与称重等真实任务中，增强数据均带来提升。 · [代码](https://github.com/DongyuLUO/ControlTac) · [项目页](https://dongyuluo.github.io/controltac)
 - **[FACTR: Force-Attending Curriculum Training for Contact-Rich Policy Learning](https://arxiv.org/abs/2502.17432)** (2025) — 低成本双边遥操作把机械臂受力反馈给操作者；训练时对视觉的破坏逐渐减弱，让策略学会关注力信息。

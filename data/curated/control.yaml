@@ -528,3 +528,92 @@
   tags: [mpc, quadratic-programming, gpu, cuda, solver]
   takeaway_en: "GPU solver for dense QPs from linear MPC: fused kernels replayed via CUDA graphs, auto-calibrated launch config, cached operators. Reports lower latency than other GPU solvers in humanoid and quadrotor control."
   takeaway_zh: "FAME-QP 是面向线性 MPC 稠密二次规划的 GPU 求解器：融合核函数经 CUDA Graph 重放、按设备自动标定执行配置并缓存算子。在人形与四旋翼仿真控制中报告延迟低于其他 GPU 求解器，且精度和控制性能不降。"
+
+- title: 'Certify, Then Select: Viability-Aware Runtime Steering of Frozen Diffusion Policies'
+  type: paper
+  arxiv: '2611.19047'
+  year: 2026
+  project: https://clmoro.github.io/cast
+  added: 2026-11-18
+  topics: [control, learning]
+  tags: [diffusion-policy, safety, barrier, runtime, frozen]
+  takeaway_en: Certifies sampled action chunks of a frozen diffusion policy with a barrier condition and executes the one a value ensemble ranks highest. Reports joint task-and-constraint success above safety output filters.
+  takeaway_zh: 给冻结扩散策略做运行期安全筛选：采样少量动作块，用屏障条件逐一认证，执行学习价值集成评分最高的认证块，并以可行性保留未来安全选项。报告在 robomimic、平面四旋翼、人形与独轮车任务上任务+约束联合成功率高于输出滤波器。
+
+- title: Physics-Informed Causal Reasoning for Nonstationary Robot Dynamics
+  type: paper
+  arxiv: '2611.19251'
+  year: 2026
+  project: https://jungbbal.github.io/PICR/
+  added: 2026-11-18
+  topics: [control, learning]
+  tags: [causal, physics-informed, adaptation, payload, franka, sim]
+  takeaway_en: A re-inferred context conditions a fixed physics-informed network for the robot's inertia and potential energy, adapting without retraining. Reports 1.6-3.8x lower error under unseen payloads.
+  takeaway_zh: 只更新从近期交互重新推断的上下文，让它条件化固定的物理信息网络，决定机器人的惯量与势能，从而无需重训练即可适应新物理条件。报告 Franka Panda 在 Isaac Sim 中对未见负载的预测误差降低 1.6–3.8 倍，并支持反事实力矩查询。
+
+- title: 'RoboKit: Accelerating Parallel Differentiable Optimization for Robot Learning'
+  type: paper
+  arxiv: '2611.20185'
+  year: 2026
+  venue: CoRL 2026
+  project: https://openrobokit.com/robokit
+  added: 2026-11-18
+  topics: [control, sim, learning]
+  tags: [gpu-parallel, differentiable, optimization, simulator, rl]
+  takeaway_en: 'GPU-parallel differentiable optimization for robot learning: multi-seed solvers, differentiable rendering and simulation; optimizes 4096 grasps in 2.97 s, 2-60x faster than task-specific baselines.'
+  takeaway_zh: 面向机器人学习的 GPU 并行可微优化工具包：多种子求解器、可微渲染与仿真、学习集成；2.97 s 内优化 4096 个抓取，比任务专用基线快 2–60 倍。蒸馏策略快 9–240 倍，RL 达到 GPU 基线分数最多快 2.1 倍。
+
+- title: Making Koopman Control Guarantees Hold on Robots
+  type: paper
+  arxiv: '2611.20402'
+  year: 2026
+  project: https://walleclipse.github.io/tik-koopman/
+  added: 2026-11-18
+  topics: [control]
+  tags: [koopman, control, stability, latent, real-time]
+  takeaway_en: Koopman controllers can stabilize the latent model yet destabilize the plant; TIK enforces first-order matching of latent and true dynamics. All 40 TIK controllers stabilize where all 40 standard ones fail.
+  takeaway_zh: Koopman 控制器可能稳定学到的潜空间模型却让真实系统失稳；TIK 强制潜空间与真实闭环动力学在切空间一阶匹配。40 个 TIK 控制器全部稳定对应对象，而 40 个标准 Koopman 控制器全部失稳；仿真七关节臂每步控制仅需 1–5 ms。
+
+- title: 'Risk Density RRT$^*$: Planning in the Space of Probability'
+  type: paper
+  arxiv: '2611.22654'
+  year: 2026
+  venue: IJRR
+  added: 2026-11-18
+  topics: [control]
+  tags: [planning, uncertainty, risk, rrt]
+  takeaway_en: 'Plans directly in collision-probability space: Risk Density evaluates a whole path''s collision probability, with severity weighting. Reports lower estimated collision probability than standard planners.'
+  takeaway_zh: 直接在碰撞概率空间中规划：Risk Density 泛函整体评估路径碰撞概率，支持按严重度加权与路径长度混合变体。报告估计碰撞概率持续低于标准规划器，并以蒙特卡洛仿真验证。
+
+- title: 'PoliMop: Policy-in-the-Loop Motion Planning in 3D Spaces for Mobile Robots'
+  type: paper
+  arxiv: '2611.18110'
+  year: 2026
+  project: https://ariael21.github.io/polimop.html
+  added: 2026-11-18
+  topics: [control, navigation]
+  tags: [planning, rrt, policy, physics, kinodynamic]
+  takeaway_en: Kinodynamic RRT that expands through physics-simulated policy rollouts, so plans respect the robot's real capabilities; mass-point preplan guidance cuts planning time by up to 63%.
+  takeaway_zh: 动动力学 RRT 通过物理仿真中的策略 rollout 扩展节点，使规划反映机器人真实能力；质点预规划引导采样，规划时间最多减少 63%。适用于四足、人形与轮式机器人，并能自动利用放木板等环境改造扩大可达空间。
+
+- title: 'BehaVerify: A Formal Verification Tool for Behavior Trees'
+  type: paper
+  arxiv: '2611.22403'
+  year: 2026
+  code: https://github.com/verivital/behaverify
+  added: 2026-11-18
+  topics: [control]
+  tags: [behavior-trees, formal-verification, safety, ros2, open-source]
+  takeaway_en: 'Verification toolbox for (neuro-symbolic) behavior trees: a DSL with LTL/CTL specifications compiled into nuXmv via ''fastforwarding'', plus Python/Haskell generation and ROS/PyTrees integration.'
+  takeaway_zh: 行为树与神经符号行为树的形式化验证工具箱：DSL 支持 LTL/CTL 规范，经“fastforwarding”高效编码到 nuXmv，可生成 Python/Haskell 实现并集成 PyTrees 与 ROS；已部署到多台自主机器人验证运行时监视器。
+
+- title: Grounding Object-to-Object Hazard Reasoning into 3D Risk Fields for Task-Conditioned Safety
+  type: paper
+  arxiv: '2611.17566'
+  year: 2026
+  project: https://vlm-hazard-riskfield.github.io
+  added: 2026-11-18
+  topics: [control, manipulation]
+  tags: [safety, vlm, risk-field, manipulation, real]
+  takeaway_en: A VLM decides whether a task risks unrecoverable failure (rejecting it) or identifies preventable object-pair hazards; segmentation and depth ground them as 3D risk fields that correct nominal motion.
+  takeaway_zh: 由 VLM 先判断任务是否存在不可恢复的危险（必要时拒绝执行），再识别可预防的物体对危险；开放词汇分割与深度信息把对象落为连续 3D 风险场，在执行中修正名义运动。在仿真与真机上评估危险、拒绝与安全三类任务。

@@ -1422,3 +1422,59 @@
   tags: [reinforcement-learning, control-variates, sim-data, offline-rl, mujoco]
   takeaway_en: "Uses simulator data only as a control variate to cut variance, not to set the learning target, so an inaccurate simulator cannot bias the policy. Policy evaluation, actor-critic and offline RL variants; tested on MuJoCo."
   takeaway_zh: "仿真数据只作为控制变量用来降低方差，而不直接决定学习目标，因此不准确的仿真器不会把策略带偏。给出策略评估、Actor-Critic 和离线强化学习三种形式，在 MuJoCo 基准上优于直接混合仿真与真实数据的做法。"
+
+- title: 'Lift, See, Act: Hierarchical Robot Policy Pretraining with 3D Foundation Models'
+  type: paper
+  arxiv: '2611.20481'
+  year: 2026
+  venue: NeurIPS 2026
+  project: https://yiyuan00.github.io/Lift-See-Act
+  added: 2026-11-18
+  topics: [learning]
+  tags: [pretraining, human-video, 3d, depth, hand, real]
+  takeaway_en: 'Hierarchical pretraining from human videos: ''Lift'' aligns policy features with dense 3D representations from multiple 3D foundation models, ''See'' adds depth and hand-region supervision, then ''Act''.'
+  takeaway_zh: 从人类视频做分层策略预训练：“Lift”把策略浅层特征与多个 3D 基础模型的稠密表征对齐，“See”加入深度重建与手部区域注意力监督，再进入“Act”。报告在多种仿真与真机任务上显著超过现有最优方法。
+
+- title: 'Practice Is Not Free: Measuring the Embodied Cost of Reset-Free Robot Practice'
+  type: paper
+  arxiv: '2611.19979'
+  year: 2026
+  code: https://github.com/Vedant2604/so101-cost-aware-scheduler
+  added: 2026-11-18
+  topics: [learning, manipulation]
+  tags: [reset-free, real, cost-aware, practice, so-101]
+  takeaway_en: 'Open low-cost SO-101 testbed measuring the embodied cost of reset-free practice - time, joint travel, human help. A fixed retry limit did not cut time lost to failures (36% vs 27%): failures do not cluster.'
+  takeaway_zh: 开源低成本 SO-101 测试台量化“免重置练习”的具身成本：每次尝试的墙钟时间、关节行程与人工介入都有账本记录。固定重试上限并未减少失败时间占比（36%，可行性规则为 27%）——失败不聚集；按成本感知规则在日志上回放能选出合理任务。
+
+- title: Reconfiguring Procedural Knowledge for Compositional Robot Skill Adaptation
+  type: paper
+  arxiv: '2611.22174'
+  year: 2026
+  venue: NeurIPS 2026
+  added: 2026-11-18
+  topics: [learning, manipulation]
+  tags: [procedural-knowledge, composition, memory, long-horizon, real]
+  takeaway_en: Skills live as multiple procedure views over a knowledge base of skill-induced transitions; deployment composes stored relations to realize new behaviors. Reports 91.9% ordered completion on Franka Kitchen tasks.
+  takeaway_zh: 把技能表示成知识库中“技能引发状态转移”的多个过程视图，部署时组合已存关系实现新行为，无需任务专用重训练。报告长程 Franka Kitchen 任务有序完成率 91.9%、每回合任务推理仅 1.0 ms，并通过局部记忆编辑完成真机适配。
+
+- title: Robotic Reward Models in the Foundation-Model Era
+  type: paper
+  arxiv: '2611.20741'
+  year: 2026
+  project: https://ethanliang99.github.io/awesome-robot-reward-model
+  added: 2026-11-18
+  topics: [learning]
+  tags: [survey, reward-models, foundation-model, evaluation, benchmark]
+  takeaway_en: Organizes 114 reward models into five semantic families by the question their outputs answer; adds RRM-Bench-1K (1,117 real-robot videos) and RRM-Hub. Dense credit follows execution progression more than task state.
+  takeaway_zh: 把 114 种机器人奖励模型按输出回答的问题归为五个语义家族；并发布 RRM-Bench-1K（1,117 条真机视频，带任务状态与相机证据标注）与开源 RRM-Hub。对 27 个评估器的研究发现：稠密打分跟随执行进度而非任务状态。
+
+- title: 'When the World Is the Test Suite: Agentic Intelligence for the Physical World'
+  type: paper
+  arxiv: '2611.22291'
+  year: 2026
+  project: https://physicalworldagent.github.io
+  added: 2026-11-18
+  topics: [learning]
+  tags: [survey, agents, evaluation, code-as-policy, physical-world]
+  takeaway_en: Treats the physical world as the test suite for coding agents that write programs for robots, labs and controllers; reviews how such programs are tested and how agents learn from the results.
+  takeaway_zh: 把物理世界当作编码智能体程序的“测试套件”：系统梳理为机器人、实验室与控制器编写程序的方式、如何测试（真机试验的成本、轨迹、仿真、学习型评判与形式化检查）以及如何从结果中学习，主张建立物理世界的持续集成式验证。

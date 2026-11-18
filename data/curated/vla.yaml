@@ -2838,3 +2838,119 @@
   tags: [model-editing, interpretability, pi0.5, language-grounding, sim]
   takeaway_en: "Repairs a VLA failure by editing weights in closed form: a clearer rewording's effect is copied into the language model's MLPs, no gradients or data. Reports π0.5 in RoboLab going from 27 to 106 of 128 held-out seeds."
   takeaway_zh: "不用梯度和训练数据，以闭式方式直接编辑权重来修复 VLA 的单步失败：把一条更明确的改写指令在各层产生的效果复制进语言模型的 MLP 权重。报告 RoboLab 中 π0.5 在 128 个保留种子上的成功数从 27 升到 106，同等大小的随机更新无效。"
+
+- title: 'EgoX: Egocentric Cross-Embodiment Manipulation with Embodiment Dreaming'
+  type: paper
+  arxiv: '2611.16728'
+  year: 2026
+  org: CMU, Bosch
+  code: https://github.com/egox-dream/egox
+  project: https://egox-dream.github.io/
+  added: 2026-11-18
+  topics: [vla, manipulation]
+  tags: [cross-embodiment, egocentric, pretraining, embodiment-dreaming, real, sim]
+  takeaway_en: Pretrains one Transformer on mixed human, robot and simulator demos with per-modality tokenizers and an 'embodiment dreaming' objective. Reports task progress 0.63 → 0.80 over 13 task-embodiment pairs.
+  takeaway_zh: 在人类、真机与仿真混合示教上预训练跨本体 Transformer：每种观测/动作模态独立分词，并以训练期“本体梦想”目标建模各本体动力学。报告 13 个任务-本体对上平均任务进度 0.63→0.80，分布外 0.53→0.77。
+
+- title: 'Right Goal, Wrong Body: Re-grounding Frozen VLAs under Actuation Shift'
+  type: paper
+  arxiv: '2611.20244'
+  year: 2026
+  project: https://umersiddique94.github.io/ReGround/
+  added: 2026-11-18
+  topics: [vla]
+  tags: [vla, robustness, actuation-shift, inference-time, libero]
+  takeaway_en: Keeps the VLA frozen and re-grounds its intended motion with dynamics learned from motor babbling, activating only when a shift is detected. Reports π0.5 restored from 0.16 to 0.90 under 400 ms latency.
+  takeaway_zh: 部署时执行特性漂移（重装、磨损、指令延迟）会让 VLA 失效；ReGround 冻结策略，仅用电机试动学到的动力学重新对齐策略意图运动，检测到漂移才介入。报告 400 ms 延迟下 π0.5 成功率从 0.16 恢复到 0.90。
+
+- title: 'ScaleVLA: Scaling Vision-Language-Action Models to 552 Billion Parameters'
+  type: paper
+  arxiv: '2611.21607'
+  year: 2026
+  org: Galbot
+  project: https://galaxygeneralrobotics.github.io/scalevla/
+  added: 2026-11-18
+  topics: [vla]
+  tags: [vla, scaling, foundation-model, deepseek, sample-efficiency, real]
+  takeaway_en: Connects a 552B DeepSeek-V4.1-Flash backbone to a trainable action DiT. Reports 10 demos beating a 2B backbone trained on 50 (87.8% vs 85.6%), LIBERO-PRO 45.1% vs at most 31.3%, and real charger insertion 9/10 vs 4/10.
+  takeaway_zh: 把 552B 的 DeepSeek-V4.1-Flash 主干接到可训练的动作 DiT，并在统一设置下对比 2B–552B 主干。报告 10 条示教胜过 2B 主干训练 50 条（87.8% 对 85.6%），LIBERO-PRO 45.1%（小模型最高 31.3%），真机充电器插入 9/10 对 4/10。
+
+- title: 'SALA: Semantically Aligned Latent Actions Enable Dual-Axis Scaling of Embodied Foundation Models'
+  type: paper
+  arxiv: '2611.17110'
+  year: 2026
+  project: https://sala-vla.github.io/
+  added: 2026-11-18
+  topics: [vla, learning]
+  tags: [latent-actions, cross-embodiment, human-video, semantic-alignment, scaling]
+  takeaway_en: Semantically aligns human and robot latent actions using language descriptions of unpaired clips; robot action reconstruction grounds control. Reports more pretraining video lowering robot action error.
+  takeaway_zh: 用无配对人类/机器人视频的语言描述估计语义相似度，监督跨本体潜动作的软邻域对齐，同时以机器人动作重建为控制提供根基。报告预训练人类视频越多、下游动作误差越低，任务专用视频越多、真机成功率越高。
+
+- title: 'ForceHarness: Turning Force into Action and Physics for Frozen Frontier Models'
+  type: paper
+  arxiv: '2611.21099'
+  year: 2026
+  org: Show Lab
+  code: https://github.com/showlab/ForceHarness
+  project: https://showlab.github.io/ForceHarness/
+  added: 2026-11-18
+  topics: [vla, manipulation]
+  tags: [frontier-model, force, harness, zero-shot, real, benchmark]
+  takeaway_en: 'Force feedback for frozen models: self-terminating primitives close the loop beneath the model; a physics layer returns quantities with uncertainty. Reports GPT-6 Astra on a real arm rising 3.3% to 90.0%.'
+  takeaway_zh: 让只能调用 API 的冻结前沿模型获得力反馈：自终止力原语在模型之下闭环控制力，物理翻译层把力迹转为带不确定性的物理量。报告无腕部力传感器的真机机械臂上 GPT-6 Astra 零样本成功率从 3.3% 升到 90.0%。
+
+- title: 'Ego2Sim2Humanoid: Agentic Real-to-Sim for Learning Loco-Manipulation VLAs without Robot Demonstrations'
+  type: paper
+  arxiv: '2611.19196'
+  year: 2026
+  project: https://robonana.github.io/ego2sim2humanoid/
+  added: 2026-11-18
+  topics: [vla, sim, locomotion]
+  tags: [real-to-sim, human-video, humanoid, whole-body, gr00t, unitree-g1]
+  takeaway_en: Turns glasses recordings into robot training data via agentic real-to-sim reconstruction and whole-body synthesis; GR00T N1.7 fine-tuned on only this data did loco-manipulation on a Unitree G1.
+  takeaway_zh: 把第一视角眼镜录制的演示转成机器人训练数据：智能体式 real-to-sim 重建场景，抓取规划与双层站姿优化合成全身运动，RL 跟踪策略补全视线外阶段。只用这批转换数据微调的 GR00T N1.7 在 Unitree G1 上自主完成移动操作任务。
+
+- title: 'ESI: An Embodied Self-Improvement Flywheel for LLM-VLA Agents'
+  type: paper
+  arxiv: '2611.18176'
+  year: 2026
+  added: 2026-11-18
+  topics: [vla, learning]
+  tags: [self-improvement, llm, vla, post-training, robodojo]
+  takeaway_en: Post-trains an LLM-VLA agent as one unit - prompts, skill interface and VLA parameters - from interaction. Reports 62.03 mean score / 49.41% success on ten RoboDojo tasks with no task-specific code.
+  takeaway_zh: 把 LLM-VLA 智能体作为一个整体做后训练：从环境交互中反复改进 LLM 提示、共享技能接口与 VLA 参数，用协作本身提供监督。报告十个 RoboDojo 任务平均分数 62.03、成功率 49.41%，无需生成任务专用控制代码，超过所有对比的混合智能体。
+
+- title: 'Envisioning Agentic Robotics: A New Era of Robotic Systems'
+  type: paper
+  arxiv: '2611.18359'
+  year: 2026
+  org: Grid Robotics
+  project: https://grid-robotics-official.github.io/agentic-robotics-roadmap
+  added: 2026-11-18
+  rating: 1
+  topics: [vla, learning]
+  tags: [survey, agentic, foundation-model, roadmap, evaluation]
+  takeaway_en: 'Position paper on agentic robotics: Embodied System 2, a frontier model plus an embodied harness, as the decision core; proposes an evaluation framework and a roadmap to sustained autonomy.'
+  takeaway_zh: 关于智能体式机器人（agentic robotics）的路线图文章：提出由前沿模型加具身框架构成的“具身系统 2”作为决策核心，给出兼顾模型能力与闭环表现的评测框架，并规划从执行单个原语到持续自主工作的路径。
+
+- title: 'InteractVLA: Turning VLAs into Interactive Tools for Agentic Robotic Manipulation'
+  type: paper
+  arxiv: '2611.22584'
+  year: 2026
+  project: https://lingwupro.github.io/InteractVLA/
+  added: 2026-11-18
+  topics: [vla, manipulation]
+  tags: [vla, agentic, geometric-guidance, self-improvement, test-time]
+  takeaway_en: 'Frozen flow-based VLAs become steerable, inspectable tools for agentic manipulation: agent targets become input gradients through the action expert. Reports 99.4% LIBERO-Plus, 48.62% RoboDojo.'
+  takeaway_zh: 把冻结的流式 VLA 变成可几何引导、可检查的工具：智能体指定的末端目标经动作专家转为输入梯度，生成的动作块反馈给智能体诊断并修正。报告 LIBERO-Plus 99.4%、RoboDojo 48.62%、RoboCasa365 89.4%，并支持递归自改进。
+
+- title: 'EgoSwarm: Learning Decentralized Robot Swarm Intelligence from Human Swarm Demonstrations'
+  type: paper
+  arxiv: '2611.20100'
+  year: 2026
+  project: https://xitong-c.github.io/EgoSwarm_Page/
+  added: 2026-11-18
+  topics: [vla, learning]
+  tags: [multi-robot, swarm, human-demos, decentralized, vla]
+  takeaway_en: From 50+ hours of multi-person egocentric demos, swarm interaction tokens recover cross-agent relations and supervise decentralized SwarmVLA policies. Reports 72.2% success across three task categories.
+  takeaway_zh: 从 50 多小时无机器人、多人第一视角演示中学习去中心化多机器人协作：群交互 token 从分布式观测恢复智能体间关系，并监督只依赖局部观测与邻居消息的 SwarmVLA。报告三类协作任务平均成功率 72.2%。

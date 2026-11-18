@@ -1877,3 +1877,91 @@
   tags: [dexterous-hand, piano, sim-to-real, fast-adaptation, real]
   takeaway_en: "Learns in simulation how to adapt, not how to act: a network predicts how action changes affect piano-playing score and guides tweaks between runs. On a real dexterous hand, F1 rises 3.6–23% after ~7 min per piece."
   takeaway_zh: "在仿真预训练中学习“如何适应”而不是“如何动作”：梯度引导网络从成对执行中学会动作调整如何影响弹奏表现，并在重复演奏之间指导调整。迁移到真实灵巧手后，每首曲子约 7 分钟适应即可让 F1 提高 3.6%–23%。"
+
+- title: 'Objectives as Policies: Vision-Language Model Cost Programs for Contact-Rich Manipulation'
+  type: paper
+  arxiv: '2611.18298'
+  year: 2026
+  project: https://zihaolu001.github.io/oap-project/
+  added: 2026-11-18
+  topics: [manipulation, control]
+  tags: [vlm, mpc, contact-rich, real-to-sim, real, sim]
+  takeaway_en: A pretrained VLM writes editable objective programs that a MPC executes in a real-to-sim digital twin, refined from rollouts. Outperforms strong baselines on four real tabletop tasks.
+  takeaway_zh: 用可编辑的“目标程序”连接预训练 VLM 与采样 MPC：程序把任务拆成阶段，组合运行/终端代价与完成条件，在 real-to-sim 数字孪生里按 MPC rollout 迭代修正后部署真机。报告在四个真实桌面任务上超过强基线。
+
+- title: When Will You Hand It Over? A Hidden Start Delay Makes Self-Play Handover Robust to Unfamiliar Partners
+  type: paper
+  arxiv: '2611.18491'
+  year: 2026
+  code: https://github.com/mkhoshnam/Selfplay-PPO-handover
+  added: 2026-11-18
+  topics: [manipulation]
+  tags: [hri, handover, self-play, rl, unitree-g1, sim]
+  takeaway_en: 'Self-play handover policies break with partners they never met (95% vs 31% with unseen partners). A hidden start delay repairs it: 31% to 80% after 300 updates, with 3-5x less high-force contact.'
+  takeaway_zh: 自对弈学到的物体交接策略遇到陌生伙伴会失效（与未见过的脚本伙伴成功率仅 31%）。给学习型伙伴随机化隐藏起手延迟即可修复：300 次更新后成功率从 31% 升到 80%，高接触力减少 3–5 倍。
+
+- title: Correcting Persistent Failures in Point-Cloud Grasping Policies using Human Demonstrations in Virtual Reality
+  type: paper
+  arxiv: '2611.18919'
+  year: 2026
+  added: 2026-11-18
+  topics: [manipulation, learning]
+  tags: [grasping, point-cloud, human-in-the-loop, rl, vr]
+  takeaway_en: Failures of an RL point-cloud grasping policy go to VR, where a person supplies two grasp points for retraining. Reports unseen-object success 55% to 83%, and 58 VR demos nearly doubling hard cases.
+  takeaway_zh: 针对强化学习点云抓取策略反复失败的情形：自动挖掘失败案例，在 VR 中由人只给出两个抓取点，再送回训练。报告 RL 把未见物体成功率从 55% 提到 83%，58 条 VR 示范把困难案例成功率从 24% 提到 45%。
+
+- title: Leaning Over to Reach Far-Away Objects
+  type: paper
+  arxiv: '2611.19100'
+  year: 2026
+  project: https://h12leaner.github.io/
+  added: 2026-11-18
+  topics: [manipulation, locomotion]
+  tags: [humanoid, whole-body, mpc, bracing, real]
+  takeaway_en: Sampling MPC that braces a Unitree H1-2 to reach far objects, at 34 Hz on a laptop; extends reach 50 cm, holds loaded postures 4+ minutes. Reports 89% reach and 81% reach-and-recovery over 54 trials.
+  takeaway_zh: 让 Unitree H1-2 靠环境支撑去够远处的物体：采样 MPC 在笔记本电脑上以 34 Hz 运行全身倚靠、支撑、够取与恢复，把可达范围向外扩展约 50 cm，负载姿势可维持 4 分钟以上。54 次试验中够取成功 89%，完整够取-恢复 81%。
+
+- title: 'DexFormer 2.0: Towards a Cross-Embodiment Foundation Policy for Dexterous Grasping'
+  type: paper
+  arxiv: '2611.20273'
+  year: 2026
+  project: https://davidlxu.github.io/dexformer2-web/
+  added: 2026-11-18
+  topics: [manipulation, vla]
+  tags: [dexterous, grasping, cross-embodiment, rl, foundation-model, real]
+  takeaway_en: 'One RL policy for cross-embodiment grasping: canonical joint interface, kinematic-tree attention, Transformer-XL memory. Reports 89% on seen and 51% on six held-out; zero-shot sim-to-real on a Flexiv arm.'
+  takeaway_zh: 单个强化学习策略实现跨本体灵巧抓取：统一关节接口加有效性掩码、按运动学树偏置的注意力与 Transformer-XL 记忆推断本体动力学。在 18 种臂-手组合上训练：见过的组合 89%，六组留出组合 51%；并在 Flexiv 机械臂上零样本 sim-to-real。
+
+- title: 'WinDEX: Metric 3D Hand Motion Reconstruction in the Wild for Dexterous Teleoperation and Policy Learning'
+  type: paper
+  arxiv: '2611.21143'
+  year: 2026
+  project: https://fruitrabbit.github.io/WinDEX/
+  added: 2026-11-18
+  topics: [manipulation, datasets]
+  tags: [hand, teleoperation, dataset, hand-tracking, egocentric, rl]
+  takeaway_en: Metric 3D hand reconstruction in the wild, with a 1,000-hour WinDEX-Hand dataset. Reports 37.29 mm world-frame joint error; RL policies trained on it reach 7.6x/3.6x the success of WiLoR/HaWoR.
+  takeaway_zh: 面向野外的度量级 3D 手部重建：几何-时序优化结合视觉惯性 SLAM、鱼眼原生网络，并用低成本立体惯性帽构建 1,000 小时 WinDEX-Hand 数据集。报告世界坐标系关节误差 37.29 mm、流式 171 FPS；用其动作参考训练的 RL 策略成功率为 WiLoR/HaWoR 参考的 7.6/3.6 倍。
+
+- title: 'ALOHA Lightning: Learning Fast and Precise Manipulation'
+  type: paper
+  arxiv: '2611.21919'
+  year: 2026
+  project: https://flash-aloha.github.io/
+  added: 2026-11-18
+  topics: [manipulation]
+  tags: [bimanual, teleoperation, high-speed, real]
+  takeaway_en: Kinesthetic teaching at near-human speed plus test-time action smoothing and visual masking. With 50 demos per task, reports >80% success near human speed on tossing/catching, folding shorts and insertion.
+  takeaway_zh: 在可反驱双臂平台上用动觉示教以接近人速采集演示，并用测试时动作平滑与视觉掩码对齐实现高速执行。每个任务 50 条示教，报告抛接球、叠短裤、电池插装和收台等双臂任务成功率超 80%、速度接近人类。
+
+- title: 'TCP4D: A Unified Tool-Center-Point Tracking and Generation Model for Robot Manipulation'
+  type: paper
+  arxiv: '2611.23143'
+  year: 2026
+  code: https://github.com/Livioni/TCP4D
+  project: https://livioni.github.io/TCP4D/
+  added: 2026-11-18
+  topics: [manipulation]
+  tags: [tcp, tracking, generation, cross-embodiment, data-generation, robotwin]
+  takeaway_en: One 4D scene representation both tracks TCP motion and generates future TCP trajectories, retargeting motion into demos for new embodiments. Reports 7.60/16.07 mm ATE and 69.19% RoboTwin success.
+  takeaway_zh: 用共享 4D 场景表征同时完成工具中心点（TCP）运动跟踪与未来轨迹生成，并把恢复的运动重定向为新本体的演示数据。报告 DROID/RoboLab 轨迹误差 7.60/16.07 mm，RoboTwin 平均成功率 69.19%；源数据与增强数据联合训练再提高 41.5%。

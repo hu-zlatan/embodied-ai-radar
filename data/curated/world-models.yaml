@@ -1434,3 +1434,103 @@
   tags: [dreamer, quadrotor, depth, mapping, isaac-sim, sim]
   takeaway_en: "Dreamer-style quadrotor world model conditioned on an online 2D scan-memory map built from depth, which also gives a geodesic progress reward. Reports 96.3% success in Isaac Sim vs 59.6% for AirDreamer."
   takeaway_zh: "面向四旋翼的 Dreamer 式世界模型：用深度图和位姿在线构建二维扫描记忆地图，世界模型、策略和评价器都以它为条件，并由它给出测地线进度奖励。在 Isaac Sim 中报告成功率 96.3%，同等交互量下 AirDreamer 为 59.6%。"
+
+- title: 'CausalWAM: Learning the Causes of Actions in World Action Models'
+  type: paper
+  arxiv: '2610.42096'
+  year: 2026
+  added: 2026-11-18
+  topics: [world-models]
+  tags: [world-action-model, causality, identifiability, sparse, real]
+  takeaway_en: Adds a sparse routing path to a pretrained WAM's action head so actions use only their latent causes, provably identified up to permutation. Validated on synthetic data and real robots.
+  takeaway_zh: 把动作的原因从场景其余部分中分离出来：在预训练 WAM 的动作头加稀疏路由路径，并证明动作相关潜变量在置换意义下可识别。在合成数据与真实机器人上验证，报告闭环效率提升。
+
+- title: 'JEPA4R: Embodied JEPA World Models with 4D Point Planning'
+  type: paper
+  arxiv: '2611.19771'
+  year: 2026
+  code: https://github.com/AIGeeksGroup/JEPA4R
+  project: https://aigeeksgroup.github.io/JEPA4R
+  added: 2026-11-18
+  topics: [world-models]
+  tags: [world-model, jepa, point-cloud, planning, sim2real, real]
+  takeaway_en: 'JEPA world model over depth-camera point clouds: predicts and plans in latent space, acting through a policy head on frozen latents. Reports 98.4% MetaWorld / 88.0% Adroit Relocate and zero-shot sim-to-real.'
+  takeaway_zh: 基于单深度相机点云的 JEPA 世界模型：在潜空间预测与规划（4D 点规划），策略头作用于冻结潜表示。报告 MetaWorld 98.4%、Adroit Relocate 88.0%（次优 R3M 为 96.0/65.3），并在真实机械臂上以夹爪与灵巧手零样本 sim-to-real。
+
+- title: 'DreamFAR: Real-Time and Long-Horizon Interaction with Diverse Objects'
+  type: paper
+  arxiv: '2611.22001'
+  year: 2026
+  project: https://www.yimingdou.com/DreamFAR/
+  added: 2026-11-18
+  topics: [world-models]
+  tags: [world-model, robot-native-data, contact-rich, long-horizon, real-time]
+  takeaway_en: World model trained from scratch on robot-native teleoperation data, no internet-video pretraining, for long-horizon contact-rich manipulation; runs 10 FPS. Reports better long-horizon prediction.
+  takeaway_zh: 完全用机器人原生遥操作数据从零训练的世界模型，不依赖互联网视频预训练，面向长程接触丰富操作；体量远小于高性能视频生成模型，商用 GPU 上 10 FPS。报告长时域未来预测优于现有模型，并用于策略评测与混合数据联合训练。
+
+- title: Distilling World Action Models for Efficient Bimanual Manipulation via Anchored Path Matching
+  type: paper
+  arxiv: '2611.22592'
+  year: 2026
+  project: https://jialonglong.github.io/Anchored-Path-Matching/
+  added: 2026-11-18
+  topics: [world-models, manipulation]
+  tags: [world-action-model, distillation, bimanual, few-step, real]
+  takeaway_en: 'One checkpoint serves 1/2/4-step bimanual WAM generation: the student matches the teacher''s endpoint and first intermediate state, with anchor-priority updates. Reports +2.0 Clean/+1.4 Random on RoboTwin 2.0.'
+  takeaway_zh: 把双臂世界动作模型蒸馏到少步推理：学生从自身到达的状态匹配教师的终点与首个中间状态，梯度冲突时锚点优先；一个检查点支持 1/2/4 步生成。报告 RoboTwin 2.0 Clean +2.0/Random +1.4 个百分点，两个真机任务控制延迟降低 21.3 倍。
+
+- title: Cache or Denoise Less? Residual Reuse in a Flow-Matching World Action Model
+  type: paper
+  arxiv: '2611.19709'
+  year: 2026
+  code: https://github.com/gabhinav001/cache-or-denoise-less
+  added: 2026-11-18
+  topics: [world-models]
+  tags: [world-action-model, flow-matching, caching, efficiency, libero]
+  takeaway_en: Two uncached denoising steps keep ten-step success in Fast-WAM on LIBERO-Goal (non-inferior within 2 pts on all 500 states) and cut a replanning call 202 to 92 ms; caching saves at most 11-14%.
+  takeaway_zh: 在 Fast-WAM 上比较跨周期缓存与直接减少去噪步数：LIBERO-Goal 上未缓存的两步保持十步的成功率（500 个初始状态上劣化不超过 2 个百分点），单次重规划 202→92 ms；缓存最多省 11–14% 且更脆弱。开源评测框架、日志与清单。
+
+- title: 'The Flip Test: Video World Models Fail to Learn the World State'
+  type: paper
+  arxiv: '2611.19822'
+  year: 2026
+  project: https://flip-test.github.io/
+  added: 2026-11-18
+  topics: [world-models]
+  tags: [world-model, video, evaluation, counterfactual, benchmark]
+  takeaway_en: 'Counterfactual test of video world models: 1,680 frames where a tiny change flips the future. All 11 models fail - best 18.3% pair accuracy, below random guessing - while a VLM stays selective.'
+  takeaway_zh: 用反事实检验视频世界模型是否真的学到世界状态：1,680 个初始帧中，当前帧的微小变化会翻转未来。11 个模型全部不达标——最好者配对准确率 18.3%，低于随机猜测的 25%；同帧上 VLM 具有选择性，编码智能体接近真实边界。
+
+- title: 'ThinkWAM: Rethinking Latent Futures for Action Refinement'
+  type: paper
+  arxiv: '2611.21258'
+  year: 2026
+  project: https://thinkwam-project.github.io/
+  added: 2026-11-18
+  topics: [world-models]
+  tags: [world-action-model, latent, refinement, bidirectional, real]
+  takeaway_en: 'Proposal-rethink-refine loop for latent WAMs: the proposed chunk corrects multi-horizon future latents, which a second pass turns into the executable chunk. Reports 98.70% LIBERO, 84.76% LIBERO-Plus.'
+  takeaway_zh: 潜空间 WAM 的“提议-反思-精修”循环：策略先提出完整动作块，经残差修正多时域未来潜表示，再送回同一动作头生成可执行动作块。报告 LIBERO 98.70%、无 OOD 微调的 LIBERO-Plus 84.76%、RoboTwin 2.0 Clean/Random 85.75/65.85%，三种真实 OOD 条件平均 64.4%。
+
+- title: 'ResWAM: Learning What Changes, Not What Stays, for World-Action Models'
+  type: paper
+  arxiv: '2611.19559'
+  year: 2026
+  code: https://github.com/OPTML-Group/ResWAM
+  project: https://chongyu-fan.netlify.app/posts/reswam/
+  added: 2026-11-18
+  topics: [world-models, vla]
+  tags: [world-action-model, residual-learning, efficiency, flow-matching, real]
+  takeaway_en: Supervises only the feature change from current to future frame in a frozen DINOv3 space, so the WAM learns robot and object motion; 2.3B model with a 0.5B DiT. Reports LIBERO-Plus 81.1%.
+  takeaway_zh: 只监督当前帧到未来帧的特征变化（冻结的 DINOv3 空间），让 WAM 学习机器人与物体的运动而非复制静止背景；2.3B 模型含 0.5B 双分支 DiT。报告 LIBERO-Plus 81.1%、RoboTwin 2.0 93.8%，真机 Open/Put/Stack 平均 80.0%（比 π0.5 高 10.0）。
+
+- title: 'Auditing a Learned Simulator for Legged Robots: The Robotic World Model on ANYmal D'
+  type: paper
+  arxiv: '2611.23118'
+  year: 2026
+  code: https://github.com/joyjeet-singh/rwm
+  added: 2026-11-18
+  topics: [world-models, sim]
+  tags: [learned-simulator, audit, reproducibility, legged, anymal, rl]
+  takeaway_en: Rebuilds a learned ANYmal D simulator to match released outputs, then measures 101 trained simulators and 38 of three other architectures; 13 of 18 copies that predicted better produced failing policies.
+  takeaway_zh: 对学习式 ANYmal D 仿真器做端到端审计：重建模型以精确复现开源代码输出，测量 101 个训练得到的仿真器、200 个压缩副本与三种其他架构。单步指标会误判设计优劣；18 个微调副本中 13 个预测精度高于发布版，却产生失败策略。
