@@ -799,3 +799,13 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Saturday: no new arXiv feed. Reviewed candidates.json: 66 uncurated, many from 11-09/11-10 that arrived after runs 74/78 had reviewed those days. 17 picks (866d32e, a72e896), facts from candidates.json abstracts, code links only for repos live in repo_stats (Meituan-Robotics-0, ScanDreamer, sim-aided RL). No ratings. GeoMind skipped (repo 404).
 - CoRL 2026 award winners: search still finds nothing official.
 - Validate 0 errors (1,429 curated), 1,561 pages, 0 broken links, README check clean. No new owner task.
+
+## 2026-11-18 — run 88 (~08:30 UTC–)
+
+- Start: no open issues; PR #1 closed by the owner on 11-16 (OWNER_TODO ticked). 5 stars / 0 forks. Local clone fresh; workflows green except **scheduled verify #212 (Mon 11-16 12:37 UTC) failed** after 49 min with no readable summary without login and no curated commit preceding it — suspected arXiv title-fetch flakiness (the weekly run's abs-page fallback after 429s). A local full verify was started but killed: this machine's proxy intermittently drops export.arxiv.org. The CI verifies triggered by the run's two curated pushes (36b40e9, 437078b) are the real check.
+- The session's workflow subagents could not start (deployment 429: no eligible model deployment), so the pick review ran inline with the same discipline (facts only from candidates.json/review_queue abstracts, code links only after fetching each repo README).
+- **58 picks from the 11-16/17/18 feed and the HF queue** (36b40e9), listed in STATE.md; one ★ (Envisioning Agentic Robotics, HF 128). Skipped 31, notably Gamer (games VLA: 128 HF upvotes and a 630★ repo, but out of scope per the HiSTEVE precedent — logged so the owner can override), MetaAct (generic LLM-agent benchmarks), AgenticJevNav (no links), FlowRRT (niche monoped), plus the usual driving/vehicle, aerial/marine/space, person-ID, wheelchair, continuum-robot and mechanism papers.
+- Four project pages that earlier verifies removed (404/401) now answer 200 with page titles matching their papers: ManiLadder, UniLatent, CaPtain, RoboColosseum restored (ece2f8b, includes the OWNER_TODO tick).
+- Four code links for picks whose repos went public (437078b): sereact/lerobot_knn, llong-cs/EgoGuidance, adeeb10abbas/weightsmith, yichg/elastra — READMEs checked. Lingbot-ALOHA stays project-only (policy repo, not HALO's code). scwm and ESI repos are empty/404: no code links.
+- CoRL 2026 awards snapshot (fetched 11-17 17:39 UTC) still lists only the six finalists; no winners. corl-program cron stays until Nov 30 per the plan.
+- Validate 0 errors (1,487 curated), README check clean, 1,623 pages, 0 broken internal links. No new owner task. End of run 88.
