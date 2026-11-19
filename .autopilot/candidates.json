@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18",
+ "updated": "2026-11-19",
  "papers": [
   {
    "id": "2611.23198",
@@ -906,120 +906,6 @@
    ],
    "abstract": "The geometric understanding of a scene is a crucial component for safe and efficient robotic operations in novel and unstructured environments. The recent emergence of foundation models for Monocular Depth Estimation (MDE) has provided an opportunity to enrich robotic perception capabilities with dense long-range depth predictions, replacing expensive onboard hardware (e.g., LiDARs and stereo cameras). However, these offline models are primarily trained on affine-invariant depth representations, and their generalization to novel scenes remains unclear. In this work we present EM-ViT, a monocular depth estimation model that learns to adapt online relative depth inputs from a foundation model prior to the metric scale with observations collected during robotic operations. Motivated by the stereo camera parameterization, our method decomposes depth prediction via dense disparity refinement to recover the scene's relative structure and an effective baseline scalar prediction to determine the missing metric scale. The learning process leverages sparse LiDAR points and, optionally, the robot's Ego-Motion (EM) to rapidly train a lightweight Vision Transformer (ViT), while an internal gradient matching loss preserves the fine-grained semantic structure of the input disparity in real-time. We demonstrate the efficacy of our method on publicly available sequences, such as KITTI, and show that our online learning pipeline can adapt to novel scenes faster and with higher accuracy than existing MDE foundation models. The code and supplementary materials will be publicly available at https://emvit-mde.github.io.",
    "fetched": "2026-11-13"
-  },
-  {
-   "id": "2611.14440",
-   "title": "UGG: Unified Generative Geometry Model",
-   "published": "2026-11-11",
-   "topics": [],
-   "venue": "NeurIPS 2026",
-   "code": [],
-   "project": [
-    "https://ugg-model.github.io/"
-   ],
-   "comment": "Accepted at NeurIPS 2026. 31 pages, 7 figures, 6 tables. Project page: https://ugg-model.github.io/",
-   "authors": [
-    "Amani Kiruga",
-    "Zhiyi Li",
-    "Ruojin Cai",
-    "Hansen Lillemark",
-    "Xiaoshan Wu",
-    "Ayush Tewari",
-    "Yilun Du"
-   ],
-   "abstract": "Understanding 4D scenes is a core challenge in visual intelligence, requiring models to jointly capture scene geometry, appearance, and dynamics from partial observations. However, existing approaches are subdivided into feedforward models for direct geometric prediction, and generative models for visual synthesis. We introduce UGG, a unified framework for 4D scene understanding that jointly models RGB video and geometric representations such as depth and camera pose. By assigning different noise levels across modalities and time, UGG formulates visual generation and geometric prediction as conditional completion within a single generative model. This flexible formulation enables the model to learn from diverse, heterogeneous datasets with different subsets of geometric and visual annotations. Furthermore, our generative formulation enables inference-time search over multiple plausible scene hypotheses, using geometric evidence extracted from observed RGB frames to improve geometric prediction without ground truth geometry. We demonstrate UGG's effectiveness over non-unified baselines across camera-controlled video generation, depth estimation, and camera pose prediction, including in challenging sparse observation settings. Code and visualizations are available at https://ugg-model.github.io/",
-   "fetched": "2026-11-11"
-  },
-  {
-   "id": "2611.14414",
-   "title": "SIGMO: Sigmoid Gated Interaction-Aware Motion Planning",
-   "published": "2026-11-11",
-   "topics": [
-    "control"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://sites.google.com/view/sigmoid-polygate"
-   ],
-   "comment": "Submitted to IEEE",
-   "authors": [
-    "Avinash Singh",
-    "Manish Saroya",
-    "Fatemeh Cheraghi Pouria",
-    "Faizan Tariq",
-    "Jovin D'sa",
-    "David Isele",
-    "Yosuke Sakamoto",
-    "Sangjae Bae"
-   ],
-   "abstract": "Despite the widespread adoption of autonomous vehicle technologies, reliable navigation within cluttered environments remains arduous due to the necessity of interaction-aware strategies; example scenarios include: narrow passages with multiple agents, lane changing in dense traffic, and crossing unsignalized intersections. These scenarios often require highly proactive strategies, simultaneously demanding interpretability and quick adaptability, which challenge end-to-end and data-driven methods. An effective strategy requires: scalability to multiple agents, adaptability to changes in other agents' behavior, and harmony with surrounding traffic without freezing or becoming overly conservative. To meet these requirements, we present SIGMO, a sigmoid-gated interaction-aware motion planner, with two main contributions. First, we formulate polynomial sigmoid functions that analytically estimate yield scores of surrounding agents using physics-grounded interaction features that capture driving intuitions. Second, we integrate the polynomial sigmoid functions into a receding-horizon planner, which facilitates interaction-aware planning with arbitrary trajectory predictions. We validate SIGMO in interaction-intensive simulations and hardware experiments. The results show that SIGMO balances proactive and defensive behavior while remaining computationally lightweight, serving as a strong baseline in a mobility stack. The simulation and hardware experiment videos are available here: https://sites.google.com/view/sigmoid-polygate.",
-   "fetched": "2026-11-11"
-  },
-  {
-   "id": "2611.13903",
-   "title": "Persistent Metric-Semantic Maritime Scene Memory from Open-Vocabulary 3D Scene Graphs",
-   "published": "2026-11-11",
-   "topics": [
-    "perception"
-   ],
-   "venue": null,
-   "code": [],
-   "project": [
-    "https://kimachristensen.github.io/maritime_3dsg"
-   ],
-   "comment": "Website: https://kimachristensen.github.io/maritime_3dsg",
-   "authors": [
-    "Kim Alexander Christensen",
-    "Dina Zimmermann",
-    "Martin Steinert",
-    "Eleni Kelasidi"
-   ],
-   "abstract": "Three-dimensional scene graphs (3DSGs) can provide robots with persistent metric-semantic representations for spatial reasoning, but the existing methods have primarily been developed for indoor and terrestrial environments. In this paper we investigate how a representative outdoor open-vocabulary method transfers to maritime environments and which adaptations are needed. Our experiments show that zero-shot representative outdoor 3DSG descriptions agree with our labeled ground truth for a majority of geometry-supported objects on our data, but the resulting map exhibits considerable physical-entity fragmentation, and its terrestrial higher-level assumptions don't capture maritime spatial organization needs. We therefore keep the underlying mapping method and post-process its accumulated evidence. We show a metric-semantic consolidation method followed by geometry-grounded multi-view vision-language model (VLM) reasoning that reconciles remaining fragments into physical entities and groups entities through observations into local places. In parallel, we construct maritime macro regions using map priors and onboard water and structure observations, and associate them with the local places. The resulting representation reduces physical-entity fragmentation beyond both the baseline and our geometry-semantic consolidation component alone, supports correspondence of fixed local places across repeated maritime traversals, and improves contextual retrieval on our reviewed queries over tested baselines. These results show how an outdoor open-vocabulary map can be adapted into persistent maritime scene memory with our methods for object/place identity and spatial abstractions.",
-   "fetched": "2026-11-11"
-  },
-  {
-   "id": "2611.13204",
-   "title": "Ground Reaction Force-Aware Model Predictive Control for Underactuated Upright Physical Assistance",
-   "published": "2026-11-11",
-   "topics": [
-    "control"
-   ],
-   "venue": "RA-L 2026",
-   "code": [],
-   "project": [],
-   "comment": "Accepted for publication in IEEE Robotics and Automation Letters (RA-L), October 2026. 8 pages, 5 figures",
-   "authors": [
-    "Darren Biskup",
-    "Jeonghan Yu",
-    "Zibo Yu",
-    "Sunil K. Agrawal"
-   ],
-   "abstract": "Many rehabilitation robots execute prescribed motions using reactive tracking controllers that do not explicitly incorporate the user's instantaneous human-ground interaction. This paper presents Ground Reaction Force-Aware Model Predictive Control (GRF-MPC), a framework for upright physical assistance. By integrating live GRF and center of pressure (CoP) measurements directly into a human centroidal dynamics model, GRF-MPC formulates a real-time quadratic program (QP) that optimizes assistive forces and moments over a receding horizon. We deployed GRF-MPC on the Robotic Upright Stand Trainer (RobUST) in an underactuated 4-cable configuration and evaluated it against a fully actuated 8-cable Cartesian impedance baseline in nearly 300 trials across six healthy participants. Across tasks spanning impulsive perturbations, lunge trajectories, and voluntary limits of stability, GRF-MPC reduced peak planar center-of-mass (CoM) error by 19.6% during perturbations, lowered trajectory tracking error by 24.1%, required 28.7% less net mechanical work, and permitted a 45.9% greater normalized voluntary excursion area. The underlying QP solves in under 1 ms, comfortably enabling 100 Hz replanning and demonstrating that incorporating live human-ground interaction into predictive control yields stronger, more transparent physical assistance with half the actuators.",
-   "fetched": "2026-11-11"
-  },
-  {
-   "id": "2611.12949",
-   "title": "Maze Runner: Autonomous Maze Navigation with Line-Based Localization and Control Barrier Functions",
-   "published": "2026-11-11",
-   "topics": [
-    "navigation",
-    "perception",
-    "control"
-   ],
-   "venue": null,
-   "code": [
-    "https://github.com/alvgaona/maze-runner"
-   ],
-   "project": [],
-   "comment": "10 pages, 8 figures, 1 table. Code: https://github.com/alvgaona/maze-runner",
-   "authors": [
-    "Alvaro J. Gaona",
-    "Lucas Gómez-Velayos",
-    "Peter Pasuy-Quevedo"
-   ],
-   "abstract": "Maze navigation requires localization from sparse, repetitive geometry, planning through narrow corridors, and control that stays safe when the estimate or the map is wrong. We present Maze Runner, an open autonomy stack in C++ and ROS 2 that addresses these needs end to end on a simulated Husarion ROSbot XL with a 2D LiDAR in Gazebo. Perception extracts wall lines from each scan with RANSAC and total least squares, with per-line uncertainty. The same line front end feeds two estimators: an Extended Kalman Filter (EKF) that localizes against a line map built from the maze mesh, and an EKF SLAM variant that builds the line map online. Planning runs online on an inflated occupancy grid with A* plus line-of-sight shortcutting, or with a forward-only Hybrid A*. A nonlinear Model Predictive Controller (NMPC) tracks the plan while discrete-time Control Barrier Functions (CBFs) on world-frame LiDAR points keep the robot clear of walls and unmapped obstacles. The algorithms live in a ROS-free, unit-tested core library, and the whole stack builds and runs from a single reproducible environment. In simulation, the robot drives a 135 m route through the maze with 1.0 cm localization RMSE against the known map and 24 cm in SLAM mode, the planner returns a path in 6 ms, and the NMPC solves in 11.7 ms on average, never exceeding its 80 ms budget.",
-   "fetched": "2026-11-11"
   }
  ]
 }
