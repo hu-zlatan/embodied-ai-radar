@@ -2,7 +2,7 @@
 
 _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与开放词汇场景地图。_
 
-共 57 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
+共 58 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/perception.html) · [English](perception.md)
 
@@ -37,6 +37,7 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - **[CoReMatch: Recurrent Continuous Coordinate Refinement for Real-Time Robotic Feature Matching](https://arxiv.org/abs/2611.03932)** (2026) — 在连续坐标中循环细化对应点、不再依赖固定网格的特征匹配方法；报告精度高于 Efficient LoFTR，在嵌入式硬件上速度超过其 10 倍。
 - **[Cyclops: LiDAR as a Camera That Dreams in Color](https://arxiv.org/abs/2608.16264)** (2026) — 把稀疏 LiDAR 强度转换为类 RGB 视频，让相机模型在黑暗中也能用。报告在不同光照下，分割与车道线检测优于 LiDAR 基线和真实相机。 · [代码](https://github.com/IMRL/Cyclops)
 - **[DGV-DLIVO: Degeneracy-Guided Visual Fusion for Direct LiDAR-Inertial-Visual Odometry in Degenerate Tunnel Environments](https://arxiv.org/abs/2611.22385)** (2026) — 面向隧道等 LiDAR 退化场景：以退化方向为引导选择有信息的视觉区域，只在缺失的运动子空间注入视觉约束。报告在 40 m 水电站隧洞内进度比 91.4%，而代表性 LIO/LIVO/VIO 方法出现停滞、振荡或发散。 · [代码](https://github.com/0RayZhang0/DGV-DLIVO)
+- **[Facet-SLAM: Real-Time Triangle Splatting SLAM](https://arxiv.org/abs/2611.23935)** (2026) — 首个实时三角形泼溅 SLAM：跟踪器用深度融合的三角形质心做 GICP 配准，建图器经变量替换限制为非平移更新，避免三角形偏离观测表面。桌面 GPU 约 100 FPS、Jetson AGX Orin 达传感器帧率；Replica 上 Delaunay 网格 chamfer 距离从 1.55 降到 0.86 cm，比光度法快 20 倍以上。 · [代码](https://github.com/edward62740/Facet-SLAM)
 - **[Fast and Accurate Hand Estimation in Pixels, Interaction and World Space](https://arxiv.org/abs/2611.07711)** (2026) — FAH 基于 SAM 3D Body 的手部分支：先预测 2D/3D 关节与表面点，再拟合 MANO 或 MHR-Hand，可选估计接触并在世界坐标系中跟踪。默认 ViT-L 模型在 RTX 4070 Ti SUPER 上达 65 fps。 · [代码](https://github.com/noahcao/FAH)
 - **[FreeLoc: Online Floorplan Localization via Diffusion-Aided Pose Refinement](https://arxiv.org/abs/2610.05011)** (2026) — 直接在平面图上在线定位 RGB 相机：实时查询地图并用扩散模型精化位姿，无需离线数据库。报告单帧与序列定位均达最优且实时运行。 · [项目页](https://zju3dv.github.io/freeloc/)
 - **[Functional-SLAM: Interaction-Aware Mapping with Online Functional Scene Graphs](https://arxiv.org/abs/2609.07497)** (2026) — 把功能场景图（如哪个把手开哪个抽屉）作为 SLAM 的在线状态持续维护，并利用其拓扑辅助重复场景的回环检测。报告比离线方法更快且精度相当。 · [代码](https://github.com/Hbelief1998/Functional-SLAM-CoRL_2026)

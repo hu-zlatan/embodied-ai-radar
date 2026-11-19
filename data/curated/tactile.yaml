@@ -842,3 +842,14 @@
   tags: [tactile, wrist-vision, pretraining, contact-rich, real]
   takeaway_en: Pretrained encoder fusing tactile signals with hand motion and wrist views, trained on about 300 hours of SharpaDex. Conditioning GR00T N1.7 and π0.5 raises success by +28.8%/+15.0% over vision-only policies.
   takeaway_zh: 在注入策略前就把触觉信号与手部运动、腕部视角深度融合：用约 300 小时 SharpaDex 数据预训练接触表征。条件化 GR00T N1.7 与 π0.5 后，四个接触丰富任务成功率比纯视觉策略平均高 28.8%/15.0%，并比无腕部视角的触觉编码器高 18.8%/7.5%。
+
+- title: 'LuxTac: A Flexible, Scalable, and Open-Source Optical Taxel Array with Distributed Three-Axis Force Sensing for Tactile Robot Learning'
+  type: paper
+  arxiv: '2611.23575'
+  year: 2026
+  project: https://luxtac.github.io
+  added: 2026-11-19
+  topics: [tactile, hardware]
+  tags: [tactile, open-hardware, sensor, shear, peg-in-hole]
+  takeaway_en: 'Open-source 3.5 mm optical taxel array with per-taxel three-axis force: gel cartridges encode shear in light color, no cameras or magnets. Normal sensing is linear to 5.8 N; its pressure improves ACT peg-in-hole.'
+  takeaway_zh: 开源的 3.5 mm 光学触觉阵列，单个 taxel 即可测三轴力：可更换凝胶盒用返回光的颜色编码切向力，无需相机、磁体或凸点覆层。法向力在 104 mN–5.8 N 内线性（R²=0.999），剪切方向误差中位数 4.8°；把 LuxTac 压力读数加入 ACT 后，插孔任务成功率超过纯视觉基线。

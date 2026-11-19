@@ -1479,3 +1479,15 @@
   tags: [survey, agents, evaluation, code-as-policy, physical-world]
   takeaway_en: Treats the physical world as the test suite for coding agents that write programs for robots, labs and controllers; reviews how such programs are tested and how agents learn from the results.
   takeaway_zh: 把物理世界当作编码智能体程序的“测试套件”：系统梳理为机器人、实验室与控制器编写程序的方式、如何测试（真机试验的成本、轨迹、仿真、学习型评判与形式化检查）以及如何从结果中学习，主张建立物理世界的持续集成式验证。
+
+- title: 'Grana: Compositional Reward Modeling for Long-Horizon Robot Manipulation'
+  type: paper
+  arxiv: '2611.24926'
+  year: 2026
+  org: NVIDIA
+  project: https://research.nvidia.com/labs/gear/grana/
+  added: 2026-11-19
+  topics: [learning, manipulation]
+  tags: [reward-models, long-horizon, progress, open-vocabulary, pretraining]
+  takeaway_en: Reward model that identifies unfinished subtasks and estimates their progress, composing it with credit for completed subtasks. Pretrained on 200 tasks, predicts zero-shot on unseen tasks and adapts to five long ones.
+  takeaway_zh: 开放词汇奖励模型：识别未完成子任务并用自然语言子任务描述估计其连续进度，再把所选子任务的进度与已完成子任务的分值组合成整任务进度。在 200 个短时域任务上预训练后，可零样本预测未见任务的奖励，并适配五个长达数分钟的长程任务，改进下游策略表现。

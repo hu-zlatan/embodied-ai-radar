@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 111 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 112 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/datasets.html) · [English](datasets.md)
 
@@ -73,6 +73,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[RFW-S: Everyday Deformable Objects with Independent Simulation Verification](https://arxiv.org/abs/2611.23056)** (2026) — 83,365 个经仿真独立验证的可变形物体资产，覆盖 485 个日常类别（软固体、布料、壳体、衣物、包袋），由参考引导生成与 LLM 辅助物理参数估计构建。还评测机器人抓取的成功率与物体完整性，并回放易碎物体操作的 sim-to-real 过程。 · [项目页](https://sjijs.github.io/RFW-S_website/)
 - **[RMMBench: A Comprehensive Benchmark for Robotic Mobile Manipulation](https://arxiv.org/abs/2610.05414)** (2026) — 移动操作评测基准：70 个在连续空间中结合导航与操作的任务场景。发现主流 VLM 在空间定位上仍有明显困难。 · [代码](https://github.com/mxxq-stack/RMMBench) · [项目页](https://mxxq-stack.github.io/rmmbench-project/)
 - **[Robo-SWE: An Executable Issue-Resolution Dataset Mined from Robot Software Repositories](https://arxiv.org/abs/2611.16116)** (2026) — 从 28 个公开机器人软件仓库（ROS 2、物理引擎、算法库、机器人学习框架）的已合并 PR 中挖掘出 236 个可执行的问题修复任务，每个附带容器配置和修复前失败、修复后通过的测试；主流编程智能体解决率约 44–57%。 · [项目页](https://huggingface.co/datasets/vharatian/Robo-SWE)
+- **[RoboBuilder: Agentic Robot Co-Design with Real-world Video Feedback in the Loop](https://arxiv.org/abs/2611.23855)** (2026) — 让编码智能体同时设计机器人硬件与程序、并真机搭建实测的基准：每个仿真通过的设计都会被打印搭建并在物理赛道测试，共搭建 135 台机器人、1.6 万次仿真、约 240 小时。仅 66% 的仿真通过设计在现实中成立；给智能体看真实失败视频后，72% 的初级/中级失败被修复。 · [项目页](https://ghadinehme.com/robobuilder.github.io/)
 - **[RoboCasa-Shift: Stage-Aware Robustness Evaluation of Vision-Language-Action Policies in Long-Horizon Household Manipulation](https://arxiv.org/abs/2610.27861)** (2026) — 基于 RoboCasa365 的 VLA 鲁棒性诊断基准：成对比较只差一个分布偏移因素的干净/扰动执行，并定位长时序任务中失败从哪个阶段开始，而不只看总成功率；在 GR00T N1.5 上评测。 · [代码](https://github.com/HaochengWang23/RoboCasa-Shift)
 - **[RoboFollow: Unveiling the Instruction Following Mirage in Embodied Agents](https://arxiv.org/abs/2609.25636)** (2026) — 揭示 VLA 的高成功率常掩盖薄弱的指令遵循：场景支持多种合法任务，必须依赖语言。九个 VLA 与 WAM 策略在基础级以外的测试中明显下降。 · [代码](https://github.com/AutoLab-SAI-SJTU/RoboFollow)
 - **[RoboGene: Diversity-Driven Agentic Task Generation Framework for VLA Pre-training](https://arxiv.org/abs/2602.16444)** (2026) — 为数据采集自动生成多样且可执行的操作任务的智能体框架，结合自我反思与人工验证记忆；据此采集 1.8 万条真机轨迹，用其训练的 VLA 成功率与泛化更好。 · [项目页](https://robogene-boost-vla.github.io/)

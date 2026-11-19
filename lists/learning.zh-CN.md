@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 146 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 147 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/learning.html) · [English](learning.md)
 
@@ -58,6 +58,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[GSBR: Geometric Support Behavior Regularization for Online RL](https://arxiv.org/abs/2611.05295)** (2026) — 在预训练策略之上做在线强化学习，按动作到其支撑集的距离施加惩罚：集内不罚，集外平滑增长；报告 19 个基准任务的平均成功率从 33% 升至 95%。 · [代码](https://github.com/charlesxu0124/gsbr) · [项目页](https://charlesxu0124.github.io/gsbr/)
 - **[GUILD: Guided Iterative Data Collection for Imitation Learning](https://arxiv.org/abs/2611.05368)** (2026) — GUILD 主动决定下一步采集什么数据：由 VLM 提出环境、物体布置与目标，采集后评估数据对策略的价值，再进入下一轮，而非事后筛选数据集。
 - **[Generative Flow on Symbolic Abstractions for Embodiment Capability Discovery](https://arxiv.org/abs/2610.17174)** (2026) — 自动发现某台机器人“学得会”的任务：用 GFlowNet 生成符号化任务骨架，以仿真中底层策略的学习效果作为奖励，再把发现的任务蒸馏进一个语言条件策略。 · [项目页](https://www.youwei-yu.com/fosa)
+- **[Grana: Compositional Reward Modeling for Long-Horizon Robot Manipulation](https://arxiv.org/abs/2611.24926)** (2026) — 开放词汇奖励模型：识别未完成子任务并用自然语言子任务描述估计其连续进度，再把所选子任务的进度与已完成子任务的分值组合成整任务进度。在 200 个短时域任务上预训练后，可零样本预测未见任务的奖励，并适配五个长达数分钟的长程任务，改进下游策略表现。 · [项目页](https://research.nvidia.com/labs/gear/grana/)
 - **[Guided Discovery of New Behaviors using Diffusion Policies](https://arxiv.org/abs/2606.08743)** (2026) — 用 Feynman-Kac 校正器配合新的引导势能，把扩散策略的采样推向少见但有前景的模态；再以基于采样的轨迹优化修复这些轨迹，并加回训练集重训策略。
 - **[HARBOR: A Harness Framework for Agentic Robot Reinforcement Learning](https://arxiv.org/abs/2606.08610)** (2026) — 自动化仿真强化学习全流程的智能体框架：从环境搭建、奖励设计到调参训练，由分阶段的专职智能体、可执行检查点、并行试验与经验复用完成。覆盖 6 个基准 16 个任务，部分迁移到真机。
 - **[HIDRA: Hierarchical Dual-Routing Attention for Replay-Free Lifelong Imitation Learning](https://arxiv.org/abs/2610.36374)** (2026) — 无回放的终身模仿学习：分层双路由注意力先按指令检索专家、再按上下文细化，并用键级几何正则抑制表征漂移带来的路由干扰；报告在多个 LIBERO 任务序列上优于无回放和有回放基线。 · [代码](https://github.com/yfqi/HIDRA)

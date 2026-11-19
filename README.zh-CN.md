@@ -54,7 +54,7 @@ _视觉-语言-动作模型与通用机器人策略。_ [在网站上查看与�
 - ⭐ **[EagleVLA: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference](https://arxiv.org/abs/2607.12659)** (2026) — EagleVLA：面向 Jetson Orin 等低功耗机载设备的 VLA 异步推理方法，针对异步执行带来的感知-执行错位与反应慢两个问题；CoRL 2026 Spotlight，曾用名 Jetson-PI。 · [代码](https://github.com/PKU-SEC-Lab/EagleVLA)
 - ⭐ **[Envisioning Agentic Robotics: A New Era of Robotic Systems](https://arxiv.org/abs/2611.18359)** (2026) — 关于智能体式机器人（agentic robotics）的路线图文章：提出由前沿模型加具身框架构成的“具身系统 2”作为决策核心，给出兼顾模型能力与闭环表现的评测框架，并规划从执行单个原语到持续自主工作的路径。 · [项目页](https://grid-robotics-official.github.io/agentic-robotics-roadmap)
 
-**[查看全部 289 条 →](lists/vla.zh-CN.md)**
+**[查看全部 296 条 →](lists/vla.zh-CN.md)**
 
 <a id="manipulation"></a>
 ### 操作与灵巧手
@@ -74,7 +74,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_ [在网站上�
 - ⭐ **[Play2Perfect: What Matters in Dexterous Play Pretraining for Precise Assembly?](https://arxiv.org/abs/2606.26428)** (2026) — CoRL 2026 Oral。探究灵巧“玩耍”预训练究竟需要什么，才能胜任精密装配这类富接触、稀疏奖励、模仿与直接 RL 都难以解决的任务。 · [代码](https://github.com/kushal2000/play2perfect) · [项目页](https://play2perfect.github.io)
 - ⭐ **[World In-Context Learning for Agentic Robot Manipulation](https://arxiv.org/abs/2611.12885)** (2026) — RoboScript：冻结的基础模型从一条示范出发在仿真中“排练”任务，把反馈写进任务记忆而不是权重。报告在 RoboTwin 2.0 全部 50 个任务上平均成功率 83.4%，比最强训练策略高 20 多个点，并迁移到真实双臂机器人。 · [代码](https://github.com/ArcheOne-AI/RoboScript) · [项目页](https://archeone-ai.github.io/RoboScript/)
 
-**[查看全部 193 条 →](lists/manipulation.zh-CN.md)**
+**[查看全部 194 条 →](lists/manipulation.zh-CN.md)**
 
 <a id="tactile"></a>
 ### 触觉与视触觉感知
@@ -84,6 +84,7 @@ _触觉传感器、触觉表征与接触丰富的控制。_ [在网站上查看�
 - ⭐⭐⭐ **[DIGIT: A Novel Design for a Low-Cost Compact High-Resolution Tactile Sensor with Application to In-Hand Manipulation](https://arxiv.org/abs/2005.14679)** (2020) — 低成本、紧凑的 GelSight 式指尖传感器，让视触觉传感器得以普及。 · [代码](https://github.com/facebookresearch/digit-interface)
 - ⭐ **[Learning Heterogeneous Tactile Representation for General Dexterous Manipulation](https://arxiv.org/abs/2611.12806)** (2026) — LingBot-Touch 为压阻式、磁式和视触觉等不同触觉传感器学习统一表征，且易于扩展到新传感器。其触觉 token 可即插即用地接入扩散策略和 VLA（π0.5、LingBot-VLA），报告在仿真和多种真实平台上提升灵巧操作。 · [代码](https://github.com/Robbyant/lingbot-touch) · [项目页](https://technology.robbyant.com/lingbot-touch)
 - ⭐ **[Visible Touch: Rendering Contact for Visuomotor Policies](https://arxiv.org/abs/2609.14156)** (2026) — CoRL 2026 Spotlight。通过渲染接触信息把触觉带入基于图像的视觉运动策略，针对现有方法需要专用触觉硬件、独立触觉编码器或非图像主干，难以与预训练 2D 视觉表征策略兼容的问题。 · [代码](https://github.com/qaz1678249/visibletouch) · [项目页](https://visibletouch.github.io/)
+- **[LuxTac: A Flexible, Scalable, and Open-Source Optical Taxel Array with Distributed Three-Axis Force Sensing for Tactile Robot Learning](https://arxiv.org/abs/2611.23575)** (2026) — 开源的 3.5 mm 光学触觉阵列，单个 taxel 即可测三轴力：可更换凝胶盒用返回光的颜色编码切向力，无需相机、磁体或凸点覆层。法向力在 104 mN–5.8 N 内线性（R²=0.999），剪切方向误差中位数 4.8°；把 LuxTac 压力读数加入 ACT 后，插孔任务成功率超过纯视觉基线。 · [项目页](https://luxtac.github.io)
 - **[TaF-Foundation: Wrench-Grounded Cross-Sensor Tactile Representations](https://arxiv.org/abs/2611.20718)** (2026) — 以六维力/力矩为共同物理参照，把四种原理、24 种传感器的触觉观测对齐到共享连续空间，用 1 亿多对“触觉-力”数据训练共享编码器。报告单帧力 RMSE 降低 17.1%，跨传感器检索 R@1 提高 13.11 个百分点，真机操作成功率 46.25%（最强基线 23.75%）。 · [项目页](https://mrjiangjm.github.io/TaF-Foundation/)
 - **[WiTac: Wrist-Informed Tactile Representations for Contact-Rich Manipulation](https://arxiv.org/abs/2611.21057)** (2026) — 在注入策略前就把触觉信号与手部运动、腕部视角深度融合：用约 300 小时 SharpaDex 数据预训练接触表征。条件化 GR00T N1.7 与 π0.5 后，四个接触丰富任务成功率比纯视觉策略平均高 28.8%/15.0%，并比无腕部视角的触觉编码器高 18.8%/7.5%。 · [项目页](https://wrist-informed-tactile-representations.github.io/)
 - **[PCTac: Mechanochromic Photonic-Crystal Tactile Sensor for Dexterous Manipulation](https://arxiv.org/abs/2611.12383)** (2026) — 开源的机械致变色光子晶体指尖：受力时微结构改变，颜色（色相）直接反映局部应力，不必再从形变间接推算力。作为 Diffusion Policy 的触觉输入，90 次真机测试报告成功率 75.6%，Wedge RGB 触觉为 63.3%，纯视觉为 32.2%。 · [项目页](https://bey0ndt1me.github.io/PCTac-page/)
@@ -92,9 +93,8 @@ _触觉传感器、触觉表征与接触丰富的控制。_ [在网站上查看�
 - **[Blind Dexterous Grasping via Real2Sim2Real Tactile Policy Learning](https://arxiv.org/abs/2606.11767)** (2026) — 在 LEAP 手上实现只凭触觉的盲抓：先构建能复现真实触觉信号的校准数字孪生，再自监督预训练感知传感器布局的触觉编码器，最后把各物体的强化学习专家蒸馏为扩散策略。
 - **[Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2610.03333)** (2026) — VISTA：等变视触觉扩散策略，把触觉融合进球面视觉 token 并随末端姿态旋转，提升富接触模仿学习的数据效率。 · [代码](https://github.com/Kenn3o3/Vista) · [项目页](https://vista-paper.github.io/)
 - **[FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation](https://arxiv.org/abs/2607.18231)** (2026) — 用预训练 VAE 把力信号历史压缩成记忆 token 输入 VLA，解决按指定次数按按钮、擦盘子等依赖记忆的接触任务。报告三个记忆型任务成功率超过 80%。 · [项目页](https://qft-333.github.io/FM-VLA-Page/)
-- **[FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation](https://arxiv.org/abs/2606.13102)** (2026) — 触觉基础策略：在 26 个数据源、21 种传感器约 3000 小时数据上预训练，把图像型、阵列型与状态型触觉信号映射到统一 token。报告已见配置提升 17.2%，两种未见传感器提升 31%。 · [代码](https://github.com/michaelyuancb/ftp1-policy) · [项目页](https://ftp1-policy.github.io)
 
-**[查看全部 82 条 →](lists/tactile.zh-CN.md)**
+**[查看全部 83 条 →](lists/tactile.zh-CN.md)**
 
 <a id="locomotion"></a>
 ### 运动控制与人形机器人
@@ -134,7 +134,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - ⭐ **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — 以动作为中心的世界动作模型：由观测预测动作，视频生成变为可选，动作精度不再依赖视频预测质量，推理开销也更低。 · [代码](https://github.com/open-gigaai/giga-world-policy) · [项目页](https://gigaai-research.github.io/GigaWorld-Policy/)
 - ⭐ **[GreenWAM: A World Foundation Model for Robotics](https://arxiv.org/abs/2610.18774)** (2026) — 同一个世界模型兼作策略，用共享的关节坐标动作空间覆盖 20 类机器人；论文报告其在 WorldArena、RoboTwin 2.0、LIBERO-plus 上表现突出，并蒸馏出可实时运行的单步人形机器人策略。 · [代码](https://github.com/greenvla/GreenWAM) · [项目页](https://greenvla.github.io/GreenWAM)
 
-**[查看全部 146 条 →](lists/world-models.zh-CN.md)**
+**[查看全部 150 条 →](lists/world-models.zh-CN.md)**
 
 <a id="navigation"></a>
 ### 导航与具身智能体
@@ -174,7 +174,7 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - ⭐ **[BundleSDF: Neural 6-DoF Tracking and 3D Reconstruction of Unknown Objects](https://arxiv.org/abs/2303.14158)** (2023) — 在 RGB-D 视频中跟踪从未见过物体的六自由度位姿，同时在线构建其神经三维模型，无需 CAD 模型；适用于操作新物体。 · [代码](https://github.com/NVlabs/BundleSDF)
 - ⭐ **[CoTracker: It is Better to Track Together](https://arxiv.org/abs/2307.07635)** (2023) — 联合跟踪视频中大量点（而非逐点独立跟踪）的 Transformer，遮挡下依然稳健；常用于从人类或机器人视频中提取运动轨迹来学习策略。 · [代码](https://github.com/facebookresearch/co-tracker)
 
-**[查看全部 57 条 →](lists/perception.zh-CN.md)**
+**[查看全部 58 条 →](lists/perception.zh-CN.md)**
 
 <a id="control"></a>
 ### 规划、控制与安全
@@ -194,7 +194,7 @@ _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的�
 - ⭐ **[MoveIt 2](https://moveit.ai/)** (2019) — ROS 2 的机械臂操作框架：提供运动规划、逆运动学、碰撞检测与实时伺服控制。 · [代码](https://github.com/moveit/moveit2)
 - ⭐ **[Pinocchio](https://github.com/stack-of-tasks/pinocchio)** (2019) — 高性能 C++/Python 刚体动力学库，提供解析导数；是运动学、最优控制（如 Crocoddyl）以及足式/人形机器人控制栈的常用底座。
 
-**[查看全部 61 条 →](lists/control.zh-CN.md)**
+**[查看全部 62 条 →](lists/control.zh-CN.md)**
 
 <a id="learning"></a>
 ### 机器人学习：强化学习与模仿学习
@@ -214,7 +214,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - ⭐ **[What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](https://arxiv.org/abs/2108.03298)** (2021) — robomimic：在人类采集的操作示教数据上系统比较模仿学习与离线强化学习（示教质量、观测选择、带历史的行为克隆），并开源框架与数据集。 · [代码](https://github.com/ARISE-Initiative/robomimic)
 - ⭐ **[Addressing Function Approximation Error in Actor-Critic Methods](https://arxiv.org/abs/1802.09477)** (2018) — TD3：通过双 Critic、延迟策略更新和目标策略平滑解决 DDPG 的价值高估问题，至今仍是连续控制的常用基线。 · [代码](https://github.com/sfujim/TD3)
 
-**[查看全部 146 条 →](lists/learning.zh-CN.md)**
+**[查看全部 147 条 →](lists/learning.zh-CN.md)**
 
 <a id="sim"></a>
 ### 仿真与 Sim-to-Real
@@ -254,7 +254,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_ [在网站�
 - ⭐ **[Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning](https://arxiv.org/abs/1910.10897)** (2019) — 50 个 Sawyer 操作任务，用于多任务与元强化学习评测。 · [代码](https://github.com/Farama-Foundation/Metaworld)
 - ⭐ **[RLBench: The Robot Learning Benchmark & Learning Environment](https://arxiv.org/abs/1909.12271)** (2019) — 100 个手工设计的操作任务并附演示，是 PerAct 等 3D 策略方法的常用基准。 · [代码](https://github.com/stepjam/RLBench)
 
-**[查看全部 111 条 →](lists/datasets.zh-CN.md)**
+**[查看全部 112 条 →](lists/datasets.zh-CN.md)**
 
 <a id="hardware"></a>
 ### 硬件与开源机器人
@@ -269,12 +269,12 @@ _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备�
 - ⭐ **[Open-TeleVision: Teleoperation with Immersive Active Visual Feedback](https://arxiv.org/abs/2407.01512)** (2024) — 带主动转向立体相机的 VR 遥操作系统，用于采集人形机器人操作数据。 · [代码](https://github.com/OpenTeleVision/TeleVision)
 - ⭐ **[SO-ARM100 / SO-101](https://github.com/TheRobotStudio/SO-ARM100)** (2024) — 开源 3D 打印 6 自由度机械臂（主从臂），每只约 100–200 美元，是 LeRobot 的默认入门套件。
 - ⭐ **[An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research](https://arxiv.org/abs/1910.00093)** (2019) — 开源四足机器人 Solo 及其模块化力矩控制关节，采用现成件和 3D 打印件，便于各实验室复现动态腿式机器人。 · [代码](https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware)
+- **[QDD-MM: A Simple and Compact Open-Source Muscle Module with Quasi-Direct-Drive Motor for Tendon-driven Robots](https://arxiv.org/abs/2611.24279)** (2026) — 面向腱驱动机器人的开源准直驱肌肉模块：结构简单紧凑、可反驱、无需专用力传感器，支持多方向布线、模块互连，甚至可用模块本体作结构件。用其搭建了单关节两肌/三肌机器人及部分肌肉骨骼人形并验证有效性；设计文件公开（Humanoids 2026）。 · [项目页](https://haraduka.github.io/qddmm/)
 - **[ARTS: An Open-Source, Reproducible Three-Arm Platform for Autonomy Research in Minimally Invasive Surgery](https://arxiv.org/abs/2611.15135)** (2026) — 完全由可采购部件搭建的微创手术自主研究平台（约 13.7 万美元）：两台 UR5e 夹持达芬奇器械、一台 UR5 持立体内窥镜，配医生控制台与独立硬件急停，ROS 2 软件锁定全部依赖。重复定位精度与 dVRK Classic 臂相当。 · [代码](https://github.com/MRE-Lab-UMD/arts)
 - **[Low-Cost Mobile Bimanual Manipulation for Long-Horizon Toilet Cleaning](https://arxiv.org/abs/2611.15381)** (2026) — 两台 SO-101 机械臂装在 TurtleBot 4 上，配 LeRobot-ROS 2 软件栈的低成本移动双臂平台。以清洁马桶为长时程案例采集 250 条示教，在同一本体上比较 π0、π0.5、SmolVLA 和 GR00T：π0 最好（严格成功率 60%，少量人工干预下 90%）。 · [项目页](https://so101-turtlebot4.github.io/mobile-bimanual-cleaning/)
 - **[RUMI: A Robotiq-Matched Universal Manipulation Interface for Robot Learning with Augmented Reality and Haptic Feedback](https://arxiv.org/abs/2611.15802)** (2026) — 仿照 UMI 的手持采集夹爪，与 Robotiq 2F-85 的非线性机构一致，可换指尖传感器；在 VR 头显中实时以增强现实提示目标机器人的运动可行性，并提供力反馈。用户实验中超关节限位的示教从 16/50 降到 3/50。
-- **[Belt-Finger: An Affordable Soft Belt-Driven Gripper for Dexterous In-Hand Manipulation](https://arxiv.org/abs/2606.20193)** (2026) — 低成本的平行夹爪升级手指模组：双软皮带结构保留常规开合，并增加手内平移、俯仰与翻滚三个自由度；配合 MPC、轻量的 10 自由度遥操作接口和学习策略使用。
 
-**[查看全部 54 条 →](lists/hardware.zh-CN.md)**
+**[查看全部 55 条 →](lists/hardware.zh-CN.md)**
 
 <!-- radar:end -->
 

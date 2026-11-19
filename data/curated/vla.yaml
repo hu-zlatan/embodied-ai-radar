@@ -2956,3 +2956,80 @@
   tags: [multi-robot, swarm, human-demos, decentralized, vla]
   takeaway_en: From 50+ hours of multi-person egocentric demos, swarm interaction tokens recover cross-agent relations and supervise decentralized SwarmVLA policies. Reports 72.2% success across three task categories.
   takeaway_zh: 从 50 多小时无机器人、多人第一视角演示中学习去中心化多机器人协作：群交互 token 从分布式观测恢复智能体间关系，并监督只依赖局部观测与邻居消息的 SwarmVLA。报告三类协作任务平均成功率 72.2%。
+
+- title: '$Z$-sight: Unifying Vision-Language-Action and Latent World Modeling'
+  type: paper
+  arxiv: '2611.24940'
+  year: 2026
+  project: https://junjieye.com/Z-sight/
+  added: 2026-11-19
+  topics: [vla, world-models]
+  tags: [vla, world-action-model, latent, mixture-of-transformers, real]
+  takeaway_en: Predicts the future in the visual token space its VLM perceives, jointly denoising future spatial tokens and actions. Reports 81.9% on SIMPLE (+9.6) and 73.3% across six Unitree G1 tasks (+20.0).
+  takeaway_zh: 在 VLM 感知当前帧的视觉 token 空间里直接预测未来：前瞻专家与连续动作专家以混合 Transformer 与 VLM 耦合，推理时联合去噪未来空间 token 与动作，无需像素重建或外部编码器。报告 SIMPLE 81.9%（比最强基线高 9.6 个百分点）、六个 Unitree G1 任务 73.3%（高 20.0 个百分点），每块 110 ms。
+
+- title: 'RoboMorpher: Scaling Robot Morphology Representations for Cross-Embodiment Action Prediction'
+  type: paper
+  arxiv: '2611.24816'
+  year: 2026
+  project: https://robomorpher.github.io/
+  added: 2026-11-19
+  topics: [vla]
+  tags: [cross-embodiment, morphology, tokenizer, pretraining, benchmark]
+  takeaway_en: Morphology-conditioned tokenizer that reconstructs joint angles and link poses together, pretrained on 40M pairs; adds EmbodiBench. Reports 56.40% RoboTwin 2.0, 23.27% EmbodiBench (+9.73/+15.34 over joint control).
+  takeaway_zh: 以形态为条件的动作分词器：联合重建关节角与连杆位姿，把控制坐标与其运动学效果关联；用几何先验生成串联臂描述，在 4000 万形态-状态对上预训练，并发布 EmbodiBench 基准（每任务 30 个生成 URDF）。冻结分词器接入 VLA 后，RoboTwin 2.0 成功率 56.40%、EmbodiBench 23.27%，比连续关节空间控制高 9.73/15.34 个百分点。
+
+- title: 'SHAPE: Discrete Supervision and Parallel Continuous Streams for Learning Dexterous Manipulation from Egocentric Human Data'
+  type: paper
+  arxiv: '2611.24585'
+  year: 2026
+  project: https://li-yaping.github.io/SHAPE/
+  added: 2026-11-19
+  topics: [vla, manipulation]
+  tags: [vla, dexterous, human-video, egocentric, bimanual, real]
+  takeaway_en: Backbone predicts discrete end-effector action tokens as an auxiliary task while a flow-matching expert outputs EEF and joint streams. Joint readout scores 0.80 vs 0.63 for π0.5 across six bimanual tasks.
+  takeaway_zh: 骨架把端到端动作块的离散 token 作为辅助任务预测，共享流匹配专家同时输出末端与关节两条可执行流。双臂 22 自由度灵巧手上：用机器人示教时关节直接读出在六个任务上得 0.80（π0.5 为 0.63），用人类数据时 IK 末端读出更利于迁移；仅靠人类演示即可学会新任务。
+
+- title: Towards Pose-Robust Few-Shot Vision-Language-Action Models
+  type: paper
+  arxiv: '2611.24360'
+  year: 2026
+  project: https://peacelwh.github.io/WACO/
+  added: 2026-11-19
+  topics: [vla]
+  tags: [vla, robustness, calibration, few-shot, canonicalization, real]
+  takeaway_en: Few-shot VLAs memorise the camera-to-base extrinsic; a bumped tripod makes them reach wrong. WACO canonicalises one RGB-D frame via arm kinematics and the static scene. Reports +13.2 points sim, +36.7 real.
+  takeaway_zh: 少样本微调的 VLA 会记死相机与基座的相对位姿：三脚架被碰或基座重新对接后就会抓错位置。WACO 用机械臂正运动学与静态场景作世界锚点，从单帧 RGB-D 同时估计相机与基座偏移并把观测、状态与动作全部规范化，再在自身估计器产生的伪影下微调策略。报告仿真偏移成功率 +13.2 个百分点、真机 UR5e +36.7 个百分点，并发布 LIBERO-PoseShift 基准。
+
+- title: 'Meaning Reaches Object Choice but Not Completion: Where Is a VLA Vulnerable to Landmark Synonyms?'
+  type: paper
+  arxiv: '2611.24076'
+  year: 2026
+  project: https://openreview.net/forum?id=b7wZqqQzON
+  added: 2026-11-19
+  topics: [vla]
+  tags: [vla, language-grounding, analysis, robustness, libero]
+  takeaway_en: 'GR00T N1.7 rewording fragility: synonyms still reach the right bowl but completion drops (67.6% vs 100%); the connector carries object choice. Connector-only fine-tuning on diversified words repairs it.'
+  takeaway_zh: 用 GR00T N1.7 定位 VLA 对改写指令的脆弱环节：训练词表外的同义地标词仍能让策略选对碗，但完成率降到 67.6%（原词 100%）；token 粘贴实验表明连接器承载物体选择，连接器两侧共同影响完成。只用多样化词微调连接器即可修复该任务的完成率，开环分数会漏掉部分修复效果。
+
+- title: 'CoRA-VTLA: Contact-Guided Attention and Queryable Response Memory for Tactile Post-Training'
+  type: paper
+  arxiv: '2611.23963'
+  year: 2026
+  project: https://cora-vtla.github.io/
+  added: 2026-11-19
+  topics: [vla, tactile]
+  tags: [vla, tactile, post-training, memory, contact-rich, real]
+  takeaway_en: 'Tactile post-training for VLAs: a memory retrieves contact responses; contact-guided gaze concentrates attention on fingertip regions. 73.33% on three MuJoCo tasks vs 50% direct fusion, 66.7% real.'
+  takeaway_zh: 为预训练 VLA 加轻量触觉模块做后训练：可查询的动作-响应记忆取回近期接触响应并与即时触觉反馈结合，接触引导的注视监督把触觉语义 token 的视觉注意力集中到指尖接触区域。报告三个 MuJoCo 任务平均 73.33%（直接触觉融合为 50%）、UniVTAC 光学触觉任务 67%、三个真机任务平均 66.7%。
+
+- title: 'ExecGap: Exploiting Command-Execution Gap for Patch Attacks on Vision-Language-Action Models'
+  type: paper
+  arxiv: '2611.23714'
+  year: 2026
+  venue: CoRL 2026
+  added: 2026-11-19
+  topics: [vla]
+  tags: [vla, adversarial, robustness, attack, real]
+  takeaway_en: 'Patch attack exploiting the command-execution gap: biases VLA commands toward low-executability directions from kinematic inefficiency and weak actuation. Reports bigger execution degradation than existing attacks.'
+  takeaway_zh: 利用 VLA 预测指令与实际执行之间的落差构造补丁攻击：把任务空间指令偏向由运动学低效与驱动弱方向估计出的“低可执行”方向，使预测指令难以真正实现、任务无法完成。报告在多个 VLA 上比现有补丁攻击造成更大的指令-执行失配，并在真机上验证。

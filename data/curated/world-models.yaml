@@ -1533,3 +1533,48 @@
   tags: [learned-simulator, audit, reproducibility, legged, anymal, rl]
   takeaway_en: Rebuilds a learned ANYmal D simulator to match released outputs, then measures 101 trained simulators and 38 of three other architectures; 13 of 18 copies that predicted better produced failing policies.
   takeaway_zh: 对学习式 ANYmal D 仿真器做端到端审计：重建模型以精确复现开源代码输出，测量 101 个训练得到的仿真器、200 个压缩副本与三种其他架构。单步指标会误判设计优劣；18 个微调副本中 13 个预测精度高于发布版，却产生失败策略。
+
+- title: 'Render the Robot, Generate the World: One Video World Model Across Embodiments'
+  type: paper
+  arxiv: '2611.24925'
+  year: 2026
+  project: https://doppelwm.github.io/
+  added: 2026-11-19
+  topics: [world-models]
+  tags: [world-model, video, cross-embodiment, rendering, pretraining]
+  takeaway_en: Conditioned on renderings of the intended body motion plus actions, it predicts environment response. One backbone over eight embodiments, ~600 h; reports +1.00 dB held-out, +1.20 dB out-of-distribution PSNR.
+  takeaway_zh: 以未来身体构型的相机对齐渲染图加数值动作轨迹作为条件，让视频世界模型专注于预测物体运动与环境响应，而非重新推导本体运动；渲染为不同本体与动作空间提供统一视觉接口。单一骨干跨 8 种机器人/人体、约 600 小时无标签视频联合训练，报告留出轨迹 PSNR 提高 1.00 dB、分布外 1.20 dB。
+
+- title: 'HINT-WAM: Hindsight-Informed Training for World Action Models'
+  type: paper
+  arxiv: '2611.24789'
+  year: 2026
+  project: https://tuandattt.github.io/hintwam/
+  added: 2026-11-19
+  topics: [world-models]
+  tags: [world-action-model, distillation, hindsight, on-policy, flow-matching]
+  takeaway_en: 'On-policy self-distillation for WAMs: the student acts on its own denoising trajectory while the same model conditioned on hindsight video provides dense targets, distilled via an energy score.'
+  takeaway_zh: 首个 WAM 的在线自蒸馏框架：学生沿自身去噪轨迹生成动作，同一模型额外以“事后视频”（演示的未来帧）为条件充当教师，给出稠密的条件动作分布作为目标，再用能量分数在分布层面蒸馏——不依赖环境奖励或仿真交互，学生只看到部署期输入。
+
+- title: 'WAM-Policy: World Action Models with On-Policy Distillation for Quadrupedal Loco-Manipulation'
+  type: paper
+  arxiv: '2611.24011'
+  year: 2026
+  code: https://github.com/AIGeeksGroup/WAM-Policy
+  project: https://aigeeksgroup.github.io/WAM-Policy/
+  added: 2026-11-19
+  topics: [world-models, locomotion]
+  tags: [world-action-model, quadruped, loco-manipulation, distillation, rl, real]
+  takeaway_en: 'Turns an arm-centric WAM into a quadrupedal loco-manipulation policy: adaptation, self-distillation to one video + two steps, RL and multi-teacher merging. Reports 85.0% on QLM-Bench.'
+  takeaway_zh: 把面向机械臂的 WAM 变成语言条件的四足移动操作策略：跨形态适配后，用在线自蒸馏把策略压到“一段视频+两步动作”的学生（采样快 14 倍），再以强化学习精调专家并多教师合并。报告 QLM-Bench 十个任务 85.0%，并在真实 Unitree Go2 Air 上部署。
+
+- title: 'ZERITH V2.5: From Predictive Power to Policy Learnability'
+  type: paper
+  arxiv: '2611.23746'
+  year: 2026
+  project: https://www.zerith.com/blog/zerith-2-5/
+  added: 2026-11-19
+  topics: [world-models]
+  tags: [world-action-model, video-generation, policy-learning, analysis, real]
+  takeaway_en: Video-action model whose policy reads features of a video generation model; studies which predictive training helps action learning. Adapting at many noise levels transfers the gain, one level does not.
+  takeaway_zh: 让动作策略读取视频生成模型的中间特征，系统研究“什么形式的预测训练对后续动作学习有用”：在多个噪声水平上适配视频模型带来大幅提升，只在部署噪声水平适配则没有；增益留在视频模型权重内时保留，仅用于初始化策略时消失。在 LIBERO、Meta-World MT50 与真机任务上评测。

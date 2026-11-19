@@ -585,3 +585,14 @@
   tags: [low-light, diffusion, perception, real-time, control-loop]
   takeaway_en: 'Embeds diffusion relighting as a generative neural sensor: a background diffusion model activates only when detection confidence drops. Reports 87.1% mAP on ExDark and 100% completion in CARLA.'
   takeaway_zh: 把扩散重光照嵌入控制回路作为生成式神经传感器：高延迟扩散模型在后台线程运行，仅当检测置信度下降（感知不确定事件）时激活。报告 ExDark 87.1% mAP，CARLA 闭环导航 100% 完成。
+
+- title: 'Facet-SLAM: Real-Time Triangle Splatting SLAM'
+  type: paper
+  arxiv: '2611.23935'
+  year: 2026
+  code: https://github.com/edward62740/Facet-SLAM
+  added: 2026-11-19
+  topics: [perception]
+  tags: [slam, rgb-d, triangle-splatting, real-time, gpu]
+  takeaway_en: 'First real-time triangle-splatting SLAM: geometric registration to depth-fused triangle centroids with a translation-free mapper. About 100 FPS desktop, sensor-rate on Jetson; Replica chamfer 1.55 to 0.86 cm.'
+  takeaway_zh: 首个实时三角形泼溅 SLAM：跟踪器用深度融合的三角形质心做 GICP 配准，建图器经变量替换限制为非平移更新，避免三角形偏离观测表面。桌面 GPU 约 100 FPS、Jetson AGX Orin 达传感器帧率；Replica 上 Delaunay 网格 chamfer 距离从 1.55 降到 0.86 cm，比光度法快 20 倍以上。

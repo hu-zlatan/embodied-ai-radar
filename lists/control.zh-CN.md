@@ -2,7 +2,7 @@
 
 _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的学习型控制。_
 
-共 61 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/control.yaml`](../data/curated/control.yaml) 生成，请勿直接编辑。
+共 62 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/control.yaml`](../data/curated/control.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/control.html) · [English](control.md)
 
@@ -30,6 +30,7 @@ _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的�
 - **[BehaVerify: A Formal Verification Tool for Behavior Trees](https://arxiv.org/abs/2611.22403)** (2026) — 行为树与神经符号行为树的形式化验证工具箱：DSL 支持 LTL/CTL 规范，经“fastforwarding”高效编码到 nuXmv，可生成 Python/Haskell 实现并集成 PyTrees 与 ROS；已部署到多台自主机器人验证运行时监视器。 · [代码](https://github.com/verivital/behaverify)
 - **[Certify, Then Select: Viability-Aware Runtime Steering of Frozen Diffusion Policies](https://arxiv.org/abs/2611.19047)** (2026) — 给冻结扩散策略做运行期安全筛选：采样少量动作块，用屏障条件逐一认证，执行学习价值集成评分最高的认证块，并以可行性保留未来安全选项。报告在 robomimic、平面四旋翼、人形与独轮车任务上任务+约束联合成功率高于输出滤波器。 · [项目页](https://clmoro.github.io/cast)
 - **[CusADi2: Latency-Optimized Batch Computation of Robot Kinematics, Jacobians, and Hessians on the GPU](https://arxiv.org/abs/2610.25476)** (2026) — 在 GPU 上以低延迟批量计算运动学、雅可比与海森矩阵，面向在线运行的采样式与梯度式轨迹优化。 · [代码](https://github.com/johnviljoen/cusadi2)
+- **[Estimation-Aware Reachability](https://arxiv.org/abs/2611.23830)** (2026) — 把 Hamilton-Jacobi 可达性推广到机器人信念空间：将意外测量视为有界对手，不可安全集随当前不确定性扩张，保证认证状态以指定概率安全。仿真中其安全滤波器几乎消除了等价确定型 HJ 的碰撞，且比同样安全的加不确定垫片基线更少保守。 · [代码](https://github.com/HimanshuPaudel/Estimation-Aware-Reachability)
 - **[Exploring the Intrinsic Geometry of Diffusion Models with Constrained Inverse Kinematics](https://arxiv.org/abs/2606.26408)** (2026) — 以解流形可精确知道的约束逆运动学为试验场，检验扩散模型学到的几何结构。在 UR5 和 Franka 上，从得分函数估计的内在维度与解析自由度一致。 · [代码](https://github.com/utiasSTARS/ConstraintIK) · [项目页](https://papers.starslab.ca/diffusion-ik-geometry/)
 - **[FAME-QP: A GPU-Accelerated Quadratic-Programming Solver for Real-Time Model Predictive Control](https://arxiv.org/abs/2611.13766)** (2026) — FAME-QP 是面向线性 MPC 稠密二次规划的 GPU 求解器：融合核函数经 CUDA Graph 重放、按设备自动标定执行配置并缓存算子。在人形与四旋翼仿真控制中报告延迟低于其他 GPU 求解器，且精度和控制性能不降。 · [代码](https://github.com/santoshrajkumar/fame-qp) · [项目页](https://santoshrajkumar.github.io/proj/fame_qp/)
 - **[Generalized Inverse Kinematics via Conditional Flow](https://arxiv.org/abs/2611.15565)** (2026) — GenGenIK 用条件流模型生成逆运动学解的分布，在同一接口中支持移动底座、多末端执行器与多目标、场景感知以及对机器人行为的偏好（如避碰、稳定）。报告在双臂抬举等任务上求解率和速度均优于现有方法。 · [项目页](https://icra-2027-gengenik.github.io/)

@@ -2,7 +2,7 @@
 
 _Reinforcement learning, imitation learning and policy post-training methods for robots, on any embodiment._
 
-146 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/learning.yaml`](../data/curated/learning.yaml); edit the YAML, not this file.
+147 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/learning.yaml`](../data/curated/learning.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/learning.html) · [中文](learning.zh-CN.md)
 
@@ -58,6 +58,7 @@ _Reinforcement learning, imitation learning and policy post-training methods for
 - **[GSBR: Geometric Support Behavior Regularization for Online RL](https://arxiv.org/abs/2611.05295)** (2026) — Online RL on top of a pretrained policy, penalised by distance from that policy's support: free inside it, smoothly costly outside; reports average success rising from 33% to 95% across 19 benchmark tasks. · [code](https://github.com/charlesxu0124/gsbr) · [project](https://charlesxu0124.github.io/gsbr/)
 - **[GUILD: Guided Iterative Data Collection for Imitation Learning](https://arxiv.org/abs/2611.05368)** (2026) — GUILD decides what to collect next: a VLM proposes environments, object setups and goals, collected data is evaluated for its value to the policy, and the loop repeats, instead of filtering after the fact.
 - **[Generative Flow on Symbolic Abstractions for Embodiment Capability Discovery](https://arxiv.org/abs/2610.17174)** (2026) — Discovers what a given robot can actually learn: a GFlowNet builds symbolic task skeletons, rewarded by how well low-level policies learn them in sim, then the tasks are distilled into one language-conditioned policy. · [project](https://www.youwei-yu.com/fosa)
+- **[Grana: Compositional Reward Modeling for Long-Horizon Robot Manipulation](https://arxiv.org/abs/2611.24926)** (2026) — Reward model that identifies unfinished subtasks and estimates their progress, composing it with credit for completed subtasks. Pretrained on 200 tasks, predicts zero-shot on unseen tasks and adapts to five long ones. · [project](https://research.nvidia.com/labs/gear/grana/)
 - **[Guided Discovery of New Behaviors using Diffusion Policies](https://arxiv.org/abs/2606.08743)** (2026) — Feynman-Kac correctors with a new guiding potential push diffusion-policy samples toward rare but promising modes; trajectory optimization repairs them and they are added back to training.
 - **[HARBOR: A Harness Framework for Agentic Robot Reinforcement Learning](https://arxiv.org/abs/2606.08610)** (2026) — Agent harness that automates sim RL from environment setup to trained policy: staged specialist agents, executable gates, parallel trials and reusable knowledge. 16 tasks across 6 benchmarks, some moved to real robots.
 - **[HIDRA: Hierarchical Dual-Routing Attention for Replay-Free Lifelong Imitation Learning](https://arxiv.org/abs/2610.36374)** (2026) — Replay-free lifelong imitation learning: hierarchical dual-routing attention retrieves experts by instruction, then refines by context, plus key regularization against drift. Reports beating replay baselines on LIBERO. · [code](https://github.com/yfqi/HIDRA)

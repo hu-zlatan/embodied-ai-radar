@@ -2,7 +2,7 @@
 
 _Tactile sensors, touch representations and contact-rich control._
 
-82 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
+83 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/tactile.html) · [中文](tactile.zh-CN.md)
 
@@ -27,6 +27,7 @@ _Tactile sensors, touch representations and contact-rich control._
 - **[How Firm Should a Grasp Be?](https://arxiv.org/abs/2610.11221)** (2026) — Estimates mass, elasticity and friction visuotactilely during the grasp and applies the minimum safe grip force; adds a dataset of fruits and vegetables with measured physical properties.
 - **[Inference-time Policy Steering via Vision and Touch](https://arxiv.org/abs/2606.14981)** (2026) — Inference-time steering with vision and touch: visual sampling picks the behaviour, tactile-guided diffusion editing fixes local contact, scored by a visuo-tactile latent world model. Reports +51% over the base policy. · [code](https://github.com/yilin-wu98/vital) · [project](https://yilin-wu98.github.io/vital_website)
 - **[Learning with Object-centric Representations of Tactile Interactive Perception for Robot Manipulation](https://arxiv.org/abs/2609.33235)** (2026) — Learns object representations from tactile exploration, aligned with text descriptions of properties, and uses them as context for manipulation. Reports task success from 41% to 92% (seen) and 19% to 67% (unseen). · [project](https://xinyiyxyx.github.io/tactile-object-centric/)
+- **[LuxTac: A Flexible, Scalable, and Open-Source Optical Taxel Array with Distributed Three-Axis Force Sensing for Tactile Robot Learning](https://arxiv.org/abs/2611.23575)** (2026) — Open-source 3.5 mm optical taxel array with per-taxel three-axis force: gel cartridges encode shear in light color, no cameras or magnets. Normal sensing is linear to 5.8 N; its pressure improves ACT peg-in-hole. · [project](https://luxtac.github.io)
 - **[MDF++: Visuo-Tactile World Action Model with End-to-end Representation Learning](https://arxiv.org/abs/2611.09293)** (2026) — Learns visuo-tactile latents end-to-end inside a diffusion world-action model not frozen encoders; multi-task cross-modal losses avoid feature collapse. Reports up to 50% gains on real bolt screwing and nut mating. · [project](https://jointmdf.github.io/)
 - **[Modular Sensory Stream for Integrating Physical Feedback in Vision-Language-Action Models](https://arxiv.org/abs/2604.23272)** (2026) — Adds separate tactile, force and torque streams to a pretrained VLA through joint cross-modal attention, with staged training and an auxiliary task that predicts future physical signals. Real-robot tests. · [project](https://jiminlx.github.io/MoSS)
 - **[Multi-Resolution Tactile Imitation Learning for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2606.06281)** (2026) — Fuses an RGB camera, a GelSight Mini and a high-rate event-based tactile sensor for a flow-matching policy. Reports 80% average success on five contact-rich tasks vs 35.5% vision-only. · [project](https://mitas-touch.github.io)
@@ -93,4 +94,4 @@ _Tactile sensors, touch representations and contact-rich control._
 
 **See also**
 
-[Never Too Late for Force](vla.md), [FORCA](manipulation.md), [ContactBench 1.0](manipulation.md), [CARD](manipulation.md), [ForceLDM](manipulation.md), [DeCAL](manipulation.md), [DexRemo](manipulation.md), [Physical Canvas](world-models.md), [DIFFTACTILE](sim.md), [Taccel](sim.md), [TacEx](sim.md), [EgoExplorer](datasets.md), [ORCA](hardware.md), [Learning Visuotactile Skills with Two Multifingered Hands](hardware.md), [DOGlove](hardware.md), [SwapBot](hardware.md), [RUMI](hardware.md)
+[Never Too Late for Force](vla.md), [CoRA-VTLA](vla.md), [FORCA](manipulation.md), [ContactBench 1.0](manipulation.md), [CARD](manipulation.md), [ForceLDM](manipulation.md), [DeCAL](manipulation.md), [DexRemo](manipulation.md), [Physical Canvas](world-models.md), [DIFFTACTILE](sim.md), [Taccel](sim.md), [TacEx](sim.md), [EgoExplorer](datasets.md), [ORCA](hardware.md), [Learning Visuotactile Skills with Two Multifingered Hands](hardware.md), [DOGlove](hardware.md), [SwapBot](hardware.md), [RUMI](hardware.md)

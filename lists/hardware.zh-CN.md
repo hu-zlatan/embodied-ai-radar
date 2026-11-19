@@ -2,7 +2,7 @@
 
 _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备。_
 
-共 54 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/hardware.yaml`](../data/curated/hardware.yaml) 生成，请勿直接编辑。
+共 55 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/hardware.yaml`](../data/curated/hardware.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/hardware.html) · [English](hardware.md)
 
@@ -28,6 +28,7 @@ _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备�
 - **[OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation](https://arxiv.org/abs/2610.36598)** (2026) — 完全开源的 UMI 式手持夹爪：3D 打印、标准 ISO 接口，用低成本双目相机获得公制尺度、低漂移的轨迹，并提出手持采集设备定位精度基准 UMI-Loc-Bench-v1；硬件、软件与数据以可商用许可证发布。 · [项目页](https://open-jaws.github.io/)
 - **[PHD-Hand: A Printable Humanoid Dexterous Hand with Linkage-Driven 3-DOA Digits](https://arxiv.org/abs/2610.29030)** (2026) — 完全连杆驱动的人形灵巧手，每根手指 3 个主动自由度；用柔性铰链和弹簧钢驱动杆取代大量微型零件，可用入门级 3D 打印机制造，尺寸接近真人手。
 - **[PanoVine: Whole-Body Visuomotor Control for Soft Growing Vine Robot](https://arxiv.org/abs/2606.22923)** (2026) — 首个自主藤蔓（软体生长）机器人系统：沿机身分布的 19 个摄像头为从演示学到的端到端视觉运动策略提供反馈，能穿过分叉结构、爬坡并进入狭窄空间。 · [代码](https://github.com/xxm19/panovine) · [项目页](https://panovine-bot.github.io)
+- **[QDD-MM: A Simple and Compact Open-Source Muscle Module with Quasi-Direct-Drive Motor for Tendon-driven Robots](https://arxiv.org/abs/2611.24279)** (2026) — 面向腱驱动机器人的开源准直驱肌肉模块：结构简单紧凑、可反驱、无需专用力传感器，支持多方向布线、模块互连，甚至可用模块本体作结构件。用其搭建了单关节两肌/三肌机器人及部分肌肉骨骼人形并验证有效性；设计文件公开（Humanoids 2026）。 · [项目页](https://haraduka.github.io/qddmm/)
 - **[RAIPAL: A Powerful and Agile Humanoid Arm for Human Tasks](https://arxiv.org/abs/2611.04334)** (2026) — 人形手臂，其力量、速度和耐力指标取自人类上肢测量数据；报告峰值负载 20 公斤（自重的 2.25 倍），末端速度 20.6 米每秒。
 - **[RUMI: A Robotiq-Matched Universal Manipulation Interface for Robot Learning with Augmented Reality and Haptic Feedback](https://arxiv.org/abs/2611.15802)** (2026) — 仿照 UMI 的手持采集夹爪，与 Robotiq 2F-85 的非线性机构一致，可换指尖传感器；在 VR 头显中实时以增强现实提示目标机器人的运动可行性，并提供力反馈。用户实验中超关节限位的示教从 16/50 降到 3/50。
 - **[RealDexUMI: A Wearable Universal Manipulation Interface for Dexterous Robot Learning](https://arxiv.org/abs/2606.06033)** (2026) — 可穿戴的灵巧 UMI：共享的末端模块（轻量灵巧手、手内相机、指尖触觉）由同构手套驱动，采集与部署时的观测和动作完全一致，无需重定向。在八个真机任务上验证。
@@ -65,4 +66,4 @@ _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备�
 
 **另见**
 
-[Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](manipulation.zh-CN.md), [Mobile ALOHA](manipulation.zh-CN.md), [Universal Manipulation Interface](manipulation.zh-CN.md), [DexCap](manipulation.zh-CN.md), [Pixel-UMI](manipulation.zh-CN.md), [Vision in Action](manipulation.zh-CN.md), [DexRemo](manipulation.zh-CN.md), [DIGIT](tactile.zh-CN.md), [AnySkin](tactile.zh-CN.md), [ReSkin](tactile.zh-CN.md), [Digitizing Touch with an Artificial Multimodal Fingertip](tactile.zh-CN.md), [GelSlim 3.0](tactile.zh-CN.md), [DTact](tactile.zh-CN.md), [9DTact](tactile.zh-CN.md), [OpenTac](tactile.zh-CN.md), [VecTile](tactile.zh-CN.md), [PanoTac](tactile.zh-CN.md), [Evetac](tactile.zh-CN.md), [PCTac](tactile.zh-CN.md), [Unitree RL Gym](locomotion.zh-CN.md), [Runtime Safety and Emergency Stops on a Full-Size Humanoid](locomotion.zh-CN.md), [LeRobot](datasets.zh-CN.md)
+[Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](manipulation.zh-CN.md), [Mobile ALOHA](manipulation.zh-CN.md), [Universal Manipulation Interface](manipulation.zh-CN.md), [DexCap](manipulation.zh-CN.md), [Pixel-UMI](manipulation.zh-CN.md), [Vision in Action](manipulation.zh-CN.md), [DexRemo](manipulation.zh-CN.md), [DIGIT](tactile.zh-CN.md), [AnySkin](tactile.zh-CN.md), [ReSkin](tactile.zh-CN.md), [Digitizing Touch with an Artificial Multimodal Fingertip](tactile.zh-CN.md), [GelSlim 3.0](tactile.zh-CN.md), [DTact](tactile.zh-CN.md), [9DTact](tactile.zh-CN.md), [OpenTac](tactile.zh-CN.md), [VecTile](tactile.zh-CN.md), [PanoTac](tactile.zh-CN.md), [Evetac](tactile.zh-CN.md), [PCTac](tactile.zh-CN.md), [LuxTac](tactile.zh-CN.md), [Unitree RL Gym](locomotion.zh-CN.md), [Runtime Safety and Emergency Stops on a Full-Size Humanoid](locomotion.zh-CN.md), [LeRobot](datasets.zh-CN.md), [RoboBuilder](datasets.zh-CN.md)

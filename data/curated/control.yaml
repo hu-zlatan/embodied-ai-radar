@@ -617,3 +617,14 @@
   tags: [safety, vlm, risk-field, manipulation, real]
   takeaway_en: A VLM decides whether a task risks unrecoverable failure (rejecting it) or identifies preventable object-pair hazards; segmentation and depth ground them as 3D risk fields that correct nominal motion.
   takeaway_zh: 由 VLM 先判断任务是否存在不可恢复的危险（必要时拒绝执行），再识别可预防的物体对危险；开放词汇分割与深度信息把对象落为连续 3D 风险场，在执行中修正名义运动。在仿真与真机上评估危险、拒绝与安全三类任务。
+
+- title: Estimation-Aware Reachability
+  type: paper
+  arxiv: '2611.23830'
+  year: 2026
+  code: https://github.com/HimanshuPaudel/Estimation-Aware-Reachability
+  added: 2026-11-19
+  topics: [control]
+  tags: [safety, reachability, estimation, uncertainty, filter]
+  takeaway_en: 'Extends Hamilton-Jacobi reachability to beliefs: unexpected measurements act as a bounded adversary, enlarging the unsafe set by current uncertainty. Its filters nearly eliminate certainty-equivalent HJ collisions.'
+  takeaway_zh: 把 Hamilton-Jacobi 可达性推广到机器人信念空间：将意外测量视为有界对手，不可安全集随当前不确定性扩张，保证认证状态以指定概率安全。仿真中其安全滤波器几乎消除了等价确定型 HJ 的碰撞，且比同样安全的加不确定垫片基线更少保守。
