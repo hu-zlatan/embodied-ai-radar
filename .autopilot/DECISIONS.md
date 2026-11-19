@@ -90,3 +90,7 @@ Owner asked which address should be official; the agent recommended the owner do
 ## 2026-11-10 — China mirror at embodied-ai-radar.com, canonical stays on GitHub Pages
 
 The owner's domain serves the EdgeOne mirror (area 'Global excluding mainland', so no ICP filing). Canonical links, sitemap, Atom feeds and OG URLs keep pointing to hu-zlatan.github.io so search ranking is not split between two hosts; the Chinese README and zh lists link the mirror for every site link (owner's call 2026-11-10; the footer line was dropped at the owner's request), the English README stays on GitHub Pages. Revisit (make the domain canonical) only if the owner wants the .com as the main address.
+
+## 2026-11-19 — CI data pushes carry the owner's GitHub identity (owner request)
+
+The owner asked that future pushes all carry their GitHub username. Agent-run commits already did (2026-11-06 directive); the seven workflows that commit data (intake, repo-stats, corl-program, venue-backfill, facts, weekly, indexnow) were still authoring as "radar-bot". Their git identity now matches the agent convention (`hu-zlatan` + the `216887419+hu-zlatan@users.noreply.github.com` noreply address), so GitHub attributes those commits to the owner's account with the same avatar and profile link. Commit messages and the CI push mechanism are unchanged; the owner explicitly requested this, and AUTOPILOT.md now records it as a standing directive.

@@ -809,3 +809,7 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Four code links for picks whose repos went public (437078b): sereact/lerobot_knn, llong-cs/EgoGuidance, adeeb10abbas/weightsmith, yichg/elastra — READMEs checked. Lingbot-ALOHA stays project-only (policy repo, not HALO's code). scwm and ESI repos are empty/404: no code links.
 - CoRL 2026 awards snapshot (fetched 11-17 17:39 UTC) still lists only the six finalists; no winners. corl-program cron stays until Nov 30 per the plan.
 - Validate 0 errors (1,487 curated), README check clean, 1,623 pages, 0 broken internal links. No new owner task. End of run 88.
+
+## 2026-11-19 — run 88 follow-up (owner request)
+
+- Owner asked that all future pushes carry their GitHub username. Agent-run commits already did; the seven data-committing workflows (intake, repo-stats, corl-program, venue-backfill, facts, weekly, indexnow) were still authoring as "radar-bot" — their git identity now matches the agent convention (hu-zlatan + noreply email). Recorded as a standing directive in AUTOPILOT.md and in DECISIONS.md. Workflow YAML validated locally; the next scheduled runs will show the new identity.
