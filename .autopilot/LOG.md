@@ -813,3 +813,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 ## 2026-11-19 — run 88 follow-up (owner request)
 
 - Owner asked that all future pushes carry their GitHub username. Agent-run commits already did; the seven data-committing workflows (intake, repo-stats, corl-program, venue-backfill, facts, weekly, indexnow) were still authoring as "radar-bot" — their git identity now matches the agent convention (hu-zlatan + noreply email). Recorded as a standing directive in AUTOPILOT.md and in DECISIONS.md. Workflow YAML validated locally; the next scheduled runs will show the new identity.
+
+## 2026-11-19 — run 89 (in progress)
+
+- Start: no issues/PRs; all workflows green. Owner request in chat: all pushes must carry the owner's GitHub username — done in e5b6335 (the seven data-committing workflows now use hu-zlatan + noreply email instead of radar-bot) and verified on real CI commits: repo-stats #432 (78e5abf) and intake #224 (38816f3) are authored by hu-zlatan. Past bot commits stay (no history rewrite).
+- Today's update: dispatched intake by hand at ~01:31; arXiv's 11-19 announcement had not been posted yet (API shows the newest cs.RO papers still dated 11-17) and the intake only rotated stale candidates (38816f3). Remaining candidates (11-16..18) are the documented run-88 skips; HF queue holds only Gamer (deliberate games skip). A watcher polls for data/arxiv/2026/11-19.json; when it lands (scheduled slots 02:17+ or a re-dispatch), review the new candidates and pick.
+- Verify #214 (run-88 picks) failed only on the HWM link, already removed in e348138; its titles and all other links passed. Verify #217 was cancelled to let today's intake run first; a fresh verify is re-dispatched and the next curated push will trigger another one. Check a green verify on the run-89 picks before ending the run.
