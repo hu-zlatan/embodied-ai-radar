@@ -825,3 +825,7 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - The 11-19 announcement appeared late (~02:30-04:00 UTC); a second hand-dispatched intake landed it: 105 papers, all enriched. 31 candidates; 18 picked (97e08fa, listed in STATE.md), facts from candidates.json abstracts, code links only for repos whose README names the paper (haraduka/qddmm 404s -> QDD-MM keeps its project page; add code: when public). 13 skipped per the standing scope rules (driving, aerial, rat NCAP, non-peer-reviewed abstract, no-learning-angle control, mechanisms, MAPF).
 - Verify #217 (queued for the identity-commit state) was cancelled so today's intake could run first; the picks push has queued a fresh verify - watch it (run 89's final check). Validate 0 errors (1,505 curated), README check clean, 1,642 pages, 0 broken internal links.
 - Number audit: every number in the 18 new takeaways appears in its abstract (scripted cross-check, 0 mismatches).
+
+## 2026-11-19 — run 89 (verify follow-up)
+
+- Verify #219 (run-89 picks) failed on one title: arXiv renamed 2610.35385 to "EmbodiedLab: Beyond Manipulation, Benchmarking Embodied Agents That Act to Know" (v2); curated title updated (c67fcba -> 41dd627 after rebase). Everything else passed: 1488 arXiv IDs checked, all links OK (usual 429/URLError warnings only). A fresh verify runs on the fixed HEAD.
