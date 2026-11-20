@@ -43,7 +43,7 @@
   {
    "id": "2611.26444",
    "title": "Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation",
-   "upvotes": 41,
+   "upvotes": 44,
    "hf_date": "2026-11-20",
    "published": "2026-11-20",
    "topics": [
@@ -101,6 +101,31 @@
    "comment": "27 pages, preprint",
    "abstract": "World models aim to predict environment dynamics under actions, enabling the prediction of action consequences without executing them in the real world. Yet despite producing increasingly realistic videos, current world models often fail to capture how small action changes affect future observations. This limits their use in tasks such as robotic policy evaluation and model-based planning, where nearly identical actions can lead to qualitatively different outcomes. To address this, we propose AFFECT, an auxiliary training objective for learning the distribution of visual changes induced by action perturbations. Specifically, we inject temporally correlated noise into the actions of a policy trained on task-agnostic human teleoperation. We then train the world model so that its generated videos respond to this noise as the recorded videos do, without requiring repeated executions from the same initial state. Across OGBench simulation and real-world DROID and ALOHA-2 setups, AFFECT makes world-model rollouts more faithful to real outcomes. On DROID, the Pearson correlation between policy success rates in the world model and on the real robot rises from 0.47 to 0.79, alongside up to 23% lower FVD. These gains carry over to planning, where selecting actions with AFFECT-trained world models improves task success by up to 8.3%.",
    "ai_summary": "AFFECT, an auxiliary objective that trains world models to match visual responses to temporally correlated action noise, improves rollout fidelity and planning success in simulated and real robotic tasks."
+  },
+  {
+   "id": "2611.22666",
+   "title": "VSpark: Speculative Decoding for Autoregressive Vision-Language-Action Models",
+   "upvotes": 5,
+   "hf_date": "2026-11-20",
+   "published": "2026-11-18",
+   "topics": [
+    "vla"
+   ],
+   "authors": [
+    "Suho Yoo",
+    "Youngjoon Jang",
+    "Hyebin Cho",
+    "Taeyeop Lee",
+    "Jaewook Jeong",
+    "Joon Son Chung"
+   ],
+   "organization": "KAIST AI",
+   "github": "https://github.com/suho-yoo/VSpark",
+   "project": "https://suho-yoo.github.io/VSpark/",
+   "arxiv_code": [],
+   "comment": "Preprint",
+   "abstract": "Our aim is to accelerate autoregressive vision-language-action models (VLAs), which generate robot actions one token at a time. Speculative decoding makes this possible: a lightweight draft model proposes several tokens at once, and the VLA verifies them in a single pass, accepting only those that match its own predictions, so decoding remains lossless. The speedup, however, is limited in robot control, where many different tokens encode nearly the same motion and a draft close to the correct action is still rejected. To address this, our approach, VSpark, is built upon three design choices: (i) rollouts collected with calibrated action noise, which expose the draft to a wider range of robot states; (ii) feature alignment, which trains the draft to match the VLA's hidden features rather than its output tokens alone; and (iii) continuation reuse, which keeps the predictions the VLA has already computed along rejected drafts as candidates for the next verification step, instead of discarding them. On four VLAs with different action tokenizers and four manipulation benchmarks, VSpark achieves 1.28x to 2.10x speedup while keeping the VLA's decoding lossless.",
+   "ai_summary": "VSpark accelerates autoregressive vision-language-action models by improving speculative decoding with calibrated action-noise rollouts, hidden-feature alignment, and reuse of rejected-draft continuations, achieving lossless 1.28x–2.10x speedups across multiple robot manipulation tasks."
   }
  ],
  "curated_link_updates": [
