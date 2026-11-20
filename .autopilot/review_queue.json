@@ -39,6 +39,68 @@
    "comment": null,
    "abstract": "We introduce Gamer, a generalist agent framework built for long-horizon tasks in complex interactive environments. Its end-to-end architecture combines perception, memory management, and multi-step reasoning. A shared training and deployment pipeline supports interaction with both conventional 2D graphical interfaces and complex 3D simulated worlds. We first continue pre-training on a dataset constructed from tens of thousands of hours of device-level keyboard and mouse interaction. These trajectories span simulated games and embodied environments, allowing the model to learn environmental dynamics across both physical and virtual domains. Sparse-thinking instruction tuning then substantially reduces redundant computation while preserving the reasoning needed for complex decisions. We train the policy for long-horizon interaction with a stable multi-turn reinforcement learning method that addresses finite context windows, accumulated rollout errors, and sparse rewards. For real-time interaction, a cloud-edge inference engine serves numerous simulated game environments concurrently, supports unbounded-context execution, and keeps online inference latency low. Across multiple challenging 3D open-world games, Gamer demonstrates solid generalization and operational efficiency comparable to skilled players. It also achieves competitive results on a range of conventional 2D game benchmarks. These results suggest that even repetitive keyboard and mouse trajectories can support substantial gains from scaling data and learning algorithms. Training on these trajectories helps Gamer learn complex skills more steadily in environments with both physical and digital properties. This approach offers a path toward generalist agents that can interact across digital and physical worlds.",
    "ai_summary": "Gamer is a generalist agent framework that integrates perception, memory, and multi-step reasoning, trained through continued pre-training, sparse-thinking instruction tuning, and multi-turn reinforcement learning to interact efficiently in 2D and 3D environments."
+  },
+  {
+   "id": "2611.26444",
+   "title": "Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation",
+   "upvotes": 32,
+   "hf_date": "2026-11-20",
+   "published": "2026-11-20",
+   "topics": [
+    "manipulation",
+    "datasets"
+   ],
+   "authors": [
+    "Yuzhi Huang",
+    "Jie Wu",
+    "Fanding Huang",
+    "Junchao Lin",
+    "Weichen Zhang",
+    "Ziyi Xiong",
+    "Yang Li",
+    "Zhengwei Xie",
+    "Zhimin Wang",
+    "Zhen Liu",
+    "Jiazhen Huang",
+    "Yuzheng Zhang",
+    "Yuche Liu",
+    "Hongyi Yang",
+    "Chen Tang",
+    "Shixiang Tang",
+    "Hakan Aktas",
+    "Adam Wu",
+    "Duo Wu",
+    "Kangye Ji"
+   ],
+   "organization": "Mind2Act-World",
+   "github": "https://github.com/Mind2Act/Mind2Act_World",
+   "project": "https://mind2act-world.com/",
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "Embodied intelligence aims to let robots perform complex physical tasks with human-like adaptability and reliability, which requires three complementary capabilities: history-based cognitive reasoning, precise and timely physical execution, and the composition of reasoning and execution through environmental feedback. Yet existing benchmarks either evaluate reasoning and execution within the same tasks or assess them separately without their composition, so they reveal little about whether a failure comes from reasoning, execution, or their composition. We introduce Mind2Act World, a diagnostic benchmark of 30 simulated manipulation tasks from five real-world application domains. Each task has three difficulty levels and two scene settings (Clean and Random), yielding 180 configurations. The tasks form three views: Mind tests decisions based on past observations, Act tests precise and timely execution, and Mind2Act combines both in closed-loop tasks where action outcomes guide later decisions. Comparing the three views shows whether a system lacks a capability or fails to compose capabilities it already has. A diagnosis harness further attributes the failed episodes of three representative systems to Mind, Act, or their composition and summarizes each system in a profile card. Our evaluation of multimodal agents, vision-language-action models (VLAs), and world-action models (WAMs) shows that competence in a single view does not carry over to Mind2Act tasks. Even the strongest agent succeeds in 52.7% of Mind and 39.0% of Act episodes but in only 12.0% of Mind2Act episodes. The strongest agent retains task state but struggles with sustained contact, whereas end-to-end policies execute practiced motions but retain little task state. These findings point to composing reasoning and execution through environmental feedback as the main open problem.",
+   "ai_summary": "A diagnostic benchmark of 180 simulated manipulation configurations evaluates whether embodied systems can combine history-based reasoning, precise execution, and closed-loop environmental feedback, revealing that single-view competence does not transfer to composed tasks."
+  },
+  {
+   "id": "2611.25980",
+   "title": "Learning What Actions Change: Action Effect Matching for Dynamics-Faithful World Models",
+   "upvotes": 9,
+   "hf_date": "2026-11-20",
+   "published": "2026-11-20",
+   "topics": [
+    "world-models"
+   ],
+   "authors": [
+    "John Won",
+    "Yonghoon Dong",
+    "Jinwoo Shin"
+   ],
+   "organization": null,
+   "github": null,
+   "project": "https://periphanes.github.io/affect/",
+   "arxiv_code": [],
+   "comment": "27 pages, preprint",
+   "abstract": "World models aim to predict environment dynamics under actions, enabling the prediction of action consequences without executing them in the real world. Yet despite producing increasingly realistic videos, current world models often fail to capture how small action changes affect future observations. This limits their use in tasks such as robotic policy evaluation and model-based planning, where nearly identical actions can lead to qualitatively different outcomes. To address this, we propose AFFECT, an auxiliary training objective for learning the distribution of visual changes induced by action perturbations. Specifically, we inject temporally correlated noise into the actions of a policy trained on task-agnostic human teleoperation. We then train the world model so that its generated videos respond to this noise as the recorded videos do, without requiring repeated executions from the same initial state. Across OGBench simulation and real-world DROID and ALOHA-2 setups, AFFECT makes world-model rollouts more faithful to real outcomes. On DROID, the Pearson correlation between policy success rates in the world model and on the real robot rises from 0.47 to 0.79, alongside up to 23% lower FVD. These gains carry over to planning, where selecting actions with AFFECT-trained world models improves task success by up to 8.3%.",
+   "ai_summary": "AFFECT, an auxiliary objective that trains world models to match visual responses to temporally correlated action noise, improves rollout fidelity and planning success in simulated and real robotic tasks."
   }
  ],
  "curated_link_updates": [
