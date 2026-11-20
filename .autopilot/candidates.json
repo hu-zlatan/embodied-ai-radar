@@ -1,6 +1,437 @@
 {
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "papers": [
+  {
+   "id": "2611.26596",
+   "title": "PGX: Physically Grounded Execution for Long-Horizon Humanoid Loco-Manipulation",
+   "published": "2026-11-20",
+   "topics": [
+    "vla",
+    "manipulation",
+    "locomotion"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://kl-research.github.io/pgx"
+   ],
+   "comment": null,
+   "authors": [
+    "Kai Lu",
+    "Chenyang Ma",
+    "Ioannis Havoutis"
+   ],
+   "abstract": "Robotic vision-language-action (VLA) models can execute diverse individual manipulation skills, yet they still struggle with long-horizon loco-manipulation tasks, where temporal structure, skills, and precision are tightly coupled within a monolithic model. We propose Physically Grounded Execution (PGX), a framework that offloads temporal and precision control to two classical training-free components, allowing the VLA to focus on stage-specific skill dynamics. PGX decomposes long-horizon loco-manipulation into three layers: (i) a predicate-based state machine governs task progression, using physical predicates to gate phase transitions, trigger recovery, and coordinate navigation and waiting. Shared predicate semantics connect offline demonstration segmentation, online execution, and stage-wise evaluation; (ii) VLA skills operate within active manipulation phases, with flat or stage-trained models concentrating on task-relevant actions; and (iii) world-coordinate locking (WCL) maintains spatial consistency through base station keeping, object-relative positioning, and world-anchored contact targets. We demonstrate the effectiveness of PGX with extensive experiments conducted on three simulated tasks and one real-world task using a Unitree G1 humanoid robot for long-horizon loco-manipulation, showing improvements in stage progression and task success rates. Project page is available at: https://kl-research.github.io/pgx",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.26434",
+   "title": "HumanCOIN: A 12,500-Hour Dataset for Human Intent in Egocentric Manipulation",
+   "published": "2026-11-20",
+   "topics": [
+    "manipulation",
+    "datasets"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://flagopen.github.io/HumanCOIN"
+   ],
+   "comment": null,
+   "authors": [
+    "Shihan Wu",
+    "You Liu",
+    "Chunyu He",
+    "Minghui Qin",
+    "Longhan Jiao",
+    "Jinbang Guo",
+    "Shaoxuan Xie",
+    "Kaixi Tian",
+    "Wenjie Chen",
+    "Jingrui Pang",
+    "Yuanhang Zhang",
+    "Yichi Zhang",
+    "Miao Liu",
+    "Tengfei Pan",
+    "Yance Jiao",
+    "Yunyan Zhang",
+    "Yihang Li",
+    "Yongjian Shen",
+    "Li Liu",
+    "Kai Zhu"
+   ],
+   "abstract": "First-person manipulation datasets treat the observation-action pair as the atomic unit and compress the generation and execution of an action into a policy network's weights, rendering the intent state behind the action unobservable. Human motor control research shows that intent mediates between observation and action and leaves observable traces along the intent pathway from decision to effect: gaze reaches the target before the hand, muscle load builds before contact, and cortical activity precedes the motor command. To record this pathway at scale, we present HumanCOIN, a first-person manipulation dataset built around human intent: 12,500 hours across 38 scene classes with three tiers of proxies. At the output end, the L1 attention tier (10,000 h) infers gaze from headband camera video, exposing the operator's next object of attention and reach before the hand moves. Midway, the L2 exertion tier (2,000 h) records surface EMG from armbands, making load expectations readable before execution is complete. At the origin, the L3 cognition tier (500 h) records scalp EEG, giving early readouts of task decisions and monitoring. Each tier inherits all proxies from the tiers below. The dataset further provides multi-view RGB images, depth maps and point clouds, 6-DoF head and wrist pose, and step-level action and object annotations. The controlled L3 setting additionally measures gaze, hand pose and finger kinematics directly. Clock and calibration data are released with the dataset so that any read rate can be re-aligned. The three tiers cover three stations, from visual orienting to cortical preparation, making the process behind visual-action pairs available for modeling at dataset scale. Project page: https://flagopen.github.io/HumanCOIN.",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.26293",
+   "title": "LocoMuJoCo: A Comprehensive Imitation Learning Benchmark for Whole-Body Control",
+   "published": "2026-11-20",
+   "topics": [
+    "manipulation",
+    "locomotion",
+    "learning",
+    "sim",
+    "datasets"
+   ],
+   "venue": null,
+   "code": [
+    "https://github.com/robfiras/loco-mujoco"
+   ],
+   "project": [],
+   "comment": null,
+   "authors": [
+    "Firas Al-Hafez",
+    "Davide Tateo",
+    "Oleg Kaidanov",
+    "Aditya Bhatt",
+    "Artur Zelik",
+    "Zhengyi Luo",
+    "Jan Peters"
+   ],
+   "abstract": "LocoMuJoCo is an open-source benchmark for imitation learning (IL) and reinforcement learning (RL) on whole-body control. The library couples MuJoCo (CPU) with MJX and the MjWarp backend (GPU) under a single API, exposes 9 humanoid, 3 (musculo-)skeletal, and 4 quadruped embodiments, and ships a curated native motion-capture dataset for every humanoid, to which it can also retarget AMASS and LAFAN1. A modular plug-in architecture makes observations, rewards, control modes, terrains, and domain randomization fully interchangeable, while compact JAX implementations of many RL and IL algorithms provide JIT-compiled end-to-end training, and the companion loco-mujoco-real repository provides sim-to-real deployment. We describe the design, the SMPL-to-robot and robot-to-robot retargeting pipeline, and a usage example. LocoMuJoCo is released under MIT at https://github.com/robfiras/loco-mujoco.",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.26242",
+   "title": "FastRoverVLA: Fast Vision-Language-Action Execution for Off-Road Autonomous Driving",
+   "published": "2026-11-20",
+   "topics": [
+    "vla"
+   ],
+   "venue": null,
+   "code": [
+    "https://github.com/ADEPT-ORG/FastRoverVLA"
+   ],
+   "project": [],
+   "comment": null,
+   "authors": [
+    "Changtao Zhao",
+    "Yingxue Guan",
+    "Li Wang",
+    "Shijie Zhao",
+    "Yuhang Zhang",
+    "Shengkai Zhang",
+    "Qing Wang",
+    "Ziying Song"
+   ],
+   "abstract": "Off-road vision-language-action (VLA) models generate scene-conditioned plans, but frequent trajectory updates can repeatedly invoke expensive multimodal inference. Reusing a prediction reduces this demand while leaving its commands exposed to changes in vehicle motion. FastRoverVLA addresses this mismatch by decoupling visual plan generation from motion-conditioned execution. Its training-free interface maintains decoded plans between visual predictions. A speed-curvature action buffer is aligned with measured motion at each update, integrated into a local trajectory, and advanced by consuming the current action. The corrected remainder is written back to the buffer, preserving motion corrections across successive updates. A bounded refresh rule normalizes speed and curvature variations within a newly decoded plan and assigns a short or long reuse budget according to the resulting plan-roughness score. The interface requires neither backbone features nor an additional learned driving policy. Over a 3 s horizon, independent real-request evaluation achieves average displacement error (ADE) and final displacement error (FDE) of 0.328/0.596 m on ORAD-3D and 0.266/0.526 m on RELLIS-3D, reducing FDE by 18.0% and 36.7% at request rates of 6.0% and 4.8%, respectively. These runs retain lower errors across four backbones and both datasets and reduce Qwen3-VL request-processing cost by factors of 16.6 and 20.8 under serial replay, while mechanism and motion-only controls identify persistent state correction as the main source of the observed accuracy benefit. The source code and evaluation materials are publicly available at https://github.com/ADEPT-ORG/FastRoverVLA.",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.26218",
+   "title": "MixReact: Physics-Based Reactive Humanoid Control from Multimodal Cues via a Discrete-Continuous Mixture of Transformers",
+   "published": "2026-11-20",
+   "topics": [
+    "locomotion"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://binlee26.github.io/MixReact_Page/"
+   ],
+   "comment": null,
+   "authors": [
+    "Bin Li",
+    "Xing Zhu",
+    "Jingya Wang"
+   ],
+   "abstract": "Humanoid agents in everyday environments are expected to react to diverse cues as humans do, with semantically appropriate and physically executable behaviors. Existing cue-driven reaction generation methods support only a narrow range of cue modalities and are limited to purely kinematic generation, leaving the resulting reactions susceptible to physical artifacts. To this end, we present MixReact, the first unified framework for physics-based reactive humanoid control from text, audio, and video cues, integrating a Discrete--Continuous Mixture of Transformers (DisCo-MoT) for state prediction with a History-aware Action Transformer (HAT) for physical execution. DisCo-MoT couples a discrete masked-modeling branch with a continuous autoregressive diffusion branch via one-way mixture attention within a MoT architecture. Guidance from discrete context mitigates collapse into averaged behaviors in one-to-many reaction generation, while direct prediction in continuous state space bypasses the decoding bottleneck of discrete representations. HAT then maps the predicted next state and observed execution history to executable actions, enabling robust closed-loop control in physics-based simulation. Experiments across all three modalities demonstrate consistent improvements over the baselines in fidelity, diversity, and physical consistency, while ablations validate the complementary contributions of the components. Our code will be released to facilitate future research. Project page: https://binlee26.github.io/MixReact_Page/",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.26105",
+   "title": "PhysVAM: Physics-oriented Future Value Action Model for Dynamic Object Manipulation",
+   "published": "2026-11-20",
+   "topics": [
+    "manipulation"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://metarobo.github.io/physvam.github.io/"
+   ],
+   "comment": null,
+   "authors": [
+    "Yuxiang Yang",
+    "Jingbo Zhang",
+    "Jiaru Zhong",
+    "Junliang Chen",
+    "Yirui Zhou",
+    "Guangming Wang",
+    "Haitao Lin",
+    "Huaiyuan Xu",
+    "Yi Wang",
+    "Lap-Pui Chau"
+   ],
+   "abstract": "Predicting future scene or object states does not necessarily reveal how robot-object interactions will advance or hinder a task. This challenge is particularly pronounced in dynamic robotic manipulation, where objects continue moving during perception and execution. Effective action generation therefore requires not only modeling object dynamics but also anticipating how future interactions will shape task progress. To this end, we propose \\textbf{PhysVAM}, a Physics-oriented Future Value Action Model that represents anticipated interactions through their effects on future task progress. This value-based formulation provides task-directed foresight without reconstructing future visual states. Conditioned on current observations and historical object and robot motion, PhysVAM jointly learns action generation and multi-horizon future-value prediction. The value branch learns horizon-specific latent representations through future task-value prediction from successful and failed trajectories. These future-value representations are integrated into the action policy through gated cross-attention, guiding action generation toward interactions that facilitate task success. Extensive simulation and real-world experiments demonstrate superior task success, with absolute success-rate improvements of 27.0 and 27.5 percentage points over the strongest baselines in simulation and real-world tasks, respectively. Project page: https://metarobo.github.io/physvam.github.io/.",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.25958",
+   "title": "Learning optimal gaits and styles for terrain-adaptive quadruped locomotion",
+   "published": "2026-11-20",
+   "topics": [
+    "locomotion"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://guillaume10.github.io/terrain-gaits"
+   ],
+   "comment": null,
+   "authors": [
+    "Guillaume Bellegarda",
+    "Auke Ijspeert"
+   ],
+   "abstract": "Animals use many different gaits to locomote at different speeds across varying terrains. A longstanding question in biology and robotics is: which gait is best? This question is most often addressed from an energy-efficiency perspective on flat terrain, leaving open how the answer depends on terrain and on the criterion optimized. Here we show that gait optimality is determined jointly by terrain, performance metric, and velocity. We use deep reinforcement learning and networks of abstract oscillators, modeling spinal central pattern generators, to learn 11 quadrupedal gaits across diverse challenging terrains, together with the locomotion style (base height, foot ground clearance, foot offsets) that each requires. A second policy then selects among them to optimize a user-specified criterion such as cost of transport, base stability, or joint smoothness. Across these performance metrics and within this repertoire, every gait is optimal under at least one terrain-metric-velocity combination. The framework adapts zero-shot to gait couplings and styles never seen during training, to terrains far beyond the training distribution, and to larger quadrupeds five times the training mass. With a single additional pitch-tracking reward term, the same gait couplings also support bipedal-mode locomotion. Our method provides a general and systematic way to produce expressive locomotion and to select the gait best suited to a given terrain and criterion. Project page: https://guillaume10.github.io/terrain-gaits.",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.25927",
+   "title": "Fast-JEPA: Advancing the Success-Latency Frontier for Latent World Models",
+   "published": "2026-11-20",
+   "topics": [
+    "world-models"
+   ],
+   "venue": null,
+   "code": [
+    "https://github.com/Sofilyzia/Fast-JEPA"
+   ],
+   "project": [],
+   "comment": null,
+   "authors": [
+    "Yao Zhang",
+    "Bin Yu",
+    "Shijie Lian",
+    "Haishan Liu",
+    "Changti Wu",
+    "Yu Wu",
+    "Kai Chen"
+   ],
+   "abstract": "Latent world models predict the outcomes of action sequences, but comparing candidate plans through recursive rollout remains expensive at test time. We introduce Fast-JEPA, a latent world model planning framework that advances the success-latency Pareto frontier of predictive search. Fast-JEPA reorganizes predictive computation to support effective action-sequence search at low planning cost. It constructs a goal-directed plan to guide search and directly predicts the outcomes of complete candidates for efficient comparison, avoiding recursive state rollout during refinement. Across PushT, Reacher, Cube, and TwoRoom, Fast-JEPA achieves 96.50% average success rate with 2.41x faster planning than INTACT. Search-budget sweeps show that its competitive success and low latency extend across candidate counts and refinement depths. We further introduce DynaGoal, a benchmark for evaluating world-model planning under dynamic out-of-distribution conditions, execution deadlines, and controlled response delays. Fast-JEPA achieves average success rates of 73.83% on DynaGoal-Shift and 87.67% on DynaGoal-Deadline, demonstrating the practical value of low-latency predictive planning under changing control conditions and execution-time constraints. Our code is available at https://github.com/Sofilyzia/Fast-JEPA.",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.25778",
+   "title": "ECHO: In-Context Behavior foundation model for Humanoid Whole-Body Control",
+   "published": "2026-11-20",
+   "topics": [
+    "locomotion"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://mwondering.github.io/echo-bfm/"
+   ],
+   "comment": null,
+   "authors": [
+    "Xingyi Wang",
+    "Bin Li",
+    "Jiyuan Shi",
+    "Chenyun Zhang",
+    "Weiji Xie",
+    "Xiangyu Miao",
+    "Junsong Wu",
+    "Wei Song",
+    "Shiqiang Zhu",
+    "Chenjia Bai"
+   ],
+   "abstract": "Humanoid behavior foundation models (BFMs) acquire diverse skills through large-scale motion imitation and massively parallel reinforcement learning, yet broad behavioral capability does not ensure precise execution across physical conditions. Without distinguishing the underlying dynamics, policies may favor conservative compromises over environment-specific precision. We introduce ECHO, an in-context BFM that turns interaction experience into environment-specific control, separating general behavioral capability from dynamics-specific execution. Mixed and Annealed Sampling first establishes a behavior prior in a single pretraining stage by balancing targeted practice with broad motion coverage. Building on this prior, Context Representation and Residual Adaptation learns structured dynamics representations from interaction histories to guide residual corrections to the frozen prior, enabling adaptation without test-time parameter updates. Extensive experiments show that ECHO outperforms all baseline methods across diverse motions and physical conditions. Moreover, deployment on the Unitree G1 demonstrates whole-body teleoperation spanning extreme acrobatics and terrain interaction, alongside payload adaptation in manipulation and whole-body control. Page is available at https://mwondering.github.io/echo-bfm/",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.25553",
+   "title": "TwoPass: Draft-Guided Few-Step Video Prediction for Robotic Manipulation",
+   "published": "2026-11-20",
+   "topics": [
+    "manipulation",
+    "world-models"
+   ],
+   "venue": null,
+   "code": [
+    "https://github.com/PlantPotatoOnMoon/TwoPass"
+   ],
+   "project": [],
+   "comment": null,
+   "authors": [
+    "Yijun Liu",
+    "Shijia Ge",
+    "Tongtong Feng",
+    "Xin Wang",
+    "Yuan Meng",
+    "Yuwei Liu",
+    "Zhi Wang",
+    "Wenwu Zhu"
+   ],
+   "abstract": "Action-conditioned video prediction lets robots anticipate the visual consequences of their actions for planning and policy evaluation. Existing predictors denoise each future from noise without using their own estimate of it, which limits the quality of the predicted future, in particular of the manipulated objects, and requires many network calls. We present TwoPass, a self-conditioned training-and-inference framework that keeps the standard flow-matching objective. Self-Generated Draft Training supplies a detached clean-video estimate from the shared network as conditioning at the same noisy state. A Refinement-Only Late Adapter applies a dedicated residual transformation when a draft is present. At inference, Draft-Reuse Iterative Refinement obtains both a solver update and the next draft from each velocity prediction, requiring as few as 4 function evaluations (NFE) per video chunk. Training samples discrete solver-query noise levels and updates the pretrained backbone. Extensive experiments on Bridge and Language Table show that TwoPass achieves state-of-the-art results with 4 NFE, far fewer than the 50-59 calls of existing predictors. Code: https://github.com/PlantPotatoOnMoon/TwoPass.",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.25461",
+   "title": "ActMem: From Latent Memory Reasoning to Grounded Robotic Action",
+   "published": "2026-11-20",
+   "topics": [
+    "vla"
+   ],
+   "venue": null,
+   "code": [
+    "https://github.com/LigphiDonk/ActMem"
+   ],
+   "project": [],
+   "comment": null,
+   "authors": [
+    "Linfeng Dong",
+    "Jianwei Niu",
+    "Jiuyi Zhao",
+    "Ruibing Feng",
+    "Xinghao Wu",
+    "Wu Yang",
+    "Shuai Tao",
+    "Wulong Liu",
+    "Mu Li"
+   ],
+   "abstract": "Vision-Language-Action (VLA) models have shown promising results in real-world long-horizon manipulation, where memory plays a crucial role. However, existing memory-augmented VLAs either retrieve past observations without reasoning about what they imply, or reason over the full history in a shared context where it crowds out current perception. Cognitive science treats them as distinct systems: memory reconstructs past experience to decide what to do, while perception guides how to act. We therefore propose ActMem, an in-context memory framework that decouples memory reasoning from perceptual grounding within a single vision-language backbone. Built on a vision-language model with native video understanding, ActMem infers the current subtask from a timestamped interaction history and keeps the hidden states formed during this inference as a Latent Memory Chain-of-Thought (Memory CoT), which conditions a flow-matching action expert. Perception Attention further lets the expert attend directly to the current view. To keep inference fast under long histories, Efficient Memory CoT Inference reuses computation across consecutive decisions without changing the output. ActMem achieves 71.1% task success and 80.8% completion success on RoboMemArena, surpassing the strongest baseline by 7.5 and 8.7 percentage points, and 73.8% average success on MIKASA-Robo, the best among all compared methods. In the real world, it reaches 68.8% average success on exogenous, endogenous, and traceless memory tasks, 10.0 percentage points above the strongest memory-augmented VLA. Code and checkpoints will be released at https://github.com/LigphiDonk/ActMem and https://huggingface.co/donk111/ActMem.",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.25415",
+   "title": "Stuck in Place: Stall Diagnosis and Remedies for JEPA Planners",
+   "published": "2026-11-20",
+   "topics": [],
+   "venue": null,
+   "code": [
+    "https://github.com/jhlee0619/unstick"
+   ],
+   "project": [],
+   "comment": null,
+   "authors": [
+    "Junhyeok Lee",
+    "Dongheon Lee",
+    "Kyu Sung Choi"
+   ],
+   "abstract": "Joint-embedding predictive architecture (JEPA) world models plan from pixels with model predictive control, yet often fail on tasks their model should handle. Test-time adaptation attributes such failures to model error under distribution shift and updates the weights on the current episode, without checking this attribution against the planning loop itself. We follow the executed planning loop on pushing tasks. In most settings, with and without distribution shift, nearly all failures (at least 96%) are stalls, where the object stays in place while the model predicts progress. The warm-started gradient-descent (GD) planner then returns nearly the same plan, a fixed point where the agent mostly idles. We propose Unstick, which pairs on-policy fine-tuning before deployment with a fixed-weight loop breaker: a residual memory of the episode's prediction errors or random re-initialization at every replan. With GD, Unstick recovers most of the adaptation gain on pushing tasks with the memory, and with re-initialization most of it on shape shifts but much less on visual shifts. A large part of what limits these planners under GD is thus a fixed point of the planning loop, present with and without distribution shift, which a planner with fixed weights can break. Code is available at https://github.com/jhlee0619/unstick.",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.25413",
+   "title": "WAMotor: Accelerating World Action Models via Speculative Inference under Dual Nonuniform Denoising Dynamics",
+   "published": "2026-11-20",
+   "topics": [
+    "world-models"
+   ],
+   "venue": null,
+   "code": [
+    "https://github.com/Overdue-Lin/WAMotor"
+   ],
+   "project": [],
+   "comment": null,
+   "authors": [
+    "Zexun Lin",
+    "Yuan Feng",
+    "Xike Xie"
+   ],
+   "abstract": "World Action Models (WAMs) unify world modeling and action generation for robotic control by integrating flow-matching velocities, yet suffer from high multi-step denoising latency. Recent studies have explored speculative inference to accelerate WAMs by drafting and verifying denoising steps in parallel. However, existing methods either require training task-specific draft models or overlook critical WAM denoising dynamics when reusing past velocities as drafts. We revisit the denoising dynamics of WAMs and identify a dual nonuniformity that breaks standard velocity-reuse assumptions: velocity smoothness is nonuniform as adjacent velocity residuals differ sharply at early and final steps, so reuse there yields large residuals, which nonuniform integration time steps further translate into local state errors that accumulate into the final action distribution. Accordingly, we formalize this by theoretically deriving a trajectory error tolerance bound that characterizes how velocity residuals and integration time steps affect the final action distribution. Based on this, we propose WAMotor, the first speculative inference method tailored to the dual nonuniformity in WAMs. It selects reliable anchor velocities by deferring speculation and employs time-step-aware verification that scales acceptance thresholds by integration time step size. WAMotor offers plug-and-play benefits, enabling seamless integration with prior WAMs. Extensive evaluations on LIBERO, RoboTwin 2.0, and LIBERO-Plus show that WAMotor achieves 2.86$\\times$--4.28$\\times$ end-to-end speedups while maintaining task success rates. Our code is available at: https://github.com/Overdue-Lin/WAMotor",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.25336",
+   "title": "MoRE: Mixture-of-Experts for Multi-Physics Robotic World Models",
+   "published": "2026-11-20",
+   "topics": [
+    "world-models"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://alwaysleepy.github.io/MoRE-WM-site/"
+   ],
+   "comment": null,
+   "authors": [
+    "Ziyu Zhu",
+    "Shaowei Liu",
+    "Albert J. Zhai",
+    "Henry Che",
+    "Wei-Chiu Ma",
+    "Shenlong Wang"
+   ],
+   "abstract": "A robotic world model should predict how objects evolve under robot actions and physical dynamics. While recent 3D world models have shown strong predictive capabilities, they still struggle with the heterogeneous dynamics arising from diverse object interactions. To address this in a unified framework, we decompose robotic interactions into distinct physical regimes and assign each to a specialized motion expert. We introduce MoRE, a 3D world model with a mixture of motion experts organized around rigid, deformable, and prehensile dynamics. This design enables a single model to capture diverse physical behaviors while preserving regime-specific priors. Trained on mixed simulation and real-world data, MoRE integrates with Model Predictive Control (MPC) to support diverse manipulation tasks. Experiments show that MoRE improves prediction accuracy across physics regimes, leading to stronger real-world MPC performance. Code, data, and project website are available at https://alwaysleepy.github.io/MoRE-WM-site/.",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.25251",
+   "title": "WEVO: World Model-Enabled VLA Optimization for Whole-Body Loco-Manipulation",
+   "published": "2026-11-20",
+   "topics": [
+    "vla",
+    "manipulation",
+    "locomotion",
+    "world-models",
+    "learning",
+    "sim"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://qianzhong-chen.github.io/wevo.github.io/"
+   ],
+   "comment": null,
+   "authors": [
+    "Qianzhong Chen",
+    "Muyuan Lin",
+    "Yuyin Sun",
+    "Mac Schwager",
+    "Cheng-Hao Kuo",
+    "Roberto Martín-Martín"
+   ],
+   "abstract": "Reinforcement learning (RL) can improve vision-language-action (VLA) policies beyond imitation, but humanoid exploration is unsafe and simulator RL can exploit residual sim-to-real gaps. We present WEVO, a teleoperation-free framework for post-training a whole-body humanoid VLA in an action-conditioned video world model (WM). Simulated manipulation and locomotion play data improve contact-dynamics and viewpoint-change prediction. A VLA trained on synthetic demonstrations collects 20 autonomous real robot rollouts per task to align the WM with deployment observations. The VLA, whole-body controller (WBC), and video WM then form a closed-loop RL environment with dense progress rewards. Across three real robot tasks, play data improves every evaluated WM metric and downstream policy success; video WM RL raises mean success from 23.3% to 75.0%, compared with 48.3% for real robot RL. We therefore leverage the complementary strengths of both environments: simulation provides policy initialization and broad coverage, while the video WM offers a deployment-aligned environment for policy improvement. Project website: https://qianzhong-chen.github.io/wevo.github.io/.",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.25199",
+   "title": "VG-Steer: Visual-Geometric Policy Steering from In-Context Aligned Abstractions",
+   "published": "2026-11-20",
+   "topics": [],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://arthurfenderbucker.github.io/VG-Steer/"
+   ],
+   "comment": null,
+   "authors": [
+    "Arthur Bucker",
+    "Pramod Anantharam",
+    "Jonathan Francis",
+    "Jean Oh"
+   ],
+   "abstract": "Adapting robot policies to out-of-distribution (OOD) settings with limited real-world data remains a key bottleneck to generalist robots. The multimodality and scarcity of robotics data lead end-to-end approaches to overfit and break under small distribution shifts. Test-time adaptation can alleviate this by correcting frozen policies at inference, but most methods ground their correction in a signal learned implicitly from robotic datasets, making it susceptible to the same shifts as the policy it corrects. Recent methods that instead exploit explicit spatial information are typically limited to coarse corrections, missing the nuanced, task-relevant motion most manipulation tasks require. We propose VG-Steer, which corrects existing policies by transferring the nuanced motion of successful in-distribution rollouts, captured along meaningful geometric axes, known here as object-relational distance pairs. VG-Steer leverages the semantic understanding of Large Vision Models (LVMs) and Vision-Language Models (VLMs) reasoning, which combines the task-relevant entity pairs and their object-relational distance projections into a single tailored visual-geometric guidance signal. In a simulation benchmark, it efficiently corrects flow-matching policies under pose and task-goal shifts; on a real robot experiment, it widens the region of the workspace the frozen policy covers, more than doubling its success rate on cable placements one grid step outside the training positions, and steers a single-task policy toward objects it was never trained on while nearly eliminating object confusion. Project website: https://arthurfenderbucker.github.io/VG-Steer/",
+   "fetched": "2026-11-20"
+  },
+  {
+   "id": "2611.25061",
+   "title": "Infer3D: Inverse Generative Modeling Enables Robust 3D Reconstruction",
+   "published": "2026-11-20",
+   "topics": [
+    "perception"
+   ],
+   "venue": null,
+   "code": [],
+   "project": [
+    "https://amanikiruga.github.io/infer3d-site/"
+   ],
+   "comment": null,
+   "authors": [
+    "Amani Kiruga",
+    "Mark Hamilton",
+    "Joshua B. Tenenbaum",
+    "William T. Freeman",
+    "Vincent Sitzmann",
+    "Yilun Du",
+    "Ayush Tewari"
+   ],
+   "abstract": "Humans can understand the 3D structure of scenes even from highly unfamiliar or extreme viewpoints. Cognitive science suggests this generalization stems from a top-down generative inference strategy. In contrast, state-of-the-art 3D reconstruction neural networks typically rely on amortized, feedforward inference. While fast, this pattern-matching approach degrades when faced with out-of-distribution (OOD) scene conditions unseen during training. Inspired by the generative nature of human vision, we propose Infer3D, an inverse generative modeling framework that recovers the latent variables of a generative model to best match the monocular input. To prevent degenerate flat outputs, we couple the generative image prior with a frozen 3D lifting network that constrains the optimization space to a valid, multi-view-consistent 3D manifold. Across a variety of controlled synthetic and real-world tasks, Infer3D demonstrates superior OOD reconstruction accuracy compared to feedforward networks trained on equal or larger datasets. Furthermore, mirroring how human perception requires more time to process confusing stimuli, we introduce an adaptive inference strategy that expends more test-time compute on ambiguous OOD examples while efficiently routing in-distribution inputs. Project website: https://amanikiruga.github.io/infer3d-site/",
+   "fetched": "2026-11-20"
+  },
   {
    "id": "2611.24840",
    "title": "Does the Action Matter? Probing Action-Conditioned Semantic Forecasting as a World Model for Autonomous Driving",
