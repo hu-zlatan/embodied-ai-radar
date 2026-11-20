@@ -834,3 +834,7 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 
 - Start: no issues/PRs; 5 stars / 0 forks. All CI data pushes now authored as hu-zlatan (identity fix from run 89 confirmed across all scheduled commits since). Local git identity re-checked.
 - The 11-20 arXiv announcement posted at 05:00 UTC (RSS shows MAWAM, wind-source localization, etc.); intake #232 dispatched by hand at 06:09 and is running. The 11-19 leftovers (13 candidates) are the documented run-89 skips; HF queue still only Gamer (deliberate games skip). CoRL 2026 awards snapshot (fetched 11-19 17:25) still lists only the six finalists - "winner" is just the page boilerplate; keep the daily cron until Nov 30 per plan.
+
+## 2026-11-20 — run 90 (feed part)
+
+- The 11-20 announcement posted 05:00 UTC; intake #232 landed 102 papers. 17 candidates; 15 picked (f0d80bc, listed in STATE.md). Code links only for LocoMuJoCo, TwoPass, WAMotor (README-verified code); ActMem/Fast-JEPA/unstick are README-only or empty repos -> project pages or nothing. Skipped FastRoverVLA (off-road driving) and Infer3D (generic 3D vision, no robot result). No ratings. Number-vs-abstract cross-check: 0 mismatches. Validate 0 errors (1,520 curated), README check clean, 1,658 pages, 0 broken internal links. Verify queued on the picks push.
