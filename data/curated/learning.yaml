@@ -1491,3 +1491,35 @@
   tags: [reward-models, long-horizon, progress, open-vocabulary, pretraining]
   takeaway_en: Reward model that identifies unfinished subtasks and estimates their progress, composing it with credit for completed subtasks. Pretrained on 200 tasks, predicts zero-shot on unseen tasks and adapts to five long ones.
   takeaway_zh: 开放词汇奖励模型：识别未完成子任务并用自然语言子任务描述估计其连续进度，再把所选子任务的进度与已完成子任务的分值组合成整任务进度。在 200 个短时域任务上预训练后，可零样本预测未见任务的奖励，并适配五个长达数分钟的长程任务，改进下游策略表现。
+
+- title: 'LocoMuJoCo: A Comprehensive Imitation Learning Benchmark for Whole-Body Control'
+  type: paper
+  arxiv: '2611.26293'
+  year: 2026
+  code: https://github.com/robfiras/loco-mujoco
+  added: 2026-11-20
+  topics: [learning, sim, datasets]
+  tags: [benchmark, imitation-learning, rl, mujoco, whole-body, open-source]
+  takeaway_en: 'Open-source IL/RL benchmark for whole-body control: MuJoCo CPU + MJX/MjWarp GPU under one API, 9 humanoid / 3 skeletal / 4 quadruped embodiments, mocap data and AMASS/LAFAN1 retargeting. MIT.'
+  takeaway_zh: 面向全身控制的模仿学习与强化学习开源基准：一个 API 统一 MuJoCo(CPU) 与 MJX/MjWarp(GPU)，含 9 种人形、3 种肌肉骨骼、4 种四足本体，为每个人形内置原生动作捕捉数据并可重定向 AMASS/LAFAN1；另有 loco-mujoco-real 提供 sim-to-real 部署。MIT 协议。
+
+- title: 'Stuck in Place: Stall Diagnosis and Remedies for JEPA Planners'
+  type: paper
+  arxiv: '2611.25415'
+  year: 2026
+  added: 2026-11-20
+  topics: [learning, world-models]
+  tags: [jepa, planning, analysis, test-time, fix]
+  takeaway_en: 'JEPA planner failures are stalls (>=96%): warm-started GD returns nearly the same plan, a fixed point. Unstick adds on-policy fine-tuning plus a loop breaker - error memory or random re-init - recovering most gains.'
+  takeaway_zh: 把 JEPA 规划器的失败诊断为“停顿”（≥96%）：热启动梯度下降总是返回几乎相同的计划，卡在不动点。Unstick 把部署前在线微调与固定权重的循环打破器结合——用回合预测误差的残差记忆或在每次重规划时随机重初始化，找回大部分自适应收益。
+
+- title: 'VG-Steer: Visual-Geometric Policy Steering from In-Context Aligned Abstractions'
+  type: paper
+  arxiv: '2611.25199'
+  year: 2026
+  project: https://arthurfenderbucker.github.io/VG-Steer/
+  added: 2026-11-20
+  topics: [learning, manipulation]
+  tags: [test-time-adaptation, policy-steering, ood, manipulation, real]
+  takeaway_en: Steers frozen policies along object-relational distance pairs from successful rollouts, combined with LVM/VLM reasoning. Doubles cable-placement success one grid step out of distribution; steers to untrained objects.
+  takeaway_zh: 用分布内成功 rollout 沿“物体关系距离对”这一几何轴捕获的精细运动校正冻结策略，再结合 LVM/VLM 的语义理解合成单一视觉-几何引导信号。报告线缆放置任务在训练位置外一格处成功率翻倍以上，并能让单任务策略转向从未训练过的物体、几乎消除物体混淆。

@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 147 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 150 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/learning.html) · [English](learning.md)
 
@@ -78,6 +78,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Leave It Better Than Found: Value-Guided Cooperation in Sequential Tasks](https://arxiv.org/abs/2611.08075)** (2026) — 从未共同训练的机器人通过共享价值函数来协作，前一个机器人会把工作空间留在后一个机器人偏好的状态；KNN 不确定性过滤避免分布外的过度自信。成功率最高提升 48.5 个百分点。
 - **[Lift, See, Act: Hierarchical Robot Policy Pretraining with 3D Foundation Models](https://arxiv.org/abs/2611.20481)** (2026) — 从人类视频做分层策略预训练：“Lift”把策略浅层特征与多个 3D 基础模型的稠密表征对齐，“See”加入深度重建与手部区域注意力监督，再进入“Act”。报告在多种仿真与真机任务上显著超过现有最优方法。 · [项目页](https://yiyuan00.github.io/Lift-See-Act)
 - **[Localized Visual Feature Aggregation via Focus Pooling for Visuomotor Policies](https://arxiv.org/abs/2609.08408)** (2026) — 以机器人当前本体状态为查询，对 CNN 中间特征做注意力池化，保留与控制相关的局部信息。报告比常规池化与显式裁剪方法分别高 36.2% 和 41.2%，仅需训练 5.8% 的编码器参数。
+- **[LocoMuJoCo: A Comprehensive Imitation Learning Benchmark for Whole-Body Control](https://arxiv.org/abs/2611.26293)** (2026) — 面向全身控制的模仿学习与强化学习开源基准：一个 API 统一 MuJoCo(CPU) 与 MJX/MjWarp(GPU)，含 9 种人形、3 种肌肉骨骼、4 种四足本体，为每个人形内置原生动作捕捉数据并可重定向 AMASS/LAFAN1；另有 loco-mujoco-real 提供 sim-to-real 部署。MIT 协议。 · [代码](https://github.com/robfiras/loco-mujoco)
 - **[MAGMA-GEN: Validated Recovery Supervision from Ambiguous Failures via Counterfactual Re-Execution](https://arxiv.org/abs/2609.20056)** (2026) — 把含义不明的失败推演转化为恢复训练数据：由特权教练推测早期的高层决策错误并提出修正，只有从同一状态重新执行确实提升进度时才保留。
 - **[MIRROR: Reflecting Hidden Symmetries from Offline Robot Interaction Data](https://arxiv.org/abs/2610.17422)** (2026) — 从离线交互数据中学习已知对称群如何同时作用于像素观测和动作，再用于帧平均行为克隆。报告在四个 Robosuite 任务上平均成功率从 80.5% 升到 85.1%。 · [项目页](https://pomdp-mirror.github.io)
 - **[Memory Anchors for Continual Robot Learning](https://arxiv.org/abs/2608.26545)** (2026) — 发现回放缓冲中少数“观测相似但所需动作冲突”的样本（记忆锚点）承担了防遗忘的主要作用：仅剔除其中 10% 就会让 LIBERO 上的遗忘增加 4.5 倍以上。 · [项目页](https://robot-adaptation.github.io/MemoryAnchors)
@@ -109,6 +110,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Simulation-aided Reinforcement Learning with Control Variates](https://arxiv.org/abs/2611.12643)** (2026) — 仿真数据只作为控制变量用来降低方差，而不直接决定学习目标，因此不准确的仿真器不会把策略带偏。给出策略评估、Actor-Critic 和离线强化学习三种形式，在 MuJoCo 基准上优于直接混合仿真与真实数据的做法。 · [代码](https://github.com/OmerHemo/Simulation-Aided-Reinforcement-Learning-with-Control-Variates)
 - **[Simultaneous Forward and Inverse Human-in-the-Loop Optimization](https://arxiv.org/abs/2609.22630)** (2026) — 面向用户试验代价高的辅助设备：先训练前向模型从控制策略预测用户结果，用它主动选择查询来学习个体奖励，再在不增加试验的情况下选出最终策略。
 - **[SkillWeaver: Agentic Exploration over Neural Interaction Skills for Scalable Robot Data Generation](https://arxiv.org/abs/2609.36171)** (2026) — VLM 智能体在仿真中调用可复用的强化学习交互技能来探索任务，借助验证、反思与记忆进行验证器引导的树搜索，无需脚本即可生成机器人数据。
+- **[Stuck in Place: Stall Diagnosis and Remedies for JEPA Planners](https://arxiv.org/abs/2611.25415)** (2026) — 把 JEPA 规划器的失败诊断为“停顿”（≥96%）：热启动梯度下降总是返回几乎相同的计划，卡在不动点。Unstick 把部署前在线微调与固定权重的循环打破器结合——用回合预测误差的残差记忆或在每次重规划时随机重初始化，找回大部分自适应收益。
 - **[SynthICL: Scalable In-context Imitation Learning with Synthetic Data](https://arxiv.org/abs/2606.08154)** (2026) — 完全用 RGB 合成数据训练的上下文模仿学习策略，并预测下一个子目标图像。报告仅给一条演示时，在 16 个未见真机任务上平均成功率 79%。 · [代码](https://github.com/sNiper-Qian/synthicl) · [项目页](https://synth-icl.github.io)
 - **[TARC: Time-Adaptive Robotic Control](https://arxiv.org/abs/2510.23176)** (2026) — 策略同时预测动作及其保持时长。报告在遥控车、Unitree Go1 和仿真 VLA 上以不到一半的控制频率达到高频控制的性能。 · [项目页](https://arnavsukhija.github.io/projects/tarc)
 - **[TILDE: Teacher-in-the-Loop Distillation from Embodied Foundation Models](https://arxiv.org/abs/2610.25376)** (2026) — 把预训练具身基础模型（教师）蒸馏到未做动作预训练的策略：在学生访问的状态上做在线监督，并由奖励模型监控进度、自动触发教师接管采集纠错轨迹（AutoDAgger，无需人工看护）；报告在 3 个真机任务上比行为克隆最高提升 4.1 倍。 · [代码](https://github.com/hku-sail/TILDE) · [项目页](https://hku-sail.github.io/TILDE/)
@@ -121,6 +123,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[UniLatent: Cross-Embodiment Transfer via Latent Observation Alignment](https://arxiv.org/abs/2611.10061)** (2026) — 用仿真渲染的成对视角，把源机器人的视觉编码器对齐到冻结的目标编码器，无需像素级图像翻译即可跨机械臂复用示范。仿真零样本成功率最高 93%；真实 xArm→Franka 每任务仅用 10 条目标示范微调即 27/30 成功。 · [项目页](https://selina2023.github.io/unilatent/)
 - **[Unified Condition-Action Modeling for Accurate One-Step Action Generation](https://arxiv.org/abs/2608.16153)** (2026) — 一步生成的流策略：把观测、时间步与动作 token 拼成一个序列，由同一 Transformer 联合建模。报告平均成功率 86.4%（提升 7.5 个百分点），推理延迟 3.0 ms，比 DP3 快 43.9 倍。 · [代码](https://github.com/NTUMARS/UCA-Policy) · [项目页](https://uca-policy.github.io/UCA.github.io/)
 - **[Unified Motion-Action Modeling for Heterogeneous Robot Learning](https://arxiv.org/abs/2606.16917)** (2026) — 以 3D 物体运动轨迹作为统一接口，用掩码生成目标联合建模物体运动与机器人动作，同一套预训练参数可作为策略、动力学模型或少样本适配器。混合机器人、人类视频与仿真数据预训练。 · [项目页](https://uma-manipulation.github.io/)
+- **[VG-Steer: Visual-Geometric Policy Steering from In-Context Aligned Abstractions](https://arxiv.org/abs/2611.25199)** (2026) — 用分布内成功 rollout 沿“物体关系距离对”这一几何轴捕获的精细运动校正冻结策略，再结合 LVM/VLM 的语义理解合成单一视觉-几何引导信号。报告线缆放置任务在训练位置外一格处成功率翻倍以上，并能让单任务策略转向从未训练过的物体、几乎消除物体混淆。 · [项目页](https://arthurfenderbucker.github.io/VG-Steer/)
 - **[WARP-RM: A Warp-Augmented Relative Progress Reward Model for Data Curation](https://arxiv.org/abs/2606.28320)** (2026) — 用时间扭曲（变速、倒放）增强的演示自监督学习帧级进度奖励，再用它过滤和加权行为克隆数据。报告 T 恤折叠吞吐量最高为普通 BC 的约 18 倍。 · [代码](https://github.com/uynitsuj/WARP-RM) · [项目页](https://uynitsuj.github.io/warp-rm/)
 - **[WARP: Whole-Body Retargeting for Learning from Offline Human Demonstrations](https://arxiv.org/abs/2606.29940)** (2026) — 离线把人类全身演示重定向到移动操作机器人：闭式肩-肘-腕几何求解器加“惰性”底盘控制，得到一致的动作；声称首次仅凭离线人类演示实现零样本全身移动操作。 · [项目页](https://warp-retargeting.github.io/)
 - **[When Robots Outweigh Objects: How Inertia Mismatch Shapes Robot Policy Learning](https://arxiv.org/abs/2611.03501)** (2026) — 在仿真中改变机器人与物体质量：强化学习影响不大，行为克隆则在机器人比物体轻时更可靠，增加数据只能缩小而无法消除差距。采集低惯量示教可部分缓解。 · [项目页](https://younghyopark.me/inertia-mismatch/)

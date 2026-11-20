@@ -1944,3 +1944,36 @@
   tags: [imitation, impedance, force, biomechanics, humanoid, zero-shot]
   takeaway_en: Modulates per-joint stiffness, damping and setpoints from motion and force, needing only motion at inference; beats matched fixed-gain PD across 129 participants and six activities.
   takeaway_zh: 强化学习策略根据运动与力测量调节各关节刚度、阻尼和位置设定点，推理时只需运动输入，避免固定增益 PD 在运动跟踪与力跟踪之间的折中。在 129 名受试者、六种活动上优于匹配的固定增益与现有模仿控制器，并可零样本迁移到新受试者和人形机器人。
+
+- title: 'MixReact: Physics-Based Reactive Humanoid Control from Multimodal Cues via a Discrete-Continuous Mixture of Transformers'
+  type: paper
+  arxiv: '2611.26218'
+  year: 2026
+  project: https://binlee26.github.io/MixReact_Page/
+  added: 2026-11-20
+  topics: [locomotion]
+  tags: [humanoid, reactive, multimodal, foundation-model, physics]
+  takeaway_en: 'First unified physics-based reactive humanoid control from text, audio and video cues: discrete-continuous mixture of transformers predicts states, a history-aware transformer executes. Best fidelity and consistency.'
+  takeaway_zh: 首个从文本、音频、视频多模态线索生成物理真实反应动作的人形控制框架：离散-连续混合 Transformer 预测目标状态，历史感知动作 Transformer 落地执行。报告三种模态下保真度、多样性与物理一致性均优于基线。
+
+- title: Learning optimal gaits and styles for terrain-adaptive quadruped locomotion
+  type: paper
+  arxiv: '2611.25958'
+  year: 2026
+  project: https://guillaume10.github.io/terrain-gaits
+  added: 2026-11-20
+  topics: [locomotion]
+  tags: [quadruped, gait, terrain, rl, zero-shot]
+  takeaway_en: Learns 11 quadruped gaits plus the style each needs via RL with oscillator networks; a second policy selects by criterion. Every gait wins under some terrain-metric-speed setup; zero-shot to unseen terrains and 5x mass.
+  takeaway_zh: 用强化学习与抽象脊柱振荡器网络学到 11 种四足步态及其所需运动风格，再由第二策略按用户指标（运输能耗、基座稳定、关节平滑）选择。每种步态都至少在某种“地形-指标-速度”组合下最优；可零样本泛化到未见步态耦合、训练分布外的地形和 5 倍体重的更大机器人。
+
+- title: 'ECHO: In-Context Behavior foundation model for Humanoid Whole-Body Control'
+  type: paper
+  arxiv: '2611.25778'
+  year: 2026
+  project: https://mwondering.github.io/echo-bfm/
+  added: 2026-11-20
+  topics: [locomotion]
+  tags: [humanoid, foundation-model, in-context, whole-body, real]
+  takeaway_en: 'In-context behavior foundation model separating general skill from dynamics-specific execution: learned context guides residuals to a frozen prior. Deployed on Unitree G1 for acrobatics, terrain and payload adaptation.'
+  takeaway_zh: 上下文式行为基础模型：把通用行为能力与动力学相关的精确执行分离，从交互历史学习结构化动力学表征，指导冻结先验的残差修正，无需测试期参数更新。在 Unitree G1 上实现极端特技、地形交互的全身遥操作，以及负载自适应。

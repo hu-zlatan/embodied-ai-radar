@@ -1976,3 +1976,25 @@
   tags: [affordance, 3d, human-to-robot, dataset, real]
   takeaway_en: 'Transfers human affordance priors into robot-actionable distributions via reliability gating, hierarchical reconstruction and graph diffusion. HPAD: 2,137 objects, 80 categories; 86.5% success over 480 real-arm trials.'
   takeaway_zh: 把人类 3D 可供性先验转换为机器人可执行分布：可靠性门控先滤除几何误报，再经分层重建与图扩散精修解决人与机器人可供性之间的拓扑失配。构建首个成对人类-机器人可供性数据集 HPAD（2,137 个物体、80 类、2.7 万对）。六自由度真机臂 480 次试验成功率 86.5%。
+
+- title: 'PhysVAM: Physics-oriented Future Value Action Model for Dynamic Object Manipulation'
+  type: paper
+  arxiv: '2611.26105'
+  year: 2026
+  project: https://metarobo.github.io/physvam.github.io/
+  added: 2026-11-20
+  topics: [manipulation]
+  tags: [manipulation, dynamic, value-model, foresight, real]
+  takeaway_en: Generates actions from physics-oriented future task value, not reconstructed states; multi-horizon value prediction feeds gated cross-attention. Reports +27.0 points sim, +27.5 real over the strongest baseline.
+  takeaway_zh: 以面向物理的“未来任务价值”指导动态物体操作：不重建未来视觉状态，而是从成功与失败轨迹学习多时域未来价值，经门控交叉注意力注入动作策略。报告仿真与真机任务成功率分别比最强基线高 27.0 与 27.5 个百分点。
+
+- title: 'TwoPass: Draft-Guided Few-Step Video Prediction for Robotic Manipulation'
+  type: paper
+  arxiv: '2611.25553'
+  year: 2026
+  code: https://github.com/PlantPotatoOnMoon/TwoPass
+  added: 2026-11-20
+  topics: [manipulation, world-models]
+  tags: [video-prediction, flow-matching, few-step, efficiency, manipulation]
+  takeaway_en: 'Self-conditioned few-step video prediction: training feeds a clean-video estimate as conditioning; each velocity prediction yields a solver update plus next draft. 4 NFE vs 50-59 calls of prior predictors.'
+  takeaway_zh: 自条件的少步视频预测：训练时用共享网络产生分离的干净视频估计作条件，推理时每次速度预测同时得到求解器更新与下一版草稿，达到每块仅 4 次函数评估。报告在 Bridge、Language Table 上以 4 NFE 达到当前最优，而现有预测器需 50–59 次。

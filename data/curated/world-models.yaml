@@ -1578,3 +1578,46 @@
   tags: [world-action-model, video-generation, policy-learning, analysis, real]
   takeaway_en: Video-action model whose policy reads features of a video generation model; studies which predictive training helps action learning. Adapting at many noise levels transfers the gain, one level does not.
   takeaway_zh: 让动作策略读取视频生成模型的中间特征，系统研究“什么形式的预测训练对后续动作学习有用”：在多个噪声水平上适配视频模型带来大幅提升，只在部署噪声水平适配则没有；增益留在视频模型权重内时保留，仅用于初始化策略时消失。在 LIBERO、Meta-World MT50 与真机任务上评测。
+
+- title: 'Fast-JEPA: Advancing the Success-Latency Frontier for Latent World Models'
+  type: paper
+  arxiv: '2611.25927'
+  year: 2026
+  added: 2026-11-20
+  topics: [world-models]
+  tags: [world-model, jepa, planning, latency, benchmark]
+  takeaway_en: Ppredicts whole candidate outcomes instead of recursive rollout, with goal-directed guidance. 96.50% average success at 2.41x faster planning than INTACT, plus the DynaGoal benchmark for OOD/delay planning.
+  takeaway_zh: 用目标导向计划引导搜索，直接预测完整候选序列的结果而非递归 rollout，推进“成功率-延迟”帕累托前沿。报告平均成功率 96.50%、规划比 INTACT 快 2.41 倍；并发布 DynaGoal 基准，评测分布漂移、执行期限与响应延迟下的世界模型规划（73.83%/87.67%）。
+
+- title: 'WAMotor: Accelerating World Action Models via Speculative Inference under Dual Nonuniform Denoising Dynamics'
+  type: paper
+  arxiv: '2611.25413'
+  year: 2026
+  code: https://github.com/Overdue-Lin/WAMotor
+  added: 2026-11-20
+  topics: [world-models]
+  tags: [world-action-model, speculative-inference, latency, efficiency, flow-matching]
+  takeaway_en: 'Speculative inference for WAMs'' dual nonuniform denoising: defers speculation to pick reliable anchors, scales acceptance by step size. 2.86-4.28x end-to-end speedup at matched success on LIBERO and RoboTwin.'
+  takeaway_zh: 针对 WAM 去噪的“双重非均匀性”（相邻速度残差早晚期差异大、积分步长也不均匀）设计投机推理：延迟投机以选取可靠锚点速度，并按积分步长缩放接受阈值。报告在 LIBERO、RoboTwin 2.0、LIBERO-Plus 上端到端加速 2.86–4.28 倍且成功率保持。
+
+- title: 'MoRE: Mixture-of-Experts for Multi-Physics Robotic World Models'
+  type: paper
+  arxiv: '2611.25336'
+  year: 2026
+  project: https://alwaysleepy.github.io/MoRE-WM-site/
+  added: 2026-11-20
+  topics: [world-models]
+  tags: [world-model, 3d, mixture-of-experts, mpc, real]
+  takeaway_en: 3D world model with motion experts for rigid, deformable and prehensile dynamics, trained on sim+real data and integrated with MPC. Reports better prediction accuracy and stronger real-world MPC.
+  takeaway_zh: 把机器人交互按物理机制分解，为刚体、可变形与抓取动力学各配专用运动专家，构成单一 3D 世界模型；在混合仿真与真实数据上训练并接入 MPC。报告各物理机制下预测精度提升、真机 MPC 操作更强。
+
+- title: 'WEVO: World Model-Enabled VLA Optimization for Whole-Body Loco-Manipulation'
+  type: paper
+  arxiv: '2611.25251'
+  year: 2026
+  project: https://qianzhong-chen.github.io/wevo.github.io/
+  added: 2026-11-20
+  topics: [world-models, vla, locomotion]
+  tags: [world-model, vla, humanoid, rl, real]
+  takeaway_en: 'Post-trains a humanoid VLA in a video world model: play data then 20 real rollouts per task align it, then closed-loop RL. Reports mean success 23.3% to 75.0% vs 48.3% for real-robot RL.'
+  takeaway_zh: 免遥操作的全身人形 VLA 后训练：先用合成操作/移动“玩耍”数据提升视频世界模型的接触动力学与视角预测，再以每任务 20 条真实 rollout 对齐部署观测，最后在视频世界模型里做闭环强化学习。报告三个真机任务平均成功率从 23.3% 升到 75.0%（真机 RL 为 48.3%）。

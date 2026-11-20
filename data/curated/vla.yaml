@@ -3033,3 +3033,24 @@
   tags: [vla, adversarial, robustness, attack, real]
   takeaway_en: 'Patch attack exploiting the command-execution gap: biases VLA commands toward low-executability directions from kinematic inefficiency and weak actuation. Reports bigger execution degradation than existing attacks.'
   takeaway_zh: 利用 VLA 预测指令与实际执行之间的落差构造补丁攻击：把任务空间指令偏向由运动学低效与驱动弱方向估计出的“低可执行”方向，使预测指令难以真正实现、任务无法完成。报告在多个 VLA 上比现有补丁攻击造成更大的指令-执行失配，并在真机上验证。
+
+- title: 'PGX: Physically Grounded Execution for Long-Horizon Humanoid Loco-Manipulation'
+  type: paper
+  arxiv: '2611.26596'
+  year: 2026
+  project: https://kl-research.github.io/pgx
+  added: 2026-11-20
+  topics: [vla, locomotion, manipulation]
+  tags: [vla, humanoid, loco-manipulation, state-machine, long-horizon, real]
+  takeaway_en: 'Offloads timing and precision to training-free parts: a predicate state machine gates transitions and recovery, world-coordinate locking keeps positions consistent. Demoed on three sim and one real Unitree G1 task.'
+  takeaway_zh: 把时序与精度控制交给免训练的经典组件，让 VLA 专注各阶段技能：基于谓词的状态机管理任务推进、相位切换与恢复，世界坐标锁定维持空间一致性。在三个仿真任务与一个 Unitree G1 真机长程移动操作任务上报告阶段推进与成功率的提升。
+
+- title: 'ActMem: From Latent Memory Reasoning to Grounded Robotic Action'
+  type: paper
+  arxiv: '2611.25461'
+  year: 2026
+  added: 2026-11-20
+  topics: [vla]
+  tags: [vla, memory, in-context, reasoning, long-horizon, real]
+  takeaway_en: 'Splits memory reasoning from perceptual grounding: latent Memory CoT infers the subtask from timestamped history, conditioning a flow-matching expert. Reports 71.1% RoboMemArena (+7.5/-), 68.8% real.'
+  takeaway_zh: 在单一视觉语言骨干里解耦记忆推理与感知落地：从带时间戳的交互历史推断当前子任务，形成的“记忆思维链”隐状态条件化流匹配动作专家，并跨连续决策复用计算。报告 RoboMemArena 任务成功 71.1%、比最强基线高 7.5/8.7 个百分点，真机 68.8%（比最强记忆增强 VLA 高 10.0）。
