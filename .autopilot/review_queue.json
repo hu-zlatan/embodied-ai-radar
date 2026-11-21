@@ -126,6 +126,32 @@
    "comment": "Preprint",
    "abstract": "Our aim is to accelerate autoregressive vision-language-action models (VLAs), which generate robot actions one token at a time. Speculative decoding makes this possible: a lightweight draft model proposes several tokens at once, and the VLA verifies them in a single pass, accepting only those that match its own predictions, so decoding remains lossless. The speedup, however, is limited in robot control, where many different tokens encode nearly the same motion and a draft close to the correct action is still rejected. To address this, our approach, VSpark, is built upon three design choices: (i) rollouts collected with calibrated action noise, which expose the draft to a wider range of robot states; (ii) feature alignment, which trains the draft to match the VLA's hidden features rather than its output tokens alone; and (iii) continuation reuse, which keeps the predictions the VLA has already computed along rejected drafts as candidates for the next verification step, instead of discarding them. On four VLAs with different action tokenizers and four manipulation benchmarks, VSpark achieves 1.28x to 2.10x speedup while keeping the VLA's decoding lossless.",
    "ai_summary": "VSpark accelerates autoregressive vision-language-action models by improving speculative decoding with calibrated action-noise rollouts, hidden-feature alignment, and reuse of rejected-draft continuations, achieving lossless 1.28x–2.10x speedups across multiple robot manipulation tasks."
+  },
+  {
+   "id": "2611.26239",
+   "title": "Teaching Vision-Language-Action Models to Stop Safely",
+   "upvotes": 5,
+   "hf_date": "2026-11-20",
+   "published": "2026-11-20",
+   "topics": [
+    "vla"
+   ],
+   "authors": [
+    "Zheyuan Liu",
+    "Chuhan Wang",
+    "Jinduo Guo",
+    "Yue Huang",
+    "Xiangchi Yuan",
+    "Ningshan Ma",
+    "Meng Jiang"
+   ],
+   "organization": "University of Notre Dame DM2 Lab",
+   "github": "https://github.com/franciscoliu/SAFI",
+   "project": "https://franciscoliu.github.io/SAFI/",
+   "arxiv_code": [],
+   "comment": "A two-stage pipeline that teaches VLAs to stop prohibited tasks safely while preserving permitted skills",
+   "abstract": "Vision-language-action (VLA) models enable robots to perform diverse tasks from visual observations and language instructions. While prior work has explored task suppression and refusal, stopping prohibited behavior once execution is underway and controlling the resulting physical response remain challenging. Our evaluation reveals that policies which suppress a task from its initial state can still complete it when taking over partway through execution. Even when the task remains unfinished, the robot may drop a held object, making non-completion an incomplete measure of safety. To address these challenges, we introduce State-Aware Fallback Imitation (SAFI) for tasks where holding provides an appropriate alternative response. SAFI comprises two stages, (1) fallback target construction, which assigns stationary arm commands and consistent gripper targets throughout prohibited-task demonstrations, and (2) joint policy adaptation, which learns these targets alongside the original actions of retained tasks. This supervision teaches an explicit alternative response at intermediate execution states while maintaining the robot's other skills. Extensive experiments with OpenVLA-OFT across LIBERO and BadLIBERO tasks evaluate prohibited completion, physical incidents, and retained-task performance. On the evaluated LIBERO tasks, SAFI reduces aggregate target success after takeover to 1.3\\%, with no recorded physical incidents or action saturation, while preserving high retained-task success.",
+   "ai_summary": null
   }
  ],
  "curated_link_updates": [
