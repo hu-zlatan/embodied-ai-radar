@@ -83,7 +83,7 @@
   {
    "id": "2611.25980",
    "title": "Learning What Actions Change: Action Effect Matching for Dynamics-Faithful World Models",
-   "upvotes": 15,
+   "upvotes": 16,
    "hf_date": "2026-11-20",
    "published": "2026-11-20",
    "topics": [
@@ -105,7 +105,7 @@
   {
    "id": "2611.26239",
    "title": "Teaching Vision-Language-Action Models to Stop Safely",
-   "upvotes": 7,
+   "upvotes": 8,
    "hf_date": "2026-11-20",
    "published": "2026-11-20",
    "topics": [
@@ -152,6 +152,31 @@
    "comment": "Preprint",
    "abstract": "Our aim is to accelerate autoregressive vision-language-action models (VLAs), which generate robot actions one token at a time. Speculative decoding makes this possible: a lightweight draft model proposes several tokens at once, and the VLA verifies them in a single pass, accepting only those that match its own predictions, so decoding remains lossless. The speedup, however, is limited in robot control, where many different tokens encode nearly the same motion and a draft close to the correct action is still rejected. To address this, our approach, VSpark, is built upon three design choices: (i) rollouts collected with calibrated action noise, which expose the draft to a wider range of robot states; (ii) feature alignment, which trains the draft to match the VLA's hidden features rather than its output tokens alone; and (iii) continuation reuse, which keeps the predictions the VLA has already computed along rejected drafts as candidates for the next verification step, instead of discarding them. On four VLAs with different action tokenizers and four manipulation benchmarks, VSpark achieves 1.28x to 2.10x speedup while keeping the VLA's decoding lossless.",
    "ai_summary": "VSpark accelerates autoregressive vision-language-action models by improving speculative decoding with calibrated action-noise rollouts, hidden-feature alignment, and reuse of rejected-draft continuations, achieving lossless 1.28x–2.10x speedups across multiple robot manipulation tasks."
+  },
+  {
+   "id": "2611.21938",
+   "title": "HubEgo-100K: In-the-Wild Egocentric Video of Skilled Work for Robot Learning",
+   "upvotes": 5,
+   "hf_date": "2026-11-18",
+   "published": "2026-11-18",
+   "topics": [
+    "learning"
+   ],
+   "authors": [
+    "Javad Amirian",
+    "Armin Kiani",
+    "Loïc Schaeffer",
+    "Tim Sprecher",
+    "Mohamed Taha",
+    "Karthik Yadati"
+   ],
+   "organization": "Hub",
+   "github": null,
+   "project": "https://huggingface.co/datasets/HubLabs/HubEgo-100K",
+   "arxiv_code": [],
+   "comment": "22 pages, 18 figures, 7 tables. Dataset: https://huggingface.co/datasets/HubLabs/HubEgo-100K",
+   "abstract": "Robot policies trained by imitation generalize poorly outside the environments and objects seen in training. Published data-scaling studies find that generalization grows with the diversity of training environments and objects rather than with more demonstrations per environment. Robot data is costly to collect across many environments, whereas egocentric human video can be recorded in the wild at scale; existing egocentric video, however, mostly shows daily-life activity and contains little skilled work in real workplaces. We present HubEgo-100K, a dataset built for diversity. This version of the paper covers the first release, v1.0: 10,124 hours of 1080p egocentric video with synchronized 100 Hz inertial (IMU) data from one head-mounted phone camera. In v1.0, 12,227 contributors record their own unscripted work in 15,548 environments (each one contributor's own setting of one type, such as their kitchen or workshop) across 11 setting types, 30 work categories, 56 task types and 35 action families, with 83% of hours in workplace settings. The release comprises 72,754 episodes with machine-generated action and language annotations, in LeRobot and MCAP formats under CC BY 4.0. We measure diversity along each axis, show that inside v1.0, with episodes in random order, new contributors and words keep appearing, and relate the measurements to published evidence on six data properties tied to policy performance, including hand visibility and inertial sensing. We also document collection, curation, privacy measures and data format, and provide a datasheet. Later versions of this paper will add benchmarks and cover further releases toward 100,000 hours.",
+   "ai_summary": null
   }
  ],
  "curated_link_updates": [
