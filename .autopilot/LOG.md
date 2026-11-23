@@ -838,3 +838,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 ## 2026-11-20 — run 90 (feed part)
 
 - The 11-20 announcement posted 05:00 UTC; intake #232 landed 102 papers. 17 candidates; 15 picked (f0d80bc, listed in STATE.md). Code links only for LocoMuJoCo, TwoPass, WAMotor (README-verified code); ActMem/Fast-JEPA/unstick are README-only or empty repos -> project pages or nothing. Skipped FastRoverVLA (off-road driving) and Infer3D (generic 3D vision, no robot result). No ratings. Number-vs-abstract cross-check: 0 mismatches. Validate 0 errors (1,520 curated), README check clean, 1,658 pages, 0 broken internal links. Verify queued on the picks push.
+
+## 2026-11-23 — run 91 (in progress, Monday)
+
+- Start: no issues/PRs; all CI pushes still authored as hu-zlatan. Weekend had no arXiv announcements (normal). The 11-23 announcement posted 05:00 UTC; intake #251 landed 93 papers (enrichment pending - second intake dispatched).
+- Batch A pushed (4230021): 18 picks - 13 late 11-20 candidates (they arrived after run 90's review; the run-87 practice caught them) + 5 from the HF queue (Mind2Act World 52 upvotes -> ★, AFFECT, SAFI, VSpark, HubEgo-100K). Skipped: multi-robot LiDAR registration, SCTD MRMP, mmWave calibration, UrbanTwin (driving), Inhabitant (HSI). Gamer stays skipped. Numbers cross-checked against abstracts: 0 mismatches. Validate 0 errors (1,538 curated), 1,676 pages, 0 broken links.
+- Batch B (the 11-23 feed): waiting for enrichment to fill candidates.json.
