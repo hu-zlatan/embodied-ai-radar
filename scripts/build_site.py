@@ -1044,7 +1044,7 @@ def build() -> int:
 <div class="cards">{fresh or '<p class="muted">' + bi("The daily feed starts with the first scheduled intake.", "每日论文将在首次定时收录后出现。") + '</p>'}</div>
 <p><a class="more" href="feed.html">{bi("See the full daily feed →", "查看完整每日论文 →")}</a></p>
 </div>"""
-    desc = "Bilingual (EN/中文), daily-updated map of embodied AI and robot learning: VLA, manipulation, tactile, humanoids, world models, sim-to-real, datasets and hardware."
+    desc = (f"Bilingual (EN/中文) radar of embodied AI & robot learning: {len(entries)} verified papers on VLA, manipulation, tactile, humanoids, world models, sim-to-real, datasets, hardware. Daily.")
     (OUT / "index.html").write_text(page("Embodied AI Radar · 具身智能雷达", body, "", desc, "",
                                          alt='\n<link rel="alternate" type="application/atom+xml" title="Agent picks · Embodied AI Radar" href="picks.xml">'), encoding="utf-8")
     # topic tiles under the search box: shown until the visitor searches or filters (app.js hides #home-static)
