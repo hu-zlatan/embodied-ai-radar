@@ -844,3 +844,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Start: no issues/PRs; all CI pushes still authored as hu-zlatan. Weekend had no arXiv announcements (normal). The 11-23 announcement posted 05:00 UTC; intake #251 landed 93 papers (enrichment pending - second intake dispatched).
 - Batch A pushed (4230021): 18 picks - 13 late 11-20 candidates (they arrived after run 90's review; the run-87 practice caught them) + 5 from the HF queue (Mind2Act World 52 upvotes -> ★, AFFECT, SAFI, VSpark, HubEgo-100K). Skipped: multi-robot LiDAR registration, SCTD MRMP, mmWave calibration, UrbanTwin (driving), Inhabitant (HSI). Gamer stays skipped. Numbers cross-checked against abstracts: 0 mismatches. Validate 0 errors (1,538 curated), 1,676 pages, 0 broken links.
 - Batch B (the 11-23 feed): waiting for enrichment to fill candidates.json.
+
+## 2026-11-23 — run 91 (feed part + owner requests)
+
+- Owner request: Douyin button (https://v.douyin.com/d3vP8UFIO6U/, @kian0711) next to the GitHub star module - first placed in the starbar (3e28230), then corrected to the header, right of the search box, labelled 抖音@kian0711 (f0aba89). Musical-note glyph tinted #fe2c55; clicking it does not dismiss the starbar.
+- Batch B (346cde4): 10 picks from the 11-23 feed. The intake had landed 93 papers without enrichment (candidates.json had no 11-23 entries; intake #252 sat pending behind verify in the arxiv-api group), so full abstracts were fetched from arXiv abs pages directly and numbers cross-checked against them (0 mismatches). Only SOAR, Mem-X and the voltage planner repos hold code (README-verified); Instant-LIVO repo 404s, PACE-WM and MomentMem are 'coming soon'.
+- Verify runs queued for both curated pushes; watch them. Validate 0 errors (1,548 curated), 1,687 pages, 0 broken internal links.
