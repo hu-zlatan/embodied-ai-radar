@@ -645,6 +645,8 @@ def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") 
               if isinstance(own, int) and own > 0 else "")
     star_btn = (f'<span class="ghb"><a class="ghb-btn" href="{REPO_URL}" rel="noopener" title="Star hu-zlatan/embodied-ai-radar on GitHub">'
                 f'{GH_MARK}{GH_STAR}<span>Star</span></a>{star_n}</span>')
+    dy_btn = (f'<a class="dybtn" href="{DY_URL}" rel="noopener" title="抖音 @kian0711">'
+              f'{DY_ICON}<span>抖音@kian0711</span></a>')
     hsearch = (f'<form class="hsearch" action="{root}search.html" role="search">'
                f'<input name="q" type="search" placeholder="Search / 搜索…" aria-label="Search papers, code, datasets" autocomplete="off"></form>')
     return f"""<!doctype html>
@@ -673,12 +675,12 @@ def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") 
 <a class="brand" href="{root}index.html">📡 {bi("Embodied AI Radar", "具身智能雷达")}</a>
 <nav>{nav}</nav>
 {hsearch}
+{dy_btn}
 {star_btn}
 <button id="lang" class="lang" type="button" aria-label="Switch language"><span lang="en">中文</span><span lang="zh">EN</span></button>
 </div>
 <div class="starbar" id="starbar"><div class="wrap">
 <p>{bi("Most of this project is curated by Claude. Drop a star to cheer Claude on!", "本项目大量由 Claude 整理维护，点个 Star 给克劳德大小姐鼓励一下！")}</p>
-<a class="ghstar dy" href="{DY_URL}" rel="noopener" title="抖音 @kian0711">{DY_ICON}<span>抖音</span></a>
 <a class="ghstar" id="starbar-go" href="{REPO_URL}" rel="noopener"><span class="s">★</span> {bi("Feed a star", "投喂 Star")}</a>
 <button type="button" class="sb-x" id="starbar-x" title="Close">{bi("No thanks ✕", "拒绝投喂，换蓝色大肥鲸 ✕")}</button>
 </div></div>
