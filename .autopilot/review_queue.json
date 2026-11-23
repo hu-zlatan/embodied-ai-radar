@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-22",
+ "updated": "2026-11-23",
  "papers": [
   {
    "id": "2611.18397",
    "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
-   "upvotes": 150,
+   "upvotes": 157,
    "hf_date": "2026-11-16",
    "published": "2026-11-16",
    "topics": [
@@ -41,142 +41,28 @@
    "ai_summary": "Gamer is a generalist agent framework that integrates perception, memory, and multi-step reasoning, trained through continued pre-training, sparse-thinking instruction tuning, and multi-turn reinforcement learning to interact efficiently in 2D and 3D environments."
   },
   {
-   "id": "2611.26444",
-   "title": "Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation",
-   "upvotes": 52,
-   "hf_date": "2026-11-20",
-   "published": "2026-11-20",
+   "id": "2611.23499",
+   "title": "BiCAT: Bimanual Coordination Action Tokenization",
+   "upvotes": 5,
+   "hf_date": "2026-11-19",
+   "published": "2026-11-19",
    "topics": [
-    "manipulation",
-    "datasets"
+    "vla",
+    "manipulation"
    ],
    "authors": [
-    "Yuzhi Huang",
-    "Jie Wu",
-    "Fanding Huang",
-    "Junchao Lin",
-    "Weichen Zhang",
-    "Ziyi Xiong",
-    "Yang Li",
-    "Zhengwei Xie",
-    "Zhimin Wang",
-    "Zhen Liu",
-    "Jiazhen Huang",
-    "Yuzheng Zhang",
-    "Yuche Liu",
-    "Hongyi Yang",
-    "Chen Tang",
-    "Shixiang Tang",
-    "Hakan Aktas",
-    "Adam Wu",
-    "Duo Wu",
-    "Kangye Ji"
+    "Xuanwei Liu",
+    "Guipu Cao",
+    "Zhongyi Luo",
+    "Jiafei Duan"
    ],
-   "organization": "Mind2Act-World",
-   "github": "https://github.com/Mind2Act/Mind2Act_World",
-   "project": "https://mind2act-world.com/",
+   "organization": "National University of Singapore",
+   "github": "https://github.com/MAGICLAB-NUS/BiCAT",
+   "project": "https://magiclab-nus.github.io/BiCAT/",
    "arxiv_code": [],
    "comment": null,
-   "abstract": "Embodied intelligence aims to let robots perform complex physical tasks with human-like adaptability and reliability, which requires three complementary capabilities: history-based cognitive reasoning, precise and timely physical execution, and the composition of reasoning and execution through environmental feedback. Yet existing benchmarks either evaluate reasoning and execution within the same tasks or assess them separately without their composition, so they reveal little about whether a failure comes from reasoning, execution, or their composition. We introduce Mind2Act World, a diagnostic benchmark of 30 simulated manipulation tasks from five real-world application domains. Each task has three difficulty levels and two scene settings (Clean and Random), yielding 180 configurations. The tasks form three views: Mind tests decisions based on past observations, Act tests precise and timely execution, and Mind2Act combines both in closed-loop tasks where action outcomes guide later decisions. Comparing the three views shows whether a system lacks a capability or fails to compose capabilities it already has. A diagnosis harness further attributes the failed episodes of three representative systems to Mind, Act, or their composition and summarizes each system in a profile card. Our evaluation of multimodal agents, vision-language-action models (VLAs), and world-action models (WAMs) shows that competence in a single view does not carry over to Mind2Act tasks. Even the strongest agent succeeds in 52.7% of Mind and 39.0% of Act episodes but in only 12.0% of Mind2Act episodes. The strongest agent retains task state but struggles with sustained contact, whereas end-to-end policies execute practiced motions but retain little task state. These findings point to composing reasoning and execution through environmental feedback as the main open problem.",
-   "ai_summary": "A diagnostic benchmark of 180 simulated manipulation configurations evaluates whether embodied systems can combine history-based reasoning, precise execution, and closed-loop environmental feedback, revealing that single-view competence does not transfer to composed tasks."
-  },
-  {
-   "id": "2611.25980",
-   "title": "Learning What Actions Change: Action Effect Matching for Dynamics-Faithful World Models",
-   "upvotes": 17,
-   "hf_date": "2026-11-20",
-   "published": "2026-11-20",
-   "topics": [
-    "world-models"
-   ],
-   "authors": [
-    "John Won",
-    "Yonghoon Dong",
-    "Jinwoo Shin"
-   ],
-   "organization": null,
-   "github": null,
-   "project": "https://periphanes.github.io/affect/",
-   "arxiv_code": [],
-   "comment": "27 pages, preprint",
-   "abstract": "World models aim to predict environment dynamics under actions, enabling the prediction of action consequences without executing them in the real world. Yet despite producing increasingly realistic videos, current world models often fail to capture how small action changes affect future observations. This limits their use in tasks such as robotic policy evaluation and model-based planning, where nearly identical actions can lead to qualitatively different outcomes. To address this, we propose AFFECT, an auxiliary training objective for learning the distribution of visual changes induced by action perturbations. Specifically, we inject temporally correlated noise into the actions of a policy trained on task-agnostic human teleoperation. We then train the world model so that its generated videos respond to this noise as the recorded videos do, without requiring repeated executions from the same initial state. Across OGBench simulation and real-world DROID and ALOHA-2 setups, AFFECT makes world-model rollouts more faithful to real outcomes. On DROID, the Pearson correlation between policy success rates in the world model and on the real robot rises from 0.47 to 0.79, alongside up to 23% lower FVD. These gains carry over to planning, where selecting actions with AFFECT-trained world models improves task success by up to 8.3%.",
-   "ai_summary": "AFFECT, an auxiliary objective that trains world models to match visual responses to temporally correlated action noise, improves rollout fidelity and planning success in simulated and real robotic tasks."
-  },
-  {
-   "id": "2611.26239",
-   "title": "Teaching Vision-Language-Action Models to Stop Safely",
-   "upvotes": 8,
-   "hf_date": "2026-11-20",
-   "published": "2026-11-20",
-   "topics": [
-    "vla"
-   ],
-   "authors": [
-    "Zheyuan Liu",
-    "Chuhan Wang",
-    "Jinduo Guo",
-    "Yue Huang",
-    "Xiangchi Yuan",
-    "Ningshan Ma",
-    "Meng Jiang"
-   ],
-   "organization": "University of Notre Dame DM2 Lab",
-   "github": "https://github.com/franciscoliu/SAFI",
-   "project": "https://franciscoliu.github.io/SAFI/",
-   "arxiv_code": [],
-   "comment": "A two-stage pipeline that teaches VLAs to stop prohibited tasks safely while preserving permitted skills",
-   "abstract": "Vision-language-action (VLA) models enable robots to perform diverse tasks from visual observations and language instructions. While prior work has explored task suppression and refusal, stopping prohibited behavior once execution is underway and controlling the resulting physical response remain challenging. Our evaluation reveals that policies which suppress a task from its initial state can still complete it when taking over partway through execution. Even when the task remains unfinished, the robot may drop a held object, making non-completion an incomplete measure of safety. To address these challenges, we introduce State-Aware Fallback Imitation (SAFI) for tasks where holding provides an appropriate alternative response. SAFI comprises two stages, (1) fallback target construction, which assigns stationary arm commands and consistent gripper targets throughout prohibited-task demonstrations, and (2) joint policy adaptation, which learns these targets alongside the original actions of retained tasks. This supervision teaches an explicit alternative response at intermediate execution states while maintaining the robot's other skills. Extensive experiments with OpenVLA-OFT across LIBERO and BadLIBERO tasks evaluate prohibited completion, physical incidents, and retained-task performance. On the evaluated LIBERO tasks, SAFI reduces aggregate target success after takeover to 1.3\\%, with no recorded physical incidents or action saturation, while preserving high retained-task success.",
-   "ai_summary": null
-  },
-  {
-   "id": "2611.22666",
-   "title": "VSpark: Speculative Decoding for Autoregressive Vision-Language-Action Models",
-   "upvotes": 6,
-   "hf_date": "2026-11-20",
-   "published": "2026-11-18",
-   "topics": [
-    "vla"
-   ],
-   "authors": [
-    "Suho Yoo",
-    "Youngjoon Jang",
-    "Hyebin Cho",
-    "Taeyeop Lee",
-    "Jaewook Jeong",
-    "Joon Son Chung"
-   ],
-   "organization": "KAIST AI",
-   "github": "https://github.com/suho-yoo/VSpark",
-   "project": "https://suho-yoo.github.io/VSpark/",
-   "arxiv_code": [],
-   "comment": "Preprint",
-   "abstract": "Our aim is to accelerate autoregressive vision-language-action models (VLAs), which generate robot actions one token at a time. Speculative decoding makes this possible: a lightweight draft model proposes several tokens at once, and the VLA verifies them in a single pass, accepting only those that match its own predictions, so decoding remains lossless. The speedup, however, is limited in robot control, where many different tokens encode nearly the same motion and a draft close to the correct action is still rejected. To address this, our approach, VSpark, is built upon three design choices: (i) rollouts collected with calibrated action noise, which expose the draft to a wider range of robot states; (ii) feature alignment, which trains the draft to match the VLA's hidden features rather than its output tokens alone; and (iii) continuation reuse, which keeps the predictions the VLA has already computed along rejected drafts as candidates for the next verification step, instead of discarding them. On four VLAs with different action tokenizers and four manipulation benchmarks, VSpark achieves 1.28x to 2.10x speedup while keeping the VLA's decoding lossless.",
-   "ai_summary": "VSpark accelerates autoregressive vision-language-action models by improving speculative decoding with calibrated action-noise rollouts, hidden-feature alignment, and reuse of rejected-draft continuations, achieving lossless 1.28x–2.10x speedups across multiple robot manipulation tasks."
-  },
-  {
-   "id": "2611.21938",
-   "title": "HubEgo-100K: In-the-Wild Egocentric Video of Skilled Work for Robot Learning",
-   "upvotes": 5,
-   "hf_date": "2026-11-18",
-   "published": "2026-11-18",
-   "topics": [
-    "learning"
-   ],
-   "authors": [
-    "Javad Amirian",
-    "Armin Kiani",
-    "Loïc Schaeffer",
-    "Tim Sprecher",
-    "Mohamed Taha",
-    "Karthik Yadati"
-   ],
-   "organization": "Hub",
-   "github": null,
-   "project": "https://huggingface.co/datasets/HubLabs/HubEgo-100K",
-   "arxiv_code": [],
-   "comment": "22 pages, 18 figures, 7 tables. Dataset: https://huggingface.co/datasets/HubLabs/HubEgo-100K",
-   "abstract": "Robot policies trained by imitation generalize poorly outside the environments and objects seen in training. Published data-scaling studies find that generalization grows with the diversity of training environments and objects rather than with more demonstrations per environment. Robot data is costly to collect across many environments, whereas egocentric human video can be recorded in the wild at scale; existing egocentric video, however, mostly shows daily-life activity and contains little skilled work in real workplaces. We present HubEgo-100K, a dataset built for diversity. This version of the paper covers the first release, v1.0: 10,124 hours of 1080p egocentric video with synchronized 100 Hz inertial (IMU) data from one head-mounted phone camera. In v1.0, 12,227 contributors record their own unscripted work in 15,548 environments (each one contributor's own setting of one type, such as their kitchen or workshop) across 11 setting types, 30 work categories, 56 task types and 35 action families, with 83% of hours in workplace settings. The release comprises 72,754 episodes with machine-generated action and language annotations, in LeRobot and MCAP formats under CC BY 4.0. We measure diversity along each axis, show that inside v1.0, with episodes in random order, new contributors and words keep appearing, and relate the measurements to published evidence on six data properties tied to policy performance, including hand visibility and inertial sensing. We also document collection, curation, privacy measures and data format, and provide a datasheet. Later versions of this paper will add benchmarks and cover further releases toward 100,000 hours.",
-   "ai_summary": null
+   "abstract": "Autoregressive vision-language-action (VLA) models predict discrete action tokens with the next-token objective of their vision-language backbone, so the action tokenizer defines the interface between the policy and the robot. In bimanual manipulation, the two arms share a repertoire of movements yet coordinate through complementary roles, and an action representation should capture both. However, most existing tokenizers encode both arms as a single concatenated action vector, in which motion patterns common to the two arms are not shared and cross-arm dependencies remain entangled within each token. The policy must therefore learn both aspects implicitly. We propose Bimanual Coordination Action Tokenization (BiCAT), which shares one motion representation across arms while conditioning each arm's tokens on its partner through symmetric cross-arm attention and a joint decoder. The policy then predicts all tokens of each arm in parallel, generating the left arm first and the right arm conditioned on it. Across ten RoboTwin 2.0 tasks and six real-world tasks on three embodiments, BiCAT achieves the highest success among the compared tokenizers. In simulation, it improves mean success by 17.6 percentage points over the strongest of eight baselines, with the largest gains on tasks that require close coordination between the arms, while requiring only 40.5 ms per action chunk. These results suggest that the action tokenizer is a natural place to model bimanual coordination.",
+   "ai_summary": "BiCAT shares a motion representation across arms and conditions each arm's tokens on its partner via symmetric cross-arm attention and a joint decoder, enabling parallel arm token prediction and improving bimanual manipulation success."
   }
  ],
  "curated_link_updates": [
@@ -209,6 +95,11 @@
    "id": "2610.29677",
    "title": "Toward Recursive Self-Improvement in Physical AI",
    "code": "https://github.com/Physical2RSI/Awesome-Physical2RSI"
+  },
+  {
+   "id": "2611.26613",
+   "title": "AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control",
+   "code": "https://github.com/cxcscmu/AgentRoboCritic"
   }
  ]
 }
