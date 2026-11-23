@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 156 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 158 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/world-models.html) · [English](world-models.md)
 
@@ -86,6 +86,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[OSWAM: An Effective World Action Model with One-Step Action Generation](https://arxiv.org/abs/2610.35850)** (2026) — 单步扩散即可生成动作的世界动作模型：用“想象 token”代替随机噪声初始化，为动作提供先验。报告比直接策略式 WAM 快约 3 倍，编译后在 RTX 5090 上延迟低至 40 毫秒，覆盖自动驾驶与具身控制。 · [代码](https://github.com/PolyU-VCLab/OSWAM) · [项目页](https://gwenzhang.github.io/OSWAM/)
 - **[ObjectWorld: Scaling Object-Centric World Models with A Large-Scale 3D Full-Object Flow Dataset](https://arxiv.org/abs/2611.11085)** (2026) — 把物体运动表示为覆盖整个表面（含遮挡部分）的稠密 3D 轨迹，适用于刚体与可形变物体。发布 1210 小时的全物体流数据集，并训练从图像和任务描述预测该流的世界模型。 · [项目页](https://nus-lins-lab.github.io/ObjectWorld/)
 - **[OpenNWM: A Generalist Navigation World Model with Latent Action Pretraining](https://arxiv.org/abs/2611.01844)** (2026) — 先从无动作标注的视频中学习潜在动作，再在后训练阶段对齐真实运动。配套数据集 NavAnywhere 含 17.5M 条视觉观测，来自 15 个来源，覆盖地面机器人、人和无人机。 · [代码](https://github.com/OpenSpace-Lab/OpenNWM)
+- **[PACE-WM: Parallel World Modeling with Action History for Visual Planning](https://arxiv.org/abs/2611.27173)** (2026) — 以已执行动作历史为条件、用因果 Transformer 并行预测多个未来表征（窗口内无递归状态反馈），并以“参考锚定最小进度”（RAMP）选择动作。报告四个视觉规划任务平均成功率 98%，匹配 CEM 设置下比自回归 LeWM 快约 7–9 倍。 · [项目页](https://github.com/LHS180/PACE-WM)
 - **[PICA-WAM: Visual Perturbation Invariance via Cross-Appearance Self-Alignment in World Action Models](https://arxiv.org/abs/2610.26813)** (2026) — 为世界-动作模型加一个自监督辅助任务：EMA 教师看原始画面，在线模型看外观扰动后的画面并对齐其动作表征；报告在 RoboTwin 2.0、LIBERO-Plus 等基准上提升四种 WAM 对视觉扰动的鲁棒性，且不损失原有性能。 · [代码](https://github.com/YudeZou/PICA-WAM-release)
 - **[PhysCoRe: Physics-Corrected Residual World Models for Material-Aware Deformable Dynamics](https://arxiv.org/abs/2607.20653)** (2026) — 可变形物体世界模型：可微 MPM 仿真器配合两个网络，一个从视觉推断逐粒子弹性，一个学习修正仿真器的残差误差。在真实操作序列上验证。 · [代码](https://github.com/lunarlab-gatech/PhysCoRe) · [项目页](https://lunarlab-gatech.github.io/PhysCoRe-website/)
 - **[PhysTrace: Interpretable Temporal Evaluation of Physical Consistency in Video Generative Models](https://arxiv.org/abs/2610.31429)** (2026) — 无需训练的视频模型物理一致性评测：由多模态大模型根据历史帧给出物理预期，再定位视频中违背预期的时间段并给出可解释描述；新增带违规区间标注的 IntPhys2-Timing（报告命中率最高 70.7%），面向依赖视频模型的世界动作模型。 · [代码](https://github.com/PhysTrace/PhysTrace)
@@ -103,6 +104,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[RynnUnify: Towards Unified Embodied Brain](https://arxiv.org/abs/2610.32965)** (2026) — 16B 统一具身模型，交替进行视频预测与语言推理，兼顾具身理解与长程视觉规划，并扩展出用于机器人控制的世界-动作版本；另提出 Rynn-VP、Rynn-GEU 评测，报告在 20 个 RoboCasa365 组合任务上成功率 51.5%。 · [代码](https://github.com/alibaba-damo-academy/RynnUnify) · [项目页](https://alibaba-damo-academy.github.io/RynnUnify.github.io/)
 - **[RynnWorld-Latent: A Cross-Embodiment World Model Conditioned on Universal Latent Actions](https://arxiv.org/abs/2610.36791)** (2026) — 以 RynnLAM 的三维潜在动作为统一条件接口的跨本体视频世界模型，在 23 个数据集（约 5.5 亿帧）的人类、机器人和仿真视频上预训练；生成的数据提升了 LIBERO 与真机策略成功率。 · [代码](https://github.com/alibaba-damo-academy/RynnWorld-Latent) · [项目页](https://alibaba-damo-academy.github.io/RynnWorld-Latent.github.io)
 - **[SKIP: Sparse Keyframe Interpolation Paradigm for Efficient Embodied World Models](https://arxiv.org/abs/2606.00664)** (2026) — SKIP 只用稀疏视频扩散模型生成与任务相关的关键帧（接近、接触、抓取、释放），再用动作条件插值器补全中间帧。在 LIBERO 上生成稠密推演快 4.16 倍。
+- **[SOAR: Training-Free Rank-Consistent Rollout Compression for Latent World Model Planning](https://arxiv.org/abs/2611.27639)** (2026) — 免训练的 rollout 压缩：每个决策点用几档 token 预算探测候选，保留不改变排序的最小预算；首步读真实观测保持精确、上下文帧缓存复用。报告在七个导航与操作任务上 2.3 倍加速达到稠密规划的成功率，2.5 倍加速保留 98%。 · [代码](https://github.com/starrywiki/SOAR)
 - **[ST-WAM: Semantic-Temporal World Action Model for Robust Manipulation under Visual Distribution Shifts](https://arxiv.org/abs/2607.28993)** (2026) — 发现视觉偏移下世界动作模型预测的未来会幻想出训练域内容，于是用 DINOv3 作为未来预测和历史检索的共享表示，以保持动作鲁棒。 · [代码](https://github.com/Thu-WangMX/ST-WAM-Semantic-Temporal-World-Action-Model) · [项目页](https://thu-wangmx.github.io/st-wam/)
 - **[STRIPS-WM: Learning Grounded Propositional STRIPS-style World Models from Images](https://arxiv.org/abs/2606.06832)** (2026) — 直接从图像转移数据学习 STRIPS 式符号算子（前提条件、增删效果）和潜在二值谓词，再从起始图与目标图用经典规划求解。优于视觉推演和潜在图搜索等基线。 · [项目页](https://elpislab.org/projects/strips-wm/)
 - **[SWAM: Scaling World Action Models with Cross-Modal Alignment](https://arxiv.org/abs/2611.12870)** (2026) — 在约 4.7 万小时的通用视频、第一人称视频、UMI 与机器人示范上，系统研究世界动作模型学习动作时如何保持语言-视频对齐。混合第一人称视频与 UMI 数据提升控制泛化；开放数据、代码与权重。 · [代码](https://github.com/shaaaaron/SWAM) · [项目页](https://char-lotte-xia.github.io/swam-official/)

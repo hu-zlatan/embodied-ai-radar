@@ -2,7 +2,7 @@
 
 _Legged locomotion, humanoid whole-body control and parkour._
 
-195 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml); edit the YAML, not this file.
+196 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/locomotion.html) · [中文](locomotion.zh-CN.md)
 
@@ -85,6 +85,7 @@ _Legged locomotion, humanoid whole-body control and parkour._
 - **[Learning Force-Reactive Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.35862)** (2026) — FLoRe: robot-free demos from force-sensing UMI-style grippers + body trackers train a diffusion policy that outputs per-hand force commands for a compliant whole-body controller; reports 80% vs. 26.7% for position-only.
 - **[Learning Loco-Manipulation From SMPC Demonstrations With Sparse Offline-to-Online RL](https://arxiv.org/abs/2608.12063)** (2026) — Uses sample-based MPC in simulation as an automatic expert, then trains off-policy RL on sparse rewards, avoiding reward shaping; deployed on an arm-equipped Spot and a G1 humanoid.
 - **[Learning optimal gaits and styles for terrain-adaptive quadruped locomotion](https://arxiv.org/abs/2611.25958)** (2026) — Learns 11 quadruped gaits plus the style each needs via RL with oscillator networks; a second policy selects by criterion. Every gait wins under some terrain-metric-speed setup; zero-shot to unseen terrains and 5x mass. · [project](https://guillaume10.github.io/terrain-gaits)
+- **[LiDAR Signals for Robot Locomotion: Spherical Range Images Enable Robust Sim-to-Real Transfer](https://arxiv.org/abs/2611.27223)** (2026) — Replays the physical LiDAR's angular sampling in simulation and encodes both as the same spherical range image, so policies train and deploy directly. Stronger sim-to-real than depth- and elevation-map baselines. · [project](https://lidar-img.github.io/)
 - **[LoComposition: Terrain-Adaptive Energy-Efficient Quadruped Locomotion without Gait Priors](https://arxiv.org/abs/2606.15896)** (2026) — Splits quadruped training into rewards for the task, constraints for limits and energy minimization for gait, with no gait priors; reports 56% lower cost of transport and 96% fewer limit violations, on a Go2.
 - **[MAPO: Mixture of Experts with Alternating Policy Optimization for Universal Humanoid Motion Tracking](https://arxiv.org/abs/2611.02613)** (2026) — Dynamic routing makes policy-update divergence misestimated in mixture-of-experts policies, so MAPO optimizes router and experts in turn. Reports tracking 182 motions PPO with MoE fails on, against one the other way. · [project](https://mapo-corl2026.github.io/MAPO/)
 - **[MARCH: Model-Assisted Reinforcement Learning for the Perceptive Control of Humanoids over Sparse Footholds](https://arxiv.org/abs/2606.10288)** (2026) — MARCH guides RL with a safe reference from simplified models and a control-Lyapunov reward, then distills to a vision policy; a Unitree G1 crosses sparse footholds with lateral constraints.

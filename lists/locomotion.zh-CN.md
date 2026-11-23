@@ -2,7 +2,7 @@
 
 _足式运动、人形全身控制与跑酷。_
 
-共 195 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
+共 196 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/locomotion.html) · [English](locomotion.md)
 
@@ -85,6 +85,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[Learning Force-Reactive Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.35862)** (2026) — FLoRe：用带力传感的 UMI 式手持夹爪与人体追踪器采集无机器人示教，训练扩散策略输出每只手的力指令，由柔顺全身控制器执行；报告在三个接触密集任务上成功率 80%，仅位置控制为 26.7%。
 - **[Learning Loco-Manipulation From SMPC Demonstrations With Sparse Offline-to-Online RL](https://arxiv.org/abs/2608.12063)** (2026) — 在仿真中用采样 MPC 自动生成专家数据，再以稀疏奖励训练离策略 RL，免去奖励塑形；已部署到带臂 Spot 和 G1 人形机器人。
 - **[Learning optimal gaits and styles for terrain-adaptive quadruped locomotion](https://arxiv.org/abs/2611.25958)** (2026) — 用强化学习与抽象脊柱振荡器网络学到 11 种四足步态及其所需运动风格，再由第二策略按用户指标（运输能耗、基座稳定、关节平滑）选择。每种步态都至少在某种“地形-指标-速度”组合下最优；可零样本泛化到未见步态耦合、训练分布外的地形和 5 倍体重的更大机器人。 · [项目页](https://guillaume10.github.io/terrain-gaits)
+- **[LiDAR Signals for Robot Locomotion: Spherical Range Images Enable Robust Sim-to-Real Transfer](https://arxiv.org/abs/2611.27223)** (2026) — 在传感与表征两层对齐仿真与真实的 LiDAR 感知：从实物激光雷达恢复逐帧角度采样模式并用 GPU 光线投射在仿真中回放，两端都编码为相同的球面距离图，策略可端到端训练、直接部署。报告 sim-to-real 迁移强于深度图与高程图基线，无需蒸馏或在线建图。 · [项目页](https://lidar-img.github.io/)
 - **[LoComposition: Terrain-Adaptive Energy-Efficient Quadruped Locomotion without Gait Priors](https://arxiv.org/abs/2606.15896)** (2026) — 将四足训练拆分为：奖励定义任务、约束保证运行限制、能耗最小化决定步态，且不使用任何步态先验；报告运输代价降低 56%、越限减少 96%，并在 Go2 上部署。
 - **[MAPO: Mixture of Experts with Alternating Policy Optimization for Universal Humanoid Motion Tracking](https://arxiv.org/abs/2611.02613)** (2026) — 动态路由会让混合专家策略的更新散度估计失准，MAPO 因此交替优化路由与专家。报告可跟踪 182 个 PPO+MoE 失败的动作，反过来只有 1 个。 · [项目页](https://mapo-corl2026.github.io/MAPO/)
 - **[MARCH: Model-Assisted Reinforcement Learning for the Perceptive Control of Humanoids over Sparse Footholds](https://arxiv.org/abs/2606.10288)** (2026) — MARCH 用简化模型生成的安全参考轨迹和控制李雅普诺夫奖励引导强化学习，再蒸馏为视觉策略；Unitree G1 可通过带侧向约束的稀疏落脚点。

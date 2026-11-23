@@ -1988,3 +1988,14 @@
   tags: [humanoid, skateboarding, rl, object-mediated, sim]
   takeaway_en: 'Model-free RL teaches a K1 humanoid to skateboard with no demos: exploit-blocking terminations forbid losing the board foot, two-foot stances and twisting. Their shifting prevalence forms an implicit curriculum.'
   takeaway_zh: 免参考的人形滑板：纯无模型强化学习，不需要演示或系统辨识。用“阻断投机行为”的终止条件约束——丢板脚、双脚上板、过度扭转、脱离滑板与板身不稳都会终止——这些约束在训练中的此消彼长形成隐式课程，从站姿控制渐进到持续的机器人-滑板运动（Humanoids 2026）。
+
+- title: 'LiDAR Signals for Robot Locomotion: Spherical Range Images Enable Robust Sim-to-Real Transfer'
+  type: paper
+  arxiv: '2611.27223'
+  year: 2026
+  project: https://lidar-img.github.io/
+  added: 2026-11-23
+  topics: [locomotion, perception]
+  tags: [legged, lidar, range-image, sim2real, perception]
+  takeaway_en: Replays the physical LiDAR's angular sampling in simulation and encodes both as the same spherical range image, so policies train and deploy directly. Stronger sim-to-real than depth- and elevation-map baselines.
+  takeaway_zh: 在传感与表征两层对齐仿真与真实的 LiDAR 感知：从实物激光雷达恢复逐帧角度采样模式并用 GPU 光线投射在仿真中回放，两端都编码为相同的球面距离图，策略可端到端训练、直接部署。报告 sim-to-real 迁移强于深度图与高程图基线，无需蒸馏或在线建图。

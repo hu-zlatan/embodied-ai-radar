@@ -1643,3 +1643,25 @@
   tags: [world-model, action-effect, dynamics, policy-evaluation, real]
   takeaway_en: 'Trains world models to respond to action perturbations like real videos: correlated noise in teleop actions, matching visual changes. DROID success correlation 0.47 to 0.79; planning gains up to 8.3%.'
   takeaway_zh: 训练世界模型对动作扰动产生与真实视频一致的视觉变化：向遥操作策略的动作注入时间相关噪声，让生成视频对噪声的响应匹配记录视频。报告 DROID 上世界模型与真机的策略成功率 Pearson 相关从 0.47 升到 0.79，规划任务成功率最多提高 8.3%。
+
+- title: 'SOAR: Training-Free Rank-Consistent Rollout Compression for Latent World Model Planning'
+  type: paper
+  arxiv: '2611.27639'
+  year: 2026
+  code: https://github.com/starrywiki/SOAR
+  added: 2026-11-23
+  topics: [world-models]
+  tags: [world-model, planning, compression, training-free, efficiency]
+  takeaway_en: Probes candidates under token budgets and keeps the smallest budget preserving their ranking; first step exact, context cached. Matches dense planning at 2.3x speedup, keeps 98% at 2.5x.
+  takeaway_zh: 免训练的 rollout 压缩：每个决策点用几档 token 预算探测候选，保留不改变排序的最小预算；首步读真实观测保持精确、上下文帧缓存复用。报告在七个导航与操作任务上 2.3 倍加速达到稠密规划的成功率，2.5 倍加速保留 98%。
+
+- title: 'PACE-WM: Parallel World Modeling with Action History for Visual Planning'
+  type: paper
+  arxiv: '2611.27173'
+  year: 2026
+  project: https://github.com/LHS180/PACE-WM
+  added: 2026-11-23
+  topics: [world-models]
+  tags: [world-model, jepa, planning, action-history, efficiency]
+  takeaway_en: Executed-action history conditions a causal Transformer predicting multiple futures in parallel, plus Reference-Anchored Minimum Progress selection. 98% average success, 7-9x faster than LeWM.
+  takeaway_zh: 以已执行动作历史为条件、用因果 Transformer 并行预测多个未来表征（窗口内无递归状态反馈），并以“参考锚定最小进度”（RAMP）选择动作。报告四个视觉规划任务平均成功率 98%，匹配 CEM 设置下比自回归 LeWM 快约 7–9 倍。

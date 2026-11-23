@@ -2009,3 +2009,14 @@
   tags: [mobile-manipulation, latent-actions, navigation, real]
   takeaway_en: Learns manipulation-aware mobility from a pretrained policy's hidden features plus few outcomes, estimating success at unvisited poses without rollouts. 47.0% vs 26.5% on eight RoboCasa tasks.
   takeaway_zh: 从预训练操作策略的隐表征加少量执行结果学习“操作感知的移动能力”：估计未到达位姿下的操作成功率而无需逐一 rollout，再由交接策略决定何时从导航切到操作。报告八个未见 RoboCasa 厨房任务平均成功率 47.0%（最强基线 26.5%，直接操作 19.2%）。
+
+- title: 'MomentMem: Memorizing Key Moments for Robot Manipulation'
+  type: paper
+  arxiv: '2611.26745'
+  year: 2026
+  org: Peking University
+  added: 2026-11-23
+  topics: [manipulation]
+  tags: [memory, manipulation, keyframe, vlm, long-horizon, real]
+  takeaway_en: A VLM-based memorizer selects keyframes, an executor acts on them. 49.9% on VMBench, +31.7 over the strongest baseline; memorizer transfers zero-shot, adapts with few annotations (43.7% vs 44.3%).
+  takeaway_zh: 视觉“关键时刻”记忆：基于 VLM 的记忆器挑选关键帧，执行器以所选记忆为条件预测动作，二者分离使记忆选择可独立评测。报告 VMBench 平均成功率 49.9%、比最强基线高 31.7 个百分点；记忆器可零样本迁移到新外观，少量记忆标注即可适应新任务（43.7% 对全监督 44.3%）。

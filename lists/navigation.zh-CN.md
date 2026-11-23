@@ -2,7 +2,7 @@
 
 _视觉语言导航、具身问答、移动操作与大模型规划。_
 
-共 89 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
+共 91 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/navigation.html) · [English](navigation.md)
 
@@ -33,6 +33,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - **[Cracking Mobile Manipulation: From Failure Diagnosis to Agentic Robot System](https://arxiv.org/abs/2610.19600)** (2026) — 发现 VLA 在原子技能上 80% 成功率、组合成移动操作后仅 19%，分析失败原因并据此构建智能体式系统。 · [代码](https://github.com/PKU-VaLuE-Lab/Cracking-Mobile-Manipulation)
 - **[EmbodiedWorld-200K: Toward Embodied World Agents via Embodied-Planning Dataset and Interactive World Models](https://arxiv.org/abs/2610.25959)** (2026) — 包含 20 万余条导航规划样本的数据集，场景多样，标注从相机运动轨迹到高层语义指令；并把视频世界模型当作低成本交互环境做强化学习后训练，报告称在未见场景上有明显提升。 · [代码](https://github.com/XiaokunFeng/EmbodiedWorld-200K) · [项目页](https://xiaokunfeng.github.io/EmbodiedWorld-200K/)
 - **[EvoPlan: Evolutionary Neuro-Symbolic Robot Planning with Spatio-Temporal Guarantees](https://arxiv.org/abs/2607.06724)** (2026) — 通过进化搜索从示教数据中挖掘信号时序逻辑约束（如社交导航舒适度）来为策略加安全护盾，并用进化式 PDDL 规划器让本地部署的大模型提出和修复计划。
+- **[EvoTER: Evolving Embodied Agents via Tool-Use Experience and Reflection](https://arxiv.org/abs/2611.27797)** (2026) — 三角色进化循环：Explorer 记录工具使用轨迹，Diagnoser 把成功与失败提炼为工具选择、参数计算、后条件检查与恢复技能，Validator 只保留在新会话中提升整任务成功的修订。报告仿真成功率 53.60%→80.40%；真机长程任务从 20% 提到 80%–100%，并吸收仿真阶段之后新加入的工具功能。 · [项目页](https://evoter-project.github.io/)
 - **[From Imitation to Alignment: Human-Preference Flow Policies for Long-Horizon Sidewalk Navigation](https://arxiv.org/abs/2606.12603)** (2026) — FlowPilot：仅用单目 RGB、无需地图的人行道导航策略，先用锚定流匹配在大规模机器人车队数据上预训练，再用少量人工接管数据做偏好学习微调。
 - **[From Region Arrival to Instance-Level Grounding in Vision-and-Language Navigation](https://arxiv.org/abs/2607.03792)** (2026) — 指出 VLN 成功率掩盖了“最后 3 米定位缺口”：智能体停在附近却未对准目标。提出实例级指标和可接入任意主干的修正模块 REALM。
 - **[Future-Aware Flow Planning for Safe UAV Target Following](https://arxiv.org/abs/2609.10166)** (2026) — 无人机目标跟随：用预测的目标未来轨迹作为条件引导流式轨迹生成，并在采样循环中修复高风险的可执行前段。安全与跟踪的权衡最好，但 Future-MPC 更平滑。
@@ -49,6 +50,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - **[Look Before You Move: Agent-Interface-Aligned Supervision for Open-World Mobile Manipulation](https://arxiv.org/abs/2610.15572)** (2026) — 让示教者直接通过智能体自身的技能接口（包括“往哪看”）执行动作来采集 VLM 智能体训练数据。报告在 170 个开放世界移动操作测试集上成功率 71.76%，零样本真机 38%。 · [项目页](https://connerqiu.github.io/look-before-you-move/)
 - **[MOON: Learning When to Forget and How to Move On in Vision-and-Language Navigation](https://arxiv.org/abs/2610.33546)** (2026) — 发现 VLN 智能体偏离路线后会被历史记忆“惯性”拖住。MOON 给冻结的导航策略加上偏航判断器（判断何时清空历史）和 GRPO 训练的恢复策略，参数增加不到 1%；报告在 R2R-CE / RxR-CE 上分别提升 5.2 / 6.0 个百分点。 · [代码](https://github.com/AutoLab-SAI-SJTU/MOON)
 - **[MOSU2: Long-range Navigation System with Multi-modal Scene Understanding](https://arxiv.org/abs/2611.11148)** (2026) — 户外长距离导航：VLM 先基于场景上下文推理，只有交互情形仍不明确时才调取几何与运动信息。真实实验中导航成功率相对前作 MOSU 从 61.8% 提升到 94.2%。 · [项目页](https://jinggm.github.io/mosu2/)
+- **[Mem-X: A Memory-Dependent Cross-Episode Benchmark for Vision-and-Language Navigation](https://arxiv.org/abs/2611.27166)** (2026) — 跨回合视觉语言导航记忆基准：后续指令指向先前回合见过的物体或路线，含 2,071 个回合、710 个会话、34 个场景，分历史物体回忆、记忆内定位与索引、离线重定位与历史路线复现三级。配套 MemBridge 基线组合语义场景记忆、跨回合定位与由粗到精检索。 · [代码](https://github.com/NJU-R-L-Group-Embodied-Lab/Mem-X)
 - **[MessyMem: Learning-from-Doing Memory for Mobile Manipulation](https://arxiv.org/abs/2609.15976)** (2026) — 移动操作机器人的持久记忆：在三维场景图中记录通过交互学到的知识（如柜子上锁、物体位置）。报告在连续 25 个任务、3 小时的仿真中任务进度达 80%。 · [项目页](https://messymem.github.io)
 - **[MessyNav: Zero-Shot Navigation via Manipulation in Messy Environments](https://arxiv.org/abs/2611.07417)** (2026) — 在杂乱环境中导航：用 VLM 推理每个挡路物体该推开、拿起还是绕开。零样本，报告在真实移动操作机器人上比最强基线高 27 个百分点。
 - **[Navigating the Clutter: Waypoint-Based Bi-Level Planning for Multi-Robot Systems](https://arxiv.org/abs/2604.21138)** (2026) — 面向密集障碍中多达九台机器人的任务与运动联合规划：用航点参数化运动轨迹，并以课程式训练和改进的 RLVR 将运动规划器的可行性反馈传回任务规划器（BoxNet3D-OBS 基准）。
