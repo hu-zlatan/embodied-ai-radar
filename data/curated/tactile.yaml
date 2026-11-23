@@ -853,3 +853,14 @@
   tags: [tactile, open-hardware, sensor, shear, peg-in-hole]
   takeaway_en: 'Open-source 3.5 mm optical taxel array with per-taxel three-axis force: gel cartridges encode shear in light color, no cameras or magnets. Normal sensing is linear to 5.8 N; its pressure improves ACT peg-in-hole.'
   takeaway_zh: 开源的 3.5 mm 光学触觉阵列，单个 taxel 即可测三轴力：可更换凝胶盒用返回光的颜色编码切向力，无需相机、磁体或凸点覆层。法向力在 104 mN–5.8 N 内线性（R²=0.999），剪切方向误差中位数 4.8°；把 LuxTac 压力读数加入 ACT 后，插孔任务成功率超过纯视觉基线。
+
+- title: 'TacInno: Teaching Vision-Language-Action Models the Contact Dynamics Beyond Vision and Action'
+  type: paper
+  arxiv: '2611.26405'
+  year: 2026
+  project: https://tacinno.github.io
+  added: 2026-11-23
+  topics: [tactile, vla]
+  tags: [tactile, vla, contact-rich, tokenizer, real]
+  takeaway_en: Trains only on 'tactile innovation' - contact dynamics vision and actions cannot explain; the policy predicts a discrete code, no module at deployment. 87.5% sim / 70.5% real, +10.7/+9.0 over the best baseline.
+  takeaway_zh: 只把“视觉与已执行动作无法解释的接触动力学”（tactile innovation）作为训练目标：分词器以视觉观测和动作为条件，把未来触觉变化压成离散码，策略学会预测该码，部署时不加任何新模块。报告六个仿真任务 87.5%、四个真机任务 70.5%，比最强视觉-触觉基线高 10.7/9.0 个百分点。

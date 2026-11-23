@@ -1977,3 +1977,14 @@
   tags: [humanoid, foundation-model, in-context, whole-body, real]
   takeaway_en: 'In-context behavior foundation model separating general skill from dynamics-specific execution: learned context guides residuals to a frozen prior. Deployed on Unitree G1 for acrobatics, terrain and payload adaptation.'
   takeaway_zh: 上下文式行为基础模型：把通用行为能力与动力学相关的精确执行分离，从交互历史学习结构化动力学表征，指导冻结先验的残差修正，无需测试期参数更新。在 Unitree G1 上实现极端特技、地形交互的全身遥操作，以及负载自适应。
+
+- title: Reference-Free Humanoid Skateboarding via Termination-Shaped Reinforcement Learning
+  type: paper
+  arxiv: '2611.26054'
+  year: 2026
+  venue: Humanoids 2026
+  added: 2026-11-23
+  topics: [locomotion]
+  tags: [humanoid, skateboarding, rl, object-mediated, sim]
+  takeaway_en: 'Model-free RL teaches a K1 humanoid to skateboard with no demos: exploit-blocking terminations forbid losing the board foot, two-foot stances and twisting. Their shifting prevalence forms an implicit curriculum.'
+  takeaway_zh: 免参考的人形滑板：纯无模型强化学习，不需要演示或系统辨识。用“阻断投机行为”的终止条件约束——丢板脚、双脚上板、过度扭转、脱离滑板与板身不稳都会终止——这些约束在训练中的此消彼长形成隐式课程，从站姿控制渐进到持续的机器人-滑板运动（Humanoids 2026）。

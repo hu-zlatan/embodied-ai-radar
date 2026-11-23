@@ -2,7 +2,7 @@
 
 _Tactile sensors, touch representations and contact-rich control._
 
-83 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
+84 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/tactile.html) · [中文](tactile.zh-CN.md)
 
@@ -44,6 +44,7 @@ _Tactile sensors, touch representations and contact-rich control._
 - **[T-Rex: Tactile-Reactive Dexterous Manipulation](https://arxiv.org/abs/2606.17055)** (2026) — Tactile-reactive VLA: 100-hour tactile dataset built around motor primitives, a variable-rate mixture-of-transformers and a temporal tactile VQ-VAE. Reports 30%+ higher average success than the best baseline on 12 tasks. · [code](https://github.com/ZhuoyangLiu2005/T-Rex) · [project](https://tactile-rex.github.io/)
 - **[TaF-Foundation: Wrench-Grounded Cross-Sensor Tactile Representations](https://arxiv.org/abs/2611.20718)** (2026) — Grounds tactile representations in 6-D wrenches, giving sensors a physical reference; a shared encoder trains on 100M+ tactile-wrench observations. Reports 17.1% lower force RMSE and +13.11 pts cross-sensor R@1. · [project](https://mrjiangjm.github.io/TaF-Foundation/)
 - **[TacCoRL: Integrating Tactile Feedback into VLA via Simulation](https://arxiv.org/abs/2606.11743)** (2026) — Adds touch to a VLA via sim-real co-training and simulated RL in a real-aligned simulator, learning how contact should change actions near failure. Reports 72.5% vs 50.0% on four bimanual tasks. · [project](https://tac-corl.github.io/)
+- **[TacInno: Teaching Vision-Language-Action Models the Contact Dynamics Beyond Vision and Action](https://arxiv.org/abs/2611.26405)** (2026) — Trains only on 'tactile innovation' - contact dynamics vision and actions cannot explain; the policy predicts a discrete code, no module at deployment. 87.5% sim / 70.5% real, +10.7/+9.0 over the best baseline. · [project](https://tacinno.github.io)
 - **[TacMind: Benchmarking and Modeling Tactile Interaction States for Robotic Manipulation](https://arxiv.org/abs/2611.00455)** (2026) — 128 simulated tactile tasks in three regimes (Precise, Recognition, Dynamic) with 12 perturbations, plus a tactile world model that treats touch as an evolving state and refines actions with predicted contact. · [code](https://github.com/Tacmind-Bench/TacMind) · [project](https://tacmind-bench.github.io/)
 - **[TacStyle: Personalizing Tactile Robot Policies using Structured Behavior Representations](https://arxiv.org/abs/2606.14862)** (2026) — Learns a structured latent space of behaviour styles (e.g. how much force to apply), and lets language reason over it instead of generating actions directly, for personalized tactile policies like wiping or folding.
 - **[TactX: Learning Shared Tactile Representations Across Diverse Sensors](https://arxiv.org/abs/2606.31236)** (2026) — Encoders for resistive, magnetic and vision-based tactile sensors are trained on paired contacts into one latent space, so a policy trained with one sensor transfers zero-shot to another on four manipulation tasks.

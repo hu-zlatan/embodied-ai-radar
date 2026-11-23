@@ -2,7 +2,7 @@
 
 _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 
-共 196 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
+共 197 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/manipulation.html) · [English](manipulation.md)
 
@@ -109,6 +109,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[Learn the Task, Not the Schedule: Reducing Spurious Cross-Arm Coupling in Bimanual Imitation Learning](https://arxiv.org/abs/2610.26507)** (2026) — CTR 在训练时对双臂示教中两只手臂的动作时序重新组合，同时保留任务必需的约束，避免策略把另一只手臂的进度当作捷径线索。 · [代码](https://github.com/MINT-SJTU/CTR)
 - **[Learning Beyond What Humans Can Demonstrate](https://arxiv.org/abs/2609.24996)** (2026) — 针对人难以遥操作完成的任务，由 LLM 编写基于状态的护栏来过滤遥操作与策略指令。报告数据采集成功率从 0–10% 提升到 70–90%。 · [项目页](https://guardrail-policy.github.io/)
 - **[Learning Dexterous Manipulation Using Contact Wrench Guidance From Human Demonstration](https://arxiv.org/abs/2607.00033)** (2026) — CHORD 在以物体为中心的接触力旋量空间中比较人与机器人的动作来引导灵巧操作强化学习，并构建来自动捕与视频的 4739 个双手任务基准；在其中 1831 个任务上平均成功率 82.12%。
+- **[Learning to Move from and for Manipulation Policies: Spatializing Latent Action Representations for Goal-Pose-Free Mobile Manipulation](https://arxiv.org/abs/2611.25366)** (2026) — 从预训练操作策略的隐表征加少量执行结果学习“操作感知的移动能力”：估计未到达位姿下的操作成功率而无需逐一 rollout，再由交接策略决定何时从导航切到操作。报告八个未见 RoboCasa 厨房任务平均成功率 47.0%（最强基线 26.5%，直接操作 19.2%）。 · [项目页](https://zsiyuan-eng.github.io/M4M/)
 - **[LiMA: Bridging Long-term Imagination to Real-time Dexterous Manipulation via Asynchronous Diffusion](https://arxiv.org/abs/2609.28431)** (2026) — 慢系统生成稀疏的长时程意图，快系统细化高频动作，二者以潜空间薛定谔桥耦合。报告延迟比 Cosmos-Policy 低 45.8%，六个双臂灵巧任务成功率 70.8%。 · [项目页](https://ccdcs.github.io/LiMA_repo/)
 - **[MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation](https://arxiv.org/abs/2611.08372)** (2026) — 用高斯泼溅与动作重定向为移动操作示教合成新的底盘位姿视角，连被操作的运动物体也一起重渲染。报告在未见底盘位姿下成功率是最强基线的两倍以上。 · [项目页](https://robin-lab.cs.utexas.edu/momasplat)
 - **[Mixture of Frames Policy: Multi-Frame Action Denoising for Bimanual Mobile Manipulation](https://arxiv.org/abs/2607.11884)** (2026) — 扩散策略在多个坐标系中同步去噪同一动作：各坐标系有专门的去噪器，再把噪声预测融合回规范坐标系。在九个双臂任务上优于“最优单坐标系”选择，并在两个真实移动操作任务上验证。

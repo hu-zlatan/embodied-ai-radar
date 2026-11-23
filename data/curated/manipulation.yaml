@@ -1998,3 +1998,14 @@
   tags: [video-prediction, flow-matching, few-step, efficiency, manipulation]
   takeaway_en: 'Self-conditioned few-step video prediction: training feeds a clean-video estimate as conditioning; each velocity prediction yields a solver update plus next draft. 4 NFE vs 50-59 calls of prior predictors.'
   takeaway_zh: 自条件的少步视频预测：训练时用共享网络产生分离的干净视频估计作条件，推理时每次速度预测同时得到求解器更新与下一版草稿，达到每块仅 4 次函数评估。报告在 Bridge、Language Table 上以 4 NFE 达到当前最优，而现有预测器需 50–59 次。
+
+- title: 'Learning to Move from and for Manipulation Policies: Spatializing Latent Action Representations for Goal-Pose-Free Mobile Manipulation'
+  type: paper
+  arxiv: '2611.25366'
+  year: 2026
+  project: https://zsiyuan-eng.github.io/M4M/
+  added: 2026-11-23
+  topics: [manipulation, navigation]
+  tags: [mobile-manipulation, latent-actions, navigation, real]
+  takeaway_en: Learns manipulation-aware mobility from a pretrained policy's hidden features plus few outcomes, estimating success at unvisited poses without rollouts. 47.0% vs 26.5% on eight RoboCasa tasks.
+  takeaway_zh: 从预训练操作策略的隐表征加少量执行结果学习“操作感知的移动能力”：估计未到达位姿下的操作成功率而无需逐一 rollout，再由交接策略决定何时从导航切到操作。报告八个未见 RoboCasa 厨房任务平均成功率 47.0%（最强基线 26.5%，直接操作 19.2%）。

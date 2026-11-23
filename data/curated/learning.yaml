@@ -1523,3 +1523,38 @@
   tags: [test-time-adaptation, policy-steering, ood, manipulation, real]
   takeaway_en: Steers frozen policies along object-relational distance pairs from successful rollouts, combined with LVM/VLM reasoning. Doubles cable-placement success one grid step out of distribution; steers to untrained objects.
   takeaway_zh: 用分布内成功 rollout 沿“物体关系距离对”这一几何轴捕获的精细运动校正冻结策略，再结合 LVM/VLM 的语义理解合成单一视觉-几何引导信号。报告线缆放置任务在训练位置外一格处成功率翻倍以上，并能让单任务策略转向从未训练过的物体、几乎消除物体混淆。
+
+- title: 'One Prior, Two Dynamics: Repurposing Video Diffusion Transformers for Self-Supervised Latent Action Learning'
+  type: paper
+  arxiv: '2611.26617'
+  year: 2026
+  org: Show Lab, NUS
+  code: https://github.com/showlab/O2LaF
+  project: https://showlab.github.io/o2laf
+  added: 2026-11-23
+  topics: [learning]
+  tags: [latent-actions, video-prior, self-supervised, cross-embodiment, zero-shot]
+  takeaway_en: 'One pretrained video DiT seeds inverse and forward dynamics: a transition encoder with action queries plus a causal action-conditioned generator. SOTA few-shot action probing; stronger zero-shot transfer.'
+  takeaway_zh: 用同一个预训练视频扩散 Transformer 初始化正、逆两个动力学模型：前馈转移编码器配可学习动作查询做逆动力学，因果动作条件生成器做正动力学，经紧凑瓶颈端到端优化。报告少样本动作探测达到当前最优，跨视觉上下文与本体的零样本动作迁移更强。
+
+- title: 'CoachSI: Self-Improvement of Robot Policies with a Language Coach'
+  type: paper
+  arxiv: '2611.25529'
+  year: 2026
+  project: https://tlxhlll.github.io/CoachSI/
+  added: 2026-11-23
+  topics: [learning]
+  tags: [self-improvement, llm, coach, long-horizon, fine-tuning]
+  takeaway_en: A frozen VLM coaches the policy in language, naming the next step in its own instruction format; coached rollouts are relabeled for fine-tuning. Reports 47.4% to 59.3%, +9.8 over human-demo fine-tuning.
+  takeaway_zh: 冻结的现成 VLM 当“语言教练”：看着机器人画面、用策略自身的原子指令格式说出下一步，绝不输出动作；成功的受指导 rollout 用原始任务指令回标后微调策略。报告长程任务无人辅助成功率从 47.4% 升到 59.3%，比人类示教微调高 9.8 个百分点。
+
+- title: Demonstration-Free Skill Composition for Navigation and Manipulation
+  type: paper
+  arxiv: '2611.25462'
+  year: 2026
+  project: https://madeleinenouri.github.io/acra-skill-composition
+  added: 2026-11-23
+  topics: [learning]
+  tags: [hierarchical-rl, skill-composition, navigation, manipulation]
+  takeaway_en: 'Demonstration-free hierarchical RL: separately trained skills compose under high-level plans, downstream skills initialized from predecessor rollouts. Beats flat DQN/SAC baselines with fewer interactions.'
+  takeaway_zh: 评测免示教的层次强化学习流程：分开训练的导航与操作技能在高层计划下组合，下游技能用前序 rollout 采集的状态初始化。报告层次流程在未见布局上显著超过扁平 DQN/SAC 基线，且所需训练交互更少、种子间方差更低。

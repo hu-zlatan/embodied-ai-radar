@@ -2,7 +2,7 @@
 
 _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipulation._
 
-196 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml); edit the YAML, not this file.
+197 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/manipulation.html) · [中文](manipulation.zh-CN.md)
 
@@ -109,6 +109,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - **[Learn the Task, Not the Schedule: Reducing Spurious Cross-Arm Coupling in Bimanual Imitation Learning](https://arxiv.org/abs/2610.26507)** (2026) — CTR retimes the two arms in bimanual demos at training time while keeping task-required constraints, so the policy stops using the other arm's progress as a shortcut cue. · [code](https://github.com/MINT-SJTU/CTR)
 - **[Learning Beyond What Humans Can Demonstrate](https://arxiv.org/abs/2609.24996)** (2026) — For tasks people cannot teleoperate well, an LLM writes state-based guardrails that filter teleop and policy commands. Reports data-collection success rising from 0-10% to 70-90%. · [project](https://guardrail-policy.github.io/)
 - **[Learning Dexterous Manipulation Using Contact Wrench Guidance From Human Demonstration](https://arxiv.org/abs/2607.00033)** (2026) — CHORD guides dexterous RL by comparing human and robot motions in object-centric contact wrench space. Also a 4,739-task bimanual benchmark built from MoCap and videos; 82.12% average on 1,831 tasks.
+- **[Learning to Move from and for Manipulation Policies: Spatializing Latent Action Representations for Goal-Pose-Free Mobile Manipulation](https://arxiv.org/abs/2611.25366)** (2026) — Learns manipulation-aware mobility from a pretrained policy's hidden features plus few outcomes, estimating success at unvisited poses without rollouts. 47.0% vs 26.5% on eight RoboCasa tasks. · [project](https://zsiyuan-eng.github.io/M4M/)
 - **[LiMA: Bridging Long-term Imagination to Real-time Dexterous Manipulation via Asynchronous Diffusion](https://arxiv.org/abs/2609.28431)** (2026) — Slow system plans sparse long-horizon intent, fast system refines dense motion, linked by a latent Schrödinger bridge. Reports 45.8% lower latency than Cosmos-Policy and 70.8% success on six bimanual tasks. · [project](https://ccdcs.github.io/LiMA_repo/)
 - **[MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation](https://arxiv.org/abs/2611.08372)** (2026) — Augments mobile-manipulation demos with new base poses, re-rendering the moving object too, via Gaussian splatting and action retargeting. Reports more than doubling the best baseline's success on unseen base poses. · [project](https://robin-lab.cs.utexas.edu/momasplat)
 - **[Mixture of Frames Policy: Multi-Frame Action Denoising for Bimanual Mobile Manipulation](https://arxiv.org/abs/2607.11884)** (2026) — Diffusion policy that denoises one action in several coordinate frames at once with frame-specialised denoisers and fuses the results. Beats oracle single-frame choice on nine bimanual tasks; two real mobile tasks.

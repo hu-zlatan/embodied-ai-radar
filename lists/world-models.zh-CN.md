@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 154 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 156 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/world-models.html) · [English](world-models.md)
 
@@ -75,6 +75,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[LaWAM: Latent World Action Models for Efficient Dynamics-Aware Robot Policies](https://arxiv.org/abs/2606.15768)** (2026) — 不生成视频的世界动作模型：在视觉基础模型的特征空间中训练潜动作模型，预测未来观测特征作为“潜在视觉子目标”来条件化动作生成。报告 LIBERO 98.6%、RoboTwin 91.22%，每个动作块推理 187 ms，比像素级 WAM 延迟低最多 24 倍。 · [代码](https://github.com/RLinf/LaWAM) · [项目页](https://rlinf.github.io/LaWAM/)
 - **[Large Video Planner Enables Generalizable Robot Control](https://arxiv.org/abs/2512.15840)** (2026) — 以视频而非语言为主干构建机器人基础模型：在互联网规模人类视频上训练开源视频规划器，零样本生成视频计划再转为机器人动作；模型与数据集均已开源。 · [代码](https://github.com/buoyancy99/large-video-planner) · [项目页](https://www.boyuan.space/large-video-planner/)
 - **[Learning Robotic World Models with Semantic and Visual Feedback](https://arxiv.org/abs/2611.07850)** (2026) — RoboImagine 通过比较多条候选未来来后训练自回归机器人世界模型：冻结的多模态评估器给出语义偏好，像素与感知层面的一致性项约束视觉误差。在 RT-1 上报告 PSNR 比继续监督微调高 1.26 dB。 · [代码](https://github.com/Alexander-wu/RoboImagine) · [项目页](https://huggingface.co/easylearning/RoboImagine)
+- **[Learning What Actions Change: Action Effect Matching for Dynamics-Faithful World Models](https://arxiv.org/abs/2611.25980)** (2026) — 训练世界模型对动作扰动产生与真实视频一致的视觉变化：向遥操作策略的动作注入时间相关噪声，让生成视频对噪声的响应匹配记录视频。报告 DROID 上世界模型与真机的策略成功率 Pearson 相关从 0.47 升到 0.79，规划任务成功率最多提高 8.3%。 · [项目页](https://periphanes.github.io/affect/)
 - **[Light-WAM: Efficient World Action Models with State-Fusion Action Decoding](https://arxiv.org/abs/2606.08242)** (2026) — 轻量世界动作模型：紧凑视频主干在降采样潜空间中做未来监督，动作专家融合多层特征一次前向预测动作块；报告可训练参数仅 0.44B，推理延迟 72 毫秒。 · [代码](https://github.com/L1ziang/Light-WAM)
 - **[MaskWAM: Unifying Mask Prompting and Prediction for World-Action Models](https://arxiv.org/abs/2606.13515)** (2026) — 以物体为中心的世界动作模型：既把目标物体掩码作为提示输入，又预测未来掩码，从而减少杂乱场景中的语言歧义和 RGB 预测中的背景偏差。
 - **[MemoryVAM: Integrating Memory into Video Action Model for Robot Manipulation](https://arxiv.org/abs/2606.20679)** (2026) — 为视频世界模型策略加入情景记忆 token，使动作能依赖已不在视野中的事件。报告 LIBERO-Mem 成功率从 5% 提升到 42.5%，真机记忆类任务约 75–80%。 · [项目页](https://MemoryVAM.github.io/)
@@ -91,6 +92,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Physical Canvas: A Vision Tactile World Model For Robot Policy Evaluation And Learning](https://arxiv.org/abs/2610.28613)** (2026) — 动作条件的视触觉世界模型：在统一的视频空间中同时预测多视角 RGB 与触觉图像，并经一致性后训练保证与真实任务状态吻合；可用于闭环策略评估和 GRPO 策略更新。 · [项目页](https://zebinx.github.io/PhysCanvas_HomePage/)
 - **[PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation](https://arxiv.org/abs/2606.28128)** (2026) — 训练框架，把监督集中在具有物理信息的区域，在像素和语义两个层面提升视频世界模拟器的物理一致性。 · [代码](https://github.com/DAGroup-PKU/PhysisForcing) · [项目页](https://dagroup-pku.github.io/PhysisForcing.github.io/)
 - **[PlayWorld: Learning Robot World Models from Autonomous Play](https://arxiv.org/abs/2603.09030)** (2026) — 完全用机器人自主“玩耍”数据（而非人类演示）训练动作条件视频世界模型，覆盖更多接触与失败情形。报告策略评估提升最高 40%，在其中做强化学习后真机成功率提升 65%。 · [项目页](https://robot-playworld.github.io/)
+- **[Point Dynamics as Proxy for Robotic World Models](https://arxiv.org/abs/2611.25946)** (2026) — 把动力学预测与视觉渲染分离：首帧提升为 3D 点，用学习的点动力学模型模拟其对机器人运动的响应，再渲染回像素对齐视频供任意视频模型读取。报告在 DROID 上用两种渲染器物体运动误差降低 8.6%/6.2%，真机双臂降低 8.1%；编辑点还能引导视频内容。 · [项目页](https://marsaki.github.io/point-dynamics-proxy/)
 - **[PrimeSim: A Generalist World Model Simulator from Large-Scale Cross-Embodiment Demonstrations](https://arxiv.org/abs/2611.04870)** (2026) — 自回归多视角世界模型，运行 10.1 FPS，100 至 200 步梯度即可适配未见平台；作者开放权重和代码，并说明细粒度局部标定仍落后于同类。 · [代码](https://github.com/PrimebotTech/PrimeSim) · [项目页](https://primebottech.github.io/PrimeSim-website/)
 - **[Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation](https://arxiv.org/abs/2606.17030)** (2026) — 语言条件视频世界模型，把自然语言作为操作、驾驶、室内导航和人到机器人迁移的统一动作接口。 · [项目页](https://pre.qwen.ai/blog?id=qwen-robotworld)
 - **[ReactWorld: Structuring Interaction Responses for Embodied Video Generation](https://arxiv.org/abs/2611.06120)** (2026) — 视频世界模型：先预测物体对接触的响应位置和方式，再反馈到物体特征与时序注意力；报告在 RBench 上比 PhysisForcing 高 3.29 分。 · [项目页](https://metaengine-world.github.io/ReactWorld/)

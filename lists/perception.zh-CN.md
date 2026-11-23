@@ -2,7 +2,7 @@
 
 _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与开放词汇场景地图。_
 
-共 58 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
+共 59 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/perception.html) · [English](perception.md)
 
@@ -55,6 +55,7 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - **[ReSiReg: Towards Spatially Consistent Semantics in Language-Conditioned Robotic Tasks](https://arxiv.org/abs/2606.19088)** (2026) — 通过由带语言描述的视觉原型重建每个图像块，让稠密 VLM 特征在空间上更一致，提升开放词汇检索与三维建图；并提供 25M 参数的小型稠密 VLM。 · [代码](https://github.com/SimonSchwaiger/resireg) · [项目页](https://resireg.github.io)
 - **[Real-Time Diffusion Relighting as a Neural Sensor: Closing the Low-Light Domain Gap for Robotic Perception](https://arxiv.org/abs/2611.17438)** (2026) — 把扩散重光照嵌入控制回路作为生成式神经传感器：高延迟扩散模型在后台线程运行，仅当检测置信度下降（感知不确定事件）时激活。报告 ExDark 87.1% mAP，CARLA 闭环导航 100% 完成。 · [项目页](https://shengjie-xu.com/conferences/2026_IROS_neural-sensor/)
 - **[RoMo-GS: Efficient Online 3D Gaussian Splatting for Robot Mapping via Exposure-Integrated Motion Blur](https://arxiv.org/abs/2610.24605)** (2026) — 在线 3DGS 建图：对每个高斯在曝光时间内解析积分以处理运动模糊，并用 Hessian 得分剪枝控制数量。渲染质量与离线去模糊 3DGS 相当，速度快 15–150 倍。
+- **[SCCV-6D: Sparse Canonical Coordinate Voting for Holistic Multi-View RGB-D 6D Pose Estimation in Robotic Bin Picking](https://arxiv.org/abs/2611.25819)** (2026) — 全稀疏多视图 RGB-D 位姿估计：分级热图剔除背景，规范坐标投票配对称感知的加权 Procrustes 闭式求解。报告 IPD 上 0.826 AP、每场景仅 1.13 秒，MV-YCB 达 96.1 ADD-S，显著快于领先方案，且在 ROBI 密集箱内仍具竞争力（WACV 2027）。
 - **[SE(3)-LIVOM: Adaptive Multi-LiDAR-Inertial-Visual Odometry and Mapping](https://arxiv.org/abs/2611.22047)** (2026) — 多激光雷达-惯性-视觉里程计，IROS 2026 COMFORT 挑战赛总冠军：两台 LiDAR、相机与 IMU 实时运行，每帧约 35 ms，用子图平面集束调整与增量位姿图修正漂移。报告六个 GrandTour 测试场景平均 ATE 1.40 cm。 · [代码](https://github.com/url-kaist/se3-livom-comfort)
 - **[SpaRV: Sparse Radiance Voxels for Scalable Geometrically Consistent LiDAR-Visual Mapping and Rendering](https://arxiv.org/abs/2610.25665)** (2026) — 用激光雷达与相机数据构建稀疏体素辐射场地图，针对机器人数据视角少、位姿有误差、场景大的问题，在保证几何精度的同时控制显存占用。 · [代码](https://github.com/hku-mars/SpaRV)
 - **[Vision as Proprioception: Estimating Humanoid Robot Pose from Video](https://arxiv.org/abs/2610.25288)** (2026) — HumanoidPose 仅凭视频恢复人形机器人的全身关节构型：适用于拿不到机载状态的场景，也能把网上的机器人视频变成训练数据。 · [代码](https://github.com/eth-siplab/HumanoidPose)

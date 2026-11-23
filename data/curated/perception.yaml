@@ -596,3 +596,14 @@
   tags: [slam, rgb-d, triangle-splatting, real-time, gpu]
   takeaway_en: 'First real-time triangle-splatting SLAM: geometric registration to depth-fused triangle centroids with a translation-free mapper. About 100 FPS desktop, sensor-rate on Jetson; Replica chamfer 1.55 to 0.86 cm.'
   takeaway_zh: 首个实时三角形泼溅 SLAM：跟踪器用深度融合的三角形质心做 GICP 配准，建图器经变量替换限制为非平移更新，避免三角形偏离观测表面。桌面 GPU 约 100 FPS、Jetson AGX Orin 达传感器帧率；Replica 上 Delaunay 网格 chamfer 距离从 1.55 降到 0.86 cm，比光度法快 20 倍以上。
+
+- title: 'SCCV-6D: Sparse Canonical Coordinate Voting for Holistic Multi-View RGB-D 6D Pose Estimation in Robotic Bin Picking'
+  type: paper
+  arxiv: '2611.25819'
+  year: 2026
+  venue: WACV 2027
+  added: 2026-11-23
+  topics: [perception]
+  tags: [6d-pose, bin-picking, rgb-d, sparse, industrial]
+  takeaway_en: 'Fully sparse multi-view RGB-D pose estimation: staged heatmaps prune background, canonical-coordinate voting gives closed-form symmetry-aware pose recovery. 0.826 AP on IPD at 1.13 s per scene.'
+  takeaway_zh: 全稀疏多视图 RGB-D 位姿估计：分级热图剔除背景，规范坐标投票配对称感知的加权 Procrustes 闭式求解。报告 IPD 上 0.826 AP、每场景仅 1.13 秒，MV-YCB 达 96.1 ADD-S，显著快于领先方案，且在 ROBI 密集箱内仍具竞争力（WACV 2027）。

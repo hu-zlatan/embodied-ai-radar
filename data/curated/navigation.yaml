@@ -871,3 +871,26 @@
   tags: [objectnav, sim2real, ros2, spot, real]
   takeaway_en: Deploys Room-Mediated ObjectNav on Spot and TurtleBot 4 through a ROS 2 bridge. Across 66 Spot trials it reaches 0.455 success vs 0.539 in sim, and pins the 8.4-pt gap on glass walls and depth limits.
   takeaway_zh: 通过机器人无关的 ROS 2 桥把 Room-Mediated 物体目标导航部署到 Spot 与 TurtleBot 4。66 次 Spot 试验成功率 0.455（仿真 0.539），并把 8.4 个百分点的差距归因于玻璃墙、禁区、深度范围与房间词表不匹配。
+
+- title: 'Cognitive-Horizon Action Chunking: Memory-Guided Adaptive Reasoning for Embodied Navigation'
+  type: paper
+  arxiv: '2611.25587'
+  year: 2026
+  code: https://github.com/phare111/chac
+  added: 2026-11-23
+  topics: [navigation]
+  tags: [navigation, efficiency, memory, training-free, real]
+  takeaway_en: 'Training-free: context and controller feedback set how many cached waypoints run before refreshing. Cuts VLM calls 33.4% HM3D-OVON / 64.7% R2R-CE; 18 vs 14 real successes at 54.9% fewer calls.'
+  takeaway_zh: 免训练的自适应推理：保留的视觉上下文、完成线索与控制反馈决定“认知视界”——连续执行多少个缓存路点后才刷新预测；策略请求停止时最多补一步修正。报告 HM3D-OVON 上 VLM 调用减少 33.4%、R2R-CE 减少 64.7%；四个真机任务 18 对 14 成功、调用减 54.9%。
+
+- title: Bridging vision-language reasoning and learned control for legged navigation in the wild
+  type: paper
+  arxiv: '2611.25215'
+  year: 2026
+  venue: Science Robotics
+  project: https://roam-hiking.github.io
+  added: 2026-11-23
+  topics: [navigation, locomotion]
+  tags: [navigation, legged, vlm, rl, real]
+  takeaway_en: 'Couples VLM scene reasoning with RL locomotion: open-vocabulary segmentation turns labels into a dense risk map for two RL policies. Kilometer-long autonomous hikes with minimal intervention.'
+  takeaway_zh: ROAM 把 VLM 的常识推理与仿真强化学习学到的运动控制结合：开放词汇分割把语义标签变成稠密实时风险图，条件化敏捷运动与局部导航两个 RL 策略。报告在复杂山地与城市场景完成公里级自主远足、极少人工干预，能理解标识避险并选择安全落脚区域。

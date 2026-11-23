@@ -1621,3 +1621,25 @@
   tags: [world-model, vla, humanoid, rl, real]
   takeaway_en: 'Post-trains a humanoid VLA in a video world model: play data then 20 real rollouts per task align it, then closed-loop RL. Reports mean success 23.3% to 75.0% vs 48.3% for real-robot RL.'
   takeaway_zh: 免遥操作的全身人形 VLA 后训练：先用合成操作/移动“玩耍”数据提升视频世界模型的接触动力学与视角预测，再以每任务 20 条真实 rollout 对齐部署观测，最后在视频世界模型里做闭环强化学习。报告三个真机任务平均成功率从 23.3% 升到 75.0%（真机 RL 为 48.3%）。
+
+- title: Point Dynamics as Proxy for Robotic World Models
+  type: paper
+  arxiv: '2611.25946'
+  year: 2026
+  project: https://marsaki.github.io/point-dynamics-proxy/
+  added: 2026-11-23
+  topics: [world-models]
+  tags: [world-model, 3d, point-dynamics, rendering, real]
+  takeaway_en: 'Separates dynamics from rendering: lift the first frame to 3D points, simulate responses with a learned model, render back. Object motion error down 8.6%/6.2% (two renderers) and 8.1% on a real bimanual robot.'
+  takeaway_zh: 把动力学预测与视觉渲染分离：首帧提升为 3D 点，用学习的点动力学模型模拟其对机器人运动的响应，再渲染回像素对齐视频供任意视频模型读取。报告在 DROID 上用两种渲染器物体运动误差降低 8.6%/6.2%，真机双臂降低 8.1%；编辑点还能引导视频内容。
+
+- title: 'Learning What Actions Change: Action Effect Matching for Dynamics-Faithful World Models'
+  type: paper
+  arxiv: '2611.25980'
+  year: 2026
+  project: https://periphanes.github.io/affect/
+  added: 2026-11-23
+  topics: [world-models]
+  tags: [world-model, action-effect, dynamics, policy-evaluation, real]
+  takeaway_en: 'Trains world models to respond to action perturbations like real videos: correlated noise in teleop actions, matching visual changes. DROID success correlation 0.47 to 0.79; planning gains up to 8.3%.'
+  takeaway_zh: 训练世界模型对动作扰动产生与真实视频一致的视觉变化：向遥操作策略的动作注入时间相关噪声，让生成视频对噪声的响应匹配记录视频。报告 DROID 上世界模型与真机的策略成功率 Pearson 相关从 0.47 升到 0.79，规划任务成功率最多提高 8.3%。
