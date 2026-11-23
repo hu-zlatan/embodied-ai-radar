@@ -850,3 +850,7 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Owner request: Douyin button (https://v.douyin.com/d3vP8UFIO6U/, @kian0711) next to the GitHub star module - first placed in the starbar (3e28230), then corrected to the header, right of the search box, labelled 抖音@kian0711 (f0aba89). Musical-note glyph tinted #fe2c55; clicking it does not dismiss the starbar.
 - Batch B (346cde4): 10 picks from the 11-23 feed. The intake had landed 93 papers without enrichment (candidates.json had no 11-23 entries; intake #252 sat pending behind verify in the arxiv-api group), so full abstracts were fetched from arXiv abs pages directly and numbers cross-checked against them (0 mismatches). Only SOAR, Mem-X and the voltage planner repos hold code (README-verified); Instant-LIVO repo 404s, PACE-WM and MomentMem are 'coming soon'.
 - Verify runs queued for both curated pushes; watch them. Validate 0 errors (1,548 curated), 1,687 pages, 0 broken internal links.
+
+## 2026-11-23 — run 91 (verify follow-up)
+
+- Verify #222 (batch A) failed on one title and five links, all pre-existing: arXiv renamed 2610.39232 to "GenSight: ..." and five InternRobotics/Primebot/AgenticTask project pages went 404. Fixed in 72ded8d: title updated; EgoExplorer -> HF dataset home, PrimeSim -> HF weights, and the other three project links dropped (no live replacement; AgenticTask's HF dataset answers 401 and cannot be linked). Code links stay. Verify #223 (on current HEAD) is still in progress.
