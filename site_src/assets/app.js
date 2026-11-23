@@ -354,7 +354,7 @@
     return (em || []).map(function (m) { var n = (data.emb || {})[m]; return n ? '<span class="chip emb">' + esc(n[lang() === 'zh' ? 1 : 0]) + '</span>' : ''; }).join('');
   }
   function hfLink(id, u) {
-    return u ? ' · <a class="hf" href="https://huggingface.co/papers/' + esc(id) + '" title="Upvotes on Hugging Face Daily Papers">▲ ' + esc(u) + ' HF</a>' : '';
+    return u ? ' · <a class="hf" href="https://huggingface.co/papers/' + esc(id) + '" title="Hugging Face 点赞 · Upvotes on Hugging Face Daily Papers">▲ ' + esc(u) + ' HF</a>' : '';
   }
   function card(it) {
     if (it.k === 'c') {

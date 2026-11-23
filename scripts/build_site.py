@@ -142,7 +142,7 @@ def hf_link(arxiv_id: str | None, h: dict | None) -> str:
     if not arxiv_id or not h:
         return ""
     return (f' · <a class="hf" href="https://huggingface.co/papers/{esc(str(arxiv_id))}" rel="noopener" '
-            f'title="Upvotes on Hugging Face Daily Papers">▲ {int(h["upvotes"])} HF</a>')
+            f'title="Hugging Face 点赞 · Upvotes on Hugging Face Daily Papers">▲ {int(h["upvotes"])} HF</a>')
 
 
 def emb_chips(ids: list[str]) -> str:
@@ -648,7 +648,7 @@ def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") 
     dy_btn = (f'<a class="dybtn" href="{DY_URL}" rel="noopener" title="抖音 @kian0711">'
               f'{DY_ICON}<span>抖音@kian0711</span></a>')
     hsearch = (f'<form class="hsearch" action="{root}search.html" role="search">'
-               f'<input name="q" type="search" placeholder="Search / 搜索…" aria-label="Search papers, code, datasets" autocomplete="off"></form>')
+               f'<input name="q" type="search" placeholder="Search / 搜索…" aria-label="Search papers, code, datasets / 搜索论文、代码、数据集" autocomplete="off"></form>')
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -677,12 +677,12 @@ def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") 
 {hsearch}
 {dy_btn}
 {star_btn}
-<button id="lang" class="lang" type="button" aria-label="Switch language"><span lang="en">中文</span><span lang="zh">EN</span></button>
+<button id="lang" class="lang" type="button" aria-label="Switch language / 切换语言"><span lang="en">中文</span><span lang="zh">EN</span></button>
 </div>
 <div class="starbar" id="starbar"><div class="wrap">
 <p>{bi("Most of this project is curated by Claude. Drop a star to cheer Claude on!", "本项目大量由 Claude 整理维护，点个 Star 给克劳德大小姐鼓励一下！")}</p>
 <a class="ghstar" id="starbar-go" href="{REPO_URL}" rel="noopener"><span class="s">★</span> {bi("Feed a star", "投喂 Star")}</a>
-<button type="button" class="sb-x" id="starbar-x" title="Close">{bi("No thanks ✕", "拒绝投喂，换蓝色大肥鲸 ✕")}</button>
+<button type="button" class="sb-x" id="starbar-x" title="Close / 关闭">{bi("No thanks ✕", "拒绝投喂，换蓝色大肥鲸 ✕")}</button>
 </div></div>
 </header>
 <main class="wrap">
@@ -1005,7 +1005,7 @@ def build() -> int:
     hf_top = sorted(hf_rows.items(), key=lambda x: (-x[1][0], x[0]))[:10]
     if hf_top:
         rows = "".join(
-            f'<li><a href="{esc(link)}">{short(t)}</a> <a class="badge rise" href="https://huggingface.co/papers/{esc(a)}" rel="noopener" title="Upvotes on Hugging Face Daily Papers">▲&nbsp;{n}</a></li>'
+            f'<li><a href="{esc(link)}">{short(t)}</a> <a class="badge rise" href="https://huggingface.co/papers/{esc(a)}" rel="noopener" title="Hugging Face 点赞 · Upvotes on Hugging Face Daily Papers">▲&nbsp;{n}</a></li>'
             for a, (n, t, link) in hf_top)
         hf_html = (f'<h2>{bi("Upvoted on Hugging Face", "Hugging Face 热议")}</h2>'
                    f'<p class="muted">{bi("Robotics papers from our feed that made Hugging Face Daily Papers in the last 14 days, by community upvotes.", "最近 14 天登上 Hugging Face Daily Papers 的本站收录论文，按社区点赞数排序。")}</p>'
