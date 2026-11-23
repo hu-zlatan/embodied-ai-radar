@@ -40,6 +40,9 @@ OWN_REPO = "hu-zlatan/embodied-ai-radar"  # key in data/repo_stats.json for the 
 GH_STAR = ('<svg class="ghb-star" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>')
 # GitHub mark from Primer Octicons (MIT), for the header "Star on GitHub" button
 GH_MARK = ('<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>')
+# Douyin button in the starbar (owner request, 2026-11-23): musical-note glyph, tinted with the Douyin red
+DY_URL = "https://v.douyin.com/d3vP8UFIO6U/"
+DY_ICON = ('<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>')
 
 
 def _asset_version() -> str:
@@ -675,6 +678,7 @@ def page(title: str, body: str, root: str, desc: str, path: str, alt: str = "") 
 </div>
 <div class="starbar" id="starbar"><div class="wrap">
 <p>{bi("Most of this project is curated by Claude. Drop a star to cheer Claude on!", "本项目大量由 Claude 整理维护，点个 Star 给克劳德大小姐鼓励一下！")}</p>
+<a class="ghstar dy" href="{DY_URL}" rel="noopener" title="抖音 @kian0711">{DY_ICON}<span>抖音</span></a>
 <a class="ghstar" id="starbar-go" href="{REPO_URL}" rel="noopener"><span class="s">★</span> {bi("Feed a star", "投喂 Star")}</a>
 <button type="button" class="sb-x" id="starbar-x" title="Close">{bi("No thanks ✕", "拒绝投喂，换蓝色大肥鲸 ✕")}</button>
 </div></div>
