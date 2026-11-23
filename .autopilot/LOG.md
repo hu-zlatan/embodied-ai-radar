@@ -854,3 +854,8 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 ## 2026-11-23 — run 91 (verify follow-up)
 
 - Verify #222 (batch A) failed on one title and five links, all pre-existing: arXiv renamed 2610.39232 to "GenSight: ..." and five InternRobotics/Primebot/AgenticTask project pages went 404. Fixed in 72ded8d: title updated; EgoExplorer -> HF dataset home, PrimeSim -> HF weights, and the other three project links dropped (no live replacement; AgenticTask's HF dataset answers 401 and cannot be linked). Code links stay. Verify #223 (on current HEAD) is still in progress.
+
+## 2026-11-23 — bilingual support audit (owner request)
+
+- Audited the EN/中文 support end to end. Core system is sound: bi() renders both versions and `html.zh [lang=en]{display:none}` / `html:not(.zh) [lang=zh]{display:none}` pick the active one; en/zh span counts are paired on every page (the +1 is the html root); select options all carry data-en/data-zh; the ZH->EN search dictionary covers ~100 terms. Data layer has zero missing or degenerate takeaways (334 sampled entries have both languages; short Chinese is just the natural compactness of Han characters, quality verified by spot check).
+- Found and fixed the one real gap: hover/aria attributes were English-only. Search box aria-label, language-toggle aria-label, starbar close title and the Hugging Face upvote titles now carry both languages (06f1d19). Built pages: 0 untranslated title attributes remain, 0 broken links, 0 validate errors.
