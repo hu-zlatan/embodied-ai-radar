@@ -43,7 +43,7 @@
   {
    "id": "2611.29897",
    "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
-   "upvotes": 115,
+   "upvotes": 127,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -72,7 +72,7 @@
   {
    "id": "2611.31201",
    "title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
-   "upvotes": 79,
+   "upvotes": 83,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [],
@@ -104,7 +104,7 @@
   {
    "id": "2611.30989",
    "title": "WorldLeague: Benchmarking Physical Agency",
-   "upvotes": 33,
+   "upvotes": 35,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -126,7 +126,7 @@
   {
    "id": "2611.29338",
    "title": "A Glimpse of Training VLMs as Foundation Models for Robotic Manipulation",
-   "upvotes": 27,
+   "upvotes": 34,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -159,7 +159,7 @@
   {
    "id": "2611.30898",
    "title": "World Models as Native Latent Action Models",
-   "upvotes": 18,
+   "upvotes": 20,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -188,7 +188,7 @@
   {
    "id": "2611.31115",
    "title": "RUIBench: What Makes a Good Robot-Use Interface?",
-   "upvotes": 17,
+   "upvotes": 19,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -251,6 +251,35 @@
    "ai_summary": "A shared flow-matching policy that reads dense patch tokens from multiple vision encoders improves success on egocentric bimanual tasks, and inverse-dynamics readout of commanded motion is a strong pre-training signal, while recognition, depth, and correspondence transfer unreliably."
   },
   {
+   "id": "2611.24077",
+   "title": "AeroRSI: Recursive Self-Improvement for Aerial Vision-Language Navigation",
+   "upvotes": 8,
+   "hf_date": "2026-11-23",
+   "published": "2026-11-19",
+   "topics": [
+    "vla",
+    "navigation"
+   ],
+   "authors": [
+    "Shiwei Wu",
+    "Yuwen Pan",
+    "Zhi Li",
+    "Yaowen Li",
+    "Yan Zhou",
+    "Xuemiao Xu",
+    "Yu Liu"
+   ],
+   "organization": "Tsinghua University",
+   "github": "https://github.com/starsholic/AeroRSI",
+   "project": "https://starsholic.github.io/AeroRSI/",
+   "arxiv_code": [
+    "https://github.com/starsholic/AeroRSI"
+   ],
+   "comment": "8-page main paper with references and supplementary material (15 pages); 5 figures, 13 tables. Code: https://github.com/starsholic/AeroRSI Project page: https://starsholic.github.io/AeroRSI/",
+   "abstract": "Vision-language-action (VLA) models enable unmanned aerial vehicles (UAVs) to follow natural-language instructions, yet still fail frequently in closed-loop flight. Correcting these failures requires repairs, i.e., actions that avoid them at the states the policy itself reaches, which human pilots cannot label at scale and rule-based planners cannot supply reliably. In this paper, we present AeroRSI, a recursive self-improvement framework in which an aerial navigation policy iteratively learns from its own failures. Our key insight is that a failing policy should judge its own repairs by flying on from them. Judged in this way, its sampled actions and even rule-based proposals that hurt it when imitated directly become reliable supervision. Moreover, an episode terminates at its first failure, concealing subsequent failures until the earlier ones are repaired. AeroRSI thus renews its supervision in every round, anchoring the failures of the current policy, verifying repairs by its continuation, and distilling them while keeping its behavior elsewhere. On TravelUAV, three rounds raise the success rate of a supervised 2B-parameter policy from 46.4% to 67.5% and reduce collisions by half, surpassing the previous state of the art by 10.6 points from the same initialization without extra human labels or inference cost. Code and models are available at https://github.com/starsholic/AeroRSI.",
+   "ai_summary": null
+  },
+  {
    "id": "2611.27689",
    "title": "Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation",
    "upvotes": 7,
@@ -276,35 +305,6 @@
    "comment": null,
    "abstract": "Vision-language model (VLM)-based agents offer a promising approach to robotic manipulation, yet remain limited by inadequate memory organization, uncertain failure attribution, and limited reuse of execution experience. We propose Embodied-Harness, a dual-agent framework that improves manipulation by refining the execution harness without updating model parameters. The Actor interacts with the environment through a robot-control interface, while the Reflector converts execution evidence into reusable operational guidance. Hierarchical Memory Architecture maintains short-term execution context and long-term experiential knowledge to support execution and reflection. Evidence-based Experience Reflection grounds failure diagnosis in observed interactions, while Recursive Harness Self-Improvement refines operational guidance across successive attempts. Experiments on RoboTwin 2.0, RoboSPA, and RMBench demonstrate the effectiveness of Embodied-Harness in generalization under environmental variations, spatial reasoning, long-horizon planning, and memory-dependent manipulation. Our method achieves success rates of 82.4%, 76.7%, and 94.4% on the three benchmarks, respectively. Real-world evaluation further yields an average success rate of 96.7% across three manipulation tasks. These results highlight the potential of Embodied-Harness to improve robotic manipulation through experience-driven harness self-improvement.",
    "ai_summary": "A dual-agent framework with hierarchical memory and recursive self-improvement enables robotic manipulation agents to convert execution evidence into reusable guidance without updating model parameters."
-  },
-  {
-   "id": "2611.24077",
-   "title": "AeroRSI: Recursive Self-Improvement for Aerial Vision-Language Navigation",
-   "upvotes": 7,
-   "hf_date": "2026-11-23",
-   "published": "2026-11-19",
-   "topics": [
-    "vla",
-    "navigation"
-   ],
-   "authors": [
-    "Shiwei Wu",
-    "Yuwen Pan",
-    "Zhi Li",
-    "Yaowen Li",
-    "Yan Zhou",
-    "Xuemiao Xu",
-    "Yu Liu"
-   ],
-   "organization": "Tsinghua University",
-   "github": "https://github.com/starsholic/AeroRSI",
-   "project": "https://starsholic.github.io/AeroRSI/",
-   "arxiv_code": [
-    "https://github.com/starsholic/AeroRSI"
-   ],
-   "comment": "8-page main paper with references and supplementary material (15 pages); 5 figures, 13 tables. Code: https://github.com/starsholic/AeroRSI Project page: https://starsholic.github.io/AeroRSI/",
-   "abstract": "Vision-language-action (VLA) models enable unmanned aerial vehicles (UAVs) to follow natural-language instructions, yet still fail frequently in closed-loop flight. Correcting these failures requires repairs, i.e., actions that avoid them at the states the policy itself reaches, which human pilots cannot label at scale and rule-based planners cannot supply reliably. In this paper, we present AeroRSI, a recursive self-improvement framework in which an aerial navigation policy iteratively learns from its own failures. Our key insight is that a failing policy should judge its own repairs by flying on from them. Judged in this way, its sampled actions and even rule-based proposals that hurt it when imitated directly become reliable supervision. Moreover, an episode terminates at its first failure, concealing subsequent failures until the earlier ones are repaired. AeroRSI thus renews its supervision in every round, anchoring the failures of the current policy, verifying repairs by its continuation, and distilling them while keeping its behavior elsewhere. On TravelUAV, three rounds raise the success rate of a supervised 2B-parameter policy from 46.4% to 67.5% and reduce collisions by half, surpassing the previous state of the art by 10.6 points from the same initialization without extra human labels or inference cost. Code and models are available at https://github.com/starsholic/AeroRSI.",
-   "ai_summary": null
   },
   {
    "id": "2611.25179",
