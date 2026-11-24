@@ -2,6 +2,35 @@
  "updated": "2026-11-24",
  "papers": [
   {
+   "id": "2611.29897",
+   "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
+   "upvotes": 171,
+   "hf_date": "2026-11-24",
+   "published": "2026-11-24",
+   "topics": [
+    "locomotion"
+   ],
+   "authors": [
+    "Yue Huang",
+    "Tianshan Zhang",
+    "Zeyu Zhang",
+    "Jayeon Kang",
+    "Akide Liu",
+    "Sungjoon Choi",
+    "Dacheng Tao",
+    "Hao Tang"
+   ],
+   "organization": "Peking University",
+   "github": "https://github.com/AIGeeksGroup/MotionMamba2.0",
+   "project": "https://aigeeksgroup.github.io/MotionMamba2.0/",
+   "arxiv_code": [
+    "https://github.com/AIGeeksGroup/MotionMamba2.0"
+   ],
+   "comment": "Code: https://github.com/AIGeeksGroup/MotionMamba2.0. Website: https://aigeeksgroup.github.io/MotionMamba2.0",
+   "abstract": "Long-horizon, real-time controllable motion generation is essential for interactive animation and humanoid robotics, where an agent must respond to changing instructions and spatial goals while moving. Existing autoregressive diffusion methods generate motion incrementally, but bounded attention caches limit access to distant history, while repeated denoising introduces substantial inference overhead. We present Motion Mamba 2.0, a Mamba-based root-body diffusion architecture that integrates local attention, resumable recurrent states, and persistent content memory (PCM) for long-horizon controllable motion generation. PCM transforms compressed motion history from Mamba recurrent states, together with state changes and text-conditioned features, into dynamically updated content slots accessible to local attention. To enable efficient inference, we further develop an execution scheme tailored to this architecture, combining CUDA Graph replay, fused kernels, and execution-flow simplification while preserving the canonical history update. Evaluations on retargeted HiPHI demonstrate accurate terminal control over rollouts of up to 39.52 s, while short-horizon comparisons on BONES Seed and retargeted HumanML3D show that the model also retains strong spatial control and text-motion matching. On an RTX 4090, the optimized execution reduces median complete-window latency from 1685.35 to 276.14 ms, achieving a median paired speedup of 6.138times while preserving identical outputs and committed states in the tested rollouts. Moreover, we conduct extensive real-world evaluation on the Unitree G1, demonstrating sequential text-guided action composition, expressive motion, and interactive locomotion through keyboard and mouse control.",
+   "ai_summary": null
+  },
+  {
    "id": "2611.18397",
    "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
    "upvotes": 161,
@@ -41,38 +70,9 @@
    "ai_summary": "Gamer is a generalist agent framework that integrates perception, memory, and multi-step reasoning, trained through continued pre-training, sparse-thinking instruction tuning, and multi-turn reinforcement learning to interact efficiently in 2D and 3D environments."
   },
   {
-   "id": "2611.29897",
-   "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
-   "upvotes": 160,
-   "hf_date": "2026-11-24",
-   "published": "2026-11-24",
-   "topics": [
-    "locomotion"
-   ],
-   "authors": [
-    "Yue Huang",
-    "Tianshan Zhang",
-    "Zeyu Zhang",
-    "Jayeon Kang",
-    "Akide Liu",
-    "Sungjoon Choi",
-    "Dacheng Tao",
-    "Hao Tang"
-   ],
-   "organization": "Peking University",
-   "github": "https://github.com/AIGeeksGroup/MotionMamba2.0",
-   "project": "https://aigeeksgroup.github.io/MotionMamba2.0/",
-   "arxiv_code": [
-    "https://github.com/AIGeeksGroup/MotionMamba2.0"
-   ],
-   "comment": "Code: https://github.com/AIGeeksGroup/MotionMamba2.0. Website: https://aigeeksgroup.github.io/MotionMamba2.0",
-   "abstract": "Long-horizon, real-time controllable motion generation is essential for interactive animation and humanoid robotics, where an agent must respond to changing instructions and spatial goals while moving. Existing autoregressive diffusion methods generate motion incrementally, but bounded attention caches limit access to distant history, while repeated denoising introduces substantial inference overhead. We present Motion Mamba 2.0, a Mamba-based root-body diffusion architecture that integrates local attention, resumable recurrent states, and persistent content memory (PCM) for long-horizon controllable motion generation. PCM transforms compressed motion history from Mamba recurrent states, together with state changes and text-conditioned features, into dynamically updated content slots accessible to local attention. To enable efficient inference, we further develop an execution scheme tailored to this architecture, combining CUDA Graph replay, fused kernels, and execution-flow simplification while preserving the canonical history update. Evaluations on retargeted HiPHI demonstrate accurate terminal control over rollouts of up to 39.52 s, while short-horizon comparisons on BONES Seed and retargeted HumanML3D show that the model also retains strong spatial control and text-motion matching. On an RTX 4090, the optimized execution reduces median complete-window latency from 1685.35 to 276.14 ms, achieving a median paired speedup of 6.138times while preserving identical outputs and committed states in the tested rollouts. Moreover, we conduct extensive real-world evaluation on the Unitree G1, demonstrating sequential text-guided action composition, expressive motion, and interactive locomotion through keyboard and mouse control.",
-   "ai_summary": null
-  },
-  {
    "id": "2611.31201",
    "title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
-   "upvotes": 88,
+   "upvotes": 89,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [],
@@ -104,7 +104,7 @@
   {
    "id": "2611.30989",
    "title": "WorldLeague: Benchmarking Physical Agency",
-   "upvotes": 58,
+   "upvotes": 69,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -126,7 +126,7 @@
   {
    "id": "2611.29338",
    "title": "A Glimpse of Training VLMs as Foundation Models for Robotic Manipulation",
-   "upvotes": 41,
+   "upvotes": 46,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -218,7 +218,7 @@
   {
    "id": "2611.30495",
    "title": "DexDuet: Learning Contact-Preserving Bimanual Dexterity from Human Demonstrations",
-   "upvotes": 10,
+   "upvotes": 13,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
