@@ -859,3 +859,7 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 
 - Audited the EN/中文 support end to end. Core system is sound: bi() renders both versions and `html.zh [lang=en]{display:none}` / `html:not(.zh) [lang=zh]{display:none}` pick the active one; en/zh span counts are paired on every page (the +1 is the html root); select options all carry data-en/data-zh; the ZH->EN search dictionary covers ~100 terms. Data layer has zero missing or degenerate takeaways (334 sampled entries have both languages; short Chinese is just the natural compactness of Han characters, quality verified by spot check).
 - Found and fixed the one real gap: hover/aria attributes were English-only. Search box aria-label, language-toggle aria-label, starbar close title and the Hugging Face upvote titles now carry both languages (06f1d19). Built pages: 0 untranslated title attributes remain, 0 broken links, 0 validate errors.
+
+## 2026-11-24 — run 92 (Tuesday)
+
+- Start: no issues/PRs. Two batches: 13 picks from the enriched 11-23 candidates (f47df1f; the run-91 review ran before enrichment filled candidates.json, so these were re-scanned) and 1 from the small 11-24 feed (SWAN, 552e130). SBTenv skipped as human-locomotor-adaptation rather than embodied AI. Full abstracts for the 11-24 pair taken from arXiv abs pages. Validate 0 errors (1,562 curated), 1,703 pages, 0 broken links; numbers cross-checked.
