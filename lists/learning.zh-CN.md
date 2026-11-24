@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 155 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 156 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/learning.html) · [English](learning.md)
 
@@ -53,6 +53,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[ExpertGen: Scalable Sim-to-Real Expert Policy Learning from Imperfect Behavior Priors](https://arxiv.org/abs/2603.15956)** (2026) — ExpertGen 先在不完美示教（甚至由大模型合成）上训练扩散先验，再冻结策略、用强化学习只优化初始噪声，在稀疏奖励下保持类人行为；得到的专家策略用于仿真到真实的行为克隆。
 - **[Explicitly capturing demonstrator multi-modality for distillation into diffusion policies](https://arxiv.org/abs/2611.10949)** (2026) — 用滑窗示范训练的扩散策略往往每个状态只记住一个动作。在同一状态下向示范者查询 k 次（vine 采样）可保留其多模态分布，并提升 best-of-N 与专家迭代效果。 · [项目页](https://shaoyuan.cc/research/vine/)
 - **[FAR: Failure-Aware Retry for Test-Time Recovery and Continual Policy Improvement](https://arxiv.org/abs/2607.01111)** (2026) — 会从失败中学习的重试机制：用失败尝试构造偏好数据，引导策略避开失败行为，并加入小幅动作扰动做局部探索，成功恢复的轨迹再回流训练。报告仿真提升 17.6%，真机提升 11.7%。 · [代码](https://github.com/Hoar012/FAR) · [项目页](https://hoar012.github.io/FAR-Project)
+- **[Fast World Planner: Advantage-Aware Action-Chunk Policy for Online Planning](https://arxiv.org/abs/2611.28616)** (2026) — 面向 MPPI 的优势感知 MBRL 框架：用混合因子分析器的动作块策略显式表示完整 H 步规划提案，并用优势估计构造改进目标训练策略、同时保持与规划器对齐。报告 31 个高维连续控制任务上比 SOTA 规划型 MBRL 少用 50% 的 MPPI 迭代，且在 Unitree Go2 上零样本 sim-to-real。 · [项目页](https://swanfastworldplanner.github.io/)
 - **[Flexible Language-Guided Representation Editing for Adaptive Robot Behavior](https://arxiv.org/abs/2610.28893)** (2026) — FLEX 用自然语言纠正来迭代修改机器人的任务特征集合，支持添加、泛化、屏蔽三种操作（而非只能添加）；在二维导航、Franka 桌面操作和真实用户研究中报告比其他特征编辑方法获得更高的归一化奖励。 · [项目页](https://mit-clear-lab.github.io/FLEX/)
 - **[Flow Policy Gradients for Robot Control](https://arxiv.org/abs/2602.02481)** (2026) — CoRL 2026 Oral。让流匹配策略梯度可用于机器人控制：绕过动作似然计算，策略不再限于高斯分布。应用于足式运动、人形动作跟踪与操作。 · [代码](https://github.com/amazon-far/fpo-control) · [项目页](https://hongsukchoi.github.io/fpo-control)
 - **[FlowDAgger: Human-in-the-Loop Adaptation of Generative Robot Policies in Latent Space](https://arxiv.org/abs/2607.08877)** (2026) — CoRL 2026 Spotlight。在隐空间中根据人类干预适配冻结的生成式策略，替代大规模采集或实机在线强化学习。 · [代码](https://github.com/microsoft/FlowDAgger) · [项目页](https://microsoft.github.io/FlowDAgger)

@@ -1580,3 +1580,14 @@
   tags: [uncertainty, flow-matching, failure-detection, kalman]
   takeaway_en: Carries state-weight cross-covariance through the ODE like EKF/UKF, fixing BayesDiff's O(1/T) variance decay; widened priors from observation embeddings. Beats several estimators for failure detection and demo selection.
   takeaway_zh: 证明 BayesDiff 的总方差随欧拉步数 T 以 O(1/T) 衰减后，用扩展/无迹卡尔曼风格的两条递归把状态-权重互协方差传播下去，并用策略已有的观测嵌入加宽先验。报告在三个操作基准的失败检测与示范选择上优于多个估计器，无需重训练。
+
+- title: 'Fast World Planner: Advantage-Aware Action-Chunk Policy for Online Planning'
+  type: paper
+  arxiv: '2611.28616'
+  year: 2026
+  project: https://swanfastworldplanner.github.io/
+  added: 2026-11-24
+  topics: [learning, control]
+  tags: [mppi, model-based-rl, planning, sim2real, unitree-go2]
+  takeaway_en: 'Advantage-aware MPPI: an action-chunk policy captures the whole H-step proposal, advantage-guided training improves the target. 50% fewer MPPI iterations; zero-shot sim-to-real on Go2.'
+  takeaway_zh: 面向 MPPI 的优势感知 MBRL 框架：用混合因子分析器的动作块策略显式表示完整 H 步规划提案，并用优势估计构造改进目标训练策略、同时保持与规划器对齐。报告 31 个高维连续控制任务上比 SOTA 规划型 MBRL 少用 50% 的 MPPI 迭代，且在 Unitree Go2 上零样本 sim-to-real。
