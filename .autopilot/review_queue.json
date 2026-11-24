@@ -4,7 +4,7 @@
   {
    "id": "2611.18397",
    "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
-   "upvotes": 159,
+   "upvotes": 161,
    "hf_date": "2026-11-16",
    "published": "2026-11-16",
    "topics": [
@@ -43,7 +43,7 @@
   {
    "id": "2611.29897",
    "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
-   "upvotes": 127,
+   "upvotes": 160,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -72,7 +72,7 @@
   {
    "id": "2611.31201",
    "title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
-   "upvotes": 83,
+   "upvotes": 88,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [],
@@ -104,7 +104,7 @@
   {
    "id": "2611.30989",
    "title": "WorldLeague: Benchmarking Physical Agency",
-   "upvotes": 35,
+   "upvotes": 58,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -126,7 +126,7 @@
   {
    "id": "2611.29338",
    "title": "A Glimpse of Training VLMs as Foundation Models for Robotic Manipulation",
-   "upvotes": 34,
+   "upvotes": 41,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -159,7 +159,7 @@
   {
    "id": "2611.30898",
    "title": "World Models as Native Latent Action Models",
-   "upvotes": 20,
+   "upvotes": 23,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -188,7 +188,7 @@
   {
    "id": "2611.31115",
    "title": "RUIBench: What Makes a Good Robot-Use Interface?",
-   "upvotes": 19,
+   "upvotes": 21,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -213,6 +213,31 @@
    "arxiv_code": [],
    "comment": "Project website: https://showlab.github.io/RUIBench",
    "abstract": "Foundation models can reason about complex physical tasks, yet translating this intelligence into reliable robot execution remains challenging. We argue that a critical, often overlooked factor is the robot-use interface (RUI), which determines how agents express and execute physical actions. To systematically study its impact, we introduce RUIBench, comprising 30 manipulation tasks across five suites spanning world knowledge, in-context learning, discovery, dynamic interaction, and contact-rich manipulation. We further develop RUIKit, a unified framework that crosses six action abstractions with two interaction forms, yielding 13 interfaces under shared perception and control. In simulation, changing only the RUI shifts a frontier agent's success rate from 45% to 81%, and that of a fine-tuned 4B model from 13% to 47%. Our analysis reveals that effective interfaces reduce unnecessary decisions while preserving essential feedback, with their benefits shaped by agent behavior and physical uncertainty. We further uncover a verification gap, where agents frequently declare success despite observable failures, revealing the need for task-level verification beyond individual actions. Together, these findings establish RUI design as a critical factor in embodied agent reliability.",
+   "ai_summary": null
+  },
+  {
+   "id": "2611.30495",
+   "title": "DexDuet: Learning Contact-Preserving Bimanual Dexterity from Human Demonstrations",
+   "upvotes": 10,
+   "hf_date": "2026-11-24",
+   "published": "2026-11-24",
+   "topics": [
+    "manipulation"
+   ],
+   "authors": [
+    "Haoran Zhang",
+    "Haokai Ding",
+    "Han Zhou",
+    "Zuxing Lu",
+    "Heng Zhang",
+    "Xingxing Zuo"
+   ],
+   "organization": "Mohamed Bin Zayed University of Artificial Intelligence",
+   "github": "https://github.com/HaoranZhangumich/DexDuet",
+   "project": "https://rcl-robotics.github.io/Dexduet.io/",
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "Human demonstrations provide a rich source of bimanual dexterous skills, yet transferring them to robot hands remains challenging. Existing methods primarily optimize object trajectory tracking, often overlooking how human hands interact with the object. Even with accurate tracking, robots may contact incorrect object parts or slide their fingers, resulting in unstable manipulation. We present DexDuet, a framework that learns contact-preserving bimanual dexterity from a single human demonstration. DexDuet employs two interaction rewards to preserve human hand-object configurations and contacts. To enable coordinated manipulation, we factorize the bimanual policy into two weight-sharing per-hand policies that condition on each other's states. We further propose assisted reference-state initialization (A-RSI), an adaptive curriculum that adjusts object assistance and training starts across demonstration segments to overcome difficult manipulation phases. Across four benchmarks spanning three simulators and five robot embodiments, DexDuet improves object-tracking ADD-AUC by 11 to 41 points over the corresponding baselines while consistently achieving better contact preservation. Notably, among 122 paired runs with comparable object-tracking accuracy, DexDuet preserves the human's contacts better in 117 cases. Code and videos are available at https://rcl-robotics.github.io/Dexduet.io/",
    "ai_summary": null
   },
   {
