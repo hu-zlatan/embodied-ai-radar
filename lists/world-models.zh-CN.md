@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 158 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 161 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/world-models.html) · [English](world-models.md)
 
@@ -95,6 +95,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation](https://arxiv.org/abs/2606.28128)** (2026) — 训练框架，把监督集中在具有物理信息的区域，在像素和语义两个层面提升视频世界模拟器的物理一致性。 · [代码](https://github.com/DAGroup-PKU/PhysisForcing) · [项目页](https://dagroup-pku.github.io/PhysisForcing.github.io/)
 - **[PlayWorld: Learning Robot World Models from Autonomous Play](https://arxiv.org/abs/2603.09030)** (2026) — 完全用机器人自主“玩耍”数据（而非人类演示）训练动作条件视频世界模型，覆盖更多接触与失败情形。报告策略评估提升最高 40%，在其中做强化学习后真机成功率提升 65%。 · [项目页](https://robot-playworld.github.io/)
 - **[Point Dynamics as Proxy for Robotic World Models](https://arxiv.org/abs/2611.25946)** (2026) — 把动力学预测与视觉渲染分离：首帧提升为 3D 点，用学习的点动力学模型模拟其对机器人运动的响应，再渲染回像素对齐视频供任意视频模型读取。报告在 DROID 上用两种渲染器物体运动误差降低 8.6%/6.2%，真机双臂降低 8.1%；编辑点还能引导视频内容。 · [项目页](https://marsaki.github.io/point-dynamics-proxy/)
+- **[PonderPounce-WM: When Does Predicting the Future Help Context-Dependent Robot Control?](https://arxiv.org/abs/2611.26996)** (2026) — 给预训练 MLLM 动作模型加三个监督视觉特征变化的未来 token，研究其影响：认知优先且仅注入认知时 RoboMME 成功率 60.83%→67.42%，直接给动作模型未来 token 仅 64%。真机 67.44%（基线 60.98%），说明未来预测作为辅助监督有用、但不应直接喂给动作模型。 · [项目页](https://worv-ai.github.io/ponderpounce-wm/)
 - **[PrimeSim: A Generalist World Model Simulator from Large-Scale Cross-Embodiment Demonstrations](https://arxiv.org/abs/2611.04870)** (2026) — 自回归多视角世界模型，运行 10.1 FPS，100 至 200 步梯度即可适配未见平台；作者开放权重和代码，并说明细粒度局部标定仍落后于同类。 · [代码](https://github.com/PrimebotTech/PrimeSim) · [项目页](https://huggingface.co/qiyuan-robot/PrimeSim)
 - **[Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation](https://arxiv.org/abs/2606.17030)** (2026) — 语言条件视频世界模型，把自然语言作为操作、驾驶、室内导航和人到机器人迁移的统一动作接口。 · [项目页](https://pre.qwen.ai/blog?id=qwen-robotworld)
 - **[ReactWorld: Structuring Interaction Responses for Embodied Video Generation](https://arxiv.org/abs/2611.06120)** (2026) — 视频世界模型：先预测物体对接触的响应位置和方式，再反馈到物体特征与时序注意力；报告在 RBench 上比 PhysisForcing 高 3.29 分。 · [项目页](https://metaengine-world.github.io/ReactWorld/)
@@ -114,6 +115,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Self-Distilling Future Video Representations for World Action Models](https://arxiv.org/abs/2610.30320)** (2026) — FRED 通过自蒸馏并引入历史观测，让世界动作模型在单步去噪中预测出更好的未来视频表征；报告在长时程、域外环境以及只有人类视频示范的任务上提升明显。 · [代码](https://github.com/suhyeok-jang/FRED) · [项目页](https://huiwon-jang.github.io/FRED/)
 - **[Sensitivity Shaping for Latent Modeling](https://arxiv.org/abs/2606.14585)** (2026) — 对控制变化不敏感的学习动力学会掩盖分布外动作。基于数据支撑的控制敏感性正则保持模型对控制的响应，从而提升分布外检测并使闭环规划更安全。
 - **[Skeleton-Grounded Latent Action Model for Robot World Models](https://arxiv.org/abs/2610.31474)** (2026) — SkeLAM 把潜在动作拆成由机器人骨架监督的运动学部分和保留其余视觉动态的残差部分，使世界模型生成更贴合机器人控制指令；报告在 DROID 上末端轨迹误差比 DreamDojo 低 19.5%，预测成功率与真机评测一致。 · [项目页](https://aopolin-lv.github.io/SkeLAM/)
+- **[Skill-JEPA: Learning Planner-Aligned Action Spaces for World Models](https://arxiv.org/abs/2611.26825)** (2026) — 用状态条件 VAE 把短动作序列编码为带标准高斯先验的潜在技能，使规划器采样的候选落在世界模型见过的分布内。报告 80 步目标平均成功率 42%→62%；AntMaze 两单元目标 0.4%→38%。只加一个模块、不改规划器、无子目标或手工技能。 · [代码](https://github.com/tcouso/Skill-JEPA)
 - **[StressDream: Steering Video World Models for Robust Policy Evaluation and Improvement](https://arxiv.org/abs/2606.00267)** (2026) — 通过优化视频世界模型的初始噪声（以 VLM 为目标），把想象引向罕见但合理的不利结果（如任务失败），用于评估和改进策略；覆盖自动驾驶与操作。 · [代码](https://github.com/CMU-IntentLab/StressDream) · [项目页](https://stressdream.github.io/)
 - **[TAPESTRY: A Single Backbone for Video Generation and Robot Control](https://arxiv.org/abs/2610.36823)** (2026) — 把预训练视频扩散 Transformer 改造成策略：每个时间步的动作编码为视频潜空间中的一个 patch，联合训练视频、视频+动作与纯动作三种扩散目标；测试时一步 DDIM 生成动作块（84 毫秒），无需生成视频。 · [项目页](https://tapestry-wam.github.io)
 - **[The Flip Test: Video World Models Fail to Learn the World State](https://arxiv.org/abs/2611.19822)** (2026) — 用反事实检验视频世界模型是否真的学到世界状态：1,680 个初始帧中，当前帧的微小变化会翻转未来。11 个模型全部不达标——最好者配对准确率 18.3%，低于随机猜测的 25%；同帧上 VLM 具有选择性，编码智能体接近真实边界。 · [项目页](https://flip-test.github.io/)
@@ -126,6 +128,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Video Prediction Policy 2: Predict Better, Act Better](https://arxiv.org/abs/2610.10270)** (2026) — 认为世界动作模型的运动错误来自未针对操作优化的视频底座和粗糙的动作模块，因此在带事件级描述的操作视频上继续预训练视频模型。 · [代码](https://github.com/roboterax/video-prediction-policy-2) · [项目页](https://robert-gyj.github.io/video-prediction-policy-2)
 - **[Video World Models Need Predictable Latents](https://arxiv.org/abs/2610.34663)** (2026) — 视频世界模型的潜空间不应只为重建而训练：加入时间可预测性目标并配合以历史为条件的解码器。报告推理成本最多降低 5 倍、训练快 7 倍以上，长时域与分布外误差降低 15–24%，与真实策略评测更一致。 · [代码](https://github.com/mattia-scardecchia/predictable-latents)
 - **[Video-Action Models for Data-Efficient Industrial Manipulation](https://arxiv.org/abs/2611.15974)** (2026) — FLUX-mimic 是基于视频预训练的视频-动作模型，在两种双臂平台的四个汽车制造任务上评测：灵巧手平台优于所有基线，夹爪平台与 π0.5 平均成功率持平；可变形零件配套任务仅用约 2 小时示教即达 77.5%。 · [项目页](https://www.mimicrobotics.com/blog/video-action-models-for-data-efficient-industrial-manipulation)
+- **[ViewDreamer: A Robot World Model beyond Fixed Camera Setups](https://arxiv.org/abs/2611.26981)** (2026) — 为可变相机集设计的单一世界模型：每个视角走预训练单视角生成路径，视角间仅通过共享 slot token 交互，配合逐步加视角的课程与跨视角槽一致对齐。报告 RoboView-Bench（1–4 相机）生成质量最佳；其 WAM 在 LIBERO-Plus、RoboTwin 2.0、RoboDojo 与真机 Franka 上超过 FastWAM-Joint。 · [项目页](https://matchlab-imperial.github.io/ViewDreamer/)
 - **[W2A: Distilling World Priors into Action Models for Real-Time Robotic Control](https://arxiv.org/abs/2611.02600)** (2026) — 训练时把视频扩散模型的中间去噪表示蒸馏进动作模型，测试时完全丢弃视频模型。在 LIBERO 上报告 95.9% 平均成功率，推理比代表性世界动作模型快约 21 倍。
 - **[WAM is capable in BEHAVIOR-1K: the 2nd-place solution to the 2026 BEHAVIOR Challenge](https://arxiv.org/abs/2611.13818)** (2026) — 2026 BEHAVIOR 挑战赛第二名方案：基于 Cosmos 3 的世界动作模型，加入更长视觉历史、任务进度条件、按任务组/技能的 LoRA 与路由，仅用开源模型。私有测试集 Q 分 0.615、完整任务成功率 41.2%。 · [项目页](https://behavior.stanford.edu/challenge/index.html)
 - **[WAM-Policy: World Action Models with On-Policy Distillation for Quadrupedal Loco-Manipulation](https://arxiv.org/abs/2611.24011)** (2026) — 把面向机械臂的 WAM 变成语言条件的四足移动操作策略：跨形态适配后，用在线自蒸馏把策略压到“一段视频+两步动作”的学生（采样快 14 倍），再以强化学习精调专家并多教师合并。报告 QLM-Bench 十个任务 85.0%，并在真实 Unitree Go2 Air 上部署。 · [代码](https://github.com/AIGeeksGroup/WAM-Policy) · [项目页](https://aigeeksgroup.github.io/WAM-Policy/)

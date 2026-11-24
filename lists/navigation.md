@@ -2,7 +2,7 @@
 
 _Vision-language navigation, embodied question answering, mobile manipulation and LLM planners._
 
-91 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/navigation.yaml`](../data/curated/navigation.yaml); edit the YAML, not this file.
+92 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/navigation.yaml`](../data/curated/navigation.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/navigation.html) · [中文](navigation.zh-CN.md)
 
@@ -53,6 +53,7 @@ _Vision-language navigation, embodied question answering, mobile manipulation an
 - **[Mem-X: A Memory-Dependent Cross-Episode Benchmark for Vision-and-Language Navigation](https://arxiv.org/abs/2611.27166)** (2026) — Cross-episode VLN benchmark where later instructions refer to earlier episodes: 2,071 episodes, 710 sessions, 34 scenes, three memory levels. MemBridge baseline combines scene memory and retrieval. · [code](https://github.com/NJU-R-L-Group-Embodied-Lab/Mem-X)
 - **[MessyMem: Learning-from-Doing Memory for Mobile Manipulation](https://arxiv.org/abs/2609.15976)** (2026) — Persistent memory for mobile manipulators: a 3D scene graph updated with what the robot learns by acting (locked cabinets, object locations). Reports 80% progress over a 25-task, 3-hour run. · [project](https://messymem.github.io)
 - **[MessyNav: Zero-Shot Navigation via Manipulation in Messy Environments](https://arxiv.org/abs/2611.07417)** (2026) — Navigates cluttered spaces by deciding, with VLM affordance reasoning, whether to swipe, pick up or avoid each blocking object. Zero-shot; reports +27 points over the best baseline on a real mobile manipulator.
+- **[NavTTT: Adaptive Parametric Memory via Hierarchical Test-Time Training for Vision-and-Language Navigation](https://arxiv.org/abs/2611.27219)** (2026) — Context-conditioned test-time training prioritises informative evidence, building spatially grounded Adaptive Parametric Memory in episode-local fast weights. Strong VLN-CE, real instruction following. · [project](https://gamepeopleplay.github.io/NavTTT/)
 - **[Navigating the Clutter: Waypoint-Based Bi-Level Planning for Multi-Robot Systems](https://arxiv.org/abs/2604.21138)** (2026) — Joint task and motion planning for up to nine robots among dense obstacles: waypoints parameterize motion, and a curriculum with modified RLVR passes motion-planner feasibility back to the task planner (BoxNet3D-OBS).
 - **[OSCAR: Obstacle Survival Curves for Adaptive Robot Navigation](https://arxiv.org/abs/2606.00990)** (2026) — CoRL 2026 Spotlight. Decides whether to wait or reroute at a blocked route by modeling how long each obstacle class tends to persist.
 - **[OdorSpaces: Visual-Olfactory Embodied Navigation in 3D Environments](https://arxiv.org/abs/2611.05738)** (2026) — Adds simulated odour transport to Habitat-Sim using Fire Dynamics Simulator, giving a smell-and-vision navigation benchmark for finding invisible gas leaks and early-stage fires, with a multimodal RL baseline.

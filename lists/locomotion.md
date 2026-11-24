@@ -2,7 +2,7 @@
 
 _Legged locomotion, humanoid whole-body control and parkour._
 
-196 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml); edit the YAML, not this file.
+197 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/locomotion.html) · [中文](locomotion.zh-CN.md)
 
@@ -81,6 +81,7 @@ _Legged locomotion, humanoid whole-body control and parkour._
 - **[LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World](https://arxiv.org/abs/2606.01458)** (2026) — Hybrid simulator (mesh foreground over a calibrated 3DGS background) that generates humanoid loco-manipulation demos without teleop. On a G1, VLAs trained only on it match or beat teleop-trained ones. · [code](https://github.com/hojjunekim/LEGS) · [project](https://hojjunekim.github.io/legs/)
 - **[LHNav: Long-Horizon Humanoid Navigation via Multirate Coordination and Physics-Grounded Action Data](https://arxiv.org/abs/2611.12136)** (2026) — Humanoid navigation to several goals from one instruction: a reasoning Brain, a VLA motion-token Cerebellum and a whole-body-control Brainstem run asynchronously; trained on physics-checked motion data. · [project](https://robbyant-research.github.io/LHNav/)
 - **[LadderMan: Learning Humanoid Perceptive Ladder Climbing](https://arxiv.org/abs/2606.05873)** (2026) — CoRL 2026 Spotlight. A humanoid system for climbing diverse ladders and manipulating while on them; a two-stage pipeline learns climbing experts through hybrid motion tracking. · [project](https://ladderman-robot.github.io)
+- **[Latent Jacobian Steer: Eliciting Contact-Rich Out-of-Distribution Behaviors from Pretrained Humanoid Controllers](https://arxiv.org/abs/2611.27338)** (2026) — Couples joint-action sampling with the frozen controller's latent space via a damped inverse policy Jacobian, steering exploration to desired physical effects. Elicits hurdling, door opening, object manipulation. · [project](https://latent-jacobian-steer.github.io/)
 - **[Learning Contact Representation for Leg Odometry](https://arxiv.org/abs/2606.05501)** (2026) — Self-supervised foot-contact estimation from joint encoders and IMU only, fed as a stance belief into a Kalman filter. Reports the lowest leg-odometry error among the compared baselines. · [code](https://github.com/egirgin/leg-odometry-contact-representation)
 - **[Learning Force-Reactive Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.35862)** (2026) — FLoRe: robot-free demos from force-sensing UMI-style grippers + body trackers train a diffusion policy that outputs per-hand force commands for a compliant whole-body controller; reports 80% vs. 26.7% for position-only.
 - **[Learning Loco-Manipulation From SMPC Demonstrations With Sparse Offline-to-Online RL](https://arxiv.org/abs/2608.12063)** (2026) — Uses sample-based MPC in simulation as an automatic expert, then trains off-policy RL on sparse rewards, avoiding reward shaping; deployed on an arm-equipped Spot and a G1 humanoid.

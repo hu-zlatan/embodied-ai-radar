@@ -2,7 +2,7 @@
 
 _视觉语言导航、具身问答、移动操作与大模型规划。_
 
-共 91 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
+共 92 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/navigation.html) · [English](navigation.md)
 
@@ -53,6 +53,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - **[Mem-X: A Memory-Dependent Cross-Episode Benchmark for Vision-and-Language Navigation](https://arxiv.org/abs/2611.27166)** (2026) — 跨回合视觉语言导航记忆基准：后续指令指向先前回合见过的物体或路线，含 2,071 个回合、710 个会话、34 个场景，分历史物体回忆、记忆内定位与索引、离线重定位与历史路线复现三级。配套 MemBridge 基线组合语义场景记忆、跨回合定位与由粗到精检索。 · [代码](https://github.com/NJU-R-L-Group-Embodied-Lab/Mem-X)
 - **[MessyMem: Learning-from-Doing Memory for Mobile Manipulation](https://arxiv.org/abs/2609.15976)** (2026) — 移动操作机器人的持久记忆：在三维场景图中记录通过交互学到的知识（如柜子上锁、物体位置）。报告在连续 25 个任务、3 小时的仿真中任务进度达 80%。 · [项目页](https://messymem.github.io)
 - **[MessyNav: Zero-Shot Navigation via Manipulation in Messy Environments](https://arxiv.org/abs/2611.07417)** (2026) — 在杂乱环境中导航：用 VLM 推理每个挡路物体该推开、拿起还是绕开。零样本，报告在真实移动操作机器人上比最强基线高 27 个百分点。
+- **[NavTTT: Adaptive Parametric Memory via Hierarchical Test-Time Training for Vision-and-Language Navigation](https://arxiv.org/abs/2611.27219)** (2026) — 以全局导航上下文为条件做测试期训练，优先保留信息量大的视觉证据，并把语言指令与空间信息融合为“自适应参数记忆”写入回合局部快速权重；各解码深度独立维护记忆防止误差串扰。报告 VLN-CE 上表现强劲、真机指令跟随有效。 · [项目页](https://gamepeopleplay.github.io/NavTTT/)
 - **[Navigating the Clutter: Waypoint-Based Bi-Level Planning for Multi-Robot Systems](https://arxiv.org/abs/2604.21138)** (2026) — 面向密集障碍中多达九台机器人的任务与运动联合规划：用航点参数化运动轨迹，并以课程式训练和改进的 RLVR 将运动规划器的可行性反馈传回任务规划器（BoxNet3D-OBS 基准）。
 - **[OSCAR: Obstacle Survival Curves for Adaptive Robot Navigation](https://arxiv.org/abs/2606.00990)** (2026) — CoRL 2026 Spotlight。通过建模各类障碍物通常停留多久，决定在路线受阻时等待还是改道。
 - **[OdorSpaces: Visual-Olfactory Embodied Navigation in 3D Environments](https://arxiv.org/abs/2611.05738)** (2026) — 用 Fire Dynamics Simulator 为 Habitat-Sim 加入气味传输仿真，构成视觉加嗅觉的导航基准，任务是定位不可见的气体泄漏和早期火源，并提供多模态强化学习基线。

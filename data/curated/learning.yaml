@@ -1558,3 +1558,25 @@
   tags: [hierarchical-rl, skill-composition, navigation, manipulation]
   takeaway_en: 'Demonstration-free hierarchical RL: separately trained skills compose under high-level plans, downstream skills initialized from predecessor rollouts. Beats flat DQN/SAC baselines with fewer interactions.'
   takeaway_zh: 评测免示教的层次强化学习流程：分开训练的导航与操作技能在高层计划下组合，下游技能用前序 rollout 采集的状态初始化。报告层次流程在未见布局上显著超过扁平 DQN/SAC 基线，且所需训练交互更少、种子间方差更低。
+
+- title: 'GenPA: Image Generators as Efficient Robot Policies'
+  type: paper
+  arxiv: '2611.27446'
+  year: 2026
+  project: https://deng-zian.github.io/GenPA-website/
+  added: 2026-11-24
+  topics: [learning, vla]
+  tags: [image-generation, policy, efficiency, libreo, real]
+  takeaway_en: 19M action-regression adapter on an image generator, native generative objective kept for perception co-training; one backbone pass at deployment. 99.10% LIBERO / 83.79% LIBERO-Plus, 20.9 ms per chunk, 1.7-3.4x faster.
+  takeaway_zh: 给图像生成骨干加 19M 参数的动作回归适配头，保留其原生生成目标做感知联合训练；部署时只需一次骨干前向，无需生成图像或迭代去噪。报告 LIBERO 99.10%、LIBERO-Plus 83.79%，每动作块 20.9 ms，比强 VLA/WAM 基快 1.7–3.4 倍。
+
+- title: 'Coherent Moment Propagation: Epistemic Uncertainty for Pre-trained Robot Policies'
+  type: paper
+  arxiv: '2611.26855'
+  year: 2026
+  project: https://comp-uq.github.io/comp-uq/
+  added: 2026-11-24
+  topics: [learning, manipulation]
+  tags: [uncertainty, flow-matching, failure-detection, kalman]
+  takeaway_en: Carries state-weight cross-covariance through the ODE like EKF/UKF, fixing BayesDiff's O(1/T) variance decay; widened priors from observation embeddings. Beats several estimators for failure detection and demo selection.
+  takeaway_zh: 证明 BayesDiff 的总方差随欧拉步数 T 以 O(1/T) 衰减后，用扩展/无迹卡尔曼风格的两条递归把状态-权重互协方差传播下去，并用策略已有的观测嵌入加宽先验。报告在三个操作基准的失败检测与示范选择上优于多个估计器，无需重训练。

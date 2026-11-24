@@ -617,3 +617,26 @@
   tags: [slam, livo, lidar, efficiency, real-time]
   takeaway_en: Spatial-hashed OctVox geometry with staged KNN search, bounded single-reference-frame visual map with uncertainty-aware fusion. About 2.3x/2.1x faster on X86/ARM, peak memory down to 1/20 and 1/13.
   takeaway_zh: 紧耦合高速实时 LIVO：空间哈希 OctVox 紧凑几何图配缓存辅助的分级 KNN 加速邻域检索与平面拟合，视觉侧用有界单参考帧地图与 Schmidt 式不确定性感知光度融合。报告 X86/ARM 上平均提速约 2.3/2.1 倍、峰值内存降至约 1/20 与 1/13，精度仍具竞争力。
+
+- title: 'StereoVLM: Binocular Vision-Language Models for Metric 3D Spatial Reasoning'
+  type: paper
+  arxiv: '2611.27915'
+  year: 2026
+  org: XPeng Robotics
+  project: https://xpeng-robotics.github.io/stereovlm/
+  added: 2026-11-24
+  topics: [perception]
+  tags: [vlm, stereo, 3d, spatial-reasoning, benchmark]
+  takeaway_en: 'Binocular VLM reasoning metric 3D from calibrated stereo: hierarchical learning from correspondence and disparity to depth and semantics. 95.17% depth accuracy, +4.3 pts RoboCasa; adds Stereo3D-Bench.'
+  takeaway_zh: 从标定双目观测学习可迁移 3D 表征的 VLM：分层学习从跨视角对应与视差、到标定条件度量深度与语义空间推理。StereoVLM-8B 深度准确率 95.17%（δ1），RoboCasa 操作成功率 +4.3 个百分点；并发布三级 Stereo3D-Bench。
+
+- title: 'SparseHPS: A Unified Model for Human Pose and Shape across Depth Cameras and LiDARs'
+  type: paper
+  arxiv: '2611.26730'
+  year: 2026
+  project: https://ghostlate.github.io/SparseHPS
+  added: 2026-11-24
+  topics: [perception]
+  tags: [human-pose, smplx, lidar, depth, point-cloud]
+  takeaway_en: 'Sensor-agnostic SMPL-X recovery from point clouds, one set of weights: sparse-voxel LitePT, per-joint queries, 7-frame causal memory. Trained on ten datasets; 22%/11% lower joint error on SLOPER4D/FreeMotion.'
+  takeaway_zh: 用同一组权重从人体点云恢复 SMPL-X 姿态、形状与全局平移，兼容深度相机与 LiDAR：稀疏体素 LitePT 编码、逐关节可学习查询解码、七帧因果记忆。在十个混合数据集上训练，SLOPER4D/FreeMotion 上根相对关节误差分别降 22%/11%。

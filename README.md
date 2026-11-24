@@ -63,7 +63,7 @@ _Vision-language-action models and generalist robot policies._ [Browse with the 
 - ⭐ **[EagleVLA: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference](https://arxiv.org/abs/2607.12659)** (2026) — EagleVLA: asynchronous VLA inference for low-power onboard chips such as Jetson Orin, tackling perception-execution misalignment and slow reaction; a CoRL 2026 Spotlight, formerly titled Jetson-PI. · [code](https://github.com/PKU-SEC-Lab/EagleVLA)
 - ⭐ **[Envisioning Agentic Robotics: A New Era of Robotic Systems](https://arxiv.org/abs/2611.18359)** (2026) — Position paper on agentic robotics: Embodied System 2, a frontier model plus an embodied harness, as the decision core; proposes an evaluation framework and a roadmap to sustained autonomy. · [project](https://grid-robotics-official.github.io/agentic-robotics-roadmap)
 
-**[All 301 entries →](lists/vla.md)**
+**[All 302 entries →](lists/vla.md)**
 
 <a id="manipulation"></a>
 ### Manipulation & Dexterous Hands
@@ -123,7 +123,7 @@ _Legged locomotion, humanoid whole-body control and parkour._ [Browse with the l
 - ⭐ **[KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills](https://arxiv.org/abs/2506.12851)** (2025) — Learns highly dynamic skills such as kung fu and dancing, through multi-step motion processing and adaptive motion tracking. · [code](https://github.com/TeleHuman/PBHC) · [project](https://kungfubot.github.io)
 - ⭐ **[OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction](https://arxiv.org/abs/2509.26633)** (2025) — Retargeting that preserves human-object and human-scene interaction rather than only body pose, generating physically plausible data for humanoid loco-manipulation. · [code](https://github.com/amazon-far/holosoma) · [project](https://omniretarget.github.io)
 
-**[All 196 entries →](lists/locomotion.md)**
+**[All 197 entries →](lists/locomotion.md)**
 
 <a id="world-models"></a>
 ### World Models
@@ -143,7 +143,7 @@ _Learned dynamics, video world models, world action models (WAM) and model-based
 - ⭐ **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — An action-centered WAM that predicts actions from the observation and makes video generation optional, so motion accuracy depends less on forecast quality and inference is cheaper. · [code](https://github.com/open-gigaai/giga-world-policy) · [project](https://gigaai-research.github.io/GigaWorld-Policy/)
 - ⭐ **[GreenWAM: A World Foundation Model for Robotics](https://arxiv.org/abs/2610.18774)** (2026) — One world model that is also the policy, across 20 robot families mapped to a shared joint-space action format; reports strong WorldArena, RoboTwin 2.0 and LIBERO-plus results and a one-step distilled humanoid policy. · [code](https://github.com/greenvla/GreenWAM) · [project](https://greenvla.github.io/GreenWAM)
 
-**[All 158 entries →](lists/world-models.md)**
+**[All 161 entries →](lists/world-models.md)**
 
 <a id="navigation"></a>
 ### Navigation & Embodied Agents
@@ -155,15 +155,15 @@ _Vision-language navigation, embodied question answering, mobile manipulation an
 - ⭐ **[ViNT: A Foundation Model for Visual Navigation](https://arxiv.org/abs/2306.14846)** (2023) — A Transformer navigation policy trained on many robots' driving data that adapts to new goal types and robots with light fine-tuning. · [code](https://github.com/robodhruv/visualnav-transformer)
 - ⭐ **[GNM: A General Navigation Model to Drive Any Robot](https://arxiv.org/abs/2210.03370)** (2022) — The predecessor of ViNT — one goal-conditioned navigation policy trained on pooled data from several different robots, which transfers to new robots including ones not seen in training. · [code](https://github.com/robodhruv/visualnav-transformer)
 - ⭐ **[The Marathon 2: A Navigation System](https://arxiv.org/abs/2003.00368)** (2020) — The paper behind Nav2, the standard ROS 2 navigation stack - behavior-tree orchestration of planners, controllers and recovery behaviors, validated by long marathon runs on real robots. · [code](https://github.com/ros-navigation/navigation2)
+- **[NavTTT: Adaptive Parametric Memory via Hierarchical Test-Time Training for Vision-and-Language Navigation](https://arxiv.org/abs/2611.27219)** (2026) — Context-conditioned test-time training prioritises informative evidence, building spatially grounded Adaptive Parametric Memory in episode-local fast weights. Strong VLN-CE, real instruction following. · [project](https://gamepeopleplay.github.io/NavTTT/)
 - **[Bridging vision-language reasoning and learned control for legged navigation in the wild](https://arxiv.org/abs/2611.25215)** (2026) — Couples VLM scene reasoning with RL locomotion: open-vocabulary segmentation turns labels into a dense risk map for two RL policies. Kilometer-long autonomous hikes with minimal intervention. · [project](https://roam-hiking.github.io)
 - **[Cognitive-Horizon Action Chunking: Memory-Guided Adaptive Reasoning for Embodied Navigation](https://arxiv.org/abs/2611.25587)** (2026) — Training-free: context and controller feedback set how many cached waypoints run before refreshing. Cuts VLM calls 33.4% HM3D-OVON / 64.7% R2R-CE; 18 vs 14 real successes at 54.9% fewer calls. · [code](https://github.com/phare111/chac)
 - **[EvoTER: Evolving Embodied Agents via Tool-Use Experience and Reflection](https://arxiv.org/abs/2611.27797)** (2026) — Explorer records tool use, Diagnoser distills failures into skills, Validator keeps only revisions that improve whole-task success. 53.60% to 80.40% in sim; real long-horizon 20% to 80-100%. · [project](https://evoter-project.github.io/)
 - **[Mem-X: A Memory-Dependent Cross-Episode Benchmark for Vision-and-Language Navigation](https://arxiv.org/abs/2611.27166)** (2026) — Cross-episode VLN benchmark where later instructions refer to earlier episodes: 2,071 episodes, 710 sessions, 34 scenes, three memory levels. MemBridge baseline combines scene memory and retrieval. · [code](https://github.com/NJU-R-L-Group-Embodied-Lab/Mem-X)
 - **[Sim-to-Real Room-Mediated Object-Goal Navigation with ROS 2 and Nav2](https://arxiv.org/abs/2611.19720)** (2026) — Deploys Room-Mediated ObjectNav on Spot and TurtleBot 4 through a ROS 2 bridge. Across 66 Spot trials it reaches 0.455 success vs 0.539 in sim, and pins the 8.4-pt gap on glass walls and depth limits. · [code](https://github.com/Matthew-K-Chua/rpv-ros2-bridge)
 - **[Compass 1: Towards Open-World and Persistent Embodied Navigation from Monocular RGB Videos](https://arxiv.org/abs/2611.12087)** (2026) — Navigation foundation model keeping ~2 min of visual history via keyframes and a history map. Releases 500 h of real and 2,000 h of annotated web video; tested on wheeled, legged, humanoid and drone bases. · [project](https://www.archon.tech/research/compass1)
-- **[CPNav: Calibrated Vision-Language Navigation for Object-Goal Search in Unseen Environments](https://arxiv.org/abs/2611.10366)** (2026) — Wraps VLM action scores for object-goal search in a conformal prediction layer with a user-set risk level, plus collision-free primitives and backtracking. Reports gains on HM3D/MP3D and on a small real robot. · [code](https://github.com/practice-lab-ucla/CPnav)
 
-**[All 91 entries →](lists/navigation.md)**
+**[All 92 entries →](lists/navigation.md)**
 
 <a id="perception"></a>
 ### Perception, SLAM & 3D Mapping
@@ -183,7 +183,7 @@ _Visual / LiDAR SLAM and odometry, 3D reconstruction, object pose, depth and ope
 - ⭐ **[BundleSDF: Neural 6-DoF Tracking and 3D Reconstruction of Unknown Objects](https://arxiv.org/abs/2303.14158)** (2023) — Tracks the 6-DoF pose of a never-seen object in RGB-D video while building its neural 3D model online, with no CAD model needed; useful for manipulating novel objects. · [code](https://github.com/NVlabs/BundleSDF)
 - ⭐ **[CoTracker: It is Better to Track Together](https://arxiv.org/abs/2307.07635)** (2023) — Transformer that tracks many video points jointly rather than one at a time, staying robust through occlusions; widely used to extract motion tracks from human or robot videos for policy learning. · [code](https://github.com/facebookresearch/co-tracker)
 
-**[All 60 entries →](lists/perception.md)**
+**[All 62 entries →](lists/perception.md)**
 
 <a id="control"></a>
 ### Planning, Control & Safety
@@ -203,7 +203,7 @@ _Motion planning, trajectory optimization, MPC, safety filters and safe learning
 - ⭐ **[MoveIt 2](https://moveit.ai/)** (2019) — The ROS 2 manipulation framework - motion planning, inverse kinematics, collision checking and real-time servoing for robot arms. · [code](https://github.com/moveit/moveit2)
 - ⭐ **[Pinocchio](https://github.com/stack-of-tasks/pinocchio)** (2019) — Fast C++/Python rigid-body dynamics library with analytical derivatives; a common backbone for kinematics, optimal control (e.g. Crocoddyl) and legged/humanoid control stacks.
 
-**[All 63 entries →](lists/control.md)**
+**[All 65 entries →](lists/control.md)**
 
 <a id="learning"></a>
 ### Robot Learning: RL & Imitation
@@ -223,7 +223,7 @@ _Reinforcement learning, imitation learning and policy post-training methods for
 - ⭐ **[What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](https://arxiv.org/abs/2108.03298)** (2021) — robomimic — a controlled study of imitation and offline RL on human-collected manipulation demos (demo quality, observation choices, history-aware BC), released with the framework and datasets. · [code](https://github.com/ARISE-Initiative/robomimic)
 - ⭐ **[Addressing Function Approximation Error in Actor-Critic Methods](https://arxiv.org/abs/1802.09477)** (2018) — TD3 — fixes DDPG's value overestimation with twin critics, delayed policy updates and target smoothing; still a standard continuous-control baseline. · [code](https://github.com/sfujim/TD3)
 
-**[All 153 entries →](lists/learning.md)**
+**[All 155 entries →](lists/learning.md)**
 
 <a id="sim"></a>
 ### Sim-to-Real & Simulators
@@ -263,7 +263,7 @@ _Large robot datasets, egocentric data and evaluation suites._ [Browse with the 
 - ⭐ **[Habitat: A Platform for Embodied AI Research](https://arxiv.org/abs/1904.01201)** (2019) — A very fast photorealistic 3D simulator and task suite that standardized embodied navigation research. · [code](https://github.com/facebookresearch/habitat-sim)
 - ⭐ **[Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning](https://arxiv.org/abs/1910.10897)** (2019) — 50 Sawyer manipulation tasks for multi-task and meta-RL evaluation. · [code](https://github.com/Farama-Foundation/Metaworld)
 
-**[All 119 entries →](lists/datasets.md)**
+**[All 120 entries →](lists/datasets.md)**
 
 <a id="hardware"></a>
 ### Hardware & Open-Source Robots

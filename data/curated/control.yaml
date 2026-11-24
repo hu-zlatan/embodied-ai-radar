@@ -639,3 +639,25 @@
   tags: [planning, potential-fields, path-planning, smooth]
   takeaway_en: 'Improves harmonic potential field planning with a frontier voltage boost: keeps no-local-minima and smooth paths while a piecewise approach solves larger maps and narrow passages faster than earlier harmonic methods.'
   takeaway_zh: 对谐波势场路径规划做改进：前沿电压提升保留无局部极小值与路径平滑等优点，分段式方法比早期谐波势场方法更快地求解更大地图与窄通道。代码公开。
+
+- title: 'Embodied Interaction Policy: A Unified Model for Full-Duplex Human-Robot Interaction'
+  type: paper
+  arxiv: '2611.27327'
+  year: 2026
+  project: https://youqiang-gui.github.io/EIP/
+  added: 2026-11-24
+  topics: [control]
+  tags: [hri, full-duplex, speech, gesture, real]
+  takeaway_en: Unified streaming policy coupling audio-interaction and motion experts via joint attention, with speaking-state and emotion tokens. EI-Data from co-speech/dyadic data; 64% lower warm-start latency than cascaded.
+  takeaway_zh: 统一流式策略，用逐层联合注意力耦合音频交互专家与动作专家，用声学 token 编码说话状态与回复情绪；打断感知的交替对话。基于共言语与双人交互数据构建 EI-Data，报告比级联系统热身延迟降低 64%、交互成功更高、动作更自然（含真机部署与用户研究）。
+
+- title: Search-Informed MPPI for Kinodynamic Motion Planning via Monte Carlo Tree Expansion
+  type: paper
+  arxiv: '2611.26763'
+  year: 2026
+  project: https://ihabmohamed.github.io/SI-MPPI/
+  added: 2026-11-24
+  topics: [control]
+  tags: [mppi, mcts, kinodynamic, planning, gpu]
+  takeaway_en: 'Embeds MPPI inside MCTS: structured ''baits'' guide GPU-batched optimisation as tree expansion, with feasibility gating and ESS warm starts. Smallest search trees and smoothest angular control on large cluttered maps.'
+  takeaway_zh: 把 MPPI 轨迹优化嵌入 MCTS 树搜索：结构化“诱饵”目标指导 GPU 批量 MPPI 生成候选运动段，经可行性门控与 top-k 选择形成稀疏有向树，ESS 自适应预热后续扩展。报告在四个大型拥挤地图上搜索树最小、角度控制最平滑，规划时间与路径长度仍具竞争力。

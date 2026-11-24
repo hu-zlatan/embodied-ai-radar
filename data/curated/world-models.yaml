@@ -1664,3 +1664,37 @@
   tags: [world-model, jepa, planning, action-history, efficiency]
   takeaway_en: Executed-action history conditions a causal Transformer predicting multiple futures in parallel, plus Reference-Anchored Minimum Progress selection. 98% average success, 7-9x faster than LeWM.
   takeaway_zh: 以已执行动作历史为条件、用因果 Transformer 并行预测多个未来表征（窗口内无递归状态反馈），并以“参考锚定最小进度”（RAMP）选择动作。报告四个视觉规划任务平均成功率 98%，匹配 CEM 设置下比自回归 LeWM 快约 7–9 倍。
+
+- title: 'PonderPounce-WM: When Does Predicting the Future Help Context-Dependent Robot Control?'
+  type: paper
+  arxiv: '2611.26996'
+  year: 2026
+  project: https://worv-ai.github.io/ponderpounce-wm/
+  added: 2026-11-24
+  topics: [world-models]
+  tags: [world-model, future-prediction, mllm, context, real]
+  takeaway_en: 'Three future tokens supervised on feature change, delivered to cognition not the actor: 60.83% to 67.42% RoboMME (direct future delivery only 64%), real 67.44% vs 60.98%. Future prediction helps as auxiliary supervision.'
+  takeaway_zh: 给预训练 MLLM 动作模型加三个监督视觉特征变化的未来 token，研究其影响：认知优先且仅注入认知时 RoboMME 成功率 60.83%→67.42%，直接给动作模型未来 token 仅 64%。真机 67.44%（基线 60.98%），说明未来预测作为辅助监督有用、但不应直接喂给动作模型。
+
+- title: 'ViewDreamer: A Robot World Model beyond Fixed Camera Setups'
+  type: paper
+  arxiv: '2611.26981'
+  year: 2026
+  org: Imperial College London
+  project: https://matchlab-imperial.github.io/ViewDreamer/
+  added: 2026-11-24
+  topics: [world-models]
+  tags: [world-model, multi-view, video-generation, cross-view, real]
+  takeaway_en: 'Single world model for variable camera sets: per-view generation with shared slot tokens, view-count curriculum, cross-view slot agreement. Best RoboView-Bench; WAM beats FastWAM-Joint on LIBERO/RoboTwin/RoboDojo.'
+  takeaway_zh: 为可变相机集设计的单一世界模型：每个视角走预训练单视角生成路径，视角间仅通过共享 slot token 交互，配合逐步加视角的课程与跨视角槽一致对齐。报告 RoboView-Bench（1–4 相机）生成质量最佳；其 WAM 在 LIBERO-Plus、RoboTwin 2.0、RoboDojo 与真机 Franka 上超过 FastWAM-Joint。
+
+- title: 'Skill-JEPA: Learning Planner-Aligned Action Spaces for World Models'
+  type: paper
+  arxiv: '2611.26825'
+  year: 2026
+  code: https://github.com/tcouso/Skill-JEPA
+  added: 2026-11-24
+  topics: [world-models]
+  tags: [jepa, world-model, latent-skills, planning, action-space]
+  takeaway_en: State-conditioned VAE encodes action sequences into latent skills with a Gaussian prior, aligning planner sampling with the model's training data. Goals over 80 steps 42% to 62%; AntMaze two-cell goals 0.4% to 38%.
+  takeaway_zh: 用状态条件 VAE 把短动作序列编码为带标准高斯先验的潜在技能，使规划器采样的候选落在世界模型见过的分布内。报告 80 步目标平均成功率 42%→62%；AntMaze 两单元目标 0.4%→38%。只加一个模块、不改规划器、无子目标或手工技能。

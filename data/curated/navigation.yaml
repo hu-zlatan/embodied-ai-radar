@@ -917,3 +917,14 @@
   tags: [benchmark, vln, memory, cross-episode]
   takeaway_en: 'Cross-episode VLN benchmark where later instructions refer to earlier episodes: 2,071 episodes, 710 sessions, 34 scenes, three memory levels. MemBridge baseline combines scene memory and retrieval.'
   takeaway_zh: 跨回合视觉语言导航记忆基准：后续指令指向先前回合见过的物体或路线，含 2,071 个回合、710 个会话、34 个场景，分历史物体回忆、记忆内定位与索引、离线重定位与历史路线复现三级。配套 MemBridge 基线组合语义场景记忆、跨回合定位与由粗到精检索。
+
+- title: 'NavTTT: Adaptive Parametric Memory via Hierarchical Test-Time Training for Vision-and-Language Navigation'
+  type: paper
+  arxiv: '2611.27219'
+  year: 2026
+  project: https://gamepeopleplay.github.io/NavTTT/
+  added: 2026-11-24
+  topics: [navigation]
+  tags: [vln, test-time-training, memory, real]
+  takeaway_en: Context-conditioned test-time training prioritises informative evidence, building spatially grounded Adaptive Parametric Memory in episode-local fast weights. Strong VLN-CE, real instruction following.
+  takeaway_zh: 以全局导航上下文为条件做测试期训练，优先保留信息量大的视觉证据，并把语言指令与空间信息融合为“自适应参数记忆”写入回合局部快速权重；各解码深度独立维护记忆防止误差串扰。报告 VLN-CE 上表现强劲、真机指令跟随有效。

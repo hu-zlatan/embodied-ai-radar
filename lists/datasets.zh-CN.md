@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 119 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 120 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/datasets.html) · [English](datasets.md)
 
@@ -79,6 +79,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[RMMBench: A Comprehensive Benchmark for Robotic Mobile Manipulation](https://arxiv.org/abs/2610.05414)** (2026) — 移动操作评测基准：70 个在连续空间中结合导航与操作的任务场景。发现主流 VLM 在空间定位上仍有明显困难。 · [代码](https://github.com/mxxq-stack/RMMBench) · [项目页](https://mxxq-stack.github.io/rmmbench-project/)
 - **[Robo-SWE: An Executable Issue-Resolution Dataset Mined from Robot Software Repositories](https://arxiv.org/abs/2611.16116)** (2026) — 从 28 个公开机器人软件仓库（ROS 2、物理引擎、算法库、机器人学习框架）的已合并 PR 中挖掘出 236 个可执行的问题修复任务，每个附带容器配置和修复前失败、修复后通过的测试；主流编程智能体解决率约 44–57%。 · [项目页](https://huggingface.co/datasets/vharatian/Robo-SWE)
 - **[RoboBuilder: Agentic Robot Co-Design with Real-world Video Feedback in the Loop](https://arxiv.org/abs/2611.23855)** (2026) — 让编码智能体同时设计机器人硬件与程序、并真机搭建实测的基准：每个仿真通过的设计都会被打印搭建并在物理赛道测试，共搭建 135 台机器人、1.6 万次仿真、约 240 小时。仅 66% 的仿真通过设计在现实中成立；给智能体看真实失败视频后，72% 的初级/中级失败被修复。 · [项目页](https://ghadinehme.com/robobuilder.github.io/)
+- **[RoboCap-10k: A Metrically Accurate Egocentric Dataset for Robot Learning](https://arxiv.org/abs/2611.26916)** (2026) — 1 万小时无脚本操作数据，覆盖 11 个国家、18 个任务族、200 类任务的付费当班记录；统一用 250 g 的 RoboCap（六路同步全局快门相机+双 IMU）。在线标定对极误差 <1 px，视觉惯性 SLAM 给重力对齐的 6 自由度头部位姿，多视角手部跟踪达厘米精度，逐回合任务/子任务文字标注。 · [项目页](https://robocap10k.com)
 - **[RoboCasa-Shift: Stage-Aware Robustness Evaluation of Vision-Language-Action Policies in Long-Horizon Household Manipulation](https://arxiv.org/abs/2610.27861)** (2026) — 基于 RoboCasa365 的 VLA 鲁棒性诊断基准：成对比较只差一个分布偏移因素的干净/扰动执行，并定位长时序任务中失败从哪个阶段开始，而不只看总成功率；在 GR00T N1.5 上评测。 · [代码](https://github.com/HaochengWang23/RoboCasa-Shift)
 - **[RoboDyna: A Benchmark for Evaluating Robotic Manipulation under Physically Grounded Dynamics](https://arxiv.org/abs/2611.26969)** (2026) — 动态场景操作基准：20 个概念动态任务（五个能力类别）加 10 个家居任务，3,500 条专家示教，配同步/异步成对评测协议与人工基线工具。报告所有评测策略成功率低于 20%；推理延迟翻转 5–12% 的回合结果，但平均成功率变化至多 3%。 · [项目页](https://robodyna.github.io/robodyna/)
 - **[RoboFollow: Unveiling the Instruction Following Mirage in Embodied Agents](https://arxiv.org/abs/2609.25636)** (2026) — 揭示 VLA 的高成功率常掩盖薄弱的指令遵循：场景支持多种合法任务，必须依赖语言。九个 VLA 与 WAM 策略在基础级以外的测试中明显下降。 · [代码](https://github.com/AutoLab-SAI-SJTU/RoboFollow)

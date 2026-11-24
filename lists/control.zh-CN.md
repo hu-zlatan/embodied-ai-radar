@@ -2,7 +2,7 @@
 
 _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的学习型控制。_
 
-共 63 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/control.yaml`](../data/curated/control.yaml) 生成，请勿直接编辑。
+共 65 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/control.yaml`](../data/curated/control.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/control.html) · [English](control.md)
 
@@ -30,6 +30,7 @@ _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的�
 - **[BehaVerify: A Formal Verification Tool for Behavior Trees](https://arxiv.org/abs/2611.22403)** (2026) — 行为树与神经符号行为树的形式化验证工具箱：DSL 支持 LTL/CTL 规范，经“fastforwarding”高效编码到 nuXmv，可生成 Python/Haskell 实现并集成 PyTrees 与 ROS；已部署到多台自主机器人验证运行时监视器。 · [代码](https://github.com/verivital/behaverify)
 - **[Certify, Then Select: Viability-Aware Runtime Steering of Frozen Diffusion Policies](https://arxiv.org/abs/2611.19047)** (2026) — 给冻结扩散策略做运行期安全筛选：采样少量动作块，用屏障条件逐一认证，执行学习价值集成评分最高的认证块，并以可行性保留未来安全选项。报告在 robomimic、平面四旋翼、人形与独轮车任务上任务+约束联合成功率高于输出滤波器。 · [项目页](https://clmoro.github.io/cast)
 - **[CusADi2: Latency-Optimized Batch Computation of Robot Kinematics, Jacobians, and Hessians on the GPU](https://arxiv.org/abs/2610.25476)** (2026) — 在 GPU 上以低延迟批量计算运动学、雅可比与海森矩阵，面向在线运行的采样式与梯度式轨迹优化。 · [代码](https://github.com/johnviljoen/cusadi2)
+- **[Embodied Interaction Policy: A Unified Model for Full-Duplex Human-Robot Interaction](https://arxiv.org/abs/2611.27327)** (2026) — 统一流式策略，用逐层联合注意力耦合音频交互专家与动作专家，用声学 token 编码说话状态与回复情绪；打断感知的交替对话。基于共言语与双人交互数据构建 EI-Data，报告比级联系统热身延迟降低 64%、交互成功更高、动作更自然（含真机部署与用户研究）。 · [项目页](https://youqiang-gui.github.io/EIP/)
 - **[Estimation-Aware Reachability](https://arxiv.org/abs/2611.23830)** (2026) — 把 Hamilton-Jacobi 可达性推广到机器人信念空间：将意外测量视为有界对手，不可安全集随当前不确定性扩张，保证认证状态以指定概率安全。仿真中其安全滤波器几乎消除了等价确定型 HJ 的碰撞，且比同样安全的加不确定垫片基线更少保守。 · [代码](https://github.com/HimanshuPaudel/Estimation-Aware-Reachability)
 - **[Exploring the Intrinsic Geometry of Diffusion Models with Constrained Inverse Kinematics](https://arxiv.org/abs/2606.26408)** (2026) — 以解流形可精确知道的约束逆运动学为试验场，检验扩散模型学到的几何结构。在 UR5 和 Franka 上，从得分函数估计的内在维度与解析自由度一致。 · [代码](https://github.com/utiasSTARS/ConstraintIK) · [项目页](https://papers.starslab.ca/diffusion-ik-geometry/)
 - **[FAME-QP: A GPU-Accelerated Quadratic-Programming Solver for Real-Time Model Predictive Control](https://arxiv.org/abs/2611.13766)** (2026) — FAME-QP 是面向线性 MPC 稠密二次规划的 GPU 求解器：融合核函数经 CUDA Graph 重放、按设备自动标定执行配置并缓存算子。在人形与四旋翼仿真控制中报告延迟低于其他 GPU 求解器，且精度和控制性能不降。 · [代码](https://github.com/santoshrajkumar/fame-qp) · [项目页](https://santoshrajkumar.github.io/proj/fame_qp/)
@@ -58,6 +59,7 @@ _运动规划、轨迹优化、模型预测控制、安全滤波器与安全的�
 - **[Safe Streaming Flow Planning by Aligning Sampling Dynamics with Execution Dynamics](https://arxiv.org/abs/2610.03132)** (2026) — 流匹配规划器让采样过程与系统执行动力学对齐，只需对实际执行的一步施加高阶控制障碍函数约束。在导航、竞速和运动任务上降低规划延迟并提升安全性。 · [代码](https://github.com/Jang-seunghwan/SafeStreamingFlowPlanning) · [项目页](https://jang-seunghwan.github.io/SafeStreamingFlowPlanning/)
 - **[Sampling-based Model Predictive Control as Sequential Monte Carlo Inference](https://arxiv.org/abs/2611.10877)** (2026) — 指出预测采样、MPPI、CEM 及其变体都是同一个序贯蒙特卡洛算法，只是提议分布、更新规则与重采样阈值不同。重采样使长时域碰撞率降低 30%，可编程提议显著提升 push-T 成功率。 · [代码](https://github.com/CoMMALab/PFMP)
 - **[Scalable Deep Unfolding of Conic Optimizers](https://arxiv.org/abs/2606.13825)** (2026) — 通过无矩阵隐式微分和稳定的半正定投影梯度，让深度展开适用于大规模锥优化求解器；报告在基于 SDP 的规划上最高提速 50 倍。
+- **[Search-Informed MPPI for Kinodynamic Motion Planning via Monte Carlo Tree Expansion](https://arxiv.org/abs/2611.26763)** (2026) — 把 MPPI 轨迹优化嵌入 MCTS 树搜索：结构化“诱饵”目标指导 GPU 批量 MPPI 生成候选运动段，经可行性门控与 top-k 选择形成稀疏有向树，ESS 自适应预热后续扩展。报告在四个大型拥挤地图上搜索树最小、角度控制最平滑，规划时间与路径长度仍具竞争力。 · [项目页](https://ihabmohamed.github.io/SI-MPPI/)
 - **[Sub-Millisecond Reflexes for Continuous Physical Human-Robot Interaction](https://arxiv.org/abs/2610.21913)** (2026) — 开源的 ROS 2 多模式控制器，可在亚毫秒内切换控制模式并触发安全反射而无需中断任务；在 Franka 机械臂上验证。 · [代码](https://github.com/RoboRef/franka_reflex_engine)
 - **[TAM: Torque Adaptation Module for Robust Motion Transfer in Manipulation](https://arxiv.org/abs/2606.06218)** (2026) — CoRL 2026 Spotlight。面向富接触动作迁移的模块，应对仿真到现实、负载与个体差异，用于替代域随机化或系统辨识。 · [代码](https://github.com/Dongwon-Son/TAM) · [项目页](https://dongwon-son.github.io/tam-project-page/)
 - **[TDC: Sim-to-Real Transferable Directional Compliance for Contact-Rich Manipulation](https://arxiv.org/abs/2602.14174)** (2026) — 把力调节拆成两部分：方向分量（任务坐标系与控制模式，由基于 VLA 的策略在仿真数据上学习）和幅值分量（在导纳控制器中人工设定）。只用仿真数据，在四个真机任务上验证。 · [项目页](https://yifei-y.github.io/project-pages/TDC/)

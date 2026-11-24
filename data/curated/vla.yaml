@@ -3091,3 +3091,14 @@
   tags: [vla, speculative-decoding, latency, efficiency]
   takeaway_en: 'Speculative decoding for autoregressive VLAs: calibrated-noise rollouts, feature-aligned drafts and continuation reuse keep decoding lossless. 1.28x-2.10x speedup across four VLAs and four benchmarks.'
   takeaway_zh: 面向自回归 VLA 的投机解码：用校准动作噪声采集 rollout 扩大草稿模型状态覆盖，特征对齐让草稿匹配 VLA 隐特征而非仅输出 token，延续复用保留已算出的预测。报告在四个 VLA、四个操作基准上加速 1.28–2.10 倍且解码无损。
+
+- title: 'FORTH: Grounding Tactile VLA Execution via Forward-Only Proxy-Control Pairing'
+  type: paper
+  arxiv: '2611.26744'
+  year: 2026
+  code: https://github.com/Jordanlllll/FORTH
+  added: 2026-11-24
+  topics: [vla, tactile]
+  tags: [vla, tactile, force, grip, slip, real]
+  takeaway_en: 'Forward-only tactile harness: backprop-free encoder, zeroth-order adapter, SlipGuard slip gate. 97.6% LIBERO at 7.12x less activation memory; grip force peaks 29x lower than a reflex ramp, avoiding structural crush.'
+  takeaway_zh: 前向式触觉执行框架，把每一层优化目标与物理可观测量显式配对：无反向传播的触觉编码器保留接触几何、零阶适配器做激活空间更新、SlipGuard 连续防滑门控。报告 LIBERO 平均 97.6%、峰值激活内存降 7.12 倍；结构件上抓握力峰值比单调反射斜坡低 29 倍。

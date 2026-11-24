@@ -2,7 +2,7 @@
 
 _足式运动、人形全身控制与跑酷。_
 
-共 196 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
+共 197 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/locomotion.yaml`](../data/curated/locomotion.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/locomotion.html) · [English](locomotion.md)
 
@@ -81,6 +81,7 @@ _足式运动、人形全身控制与跑酷。_
 - **[LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World](https://arxiv.org/abs/2606.01458)** (2026) — 混合模拟器：网格前景叠加校准过的 3D 高斯泼溅背景，无需遥操作即可生成人形移动操作演示。在 G1 上，仅用其数据训练的 VLA 达到或超过遥操作数据训练的效果。 · [代码](https://github.com/hojjunekim/LEGS) · [项目页](https://hojjunekim.github.io/legs/)
 - **[LHNav: Long-Horizon Humanoid Navigation via Multirate Coordination and Physics-Grounded Action Data](https://arxiv.org/abs/2611.12136)** (2026) — 让人形机器人按一条长指令依次前往多个目的地：系统分为负责任务推理的“大脑”、预测 VLA 动作 token 的“小脑”和执行全身控制的“脑干”，三者以不同频率异步协同；“小脑”用经过物理跟踪校验、带渲染视觉的动作数据训练。 · [项目页](https://robbyant-research.github.io/LHNav/)
 - **[LadderMan: Learning Humanoid Perceptive Ladder Climbing](https://arxiv.org/abs/2606.05873)** (2026) — CoRL 2026 Spotlight。让人形机器人攀爬多种梯子并在梯上操作；两阶段流程用混合动作跟踪学习多个攀爬专家策略。 · [项目页](https://ladderman-robot.github.io)
+- **[Latent Jacobian Steer: Eliciting Contact-Rich Out-of-Distribution Behaviors from Pretrained Humanoid Controllers](https://arxiv.org/abs/2611.27338)** (2026) — 把关节动作空间采样与冻结控制器的潜空间耦合：经策略雅可比阻尼局部逆映射得到潜指令，让探索直接瞄准所需物理效果。报告人形跨栏、非抓取开门、操作铰接物体等分布外接触行为，并让灵巧手策略越过目标空间直接搜索完成四种装配。 · [项目页](https://latent-jacobian-steer.github.io/)
 - **[Learning Contact Representation for Leg Odometry](https://arxiv.org/abs/2606.05501)** (2026) — 仅用关节编码器与 IMU 自监督估计足端接触，并作为支撑置信度输入卡尔曼滤波器。报告腿式里程计误差在对比方法中最低。 · [代码](https://github.com/egirgin/leg-odometry-contact-representation)
 - **[Learning Force-Reactive Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.35862)** (2026) — FLoRe：用带力传感的 UMI 式手持夹爪与人体追踪器采集无机器人示教，训练扩散策略输出每只手的力指令，由柔顺全身控制器执行；报告在三个接触密集任务上成功率 80%，仅位置控制为 26.7%。
 - **[Learning Loco-Manipulation From SMPC Demonstrations With Sparse Offline-to-Online RL](https://arxiv.org/abs/2608.12063)** (2026) — 在仿真中用采样 MPC 自动生成专家数据，再以稀疏奖励训练离策略 RL，免去奖励塑形；已部署到带臂 Spot 和 G1 人形机器人。

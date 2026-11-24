@@ -1999,3 +1999,14 @@
   tags: [legged, lidar, range-image, sim2real, perception]
   takeaway_en: Replays the physical LiDAR's angular sampling in simulation and encodes both as the same spherical range image, so policies train and deploy directly. Stronger sim-to-real than depth- and elevation-map baselines.
   takeaway_zh: 在传感与表征两层对齐仿真与真实的 LiDAR 感知：从实物激光雷达恢复逐帧角度采样模式并用 GPU 光线投射在仿真中回放，两端都编码为相同的球面距离图，策略可端到端训练、直接部署。报告 sim-to-real 迁移强于深度图与高程图基线，无需蒸馏或在线建图。
+
+- title: 'Latent Jacobian Steer: Eliciting Contact-Rich Out-of-Distribution Behaviors from Pretrained Humanoid Controllers'
+  type: paper
+  arxiv: '2611.27338'
+  year: 2026
+  project: https://latent-jacobian-steer.github.io/
+  added: 2026-11-24
+  topics: [locomotion, manipulation]
+  tags: [humanoid, contact-rich, bfm, zero-shot, exploration]
+  takeaway_en: Couples joint-action sampling with the frozen controller's latent space via a damped inverse policy Jacobian, steering exploration to desired physical effects. Elicits hurdling, door opening, object manipulation.
+  takeaway_zh: 把关节动作空间采样与冻结控制器的潜空间耦合：经策略雅可比阻尼局部逆映射得到潜指令，让探索直接瞄准所需物理效果。报告人形跨栏、非抓取开门、操作铰接物体等分布外接触行为，并让灵巧手策略越过目标空间直接搜索完成四种装配。

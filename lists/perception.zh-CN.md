@@ -2,7 +2,7 @@
 
 _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与开放词汇场景地图。_
 
-共 60 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
+共 62 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/perception.html) · [English](perception.md)
 
@@ -59,6 +59,8 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - **[SCCV-6D: Sparse Canonical Coordinate Voting for Holistic Multi-View RGB-D 6D Pose Estimation in Robotic Bin Picking](https://arxiv.org/abs/2611.25819)** (2026) — 全稀疏多视图 RGB-D 位姿估计：分级热图剔除背景，规范坐标投票配对称感知的加权 Procrustes 闭式求解。报告 IPD 上 0.826 AP、每场景仅 1.13 秒，MV-YCB 达 96.1 ADD-S，显著快于领先方案，且在 ROBI 密集箱内仍具竞争力（WACV 2027）。
 - **[SE(3)-LIVOM: Adaptive Multi-LiDAR-Inertial-Visual Odometry and Mapping](https://arxiv.org/abs/2611.22047)** (2026) — 多激光雷达-惯性-视觉里程计，IROS 2026 COMFORT 挑战赛总冠军：两台 LiDAR、相机与 IMU 实时运行，每帧约 35 ms，用子图平面集束调整与增量位姿图修正漂移。报告六个 GrandTour 测试场景平均 ATE 1.40 cm。 · [代码](https://github.com/url-kaist/se3-livom-comfort)
 - **[SpaRV: Sparse Radiance Voxels for Scalable Geometrically Consistent LiDAR-Visual Mapping and Rendering](https://arxiv.org/abs/2610.25665)** (2026) — 用激光雷达与相机数据构建稀疏体素辐射场地图，针对机器人数据视角少、位姿有误差、场景大的问题，在保证几何精度的同时控制显存占用。 · [代码](https://github.com/hku-mars/SpaRV)
+- **[SparseHPS: A Unified Model for Human Pose and Shape across Depth Cameras and LiDARs](https://arxiv.org/abs/2611.26730)** (2026) — 用同一组权重从人体点云恢复 SMPL-X 姿态、形状与全局平移，兼容深度相机与 LiDAR：稀疏体素 LitePT 编码、逐关节可学习查询解码、七帧因果记忆。在十个混合数据集上训练，SLOPER4D/FreeMotion 上根相对关节误差分别降 22%/11%。 · [项目页](https://ghostlate.github.io/SparseHPS)
+- **[StereoVLM: Binocular Vision-Language Models for Metric 3D Spatial Reasoning](https://arxiv.org/abs/2611.27915)** (2026) — 从标定双目观测学习可迁移 3D 表征的 VLM：分层学习从跨视角对应与视差、到标定条件度量深度与语义空间推理。StereoVLM-8B 深度准确率 95.17%（δ1），RoboCasa 操作成功率 +4.3 个百分点；并发布三级 Stereo3D-Bench。 · [项目页](https://xpeng-robotics.github.io/stereovlm/)
 - **[Vision as Proprioception: Estimating Humanoid Robot Pose from Video](https://arxiv.org/abs/2610.25288)** (2026) — HumanoidPose 仅凭视频恢复人形机器人的全身关节构型：适用于拿不到机载状态的场景，也能把网上的机器人视频变成训练数据。 · [代码](https://github.com/eth-siplab/HumanoidPose)
 - **[VoxAfford: Multi-Scale Voxel-Token Fusion for Open-Vocabulary 3D Affordance Detection](https://arxiv.org/abs/2605.01365)** (2026) — 开放词汇 3D 可供性检测：多模态大模型的输出 token 在解码掩码前，通过门控交叉注意力从冻结的 3D VQ-VAE 中检索多尺度几何特征。报告 mIoU 提升约 8%。
 - **[What Objects Enable, Not What They Are: Functional Latent Spaces for Affordance Reasoning](https://arxiv.org/abs/2606.05533)** (2026) — 把视觉观测映射到按功能（如“可移动”）而非外观组织的潜在空间，并在不确定时自动发现新的可供性。报告推断准确率 94%，比已有方法高 15 个百分点以上。 · [项目页](https://A4Dance-reasoning.github.io)

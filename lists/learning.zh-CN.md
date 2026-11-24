@@ -2,7 +2,7 @@
 
 _面向机器人的强化学习、模仿学习与策略后训练方法，不限机器人形态。_
 
-共 153 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
+共 155 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/learning.yaml`](../data/curated/learning.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/learning.html) · [English](learning.md)
 
@@ -36,6 +36,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[CS-Pi: Constraint-Satisfying Flow Policy Sampling](https://arxiv.org/abs/2611.08654)** (2026) — 在推理时为流匹配策略施加训练中没有的约束（如避开新障碍）：把每次采样投影到最近的安全动作，按移动距离加回噪声，再用原策略重新生成，直到得到安全且合理的动作。货架取放任务报告安全成功率 81%（纯投影为 55%），Franka 真机 55%。 · [项目页](https://sumo048.github.io/CS-pi_site/)
 - **[Chameleon: Control-Indexed Prospective Memory for Visuomotor Manipulation](https://arxiv.org/abs/2603.24576)** (2026) — 约 6000 万参数的视觉运动策略，带事件记忆，面向“决定性线索早于动作很久出现”的任务，并发布真机基准 Camo-Dataset。报告决策成功率从 22.5% 提升到 80.8%，LIBERO-10 达 87.1%。
 - **[CoachSI: Self-Improvement of Robot Policies with a Language Coach](https://arxiv.org/abs/2611.25529)** (2026) — 冻结的现成 VLM 当“语言教练”：看着机器人画面、用策略自身的原子指令格式说出下一步，绝不输出动作；成功的受指导 rollout 用原始任务指令回标后微调策略。报告长程任务无人辅助成功率从 47.4% 升到 59.3%，比人类示教微调高 9.8 个百分点。 · [项目页](https://tlxhlll.github.io/CoachSI/)
+- **[Coherent Moment Propagation: Epistemic Uncertainty for Pre-trained Robot Policies](https://arxiv.org/abs/2611.26855)** (2026) — 证明 BayesDiff 的总方差随欧拉步数 T 以 O(1/T) 衰减后，用扩展/无迹卡尔曼风格的两条递归把状态-权重互协方差传播下去，并用策略已有的观测嵌入加宽先验。报告在三个操作基准的失败检测与示范选择上优于多个估计器，无需重训练。 · [项目页](https://comp-uq.github.io/comp-uq/)
 - **[Coverage Aware Active Evaluation for Failure Discovery with Paired Systems](https://arxiv.org/abs/2608.13719)** (2026) — 在有限测试预算下寻找真实系统的失败：用残差建模校正廉价代理（如仿真器）的失败信号，并挑选多样且有数据支撑的场景。发现的失败数最多为随机采样的 2 倍。
 - **[CuraEval: Evaluating Demonstration Curation on Mixed-Skill Robot Data](https://arxiv.org/abs/2610.38221)** (2026) — 对示范数据筛选方法做严格对照：在混合技能的 robomimic 数据上与等量随机子集和全量训练比较，发现某评分几乎等同于按轨迹长度排序；经多重比较校正后，没有任何筛选条件显著优于全量数据训练（CoRL 2026 Workshop 论文）。 · [代码](https://github.com/jiuyixu25/CuraEval)
 - **[D&A: Decoupling Description and Assessment Enables VLMs as Zero-Shot Robotic Reward Models](https://arxiv.org/abs/2611.03622)** (2026) — 只靠提示词的任务进度评估：先让 VLM 客观描述画面并定义绝对成功标准，再按明确评分表打分，减少对失败执行“幻觉式”的进度判断，其奖励可用于下游强化学习。 · [代码](https://github.com/memmelma/dna) · [项目页](https://weirdlabuw.github.io/dna)
@@ -59,6 +60,7 @@ _面向机器人的强化学习、模仿学习与策略后训练方法，不限�
 - **[Freeform Preference Learning for Robotic Manipulation](https://arxiv.org/abs/2606.32027)** (2026) — 让标注者用自然语言自定义偏好维度（速度、安全、细致等）并逐维比较轨迹，训练语言条件奖励模型和可引导的策略。报告比稀疏奖励与二元偏好方法高 38 个百分点。 · [项目页](https://freeform-pl.github.io/fpl.website/)
 - **[GSBR: Geometric Support Behavior Regularization for Online RL](https://arxiv.org/abs/2611.05295)** (2026) — 在预训练策略之上做在线强化学习，按动作到其支撑集的距离施加惩罚：集内不罚，集外平滑增长；报告 19 个基准任务的平均成功率从 33% 升至 95%。 · [代码](https://github.com/charlesxu0124/gsbr) · [项目页](https://charlesxu0124.github.io/gsbr/)
 - **[GUILD: Guided Iterative Data Collection for Imitation Learning](https://arxiv.org/abs/2611.05368)** (2026) — GUILD 主动决定下一步采集什么数据：由 VLM 提出环境、物体布置与目标，采集后评估数据对策略的价值，再进入下一轮，而非事后筛选数据集。
+- **[GenPA: Image Generators as Efficient Robot Policies](https://arxiv.org/abs/2611.27446)** (2026) — 给图像生成骨干加 19M 参数的动作回归适配头，保留其原生生成目标做感知联合训练；部署时只需一次骨干前向，无需生成图像或迭代去噪。报告 LIBERO 99.10%、LIBERO-Plus 83.79%，每动作块 20.9 ms，比强 VLA/WAM 基快 1.7–3.4 倍。 · [项目页](https://deng-zian.github.io/GenPA-website/)
 - **[Generative Flow on Symbolic Abstractions for Embodiment Capability Discovery](https://arxiv.org/abs/2610.17174)** (2026) — 自动发现某台机器人“学得会”的任务：用 GFlowNet 生成符号化任务骨架，以仿真中底层策略的学习效果作为奖励，再把发现的任务蒸馏进一个语言条件策略。 · [项目页](https://www.youwei-yu.com/fosa)
 - **[Grana: Compositional Reward Modeling for Long-Horizon Robot Manipulation](https://arxiv.org/abs/2611.24926)** (2026) — 开放词汇奖励模型：识别未完成子任务并用自然语言子任务描述估计其连续进度，再把所选子任务的进度与已完成子任务的分值组合成整任务进度。在 200 个短时域任务上预训练后，可零样本预测未见任务的奖励，并适配五个长达数分钟的长程任务，改进下游策略表现。 · [项目页](https://research.nvidia.com/labs/gear/grana/)
 - **[Guided Discovery of New Behaviors using Diffusion Policies](https://arxiv.org/abs/2606.08743)** (2026) — 用 Feynman-Kac 校正器配合新的引导势能，把扩散策略的采样推向少见但有前景的模态；再以基于采样的轨迹优化修复这些轨迹，并加回训练集重训策略。
