@@ -661,3 +661,14 @@
   tags: [mppi, mcts, kinodynamic, planning, gpu]
   takeaway_en: 'Embeds MPPI inside MCTS: structured ''baits'' guide GPU-batched optimisation as tree expansion, with feasibility gating and ESS warm starts. Smallest search trees and smoothest angular control on large cluttered maps.'
   takeaway_zh: 把 MPPI 轨迹优化嵌入 MCTS 树搜索：结构化“诱饵”目标指导 GPU 批量 MPPI 生成候选运动段，经可行性门控与 top-k 选择形成稀疏有向树，ESS 自适应预热后续扩展。报告在四个大型拥挤地图上搜索树最小、角度控制最平滑，规划时间与路径长度仍具竞争力。
+
+- title: 'MoMa-NMP: Scene-Scale Neural Motion Planning for Mobile Manipulators'
+  type: paper
+  arxiv: '2611.29913'
+  year: 2026
+  project: https://adamhkan.com/moma-nmp/
+  added: 2026-11-25
+  topics: [control]
+  tags: [motion-planning, mobile-manipulation, imitation, real]
+  takeaway_en: Demo generation splits into global path discovery and local refinement, producing millions of whole-body trajectories; behavior cloning plus privileged on-policy distillation. 87.0% sim; 77.5% over 80 unseen real trials.
+  takeaway_zh: 演示生成管线把问题拆成全局路径发现与局部运动精修，程序化场景中产出百万级全身轨迹；先行为克隆再特权在线策略蒸馏训练神经运动规划器。报告仿真基准 87.0%、80 组未见真实场景试验 77.5%。

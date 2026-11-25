@@ -1265,3 +1265,92 @@
   tags: [dataset, egocentric, hand-pose, multi-view, slam]
   takeaway_en: '10,000 hours of unscripted manipulation across 11 countries on one device: six synchronized cameras, dual IMU, <1 px epipolar error, gravity-aligned 6-DoF head pose, cm-precise hand tracking, per-episode captions.'
   takeaway_zh: 1 万小时无脚本操作数据，覆盖 11 个国家、18 个任务族、200 类任务的付费当班记录；统一用 250 g 的 RoboCap（六路同步全局快门相机+双 IMU）。在线标定对极误差 <1 px，视觉惯性 SLAM 给重力对齐的 6 自由度头部位姿，多视角手部跟踪达厘米精度，逐回合任务/子任务文字标注。
+
+- title: 'WorldLeague: Benchmarking Physical Agency'
+  type: paper
+  arxiv: '2611.30989'
+  year: 2026
+  project: https://xyangzhou.github.io/WorldLeague
+  rating: 1
+  added: 2026-11-25
+  topics: [datasets]
+  tags: [benchmark, physical-agency, evaluation]
+  takeaway_en: 60 simulated robot tasks across WorldSeek, WorldShape and WorldShift, measuring Interactive Score and physical success. Among 13 systems, Claude Fable 5.2 leads with 13 goals and 28.58/100.
+  takeaway_zh: 60 个仿真机器人任务的物理能动性基准：WorldSeek（探索取证）、WorldShape（重排）、WorldShift（适应变化），按六项能力维度记录交互得分与物理成功率。报告 13 个系统中 Claude Fable 5.2 达成 13 个目标、平均交互分 28.58/100 居首；VLM 即使全部答对，71.8% 的回合交互分仍为零。
+
+- title: 'EgoDepth-Bench: Benchmarking Metric Depth for Egocentric Manipulation'
+  type: paper
+  arxiv: '2611.30734'
+  year: 2026
+  project: https://egodepth-bench.github.io/
+  added: 2026-11-25
+  topics: [datasets, manipulation]
+  tags: [benchmark, depth, egocentric]
+  takeaway_en: '941,233 synchronized samples, 37 environments: six calibrated RGB views with metric fisheye depth, ball-bar verified (1.27 mm). Fine-tuning MapAnything cuts AbsRel 0.708 to 0.091 on unseen environments.'
+  takeaway_zh: 94 万同步样本、37 个物理环境的自我中心度量深度基准：六路标定 RGB 视角配鱼眼原生度量深度（五组主动红外立体重建），球棒验证中位误差 1.27 mm。报告微调 MapAnything 后在未见环境 AbsRel 从 0.708 降到 0.091，并支持按环境留出评测。
+
+- title: 'SWEEP-Bench: Do Embodied Policies Act on the Speed They See?'
+  type: paper
+  arxiv: '2611.30637'
+  year: 2026
+  project: https://damin3927.github.io/SWEEP-Bench
+  added: 2026-11-25
+  topics: [datasets]
+  tags: [benchmark, speed, manipulation]
+  takeaway_en: '80 conveyor-belt tasks at 13 belt speeds: six of eight models peak at intermediate speeds and act on average demo speed; past frames add 10-40 points for three models, and ground-truth speed input helps all four tested.'
+  takeaway_zh: 80 个传送带操作任务、16 个技能类、13 档速度的基准，同一随机场景跨速度评测。报告八个模型中有六个在中间速度达到峰值、倾向输出演示平均速度的动作；过去帧让三个模型成功率提升 10–40 分，速度真值输入对四个测试模型全部有益。
+
+- title: 'RoboInF: A Benchmark for Instruction Fidelity in Robotic Manipulation'
+  type: paper
+  arxiv: '2611.30555'
+  year: 2026
+  project: https://sjtu-deepvisionlab.github.io/RoboInF/
+  added: 2026-11-25
+  topics: [datasets, manipulation]
+  tags: [benchmark, instruction, fidelity]
+  takeaway_en: Eight tasks with six to twelve expert-validated instruction branches; checkers verify goals and whole-execution compliance. All four evaluated models show a gap between task success and faithful execution.
+  takeaway_zh: 八个任务各配 6–12 条专家验证的指令分支（目标、流程或细节不同、初始场景不变），检查器沿轨迹、接触与事件序列全程核验执行合规性，并附 4,242 条示教的 RoboInF-4K。报告四个模型（π0.5、OpenWAM、GPT-6 Astra、Qwen3.8-Flash）都存在任务成功与忠实执行的差距。
+
+- title: 'RoboLiveMem: Is Robot Memory Solved When the World Does Not Wait?'
+  type: paper
+  arxiv: '2611.30047'
+  year: 2026
+  project: https://robolivemem.github.io/
+  added: 2026-11-25
+  topics: [datasets]
+  tags: [benchmark, memory, agents]
+  takeaway_en: 'Same memory tasks run paused and running: 29 families, 34,176 episodes. Claude/GPT models drop from 97% paused to 50% running; a final look closes most of the gap, but repeated swaps still cost points.'
+  takeaway_zh: 同一记忆任务在“世界暂停”与“世界继续运转”下各跑一遍：29 个任务族、34,176 回合。报告暂停时 8 个 Claude/GPT 模型平均 97% 成功、世界运转时仅 50%，排名也改变；行动前再看一眼能补回大部分差距，但多次相同物体互换仍让全部九个模型失分。
+
+- title: 'Action Windows Are Inherently Temporal: A Benchmark for Time-Sensitive Robotic Manipulation'
+  type: paper
+  arxiv: '2611.29558'
+  year: 2026
+  project: https://eyja42.github.io/await-site/
+  added: 2026-11-25
+  topics: [datasets, manipulation]
+  tags: [benchmark, time-sensitive, agents]
+  takeaway_en: AWAIT evaluates completion within physical action windows that account for decision and execution time. Reveals difficulty recognizing window onset; successive decisions can exhaust a window even when each fits.
+  takeaway_zh: AWAIT 基准在计入决策与执行时间共享预算的“动作窗口”内评测任务完成。报告智能体难以识别窗口开启时刻，且即便每次决策都短于窗口时长，连续的决策与运动仍会耗尽窗口。
+
+- title: 'HIVE-Bench: Evaluating Patch-Level Visual Representations for Egocentric Robot Manipulation'
+  type: paper
+  arxiv: '2611.30813'
+  year: 2026
+  code: https://github.com/KolaKivy/HIVE-Bench
+  added: 2026-11-25
+  topics: [datasets, learning]
+  tags: [benchmark, representation, egocentric, bimanual]
+  takeaway_en: One shared flow-matching policy reads 20 encoders from seven families on 24 egocentric bimanual tasks. Keeping patches matters; inverse-dynamics readout is a top pre-training metric.
+  takeaway_zh: 用一个共享流匹配策略在 24 个自我中心双臂任务上评测 7 族 20 个编码器的块级表征。报告保留 patch 至关重要（把每视图平均成一个 token 会损失大部分成功率）、自适应对每对编码器都有益；逆动力学读出是训练前最强的预测指标之一，识别/深度/对应并不稳定迁移。
+
+- title: 'Phantom Success, Silent Failure: Auditing the Success Checkers of Simulated Manipulation Benchmarks'
+  type: paper
+  arxiv: '2611.25179'
+  year: 2026
+  org: Mohamed Bin Zayed University of Artificial Intelligence
+  added: 2026-11-25
+  topics: [datasets]
+  tags: [benchmark, audit, evaluation, llm]
+  takeaway_en: 'Finds checker-instruction disagreements, recreates them in simulation, verifies by rendering: 61 distinct defects across 49 tasks - 40 phantom successes, 21 silent failures in RoboTwin 2.0, RoboCasa365 and RoboDojo.'
+  takeaway_zh: SimAudit 用 LLM 分析指令与检查器代码的分歧场景，在仿真中复现并运行原检查器，再以多视角渲染人工核验。报告三个基准 183 个测试用例中确认 61 处缺陷（49 个任务）：40 个“幽灵成功”（未完成被接受）与 21 个“静默失败”（有效完成被拒绝）。

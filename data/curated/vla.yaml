@@ -3102,3 +3102,128 @@
   tags: [vla, tactile, force, grip, slip, real]
   takeaway_en: 'Forward-only tactile harness: backprop-free encoder, zeroth-order adapter, SlipGuard slip gate. 97.6% LIBERO at 7.12x less activation memory; grip force peaks 29x lower than a reflex ramp, avoiding structural crush.'
   takeaway_zh: 前向式触觉执行框架，把每一层优化目标与物理可观测量显式配对：无反向传播的触觉编码器保留接触几何、零阶适配器做激活空间更新、SlipGuard 连续防滑门控。报告 LIBERO 平均 97.6%、峰值激活内存降 7.12 倍；结构件上抓握力峰值比单调反射斜坡低 29 倍。
+
+- title: 'ACAP: Asynchronous Coding Agents for Efficient Robot Control'
+  type: paper
+  arxiv: '2611.31205'
+  year: 2026
+  project: https://projects.zxhezexin.com/acap
+  added: 2026-11-25
+  topics: [vla]
+  tags: [coding-agents, asynchronous, real]
+  takeaway_en: 'Teams of coding agents run one per control group, a hyper-agent coordinates dependencies. 72 real rollouts, 25 settings: 28.2% lower time cost than a single-agent policy; supports mobile manipulation.'
+  takeaway_zh: 把机器人组织为一队常驻编码智能体，每个成员负责一个控制组（臂+爪、躯干+底盘）异步推理执行，超智能体协调依赖并动态分配控制权。72 条真机 rollout、25 种任务/平台设置下任务均衡时间成本比单智能体降低 28.2%，并支持底盘与躯干成员接口的移动操作。
+
+- title: 'Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness'
+  type: paper
+  arxiv: '2611.31201'
+  year: 2026
+  project: https://dravenalg.github.io/projects/Embo-Harness/
+  rating: 1
+  added: 2026-11-25
+  topics: [vla]
+  tags: [frontier-model, harness, real]
+  takeaway_en: Studies four harness components (prompting, planning, execution, tool use) and distills a recipe favoring native visual reasoning over handcrafted priors. 83.3% on RoboLab-120 (+26.2); 15/20 zero-shot real trials.
+  takeaway_zh: 系统研究前沿模型直接作策略的闭环框架四要素（提示、规划、执行、工具），提炼出优先利用模型原生视觉推理与工具能力的实用配方。报告 RoboLab-120 成功率 83.3%（比最强基线高 26.2 个百分点），四个真实操作任务零样本 15/20 成功。
+
+- title: 'Quantizing in the Loop: Drift-Aware Ultra-Low-Bit Vision-Language-Action Models'
+  type: paper
+  arxiv: '2611.30178'
+  year: 2026
+  code: https://github.com/ForeverBlue816/LoopQ
+  added: 2026-11-25
+  topics: [vla]
+  tags: [quantization, efficiency, on-policy, real]
+  takeaway_en: 'On-policy ultra-low-bit quantization: calibrates on the quantized policy''s own rollouts and aligns readouts with the full-precision teacher. 2-bit GR00T N1.7 keeps 60.4% vs 61.8% LIBERO-Plus; runs on Jetson AGX Thor.'
+  takeaway_zh: 在线策略式超低比特量化：用量化策略自身 rollout 的状态校准，读出头与全精度教师对齐，冻结码本只微调查找表与缩放。报告 GR00T N1.7 全线性层 2 比特时 LIBERO-Plus 60.4%（全精度 61.8%），在 Jetson AGX Thor 整数核上运行；真机 Piper 与全精度仅差一次成功。
+
+- title: 'LeadVLA: Learning Follower-Aware Route Execution for Robot Leading'
+  type: paper
+  arxiv: '2611.30149'
+  year: 2026
+  project: https://louiszengCN.github.io/LeadVLA_PAGE/
+  added: 2026-11-25
+  topics: [vla]
+  tags: [vla, navigation, hri]
+  takeaway_en: Structured policy keeps the route as an explicit path reference while learning pace and follower-conditioned residuals; 4M-sample corpus plus LeadBench. 39.6% success, real-world transfer without fine-tuning.
+  takeaway_zh: 结构化多模态策略保留显式路径参考，同时学习行进节奏与随行者/场景条件的残差修正；构建约 400 万样本的 UE 闭环训练语料与 108 集完全留出的 LeadBench。报告 39.6% 任务成功（评估策略中最高），无需真机微调即迁移到未见真实环境。
+
+- title: 'RoboThink: Let the Agent Think, Let the Policy Act'
+  type: paper
+  arxiv: '2611.30111'
+  year: 2026
+  project: https://robo-think.github.io/
+  added: 2026-11-25
+  topics: [vla]
+  tags: [agent, vla, instruction, real-time]
+  takeaway_en: The agent thinks, the policy acts on guidance via instruction and feedback channels taught by agent-labelled DAgger. Under drift, LIBERO 0.09 to 0.87; 55 s and 8k tokens vs GPT-6 Astra's 2.1 min and 1M+.
+  takeaway_zh: 智能体只负责思考、策略学会执行其指导：指令通道改写任务、反馈通道修正动作方式，用智能体标注的 DAgger 与反事实反馈训练且仅动作模块可读。报告 LIBERO 恒定漂移下成功率 0.09→0.87、随机漂移 0.42→0.84；每回合 55 秒 8k token（GPT-6 Astra 需 2.1 分钟百万级 token）。
+
+- title: 'JEPA-Tuner: From Predictive Fine-Tuning to Asynchronous Execution of Vision-Language-Action Models'
+  type: paper
+  arxiv: '2611.29096'
+  year: 2026
+  project: https://qujx.github.io/JEPA-Tuner-Website
+  added: 2026-11-25
+  topics: [vla]
+  tags: [vla, predictive, asynchronous, fine-tuning]
+  takeaway_en: Regularizes VLA guidance through action-conditioned future prediction, so the predictor anticipates the next chunk's guidance for asynchronous execution without overlap correction. Improves sync and async control.
+  takeaway_zh: 用动作条件未来预测正则化 VLA 的策略引导：预测器从当前引导与已执行动作匹配未来观测的引导，异步执行时提前生成下一块并在首动作直接执行。报告同步推理成功率提升、异步控制在 LIBERO 与多种尺寸真机上性能与平滑性均改善。
+
+- title: 'DelayOPSD: On-Policy Self-Distillation from a Synchronous Teacher for Real-time Asynchronous Policies'
+  type: paper
+  arxiv: '2611.30534'
+  year: 2026
+  code: https://github.com/present091/DelayOPSD
+  added: 2026-11-25
+  topics: [vla]
+  tags: [vla, asynchronous, distillation, latency, real]
+  takeaway_en: A synchronous teacher (same policy, execution-time observation) supervises a delayed student on its own rollouts. Under a 10-step delay, SmolVLA 70.2% to 78.7%; best average on LIBERO/Kinetix; real success 46% to 62%.
+  takeaway_zh: 用同步教师（同一策略、执行时刻观测）在策略自身 rollout 上监督延迟学生，让学生在整个去噪过程匹配教师。报告 10 步延迟下 SmolVLA 从 70.2% 提到 78.7%，LIBERO 与 Kinetix 上平均成功率最高，真机 46%→62%，部署无额外模块。
+
+- title: 'EgoStudy: How Does Scaling Egocentric Data Affect VLA and WAM Pretraining?'
+  type: paper
+  arxiv: '2611.30490'
+  year: 2026
+  project: https://puzhenyuan.github.io/EgoStudy-website
+  added: 2026-11-25
+  topics: [vla, world-models]
+  tags: [egocentric, scaling, study, pretraining]
+  takeaway_en: 'Controlled scaling study holding robot data fixed: diversity, alignment and language detail drive transfer; scaling helps end-effector motion more than fingers; WAMs win with little data, VLAs gain as data grows.'
+  takeaway_zh: 固定机器人数据的对照缩放研究：数据多样性、轨迹对齐与详细语言标注是迁移关键；扩大自我中心数据对末端平移预测的增益大于精细手指运动；数据有限时 WAM 更受益，数据量增大后 VLA 增益更大。
+
+- title: 'Detecting Is Not Choosing: What a World Model Needs to Keep a VLA Policy Safe'
+  type: paper
+  arxiv: '2611.29553'
+  year: 2026
+  project: https://openreview.net/forum?id=oIzsAcOuYl
+  added: 2026-11-25
+  topics: [vla, world-models]
+  tags: [safety, world-model, analysis]
+  takeaway_en: An exact lookahead filter raises VLA safety 11.5-25.7 points, but learned critics that detect danger rank candidates near chance; 3.18 mm state error removes 70% of the gain. Rank within state, be accurate in the tail.
+  takeaway_zh: 精确前瞻滤波让三个 VLA 的安全率提升 11.5–25.7 分，但学到能检测危险状态的评判器在同一状态下排序候选接近随机（决策内 AUROC 0.55）；3.18 mm 的中位状态误差即抹掉 70% 增益。结论：安全世界模型要按“同状态排序”评判，且尾部与手持物体上都要准。
+
+- title: A Glimpse of Training VLMs as Foundation Models for Robotic Manipulation
+  type: paper
+  arxiv: '2611.29338'
+  year: 2026
+  org: Tsinghua University
+  rating: 1
+  added: 2026-11-25
+  topics: [vla]
+  tags: [vlm, foundation-model, sft, streaming]
+  takeaway_en: 'nanoAstra: semantic action modeling over reusable primitives plus capability-preserving SFT, trained on 5,000+ hours of robot data and VQA. 17.8% zero-shot RoboTwin 2.0 randomized; streaming cuts idle time 35.0% to 6.9%.'
+  takeaway_zh: nanoAstra 用可复用参数化原语表示机器人行为为语义步骤，并以机器人专用系统提示约束输出到结构化动作空间（能力保持 SFT）；在 5000 多小时机器人数据与通用 VQA 上训练。报告 RoboTwin 2.0 随机基准零样本 17.8%（显著超过先进 VLA/WAM 与同规模 VLM），单卡推理快于动作执行、流水线使机器人闲置时间从 35.0% 降到 6.9%。
+
+- title: 'BiCAT: Bimanual Coordination Action Tokenization'
+  type: paper
+  arxiv: '2611.23499'
+  year: 2026
+  org: National University of Singapore
+  code: https://github.com/MAGICLAB-NUS/BiCAT
+  project: https://magiclab-nus.github.io/BiCAT/
+  added: 2026-11-25
+  topics: [vla, manipulation]
+  tags: [vla, bimanual, tokenizer, coordination, real]
+  takeaway_en: Shares one motion representation across arms; symmetric cross-arm attention and a joint decoder condition each arm on its partner. +17.6 over the best of eight baselines on RoboTwin 2.0; 40.5 ms per chunk.
+  takeaway_zh: 双臂共享一套运动表征，通过对称跨臂注意力与联合解码器让每只手臂以对方为条件（先生成左臂）；策略并行预测各臂全部 token。报告 RoboTwin 2.0 十个任务上比八个基线中最强者平均高 17.6 个百分点、每动作块 40.5 ms，三个本体六个真机任务成功率最高。

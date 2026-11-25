@@ -1698,3 +1698,126 @@
   tags: [jepa, world-model, latent-skills, planning, action-space]
   takeaway_en: State-conditioned VAE encodes action sequences into latent skills with a Gaussian prior, aligning planner sampling with the model's training data. Goals over 80 steps 42% to 62%; AntMaze two-cell goals 0.4% to 38%.
   takeaway_zh: 用状态条件 VAE 把短动作序列编码为带标准高斯先验的潜在技能，使规划器采样的候选落在世界模型见过的分布内。报告 80 步目标平均成功率 42%→62%；AntMaze 两单元目标 0.4%→38%。只加一个模块、不改规划器、无子目标或手工技能。
+
+- title: 'VITA-WAM: Manifold-Aligned World-Action Modeling for Real-Time Robot Control'
+  type: paper
+  arxiv: '2611.31195'
+  year: 2026
+  project: https://ucd-dare.github.io/VITA-WAM
+  added: 2026-11-25
+  topics: [world-models]
+  tags: [wam, flow-matching, latency, real-time]
+  takeaway_en: Aligns observation and action manifolds so a single ODE step transports latent observations into actions, dropping per-step cross-attention. One step beats 10-step FastWAM by 21.47 pp on LIBERO-Plus at 55.67 ms (2.1x).
+  takeaway_zh: 对齐观测流形与动作流形，使单步 ODE 即可把潜观测直接输运为潜动作，并省去去噪各步的交叉注意力。报告单步在 LIBERO-Plus 上超过 10 步 FastWAM 21.47 个百分点、LIBERO 高 1.65，推理 55.67 ms（2.1 倍加速），无需蒸馏。
+
+- title: 'Foresight Forcing: Learning Spatial Foresight for Robotic Manipulation'
+  type: paper
+  arxiv: '2611.30963'
+  year: 2026
+  project: https://anson2333.github.io/foresight-forcing
+  added: 2026-11-25
+  topics: [world-models, manipulation]
+  tags: [wam, 3d, spatial, real]
+  takeaway_en: Distills patch-wise 3D feature changes into spatial transition queries refined from observation, instruction and proprioception; deployment predicts queries without future frames. 95.01% RoboTwin 2.0 Full; 85.8% real.
+  takeaway_zh: 用冻结 3D 基础模型提取对齐的当前-未来帧的块级特征差，蒸馏为“空间转移查询”，与当前视觉特征一起生成动作；部署时无需未来观测或 3D 教师。报告 RoboTwin 2.0 Full 平均 95.01%，六个真机任务平均分 85.8%。
+
+- title: 'DexLatentWorld: 3D Cross-Embodiment Latent Action World Models for Zero-Shot Robotic Manipulation'
+  type: paper
+  arxiv: '2611.30907'
+  year: 2026
+  project: https://vinaymohan0409.github.io/DexLatentWorld/
+  added: 2026-11-25
+  topics: [world-models, manipulation]
+  tags: [world-model, latent-actions, cross-embodiment, 3d, real]
+  takeaway_en: Learns continuous latent actions from point clouds of retargeted human demos with a contrastive cross-embodiment objective; MPC searches the latent space. 90/92/60% reach/grasp/place; 86% real dexterous hand.
+  takeaway_zh: 从重定向人类演示的点云学习连续潜动作，用对比目标保证跨本体运动表征一致；MPC 直接在潜动作空间搜索，从预测的几何运动恢复可执行指令，无需本体专用解码器。报告 reach/grasp/place 90%/92%/60%（DexWM 为 72/58/28），未见灵巧手真机 50 次试验 86%。
+
+- title: World Models as Native Latent Action Models
+  type: paper
+  arxiv: '2611.30898'
+  year: 2026
+  project: https://pawteam-eai.github.io/native-lam/
+  added: 2026-11-25
+  topics: [world-models, vla]
+  tags: [world-model, latent-actions, vla, pretraining]
+  takeaway_en: One pretrained video DiT serves as both IDM and FDM with learnable dynamics registers as the only bridge; PAWlicy uses it as a dynamics teacher. 93.6% RoboTwin 2.0, top among VLAs; real robots beat π0.5.
+  takeaway_zh: 把预训练视频扩散 Transformer 同时用作逆/正动力学模型，仅在两者之间加可学习动力学寄存器，从动作唯一不同的反事实帧对中蒸馏出紧凑的“原生潜动作”。其 PAWlicy 预训练范式报告 RoboTwin 2.0 域随机化示教平均 93.6%（VLA 中最高），真机两项任务超过 π0.5。
+
+- title: Spiking World-Action Models for Robotic Manipulation
+  type: paper
+  arxiv: '2611.30041'
+  year: 2026
+  project: https://wxqnl.github.io/spikingwam/
+  added: 2026-11-25
+  topics: [world-models]
+  tags: [spiking, wam, efficiency, real]
+  takeaway_en: 'First spiking WAM: a sparse task-skeleton state keeps arm and object keypoints, spike coding and grid attention keep millimetre precision, one pass per plan. Competitive success, far less energy; best on LIBERO-Plus.'
+  takeaway_zh: 首个脉冲世界动作模型：用稀疏“任务骨架状态”只保留机械臂与物体关键点，体帧脉冲编码与网格重合注意力保持毫米精度，每个计划只需一次网络前向。报告 LIBERO/RoboTwin 2.0 成功率有竞争力且能耗大幅降低、LIBERO-Plus 超过所有对比方法，并有真机验证。
+
+- title: 'FlexWAM: Learning Flexible Visual Routing for World Action Models'
+  type: paper
+  arxiv: '2611.30024'
+  year: 2026
+  project: https://flexwam.github.io/
+  added: 2026-11-25
+  topics: [world-models]
+  tags: [wam, multi-view, routing, real]
+  takeaway_en: Alternates within/cross-view attention and routes action attention by an observation-conditioned router trained with counterfactual view credit. +16.4/+23.0 points over the strongest baseline on five real tasks.
+  takeaway_zh: 在视角内与跨视角注意力间交替，并用观测条件路由器为动作预测优先分配相关视角；路由器由“反事实视角信用”（抑制某视角贡献后的动作损失敏感度）训练。报告两个视频骨干、两种真机平台五个任务上比最强基线平均高 16.4/23.0 个百分点。
+
+- title: 'One Latent World for Heterogeneous LiDARs: A Scan Pattern Agnostic 4D World Model via Direct Ray Decoding'
+  type: paper
+  arxiv: '2611.30007'
+  year: 2026
+  project: https://minwoo0611.github.io/OneLatentWorld
+  added: 2026-11-25
+  topics: [world-models, perception]
+  tags: [world-model, lidar, 4d, ray-decoding]
+  takeaway_en: 'One spatial latent observed by any LiDAR: rays decode hit probability and depth directly, no intermediate surface. Registration error down about 70%; 19-28% lower depth error than rendering baselines.'
+  takeaway_zh: 扫描模式无关的 4D LiDAR 世界模型：场景与传感器观测解耦，同一空间潜表示可被异质 LiDAR 在相同安装位直接观测；每条射线独立从潜表示解码命中概率与深度，无需中间表面/场。报告配准误差比最好基线低约 70%、深度误差低 19–28%，生成扫描有益于多个下游任务。
+
+- title: 'MAWAM: Joint Imagination for Collaborative Robot Manipulation with a Multi-Agent World Action Model'
+  type: paper
+  arxiv: '2611.29501'
+  year: 2026
+  project: https://embodiedcity.github.io/MAWAM/
+  added: 2026-11-25
+  topics: [world-models, manipulation]
+  tags: [wam, multi-robot, collaboration, real]
+  takeaway_en: Extends one WAM along an agent axis with joint self-attention over all agents plus identity and embodiment masks; MA-Bench with seven tasks. 82.7% mean joint success (+30.7); real heterogeneous team.
+  takeaway_zh: 沿智能体维度扩展单智能体 WAM：统一因果序列中所有智能体共享权重的联合自注意力时空对齐各自想象的未来，语言/身份/本体编码把每条流绑定到对应角色。构建 MA-Bench 七任务，报告平均联合成功率 82.7%（比最强基线高 30.7），并在真实异构机器人队上实时协作。
+
+- title: '$\zeta_0$: A Framework for World Action Models with Joint Scene and Body Foresight in Humanoid Control'
+  type: paper
+  arxiv: '2611.29277'
+  year: 2026
+  code: https://github.com/chenyizhi123/Zeta0
+  project: https://chenyizhi123.github.io/zeta0-project/
+  added: 2026-11-25
+  topics: [world-models, locomotion]
+  tags: [wam, humanoid, foresight, real]
+  takeaway_en: Turns VLAs into WAMs with joint visual-feature and measured-joint-trajectory foresight via dual-response transfer. On HumanoidArena 63.6/79.5% for Psi-0 and GR00T N1.7 (+18.8/+9.0); 78.3/85.0% real.
+  takeaway_zh: 把 VLA 升级为同时预见未来视觉特征与实测关节轨迹的人形 WAM：教师以记录的未来提供参考动作响应，双响应迁移训练因果预测器与执行策略对齐。报告 HumanoidArena 上 Ψ0/GR00T N1.7 分别 63.6%/79.5%（+18.8/+9.0 个百分点），六个真机任务 78.3%/85.0%。
+
+- title: 'SANA-Robot: Efficient World Action Model with Hybrid Memory'
+  type: paper
+  arxiv: '2611.28943'
+  year: 2026
+  org: NVIDIA
+  project: https://nvlabs.github.io/Sana/Robot/
+  added: 2026-11-25
+  topics: [world-models]
+  tags: [wam, memory, edge, real-time]
+  takeaway_en: '4.5B WAM with minute-level memory: linear attention keeps a fixed-size global state plus sliding-window layers; one model as policy and simulator. Best RoboDojo memory among ~5B models; 30 Hz edge control.'
+  takeaway_zh: 4.5B 带分钟级记忆的 WAM：线性注意力维持定长全局记忆、滑窗 softmax 层传播既往信息，记忆成本恒定；同一模型既可当策略也可当世界仿真器（对动作/视频 token 施加不同噪声级）。报告 RoboDojo 记忆维度在约 5B 模型中最佳、LIBERO-Plus/Pro/Max 成功率最高，RTX 5090 上每块 135 ms、边缘设备 30 Hz 异步闭环。
+
+- title: 'JEPA-Shield: Safe Diffusion Planning with Latent World Models via Conformal Shielding'
+  type: paper
+  arxiv: '2611.29609'
+  year: 2026
+  project: https://www.taekyung.me/jepa-shield
+  added: 2026-11-25
+  topics: [world-models, control]
+  tags: [safety, jepa, conformal, planning]
+  takeaway_en: 'Connects a frozen JEPA planner to task-space safety: conformal prediction turns motion errors into uncertainty tubes, a backup shield screens candidates. 84.4-99.0% success with zero violations on VParkBench.'
+  takeaway_zh: 把冻结的 JEPA 世界模型规划接入任务空间安全执行：共形预测把运动预测误差变成多时域不确定性管，基于备份的屏障逐一筛掉不安全候选。给出块边界处的概率约束满足保证；VParkBench 泊车任务成功率 84.4%–99.0% 且零约束违反。

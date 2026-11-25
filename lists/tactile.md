@@ -2,7 +2,7 @@
 
 _Tactile sensors, touch representations and contact-rich control._
 
-84 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
+85 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/tactile.yaml`](../data/curated/tactile.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/tactile.html) · [中文](tactile.zh-CN.md)
 
@@ -15,6 +15,7 @@ _Tactile sensors, touch representations and contact-rich control._
 - **[ACTS: Learning Visuo-Tactile World Models from Human Physical Interaction](https://arxiv.org/abs/2610.24285)** (2026) — Visuo-tactile world model trained only on humans handling GelSight sensors (4.9 h React dataset). Reports that contact dynamics transfer to robot rollouts more reliably than visual appearance does. · [project](https://acts-anon.github.io/)
 - **[Blind Dexterous Grasping via Real2Sim2Real Tactile Policy Learning](https://arxiv.org/abs/2606.11767)** (2026) — Tactile-only blind grasping on a LEAP Hand: calibrate a digital twin to reproduce real touch signals, pretrain a layout-aware tactile encoder, and distill object-specific RL experts into a diffusion policy.
 - **[DeTac: Dual-branch Decoupling of Texture and Force Signals in Vision-Based Tactile Sensors](https://arxiv.org/abs/2610.16463)** (2026) — CoRL 2026 Spotlight. Dual-branch generative framework that extracts clean shading and marker images at once from one marker-based tactile frame, avoiding serial mask-based inpainting.
+- **[Distilling Touch into Vision-Only Policies for Contact-Rich Manipulation](https://arxiv.org/abs/2611.28697)** (2026) — Distills tactile-guided behavior straight into a vision-only policy - act as if you could feel, without reconstructing touch. +16.0% sim / +22.5% real, within 2.0/3.75% of the tactile teacher. · [project](https://pier-lab.github.io/tacittouch/)
 - **[Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2610.03333)** (2026) — VISTA: equivariant visuotactile diffusion policy that fuses touch into spherical visual tokens and rotates them with the gripper pose, for more data-efficient contact-rich imitation. · [code](https://github.com/Kenn3o3/Vista) · [project](https://vista-paper.github.io/)
 - **[Evaluating Tactile Foundation Models for End-to-End Imitation Learning in Contact-Rich Manipulation](https://arxiv.org/abs/2611.00957)** (2026) — Plugs several pretrained tactile foundation models into Diffusion Policy and compares them in one setup, including fine-tuning and mid-training strategies, with over 5,000 real-world rollouts. · [code](https://github.com/isri-aist/TacLatentIL) · [project](https://mmurooka.github.io/tfm4il-project-page/)
 - **[FACTR 2: Learning External Force Sensing for Commodity Robot Arms Improves Policy Learning](https://arxiv.org/abs/2606.12406)** (2026) — CoRL 2026 Oral. NEXT estimates external joint torques without force sensors, training in 1 minute from 10 minutes of free-motion data, enabling force-feedback teleoperation and better policy learning on low-cost arms. · [code](https://github.com/philiphan0109/factr2_next) · [project](https://jasonjzliu.com/factr2)

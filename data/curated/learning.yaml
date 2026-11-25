@@ -1591,3 +1591,117 @@
   tags: [mppi, model-based-rl, planning, sim2real, unitree-go2]
   takeaway_en: 'Advantage-aware MPPI: an action-chunk policy captures the whole H-step proposal, advantage-guided training improves the target. 50% fewer MPPI iterations; zero-shot sim-to-real on Go2.'
   takeaway_zh: 面向 MPPI 的优势感知 MBRL 框架：用混合因子分析器的动作块策略显式表示完整 H 步规划提案，并用优势估计构造改进目标训练策略、同时保持与规划器对齐。报告 31 个高维连续控制任务上比 SOTA 规划型 MBRL 少用 50% 的 MPPI 迭代，且在 Unitree Go2 上零样本 sim-to-real。
+
+- title: 'ReWeave: Emergent Physical Task Topologies for Embodied Harness Optimization and Cross-Task Meta-Distillation'
+  type: paper
+  arxiv: '2611.31053'
+  year: 2026
+  code: https://github.com/xuyicheng-zju/ReWeave
+  project: https://xuyicheng-zju.github.io/ReWeave/
+  added: 2026-11-25
+  topics: [learning]
+  tags: [harness, long-horizon, continual-learning]
+  takeaway_en: Co-optimizes an agent harness and an emergent physical task topology without policy updates; 72 specialists consolidate into 44 reusable groups. LIBERO-PRO 89.00% to 98.75%, RoboDojo 25.50% to 58.25%.
+  takeaway_zh: 冻结策略与感知，联合优化具身 harness 与涌现的物理任务拓扑：新证据修正拓扑后重投影历史试验、暴露进度与瓶颈。报告把 72 个专家单元合并为 44 个可复用组，LIBERO-PRO 89.00%→98.75%、RoboDojo 25.50%→58.25%，共享 harness 在八个未见任务上 51.3%（持续学习后 75.0%）。
+
+- title: 'RoboAda: Adapting Frozen Robot Policies at Test Time to Physics They Cannot See'
+  type: paper
+  arxiv: '2611.30209'
+  year: 2026
+  project: https://RoboAda.github.io/
+  added: 2026-11-25
+  topics: [learning]
+  tags: [test-time, adaptation, physics, real]
+  takeaway_en: 'Keeps the plan, corrects the commands: an inverse-dynamics model turns observed motion into free labels, response hypotheses weighted by prediction quality. Doubles success 27.8% to 62.9% under 11 shifts.'
+  takeaway_zh: 不改计划、只修正执行指令：逆动力学模型把观测运动转为“应有的指令”免费标签，竞争假设（含“什么都没变”）按预测质量加权。报告五个冻结策略在 11 种物理漂移下平均成功率 27.8%→62.9%，比七种测试期自适应方法中最好者高 17.3 分，且无变化时基本不损性能。
+
+- title: 'ABI: Actor-Free Behavior-Induced Representations for Zero-Shot Test-Time Guidance'
+  type: paper
+  arxiv: '2611.30636'
+  year: 2026
+  project: https://securitycfs.github.io/ABI-demo/
+  added: 2026-11-25
+  topics: [learning]
+  tags: [zero-shot, representation, critic, guidance]
+  takeaway_en: Learns multi-horizon action-chunk representations from unlabeled trajectories, no rewards or actor training; a chunk critic guides policies with no updates. 65 tasks, matches zero-shot RL baselines; works from pixels.
+  takeaway_zh: 免奖励、免 actor 训练：从无标注轨迹学习多时域动作块表征（行为诱导表征），冻结表征加轻量任务读出构成块评判器，零参数更新地引导任意目标策略。报告 65 个运动/导航/操作任务上使弱模仿策略达到或超过零样本 RL 基线，从原始像素输入同样有效。
+
+- title: Skill-Adaptive Noise Scheduling for Diffusion Policies
+  type: paper
+  arxiv: '2611.30264'
+  year: 2026
+  venue: NeurIPS 2026
+  added: 2026-11-25
+  topics: [learning, manipulation]
+  tags: [diffusion-policy, noise-schedule, skills, real]
+  takeaway_en: Learnable skill-conditioned noise schedule per action dimension, with an auxiliary inverse objective keeping schedules discriminative; denoising steps adapt per skill cluster. More success with fewer steps.
+  takeaway_zh: 为扩散策略学一个按技能、按动作维度的噪声调度，辅以从 Legendre 系数重建技能嵌入的逆目标防止调度坍缩；推理时按技能簇分配去噪步数，精细技能多算、简单技能少算。报告在接触丰富与灵巧操作任务上成功率更高且去噪步数更少（含真机）。
+
+- title: 'Reset Dependence Is Embodied: Training Protocol Changes Which Morphologies Appear Optimal'
+  type: paper
+  arxiv: '2611.29518'
+  year: 2026
+  venue: NeurIPS 2026
+  code: https://github.com/kevinxqiu/reset-dependence
+  project: https://reset-dependence.github.io
+  added: 2026-11-25
+  topics: [learning, sim]
+  tags: [co-design, rl, analysis, benchmark]
+  takeaway_en: 'Trains 100 evolved UNIMAL bodies under three reset rules and scores with one evaluator: Strict and Reset-free rankings correlate only 0.21. Choosing bodies by worst-case reward keeps 91% of each protocol''s best.'
+  takeaway_zh: 对 100 个进化的 UNIMAL 身体用三种重置规则训练 PPO 并用同一评估器打分：Strict 与 Reset-free 的排名相关仅 0.21。报告按三种协议最差奖励选身体，样本内仍保留各协议最佳身体的至少 91% 奖励；建议共设计基准声明重置规则并报告跨协议稳健的身体。
+
+- title: Neural Fidelity Calibration for Informative Sim-to-Real Adaptation
+  type: paper
+  arxiv: '2611.28274'
+  year: 2026
+  project: https://www.youwei-yu.com/nfc/
+  added: 2026-11-25
+  topics: [learning, sim]
+  tags: [sim2real, calibration, flow-matching, real]
+  takeaway_en: 'Conditional flow matching calibrates simulator parameters and residual fidelity online from execution data; fine-tunes only on anomaly. Broken-axle robot on snow/mud/grass: 26% to 70% success, 88% less jerk.'
+  takeaway_zh: 用条件流匹配在线标定仿真器物理参数与“残差保真度”（未建模动力学与感知误差），在潜空间采样真实环境供真转仿真微调，仅异常时触发。报告五个机器人、最多 39 个参数上后验最准；断轴轮式机器人在雪/泥/湿草地上成功率 26%→70%、姿态抖动降 88%。
+
+- title: 'Innata-0: A Native Embodied World System with Model-Agent Co-Design'
+  type: paper
+  arxiv: '2611.30254'
+  year: 2026
+  org: BAAI
+  project: https://baai-eai.github.io/innata-0/
+  added: 2026-11-25
+  topics: [learning, world-models]
+  tags: [wam, agent, co-design, foundation-model]
+  takeaway_en: Co-designs an embodied world-action model (tri-tower mixture-of-transformers for understanding, prediction, action) with an agent handling memory, verification and recovery; a protocol aligns training with execution.
+  takeaway_zh: 模型-智能体协同设计的原生具身世界系统：Innata-0-WAM 用三塔混合 Transformer 统一理解、预测与动作生成，Innata-0-Agent 以记忆、验证与恢复支撑长程执行；协同设计协议把模型训练与智能体执行对齐，并用验证过的经验支持后续适应。
+
+- title: 'EnvTrap: Revealing the Environment-Only Attack Surface in Embodied AI via Consequence-Blind Action Execution'
+  type: paper
+  arxiv: '2611.30004'
+  year: 2026
+  venue: NeurIPS 2026
+  added: 2026-11-25
+  topics: [learning]
+  tags: [safety, attack, embodied, robustness]
+  takeaway_en: Environment-only object rearrangements raise hazardous-action rates to 83.4% across five policies; a consequence-aware defense cuts trap triggers by 76.3 points in sim and 62.9 on physical backends.
+  takeaway_zh: 只重排环境物体（不改模型与指令）即可让五个动作策略的危险动作率平均升到 83.4%，模型后果预测接近随机而人类评估者准确率高；提出的后果感知防御在仿真中把陷阱触发率平均降 76.3 个百分点、物理后端降 62.9。
+
+- title: How Should a Home Robot Update Its Memories When Human Routines Change?
+  type: paper
+  arxiv: '2611.29818'
+  year: 2026
+  code: https://github.com/nesl/memory-for-home-robots
+  added: 2026-11-25
+  topics: [learning, navigation]
+  tags: [memory, home-robot, analysis]
+  takeaway_en: 'Simulated households with a resident who gets sick, recovers, relapses: a rule keeping every sighted room beats summary-only LM memory, and history access closes the gap. Summaries miss sick-day patterns.'
+  takeaway_zh: 在“住户生病-康复-再病”的仿真家庭中比较记忆策略：保留物体所有出现房间的规则胜过只写摘要的语言模型记忆，让模型读原始历史即可追平；摘要几乎无法区分生病日与日常模式，删除首次病史会抹掉全部增益。建议未来基准评测可回归惯例的记忆能力。
+
+- title: 'Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation'
+  type: paper
+  arxiv: '2611.27689'
+  year: 2026
+  org: Zhejiang University
+  added: 2026-11-25
+  topics: [learning]
+  tags: [harness, self-improvement, memory, real]
+  takeaway_en: Actor executes, Reflector converts evidence into reusable guidance in a hierarchical memory; recursive harness refinement without parameter updates. 82.4/76.7/94.4% on three benchmarks; 96.7% real.
+  takeaway_zh: 双智能体框架：Actor 经机器人控制接口执行，Reflector 把执行证据转化为可复用操作指导，分层记忆维护短期上下文与长期经验；基于证据的失败归因驱动 harness 递归自改进，不更新模型参数。报告 RoboTwin 2.0 82.4%、RoboSPA 76.7%、RMBench 94.4%，三个真机任务平均 96.7%。

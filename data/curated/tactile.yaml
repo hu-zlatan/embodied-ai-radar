@@ -864,3 +864,14 @@
   tags: [tactile, vla, contact-rich, tokenizer, real]
   takeaway_en: Trains only on 'tactile innovation' - contact dynamics vision and actions cannot explain; the policy predicts a discrete code, no module at deployment. 87.5% sim / 70.5% real, +10.7/+9.0 over the best baseline.
   takeaway_zh: 只把“视觉与已执行动作无法解释的接触动力学”（tactile innovation）作为训练目标：分词器以视觉观测和动作为条件，把未来触觉变化压成离散码，策略学会预测该码，部署时不加任何新模块。报告六个仿真任务 87.5%、四个真机任务 70.5%，比最强视觉-触觉基线高 10.7/9.0 个百分点。
+
+- title: Distilling Touch into Vision-Only Policies for Contact-Rich Manipulation
+  type: paper
+  arxiv: '2611.28697'
+  year: 2026
+  project: https://pier-lab.github.io/tacittouch/
+  added: 2026-11-25
+  topics: [tactile, manipulation]
+  tags: [tactile, distillation, vision-only, real]
+  takeaway_en: Distills tactile-guided behavior straight into a vision-only policy - act as if you could feel, without reconstructing touch. +16.0% sim / +22.5% real, within 2.0/3.75% of the tactile teacher.
+  takeaway_zh: TacitTouch 把触觉引导行为直接蒸馏进纯视觉策略——“学得好像摸得到”，不重建触觉观测：冻结的视觉-触觉教师在相同噪声动作与流时间上监督学生的去噪预测与中间动作表征。报告四个仿真任务 +16.0%、四个真机任务 +22.5%，与使用实测触觉的教师差距仅 2.0/3.75%。

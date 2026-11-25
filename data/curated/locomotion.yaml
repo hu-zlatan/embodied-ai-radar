@@ -2010,3 +2010,49 @@
   tags: [humanoid, contact-rich, bfm, zero-shot, exploration]
   takeaway_en: Couples joint-action sampling with the frozen controller's latent space via a damped inverse policy Jacobian, steering exploration to desired physical effects. Elicits hurdling, door opening, object manipulation.
   takeaway_zh: 把关节动作空间采样与冻结控制器的潜空间耦合：经策略雅可比阻尼局部逆映射得到潜指令，让探索直接瞄准所需物理效果。报告人形跨栏、非抓取开门、操作铰接物体等分布外接触行为，并让灵巧手策略越过目标空间直接搜索完成四种装配。
+
+- title: 'Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control'
+  type: paper
+  arxiv: '2611.29897'
+  year: 2026
+  code: https://github.com/AIGeeksGroup/MotionMamba2.0
+  project: https://aigeeksgroup.github.io/MotionMamba2.0
+  rating: 1
+  added: 2026-11-25
+  topics: [locomotion]
+  tags: [humanoid, mamba, motion-generation, real-time, real]
+  takeaway_en: 'Mamba-based root-body diffusion with resumable recurrent states and persistent content memory; CUDA-graph execution cuts latency 1685 to 276 ms (6.14x). Real G1: text-guided composition, interactive locomotion.'
+  takeaway_zh: 基于 Mamba 的根-体扩散运动生成：可恢复循环状态与持久内容记忆把压缩运动历史转为局部注意力可访问的内容槽，支持长程可控生成。报告 HiPHI 上最长 39.52 秒 rollout 的精确末端控制，优化后中位延迟 1685→276 ms（6.14 倍）；G1 真机实现文本引导动作组合与键鼠交互移动。
+
+- title: 'PushMimic: Learning Adaptive Humanoid Box Pushing via Dynamic Motion Augmentation and Reference Distillation'
+  type: paper
+  arxiv: '2611.30077'
+  year: 2026
+  project: https://silvery107.github.io/pushmimic/
+  added: 2026-11-25
+  topics: [locomotion]
+  tags: [humanoid, pushing, rl, unitree-g1, real]
+  takeaway_en: One level-ground reference augmented over box masses and ramp inclinations via sampling-based trajectory optimization, distilled into one policy. 57.8% to 88.8%; G1 adapts torso pitch up to 19 kg.
+  takeaway_zh: 用采样轨迹优化把单条平地参考运动扩充为覆盖箱体质量与坡度的动态可行数据集，再蒸馏为一个跟踪策略。报告仿真成功率 57.8%→88.8%、手臂推箱代价降 22%；G1 真机在倾斜跑台上自适应躯干俯仰连续推箱（最大 19 kg、12.6°）。
+
+- title: 'Arcadian: Open-Source Humanoid Ecosystem for Accessible and Customizable Research and Education'
+  type: paper
+  arxiv: '2611.29868'
+  year: 2026
+  project: https://arcadian-humanoid.github.io/
+  added: 2026-11-25
+  topics: [locomotion, hardware]
+  tags: [humanoid, open-hardware, education, real]
+  takeaway_en: Meter-scale open humanoid with metal-embedded 3D printing, no CNC; RL locomotion transfers from sim and VR teleoperation drives both arms. About $6,800 to build; CAD, BOM, assembly docs and training code released.
+  takeaway_zh: 约一米高、约 6800 美元成本的开源人形机器人生态：金属嵌入 3D 打印免 CNC，兼顾强度与可定制性。报告仿真强化学习运动策略直迁硬件、VR 遥操作驱动双臂完成简单操作；CAD、物料清单、装配文档与训练部署代码全部公开，社区反馈驱动设计更新。
+
+- title: 'CarlHOI: Counterfactual Predictive Imagination for Generalizable Multi-Humanoid Object Interaction under Constrained Environments'
+  type: paper
+  arxiv: '2611.29749'
+  year: 2026
+  project: https://carlhoi.github.io
+  added: 2026-11-25
+  topics: [locomotion]
+  tags: [humanoid, multi-robot, world-model, counterfactual]
+  takeaway_en: A counterfactual-anchored relational world model imagines alternative collective futures under waypoint commands, guiding pretrained controllers without retraining. From 4 to 2-10 humanoids, unseen obstacles and objects.
+  takeaway_zh: 以反事实锚定的关系世界模型想象不同共享路径点指令下的人形队与物体未来，评估进度、失败与接触风险后选择自适应引导，不改动预训练协作控制器。报告仅用四人形训练即可泛化到 2–10 人形队、未见障碍几何与摆放及新物体组合。

@@ -2,7 +2,7 @@
 
 _触觉传感器、触觉表征与接触丰富的控制。_
 
-共 84 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
+共 85 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/tactile.yaml`](../data/curated/tactile.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/tactile.html) · [English](tactile.md)
 
@@ -15,6 +15,7 @@ _触觉传感器、触觉表征与接触丰富的控制。_
 - **[ACTS: Learning Visuo-Tactile World Models from Human Physical Interaction](https://arxiv.org/abs/2610.24285)** (2026) — 只用人手持 GelSight 传感器的交互数据（4.9 小时 React 数据集）训练视触觉世界模型。报告在机器人回放中接触动态比视觉外观更容易迁移，部分任务的相机视角预测甚至不如直接复制帧。 · [项目页](https://acts-anon.github.io/)
 - **[Blind Dexterous Grasping via Real2Sim2Real Tactile Policy Learning](https://arxiv.org/abs/2606.11767)** (2026) — 在 LEAP 手上实现只凭触觉的盲抓：先构建能复现真实触觉信号的校准数字孪生，再自监督预训练感知传感器布局的触觉编码器，最后把各物体的强化学习专家蒸馏为扩散策略。
 - **[DeTac: Dual-branch Decoupling of Texture and Force Signals in Vision-Based Tactile Sensors](https://arxiv.org/abs/2610.16463)** (2026) — CoRL 2026 Spotlight。双分支生成框架，可从单帧带标记点的触觉图像同时分离出干净的明暗图与标记图，避免串行掩码修复。
+- **[Distilling Touch into Vision-Only Policies for Contact-Rich Manipulation](https://arxiv.org/abs/2611.28697)** (2026) — TacitTouch 把触觉引导行为直接蒸馏进纯视觉策略——“学得好像摸得到”，不重建触觉观测：冻结的视觉-触觉教师在相同噪声动作与流时间上监督学生的去噪预测与中间动作表征。报告四个仿真任务 +16.0%、四个真机任务 +22.5%，与使用实测触觉的教师差距仅 2.0/3.75%。 · [项目页](https://pier-lab.github.io/tacittouch/)
 - **[Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2610.03333)** (2026) — VISTA：等变视触觉扩散策略，把触觉融合进球面视觉 token 并随末端姿态旋转，提升富接触模仿学习的数据效率。 · [代码](https://github.com/Kenn3o3/Vista) · [项目页](https://vista-paper.github.io/)
 - **[Evaluating Tactile Foundation Models for End-to-End Imitation Learning in Contact-Rich Manipulation](https://arxiv.org/abs/2611.00957)** (2026) — 把多种预训练触觉基础模型接入 Diffusion Policy，在统一设置下比较，并考察编码器微调与任务专用中训练策略，含 5000 多次真实机器人回合。 · [代码](https://github.com/isri-aist/TacLatentIL) · [项目页](https://mmurooka.github.io/tfm4il-project-page/)
 - **[FACTR 2: Learning External Force Sensing for Commodity Robot Arms Improves Policy Learning](https://arxiv.org/abs/2606.12406)** (2026) — CoRL 2026 Oral。NEXT 无需力传感器即可估计外部关节力矩，用 10 分钟自由运动数据训练 1 分钟，为低成本机械臂带来力反馈遥操作与更好的策略学习。 · [代码](https://github.com/philiphan0109/factr2_next) · [项目页](https://jasonjzliu.com/factr2)
