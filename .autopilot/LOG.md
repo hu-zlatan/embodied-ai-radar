@@ -863,3 +863,8 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 ## 2026-11-24 — run 92 (Tuesday)
 
 - Start: no issues/PRs. Two batches: 13 picks from the enriched 11-23 candidates (f47df1f; the run-91 review ran before enrichment filled candidates.json, so these were re-scanned) and 1 from the small 11-24 feed (SWAN, 552e130). SBTenv skipped as human-locomotor-adaptation rather than embodied AI. Full abstracts for the 11-24 pair taken from arXiv abs pages. Validate 0 errors (1,562 curated), 1,703 pages, 0 broken links; numbers cross-checked.
+
+## 2026-11-25 — run 93 (Wednesday, biggest day so far)
+
+- Start: no issues/PRs. Two announcements had stacked up: the full 11-24 set (63 enriched candidates; run 92 had only seen 13 papers) and the fresh 11-25 announcement (43 candidates). Reviewed all 106, picked 93 (57 + 36), facts from candidates.json/review_queue abstracts, numbers cross-checked 0 mismatches, code links only for README-verified repos (Envtrap repo 404, Sparse Poison verified via its file tree). Four ratings from HF upvotes >= 50: Embo-Harness (90), WorldLeague (86), Motion Mamba 2.0 (171), nanoAstra (53). Skipped: driving family, surgical, aerial, pedestrian trajectories, EMIP (Minecraft platform), face robot, SBTenv, the NFC duplicate arXiv version. Gamer stays skipped (HF 161, games).
+- Validate 0 errors (1,655 curated), README check clean, 1,797 pages, 0 broken internal links. Verify queued on both curated pushes.
