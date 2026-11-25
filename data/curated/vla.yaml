@@ -3227,3 +3227,91 @@
   tags: [vla, bimanual, tokenizer, coordination, real]
   takeaway_en: Shares one motion representation across arms; symmetric cross-arm attention and a joint decoder condition each arm on its partner. +17.6 over the best of eight baselines on RoboTwin 2.0; 40.5 ms per chunk.
   takeaway_zh: 双臂共享一套运动表征，通过对称跨臂注意力与联合解码器让每只手臂以对方为条件（先生成左臂）；策略并行预测各臂全部 token。报告 RoboTwin 2.0 十个任务上比八个基线中最强者平均高 17.6 个百分点、每动作块 40.5 ms，三个本体六个真机任务成功率最高。
+
+- title: 'OmniAct: One Policy, One Million Embodiments'
+  type: paper
+  arxiv: '2611.33158'
+  year: 2026
+  project: https://omniact.github.io/
+  added: 2026-11-25
+  topics: [vla, manipulation]
+  tags: [cross-embodiment, foundation-model, zero-shot, real]
+  takeaway_en: 'Conditions on each robot''s kinematic graph for embodiment-specific strategies, trained on one million filtered embodiments. 63.0% on 2,000 held-out episodes (π0.5: 17.8%); ~2x the best on an unseen robot.'
+  takeaway_zh: 直接以各机器人运动学图（关节位置、运动轴、连接关系）为条件生成本体专属策略，在程序化生成并过滤的 100 万种物理可行本体上训练。报告 2,000 个本体-场景留出回合 63.0%（π0.5 为 17.8%、最强基线 57.9%），在未见真机上成功率约为次优方法 MolmoAct2 的两倍。
+
+- title: 'Any2Act: Scaling In-Context Robot Learning from Heterogeneous Demonstrations'
+  type: paper
+  arxiv: '2611.32353'
+  year: 2026
+  project: https://any2act.github.io/
+  added: 2026-11-25
+  topics: [vla]
+  tags: [in-context-learning, cross-embodiment, foundation-model, zero-shot]
+  takeaway_en: Expresses every demo in the executor's camera layout and action space; learns to follow once from 1.2M robot-to-robot trajectories, adapters absorb human video, sim, UMI. 57.5% from one demo, above 50-demo VLAs.
+  takeaway_zh: 把一切示范都表示为“执行者”的相机布局与动作空间：先在 120 万条机器人-机器人轨迹上学一次“如何跟随”，再用各源路由适配器（仅几百对数据）吸收人类视频、仿真与 UMI 的残差，预训练模型保持冻结。报告单条示范在未见任务上 57.5% 成功，超过用 50 条示范微调的 VLA；其他来源保持执行者自身示范 74–91% 的成功。
+
+- title: 'Sparse Poison, Strong Hijack: Efficient Trajectory-Level Backdoors in Vision-Language-Action Models with Only 1\% Poisoning'
+  type: paper
+  arxiv: '2611.32304'
+  year: 2026
+  code: https://github.com/vla-attack/Sparse_Poison_Strong_Hijack
+  added: 2026-11-25
+  topics: [vla]
+  tags: [backdoor, security, attack]
+  takeaway_en: 'Differentiable rendering optimizes a 3D trigger; dual-LoRA decouples clean and backdoor updates. With 1% poisoned data: 86.4% target and 95.2% clean success on OpenVLA-OFT; real hijacking shown.'
+  takeaway_zh: 两阶段共优化：冻结策略下用可微渲染优化 3D 触发器的纹理、平移与尺度，再用源选择双 LoRA 解耦干净与后门更新并经列式校准融合。报告仅 1% 毒化数据即达目标任务 86.4%、干净任务 95.2%（OpenVLA-OFT，LIBERO-Spatial），并在真机上演示轨迹级劫持。
+
+- title: 'Seeing Is Not Reaching: Instruction Shortcuts Override Visual Grounding in Vision-Language-Action Models'
+  type: paper
+  arxiv: '2611.32206'
+  year: 2026
+  code: https://github.com/QZhang2111/psg
+  added: 2026-11-25
+  topics: [vla]
+  tags: [analysis, grounding, shortcut, training-free]
+  takeaway_en: 'Across six VLAs, an instruction shortcut retrieves the object''s training location even when attention follows the moved target. PSG amplifies grounding, suppresses the shortcut without training: reaching 22.0% to 52.6%.'
+  takeaway_zh: 六个 VLA 都存在“看见≠够到”：指令捷径直接取回物体的训练位置，即使注意力已跟随移动后的目标。PSG 分离图像中介的接地通路与指令直达动作通路，免训练放大接地、抑制捷径。报告 LIBERO-PRO 位置扰动下目标到达率 22.0%→52.6%、任务成功 16.6%→40.8%。
+
+- title: 'Perception Is Enough, at the Right Scale: Scale-Adaptive Token Pruning for Vision-Language-Action Models'
+  type: paper
+  arxiv: '2611.31954'
+  year: 2026
+  project: https://lin0e0.github.io/TauPrune-VLA/
+  added: 2026-11-25
+  topics: [vla]
+  tags: [efficiency, token-pruning, training-free, real]
+  takeaway_en: Training-free pruning whose retained scale adapts to evolving semantics via one temperature, updated online; retention runs asynchronously. Up to 1.86x speedup at near-baseline success on two real platforms.
+  takeaway_zh: 免训练 token 剪枝：用一个“感知温度”控制保留表征的尺度，随操作中语义结构演化在线调整（机器人状态变化与动作幅度调节强度），连续帧间语义稳定使保留索引可异步计算。报告多 VLA 与仿真基准上最多 1.86 倍推理加速、成功率接近基线，并在两个真机平台验证。
+
+- title: 'Hi3R-VLA: Grounding Semantics and Actions in 3D'
+  type: paper
+  arxiv: '2611.31535'
+  year: 2026
+  project: https://cshizhe.github.io/projects/hi3r_vla.html
+  added: 2026-11-25
+  topics: [vla]
+  tags: [3d, vla, dexterous, real]
+  takeaway_en: 'Grounds vision, language and action in explicit 3D geometry: aligned features enrich point clouds, 3D-RoPE action-to-point attention anchors control. Under 250M params, SOTA on RoboCasa, RLBench, RoboTwin2, DexJoCo.'
+  takeaway_zh: 把视觉、语言与动作三类模态都锚定在显式 3D 几何中：空间对齐的视觉特征与语言条件融入点云，3D-RoPE 增强的动作-点注意力在粗到细点特征上建模动作目标与观测点的几何关系。报告以不到 2.5 亿可训练参数在 RoboCasa、RLBench、RoboTwin2、DexJoCo、DexSuite 上达 SOTA（含灵巧手），并有真机验证。
+
+- title: 'Near-Zero Forgetting Is Not Enough: Out-of-Distribution Robustness in Continual Learning of Pretrained VLAs'
+  type: paper
+  arxiv: '2611.31511'
+  year: 2026
+  project: https://adrrp.github.io/vla-ood-robustness
+  added: 2026-11-25
+  topics: [vla, learning]
+  tags: [continual-learning, ood, analysis]
+  takeaway_en: With replay, Pi0 keeps near-zero ID forgetting but OOD robustness on earlier tasks collapses; drift concentrates in multimodal and action features - OOD features stay informative but misaligned.
+  takeaway_zh: 经验回放下 Pi0 的域内遗忘接近零，但持续学习过程中旧任务的分布外鲁棒性迅速坍塌；表征漂移集中在多模态与动作特征，线性探针显示 OOD 特征仍含任务信息但“不可读”，与表征失对齐一致。
+
+- title: 'Ground, Guide, Act: Improving VLA Spatial Generalization with Multimodal Foundation Models'
+  type: paper
+  arxiv: '2611.31452'
+  year: 2026
+  project: https://tom-zgt.github.io/MFM-VLA
+  added: 2026-11-25
+  topics: [vla]
+  tags: [vla, spatial, mfm, collaboration, real]
+  takeaway_en: MFM grounds targets and guides free-space motion, the VLA keeps fine-grained control; a router picks when to intervene. +14.9/+74.0/+3.6 points on LIBERO-PRO, ALOHA-Sim-PRO, RoboCasa365; +30.9 real.
+  takeaway_zh: 选择性协作框架：通用多模态基础模型负责目标接地与空间引导、控制器执行自由空间运动、VLA 保留精细操作，能力路由器按校准选择是否介入；VLA 用动作块级稠密几何标注与扰动状态恢复数据微调。报告 LIBERO-PRO +14.9、ALOHA-Sim-PRO +74.0、RoboCasa365 +3.6、真实化学任务 +30.9 个百分点。

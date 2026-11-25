@@ -1821,3 +1821,37 @@
   tags: [safety, jepa, conformal, planning]
   takeaway_en: 'Connects a frozen JEPA planner to task-space safety: conformal prediction turns motion errors into uncertainty tubes, a backup shield screens candidates. 84.4-99.0% success with zero violations on VParkBench.'
   takeaway_zh: 把冻结的 JEPA 世界模型规划接入任务空间安全执行：共形预测把运动预测误差变成多时域不确定性管，基于备份的屏障逐一筛掉不安全候选。给出块边界处的概率约束满足保证；VParkBench 泊车任务成功率 84.4%–99.0% 且零约束违反。
+
+- title: Simulator-as-Proxy World Model for Robot Manipulation
+  type: paper
+  arxiv: '2611.32786'
+  year: 2026
+  code: https://github.com/TingtingLiao/SimPWM
+  project: https://sim-pwm.pages.dev
+  added: 2026-11-25
+  topics: [world-models, sim]
+  tags: [world-model, simulator, analysis, video]
+  takeaway_en: Represents the robot as its 3D model and touched objects as points, moved by a rule-based simulator, rendered to video plus state. Video follows the arm; object state only for some models; missed pick-ups 54% to 38%.
+  takeaway_zh: 用标定相机首帧重建机器人 3D 模型与可触碰物体的点表示，由无训练参数的规则仿真器按动作演化、视频模型渲染，同时返回仿真状态。探测发现视频严格跟随机械臂（IoU 0.75–0.78），但物体状态只有部分基模型跟随；加入物体代理后漏抓从 54% 降到 38%，冻结仿真物体时不同模型的反应揭示了各自对状态的依赖。
+
+- title: 'LeanWAM: Learning Latent World Action Models from Frozen Video Models'
+  type: paper
+  arxiv: '2611.31740'
+  year: 2026
+  project: https://shaolonl-16.github.io/leanwam/
+  added: 2026-11-25
+  topics: [world-models]
+  tags: [wam, latent, efficiency, distillation]
+  takeaway_en: A Future Extractor compresses transitions into 32 tokens conditioning a frozen generator; readout supplies world tokens; both distill into the policy. 1.4B params; 25.1 ms per chunk, 12.3-41.5x faster than WAMs.
+  takeaway_zh: 未来提取器把观测转移压缩为 32 个预测 token 条件化冻结视频生成器，其隐状态紧凑读出提供世界 token；第二阶段把两者蒸馏进策略。报告 1.4B 参数、无大规模具身预训练即在 LIBERO、LIBERO-Plus、RoboTwin 2.0 上超过强 VLA/WAM 基线，A100 上每动作块 25.1 ms（快 12.3–41.5 倍）。
+
+- title: 'FoveaWAM: Role-Aware 4D World-Action Modeling for Dynamic Manipulation'
+  type: paper
+  arxiv: '2611.31705'
+  year: 2026
+  project: https://foveawam.github.io/
+  added: 2026-11-25
+  topics: [world-models, manipulation]
+  tags: [wam, 4d, dynamic, latency]
+  takeaway_en: 'Precision by role: target motion as a metric SE(3) trajectory, surroundings as sparse 3D flow. Acts in 15.1 ms (~10x faster); 82.1% on its OnTimeBench, 20.8 points above the strongest baseline.'
+  takeaway_zh: 按角色分配精度：目标运动建模为度量 SE(3) 轨迹（决定接触，需毫米精度），周围环境建模为稀疏 3D 流（只关心净空与传递的运动），静态部分直接读当前帧。报告 RTX 5090 上 15.1 ms 出动作（约为视频基线 1/10），在场景持续运动的 OnTimeBench 上 82.1%（比最强基线高 20.8 分），DOMINO 与真机同样领先。

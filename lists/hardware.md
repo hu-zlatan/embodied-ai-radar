@@ -2,7 +2,7 @@
 
 _Low-cost arms, hands, grippers and data-collection rigs you can build._
 
-55 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/hardware.yaml`](../data/curated/hardware.yaml); edit the YAML, not this file.
+56 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/hardware.yaml`](../data/curated/hardware.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/hardware.html) · [中文](hardware.zh-CN.md)
 
@@ -34,6 +34,7 @@ _Low-cost arms, hands, grippers and data-collection rigs you can build._
 - **[RealDexUMI: A Wearable Universal Manipulation Interface for Dexterous Robot Learning](https://arxiv.org/abs/2606.06033)** (2026) — Wearable dexterous UMI: a shared end-effector module (light hand, in-hand camera, fingertip touch) driven by an isomorphic glove, so collected and deployed observations and actions match. Eight real tasks.
 - **[SEED-UMI: Sharing the Exoskeleton between human and robot for onE-to-one Dexterous demonstration](https://arxiv.org/abs/2609.11753)** (2026) — Human and robot wear the same hand exoskeleton, so encoders and wrist cameras match between collection and rollout; retargeting becomes paired supervision. 3.0x faster collection, 70.0% success on five tasks.
 - **[SPOT: Spatial Perception-Oriented Long-Horizon Humanoid Teleoperation](https://arxiv.org/abs/2609.07933)** (2026) — VR humanoid teleoperation for long tasks: a robot-mounted binocular fisheye, wide stereo display, head-decoupled free-looking and stabilization keep the operator aware of the surroundings.
+- **[Self-Sensing Compliant Anthropomorphic Hand for Speed-Dictated Shared Force Control in Teleoperation](https://arxiv.org/abs/2611.32937)** (2026) — The elastic tendon transmission itself senses: springs read by potentiometers estimate joint states and finger forces, no external sensors. Contact-aware shared control raises success on fragile and heavy objects. · [project](https://huijiang-wang.github.io/selfsensing-hand/)
 - **[Shape Your Body: Value Gradients for Multi-Embodiment Robot Design](https://arxiv.org/abs/2606.00702)** (2026) — Reuses a frozen multi-robot value function as a differentiable surrogate for robot design, avoiding a new co-design RL loop per robot; handles over 1100 design parameters.
 - **[SuperSuit: An Isomorphic Bimodal Interface for Scalable Mobile Manipulation](https://arxiv.org/abs/2603.06280)** (2026) — One wearable both teleoperates a wheeled bimanual robot and records robot-free demos; arms are mechanically aligned, so no IK or retargeting. With a 10-episode robot-grounded seed, 100 robot-free episodes suffice.
 - **[SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing](https://arxiv.org/abs/2610.40646)** (2026) — Instead of one universal gripper: a fixed robot-side coupling plus cheap tool-side adapters with tactile sensors turn household tools into swappable end effectors; imitation policies cook tofu and flip meat. · [project](https://personalrobotics.github.io/SwapBot)

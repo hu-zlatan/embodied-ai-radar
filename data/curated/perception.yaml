@@ -640,3 +640,16 @@
   tags: [human-pose, smplx, lidar, depth, point-cloud]
   takeaway_en: 'Sensor-agnostic SMPL-X recovery from point clouds, one set of weights: sparse-voxel LitePT, per-joint queries, 7-frame causal memory. Trained on ten datasets; 22%/11% lower joint error on SLOPER4D/FreeMotion.'
   takeaway_zh: 用同一组权重从人体点云恢复 SMPL-X 姿态、形状与全局平移，兼容深度相机与 LiDAR：稀疏体素 LitePT 编码、逐关节可学习查询解码、七帧因果记忆。在十个混合数据集上训练，SLOPER4D/FreeMotion 上根相对关节误差分别降 22%/11%。
+
+- title: 'DOPER: Deep Object Pose Estimation Revisited'
+  type: paper
+  arxiv: '2611.32846'
+  year: 2026
+  org: NVIDIA
+  code: https://github.com/NVlabs/DOPER
+  project: https://nvlabs.github.io/DOPER/
+  added: 2026-11-25
+  topics: [perception]
+  tags: [6d-pose, rgb, keypoints, real-time]
+  takeaway_en: One backbone for detection, segmentation and keypoints recovers 6D pose via PnP; partial supervision and multi-view geometry adapt synthetic to real. SOTA detection AP on HANDAL, HOPEv2, HOT3D, T-LESS at 35 Hz.
+  takeaway_zh: 共享视觉骨干联合检测、分割与关键点预测，经 PnP 恢复已知物体 6D 位姿；从合成数据起步、用部分监督与标定多视图几何约束适配真实观测，推理时可选热图精修直接拟合刚性位姿。报告 RGB-only 在 HANDAL、HOPEv2、HOT3D、T-LESS 上检测 AP 达 SOTA，单物体 35 Hz 实时。

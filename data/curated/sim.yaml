@@ -718,3 +718,14 @@
   tags: [differentiable-simulation, gpu-parallel, magnetic-levitation, sim2real, real]
   takeaway_en: Differentiable GPU-parallel simulator computing 6D magnetic-levitation physics directly, not hand-crafted approximations; trains the first neural controller for a maglev system, zero-shot sim-to-real at 4 kHz.
   takeaway_zh: 全可微、GPU 并行的 6D 磁悬浮仿真器，直接计算电磁物理而非手工近似；据此训练出首个工业级磁悬浮系统神经控制器，4 kHz 实时约束下零样本 sim-to-real，甚至悬浮起一种没有手工方案存在的动子拓扑。
+
+- title: 'Support2Sim: Visually Faithful Real2Sim with Stable Object Supports'
+  type: paper
+  arxiv: '2611.32727'
+  year: 2026
+  project: https://support2sim.github.io
+  added: 2026-11-25
+  topics: [sim]
+  tags: [real2sim, scene-reconstruction, physics]
+  takeaway_en: 'From one RGB image: an inferred support graph plus contact-guided pose initialization and physics-rollout refinement. +21.4 pp source-mask IoU, 87.1% supports realized, drift 79.6 to 45.3 mm over 50 scenes.'
+  takeaway_zh: 单张 RGB 重建可仿真场景：推断支撑图并用接触引导位姿初始化给出多支撑物体的候选位姿，粗到精精修以固定搜索预算、用物理 rollout 评估更新。报告 50 个场景上源掩码 IoU 提高 21.4 个百分点、支撑实现率 87.1%（基线 73.2%）、平均漂移 79.6→45.3 mm。

@@ -2,7 +2,7 @@
 
 _视觉语言导航、具身问答、移动操作与大模型规划。_
 
-共 93 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
+共 94 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/navigation.html) · [English](navigation.md)
 
@@ -70,6 +70,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - **[See What I Need, Dream What I Want: A Navigation Foundation Model on a Self-Constructed Representation Space](https://arxiv.org/abs/2610.31762)** (2026) — RepresentNav 用一个小型 Transformer 融合多个视觉基础模型各层特征，构建由导航目标自行塑造的表示空间，并在每步动作前预测下一时刻的潜在表示（JEPA 式）；报告 VLNVerse 细粒度成功率 83.8%（领先 20.05 个百分点），并在真机上验证。 · [项目页](https://wang-yinxi.github.io/representnav/)
 - **[Seeing Beyond the Next Step: World-Model-Guided Human-Like Navigation in Multi-Agent Scenes](https://arxiv.org/abs/2611.07730)** (2026) — 仅在训练时用两个世界模型（社交动态、场景语义）为候选动作打分，再把这种前瞻能力蒸馏进单次前向的策略。观察者认为其运动比基线更像人。 · [项目页](https://seoneun.github.io/-NeurIPS-2026-Seeing-Beyond-the-Next-Step/)
 - **[Seeing Together, Acting Apart: Shared Environmental Understanding for Multi-Robot Navigation](https://arxiv.org/abs/2611.30310)** (2026) — 把协作前移到表征层：SEER 把多机器人部分自我观测聚合进共享潜世界模型，按时空相似性检索相关上下文并以 token 注入下游导航智能体。报告专业化 VLN 与通用 VLM 智能体导航表现均提升，且单智能体能力不退化。
+- **[Seeing to Drive on a Single Board: Attention-Free Depth for Onboard Robot Navigation](https://arxiv.org/abs/2611.32718)** (2026) — 把 Depth Anything V2-Large 蒸馏为免注意力 24.5M ResNet-34 U-Net，在树莓派 5 + Hailo-8L 上 27.1 FPS 整数推理（int8 与浮点 Pearson 0.99993）；建图、hybrid-A* 与 SLAM 全跑在 Pi 的 CPU 上。报告真实院落的硬件在环测试 10 场景中 7.9±1.1 次无接触到达目标。 · [代码](https://github.com/itaim18/DANIEL)
 - **[SidewalkBench: Benchmarking Visual Navigation on Urban Sidewalks](https://arxiv.org/abs/2606.16953)** (2026) — CoRL 2026 Spotlight。城市人行道视觉导航基准，基于 Isaac Sim，包含程序生成与真实世界环境。 · [代码](https://github.com/VAIL-UCLA/SidewalkBench) · [项目页](https://vail-ucla.github.io/SidewalkBench/)
 - **[Sim-to-Real Room-Mediated Object-Goal Navigation with ROS 2 and Nav2](https://arxiv.org/abs/2611.19720)** (2026) — 通过机器人无关的 ROS 2 桥把 Room-Mediated 物体目标导航部署到 Spot 与 TurtleBot 4。66 次 Spot 试验成功率 0.455（仿真 0.539），并把 8.4 个百分点的差距归因于玻璃墙、禁区、深度范围与房间词表不匹配。 · [代码](https://github.com/Matthew-K-Chua/rpv-ros2-bridge)
 - **[TARSphere: A Robot-Oriented Full-Stack Framework for Long-Horizon Embodied Agents in Evolving Physical and Social Environments](https://arxiv.org/abs/2610.30043)** (2026) — 带具身 NPC、受限对话和事件驱动任务状态机的物理仿真框架，并提供让冻结多模态大模型调用多级技能的执行框架；基于 30 个室内场景构建 360 回合基准，评测 8 个模型，报告通用模型可胜过具身专用模型，任务变更和人机协作仍是难点。 · [代码](https://github.com/xuyicheng-zju/TARSphere) · [项目页](https://xuyicheng-zju.github.io/TARSphere/)

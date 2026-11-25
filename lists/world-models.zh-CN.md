@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 172 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 175 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/world-models.html) · [English](world-models.md)
 
@@ -62,6 +62,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Fast-JEPA: Advancing the Success-Latency Frontier for Latent World Models](https://arxiv.org/abs/2611.25927)** (2026) — 用目标导向计划引导搜索，直接预测完整候选序列的结果而非递归 rollout，推进“成功率-延迟”帕累托前沿。报告平均成功率 96.50%、规划比 INTACT 快 2.41 倍；并发布 DynaGoal 基准，评测分布漂移、执行期限与响应延迟下的世界模型规划（73.83%/87.67%）。
 - **[FlexWAM: Learning Flexible Visual Routing for World Action Models](https://arxiv.org/abs/2611.30024)** (2026) — 在视角内与跨视角注意力间交替，并用观测条件路由器为动作预测优先分配相关视角；路由器由“反事实视角信用”（抑制某视角贡献后的动作损失敏感度）训练。报告两个视频骨干、两种真机平台五个任务上比最强基线平均高 16.4/23.0 个百分点。 · [项目页](https://flexwam.github.io/)
 - **[Foresight Forcing: Learning Spatial Foresight for Robotic Manipulation](https://arxiv.org/abs/2611.30963)** (2026) — 用冻结 3D 基础模型提取对齐的当前-未来帧的块级特征差，蒸馏为“空间转移查询”，与当前视觉特征一起生成动作；部署时无需未来观测或 3D 教师。报告 RoboTwin 2.0 Full 平均 95.01%，六个真机任务平均分 85.8%。 · [项目页](https://anson2333.github.io/foresight-forcing)
+- **[FoveaWAM: Role-Aware 4D World-Action Modeling for Dynamic Manipulation](https://arxiv.org/abs/2611.31705)** (2026) — 按角色分配精度：目标运动建模为度量 SE(3) 轨迹（决定接触，需毫米精度），周围环境建模为稀疏 3D 流（只关心净空与传递的运动），静态部分直接读当前帧。报告 RTX 5090 上 15.1 ms 出动作（约为视频基线 1/10），在场景持续运动的 OnTimeBench 上 82.1%（比最强基线高 20.8 分），DOMINO 与真机同样领先。 · [项目页](https://foveawam.github.io/)
 - **[From Video Frames to Robot Meta-Frames: A Unified Latent Interface for World Action Models](https://arxiv.org/abs/2611.14365)** (2026) — MetaWAM 把本体感知、动作和价值信号按频带打包进一个与预训练视频扩散模型先验对齐的“元帧”，无需额外模块。报告 RoboCasa 成功率 68.9%、推理延迟降低 39%，三项真实 Franka 任务成功率 85%。 · [代码](https://github.com/showlab/MetaWAM)
 - **[From World Models to World Action Models: A Concise Tutorial for Robotics](https://arxiv.org/abs/2607.00836)** (2026) — 简明教程而非综述：界定机器人领域的世界模型和世界动作模型，并在统一视角下比较空间智能模型、JEPA 和 Cosmos。 · [代码](https://github.com/clearlab-sustech/WorldModelSurvey)
 - **[Future Representation Distillation for Imagination-free World Action Models](https://arxiv.org/abs/2611.04527)** (2026) — DreamFree：无需生成未来视频的世界动作模型。编码器从当前观测预测冻结视频扩散模型的表征，动作模块据此出动作；报告以 14B 视频扩散骨干实现 11Hz 实时闭环控制。 · [项目页](https://harryjo97.github.io/dreamfree/)
@@ -80,6 +81,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[La-JEPA: Compact Robot Policies with Latent World Modeling](https://arxiv.org/abs/2611.08156)** (2026) — 在冻结的 V-JEPA 2.1 特征上从零训练的紧凑世界动作模型，仅在训练时预测未来特征。报告在无具身预训练的策略中 RoboTwin 2.0 最优，并修正了 LIBERO-Plus 的指令。
 - **[LaWAM: Latent World Action Models for Efficient Dynamics-Aware Robot Policies](https://arxiv.org/abs/2606.15768)** (2026) — 不生成视频的世界动作模型：在视觉基础模型的特征空间中训练潜动作模型，预测未来观测特征作为“潜在视觉子目标”来条件化动作生成。报告 LIBERO 98.6%、RoboTwin 91.22%，每个动作块推理 187 ms，比像素级 WAM 延迟低最多 24 倍。 · [代码](https://github.com/RLinf/LaWAM) · [项目页](https://rlinf.github.io/LaWAM/)
 - **[Large Video Planner Enables Generalizable Robot Control](https://arxiv.org/abs/2512.15840)** (2026) — 以视频而非语言为主干构建机器人基础模型：在互联网规模人类视频上训练开源视频规划器，零样本生成视频计划再转为机器人动作；模型与数据集均已开源。 · [代码](https://github.com/buoyancy99/large-video-planner) · [项目页](https://www.boyuan.space/large-video-planner/)
+- **[LeanWAM: Learning Latent World Action Models from Frozen Video Models](https://arxiv.org/abs/2611.31740)** (2026) — 未来提取器把观测转移压缩为 32 个预测 token 条件化冻结视频生成器，其隐状态紧凑读出提供世界 token；第二阶段把两者蒸馏进策略。报告 1.4B 参数、无大规模具身预训练即在 LIBERO、LIBERO-Plus、RoboTwin 2.0 上超过强 VLA/WAM 基线，A100 上每动作块 25.1 ms（快 12.3–41.5 倍）。 · [项目页](https://shaolonl-16.github.io/leanwam/)
 - **[Learning Robotic World Models with Semantic and Visual Feedback](https://arxiv.org/abs/2611.07850)** (2026) — RoboImagine 通过比较多条候选未来来后训练自回归机器人世界模型：冻结的多模态评估器给出语义偏好，像素与感知层面的一致性项约束视觉误差。在 RT-1 上报告 PSNR 比继续监督微调高 1.26 dB。 · [代码](https://github.com/Alexander-wu/RoboImagine) · [项目页](https://huggingface.co/easylearning/RoboImagine)
 - **[Learning What Actions Change: Action Effect Matching for Dynamics-Faithful World Models](https://arxiv.org/abs/2611.25980)** (2026) — 训练世界模型对动作扰动产生与真实视频一致的视觉变化：向遥操作策略的动作注入时间相关噪声，让生成视频对噪声的响应匹配记录视频。报告 DROID 上世界模型与真机的策略成功率 Pearson 相关从 0.47 升到 0.79，规划任务成功率最多提高 8.3%。 · [项目页](https://periphanes.github.io/affect/)
 - **[Light-WAM: Efficient World Action Models with State-Fusion Action Decoding](https://arxiv.org/abs/2606.08242)** (2026) — 轻量世界动作模型：紧凑视频主干在降采样潜空间中做未来监督，动作专家融合多层特征一次前向预测动作块；报告可训练参数仅 0.44B，推理延迟 72 毫秒。 · [代码](https://github.com/L1ziang/Light-WAM)
@@ -122,6 +124,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[ScanDreamer: A Map-Grounded World Model for Quadrotor Navigation](https://arxiv.org/abs/2611.11605)** (2026) — 面向四旋翼的 Dreamer 式世界模型：用深度图和位姿在线构建二维扫描记忆地图，世界模型、策略和评价器都以它为条件，并由它给出测地线进度奖励。在 Isaac Sim 中报告成功率 96.3%，同等交互量下 AirDreamer 为 59.6%。 · [代码](https://github.com/WANGSHUAIzzzz/ScanDreamer)
 - **[Self-Distilling Future Video Representations for World Action Models](https://arxiv.org/abs/2610.30320)** (2026) — FRED 通过自蒸馏并引入历史观测，让世界动作模型在单步去噪中预测出更好的未来视频表征；报告在长时程、域外环境以及只有人类视频示范的任务上提升明显。 · [代码](https://github.com/suhyeok-jang/FRED) · [项目页](https://huiwon-jang.github.io/FRED/)
 - **[Sensitivity Shaping for Latent Modeling](https://arxiv.org/abs/2606.14585)** (2026) — 对控制变化不敏感的学习动力学会掩盖分布外动作。基于数据支撑的控制敏感性正则保持模型对控制的响应，从而提升分布外检测并使闭环规划更安全。
+- **[Simulator-as-Proxy World Model for Robot Manipulation](https://arxiv.org/abs/2611.32786)** (2026) — 用标定相机首帧重建机器人 3D 模型与可触碰物体的点表示，由无训练参数的规则仿真器按动作演化、视频模型渲染，同时返回仿真状态。探测发现视频严格跟随机械臂（IoU 0.75–0.78），但物体状态只有部分基模型跟随；加入物体代理后漏抓从 54% 降到 38%，冻结仿真物体时不同模型的反应揭示了各自对状态的依赖。 · [代码](https://github.com/TingtingLiao/SimPWM) · [项目页](https://sim-pwm.pages.dev)
 - **[Skeleton-Grounded Latent Action Model for Robot World Models](https://arxiv.org/abs/2610.31474)** (2026) — SkeLAM 把潜在动作拆成由机器人骨架监督的运动学部分和保留其余视觉动态的残差部分，使世界模型生成更贴合机器人控制指令；报告在 DROID 上末端轨迹误差比 DreamDojo 低 19.5%，预测成功率与真机评测一致。 · [项目页](https://aopolin-lv.github.io/SkeLAM/)
 - **[Skill-JEPA: Learning Planner-Aligned Action Spaces for World Models](https://arxiv.org/abs/2611.26825)** (2026) — 用状态条件 VAE 把短动作序列编码为带标准高斯先验的潜在技能，使规划器采样的候选落在世界模型见过的分布内。报告 80 步目标平均成功率 42%→62%；AntMaze 两单元目标 0.4%→38%。只加一个模块、不改规划器、无子目标或手工技能。 · [代码](https://github.com/tcouso/Skill-JEPA)
 - **[Spiking World-Action Models for Robotic Manipulation](https://arxiv.org/abs/2611.30041)** (2026) — 首个脉冲世界动作模型：用稀疏“任务骨架状态”只保留机械臂与物体关键点，体帧脉冲编码与网格重合注意力保持毫米精度，每个计划只需一次网络前向。报告 LIBERO/RoboTwin 2.0 成功率有竞争力且能耗大幅降低、LIBERO-Plus 超过所有对比方法，并有真机验证。 · [项目页](https://wxqnl.github.io/spikingwam/)

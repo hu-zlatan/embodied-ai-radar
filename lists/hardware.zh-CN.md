@@ -2,7 +2,7 @@
 
 _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备。_
 
-共 55 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/hardware.yaml`](../data/curated/hardware.yaml) 生成，请勿直接编辑。
+共 56 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/hardware.yaml`](../data/curated/hardware.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/hardware.html) · [English](hardware.md)
 
@@ -34,6 +34,7 @@ _可自行搭建的低成本机械臂、灵巧手、夹爪与数据采集设备�
 - **[RealDexUMI: A Wearable Universal Manipulation Interface for Dexterous Robot Learning](https://arxiv.org/abs/2606.06033)** (2026) — 可穿戴的灵巧 UMI：共享的末端模块（轻量灵巧手、手内相机、指尖触觉）由同构手套驱动，采集与部署时的观测和动作完全一致，无需重定向。在八个真机任务上验证。
 - **[SEED-UMI: Sharing the Exoskeleton between human and robot for onE-to-one Dexterous demonstration](https://arxiv.org/abs/2609.11753)** (2026) — 人与机器人佩戴同一套手部外骨骼，采集与执行时关节编码器和腕部相机看到相同的机构，重定向变成成对监督。数据采集效率是外骨骼遥操作的 3.0 倍，五个任务平均成功率 70.0%。
 - **[SPOT: Spatial Perception-Oriented Long-Horizon Humanoid Teleoperation](https://arxiv.org/abs/2609.07933)** (2026) — 面向长时任务的人形机器人 VR 遥操作：机载双目鱼眼相机、宽视场立体显示、与机器人运动解耦的自由环视及画面稳定，让操作者持续掌握周围空间信息。
+- **[Self-Sensing Compliant Anthropomorphic Hand for Speed-Dictated Shared Force Control in Teleoperation](https://arxiv.org/abs/2611.32937)** (2026) — 利用柔顺腱驱手的弹性传动自传感：前臂电机盒内的电位计读取串联弹簧，无需任何外部传感器即估计关节状态与指力。基于此的接触感知共享控制（先跟随人手运动、本体感知检测到接触后切换为以抓取速度定设定点的指级力控）报告脆性与重物抓取成功率高于直接遥操作。 · [项目页](https://huijiang-wang.github.io/selfsensing-hand/)
 - **[Shape Your Body: Value Gradients for Multi-Embodiment Robot Design](https://arxiv.org/abs/2606.00702)** (2026) — 把冻结的多机器人价值函数作为可微代理模型来优化机器人设计，无需为每台机器人重跑协同设计 RL；可处理 1100 多个设计参数。
 - **[SuperSuit: An Isomorphic Bimodal Interface for Scalable Mobile Manipulation](https://arxiv.org/abs/2603.06280)** (2026) — 同一套穿戴设备既能遥操作轮式双臂机器人，也能在机器人不在场时录制示教；手臂与机器人机械同构，无需逆运动学或重定向。只需 10 条有机器人参与的种子数据，其余 100 条可脱离机器人录制。
 - **[SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing](https://arxiv.org/abs/2610.40646)** (2026) — 不追求万能夹爪，而是用固定的机器人侧接口加低成本、带触觉传感器的工具侧适配器，把日常厨具变成可自动更换的末端执行器，兼容多种机器人平台；配套遥操作采集示范，模仿学习策略完成煎豆腐、拌沙拉、翻肉等工具任务。 · [项目页](https://personalrobotics.github.io/SwapBot)

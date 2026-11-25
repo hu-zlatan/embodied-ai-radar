@@ -1705,3 +1705,91 @@
   tags: [harness, self-improvement, memory, real]
   takeaway_en: Actor executes, Reflector converts evidence into reusable guidance in a hierarchical memory; recursive harness refinement without parameter updates. 82.4/76.7/94.4% on three benchmarks; 96.7% real.
   takeaway_zh: 双智能体框架：Actor 经机器人控制接口执行，Reflector 把执行证据转化为可复用操作指导，分层记忆维护短期上下文与长期经验；基于证据的失败归因驱动 harness 递归自改进，不更新模型参数。报告 RoboTwin 2.0 82.4%、RoboSPA 76.7%、RMBench 94.4%，三个真机任务平均 96.7%。
+
+- title: Exploratory Midtraining for Robot Policies
+  type: paper
+  arxiv: '2611.33130'
+  year: 2026
+  project: https://kshitiz-1225.github.io/exploratory-midtraining-robot-policies/
+  added: 2026-11-25
+  topics: [learning]
+  tags: [midtraining, data-scaling, adversarial, real]
+  takeaway_en: Beta-Data from adversarial teleoperation is relabeled with local outcomes; midtraining on it gives better data scaling, zero-shot generalization and online fine-tuning across sim and three real platforms.
+  takeaway_zh: 对抗遥操作采集 β-Data：人类对手可逆扰动环境、操作者不重置继续完成任务，轨迹段以自然语言标注局部结果；在其上中训练（以近期动作历史为条件）的策略持续使用更多底层行为。报告仿真与三个真机平台上数据缩放律更优、零样本泛化更好、在线微调所需 rollout 更少且成功率更高。
+
+- title: 'Embodied AI Fails the Mirror Test: How a Simple Mirror Breaks Robot Policies'
+  type: paper
+  arxiv: '2611.33010'
+  year: 2026
+  code: https://github.com/iPPLab/robodojo-mirror
+  added: 2026-11-25
+  topics: [learning]
+  tags: [robustness, benchmark, analysis, real]
+  takeaway_en: 'RoboDojo-Mirror adds mirrors: success drops 10.8-56.7 points across five policies; 50-88% of mirror failures occur without contact - phantom targeting of reflections. Real π0.5 and FastWAM degrade too.'
+  takeaway_zh: 在 RoboDojo 中加入单镜、双镜与镜面桌面条件：五个策略（VLA/WAM/agentic）平均成功率下降 10.8–56.7 个百分点、镜面桌面最多 62.5；50–88% 的镜子特有失败没有接触记录，轨迹与接触分析显示对反射物体的“幻影瞄准”与真实物体空间误定位。真机 π0.5 与 FastWAM 同样退化。
+
+- title: What Does a Skill Vocabulary Cost? A Closed-Loop Decomposition over Demonstrated Motions
+  type: paper
+  arxiv: '2611.32858'
+  year: 2026
+  project: https://intuitive-robots.github.io/mpq
+  added: 2026-11-25
+  topics: [learning]
+  tags: [skills, analysis, quantization]
+  takeaway_en: 'MPQ places the demonstrated-motion library after a trained policy: nearest replacement with bounded correction, no training. Quantization costs nothing; skill choice at most 2 points; selector placement costs up to 12.'
+  takeaway_zh: 把演示运动库放在训练好的策略之后而非内部：每个预测动作块替换为库中最近元素并在界内修正，不训练任何参数。报告六个架构（含 7B VLA）包装后与原策略统计等价；量化零代价、技能选择最多 2 分损失，而选择器自身的放置与修正造成其余最多 12 分差距。
+
+- title: 'RoboHarness-RL: Agentic Reinforcement Learning for VLM-Based Robot Manipulation'
+  type: paper
+  arxiv: '2611.32016'
+  year: 2026
+  project: https://aim-uofa.github.io/RoboHarness-RL/
+  added: 2026-11-25
+  topics: [learning, manipulation]
+  tags: [agentic, rl, vlm, tool-calls]
+  takeaway_en: 'SFT on teacher demos, then multi-turn RL with task-outcome rewards for tool calls; LiteHarness keeps contexts compact. Qwen3.5-9B: RoboTwin 2.0 31.2% to 44.0%, LIBERO-Pro 57.8% to 73.3%; repetitive calls cut up to 4x.'
+  takeaway_zh: 先在教师成功示范上 SFT，再用任务结果奖励做多轮强化学习改进工具调用，无需 VLA/WAM；LiteHarness 用分层记忆压缩交互上下文。报告 Qwen3.5-9B 在 RoboTwin 2.0 从 31.2% 提到 44.0%、LIBERO-Pro 57.8%→73.3%，重复调用率最多降 4 倍、执行更短、负反馈恢复更好。
+
+- title: 'CALVIN-MAX: When Does a Mid-Execution Change Hurt a Robot Policy?'
+  type: paper
+  arxiv: '2611.31868'
+  year: 2026
+  project: https://forall-labs.github.io/CALVIN-MAX/
+  added: 2026-11-25
+  topics: [learning, datasets]
+  tags: [benchmark, analysis, robustness]
+  takeaway_en: '7,828 cases with one mid-execution change: ten policies lose 4.4-9.9 points on the affected instruction; visual changes cost 5.4 points less mid-motion; the cost outlasts the instruction (5.0-16.8 points next).'
+  takeaway_zh: 7,828 个案例、每个含一次执行中变化（物体/相机/机器人/指令）：十个发布策略在受影响指令上损失 4.4–9.9 个百分点。视觉类变化在执行中出现比从头存在少损失 5.4 分，场景或机器人变化无时序效应；代价会延续——完成受影响指令的策略，下一指令成功率低 5.0–16.8 分。
+
+- title: 'One Phase Is Enough: Sim-to-Real Transfer with Direct Visual Reinforcement Learning'
+  type: paper
+  arxiv: '2611.31588'
+  year: 2026
+  project: https://jmarangola.github.io/one-phase-visual-rl/
+  added: 2026-11-25
+  topics: [learning, sim]
+  tags: [visual-rl, sim2real, foundation-models, real]
+  takeaway_en: DRIFT trains visual RL in one phase with a frozen pretrained vision encoder, no teacher distillation. 58.8% relative improvement in real success over two-phase; the gap widens out of distribution.
+  takeaway_zh: 单阶段视觉强化学习配方：冻结预训练视觉编码器，让 RL 专注从现成表征学控制，跳过两阶段的教师蒸馏。报告三个真机操作任务平均成功率相对两阶段蒸馏提高 58.8%；仿真中优势从分布内约 9% 扩大到分布外超 61%。
+
+- title: 'ReFocus: Progress-Guided Adaptive Practice for Long-Horizon Robotic Manipulation Reinforcement Learning'
+  type: paper
+  arxiv: '2611.32639'
+  year: 2026
+  project: https://refocus-robotics.github.io
+  added: 2026-11-25
+  topics: [learning, manipulation]
+  tags: [rl, long-horizon, progress, real]
+  takeaway_en: 'Alternates Global and Local RL: a DAG-based progress reward diagnoses bottlenecks, adaptive practice windows give them extra interaction. LIBERO-Long 97.8% vs 90.6% (π0.5); real BreadBaker 95% vs 30%.'
+  takeaway_zh: 全局-局部分轮强化学习：把任务分解为子任务 DAG 并以进度奖励诊断瓶颈，为“瓶颈段”分配自适应练习窗口额外交互。报告 LIBERO-Long 97.8%（π0.5 为 90.6%）、RoboCasa365 51.3%（39.3%），真机 BreadBaker 95% 对 π0.5 的 30%。
+
+- title: 'EvoMisty: Building, Optimizing, and Evolving Capabilities on a Social Robot'
+  type: paper
+  arxiv: '2611.31341'
+  year: 2026
+  project: https://wangxiaoshawn.github.io/projects/evomisty/index.html
+  added: 2026-11-25
+  topics: [learning]
+  tags: [coding-agents, capability-library, real]
+  takeaway_en: Coding agents build capabilities from official docs and verify on a physical Misty II; skills distilled for reuse. 109/107 atomic capabilities, all 28 AutoMisty tasks; dialogue latency -52%/-71%; reuse -33-72%.
+  takeaway_zh: 插件式框架让编码智能体从官方文档构建控制程序、在真机 Misty II 上验证并沉淀原子能力库，任务完成后按用户指标迭代优化并蒸馏可复用技能。报告 Claude Code/Codex 分别构建 109/107 个原子能力、完成全部 28 个 AutoMisty 任务；对话延迟降 52%/71%，技能复用使另外三个对话任务延迟降 33–72%。

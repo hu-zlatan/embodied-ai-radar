@@ -939,3 +939,14 @@
   tags: [multi-robot, world-model, vln]
   takeaway_en: 'Collaboration in representation space: SEER aggregates partial egocentric observations into a shared latent world model, retrieved by spatio-temporal similarity and injected as tokens. Improves VLN and VLM agents.'
   takeaway_zh: 把协作前移到表征层：SEER 把多机器人部分自我观测聚合进共享潜世界模型，按时空相似性检索相关上下文并以 token 注入下游导航智能体。报告专业化 VLN 与通用 VLM 智能体导航表现均提升，且单智能体能力不退化。
+
+- title: 'Seeing to Drive on a Single Board: Attention-Free Depth for Onboard Robot Navigation'
+  type: paper
+  arxiv: '2611.32718'
+  year: 2026
+  code: https://github.com/itaim18/DANIEL
+  added: 2026-11-25
+  topics: [navigation, perception]
+  tags: [depth, edge, navigation, real]
+  takeaway_en: Distils Depth Anything V2-Large into an attention-free 24.5M U-Net at 27.1 FPS on Pi 5 + Hailo-8L; SLAM, mapping and hybrid-A* run on the Pi's CPU. 7.9/10 scenes reached without contact in HIL tests.
+  takeaway_zh: 把 Depth Anything V2-Large 蒸馏为免注意力 24.5M ResNet-34 U-Net，在树莓派 5 + Hailo-8L 上 27.1 FPS 整数推理（int8 与浮点 Pearson 0.99993）；建图、hybrid-A* 与 SLAM 全跑在 Pi 的 CPU 上。报告真实院落的硬件在环测试 10 场景中 7.9±1.1 次无接触到达目标。

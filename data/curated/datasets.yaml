@@ -1354,3 +1354,84 @@
   tags: [benchmark, audit, evaluation, llm]
   takeaway_en: 'Finds checker-instruction disagreements, recreates them in simulation, verifies by rendering: 61 distinct defects across 49 tasks - 40 phantom successes, 21 silent failures in RoboTwin 2.0, RoboCasa365 and RoboDojo.'
   takeaway_zh: SimAudit 用 LLM 分析指令与检查器代码的分歧场景，在仿真中复现并运行原检查器，再以多视角渲染人工核验。报告三个基准 183 个测试用例中确认 61 处缺陷（49 个任务）：40 个“幽灵成功”（未完成被接受）与 21 个“静默失败”（有效完成被拒绝）。
+
+- title: 'Lost on Campus: Evaluating Embodied Spatial Reasoning of Vision-Language Models in the Wild'
+  type: paper
+  arxiv: '2611.33145'
+  year: 2026
+  venue: NeurIPS 2026
+  project: https://dyfcalid.github.io/Lost-on-Campus/
+  added: 2026-11-25
+  topics: [datasets]
+  tags: [benchmark, spatial-reasoning, outdoor, vlm]
+  takeaway_en: Outdoor 3DGS scenes with diagnostic QA plus closed-loop navigation over six ESR aspects. Outdoor demands far more spatial reasoning than indoor; spatial foresight and ego-allocentric localization are the bottlenecks.
+  takeaway_zh: 大规模真实户外 3D 高斯泼溅场景中的具身空间推理基准：隔离式诊断问答与多模态指令下的闭环交互导航统一评测，覆盖动作接地、空间前瞻、度量感知、目标导向规划、自我-异我定位与时空一致性六项能力。报告户外环境对空间推理的要求远高于室内，空间前瞻与自我-异我定位是主要瓶颈。
+
+- title: 'ROAM-Bench: Evaluating Embodied Active Spatial Intelligence through Evidence Verification'
+  type: paper
+  arxiv: '2611.33143'
+  year: 2026
+  project: https://rxjfighting.github.io/ROAM-Bench/
+  added: 2026-11-25
+  topics: [datasets]
+  tags: [benchmark, spatial, agents, evidence]
+  takeaway_en: 250 manually validated tasks, 11 types, 27 scenes under motion and collision constraints; independent checks separate outcomes from unmet requirements. Humans 84%; frontier VLMs show two complementary failure modes.
+  takeaway_zh: 250 个人工验证任务、11 类、27 个室内场景，在机器人运动与碰撞约束下评测主动空间智能；独立检查从仿真状态与回合记录同时核验结果与任务要求。报告人类评估者 100 个采样任务严格成功率 84%，七个前沿 VLM 呈现“结果对但要求未满足”与“结果错但通过更强检查”两种互补失败模式。
+
+- title: 'EmbodiSafety: Benchmarking Risk Understanding and Response in Embodied AI'
+  type: paper
+  arxiv: '2611.33054'
+  year: 2026
+  project: https://embodisafety.github.io/
+  added: 2026-11-25
+  topics: [datasets]
+  tags: [benchmark, safety, agents]
+  takeaway_en: 1,092 snapshot and 540 trajectory tasks across 844 visual scenarios; six response modes, recovery separated from human escalation. Claude-Opus-5.5 tops at 56.1%/61.5%; 40k examples raise Qwen3.5's accuracy.
+  takeaway_zh: 1,092 个快照与 540 个轨迹任务、844 个视觉场景的安全基准，六种响应模式（直接执行、拒绝、澄清、受限执行、自主恢复、人工升级），把“恢复”与“人工干预”分开显式评测安全自主边界。报告 Claude-Opus-5.5 完全决策准确率最高（快照 56.1%、轨迹 61.5%）；40k 安全对齐语料训练后 Qwen3.5 系列准确率提升。
+
+- title: 'RFW-W: Scaling Physical Asset Universes for Generative Embodied Simulation'
+  type: paper
+  arxiv: '2611.33013'
+  year: 2026
+  code: https://github.com/RoboFlywheel-com/RoboFlywheel-World
+  added: 2026-11-25
+  topics: [datasets, sim]
+  tags: [dataset, assets, simulation, robottwin]
+  takeaway_en: '1,010,386 asset records: 524,611 rigid, 402,410 articulated, 83,365 deformable, unified for task-conditioned scenes. RFW-R-trained RoboTwin policies: 71.2% clean / 41.8% randomized (+15.8/+10.6).'
+  takeaway_zh: 101 万条物理资产记录的统一资产宇宙：52.4 万刚体（1,212 类）、40.2 万铰接（531 类）、8.3 万可变形（485 类），公共接口按资产类型保留物理要求供检索与场景组装。报告用 RFW-R 训练的 RoboTwin 策略干净 71.2%、随机化 41.8%，比最强基线高 15.8/10.6 个百分点。
+
+- title: 'MRBench: Benchmarking Physical Necessity Reasoning in Heterogeneous Multi-Robot Manipulation'
+  type: paper
+  arxiv: '2611.32803'
+  year: 2026
+  org: Show Lab
+  project: https://showlab.github.io/MRBench/
+  added: 2026-11-25
+  topics: [datasets, manipulation]
+  tags: [benchmark, multi-robot, reasoning]
+  takeaway_en: 'Eight tasks under five resource-changing configurations; MRScissors separates requirements from measured capabilities, finds minimal teams by constrained search: 85.4%/91.2% team-selection accuracy.'
+  takeaway_zh: 八个多机器人操作任务、五种改变所需资源的配置：评测“物理必要性推理”（任务要什么、哪些资源能满足、哪些真必要）。MRScissors 分离任务需求与实测能力、约束搜索最小可行团队，报告两个骨干上团队选择准确率 85.4%/91.2%，比最强基线高 10.4/9.5 分。
+
+- title: 'ICLWorld: Benchmarking In-Context Learning of Agents from Digital to Physical Worlds'
+  type: paper
+  arxiv: '2611.32649'
+  year: 2026
+  code: https://github.com/ICLWorld/ICLWorld
+  project: https://iclworld.github.io
+  added: 2026-11-25
+  topics: [datasets]
+  tags: [benchmark, in-context-learning, agents]
+  takeaway_en: '30 environments, 630 demos, 160 tasks with counter-intuitive rules. Claude Opus 5.5 / GPT-6 Astra: 82%/76% computer-use but 27%/26% robot-use; 98% of rule questions right, 20% of tasks done.'
+  takeaway_zh: 从数字到物理世界的上下文学习在线基准：30 个环境、630 条示范视频、160 个带反直觉规则的任务（文本或视频呈现），UIverse 把每个环境统一为界面。报告 Claude Opus 5.5/GPT-6 Astra 计算机任务 82%/76% 成功但机器人任务仅 27%/26%；智能体答对 98% 的规则问题却只完成 20% 的任务。
+
+- title: 'Follow-Bench 2.0: An End-to-End 3D Benchmark for Socially-Aware Robot Person Following'
+  type: paper
+  arxiv: '2611.32579'
+  year: 2026
+  venue: NeurIPS 2026
+  project: https://medlartea.github.io/follow-bench-v2/
+  added: 2026-11-25
+  topics: [datasets]
+  tags: [benchmark, person-following, social, 3d]
+  takeaway_en: 'UE-built difficulty-leveled scenarios: crowds, weather, bottlenecks, queues, occlusions; unified closed-loop protocol with safety-comfort metrics. Modular pipelines beat end-to-end policies; side-following remains open.'
+  takeaway_zh: 虚幻引擎构建的分级难度人员跟随基准：人流、光照天气、拥挤布局、瓶颈、排队、干扰者与临时遮挡，统一闭环协议评测感知-规划耦合挑战，并给出目标可见性、恢复、社交空间侵入、队形与运动平滑等安全舒适指标。报告模块化跟随流程显著优于端到端视觉策略，侧面跟随远未解决。
