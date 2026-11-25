@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-24",
+ "updated": "2026-11-25",
  "papers": [
   {
    "id": "2611.29897",
    "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
-   "upvotes": 171,
+   "upvotes": 185,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -33,7 +33,7 @@
   {
    "id": "2611.18397",
    "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
-   "upvotes": 161,
+   "upvotes": 163,
    "hf_date": "2026-11-16",
    "published": "2026-11-16",
    "topics": [
@@ -70,9 +70,31 @@
    "ai_summary": "Gamer is a generalist agent framework that integrates perception, memory, and multi-step reasoning, trained through continued pre-training, sparse-thinking instruction tuning, and multi-turn reinforcement learning to interact efficiently in 2D and 3D environments."
   },
   {
+   "id": "2611.30989",
+   "title": "WorldLeague: Benchmarking Physical Agency",
+   "upvotes": 130,
+   "hf_date": "2026-11-24",
+   "published": "2026-11-24",
+   "topics": [
+    "datasets"
+   ],
+   "authors": [
+    "Xinyang Zhou",
+    "Qi Li",
+    "Xinchao Wang"
+   ],
+   "organization": "National University of Singapore",
+   "github": "https://github.com/xyangzhou/WorldLeague",
+   "project": "https://xyangzhou.github.io/WorldLeague/",
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "AI systems can now operate Blender, follow instructions in complex video games, and manipulate objects with robot arms. What range of physical goals can today's AI systems achieve autonomously? Answering this question requires testing systems on tasks that demand different combinations of perception, memory, planning, and action. We introduce WorldLeague, a benchmark that compares AI systems on a common set of 60 simulated robot tasks by measuring progress toward each task's physical goal from the robot's trajectory. Robots explore scenes to gather evidence in WorldSeek, rearrange objects in WorldShape, and adapt to changes in WorldShift. Tying these goals to a single control interface limits which AI systems can be compared. In WorldLeague, vision-language models (VLMs) choose targets and motions, while vision-language-action models (VLAs) and world-action models (WAMs) use their native controls. For each of six capability dimensions, we measure how much progress a system makes toward its goals (Interactive Score) and how often it achieves them (physical success rate). Together, these measures form the system's Physical Agency Profile. Among 13 representative AI systems, Claude Fable 5.2 achieves 13 of the 60 goals and earns the highest mean Interactive Score (28.58/100). Fable leads in four dimensions, while GPT-6.1-Sol and GPT-6-Astra tie for first on rule-following tasks. Even when VLMs answer every final question correctly, they receive an Interactive Score of zero in 71.8\\% of those episodes. WorldLeague gives Embodied AI, Physical AI, and Agentic AI a shared basis for comparing what AI systems achieve autonomously, from partial progress toward a physical goal to full goal completion. Project Webpage: https://xyangzhou.github.io/WorldLeague",
+   "ai_summary": "WorldLeague benchmarks 13 AI systems on 60 simulated robot tasks spanning exploration, rearrangement, and adaptation, measuring progress and success to compare autonomous physical goal achievement."
+  },
+  {
    "id": "2611.31201",
    "title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
-   "upvotes": 90,
+   "upvotes": 97,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [],
@@ -102,31 +124,9 @@
    "ai_summary": "A systematic framework shows that frontier multimodal models can serve as robot policies when harnessed with interfaces favoring native visual reasoning and tool use, achieving high success in simulated and real manipulation tasks."
   },
   {
-   "id": "2611.30989",
-   "title": "WorldLeague: Benchmarking Physical Agency",
-   "upvotes": 86,
-   "hf_date": "2026-11-24",
-   "published": "2026-11-24",
-   "topics": [
-    "datasets"
-   ],
-   "authors": [
-    "Xinyang Zhou",
-    "Qi Li",
-    "Xinchao Wang"
-   ],
-   "organization": "National University of Singapore",
-   "github": "https://github.com/xyangzhou/WorldLeague",
-   "project": "https://xyangzhou.github.io/WorldLeague/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "AI systems can now operate Blender, follow instructions in complex video games, and manipulate objects with robot arms. What range of physical goals can today's AI systems achieve autonomously? Answering this question requires testing systems on tasks that demand different combinations of perception, memory, planning, and action. We introduce WorldLeague, a benchmark that compares AI systems on a common set of 60 simulated robot tasks by measuring progress toward each task's physical goal from the robot's trajectory. Robots explore scenes to gather evidence in WorldSeek, rearrange objects in WorldShape, and adapt to changes in WorldShift. Tying these goals to a single control interface limits which AI systems can be compared. In WorldLeague, vision-language models (VLMs) choose targets and motions, while vision-language-action models (VLAs) and world-action models (WAMs) use their native controls. For each of six capability dimensions, we measure how much progress a system makes toward its goals (Interactive Score) and how often it achieves them (physical success rate). Together, these measures form the system's Physical Agency Profile. Among 13 representative AI systems, Claude Fable 5.2 achieves 13 of the 60 goals and earns the highest mean Interactive Score (28.58/100). Fable leads in four dimensions, while GPT-6.1-Sol and GPT-6-Astra tie for first on rule-following tasks. Even when VLMs answer every final question correctly, they receive an Interactive Score of zero in 71.8\\% of those episodes. WorldLeague gives Embodied AI, Physical AI, and Agentic AI a shared basis for comparing what AI systems achieve autonomously, from partial progress toward a physical goal to full goal completion. Project Webpage: https://xyangzhou.github.io/WorldLeague",
-   "ai_summary": "WorldLeague benchmarks 13 AI systems on 60 simulated robot tasks spanning exploration, rearrangement, and adaptation, measuring progress and success to compare autonomous physical goal achievement."
-  },
-  {
    "id": "2611.29338",
    "title": "A Glimpse of Training VLMs as Foundation Models for Robotic Manipulation",
-   "upvotes": 53,
+   "upvotes": 55,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -149,17 +149,40 @@
     "Shi-Min Hu"
    ],
    "organization": "Tsinghua University",
-   "github": null,
-   "project": null,
+   "github": "https://github.com/Hugo-AGI/nanoAstra",
+   "project": "https://nanoastra.github.io",
    "arxiv_code": [],
    "comment": null,
    "abstract": "Recently, GPT-6 Astra demonstrates strong generalization in robot control, yet limited disclosure of its training leaves open how such capabilities can be reproduced. We introduce nanoAstra, an approach to training vision-language models (VLMs) for generalizable manipulation that combines semantic action modeling with capability-preserving supervised fine-tuning (CP-SFT). nanoAstra represents robot behavior as semantic steps composed of reusable, parameterized action primitives, guided by explicit progress descriptions. Meanwhile, CP-SFT uses an explicit robot-specific system prompt to constrain manipulation outputs to a structured action space, aiming to focus adaptation on robot-specific contexts and promote specialization while minimizing interference with broader pretrained capabilities. With this formulation, we train nanoAstra on more than 5,000 hours of robot data together with general VQA data. On RoboTwin 2.0's randomized benchmark, nanoAstra-9B achieves a 17.8% zero-shot success rate, substantially outperforming advanced VLA and WAM baselines as well as similarly sized VLMs. With inference faster than the corresponding motion execution on a single H20 GPU, our model supports action-chunk-like streaming execution that overlaps inference with motion, reducing the robot's idle time from 35.0% to 6.9%.",
    "ai_summary": "nanoAstra combines semantic action modeling with capability-preserving supervised fine-tuning to train vision-language models for generalizable robot manipulation, achieving strong zero-shot success and faster streaming execution."
   },
   {
+   "id": "2611.31205",
+   "title": "ACAP: Asynchronous Coding Agents for Efficient Robot Control",
+   "upvotes": 44,
+   "hf_date": "2026-11-25",
+   "published": "2026-11-24",
+   "topics": [],
+   "authors": [
+    "Zexin He",
+    "Rui Li",
+    "Yushi Lan",
+    "Chengkai Jin",
+    "Zhi Hou",
+    "Xingang Pan"
+   ],
+   "organization": "MMLab@NTU",
+   "github": null,
+   "project": "https://projects.zxhezexin.com/acap",
+   "arxiv_code": [],
+   "comment": "Project page: https://projects.zxhezexin.com/acap",
+   "abstract": "Coding agents can construct and revise robot behavior during execution, but using one agent for the whole robot can delay otherwise independent work. We introduce Asynchronous Coding Agents as Policy (ACAP), an asynchronous framework that organizes one robot as a team of persistent agents. Each member reasons and acts for a configurable control group, such as an arm with its gripper or the torso and chassis, enabling asynchronous reasoning and execution. However, different robot components often have physical dependencies that require coordination. To address this challenge, ACAP introduces a hyper-agent that assigns tasks, coordinates dependencies, and dynamically allocates control between the lead and member agents. This allows independent work to progress concurrently while supporting tightly coupled manipulation when necessary. Across 72 real-world rollouts covering 25 task/platform settings, ACAP reduces task-balanced time cost by 28.2% compared with a single-agent Direct Policy, with improvements across Fully Parallel, Parallel-Sequential, and Collaborative tasks. Across all eight Collaborative settings, ACAP also achieves lower mean time cost than Fixed Delegation, where only member agents can control their assigned groups. An additional 90-rollout study shows lower mean 30-minute-capped time cost than Direct on all six tasks. We further demonstrate mobile manipulation using the same member interface for chassis and torso control. We present the framework and a real-world rollout dataset containing observations, generated programs, actions, and feedback to support research on how coding agents reason and act in the physical world.",
+   "ai_summary": null
+  },
+  {
    "id": "2611.30898",
    "title": "World Models as Native Latent Action Models",
-   "upvotes": 23,
+   "upvotes": 25,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -216,9 +239,46 @@
    "ai_summary": null
   },
   {
+   "id": "2611.30254",
+   "title": "Innata-0: A Native Embodied World System with Model-Agent Co-Design",
+   "upvotes": 21,
+   "hf_date": "2026-11-24",
+   "published": "2026-11-24",
+   "topics": [],
+   "authors": [
+    "Innata Team",
+    "Yu Bai",
+    "Ziyi Bai",
+    "Yuxuan Cai",
+    "Chenrui He",
+    "Wenhao Li",
+    "Zhe Lin",
+    "Heng Wang",
+    "Hai Yuan",
+    "Zhiwei Yu",
+    "Yuanhang Zhang",
+    "Luyou Chen",
+    "Tiezhu Gao",
+    "Zheng Geng",
+    "Jinbang Guo",
+    "Dongxu Han",
+    "Diqi He",
+    "Börje F. Karlsson",
+    "Jintao Li",
+    "Zhiyu Li"
+   ],
+   "organization": "Beijing Academy of Artificial Intelligence",
+   "github": null,
+   "project": "https://baai-eai.github.io/innata-0/",
+   "arxiv_code": [],
+   "comment": "87 pages, 25 figures, Project Page: https://baai-eai.github.io/innata-0/",
+   "abstract": "The physical world is open-ended, dynamic, and partially observable. While foundation models have advanced embodied intelligence, standalone models struggle with long-horizon execution, and simply integrating models with agents may lead to inconsistencies between planning and physical control. To support reliable and adaptive behaviors in the physical world, we introduce Innata-0, a native embodied world system. Innata-0 jointly designs an embodied world-action model and an agent to combine their complementary strengths. The model, Innata-0-WAM, adopts a tri-tower Mixture-of-Transformers architecture that integrates understanding, prediction, and action generation. The agent, Innata-0-Agent, coordinates long-horizon execution through memory, verification, and recovery. A co-design protocol is further proposed to align model training with agent execution and leverage validated experiences to support subsequent adaptation and model improvement. Extensive evaluations demonstrate strong embodied capabilities across understanding, world prediction, and robotic manipulation. Innata-0 represents our first step toward physical intelligence, and we see it as the beginning of a much longer journey.",
+   "ai_summary": "Innata-0 is a native embodied world system that co-designs a world-action model and an agent to enable reliable long-horizon physical behaviors through integrated understanding, prediction, action generation, memory, verification, and recovery."
+  },
+  {
    "id": "2611.30495",
    "title": "DexDuet: Learning Contact-Preserving Bimanual Dexterity from Human Demonstrations",
-   "upvotes": 13,
+   "upvotes": 14,
    "hf_date": "2026-11-24",
    "published": "2026-11-24",
    "topics": [
@@ -239,6 +299,33 @@
    "comment": null,
    "abstract": "Human demonstrations provide a rich source of bimanual dexterous skills, yet transferring them to robot hands remains challenging. Existing methods primarily optimize object trajectory tracking, often overlooking how human hands interact with the object. Even with accurate tracking, robots may contact incorrect object parts or slide their fingers, resulting in unstable manipulation. We present DexDuet, a framework that learns contact-preserving bimanual dexterity from a single human demonstration. DexDuet employs two interaction rewards to preserve human hand-object configurations and contacts. To enable coordinated manipulation, we factorize the bimanual policy into two weight-sharing per-hand policies that condition on each other's states. We further propose assisted reference-state initialization (A-RSI), an adaptive curriculum that adjusts object assistance and training starts across demonstration segments to overcome difficult manipulation phases. Across four benchmarks spanning three simulators and five robot embodiments, DexDuet improves object-tracking ADD-AUC by 11 to 41 points over the corresponding baselines while consistently achieving better contact preservation. Notably, among 122 paired runs with comparable object-tracking accuracy, DexDuet preserves the human's contacts better in 117 cases. Code and videos are available at https://rcl-robotics.github.io/Dexduet.io/",
    "ai_summary": null
+  },
+  {
+   "id": "2611.30149",
+   "title": "LeadVLA: Learning Follower-Aware Route Execution for Robot Leading",
+   "upvotes": 12,
+   "hf_date": "2026-11-25",
+   "published": "2026-11-24",
+   "topics": [
+    "vla"
+   ],
+   "authors": [
+    "Tianle Zeng",
+    "Hanjing Ye",
+    "Bingyi Xia",
+    "Yuchen Zhou",
+    "Zibo Zhang",
+    "Yufei Huang",
+    "Yonggen Ling",
+    "Hong Zhang"
+   ],
+   "organization": null,
+   "github": null,
+   "project": "https://louiszengCN.github.io/LeadVLA_PAGE/",
+   "arxiv_code": [],
+   "comment": "Project page: https://louiszengCN.github.io/LeadVLA_PAGE/",
+   "abstract": "Robot leading requires executing a route while continuously adapting to a designated follower. Existing robot-leading systems often mediate follower understanding and physical route execution through explicit states, planners, or modular interfaces; directly learning this coupling through end-to-end trajectory prediction can instead entangle route execution with follower response. We introduce LeadVLA, a structured multimodal policy that preserves the route as an explicit Path reference while learning a Pace for route progress and a Residual for local follower- and scene-conditioned adaptation. To make this problem trainable and measurable, we develop LeadInfra, a configurable Unreal Engine-based closed-loop data-generation infrastructure from which we instantiate an approximately 4M-sample training corpus, and LeadBench, a standardized benchmark with 108 fully held-out closed-loop episodes. LeadVLA achieves the highest task success (39.6%) among evaluated robot policies on LeadBench while maintaining strong route fidelity and follower responsiveness, and transfers to unseen real-world environments without real-world policy fine-tuning. Project Page: https://louiszengCN.github.io/LeadVLA_PAGE/",
+   "ai_summary": "LeadVLA is a structured multimodal policy that separates route execution into explicit path, pace, and residual components, trained and evaluated with generated closed-loop data and a benchmark, achieving the highest success among tested robot policies and transferring to unseen real environments without fine-tuning."
   },
   {
    "id": "2611.30813",
@@ -276,6 +363,33 @@
    "ai_summary": "A shared flow-matching policy that reads dense patch tokens from multiple vision encoders improves success on egocentric bimanual tasks, and inverse-dynamics readout of commanded motion is a strong pre-training signal, while recognition, depth, and correspondence transfer unreliably."
   },
   {
+   "id": "2611.27689",
+   "title": "Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation",
+   "upvotes": 8,
+   "hf_date": "2026-11-24",
+   "published": "2026-11-23",
+   "topics": [
+    "manipulation"
+   ],
+   "authors": [
+    "Zhenxuan Fan",
+    "Zhuoya Wang",
+    "Yuqian Yuan",
+    "Wenqiao Zhang",
+    "Juncheng Li",
+    "Jun Xiao",
+    "Siliang Tang",
+    "Yueting Zhuang"
+   ],
+   "organization": "Zhejiang University",
+   "github": null,
+   "project": null,
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "Vision-language model (VLM)-based agents offer a promising approach to robotic manipulation, yet remain limited by inadequate memory organization, uncertain failure attribution, and limited reuse of execution experience. We propose Embodied-Harness, a dual-agent framework that improves manipulation by refining the execution harness without updating model parameters. The Actor interacts with the environment through a robot-control interface, while the Reflector converts execution evidence into reusable operational guidance. Hierarchical Memory Architecture maintains short-term execution context and long-term experiential knowledge to support execution and reflection. Evidence-based Experience Reflection grounds failure diagnosis in observed interactions, while Recursive Harness Self-Improvement refines operational guidance across successive attempts. Experiments on RoboTwin 2.0, RoboSPA, and RMBench demonstrate the effectiveness of Embodied-Harness in generalization under environmental variations, spatial reasoning, long-horizon planning, and memory-dependent manipulation. Our method achieves success rates of 82.4%, 76.7%, and 94.4% on the three benchmarks, respectively. Real-world evaluation further yields an average success rate of 96.7% across three manipulation tasks. These results highlight the potential of Embodied-Harness to improve robotic manipulation through experience-driven harness self-improvement.",
+   "ai_summary": "A dual-agent framework with hierarchical memory and recursive self-improvement enables robotic manipulation agents to convert execution evidence into reusable guidance without updating model parameters."
+  },
+  {
    "id": "2611.24077",
    "title": "AeroRSI: Recursive Self-Improvement for Aerial Vision-Language Navigation",
    "upvotes": 8,
@@ -305,31 +419,33 @@
    "ai_summary": null
   },
   {
-   "id": "2611.27689",
-   "title": "Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation",
+   "id": "2611.33010",
+   "title": "Embodied AI Fails the Mirror Test: How a Simple Mirror Breaks Robot Policies",
    "upvotes": 7,
-   "hf_date": "2026-11-24",
-   "published": "2026-11-23",
+   "hf_date": "2026-11-25",
+   "published": "2026-11-25",
    "topics": [
-    "manipulation"
+    "learning"
    ],
    "authors": [
-    "Zhenxuan Fan",
-    "Zhuoya Wang",
-    "Yuqian Yuan",
-    "Wenqiao Zhang",
-    "Juncheng Li",
-    "Jun Xiao",
-    "Siliang Tang",
-    "Yueting Zhuang"
+    "Xuanchen Liu",
+    "Hejun Zhang",
+    "Boxuan Dong",
+    "Ying Wu",
+    "Heshuai Li",
+    "Wen Gao",
+    "Yonghong Tian",
+    "Weihao Yu"
    ],
-   "organization": "Zhejiang University",
-   "github": null,
-   "project": null,
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Vision-language model (VLM)-based agents offer a promising approach to robotic manipulation, yet remain limited by inadequate memory organization, uncertain failure attribution, and limited reuse of execution experience. We propose Embodied-Harness, a dual-agent framework that improves manipulation by refining the execution harness without updating model parameters. The Actor interacts with the environment through a robot-control interface, while the Reflector converts execution evidence into reusable operational guidance. Hierarchical Memory Architecture maintains short-term execution context and long-term experiential knowledge to support execution and reflection. Evidence-based Experience Reflection grounds failure diagnosis in observed interactions, while Recursive Harness Self-Improvement refines operational guidance across successive attempts. Experiments on RoboTwin 2.0, RoboSPA, and RMBench demonstrate the effectiveness of Embodied-Harness in generalization under environmental variations, spatial reasoning, long-horizon planning, and memory-dependent manipulation. Our method achieves success rates of 82.4%, 76.7%, and 94.4% on the three benchmarks, respectively. Real-world evaluation further yields an average success rate of 96.7% across three manipulation tasks. These results highlight the potential of Embodied-Harness to improve robotic manipulation through experience-driven harness self-improvement.",
-   "ai_summary": "A dual-agent framework with hierarchical memory and recursive self-improvement enables robotic manipulation agents to convert execution evidence into reusable guidance without updating model parameters."
+   "organization": "intelligence++",
+   "github": "https://github.com/iPPLab/robodojo-mirror",
+   "project": "https://ipplab.github.io/robodojo-mirror",
+   "arxiv_code": [
+    "https://github.com/iPPLab/robodojo-mirror"
+   ],
+   "comment": "Code: https://github.com/iPPLab/robodojo-mirror",
+   "abstract": "Can a simple mirror expose the limitations of today's robotic manipulation policies? Inspired by the mirror self-recognition test in animal cognition, we investigate whether robot policies can reliably manipulate physical objects in scenes containing their reflections. We introduce RoboDojo-Mirror, a benchmark built on RoboDojo that preserves task objectives, success criteria, and policy checkpoints while comparing a mirror-free baseline with single-mirror, dual-mirror, and mirrored-tabletop conditions. Across five policies spanning Vision-Language-Action models, World Action Models, and agentic policies, every mirror condition reduces aggregate success rates: averaged over the three conditions, the drop ranges from 10.8 to 56.7 percentage points across policies, and it reaches 62.5 points on the mirrored tabletop. Because a mirror is also a physical obstacle, we compare it against geometrically matched non-reflective panels; 50--88\\% of mirror-specific failures occur without recorded robot--panel contact, so direct collisions alone do not explain the degradation. Trajectory and contact analyses instead reveal recurring behaviors consistent with phantom targeting of reflected objects and spatial mislocalization of real ones. Targeted diagnostics further characterize grasping near reflections, policy-dependent pushing progress, and physical-target interaction under main-camera occlusion. Real-robot experiments with π_{0.5} and FastWAM also show lower overall success rates under the upright-mirror and mirrored-tabletop conditions. These findings reveal a shared vulnerability to reflective environments across diverse robot policies and motivate reflection-aware evaluation of embodied intelligence. Code is available at https://github.com/iPPLab/robodojo-mirror.",
+   "ai_summary": "A new benchmark shows that many robot manipulation policies perform worse when mirrors are present, often because they confuse reflections with real objects rather than simply colliding with the mirror."
   },
   {
    "id": "2611.23499",
@@ -354,6 +470,31 @@
    "comment": null,
    "abstract": "Autoregressive vision-language-action (VLA) models predict discrete action tokens with the next-token objective of their vision-language backbone, so the action tokenizer defines the interface between the policy and the robot. In bimanual manipulation, the two arms share a repertoire of movements yet coordinate through complementary roles, and an action representation should capture both. However, most existing tokenizers encode both arms as a single concatenated action vector, in which motion patterns common to the two arms are not shared and cross-arm dependencies remain entangled within each token. The policy must therefore learn both aspects implicitly. We propose Bimanual Coordination Action Tokenization (BiCAT), which shares one motion representation across arms while conditioning each arm's tokens on its partner through symmetric cross-arm attention and a joint decoder. The policy then predicts all tokens of each arm in parallel, generating the left arm first and the right arm conditioned on it. Across ten RoboTwin 2.0 tasks and six real-world tasks on three embodiments, BiCAT achieves the highest success among the compared tokenizers. In simulation, it improves mean success by 17.6 percentage points over the strongest of eight baselines, with the largest gains on tasks that require close coordination between the arms, while requiring only 40.5 ms per action chunk. These results suggest that the action tokenizer is a natural place to model bimanual coordination.",
    "ai_summary": "BiCAT shares a motion representation across arms and conditions each arm's tokens on its partner via symmetric cross-arm attention and a joint decoder, enabling parallel arm token prediction and improving bimanual manipulation success."
+  },
+  {
+   "id": "2611.30900",
+   "title": "GlanceNav: Efficient Vision-and-Language Navigation with Streaming Memory and Counterfactual Rewind",
+   "upvotes": 5,
+   "hf_date": "2026-11-24",
+   "published": "2026-11-24",
+   "topics": [
+    "navigation"
+   ],
+   "authors": [
+    "Anh Dao",
+    "Quan-Dung Pham",
+    "Danh Vinh Le",
+    "Tuyen Pham Le",
+    "Quan Nguyen",
+    "Yuzhang Shang"
+   ],
+   "organization": "VinMotion",
+   "github": "https://github.com/GlanceNav/GlanceNav",
+   "project": "https://glancenav.github.io/",
+   "arxiv_code": [],
+   "comment": null,
+   "abstract": "Multimodal large language models (MLLMs) have become strong policies for vision-and-language navigation (VLN). However, most of them encode a sample of past frames again at every decision and are trained on isolated decisions, so computation is redundant and the usable history is short. They also learn from their own mistakes through outcome rewards that give one scalar to a whole episode. We ask whether a navigator can encode each frame only once, at a constant cost per step, and still remember what matters and learn efficiently from its mistakes. We present GlanceNav, a streaming navigator built on a hybrid MLLM. Its Gated DeltaNet layers carry a recurrent state through the whole episode, while its attention layers keep a short window of recent observations and a small bank of keyframes, selected by how much each frame changes the recurrent state. This constant-size memory keeps the cost per step fixed and allows training on whole episodes with the same memory as at inference. Because the entire memory can also be copied in constant time, we further propose Counterfactual Rewind (CoRe), a reinforcement learning stage that rewinds a drifting rollout to its closest approach to the goal, lets an expert correct a few actions, and credits decisions by the resulting change in outcome. Trained only on the R2R-CE and RxR-CE training splits, with 1,000 instructions for reinforcement learning, a 4B GlanceNav reaches success rates of 71.9% and 73.6% on R2R-CE and RxR-CE val-unseen. On R2R-CE, it outperforms the strongest previous single-RGB method trained without external data by 9.1 points, while running at 104 ms per step.",
+   "ai_summary": "GlanceNav is a streaming multimodal navigator that maintains constant per-step memory through recurrent and attention mechanisms and uses a reinforcement learning correction method to improve vision-and-language navigation."
   },
   {
    "id": "2611.25179",
