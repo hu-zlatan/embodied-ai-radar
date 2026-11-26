@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "papers": [
   {
    "id": "2611.18397",
    "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
-   "upvotes": 165,
+   "upvotes": 166,
    "hf_date": "2026-11-16",
    "published": "2026-11-16",
    "topics": [
@@ -68,6 +68,64 @@
    "comment": "8-page main paper with references and supplementary material (15 pages); 5 figures, 13 tables. Code: https://github.com/starsholic/AeroRSI Project page: https://starsholic.github.io/AeroRSI/",
    "abstract": "Vision-language-action (VLA) models enable unmanned aerial vehicles (UAVs) to follow natural-language instructions, yet still fail frequently in closed-loop flight. Correcting these failures requires repairs, i.e., actions that avoid them at the states the policy itself reaches, which human pilots cannot label at scale and rule-based planners cannot supply reliably. In this paper, we present AeroRSI, a recursive self-improvement framework in which an aerial navigation policy iteratively learns from its own failures. Our key insight is that a failing policy should judge its own repairs by flying on from them. Judged in this way, its sampled actions and even rule-based proposals that hurt it when imitated directly become reliable supervision. Moreover, an episode terminates at its first failure, concealing subsequent failures until the earlier ones are repaired. AeroRSI thus renews its supervision in every round, anchoring the failures of the current policy, verifying repairs by its continuation, and distilling them while keeping its behavior elsewhere. On TravelUAV, three rounds raise the success rate of a supervised 2B-parameter policy from 46.4% to 67.5% and reduce collisions by half, surpassing the previous state of the art by 10.6 points from the same initialization without extra human labels or inference cost. Code and models are available at https://github.com/starsholic/AeroRSI.",
    "ai_summary": null
+  },
+  {
+   "id": "2611.34811",
+   "title": "HOG-WAM: Improving Visual Robustness through Future Gradient Prediction",
+   "upvotes": 6,
+   "hf_date": "2026-11-26",
+   "published": "2026-11-26",
+   "topics": [
+    "world-models"
+   ],
+   "authors": [
+    "Boxuan Dong",
+    "Yupeng Qian",
+    "Ying Wu",
+    "Heshuai Li",
+    "Junhao Tan",
+    "Zhenxiong Tan",
+    "Weijia Wu",
+    "Weihao Yu"
+   ],
+   "organization": "intelligence++",
+   "github": "https://github.com/iPPLab/HOG-WAM",
+   "project": null,
+   "arxiv_code": [
+    "https://github.com/iPPLab/HOG-WAM"
+   ],
+   "comment": "Code: https://github.com/iPPLab/HOG-WAM",
+   "abstract": "World-action models jointly predict future observations and actions, yet visual corruption can disrupt the resulting policies. We introduce HOG-WAM, which adds future Histograms of Oriented Gradients (HOG) as structural supervision derived directly from demonstration images. An auxiliary HOG diffusion transformer (DiT) module reads RGB features through asymmetric attention, allowing its objective to shape the visual representation used for control. The module is used only during training and removed at inference, preserving FastWAM's RGB-to-action architecture. We evaluate four controlled observation corruptions through a visual-corruption extension of RoboTwin, termed RoboTwin-Plus; HOG-WAM achieves the highest success among the compared policies under all four. Mixed-noise success increases from 78.86% to 82.86% relative to FastWAM, with comparable performance on clean scenes. On LIBERO Plus, overall success increases from 74.49% to 75.26%, with the largest gain under sensor noise, from 74.14% to 78.89%. Across four Franka tasks, average success increases from 40% to 59% under clean observations and from 17% to 24% under noisy observations. A representation ablation favors combining RGB observations with auxiliary HOG prediction over replacing RGB with HOG. These findings support future-gradient prediction as complementary supervision for visually robust control, with larger absolute gains on physical tasks than in simulation. Code is available at https://github.com/iPPLab/HOG-WAM.",
+   "ai_summary": "HOG-WAM improves visually robust control in world-action models by adding future Histograms of Oriented Gradients as auxiliary structural supervision through a training-only HOG diffusion transformer, yielding higher success under observation corruptions while preserving the original RGB-to-action inference architecture."
+  },
+  {
+   "id": "2611.34675",
+   "title": "RoboEvo^2: Recursive Robot Self-Improvement via Harness-Policy Co-Evolution",
+   "upvotes": 6,
+   "hf_date": "2026-11-26",
+   "published": "2026-11-26",
+   "topics": [],
+   "authors": [
+    "Chenzhi Liu",
+    "Jiehong Lin",
+    "Wei Huang",
+    "Xuzhao Huang",
+    "Haoyuan Li",
+    "Yang Zhang",
+    "Junchao Huang",
+    "Chenyeyang Cai",
+    "Bo Wang",
+    "Kazuhiro Kosuge",
+    "Zhongrui Wang",
+    "Xiaojuan Qi"
+   ],
+   "organization": null,
+   "github": "https://github.com/kaiknower/RoboEvo2",
+   "project": "https://kaiknower.github.io/RoboEvo2/",
+   "arxiv_code": [],
+   "comment": "Project page: https://kaiknower.github.io/RoboEvo2/",
+   "abstract": "Robots should adapt to unfamiliar environments and acquire new skills through interaction, then execute those skills efficiently with practice. Vision-language-action policies provide efficient control, but often need additional human demonstrations to handle unfamiliar settings; reasoning agents can discover solutions using broad prior knowledge and robot-control APIs, but repeated deliberation and repair are costly. Inspired by human learning through reasoning and practice, we propose RoboEvo^2, a framework for recursive harness-policy co-evolution. In Policy-to-Harness (P2H) evolution, policy failures guide a coding agent to search complementary Code, Code+ICL, and Code+Policy routes, consolidating verified solutions into reusable skills, routing strategies, and experience memory. In Harness-to-Policy (H2P) evolution, verified trajectories provide supervised training, while Counterfactual Preference Distillation (CPD) teaches the policy to favor successful corrections over failures from the same starting state. The improved policy provides stronger motor skills for subsequent search, while its remaining failures redirect harness evolution, closing the reciprocal loop. Through recursive co-evolution without additional human demonstrations, RoboEvo^2 improves standalone success from 11.0% to 84.1% and hybrid success from 30.4% to 90.5% on LIBERO-PRO, with similar gains and reduced agentic costs on RoboTwin C2R. Further experiments demonstrate autonomous task acquisition, cross-embodiment harness transfer, and 95.0% hybrid success on the Unitree G1-D. Our models and code will be publicly released.",
+   "ai_summary": "RoboEvo$^2$ recursively co-evolves a coding-agent harness and a vision-language-action policy, using policy failures to discover reusable skills and preference distillation to improve motor control, yielding large success gains without extra human demonstrations."
   },
   {
    "id": "2611.30900",
@@ -188,6 +246,11 @@
    "id": "2611.30637",
    "title": "SWEEP-Bench: Do Embodied Policies Act on the Speed They See?",
    "code": "https://github.com/Damin3927/SWEEP-Bench"
+  },
+  {
+   "id": "2611.33143",
+   "title": "ROAM-Bench: Evaluating Embodied Active Spatial Intelligence through Evidence Verification",
+   "code": "https://github.com/rxjfighting/ROAM-Bench"
   }
  ]
 }
