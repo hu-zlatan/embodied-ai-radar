@@ -2,7 +2,7 @@
 
 _大规模机器人数据集、第一视角数据与评测基准。_
 
-共 135 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
+共 137 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/datasets.yaml`](../data/curated/datasets.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/datasets.html) · [English](datasets.md)
 
@@ -39,6 +39,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[ClothDojo: Learned Data Generation and Benchmarking for Bimanual Garment Flattening and Folding](https://arxiv.org/abs/2611.01190)** (2026) — 仿真平台：用微调后的 VLA 生成近 8000 条成功的衣物操作轨迹，并重新渲染供 RGB 策略训练，效果优于直接用人类数据训练，但泛化到未见衣物仍是难题。 · [项目页](https://clothdojo.github.io/)
 - **[CrowdMAPS: Crowdsourcing Multiple Actions per State for Real-World Imitation Learning](https://arxiv.org/abs/2611.15078)** (2026) — 把真实机器人已经访问过的状态发给远程标注者，在网页 3D 界面中补充其他可行动作，无需更多机器人采集时间即可“加宽”数据集。每个状态从 1 个动作增加到 10 个，五个真实任务的平均成功率提高约 33–36 个百分点。
 - **[DexArena: A Unified Benchmark for Long-Horizon Dexterous Manipulation](https://arxiv.org/abs/2611.02629)** (2026) — 10 个长时序和 30 个阶段级双手灵巧任务，每个阶段都有物理判定的成功条件，可衡量中间进度；提供经过验证的遥操作示范和统一接口。 · [项目页](https://sipair-elastic.github.io/DexArena-website/)
+- **[DexEngine: Scaling Human Demonstrations into Physically Executable Whole-Robot Data](https://arxiv.org/abs/2611.33579)** (2026) — 把人类手-物体数据转为可训练、物理可执行的臂-手轨迹：先把每段手-物运动放到机械臂可及处并求跟随臂动，再用残差强化学习在物理仿真中修正。从九个数据集为四种灵巧手各生成约 5,200 片段，扩增为 6.5 万条轨迹（116 小时）、32.5 万回合（578 小时），比 RL 式重定向快 10 倍以上，训练出的策略显著优于未做物理修正的数据。 · [代码](https://github.com/wongyun-yu/DexEngine) · [项目页](https://wongyun-yu.github.io/dexengine/)
 - **[Diversity You Can Actually Measure: A Fast, Model-Free Diversity Metric for Robotics Datasets](https://arxiv.org/abs/2603.11634)** (2026) — CoRL 2026 Oral。直接从示范数据度量模仿学习数据集的多样性：基于签名核定义熵，无需先训练模型。
 - **[Do as I Do: Dexterous Manipulation Data from Everyday Human Videos](https://arxiv.org/abs/2606.19333)** (2026) — 从普通单目人类视频重建手-物交互，并重定向为多指机器人手可执行的动作序列；手-物估计优于已有方法，并给出采集人类数据的实践建议。 · [代码](https://github.com/malik-group/do-as-i-do) · [项目页](https://do-as-i-do.com/)
 - **[Ego2Robot: Scalable Robot Data Synthesis from Egocentric Human Data](https://arxiv.org/abs/2608.02580)** (2026) — CoRL 2026 Spotlight。把第一视角人类操作视频转换为机器人训练数据的流程，并检验其能否大规模助力 VLA 预训练。 · [项目页](https://www-ye.github.io/ego2robot_blog/)
@@ -53,6 +54,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_
 - **[Embodied Skill Bench: Benchmarking How Well Agents with Embodied Skills Perform on Physical Tasks](https://arxiv.org/abs/2610.16238)** (2026) — 将 VLA 策略、感知模型与经验知识封装成 250 个可复用的“具身技能”，评测它们对大模型智能体完成物理任务的帮助。 · [代码](https://github.com/HanZhi306/EmbodiedSkill-Bench)
 - **[EmbodiedLab: Beyond Manipulation, Benchmarking Embodied Agents That Act to Know](https://arxiv.org/abs/2610.35385)** (2026) — “为求知而行动”的基准：机器人在物理仿真实验室中自行操作仪器、读数，测出每次随机重采样的未知参数。共 30 个实验、5 个学科；报告最强的前沿模型智能体在原生控制下成功率也不到一半，失败多源于与仪器交互。 · [代码](https://github.com/HexaFuture/EmbodiedLab) · [项目页](https://hexafuture.ai/benchmarks/embodiedlab/)
 - **[FLORA: An Open Model Suite for Scaling Robotics Data Engines](https://arxiv.org/abs/2610.31779)** (2026) — GR00T 训练所用的开放数据引擎：一组模型为人类与机器人视频生成带时间戳的动作描述、稠密过程奖励和整段结果奖励；报告在 WGO-Bench、RoboReward 与 Robometer 上达到最优。 · [代码](https://github.com/NVIDIA/Flora) · [项目页](https://research.nvidia.com/labs/gear/flora)
+- **[FailPoint-X: A Policy-Matched, Failure-Anchored Benchmark for Offline VLA Post-Training from Human Takeovers](https://arxiv.org/abs/2611.33769)** (2026) — 从固定 π0.5 检查点在 LIBERO-X 十个任务族收集 629 个自然失败、2,823 次人工接管，评测统一从 384 个留出失败区间的固定中点重启。报告行为克隆恢复动作比仅用示范高 29.4 个百分点，但在 L1–L5 名义起点下会损失 30.0 个点。
 - **[Flex-RSI: Benchmarking Recursive Self-Improvement of Frontier Agents](https://arxiv.org/abs/2611.08946)** (2026) — 评测智能体在固定预算下改写自身框架的能力，任务涵盖视觉与机器人；发现智能体自建解法时自我改进收益最大，开源权重模型在需通过物理稳定性等严格检查的任务上落后最多。 · [代码](https://github.com/flex-rsi/rsi-bench) · [项目页](https://flex-rsi.github.io)
 - **[FoldNet++: a Large-Scale Synthetic Dataset for Robotic T-Shirt Folding and Unfolding](https://arxiv.org/abs/2609.12433)** (2026) — 合成 T 恤折叠与展开数据：6 种机器人、1000 件 T 恤、12 万条轨迹。报告仅用其训练的策略在未见过的真实 T 恤上成功率超过 90%。 · [代码](https://github.com/GalaxyGeneralRobotics/FoldNetXX) · [项目页](https://pku-epic.github.io/FoldNetXX/)
 - **[Follow-Bench 2.0: An End-to-End 3D Benchmark for Socially-Aware Robot Person Following](https://arxiv.org/abs/2611.32579)** (2026) — 虚幻引擎构建的分级难度人员跟随基准：人流、光照天气、拥挤布局、瓶颈、排队、干扰者与临时遮挡，统一闭环协议评测感知-规划耦合挑战，并给出目标可见性、恢复、社交空间侵入、队形与运动平滑等安全舒适指标。报告模块化跟随流程显著优于端到端视觉策略，侧面跟随远未解决。 · [项目页](https://medlartea.github.io/follow-bench-v2/)

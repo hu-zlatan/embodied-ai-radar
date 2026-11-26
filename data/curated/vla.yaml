@@ -3315,3 +3315,59 @@
   tags: [vla, spatial, mfm, collaboration, real]
   takeaway_en: MFM grounds targets and guides free-space motion, the VLA keeps fine-grained control; a router picks when to intervene. +14.9/+74.0/+3.6 points on LIBERO-PRO, ALOHA-Sim-PRO, RoboCasa365; +30.9 real.
   takeaway_zh: 选择性协作框架：通用多模态基础模型负责目标接地与空间引导、控制器执行自由空间运动、VLA 保留精细操作，能力路由器按校准选择是否介入；VLA 用动作块级稠密几何标注与扰动状态恢复数据微调。报告 LIBERO-PRO +14.9、ALOHA-Sim-PRO +74.0、RoboCasa365 +3.6、真实化学任务 +30.9 个百分点。
+
+- title: 'M$^{2}$AdaptVLA: Multimodal Memory-Augmented Vision-Language-Action Model with Predictive Test-Time Adaptation'
+  type: paper
+  arxiv: '2611.34560'
+  year: 2026
+  project: https://tlf-tlf.github.io/M2AdaptVLAPage/
+  added: 2026-11-26
+  topics: [vla]
+  tags: [vla, memory, wrench, test-time-adaptation, real]
+  takeaway_en: 'Visual memory via a bounded TTT bank plus gated wrench memory, with predictive test-time adaptation from an auxiliary wrench loss. Eight memory-dependent tasks: 82.71% mean, +31.46 points over the strongest baseline.'
+  takeaway_zh: 视觉记忆用有界测试期训练库（每帧特征结合快权重读出）、力矩记忆用上下文门控决定动作专家对力历史的依赖，并以辅助力矩预测损失做预测式测试期自适应（只反传最后去噪步更新低秩适配器）。报告八个需视觉与力矩记忆的任务平均 82.71%，比最强基线高 31.46 个百分点。
+
+- title: HoloBrain-0.5 Technical Report
+  type: paper
+  arxiv: '2611.34449'
+  year: 2026
+  org: Horizon Robotics
+  project: https://horizonrobotics.github.io/robot_lab/holobrain_0_5/
+  added: 2026-11-26
+  topics: [vla]
+  tags: [vla, foundation-model, cross-embodiment, fsq, real]
+  takeaway_en: 'Cross-embodiment VLAs in a shared action space from standardized URDF kinematics: continuous diffusion and residual-FSQ variants, 10,000+ hours over 15 embodiments. 94.52% vs π0.5''s 86.25% on seven real tasks.'
+  takeaway_zh: 跨本体 VLA 系列：把 URDF 的关节轴、坐标框架与工具中心点标准化并编码为共享 3D 运动学图，输出连续（扩散）与离散（残差 FSQ + 延迟自回归）两种动作块。在 1 万小时以上、15 类本体的真实/仿真/人类数据上预训练；报告七个真机任务进度 94.52%（π0.5 为 86.25%），少量 G1 示教后三类人形任务 70.24%（π0.5 为 11.00%）。
+
+- title: '$\widetilde{\varepsilon}$: Does Initial Noise Induce Directional Bias in Vision-Language-Action Models?'
+  type: paper
+  arxiv: '2611.33816'
+  year: 2026
+  project: https://june65.github.io/Epsilon-Tilde
+  added: 2026-11-26
+  topics: [vla]
+  tags: [diffusion, noise, analysis, real]
+  takeaway_en: Shows initial noise induces a directional bias aligned with its temporal mean; antithetic noise-pair training plus removing the mean at inference raises π0.5 real success from 40% to 68%.
+  takeaway_zh: 揭示初始噪声在动作空间诱导出与噪声时序均值高度一致的方向偏置；训练时用对偶噪声对 (ε, -ε) 强制一致预测，推理时减去噪声时序均值。报告大幅降低动作偏差并提升可复现性，真机 π0.5 平均成功率从 40% 升到 68%。
+
+- title: Keep or Roll Back? Out-of-Loop Judges for Self-Improving VLA and End-to-End Embodied Policies
+  type: paper
+  arxiv: '2611.33794'
+  year: 2026
+  project: https://zilin-huang.github.io/SealedLoop/
+  added: 2026-11-26
+  topics: [vla, learning]
+  tags: [self-improvement, evaluation, analysis, real]
+  takeaway_en: Adds a sealed judge outside the self-improvement loop with a sequential test. In driving, an exact in-loop judge would keep 8/15 false gains; the sealed test accepted 11 of 12 real gains, none of 59 losses.
+  takeaway_zh: 为自我改进循环引入“密封评判器”（改进器看不见、无法对其优化）+ 序贯检验，只有通过才保留新策略，并区分“评判器误差”与“迁移差距”两种假增益。报告驾驶中即使循环内评判器完全准确也会保留 8/15 个假增益；密封检验在已知真值的驾驶对上接受 11/12 真增益、0/59 假增益。
+
+- title: 'FreshVLA: Frequency-Regularized Time Scale Hierarchical Latent Actions for Vision-Language-Action Models'
+  type: paper
+  arxiv: '2611.33635'
+  year: 2026
+  project: https://freshvla.github.io/
+  added: 2026-11-26
+  topics: [vla]
+  tags: [latent-actions, frequency, hierarchical, real]
+  takeaway_en: A high-pass prior steers latent actions away from static appearance, and cross-timescale sampling splits coarse progress from fine dynamics. 98.2% LIBERO, 98.0% LIBERO-Long, 80.4% zero-shot LIBERO-PLUS.
+  takeaway_zh: 用高通先验把潜动作编码导向动态区域、减少静态外观依赖，并以跨时间尺度采样与频域正则把潜动作分为粗粒度任务进度与细粒度执行动态。报告 LIBERO 98.2%、LIBERO-Long 98.0%（比 GR00T-N1.6 高 3.6）、零样本 LIBERO-PLUS 80.4%；真机比 π0.5 平均高 7.5%，对视觉扰动更鲁棒。

@@ -1435,3 +1435,25 @@
   tags: [benchmark, person-following, social, 3d]
   takeaway_en: 'UE-built difficulty-leveled scenarios: crowds, weather, bottlenecks, queues, occlusions; unified closed-loop protocol with safety-comfort metrics. Modular pipelines beat end-to-end policies; side-following remains open.'
   takeaway_zh: 虚幻引擎构建的分级难度人员跟随基准：人流、光照天气、拥挤布局、瓶颈、排队、干扰者与临时遮挡，统一闭环协议评测感知-规划耦合挑战，并给出目标可见性、恢复、社交空间侵入、队形与运动平滑等安全舒适指标。报告模块化跟随流程显著优于端到端视觉策略，侧面跟随远未解决。
+
+- title: 'DexEngine: Scaling Human Demonstrations into Physically Executable Whole-Robot Data'
+  type: paper
+  arxiv: '2611.33579'
+  year: 2026
+  code: https://github.com/wongyun-yu/DexEngine
+  project: https://wongyun-yu.github.io/dexengine/
+  added: 2026-11-26
+  topics: [datasets, manipulation]
+  tags: [retargeting, dexterous, simulation, dataset]
+  takeaway_en: 'Turns human hand-object data into train-ready arm-hand trajectories: places motion in reach, follows the hands, corrects with residual RL. 65,000 trajectories (116 h) over four hands; 10x faster than RL retargeting.'
+  takeaway_zh: 把人类手-物体数据转为可训练、物理可执行的臂-手轨迹：先把每段手-物运动放到机械臂可及处并求跟随臂动，再用残差强化学习在物理仿真中修正。从九个数据集为四种灵巧手各生成约 5,200 片段，扩增为 6.5 万条轨迹（116 小时）、32.5 万回合（578 小时），比 RL 式重定向快 10 倍以上，训练出的策略显著优于未做物理修正的数据。
+
+- title: 'FailPoint-X: A Policy-Matched, Failure-Anchored Benchmark for Offline VLA Post-Training from Human Takeovers'
+  type: paper
+  arxiv: '2611.33769'
+  year: 2026
+  added: 2026-11-26
+  topics: [datasets, vla]
+  tags: [benchmark, vla, post-training, human-takeover]
+  takeaway_en: 629 natural failures across 10 LIBERO-X families, 2,823 takeovers logged, evaluation restarts from fixed held-out midpoints. Cloning recoveries beats demo-only by 29.4 points; loses 30 points at nominal starts.
+  takeaway_zh: 从固定 π0.5 检查点在 LIBERO-X 十个任务族收集 629 个自然失败、2,823 次人工接管，评测统一从 384 个留出失败区间的固定中点重启。报告行为克隆恢复动作比仅用示范高 29.4 个百分点，但在 L1–L5 名义起点下会损失 30.0 个点。

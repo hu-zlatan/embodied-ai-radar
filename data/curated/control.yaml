@@ -672,3 +672,14 @@
   tags: [motion-planning, mobile-manipulation, imitation, real]
   takeaway_en: Demo generation splits into global path discovery and local refinement, producing millions of whole-body trajectories; behavior cloning plus privileged on-policy distillation. 87.0% sim; 77.5% over 80 unseen real trials.
   takeaway_zh: 演示生成管线把问题拆成全局路径发现与局部运动精修，程序化场景中产出百万级全身轨迹；先行为克隆再特权在线策略蒸馏训练神经运动规划器。报告仿真基准 87.0%、80 组未见真实场景试验 77.5%。
+
+- title: 'FOCI: Trajectory Optimization on Gaussian Splats for Gaussian Robots'
+  type: paper
+  arxiv: '2611.33380'
+  year: 2026
+  code: https://github.com/leggedrobotics/foci
+  added: 2026-11-26
+  topics: [control, perception]
+  tags: [gaussian-splatting, trajectory-optimization, collision, real]
+  takeaway_en: Represents robot and environment as Gaussian splats with an overlap-integral collision formulation, orientation-aware, no bounding boxes. Collision-free trajectories for legged, aerial and manipulator robots in seconds.
+  takeaway_zh: 把机器人与环境都表示为高斯泼溅，用高斯间重叠积分给出可解释的碰撞表述，直接在 Gaussians 上做轨迹优化；支持固定/移动基座、四足与无人机，兼容静态与动态高斯环境。相比保守包围盒能进行朝向感知规划、穿越极窄空间；报告在数十万高斯的环境中数秒内为腿足、空中与操作机器人算出无碰撞轨迹。

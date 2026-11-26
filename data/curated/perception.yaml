@@ -653,3 +653,13 @@
   tags: [6d-pose, rgb, keypoints, real-time]
   takeaway_en: One backbone for detection, segmentation and keypoints recovers 6D pose via PnP; partial supervision and multi-view geometry adapt synthetic to real. SOTA detection AP on HANDAL, HOPEv2, HOT3D, T-LESS at 35 Hz.
   takeaway_zh: 共享视觉骨干联合检测、分割与关键点预测，经 PnP 恢复已知物体 6D 位姿；从合成数据起步、用部分监督与标定多视图几何约束适配真实观测，推理时可选热图精修直接拟合刚性位姿。报告 RGB-only 在 HANDAL、HOPEv2、HOT3D、T-LESS 上检测 AP 达 SOTA，单物体 35 Hz 实时。
+
+- title: 'Embodied-VGGT: Preserving Reliable Local Geometry for Long-Sequence Reconstruction'
+  type: paper
+  arxiv: '2611.33964'
+  year: 2026
+  added: 2026-11-26
+  topics: [perception]
+  tags: [slam, reconstruction, long-sequence, drift]
+  takeaway_en: Uses ground-derived relative scale to regularize memory, superpoint alignment for inter-chunk translation and cross-loop Sim(3) corrections. KITTI ATE 7.30 m (-46.8%), Chamfer 2.67 m (-23.3%).
+  takeaway_zh: 利用具身采集的重复观测线索：由预测地面几何导出相对尺度参考以正则化测试期记忆更新，超点对齐跨空间区域平衡地面与非地面证据估计块间平移，交叉环优化为一致块组共享单一 Sim(3) 修正。报告 KITTI Odometry 平均 ATE 7.30 m（降 46.8%）、Chamfer 2.67 m（降 23.3%）。

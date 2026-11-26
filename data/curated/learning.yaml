@@ -1793,3 +1793,60 @@
   tags: [coding-agents, capability-library, real]
   takeaway_en: Coding agents build capabilities from official docs and verify on a physical Misty II; skills distilled for reuse. 109/107 atomic capabilities, all 28 AutoMisty tasks; dialogue latency -52%/-71%; reuse -33-72%.
   takeaway_zh: 插件式框架让编码智能体从官方文档构建控制程序、在真机 Misty II 上验证并沉淀原子能力库，任务完成后按用户指标迭代优化并蒸馏可复用技能。报告 Claude Code/Codex 分别构建 109/107 个原子能力、完成全部 28 个 AutoMisty 任务；对话延迟降 52%/71%，技能复用使另外三个对话任务延迟降 33–72%。
+
+- title: 'RoboEvo$^2$: Recursive Robot Self-Improvement via Harness-Policy Co-Evolution'
+  type: paper
+  arxiv: '2611.34675'
+  year: 2026
+  project: https://kaiknower.github.io/RoboEvo2/
+  added: 2026-11-26
+  topics: [learning, manipulation]
+  tags: [self-improvement, co-evolution, agentic, real]
+  takeaway_en: Policy failures steer a coding agent to grow the harness; verified trajectories train the policy, with counterfactual preference distillation. LIBERO-PRO 11.0% to 84.1% standalone; 95.0% on a real G1-D.
+  takeaway_zh: 策略失败驱动编码智能体扩展执行框架（Code/Code+ICL/Code+策略三条路径），验证过的轨迹反过来监督策略，并以反事实偏好蒸馏让策略偏向成功修正而非同一起点的失败。报告无需额外人类示教：LIBERO-PRO 独立成功 11.0%→84.1%、混合 30.4%→90.5%，Unitree G1-D 真机混合成功 95.0%。
+
+- title: 'iMFPO: Improving Mean Flow Policy Optimization with Drift-Aware Velocity Alignment for Embodied Control'
+  type: paper
+  arxiv: '2611.33922'
+  year: 2026
+  code: https://github.com/AIGeeksGroup/iMFPO
+  project: https://aigeeksgroup.github.io/iMFPO
+  added: 2026-11-26
+  topics: [learning]
+  tags: [flow-matching, rl, one-step, latency]
+  takeaway_en: 'One-step generative policy: an interval-conditioned actor learns instantaneous velocity and interval-averaged actions, with JVP-corrected regression and a frozen PPO teacher. Go2 latency 15.57 to 0.41 ms.'
+  takeaway_zh: 一步生成式策略优化：区间条件演员同时支持瞬时速度监督与区间平均动作生成，JVP 修正的速度回归与奖励驱动目标联合优化、训练时用冻结 PPO 教师做动作级引导。推理直接输出区间平均速度、无需迭代积分。报告 Go2 动作生成延迟 15.57 ms→0.41 ms，在 Go2/G1/H1/Spot 上均取得稳健回报。
+
+- title: 'Ground Your Steps: Optimizing Sampling Schedules in Flow Matching Robot Policies'
+  type: paper
+  arxiv: '2611.34148'
+  year: 2026
+  code: https://github.com/D-Robotics-AI-Lab/GroundYourSteps
+  added: 2026-11-26
+  topics: [learning]
+  tags: [flow-matching, sampling, training-free, real]
+  takeaway_en: 'Training-free schedule optimization: fractional differencing makes generated and demonstrated chunk distributions coincide when they match, so minimizing energy distance gives a better schedule. +2.8 points on RoboTwin.'
+  takeaway_zh: 免训练的采样调度优化：沿每个关节动作序列做截断分数阶差分后，“生成块对示范”与“两个独立生成块互对”的成对差分分布在分布匹配时恰好重合，最小化两者能量距离即得每个任务与 NFE 预算下的改进调度。报告 RoboTwin 2.0 上 π0.5 与 GR00T N1.7 各 +2.8 个百分点，三个真机任务最多 +3.3。
+
+- title: Effect-Driven Skill Abstractions for Offline Reinforcement Learning
+  type: paper
+  arxiv: '2611.33229'
+  year: 2026
+  venue: NeurIPS 2026
+  project: https://burcukilic.github.io/projects/effect-driven-skill-abstractions/
+  added: 2026-11-26
+  topics: [learning]
+  tags: [offline-rl, skills, abstraction, goal-conditioned]
+  takeaway_en: Quantizes action chunks by next-state prediction rather than clustering or reconstruction, so skills differ by the states they lead to; a drop-in discrete actor head for offline RL beats continuous actors.
+  takeaway_zh: 以“下一个状态预测”而非聚类或重建来量化动作块，让技能的区分依据是它们导致的状态变化，从而覆盖当前状态下可达的多样结果；以此替换离线 RL 的连续演员头为离散选择头，底层控制器还原动作。报告在导航与操作基准上显著优于连续演员与重建式离散化基线（NeurIPS 2026）。
+
+- title: 'Practice Makes Fluent: Learning to Use Earlier Predictions in Looped Models'
+  type: paper
+  arxiv: '2611.33722'
+  year: 2026
+  project: https://msseok96-cpu.github.io/FLUENT/
+  added: 2026-11-26
+  topics: [learning]
+  tags: [efficiency, looped-models, distillation, real]
+  takeaway_en: Distills the initial model's final-loop prediction into early predictions, anchors the current final loop to the same frozen teacher, and trains the exit gate on disagreement vs cost. Real 62.3% to 74.6%; 69 s to 31 s.
+  takeaway_zh: FLUENT 免额外标签与奖励：把初始模型的最终环预测蒸馏给早退预测、把当前最终环锚定到同一冻结教师，并把退出门控训练为“与当前最终环预测的分歧 vs 计算代价”的平衡。报告新 Crafter 世界更深层性能提升、LIBERO 更少动作头迭代，真机成功率 62.3%→74.6%、平均成功耗时 69 秒→31 秒。

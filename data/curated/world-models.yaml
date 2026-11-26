@@ -1855,3 +1855,48 @@
   tags: [wam, 4d, dynamic, latency]
   takeaway_en: 'Precision by role: target motion as a metric SE(3) trajectory, surroundings as sparse 3D flow. Acts in 15.1 ms (~10x faster); 82.1% on its OnTimeBench, 20.8 points above the strongest baseline.'
   takeaway_zh: 按角色分配精度：目标运动建模为度量 SE(3) 轨迹（决定接触，需毫米精度），周围环境建模为稀疏 3D 流（只关心净空与传递的运动），静态部分直接读当前帧。报告 RTX 5090 上 15.1 ms 出动作（约为视频基线 1/10），在场景持续运动的 OnTimeBench 上 82.1%（比最强基线高 20.8 分），DOMINO 与真机同样领先。
+
+- title: 'HOG-WAM: Improving Visual Robustness through Future Gradient Prediction'
+  type: paper
+  arxiv: '2611.34811'
+  year: 2026
+  code: https://github.com/iPPLab/HOG-WAM
+  added: 2026-11-26
+  topics: [world-models]
+  tags: [wam, robustness, supervision, real]
+  takeaway_en: Adds future HOG prediction as auxiliary supervision through a DiT used only in training. Mixed-noise RoboTwin 78.86% to 82.86%; LIBERO-Plus sensor noise 74.14% to 78.89%; Franka 40% to 59%.
+  takeaway_zh: 把未来 HOG（方向梯度直方图）作为辅助结构监督：HOG 扩散 Transformer 经非对称注意力读取 RGB 特征，仅训练时使用、推理时移除，保持原 RGB→动作架构。报告 RoboTwin 混合噪声成功率 78.86%→82.86%、LIBERO-Plus 传感噪声 74.14%→78.89%，四个真机任务干净条件 40%→59%。
+
+- title: 'Motion Beyond Pixels: Learning Future Visual Representations for Object-Centric Dynamics'
+  type: paper
+  arxiv: '2611.34644'
+  year: 2026
+  project: https://xyz1206.github.io/MotionRep/
+  added: 2026-11-26
+  topics: [world-models]
+  tags: [world-model, dino, object-flow, 3d]
+  takeaway_en: Jointly predicts future DINO representations and 3D object flow via a DINO-VAE and asymmetric noise schedules, three denoising steps at inference. Beats pixel baselines on flow accuracy and unseen scenes.
+  takeaway_zh: 联合生成未来 DINO 表征与 3D 物体流，把语义与几何耦合到物体中心的动力学中：DINO-VAE 经时间与通道压缩得到紧凑潜变量，统一扩散 Transformer 用联合注意力预测，非对称模态噪声调度让视觉流领先于 3D 流。报告 3D 物体流精度与未见场景泛化超过像素基线，推理仅需三步去噪。
+
+- title: Long-Horizon Planning with Latent World Models via Graph Anchors
+  type: paper
+  arxiv: '2611.34509'
+  year: 2026
+  code: https://github.com/syed-nazmus-sakib/graph-anchors
+  project: https://syed-nazmus-sakib.github.io/graph-anchors/
+  added: 2026-11-26
+  topics: [world-models]
+  tags: [world-model, planning, long-horizon, training-free]
+  takeaway_en: 'Diagnoses latent-distance goal costs failing near the goal and over-weighting the arm, then anchors steps to nearby nodes on a graph over recorded frames. 400-step goals: LeWM 13% to 85%; Push-T 5% to 71%.'
+  takeaway_zh: 诊断出潜距离目标代价的两类失败（接近目标时丢失方向信号、重视机械臂而轻视被操作物体），并在模型自身训练帧上建稀疏图，让每一步指向通往目标最短路径上几个节点之外的中继。报告 400 步远目标：LeWM 成功率 PointMaze-Medium 13%→85%、Large 8%→87%、Push-T 5%→71%。
+
+- title: '$\mu$MPC: Microsecond-Scale Nonlinear and World Model Control from Edge to GPU via Koopman-Linearized Precompilation'
+  type: paper
+  arxiv: '2611.34597'
+  year: 2026
+  project: https://www.deveshnath.com/projects/micrompc/
+  added: 2026-11-26
+  topics: [world-models, control]
+  tags: [mpc, koopman, real-time, gpu]
+  takeaway_en: Precomputes finite-horizon control-to-output maps so the QP has only H*n_u variables, independent of lifted dimension. 23 us on a CPU, 4096-D quadruped under 5 ms, 200 quadrotors above 30 Hz on GPU.
+  takeaway_zh: 用学习的 Koopman 线性化动力学预编译有限时域“控制-输出”映射，把在线 QP 压缩为仅含 H×n_u 个变量的纯动作问题，与提升维数无关；固定原算子支持只用矩阵-向量乘与投影的原-对偶迭代。报告桌面 CPU 低至 23 微秒、4096 维四足 <5 ms、GPU 上 200 架四旋翼避碰规划 >30 Hz，最多快 1907 倍。

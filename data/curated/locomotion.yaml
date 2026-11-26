@@ -2056,3 +2056,36 @@
   tags: [humanoid, multi-robot, world-model, counterfactual]
   takeaway_en: A counterfactual-anchored relational world model imagines alternative collective futures under waypoint commands, guiding pretrained controllers without retraining. From 4 to 2-10 humanoids, unseen obstacles and objects.
   takeaway_zh: 以反事实锚定的关系世界模型想象不同共享路径点指令下的人形队与物体未来，评估进度、失败与接触风险后选择自适应引导，不改动预训练协作控制器。报告仅用四人形训练即可泛化到 2–10 人形队、未见障碍几何与摆放及新物体组合。
+
+- title: 'Riding the Wave: Sim-to-Real Humanoid Control on Elastic Terrain'
+  type: paper
+  arxiv: '2611.34569'
+  year: 2026
+  project: https://fly-pigTH.github.io/wave_rider/
+  added: 2026-11-26
+  topics: [locomotion, sim]
+  tags: [humanoid, deformable, sim2real, trampoline, real]
+  takeaway_en: RIPPLE models elastic terrain with a pretensioned mass-spring mesh in GPU-parallel simulation and stages training; proprioception-only policies balance and jump on a real humanoid and enter a trampoline zero-shot.
+  takeaway_zh: RIPPLE 用预张紧质量-弹簧网格（空间耦合的形变、储能与回弹）加可变形接触在 GPU 并行仿真中建模弹性地形，分段把平地技能迁移到弹性面。仅靠本体感知的策略让 MagicBot Z1 零样本实现平衡、连续跳跃并从刚性平台踏上蹦床；策略可容忍 0.35–2.8 倍训练刚度、7 米宽床面，无需标定。
+
+- title: 'AGLR: Attribute-Guided Latent Refinement for Fine-Grained Humanoid Motion Generation and Editing'
+  type: paper
+  arxiv: '2611.34519'
+  year: 2026
+  project: https://syuan8889.github.io/AGLR-project/
+  added: 2026-11-26
+  topics: [locomotion]
+  tags: [humanoid, motion-generation, editing, latency]
+  takeaway_en: A compact geometric interface controls limb extents, torso orientation and root trajectory; an adapter makes a single-pass correction. Editing a cached 500-frame motion takes 9.1 ms; zero-shot to BONES-SEED-G1.
+  takeaway_zh: 紧凑几何接口支持对肢体伸展、躯干朝向与根轨迹做可组合、时变的精确控制；属性残差适配器对已有潜表示做单次前向修正，双层监督同时保证目标达成与源动作保持。报告 HumanML3D-G1 上可控生成与保持式编辑成功率最高，编辑缓存 500 帧动作仅 9.1 ms，并零样本迁移到 BONES-SEED-G1。
+
+- title: 'CoTAMP: Cooperative Task and Motion Planning for Quadruped Robots with Large Language Models'
+  type: paper
+  arxiv: '2611.33911'
+  year: 2026
+  project: https://woojin8097.github.io/CoTAMP/
+  added: 2026-11-26
+  topics: [locomotion, control]
+  tags: [multi-robot, tamp, llm, quadruped]
+  takeaway_en: LLM task planning invents motions outside any skill set, motion generation turns them into trajectories, code modules verify and feed failures back. All 30 trials produced valid references that converged in optimization.
+  takeaway_zh: LLM 任务规划发明预定义技能集之外的协作动作（踩同伴背上崖、用箱子搭桥），运动生成把关键帧转为连续轨迹，代码模块核验并将失败回传给 LLM 修正，最后轨迹优化满足动力学。报告两 RAIBO2 四足、三条仿真赛道 30 次试验全部生成运动学有效参考并收敛，成功率、可行性、耗时与成本均优于基线。

@@ -2197,3 +2197,103 @@
   tags: [benchmark, fabric, deformable, bimanual]
   takeaway_en: Six tasks, 10,000 assets, Newton solver with contact-driven grasp-hold-release (45/45 vs none for baselines). Best policy 77%, but no policy exceeds 36% on T-shirt folding; real π0.5 keeps the difficulty order.
   takeaway_zh: 双臂布料操作基准：六个任务（衣物/丝绸/包袋）、1 万仿真资产，基于 Newton 的接触驱动求解器实现无人工附着物的稳定抓-持-放（45/45 次成功，基线配置为 0）。报告最佳策略平均 77%，但长程叠 T 恤无人超过 36%，重度变形初始配置下仅 6–14%；真机 π0.5 与仿真难度排序一致（Spearman 0.94）。
+
+- title: 'What a Drop Reveals: Sim-to-Real Material Estimation for Deformable Objects from Video'
+  type: paper
+  arxiv: '2611.34894'
+  year: 2026
+  project: https://bjxdw.github.io/PhysReader/
+  added: 2026-11-26
+  topics: [manipulation, sim]
+  tags: [sim2real, material, deformable, video]
+  takeaway_en: A predictor trained only in simulation reads material from a drop video; 2D optical-flow tracklets transfer best to real drops. Closest to reference materials on 16 objects; 12 s vs 49 min.
+  takeaway_zh: 只用仿真训练的前馈预测器从一次落地视频估计可变形物体的密度归一化刚度与屈服应力。发现仿真验证把 3D 输入排第一，但真实落地视频上 2D 光流片段迁移最好；PhysReader 在 16 个真实物体上与参考材料最接近（12 秒对优化器的 49 分钟）。
+
+- title: 'FineDex: Bridging Fine-Grained Human-Object Interaction Generation to Dexterous Humanoid Manipulation'
+  type: paper
+  arxiv: '2611.34884'
+  year: 2026
+  project: https://finedex.github.io/
+  added: 2026-11-26
+  topics: [manipulation]
+  tags: [dexterous, humanoid, hoi, generation, real]
+  takeaway_en: Learns body-hand-object motion from fine-grained finger and contact instructions, then uses it as a prior for an agent finding feasible contacts in a physics twin. Deployed on a real dexterous humanoid.
+  takeaway_zh: 让手指级意图既可表达又可执行：按手的选择、具体手指与铰接物体接触等细粒度指令学习人体-手-物体协同运动，再把生成的交互作为先验，由智能体在物理数字孪生中通过练习发现可行接触策略。报告 HOI 生成质量与可控性最优、操作成功率大幅提升，并在真实灵巧人形上部署。
+
+- title: 'SOLVE: Sparse, Ordered Keyposes Make LLM Agents Versatile and Efficient Robot Manipulator'
+  type: paper
+  arxiv: '2611.34750'
+  year: 2026
+  project: https://serenos.github.io/solve-website
+  added: 2026-11-26
+  topics: [manipulation]
+  tags: [llm-agent, keyposes, efficiency, real]
+  takeaway_en: 'Training-free: a multimodal LLM writes sparse ordered 6-DoF keyposes per call and a planner interpolates. 74.5% RoboDojo, 84.5% RoboLab at $1.7/episode (12x cheaper); 88% on 16 zero-shot real tasks.'
+  takeaway_zh: 免训练的高效 agent 策略：多模态大模型每次调用写出稀疏有序的 6 自由度末端关键位姿，由运动规划器插值；关键位姿经稀疏深度查询接地并自行处理噪声，还能从自身 rollout 反思蒸馏规则。报告 RoboDojo 74.5%、RoboLab 84.5%，每回合仅 1.7 美元（稠密控制 agent 的 1/12）；真机 16 个零样本任务 88% 成功。
+
+- title: 'ELMO: Emergent Representations In Imitation Learning Via Dynamic Hierarchical Action Chunking'
+  type: paper
+  arxiv: '2611.34741'
+  year: 2026
+  project: https://uoft-isl.github.io/elmo.github.io/
+  added: 2026-11-26
+  topics: [manipulation, learning]
+  tags: [latent-actions, imitation, generalization, benchmark]
+  takeaway_en: VLA planner plus an observation-conditioned decoder over dynamically chunked trajectories learn grounded semantic codes without pretraining. +9.6 points LIBERO-Plus; Blocks 38.6% vs baselines under 5%.
+  takeaway_zh: 端到端学习“接地的语义代码”：VLA 规划器与观测条件解码器在动态分块轨迹上联合训练，无需单独预训练。报告 LIBERO-Plus 高 9.6 个百分点、CALVIN 平均任务长度 +0.75；在其无捷径的 Blocks 基准上 38.6% 成功，而所有基线低于 5%。
+
+- title: 'Nav4Manip: From Navigation to Dexterous Mobile Manipulation through Co-Evolution'
+  type: paper
+  arxiv: '2611.34655'
+  year: 2026
+  project: https://nav4manip.github.io/
+  added: 2026-11-26
+  topics: [manipulation, navigation]
+  tags: [mobile-manipulation, co-evolution, dexterous, real]
+  takeaway_en: 'Coupled co-evolution: a navigator learns manipulation-aware affordances with RFT and counterfactual RLAIF while a WAM handles dexterous manipulation. Adds Nav-N-Manip; real mobile manipulation shown.'
+  takeaway_zh: 双向耦合的共同进化系统：导航器经多任务协同调优学习操作感知的可供性，再用拒绝采样微调与反事实 RLAIF 改进；世界动作模型负责下游灵巧操作。构建 Nav-N-Manip 基准与导航-操作配对数据，报告 VLN 基准 SOTA 并在真实环境完成长程灵巧移动操作。
+
+- title: 'WAtcher: Watching Ahead for Safe Robotic Manipulation with Efficient World-Action Models'
+  type: paper
+  arxiv: '2611.34124'
+  year: 2026
+  project: https://zyshan0929.github.io/WAtcher
+  added: 2026-11-26
+  topics: [manipulation, world-models]
+  tags: [wam, safety, hazard, real]
+  takeaway_en: Imagines each candidate chunk in two denoising steps and scores it with a detachable Safe-Guard trained on ~25,000 hazard windows. Hazardous trials 27.0% to 10.8%, no success loss; 74.0% vs 59.5% real.
+  takeaway_zh: 执行前用两步去噪想象每个候选动作块的后果，由可拆卸的 Safe-Guard 评分并在高风险时触发有界后退；Safe-Guard 用约 2.5 万条物理事件标注窗口训练。报告盲集平衡准确率 92.1%，训练任务危险回合从 27.0% 降到 10.8% 且成功率不降，五个真机任务 74.0%（π0.5 为 59.5%）。
+
+- title: Targeted Adaptation of World-Action Models via Interaction and Motion Heads
+  type: paper
+  arxiv: '2611.33963'
+  year: 2026
+  project: https://headlight-wam.github.io/
+  added: 2026-11-26
+  topics: [manipulation, world-models]
+  tags: [wam, peft, adaptation, real]
+  takeaway_en: Finds Next-Interaction Heads (grasp targets) and Motion Heads (movement) in WAMs; HeadLight adapts just those. 62.28% on unseen RoboTwin vs 57.89% full fine-tuning, updating 1.1% of parameters.
+  takeaway_zh: 在 WAM 中发现两类功能专家注意力头：定位抓取/放手的“下一交互头”与跨帧追踪运动的“运动头”，HeadLight 只适配这两类头。报告微调未见 RoboTwin 任务 62.28%（全量微调 57.89%、LoRA 58.66%），仅更新 1.1% 参数；消融运动头使成功率跌到 0.94%，远大于同数量随机头。
+
+- title: 'SEEK: Self-Evolution through Execution Knowledge for Agentic Robot Manipulation'
+  type: paper
+  arxiv: '2611.33915'
+  year: 2026
+  project: https://zeyangguan.github.io/SEEK-Agentic-Robot-Manipulation/
+  added: 2026-11-26
+  topics: [manipulation]
+  tags: [agentic, memory, self-improvement]
+  takeaway_en: 'Keeps executable procedures plus measured action effects in a persistent bank, revising procedures from evidence. RoboDojo: 27.0 to 54.4 average score over ten attempts; 77.6% fewer model calls.'
+  takeaway_zh: 把可执行程序（自进化程序化策略）与动作实测效果（持久动作-效果库）同时保留：条件被覆盖时不经模型直接执行，遇到未覆盖条件时用实测证据修订程序。报告 RoboDojo 十次尝试内平均分 27.0→54.4、成功率 19.7%→48.0%；GPT-6.2 Astra 五次尝试即 80.1（直接行动 49.6），模型调用少 77.6%。
+
+- title: Learning a Whole-Body Pivot-Walking Gait for Heavy-Box Transport with a Humanoid
+  type: paper
+  arxiv: '2611.33828'
+  year: 2026
+  venue: Humanoids 2026
+  project: https://uni963.github.io/pivot-walking/
+  added: 2026-11-26
+  topics: [manipulation, locomotion]
+  tags: [humanoid, pivot-walking, rl, transport, real]
+  takeaway_en: One RL policy coordinates stepping, balance and object manipulation for pivot walking; deployed object-blind on a clock. A real humanoid moved the box over 1 m in all five trials without object sensing.
+  takeaway_zh: 单一强化学习策略联合协调迈步、平衡与物体操控，实现人形“枢轴行走”搬运重箱：奖励鼓励交替枢轴动作，相位参考随物体位移推进。真机部署为物体盲版本（按周期时钟），五次试验全部把箱子向前搬运 1 米以上，无需直接测量物体状态（Humanoids 2026）。
