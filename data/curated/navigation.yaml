@@ -950,3 +950,16 @@
   tags: [depth, edge, navigation, real]
   takeaway_en: Distils Depth Anything V2-Large into an attention-free 24.5M U-Net at 27.1 FPS on Pi 5 + Hailo-8L; SLAM, mapping and hybrid-A* run on the Pi's CPU. 7.9/10 scenes reached without contact in HIL tests.
   takeaway_zh: 把 Depth Anything V2-Large 蒸馏为免注意力 24.5M ResNet-34 U-Net，在树莓派 5 + Hailo-8L 上 27.1 FPS 整数推理（int8 与浮点 Pearson 0.99993）；建图、hybrid-A* 与 SLAM 全跑在 Pi 的 CPU 上。报告真实院落的硬件在环测试 10 场景中 7.9±1.1 次无接触到达目标。
+
+- title: 'GlanceNav: Efficient Vision-and-Language Navigation with Streaming Memory and Counterfactual Rewind'
+  type: paper
+  arxiv: '2611.30900'
+  year: 2026
+  org: VinMotion
+  code: https://github.com/GlanceNav/GlanceNav
+  project: https://glancenav.github.io/
+  added: 2026-11-26
+  topics: [navigation]
+  tags: [vln, mllm, memory, streaming, rl]
+  takeaway_en: 'Encodes each frame once at constant cost per step: Gated DeltaNet carries a recurrent state, attention keeps a window plus keyframes picked by state change. 4B: 71.9%/73.6% R2R-CE/RxR-CE val-unseen at 104 ms per step.'
+  takeaway_zh: 每帧只编码一次、每步开销恒定：Gated DeltaNet 用循环状态贯穿整个回合，注意力层保留短窗口与按“状态变化量”挑选的关键帧库；配套反事实回溯强化学习。报告 4B 模型在 R2R-CE/RxR-CE 未见验证集 71.9%/73.6%，每步 104 ms，比无外部数据的单 RGB 方法高 9.1 分。

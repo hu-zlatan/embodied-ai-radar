@@ -2,7 +2,7 @@
 
 _视觉语言导航、具身问答、移动操作与大模型规划。_
 
-共 94 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
+共 95 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/navigation.yaml`](../data/curated/navigation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/navigation.html) · [English](navigation.md)
 
@@ -40,6 +40,7 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_
 - **[G2-Nav: Grounded and Guarded Vision-Language Costmaps for Robot Social Navigation](https://arxiv.org/abs/2607.16956)** (2026) — 社交导航：让 VLM 生成代价地图而非直接决策，并校验上游跟踪，另加高频安全检查应对延迟；真机验证。 · [代码](https://github.com/centiLinda/G2-Nav)
 - **[GLST: Global-Local Spatio-Temporal Memory Decomposition Framework for Online Chained-Goal Navigation](https://arxiv.org/abs/2610.17927)** (2026) — 研究回合中目标会无提示地改变的导航：把记忆分解为全局/局部空间与长/短时序信念，并配合目标条件奖励。在 Spot 四足机器人上实机验证。
 - **[Gaussian Episodic Memory for Long-Term Spatiotemporal Reasoning](https://arxiv.org/abs/2610.33158)** (2026) — GEMS 维护一张只在场景变化处增量更新的 3DGS 地图，智能体按需渲染新视角来回答时空问题和定位物体；同时发布 GEMS-Bench（3 个真实 + 12 个合成环境，473 个问答对），报告在物体定位和时空问答上优于近期基线。 · [项目页](https://abwerby.github.io/GEMS/)
+- **[GlanceNav: Efficient Vision-and-Language Navigation with Streaming Memory and Counterfactual Rewind](https://arxiv.org/abs/2611.30900)** (2026) — 每帧只编码一次、每步开销恒定：Gated DeltaNet 用循环状态贯穿整个回合，注意力层保留短窗口与按“状态变化量”挑选的关键帧库；配套反事实回溯强化学习。报告 4B 模型在 R2R-CE/RxR-CE 未见验证集 71.9%/73.6%，每步 104 ms，比无外部数据的单 RGB 方法高 9.1 分。 · [代码](https://github.com/GlanceNav/GlanceNav) · [项目页](https://glancenav.github.io/)
 - **[HAVANA: A Hierarchical Video-Action Model for Vision-Language Navigation](https://arxiv.org/abs/2610.24122)** (2026) — 面向视觉语言导航的双系统视频-动作模型：慢系统根据历史观测与指令生成紧凑的隐式规划，快系统结合该规划与最新观测输出局部轨迹；推理时不生成未来视频。代码与权重称将在该仓库发布。 · [代码](https://github.com/Anastasiawd/HAVANA) · [项目页](https://github.com/Anastasiawd/HAVANA)
 - **[Hierarchical Residual Policy Learning for Real-World Mobile Manipulation with Sparse Human Guidance](https://arxiv.org/abs/2610.20607)** (2026) — HiRe-MoMa 在真实环境中通过学习残差修正来微调冻结的移动操作策略，只需偶尔的人类引导。 · [代码](https://github.com/tasl-lab/HiRe-MoMa) · [项目页](https://hire-moma.github.io/)
 - **[InCoM: Intent-Driven Perception and Structured Coordination for Mobile Manipulation](https://arxiv.org/abs/2602.23024)** (2026) — 移动操作策略：推断运动意图以动态分配感知注意力，并用显式建模底盘-机械臂交互的流匹配解码器输出动作。报告在三个任务上比 DSPv2 高 23.6–33.0 个百分点。 · [代码](https://github.com/liujiahao2077/InCoM) · [项目页](https://liujiahao2077.github.io/InCoM.github.io)

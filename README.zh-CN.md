@@ -146,15 +146,15 @@ _视觉语言导航、具身问答、移动操作与大模型规划。_ [在网�
 - ⭐ **[ViNT: A Foundation Model for Visual Navigation](https://arxiv.org/abs/2306.14846)** (2023) — 在多种机器人的导航数据上训练的 Transformer 导航策略，经少量微调即可适配新的目标形式和新机器人。 · [代码](https://github.com/robodhruv/visualnav-transformer)
 - ⭐ **[GNM: A General Navigation Model to Drive Any Robot](https://arxiv.org/abs/2210.03370)** (2022) — ViNT 的前作：在多种不同机器人汇集的数据上训练一个目标条件导航策略，可迁移到包括训练中未见过的新机器人。 · [代码](https://github.com/robodhruv/visualnav-transformer)
 - ⭐ **[The Marathon 2: A Navigation System](https://arxiv.org/abs/2003.00368)** (2020) — ROS 2 标准导航栈 Nav2 的论文：用行为树编排规划器、控制器和恢复行为，并在真实机器人上长距离“马拉松”测试验证。 · [代码](https://github.com/ros-navigation/navigation2)
+- **[GlanceNav: Efficient Vision-and-Language Navigation with Streaming Memory and Counterfactual Rewind](https://arxiv.org/abs/2611.30900)** (2026) — 每帧只编码一次、每步开销恒定：Gated DeltaNet 用循环状态贯穿整个回合，注意力层保留短窗口与按“状态变化量”挑选的关键帧库；配套反事实回溯强化学习。报告 4B 模型在 R2R-CE/RxR-CE 未见验证集 71.9%/73.6%，每步 104 ms，比无外部数据的单 RGB 方法高 9.1 分。 · [代码](https://github.com/GlanceNav/GlanceNav) · [项目页](https://glancenav.github.io/)
 - **[Seeing Together, Acting Apart: Shared Environmental Understanding for Multi-Robot Navigation](https://arxiv.org/abs/2611.30310)** (2026) — 把协作前移到表征层：SEER 把多机器人部分自我观测聚合进共享潜世界模型，按时空相似性检索相关上下文并以 token 注入下游导航智能体。报告专业化 VLN 与通用 VLM 智能体导航表现均提升，且单智能体能力不退化。
 - **[Seeing to Drive on a Single Board: Attention-Free Depth for Onboard Robot Navigation](https://arxiv.org/abs/2611.32718)** (2026) — 把 Depth Anything V2-Large 蒸馏为免注意力 24.5M ResNet-34 U-Net，在树莓派 5 + Hailo-8L 上 27.1 FPS 整数推理（int8 与浮点 Pearson 0.99993）；建图、hybrid-A* 与 SLAM 全跑在 Pi 的 CPU 上。报告真实院落的硬件在环测试 10 场景中 7.9±1.1 次无接触到达目标。 · [代码](https://github.com/itaim18/DANIEL)
 - **[NavTTT: Adaptive Parametric Memory via Hierarchical Test-Time Training for Vision-and-Language Navigation](https://arxiv.org/abs/2611.27219)** (2026) — 以全局导航上下文为条件做测试期训练，优先保留信息量大的视觉证据，并把语言指令与空间信息融合为“自适应参数记忆”写入回合局部快速权重；各解码深度独立维护记忆防止误差串扰。报告 VLN-CE 上表现强劲、真机指令跟随有效。 · [项目页](https://gamepeopleplay.github.io/NavTTT/)
 - **[Bridging vision-language reasoning and learned control for legged navigation in the wild](https://arxiv.org/abs/2611.25215)** (2026) — ROAM 把 VLM 的常识推理与仿真强化学习学到的运动控制结合：开放词汇分割把语义标签变成稠密实时风险图，条件化敏捷运动与局部导航两个 RL 策略。报告在复杂山地与城市场景完成公里级自主远足、极少人工干预，能理解标识避险并选择安全落脚区域。 · [项目页](https://roam-hiking.github.io)
 - **[Cognitive-Horizon Action Chunking: Memory-Guided Adaptive Reasoning for Embodied Navigation](https://arxiv.org/abs/2611.25587)** (2026) — 免训练的自适应推理：保留的视觉上下文、完成线索与控制反馈决定“认知视界”——连续执行多少个缓存路点后才刷新预测；策略请求停止时最多补一步修正。报告 HM3D-OVON 上 VLM 调用减少 33.4%、R2R-CE 减少 64.7%；四个真机任务 18 对 14 成功、调用减 54.9%。 · [代码](https://github.com/phare111/chac)
 - **[EvoTER: Evolving Embodied Agents via Tool-Use Experience and Reflection](https://arxiv.org/abs/2611.27797)** (2026) — 三角色进化循环：Explorer 记录工具使用轨迹，Diagnoser 把成功与失败提炼为工具选择、参数计算、后条件检查与恢复技能，Validator 只保留在新会话中提升整任务成功的修订。报告仿真成功率 53.60%→80.40%；真机长程任务从 20% 提到 80%–100%，并吸收仿真阶段之后新加入的工具功能。 · [项目页](https://evoter-project.github.io/)
-- **[Mem-X: A Memory-Dependent Cross-Episode Benchmark for Vision-and-Language Navigation](https://arxiv.org/abs/2611.27166)** (2026) — 跨回合视觉语言导航记忆基准：后续指令指向先前回合见过的物体或路线，含 2,071 个回合、710 个会话、34 个场景，分历史物体回忆、记忆内定位与索引、离线重定位与历史路线复现三级。配套 MemBridge 基线组合语义场景记忆、跨回合定位与由粗到精检索。 · [代码](https://github.com/NJU-R-L-Group-Embodied-Lab/Mem-X)
 
-**[查看全部 94 条 →](lists/navigation.zh-CN.md)**
+**[查看全部 95 条 →](lists/navigation.zh-CN.md)**
 
 <a id="perception"></a>
 ### 感知、SLAM 与三维建图
