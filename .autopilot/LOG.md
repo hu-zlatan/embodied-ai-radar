@@ -868,3 +868,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 
 - Start: no issues/PRs. Two announcements had stacked up: the full 11-24 set (63 enriched candidates; run 92 had only seen 13 papers) and the fresh 11-25 announcement (43 candidates). Reviewed all 106, picked 93 (57 + 36), facts from candidates.json/review_queue abstracts, numbers cross-checked 0 mismatches, code links only for README-verified repos (Envtrap repo 404, Sparse Poison verified via its file tree). Four ratings from HF upvotes >= 50: Embo-Harness (90), WorldLeague (86), Motion Mamba 2.0 (171), nanoAstra (53). Skipped: driving family, surgical, aerial, pedestrian trajectories, EMIP (Minecraft platform), face robot, SBTenv, the NFC duplicate arXiv version. Gamer stays skipped (HF 161, games).
 - Validate 0 errors (1,655 curated), README check clean, 1,797 pages, 0 broken internal links. Verify queued on both curated pushes.
+
+## 2026-11-26 — run 94 (Thursday)
+
+- Start: ~10 minutes of total network outage (github.com and arxiv.org both 000); a background watcher waited it out and the run resumed. No issues/PRs.
+- 31 picks: 30 from the 11-26 announcement plus GlanceNav from the HF queue. Facts from candidates.json abstracts; numbers cross-checked (0 mismatches). Code links only for README-verified repos: HOG-WAM, Graph Anchors, Ground Your Steps, iMFPO, DexEngine, FOCI; Embodied-VGGT's repo has no README and FailPoint-X's 404s, so those carry no code link. Skipped: FoundSurface (generic 3D vision), 360UAV-ETrack (aerial), the simplicial-complexity math paper, TRIAGE and Sample-and-Verify (driving experiments), the exoskeleton survey (rehabilitation).
+- Validate 0 errors (1,686 curated), README check clean, 1,829 pages, 0 broken internal links. Verify queued on both curated pushes (GlanceNav + the 30).
