@@ -41,9 +41,42 @@
    "ai_summary": "Gamer is a generalist agent framework that integrates perception, memory, and multi-step reasoning, trained through continued pre-training, sparse-thinking instruction tuning, and multi-turn reinforcement learning to interact efficiently in 2D and 3D environments."
   },
   {
+   "id": "2611.34849",
+   "title": "Real2SimLab: A Unified Platform for Real-to-Simulation Transfer",
+   "upvotes": 83,
+   "hf_date": "2026-11-26",
+   "published": "2026-11-26",
+   "topics": [
+    "sim",
+    "datasets"
+   ],
+   "authors": [
+    "Yongchang Zhang",
+    "Jie Huang",
+    "Yunhe Ni",
+    "Ningyu Zhou",
+    "Guangyu Zhao",
+    "Ruixun Liu",
+    "Rui Huang",
+    "Yidi Wu",
+    "TianZe Zhang",
+    "Zixiang Jiang",
+    "Xiang Li",
+    "Kevin Shen",
+    "Yiwu Zhong"
+   ],
+   "organization": "PKU-VaLuE-Lab",
+   "github": "https://github.com/Real2SimHub/Real2SimLab",
+   "project": "https://real2simhub.github.io",
+   "arxiv_code": [],
+   "comment": "Project page: https://real2simhub.github.io/",
+   "abstract": "Real-to-simulation transfer, which builds simulations from real-world observations, has long been studied in research and industry. Recently, coding agents have become capable of generating simulation programs from video recordings, and several benchmarks have been proposed to evaluate them. However, each individual benchmark defines its own inputs, deliverables, and scoring pipeline. This leads to N times M integrations when evaluating N methods on M benchmarks. To this end, we present Real2SimLab, a unified platform for real-to-simulation transfer. It evaluates a method by running its written program and scoring the output simulation with the original scorer of each benchmark. Moreover, Real2SimLab provides a pipeline to create training data and reward annotations for real-to-simulation methods. Our pipeline carefully avoids data contamination by filtering out the video recordings that exist in benchmarks. For each video recording, a program is first produced, and then our pipeline computes its reward with the same code that Real2SimLab uses for evaluation. So far, it supports 47 coding agents and 5 non-agent methods on 6 benchmarks. Both the platform and Awesome-Real2Sim, our research map of nearly 300 real-to-simulation papers, are open source, and we invite the Real2SimHub community to build them together.",
+   "ai_summary": null
+  },
+  {
    "id": "2611.34347",
    "title": "AIRIS: Benchmarking Social Embodied Intelligence in Egocentric Streaming Videos",
-   "upvotes": 15,
+   "upvotes": 16,
    "hf_date": "2026-11-26",
    "published": "2026-11-26",
    "topics": [
@@ -73,7 +106,7 @@
   {
    "id": "2611.34128",
    "title": "FoundSurface: Feedforward Ray-Based 3D Scene Surface Reconstruction from Unposed Images",
-   "upvotes": 14,
+   "upvotes": 15,
    "hf_date": "2026-11-26",
    "published": "2026-11-26",
    "topics": [],
@@ -92,39 +125,6 @@
    "comment": "NeurIPS 2026. Project page: https://vlar-group.github.io/FoundSurface.html",
    "abstract": "Accurate 3D surface reconstruction from unposed images remains a fundamental challenge in computer vision. Recent feed-forward pointmap methods eliminate the need for camera poses but inherently produce discrete, sparse representations. In this paper, we present a generalizable pipeline that directly recovers continuous, high-fidelity 3D surfaces from unposed images by seamlessly integrating pointmap- and ray-based representations. Our approach first extracts explicit geometric priors using a pre-trained pointmap model. A query-view-centric selection module then identifies geometrically relevant reference views via a robust surfel voting mechanism. Next, a cross-attention regressor bridges target query rays with reference features to estimate a continuous coarse surface. Lastly, a raylet-based module aggregates local 3D features to carve out high-frequency details and analytical normals. Trained as a single foundation model on 9 diverse datasets, our method demonstrates exceptional zero-shot generalization on 6 unseen datasets, clearly surpassing state-of-the-art baselines in geometric accuracy and detail preservation.",
    "ai_summary": "A generalizable pipeline reconstructs continuous, high-fidelity 3D surfaces from unposed images by integrating pointmap and ray-based representations, achieving strong zero-shot generalization."
-  },
-  {
-   "id": "2611.34849",
-   "title": "Real2SimLab: A Unified Platform for Real-to-Simulation Transfer",
-   "upvotes": 12,
-   "hf_date": "2026-11-26",
-   "published": "2026-11-26",
-   "topics": [
-    "sim",
-    "datasets"
-   ],
-   "authors": [
-    "Yongchang Zhang",
-    "Jie Huang",
-    "Yunhe Ni",
-    "Ningyu Zhou",
-    "Guangyu Zhao",
-    "Ruixun Liu",
-    "Rui Huang",
-    "Yidi Wu",
-    "TianZe Zhang",
-    "Zixiang Jiang",
-    "Xiang Li",
-    "Kevin Shen",
-    "Yiwu Zhong"
-   ],
-   "organization": "PKU-VaLuE-Lab",
-   "github": "https://github.com/Real2SimHub/Real2SimLab",
-   "project": "https://real2simhub.github.io",
-   "arxiv_code": [],
-   "comment": "Project page: https://real2simhub.github.io/",
-   "abstract": "Real-to-simulation transfer, which builds simulations from real-world observations, has long been studied in research and industry. Recently, coding agents have become capable of generating simulation programs from video recordings, and several benchmarks have been proposed to evaluate them. However, each individual benchmark defines its own inputs, deliverables, and scoring pipeline. This leads to N times M integrations when evaluating N methods on M benchmarks. To this end, we present Real2SimLab, a unified platform for real-to-simulation transfer. It evaluates a method by running its written program and scoring the output simulation with the original scorer of each benchmark. Moreover, Real2SimLab provides a pipeline to create training data and reward annotations for real-to-simulation methods. Our pipeline carefully avoids data contamination by filtering out the video recordings that exist in benchmarks. For each video recording, a program is first produced, and then our pipeline computes its reward with the same code that Real2SimLab uses for evaluation. So far, it supports 47 coding agents and 5 non-agent methods on 6 benchmarks. Both the platform and Awesome-Real2Sim, our research map of nearly 300 real-to-simulation papers, are open source, and we invite the Real2SimHub community to build them together.",
-   "ai_summary": null
   },
   {
    "id": "2611.33925",
