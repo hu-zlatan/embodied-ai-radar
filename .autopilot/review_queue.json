@@ -4,7 +4,7 @@
   {
    "id": "2611.18397",
    "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
-   "upvotes": 166,
+   "upvotes": 167,
    "hf_date": "2026-11-16",
    "published": "2026-11-16",
    "topics": [
@@ -41,42 +41,9 @@
    "ai_summary": "Gamer is a generalist agent framework that integrates perception, memory, and multi-step reasoning, trained through continued pre-training, sparse-thinking instruction tuning, and multi-turn reinforcement learning to interact efficiently in 2D and 3D environments."
   },
   {
-   "id": "2611.34849",
-   "title": "Real2SimLab: A Unified Platform for Real-to-Simulation Transfer",
-   "upvotes": 108,
-   "hf_date": "2026-11-26",
-   "published": "2026-11-26",
-   "topics": [
-    "sim",
-    "datasets"
-   ],
-   "authors": [
-    "Yongchang Zhang",
-    "Jie Huang",
-    "Yunhe Ni",
-    "Ningyu Zhou",
-    "Guangyu Zhao",
-    "Ruixun Liu",
-    "Rui Huang",
-    "Yidi Wu",
-    "TianZe Zhang",
-    "Zixiang Jiang",
-    "Xiang Li",
-    "Kevin Shen",
-    "Yiwu Zhong"
-   ],
-   "organization": "PKU-VaLuE-Lab",
-   "github": "https://github.com/Real2SimHub/Real2SimLab",
-   "project": "https://real2simhub.github.io",
-   "arxiv_code": [],
-   "comment": "Project page: https://real2simhub.github.io/",
-   "abstract": "Real-to-simulation transfer, which builds simulations from real-world observations, has long been studied in research and industry. Recently, coding agents have become capable of generating simulation programs from video recordings, and several benchmarks have been proposed to evaluate them. However, each individual benchmark defines its own inputs, deliverables, and scoring pipeline. This leads to N times M integrations when evaluating N methods on M benchmarks. To this end, we present Real2SimLab, a unified platform for real-to-simulation transfer. It evaluates a method by running its written program and scoring the output simulation with the original scorer of each benchmark. Moreover, Real2SimLab provides a pipeline to create training data and reward annotations for real-to-simulation methods. Our pipeline carefully avoids data contamination by filtering out the video recordings that exist in benchmarks. For each video recording, a program is first produced, and then our pipeline computes its reward with the same code that Real2SimLab uses for evaluation. So far, it supports 47 coding agents and 5 non-agent methods on 6 benchmarks. Both the platform and Awesome-Real2Sim, our research map of nearly 300 real-to-simulation papers, are open source, and we invite the Real2SimHub community to build them together.",
-   "ai_summary": null
-  },
-  {
    "id": "2611.28732",
    "title": "Entangle: Scaling Human-Video In-Context World-Action Models across Unseen Tasks and Contexts",
-   "upvotes": 26,
+   "upvotes": 27,
    "hf_date": "2026-11-26",
    "published": "2026-11-24",
    "topics": [
@@ -104,36 +71,6 @@
    "ai_summary": null
   },
   {
-   "id": "2611.34347",
-   "title": "AIRIS: Benchmarking Social Embodied Intelligence in Egocentric Streaming Videos",
-   "upvotes": 17,
-   "hf_date": "2026-11-26",
-   "published": "2026-11-26",
-   "topics": [
-    "datasets"
-   ],
-   "authors": [
-    "Yuchen Zhou",
-    "Hongsheng Wu",
-    "Jiayu Tang",
-    "Yunxuan Mao",
-    "Hanjing Ye",
-    "Shenghao Zhang",
-    "Jing Tang",
-    "Chun-Kai Fan",
-    "Yufei Huang",
-    "Yonggen Ling",
-    "He Zhang"
-   ],
-   "organization": "Tencent",
-   "github": "https://github.com/AIRIS-bench/AIRIS",
-   "project": "https://airis-bench.github.io/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Embodied agents operating around people must not only recognize social cues, but also decide when the available evidence is sufficient, whether to intervene, and how to respond without violating social norms. Existing benchmarks typically evaluate these abilities in isolation or with access to completed videos, obscuring where an online social decision fails. We introduce AIRIS, a causal streaming benchmark that formulates social embodied intelligence as a time-anchored chain of Attention, Intention, Reaction, and Interaction (A-I-R-I). AIRIS contains 8,000 expert-curated questions grounded in 357 egocentric clips across 11 context categories and 36 capability dimensions. At each query, models receive only the observation prefix available at that time; decision-aware metrics reward calibrated waiting and complete reactions while penalizing premature commitment. Evaluating 45 proprietary and open-source general-purpose, embodied, streaming-video, and omni-modal models reveals fragmented and temporally miscalibrated competence. General-purpose VLMs excel at passive cue grounding and intent recognition, whereas embodied specialists lead on isolated reaction sub-decisions; yet across all families, models frequently guess intents before sufficient evidence emerges and fail to jointly align intervention timing, action domain, and concrete execution within the same episode. AIRIS thus provides a diagnostic foundation for bridging the gap between passive social perception and reliable embodied interaction.",
-   "ai_summary": null
-  },
-  {
    "id": "2611.34128",
    "title": "FoundSurface: Feedforward Ray-Based 3D Scene Surface Reconstruction from Unposed Images",
    "upvotes": 17,
@@ -155,36 +92,6 @@
    "comment": "NeurIPS 2026. Project page: https://vlar-group.github.io/FoundSurface.html",
    "abstract": "Accurate 3D surface reconstruction from unposed images remains a fundamental challenge in computer vision. Recent feed-forward pointmap methods eliminate the need for camera poses but inherently produce discrete, sparse representations. In this paper, we present a generalizable pipeline that directly recovers continuous, high-fidelity 3D surfaces from unposed images by seamlessly integrating pointmap- and ray-based representations. Our approach first extracts explicit geometric priors using a pre-trained pointmap model. A query-view-centric selection module then identifies geometrically relevant reference views via a robust surfel voting mechanism. Next, a cross-attention regressor bridges target query rays with reference features to estimate a continuous coarse surface. Lastly, a raylet-based module aggregates local 3D features to carve out high-frequency details and analytical normals. Trained as a single foundation model on 9 diverse datasets, our method demonstrates exceptional zero-shot generalization on 6 unseen datasets, clearly surpassing state-of-the-art baselines in geometric accuracy and detail preservation.",
    "ai_summary": "A generalizable pipeline reconstructs continuous, high-fidelity 3D surfaces from unposed images by integrating pointmap and ray-based representations, achieving strong zero-shot generalization."
-  },
-  {
-   "id": "2611.33925",
-   "title": "Beyond the Happy Path: Generalizing Robot World Models from Simulated Failures",
-   "upvotes": 13,
-   "hf_date": "2026-11-26",
-   "published": "2026-11-26",
-   "topics": [
-    "manipulation",
-    "world-models"
-   ],
-   "authors": [
-    "Zhiyue Zhao",
-    "Mingyu Liu",
-    "Bolin Zhang",
-    "Liyang Li",
-    "Guangyu Huang",
-    "Canyu Zhao",
-    "Jinchuan Shi",
-    "Haokai Zhang",
-    "Hao Chen",
-    "Chunhua Shen"
-   ],
-   "organization": "Zhejiang University",
-   "github": "https://github.com/aim-uofa/WorldReforge",
-   "project": "https://aim-uofa.github.io/WorldReforge/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "Robot world models are increasingly used to evaluate and plan policies, yet robot training data are dominated by successful demonstrations. Off the happy path, when a grasp is misaligned or mistimed and the object is pushed, tilted, or slips, their predictions break down. Across five pretrained action-conditioned models, object-motion error is at most 10.4% lower than that of a static baseline that copies the first frame, and two models are worse than this baseline. We present WorldReforge, which teaches world models what happens when manipulation goes wrong. We construct the Reforge dataset of 62k simulated trajectories by perturbing reference grasps in position, orientation, and closure timing, recording each resulting push, slip, or failed pickup with ground-truth object pose, contact, and surface points. WorldReforge turns this ground truth into two training signals without additional inference cost. Interaction Alignment focuses reconstruction on the small object and contact regions that a global loss underweights, and Surface Correspondence trains backbone features to follow the same physical surface points across frames. On Cosmos3 Nano, WorldReforge reduces object trajectory error by 28.2% overall and by 35.0% on unseen objects, and it lowers the error in predicting how two actions' outcomes diverge by 43.3%. Although trained only in simulation, it also improves reconstruction on DROID and on real failure videos. Controlled data studies show that failed contact and successful holding teach complementary physics: failed contact teaches how objects respond, and holding teaches how a grasped state persists. Our code, data, and models are available at aim-uofa.github.io/WorldReforge/.",
-   "ai_summary": "Training world models on simulated manipulation failures with interaction alignment and surface correspondence reduces object trajectory and action-outcome prediction errors, including on unseen objects and real data."
   },
   {
    "id": "2611.24077",
@@ -240,30 +147,6 @@
    "comment": null,
    "abstract": "Agent-orchestrated robot systems combine the general reasoning capability of multimodal agents with the precise physical control of learned visuomotor policies. Yet such systems often fail at the moment of handoff: a policy is reliable only from a limited set of start states, while the agent may invoke it outside this region. We call this region the policy's handoff boundary. Existing whole-task policies typically have handoff boundaries that are narrow and difficult for an agent to characterize, making reliable coordination challenging. We propose Boundary-Aware Policy Learning, which explicitly shapes and then expands the handoff boundary of a visuomotor policy. First, Boundary-Explicit Training fine-tunes the policy on contact segments with diverse start poses, yielding a wide and well-defined boundary that can be communicated to the agent through a simple handoff protocol. Second, Boundary-Expanding Self-Improvement retrains the policy on curated successful system rollouts, extending the boundary toward earlier stages of each task and allowing the agent to hand over sooner with fewer language-model calls. Across RoboTwin 2.0 and RoboDojo, our system outperforms the strongest baseline by over 26 percentage points, reaching 98.4% success in randomized RoboTwin 2.0 scenes, while further reducing its API cost and execution time by 41.3% and 37.5%, respectively. These results suggest that the key to robust agent-policy orchestration lies not only in improving either component individually, but also in explicitly shaping the boundary between them.",
    "ai_summary": "A method that explicitly shapes and expands the handoff boundary of visuomotor policies improves coordination between multimodal agents and robot policies, yielding higher success and lower cost."
-  },
-  {
-   "id": "2611.25595",
-   "title": "LoopedWAM: Looped World Action Models for Elastic Inference",
-   "upvotes": 5,
-   "hf_date": "2026-11-25",
-   "published": "2026-11-20",
-   "topics": [
-    "world-models"
-   ],
-   "authors": [
-    "Anh Dao",
-    "Xinxin Liu",
-    "Hang Yu",
-    "Jeffrey A Chan Santiago",
-    "Yuzhang Shang"
-   ],
-   "organization": "Center for Research in Computer Vision, University of Central Florida",
-   "github": "https://github.com/anhdao69/LoopedWAM",
-   "project": "https://anhdao69.github.io/LoopedWAM/",
-   "arxiv_code": [],
-   "comment": null,
-   "abstract": "World action models (WAMs) couple generative video modeling with robotic action prediction but typically require large video and action transformers, limiting deployment efficiency. We present LoopedWAM, a compact WAM that recurrently applies a shared six-block core in each expert, executing 30 transformer layers while storing only 12 blocks per expert. To account for their asymmetric inference costs, the video and action experts can operate at different depths: visual features are computed once per query, whereas action computation repeats at every sampling step. We further propose elastic self-distillation, which trains a single elastic checkpoint, LoopedWAM-E, across action-depth and sampling-step budgets. With only 0.58B policy parameters and no robot pretraining, LoopedWAM achieves 96.1% success on LIBERO, 91.9% on RoboTwin 2.0, and 52.2% on RoboCasaGR1, while using 7.4times less peak GPU memory than Fast-WAM under matched inference measurements. On LIBERO, LoopedWAM-E achieves 96.0% success in 27.6 ms or 95.2% in 24.7 ms on an H100, providing multiple accuracy-latency operating points from a single checkpoint; with two sampling steps and four action loops, it stays within 0.5 points of LoopedWAM on all three benchmarks. Ablations demonstrate that weight-shared depth preserves competitive performance, while aggressive action-depth reduction requires explicit budget-aware training. On a real AgileX PiPER arm, LoopedWAM succeeds in 71.3% of 80 trials across four tasks.",
-   "ai_summary": null
   }
  ],
  "curated_link_updates": [
@@ -356,6 +239,11 @@
    "code": "https://github.com/kaiknower/RoboEvo2"
   },
   {
+   "id": "2611.34849",
+   "title": "Real2SimLab: A Unified Platform for Real-to-Simulation Transfer",
+   "code": "https://github.com/Real2SimHub/Real2SimLab"
+  },
+  {
    "id": "2611.26613",
    "title": "AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control",
    "code": "https://github.com/cxcscmu/AgentRoboCritic"
@@ -374,6 +262,11 @@
    "id": "2611.33143",
    "title": "ROAM-Bench: Evaluating Embodied Active Spatial Intelligence through Evidence Verification",
    "code": "https://github.com/rxjfighting/ROAM-Bench"
+  },
+  {
+   "id": "2611.34671",
+   "title": "DemoFoundry: Toward Scalable Photorealistic Robot Data with Coding Agents and Generative Rendering",
+   "code": "https://github.com/RobbinW/DemoFoundry"
   }
  ]
 }
