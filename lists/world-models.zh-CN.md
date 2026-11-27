@@ -2,7 +2,7 @@
 
 _学习的动力学模型、视频世界模型、世界动作模型（WAM）与基于模型的强化学习。_
 
-共 179 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
+共 181 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/world-models.yaml`](../data/curated/world-models.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/world-models.html) · [English](world-models.md)
 
@@ -14,6 +14,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - ⭐⭐ **[OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining](https://arxiv.org/abs/2609.07398)** (2026) — 开放研究栈，把世界动作模型拆成可组合模块，并通过对照实验研究该从视频先验继承什么、世界学习与动作学习如何相互作用。 · [代码](https://github.com/OpenWAM-Official/OpenWAM) · [项目页](https://openwam-official.github.io/)
 - ⭐⭐ **[RoboJEPA: Scaling Robotic Latent World Models](https://arxiv.org/abs/2610.10515)** (2026) — 跨 12 种机器人形态训练的 JEPA 世界模型；其想象误差随算力服从幂律，因此可以预测超出拟合规模时的模型质量。 · [代码](https://github.com/facebookresearch/robo_jepa) · [项目页](https://robojepa.github.io/)
 - ⭐⭐ **[World Action Models: A Survey](https://arxiv.org/abs/2606.20781)** (2026) — 厘清 WAM 与世界模型、视频生成模型、VLA 的区别，并按生成内容（渲染、潜空间或不生成）和架构分类；结论是领域正走向少生成未来，只保留控制所需。 · [项目页](https://world-action-models.github.io/)
+- ⭐ **[Beyond the Happy Path: Generalizing Robot World Models from Simulated Failures](https://arxiv.org/abs/2611.33925)** (2026) — 指出在抓取错位、时机偏差、推偏滑落等“快乐路径”之外，五个预训练动作条件世界模型的物体运动误差最多只比静态基线低 10.4%（两个更差）；用 62k 条扰动参考抓取的仿真失败轨迹，以交互对齐与表面对应两种训练信号改进，报告物体轨迹误差整体降 28.2%、未见物体降 35.0%，动作对比误差降 43.3%。 · [代码](https://github.com/aim-uofa/WorldReforge) · [项目页](https://aim-uofa.github.io/WorldReforge/)
 - ⭐ **[Causal World Modeling for Robot Control](https://arxiv.org/abs/2601.21998)** (2026) — LingBot-VA：同时学习帧预测和策略的自回归扩散框架，具有视频动作共享潜空间、闭环推演和异步推理。 · [代码](https://github.com/Robbyant/lingbot-va) · [项目页](https://technology.robbyant.com/lingbot-va)
 - ⭐ **[Chunk-wise Model-based Policy Optimization](https://arxiv.org/abs/2610.14564)** (2026) — CoRL 2026 Spotlight。将分块世界模型用作训练期可微评估器的模型式强化学习，针对累积误差、推理延迟与 BPTT 不稳定问题。 · [代码](https://github.com/song-wx/CMPO) · [项目页](https://song-wx.github.io/cmpo.github.io/)
 - ⭐ **[DreamX: Video Diffusion Model is a Universal Latent Action Learner](https://arxiv.org/abs/2611.05377)** (2026) — 复用预训练视频扩散模型提取紧凑潜动作（每帧 1,200 压到 4 个 token），作为人、机器人和不同环境之间的共享接口，并支持零示教动作迁移。 · [代码](https://github.com/cvlab-kaist/DreamX) · [项目页](https://cvlab-kaist.github.io/DreamX/)
@@ -88,6 +89,7 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - **[Learning What Actions Change: Action Effect Matching for Dynamics-Faithful World Models](https://arxiv.org/abs/2611.25980)** (2026) — 训练世界模型对动作扰动产生与真实视频一致的视觉变化：向遥操作策略的动作注入时间相关噪声，让生成视频对噪声的响应匹配记录视频。报告 DROID 上世界模型与真机的策略成功率 Pearson 相关从 0.47 升到 0.79，规划任务成功率最多提高 8.3%。 · [项目页](https://periphanes.github.io/affect/)
 - **[Light-WAM: Efficient World Action Models with State-Fusion Action Decoding](https://arxiv.org/abs/2606.08242)** (2026) — 轻量世界动作模型：紧凑视频主干在降采样潜空间中做未来监督，动作专家融合多层特征一次前向预测动作块；报告可训练参数仅 0.44B，推理延迟 72 毫秒。 · [代码](https://github.com/L1ziang/Light-WAM)
 - **[Long-Horizon Planning with Latent World Models via Graph Anchors](https://arxiv.org/abs/2611.34509)** (2026) — 诊断出潜距离目标代价的两类失败（接近目标时丢失方向信号、重视机械臂而轻视被操作物体），并在模型自身训练帧上建稀疏图，让每一步指向通往目标最短路径上几个节点之外的中继。报告 400 步远目标：LeWM 成功率 PointMaze-Medium 13%→85%、Large 8%→87%、Push-T 5%→71%。 · [代码](https://github.com/syed-nazmus-sakib/graph-anchors) · [项目页](https://syed-nazmus-sakib.github.io/graph-anchors/)
+- **[LoopedWAM: Looped World Action Models for Elastic Inference](https://arxiv.org/abs/2611.25595)** (2026) — 每个专家只存 12 个块、循环复用共享的六块核心，等效 30 层 Transformer；视频与动作专家按各自推理代价使用不同深度，并用弹性自蒸馏训练单一检查点在多种动作深度与采样步预算下工作。报告 0.58B 参数、无机器人预训练：LIBERO 96.1%、RoboTwin 2.0 91.9%，峰值显存比 Fast-WAM 少 7.4 倍；真机 AgileX PiPER 71.3%。 · [代码](https://github.com/anhdao69/LoopedWAM) · [项目页](https://anhdao69.github.io/LoopedWAM/)
 - **[MAWAM: Joint Imagination for Collaborative Robot Manipulation with a Multi-Agent World Action Model](https://arxiv.org/abs/2611.29501)** (2026) — 沿智能体维度扩展单智能体 WAM：统一因果序列中所有智能体共享权重的联合自注意力时空对齐各自想象的未来，语言/身份/本体编码把每条流绑定到对应角色。构建 MA-Bench 七任务，报告平均联合成功率 82.7%（比最强基线高 30.7），并在真实异构机器人队上实时协作。 · [项目页](https://embodiedcity.github.io/MAWAM/)
 - **[MaskWAM: Unifying Mask Prompting and Prediction for World-Action Models](https://arxiv.org/abs/2606.13515)** (2026) — 以物体为中心的世界动作模型：既把目标物体掩码作为提示输入，又预测未来掩码，从而减少杂乱场景中的语言歧义和 RGB 预测中的背景偏差。
 - **[MemoryVAM: Integrating Memory into Video Action Model for Robot Manipulation](https://arxiv.org/abs/2606.20679)** (2026) — 为视频世界模型策略加入情景记忆 token，使动作能依赖已不在视野中的事件。报告 LIBERO-Mem 成功率从 5% 提升到 42.5%，真机记忆类任务约 75–80%。 · [项目页](https://MemoryVAM.github.io/)

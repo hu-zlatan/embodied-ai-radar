@@ -729,3 +729,15 @@
   tags: [real2sim, scene-reconstruction, physics]
   takeaway_en: 'From one RGB image: an inferred support graph plus contact-guided pose initialization and physics-rollout refinement. +21.4 pp source-mask IoU, 87.1% supports realized, drift 79.6 to 45.3 mm over 50 scenes.'
   takeaway_zh: 单张 RGB 重建可仿真场景：推断支撑图并用接触引导位姿初始化给出多支撑物体的候选位姿，粗到精精修以固定搜索预算、用物理 rollout 评估更新。报告 50 个场景上源掩码 IoU 提高 21.4 个百分点、支撑实现率 87.1%（基线 73.2%）、平均漂移 79.6→45.3 mm。
+
+- title: 'Real2SimLab: A Unified Platform for Real-to-Simulation Transfer'
+  type: paper
+  arxiv: '2611.34849'
+  year: 2026
+  project: https://real2simhub.github.io/
+  rating: 1
+  added: 2026-11-27
+  topics: [sim, datasets]
+  tags: [real2sim, benchmark, agents, platform]
+  takeaway_en: 'Runs any real-to-sim method''s written program and scores it with each benchmark''s own scorer, removing N x M integrations: 47 coding agents and 5 non-agent methods on 6 benchmarks, plus a data pipeline.'
+  takeaway_zh: 统一平台：运行任意 Real2Sim 方法写出的程序，并用各基准原有打分器评估输出仿真，消除 N×M 集成；已支持 6 个基准上 47 个编码智能体与 5 种非智能体方法，并提供过滤数据污染的参考视频、生成训练数据与奖励标注的流水线，还开放近 300 篇论文的研究地图。

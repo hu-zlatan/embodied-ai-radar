@@ -2,7 +2,7 @@
 
 _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 
-共 71 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
+共 72 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/sim.yaml`](../data/curated/sim.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/sim.html) · [English](sim.md)
 
@@ -11,6 +11,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_
 - ⭐⭐⭐ **[MuJoCo](https://mujoco.org/)** (2012) — 快速准确的接触物理仿真，机器人学习研究的默认仿真器，由 DeepMind 开源。 · [代码](https://github.com/google-deepmind/mujoco)
 - ⭐⭐ **[When the Simulator Fails, Not the Policy: Auditing Contact Artifacts in Simulated Robot Benchmarks](https://arxiv.org/abs/2610.41857)** (2026) — 审计仿真基准：不少“策略失败”其实是物理引擎把物体弹飞。SimuGuard 为 LIBERO、RoboTwin、RoboCasa、RoboDojo 提供审计插件，把 RoboTwin 上的问题追溯到碰撞检测的一个常量；仅改动它，异常回合由 100 回合 12 次降到 0，五个容器任务成功率由 89% 升到 98%。 · [代码](https://github.com/ALEXander22568/simuguard)
 - ⭐ **[Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot](https://arxiv.org/abs/2601.02078)** (2026) — Genie Sim 3.0：面向操作的仿真平台，用 LLM 工具依自然语言生成场景，并提供基于 LLM 与 VLM 的自动化评测基准。 · [代码](https://github.com/AgibotTech/genie_sim)
+- ⭐ **[Real2SimLab: A Unified Platform for Real-to-Simulation Transfer](https://arxiv.org/abs/2611.34849)** (2026) — 统一平台：运行任意 Real2Sim 方法写出的程序，并用各基准原有打分器评估输出仿真，消除 N×M 集成；已支持 6 个基准上 47 个编码智能体与 5 种非智能体方法，并提供过滤数据污染的参考视频、生成训练数据与奖励标注的流水线，还开放近 300 篇论文的研究地图。 · [项目页](https://real2simhub.github.io/)
 - ⭐ **[Isaac Lab: A GPU-Accelerated Simulation Framework for Multi-Modal Robot Learning](https://arxiv.org/abs/2511.04831)** (2025) — Isaac Lab（Orbit 的后继）的正式论文：GPU 并行的物理、渲染与传感器仿真，内置机器人与任务，面向强化学习和模仿学习。 · [代码](https://github.com/isaac-sim/IsaacLab)
 - ⭐ **[MuJoCo Playground](https://arxiv.org/abs/2502.08844)** (2025) — 基于 MJX 的 GPU 加速运动与操作环境，几分钟即可训练并迁移到真实机器人。 · [代码](https://github.com/google-deepmind/mujoco_playground)
 - ⭐ **[Newton](https://github.com/newton-physics/newton)** (2025) — 基于 NVIDIA Warp 和 OpenUSD 的开源 GPU 物理引擎，支持多种求解器，面向接触丰富的机器人学习；由 Disney Research、Google DeepMind 和 NVIDIA 联合开发，由 Linux 基金会托管。

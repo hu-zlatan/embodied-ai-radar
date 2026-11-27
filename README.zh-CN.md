@@ -127,14 +127,14 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - ⭐⭐ **[OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining](https://arxiv.org/abs/2609.07398)** (2026) — 开放研究栈，把世界动作模型拆成可组合模块，并通过对照实验研究该从视频先验继承什么、世界学习与动作学习如何相互作用。 · [代码](https://github.com/OpenWAM-Official/OpenWAM) · [项目页](https://openwam-official.github.io/)
 - ⭐⭐ **[RoboJEPA: Scaling Robotic Latent World Models](https://arxiv.org/abs/2610.10515)** (2026) — 跨 12 种机器人形态训练的 JEPA 世界模型；其想象误差随算力服从幂律，因此可以预测超出拟合规模时的模型质量。 · [代码](https://github.com/facebookresearch/robo_jepa) · [项目页](https://robojepa.github.io/)
 - ⭐⭐ **[World Action Models: A Survey](https://arxiv.org/abs/2606.20781)** (2026) — 厘清 WAM 与世界模型、视频生成模型、VLA 的区别，并按生成内容（渲染、潜空间或不生成）和架构分类；结论是领域正走向少生成未来，只保留控制所需。 · [项目页](https://world-action-models.github.io/)
+- ⭐ **[Beyond the Happy Path: Generalizing Robot World Models from Simulated Failures](https://arxiv.org/abs/2611.33925)** (2026) — 指出在抓取错位、时机偏差、推偏滑落等“快乐路径”之外，五个预训练动作条件世界模型的物体运动误差最多只比静态基线低 10.4%（两个更差）；用 62k 条扰动参考抓取的仿真失败轨迹，以交互对齐与表面对应两种训练信号改进，报告物体轨迹误差整体降 28.2%、未见物体降 35.0%，动作对比误差降 43.3%。 · [代码](https://github.com/aim-uofa/WorldReforge) · [项目页](https://aim-uofa.github.io/WorldReforge/)
 - ⭐ **[Causal World Modeling for Robot Control](https://arxiv.org/abs/2601.21998)** (2026) — LingBot-VA：同时学习帧预测和策略的自回归扩散框架，具有视频动作共享潜空间、闭环推演和异步推理。 · [代码](https://github.com/Robbyant/lingbot-va) · [项目页](https://technology.robbyant.com/lingbot-va)
 - ⭐ **[Chunk-wise Model-based Policy Optimization](https://arxiv.org/abs/2610.14564)** (2026) — CoRL 2026 Spotlight。将分块世界模型用作训练期可微评估器的模型式强化学习，针对累积误差、推理延迟与 BPTT 不稳定问题。 · [代码](https://github.com/song-wx/CMPO) · [项目页](https://song-wx.github.io/cmpo.github.io/)
 - ⭐ **[DreamX: Video Diffusion Model is a Universal Latent Action Learner](https://arxiv.org/abs/2611.05377)** (2026) — 复用预训练视频扩散模型提取紧凑潜动作（每帧 1,200 压到 4 个 token），作为人、机器人和不同环境之间的共享接口，并支持零示教动作迁移。 · [代码](https://github.com/cvlab-kaist/DreamX) · [项目页](https://cvlab-kaist.github.io/DreamX/)
 - ⭐ **[Fast-WAM: Do World Action Models Need Test-time Future Imagination?](https://arxiv.org/abs/2603.16666)** (2026) — 追问世界动作模型在测试时是否需要想象未来：训练时保留视频联合训练，推理时跳过视频生成，以对照实验区分两者的作用。 · [代码](https://github.com/yuantianyuan01/FastWAM) · [项目页](https://yuantianyuan01.github.io/FastWAM/)
 - ⭐ **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — 以动作为中心的世界动作模型：由观测预测动作，视频生成变为可选，动作精度不再依赖视频预测质量，推理开销也更低。 · [代码](https://github.com/open-gigaai/giga-world-policy) · [项目页](https://gigaai-research.github.io/GigaWorld-Policy/)
-- ⭐ **[GreenWAM: A World Foundation Model for Robotics](https://arxiv.org/abs/2610.18774)** (2026) — 同一个世界模型兼作策略，用共享的关节坐标动作空间覆盖 20 类机器人；论文报告其在 WorldArena、RoboTwin 2.0、LIBERO-plus 上表现突出，并蒸馏出可实时运行的单步人形机器人策略。 · [代码](https://github.com/greenvla/GreenWAM) · [项目页](https://greenvla.github.io/GreenWAM)
 
-**[查看全部 179 条 →](lists/world-models.zh-CN.md)**
+**[查看全部 181 条 →](lists/world-models.zh-CN.md)**
 
 <a id="navigation"></a>
 ### 导航与具身智能体
@@ -174,7 +174,7 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - ⭐ **[BundleSDF: Neural 6-DoF Tracking and 3D Reconstruction of Unknown Objects](https://arxiv.org/abs/2303.14158)** (2023) — 在 RGB-D 视频中跟踪从未见过物体的六自由度位姿，同时在线构建其神经三维模型，无需 CAD 模型；适用于操作新物体。 · [代码](https://github.com/NVlabs/BundleSDF)
 - ⭐ **[CoTracker: It is Better to Track Together](https://arxiv.org/abs/2307.07635)** (2023) — 联合跟踪视频中大量点（而非逐点独立跟踪）的 Transformer，遮挡下依然稳健；常用于从人类或机器人视频中提取运动轨迹来学习策略。 · [代码](https://github.com/facebookresearch/co-tracker)
 
-**[查看全部 64 条 →](lists/perception.zh-CN.md)**
+**[查看全部 65 条 →](lists/perception.zh-CN.md)**
 
 <a id="control"></a>
 ### 规划、控制与安全
@@ -224,6 +224,7 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_ [在网站上
 - ⭐⭐⭐ **[MuJoCo](https://mujoco.org/)** (2012) — 快速准确的接触物理仿真，机器人学习研究的默认仿真器，由 DeepMind 开源。 · [代码](https://github.com/google-deepmind/mujoco)
 - ⭐⭐ **[When the Simulator Fails, Not the Policy: Auditing Contact Artifacts in Simulated Robot Benchmarks](https://arxiv.org/abs/2610.41857)** (2026) — 审计仿真基准：不少“策略失败”其实是物理引擎把物体弹飞。SimuGuard 为 LIBERO、RoboTwin、RoboCasa、RoboDojo 提供审计插件，把 RoboTwin 上的问题追溯到碰撞检测的一个常量；仅改动它，异常回合由 100 回合 12 次降到 0，五个容器任务成功率由 89% 升到 98%。 · [代码](https://github.com/ALEXander22568/simuguard)
 - ⭐ **[Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot](https://arxiv.org/abs/2601.02078)** (2026) — Genie Sim 3.0：面向操作的仿真平台，用 LLM 工具依自然语言生成场景，并提供基于 LLM 与 VLM 的自动化评测基准。 · [代码](https://github.com/AgibotTech/genie_sim)
+- ⭐ **[Real2SimLab: A Unified Platform for Real-to-Simulation Transfer](https://arxiv.org/abs/2611.34849)** (2026) — 统一平台：运行任意 Real2Sim 方法写出的程序，并用各基准原有打分器评估输出仿真，消除 N×M 集成；已支持 6 个基准上 47 个编码智能体与 5 种非智能体方法，并提供过滤数据污染的参考视频、生成训练数据与奖励标注的流水线，还开放近 300 篇论文的研究地图。 · [项目页](https://real2simhub.github.io/)
 - ⭐ **[Isaac Lab: A GPU-Accelerated Simulation Framework for Multi-Modal Robot Learning](https://arxiv.org/abs/2511.04831)** (2025) — Isaac Lab（Orbit 的后继）的正式论文：GPU 并行的物理、渲染与传感器仿真，内置机器人与任务，面向强化学习和模仿学习。 · [代码](https://github.com/isaac-sim/IsaacLab)
 - ⭐ **[MuJoCo Playground](https://arxiv.org/abs/2502.08844)** (2025) — 基于 MJX 的 GPU 加速运动与操作环境，几分钟即可训练并迁移到真实机器人。 · [代码](https://github.com/google-deepmind/mujoco_playground)
 - ⭐ **[Newton](https://github.com/newton-physics/newton)** (2025) — 基于 NVIDIA Warp 和 OpenUSD 的开源 GPU 物理引擎，支持多种求解器，面向接触丰富的机器人学习；由 Disney Research、Google DeepMind 和 NVIDIA 联合开发，由 Linux 基金会托管。
@@ -232,9 +233,8 @@ _物理仿真器、GPU 并行训练与向真实机器人迁移。_ [在网站上
 - ⭐ **[Genesis](https://github.com/Genesis-Embodied-AI/Genesis)** (2024) — 开源、Python 原生的物理平台，覆盖刚体、软体、流体，支持高速 GPU 仿真。
 - ⭐ **[Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer](https://arxiv.org/abs/2404.05695)** (2024) — 基于 Isaac Gym 的人形机器人运动强化学习框架，先在 MuJoCo 中做 sim2sim 验证，再零样本部署到真实人形机器人，是人形 RL 的常用起点。 · [代码](https://github.com/roboterax/humanoid-gym)
 - ⭐ **[ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI](https://arxiv.org/abs/2410.00425)** (2024) — GPU 并行仿真与渲染，内置大量操作任务，适合快速视觉强化学习与数据生成。 · [代码](https://github.com/haosulab/ManiSkill)
-- ⭐ **[RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots](https://arxiv.org/abs/2406.02523)** (2024) — 120 个厨房场景、2500 多个物体与 100 个任务，并附生成演示，用于训练通用策略。 · [代码](https://github.com/robocasa/robocasa)
 
-**[查看全部 71 条 →](lists/sim.zh-CN.md)**
+**[查看全部 72 条 →](lists/sim.zh-CN.md)**
 
 <a id="datasets"></a>
 ### 数据集与基准
@@ -244,6 +244,7 @@ _大规模机器人数据集、第一视角数据与评测基准。_ [在网站�
 - ⭐⭐⭐ **[Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://arxiv.org/abs/2310.08864)** (2023) — 30 多个实验室汇集 22 种机器人的 100 多万条轨迹；在其上训练的 RT-X 优于单机器人基线。 · [代码](https://github.com/google-deepmind/open_x_embodiment)
 - ⭐⭐ **[LeRobot](https://github.com/huggingface/lerobot)** (2024) — PyTorch 机器人学习库，提供数据集、预训练策略（ACT、Diffusion、SmolVLA）与低成本机械臂驱动。
 - ⭐⭐ **[LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning](https://arxiv.org/abs/2306.03310)** (2023) — 四个套件共 130 个语言条件任务，现已成为 VLA 论文最常用的仿真基准。 · [代码](https://github.com/Lifelong-Robot-Learning/LIBERO)
+- ⭐ **[AIRIS: Benchmarking Social Embodied Intelligence in Egocentric Streaming Videos](https://arxiv.org/abs/2611.34347)** (2026) — 因果流式社交具身基准：357 段第一视角视频上 8,000 个专家标注问题，按“注意-意图-反应-交互”时间锚定，每个查询只给当时可用的观测前缀，决策感知指标奖励恰当的等待与完整反应、惩罚过早表态。评测 45 个模型发现能力碎片化且时间校准差：模型常在证据不足时猜意图，也难以在同一回合内对齐介入时机、动作域与具体执行。 · [代码](https://github.com/AIRIS-bench/AIRIS) · [项目页](https://airis-bench.github.io/)
 - ⭐ **[BEAKER: An Expert-Curated Benchmark for Embodied Brains in Self-Driving Chemical Laboratories](https://arxiv.org/abs/2611.06911)** (2026) — 1000 道专家整理的题目、11 种图像和视频任务，检验多模态大模型能否担任自动化化学实验室的“大脑”：可供性、轨迹、仪器搭建、安全与步骤推理。
 - ⭐ **[Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation](https://arxiv.org/abs/2611.26444)** (2026) — 30 个仿真操作任务、三档难度、Clean/Random 两种场景（180 配置），分为 Mind（决策）、Act（执行）与 Mind2Act（闭环组合）三个视角，并带失败归因诊断。最强 agent 的 Mind 52.7%、Act 39.0%，但 Mind2Act 仅 12.0%——推理与执行的组合是核心开放问题。 · [代码](https://github.com/Mind2Act/Mind2Act_World) · [项目页](https://mind2act-world.com/)
 - ⭐ **[What Are We Actually Benchmarking in Robot Manipulation?](https://arxiv.org/abs/2606.04233)** (2026) — CoRL 2026 Oral。用捷径可解、统计不显著、渐进过拟合、数据来源依赖四种失效模式审计 LIBERO、CALVIN、SimplerEnv、RoboCasa 和 RoboTwin 2.0；其中 LIBERO 与 CALVIN 未通过多项诊断。 · [代码](https://github.com/ripl/ManipulationBenchmarkAudit) · [项目页](https://ripl.github.io/manipulation_benchmark_audit/)
@@ -252,9 +253,8 @@ _大规模机器人数据集、第一视角数据与评测基准。_ [在网站�
 - ⭐ **[RoboVerse: Towards a Unified Platform, Dataset and Benchmark for Scalable and Generalizable Robot Learning](https://arxiv.org/abs/2504.18904)** (2025) — MetaSim 用统一接口封装多种仿真器（Isaac Sim/Gym、MuJoCo、Genesis、SAPIEN、PyBullet 等）；提供由公开基准迁移而来的大规模合成数据集，以及按泛化层级划分的统一模仿学习/强化学习基准。 · [代码](https://github.com/RoboVerseOrg/RoboVerse) · [项目页](https://roboverseorg.github.io/)
 - ⭐ **[Evaluating Real-World Robot Manipulation Policies in Simulation](https://arxiv.org/abs/2405.05941)** (2024) — SimplerEnv：真实到仿真的评测环境，其得分与 RT-1/Octo 类策略的真机表现相关。 · [代码](https://github.com/simpler-env/SimplerEnv)
 - ⭐ **[CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks](https://arxiv.org/abs/2112.03227)** (2021) — 连续执行五条语言指令，测试长时程、语言条件下的控制能力。 · [代码](https://github.com/mees/calvin)
-- ⭐ **[Habitat: A Platform for Embodied AI Research](https://arxiv.org/abs/1904.01201)** (2019) — 极速的逼真 3D 仿真器与任务集，统一了具身导航研究的标准。 · [代码](https://github.com/facebookresearch/habitat-sim)
 
-**[查看全部 137 条 →](lists/datasets.zh-CN.md)**
+**[查看全部 140 条 →](lists/datasets.zh-CN.md)**
 
 <a id="hardware"></a>
 ### 硬件与开源机器人

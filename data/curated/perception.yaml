@@ -663,3 +663,14 @@
   tags: [slam, reconstruction, long-sequence, drift]
   takeaway_en: Uses ground-derived relative scale to regularize memory, superpoint alignment for inter-chunk translation and cross-loop Sim(3) corrections. KITTI ATE 7.30 m (-46.8%), Chamfer 2.67 m (-23.3%).
   takeaway_zh: 利用具身采集的重复观测线索：由预测地面几何导出相对尺度参考以正则化测试期记忆更新，超点对齐跨空间区域平衡地面与非地面证据估计块间平移，交叉环优化为一致块组共享单一 Sim(3) 修正。报告 KITTI Odometry 平均 ATE 7.30 m（降 46.8%）、Chamfer 2.67 m（降 23.3%）。
+
+- title: 'ProManO: Beyond Sim(3) for Metric Upgrade of Feed-Forward Geometry with Visual-Inertial Anchors'
+  type: paper
+  arxiv: '2611.34480'
+  year: 2026
+  project: https://h0xg.github.io/ProManO/
+  added: 2026-11-27
+  topics: [perception]
+  tags: [metric-scale, vio, geometry, optimization]
+  takeaway_en: Proves transforms compatible with calibrated intrinsics form a ten-dimensional manifold; three DoF beyond Sim(3) need metric depth or multi-view constraints. Uncertainty-weighted EM, best F1 on four datasets.
+  takeaway_zh: 证明与已标定内参相容的变换构成十维流形：除 Sim(3) 外另有三个自由度决定无穷远平面，只能由沿视线的度量深度或多视图约束解决（相似对齐后残差随深度范围二次增长）。ProManO 用按沿射线不确定性与内点概率加权的 EM 优化估计它们，在 EuRoC、CID-SIMS、Oxford Spires、KITTI-360 上平均 F1 最高。

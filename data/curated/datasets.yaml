@@ -1457,3 +1457,39 @@
   tags: [benchmark, vla, post-training, human-takeover]
   takeaway_en: 629 natural failures across 10 LIBERO-X families, 2,823 takeovers logged, evaluation restarts from fixed held-out midpoints. Cloning recoveries beats demo-only by 29.4 points; loses 30 points at nominal starts.
   takeaway_zh: 从固定 π0.5 检查点在 LIBERO-X 十个任务族收集 629 个自然失败、2,823 次人工接管，评测统一从 384 个留出失败区间的固定中点重启。报告行为克隆恢复动作比仅用示范高 29.4 个百分点，但在 L1–L5 名义起点下会损失 30.0 个点。
+
+- title: 'DemoFoundry: Toward Scalable Photorealistic Robot Data with Coding Agents and Generative Rendering'
+  type: paper
+  arxiv: '2611.34671'
+  year: 2026
+  project: https://robbinw.github.io/DemoFoundry-Web
+  added: 2026-11-27
+  topics: [datasets, learning]
+  tags: [synthetic-data, rendering, coding-agents]
+  takeaway_en: Coding agents build aligned real-proxy pairs to train a renderer and write interaction programs; proxy videos come from a physics simulator, rendered photorealistic. Policies approach equal-size real-demo training.
+  takeaway_zh: 编码智能体从已有机器人回合构建对齐的“真实-代理”视频对训练视频渲染器，并编写可执行交互程序在物理仿真中生成带对齐状态与动作的代理视频，再由渲染器转为场景一致的照片级真实观测；自动执行检查筛选成功轨迹。报告策略优于纯仿真训练、接近等量真实示教。
+
+- title: 'Dynamic Task Update Benchmark (DTU-Bench): Evaluating Runtime Task Adaptation in Robotic Manipulation'
+  type: paper
+  arxiv: '2611.34538'
+  year: 2026
+  project: https://dtu-bench.github.io/
+  added: 2026-11-27
+  topics: [datasets, vla]
+  tags: [benchmark, vla, instruction-change, analysis]
+  takeaway_en: '40 task revisions across seven update types and three stages: 95.8% on original tasks but 1.6% when the instruction changes which object to manipulate; a scripted reset controller lifts π0.5 from 2% to 38%.'
+  takeaway_zh: 40 个任务修订、七种更新类型、三个执行阶段的基准：报告 13 个 VLA 配置在原始任务上平均 95.8% 成功，但执行中改变“操作哪个物体”时只有 1.6%；受控诊断显示策略常先完成旧任务，且表现依赖机器人当前物理状态；脚本化的松手回臂控制器让 π0.5 从 2% 提到 38%。
+
+- title: 'AIRIS: Benchmarking Social Embodied Intelligence in Egocentric Streaming Videos'
+  type: paper
+  arxiv: '2611.34347'
+  year: 2026
+  org: Tencent
+  code: https://github.com/AIRIS-bench/AIRIS
+  project: https://airis-bench.github.io/
+  rating: 1
+  added: 2026-11-27
+  topics: [datasets]
+  tags: [benchmark, social, streaming, egocentric]
+  takeaway_en: 'Causal streaming benchmark: 8,000 expert questions over 357 egocentric clips, time-anchored as Attention-Intention-Reaction-Interaction, with decision-aware metrics. 45 models: fragmented, miscalibrated.'
+  takeaway_zh: 因果流式社交具身基准：357 段第一视角视频上 8,000 个专家标注问题，按“注意-意图-反应-交互”时间锚定，每个查询只给当时可用的观测前缀，决策感知指标奖励恰当的等待与完整反应、惩罚过早表态。评测 45 个模型发现能力碎片化且时间校准差：模型常在证据不足时猜意图，也难以在同一回合内对齐介入时机、动作域与具体执行。

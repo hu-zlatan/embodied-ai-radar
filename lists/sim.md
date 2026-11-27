@@ -2,7 +2,7 @@
 
 _Physics simulators, GPU-parallel training and transfer to real robots._
 
-71 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
+72 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/sim.yaml`](../data/curated/sim.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/sim.html) · [中文](sim.zh-CN.md)
 
@@ -11,6 +11,7 @@ _Physics simulators, GPU-parallel training and transfer to real robots._
 - ⭐⭐⭐ **[MuJoCo](https://mujoco.org/)** (2012) — Fast, accurate contact physics; the default simulator for robot learning research, open-sourced by DeepMind. · [code](https://github.com/google-deepmind/mujoco)
 - ⭐⭐ **[When the Simulator Fails, Not the Policy: Auditing Contact Artifacts in Simulated Robot Benchmarks](https://arxiv.org/abs/2610.41857)** (2026) — Many benchmark 'policy failures' are physics-engine ejections. SimuGuard traced RoboTwin artifacts to one collision constant; changing it cut artifact episodes from 12/100 to none and lifted five tasks 89% → 98%. · [code](https://github.com/ALEXander22568/simuguard)
 - ⭐ **[Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot](https://arxiv.org/abs/2601.02078)** (2026) — Genie Sim 3.0: a manipulation simulation platform whose LLM tool builds scenes from natural language, with an LLM- and VLM-based automated benchmark. · [code](https://github.com/AgibotTech/genie_sim)
+- ⭐ **[Real2SimLab: A Unified Platform for Real-to-Simulation Transfer](https://arxiv.org/abs/2611.34849)** (2026) — Runs any real-to-sim method's written program and scores it with each benchmark's own scorer, removing N x M integrations: 47 coding agents and 5 non-agent methods on 6 benchmarks, plus a data pipeline. · [project](https://real2simhub.github.io/)
 - ⭐ **[Isaac Lab: A GPU-Accelerated Simulation Framework for Multi-Modal Robot Learning](https://arxiv.org/abs/2511.04831)** (2025) — The reference paper for Isaac Lab, Orbit's successor — GPU-parallel physics, rendering and sensor simulation with ready-made robots and tasks for RL and imitation. · [code](https://github.com/isaac-sim/IsaacLab)
 - ⭐ **[MuJoCo Playground](https://arxiv.org/abs/2502.08844)** (2025) — GPU-accelerated MJX environments for locomotion and manipulation that train in minutes and transfer to real robots. · [code](https://github.com/google-deepmind/mujoco_playground)
 - ⭐ **[Newton](https://github.com/newton-physics/newton)** (2025) — Open, GPU-accelerated physics engine built on NVIDIA Warp and OpenUSD with multiple solvers for contact-rich robot learning; co-developed by Disney Research, Google DeepMind and NVIDIA, hosted by the Linux Foundation.

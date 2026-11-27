@@ -1900,3 +1900,29 @@
   tags: [mpc, koopman, real-time, gpu]
   takeaway_en: Precomputes finite-horizon control-to-output maps so the QP has only H*n_u variables, independent of lifted dimension. 23 us on a CPU, 4096-D quadruped under 5 ms, 200 quadrotors above 30 Hz on GPU.
   takeaway_zh: 用学习的 Koopman 线性化动力学预编译有限时域“控制-输出”映射，把在线 QP 压缩为仅含 H×n_u 个变量的纯动作问题，与提升维数无关；固定原算子支持只用矩阵-向量乘与投影的原-对偶迭代。报告桌面 CPU 低至 23 微秒、4096 维四足 <5 ms、GPU 上 200 架四旋翼避碰规划 >30 Hz，最多快 1907 倍。
+
+- title: 'LoopedWAM: Looped World Action Models for Elastic Inference'
+  type: paper
+  arxiv: '2611.25595'
+  year: 2026
+  code: https://github.com/anhdao69/LoopedWAM
+  project: https://anhdao69.github.io/LoopedWAM/
+  added: 2026-11-27
+  topics: [world-models]
+  tags: [wam, efficiency, elastic, real]
+  takeaway_en: 'A shared six-block core applied recurrently gives 30 transformer layers from 12 stored blocks per expert, plus elastic self-distillation. 0.58B: 96.1% LIBERO, 91.9% RoboTwin 2.0; 7.4x less peak GPU memory.'
+  takeaway_zh: 每个专家只存 12 个块、循环复用共享的六块核心，等效 30 层 Transformer；视频与动作专家按各自推理代价使用不同深度，并用弹性自蒸馏训练单一检查点在多种动作深度与采样步预算下工作。报告 0.58B 参数、无机器人预训练：LIBERO 96.1%、RoboTwin 2.0 91.9%，峰值显存比 Fast-WAM 少 7.4 倍；真机 AgileX PiPER 71.3%。
+
+- title: 'Beyond the Happy Path: Generalizing Robot World Models from Simulated Failures'
+  type: paper
+  arxiv: '2611.33925'
+  year: 2026
+  org: Zhejiang University
+  code: https://github.com/aim-uofa/WorldReforge
+  project: https://aim-uofa.github.io/WorldReforge/
+  rating: 1
+  added: 2026-11-27
+  topics: [world-models]
+  tags: [world-model, failure, physics, sim]
+  takeaway_en: Pretrained action-conditioned world models barely beat a copy-first-frame baseline off the happy path; 62k simulated failure trajectories plus interaction alignment cut object error 28.2% (35.0% unseen).
+  takeaway_zh: 指出在抓取错位、时机偏差、推偏滑落等“快乐路径”之外，五个预训练动作条件世界模型的物体运动误差最多只比静态基线低 10.4%（两个更差）；用 62k 条扰动参考抓取的仿真失败轨迹，以交互对齐与表面对应两种训练信号改进，报告物体轨迹误差整体降 28.2%、未见物体降 35.0%，动作对比误差降 43.3%。

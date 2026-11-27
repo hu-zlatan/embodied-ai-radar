@@ -2,7 +2,7 @@
 
 _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与开放词汇场景地图。_
 
-共 64 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
+共 65 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/perception.yaml`](../data/curated/perception.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/perception.html) · [English](perception.md)
 
@@ -55,6 +55,7 @@ _视觉/激光 SLAM 与里程计、三维重建、物体位姿、深度估计与
 - **[OpenVIO: A Versatile Open-Source Visual-Inertial Odometry System](https://arxiv.org/abs/2610.41671)** (2026) — MIT 许可的开源视觉惯性里程计，面向科研与实际应用。支持针孔、鱼眼相机及拼接 360° 图像，并在公开数据集上与其他开源 VIO 系统做了对比。 · [代码](https://github.com/93won/openvio)
 - **[OptiGeo: Efficient Monocular Geometry for Embodied Perception in Optically Challenging Scenes](https://arxiv.org/abs/2608.29881)** (2026) — 面向透明与反光场景的 3000 万参数单目深度模型，用少量渲染数据纠正真实深度传感器带来的监督偏差。报告在透明场景基准上超过 3 亿参数级和多视图模型。 · [代码](https://github.com/mx-liu6/OptiGeo) · [项目页](https://mx-liu6.github.io/OptiGeo-web/)
 - **[PROSE: Training-Free Egocentric Scene Registration with Vision-Language Models](https://arxiv.org/abs/2606.16569)** (2026) — 对齐同一房间在不同时间的两段纯 RGB 第一人称录像：用基础模型构建物体级 3D 场景图，再让 VLM 跨两段录像匹配物体实例。无需训练或深度传感器。
+- **[ProManO: Beyond Sim(3) for Metric Upgrade of Feed-Forward Geometry with Visual-Inertial Anchors](https://arxiv.org/abs/2611.34480)** (2026) — 证明与已标定内参相容的变换构成十维流形：除 Sim(3) 外另有三个自由度决定无穷远平面，只能由沿视线的度量深度或多视图约束解决（相似对齐后残差随深度范围二次增长）。ProManO 用按沿射线不确定性与内点概率加权的 EM 优化估计它们，在 EuRoC、CID-SIMS、Oxford Spires、KITTI-360 上平均 F1 最高。 · [项目页](https://h0xg.github.io/ProManO/)
 - **[ReSiReg: Towards Spatially Consistent Semantics in Language-Conditioned Robotic Tasks](https://arxiv.org/abs/2606.19088)** (2026) — 通过由带语言描述的视觉原型重建每个图像块，让稠密 VLM 特征在空间上更一致，提升开放词汇检索与三维建图；并提供 25M 参数的小型稠密 VLM。 · [代码](https://github.com/SimonSchwaiger/resireg) · [项目页](https://resireg.github.io)
 - **[Real-Time Diffusion Relighting as a Neural Sensor: Closing the Low-Light Domain Gap for Robotic Perception](https://arxiv.org/abs/2611.17438)** (2026) — 把扩散重光照嵌入控制回路作为生成式神经传感器：高延迟扩散模型在后台线程运行，仅当检测置信度下降（感知不确定事件）时激活。报告 ExDark 87.1% mAP，CARLA 闭环导航 100% 完成。 · [项目页](https://shengjie-xu.com/conferences/2026_IROS_neural-sensor/)
 - **[RoMo-GS: Efficient Online 3D Gaussian Splatting for Robot Mapping via Exposure-Integrated Motion Blur](https://arxiv.org/abs/2610.24605)** (2026) — 在线 3DGS 建图：对每个高斯在曝光时间内解析积分以处理运动模糊，并用 Hessian 得分剪枝控制数量。渲染质量与离线去模糊 3DGS 相当，速度快 15–150 倍。
