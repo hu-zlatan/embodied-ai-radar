@@ -2297,3 +2297,15 @@
   tags: [humanoid, pivot-walking, rl, transport, real]
   takeaway_en: One RL policy coordinates stepping, balance and object manipulation for pivot walking; deployed object-blind on a clock. A real humanoid moved the box over 1 m in all five trials without object sensing.
   takeaway_zh: 单一强化学习策略联合协调迈步、平衡与物体操控，实现人形“枢轴行走”搬运重箱：奖励鼓励交替枢轴动作，相位参考随物体位移推进。真机部署为物体盲版本（按周期时钟），五次试验全部把箱子向前搬运 1 米以上，无需直接测量物体状态（Humanoids 2026）。
+
+- title: Boundary-Aware Policy Learning for Agent-Orchestrated Robot Manipulation
+  type: paper
+  arxiv: '2611.32238'
+  year: 2026
+  org: Sage Physical AI
+  project: https://kaipengfang.github.io/bapl-agentic-manip/
+  added: 2026-11-27
+  topics: [manipulation]
+  tags: [agentic, handoff, policy-learning, boundary]
+  takeaway_en: Names the policy's handoff boundary - the start states where it is reliable - and shapes then expands it with boundary-explicit training on diverse start poses, communicated to the agent by a simple protocol.
+  takeaway_zh: 提出策略的“交接边界”（智能体可安全调用该策略的起始状态集合）：先用多样起始位姿的接触段做边界显式训练，得到宽而清晰的边界并通过简单交接协议告诉智能体，再扩大该边界，从而减少智能体编排操作在交接瞬间的失败。

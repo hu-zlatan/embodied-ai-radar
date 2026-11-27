@@ -83,7 +83,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - ⭐ **[Play2Perfect: What Matters in Dexterous Play Pretraining for Precise Assembly?](https://arxiv.org/abs/2606.26428)** (2026) — CoRL 2026 Oral. Asks what dexterous play pretraining actually needs before precise assembly, a contact-rich, sparse-reward task that is hard for both imitation and direct RL. · [code](https://github.com/kushal2000/play2perfect) · [project](https://play2perfect.github.io)
 - ⭐ **[World In-Context Learning for Agentic Robot Manipulation](https://arxiv.org/abs/2611.12885)** (2026) — RoboScript: a frozen model rehearses a task in sim from one demo and writes feedback into a task memory, not weights. 83.4% on all 50 RoboTwin 2.0 tasks, 20+ points over the best trained policy; real dual-arm too. · [code](https://github.com/ArcheOne-AI/RoboScript) · [project](https://archeone-ai.github.io/RoboScript/)
 
-**[All 223 entries →](lists/manipulation.md)**
+**[All 224 entries →](lists/manipulation.md)**
 
 <a id="tactile"></a>
 ### Tactile & Visuotactile Sensing
@@ -140,10 +140,10 @@ _Learned dynamics, video world models, world action models (WAM) and model-based
 - ⭐ **[Causal World Modeling for Robot Control](https://arxiv.org/abs/2601.21998)** (2026) — LingBot-VA: an autoregressive diffusion framework that learns frame prediction and policy together, with shared video-action latents, closed-loop rollout and asynchronous inference. · [code](https://github.com/Robbyant/lingbot-va) · [project](https://technology.robbyant.com/lingbot-va)
 - ⭐ **[Chunk-wise Model-based Policy Optimization](https://arxiv.org/abs/2610.14564)** (2026) — CoRL 2026 Spotlight. Model-based RL that uses a chunk world model as a differentiable training-time evaluator, targeting compounding error, inference latency and BPTT instability. · [code](https://github.com/song-wx/CMPO) · [project](https://song-wx.github.io/cmpo.github.io/)
 - ⭐ **[DreamX: Video Diffusion Model is a Universal Latent Action Learner](https://arxiv.org/abs/2611.05377)** (2026) — Reuses a pretrained video diffusion model to extract compact latent actions (1,200 to 4 tokens per frame) that act as a shared interface across humans, robots and environments, including zero-shot action transfer. · [code](https://github.com/cvlab-kaist/DreamX) · [project](https://cvlab-kaist.github.io/DreamX/)
+- ⭐ **[Entangle: Scaling Human-Video In-Context World-Action Models across Unseen Tasks and Contexts](https://arxiv.org/abs/2611.28732)** (2026) — In-context WAM mapping one human video plus observations to future states and actions; video-to-video generation turns robot videos into matched human contexts, with anti-shortcut losses. · [project](https://entangle-robotics.github.io/)
 - ⭐ **[Fast-WAM: Do World Action Models Need Test-time Future Imagination?](https://arxiv.org/abs/2603.16666)** (2026) — Asks whether WAMs need future imagination at test time: keeps video co-training during training but skips video generation at inference, separating the two effects in a controlled comparison. · [code](https://github.com/yuantianyuan01/FastWAM) · [project](https://yuantianyuan01.github.io/FastWAM/)
-- ⭐ **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — An action-centered WAM that predicts actions from the observation and makes video generation optional, so motion accuracy depends less on forecast quality and inference is cheaper. · [code](https://github.com/open-gigaai/giga-world-policy) · [project](https://gigaai-research.github.io/GigaWorld-Policy/)
 
-**[All 181 entries →](lists/world-models.md)**
+**[All 182 entries →](lists/world-models.md)**
 
 <a id="navigation"></a>
 ### Navigation & Embodied Agents

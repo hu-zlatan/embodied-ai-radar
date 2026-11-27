@@ -74,7 +74,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_ [在网站上�
 - ⭐ **[Play2Perfect: What Matters in Dexterous Play Pretraining for Precise Assembly?](https://arxiv.org/abs/2606.26428)** (2026) — CoRL 2026 Oral。探究灵巧“玩耍”预训练究竟需要什么，才能胜任精密装配这类富接触、稀疏奖励、模仿与直接 RL 都难以解决的任务。 · [代码](https://github.com/kushal2000/play2perfect) · [项目页](https://play2perfect.github.io)
 - ⭐ **[World In-Context Learning for Agentic Robot Manipulation](https://arxiv.org/abs/2611.12885)** (2026) — RoboScript：冻结的基础模型从一条示范出发在仿真中“排练”任务，把反馈写进任务记忆而不是权重。报告在 RoboTwin 2.0 全部 50 个任务上平均成功率 83.4%，比最强训练策略高 20 多个点，并迁移到真实双臂机器人。 · [代码](https://github.com/ArcheOne-AI/RoboScript) · [项目页](https://archeone-ai.github.io/RoboScript/)
 
-**[查看全部 223 条 →](lists/manipulation.zh-CN.md)**
+**[查看全部 224 条 →](lists/manipulation.zh-CN.md)**
 
 <a id="tactile"></a>
 ### 触觉与视触觉感知
@@ -131,10 +131,10 @@ _学习的动力学模型、视频世界模型、世界动作模型（WAM）与�
 - ⭐ **[Causal World Modeling for Robot Control](https://arxiv.org/abs/2601.21998)** (2026) — LingBot-VA：同时学习帧预测和策略的自回归扩散框架，具有视频动作共享潜空间、闭环推演和异步推理。 · [代码](https://github.com/Robbyant/lingbot-va) · [项目页](https://technology.robbyant.com/lingbot-va)
 - ⭐ **[Chunk-wise Model-based Policy Optimization](https://arxiv.org/abs/2610.14564)** (2026) — CoRL 2026 Spotlight。将分块世界模型用作训练期可微评估器的模型式强化学习，针对累积误差、推理延迟与 BPTT 不稳定问题。 · [代码](https://github.com/song-wx/CMPO) · [项目页](https://song-wx.github.io/cmpo.github.io/)
 - ⭐ **[DreamX: Video Diffusion Model is a Universal Latent Action Learner](https://arxiv.org/abs/2611.05377)** (2026) — 复用预训练视频扩散模型提取紧凑潜动作（每帧 1,200 压到 4 个 token），作为人、机器人和不同环境之间的共享接口，并支持零示教动作迁移。 · [代码](https://github.com/cvlab-kaist/DreamX) · [项目页](https://cvlab-kaist.github.io/DreamX/)
+- ⭐ **[Entangle: Scaling Human-Video In-Context World-Action Models across Unseen Tasks and Contexts](https://arxiv.org/abs/2611.28732)** (2026) — 上下文式世界动作模型：把单条人类视频与当前机器人观测映射为未来视觉状态与可执行动作。为扩规模，用视频到视频生成把机器人录像转成时间对齐的匹配人类上下文（并辅以真实配对录制），并用变长上下文与防止“初帧/任务身份捷径”的损失训练。 · [项目页](https://entangle-robotics.github.io/)
 - ⭐ **[Fast-WAM: Do World Action Models Need Test-time Future Imagination?](https://arxiv.org/abs/2603.16666)** (2026) — 追问世界动作模型在测试时是否需要想象未来：训练时保留视频联合训练，推理时跳过视频生成，以对照实验区分两者的作用。 · [代码](https://github.com/yuantianyuan01/FastWAM) · [项目页](https://yuantianyuan01.github.io/FastWAM/)
-- ⭐ **[GigaWorld-Policy: An Efficient Action-Centered World--Action Model](https://arxiv.org/abs/2603.17240)** (2026) — 以动作为中心的世界动作模型：由观测预测动作，视频生成变为可选，动作精度不再依赖视频预测质量，推理开销也更低。 · [代码](https://github.com/open-gigaai/giga-world-policy) · [项目页](https://gigaai-research.github.io/GigaWorld-Policy/)
 
-**[查看全部 181 条 →](lists/world-models.zh-CN.md)**
+**[查看全部 182 条 →](lists/world-models.zh-CN.md)**
 
 <a id="navigation"></a>
 ### 导航与具身智能体

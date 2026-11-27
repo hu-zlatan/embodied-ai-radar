@@ -1926,3 +1926,15 @@
   tags: [world-model, failure, physics, sim]
   takeaway_en: Pretrained action-conditioned world models barely beat a copy-first-frame baseline off the happy path; 62k simulated failure trajectories plus interaction alignment cut object error 28.2% (35.0% unseen).
   takeaway_zh: 指出在抓取错位、时机偏差、推偏滑落等“快乐路径”之外，五个预训练动作条件世界模型的物体运动误差最多只比静态基线低 10.4%（两个更差）；用 62k 条扰动参考抓取的仿真失败轨迹，以交互对齐与表面对应两种训练信号改进，报告物体轨迹误差整体降 28.2%、未见物体降 35.0%，动作对比误差降 43.3%。
+
+- title: 'Entangle: Scaling Human-Video In-Context World-Action Models across Unseen Tasks and Contexts'
+  type: paper
+  arxiv: '2611.28732'
+  year: 2026
+  rating: 1
+  project: https://entangle-robotics.github.io/
+  added: 2026-11-27
+  topics: [world-models, vla]
+  tags: [world-action-model, in-context, human-video, scaling]
+  takeaway_en: In-context WAM mapping one human video plus observations to future states and actions; video-to-video generation turns robot videos into matched human contexts, with anti-shortcut losses.
+  takeaway_zh: 上下文式世界动作模型：把单条人类视频与当前机器人观测映射为未来视觉状态与可执行动作。为扩规模，用视频到视频生成把机器人录像转成时间对齐的匹配人类上下文（并辅以真实配对录制），并用变长上下文与防止“初帧/任务身份捷径”的损失训练。

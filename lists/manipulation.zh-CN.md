@@ -2,7 +2,7 @@
 
 _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 
-共 223 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
+共 224 条。⭐⭐⭐ 必读（每个主题仅一篇）· ⭐⭐ 强烈推荐 · ⭐ 推荐。由 [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml) 生成，请勿直接编辑。
 
 [返回 README](../README.zh-CN.md) · [在网站上查看](https://embodied-ai-radar.com/topics/manipulation.html) · [English](manipulation.md)
 
@@ -47,6 +47,7 @@ _模仿学习、扩散策略、抓取、双臂与灵巧操作。_
 - **[BiRoAD: Learning Shared and Role-Adaptive Representations for Bimanual Manipulation](https://arxiv.org/abs/2609.23445)** (2026) — 把双臂策略特征分解为交换对称分量（两臂互换角色时不变的协调结构）与交换反对称分量（随角色变化的行为差异），再以残差形式加回各臂的表示。
 - **[Bimanual Robot Manipulation via Multi-Agent In-Context Learning](https://arxiv.org/abs/2604.20348)** (2026) — 把双臂视为“主-从”两个智能体，让纯文本 LLM 无需微调即可通过上下文学习完成少样本双臂操作。报告在 TWIN 的 13 个任务上平均成功率 70.5%。 · [项目页](https://alesspalma.github.io/bicicle)
 - **[Blind Precise Assembly: Proprioceptive Sim-to-Real Peg-in-Hole for Diverse Parts](https://arxiv.org/abs/2610.23849)** (2026) — 探究仅靠关节读数能否完成毫米级精密插装：训练不用相机、力或触觉输入的 sim-to-real 策略。
+- **[Boundary-Aware Policy Learning for Agent-Orchestrated Robot Manipulation](https://arxiv.org/abs/2611.32238)** (2026) — 提出策略的“交接边界”（智能体可安全调用该策略的起始状态集合）：先用多样起始位姿的接触段做边界显式训练，得到宽而清晰的边界并通过简单交接协议告诉智能体，再扩大该边界，从而减少智能体编排操作在交接瞬间的失败。 · [项目页](https://kaipengfang.github.io/bapl-agentic-manip/)
 - **[Bridging Task Planning and Execution for Language-Conditioned Bimanual Manipulation](https://arxiv.org/abs/2611.12409)** (2026) — 面向双臂人形机器人的零样本视觉语言规划框架，同时考虑任务目标和执行可行性：在带执行约束的场景表示上决定挪开哪些障碍，把动作组织成带前后置条件的并行双臂阶段，并由分层校验器触发局部恢复或重规划。在 CENTAURO 轮腿人形机器人上测试九个场景。 · [项目页](https://advrhumanoids.github.io/bridging-planning-execution/)
 - **[CAPER: PartGround and PlanRefine for Reliable Manual-Guided Robotic Assembly Planning](https://arxiv.org/abs/2611.32986)** (2026) — 装配规划两模块：PartGround 把步骤级手册证据与产品清单、零件参考对齐，给出带证据的精确零件指派（装配中间表示）；PlanRefine 按有限库存审计并剔除最低置信指派。报告 IAW 数据集上有限库存一致率 83.33%、越库零件零出现，库存超用对 9→0、超额单元 51→0。 · [项目页](https://xhzzzz123.github.io/CAPER/)
 - **[CARD: Contact-Anchored Retargeting for Dexterous Manipulation](https://arxiv.org/abs/2610.36539)** (2026) — 把人手示教（视频、动捕、触觉手套）重定向到灵巧手时显式保留接触力目标而不只是运动学，并用触觉跟踪控制器回放；报告 43–78% 的接触帧保持接触，纯运动学方法不到 10%。 · [项目页](https://card-retargeting.github.io/)

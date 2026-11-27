@@ -2,7 +2,7 @@
 
 _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipulation._
 
-223 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml); edit the YAML, not this file.
+224 entries. ⭐⭐⭐ must-read (one per topic) · ⭐⭐ highly recommended · ⭐ recommended. Generated from [`data/curated/manipulation.yaml`](../data/curated/manipulation.yaml); edit the YAML, not this file.
 
 [Back to the README](../README.md) · [Browse on the website](https://embodied-ai-radar.com/topics/manipulation.html) · [中文](manipulation.zh-CN.md)
 
@@ -47,6 +47,7 @@ _Imitation learning, diffusion policies, grasping, bimanual and dexterous manipu
 - **[BiRoAD: Learning Shared and Role-Adaptive Representations for Bimanual Manipulation](https://arxiv.org/abs/2609.23445)** (2026) — Splits bimanual policy features into a swap-symmetric part (coordination that holds when arms trade roles) and a swap-antisymmetric part (role-specific behaviour), recomposed as residuals on each arm's features.
 - **[Bimanual Robot Manipulation via Multi-Agent In-Context Learning](https://arxiv.org/abs/2604.20348)** (2026) — Lets text-only LLMs do few-shot bimanual manipulation without fine-tuning by treating the arms as leader and follower agents. Reports 70.5% average success on 13 TWIN tasks. · [project](https://alesspalma.github.io/bicicle)
 - **[Blind Precise Assembly: Proprioceptive Sim-to-Real Peg-in-Hole for Diverse Parts](https://arxiv.org/abs/2610.23849)** (2026) — Asks whether joint readings alone suffice for millimetre-precise insertion — trains sim-to-real policies with no camera, force or tactile input.
+- **[Boundary-Aware Policy Learning for Agent-Orchestrated Robot Manipulation](https://arxiv.org/abs/2611.32238)** (2026) — Names the policy's handoff boundary - the start states where it is reliable - and shapes then expands it with boundary-explicit training on diverse start poses, communicated to the agent by a simple protocol. · [project](https://kaipengfang.github.io/bapl-agentic-manip/)
 - **[Bridging Task Planning and Execution for Language-Conditioned Bimanual Manipulation](https://arxiv.org/abs/2611.12409)** (2026) — Zero-shot VLM planner for bimanual humanoids that weighs feasibility as well as goals: execution-aware scene graph, parallel two-arm stages with pre/post-conditions, recovery via a validator. Tested on CENTAURO. · [project](https://advrhumanoids.github.io/bridging-planning-execution/)
 - **[CAPER: PartGround and PlanRefine for Reliable Manual-Guided Robotic Assembly Planning](https://arxiv.org/abs/2611.32986)** (2026) — PartGround aligns manual evidence with inventory for exact Part IDs; PlanRefine audits against finite inventory. On IKEA Assembly in the Wild: 83.33% consistency, zero out-of-inventory parts, overuse 9 to 0. · [project](https://xhzzzz123.github.io/CAPER/)
 - **[CARD: Contact-Anchored Retargeting for Dexterous Manipulation](https://arxiv.org/abs/2610.36539)** (2026) — Retargets human hand demos (video, mocap, tactile gloves) by keeping contact-force targets, not just kinematics; a tactile tracking controller replays them. Reports contact kept on 43–78% of frames vs <10%. · [project](https://card-retargeting.github.io/)
