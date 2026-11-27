@@ -874,3 +874,9 @@ Newest entries at the bottom. One entry per run: date and time (UTC), what shipp
 - Start: ~10 minutes of total network outage (github.com and arxiv.org both 000); a background watcher waited it out and the run resumed. No issues/PRs.
 - 31 picks: 30 from the 11-26 announcement plus GlanceNav from the HF queue. Facts from candidates.json abstracts; numbers cross-checked (0 mismatches). Code links only for README-verified repos: HOG-WAM, Graph Anchors, Ground Your Steps, iMFPO, DexEngine, FOCI; Embodied-VGGT's repo has no README and FailPoint-X's 404s, so those carry no code link. Skipped: FoundSurface (generic 3D vision), 360UAV-ETrack (aerial), the simplicial-complexity math paper, TRIAGE and Sample-and-Verify (driving experiments), the exoskeleton survey (rehabilitation).
 - Validate 0 errors (1,686 curated), README check clean, 1,829 pages, 0 broken internal links. Verify queued on both curated pushes (GlanceNav + the 30).
+
+## 2026-11-27 — run 95 (Friday)
+
+- Start: verify #228–#231 had all failed. #231's log showed 4 arXiv renames (SMR 2610.29169, SparseHPS 2611.26730, MyoAcross 2610.36535, RoboEval report 2611.11464 now "1st Place Solution") and 3 dead links: CoTAMP's project URL had a typo (woojin8097 -> 8098, live), and HoloBrain-0.5's and Ego2Sim2Humanoid's project sites are gone at the host root (dropped, restore if they return). Fixed in e4a982b.
+- Reviewing yesterday's leftovers found 4 candidates run 94 judged pick-worthy but never wrote: Real2SimLab (HF 102 upvotes -> ★), DemoFoundry, DTU-Bench, ProManO. Added together with 3 new HF-queue entries (AIRIS/Tencent 17 -> ★, WorldReforge/ZJU 13 -> ★, LoopedWAM) in e93646a; numbers cross-checked, validate 0 errors (1,693 curated), 1,836 pages, 0 broken links.
+- 11-27 announcement: intake dispatched; waiting for the feed to land.
